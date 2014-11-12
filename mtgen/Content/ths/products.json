@@ -1,0 +1,165 @@
+{
+"_comment": "full product list: http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/1307",
+"_comment": "NOTE: cannot do Intro Packs or Event Deck as they mix different sets",
+"_comment": "if there are no options the query/packNames will be auto-run"
+
+		,"BAD":{
+			"_comment": "CANNOT USE: it combines mutiple sets"
+			,"productName": "ths-intro-packs"
+			,"productDesc": "Intro Packs"
+			,"isGenerated": false
+			,"autoGenerate": true
+			,"initialSort": "set"
+			,"options" : {
+				"buttons": [
+					{
+						"packName": "ths-intro-pack-favors-from-nyx"
+						,"packDesc": "Theros Intro Pack: Favors From Nyx"
+						,"default": true
+					}
+					,{
+						"packName": "ths-intro-pack-manipulative-monstrosities"
+						,"packDesc": "Theros Intro Pack: Manipulative Monstrosities"
+					}
+					,{
+						"packName": "ths-intro-pack-devotion-to-darkness"
+						,"packDesc": "Theros Intro Pack: Devotion to Darkness"
+					}
+					,{
+						"packName": "ths-intro-pack-blazing-beasts-of-myth"
+						,"packDesc": "Theros Intro Pack: Blazing Beasts of Myth"
+					}
+					,{
+						"packName": "ths-intro-pack-anthousas-army"
+						,"packDesc": "Theros Intro Pack: Anthousas Army"
+					}
+
+				]
+			}
+		}
+
+,"products": 
+	[
+		{
+			"productName": "ths-all-cards"
+			,"productDesc": "All Cards"
+			,"isGenerated": false
+			,"initialSort": "colour"
+			,"packs": [
+				{ "packName":"ths-all-cards" }
+			]
+		}
+		,{
+			"productName": "ths-prerelease"
+			,"productDesc": "Prerelease"
+			,"sources": [ "http://wpn.wizards.com/sites/wpn/files/attachements/740_b11536_001_en_lr.pdf" ]
+			,"isGenerated": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"ths-standard" }
+				,{ "packName":"ths-seeded-booster-white" },{ "packName":"ths-seeded-booster-packins-white" }
+				,{ "packName":"ths-seeded-booster-blue" } ,{ "packName":"ths-seeded-booster-packins-blue" }
+				,{ "packName":"ths-seeded-booster-black" },{ "packName":"ths-seeded-booster-packins-black" }
+				,{ "packName":"ths-seeded-booster-red" }  ,{ "packName":"ths-seeded-booster-packins-red" }
+				,{ "packName":"ths-seeded-booster-green" },{ "packName":"ths-seeded-booster-packins-green" }
+				,{ "packName":"ths-prerelease-promos" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "ths-prerelease-hunt-with-valor-white"
+						,"presetDesc": "Hunt with Valor (White)"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"ths-seeded-booster-white" }
+							,{ "count":1, "defaultPackName":"ths-seeded-booster-packins-white" }
+							,{ "count":5, "defaultPackName":"ths-standard" }
+						]
+					}
+					,{
+						"presetName": "ths-prerelease-hunt-with-guile-blue"
+						,"presetDesc": "Hunt with Guile (Blue)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"ths-seeded-booster-blue" }
+							,{ "count":1, "defaultPackName":"ths-seeded-booster-packins-blue" }
+							,{ "count":5, "defaultPackName":"ths-standard" }
+						]
+					}
+					,{
+						"presetName": "ths-prerelease-hunt-with-ambition-black"
+						,"presetDesc": "Hunt with Ambition (Black)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"ths-seeded-booster-black" }
+							,{ "count":1, "defaultPackName":"ths-seeded-booster-packins-black" }
+							,{ "count":5, "defaultPackName":"ths-standard" }
+						]
+					}
+					,{
+						"presetName": "ths-prerelease-hunt-with-ferocity-red"
+						,"presetDesc": "Hunt with Ferocity (Red)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"ths-seeded-booster-red" }
+							,{ "count":1, "defaultPackName":"ths-seeded-booster-packins-red" }
+							,{ "count":5, "defaultPackName":"ths-standard" }
+						]
+					}
+					,{
+						"presetName": "ths-prerelease-hunt-with-strength-green"
+						,"presetDesc": "Hunt with Strength (Green)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"ths-seeded-booster-green" }
+							,{ "count":1, "defaultPackName":"ths-seeded-booster-packins-green" }
+							,{ "count":5, "defaultPackName":"ths-standard" }
+						]
+					}
+					,{
+						"presetName": "ths-prerelease-promos"
+						,"presetDesc": "Theros Prerelease Promos"
+						,"packs": [
+							{ "count":1, "defaultPackName":"ths-prerelease-promos" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "ths-fat-pack"
+			,"productDesc": "Fat Pack"
+			,"sources": [ "https://www.youtube.com/watch?v=4lWQB_hMTxU" ]
+			,"isGenerated": true
+			,"autoGenerate": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"ths-standard" }
+				,{ "packName":"ths-fat-pack-land" }
+				,{ "packName":"ths-fat-pack-pack-ins" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "ths-fat-pack"
+						,"presetDesc": "Theros Fat Pack"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"ths-fat-pack-pack-ins" }
+							,{ "count":9, "defaultPackName":"ths-standard" }
+							,{ "count":1, "defaultPackName":"ths-fat-pack-land" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "ths-promos"
+			,"productDesc": "All Promos"
+			,"isGenerated": false
+			,"initialSort": "name"
+			,"packs": [
+				{ "packName":"ths-promos" }
+			]
+		}
+
+	]
+}

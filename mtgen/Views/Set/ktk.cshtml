@@ -1,0 +1,60 @@
+﻿@using mtgen.Models;
+@{
+    var set = new mtgen.Models.Set()
+    {
+        Code = "ktk",
+        Name = "Khans of Tarkir",
+        CreatedDate = new DateTime(2014, 9, 1),
+        CardCount = 269,
+        StartProductName = "ktk-prerelease"
+    };
+
+    set.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2014,9,30),
+            HtmlString = "Evening: Added actual spindown life counters and the Abzan Clan Info card."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014,9,22),
+            HtmlString = "Evening: Added most of the actual Clan pack-ins and the Fat Pack pack-ins."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014,9,18),
+            HtmlString = "Evening: Updated seeded clan packs with what we're seeing in the <a href='https://docs.google.com/spreadsheet/ccc?key=0Apln2HM4aSGbdDJ6MFk5cTBjb09sXzFWdndhTkx2V1E#gid=9'>tracking spreadsheet</a>. Thanks, Wolfninja for the heads up!"
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014,9,15),
+            HtmlString = "Noon: Added updated prerelease pack-ins from <a href='http://magic.wizards.com/en/articles/archive/feature/khans-tarkir-prerelease-primer-2014-09-15'>here</a>."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014,9,14),
+            HtmlString = "Midnight: Added Fat Pack pack-in placeholders and Holiday Gift Box product."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014,9,14),
+            HtmlString = "Evening: Added prerelease pack-in placeholders."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014,9,14),
+            HtmlString = "Afternoon: Seeded booster first slot possibilities now made up of the clan's Khan and all clan rares."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014,9,14),
+            HtmlString = "Morning: Prerelease generator created."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014,9,14),
+            HtmlString = "All cards now included."
+        }
+    };
+
+    ViewBag.Set = set;
+
+    /* Defaults:
+        SetFile = "~/sets.json";
+        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+        PackFiles = new List<string>() { "packs.json" };
+        ProductFile = "products.json";
+     */
+}

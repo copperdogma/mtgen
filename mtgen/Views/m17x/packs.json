@@ -1,0 +1,442 @@
+{
+"_comment": "base: http://magic.wizards.com/en/content/magic-2015-core-set-card-set-archive-products-game-info",
+"_comment": "prerelease contents: http://wpn.wizards.com/sites/wpn/files/attachements/740_b11536_001_en_lr.pdf",
+"_comment": "seeded booster opening (16 cards, no land/marketing/token): https://www.facebook.com/photo.php?v=10154297170330307",
+"_comment": "prerelease packs: Hunt with Valor (White), Hunt with Guile (Blue), Hunt with Ambition (Black), Hunt with Ferocity (Red), Hunt with Strength (Green)",
+"_comment": "promo cards: http://mtg-realm.blogspot.ca/2014/06/magic-2015-promos.html",
+"_comment": "Intro Packs from wotc: http://magic.wizards.com/en/articles/archive/magic-2015-intro-deck-decklists-2014-07-09",
+"defs": 
+	[
+		{
+			"defName": "m15",
+			"query": "from[*]?set='m15'"
+		}
+		,{
+			"defName": "m15_main",
+			"query": "from[m15]-from[m15]?type=(Marketing|Basic Land)-from[m15]?token=true-from[m15]?promo=true"
+		}
+		,{
+			"defName": "m15_intro_packs",
+			"query": "from[m15]-from[m15]?promo=true"
+		}
+		,{
+			"defName": "m15_foils",
+			"query": "from[m15_main]"
+		}
+		,{
+			"defName": "m15_promo",
+			"query": "from[m15]?promo=true"
+		},
+		{
+			"defName": "m15_uncommons",
+			"query": "from[m15_main]?rarity='u'"
+		},
+		{
+			"defName": "m15_main_white",
+			"query": "from[m15_main]-from[m15_main]?colour=(u|b|r|g)"
+		},
+		{
+			"defName": "m15_main_blue",
+			"query": "from[m15_main]-from[m15_main]?colour=(w|b|r|g)"
+		},
+		{
+			"defName": "m15_main_black",
+			"query": "from[m15_main]-from[m15_main]?colour=(w|u|r|g)"
+		},
+		{
+			"defName": "m15_main_red",
+			"query": "from[m15_main]-from[m15_main]?colour=(w|u|b|g)"
+		},
+		{
+			"defName": "m15_main_green",
+			"query": "from[m15_main]-from[m15_main]?colour=(w|u|b|r)"
+		},
+		{
+			"defName": "m15_fatpack",
+			"query": "from[m15]?includedReason='Fat Pack Pack-In'"
+		}
+
+	]
+
+,"packs": 
+	[
+ 		{
+		"packName": "m15-all-cards",
+		"packDesc": "2015 Core Set: All Cards",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[m15]" }
+			]
+		}
+
+ 		,{
+		"packName": "m15-standard",
+		"packDesc": "2015 Core Set: Standard Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "from[m15]?type='Basic Land'" }
+			,{ "query": "take[9]>from[m15_main]?rarity='c'" }
+			,{ "querySet": [ { "percent": 75, "query": "from[m15_main]?rarity='c'" }
+							,{ "percent": 25, "query": "from[m15_foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+							] }
+			,{ "query": "take[3]>from[m15_main]?rarity='u'" }
+			,{ "querySet": [ { "percent": 87.5, "query": "from[m15_main]?rarity='r'" }
+							,{ "percent": 12.5, "query": "from[m15_main]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" } 
+							] }
+			,{ "querySet": [ { "percent": 50, "query": "from[m15]?type='Marketing'" }
+							,{ "percent": 50, "query": "from[m15]?token=true-from[m15]?promo=true" } 
+							] }
+			]
+		}
+
+		,{
+		"packName": "m15-promos",
+		"packDesc": "2015 Core Set: Promos",
+		"isGenerated": false,
+		"includeWithUserCards": false,
+		"cards": [
+			{ "query": "take[*]>from[m15_promo]" }
+			]
+		}
+
+		,{
+		"packName": "m15-prerelease-promos",
+		"packDesc": "2015 Core Set: Prerelease Promos",
+		"isGenerated": false,
+		"includeWithUserCards": false,
+		"cards": [
+			{ "query": "take[*]>from[m15_promo]?includedReason='Prerelease Promo'" }
+			]
+		}
+
+		,{
+		"packName": "m15-seeded-booster-white",
+		"packDesc": "2015 Core Set: Hunt with Valor (White) Seeded Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "from[m15_promo]?title='Resolute Archangel'" }
+			,{ "querySet": [ 
+				{ "query": "take[*]>from[m15_main]?title=(Soul of Theros|Oreskos Swiftclaw|Wall of Limbs|Ajani's Pridemate|Staff of the Sun Magus|Sungrace Pegasus|Welkin Tern|Covenant of Blood|Forge Devil|Solemn Offering|Verdant Haven|Meditation Puzzle|Statute of Denial|Borderland Marauder|Charging Rhino)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Avacyn, Guardian Angel|Oreskos Swiftclaw|Belligerent Sliver|Caustic Tar|Constricting Sliver|Nimbus of the Isles|Marked by Honor|Carnivorous Moss-Beast|Void Snare|Inferno Fist|Heliod's Pilgrim|Bronze Sable|Oppressive Rays|Typhoid Rats|Plummet)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Hushwing Gryff|Oreskos Swiftclaw|Seraph of the Masses|Dissipate|Overwhelm|Triplicate Spirits|Accursed Spirit|Selfless Cathar|Lava Axe|Necrobite|Ephemeral Shields|Siege Wurm|Coral Barrier|Rummaging Goblin|Ornithopter)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Spirit Bonds|Oreskos Swiftclaw|Ulcerate|Sunblade Elf|Congregate|Raise the Alarm|Chronostutter|Thundering Giant|Solemn Offering|Black Cat|Living Totem|Sanctified Charge|Wall of Fire|Will-Forged Golem|Frost Lynx)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Preeminent Captain|Oreskos Swiftclaw|Dauntless River Marshal|Brawler's Plate|Jace's Ingenuity|Midnight Guard|Mind Rot|Lightning Strike|Netcaster Spider|Pillar of Light|Nimbus of the Isles|Shadowcloak Vampire|Miner's Bane|Kinsbaile Skirmisher|Frost Lynx)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Spectra Ward|Oreskos Swiftclaw|Sacred Armory|Boonweaver Giant|Brood Keeper|Amphin Pathmage|Black Cat|Hammerhand|Raise the Alarm|Invisibility|Marked by Honor|Flesh to Dust|Vineweft|Divine Favor|Siege Wurm)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Mass Calcify|Oreskos Swiftclaw|Into the Void|Geist of the Moors|Reclamation Sage|Tyrant's Machine|Divine Favor|Carrion Crow|Titanic Growth|Blastfire Bolt|Unmake the Graves|Tireless Missionaries|Krenko's Enforcer|Razorfoot Griffin|Frost Lynx)", "inOrder": true }
+				]
+			}
+			]
+		}		
+						,{
+		"packName": "m15-seeded-booster-packins-white",
+		"packDesc": "2015 Core Set: Hunt with Valor (White) Pack-Ins",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[m15]?title=(White Spindown Life Counter|White Activity Insert|Garruk the Slayer: Oversized)" }
+			,{ "query": "take[3]>from[m15]?title='Wolf", "canBeDuplicate": true }
+			]
+		}
+		
+
+ 		,{
+		"packName": "m15-seeded-booster-blue",
+		"packDesc": "2015 Core Set: Hunt with Guile (Blue) Seeded Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "from[m15_promo]?title='Mercurial Pretender'" }
+			,{ "querySet": [
+				{ "query": "take[*]>from[m15_main]?title=(Soul of Ravnica|Fugitive Wizard|Rogue's Gloves|Illusory Angel|Wall of Mulch|Nimbus of the Isles|Pillar of Light|Krenko's Enforcer|Invisibility|Accursed Spirit|Wall of Fire|Encrust|Sungrace Pegasus|Flesh to Dust|Ranger's Guile)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Jalira, Master Polymorphist|Fugitive Wizard|Meteorite|Quickling|Gravedigger|Heliod's Pilgrim|Coral Barrier|Satyr Wayfinder|Torch Fiend|Negate|Oppressive Rays|Child of Night|Frost Lynx|Shaman of Spring|Blastfire Bolt)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Chief Engineer|Fugitive Wizard|Juggernaut|Paragon of Gathering Mists|Stoke the Flames|Aeronaut Tinkerer|Midnight Guard|Crippling Blight|Scrapyard Mongrel|Shaman of Spring|Frost Lynx|Oppressive Rays|Verdant Haven|Will-Forged Golem|Ranger's Guile)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Chasm Skulker|Fugitive Wizard|Ensoul Artifact|Shrapnel Blast|Rogue's Gloves|Nimbus of the Isles|Elvish Mystic|Kinsbaile Skirmisher|Typhoid Rats|Lightning Strike|Aeronaut Tinkerer|Netcaster Spider|Ornithopter|Raise the Alarm|Flesh to Dust)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Stormtide Leviathan|Fugitive Wizard|Gargoyle Sentinel|Stab Wound|Jorubai Murk Lurker|Generator Servant|Coral Barrier|Carrion Crow|Midnight Guard|Peel from Reality|Hunt the Weak|Lava Axe|Living Totem|Hydrosurge|Triplicate Spirits)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Polymorphist's Jest|Fugitive Wizard|Cone of Flame|Roaring Primadox|Kapsho Kitefins|Evolving Wilds|Rotfeaster Maggot|Peel from Reality|Forge Devil|Razorfoot Griffin|Frost Lynx|Satyr Wayfinder|Necrobite|Statute of Denial|Tireless Missionaries)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Master of Predicaments|Fugitive Wizard|Geist of the Moors|Heat Ray|Wall of Frost|Accursed Spirit|Amphin Pathmage|Shaman of Spring|Void Snare|Razorfoot Griffin|Plummet|Welkin Tern|Eternal Thirst|Rummaging Goblin|Tyrant's Machine)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(AEtherspouts|Fugitive Wizard|Paragon of Gathering Mists|Dauntless River Marshal|Stoke the Flames|Encrust|Child of Night|Krenko's Enforcer|Frost Lynx|Sign in Blood|Nimbus of the Isles|Charging Rhino|Kinsbaile Skirmisher|Tyrant's Machine|Hunt the Weak)", "inOrder": true }
+				]
+			}
+			]
+		}
+		,{
+		"packName": "m15-seeded-booster-packins-blue",
+		"packDesc": "2015 Core Set: Hunt with Guile (Blue) Pack-Ins",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[m15]?title=(Blue Spindown Life Counter|Blue Activity Insert|Garruk the Slayer: Oversized)" }
+			,{ "query": "take[3]>from[m15]?title='Wolf", "canBeDuplicate": true }
+			]
+		}
+
+
+ 		,{
+		"packName": "m15-seeded-booster-black",
+		"packDesc": "2015 Core Set: Hunt with Ambition (Black) Seeded Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "from[m15_promo]?title='Indulgent Tormentor'" }
+			,{ "querySet": [
+				{ "query": "take[*]>from[m15_main]?title=(Soul of Innistrad|Witch's Familiar|Might Makes Right|Endless Obedience|Brawler's Plate|Frost Lynx|Unmake the Graves|Midnight Guard|Satyr Wayfinder|Necromancer's Assistant|Rummaging Goblin|Rotfeaster Maggot|Mind Sculpt|Razorfoot Griffin|Undergrowth Scavenger)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Ob Nixilis, Unshackled|Witch's Familiar|Devouring Light|Circle of Flame|Feast on the Fallen|Krenko's Enforcer|Mind Rot|Welkin Tern|Midnight Guard|Typhoid Rats|Siege Wurm|Evolving Wilds|Shadowcloak Vampire|Living Totem|Divination)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Stain the Mind|Witch's Familiar|Altac Bloodseeker|Meteorite|Nightfire Giant|Plummet|Typhoid Rats|Razorfoot Griffin|Lightning Strike|Festergloom|Frost Lynx|Flesh to Dust|Research Assistant|Charging Rhino|Pillar of Light)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Cruel Sadist|Witch's Familiar|Heat Ray|First Response|Ulcerate|Elvish Mystic|Amphin Pathmage|Covenant of Blood|Negate|Razorfoot Griffin|Shadowcloak Vampire|Charging Rhino|Eternal Thirst|Forge Devil|Will-Forged Golem)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(In Garruk's Wake|Witch's Familiar|Ajani's Pridemate|Necrogen Scudder|Staff of the Death Magus|Chronostutter|Triplicate Spirits|Child of Night|Rummaging Goblin|Rotfeaster Maggot|Coral Barrier|Netcaster Spider|Sign in Blood|Inferno Fist|Verdant Haven)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Necromancer's Stockpile|Witch's Familiar|Gravedigger|Jace's Ingenuity|Ancient Silverback|Bronze Sable|Necromancer's Assistant|Selfless Cathar|Thundering Giant|Carrion Crow|Sanctified Charge|Undergrowth Scavenger|Black Cat|Research Assistant|Lightning Strike)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Urborg, Tomb of Yawgmoth|Witch's Familiar|Caustic Tar|Geist of the Moors|Jorubai Murk Lurker|Sign in Blood|Shaman of Spring|Carrion Crow|Borderland Marauder|Nimbus of the Isles|Flesh to Dust|Ranger's Guile|Soulmender|Accursed Spirit|Inferno Fist)", "inOrder": true }
+				]
+			}
+			]
+		}
+		,{
+		"packName": "m15-seeded-booster-packins-black",
+		"packDesc": "2015 Core Set: Hunt with Ambition (Black) Pack-Ins",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[m15]?title=(Black Spindown Life Counter|Black Activity Insert|Garruk the Slayer: Oversized)" }
+			,{ "query": "take[3]>from[m15]?title='Wolf", "canBeDuplicate": true }
+			]
+		}
+
+
+ 		,{
+		"packName": "m15-seeded-booster-red",
+		"packDesc": "2015 Core Set: Hunt with Ferocity (Red) Seeded Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "from[m15_promo]?title='Siege Dragon'" }
+			,{ "querySet": [
+				{ "query": "take[*]>from[m15_main]?title=(Soul of Shandalar|Goblin Roughrider|Meteorite|Might Makes Right|Turn to Frog|Elvish Mystic|Carrion Crow|Sungrace Pegasus|Lightning Strike|Verdant Haven|Generator Servant|Ephemeral Shields|Miner's Bane|Amphin Pathmage|Accursed Spirit)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Kurkesh, Onakke Ancient|Goblin Roughrider|Frenzied Goblin|Into the Void|Rogue's Gloves|Lightning Strike|Solemn Offering|Mind Rot|Titanic Growth|Scrapyard Mongrel|Triplicate Spirits|Aeronaut Tinkerer|Tyrant's Machine|Siege Wurm|Zof Shade)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Burning Anger|Goblin Roughrider|Kird Chieftain|Boonweaver Giant|Nissa's Expedition|Evolving Wilds|Amphin Pathmage|Inferno Fist|Divine Favor|Typhoid Rats|Blastfire Bolt|Glacial Crasher|Siege Wurm|Miner's Bane|Flesh to Dust)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Aggressive Mining|Goblin Roughrider|Ulcerate|Boonweaver Giant|Cone of Flame|Welkin Tern|Inferno Fist|Netcaster Spider|Carrion Crow|Marked by Honor|Krenko's Enforcer|Invisibility|Elvish Mystic|Borderland Marauder|Evolving Wilds)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Hoarding Dragon|Goblin Roughrider|Nightfire Giant|Act on Impulse|Warden of the Beyond|Coral Barrier|Forge Devil|Plummet|Lightning Strike|Will-Forged Golem|Torch Fiend|Glacial Crasher|Pillar of Light|Titanic Growth|Rotfeaster Maggot)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Goblin Kaboomist|Goblin Roughrider|Gargoyle Sentinel|Shrapnel Blast|Ensoul Artifact|Titanic Growth|Flesh to Dust|Scrapyard Mongrel|Divine Favor|Elvish Mystic|Blastfire Bolt|Aeronaut Tinkerer|Shadowcloak Vampire|Razorfoot Griffin|Ornithopter)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Goblin Rabblemaster|Goblin Roughrider|Overwhelm|Brood Keeper|Xathrid Slyblade|Will-Forged Golem|Vineweft|Hammerhand|Encrust|Foundry Street Denizen|Heliod's Pilgrim|Child of Night|Inferno Fist|Oppressive Rays|Nimbus of the Isles)", "inOrder": true }
+				]
+			}
+			]
+		}
+		,{
+		"packName": "m15-seeded-booster-packins-red",
+		"packDesc": "2015 Core Set: Hunt with Ferocity (Red) Pack-Ins",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[m15]?title=(Red Spindown Life Counter|Red Activity Insert|Garruk the Slayer: Oversized)" }
+			,{ "query": "take[3]>from[m15]?title='Wolf", "canBeDuplicate": true }
+			]
+		}
+
+
+ 		,{
+		"packName": "m15-seeded-booster-green",
+		"packDesc": "2015 Core Set: Hunt with Strength (Green) Seeded Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "from[m15_promo]?title='Phytotitan'" }
+			,{ "querySet": [
+				{ "query": "take[*]>from[m15_main]?title=(Soul of Zendikar|Runeclaw Bear|Back to Nature|Devouring Light|Gravedigger|Undergrowth Scavenger|Coral Barrier|Elvish Mystic|Sungrace Pegasus|Evolving Wilds|Netcaster Spider|Necromancer's Assistant|Research Assistant|Blastfire Bolt|Thundering Giant)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Yisan, the Wanderer Bard|Runeclaw Bear|Kapsho Kitefins|Reclamation Sage|Brawler's Plate|Ephemeral Shields|Shaman of Spring|Forge Devil|Covenant of Blood|Rotfeaster Maggot|Peel from Reality|Elvish Mystic|Tireless Missionaries|Lightning Strike|Charging Rhino)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Genesis Hydra|Runeclaw Bear|Meteorite|Into The Void|Roaring Primadox|Frost Lynx|Invasive Species|Razorfoot Griffin|Typhoid Rats|Satyr Wayfinder|Divine Favor|Naturalize|Lava Axe|Flesh To Dust|Rummaging Goblin)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Hornet Queen|Runeclaw Bear|Paragon of Eternal Wilds|Kird Chieftain|Dissipate|Crippling Blight|Nimbus of the Isles|Ephemeral Shields|Elvish Mystic|Tyrant's Machine|Carnivorous Moss-Beast|Thundering Giant|Razorfoot Griffin|Hunt the Weak|Zof Shade)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Life's Legacy|Runeclaw Bear|Endless Obedience|Sacred Armory|Restock|Rummaging Goblin|Peel from Reality|Undergrowth Scavenger|Selfless Cathar|Flesh to Dust|Satyr Wayfinder|Miner's Bane|Welkin Tern|Carnivorous Moss-Beast|Kinsbaile Skirmisher)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Kalonian Twingrove|Runeclaw Bear|Brawler's Plate|Nissa's Expedition|Might Makes Right|Statute of Denial|Naturalize|Midnight Guard|Child of Night|Siege Wurm|Raise the Alarm|Verdant Haven|Welkin Tern|Lightning Strike|Shadowcloak Vampire)", "inOrder": true },
+				{ "query": "take[*]>from[m15_main]?title=(Hornet Nest|Runeclaw Bear|Overwhelm|Military Intelligence|Frenzied Goblin|Sanctified Charge|Black Cat|Plummet|Research Assistant|Shaman of Spring|Crowd's Favor|Unmake the Graves|Will-Forged Golem|Siege Wurm|Triplicate Spirits)", "inOrder": true }
+				]
+			}
+			]
+		}
+		,{
+		"packName": "m15-seeded-booster-packins-green",
+		"packDesc": "2015 Core Set: Hunt with Strength (Green) Pack-Ins",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[m15]?title=(Green Spindown Life Counter|Green Activity Insert|Garruk the Slayer: Oversized)" }
+			,{ "query": "take[3]>from[m15]?title='Wolf", "canBeDuplicate": true }
+			]
+		}
+
+		,{
+		"packName": "2015-intro-deck-price-of-glory",
+		"packDesc": "2015 Intro Deck: Price of Glory (White/Black)",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[3]>from[m15_intro_packs]?title='Soulmender'", "canBeDuplicate": true },
+			{ "query": "from[m15_intro_packs]?title='Kinsbaile Skirmisher'" },
+			{ "query": "from[m15_intro_packs]?title='Wall of Essence'" },
+			{ "query": "take[2]>from[m15_intro_packs]?title='Child of Night'", "canBeDuplicate": true },
+			{ "query": "from[m15_intro_packs]?title='Accursed Spirit'" },
+			{ "query": "from[m15_intro_packs]?title='Tireless Missionaries'" },
+			{ "query": "take[3]>from[m15_intro_packs]?title='Sign in Blood'", "canBeDuplicate": true },
+			{ "query": "from[m15_intro_packs]?title='Solemn Offering'" },
+			{ "query": "from[m15_intro_packs]?title='Mass Calcify'" },
+			{ "query": "from[m15_intro_packs]?title='Staff of the Death Magus'" },
+			{ "query": "from[m15_intro_packs]?title='Staff of the Sun Magus'" },
+			{ "query": "from[m15_intro_packs]?title='Crippling Blight'" },
+			{ "query": "from[m15_intro_packs]?title='Divine Favor'" },
+			{ "query": "take[12]>from[m15_intro_packs]?title='Plains'", "canBeDuplicate": true },
+			{ "query": "take[13]>from[m15_intro_packs]?title='Swamp'", "canBeDuplicate": true }
+			]
+		}
+		,{
+		"packName": "2015-intro-deck-price-of-glory-foil",
+		"packDesc": "2015 Intro Deck: Price of Glory Premium Foil",
+		"isGenerated": false,
+		"cards": [
+				{ "query": "from[m15_intro_packs]?title='Resolute Archangel'", "setValues": { "foil": true } }
+			]
+		}
+		
+		,{
+		"packName": "2015-intro-deck-hit-the-ground-running",
+		"packDesc": "2015 Intro Deck: Hit the Ground Running (Blue/Green)",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[2]>from[m15_intro_packs]?title='Runeclaw Bear'", "canBeDuplicate": true },
+			{ "query": "from[m15_intro_packs]?title='Illusory Angel'" },
+			{ "query": "take[2]>from[m15_intro_packs]?title='Roaring Primadox'", "canBeDuplicate": true },
+			{ "query": "from[m15_intro_packs]?title='Stormtide Leviathan'" },
+			{ "query": "take[2]>from[m15_intro_packs]?title='Into the Void'", "canBeDuplicate": true },
+			{ "query": "from[m15_intro_packs]?title='Restock'" },
+			{ "query": "from[m15_intro_packs]?title='Negate'" },
+			{ "query": "take[2]>from[m15_intro_packs]?title='Peel from Reality'", "canBeDuplicate": true },
+			{ "query": "from[m15_intro_packs]?title='Turn to Frog'" },
+			{ "query": "from[m15_intro_packs]?title='Plummet'" },
+			{ "query": "from[m15_intro_packs]?title='Encrust'" },
+			{ "query": "take[13]>from[m15_intro_packs]?title='Island'", "canBeDuplicate": true },
+			{ "query": "take[12]>from[m15_intro_packs]?title='Forest'", "canBeDuplicate": true }
+			]
+		}
+		,{
+		"packName": "2015-intro-deck-hit-the-ground-running-foil",
+		"packDesc": "2015 Intro Deck: Hit the Ground Running Premium Foil",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[m15_intro_packs]?title='Mercurial Pretender'", "setValues": { "foil": true } }
+			]
+		}
+		
+		,{
+		"packName": "2015-intro-deck-infernal-intervention",
+		"packDesc": "2015 Intro Deck: Infernal Intervention (Black/Red)",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[3]>from[m15_intro_packs]?title='Typhoid Rats'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[m15_intro_packs]?title='Torch Fiend'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[m15_intro_packs]?title='Gargoyle Sentinel'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[m15_intro_packs]?title='Goblin Roughrider'", "canBeDuplicate": true },
+			{ "query": "from[m15_intro_packs]?title='Wall of Fire'" },
+			{ "query": "from[m15_intro_packs]?title='Gravedigger'" },
+			{ "query": "from[m15_intro_packs]?title='Zof Shade'" },
+			{ "query": "from[m15_intro_packs]?title='Thundering Giant'" },
+			{ "query": "from[m15_intro_packs]?title='Clear a Path'" },
+			{ "query": "from[m15_intro_packs]?title='Cone of Flame'" },
+			{ "query": "take[2]>from[m15_intro_packs]?title='Lightning Strike'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[m15_intro_packs]?title='Heat Ray'", "canBeDuplicate": true },
+			{ "query": "from[m15_intro_packs]?title='Stab Wound'" },
+			{ "query": "from[m15_intro_packs]?title='Caustic Tar'" },
+			{ "query": "take[13]>from[m15_intro_packs]?title='Swamp'", "canBeDuplicate": true },
+			{ "query": "take[13]>from[m15_intro_packs]?title='Mountain'", "canBeDuplicate": true }
+			]
+		}
+		,{
+		"packName": "2015-intro-deck-infernal-intervention-foil",
+		"packDesc": "2015 Intro Deck: Infernal Intervention Premium Foil",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[m15_intro_packs]?title='Indulgent Tormentor'", "setValues": { "foil": true } }
+			]
+		}
+		
+		,{
+		"packName": "2015-intro-deck-flames-of-the-dragon",
+		"packDesc": "2015 Intro Deck: Flames of the Dragon (Red/Blue)",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[2]>from[m15_intro_packs]?title='Ornithopter'", "canBeDuplicate": true },
+			{ "query": "take[3]>from[m15_intro_packs]?title='Bronze Sable'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[m15_intro_packs]?title='Welkin Tern'", "canBeDuplicate": true },
+			{ "query": "from[m15_intro_packs]?title='Rummaging Goblin'" },
+			{ "query": "take[3]>from[m15_intro_packs]?title='Aeronaut Tinkerer'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[m15_intro_packs]?title='Krenko’s Enforcer'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[m15_intro_packs]?title='Wall of Frost'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[m15_intro_packs]?title='Juggernaut'", "canBeDuplicate": true },
+			{ "query": "take[3]>from[m15_intro_packs]?title='Scrapyard Mongrel'", "canBeDuplicate": true },
+			{ "query": "from[m15_intro_packs]?title='Hoarding Dragon'" },
+			{ "query": "take[2]>from[m15_intro_packs]?title='Glacial Crasher'", "canBeDuplicate": true },
+			{ "query": "from[m15_intro_packs]?title='Siege Dragon'" },
+			{ "query": "take[2]>from[m15_intro_packs]?title='Lava Axe'", "canBeDuplicate": true },
+			{ "query": "from[m15_intro_packs]?title='Shrapnel Blast'" },
+			{ "query": "from[m15_intro_packs]?title='Rogue’s Gloves'" },
+			{ "query": "from[m15_intro_packs]?title='Sacred Armory'" },
+			{ "query": "from[m15_intro_packs]?title='Tyrant’s Machine'" },
+			{ "query": "from[m15_intro_packs]?title='Brawler’s Plate'" },
+			{ "query": "from[m15_intro_packs]?title='Staff of the Flame Magus'" },
+			{ "query": "from[m15_intro_packs]?title='Staff of the Mind Magus'" },
+			{ "query": "from[m15_intro_packs]?title='Darksteel Citadel'" },
+			{ "query": "take[2]>from[m15_intro_packs]?title='Ensoul Artifact'", "canBeDuplicate": true },
+			{ "query": "take[12]>from[m15_intro_packs]?title='Mountain'", "canBeDuplicate": true },
+			{ "query": "take[12]>from[m15_intro_packs]?title='Island'", "canBeDuplicate": true }
+			]
+		}
+		,{
+		"packName": "2015-intro-deck-flames-of-the-dragon-foil",
+		"packDesc": "2015 Intro Deck: Flames of the Dragon Premium Foil",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[m15_intro_packs]?title='Siege Dragon'", "setValues": { "foil": true } }
+			]
+		}
+		
+		,{
+		"packName": "2015-intro-deck-will-of-the-masses",
+		"packDesc": "2015 Intro Deck: Will of the Masses (Green/White)",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[2]>from[m15_intro_packs]?title='Selfless Cathar'", "canBeDuplicate": true },
+			{ "query": "from[m15_intro_packs]?title='Wall of Mulch'" },
+			{ "query": "take[2]>from[m15_intro_packs]?title='Midnight Guard'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[m15_intro_packs]?title='Siege Wurm'", "canBeDuplicate": true },
+			{ "query": "from[m15_intro_packs]?title='Hornet Queen'" },
+			{ "query": "from[m15_intro_packs]?title='Overwhelm'" },
+			{ "query": "from[m15_intro_packs]?title='Gather Courage'" },
+			{ "query": "from[m15_intro_packs]?title='Naturalize'" },
+			{ "query": "from[m15_intro_packs]?title='Titanic Growth'" },
+			{ "query": "take[3]>from[m15_intro_packs]?title='Raise the Alarm'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[m15_intro_packs]?title='Devouring Light'", "canBeDuplicate": true },
+			{ "query": "take[13]>from[m15_intro_packs]?title='Forest'", "canBeDuplicate": true },
+			{ "query": "take[12]>from[m15_intro_packs]?title='Plains'", "canBeDuplicate": true }
+			]
+		}
+		,{
+		"packName": "2015-intro-deck-will-of-the-masses-foil",
+		"packDesc": "2015 Intro Deck: Will of the Masses Premium Foil",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[m15_intro_packs]?title='Phytotitan'", "setValues": { "foil": true } }
+			]
+		}
+		
+		,{
+		"packName": "m15-fat-pack-pack-ins",
+		"packDesc": "2015 Core Set Fat Pack: Pack-Ins",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[m15]?title=(2015 Core Set Player’s Guide|2015 Core Set Card Box|2015 Core Set Mural|2015 Core Set Rules Reference Card)" }
+			,{ "query": "from[m15_fatpack]?type='Life Counter'", "canBeDuplicate": true  }
+			,{ "query": "take[2]>from[m15]?title='2015 Core Set Deck Box'", "canBeDuplicate": true  }
+			]
+		}
+		,{
+		"packName": "m15-fat-pack-land",
+		"packDesc": "2015 Fat Pack: Land",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[16]>from[m15]?title='Plains'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[m15]?title='Island'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[m15]?title='Swamp'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[m15]?title='Forest'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[m15]?title='Mountain'", "canBeDuplicate": true }
+			]
+		}
+
+	]
+}

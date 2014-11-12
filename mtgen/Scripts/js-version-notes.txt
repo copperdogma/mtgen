@@ -1,0 +1,21 @@
+jquery.base64.min.js
+- I THINK once I updated to jquery 2.10+ this broke with a INVALID_CHARACTER_ERR, so I used a new one from here:
+
+mdn.base64.min.js
+- first used 20140606 on Core 2015 Set, replaced jquery.base64.min.js I think due to jQuery 2.10+ issue
+
+jlinq.js
+- used until 20140711 (during M15) when I replaced it with linq.js
+
+linq.js
+- started using on 20140711 (during M15)
+- stopped using on 20140808 when it was replaced completely with Underscore (6x faster)
+
+jquery.eventable.js
+- used until 20140713 (during M15) when I replaced it with backbone.js events
+
+underscore-min.js
+- 20140713: upgraded to 1.6.0
+
+backbone-mins.js
+- 20140713: newly included (during M15) to implement MVC

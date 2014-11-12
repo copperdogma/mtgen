@@ -1,0 +1,293 @@
+{
+"-comment": "from: http://wiki.mtgsalvation.com/article/Journey-into-Nyx",
+"-comment": "promo cards: http://www.wizards.com/Magic/Magazine/Article.aspx?x=mtg/daily/arcana/1408",
+"-comment": "tokens (from BNG): http://www.wizards.com/Magic/Magazine/Article.aspx?x=mtg/daily/arcana/1477",
+"-comment": "There are five Prerelease Packs to choose from; each color has a Heroic Path: White — Forged in Glory, Blue — Forged in Intellect, Black — Forged in Tyranny, Red — Forged in War, and Green — Forged in Pursuit",
+"-comment": "Each Prerelease Pack contains items designed specifically for the chosen Heroic Path: 2 Journey into Nyx booster packs, 1 Journey Into Nyx booster pack, 2 Theros booster packs, 1 seeded booster pack, 1 promo card, 1 Forge a Godslayer activity card, 1 Spindown life counter, 1 Hero's Path welcome letter, 1 Hero Card",
+"-comment": "Each Prerelease pack contains one Hero card ... The pack also contains a playable Prerelease promo (Hall of Triumph)",
+"-comment": "Includes one of five Hero Equipment cards (respectively Spear of the General, Cloak of the Philosopher, Lash of the Tyrant, Axe of the Warmonger Bow of the Hunter)",
+"-comment": "one of five according to the chosen Godslayer: Dawnbringer Charioteers, Scourge of Fleets Doomwake Giant Spawn of Thraxes or Heroes' Bane",
+"-comment": "seeded booster description: ????  http://www.wizards.com/magic/magazine/article.aspx?x=mtg/daily/feature/284#path",
+"defs": 
+	[
+		{
+			"defName": "jou",
+			"query": "from[*]?set='jou'"
+		},
+		{
+			"defName": "jou-promo",
+			"query": "from[jou]?promo=true"
+		},
+		{
+			"defName": "jou-set",
+			"query": "from[jou]-from[jou-promo]"
+		},
+		{
+			"defName": "jou-main",
+			"query": "from[jou]-from[jou]?type=(Marketing|Basic Land)-from[jou]?token=true-from[jou]?promo=true"
+		},
+		{
+			"defName": "jou-main-white",
+			"query": "from[jou-main]?cost=contains({W})"
+		},
+		{
+			"defName": "jou-main-white-multicolour",
+			"query": "from[jou-main-white]?colour='m'"
+		},
+		{
+			"defName": "jou-main-blue",
+			"query": "from[jou-main]?cost=contains({U})"
+		},
+		{
+			"defName": "jou-main-blue-multicolour",
+			"query": "from[jou-main-blue]?colour='m'"
+		},
+		{
+			"defName": "jou-main-black",
+			"query": "from[jou-main]?cost=contains({B})"
+		},
+		{
+			"defName": "jou-main-black-multicolour",
+			"query": "from[jou-main-black]?colour='m'"
+		},
+		{
+			"defName": "jou-main-red",
+			"query": "from[jou-main]?cost=contains({R})"
+		},
+		{
+			"defName": "jou-main-red-multicolour",
+			"query": "from[jou-main-red]?colour='m'"
+		},
+		{
+			"defName": "jou-main-green",
+			"query": "from[jou-main]?cost=contains({G})"
+		},
+		{
+			"defName": "jou-main-green-multicolour",
+			"query": "from[jou-main-green]?colour='m'"
+		},
+		{
+			"defName": "jou-uncommons",
+			"query": "from[jou-main]?rarity='u'"
+		},
+		{
+			"defName": "jou-foils",
+			"query": "from[jou-main]"
+		},
+		{
+			"defName": "jou-gods",
+			"query": "from[jou-main]?subtype='God'"
+		},
+		{
+			"defName": "jou-fatpack",
+			"query": "from[jou]?includedReason='Fat Pack Pack-In'"
+		}
+	]
+
+,"packs": 
+	[
+ 		{
+		"packName": "jou-all-cards",
+		"packDesc": "Journey Into Nyx: All Cards",
+		"isGenerated": false,
+		"cards": [ { "query": "take[*]>from[jou]" } ]
+		}
+ 		
+ 		,{
+		"packName": "jou-standard",
+		"packDesc": "Journey Into Nyx: Standard Booster",
+		"cards": [
+			{ "query": "from[ths]?type='Basic Land'" }
+			,{ "query": "take[9]>from[jou-main]?rarity='c'" }
+			,{ "querySet": [ { "percent": 75, "query": "from[jou-main]?rarity='c'" }
+							,{ "percent": 25, "query": "from[jou-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+							] }
+			,{ "query": "take[3]>from[jou-main]?rarity='u'" }
+			,{ "querySet": [ { "percent": 87.5, "query": "from[jou-main]?rarity='r'" }
+							,{ "percent": 12.5, "query": "from[jou-main]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" } 
+							] }
+			,{ "querySet": [ { "percent": 50, "query": "from[jou]?type='Marketing'" }
+							,{ "percent": 50, "query": "from[jou]?token=true-from[jou]?promo=true" } 
+							] }
+			]
+		}
+
+		,{
+		"packName": "jou-promos",
+		"packDesc": "Journey Into Nyx: Promos",
+		"includeWithUserCards": false,
+		"cards": [
+			{ "query": "take[*]>from[jou-promo]" }
+			]
+		}
+
+		,{
+		"packName": "jou-prerelease-promos",
+		"packDesc": "Journey Into Nyx: Prerelease Promos",
+		"isGenerated": false,
+		"includeWithUserCards": false,
+		"cards": [
+			{ "query": "take[*]>from[jou-promo]?includedReason='Prerelease Promo'" }
+			]
+		}
+		
+		,{
+		"packName": "jou-seeded-booster-white",
+		"packDesc": "Journey Into Nyx: Forged in Glory (White) Seeded Booster",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[jou-promo]?title='Dawnbringer Charioteers'" }
+			,{ "querySet": [
+				{ "query": "take[*]>from[jou-main]?title=(Athreos, God of Passage|Oreskos Swiftclaw|Nyx-Fleece Ram|Mogis's Warhound|Underworld Coinsmith|Armament of Nyx|Pin to the Earth|Oakheart Dryads|Supply-Line Cranes|Lightning Diadem|Harvestguard Alseids|Nyx Infusion|Font of Vigor|Thassa's Devourer|Desecration Plague)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Dictate of Heliod|Oreskos Swiftclaw|Kiora's Dismissal|Consign to Dust|Quarry Colossus|Lightning Diadem|Pharika's Chosen|Font of Vigor|Cloaked Siren|Akroan Mastiff|Golden Hind|Oppressive Rays|Sigiled Skink|Stonewise Fortifier|Feast of Dreams)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Aegis of the Gods|Oreskos Swiftclaw|Banishing Light|Hour of Need|Desperate Stand|Golden Hind|Lagonna-Band Trailblazer|Bloodcrazed Hoplite|Stonewise Fortifier|Eagle of the Watch|Pheres-Band Thunderhoof|Triton Shorestalker|Oppressive Rays|Bladetusk Boar|Cast into Darkness)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Launch the Fleet|Oreskos Swiftclaw|Triton Cavalry|Tethmos High Priest|Colossal Heroics|Satyr Hoplite|Supply-Line Cranes|Pheres-Band Thunderhoof|Lagonna-Band Trailblazer|Nyx Infusion|War-Wing Siren|Oppressive Rays|Bloodcrazed Hoplite|Eagle of the Watch|Rouse the Mob)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Deicide|Oreskos Swiftclaw|Interpret the Signs|Reprisal|Brain Maggot|Renowned Weaver|Stonewise Fortifier|Starfall|Font of Vigor|Akroan Mastiff|Pin to the Earth|Satyr Grovedancer|Supply-Line Cranes|Aspect of Gorgon|Bladetusk Boar)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Skybind|Oreskos Swiftclaw|Forgeborn Oreads|Nyx-Fleece Ram|Underworld Coinsmith|Thassa's Devourer|Kruphix's Insight|Grim Guardian|Harvestguard Alseids|Akroan Mastiff|Lightning Diadem|Supply-Line Cranes|Cloaked Siren|Font of Vigor|Oakheart Dryads)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Launch the Fleet|Oreskos Swiftclaw|Solidarity of Heroes|Akroan Line Breaker|Tethmos High Priest|Eagle of the Watch|War-Wing Siren|Lagonna-Band Trailblazer|Bloodcrazed Hoplite|Hubris|Ajani's Presence|Satyr Hoplite|Pheres-Band Thunderhoof|Supply-Line Cranes|Cruel Feeding)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Aegis of the Gods|Oreskos Swiftclaw|Thoughtrender Lamia|Goldenhide Ox|Sightless Brawler|Font of Ire|Supply-Line Cranes|Cloaked Siren|Armament of Nyx|Bladetusk Boar|Font of Vigor|Dreadbringer Lampads|Harvestguard Alseids|Oakheart Dryads|Font of Fortunes)", "inOrder": true }
+				]
+			}
+			]
+		}
+		,{
+		"packName": "jou-seeded-booster-packins-white",
+		"packDesc": "Journey Into Nyx: Hero Prerelease Pack-Ins: Forged in Glory (White)",
+		"cards": [
+			{ "query": "take[*]>from[jou]?title=(Spear of the General|Forged in Glory Welcome Letter|Forged in Glory Welcome Letter: back|Forge a Godslayer Activity Card|White Journey Into Nyx Spindown Life Counter)", "inOrder": true }
+			,{ "query": "take[*]>from[jou]?type='Activity Card Sticker'"}
+			]
+		}
+
+		,{
+		"packName": "jou-seeded-booster-blue",
+		"packDesc": "Journey Into Nyx: Forged in Intellect (Blue) Seeded Booster",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[jou-promo]?title='Scourge of Fleets'" }
+			,{ "querySet": [
+				{ "query": "take[*]>from[jou-main]?title=(Keranos, God of Storms|Triton Shorestalker|Pull from the Deep|Stormchaser Chimera|Consign to Dust|Oppressive Rays|Godhunter Octopus|Pharika's Chosen|Sigiled Skink|Hubris|Eagle of the Watch|Sigiled Starfish|Feast of Dreams|Rise of Eagles|Market Festival)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Dictate of Kruphix|Triton Shorestalker|Fleetfeather Cockatrice|Interpret the Signs|Reprisal|Market Festival|Sigiled Starfish|Oreskos Swiftclaw|Godhunter Octopus|Flurry of Horns|Pin to the Earth|Pharika's Chosen|Sigiled Skink|Hubris|Cast into Darkness)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Hypnotic Siren|Triton Shorestalker|Wildfire Cerberus|Crystalline Nautilus|Fleetfeather Cockatrice|Feast of Dreams|Sigiled Starfish|Hubris|Akroan Mastiff|Gluttonous Cyclops|Font of Fortunes|Pharika's Chosen|Godhunter Octopus|Stonewise Fortifier|Market Festival)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Polymorphous Rush|Triton Shorestalker|Triton Cavalry|Akroan Line Breaker|Tethmos High Priest|War-Wing SIren|Pheres-Band Thunderhoof|Cruel Feeding|Hubris|Sigiled Skink|Cloaked Siren|Aerial Formation|Desecration Plague|Bloodcrazed Hoplite|Ajani's Presence)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Daring Thief|Triton Shorestalker|Disciple of Deceit|Spirespine|Thassa's Ire|Armament of Nyx|Cloaked Siren|Starfall|Feast of Dreams|Sigiled Starfish|Market Festival|Pin to the Earth|Sigiled Skink|Godhunter Octopus|Akroan Mastiff)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Battlefield Thaumaturge|Triton Shorestalker|Leonin Iconoclast|Nightmarish End|Triton Cavalry|Starfall|Aerial Formation|Pheres-Band Thunderhoof|Godhunter Octopus|Grim Guardian|Ajani's Presence|War-Wing Siren|Nature's Panoply|Hubris|Satyr Hoplite)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Hypnotic Siren|Thoughtrender Lamia|Nyx-Fleece Ram|Whitewater Naiads|Triton Shorestalker|Font of Fortunes|Humbler of Mortals|Bladetusk Boar|Countermand|Font of Fertility|Pin to the Earth|Harvestguard Alseids|Nyx Infusion|Thassa's Devourer|Lightning Diadem)", "inOrder": true }
+				]
+			}
+			]
+		}		,{
+		"packName": "jou-seeded-booster-packins-blue",
+		"packDesc": "Journey Into Nyx: Hero Prerelease Pack-Ins: Forged in Intellect (Blue)",
+		"cards": [
+			{ "query": "take[*]>from[jou]?title=(Cloak of the Philosopher|Forged in Intellect Welcome Letter|Forged in Intellect Welcome Letter: back|Forge a Godslayer Activity Card|Blue Journey Into Nyx Spindown Life Counter)", "inOrder": true }
+			,{ "query": "take[*]>from[jou]?type='Activity Card Sticker'"}
+			]
+		}
+
+		,{
+		"packName": "jou-seeded-booster-black",
+		"packDesc": "Journey Into Nyx: Forged in Tyrrany (Black) Seeded Booster",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[jou-promo]?title='Doomwake Giant'" }
+			,{ "querySet": [
+				{ "query": "take[*]>from[jou-main]?title=(Pharika, God of Affliction|Rotted Hulk|Eidolon of Rhetoric|Nyx Weaver|Ritual of the Returned|Cloaked Siren|Bladetusk Boar|Font of Return|Akroan Mastiff|Grim Guardian|Kruphix's Insight|Returned Reveler|Pin to the Earth|Pharika's Chosen|Font of Ire)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Dictate of Erebos|Rotted Hulk|Banishing Light|Squelching Leeches|Cyclops of Eternal Fury|Pharika's Chosen|Countermand|Stonewise Fortifier|Font of Return|Renowned Weaver|Cloaked Siren|Aspect of Gorgon|Starfall|Returned Reveler|Kruphix's Insight)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Master of the Feast|Rotted Hulk|Mogis's Warhound|Gnarled Scarhide|Spirespine|Eagle of the Watch|Aspect of Gorgon|Triton Shorestalker|Sigiled Skink|Cast into Darkness|Pharika's Chosen|Satyr Grovedancer|Dreadbringer Lampads|Stonewise Fortifier|Cloaked Siren)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Silence the Believers|Rotted Hulk|Interpret the Signs|Eidolon of Rhetoric|Squelching Leeches|Font of Fertility|Flurry of Horns|Cruel Feeding|Pin to the Earth|Pharika's Chosen|Akroan Mastiff|Returned Reveler|Starfall|Feast of Dreams|Renowned Weaver)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(King Macar, the Gold-Cursed|Rotted Hulk|Squelching Leeches|Disciple of Deceit|Cyclops of Eternal Fury|Armament of Nyx|Aspect of Gorgon|Sigiled Skink|Returned Reveler|Desecration Plague|Font of Return|Pin to the Earth|Cast into Darkness|Akroan Mastiff|Golden Hind)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Extinguish All Hope|Rotted Hulk|Goldenhide Ox|Whitewater Naiads|Thoughtrender Lamia|Font of Ire|Oppressive Rays|Grim Guardian|Oakheart Dryads|Aspect of Gorgon|Pin to the Earth|Dreadbringer Lampads|Stonewise Fortifier|Nyx Infusion|Bladetusk Boar)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Silence the Believers|Rotted Hulk|Felhide Petrifier|Pull from the Deep|Rollick of Abandon|Returned Reveler|Ajani's Presence|Golden Hind|Font of Return|Flurry of Horns|Pharika's Chosen|Sigiled Starfish|Desecration Plague|Cruel Feeding|Supply-Line Cranes)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Extinguish All Hope|Rotted Hulk|Underworld Coinsmith|Agent of Erebos|Goldenhide Ox|Pin to the Earth|Grim Guardian|Aspect of Gorgon|Bladetusk Boar|Thassa's Devourer|Dreadbringer Lampads|Kruphix's Insight|Returned Reveler|Lightning Diadem|Harvestguard Alseids)", "inOrder": true }
+				]
+			}
+			]
+		}
+		,{
+		"packName": "jou-seeded-booster-packins-black",
+		"packDesc": "Journey Into Nyx: Hero Prerelease Pack-Ins: Forged in Tyrrany (Black)",
+		"cards": [
+			{ "query": "take[*]>from[jou]?title=(Lash of the Tyrant|Forged in Tyrrany Welcome Letter|Forged in Tyrrany Welcome Letter: back|Forge a Godslayer Activity Card|Black Journey Into Nyx Spindown Life Counter)", "inOrder": true }
+			,{ "query": "take[*]>from[jou]?type='Activity Card Sticker'"}
+			]
+		}
+
+		,{
+		"packName": "jou-seeded-booster-red",
+		"packDesc": "Journey Into Nyx: Forged in War (Red) Seeded Booster",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[jou-promo]?title='Spawn of Thraxes'" }
+			,{ "querySet": [
+				{ "query": "take[*]>from[jou-main]?title=(Iroas, God of Victory|Pensive Minotaur|Cyclops of Eternal Fury|Banishing Light|Crystalline Nautilus|Bladetusk Boar|Humbler of Mortals|Cast Into Darkness|Magma Spray|Sigiled Starfish|Font of Ire|Stonewise Fortifier|Golden Hind|Sigiled Skink|Dreadbringer Lampads)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Dictate of the Twin Gods|Pensive Minotaur|Felhide Petrifier|Spirespine|Cyclops of Eternal Fury|Font of Fortunes|Starfall|Supply-Line Cranes|Bladetusk Boar|Cast into Darkness|Flurry of Horns|Cloaked Siren|Stonewise Fortifier|Font of Ire|Satyr Grovedancer)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Eidolon of the Great Revel|Pensive Minotaur|Felhide Petrifier|Mogis's Warhound|Crystalline Nautilus|Oppressive Rays|Sigiled Skink|Cast into Darkness|Magma Spray|Eagle of the Watch|Golden Hind|Bladetusk Boar|Desecration Plague|Flurry of Horns|Hubris)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Harness by Force|Pensive Minotaur|Gnarled Scarhide|Tethmos High Priest|Akroan Line Breaker|Magma Spray|War-Wing Siren|Satyr Grovedancer|Satyr Hoplite|Pheres-Band Thunderhoof|Ajani's Presence|Sigiled Skink|Aerial Formation|Bloodcrazed Hoplite|Rouse the Mob)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Bearer of the Heavens|Pensive Minotaur|Reprisal|Swarmborn Giant|Wildfire Cerberus|Sigiled Starfish|Pharika's Chosen|Bladetusk Boar|Golden Hind|Gluttonous Cyclops|Akroan Mastiff|Magma Spray|Sigiled Skink|Feast of Dreams|Hubris)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Twinflame|Pensive Minotaur|Akroan Line Breaker|Colossal Heroics|Stormchaser Chimera|Bloodcrazed Hoplite|Rouse the Mob|Pheres-Band Thunderhoof|Sigiled Skink|Eagle of the Watch|Bladetusk Boar|Feast of Dreams|War-Wing Siren|Magma Spray|Ajani's Presence)", "inOrder": true }
+				]
+			}
+			]
+		}
+		,{
+		"packName": "jou-seeded-booster-packins-red",
+		"packDesc": "Journey Into Nyx: Hero Prerelease Pack-Ins: Forged in War (Red)",
+		"cards": [
+			{ "query": "take[*]>from[jou]?title=(Axe of the Warmonger|Forged in War Welcome Letter|Forged in War Welcome Letter: back|Forge a Godslayer Activity Card|Red Journey Into Nyx Spindown Life Counter)", "inOrder": true }
+			,{ "query": "take[*]>from[jou]?type='Activity Card Sticker'"}
+			]
+		}
+
+		,{
+		"packName": "jou-seeded-booster-green",
+		"packDesc": "Journey Into Nyx: Forged in Pursuit (Green) Seeded Booster",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[jou-promo]?title=(Heroes' Bane)" }
+			,{ "querySet": [
+				{ "query": "take[*]>from[jou-main]?title=(Kruphix, God of Horizons|Satyr Grovedancer|Bassara Tower Archer|Reprisal|Fleetfeather Cockatrice|Ravenous Leucrocota|Font of Return|Hubris|Market Festival|Flurry of Horns|Golden Hind|Feast of Dreams|Stonewise Fortifier|Font of Fertility|Magma Spray)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Dictate of Karametra|Satyr Grovedancer|Swarmborn Giant|Fleetfeather Cockatrice|Spiteful Blow|Golden Hind|Akroan Mastiff|Returned Reveler|Desecration Plague|Gluttonous Cyclops|Font of Fertility|Oppressive Rays|Ravenous Leucrocota|Lightning Diadem|Pin to the Earth)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Eidolon of Blossoms|Satyr Grovedancer|Whitewater Naiads|Spirespine|Brain Maggot|Starfall|Humbler of Mortals|Pin to the Earth|Oakheart Dryads|Nyx Infusion|Desecration Plague|Harvestguard Alseids|Kruphix's Insight|Bladetusk Boar|Oppressive Rays)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Setessan Tactics|Swarmborn Giant|Akroan Line Breaker|Satyr Grovedancer|Skyspear Cavalry|Font of Fertility|Magma Spray|Oppressive Rays|Pheres-Band Thunderhoof|Feast of Dreams|War-Wing Siren|Aerial Formation|Returned Reveler|Desecration Plague|Ravenous Leucrocota)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Pheres-Band Warchief|Satyr Grovedancer|Gnarled Scarhide|Nessian Game Warden|Mogis's Warhound|Supply-Line Cranes|Cast into Darkness|Renowned Weaver|Hubris|Bladetusk Boar|Pheres-Band Thunderhoof|Desecration Plague|Cloaked SIren|Golden Hind|Oppressive Rays)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Hydra Broodmaster|Satyr Grovedancer|Wildfire Cerberus|Interpret the Signs|Swarmborn Giant|Stonewise Fortifier|Font of Fertility|Returned Reveler|Ravenous Leucrocota|Sigiled Skink|Golden Hind|Supply-Line Cranes|Desecration Plague|War-Wing Siren|Feast of Dreams)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Hydra Broodmaster|Satyr Grovedancer|Ritual of the Returned|Consign to Dust|Reprisal|Ravenous Leucrocota|Bladetusk Boar|Golden Hind|Rise of Eagles|Akroan Mastiff|Font of Fertility|Pharika's Chosen|Starfall|Nature's Panoply|Sigiled Starfish)", "inOrder": true },
+				{ "query": "take[*]>from[jou-main]?title=(Eidolon of Blossoms|Satyr Grovedancer|Banishing Light|Cyclops of Eternal Fury|Goldenhide Ox|Font of Fertility|Harvestguard Alseids|Nyx Infusion|Oakheart Dryads|Font of Ire|Pin to the Earth|Humbler of Mortals|Grim Guardian|Desecration Plague|Thassa's Devourer)", "inOrder": true }
+				]
+			}
+			]
+		}
+		,{
+		"packName": "jou-seeded-booster-packins-green",
+		"packDesc": "Journey Into Nyx: Hero Prerelease Pack-Ins: Forged in Pursuit (Green)",
+		"cards": [
+			{ "query": "take[*]>from[jou]?title=(Bow of the Hunter|Forged in Pursuit Welcome Letter|Forged in Pursuit Welcome Letter: back|Forge a Godslayer Activity Card|Green Journey Into Nyx Spindown Life Counter)", "inOrder": true }
+			,{ "query": "take[*]>from[jou]?type='Activity Card Sticker'"}
+			]
+		}
+
+		,{
+		"packName": "jou-fat-pack-land",
+		"packDesc": "Journey Into Nyx Fat Pack: Land",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[16]>from[ths]?title='Plains'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[ths]?title='Island'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[ths]?title='Swamp'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[ths]?title='Forest'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[ths]?title='Mountain'", "canBeDuplicate": true }
+			]
+		}
+		,{
+		"packName": "jou-fat-pack-pack-ins",
+		"packDesc": "Journey Into Nyx Fat Pack: Pack-Ins",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[jou]?title=(Journey Into Nyx Player’s Guide|Journey Into Nyx Card Box|Journey Into Nyx Mural)", "inOrder": true }
+			,{ "query": "from[jou-fatpack]?type='Life Counter'", "canBeDuplicate": true  }
+			,{ "query": "take[2]>from[jou]?title='Journey Into Nyx Deck Box'", "canBeDuplicate": true  }
+			]
+		}
+]
+}

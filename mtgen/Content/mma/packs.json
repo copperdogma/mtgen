@@ -1,0 +1,59 @@
+{
+"defs": 
+	[
+		{
+			"defName": "mma",
+			"query": "from[*]?set='mma'"
+		},
+		{
+			"defName": "mma_set",
+			"query": "from[mma]"
+		},
+		{
+			"defName": "mma_main",
+			"query": "from[mma_set]-from[mma_set]?type='Marketing'-from[mma]?token=true",
+			"_comment": "Not normal: put land back IN the main because there is no land slot in MMA"
+		},
+		{
+			"defName": "mma_foils",
+			"query": "from[mma_main]"
+		}
+	]
+
+,"packs": 
+	[
+ 		{
+		"packName": "mma-all-cards",
+		"packDesc": "Modern Masters Set: All Cards",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[mma]" }
+			]
+		}
+		
+ 		,{
+		"packName": "mma-standard",
+		"packDesc": "Modern Masters Set: Standard Booster",
+		"_comment": "Modern Masters is strange and doesn't have land but has a foil instead: http://wiki.mtgsalvation.com/article/Modern_Masters",
+		"_comment-foil": "The big foil percentage calculation below is based on a booster spread: 10 common, 3 uncommon, 1 x (7/8 rare, 1/8 mythic rare)",
+		"cards": [
+			{ "query": "take[10]>from[mma_main]?rarity='c'" }
+			,{ "query": "take[3]>from[mma_main]?rarity='u'" }
+			,{ "querySet": [ { "percent": 87.5, "query": "from[mma_main]?rarity='r'" }
+							,{ "percent": 12.5, "query": "from[mma_main]?rarity='m'"
+							, "_comment": "rare=7/8, mythicRare=1/8" }
+							] }
+			,{ "querySet": [ 
+								{ "percent": 71.43, "query": "from[mma_foils]?rarity='c'", "canBeDuplicate": true, "setValues": { "foil": true } }
+								,{ "percent": 21.43, "query": "from[mma_foils]?rarity='u'", "canBeDuplicate": true, "setValues": { "foil": true } }
+								,{ "percent": 6.25, "query": "from[mma_foils]?rarity='r'", "canBeDuplicate": true, "setValues": { "foil": true } }
+								,{ "percent": 0.89, "query": "from[mma_foils]?rarity='m'", "canBeDuplicate": true, "setValues": { "foil": true } }
+							] }
+			,{ "querySet": [ { "percent": 50, "query": "from[mma]?type='Marketing'" }
+							,{ "percent": 50, "query": "from[mma]?token=true" } 
+							] }
+			]
+		}
+		
+]
+}

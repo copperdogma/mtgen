@@ -1,0 +1,55 @@
+﻿img {
+	float: right;
+}
+img[itemprop=image] {
+	display: block;
+	float: none;
+	margin: 0 auto;
+	max-width: 13em;
+	max-height: 3em;
+	padding: 1em;
+}
+.ad {
+	float: right;
+	margin-left: 1em;
+}
+table {
+	text-align: left;
+    width: 100%;
+}
+td, th {
+	padding: .5em 1em;
+}
+table tbody tr {
+	height: 6em;
+}
+table tbody tr.title {
+	height: auto;
+}
+.block {
+	background: gainsboro;
+}
+.current {
+	background: lightblue;
+}
+.title {
+	background: gray;
+	color: white;
+	font-weight: bold;
+}
+.future {
+	opacity: .3;
+}
+.error {
+	color: red;
+}
+.social {
+	height: 90px;
+}
+p.twitter-follow {
+	vertical-align: top;
+}
+.twitter-follow-button {
+	display: inline-block;
+	height: 24px;
+}

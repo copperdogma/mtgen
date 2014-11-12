@@ -1,0 +1,37 @@
+{
+"_comment": "if there are no options the query/packNames will be auto-run"
+,"products": 
+	[
+		{
+			"productName": "mma-all-cards"
+			,"productDesc": "All Cards"
+			,"isGenerated": false
+			,"initialSort": "colour"
+			,"packs": [
+				{ "packName":"mma-all-cards" }
+			]
+		}
+		,{
+			"productName": "mma-boosters"
+			,"productDesc": "Boosters"
+			,"isGenerated": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"mma-standard" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "mma-boosters"
+						,"presetDesc": "Modern Masters Boosters"
+						,"default": true
+						,"packs": [
+							{ "count":6, "defaultPackName":"mma-standard" }
+						]
+					}
+				]
+			}
+		}
+
+	]
+}

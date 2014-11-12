@@ -1,0 +1,16 @@
+{
+"_comment": "if there are no options the query/packNames will be auto-run"
+,"products": 
+	[
+		{
+			"productName": "v14-all-cards"
+			,"productDesc": "All Cards"
+			,"isGenerated": false
+			,"initialSort": "rarity"
+			,"packs": [
+				{ "packName":"v14-all-cards" }
+			]
+		}
+
+	]
+}

@@ -1,0 +1,37 @@
+{
+"_comment": "if there are no options the query/packNames will be auto-run"
+,"products": 
+	[
+		{
+			"productName": "ovm-all-cards"
+			,"productDesc": "All Cards"
+			,"isGenerated": false
+			,"initialSort": "colour"
+			,"packs": [
+				{ "packName":"ovm-all-cards" }
+			]
+		}
+		,{
+			"productName": "ovm-boosters"
+			,"productDesc": "Online Boosters"
+			,"isGenerated": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"ovm-standard-online" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "ovm-boosters-online"
+						,"presetDesc": "Boosters"
+						,"default": true
+						,"packs": [
+							{ "count":6, "defaultPackName":"ovm-standard" }
+						]
+					}
+				]
+			}
+		}
+
+	]
+}

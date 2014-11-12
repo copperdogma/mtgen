@@ -1,0 +1,858 @@
+[
+ {
+  "src": "http://copper-dog.com/mtg-generator/images/mtg-marketing1.png",
+  "title": "Tip/Marketing Card",
+  "set": "ktk",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Marketing",
+  "usableForDeckBuilding": false,
+  "marketing": true
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/images/mtg-marketing2.png",
+  "title": "Tip/Marketing Card",
+  "set": "ktk",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Marketing",
+  "usableForDeckBuilding": false,
+  "marketing": true
+ },
+
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-spindown-life-counter-abzan.png",
+  "set": "ktk",
+  "title": "Abzan Spindown Life Counter",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Life Counter",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-spindown-life-counter-jeskai.png",
+  "set": "ktk",
+  "title": "Jeskai Spindown Life Counter",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Life Counter",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-spindown-life-counter-sultai.png",
+  "set": "ktk",
+  "title": "Sultai Spindown Life Counter",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Life Counter",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-spindown-life-counter-mardu.png",
+  "set": "ktk",
+  "title": "Mardu Spindown Life Counter",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Life Counter",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-spindown-life-counter-temur.png",
+  "set": "ktk",
+  "title": "Temur Spindown Life Counter",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Life Counter",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-clan-info-abzan.jpg",
+  "src_large": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-clan-info-abzan-lg.jpg",
+  "height": 370,
+  "width": 487,
+  "set": "ktk",
+  "title": "Abzan Clan Info Card",
+  "colour": "other",
+  "rarity": "c",
+  "type": "Info Card",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-clan-info-jeskai.jpg",
+  "src_large": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-clan-info-jeskai-lg.jpg",
+  "height": 370,
+  "width": 487,
+  "set": "ktk",
+  "title": "Jeskai Clan Info Card",
+  "colour": "other",
+  "rarity": "c",
+  "type": "Info Card",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-clan-info-sultai.jpg",
+  "src_large": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-clan-info-sultai-lg.jpg",
+  "height": 370,
+  "width": 487,
+  "set": "ktk",
+  "title": "Sultai Clan Info Card",
+  "colour": "other",
+  "rarity": "c",
+  "type": "Info Card",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-clan-info-mardu.jpg",
+  "src_large": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-clan-info-mardu-lg.jpg",
+  "height": 370,
+  "width": 487,
+  "set": "ktk",
+  "title": "Mardu Clan Info Card",
+  "colour": "other",
+  "rarity": "c",
+  "type": "Info Card",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-clan-info-temur.jpg",
+  "src_large": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-clan-info-temur-lg.jpg",
+  "height": 370,
+  "width": 487,
+  "set": "ktk",
+  "title": "Temur Clan Info Card",
+  "colour": "other",
+  "rarity": "c",
+  "type": "Info Card",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-achivement-card-abzan.jpg",
+  "src_large": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-achivement-card-abzan-lg.jpg",
+  "height": 370,
+  "width": 487,
+  "set": "ktk",
+  "title": "Abzan Activity Card",
+  "colour": "other",
+  "rarity": "c",
+  "type": "Activity Card",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-achivement-card-jeskai.jpg",
+  "src_large": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-achivement-card-jeskai-lg.jpg",
+  "height": 370,
+  "width": 487,
+  "set": "ktk",
+  "title": "Jeskai Activity Card",
+  "colour": "other",
+  "rarity": "c",
+  "type": "Activity Card",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-achivement-card-sultai.jpg",
+  "src_large": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-achivement-card-sultai-lg.jpg",
+  "height": 370,
+  "width": 487,
+  "set": "ktk",
+  "title": "Sultai Activity Card",
+  "colour": "other",
+  "rarity": "c",
+  "type": "Activity Card",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-achivement-card-mardu.jpg",
+  "src_large": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-achivement-card-mardu-lg.jpg",
+  "height": 370,
+  "width": 487,
+  "set": "ktk",
+  "title": "Mardu Activity Card",
+  "colour": "other",
+  "rarity": "c",
+  "type": "Activity Card",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-achivement-card-temur.jpg",
+  "src_large": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-achivement-card-temur-lg.jpg",
+  "height": 370,
+  "width": 487,
+  "set": "ktk",
+  "title": "Temur Activity Card",
+  "colour": "other",
+  "rarity": "c",
+  "type": "Activity Card",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-button-abzan.png",
+  "set": "ktk",
+  "title": "Abzan Clan Button",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Button",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-button-jeskai.png",
+  "set": "ktk",
+  "title": "Jeskai Clan Button",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Button",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-button-sultai.png",
+  "set": "ktk",
+  "title": "Sultai Clan Button",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Button",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-button-mardu.png",
+  "set": "ktk",
+  "title": "Mardu Clan Button",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Button",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-button-temur.png",
+  "set": "ktk",
+  "title": "Temur Clan Button",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Button",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+
+
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-sticker-abzan.png",
+  "set": "ktk",
+  "title": "Abzan Clan Sticker",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Sticker",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-sticker-jeskai.png",
+  "set": "ktk",
+  "title": "Jeskai Clan Sticker",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Sticker",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-sticker-sultai.png",
+  "set": "ktk",
+  "title": "Sultai Clan Sticker",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Sticker",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-sticker-mardu.png",
+  "set": "ktk",
+  "title": "Mardu Clan Sticker",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Sticker",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-sticker-temur.png",
+  "set": "ktk",
+  "title": "Temur Clan Sticker",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Sticker",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ }
+
+ ,{
+  "src": "holder.js/265x370/text:Khans of Tarkir Storage Box",
+  "title": "Khans of Tarkir Storage Box",
+  "set": "ktk",
+  "rarity": "c",
+  "type": "Storage Box",
+  "colour": "o",
+  "promo": "true",
+  "includedReason": "Holiday Gift Box",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "src": "holder.js/265x370/text:Khans of Tarkir Illustrated Plastic Dividers",
+  "title": "Khans of Tarkir Illustrated Plastic Dividers",
+  "set": "ktk",
+  "rarity": "c",
+  "type": "Storage Box",
+  "colour": "o",
+  "promo": "true",
+  "includedReason": "Holiday Gift Box",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "src": "holder.js/265x370/text:Khans of Tarkir Plastic Divider Sticker Sheet",
+  "title": "Khans of Tarkir Plastic Divider Sticker Sheet",
+  "set": "ktk",
+  "rarity": "c",
+  "type": "Storage Box",
+  "colour": "o",
+  "promo": "true",
+  "includedReason": "Holiday Gift Box",
+  "usableForDeckBuilding": false
+ }
+
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_ga8g903ch1.png",
+  "title": "Plains",
+  "set": "ktk",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Plains",
+  "colour": "l",
+  "num": "251"
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_3zq1u8dqyy.png",
+  "title": "Plains",
+  "set": "ktk",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Plains",
+  "colour": "l",
+  "num": "252"
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_p0pugg8iy2.png",
+  "title": "Plains",
+  "set": "ktk",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Plains",
+  "colour": "l",
+  "num": "253"
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_9k2o6mx6ad.png",
+  "title": "Island",
+  "set": "ktk",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Island",
+  "colour": "l",
+  "num": "254"
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_dy50to1tkb.png",
+  "title": "Island",
+  "set": "ktk",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Island",
+  "colour": "l",
+  "num": "255"
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_w3y2bt6q6q.png",
+  "title": "Island",
+  "set": "ktk",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Island",
+  "colour": "l",
+  "num": "256"
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_xcyved5itm.png",
+  "title": "Island",
+  "set": "ktk",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Island",
+  "colour": "l",
+  "num": "257"
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_bvqohgptsp.png",
+  "title": "Swamp",
+  "set": "ktk",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Swamp",
+  "colour": "l",
+  "num": "258"
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_u8ltggxm3k.png",
+  "title": "Swamp",
+  "set": "ktk",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Swamp",
+  "colour": "l",
+  "num": "259"
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_6g0d8y9iz6.png",
+  "title": "Swamp",
+  "set": "ktk",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Swamp",
+  "colour": "l",
+  "num": "260"
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_r99319fwog.png",
+  "title": "Swamp",
+  "set": "ktk",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Swamp",
+  "colour": "l",
+  "num": "261"
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_54pgykxl8n.png",
+  "title": "Mountain",
+  "set": "ktk",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Mountain",
+  "colour": "l",
+  "num": "262"
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_izf1nzt1nv.png",
+  "title": "Mountain",
+  "set": "ktk",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Mountain",
+  "colour": "l",
+  "num": "263"
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_bvpjl510jc.png",
+  "title": "Mountain",
+  "set": "ktk",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Mountain",
+  "colour": "l",
+  "num": "264"
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_baf60w013e.png",
+  "title": "Mountain",
+  "set": "ktk",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Mountain",
+  "colour": "l",
+  "num": "265"
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_coyopt0tfc.png",
+  "title": "Forest",
+  "set": "ktk",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Forest",
+  "colour": "l",
+  "num": "266"
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_63p2jvj7ov.png",
+  "title": "Forest",
+  "set": "ktk",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Forest",
+  "colour": "l",
+  "num": "267"
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_otfdp8wu1j.png",
+  "title": "Forest",
+  "set": "ktk",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Forest",
+  "colour": "l",
+  "num": "268"
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_ge236g81v3.png",
+  "title": "Forest",
+  "set": "ktk",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Forest",
+  "colour": "l",
+  "num": "269"
+ }
+
+ ,{
+  "title": "Ankle Shanker",
+  "set": "ktk",
+  "cost": "{2}{R}{W}{B}",
+  "rarity": "r",
+  "type": "Creature",
+  "subtype": "Goblin Berserker",
+  "power": "2",
+  "toughness": "2",
+  "colour": "m",
+  "num": "164 R Intro Pack",
+  "clan": "Mardu",
+  "fixedViaException": true,
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_yw7tq0tb5d.png",
+  "promo": "true",
+  "includedReason": "Intro Pack",
+  "usableForDeckBuilding": false
+ },
+ {
+  "title": "Avalanche Tusker",
+  "set": "ktk",
+  "cost": "{2}{G}{U}{R}",
+  "rarity": "r",
+  "type": "Creature",
+  "subtype": "Elephant Warrior",
+  "power": "6",
+  "toughness": "4",
+  "colour": "m",
+  "num": "166 R Intro Pack",
+  "clan": "Temur",
+  "fixedViaException": true,
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_fndgcf2nec.png",
+  "promo": "true",
+  "includedReason": "Intro Pack",
+  "usableForDeckBuilding": false
+ },
+ {
+  "title": "Ivorytusk Fortress",
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_srjnli158h.png",
+  "set": "ktk",
+  "cost": "{2}{W}{B}{G}",
+  "rarity": "r",
+  "type": "Creature",
+  "subtype": "Elephant",
+  "power": "5",
+  "toughness": "7",
+  "colour": "m",
+  "num": "179 R Intro Pack",
+  "clan": "Abzan",
+  "fixedViaException": true,
+  "promo": "true",
+  "includedReason": "Intro Pack",
+  "usableForDeckBuilding": false
+ },
+ {
+  "title": "Rakshasa Vizier",
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_052o6irx8e.png",
+  "set": "ktk",
+  "cost": "{2}{B}{G}{U}",
+  "rarity": "r",
+  "type": "Creature",
+  "subtype": "Cat Demon",
+  "power": "4",
+  "toughness": "4",
+  "colour": "m",
+  "num": "193 R Intro Pack",
+  "clan": "Sultai",
+  "fixedViaException": true,
+  "promo": "true",
+  "includedReason": "Intro Pack",
+  "usableForDeckBuilding": false
+ },
+ {
+  "title": "Sage of the Inward Eye",
+  "set": "ktk",
+  "cost": "{2}{U}{R}{W}",
+  "rarity": "r",
+  "type": "Creature",
+  "subtype": "Djinn Wizard",
+  "power": "3",
+  "toughness": "4",
+  "colour": "m",
+  "num": "195 R Intro Pack",
+  "clan": "Jeskai",
+  "fixedViaException": true,
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_s78gxg7ydk.png",
+  "promo": "true",
+  "includedReason": "Intro Pack",
+  "usableForDeckBuilding": false
+ },
+ {
+  "title": "Dragon Throne of Tarkir",
+  "set": "ktk",
+  "cost": "{4}",
+  "rarity": "r",
+  "type": "Legendary Artifact",
+  "subtype": "Equipment",
+  "colour": "a",
+  "num": "219 P Launch",
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_dap76wlnh4.png",
+  "promo": "true",
+  "includedReason": "Launch",
+  "usableForDeckBuilding": false
+ },
+ {
+  "title": "Heir of the Wilds",
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_elhoe145bm.png",
+  "set": "ktk",
+  "cost": "{1}{G}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Human Warrior",
+  "power": "2",
+  "toughness": "2",
+  "colour": "g",
+  "num": "134 P Game Day",
+  "clan": "Temur",
+  "fixedViaException": true,
+  "promo": "true",
+  "includedReason": "Game Day",
+  "usableForDeckBuilding": false
+ },
+ {
+  "title": "Utter End",
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_36v72cyyqk.png",
+  "set": "ktk",
+  "cost": "{2}{W}{B}",
+  "rarity": "r",
+  "type": "Instant",
+  "colour": "m",
+  "num": "210 P Game Day",
+  "promo": "true",
+  "includedReason": "Game Day Top 8",
+  "usableForDeckBuilding": false
+ },
+ {
+  "title": "Rattleclaw Mystic",
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_elpll3xzyd.png",
+  "set": "ktk",
+  "cost": "{1}{G}",
+  "rarity": "r",
+  "type": "Creature",
+  "subtype": "Human Shaman",
+  "power": "2",
+  "toughness": "1",
+  "colour": "g",
+  "num": "144 P Buy-a-Box",
+  "clan": "Temur",
+  "fixedViaException": true,
+  "promo": "true",
+  "includedReason": "Buy-a-Box",
+  "usableForDeckBuilding": false
+ },
+ {
+  "title": "Sultai Charm",
+  "src": "http://media.wizards.com/images/magic/tcg/products/ktk/8arg43u984398yf/en_9wx4mv7niz.png",
+  "set": "ktk",
+  "cost": "{B}{G}{U}",
+  "rarity": "u",
+  "type": "Instant",
+  "colour": "m",
+  "num": "204 P Gift Box",
+  "clan": "Sultai",
+  "fixedViaException": true,
+  "promo": "true",
+  "includedReason": "Gift Box",
+  "usableForDeckBuilding": false
+ }
+
+ ,{
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-fat-pack-players-guide.png",
+  "set": "ktk",
+  "title": "Khans of Tarkir Player’s Guide",
+  "colour": "other",
+  "rarity": "c",
+  "type": "Player's Guide",
+  "promo": "true",
+  "includedReason": "Fat Pack Pack-In",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-fat-pack-rules-reference-card.png",
+  "set": "ktk",
+  "title": "Khans of Tarkir Rules Reference Card",
+  "colour": "other",
+  "rarity": "c",
+  "type": "Rules Reference Card",
+  "promo": "true",
+  "includedReason": "Fat Pack Pack-In",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-fat-pack-card-box.png",
+  "set": "ktk",
+  "title": "Khans of Tarkir Card Box",
+  "colour": "other",
+  "rarity": "c",
+  "type": "Card Box",
+  "promo": "true",
+  "includedReason": "Fat Pack Pack-In",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-fat-pack-mural.png",
+  "set": "ktk",
+  "title": "Khans of Tarkir Mural",
+  "colour": "other",
+  "rarity": "c",
+  "type": "Mural",
+  "promo": "true",
+  "includedReason": "Fat Pack Pack-In",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-fat-pack-deck-box.png",
+  "set": "ktk",
+  "title": "Khans of Tarkir Deck Box",
+  "colour": "other",
+  "rarity": "c",
+  "type": "Deck Box",
+  "promo": "true",
+  "includedReason": "Fat Pack Pack-In",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-spindown-life-counter-abzan.png",
+  "set": "ktk",
+  "title": "Special-Edition Khans of Tarkir Abzan Spindown Life Counter",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Life Counter",
+  "promo": "true",
+  "includedReason": "Fat Pack Pack-In",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-spindown-life-counter-jeskai.png",
+  "set": "ktk",
+  "title": "Special-Edition Khans of Tarkir Jeskai Spindown Life Counter",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Life Counter",
+  "promo": "true",
+  "includedReason": "Fat Pack Pack-In",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-spindown-life-counter-sultai.png",
+  "set": "ktk",
+  "title": "Special-Edition Khans of Tarkir Sultai Spindown Life Counter",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Life Counter",
+  "promo": "true",
+  "includedReason": "Fat Pack Pack-In",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-spindown-life-counter-mardu.png",
+  "set": "ktk",
+  "title": "Special-Edition Khans of Tarkir Mardu Spindown Life Counter",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Life Counter",
+  "promo": "true",
+  "includedReason": "Fat Pack Pack-In",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/ktk/cards/ktk-spindown-life-counter-temur.png",
+  "set": "ktk",
+  "title": "Special-Edition Khans of Tarkir Temur Spindown Life Counter",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Life Counter",
+  "promo": "true",
+  "includedReason": "Fat Pack Pack-In",
+  "usableForDeckBuilding": false
+ }
+
+]

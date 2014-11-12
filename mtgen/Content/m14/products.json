@@ -1,0 +1,78 @@
+{
+"_comment": "if there are no options the query/packNames will be auto-run"
+,"products": 
+	[
+		{
+			"productName": "m14-all-cards"
+			,"productDesc": "All Cards"
+			,"isGenerated": false
+			,"initialSort": "colour"
+			,"packs": [
+				{ "packName":"m14-all-cards" }
+			]
+		}
+		,{
+			"productName": "m14-prerelease"
+			,"productDesc": "Prerelease"
+			,"sources": [ "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/1262", "https://docs.google.com/viewer?url=http%3A%2F%2Fmedia.wizards.com%2FContentResources%2FWizards%2FWPN%2FMain%2FDocuments%2F2013_07_08_M14PreKit_PDF1.pdf" ]
+			,"isGenerated": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"m14-standard" }
+				,{ "packName":"m14-prerelease-promos" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "m14-prerelease"
+						,"presetDesc": "Core 2014 Prerelease"
+						,"default": true
+						,"packs": [
+							{ "count":6, "defaultPackName":"m14-standard" }
+							,{ "count":1, "defaultPackName":"m14-prerelease-promos" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "m14-fat-pack"
+			,"productDesc": "Fat Pack"
+			,"sources": [ "http://wpn.wizards.com/en/products/magic-2014-core-set" ]
+			,"isGenerated": true
+			,"autoGenerate": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"m14-standard" }
+				,{ "packName":"m14-fat-pack-land" }
+				,{ "packName":"m14-fat-pack-pack-ins" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "m14-fat-pack"
+						,"presetDesc": "Core 2014 Fat Pack"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"m14-fat-pack-pack-ins" }
+							,{ "count":9, "defaultPackName":"m14-standard" }
+							,{ "count":1, "defaultPackName":"m14-fat-pack-land" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "m14-promos"
+			,"productDesc": "All Promos"
+			,"isGenerated": false
+			,"initialSort": "name"
+			,"packs": [
+				{ "packName":"m14-promos" }
+			]
+		}
+
+	]
+}

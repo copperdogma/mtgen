@@ -1,0 +1,80 @@
+{
+"_comment": "if there are no options the query/packNames will be auto-run"
+,"products": 
+	[
+		{
+			"productName": "c14-all-cards"
+			,"productDesc": "All Cards"
+			,"soures": [ "http://magic.wizards.com/en/game-info/products/card-set-archive/commander-2014", "http://magic.wizards.com/en/articles/archive/arcana/commander-2014-edition-decklists-2014-10-31", "http://magic.wizards.com/en/articles/archive/arcana/commander-2014-edition-tokens-2014-10-28", "http://magic.wizards.com/en/articles/archive/feature/love-letter-vorthos-2014-10-24" ]
+			,"isGenerated": false
+			,"initialSort": "colour"
+			,"packs": [
+				{ "packName":"c14-all-cards" }
+			]
+		}
+		,{
+			"productName": "c14-commander-decks"
+			,"productDesc": "Commander Decks"
+			,"isGenerated": false
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"c14-deck-forged-in-stone" },{ "packName":"c14-deck-forged-in-stone-land" },{ "packName":"c14-deck-forged-in-stone-tokens" }
+				,{ "packName":"c14-deck-peer-through-time" },{ "packName":"c14-deck-peer-through-time-land" },{ "packName":"c14-deck-peer-through-time-tokens" }
+				,{ "packName":"c14-deck-sworn-to-darkness" },{ "packName":"c14-deck-sworn-to-darkness-land" },{ "packName":"c14-deck-sworn-to-darkness-tokens" }
+				,{ "packName":"c14-deck-built-from-scratch" },{ "packName":"c14-deck-built-from-scratch-land" },{ "packName":"c14-deck-built-from-scratch-tokens" }
+				,{ "packName":"c14-deck-guided-by-nature" },{ "packName":"c14-deck-guided-by-nature-land" },{ "packName":"c14-deck-guided-by-nature-tokens" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "c14-deck-forged-in-stone"
+						,"presetDesc": "Forged in Stone (White)"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"c14-deck-forged-in-stone" }
+							,{ "count":1, "defaultPackName":"c14-deck-forged-in-stone-land" }
+							,{ "count":1, "defaultPackName":"c14-deck-forged-in-stone-tokens" }
+						]
+					}
+					,{
+						"presetName": "c14-deck-peer-through-time"
+						,"presetDesc": "Peer Through Time (Blue)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"c14-deck-peer-through-time" }
+							,{ "count":1, "defaultPackName":"c14-deck-peer-through-time-land" }
+							,{ "count":1, "defaultPackName":"c14-deck-peer-through-time-tokens" }
+						]
+					}
+					,{
+						"presetName": "c14-deck-sworn-to-darkness"
+						,"presetDesc": "Sworn to Darkness (Black)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"c14-deck-sworn-to-darkness" }
+							,{ "count":1, "defaultPackName":"c14-deck-sworn-to-darkness-land" }
+							,{ "count":1, "defaultPackName":"c14-deck-sworn-to-darkness-tokens" }
+						]
+					}
+					,{
+						"presetName": "c14-deck-built-from-scratch"
+						,"presetDesc": "Built from Scratch (Red)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"c14-deck-built-from-scratch" }
+							,{ "count":1, "defaultPackName":"c14-deck-built-from-scratch-land" }
+							,{ "count":1, "defaultPackName":"c14-deck-built-from-scratch-tokens" }
+						]
+					}
+					,{
+						"presetName": "c14-deck-guided-by-nature"
+						,"presetDesc": "Guided by Nature (Green)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"c14-deck-guided-by-nature" }
+							,{ "count":1, "defaultPackName":"c14-deck-guided-by-nature-land" }
+							,{ "count":1, "defaultPackName":"c14-deck-guided-by-nature-tokens" }
+						]
+					}
+				]
+			}
+		}
+
+	]
+}

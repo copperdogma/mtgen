@@ -1,0 +1,497 @@
+{
+
+"defs": 
+	[
+		{
+			"defName": "c14",
+			"query": "from[*]?set='c14'"
+		}
+		,{
+			"defName": "c14-main",
+			"query": "from[c14]-from[c14]?type=(Marketing|Basic Land)-from[c14]?token=true-from[c14]?promo=true"
+		}
+
+	]
+
+,"packs": 
+	[
+ 		{
+		"packName": "c14-all-cards",
+		"packDesc": "Commander 2014: All Cards",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[c14]" }
+			]
+		}
+
+		,{
+		"packName": "c14-deck-forged-in-stone",
+		"packDesc": "Commander 2014: Forged in Stone (White)",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[c14]?title='Nahiri, the Lithomancer'" },
+			{ "query": "from[c14]?title='Containment Priest'" },
+			{ "query": "from[c14]?title='Whitemane Lion'" },
+			{ "query": "from[c14]?title='Grand Abolisher'" },
+			{ "query": "from[c14]?title='Kor Sanctifiers'" },
+			{ "query": "from[c14]?title='Mentor of the Meek'" },
+			{ "query": "from[c14]?title='Flickerwisp'" },
+			{ "query": "from[c14]?title='Hallowed Spiritkeeper'" },
+			{ "query": "from[c14]?title='Kemba, Kha Regent'" },
+			{ "query": "from[c14]?title='Silverblade Paladin'" },
+			{ "query": "from[c14]?title='Skyhunter Skirmisher'" },
+			{ "query": "from[c14]?title='Angelic Field Marshal'" },
+			{ "query": "from[c14]?title='Celestial Crusader'" },
+			{ "query": "from[c14]?title='Jazal Goldmane'" },
+			{ "query": "from[c14]?title='Geist-Honored Monk'" },
+			{ "query": "from[c14]?title='Requiem Angel'" },
+			{ "query": "from[c14]?title='Adarkar Valkyrie'" },
+			{ "query": "from[c14]?title='Sun Titan'" },
+			{ "query": "from[c14]?title='Sunblast Angel'" },
+			{ "query": "from[c14]?title='Twilight Shepherd'" },
+			{ "query": "from[c14]?title='Angel of the Dire Hour'" },
+			{ "query": "from[c14]?title='Serra Avatar'" },
+			{ "query": "from[c14]?title='Masterwork of Ingenuity'" },
+			{ "query": "from[c14]?title='Skullclamp'" },
+			{ "query": "from[c14]?title='Sol Ring'" },
+			{ "query": "from[c14]?title='Marble Diamond'" },
+			{ "query": "from[c14]?title='Mask of Memory'" },
+			{ "query": "from[c14]?title='Pearl Medallion'" },
+			{ "query": "from[c14]?title='Swiftfoot Boots'" },
+			{ "query": "from[c14]?title='Commander’s Sphere'" },
+			{ "query": "from[c14]?title='Loxodon Warhammer'" },
+			{ "query": "from[c14]?title='Strata Scythe'" },
+			{ "query": "from[c14]?title='Sword of Vengeance'" },
+			{ "query": "from[c14]?title='Assault Suit'" },
+			{ "query": "from[c14]?title='Bonehoard'" },
+			{ "query": "from[c14]?title='Moonsilver Spear'" },
+			{ "query": "from[c14]?title='Argentum Armor'" },
+			{ "query": "from[c14]?title='Loreseeker’s Stone'" },
+			{ "query": "from[c14]?title='Armistice'" },
+			{ "query": "from[c14]?title='Mobilization'" },
+			{ "query": "from[c14]?title='Sacred Mesa'" },
+			{ "query": "from[c14]?title='Marshal’s Anthem'" },
+			{ "query": "from[c14]?title='Cathars’ Crusade'" },
+			{ "query": "from[c14]?title='True Conviction'" },
+			{ "query": "from[c14]?title='Brave the Elements'" },
+			{ "query": "from[c14]?title='Condemn'" },
+			{ "query": "from[c14]?title='Afterlife'" },
+			{ "query": "from[c14]?title='Midnight Haunting'" },
+			{ "query": "from[c14]?title='Oblation'" },
+			{ "query": "from[c14]?title='Wing Shards'" },
+			{ "query": "from[c14]?title='Benevolent Offering'" },
+			{ "query": "from[c14]?title='Comeuppance'" },
+			{ "query": "from[c14]?title='Return to Dust'" },
+			{ "query": "from[c14]?title='White Sun’s Zenith'" },
+			{ "query": "from[c14]?title='Gift of Estates'" },
+			{ "query": "from[c14]?title='Spectral Procession'" },
+			{ "query": "from[c14]?title='Fell the Mighty'" },
+			{ "query": "from[c14]?title='Nomads’ Assembly'" },
+			{ "query": "from[c14]?title='Deploy to the Front'" },
+			{ "query": "from[c14]?title='Martial Coup'" },
+			{ "query": "from[c14]?title='Decree of Justice'" },
+			{ "query": "from[c14]?title='Arcane Lighthouse'" },
+			{ "query": "from[c14]?title='Drifting Meadow'" },
+			{ "query": "from[c14]?title='Emeria, the Sky Ruin'" },
+			{ "query": "from[c14]?title='Ghost Quarter'" },
+			{ "query": "from[c14]?title='Karoo'" },
+			{ "query": "from[c14]?title='Secluded Steppe'" },
+			{ "query": "from[c14]?title='Temple of the False God'" }
+			]
+		}
+		,{
+		"packName": "c14-deck-forged-in-stone-land",
+		"packDesc": "Commander 2014: Forged in Stone (White) - Land",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[32]>from[c14]?title='Plains'", "canBeDuplicate": true }
+			]
+		}
+		,{
+		"packName": "c14-deck-forged-in-stone-tokens",
+		"packDesc": "Commander 2014: Forged in Stone (White) - Tokens",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[c14]?title=(Kor Soldier|Stoneforged Blade|Spirit|Cat|Angel|Soldier|Pegasus)" }
+			]
+		}
+		,{
+		"packName": "c14-deck-peer-through-time",
+		"packDesc": "Commander 2014: Peer Through Time (Blue)",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[c14]?title='Teferi, Temporal Archmage'" },
+			{ "query": "from[c14]?title='Azure Mage'" },
+			{ "query": "from[c14]?title='Fathom Seer'" },
+			{ "query": "from[c14]?title='Fog Bank'" },
+			{ "query": "from[c14]?title='Willbender'" },
+			{ "query": "from[c14]?title='Dulcet Sirens'" },
+			{ "query": "from[c14]?title='Riptide Survivor'" },
+			{ "query": "from[c14]?title='Sea Gate Oracle'" },
+			{ "query": "from[c14]?title='Shaper Parasite'" },
+			{ "query": "from[c14]?title='Reef Worm'" },
+			{ "query": "from[c14]?title='Mulldrifter'" },
+			{ "query": "from[c14]?title='Ixidron'" },
+			{ "query": "from[c14]?title='Stitcher Geralf'" },
+			{ "query": "from[c14]?title='Stormsurge Kraken'" },
+			{ "query": "from[c14]?title='Steel Hellkite'" },
+			{ "query": "from[c14]?title='Brine Elemental'" },
+			{ "query": "from[c14]?title='Frost Titan'" },
+			{ "query": "from[c14]?title='Sphinx of Jwar Isle'" },
+			{ "query": "from[c14]?title='Sphinx of Magosi'" },
+			{ "query": "from[c14]?title='Phyrexian Ingester'" },
+			{ "query": "from[c14]?title='Sphinx of Uthuun'" },
+			{ "query": "from[c14]?title='Hoverguard Sweepers'" },
+			{ "query": "from[c14]?title='Lorthos, the Tidemaker'" },
+			{ "query": "from[c14]?title='Artisan of Kozilek'" },
+			{ "query": "from[c14]?title='Breaching Leviathan'" },
+			{ "query": "from[c14]?title='Deep-Sea Kraken'" },
+			{ "query": "from[c14]?title='Everflowing Chalice'" },
+			{ "query": "from[c14]?title='Tormod’s Crypt'" },
+			{ "query": "from[c14]?title='Sol Ring'" },
+			{ "query": "from[c14]?title='Mind Stone'" },
+			{ "query": "from[c14]?title='Sapphire Medallion'" },
+			{ "query": "from[c14]?title='Sky Diamond'" },
+			{ "query": "from[c14]?title='Swiftfoot Boots'" },
+			{ "query": "from[c14]?title='Commander’s Sphere'" },
+			{ "query": "from[c14]?title='Crown of Doom'" },
+			{ "query": "from[c14]?title='Unstable Obelisk'" },
+			{ "query": "from[c14]?title='Worn Powerstone'" },
+			{ "query": "from[c14]?title='Assault Suit'" },
+			{ "query": "from[c14]?title='Nevinyrral’s Disk'" },
+			{ "query": "from[c14]?title='Thran Dynamo'" },
+			{ "query": "from[c14]?title='Ur-Golem’s Eye'" },
+			{ "query": "from[c14]?title='Dreamstone Hedron'" },
+			{ "query": "from[c14]?title='Fool’s Demise'" },
+			{ "query": "from[c14]?title='Infinite Reflection'" },
+			{ "query": "from[c14]?title='Well of Ideas'" },
+			{ "query": "from[c14]?title='Pongify'" },
+			{ "query": "from[c14]?title='Cyclonic Rift'" },
+			{ "query": "from[c14]?title='Into the Roil'" },
+			{ "query": "from[c14]?title='Turn to Frog'" },
+			{ "query": "from[c14]?title='Exclude'" },
+			{ "query": "from[c14]?title='Cackling Counterpart'" },
+			{ "query": "from[c14]?title='Domineering Will'" },
+			{ "query": "from[c14]?title='Dismiss'" },
+			{ "query": "from[c14]?title='Intellectual Offering'" },
+			{ "query": "from[c14]?title='Stroke of Genius'" },
+			{ "query": "from[c14]?title='Call to Mind'" },
+			{ "query": "from[c14]?title='Compulsive Research'" },
+			{ "query": "from[c14]?title='Concentrate'" },
+			{ "query": "from[c14]?title='Rite of Replication'" },
+			{ "query": "from[c14]?title='Rush of Knowledge'" },
+			{ "query": "from[c14]?title='Æther Gale'" },
+			{ "query": "from[c14]?title='Distorting Wake'" },
+			{ "query": "from[c14]?title='Coral Atoll'" },
+			{ "query": "from[c14]?title='Ghost Quarter'" },
+			{ "query": "from[c14]?title='Lonely Sandbar'" },
+			{ "query": "from[c14]?title='Myriad Landscape'" },
+			{ "query": "from[c14]?title='Remote Isle'" },
+			{ "query": "from[c14]?title='Tectonic Edge'" },
+			{ "query": "from[c14]?title='Zoetic Cavern'" }
+			]
+		}
+		,{
+		"packName": "c14-deck-peer-through-time-land",
+		"packDesc": "Commander 2014: Peer Through Time (Blue) - Land",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[31]>from[c14]?title='Island'", "canBeDuplicate": true }
+			]
+		}
+		,{
+		"packName": "c14-deck-peer-through-time-tokens",
+		"packDesc": "Commander 2014: Peer Through Time (Blue) - Tokens",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[c14]?title=(Emblem: Teferi|Fish|Whale|Kraken|Ape)" }
+			,{ "query": "from[c14]?num='011/036 T'" }
+			]
+		}
+		,{
+		"packName": "c14-deck-sworn-to-darkness",
+		"packDesc": "Commander 2014: Sworn to Darkness (Black)",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[c14]?title='Ob Nixilis of the Black Oath'" },
+			{ "query": "from[c14]?title='Skirsdag High Priest'" },
+			{ "query": "from[c14]?title='Nantuko Shade'" },
+			{ "query": "from[c14]?title='Vampire Hexmage'" },
+			{ "query": "from[c14]?title='Burnished Hart'" },
+			{ "query": "from[c14]?title='Flesh Carver'" },
+			{ "query": "from[c14]?title='Crypt Ghast'" },
+			{ "query": "from[c14]?title='Disciple of Bolas'" },
+			{ "query": "from[c14]?title='Evernight Shade'" },
+			{ "query": "from[c14]?title='Abyssal Persecutor'" },
+			{ "query": "from[c14]?title='Liliana’s Reaver'" },
+			{ "query": "from[c14]?title='Nekrataal'" },
+			{ "query": "from[c14]?title='Magus of the Coffers'" },
+			{ "query": "from[c14]?title='Raving Dead'" },
+			{ "query": "from[c14]?title='Shriekmaw'" },
+			{ "query": "from[c14]?title='Bloodgift Demon'" },
+			{ "query": "from[c14]?title='Demon of Wailing Agonies'" },
+			{ "query": "from[c14]?title='Drana, Kalastria Bloodchief'" },
+			{ "query": "from[c14]?title='Ghoulcaller Gisa'" },
+			{ "query": "from[c14]?title='Gray Merchant of Asphodel'" },
+			{ "query": "from[c14]?title='Morkrut Banshee'" },
+			{ "query": "from[c14]?title='Grave Titan'" },
+			{ "query": "from[c14]?title='Phyrexian Gargantua'" },
+			{ "query": "from[c14]?title='Pontiff of Blight'" },
+			{ "query": "from[c14]?title='Reaper from the Abyss'" },
+			{ "query": "from[c14]?title='Xathrid Demon'" },
+			{ "query": "from[c14]?title='Butcher of Malakir'" },
+			{ "query": "from[c14]?title='Overseer of the Damned'" },
+			{ "query": "from[c14]?title='Pestilence Demon'" },
+			{ "query": "from[c14]?title='Sol Ring'" },
+			{ "query": "from[c14]?title='Charcoal Diamond'" },
+			{ "query": "from[c14]?title='Jet Medallion'" },
+			{ "query": "from[c14]?title='Mind Stone'" },
+			{ "query": "from[c14]?title='Swiftfoot Boots'" },
+			{ "query": "from[c14]?title='Commander’s Sphere'" },
+			{ "query": "from[c14]?title='Unstable Obelisk'" },
+			{ "query": "from[c14]?title='Worn Powerstone'" },
+			{ "query": "from[c14]?title='Lashwrithe'" },
+			{ "query": "from[c14]?title='Bad Moon'" },
+			{ "query": "from[c14]?title='Spoils of Blood'" },
+			{ "query": "from[c14]?title='Tragic Slip'" },
+			{ "query": "from[c14]?title='Malicious Affliction'" },
+			{ "query": "from[c14]?title='Sudden Spoiling'" },
+			{ "query": "from[c14]?title='Tendrils of Corruption'" },
+			{ "query": "from[c14]?title='Annihilate'" },
+			{ "query": "from[c14]?title='Skeletal Scrying'" },
+			{ "query": "from[c14]?title='Wake the Dead'" },
+			{ "query": "from[c14]?title='Sign in Blood'" },
+			{ "query": "from[c14]?title='Read the Bones'" },
+			{ "query": "from[c14]?title='Victimize'" },
+			{ "query": "from[c14]?title='Syphon Mind'" },
+			{ "query": "from[c14]?title='Dread Return'" },
+			{ "query": "from[c14]?title='Mutilate'" },
+			{ "query": "from[c14]?title='Infernal Offering'" },
+			{ "query": "from[c14]?title='Æther Snap'" },
+			{ "query": "from[c14]?title='Promise of Power'" },
+			{ "query": "from[c14]?title='Necromantic Selection'" },
+			{ "query": "from[c14]?title='Black Sun’s Zenith'" },
+			{ "query": "from[c14]?title='Profane Command'" },
+			{ "query": "from[c14]?title='Dregs of Sorrow'" },
+			{ "query": "from[c14]?title='Arcane Lighthouse'" },
+			{ "query": "from[c14]?title='Barren Moor'" },
+			{ "query": "from[c14]?title='Bojuka Bog'" },
+			{ "query": "from[c14]?title='Crypt of Agadeem'" },
+			{ "query": "from[c14]?title='Everglades'" },
+			{ "query": "from[c14]?title='Ghost Quarter'" },
+			{ "query": "from[c14]?title='Myriad Landscape'" },
+			{ "query": "from[c14]?title='Polluted Mire'" }
+			]
+		}
+		,{
+		"packName": "c14-deck-sworn-to-darkness-land",
+		"packDesc": "Commander 2014: Sworn to Darkness (Black) - Land",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[32]>from[c14]?title='Swamp'", "canBeDuplicate": true }
+			]
+		}
+		,{
+		"packName": "c14-deck-sworn-to-darkness-tokens",
+		"packDesc": "Commander 2014: Sworn to Darkness (Black) - Tokens",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[c14]?title=(Emblem: Ob Nixilis|Demon|Horror|Germ)" }
+			,{ "query": "from[c14]?num='016/036 T'" }
+			]
+		}
+		,{
+		"packName": "c14-deck-built-from-scratch",
+		"packDesc": "Commander 2014: Built from Scratch (Red)",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[c14]?title='Daretti, Scrap Savant'" },
+			{ "query": "from[c14]?title='Goblin Welder'" },
+			{ "query": "from[c14]?title='Epochrasite'" },
+			{ "query": "from[c14]?title='Myr Retriever'" },
+			{ "query": "from[c14]?title='Myr Sire'" },
+			{ "query": "from[c14]?title='Bottle Gnomes'" },
+			{ "query": "from[c14]?title='Cathodion'" },
+			{ "query": "from[c14]?title='Junk Diver'" },
+			{ "query": "from[c14]?title='Palladium Myr'" },
+			{ "query": "from[c14]?title='Pilgrim’s Eye'" },
+			{ "query": "from[c14]?title='Tuktuk the Explorer'" },
+			{ "query": "from[c14]?title='Dualcaster Mage'" },
+			{ "query": "from[c14]?title='Feldon of the Third Path'" },
+			{ "query": "from[c14]?title='Solemn Simulacrum'" },
+			{ "query": "from[c14]?title='Flametongue Kavu'" },
+			{ "query": "from[c14]?title='Beetleback Chief'" },
+			{ "query": "from[c14]?title='Ingot Chewer'" },
+			{ "query": "from[c14]?title='Steel Hellkite'" },
+			{ "query": "from[c14]?title='Wurmcoil Engine'" },
+			{ "query": "from[c14]?title='Spitebellows'" },
+			{ "query": "from[c14]?title='Hoard-Smelter Dragon'" },
+			{ "query": "from[c14]?title='Warmonger Hellkite'" },
+			{ "query": "from[c14]?title='Myr Battlesphere'" },
+			{ "query": "from[c14]?title='Pentavus'" },
+			{ "query": "from[c14]?title='Tyrant’s Familiar'" },
+			{ "query": "from[c14]?title='Bosh, Iron Golem'" },
+			{ "query": "from[c14]?title='Bogardan Hellkite'" },
+			{ "query": "from[c14]?title='Everflowing Chalice'" },
+			{ "query": "from[c14]?title='Panic Spellbomb'" },
+			{ "query": "from[c14]?title='Sol Ring'" },
+			{ "query": "from[c14]?title='Wayfarer’s Bauble'" },
+			{ "query": "from[c14]?title='Fire Diamond'" },
+			{ "query": "from[c14]?title='Ichor Wellspring'" },
+			{ "query": "from[c14]?title='Liquimetal Coating'" },
+			{ "query": "from[c14]?title='Mind Stone'" },
+			{ "query": "from[c14]?title='Mycosynth Wellspring'" },
+			{ "query": "from[c14]?title='Ruby Medallion'" },
+			{ "query": "from[c14]?title='Swiftfoot Boots'" },
+			{ "query": "from[c14]?title='Commander’s Sphere'" },
+			{ "query": "from[c14]?title='Jalum Tome'" },
+			{ "query": "from[c14]?title='Pristine Talisman'" },
+			{ "query": "from[c14]?title='Unstable Obelisk'" },
+			{ "query": "from[c14]?title='Trading Post'" },
+			{ "query": "from[c14]?title='Caged Sun'" },
+			{ "query": "from[c14]?title='Dreamstone Hedron'" },
+			{ "query": "from[c14]?title='Loreseeker’s Stone'" },
+			{ "query": "from[c14]?title='Spine of Ish Sah'" },
+			{ "query": "from[c14]?title='Bitter Feud'" },
+			{ "query": "from[c14]?title='Impact Resonance'" },
+			{ "query": "from[c14]?title='Chaos Warp'" },
+			{ "query": "from[c14]?title='Volcanic Offering'" },
+			{ "query": "from[c14]?title='Word of Seizing'" },
+			{ "query": "from[c14]?title='Magmaquake'" },
+			{ "query": "from[c14]?title='Starstorm'" },
+			{ "query": "from[c14]?title='Faithless Looting'" },
+			{ "query": "from[c14]?title='Whipflare'" },
+			{ "query": "from[c14]?title='Scrap Mastery'" },
+			{ "query": "from[c14]?title='Incite Rebellion'" },
+			{ "query": "from[c14]?title='Blasphemous Act'" },
+			{ "query": "from[c14]?title='Arcane Lighthouse'" },
+			{ "query": "from[c14]?title='Buried Ruin'" },
+			{ "query": "from[c14]?title='Darksteel Citadel'" },
+			{ "query": "from[c14]?title='Dormant Volcano'" },
+			{ "query": "from[c14]?title='Flamekin Village'" },
+			{ "query": "from[c14]?title='Forgotten Cave'" },
+			{ "query": "from[c14]?title='Ghost Quarter'" },
+			{ "query": "from[c14]?title='Great Furnace'" },
+			{ "query": "from[c14]?title='Phyrexia’s Core'" },
+			{ "query": "from[c14]?title='Reliquary Tower'" },
+			{ "query": "from[c14]?title='Smoldering Crater'" },
+			{ "query": "from[c14]?title='Temple of the False God'" }
+			]
+		}
+		,{
+		"packName": "c14-deck-built-from-scratch-land",
+		"packDesc": "Commander 2014: Built from Scratch (Red) - Land",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[29]>from[c14]?title='Mountain'", "canBeDuplicate": true }
+			]
+		}
+		,{
+		"packName": "c14-deck-built-from-scratch-tokens",
+		"packDesc": "Commander 2014: Built from Scratch (Red) - Tokens",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[c14]?title=(Emblem: Daretti|Myr|Tuktuk the Returned|Goblin|Wurm|Pentavite|Goat)" }
+			]
+		}
+		,{
+		"packName": "c14-deck-guided-by-nature",
+		"packDesc": "Commander 2014: Guided by Nature (Green)",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[c14]?title='Freyalise, Llanowar’s Fury'" },
+			{ "query": "from[c14]?title='Elvish Mystic'" },
+			{ "query": "from[c14]?title='Elvish Skysweeper'" },
+			{ "query": "from[c14]?title='Essence Warden'" },
+			{ "query": "from[c14]?title='Joraga Warcaller'" },
+			{ "query": "from[c14]?title='Llanowar Elves'" },
+			{ "query": "from[c14]?title='Sylvan Safekeeper'" },
+			{ "query": "from[c14]?title='Elvish Visionary'" },
+			{ "query": "from[c14]?title='Priest of Titania'" },
+			{ "query": "from[c14]?title='Sylvan Ranger'" },
+			{ "query": "from[c14]?title='Thornweald Archer'" },
+			{ "query": "from[c14]?title='Wellwisher'" },
+			{ "query": "from[c14]?title='Farhaven Elf'" },
+			{ "query": "from[c14]?title='Imperious Perfect'" },
+			{ "query": "from[c14]?title='Reclamation Sage'" },
+			{ "query": "from[c14]?title='Timberwatch Elf'" },
+			{ "query": "from[c14]?title='Titania’s Chosen'" },
+			{ "query": "from[c14]?title='Wood Elves'" },
+			{ "query": "from[c14]?title='Elvish Archdruid'" },
+			{ "query": "from[c14]?title='Ezuri, Renegade Leader'" },
+			{ "query": "from[c14]?title='Drove of Elves'" },
+			{ "query": "from[c14]?title='Immaculate Magistrate'" },
+			{ "query": "from[c14]?title='Wren’s Run Packmaster'" },
+			{ "query": "from[c14]?title='Lys Alana Huntmaster'" },
+			{ "query": "from[c14]?title='Masked Admirers'" },
+			{ "query": "from[c14]?title='Wolfbriar Elemental'" },
+			{ "query": "from[c14]?title='Creeperhulk'" },
+			{ "query": "from[c14]?title='Silklash Spider'" },
+			{ "query": "from[c14]?title='Titania, Protector of Argoth'" },
+			{ "query": "from[c14]?title='Grave Sifter'" },
+			{ "query": "from[c14]?title='Primordial Sage'" },
+			{ "query": "from[c14]?title='Rampaging Baloths'" },
+			{ "query": "from[c14]?title='Soul of the Harvest'" },
+			{ "query": "from[c14]?title='Thunderfoot Baloth'" },
+			{ "query": "from[c14]?title='Siege Behemoth'" },
+			{ "query": "from[c14]?title='Tornado Elemental'" },
+			{ "query": "from[c14]?title='Terastodon'" },
+			{ "query": "from[c14]?title='Lifeblood Hydra'" },
+			{ "query": "from[c14]?title='Skullclamp'" },
+			{ "query": "from[c14]?title='Sol Ring'" },
+			{ "query": "from[c14]?title='Emerald Medallion'" },
+			{ "query": "from[c14]?title='Moss Diamond'" },
+			{ "query": "from[c14]?title='Swiftfoot Boots'" },
+			{ "query": "from[c14]?title='Commander’s Sphere'" },
+			{ "query": "from[c14]?title='Assault Suit'" },
+			{ "query": "from[c14]?title='Seer’s Sundial'" },
+			{ "query": "from[c14]?title='Predator, Flagship'" },
+			{ "query": "from[c14]?title='Loreseeker’s Stone'" },
+			{ "query": "from[c14]?title='Beastmaster Ascension'" },
+			{ "query": "from[c14]?title='Song of the Dryads'" },
+			{ "query": "from[c14]?title='Wolfcaller’s Howl'" },
+			{ "query": "from[c14]?title='Harrow'" },
+			{ "query": "from[c14]?title='Fresh Meat'" },
+			{ "query": "from[c14]?title='Hunting Triad'" },
+			{ "query": "from[c14]?title='Whirlwind'" },
+			{ "query": "from[c14]?title='Overwhelming Stampede'" },
+			{ "query": "from[c14]?title='Overrun'" },
+			{ "query": "from[c14]?title='Grim Flowering'" },
+			{ "query": "from[c14]?title='Collective Unconscious'" },
+			{ "query": "from[c14]?title='Desert Twister'" },
+			{ "query": "from[c14]?title='Wave of Vitriol'" },
+			{ "query": "from[c14]?title='Praetor’s Counsel'" },
+			{ "query": "from[c14]?title='Sylvan Offering'" },
+			{ "query": "from[c14]?title='Crystal Vein'" },
+			{ "query": "from[c14]?title='Evolving Wilds'" },
+			{ "query": "from[c14]?title='Gargoyle Castle'" },
+			{ "query": "from[c14]?title='Ghost Quarter'" },
+			{ "query": "from[c14]?title='Haunted Fengraf'" },
+			{ "query": "from[c14]?title='Havenwood Battleground'" },
+			{ "query": "from[c14]?title='Jungle Basin'" },
+			{ "query": "from[c14]?title='Myriad Landscape'" },
+			{ "query": "from[c14]?title='Oran-Rief, the Vastwood'" },
+			{ "query": "from[c14]?title='Slippery Karst'" },
+			{ "query": "from[c14]?title='Terramorphic Expanse'" },
+			{ "query": "from[c14]?title='Tranquil Thicket'" }
+			]
+		}
+		,{
+		"packName": "c14-deck-guided-by-nature-land",
+		"packDesc": "Commander 2014: Guided by Nature (Green) - Land",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[25]>from[c14]?title='Forest'", "canBeDuplicate": true }
+			]
+		}
+		,{
+		"packName": "c14-deck-guided-by-nature-tokens",
+		"packDesc": "Commander 2014: Guided by Nature (Green) - Tokens",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[c14]?title=(Elf Druid|Elf Warrior|Wolf|Elemental|Beast|Elephant|Treefolk|Gargoyle)" }
+			]
+		}
+
+	]
+}

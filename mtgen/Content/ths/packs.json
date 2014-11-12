@@ -1,0 +1,432 @@
+{
+"_comment": "from: http://wiki.mtgsalvation.com/article/Hero%27s_Path#Hero.27s_Path",
+"_comment": "five Theros booster packs and a seeded booster pack",
+"_comment": "from: http://archive.wizards.com/magic/magazine/article.aspx?x=mtg/daily/feature/265",
+"_comment": "player Chooses a Path: Path of Honor (White), Path of Wisdom (Blue), Path of Ambition (Black), Path of Battle (Red), Path of Might (Green)",
+"_comment": "Each Prerelease pack contains one Hero card (respectively the Protector, the Philosopher, the Avenger, the Warrior and the Hunter), which isn’t for use at the Prerelease. The pack also contains a playable Prerelease promo",
+"defs": 
+	[
+		{
+			"defName": "ths",
+			"query": "from[*]?set='ths'"
+		},
+		{
+			"defName": "ths_promo",
+			"query": "from[ths]?promo=true"
+		},
+		{
+			"defName": "ths_set",
+			"query": "from[ths]-from[ths_promo]"
+		},
+		{
+			"defName": "ths_main",
+			"query": "from[ths]-from[ths]?type=(Marketing|Basic Land)-from[ths]?token=true-from[ths]?promo=true"
+		},
+		{
+			"defName": "ths_main_white",
+			"query": "from[ths_main]-from[ths_set]?colour=(u|b|r|g)"
+		},
+		{
+			"defName": "ths_main_blue",
+			"query": "from[ths_main]-from[ths_set]?colour=(w|b|r|g)"
+		},
+		{
+			"defName": "ths_main_black",
+			"query": "from[ths_main]-from[ths_set]?colour=(w|u|r|g)"
+		},
+		{
+			"defName": "ths_main_red",
+			"query": "from[ths_main]-from[ths_set]?colour=(w|u|b|g)"
+		},
+		{
+			"defName": "ths_main_green",
+			"query": "from[ths_main]-from[ths_set]?colour=(w|u|b|r)"
+		},
+		{
+			"defName": "ths_foils",
+			"query": "from[ths_main]"
+		},
+		{
+			"defName": "ths_fatpack",
+			"query": "from[ths]?includedReason='Fat Pack Pack-In'"
+		}
+	]
+
+,"packs": 
+	[
+ 		{
+		"packName": "ths-all-cards",
+		"packDesc": "Theros Set: All Cards",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[ths]" }
+			]
+		}
+
+ 		,{
+		"packName": "ths-standard",
+		"packDesc": "Theros Set: Standard Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "from[ths]?type='Basic Land'" }
+			,{ "query": "take[9]>from[ths_main]?rarity='c'" }
+			,{ "querySet": [ { "percent": 75, "query": "from[ths_main]?rarity='c'" }
+							,{ "percent": 25, "query": "from[ths_foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+							] }
+			,{ "query": "take[3]>from[ths_main]?rarity='u'" }
+			,{ "querySet": [ { "percent": 87.5, "query": "from[ths_main]?rarity='r'" }
+							,{ "percent": 12.5, "query": "from[ths_main]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" } 
+							] }
+			,{ "querySet": [ { "percent": 50, "query": "from[ths]?type='Marketing'" }
+							,{ "percent": 50, "query": "from[ths]?token=true-from[ths]?promo=true" } 
+							] }
+			]
+		}
+
+		,{
+		"packName": "ths-promos",
+		"packDesc": "Theros Set: Promos",
+		"isGenerated": false,
+		"includeWithUserCards": false,
+		"cards": [
+			{ "query": "take[*]>from[ths_promo]" }
+			]
+		}
+
+		,{
+		"packName": "ths-prerelease-promos",
+		"packDesc": "Theros: Prerelease Promos",
+		"isGenerated": false,
+		"includeWithUserCards": false,
+		"cards": [
+			{ "query": "take[*]>from[ths_promo]?includedReason='Prerelease Promo'" }
+			]
+		}
+
+		,{
+		"packName": "ths-seeded-booster-white",
+		"packDesc": "Theros Set: Path of Honor (White) Seeded Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "from[ths_promo]?title='Celestial Archon'" }
+			,{ "querySet": [
+				{ "query": "take[*]>from[ths_main]?title=(Spear of Heliod|Cutthroat Maneuver|Evangel of Heliod|Battlewise Hoplite|Ray of Dissolution|Traveling Philosopher|Priest of Iroas|Gods Willing|Blood-Toll Harpy|Wingsteed Rider|Coastline Chimera|Leafcrown Dryad|Silent Artisan|Savage Surge|Rage of Purphoros)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Fleecemane Lion|Insatiable Harpy|Dauntless Onslaught|Centaur Battlemaster|Ray of Dissolution|Setessan Griffin|Felhide Minotaur|Griptide|Hopeful Eidolon|Coastline Chimera|Rage of Purphoros|Battlewise Valor|Feral Invocation|Ephara's Warden|Satyr Rambler)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Hundred-Handed One|Phalanx Leader|Triton Tactics|Chronicler of Heroes|Ray of Dissolution|Gods Willing|Titan's Strength|Setessan Battle Priest|Minotaur Skullcleaver|Felhide Minotaur|Yoked Ox|Savage Surge|Lash of the Whip|Setessan Griffin|Vaporkin)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Fabled Hero|Battlewise Hoplite|Favored Hoplite|Warriors' Lesson|Ray of Dissolution|Silent Artisan|Lash of the Whip|Akroan Crusader|Leafcrown Dryad|Chosen by Heliod|Fate Foretold|Observant Alseid|Lightning Strike|Ephara's Warden|Fleshmad Steed)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Chained to the Rocks|Triton Fortune Hunter|Phalanx Leader|Akroan Hoplite|Ray of Dissolution|Wingsteed Rider|Fate Foretold|Battlewise Valor|Staunch-Hearted Warrior|Yoked Ox|Spearpoint Oread|Boon of Erebos|Cavern Lampad|Setessan Battle Priest|Leafcrown Dryad)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Gift of Immortality|Sentry of the Underworld|Heliod's Emissary|Arena Athlete|Ray of Dissolution|Wingsteed Rider|Boulderfall|Baleful Eidolon|Last Breath|Leafcrown Dryad|Silent Artisan|Wavecrash Triton|Scholar of Atheros|Vaporkin|Staunch-Hearted Warrior)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Soldier of the Pantheon|Akroan Hoplite|Centaur Battlemaster|Phalanx Leader|Ray of Dissolution|Nimbus Naiad|Battlewise Valor|Savage Surge|Yoked Ox|Spearpoint Oread|Chosen by Heliod|Sip of Hemlock|Aqueous Form|Leonin Snarecaster|Cavern Lampad)", "inOrder": true }
+				]
+			}
+			]
+		}
+		,{
+		"packName": "ths-seeded-booster-packins-white",
+		"packDesc": "Theros: Hero Prerelease Pack-Ins: Path of Honor (White)",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[ths]?title=(The Protector|Path of Honor Welcome Letter|White Choose Your Path Activity Card|White Theros Spindown Life Counter)" }
+			]
+		}
+
+ 		,{
+		"packName": "ths-seeded-booster-blue",
+		"packDesc": "Theros Set: Path of Wisdom (Blue) Seeded Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "from[ths_promo]?title='Shipbreaker Kraken'" }
+			,{ "querySet": [
+				{ "query": "take[*]>from[ths_main]?title=(Thassa, God of the Sea|Shipwreck Singer|Sealock Monster|Artisan's Sorrow|Annul|Silent Artisan|Lash of the Whip|Mnemonic Wall|Coastline Chimera|Hopeful Eidolon|Leafcrown Dryad|Aqueous Form|Ill-Tempered Cyclops|Omenspeaker|Spark Jolt)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Bident of Thassa|Flamespeaker Adept|Thassa's Emissary|Horizon Chimera|Annul|Agent of Horizons|Voyage's End|Read the Bones|Breaching Hippocamp|Spark Jolt|Ephara's Warden|Vaporkin|Observant Alseid|Aqueous Form|Blood-Toll Harpy)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Daxos of Meletis|Erebos's Emissary|Triton Fortune Hunter|Gods Willing|Annul|Coastline Chimera|Nylea's Presence|Rage of Purphoros|Voyage's End|Nessian Courser|Stymied Hopes|Borderland Minotaur|Read the Bones|Benthic Giant|Hopeful Eidolon)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Steam Augury|Warriors' Lesson|Sealock Monster|Spellheart Chimera|Annul|Asphodel Wanderer|Stymied Hopes|Nessian Courser|Crackling Triton|Divine Verdict|Lightning Strike|Yoked Ox|Lash of the Whip|Benthic Giant|Prescient Chimera)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Prognostic Sphinx|Insatiable Harpy|Decorated Griffin|Dissolve|Annul|Divine Verdict|Ill-Tempered Cyclops|Stymied Hopes|Voyage's End|Sip of Hemlock|Spark Jolt|Agent of Horizons|Vaporkin|Mnemonic Wall|Time to Feed)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Meletis Charlatan|Horizon Scholar|Insatiable Harpy|Spellheart Chimera|Annul|Mnemonic Wall|Lightning Strike|Prescient Chimera|Hopeful Eidolon|Nylea's Presence|Griptide|Read the Bones|Stymied Hopes|Divine Verdict|Nessian Asp)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Artisan of Forms|Heliod's Emissary|Triton Fortune Hunter|Magma Jet|Annul|Nimbus Naiad|Borderland Minotaur|Aqueous Form|Cavern Lampad|Griptide|Battlewise Valor|Nessian Courser|Coastline Chimera|Feral Invocation|Returned Phalanx)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Curse of the Swine|Horizon Chimera|Thassa's Emissary|Vanquish the Foul|Annul|Omenspeaker|Returned Phalanx|Observant Alseid|Voyage's End|Pharika's Cure|Rage of Purphoros|Thassa's Bounty|Voyaging Satyr|Aqueous Form|Wild Celebrants)", "inOrder": true }
+				]
+			}
+			]
+		}
+		,{
+		"packName": "ths-seeded-booster-packins-blue",
+		"packDesc": "Theros: Hero Prerelease Pack-Ins: Path of Wisdom (Blue)",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[ths]?title=(The Philosopher|Path of Wisdom Welcome Letter|Blue Choose Your Path Activity Card|Blue Theros Spindown Life Counter)" }
+			]
+		}
+
+ 		,{
+		"packName": "ths-seeded-booster-black",
+		"packDesc": "Theros Set: Path of Ambition (Black) Seeded Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "from[ths_promo]?title='Abhorrent Overlord'" }
+			,{ "querySet": [
+				{ "query": "take[*]>from[ths_main]?title=(Erebos, God of the Dead|Ordeal of Thassa|Mogis's Marauder|Vanquish the Foul|Scourgemark|Rage of Purphoros|Fleshmad Steed|Deathbellow Raider|Viper's Kiss|Wavecrash Triton|Disciple of Phenax|Hopeful Eidolon|Nylea's Disciple|Asphodel Wanderer|Sedge Scorpion)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Whip of Erebos|Sentry of the Underworld|Ordeal of Erebos|Nemesis of Mortals|Scourgemark|Asphodel Wanderer|Ill-Tempered Cyclops|Prescient Chimera|Gray Merchant of Asphodel|Boulderfall|Scholar of Atheros|Returned Centaur|Commune with the Gods|Disciple of Phenax|Thassa's Bounty)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Psychic Intrusion|Stoneshock Giant|Rescue from the Underworld|Shipwreck Singer|Scourgemark|Returned Centaur|Time to Feed|Gray Merchant of Asphodel|Sedge Scorpion|Disciple of Phenax|Scholar of Atheros|Spark Jolt|Pharika's Cure|Prescient Chimera|Hopeful Eidolon)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Reaper of the Wilds|Nemesis of Mortals|Rescue from the Underworld|Dissolve|Scourgemark|Pharika's Cure|Nimbus Naiad|Observant Alseid|Loathsome Catoblepas|Lagonna-Band Elder|Spearpoint Oread|Baleful Eidolon|Commune with the Gods|Returned Centaur|Portent of Betrayal)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Agent of the Fates|Ordeal of Purphoros|Tormented Hero|Triton Tactics|Scourgemark|Viper's Kiss|Deathbellow Raider|Fleshmad Steed|Staunch-Hearted Warrior|Wavecrash Triton|Boon of Erebos|Savage Surge|Gods Willing|Cavern Lampad|Observant Alseid)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Hero's Downfall|Nylea's Emissary|Tormented Hero|Kragma Warcaller|Scourgemark|Baleful Eidolon|Omenspeaker|Felhide Minotaur|Deathbellow Raider|Scholar of Atheros|Pharika's Cure|Commune with the Gods|Griptide|Viper's Kiss|Observant Alseid)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Nighthowler|Erebos's Emissary|Ordeal of Heliod|Pharika's Mender|Scourgemark|Borderland Minotaur|March of the Returned|Griptide|Disciple of Phenax|Lagonna-Band Elder|Returned Centaur|Benthic Giant|Sedge Scorpion|Sip of Hemlock|Spearpoint Oread)", "inOrder": true }
+				]
+			}
+			]
+		}
+		,{
+		"packName": "ths-seeded-booster-packins-black",
+		"packDesc": "Theros: Hero Prerelease Pack-Ins: Path of Ambition (Black)",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[ths]?title=(The Avenger|Path of Ambition Welcome Letter|Black Choose Your Path Activity Card|Black Theros Spindown Life Counter)" }
+			]
+		}
+
+ 		,{
+		"packName": "ths-seeded-booster-red",
+		"packDesc": "Theros Set: Hunt with Ferocity (Red) Seeded Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "from[ths_promo]?title='Ember Swallower'" }
+			,{ "querySet": [
+				{ "query": "take[*]>from[ths_main]?title=(Purphoros, God of the Forge|Destructive Revelry|Fanatic of Mogis|Ordeal of Thassa|Demolish|Satyr Rambler|Blood-Toll Harpy|Two-headed Cerberus|Felhide Minotaur|Crackling Triton|Dragon Mantle|Satyr Hedonist|Leonin Snarecaster|Messenger's Speed|Divine Verdict)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Hammer of Purphoros|Ordeal of Erebos|Stoneshock Giant|Destructive Revelry|Demolish|Borderland Minotaur|Crackling Triton|Boulderfall|Leonin Snarecaster|Portent of Betrayal|Messenger's Speed|Mnemonic Wall|Lagonna-Band Elder|Satyr Hedonist|Blood-Toll Harpy)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Tymaret, the Murder King|Sealock Monster|Ordeal of Purphoros|Mogis's Marauder|Demolish|Cavern Lampad|Deathbellow Raider|Divine Verdict|Dragon Mantle|Lost in a Labyrinth|Messenger's Speed|Feral Invocation|Two-Headed Cerberus|Lagonna-Band Elder|Nessian Courser)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Anax and Cymede|Cutthroat Maneuver|Arena Athlete|Ordeal of Heliod|Demolish|Minotaur Skullcleaver|Blood-Toll Harpy|Messenger's Speed|Crackling Triton|Satyr Rambler|Wingsteed Rider|Staunch-Hearted Warrior|Portent of Betrayal|Satyr Hedonist|Lost in a Labyrinth)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Anger of the Gods|Spellheart Chimera|Flamespeaker Adept|Decorated Griffin|Demolish|Time to Feed|Last Breath|Borderland Minotaur|Griptide|Boulderfall|Read the Bones|Satyr Rambler|Pheres-Band Centaurs|Spark Jolt|Gray Merchant of Asphodel)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Rageblood Shaman|Ordeal of Nylea|Coordinated Assault|Kragma Warcaller|Demolish|Minotaur Skullcleaver|Nessian Asp|Divine Verdict|Deathbellow Raider|Sip of Hemlock|Borderland Minotaur|Vaporkin|Leonin Snarecaster|Messenger's Speed|Lost in a Labyrinth)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Labyrinth Champion|Centaur Battlemaster|Ordeal of Purphoros|Favored Hoplite|Demolish|Ill-Tempered Cyclops|Crackling Triton|Wingsteed Rider|Lightning Strike|Nimbus Naiad|Lash of the Whip|Minotaur Skullcleaver|Savage Surge|Akroan Crusader|Fleshmad Steed)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Titan of Eternal Fire|Ordeal of Thassa|Arena Athlete|Akroan Hoplite|Demolish|Messenger's Speed|Traveling Philosopher|Spearpoint Oread|Gray Merchant of Asphodel|Priest of Iroas|Omenspeaker|Staunch-Hearted Warrior|Lightning Strike|Boon of Erebos|Nessian Asp)", "inOrder": true }
+				]
+			}
+			]		
+		}
+		,{
+		"packName": "ths-seeded-booster-packins-red",
+		"packDesc": "Theros: Hero Prerelease Pack-Ins: Path of Battle (Red)",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[ths]?title=(The Warrior|Path of Battle Welcome Letter|Red Choose Your Path Activity Card|Red Theros Spindown Life Counter)" }
+			]
+		}
+
+ 		,{
+		"packName": "ths-seeded-booster-green",
+		"packDesc": "Theros Set: Path of Might (Green) Seeded Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "from[ths_promo]?title='Anthousa, Setessan Hero'" }
+			,{ "querySet": [
+				{ "query": "take[*]>from[ths_main]?title=(Nylea, God of the Hunt|Erebos's Emissary|Karametra's Acolyte|Horizon Chimera|Fade into Antiquity|Loathsome Catoblepas|Feral Invocation|Ill-Tempered Cyclops|Shredding Winds|Titan's Strength|Nessian Asp|Wingsteed Rider|Voyage's End|Nylea's Disciple|Last Breath)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Bow of Nylea|Pharika's Mender|Nylea's Emissary|Sea God's Revenge|Fade into Antiquity|Defend the Hearth|Omenspeaker|Setessan Griffin|Commune with the Gods|Minotaur Skullcleaver|Voyaging Satyr|Lagonna-Band Elder|Returned Centaur|Sedge Scorpion|Wild Celebrants)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Polis Crusher|Ordeal of Nylea|Sea God's Revenge|Stoneshock Giant|Fade into Antiquity|Vulpine Goliath|Breaching Hippocamp|Setessan Griffin|Time to Feed|Battlewise Valor|Pharika's Cure|Voyaging Satyr|Boulderfall|Satyr Hedonist|Returned Centaur)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Prophet of Kruphix|Horizon Scholar|Artisan's Sorrow|Decorated Griffin|Fade Into Antiquity|Nessian Asp|Returned Centaur|Pheres-Band Centaurs|Voyage's End|Time to Feed|Divine Verdict|Rage of Purphoros|Agent of Horizons|Satyr Rambler|Sip of Hemlock)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Reverent Hunter|Magma Jet|Nemesis of Mortals|Pharika's Mender|Fade into Antiquity|Defend the Hearth|Aqueous Form|Feral Invocation|Loathsome Catoblepas|Vaporkin|Sedge Scorpion|Wild Celebrants|Setessan Griffin|Commune with the Gods|Wingsteed Rider)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Mistcutter Hydra|Destructive Revelry|Ordeal of Nylea|Chronicler of Heroes|Fade into Antiquity|Shredding Winds|Last Breath|Omenspeaker|Vulpine Goliath|Thassa's Bounty|Cavern Lampad|Nylea's Disciple|Titan's Strength|March of the Returned|Savage Surge)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Boon Satyr|Keepsake Gorgon|Artisan's Sorrow|Chronicler of Heroes|Fade into Antiquity|Nylea's Disciple|Spearpoint Oread|Asphodel Wanderer|Wavecrash Triton|Defend the Hearth|Ill-Tempered Cyclops|Staunch-Hearted Warrior|Nimbus Naiad|Time to Feed|Setessan Griffin)", "inOrder": true },
+				{ "query": "take[*]>from[ths_main]?title=(Arbor Colossus|Purphoros's Emissary|Satyr Piper|Dauntless Onslaught|Fade into Antiquity|Defend the Hearth|Loathsome Catoblepas|Titan's Strength|Nessian Asp|Breaching Hippocamp|Nylea's Disciple|Lash of the Whip|Traveling Philosopher|Voyaging Satyr|Lost in a Labyrinth)", "inOrder": true }
+				]
+			}
+			]		
+		}
+		,{
+		"packName": "ths-seeded-booster-packins-green",
+		"packDesc": "Theros: Hero Prerelease Pack-Ins: Path of Might (Green)",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[ths]?title=(The Hunter|Path of Might Welcome Letter|Green Choose Your Path Activity Card|Green Theros Spindown Life Counter)" }
+			]
+		}
+
+		,{
+		"packName": "ths-intro-pack-favors-from-nyx",
+		"packDesc": "Favors From Nyx",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[ths_main]?title='Celestial Archon'", "setValues": { "foil": true } },
+			{ "query": "take[16]>from[ths_main]?title='Plains'", "canBeDuplicate": true },
+			{ "query": "take[9]>from[ths_main]?title='Swamp'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Auramancer'" },
+			{ "query": "from[ths_main]?title='Baleful Eidolon'" },
+			{ "query": "from[ths_main]?title='Banisher Priest'" },
+			{ "query": "from[ths_main]?title='Blightcaster'" },
+			{ "query": "from[ths_main]?title='Cavern Lampad'" },
+			{ "query": "from[ths_main]?title='Erebos’s Emissary'" },
+			{ "query": "take[2]>from[ths_main]?title='Heliod’s Emissary'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Hopeful Eidolon'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Lagonna-Band Elder'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Minotaur Abomination'" },
+			{ "query": "take[2]>from[ths_main]?title='Observant Alseid'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Pillarfield Ox'" },
+			{ "query": "from[ths_main]?title='Scholar of Athreos'" },
+			{ "query": "from[ths_main]?title='Sentry of the Underworld'" },
+			{ "query": "take[2]>from[ths_main]?title='Traveling Philosopher'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Yoked Ox'" },
+			{ "query": "from[ths_main]?title='Doom Blade'" },
+			{ "query": "from[ths_main]?title='Gift of Immortality'" },
+			{ "query": "take[2]>from[ths_main]?title='Last Breath'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Ordeal of Erebos'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Ordeal of Heliod'" },
+			{ "query": "from[ths_main]?title='Pacifism'" },
+			{ "query": "take[2]>from[ths_main]?title='Pharika’s Cure'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Ray of Dissolution'" },
+			{ "query": "take[2]>from[ths_main]?title='Vanquish the Foul'", "canBeDuplicate": true }
+			]
+		}
+		,{
+		"packName": "ths-intro-pack-manipulative-monstrosities",
+		"packDesc": "Manipulative Monstrosities",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[ths_main]?title='Shipbreaker Kraken'", "setValues": { "foil": true } },
+			{ "query": "take[16]>from[ths_main]?title='Island'", "canBeDuplicate": true },
+			{ "query": "take[10]>from[ths_main]?title='Mountain'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Archaeomancer'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Burnished Hart'" },
+			{ "query": "take[2]>from[ths_main]?title='Coral Merfolk'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Crackling Triton'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Ill-Tempered Cyclops'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Omenspeaker'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Sealock Monster'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Stoneshock Giant'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Wall of Frost'" },
+			{ "query": "from[ths_main]?title='Water Servant'" },
+			{ "query": "from[ths_main]?title='Curse of the Swine'" },
+			{ "query": "from[ths_main]?title='Disperse'" },
+			{ "query": "from[ths_main]?title='Dissolve'" },
+			{ "query": "take[2]>from[ths_main]?title='Griptide'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Lightning Strike'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Lost in a Labyrinth'" },
+			{ "query": "from[ths_main]?title='Magma Jet'" },
+			{ "query": "from[ths_main]?title='Ordeal of Purphoros'" },
+			{ "query": "take[2]>from[ths_main]?title='Rage of Purphoros'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Sea God’s Revenge'" },
+			{ "query": "take[2]>from[ths_main]?title='Shock'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Volcanic Geyser'" }
+			]
+		}
+		,{
+		"packName": "ths-intro-pack-devotion-to-darkness",
+		"packDesc": "Devotion to Darkness",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[ths_main]?title='Abhorrent Overlord'", "setValues": { "foil": true } },
+			{ "query": "take[9]>from[ths_main]?title='Island'", "canBeDuplicate": true },
+			{ "query": "take[16]>from[ths_main]?title='Swamp'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Blood-Toll Harpy'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Child of Night'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Disciple of Phenax'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Gray Merchant of Asphodel'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Horizon Scholar'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Insatiable Harpy'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Minotaur Abomination'" },
+			{ "query": "take[2]>from[ths_main]?title='Mogis’s Marauder'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Returned Phalanx'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Undead Minotaur'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Boon of Erebos'" },
+			{ "query": "take[2]>from[ths_main]?title='Glimpse the Future'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Griptide'" },
+			{ "query": "from[ths_main]?title='Lash of the Whip'" },
+			{ "query": "from[ths_main]?title='March of the Returned'" },
+			{ "query": "from[ths_main]?title='Ordeal of Thassa'" },
+			{ "query": "from[ths_main]?title='Pharika’s Cure'" },
+			{ "query": "from[ths_main]?title='Rescue from the Underworld'" },
+			{ "query": "from[ths_main]?title='Sea God’s Revenge'" },
+			{ "query": "take[2]>from[ths_main]?title='Sip of Hemlock'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Whip of Erebos'" },
+			{ "query": "from[ths_main]?title='Witches’ Eye'" },
+			{ "query": "from[ths_main]?title='Voyage’s End'" }
+			]
+		}
+		,{
+		"packName": "ths-intro-pack-blazing-beasts-of-myth",
+		"packDesc": "Blazing Beasts of Myth",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[ths_main]?title='Ember Swallower'", "setValues": { "foil": true } },
+			{ "query": "take[11]>from[ths_main]?title='Forest'", "canBeDuplicate": true },
+			{ "query": "take[14]>from[ths_main]?title='Mountain'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Borderland Minotaur'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Ill-Tempered Cyclops'" },
+			{ "query": "take[2]>from[ths_main]?title='Minotaur Skullcleaver'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Nemesis of Mortals'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Nessian Asp'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Nessian Courser'" },
+			{ "query": "from[ths_main]?title='Polis Crusher'" },
+			{ "query": "from[ths_main]?title='Rootwalla'" },
+			{ "query": "take[2]>from[ths_main]?title='Satyr Hedonist'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Satyr Piper'" },
+			{ "query": "take[2]>from[ths_main]?title='Satyr Rambler'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Stoneshock Giant'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Voyaging Satyr'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Artisan’s Sorrow'" },
+			{ "query": "from[ths_main]?title='Destructive Revelry'" },
+			{ "query": "from[ths_main]?title='Dragon Mantle'" },
+			{ "query": "take[2]>from[ths_main]?title='Lightning Strike'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Magma Jet'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Portent of Betrayal'" },
+			{ "query": "take[2]>from[ths_main]?title='Rage of Purphoros'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Windstorm'" },
+			{ "query": "take[2]>from[ths_main]?title='Volcanic Geyser'", "canBeDuplicate": true }
+			]
+		}
+		,{
+		"packName": "ths-intro-pack-anthousas-army",
+		"packDesc": "Anthousa's Army",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[ths_main]?title='Anthousa, Setessan Hero'", "setValues": { "foil": true } },
+			{ "query": "take[13]>from[ths_main]?title='Forest'", "canBeDuplicate": true },
+			{ "query": "take[12]>from[ths_main]?title='Plains'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Centaur Battlemaster'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Chronicler of Heroes'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Deadly Recluse'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Elvish Mystic'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Favored Hoplite'" },
+			{ "query": "from[ths_main]?title='Phalanx Leader'" },
+			{ "query": "from[ths_main]?title='Pheres-Band Centaurs'" },
+			{ "query": "take[2]>from[ths_main]?title='Rumbling Baloth'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Setessan Battle Priest'" },
+			{ "query": "from[ths_main]?title='Setessan Griffin'" },
+			{ "query": "take[2]>from[ths_main]?title='Staunch-Hearted Warrior'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Wingsteed Rider'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Artisan’s Sorrow'" },
+			{ "query": "take[2]>from[ths_main]?title='Battlewise Valor'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Bow of Nylea'" },
+			{ "query": "take[2]>from[ths_main]?title='Dauntless Onslaught'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Giant Growth'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Pacifism'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[ths_main]?title='Time to Feed'", "canBeDuplicate": true },
+			{ "query": "from[ths_main]?title='Vanquish the Foul'" },
+			{ "query": "take[2]>from[ths_main]?title='Warriors’ Lesson'", "canBeDuplicate": true }
+			]
+		}
+
+		,{
+		"packName": "ths-fat-pack-land",
+		"packDesc": "Theros Fat Pack: Land",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[16]>from[ths]?title='Plains'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[ths]?title='Island'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[ths]?title='Swamp'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[ths]?title='Forest'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[ths]?title='Mountain'", "canBeDuplicate": true }
+			]
+		}
+		,{
+		"packName": "ths-fat-pack-pack-ins",
+		"packDesc": "Theros Fat Pack: Pack-Ins",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[ths]?title=(Theros Player’s Guide|Theros Card Box|Theros Mural)" }
+			,{ "query": "from[ths_fatpack]?type='Life Counter'", "canBeDuplicate": true  }
+			,{ "query": "take[2]>from[ths]?title='Theros Deck Box'", "canBeDuplicate": true  }
+			]
+		}
+
+	]
+}

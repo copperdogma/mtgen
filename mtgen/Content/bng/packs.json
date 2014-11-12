@@ -1,0 +1,288 @@
+{
+"_comment": "from: http://wiki.mtgsalvation.com/article/Born_of_the_Gods",
+"_comment": "promo cards: http://www.wizards.com/Magic/Magazine/Article.aspx?x=mtg/daily/arcana/1408",
+"_comment": "player Chooses a Destiny: Path of Honor (White), Path of Wisdom (Blue), Path of Ambition (Black), Path of Battle (Red), Path of Might (Green)",
+"_comment": "Each Prerelease pack contains one Hero card (respectively the General, the Savant, the Tyrant, the Warmonger, and the Provider), which isn’t for use at the Prerelease. The pack also contains a playable Prerelease promo",
+"_comment": "seeded booster description: http://www.wizards.com/magic/magazine/article.aspx?x=mtg/daily/feature/284#path",
+"defs": 
+	[
+		{
+			"defName": "bng",
+			"query": "from[*]?set='bng'"
+		},
+		{
+			"defName": "bng-promo",
+			"query": "from[bng]?promo=true"
+		},
+		{
+			"defName": "bng-set",
+			"query": "from[bng]-from[bng-promo]"
+		},
+		{
+			"defName": "bng-main",
+			"query": "from[bng]-from[bng]?type=(Marketing|Basic Land)-from[bng]?token=true-from[bng]?promo=true"
+		},
+		{
+			"defName": "bng-main-white",
+			"query": "from[bng-main]?cost=contains({W})"
+		},
+		{
+			"defName": "bng-main-white-multicolour",
+			"query": "from[bng-main-white]?colour='m'"
+		},
+		{
+			"defName": "bng-main-blue",
+			"query": "from[bng-main]?cost=contains({U})"
+		},
+		{
+			"defName": "bng-main-blue-multicolour",
+			"query": "from[bng-main-blue]?colour='m'"
+		},
+		{
+			"defName": "bng-main-black",
+			"query": "from[bng-main]?cost=contains({B})"
+		},
+		{
+			"defName": "bng-main-black-multicolour",
+			"query": "from[bng-main-black]?colour='m'"
+		},
+		{
+			"defName": "bng-main-red",
+			"query": "from[bng-main]?cost=contains({R})"
+		},
+		{
+			"defName": "bng-main-red-multicolour",
+			"query": "from[bng-main-red]?colour='m'"
+		},
+		{
+			"defName": "bng-main-green",
+			"query": "from[bng-main]?cost=contains({G})"
+		},
+		{
+			"defName": "bng-main-green-multicolour",
+			"query": "from[bng-main-green]?colour='m'"
+		},
+		{
+			"defName": "bng-uncommons",
+			"query": "from[bng-main]?rarity='u'"
+		},
+		{
+			"defName": "bng-foils",
+			"query": "from[bng-main]"
+		},
+		{
+			"defName": "bng-gods",
+			"query": "from[bng-main]?subtype='God'"
+		},
+		{
+			"defName": "bng-promo",
+			"query": "from[bng]?promo=true"
+		},
+		{
+			"defName": "bng-fatpack",
+			"query": "from[bng]?includedReason='Fat Pack Pack-In'"
+		}
+	]
+
+,"packs": 
+	[
+ 		{
+		"packName": "bng-all-cards",
+		"packDesc": "Born of the Gods Set: All Cards",
+		"isGenerated": false,
+		"cards": [ { "query": "take[*]>from[bng]" } ]
+		}
+ 		
+ 		,{
+		"packName": "bng-standard",
+		"packDesc": "Born of the Gods Set: Standard Booster",
+		"cards": [
+			{ "query": "from[ths]?type='Basic Land'" }
+			,{ "query": "take[9]>from[bng-main]?rarity='c'" }
+			,{ "querySet": [ { "percent": 75, "query": "from[bng-main]?rarity='c'" }
+							,{ "percent": 25, "query": "from[bng-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+							] }
+			,{ "query": "take[3]>from[bng-main]?rarity='u'" }
+			,{ "querySet": [ { "percent": 87.5, "query": "from[bng-main]?rarity='r'" }
+							,{ "percent": 12.5, "query": "from[bng-main]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" } 
+							] }
+			,{ "querySet": [ { "percent": 50, "query": "from[ths]?type='Marketing'" }
+							,{ "percent": 50, "query": "from[ths]?token=true-from[ths]?promo=true" } 
+							] }
+			]
+		}
+		
+		,{
+		"packName": "bng-promos",
+		"packDesc": "Born of the Gods Set: Promos",
+		"includeWithUserCards": false,
+		"cards": [
+			{ "query": "take[*]>from[bng-promo]" }
+			]
+		}
+
+		,{
+		"packName": "bng-prerelease-promos",
+		"packDesc": "Born of the Gods: Prerelease Promos",
+		"isGenerated": false,
+		"includeWithUserCards": false,
+		"cards": [
+			{ "query": "take[*]>from[bng-promo]?includedReason='Prerelease Promo'" }
+			]
+		}
+
+		,{
+		"packName": "bng-seeded-booster-white",
+		"packDesc": "Born of the Gods Set: Destined to Lead (White) Seeded Booster",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[bng-promo]?title='Silent Sentinel'" },
+			{ "querySet": [
+				{ "query": "take[*]>from[bng-main]?title=(Ephara, God of the Polis|Revoke Existence|Peregrination|Acolyte's Reward|Ephara's Enlightenment|Excoriate|Bolt of Keranos|Akroan Skyguard|Felhide Brawler|Nyxborn Wolf|Loyal Pegasus|Asphyxiate|Ephara's Radiance|Impetuous Sunchaser|Stratus Walk)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Fated Retribution|Revoke Existence|Thunder Brute|Archetype of Courage|Archetype of Imagination|Excoriate|Rise to the Challenge|Servant of Tymaret|Oreskos Sun Guide|Asphyxiate|Setessan Starbreaker|Great Hart|Deepwater Hypnotist|Griffin Dreamfinder|Snake of the Golden Grove)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Spirit of the Labyrinth|Revoke Existence|Raised by Wolves|Thunder Brute|Vanguard of Brimaz|Sphinx's Disciple|Akroan Skyguard|Forsaken Drifters|Elite Skirmisher|Weight of the Underworld|Kragma Butcher|Ephara's Radiance|Crypsis|Nyxborn Shieldmate|Mortal's Resolve)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Eidolon of Countless Battles|Revoke Existence|Odunos River Trawler|God-Favored General|Searing Blood|Hold at Bay|Nyxborn Rollicker|Nyxborn Shieldmate|Sphinx's Disciple|Karametra's Favor|Elite Skirmisher|Sudden Storm|Excoriate|Nyxborn Wolf|Nyxborn Eidolon)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Hero of Iroas|Revoke Existence|Reap What Is Sown|Glimpse the Sun God|Flitterstep Eidolon|Ephara's Radiance|Fearsome Temper|Nyxborn Shieldmate|Warchanter of Mogis|Setessan Starbreaker|Mortal's Ardor|Asphyxiate|Elite Skirmisher|Cyclops of One-Eyed Pass|Chorus of the Tides)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Plea for Guidance|Revoke Existence|Archetype of Finality|Ornitharch|Archetype of Aggression|Chorus of the Tides|Mortal's Ardor|Rise to the Challenge|Akroan Skyguard|Nyxborn Triton|Hold at Bay|Satyr Wayfinder|Nyxborn Shieldmate|Weight of the Underworld|Snake of the Golden Grove)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Eidolon of Countless Battles|Revoke Existence|Raised by Wolves|Ghostblade Eidolon|Drown in Sorrow|Chorus of the Tides|Rise to the Challenge|Akroan Skyguard|Pharagax Giant|Oreskos Sun Guide|Mortal's Resolve|Great Hart|Marshmist Titan|Mortal's Ardor|Stratus Walk)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Hero of Iroas|Revoke Existence|Ephara's Enlightenment|Ghostblade Eidolon|Ashiok's Adept|Mortal's Ardor|Nyxborn Rollicker|Nyxborn Shieldmate|Bolt of Keranos|Deepwater Hypnotist|Hold at Bay|Nyxborn Eidolon|Akroan Skyguard|Nyxborn Wolf|Mortal's Resolve)", "inOrder": true }
+				]
+			}
+			]
+		}
+		,{
+		"packName": "bng-seeded-booster-packins-white",
+		"packDesc": "Born of the Gods: Hero Prerelease Pack-Ins: Destined to Lead (White)",
+		"cards": [
+			{ "query": "take[*]>from[bng]?title=(The General|Destined to Lead Welcome Letter|White Choose Your Path Activity Card|White Born of the Gods Spindown Life Counter)" }
+			]
+		}
+
+		,{
+		"packName": "bng-seeded-booster-blue",
+		"packDesc": "Born of the Gods Set: Destined to Lead (White) Seeded Booster",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[bng-promo]?title='Arbiter of the Ideal'" },
+			{ "querySet": [
+				{ "query": "take[*]>from[bng-main]?title=(Phenax, God of Deception|Nullify|Aerie Worshippers|Siren of the Silent Song|Unravel the AEther|Retraction Helix|Pharagax Giant|Sphinx's Disciple|Griffin Dreamfinder|Pheres-Band Tromper|Evanescent Intellect|Ephara's Radiance|Weight of the Underworld|Deepwater Hypnotist|Rise to the Challenge)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Fated Infatuation|Nullify|Stormcaller of Keranos|Flitterstep Eidolon|Unravel the Aether|Floodtide Serpent|Nyxborn Shieldmate|Sphinx's Disciple|Claim of Erebos|Setessan Oathsworn|Divination|Hold at Bay|Deepwater Hypnotist|Nyxborn Rollicker|Asphyxiate)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Perplexing Chimera|Nullify|Thunder Brute|Siren of the Fanged Coast|Spiteful Returned|Deepwater Hypnotist|Bolt of Keranos|Divination|Necrobite|Mortal's Resolve|Crypsis|Akroan Skyguard|Chorus of the Tides|Snake of the Golden Grove|Excoriate)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Mindreaver|Nullify|Drown in Sorrow|Kraken of the Straits|God-Favored General|Stratus Walk|Excoriate|Retraction Helix|Pharagax Giant|Setessan Starbreaker|Deepwater Hypnotist|Chorus of the Tides|Weight of the Underworld|Reckless Reveler|Karametra's Favor)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Tromokratis|Nullify|Raised by Wolves|Archetype of Imagination|God-Favored General|Retraction Helix|Bolt of Keranos|Nyxborn Triton|Felhide Brawler|Satyr Wayfinder|Floodtide Serpent|Nyxborn Shieldmate|Crypsis|Reckless Reveler|Asphyxiate)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Tromokratis|Nullify|Archetype of Imagination|Stratus Walk|Forsaken Drifters|Floodtide Serpent|Deepwater Hypnotist|Mortal's Resolve|Sudden Storm|Glimpse the Sun God|Drown in Sorrow|Cyclops of One-Eyed Pass|Bolt of Keranos|Setessan Oathsworn|Akroan Skyguard)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Mindreaver|Nullify|Glimpse the Sun God|Siren of Fanged Coast|Pinnacle of Rage|Crypsis|Asphyxiate|Chorus of the Tides|Warchanter of Mogis|Karametra's Favor|Nyxborn Triton|Cyclops of One-Eyed Pass|Divination|Nyxborn Wolf|Revoke Existence)", "inOrder": true }
+				]
+			}
+			]
+		}
+		,{
+		"packName": "bng-seeded-booster-packins-blue",
+		"packDesc": "Born of the Gods: Hero Prerelease Pack-Ins: Destined to Outwit (Blue)",
+		"cards": [
+			{ "query": "take[*]>from[bng]?title=(The Savant|Destined to Outwit Welcome Letter|Blue Choose Your Path Activity Card|Blue Born of the Gods Spindown Life Counter)" }
+			]
+		}
+
+		,{
+		"packName": "bng-seeded-booster-black",
+		"packDesc": "Born of the Gods Set: Destined to Lead (White) Seeded Booster",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[bng-promo]?title='Eater of Hope'" },
+			{ "querySet": [
+				{ "query": "take[*]>from[bng-main]?title=(Mogis, God of Slaughter|Claim of Erebos|Spiteful Returned|Ragemonger|Graverobber Spider|Weight of the Underworld|Sudden Storm|Asphyxiate|Kragma Butcher|Mortal's Resolve|Nyxborn Eidolon|Oreskos Sun Guide|Felhide Brawler|Chorus of the Tides|Griffin Dreamfinder)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Fated Return|Claim of Erebos|Graverobber Spider|Bile Blight|Vanguard of Brimaz|Grisly Transformation|Pharagax Giant|Nyxborn Eidolon|Crypsis|Satyr Wayfinder|Weight of the Underworld|Sphinx's Disciple|Forsaken Drifters|Nyxborn Rollicker|Revoke Existence)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Fate Unraveler|Claim of Erebos|Dawn to Dusk|Odunos River Trawler|Archetype of Aggression|Weight of the Underworld|Rise to the Challenge|Forsaken Drifters|Retraction Helix|Nyxborn Wolf|Grisly Transformation|Chorus of the Tides|Nyxborn Eidolon|Karametra's Favor|Griffin Dreamfinder)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Herald of Torment|Claim of Erebos|Dawn to Dusk|Odunos River Trawler|Pheres-Band Raiders|Servant of Tymaret|Pharagax Giant|Weight of the Underworld|Retraction Helix|Karametra's Favor|Forsaken Drifters|Griffin Dreamfinder|Nyxborn Eidolon|Rise to the Challenge|Chorus of the Tides)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Gild|Claim of Erebos|Thunder Brute|Drown in Sorrow|Flitterstep Eidolon|Marshmist Titan|Sudden Storm|Asphyxiate|Fall of the Hammer|Karametra's Favor|Nyxborn Eidolon|Mortal's Ardor|Felhide Brawler|Setessan Starbreaker|Akroan Skyguard)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Fate Unraveler|Claim of Erebos|Graverobber Spider|Spiteful Returned|Thassa's Rebuff|Marshmist Titan|Kragma Butcher|Asphyxiate|Sphinx's Disciple|Mortal's Resolve|Revoke Existence|Weight of the Underworld|Forsaken Drifters|Rise to the Challenge|Griffin Dreamfinder)", "inOrder": true }
+				]
+			}
+			]
+		}
+		,{
+		"packName": "bng-seeded-booster-packins-black",
+		"packDesc": "Born of the Gods: Hero Prerelease Pack-Ins: Destined to Dominate (Black)",
+		"cards": [
+			{ "query": "take[*]>from[bng]?title=(The Tyrant|Destined to Dominate Welcome Letter|Black Choose Your Path Activity Card|Black Born of the Gods Spindown Life Counter)" }
+			]
+		}
+
+		,{
+		"packName": "bng-seeded-booster-red",
+		"packDesc": "Born of the Gods Set: Destined to Lead (White) Seeded Booster",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[bng-promo]?title='Forgestoker Dragon'" },
+			{ "querySet": [
+				{ "query": "take[*]>from[bng-main]?title=(Xenagos, God of Revels|Scouring Sands|Everflame Eidolon|Fanatic of Xenagos|Ashiok's Adept|Fearsome Temper|Sudden Storm|Bolt of Keranos|Floodtide Serpent|Swordwise Centaur|Epiphany Storm|Oreskos Sun Guide|Cyclops of One-Eyed Pass|Servant of Tymaret|Loyal Pegasus)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Fated Conflagration|Stormcaller of Keranos|Impetuous Sunchaser|Kragma Butcher|Reckless Reveler|Scouring Sands|Rise to the Challenge|Servant of Tymaret|Asphyxiate|Oracle's Insight|Deepwater Hypnotist|Setessan Oathsworn|Mortal's Resolve|Glimpse the Sun God|Oreskos Sun Guide)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Satyr Firedancer|Scouring Sands|Akroan Phalanx|Pinnacle of Rage|Sanguimancy|Kragma Butcher|Marshmist Titan|Fall of the Hammer|Retraction Helix|Pheres-Band Tromper|Bolt of Keranos|Deepwater Hypnotist|Nyxborn Rollicker|Setessan Starbreaker|Nyxborn Shieldmate)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Felhide Spiritbinder|Scouring Sands|Akroan Phalanx|Akroan Conscriptor|Meletis Astronomer|Epiphany Storm|Nyxborn Eidolon|Fall of the Hammer|Karametra's Favor|Asphyxiate|Impetuous Sunchaser|Stratus Walk|Nyxborn Rollicker|Pheres-Band Tromper|Elite Skirmisher)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Oracle of Bones|Scouring Sands|Siren of the Fanged Coast|Satyr Nyx-Smith|Unravel the AEther|Fearsome Temper|Forsaken Drifters|Bolt of Keranos|Nyxborn Triton|Snake of the Golden Grove|Cyclops of One-Eyed Pass|Great Hart|Reckless Reveler|Eye Gouge|Excoriate)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Whims of the Fates|Scouring Sands|Spiteful Returned|Pinnacle of Rage|Unravel the AEther|Bolt of Keranos|Stratus Walk|Kragma Butcher|Chorus of the Tides|Nyxborn Wolf|Cyclops of One-Eyed Pass|Oreskos Sun Guide|Nyxborn Rollicker|Necrobite|Mortal's Ardor)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Oracle of Bones|Scouring Sands|Shrike Harpy|Everflame Eidolon|Archetype of Imagination|Epiphany Storm|Nyxborn Eidolon|Fall of the Hammer|Retraction Helix|Mortal's Resolve|Kragma Butcher|Elite Skirmisher|Bolt of Keranos|Snake of the Golden Grove|Revoke Existence)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Felhide Spiritbinder|Scouring Sands|Searing Blood|Raised by Wolves|Acolyte's Reward|Reckless Reveler|Asphyxiate|Pharagax Giant|Deepwater Hypnotist|Setessan Oathsworn|Epiphany Storm|Sphinx's Disciple|Bolt of Keranos|Felhide Brawler|Akroan Skyguard)", "inOrder": true }
+				]
+			}
+			]
+		}		,{
+		"packName": "bng-seeded-booster-packins-red",
+		"packDesc": "Born of the Gods: Hero Prerelease Pack-Ins: Destined to Conqueur (Red)",
+		"cards": [
+			{ "query": "take[*]>from[bng]?title=(The Warmonger|Destined to Conquer Welcome Letter|Red Choose Your Path Activity Card|Red Born of the Gods Spindown Life Counter)" }
+			]
+		}
+
+		,{
+		"packName": "bng-seeded-booster-green",
+		"packDesc": "Born of the Gods Set: Destined to Lead (White) Seeded Booster",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[bng-promo]?title='Nessian Wilds Ravager'" },
+			{ "querySet": [
+				{ "query": "take[*]>from[bng-main]?title=(Karametra, God of Harvests|Culling Mark|Raised by Wolves|Reap What Is Sown|Searing Blood|Elite Skirmisher|Setessan Starbreaker|Stratus Walk|Aspect of Hydra|Cyclops of One-Eyed Pass|Weight of the Underworld|Mortal's Resolve|Felhide Brawler|Nyxborn Wolf|Deepwater Hypnotist)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Fated Intervention|Culling Mark|Spiteful Returned|Graverobber Spider|Thunder Brute|Nyxborn Wolf|Griffin Dreamfinder|Satyr Wayfinder|Evanescent Intellect|Oreskos Sun Guide|Aspect of Hydra|Forsaken Drifters|Chorus of the Tides|Karametra's Favor|Reckless Reveler)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Courser of Kruphix|Culling Mark|Pinnacle of Rage|Noble Quarry|Vanguard of Brimaz|Aspect of Hydra|Asphyxiate|Nyxborn Triton|Mortal's Resolve|Retraction Helix|Nyxborn Rollicker|Mortal's Ardor|Swordwise Centaur|Setessan Starbreaker|Felhide Brawler)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Hero of Leina Tower|Culling Mark|Siren of the Fanged Coast|Unravel the Aether|Ashiok's Adept|Mortal's Resolve|Mortal's Ardor|Kragma Butcher|Setessan Oathsworn|Nyxborn Triton|Aspect of Hydra|Akroan Skyguard|Nyxborn Wolf|Fall of the Hammer|Necrobite)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Scourge of Skola Vale|Culling Mark|Drown in Sorrow|Graverobber Spider|Kraken of the Straits|Satyr Wayfinder|Great Hart|Mortal's Resolve|Nyxborn Rollicker|Elite Skirmisher|Snake of the Golden Grove|Rise to the Challenge|Sudden Storm|Setessan Starbreaker|Forsaken Drifters)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Hunter's Prowess|Culling Mark|Akroan Conscriptor|Nessian Demolok|Archetype of Imagination|Charging Badger|Mortal's Ardor|Crypsis|Nyxborn Wolf|Karametra's Favor|Claim of Erebos|Nyxborn Shieldmate|Swordwise Centaur|Asphyxiate|Fall of the Hammer)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Hunter's Prowess|Culling Mark|Vanguard of Brimaz|Mischief and Mayhem|Shrike Harpy|Elite Skirmisher|Sphinx's Disciple|Bolt of Keranos|Aspect of Hydra|Grisly Transformation|Retraction Helix|Setessan Oathsworn|Rise to the Challenge|Setessan Starbreaker|Swordwise Centaur)", "inOrder": true },
+				{ "query": "take[*]>from[bng-main]?title=(Courser of Kruphix|Culling Mark|Siren of the Fanged Coast|Unravel the AEther|Glimpse the Sun God|Pheres-Band Tromper|Weight of the Underworld|Sphinx's Disciple|Aspect of Hydra|Reckless Reveler|Setessan Oathsworn|Fall of the Hammer|Grisly Transformation|Setessan Starbreaker|Akroan Skyguard)", "inOrder": true }
+				]
+			}
+			]
+		}
+		,{
+		"packName": "bng-seeded-booster-packins-green",
+		"packDesc": "Born of the Gods: Hero Prerelease Pack-Ins: Destined to Thrive (Green)",
+		"cards": [
+			{ "query": "take[*]>from[bng]?title=(The Provider|Destined to Thrive Welcome Letter|Green Choose Your Path Activity Card|Green Born of the Gods Spindown Life Counter)" }
+			]
+		}
+
+		,{
+		"packName": "bng-fat-pack-land",
+		"packDesc": "Born of the Gods Fat Pack: Land",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[16]>from[ths]?title='Plains'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[ths]?title='Island'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[ths]?title='Swamp'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[ths]?title='Forest'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[ths]?title='Mountain'", "canBeDuplicate": true }
+			]
+		}
+		,{
+		"packName": "bng-fat-pack-pack-ins",
+		"packDesc": "Born of the Gods Fat Pack: Pack-Ins",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[bng]?title=(Born of the Gods Player’s Guide|Born of the Gods Card Box|Born of the Gods Mural)" }
+			,{ "query": "from[bng-fatpack]?type='Life Counter'", "canBeDuplicate": true  }
+			,{ "query": "take[2]>from[bng]?title='Born of the Gods Deck Box'", "canBeDuplicate": true  }
+			]
+		}
+]
+}

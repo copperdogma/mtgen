@@ -1,0 +1,251 @@
+{
+"_comment": "if there are no options the query/packNames will be auto-run"
+,"products": 
+	[
+		{
+			"productName": "ktk-all-cards"
+			,"productDesc": "All Cards"
+			,"soures": [ "http://magic.wizards.com/en/game-info/products/card-set-archive/khans-of-tarkir", "http://magic.wizards.com/en/articles/archive/ktk-cig-en" ]
+			,"isGenerated": false
+			,"initialSort": "colour"
+			,"packs": [
+				{ "packName":"ktk-all-cards" }
+			]
+		}
+		,{
+			"productName": "ktk-boosters"
+			,"productDesc": "Boosters"
+			,"isGenerated": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"ktk-standard" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "ktk-boosters-six"
+						,"presetDesc": "Six Boosters"
+						,"default": true
+						,"packs": [
+							{ "count":6, "defaultPackName":"ktk-standard" }
+						]
+					}
+				]
+			}
+		}
+		,{
+			"productName": "ktk-prerelease"
+			,"productDesc": "Prerelease"
+			,"isVisible": true
+			,"_comment": "from the YouTube clips it looks like the seeded go: Promo, clan Banner, 4U, 10C"
+			,"sources": [ "http://magic.wizards.com/en/articles/archive/feature/khans-tarkir-prerelease-primer-2014-09-15", "http://wpn.wizards.com/sites/wpn/files/attachements/khans_of_tarkir_prerelease_instructions_en_lr.pdf", "https://docs.google.com/spreadsheet/ccc?key=0Apln2HM4aSGbdDJ6MFk5cTBjb09sXzFWdndhTkx2V1E#gid=9" ]
+			,"isGenerated": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"ktk-standard" }
+				,{ "packName":"ktk-seeded-booster-abzan" },{ "packName":"ktk-seeded-booster-packins-abzan" }
+				,{ "packName":"ktk-seeded-booster-jeskai" } ,{ "packName":"ktk-seeded-booster-packins-jeskai" }
+				,{ "packName":"ktk-seeded-booster-sultai" },{ "packName":"ktk-seeded-booster-packins-sultai" }
+				,{ "packName":"ktk-seeded-booster-mardu" }  ,{ "packName":"ktk-seeded-booster-packins-mardu" }
+				,{ "packName":"ktk-seeded-booster-temur" },{ "packName":"ktk-seeded-booster-packins-temur" }
+				,{ "packName":"ktk-prerelease-promos" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "ktk-prerelease-abzan"
+						,"presetDesc": "Abzan Houses (White/Black/Green)"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"ktk-seeded-booster-abzan" }
+							,{ "count":1, "defaultPackName":"ktk-seeded-booster-packins-abzan" }
+							,{ "count":5, "defaultPackName":"ktk-standard" }
+						]
+					}
+					,{
+						"presetName": "ktk-prerelease-jeskai"
+						,"presetDesc": "Jeskai Way (Blue/Red/White)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"ktk-seeded-booster-jeskai" }
+							,{ "count":1, "defaultPackName":"ktk-seeded-booster-packins-jeskai" }
+							,{ "count":5, "defaultPackName":"ktk-standard" }
+						]
+					}
+					,{
+						"presetName": "ktk-prerelease-sultai"
+						,"presetDesc": "Sultai Brood (Black/Green/Blue)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"ktk-seeded-booster-sultai" }
+							,{ "count":1, "defaultPackName":"ktk-seeded-booster-packins-sultai" }
+							,{ "count":5, "defaultPackName":"ktk-standard" }
+						]
+					}
+					,{
+						"presetName": "ktk-prerelease-mardu"
+						,"presetDesc": "Mardu Horde (Red/White/Black)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"ktk-seeded-booster-mardu" }
+							,{ "count":1, "defaultPackName":"ktk-seeded-booster-packins-mardu" }
+							,{ "count":5, "defaultPackName":"ktk-standard" }
+						]
+					}
+					,{
+						"presetName": "ktk-prerelease-temur"
+						,"presetDesc": "Temur Frontier (Green/Blue/Red)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"ktk-seeded-booster-temur" }
+							,{ "count":1, "defaultPackName":"ktk-seeded-booster-packins-temur" }
+							,{ "count":5, "defaultPackName":"ktk-standard" }
+						]
+					}
+					,{
+						"presetName": "ktk-prerelease-promos"
+						,"presetDesc": "Khans of Tarkir Prerelease Promos"
+						,"packs": [
+							{ "count":1, "defaultPackName":"ktk-prerelease-promos" }
+						]
+					}
+				]
+			}
+		}
+		,{
+			"productName": "ktk-intro-decks"
+			,"isVisible": false
+			,"productDesc": "Intro Decks"
+			,"isGenerated": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"2015-intro-deck-price-of-glory" }
+				,{ "packName":"2015-intro-deck-price-of-glory-foil" }
+				,{ "packName":"2015-intro-deck-hit-the-ground-running" }
+				,{ "packName":"2015-intro-deck-hit-the-ground-running-foil" }
+				,{ "packName":"2015-intro-deck-infernal-intervention" }
+				,{ "packName":"2015-intro-deck-infernal-intervention-foil" }
+				,{ "packName":"2015-intro-deck-flames-of-the-dragon" }
+				,{ "packName":"2015-intro-deck-flames-of-the-dragon-foil" }
+				,{ "packName":"2015-intro-deck-will-of-the-masses" }
+				,{ "packName":"2015-intro-deck-will-of-the-masses-foil" }
+				,{ "packName":"ktk-standard" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "2015-intro-deck-price-of-glory"
+						,"presetDesc": "2015 Intro Deck: Price of Glory (White/Black)"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"2015-intro-deck-price-of-glory-foil" }
+							,{ "count":1, "defaultPackName":"2015-intro-deck-price-of-glory" }
+							,{ "count":2, "defaultPackName":"ktk-standard" }
+						]
+					}
+					,{
+						"presetName": "2015-intro-deck-hit-the-ground-running"
+						,"presetDesc": "2015 Intro Deck: Hit the Ground Running (Blue/Green)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"2015-intro-deck-hit-the-ground-running-foil" }
+							,{ "count":1, "defaultPackName":"2015-intro-deck-hit-the-ground-running" }
+							,{ "count":2, "defaultPackName":"ktk-standard" }
+						]
+					}
+					,{
+						"presetName": "2015-intro-deck-infernal-intervention"
+						,"presetDesc": "2015 Intro Deck: Infernal Intervention (Black/Red)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"2015-intro-deck-infernal-intervention-foil" }
+							,{ "count":1, "defaultPackName":"2015-intro-deck-infernal-intervention" }
+							,{ "count":2, "defaultPackName":"ktk-standard" }
+						]
+					}
+					,{
+						"presetName": "2015-intro-deck-flames-of-the-dragon"
+						,"presetDesc": "2015 Intro Deck: Flames of the Dragon (Red/Blue)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"2015-intro-deck-flames-of-the-dragon-foil" }
+							,{ "count":1, "defaultPackName":"2015-intro-deck-flames-of-the-dragon" }
+							,{ "count":2, "defaultPackName":"ktk-standard" }
+						]
+					}
+					,{
+						"presetName": "2015-intro-deck-will-of-the-masses"
+						,"presetDesc": "2015 Intro Deck: Will of the Masses (Green/White)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"2015-intro-deck-will-of-the-masses-foil" }
+							,{ "count":1, "defaultPackName":"2015-intro-deck-will-of-the-masses" }
+							,{ "count":2, "defaultPackName":"ktk-standard" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "ktk-fat-pack"
+			,"isVisible": true
+			,"productDesc": "Fat Pack"
+			,"isGenerated": true
+			,"autoGenerate": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"ktk-standard" }
+				,{ "packName":"ktk-fat-pack-land" }
+				,{ "packName":"ktk-fat-pack-pack-ins" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "ktk-fat-pack"
+						,"presetDesc": "Khans of Tarkir Fat Pack"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"ktk-fat-pack-pack-ins" }
+							,{ "count":9, "defaultPackName":"ktk-standard" }
+							,{ "count":1, "defaultPackName":"ktk-fat-pack-land" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "ktk-gift-box"
+			,"isVisible": true
+			,"productDesc": "Holiday Gift Box"
+			,"sources": [ "http://magic.wizards.com/en/articles/archive/announcing-2014-holiday-gift-box-2014-09-11" ]
+			,"isGenerated": true
+			,"autoGenerate": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"ktk-standard" }
+				,{ "packName":"ktk-gift-box-land" }
+				,{ "packName":"ktk-gift-box-pack-ins" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "ktk-gift-box"
+						,"presetDesc": "Khans of Tarkir Holiday Gift Box"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"ktk-gift-box-pack-ins" }
+							,{ "count":4, "defaultPackName":"ktk-standard" }
+							,{ "count":1, "defaultPackName":"ktk-gift-box-land" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "ktk-promos"
+			,"productDesc": "All Promos"
+			,"sources": [ "http://magic.wizards.com/en/articles/archive/arcana/khans-tarkir-promos-2014-09-04", "http://magic.wizards.com/en/articles/archive/announcing-2014-holiday-gift-box-2014-09-11" ]
+			,"isGenerated": false
+			,"initialSort": "name"
+			,"packs": [
+				{ "packName":"ktk-promos" }
+			]
+		}
+
+	]
+}

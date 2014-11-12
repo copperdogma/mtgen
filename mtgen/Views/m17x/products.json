@@ -1,0 +1,194 @@
+{
+"_comment": "if there are no options the query/packNames will be auto-run"
+,"products": 
+	[
+		{
+			"productName": "m15-all-cards"
+			,"productDesc": "All Cards"
+			,"isGenerated": false
+			,"initialSort": "colour"
+			,"packs": [
+				{ "packName":"m15-all-cards" }
+			]
+		}
+		,{
+			"productName": "m15-prerelease"
+			,"productDesc": "Prerelease"
+			,"isGenerated": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"m15-standard" }
+				,{ "packName":"m15-seeded-booster-white" },{ "packName":"m15-seeded-booster-packins-white" }
+				,{ "packName":"m15-seeded-booster-blue" } ,{ "packName":"m15-seeded-booster-packins-blue" }
+				,{ "packName":"m15-seeded-booster-black" },{ "packName":"m15-seeded-booster-packins-black" }
+				,{ "packName":"m15-seeded-booster-red" }  ,{ "packName":"m15-seeded-booster-packins-red" }
+				,{ "packName":"m15-seeded-booster-green" },{ "packName":"m15-seeded-booster-packins-green" }
+				,{ "packName":"m15-prerelease-promos" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "m15-prerelease-hunt-with-valor-white"
+						,"presetDesc": "Hunt with Valor (White)"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"m15-seeded-booster-white" }
+							,{ "count":1, "defaultPackName":"m15-seeded-booster-packins-white" }
+							,{ "count":5, "defaultPackName":"m15-standard" }
+						]
+					}
+					,{
+						"presetName": "m15-prerelease-hunt-with-guile-blue"
+						,"presetDesc": "Hunt with Guile (Blue)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"m15-seeded-booster-blue" }
+							,{ "count":1, "defaultPackName":"m15-seeded-booster-packins-blue" }
+							,{ "count":5, "defaultPackName":"m15-standard" }
+						]
+					}
+					,{
+						"presetName": "m15-prerelease-hunt-with-ambition-black"
+						,"presetDesc": "Hunt with Ambition (Black)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"m15-seeded-booster-black" }
+							,{ "count":1, "defaultPackName":"m15-seeded-booster-packins-black" }
+							,{ "count":5, "defaultPackName":"m15-standard" }
+						]
+					}
+					,{
+						"presetName": "m15-prerelease-hunt-with-ferocity-red"
+						,"presetDesc": "Hunt with Ferocity (Red)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"m15-seeded-booster-red" }
+							,{ "count":1, "defaultPackName":"m15-seeded-booster-packins-red" }
+							,{ "count":5, "defaultPackName":"m15-standard" }
+						]
+					}
+					,{
+						"presetName": "m15-prerelease-hunt-with-strength-green"
+						,"presetDesc": "Hunt with Strength (Green)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"m15-seeded-booster-green" }
+							,{ "count":1, "defaultPackName":"m15-seeded-booster-packins-green" }
+							,{ "count":5, "defaultPackName":"m15-standard" }
+						]
+					}
+					,{
+						"presetName": "m15-prerelease-promos"
+						,"presetDesc": "Core 2015 Prerelease Promos"
+						,"packs": [
+							{ "count":1, "defaultPackName":"m15-prerelease-promos" }
+						]
+					}
+				]
+			}
+		}
+		,{
+			"productName": "m15-intro-decks"
+			,"productDesc": "Intro Decks"
+			,"isGenerated": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"2015-intro-deck-price-of-glory" }
+				,{ "packName":"2015-intro-deck-price-of-glory-foil" }
+				,{ "packName":"2015-intro-deck-hit-the-ground-running" }
+				,{ "packName":"2015-intro-deck-hit-the-ground-running-foil" }
+				,{ "packName":"2015-intro-deck-infernal-intervention" }
+				,{ "packName":"2015-intro-deck-infernal-intervention-foil" }
+				,{ "packName":"2015-intro-deck-flames-of-the-dragon" }
+				,{ "packName":"2015-intro-deck-flames-of-the-dragon-foil" }
+				,{ "packName":"2015-intro-deck-will-of-the-masses" }
+				,{ "packName":"2015-intro-deck-will-of-the-masses-foil" }
+				,{ "packName":"m15-standard" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "2015-intro-deck-price-of-glory"
+						,"presetDesc": "2015 Intro Deck: Price of Glory (White/Black)"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"2015-intro-deck-price-of-glory-foil" }
+							,{ "count":1, "defaultPackName":"2015-intro-deck-price-of-glory" }
+							,{ "count":2, "defaultPackName":"m15-standard" }
+						]
+					}
+					,{
+						"presetName": "2015-intro-deck-hit-the-ground-running"
+						,"presetDesc": "2015 Intro Deck: Hit the Ground Running (Blue/Green)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"2015-intro-deck-hit-the-ground-running-foil" }
+							,{ "count":1, "defaultPackName":"2015-intro-deck-hit-the-ground-running" }
+							,{ "count":2, "defaultPackName":"m15-standard" }
+						]
+					}
+					,{
+						"presetName": "2015-intro-deck-infernal-intervention"
+						,"presetDesc": "2015 Intro Deck: Infernal Intervention (Black/Red)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"2015-intro-deck-infernal-intervention-foil" }
+							,{ "count":1, "defaultPackName":"2015-intro-deck-infernal-intervention" }
+							,{ "count":2, "defaultPackName":"m15-standard" }
+						]
+					}
+					,{
+						"presetName": "2015-intro-deck-flames-of-the-dragon"
+						,"presetDesc": "2015 Intro Deck: Flames of the Dragon (Red/Blue)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"2015-intro-deck-flames-of-the-dragon-foil" }
+							,{ "count":1, "defaultPackName":"2015-intro-deck-flames-of-the-dragon" }
+							,{ "count":2, "defaultPackName":"m15-standard" }
+						]
+					}
+					,{
+						"presetName": "2015-intro-deck-will-of-the-masses"
+						,"presetDesc": "2015 Intro Deck: Will of the Masses (Green/White)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"2015-intro-deck-will-of-the-masses-foil" }
+							,{ "count":1, "defaultPackName":"2015-intro-deck-will-of-the-masses" }
+							,{ "count":2, "defaultPackName":"m15-standard" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "m15-fat-pack"
+			,"productDesc": "Fat Pack"
+			,"isGenerated": true
+			,"autoGenerate": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"m15-standard" }
+				,{ "packName":"m15-fat-pack-land" }
+				,{ "packName":"m15-fat-pack-pack-ins" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "m15-fat-pack"
+						,"presetDesc": "Core 2015 Fat Pack"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"m15-fat-pack-pack-ins" }
+							,{ "count":9, "defaultPackName":"m15-standard" }
+							,{ "count":1, "defaultPackName":"m15-fat-pack-land" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "m15-promos"
+			,"productDesc": "All Promos"
+			,"isGenerated": false
+			,"initialSort": "name"
+			,"packs": [
+				{ "packName":"m15-promos" }
+			]
+		}
+
+	]
+}

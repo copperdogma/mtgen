@@ -1,0 +1,139 @@
+{
+"defs": 
+	[
+		{
+			"defName": "m14",
+			"query": "from[*]?set='m14'"
+		}
+		,{
+			"defName": "m14-main",
+			"query": "from[m14]-from[m14]?type=(Marketing|Basic Land)-from[m14]?token=true-from[m14]?promo=true"
+		}
+		,{
+			"defName": "m14-intro-packs",
+			"query": "from[m14]-from[m14]?promo=true"
+		}
+		,{
+			"defName": "m14-foils",
+			"query": "from[m14-main]"
+		}
+		,{
+			"defName": "m14-promo",
+			"query": "from[m14]?promo=true"
+		},
+		{
+			"defName": "m14-uncommons",
+			"query": "from[m14-main]?rarity='u'"
+		},
+		{
+			"defName": "m14-main-white",
+			"query": "from[m14-main]-from[m14-main]?colour=(u|b|r|g)"
+		},
+		{
+			"defName": "m14-main-blue",
+			"query": "from[m14-main]-from[m14-main]?colour=(w|b|r|g)"
+		},
+		{
+			"defName": "m14-main-black",
+			"query": "from[m14-main]-from[m14-main]?colour=(w|u|r|g)"
+		},
+		{
+			"defName": "m14-main-red",
+			"query": "from[m14-main]-from[m14-main]?colour=(w|u|b|g)"
+		},
+		{
+			"defName": "m14-main-green",
+			"query": "from[m14-main]-from[m14-main]?colour=(w|u|b|r)"
+		},
+		{
+			"defName": "m14-fatpack",
+			"query": "from[m14]?includedReason='Fat Pack Pack-In'"
+		}
+
+	]
+
+,"packs": 
+	[
+ 		{
+		"packName": "m14-all-cards",
+		"packDesc": "2014 Core Set: All Cards",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[m14]" }
+			]
+		}
+
+ 		,{
+		"packName": "m14-standard",
+		"packDesc": "2014 Core Set: Standard Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "from[m14]?type='Basic Land'" }
+			,{ "query": "take[9]>from[m14-main]?rarity='c'" }
+			,{ "querySet": [ { "percent": 75, "query": "from[m14-main]?rarity='c'" }
+							,{ "percent": 25, "query": "from[m14-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+							] }
+			,{ "query": "take[3]>from[m14-main]?rarity='u'" }
+			,{ "querySet": [ { "percent": 87.5, "query": "from[m14-main]?rarity='r'" }
+							,{ "percent": 12.5, "query": "from[m14-main]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" } 
+							] }
+			,{ "querySet": [ { "percent": 50, "query": "from[m14]?type='Marketing'" }
+							,{ "percent": 50, "query": "from[m14]?token=true-from[m14]?promo=true" } 
+							] }
+			]
+		}
+
+		,{
+		"packName": "m14-promos",
+		"packDesc": "2014 Core Set: Promos",
+		"isGenerated": false,
+		"includeWithUserCards": false,
+		"cards": [
+			{ "query": "take[*]>from[m14-promo]" }
+			]
+		}
+
+		,{
+		"packName": "m14-prerelease-promos",
+		"packDesc": "2014 Core Set: Prerelease Promos",
+		"isGenerated": false,
+		"includeWithUserCards": false,
+		"cards": [
+			{ "query": "take[*]>from[m14-promo]?includedReason='Prerelease Promo'" }
+			]
+		}
+
+		,{
+		"packName": "m14-prerelease-packins",
+		"packDesc": "2014 Core Set: Prerelease Pack-Ins",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[m14]?includedReason='Prerelease Promo'" }
+			]
+		}
+
+		,{
+		"packName": "m14-fat-pack-pack-ins",
+		"packDesc": "2014 Core Set Fat Pack: Pack-Ins",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[m14]?title=(2014 Core Set Player’s Guide|2014 Core Set Card Box|2014 Core Set Mural|2014 Core Set Rules Reference Card)" }
+			,{ "query": "from[m14-fatpack]?type='Life Counter'", "canBeDuplicate": true  }
+			,{ "query": "take[2]>from[m14]?title='2014 Core Set Deck Box'", "canBeDuplicate": true  }
+			]
+		}
+		,{
+		"packName": "m14-fat-pack-land",
+		"packDesc": "2014 Fat Pack: Land",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[16]>from[m14]?title='Plains'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[m14]?title='Island'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[m14]?title='Swamp'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[m14]?title='Forest'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[m14]?title='Mountain'", "canBeDuplicate": true }
+			]
+		}
+
+	]
+}

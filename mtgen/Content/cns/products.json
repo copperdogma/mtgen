@@ -1,0 +1,47 @@
+{
+"_comment": "if there are no options the query/packNames will be auto-run"
+,"products": 
+	[
+		{
+			"productName": "cns-all-cards"
+			,"productDesc": "All Cards"
+			,"isGenerated": false
+			,"initialSort": "colour"
+			,"packs": [
+				{ "packName":"cns-all-cards" }
+			]
+		}
+		,{
+			"productName": "cns-boosters"
+			,"productDesc": "Boosters"
+			,"isGenerated": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"cns-standard" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "cns-boosters"
+						,"presetDesc": "Boosters"
+						,"default": true
+						,"packs": [
+							{ "count":6, "defaultPackName":"cns-standard" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "cns-promos"
+			,"productDesc": "All Promos"
+			,"isGenerated": false
+			,"initialSort": "name"
+			,"packs": [
+				{ "packName":"cns-promos" }
+			]
+		}
+
+	]
+}

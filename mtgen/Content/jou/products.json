@@ -1,0 +1,142 @@
+{
+"_comment": "full product list: http://wpn.wizards.com/en/products/journey-nyx",
+"_comment": "can't do intro packs as they include cards back to m14",
+"_comment": "if there are no options the query/packNames will be auto-run"
+
+,"products": 
+	[
+		{
+			"productName": "jou-all-cards"
+			,"productDesc": "All Cards"
+			,"isGenerated": false
+			,"initialSort": "colour"
+			,"packs": [
+				{ "packName":"jou-all-cards" }
+			]
+		}
+		,{
+			"productName": "jou-prerelease"
+			,"productDesc": "Prerelease"
+			,"sources": [ "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/feature/296", "http://archive.wizards.com/Magic/tcg/events.aspx?x=mtgcom/events/prerelease-facts", "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/other/04212014/journeyevents" ]
+			,"isGenerated": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"jou-standard" }
+				,{ "packName":"bng-standard" }
+				,{ "packName":"ths-standard" }
+				,{ "packName":"jou-seeded-booster-white" },{ "packName":"jou-seeded-booster-packins-white" }
+				,{ "packName":"jou-seeded-booster-blue" } ,{ "packName":"jou-seeded-booster-packins-blue" }
+				,{ "packName":"jou-seeded-booster-black" },{ "packName":"jou-seeded-booster-packins-black" }
+				,{ "packName":"jou-seeded-booster-red" }  ,{ "packName":"jou-seeded-booster-packins-red" }
+				,{ "packName":"jou-seeded-booster-green" },{ "packName":"jou-seeded-booster-packins-green" }
+				,{ "packName":"jou-prerelease-promos" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "jou-prerelease-destined-to-lead-white"
+						,"presetDesc": "Forged in Glory (White)"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"jou-seeded-booster-white" }
+							,{ "count":1, "defaultPackName":"jou-seeded-booster-packins-white" }
+							,{ "count":2, "defaultPackName":"jou-standard" }
+							,{ "count":1, "defaultPackName":"bng-standard" }
+							,{ "count":2, "defaultPackName":"ths-standard" }
+						]
+					}
+					,{
+						"presetName": "jou-prerelease-destined-to-outwit-blue"
+						,"presetDesc": "Forged in Intellect (Blue)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"jou-seeded-booster-blue" }
+							,{ "count":1, "defaultPackName":"jou-seeded-booster-packins-blue" }
+							,{ "count":2, "defaultPackName":"jou-standard" }
+							,{ "count":1, "defaultPackName":"bng-standard" }
+							,{ "count":2, "defaultPackName":"ths-standard" }
+						]
+					}
+					,{
+						"presetName": "jou-prerelease-destined-to-dominate-black"
+						,"presetDesc": "Forged in Tyranny (Black)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"jou-seeded-booster-black" }
+							,{ "count":1, "defaultPackName":"jou-seeded-booster-packins-black" }
+							,{ "count":2, "defaultPackName":"jou-standard" }
+							,{ "count":1, "defaultPackName":"bng-standard" }
+							,{ "count":2, "defaultPackName":"ths-standard" }
+						]
+					}
+					,{
+						"presetName": "jou-prerelease-destined-to-conquer-red"
+						,"presetDesc": "Forged in War (Red)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"jou-seeded-booster-red" }
+							,{ "count":1, "defaultPackName":"jou-seeded-booster-packins-red" }
+							,{ "count":2, "defaultPackName":"jou-standard" }
+							,{ "count":1, "defaultPackName":"bng-standard" }
+							,{ "count":2, "defaultPackName":"ths-standard" }
+						]
+					}
+					,{
+						"presetName": "jou-prerelease-destined-to-thrive-green"
+						,"presetDesc": "Forged in Pursuit (Green)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"jou-seeded-booster-green" }
+							,{ "count":1, "defaultPackName":"jou-seeded-booster-packins-green" }
+							,{ "count":2, "defaultPackName":"jou-standard" }
+							,{ "count":1, "defaultPackName":"bng-standard" }
+							,{ "count":2, "defaultPackName":"ths-standard" }
+						]
+					}
+					,{
+						"presetName": "jou-prerelease-promos"
+						,"presetDesc": "Theros Prerelease Promos"
+						,"packs": [
+							{ "count":1, "defaultPackName":"jou-prerelease-promos" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "jou-fat-pack"
+			,"productDesc": "Fat Pack"
+			,"sources": [ "http://wpn.wizards.com/en/products/journey-nyx" ]
+			,"isGenerated": true
+			,"autoGenerate": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"jou-standard" }
+				,{ "packName":"jou-fat-pack-land" }
+				,{ "packName":"jou-fat-pack-pack-ins" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "jou-fat-pack"
+						,"presetDesc": "Theros Fat Pack"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"jou-fat-pack-pack-ins" }
+							,{ "count":9, "defaultPackName":"jou-standard" }
+							,{ "count":1, "defaultPackName":"jou-fat-pack-land" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "jou-promos"
+			,"productDesc": "All Promos"
+			,"isGenerated": false
+			,"initialSort": "name"
+			,"packs": [
+				{ "packName":"jou-promos" }
+			]
+		}
+
+	]
+}

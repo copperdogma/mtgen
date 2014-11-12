@@ -1,0 +1,26 @@
+{
+"_comment": "Product page: http://magic.wizards.com/en/products/from-the-vault-annihilation",
+"_comment": "Source for all cards: http://magic.wizards.com/en/articles/archive/look-inside-vault-annihilation-2014-08-11",
+"_comment": "More info + packins info: http://mtg-realm.blogspot.ca/2014/08/ftv-annihilation-decklist.html",
+
+"defs": 
+	[
+		{
+			"defName": "v14",
+			"query": "from[*]?set='v14'"
+		}
+	]
+
+,"packs": 
+	[
+ 		{
+		"packName": "v14-all-cards",
+		"packDesc": "From The Vault: Annihilation: All Cards",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[v14]" }
+			]
+		}
+		
+	]
+}

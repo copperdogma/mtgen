@@ -1,0 +1,136 @@
+{
+"_comment": "full product list: http://wpn.wizards.com/en/products/born-gods",
+"_comment": "can't do intro packs as they include cards back to m14",
+"_comment": "if there are no options the query/packNames will be auto-run"
+
+,"products": 
+	[
+		{
+			"productName": "bng-all-cards"
+			,"productDesc": "All Cards"
+			,"isGenerated": false
+			,"initialSort": "colour"
+			,"packs": [
+				{ "packName":"bng-all-cards" }
+			]
+		}
+		,{
+			"productName": "bng-prerelease"
+			,"productDesc": "Prerelease"
+			,"sources": [ "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/feature/284" ]
+			,"isGenerated": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"bng-standard" }
+				,{ "packName":"ths-standard" }
+				,{ "packName":"bng-seeded-booster-white" },{ "packName":"bng-seeded-booster-packins-white" }
+				,{ "packName":"bng-seeded-booster-blue" } ,{ "packName":"bng-seeded-booster-packins-blue" }
+				,{ "packName":"bng-seeded-booster-black" },{ "packName":"bng-seeded-booster-packins-black" }
+				,{ "packName":"bng-seeded-booster-red" }  ,{ "packName":"bng-seeded-booster-packins-red" }
+				,{ "packName":"bng-seeded-booster-green" },{ "packName":"bng-seeded-booster-packins-green" }
+				,{ "packName":"bng-prerelease-promos" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "bng-prerelease-destined-to-lead-white"
+						,"presetDesc": "Destined to Lead (White)"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"bng-seeded-booster-white" }
+							,{ "count":1, "defaultPackName":"bng-seeded-booster-packins-white" }
+							,{ "count":2, "defaultPackName":"bng-standard" }
+							,{ "count":3, "defaultPackName":"ths-standard" }
+						]
+					}
+					,{
+						"presetName": "bng-prerelease-destined-to-outwit-blue"
+						,"presetDesc": "Destined to Outwit (Blue)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"bng-seeded-booster-blue" }
+							,{ "count":1, "defaultPackName":"bng-seeded-booster-packins-blue" }
+							,{ "count":2, "defaultPackName":"bng-standard" }
+							,{ "count":3, "defaultPackName":"ths-standard" }
+						]
+					}
+					,{
+						"presetName": "bng-prerelease-destined-to-dominate-black"
+						,"presetDesc": "Destined to Dominate (Black)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"bng-seeded-booster-black" }
+							,{ "count":1, "defaultPackName":"bng-seeded-booster-packins-black" }
+							,{ "count":2, "defaultPackName":"bng-standard" }
+							,{ "count":3, "defaultPackName":"ths-standard" }
+						]
+					}
+					,{
+						"presetName": "bng-prerelease-destined-to-conquer-red"
+						,"presetDesc": "Destined to Conquer (Red)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"bng-seeded-booster-red" }
+							,{ "count":1, "defaultPackName":"bng-seeded-booster-packins-red" }
+							,{ "count":2, "defaultPackName":"bng-standard" }
+							,{ "count":3, "defaultPackName":"ths-standard" }
+						]
+					}
+					,{
+						"presetName": "bng-prerelease-destined-to-thrive-green"
+						,"presetDesc": "Destined to Thrive (Green)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"bng-seeded-booster-green" }
+							,{ "count":1, "defaultPackName":"bng-seeded-booster-packins-green" }
+							,{ "count":2, "defaultPackName":"bng-standard" }
+							,{ "count":3, "defaultPackName":"ths-standard" }
+						]
+					}
+					,{
+						"presetName": "bng-prerelease-promos"
+						,"presetDesc": "Theros Prerelease Promos"
+						,"packs": [
+							{ "count":1, "defaultPackName":"bng-prerelease-promos" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "bng-fat-pack"
+			,"productDesc": "Fat Pack"
+			,"sources": [ "FIX FIX FIX https://www.youtube.com/watch?v=4lWQB_hMTxU" ]
+			,"isGenerated": true
+			,"autoGenerate": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"bng-standard" }
+				,{ "packName":"bng-fat-pack-land" }
+				,{ "packName":"bng-fat-pack-pack-ins" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "bng-fat-pack"
+						,"presetDesc": "Theros Fat Pack"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"bng-fat-pack-pack-ins" }
+							,{ "count":9, "defaultPackName":"bng-standard" }
+							,{ "count":1, "defaultPackName":"bng-fat-pack-land" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "bng-promos"
+			,"productDesc": "All Promos"
+			,"isGenerated": false
+			,"initialSort": "name"
+			,"packs": [
+				{ "packName":"bng-promos" }
+			]
+		}
+
+	]
+}

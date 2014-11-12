@@ -1,0 +1,520 @@
+[
+ {
+  "src": "http://copper-dog.com/mtg-generator/images/mtg-marketing1.png",
+  "title": "Tip/Marketing Card",
+  "set": "m14",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Marketing",
+  "usableForDeckBuilding": false,
+  "marketing": true
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/images/mtg-marketing2.png",
+  "title": "Tip/Marketing Card",
+  "set": "m14",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Marketing",
+  "usableForDeckBuilding": false,
+  "marketing": true
+ },
+
+ {
+  "src": "http://media.wizards.com/images/magic/daily/arcana/arc1262_slivertoken.jpg",
+  "set": "m14",
+  "title": "Sliver Token",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Sliver",
+  "power": "1",
+  "toughness": "1",
+  "token": "true",
+  "promo": "true",
+  "includedReason": "In-Store Magic 2014 League Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://media.wizards.com/images/magic/tcg/products/m14/azsxdcfv/asdfasdf_PRM_Prerelease_EN_FF.jpg",
+  "title": "Megantic Sliver",
+  "set": "m14",
+  "cost": "{5}{G}",
+  "rarity": "r",
+  "type": "Creature",
+  "subtype": "Sliver",
+  "power": "3",
+  "toughness": "3",
+  "colour": "g",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://media.wizards.com/images/magic/daily/arcana/arc1248_card1.jpg",
+  "title": "Scavenging Ooze",
+  "set": "m14",
+  "cost": "{1}{G}",
+  "rarity": "r",
+  "type": "Creature",
+  "subtype": "Ooze",
+  "power": "2",
+  "toughness": "2",
+  "colour": "g",
+  "promo": "true",
+  "includedReason": "Magic 2014 — Duels of the Planeswalkers promotional booster pack in",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://media.wizards.com/images/magic/daily/arcana/arc1248_card2.jpg",
+  "title": "Ogre Battledriver",
+  "set": "m14",
+  "cost": "{2}{R}{R}",
+  "rarity": "r",
+  "type": "Creature",
+  "subtype": "Ogre Warrior",
+  "power": "3",
+  "toughness": "3",
+  "colour": "r",
+  "promo": "true",
+  "includedReason": "Magic 2014 — Duels of the Planeswalkers promotional booster pack in",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://media.wizards.com/images/magic/daily/arcana/arc1248_card3.jpg",
+  "title": "Bonescythe Sliver",
+  "set": "m14",
+  "cost": "{3}{W}",
+  "rarity": "r",
+  "type": "Creature",
+  "subtype": "Sliver",
+  "power": "2",
+  "toughness": "2",
+  "colour": "w",
+  "promo": "true",
+  "includedReason": "Magic 2014 — Duels of the Planeswalkers promotional booster pack in",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://media.wizards.com/images/magic/daily/arcana/arc1262_whale.jpg",
+  "title": "Colossal Whale",
+  "set": "m14",
+  "cost": "{5}{U}{U}",
+  "rarity": "r",
+  "type": "Creature",
+  "subtype": "Whale",
+  "power": "5",
+  "toughness": "5",
+  "colour": "u",
+  "promo": "true",
+  "includedReason": "Launch Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://media.wizards.com/images/magic/daily/arcana/arc1262_stirrings.jpg",
+  "title": "Hive Stirrings",
+  "set": "m14",
+  "cost": "{2}{W}",
+  "rarity": "c",
+  "type": "Sorcery",
+  "colour": "w",
+  "promo": "true",
+  "includedReason": "Game Day Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://media.wizards.com/images/magic/daily/arcana/arc1262_diplomats.jpg",
+  "title": "Goblin Diplomats",
+  "set": "m14",
+  "cost": "{1}{R}",
+  "rarity": "r",
+  "type": "Creature",
+  "subtype": "Goblin",
+  "power": "2",
+  "toughness": "1",
+  "colour": "r",
+  "promo": "true",
+  "includedReason": "Game Day Promo",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://media.wizards.com/images/magic/daily/arcana/arc1262_ratchet.jpg",
+  "title": "Ratchet Bomb",
+  "set": "m14",
+  "cost": "{2}",
+  "rarity": "r",
+  "type": "Artifact",
+  "colour": "a",
+  "promo": "true",
+  "includedReason": "Buy-a-Box Promo",
+  "usableForDeckBuilding": false
+ }
+
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/m14/poi798sjkasd/uEwjXdsBN3_EN.jpg",
+  "title": "Forest",
+  "set": "m14",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Forest",
+  "colour": "l",
+  "num": "246",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/m14/poi798sjkasd/DfmLUMQpJQ_EN.jpg",
+  "title": "Forest",
+  "set": "m14",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Forest",
+  "colour": "l",
+  "num": "247",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/m14/poi798sjkasd/IONgfwEpMe_EN.jpg",
+  "title": "Forest",
+  "set": "m14",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Forest",
+  "colour": "l",
+  "num": "248",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/m14/poi798sjkasd/D9wNFRk9Zg_EN.jpg",
+  "title": "Forest",
+  "set": "m14",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Forest",
+  "colour": "l",
+  "num": "249",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/m14/poi798sjkasd/K6Z6TkNDbP_EN.jpg",
+  "title": "Island",
+  "set": "m14",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Island",
+  "colour": "l",
+  "num": "234",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/m14/poi798sjkasd/5fP77accvc_EN.jpg",
+  "title": "Island",
+  "set": "m14",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Island",
+  "colour": "l",
+  "num": "235",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/m14/poi798sjkasd/AUFEniRRrl_EN.jpg",
+  "title": "Island",
+  "set": "m14",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Island",
+  "colour": "l",
+  "num": "236",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/m14/poi798sjkasd/e329UyqxXU_EN.jpg",
+  "title": "Island",
+  "set": "m14",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Island",
+  "colour": "l",
+  "num": "237",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/m14/poi798sjkasd/R3c4FKGACE_EN.jpg",
+  "title": "Mountain",
+  "set": "m14",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Mountain",
+  "colour": "l",
+  "num": "242",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/m14/poi798sjkasd/nV1nBwHQBV_EN.jpg",
+  "title": "Mountain",
+  "set": "m14",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Mountain",
+  "colour": "l",
+  "num": "243",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/m14/poi798sjkasd/Ud2G66ayby_EN.jpg",
+  "title": "Mountain",
+  "set": "m14",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Mountain",
+  "colour": "l",
+  "num": "244",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/m14/poi798sjkasd/PwZ2oIBjEs_EN.jpg",
+  "title": "Mountain",
+  "set": "m14",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Mountain",
+  "colour": "l",
+  "num": "245",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/m14/poi798sjkasd/C8SG3pzeO8_EN.jpg",
+  "title": "Plains",
+  "set": "m14",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Plains",
+  "colour": "l",
+  "num": "230",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/m14/poi798sjkasd/kvtWUx3LLx_EN.jpg",
+  "title": "Plains",
+  "set": "m14",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Plains",
+  "colour": "l",
+  "num": "231",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/m14/poi798sjkasd/edG7PA0chO_EN.jpg",
+  "title": "Plains",
+  "set": "m14",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Plains",
+  "colour": "l",
+  "num": "232",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/m14/poi798sjkasd/R85YF2w3xe_EN.jpg",
+  "title": "Plains",
+  "set": "m14",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Plains",
+  "colour": "l",
+  "num": "233",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/m14/poi798sjkasd/yCjcp72HSy_EN.jpg",
+  "title": "Swamp",
+  "set": "m14",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Swamp",
+  "colour": "l",
+  "num": "238",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/m14/poi798sjkasd/J44FVzuUVZ_EN.jpg",
+  "title": "Swamp",
+  "set": "m14",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Swamp",
+  "colour": "l",
+  "num": "239",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/m14/poi798sjkasd/rGHjLfiP4k_EN.jpg",
+  "title": "Swamp",
+  "set": "m14",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Swamp",
+  "colour": "l",
+  "num": "240",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "src": "http://media.wizards.com/images/magic/tcg/products/m14/poi798sjkasd/SET1WkNbEq_EN.jpg",
+  "title": "Swamp",
+  "set": "m14",
+  "cost": "",
+  "rarity": "c",
+  "type": "Basic Land",
+  "subtype": "Swamp",
+  "colour": "l",
+  "num": "241",
+  "usableForDeckBuilding": false
+ },
+
+ {
+  "src": "http://copper-dog.com/mtg-generator/m14/cards/m14-achievement-card.jpg",
+  "src_large": "http://copper-dog.com/mtg-generator/m14/cards/m14-achievement-card-lg.jpg",
+  "height": 370,
+  "width": 487,
+  "set": "m14",
+  "title": "2014 Core Set Achievement Card",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Achievement Card",
+  "promo": "true",
+  "includedReason": "Prerelease Promo",
+  "usableForDeckBuilding": false
+ }
+ 
+ ,{
+  "src": "http://copper-dog.com/mtg-generator/m14/cards/m14-fat-pack-players-guide.png",
+  "set": "m14",
+  "title": "2014 Core Set Player’s Guide",
+  "colour": "other",
+  "rarity": "c",
+  "type": "Player's Guide",
+  "promo": "true",
+  "includedReason": "Fat Pack Pack-In",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/m14/cards/m14-fat-pack-card-box.png",
+  "set": "m14",
+  "title": "2014 Core Set Card Box",
+  "colour": "other",
+  "rarity": "c",
+  "type": "Card Box",
+  "promo": "true",
+  "includedReason": "Fat Pack Pack-In",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/m14/cards/m14-fat-pack-mural.png",
+  "set": "m14",
+  "title": "2014 Core Set Mural",
+  "colour": "other",
+  "rarity": "c",
+  "type": "Mural",
+  "promo": "true",
+  "includedReason": "Fat Pack Pack-In",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/m14/cards/m14-fat-pack-deck-box.png",
+  "set": "m14",
+  "title": "2014 Core Set Deck Box",
+  "colour": "other",
+  "rarity": "c",
+  "type": "Deck Box",
+  "promo": "true",
+  "includedReason": "Fat Pack Pack-In",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/m14/cards/m14-fat-pack-rules-reference-card.png",
+  "title": "2014 Core Set Rules Reference Card",
+  "set": "m14",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Rules Reference Card",
+  "usableForDeckBuilding": false,
+  "includedReason": "Fat Pack Pack-In",
+  "marketing": true
+ },
+
+ {
+  "src": "http://copper-dog.com/mtg-generator/m14/cards/m14-spindown-life-counter-white.png",
+  "set": "m14",
+  "title": "White Spindown Life Counter",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Life Counter",
+  "promo": "true",
+  "includedReason": "Fat Pack Pack-In",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/m14/cards/m14-spindown-life-counter-blue.png",
+  "set": "m14",
+  "title": "Blue Spindown Life Counter",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Life Counter",
+  "promo": "true",
+  "includedReason": "Fat Pack Pack-In",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/m14/cards/m14-spindown-life-counter-black.png",
+  "set": "m14",
+  "title": "Black Spindown Life Counter",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Life Counter",
+  "promo": "true",
+  "includedReason": "Fat Pack Pack-In",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/m14/cards/m14-spindown-life-counter-red.png",
+  "set": "m14",
+  "title": "Red Spindown Life Counter",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Life Counter",
+  "promo": "true",
+  "includedReason": "Fat Pack Pack-In",
+  "usableForDeckBuilding": false
+ },
+ {
+  "src": "http://copper-dog.com/mtg-generator/m14/cards/m14-spindown-life-counter-green.png",
+  "set": "m14",
+  "title": "Green Spindown Life Counter",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Life Counter",
+  "promo": "true",
+  "includedReason": "Fat Pack Pack-In",
+  "usableForDeckBuilding": false
+ }
+]
