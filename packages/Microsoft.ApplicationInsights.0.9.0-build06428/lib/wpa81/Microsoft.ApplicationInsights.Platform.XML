@@ -1,0 +1,1140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <assembly>
+        <name>Microsoft.ApplicationInsights.Platform</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.ApplicationInsights.Platform.UnhandledExceptionTransmitter">
+            <summary>
+            A transmitter that will immediately send whatever telemetry we want to transmit immediately.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.UnhandledExceptionTransmitter.Transmit(Microsoft.ApplicationInsights.Channels.Transmission)">
+            <summary>
+            Transmits the <paramref name="transmission" />.
+            </summary>
+            <params name="transmission">The transmission to send.</params>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.UnhandledExceptionTransmitter.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.UnhandledExceptionTransmitter.EndpointAddress">
+            <summary>
+            Gets or sets the address of the endpoint where telemetry will be transmitted.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.UnhandledExceptionTelemetryModule">
+            <summary>
+            A module that deals in Exception events and will create ExceptionTelemetry objects when triggered.
+            </summary>
+            <summary>
+            A module that deals in Exception events and will create ExceptionTelemetry objects when triggered.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.UnhandledExceptionTelemetryModule.HookNavigationEventsRetryIntervalInMilliseconds">
+            <summary>
+            The hook navigation events retry interval in milliseconds.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.UnhandledExceptionTelemetryModule.configuration">
+            <summary>
+            The telemetry configuration we are going to use while constructing our context.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.UnhandledExceptionTelemetryModule.context">
+            <summary>
+            The telemetry context we are going to use to dispatch our data.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.UnhandledExceptionTelemetryModule.lastException">
+            <summary>
+            The last exception we handled.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.UnhandledExceptionTelemetryModule.initialized">
+            <summary>
+            A boolean indicating if this instance has been initialized.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.UnhandledExceptionTelemetryModule.currentHookRetryCount">
+            <summary>
+            The current retry count for hooking events.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.UnhandledExceptionTelemetryModule.#ctor(Microsoft.ApplicationInsights.TelemetryConfiguration)">
+            <summary>
+            Initializes static members of the <see cref="T:Microsoft.ApplicationInsights.Platform.UnhandledExceptionTelemetryModule" /> class.
+            </summary>
+            <param name="configuration">The configuration to use while constructing a telemetry context.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.UnhandledExceptionTelemetryModule.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.UnhandledExceptionTelemetryModule.Initialize">
+            <summary>
+            Hooks the unhandled Exception event for the entire application.
+            </summary>
+            <returns>The task representing this operation.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.UnhandledExceptionTelemetryModule.ApplicationOnUnhandledException(System.Object,System.Object)">
+            <summary>
+            Handles the application UnhandledException event and will send that exception to the Application Insights service.
+            </summary>
+            <param name="sender">The sender of this event.</param>
+            <param name="e">The event args for this event.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.UnhandledExceptionTelemetryModule.CaptureUnhandledException(Windows.Foundation.HResult,System.Boolean)">
+            <summary>
+            Capture the unhandled exception and trace it.
+            </summary>
+            <param name="exception">The exception object to track.</param>
+            <param name="exceptionHandled">A boolean indicating if this exception was handled already.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.UnhandledExceptionTelemetryModule.CaptureUnhandledExceptionAsync(Windows.Foundation.HResult,System.Boolean)">
+            <summary>
+            Use async void instead of async Task to make sure exception re-thrown would be captured by Application.UnhandledException
+            </summary>
+            <param name="exception">The exception to capture.</param>
+            <param name="exceptionHandled">Indicate whether exception is already handled or not.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.UnhandledExceptionTelemetryModule.StartEventIntercept(System.Threading.Tasks.TaskCompletionSource{System.Object})">
+            <summary>
+            Will start the unhandled Exception event interception.
+            </summary>
+            <param name="completionSource">The completion source that will be signalled once the interception has completed.</param>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.UnhandledExceptionTelemetryModule.Context">
+            <summary>
+            Gets the internal telemetry context that this module is using to send page telemetry.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.PageViewEventArgs">
+            <summary>
+            The page view event args.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PageViewEventArgs.#ctor(System.String,System.DateTimeOffset,System.Int64)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.ApplicationInsights.Platform.PageViewEventArgs" /> class.
+            </summary>
+            <param name="url">The URL for this page.</param>
+            <param name="timestamp">The timestamp at which the page view has occurred.</param>
+            <param name="loadTimeInNanoseconds">The page load time in nanoseconds.</param>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.PageViewEventArgs.Url">
+            <summary>
+            Gets the URL for this page.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.PageViewEventArgs.Timestamp">
+            <summary>
+            Gets the timestamp at which the page view has occurred.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.PageViewEventArgs.LoadTimeInNanoseconds">
+            <summary>
+            Gets the page load time in nanoseconds.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule">
+            <summary>
+            A module that deals in PageView events and will create PageViewTelemetry objects when triggered.
+            </summary>
+            <summary>
+            A module that deals in PageView events and will create PageViewTelemetry objects when triggered.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.NavigationAddressUriScheme">
+            <summary>
+            The navigation address URI scheme.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.UnknownPage">
+            <summary>
+            The unknown page string.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.HookNavigationEventsRetryIntervalInMilliseconds">
+            <summary>
+            The hook navigation events retry interval in milliseconds.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.configuration">
+            <summary>
+            The telemetry configuration we are going to use while constructing our context.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.context">
+            <summary>
+            The telemetry context we are going to use to dispatch our data.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.trackedFrames">
+            <summary>
+            The frames we're going to keep track of.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.initialized">
+            <summary>
+            A boolean indicating if the current module is initialized.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.currentHookRetryCount">
+            <summary>
+            The current retry count for hooking events.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.#ctor(Microsoft.ApplicationInsights.TelemetryConfiguration)">
+            <summary>
+            Initializes static members of the <see cref="T:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule" /> class.
+            </summary>
+            <param name="configuration">The configuration to use while constructing a telemetry context.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.Initialize">
+            <summary>
+            Hooks the navigation events for the root level frame for the application. This operation is asynchronous and as such may miss the first few events.
+            </summary>
+            <returns>The task representing this operation.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.WalkDependencyObjectTree(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Walks the dependency object tree while looking for Frame objects.
+            </summary>
+            <param name="currentNode">The current node at which to start our recursion.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.ContinueRecursionForDependencyObject(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Computes a boolean that indicates whether to continue the recursion for the passed in dependency object.
+            </summary>
+            <param name="currentNode">The current node.</param>
+            <returns>True if recursion needs to continue, false otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.ProcessDependencyObject(Windows.UI.Xaml.DependencyObject)">
+            <summary>
+            Processes the a single dependency object and hooks whatever events we're currently interested in.
+            </summary>
+            <param name="currentElement">The element to operate on.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.OnPageView(Microsoft.ApplicationInsights.Platform.PageViewEventArgs)">
+            <summary>
+            Raises the PageView event.
+            </summary>
+            <param name="e">The event args to include with the raised event.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.StartTreeWalk(System.Threading.Tasks.TaskCompletionSource{System.Object})">
+            <summary>
+            Starts the tree walk to look for Frames. Note that this method will recursively invoke itself multiple times as the state of the application may not allow 
+            walking of the visual tree at invocation time. 
+            </summary>
+            <param name="completionSource">The completion source that will be signalled once the visual tree walk has completed.</param>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.Context">
+            <summary>
+            Gets the internal telemetry context that this module is using to send page telemetry.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.TrackedFrames">
+            <summary>
+            Gets the internal list of tracked frames for this module.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.IsInitialized">
+            <summary>
+            Gets a value indicating whether this instance is initialized.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.FrameHandlers">
+            <summary>
+            A wrapper class that handles all eventing for a single Frame object. 
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.FrameHandlers.NanosecondsPerTick">
+            <summary>
+            The number of nanoseconds per tick that our stopwatch can produce.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.FrameHandlers.module">
+            <summary>
+            The module that this handler belongs to.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.FrameHandlers.stopwatch">
+            <summary>
+            The stopwatch we are using to keep track of the time between navigation events.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.FrameHandlers.frame">
+            <summary>
+            The frame object we're listening to.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.FrameHandlers.target">
+            <summary>
+            The target of our navigation.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.FrameHandlers.navigationStarted">
+            <summary>
+            The time at which the current navigation has started.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.FrameHandlers.fromTicks">
+            <summary>
+            The tick count at which the operation has started.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.FrameHandlers.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.FrameHandlers" /> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.FrameHandlers.#ctor(Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule,Windows.UI.Xaml.Controls.Frame)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.FrameHandlers" /> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.FrameHandlers.InitializeOnUiThread">
+            <summary>
+            Initializes the event handlers for this frame.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.FrameHandlers.FrameNavigatingHandler(System.Object,System.Object)">
+            <summary>
+            Handles the Navigating event for the Frame controls.
+            </summary>
+            <param name="sender">The sender of our event.</param>
+            <param name="e">The event args associated with this event.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.FrameHandlers.FrameNavigatedHandler(System.Object,System.Object)">
+            <summary>
+            Handles the Navigated event for the Frame controls.
+            </summary>
+            <param name="sender">The sender of our event.</param>
+            <param name="e">The event args associated with this event.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.FrameHandlers.FrameUnloadedHandler(System.Object,System.Object)">
+            <summary>
+            Handles the Unload event for the Frame controls.
+            </summary>
+            <param name="sender">The sender of our event.</param>
+            <param name="e">The event args associated with this event.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.FrameHandlers.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.PageViewTelemetryModule.FrameHandlers.Frame">
+            <summary>
+            Gets the frame associated with this handler.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.ComponentContextInitializer">
+            <summary>
+            A telemetry context initializer that will gather component context information.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.ComponentContextInitializer.Initialize(Microsoft.ApplicationInsights.TelemetryContext)">
+            <summary>
+            Initializes the given <see cref="T:Microsoft.ApplicationInsights.TelemetryContext" />.
+            </summary>
+            <param name="context">The telemetry context to initialize.</param>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.ComponentContextReader">
+            <summary>
+            The reader is platform specific and will contain different implementations for reading specific data based on the platform its running on.
+            </summary>
+            <summary>
+            The reader is platform specific and applies to Windows Phone WinRT applications only.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.IComponentContextReader">
+            <summary>
+            The component context reader interface used while reading component related information in a platform specific way.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.IComponentContextReader.Initialize">
+            <summary>
+            Initializes the current reader with respect to its environment.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.IComponentContextReader.GetVersion">
+            <summary>
+            Gets the version for the current application. If the version cannot be found, we will return the passed in default.
+            </summary>
+            <returns>The extracted data.</returns>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.ComponentContextReader.UnknownComponentVersion">
+            <summary>
+            The default application version we will be returning if no application version is found.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.ComponentContextReader.instance">
+            <summary>
+            The singleton instance for our reader.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.ComponentContextReader.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.ApplicationInsights.Platform.ComponentContextReader" /> class.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.ComponentContextReader.version">
+            <summary>
+            The version for this component.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.ComponentContextReader.Initialize">
+            <summary>
+            Initializes the current instance with respect to the platform specific implementation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.ComponentContextReader.GetVersion">
+            <summary>
+            Gets the version for the current application. If the version cannot be found, we will return the passed in default.
+            </summary>
+            <returns>The extracted data.</returns>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.ComponentContextReader.Instance">
+            <summary>
+            Gets or sets the singleton instance for our application context reader.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.DeviceContextInitializer">
+            <summary>
+            A telemetry context initializer that will gather device context information.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.DeviceContextInitializer.Initialize(Microsoft.ApplicationInsights.TelemetryContext)">
+            <summary>
+            Initializes the given <see cref="T:Microsoft.ApplicationInsights.TelemetryContext" />.
+            </summary>
+            <param name="context">The telemetry context to initialize.</param>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.DeviceContextReader">
+            <summary>
+            The reader is platform specific and will contain different implementations for reading specific data based on the platform its running on.
+            </summary>
+            <summary>
+            The reader is platform specific and applies to Windows Phone WinRT applications only.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.IDeviceContextReader">
+            <summary>
+            The device context reader interface used while reading device related information in a platform specific way.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.IDeviceContextReader.Initialize">
+            <summary>
+            Initializes the current reader with respect to its environment.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.IDeviceContextReader.GetDeviceType">
+            <summary>
+            Gets the type of the device.
+            </summary>
+            <returns>The type for this device as a hard-coded string.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.IDeviceContextReader.GetDeviceUniqueId">
+            <summary>
+            Gets the device unique identifier.
+            </summary>
+            <returns>The discovered device identifier.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.IDeviceContextReader.GetOperatingSystemAsync">
+            <summary>
+            Gets the operating system version.
+            </summary>
+            <returns>The discovered operating system.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.IDeviceContextReader.GetOemName">
+            <summary>
+            Gets the device OEM.
+            </summary>
+            <returns>The discovered OEM.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.IDeviceContextReader.GetDeviceModel">
+            <summary>
+            Gets the device model.
+            </summary>
+            <returns>The discovered device model.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.IDeviceContextReader.GetNetworkType">
+            <summary>
+            Gets the network type.
+            </summary>
+            <returns>The discovered network type.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.IDeviceContextReader.GetScreenResolutionAsync">
+            <summary>
+            Gets the screen resolution.
+            </summary>
+            <returns>The discovered screen resolution.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.IDeviceContextReader.GetHostSystemLocale">
+            <summary>
+            Gets the host system locale.
+            </summary>
+            <returns>The discovered locale.</returns>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.IDeviceContextReader.FallbackContext">
+            <summary>
+            Gets the fallback device context.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.DeviceContextReader.ContextPersistentStorageFileName">
+            <summary>
+            The file name used when storing persistent context.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.DeviceContextReader.AsyncRetryIntervalInMilliseconds">
+            <summary>
+            The number of milliseconds to wait before asynchronously retrying an operation.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.DeviceContextReader.instance">
+            <summary>
+            The singleton instance for our reader.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.DeviceContextReader.syncRoot">
+            <summary>
+            The sync root used in synchronizing access to persistent storage.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.DeviceContextReader.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.ApplicationInsights.Platform.DeviceContextReader" /> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.DeviceContextReader.GetHostSystemLocale">
+            <summary>
+            Gets the host system locale.
+            </summary>
+            <returns>The discovered locale.</returns>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.DeviceContextReader.deviceId">
+            <summary>
+            The device identifier.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.DeviceContextReader.operatingSystem">
+            <summary>
+            The operating system.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.DeviceContextReader.deviceManufacturer">
+            <summary>
+            The device manufacturer.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.DeviceContextReader.deviceName">
+            <summary>
+            The device name.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.DeviceContextReader.screenResolution">
+            <summary>
+            The current application resolution.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.DeviceContextReader.networkType">
+            <summary>
+            The network type.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.DeviceContextReader.Initialize">
+            <summary>
+            Initializes the current instance with respect to the platform specific implementation.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.DeviceContextReader.GetDeviceType">
+            <summary>
+            Gets the type of the device.
+            </summary>
+            <returns>The type for this device as a hard-coded string.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.DeviceContextReader.GetDeviceUniqueId">
+            <summary>
+            Gets the device unique identifier.
+            </summary>
+            <returns>The discovered device identifier.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.DeviceContextReader.GetOperatingSystemAsync">
+            <summary>
+            Gets the operating system version.
+            </summary>
+            <returns>The discovered operating system.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.DeviceContextReader.GetDeviceModel">
+            <summary>
+            Gets the device model.
+            </summary>
+            <returns>The discovered device model.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.DeviceContextReader.GetScreenResolutionAsync">
+            <summary>
+            Gets the screen resolution.
+            </summary>
+            <returns>The discovered screen resolution.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.DeviceContextReader.GetNetworkType">
+            <summary>
+            Gets the network type.
+            </summary>
+            <returns>The discovered network type.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.DeviceContextReader.GetScreenResolutionInternal(System.Threading.Tasks.TaskCompletionSource{System.String})">
+            <summary>
+            Gets the screen resolution (internal helper for error handling).
+            </summary>
+            <param name="completionSource">The completion source that will be used to signal the completion of this task.</param>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.DeviceContextReader.Instance">
+            <summary>
+            Gets or sets the singleton instance for our application context reader.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.DeviceContextReader.FallbackContext">
+            <summary>
+            Gets the fallback device context.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.FallbackDeviceContext">
+            <summary>
+            The fallback device context we will be using if we can't extract device information directly.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.IFallbackContext">
+            <summary>
+            The interface for all fallback contexts.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.IFallbackContext.Initialize">
+            <summary>
+            Initializes this instance with a set of new properties to serve as context.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.IFallbackContext.Serialize(System.Xml.Linq.XElement)">
+            <summary>
+            Serializes the current instance to the passed in root element.
+            </summary>
+            <param name="rootElement">The root element to serialize to.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.IFallbackContext.Deserialize(System.Xml.Linq.XElement)">
+            <summary>
+            Deserializes the passed in root element to the current instance.
+            </summary>
+            <param name="rootElement">The root element to deserialize.</param>
+            <returns>True if deserialization was successful, false otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.FallbackDeviceContext.Initialize">
+            <summary>
+            Initializes this instance with a set of new properties to serve as context.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.FallbackDeviceContext.Serialize(System.Xml.Linq.XElement)">
+            <summary>
+            Serializes the current instance to the passed in root element.
+            </summary>
+            <param name="rootElement">The root element to serialize to.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.FallbackDeviceContext.Deserialize(System.Xml.Linq.XElement)">
+            <summary>
+            Deserializes the passed in root element to the current instance.
+            </summary>
+            <param name="rootElement">The root element to deserialize.</param>
+            <returns>True if deserialization was successful, false otherwise.</returns>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.FallbackDeviceContext.DeviceUniqueId">
+            <summary>
+            Gets the device unique identifier.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.FallbackUserContext">
+            <summary>
+            The fallback user context we will be using if we can't extract user information directly.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.FallbackUserContext.Initialize">
+            <summary>
+            Initializes this instance with a set of new properties to serve as context.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.FallbackUserContext.Serialize(System.Xml.Linq.XElement)">
+            <summary>
+            Serializes the current instance to the passed in root element.
+            </summary>
+            <param name="rootElement">The root element to serialize to.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.FallbackUserContext.Deserialize(System.Xml.Linq.XElement)">
+            <summary>
+            Deserializes the passed in root element to the current instance.
+            </summary>
+            <param name="rootElement">The root element to deserialize.</param>
+            <returns>True if deserialization was successful, false otherwise.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.FallbackUserContext.TryGetValue(System.Xml.Linq.XElement,System.String,System.String@)">
+            <summary>
+            Tries to get a single child element for the passed in root element. If successful, the value will be set on the output parameter and the method will return true.
+            </summary>
+            <param name="rootElement">The root element to query.</param>
+            <param name="elementName">The child element name to look for.</param>
+            <param name="value">The output parameter which will contain the result value.</param>
+            <returns>True if the value was found, false otherwise.</returns>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.FallbackUserContext.AnonymousUserId">
+            <summary>
+            Gets the anonymous user ID.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.FallbackUserContext.AnonymousUserAcquisitionDate">
+            <summary>
+            Gets the anonymous user acquisition date.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.ISessionContextReader">
+            <summary>
+            The session context reader interface used while reading session related information in a platform specific way.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.ISessionContextReader.Initialize">
+            <summary>
+            Initializes the current reader with respect to its environment.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.ISessionContextReader.GetSessionId">
+            <summary>
+            Gets the session for the current context. If a session cannot be found, will generate a static session that is valid for the duration of the process.
+            </summary>
+            <returns>The extracted data.</returns>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.IUserContextReader">
+            <summary>
+            The user context reader interface used while reading user related information in a platform specific way.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.IUserContextReader.Initialize">
+            <summary>
+            Initializes the current reader with respect to its environment.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.IUserContextReader.GetAnonymousUserId">
+            <summary>
+            Gets the anonymous user ID for the current application.
+            </summary>
+            <returns>The extracted data.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.IUserContextReader.GetAnonymousUserAcquisitionDate">
+            <summary>
+            Gets the anonymous user acquisition date for the current application.
+            </summary>
+            <returns>The extracted data.</returns>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.IUserContextReader.FallbackContext">
+            <summary>
+            Gets the fallback user context.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.SessionContextInitializer">
+            <summary>
+            A telemetry context initializer that will gather session context information.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.SessionContextInitializer.Initialize(Microsoft.ApplicationInsights.TelemetryContext)">
+            <summary>
+            Initializes the given <see cref="T:Microsoft.ApplicationInsights.TelemetryContext" />.
+            </summary>
+            <param name="context">The telemetry context to initialize.</param>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.SessionContextReader">
+            <summary>
+            The reader is platform specific and will contain different implementations for reading specific data based on the platform its running on.
+            </summary>
+            <summary>
+            The reader is platform specific and applies to WinRT applications only.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.SessionContextReader.instance">
+            <summary>
+            The singleton instance for our reader.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.SessionContextReader.staticSessionId">
+            <summary>
+            The static session ID used as a fallback.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.SessionContextReader.#cctor">
+            <summary>
+            Initializes static members of the <see cref="T:Microsoft.ApplicationInsights.Platform.SessionContextReader" /> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.SessionContextReader.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.ApplicationInsights.Platform.SessionContextReader" /> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.SessionContextReader.Initialize">
+            <summary>
+            Initializes the current reader with respect to its environment.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.SessionContextReader.GetSessionId">
+            <summary>
+            Gets the session for the current context. If a session cannot be found, will generate a static session that is valid for the duration of the process.
+            </summary>
+            <returns>
+            The extracted data.
+            </returns>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.SessionContextReader.Instance">
+            <summary>
+            Gets or sets the singleton instance for our application context reader.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.SessionContextReader.StaticSessionId">
+            <summary>
+            Gets the static session identifier.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.UserContextInitializer">
+            <summary>
+            A telemetry context initializer that will gather device context information.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.UserContextInitializer.Initialize(Microsoft.ApplicationInsights.TelemetryContext)">
+            <summary>
+            Initializes the given <see cref="T:Microsoft.ApplicationInsights.TelemetryContext" />.
+            </summary>
+            <param name="context">The telemetry context to initialize.</param>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.UserContextReader">
+            <summary>
+            The reader is platform specific and will contain different implementations for reading specific data based on the platform its running on.
+            </summary>
+            <summary>
+            The reader is platform specific and applies to Windows Phone WinRT applications only.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.UserContextReader.ContextPersistentStorageFileName">
+            <summary>
+            The file name used when storing persistent context.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.UserContextReader.instance">
+            <summary>
+            The singleton instance for our reader.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.UserContextReader.syncRoot">
+            <summary>
+            The sync root used in synchronizing access to persistent storage.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.UserContextReader.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.ApplicationInsights.Platform.UserContextReader" /> class.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.UserContextReader.anonymousUserId">
+            <summary>
+            The anonymous user identifier.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.UserContextReader.anonymousUserAcquisitionDate">
+            <summary>
+            The anonymous user acquisition date.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.UserContextReader.cachedContext">
+            <summary>
+            The cached fallback context.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.UserContextReader.Initialize">
+            <summary>
+            Initializes the current reader with respect to its environment.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.UserContextReader.GetAnonymousUserId">
+            <summary>
+            Gets the anonymous user ID for the current application.
+            </summary>
+            <returns>The extracted data.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.UserContextReader.GetAnonymousUserAcquisitionDate">
+            <summary>
+            Gets the anonymous user acquisition date for the current application.
+            </summary>
+            <returns>The extracted data.</returns>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.UserContextReader.ReadSerializedContext">
+            <summary>
+            Reads the serialized context from persistent storage, or will create a new context if none exits.
+            </summary>
+            <returns>The fallback context we will be using.</returns>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.UserContextReader.Instance">
+            <summary>
+            Gets or sets the singleton instance for our application context reader.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.UserContextReader.FallbackContext">
+            <summary>
+            Gets the fallback user context.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.OnSuspendScheduler.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.ApplicationInsights.Platform.OnSuspendScheduler" /> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.OnSuspendScheduler.Start">
+            <summary>
+            Start a scheduler.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.OnSuspendScheduler.Stop">
+            <summary>
+            Stop a scheduler.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.OnSuspendScheduler.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.OnSuspendScheduler.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources.
+            </summary>
+            <param name="dispossing"><c>true</c> to release both managed and unmanaged resources; <c>false</c> to release only unmanaged resources.</param>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.OnSuspendScheduler.OnApplicationSuspending(System.Object,Windows.ApplicationModel.SuspendingEventArgs)">
+            <summary>
+            Called when [application closing].
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="suspendingEventArgs">The <see cref="T:Windows.ApplicationModel.SuspendingEventArgs" /> instance containing the event data.</param>
+        </member>
+        <member name="E:Microsoft.ApplicationInsights.Platform.OnSuspendScheduler.OnScheduled">
+            <summary>
+            Indicates on schedule event.
+            </summary>
+        </member>
+        <member name="P:Microsoft.ApplicationInsights.Platform.OnSuspendScheduler.Enabled">
+            <summary>
+            Gets a value indicating whether the scheduler is active or not.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.PlatformImplementation">
+            <summary>
+            The Windows Phone 8.1 (Windows Runtime) implementation of the <see cref="T:Microsoft.ApplicationInsights.Implementation.IPlatform" /> interface.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PlatformImplementation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.ApplicationInsights.Platform.PlatformImplementation" /> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PlatformImplementation.ReadConfigurationXml">
+            <summary>
+            Returns contents of the ApplicationInsights.config file in the application directory.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PlatformImplementation.GetTransmissionStorage(System.String)">
+            <summary>
+            Returns TransmissionStorage <see cref="T:Microsoft.ApplicationInsights.Channels.ITransmissionStorage" />.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PlatformImplementation.GetTelemetryChannel">
+            <summary>
+            Returns the <see cref="T:Microsoft.ApplicationInsights.ObjectModel.ITelemetryChannel" /> for each platform.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PlatformImplementation.GetDebugOutput">
+            <summary>
+            Returns the platform specific Debugger writer to the VS output console.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.PlatformImplementation.OnApplicationResume(System.Object,System.Object)">
+            <summary>
+            Application resume method will be called when the application is resumed.
+            </summary>
+        </member>
+        <member name="E:Microsoft.ApplicationInsights.Platform.PlatformImplementation.ApplicationStarted">
+            <summary>
+            Application started event.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.TelemetryChannel">
+            <summary>
+            The Telemetry channel for WINRT applications.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.NetBiosMachineNameTelemetryInitializer">
+            <summary>
+            A telemetry initializer that will set the MachineName property on a TraceTelemetry object to the current machine's NETBIOS name.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.NetBiosMachineNameTelemetryInitializer.machineName">
+            <summary>
+            The current machine name.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.NetBiosMachineNameTelemetryInitializer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.ApplicationInsights.Platform.NetBiosMachineNameTelemetryInitializer" /> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.NetBiosMachineNameTelemetryInitializer.Initialize(Microsoft.ApplicationInsights.ObjectModel.ITelemetry)">
+            <summary>
+            Initializes properties of the specified <see cref="T:Microsoft.ApplicationInsights.ObjectModel.ITelemetry" /> object.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.OperatingSystemTelemetryInitializer">
+            <summary>
+            A telemetry initializer that will set the OperatingSystem property on a TraceTelemetry object to the current operating system.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.OperatingSystemTelemetryInitializer.operatingSystem">
+            <summary>
+            The operating system name. Note that this value is populated async.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.OperatingSystemTelemetryInitializer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.ApplicationInsights.Platform.OperatingSystemTelemetryInitializer" /> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.OperatingSystemTelemetryInitializer.Initialize(Microsoft.ApplicationInsights.ObjectModel.ITelemetry)">
+            <summary>
+            Initializes properties of the specified <see cref="T:Microsoft.ApplicationInsights.ObjectModel.ITelemetry" /> object.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.ProcessIdTelemetryInitializer">
+            <summary>
+            A telemetry initializer that will set the ProcessId property on a TraceTelemetry object to the current process ID.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.ProcessIdTelemetryInitializer.CurrentProcessId">
+            <summary>
+            The current process ID.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.ProcessIdTelemetryInitializer.Initialize(Microsoft.ApplicationInsights.ObjectModel.ITelemetry)">
+            <summary>
+            Initializes properties of the specified <see cref="T:Microsoft.ApplicationInsights.ObjectModel.ITelemetry" /> object.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.ProcessNameTelemetryInitializer">
+            <summary>
+            A telemetry initializer that will set the ProcessName property on a TraceTelemetry object to the current process name.
+            </summary>
+        </member>
+        <member name="F:Microsoft.ApplicationInsights.Platform.ProcessNameTelemetryInitializer.currentProcessName">
+            <summary>
+            The current process name.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.ProcessNameTelemetryInitializer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.ApplicationInsights.Platform.ProcessNameTelemetryInitializer" /> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.ProcessNameTelemetryInitializer.Initialize(Microsoft.ApplicationInsights.ObjectModel.ITelemetry)">
+            <summary>
+            Initializes properties of the specified <see cref="T:Microsoft.ApplicationInsights.ObjectModel.ITelemetry" /> object.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.ThreadIdTelemetryInitializer">
+            <summary>
+            A telemetry initializer that will set the ThreadId property on a TraceTelemetry object to the current thread ID.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.ThreadIdTelemetryInitializer.Initialize(Microsoft.ApplicationInsights.ObjectModel.ITelemetry)">
+            <summary>
+            Initializes properties of the specified <see cref="T:Microsoft.ApplicationInsights.ObjectModel.ITelemetry" /> object.
+            </summary>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.ThreadLanguageTelemetryInitializer">
+            <summary>
+            A telemetry initializer that will set the Language property on a TraceTelemetry object to the current threads culture name.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.ThreadLanguageTelemetryInitializer.Initialize(Microsoft.ApplicationInsights.ObjectModel.ITelemetry)">
+            <summary>
+            Initializes properties of the specified <see cref="T:Microsoft.ApplicationInsights.ObjectModel.ITelemetry" /> object.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.TransmissionStorage.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.ApplicationInsights.Platform.TransmissionStorage" /> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.TransmissionStorage.SaveAsync(Microsoft.ApplicationInsights.Channels.Transmission)">
+            <summary>
+            Save the <paramref name="transmission" /> to the local storage.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.TransmissionStorage.LoadAsync">
+            <summary>
+            Load the oldest cache events file and return the transmission, if no files on disk will return null.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.TransmissionStorage.DeleteTransmission(Microsoft.ApplicationInsights.Channels.Transmission)">
+            <summary>
+            Deleting the given <paramref name="transmission" /> from the transmission storage.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.TransmissionStorage.ResetSource(Microsoft.ApplicationInsights.Channels.Transmission)">
+            <summary>
+            Resetting the given <paramref name="transmission" /> by Updating the file name
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.TransmissionStorage.EnsureStorageFolderExists">
+            <summary>
+            It seems that after suspend the storage folder is null and we need to fetch the folder again.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.TransmissionStorage.GetOldestFile">
+            <summary>
+            Gets the oldest cache events file which is not loaded already.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.TransmissionStorage.CleanStorage">
+            <summary>
+            Deleting the oldest cache events files until will reach the storage limit.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.TransmissionStorage.DeleteFile(System.String)">
+            <summary>
+            Delete file.
+            </summary>
+            <param name="fileName">The file name.</param>
+            <returns>Return true if file is deleted successfully, otherwise return false.</returns>
+        </member>
+        <member name="T:Microsoft.ApplicationInsights.Platform.Utils">
+            <summary>
+            Various utilities.
+            </summary>
+        </member>
+        <member name="M:Microsoft.ApplicationInsights.Platform.Utils.ReadSerializedContext``1(System.String)">
+            <summary>
+            Reads the serialized context from persistent storage, or will create a new context if none exits.
+            </summary>
+            <param name="fileName">The file to read from storage.</param>
+            <returns>The fallback context we will be using.</returns>
+        </member>
+    </members>
+</doc>

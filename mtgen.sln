@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mtgen", "mtgen\mtgen.csproj", "{43636C8C-F9E9-4282-A653-2FD83A4EE3E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{62466176-4FEB-46DA-91B5-A28F04A7F11E}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{AA4CDD5F-00B5-4B77-802A-6CB13CA84967}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\mtgen-WAWS-dev.json = PublishScripts\Configurations\mtgen-WAWS-dev.json
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43636C8C-F9E9-4282-A653-2FD83A4EE3E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43636C8C-F9E9-4282-A653-2FD83A4EE3E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43636C8C-F9E9-4282-A653-2FD83A4EE3E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43636C8C-F9E9-4282-A653-2FD83A4EE3E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AA4CDD5F-00B5-4B77-802A-6CB13CA84967} = {62466176-4FEB-46DA-91B5-A28F04A7F11E}
+	EndGlobalSection
+EndGlobal

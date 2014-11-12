@@ -1,0 +1,49 @@
+<ApplicationInsights schemaVersion="2014-05-30" xdt:Transform="SetAttributes" xmlns="http://schemas.microsoft.com/ApplicationInsights/2013/Settings" xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <!-- 
+      Learn more about Application Insights configuration with ApplicationInsights.config here: 
+      http://go.microsoft.com/fwlink/?LinkID=392530
+
+      A unique identifier of the application component in Application Insights. It is used to differentiate data sent 
+      by different components and from different applications. 
+  -->
+  <InstrumentationKey xdt:Transform="InsertIfMissing"><!--00000000-0000-0000-0000-000000000000--></InstrumentationKey>        
+  
+  <ContextInitializers xdt:Transform="InsertIfMissing">
+    <!-- 
+        Context initializers are responsible for populating environment-based properties on a new instance of TelemetryContext.
+        They are run once per instance of TelementryContext.
+    -->
+    <Add xdt:Transform="InsertIfMissing" xdt:Locator="Match(Type)" Type="Microsoft.ApplicationInsights.Platform.ComponentContextInitializer, Microsoft.ApplicationInsights.Platform" />
+    <Add xdt:Transform="InsertIfMissing" xdt:Locator="Match(Type)" Type="Microsoft.ApplicationInsights.Platform.DeviceContextInitializer, Microsoft.ApplicationInsights.Platform" />
+    <Add xdt:Transform="InsertIfMissing" xdt:Locator="Match(Type)" Type="Microsoft.ApplicationInsights.Platform.UserContextInitializer, Microsoft.ApplicationInsights.Platform" />
+    <Add xdt:Transform="InsertIfMissing" xdt:Locator="Match(Type)" Type="Microsoft.ApplicationInsights.Platform.SessionContextInitializer, Microsoft.ApplicationInsights.Platform" />
+    <Add xdt:Transform="InsertIfMissing" xdt:Locator="Match(Type)" Type="Microsoft.ApplicationInsights.Platform.AzureRoleEnvironmentContextInitializer, Microsoft.ApplicationInsights.Platform" />
+  </ContextInitializers>
+
+  <TelemetryInitializers xdt:Transform="InsertIfMissing">
+    <!-- 
+        Telemetry initializers are responsible for populating per-telemetry item properties on a instance of ITelemetry.
+        They are run once per instance of ITelementry.
+    -->
+    <Add xdt:Transform="InsertIfMissing" xdt:Locator="Match(Type)" Type="Microsoft.ApplicationInsights.Core.TimestampPropertyInitializer, Microsoft.ApplicationInsights" />
+    <Add xdt:Transform="InsertIfMissing" xdt:Locator="Match(Type)" Type="Microsoft.ApplicationInsights.Platform.NetBiosMachineNameTelemetryInitializer, Microsoft.ApplicationInsights.Platform" />
+    <Add xdt:Transform="InsertIfMissing" xdt:Locator="Match(Type)" Type="Microsoft.ApplicationInsights.Platform.OperatingSystemTelemetryInitializer, Microsoft.ApplicationInsights.Platform" />
+    <Add xdt:Transform="InsertIfMissing" xdt:Locator="Match(Type)" Type="Microsoft.ApplicationInsights.Platform.ProcessIdTelemetryInitializer, Microsoft.ApplicationInsights.Platform" />
+    <Add xdt:Transform="InsertIfMissing" xdt:Locator="Match(Type)" Type="Microsoft.ApplicationInsights.Platform.ProcessNameTelemetryInitializer, Microsoft.ApplicationInsights.Platform" />
+    <Add xdt:Transform="InsertIfMissing" xdt:Locator="Match(Type)" Type="Microsoft.ApplicationInsights.Platform.ThreadIdTelemetryInitializer, Microsoft.ApplicationInsights.Platform" />
+    <Add xdt:Transform="InsertIfMissing" xdt:Locator="Match(Type)" Type="Microsoft.ApplicationInsights.Platform.ThreadLanguageTelemetryInitializer, Microsoft.ApplicationInsights.Platform" />
+  </TelemetryInitializers>
+
+  <TelemetryChannel xdt:Transform="InsertIfMissing">
+    <!-- 
+        The telemetry channel section can be used to configure the behavior of the SDK with respect to sending data to 
+        the Application Insights service.
+    -->
+    <!--
+      DeveloperMode setting controls Application Insights SDK behavior to optimize for local debugging. 
+      This setting should be set to false before deploying your application.
+    -->
+    <DeveloperMode xdt:Transform="InsertIfMissing">true</DeveloperMode>
+  </TelemetryChannel>
+
+</ApplicationInsights>
