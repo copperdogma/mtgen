@@ -33,7 +33,7 @@
         ga('send', 'pageview');
     </script>
     <aside class="info">
-        <p class="created-date">Created: @set.CreatedDate.ToString("dd-MMM-yyy").</p>
+        <p class="created-date">Created: @set.CreatedDate.ToString("dd-MMM-yyy"). @set.CreatedText</p>
         @{
             var first = true;
             foreach (var update in set.Updates)
@@ -51,17 +51,9 @@
             }
             if (set.Updates.Count() > 1)
             {
-                <a class="update-more button" href="#">@(set.Updates.Count()-1) More ></a>
+                <a class="update-more button" href="#">@(set.Updates.Count() - 1) More ></a>
             }
-}
-        <!--<p class="update-new">Updated: 9-Aug-2014: Evening: HUGE new release, rewritten from scratch. New features: sorting and grouping by colour, rarity, cost, and type. Now includes Intro Decks and Fat Packs. Many more little features.</p>
-        <p class="update hidden">Updated: 9-Jul-2014: Evening: Added Intro Packs as an option in the drop-downs. Also the seeded booster rare slot is fixed: if it's mythic it's going to be a Soul card.</p>
-        <a class="update-more button" href="#">1 More ></a>-->
-        <!--<ul>
-            <li><a href="http://magic.wizards.com/en/content/prerelease-event-types-events">WotC Magic Prerelease Info</a></li>
-            <li><a href="http://magic.wizards.com/en/content/magic-2015-core-set-card-set-archive-products-game-info">WotC 2015 Core Set Info</a></li>
-            <li><a href="http://magic.wizards.com/en/content/magic-2015-core-set-card-set-archive-products-game-info">View All 2015 Core Set Cards from WotC</a></li>
-        </ul>-->
+        }
     </aside>
     @if (set.Incomplete)
     {

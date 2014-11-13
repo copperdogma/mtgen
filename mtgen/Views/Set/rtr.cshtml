@@ -1,0 +1,33 @@
+﻿@using mtgen.Models;
+@{
+    var set = new mtgen.Models.Set()
+    {
+        Code = "rtr",
+        Name = "Return to Ravnica",
+        CreatedDate = new DateTime(2013, 1, 1),
+        CardCount = 274,
+        StartProductName = "rtr-prerelease"
+    };
+
+    set.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2014,8,24),
+            HtmlString = "Evening: Upgraded to newest version, added all Prerelease pack-ins, Fat Packs, and guild sorting."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014,2,17),
+            HtmlString = "Now uses the new generator engine and include the ability to generate guild packs."
+        }
+    };
+
+
+    ViewBag.Set = set;
+
+    /* Defaults:
+        SetFile = "~/sets.json";
+        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+        PackFiles = new List<string>() { "packs.json" };
+        ProductFile = "products.json";
+     */
+}

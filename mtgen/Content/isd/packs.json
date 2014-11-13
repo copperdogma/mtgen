@@ -1,0 +1,106 @@
+{
+"defs": 
+	[
+		{
+			"defName": "isd",
+			"query": "from[*]?set='isd'"
+		},
+		{
+			"defName": "isd-promo",
+			"query": "from[isd]?promo=true"
+		},
+		{
+			"defName": "isd-set",
+			"query": "from[isd]-from[isd-promo]"
+		},
+		{
+			"defName": "isd-main",
+			"query": "from[isd]-from[isd]?type=(Marketing|Basic Land)-from[isd]?token=true-from[isd]?promo=true"
+		},
+		{
+			"defName": "isd-foils",
+			"query": "from[isd-main]"
+		},
+		{
+			"defName": "isd-fatpack",
+			"query": "from[isd]?includedReason='Fat Pack Pack-In'"
+		}
+	]
+
+,"packs": 
+	[
+ 		{
+		"packName": "isd-all-cards",
+		"packDesc": "Innistrad: All Cards",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[isd]" }
+			]
+		}
+
+ 		,{
+		"packName": "isd-standard",
+		"packDesc": "Innistrad: Standard Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "from[isd]?type='Basic Land'" }
+			,{ "query": "take[9]>from[isd-main]?rarity='c'" }
+			,{ "querySet": [ { "percent": 75, "query": "from[isd-main]?rarity='c'" }
+							,{ "percent": 25, "query": "from[isd-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+							] }
+			,{ "query": "take[3]>from[isd-main]?rarity='u'" }
+			,{ "querySet": [ { "percent": 87.5, "query": "from[isd-main]?rarity='r'" }
+							,{ "percent": 12.5, "query": "from[isd-main]?rarity='m'", "-comment": "rare=7/8, mythicRare=1/8" } 
+							] }
+			,{ "querySet": [ { "percent": 50, "query": "from[isd]?title='Checklist Card'" }
+							,{ "percent": 25, "query": "from[isd]?type='Marketing'" } 
+							,{ "percent": 25, "query": "from[isd]?token=true-from[isd]?promo=true" } 
+							] }
+			]
+		}
+
+		,{
+		"packName": "isd-promos",
+		"packDesc": "Innistrad: Promos",
+		"isGenerated": false,
+		"includeWithUserCards": false,
+		"cards": [
+			{ "query": "take[*]>from[isd-promo]" }
+			]
+		}
+
+		,{
+		"packName": "isd-prerelease-promos",
+		"packDesc": "Innistrad: Prerelease Promos",
+		"isGenerated": false,
+		"includeWithUserCards": false,
+		"cards": [
+			{ "query": "take[*]>from[isd-promo]?includedReason='Prerelease Promo'" }
+			]
+		}
+
+		,{
+		"packName": "isd-fat-pack-land",
+		"packDesc": "Innistrad Fat Pack: Land",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[14]>from[isd]?title='Plains'", "canBeDuplicate": true }
+			,{ "query": "take[14]>from[isd]?title='Island'", "canBeDuplicate": true }
+			,{ "query": "take[14]>from[isd]?title='Swamp'", "canBeDuplicate": true }
+			,{ "query": "take[14]>from[isd]?title='Forest'", "canBeDuplicate": true }
+			,{ "query": "take[14]>from[isd]?title='Mountain'", "canBeDuplicate": true }
+			]
+		}
+		,{
+		"packName": "isd-fat-pack-pack-ins",
+		"packDesc": "Innistrad Fat Pack: Pack-Ins",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[isd]?title=(Innistrad Player’s Guide|Innistrad Card Box|Innistrad Mural|Innistrad Rules Reference Card)", "inOrder": true }
+			,{ "query": "from[isd-fatpack]?type='Life Counter'", "canBeDuplicate": true  }
+			,{ "query": "take[2]>from[isd]?title='Innistrad Deck Box'", "canBeDuplicate": true  }
+			]
+		}
+
+	]
+}

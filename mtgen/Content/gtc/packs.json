@@ -1,0 +1,418 @@
+{
+"defs": 
+	[
+		{
+			"defName": "gtc",
+			"query": "from[*]?set='gtc'"
+		},
+		{
+			"defName": "rtr-basicland",
+			"query": "from[*]?type='Basic Land'"
+		},
+		{
+			"defName": "gtc-promo",
+			"query": "from[gtc]?promo=true"
+		},
+		{
+			"defName": "gtc-set",
+			"query": "from[gtc]-from[gtc-promo]"
+		},
+		{
+			"defName": "gtc-main",
+			"query": "from[gtc]-from[gtc]?type=(Marketing|Basic Land)-from[gtc]?token=true-from[gtc]?promo=true"
+		},
+		{
+			"defName": "gtc-foils",
+			"query": "from[gtc-main]"
+		},
+		{
+			"defName": "gtc-fatpack",
+			"query": "from[gtc]?includedReason='Fat Pack Pack-In'"
+		}
+	]
+
+,"packs": 
+	[
+ 		{
+		"packName": "gtc-all-cards",
+		"packDesc": "Gatecrash: All Cards",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[gtc]" }
+			]
+		}
+
+ 		,{
+		"packName": "gtc-standard",
+		"packDesc": "Gatecrash: Standard Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "from[rtr-basicland]" }
+			,{ "query": "take[9]>from[gtc-main]?rarity='c'" }
+			,{ "querySet": [ { "percent": 75, "query": "from[gtc-main]?rarity='c'" }
+							,{ "percent": 25, "query": "from[gtc-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+							] }
+			,{ "query": "take[3]>from[gtc-main]?rarity='u'" }
+			,{ "querySet": [ { "percent": 87.5, "query": "from[gtc-main]?rarity='r'" }
+							,{ "percent": 12.5, "query": "from[gtc-main]?rarity='m'", "-comment": "rare=7/8, mythicRare=1/8" } 
+							] }
+			,{ "querySet": [ { "percent": 50, "query": "from[gtc]?type='Marketing'" }
+							,{ "percent": 50, "query": "from[gtc]?token=true-from[gtc]?promo=true" } 
+							] }
+			]
+		}
+
+		,{
+		"packName": "gtc-promos",
+		"packDesc": "Gatecrash: Promos",
+		"isGenerated": false,
+		"includeWithUserCards": false,
+		"cards": [
+			{ "query": "take[*]>from[gtc-promo]" }
+			]
+		}
+
+		,{
+		"packName": "gtc-prerelease-promos",
+		"packDesc": "Gatecrash: Prerelease Promos",
+		"isGenerated": false,
+		"includeWithUserCards": false,
+		"cards": [
+			{ "query": "take[*]>from[gtc-promo]?includedReason='Prerelease Promo'" }
+			]
+		}
+
+		,{
+		"packName": "gtc-guild-booster-orzhov",
+		"packDesc": "Gatecrash: Orzhov Guild Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "from[gtc-promo]?title='Treasury Thrull'" }
+			,{ "query": "from[gtc]?title='Orzhov Guildgate'" }
+			,{ "querySet": [
+				{ "query": "take[*]>from[gtc-main]?title=(Obzedat, Ghost Council|Vizkopa Guildmage|Righteous Charge|Dying Wish|Executioner's Swing|Purge the Profane|Court Street Denizen|Knight Watch|Devour Flesh|Shadow Alley Denizen|Basilica Screecher|Gutter Skulk|Basilica Guards|Razortip Whip)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Alms Beast|Gift of Orzhova|Thrull Parasite|Debtor's Pulpit|Assault Griffin|Prophetic Prism|Shadow Alley Denizen|Dutiful Thrull|Purge the Profane|Court Street Denizen|Devour Flesh|Beckon Apparition|Syndicate Enforcer|Zarichi Tiger)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(High Priest of Penance|Syndicate Enforcer|Riot Gear|Guardian of the Gateless|Illness in the Ranks|Dutiful Thrull|Syndic of Tithes|Vizkopa Confessor|Basilica Guards|Kingpin's Pet|Gutter Skulk|Knight Watch|Beckon Apparition|Grisly Spectacle)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Merciless Eviction|Hold the Gates|Orzhov Keyrune|Vizkopa Guildmage|Corpse Blockade|Basilica Screecher|Court Street Denizen|Beckon Apparition|Basilica Guards|Death's Approach|Devour Flesh|Dutiful Thrull|Slate Street Ruffian|Kingpin's Pet)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Immortal Servitude|Urbis Protector|Killing Glare|Orzhov Charm|Shadow Alley Denizen|Dutiful Thrull|Purge the Profane|Smite|Syndicate Enforcer|Court Street Denizen|Contaminated Ground|Kingpin's Pet|Skyblinder Staff|Corpse Blockade)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Crypt Ghast|Knight of Obligation|Cartel Aristocrat|Gateway Shade|Angelic Edict|Basilica Screecher|Purge the Profane|Smite|Armored Transport|Guildscorn Ward|Contaminated Ground|Basilica Guards|Beckon Apparition|Slate Street Ruffian)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Blind Obedience|One Thousand Lashes|Wight of Precinct Six|Murder Investigation|Slate Street Ruffian|Dutiful Thrull|Executioner's Swing|Knight Watch|Beckon Apparition|Basilica Guards|Syndicate Enforcer|Smite|Gutter Skulk|Syndic of Tithes)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Luminate Primordial|Vizkopa Confessor|Smog Elemental|Holy Mantle|Basilica Screecher|Purge the Profane|Shadow Alley Denizen|Smite|Devour Flesh|Kingpin's Pet|Aerial Maneuver|Slate Street Ruffian|Guildscorn Ward|Millennial Gargoyle)", "inOrder": true }
+				]
+			}
+			]
+		}
+		,{
+		"packName": "gtc-guild-booster-packins-orzhov",
+		"packDesc": "Gatecrash: Orzhov Guild Prerelease Pack-Ins",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[gtc-promo]?title=(Orzhov Welcome Letter|Orzhov Achievement Card|Orzhov Guild Sticker|Orzhov Spindown Life Counter)", "inOrder": true }
+			]
+		}
+
+ 		,{
+		"packName": "gtc-guild-booster-dimir",
+		"packDesc": "Gatecrash: Dimir Guild Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "from[gtc-promo]?title='Consuming Aberration'" }
+			,{ "query": "from[gtc]?title='Dimir Guildgate'" }
+			,{ "querySet": [
+				{ "query": "take[*]>from[gtc-main]?title=(Lazav, Dimir Mastermind|Dying Wish|Gridlock|Bane Alley Broker|Midnight Recovery|Sage's Row Denizen|Psychic Strike|Metropolis Sprite|Grisly Spectacle|Way of the Thief|Horror of the Dim|Millennial Gargoyle|Spell Rupture|Deathcult Rogue)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Mind Grind|Bane Alley Broker|Voidwalk|Wight of Precinct Six|Last Thoughts|Grisly Spectacle|Sage's Row Denizen|Mortus Strider|Shadow Slice|Metropolis Sprite|Paranoid Delusions|Midnight Recovery|Keymaster Rogue|Shadow Alley Denizen)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Soul Ransom|Mental Vapors|Mindeye Drake|Coerced Confession|Corpse Blockade|Mortus Strider|Death's Approach|Razortip Whip|Balustrade Spy|Skygames|Shadow Slice|Deathcult Rogue|Midnight Recovery|Hands of Binding)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Whispering Madness|Smog Elemental|Dinrova Horror|Sapphire Drake|Contaminated Ground|Prophetic Prism|Keymaster Rogue|Armored Transport|Skygames|Paranoid Delusions|Sage's Row Denizen|Gutter Skulk|Totally Lost|Mortus Strider)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Nightveil Specter|Agoraphobia|Killing Glare|Duskmantle Guildmage|Last Thoughts|Midnight Recovery|Deathcult Rogue|Scatter Arc|Slate Street Ruffian|Psychic Strike|Metropolis Sprite|Corpse Blockade|Skygames|Shadow Alley Denizen)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Undercity Plague|Call of the Nightwing|Gateway Shade|Incursion Specialist|Death's Approach|Spell Rupture|Deathcult Rogue|Keymaster Rogue|Contaminated Ground|Leyline Phantom|Skyblinder Staff|Skygames|Balustrade Spy|Psychic Strike)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Stolen Identity|Undercity Informer|Ætherize|Dimir Charm|Midnight Recovery|Metropolis Sprite|Grisly Spectacle|Skygames|Balustrade Spy|Psychic Strike|Shadow Slice|Deathcult Rogue|Spell Rupture|Shadow Alley Denizen)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Sepulchral Primordial|Dimir Keyrune|Illness in the Ranks|Dimir Charm|Horror of the Dim|Last Thoughts|Death's Approach|Deathcult Rogue|Riot Gear|Slate Street Ruffian|Sage's Row Denizen|Mortus Strider|Contaminated Ground|Totally Lost)", "inOrder": true }
+				]
+			}
+			]
+		}
+		,{
+		"packName": "gtc-guild-booster-packins-dimir",
+		"packDesc": "Gatecrash: Dimir Guild Prerelease Pack-Ins",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[gtc-promo]?title=(Dimir Welcome Letter|Dimir Achievement Card|Dimir Guild Sticker|Dimir Spindown Life Counter)", "inOrder": true }
+			]
+		}
+
+ 		,{
+		"packName": "gtc-guild-booster-gruul",
+		"packDesc": "Gatecrash: Gruul Guild Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "from[gtc-promo]?title='Rubblehulk'" }
+			,{ "query": "from[gtc]?title='Gruul Guildgate'" }
+			,{ "querySet": [
+				{ "query": "take[*]>from[gtc-main]?title=(Borborygmos Enraged|Hellraiser Goblin|Frenzied Tilling|Serene Remembrance|Ember Beast|Primal Visitation|Disciple of the Old Ways|Mugging|Predator's Rapport|Riot Gear|Greenside Watcher|Pit Fight|Act of Treason|Ivy Lane Denizen)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Gruul Ragebeast|Crackling Perimeter|Ground Assault|Wasteland Viper|Skinbrand Goblin|Primal Visitation|Act of Treason|Slaughterhorn|Millennial Gargoyle|Zhur-Taa Swine|Wildwood Rebirth|Scab-Clan Charger|Madcap Skills|Disciple of the Old Ways)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Signal the Clans|Miming Slime|Rust Scarab|Ghor-Clan Rampager|Prophetic Prism|Verdant Haven|Structural Collapse|Ruination Wurm|Scorchwalker|Skinbrand Goblin|Forced Adaptation|Zhur-Taa Swine|Burst of Strength|Tin Street Market)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Clan Defiance|Ripscale Predator|Gruul Charm|Hindervines|Slaughterhorn|Act of Treason|Primal Visitation|Ember Beast|Disciple of the Old Ways|Zhur-Taa Swine|Predator's Rapport|Skinbrand Goblin|Armored Transport|Scorchwalker)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Rubblebelt Raiders|Alpha Authority|Burning-Tree Emissary|Homing Lightning|Tin Street Market|Razortip Whip|Foundry Street Denizen|Mugging|Ruination Wurm|Spire Tracer|Act of Treason|Slaughterhorn|Naturalize|Primal Visitation)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Wrecking Ogre|Skaarg Guildmage|Madcap Skills|Disciple of the Old Ways|Scab-Clan Charger|Foundry Street Denizen|Ember Beast|Slaughterhorn|Mark for Death|Primal Visitation|Spire Tracer|Pit Fight|Forced Adaptation|Tower Defense)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Skaarg Goliath|Viashino Shanktail|Gruul Keyrune|Skullcrack|Structural Collapse|Pit Fight|Mugging|Disciple of the Old Ways|Ruination Wurm|Ember Beast|Predator's Rapport|Madcap Skills|Scab-Clan Charger|Scorchwalker)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Sylvan Primordial|Gruul Charm|Cinder Elemental|Crowned Ceratok|Pit Fight|Act of Treason|Skyblinder Staff|Scorchwalker|Scab-Clan Charger|Primal Visitation|Foundry Street Denizen|Wildwood Rebirth|Structural Collapse|Slaughterhorn)", "inOrder": true }
+				]
+			}
+			]
+		}
+		,{
+		"packName": "gtc-guild-booster-packins-gruul",
+		"packDesc": "Gatecrash: Gruul Guild Prerelease Pack-Ins",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[gtc-promo]?title=(Gruul Welcome Letter|Gruul Achievement Card|Gruul Guild Sticker|Gruul Spindown Life Counter)", "inOrder": true }
+			]
+		}
+
+ 		,{
+		"packName": "gtc-guild-booster-boros",
+		"packDesc": "Gatecrash: Boros Guild Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "from[gtc-promo]?title='Foundry Champion'" }
+			,{ "query": "from[gtc]?title='Boros Guildgate'" }
+			,{ "querySet": [
+				{ "query": "take[*]>from[gtc-main]?title=(Aurelia, the Warleader|Hold the Gates|Ordruun Veteran|Cinder Elemental|Madcap Skills|Skyblinder Staff|Bomber Corps|Wojek Halberdiers|Prophetic Prism|Assault Griffin|Nav Squad Commandos|Shattering Blow|Act of Treason|Court Street Denizen)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Spark Trooper|Hellraiser Goblin|Fortress Cyclops|Guardian of the Gateless|Foundry Street Denizen|Shattering Blow|Furious Resistance|Guildscorn Ward|Warmind Infantry|Assault Griffin|Structural Collapse|Wojek Halberdiers|Angelic Edict|Armored Transport)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Assemble the Legion|Crackling Perimeter|Truefire Paladin|Holy Mantle|Bomber Corps|Knight Watch|Towering Thunderfist|Shielded Passage|Martial Glory|Massive Raid|Guildscorn Ward|Madcap Skills|Wojek Halberdiers|Angelic Edict)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Firemane Avenger|Skullcrack|Sunhome Guildmage|Righteous Charge|Foundry Street Denizen|Skyknight Legionnaire|Aerial Maneuver|Madcap Skills|Smite|Bomber Corps|Millennial Gargoyle|Mugging|Knight Watch|Shattering Blow)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Boros Reckoner|Boros Charm|Homing Lightning|Boros Keyrune|Zarichi Tiger|Skyknight Legionnaire|Guildscorn Ward|Structural Collapse|Daring Skyjek|Martial Glory|Aerial Maneuver|Furious Resistance|Smite|Bomber Corps)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Frontline Medic|Firefist Striker|Arrows of Justice|Murder Investigation|Warmind Infantry|Assault Griffin|Furious Resistance|Zarichi Tiger|Towering Thunderfist|Martial Glory|Guildscorn Ward|Foundry Street Denizen|Skyknight Legionnaire|Razortip Whip)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Legion Loyalist|Arrows of Justice|Ripscale Predator|Urbis Protector|Riot Gear|Daring Skyjek|Nav Squad Commandos|Structural Collapse|Wojek Halberdiers|Martial Glory|Massive Raid|Bomber Corps|Court Street Denizen|Shielded Passage)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Molten Primordial|Mark for Death|Sunhome Guildmage|Boros Elite|Bomber Corps|Shielded Passage|Massive Raid|Skyknight Legionnaire|Guildscorn Ward|Warmind Infantry|Assault Griffin|Shattering Blow|Tin Street Market|Daring Skyjek)", "inOrder": true }
+				]
+			}
+			]
+		}
+		,{
+		"packName": "gtc-guild-booster-packins-boros",
+		"packDesc": "Gatecrash: Boros Guild Prerelease Pack-Ins",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[gtc-promo]?title=(Boros Welcome Letter|Boros Achievement Card|Boros Guild Sticker|Boros Spindown Life Counter)", "inOrder": true }
+			]
+		}
+
+ 		,{
+		"packName": "gtc-guild-booster-simic",
+		"packDesc": "Gatecrash: Simic Guild Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "from[gtc-promo]?title='Fathom Mage'" }
+			,{ "query": "from[gtc]?title='Simic Guildgate'" }
+			,{ "querySet": [
+				{ "query": "take[*]>from[gtc-main]?title=(Prime Speaker Zegana|Alpha Authority|Nimbus Swimmer|Rapid Hybridization|Verdant Haven|Drakewing Krasis|Greenside Watcher|Frilled Oculus|Hydroform|Way of the Thief|Adaptive Snapjaw|Clinging Anemones|Armored Transport|Wildwood Rebirth)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Unexpected Results|Metropolis Sprite|Zameck Guildmage|Miming Slime|Gridlock|Verdant Haven|Shambleshark|Adaptive Snapjaw|Scatter Arc|Crocanura|Keymaster Rogue|Forced Adaptation|Bioshift|Spire Tracer)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Mystic Genesis|Experiment One|Elusive Krasis|Simic Fluxmage|Spell Rupture|Naturalize|Cloudfin Raptor|Adaptive Snapjaw|Hydroform|Ivy Lane Denizen|Totally Lost|Drakewing Krasis|Greenside Watcher|Razortip Whip)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Biovisionary|Ætherize|Rust Scarab|Wildwood Rebirth|Scatter Arc|Crocanura|Frilled Oculus|Burst of Strength|Simic Charm|Hydroform|Leyline Phantom|Ivy Lane Denizen|Prophetic Prism|Shambleshark)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Biomass Mutation|Urban Evolution|Tower Defense|Sapphire Drake|Riot Gear|Adaptive Snapjaw|Totally Lost|Drakewing Krasis|Hydroform|Sage's Row Denizen|Predator's Rapport|Frilled Oculus|Ivy Lane Denizen|Cloudfin Raptor)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Gyre Sage|Elusive Krasis|Hindervines|Mindeye Drake|Greenside Watcher|Way of the Thief|Burst of Strength|Cloudfin Raptor|Shambleshark|Totally Lost|Wildwood Rebirth|Leyline Phantom|Bioshift|Keymaster Rogue)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Simic Manipulator|Merfolk of the Depths|Crowned Ceratok|Simic Keyrune|Crocanura|Spell Rupture|Bioshift|Millennial Gargoyle|Totally Lost|Spire Tracer|Drakewing Krasis|Clinging Anemones|Burst of Strength|Frilled Oculus)", "inOrder": true },
+				{ "query": "take[*]>from[gtc-main]?title=(Diluvian Primordial|Nimbus Swimmer|Serene Remembrance|Agoraphobia|Spire Tracer|Bioshift|Clinging Anemones|Adaptive Snapjaw|Skygames|Naturalize|Sage's Row Denizen|Burst of Strength|Shambleshark|Skyblinder Staff)", "inOrder": true }
+				]
+			}
+			]
+		}
+		,{
+		"packName": "gtc-guild-booster-packins-simic",
+		"packDesc": "Gatecrash: Simic Guild Prerelease Pack-Ins",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[gtc-promo]?title=(Simic Welcome Letter|Simic Achievement Card|Simic Guild Sticker|Simic Spindown Life Counter)", "inOrder": true }
+			]
+		}
+
+		,{
+		"packName": "gtc-intro-pack-favors-from-nyx",
+		"packDesc": "Favors From Nyx",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[gtc-main]?title='Celestial Archon'", "setValues": { "foil": true } },
+			{ "query": "take[16]>from[gtc-main]?title='Plains'", "canBeDuplicate": true },
+			{ "query": "take[9]>from[gtc-main]?title='Swamp'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Auramancer'" },
+			{ "query": "from[gtc-main]?title='Baleful Eidolon'" },
+			{ "query": "from[gtc-main]?title='Banisher Priest'" },
+			{ "query": "from[gtc-main]?title='Blightcaster'" },
+			{ "query": "from[gtc-main]?title='Cavern Lampad'" },
+			{ "query": "from[gtc-main]?title='Erebos’s Emissary'" },
+			{ "query": "take[2]>from[gtc-main]?title='Heliod’s Emissary'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Hopeful Eidolon'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Lagonna-Band Elder'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Minotaur Abomination'" },
+			{ "query": "take[2]>from[gtc-main]?title='Observant Alseid'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Pillarfield Ox'" },
+			{ "query": "from[gtc-main]?title='Scholar of Athreos'" },
+			{ "query": "from[gtc-main]?title='Sentry of the Underworld'" },
+			{ "query": "take[2]>from[gtc-main]?title='Traveling Philosopher'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Yoked Ox'" },
+			{ "query": "from[gtc-main]?title='Doom Blade'" },
+			{ "query": "from[gtc-main]?title='Gift of Immortality'" },
+			{ "query": "take[2]>from[gtc-main]?title='Last Breath'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Ordeal of Erebos'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Ordeal of Heliod'" },
+			{ "query": "from[gtc-main]?title='Pacifism'" },
+			{ "query": "take[2]>from[gtc-main]?title='Pharika’s Cure'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Ray of Dissolution'" },
+			{ "query": "take[2]>from[gtc-main]?title='Vanquish the Foul'", "canBeDuplicate": true }
+			]
+		}
+		,{
+		"packName": "gtc-intro-pack-manipulative-monstrosities",
+		"packDesc": "Manipulative Monstrosities",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[gtc-main]?title='Shipbreaker Kraken'", "setValues": { "foil": true } },
+			{ "query": "take[16]>from[gtc-main]?title='Island'", "canBeDuplicate": true },
+			{ "query": "take[10]>from[gtc-main]?title='Mountain'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Archaeomancer'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Burnished Hart'" },
+			{ "query": "take[2]>from[gtc-main]?title='Coral Merfolk'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Crackling Triton'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Ill-Tempered Cyclops'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Omenspeaker'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Sealock Monster'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Stoneshock Giant'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Wall of Frost'" },
+			{ "query": "from[gtc-main]?title='Water Servant'" },
+			{ "query": "from[gtc-main]?title='Curse of the Swine'" },
+			{ "query": "from[gtc-main]?title='Disperse'" },
+			{ "query": "from[gtc-main]?title='Dissolve'" },
+			{ "query": "take[2]>from[gtc-main]?title='Griptide'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Lightning Strike'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Lost in a Labyrinth'" },
+			{ "query": "from[gtc-main]?title='Magma Jet'" },
+			{ "query": "from[gtc-main]?title='Ordeal of Purphoros'" },
+			{ "query": "take[2]>from[gtc-main]?title='Rage of Purphoros'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Sea God’s Revenge'" },
+			{ "query": "take[2]>from[gtc-main]?title='Shock'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Volcanic Geyser'" }
+			]
+		}
+		,{
+		"packName": "gtc-intro-pack-devotion-to-darkness",
+		"packDesc": "Devotion to Darkness",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[gtc-main]?title='Abhorrent Overlord'", "setValues": { "foil": true } },
+			{ "query": "take[9]>from[gtc-main]?title='Island'", "canBeDuplicate": true },
+			{ "query": "take[16]>from[gtc-main]?title='Swamp'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Blood-Toll Harpy'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Child of Night'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Disciple of Phenax'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Gray Merchant of Asphodel'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Horizon Scholar'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Insatiable Harpy'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Minotaur Abomination'" },
+			{ "query": "take[2]>from[gtc-main]?title='Mogis’s Marauder'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Returned Phalanx'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Undead Minotaur'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Boon of Erebos'" },
+			{ "query": "take[2]>from[gtc-main]?title='Glimpse the Future'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Griptide'" },
+			{ "query": "from[gtc-main]?title='Lash of the Whip'" },
+			{ "query": "from[gtc-main]?title='March of the Returned'" },
+			{ "query": "from[gtc-main]?title='Ordeal of Thassa'" },
+			{ "query": "from[gtc-main]?title='Pharika’s Cure'" },
+			{ "query": "from[gtc-main]?title='Rescue from the Underworld'" },
+			{ "query": "from[gtc-main]?title='Sea God’s Revenge'" },
+			{ "query": "take[2]>from[gtc-main]?title='Sip of Hemlock'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Whip of Erebos'" },
+			{ "query": "from[gtc-main]?title='Witches’ Eye'" },
+			{ "query": "from[gtc-main]?title='Voyage’s End'" }
+			]
+		}
+		,{
+		"packName": "gtc-intro-pack-blazing-beasts-of-myth",
+		"packDesc": "Blazing Beasts of Myth",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[gtc-main]?title='Ember Swallower'", "setValues": { "foil": true } },
+			{ "query": "take[11]>from[gtc-main]?title='Forest'", "canBeDuplicate": true },
+			{ "query": "take[14]>from[gtc-main]?title='Mountain'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Borderland Minotaur'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Ill-Tempered Cyclops'" },
+			{ "query": "take[2]>from[gtc-main]?title='Minotaur Skullcleaver'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Nemesis of Mortals'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Nessian Asp'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Nessian Courser'" },
+			{ "query": "from[gtc-main]?title='Polis Crusher'" },
+			{ "query": "from[gtc-main]?title='Rootwalla'" },
+			{ "query": "take[2]>from[gtc-main]?title='Satyr Hedonist'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Satyr Piper'" },
+			{ "query": "take[2]>from[gtc-main]?title='Satyr Rambler'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Stoneshock Giant'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Voyaging Satyr'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Artisan’s Sorrow'" },
+			{ "query": "from[gtc-main]?title='Destructive Revelry'" },
+			{ "query": "from[gtc-main]?title='Dragon Mantle'" },
+			{ "query": "take[2]>from[gtc-main]?title='Lightning Strike'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Magma Jet'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Portent of Betrayal'" },
+			{ "query": "take[2]>from[gtc-main]?title='Rage of Purphoros'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Windstorm'" },
+			{ "query": "take[2]>from[gtc-main]?title='Volcanic Geyser'", "canBeDuplicate": true }
+			]
+		}
+		,{
+		"packName": "gtc-intro-pack-anthousas-army",
+		"packDesc": "Anthousa's Army",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "from[gtc-main]?title='Anthousa, Setessan Hero'", "setValues": { "foil": true } },
+			{ "query": "take[13]>from[gtc-main]?title='Forest'", "canBeDuplicate": true },
+			{ "query": "take[12]>from[gtc-main]?title='Plains'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Centaur Battlemaster'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Chronicler of Heroes'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Deadly Recluse'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Elvish Mystic'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Favored Hoplite'" },
+			{ "query": "from[gtc-main]?title='Phalanx Leader'" },
+			{ "query": "from[gtc-main]?title='Pheres-Band Centaurs'" },
+			{ "query": "take[2]>from[gtc-main]?title='Rumbling Baloth'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Setessan Battle Priest'" },
+			{ "query": "from[gtc-main]?title='Setessan Griffin'" },
+			{ "query": "take[2]>from[gtc-main]?title='Staunch-Hearted Warrior'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Wingsteed Rider'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Artisan’s Sorrow'" },
+			{ "query": "take[2]>from[gtc-main]?title='Battlewise Valor'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Bow of Nylea'" },
+			{ "query": "take[2]>from[gtc-main]?title='Dauntless Onslaught'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Giant Growth'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Pacifism'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[gtc-main]?title='Time to Feed'", "canBeDuplicate": true },
+			{ "query": "from[gtc-main]?title='Vanquish the Foul'" },
+			{ "query": "take[2]>from[gtc-main]?title='Warriors’ Lesson'", "canBeDuplicate": true }
+			]
+		}
+
+		,{
+		"packName": "rtr-fat-pack-land",
+		"packDesc": "Return to Ravnica Fat Pack: Land",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[16]>from[rtr-basicland]?title='Plains'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[rtr-basicland]?title='Island'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[rtr-basicland]?title='Swamp'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[rtr-basicland]?title='Forest'", "canBeDuplicate": true }
+			,{ "query": "take[16]>from[rtr-basicland]?title='Mountain'", "canBeDuplicate": true }
+			]
+		}
+		,{
+		"packName": "gtc-fat-pack-pack-ins",
+		"packDesc": "Gatecrash Fat Pack: Pack-Ins",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[gtc]?title=(Gatecrash Player’s Guide|Gatecrash Card Box|Gatecrash Mural|Gatecrash Rules Reference Card)", "inOrder": true }
+			,{ "query": "from[gtc-fatpack]?type='Life Counter'", "canBeDuplicate": true  }
+			,{ "query": "take[2]>from[gtc]?title='Gatecrash Deck Box'", "canBeDuplicate": true  }
+			]
+		}
+
+	]
+}

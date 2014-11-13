@@ -1,0 +1,41 @@
+﻿@using mtgen.Models;
+@{
+    var set = new mtgen.Models.Set()
+    {
+        Code = "dgm",
+        Name = "Dragon's Maze",
+        CreatedDate = new DateTime(2013, 4, 12),
+        CardCount = 156,
+        StartProductName = "dgm-prerelease"
+    };
+
+    set.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2014,9,2),
+            HtmlString = "Evening: Upgraded to newest version, added all Prerelease pack-ins, Fat Packs, and guild sorting."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014,4,25),
+            HtmlString = "13:00 MST: Added the ability to export your generated cards to the .dec format (used by Magic Online, Cockatrice, and Apprentice), .coll format (used by Decked Builder), and .cod format (used by Cockatrice)."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014,4,25),
+            HtmlString = "23:30 MST: Welcome Reddit! Holy crap you guys know how to send traffic. Based on feedback I've fixed: The land slot now gives a 95% chance of a Guild Gate, 4% chance of a Shockland, and a 1% chance of Maze's End. Despite the weird Europe mis-print, this generator no longer allows foil Shocklands."
+        }
+    };
+
+    set.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json",
+										"../gtc/cardsMain.json", "../gtc/cardsToken.json", "../gtc/cardsOther.json",
+										"../rtr/cardsMain.json", "../rtr/cardsToken.json", "../rtr/cardsOther.json" };
+    set.PackFiles = new List<string>() { "packs.json", "../gtc/packs.json", "../rtr/packs.json" };
+
+    ViewBag.Set = set;
+
+    /* Defaults:
+        SetFile = "~/sets.json";
+        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+        PackFiles = new List<string>() { "packs.json" };
+        ProductFile = "products.json";
+     */
+}

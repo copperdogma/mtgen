@@ -1,0 +1,186 @@
+{
+	"defs": 
+		[
+			{
+				"defName": "rtr",
+				"query": "from[*]?set='rtr'"
+			},
+			{
+				"defName": "rtr-promo",
+				"query": "from[rtr]?promo=true"
+			},
+			{
+				"defName": "rtr-set",
+				"query": "from[rtr]-from[rtr-promo]"
+			},
+			{
+				"defName": "rtr-main",
+				"query": "from[rtr-set]-from[rtr-set]?type=(Tip|Token|Land)"
+			},
+			{
+				"defName": "rtr-foils",
+				"query": "from[rtr-main]"
+			}
+		]
+
+	,"packs": 
+		[
+	 		{
+			"packName": "rtr-standard",
+			"packDesc": "Return to Ravnica: Standard Booster",
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 100, "query": "from[rtr]?type='Land'" } ] }
+					,{ "percents": [ { "percent": 100, "query": "take[8]>from[rtr-main]?rarity='c'" } ] }
+					,{ "percents": [ { "percent": 75, "query": "from[rtr-main]?rarity='c'" }
+									,{ "percent": 25, "query": "from[rtr-foils]", "canBeDuplicate": true, "setValues": [ { "key" : "foil", "value" : "true" } ], "-comment": "25% change rare is a foil of any card, including land" }
+									] }
+					,{ "percents": [ { "percent": 100, "query": "take[3]>from[rtr-main]?rarity='u'" } ] }
+					,{ "percents": [ { "percent": 87.5, "query": "from[rtr-main]?rarity='r'" }
+									,{ "percent": 12.5, "query": "from[rtr-main]?rarity='mr'", "-comment": "rare=7/8, mythicRare=1/8" } 
+									] }
+					,{ "percents": [ { "percent": 50, "query": "from[rtr]?type='Tip'" }
+									,{ "percent": 50, "query": "from[rtr]?type='Token'" } 
+									] }
+					]
+				}		
+			}
+			
+			,{
+			"packName": "rtr-guild-booster-azorius",
+			"packDesc": "Return to Ravnica: Prerelease Azorius Guild Booster",
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 14.285714286, "query": "take[*]>from[rtr]?title=(Isperia, Supreme Judge|Judge's Familiar|Syncopate|Azorius Justiciar|Sunspire Griffin|Inspiration|Avenging Arrow|Cancel|Search Warrant|Inaction Injunction|Keening Apparition|Tower Drake|Hussar Patrol|Trained Caracal)" }
+									,{ "percent": 14.285714286, "query": "take[*]>from[rtr]?title=(Detention Sphere|New Prahv Guildmage|Soul Tithe|Azorius Keyrune|Keening Apparition|Inaction Injunction|Concordia Pegasus|Vassal Soul|Doorkeeper|Trained Caracal|Voidwielder|Ethereal Armor|Dramatic Rescue|Dispel)" } 
+									,{ "percent": 14.285714286, "query": "take[*]>from[rtr]?title=(Righteous Authority|Street Sweeper|Skymark Roc|Fencing Ace|Inaction Injunction|Armory Guard|Avenging Arrow|Vassal Soul|Isperia's Skywatch|Trained Caracal|Voidwielder|Search Warrant|Paralyzing Grasp|Ethereal Armor)" } 
+									,{ "percent": 14.285714286, "query": "take[*]>from[rtr]?title=(Supreme Verdict|Soulsworn Spirit|Azorius Keyrune|Judge's Familiar|Dramatic Rescue|Paralyzing Grasp|Azorius Arrester|Doorkeeper|Swift Justice|Crosstown Courier|Avenging Arrow|Knightly Valor|Dispel|Search Warrant)" } 
+									,{ "percent": 14.285714286, "query": "take[*]>from[rtr]?title=(Azor's Elocutors|Sphere of Safety|Skyline Predator|Lyev Skyknight|Paralyzing Grasp|Azorius Arrester|Vassal Soul|Seller of Songbirds|Knightly Valor|Crosstown Courier|Dramatic Rescue|Inaction Injunction|Swift Justice|Chronic Flooding)" }
+									,{ "percent": 14.285714286, "query": "take[*]>from[rtr]?title=(Palisade Giant|Hover Barrier|Lyev Skyknight|Security Blockade|Isperia's Skywatch|Inaction Injunction|Concordia Pegasus|Vassal Soul|Crosstown Courier|Search Warrant|Transguild Promenade|Armory Guard|Swift Justice|Cancel)" }
+									,{ "percent": 14.285714286, "query": "take[*]>from[rtr]?title=(Martial Law|Aquus Steed|Fall of the Gavel|Bazaar Krovod|Avenging Arrow|Azorius Arrester|Concordia Pegasus|Chronic Flooding|Tower Drake|Hussar Patrol|Search Warrant|Stealer of Secrets|Ethereal Armor|Doorkeeper)" } 
+									,{ "percent": 14.285714286, "query": "take[*]>from[rtr]?title=(Sphinx of the Chimes|Arrest|Azorius Charm|Faerie Impostor|Seller of Songbirds|Armory Guard|Voidwielder|Inspiration|Search Warrant|Azorius Arrester|Keening Apparition|Dispel|Dramatic Rescue|Chronic Flooding)" } 
+									] }
+					]
+				}
+			}
+			,{
+			"packName": "rtr-guild-booster-golgari",
+			"packDesc": "Return to Ravnica: Prerelease Golgari Guild Booster",
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Jarad, Golgari Lich Lord|Seek the Horizon|Slitherhead|Slum Reaper|Trestle Troll|Stab Wound|Chorus of Might|Sewer Shambler|Daggerdrome Imp|Grisly Salvage|Aerial Predation|Centaur's Herald|Terrus Wurm|Giant Growth)" }
+									,{ "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Lotleth Troll|Golgari Keyrune|Treasured Find|Savage Surge|Stab Wound|Towering Indrik|Sewer Shambler|Grisly Salvage|Axebane Stag|Urban Burgeoning|Golgari Longlegs|Cremate|Drudge Beetle|Drainpipe Vermin)" } 
+									,{ "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Jarad's Orders|Archweaver|Golgari Keyrune|Dreg Mangler|Sluiceway Scorpion|Catacomb Slug|Chorus of Might|Launch Party|Korozda Monitor|Trestle Troll|Drudge Beetle|Mind Rot|Gatecreeper Vine|Daggerdrome Imp)" } 
+									,{ "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Abrupt Decay|Rogue's Passage|Zanikev Locust|Korozda Guildmage|Axebane Stag|Stonefare Crocodile|Stab Wound|Golgari Longlegs|Giant Growth|Trestle Troll|Perilous Shadow|Destroy the Evidence|Korozda Monitor|Drainpipe Vermin)" } 
+									,{ "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Deathrite Shaman|Dark Revenant|Gobbling Ooze|Rites of Reaping|Perilous Shadow|Drudge Beetle|Sluiceway Scorpion|Centaur's Herald|Stonefare Crocodile|Mind Rot|Terrus Wurm|Destroy the Evidence|Giant Growth|Golgari Longlegs)" } 
+									,{ "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Grave Betrayal|Launch Party|Dreg Mangler|Oak Street Innkeeper|Axebane Stag|Mind Rot|Assassin's Strike|Cremate|Daggerdrome Imp|Urban Burgeoning|Trestle Troll|Sluiceway Scorpion|Drudge Beetle|Korozda Monitor)" } 
+									,{ "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Underworld Connections|Golgari Charm|Golgari Decoy|Tavern Swindler|Grisly Salvage|Urban Burgeoning|Transguild Promenade|Sewer Shambler|Stab Wound|Stonefare Crocodile|Towering Indrik|Drainpipe Vermin|Golgari Longlegs|Destroy the Evidence)" } 
+									,{ "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Deadbridge Goliath|Brushstrider|Slitherhead|Ultimate Price|Korozda Monitor|Cremate|Axebane Guardian|Terrus Wurm|Destroy the Evidence|Rubbleback Rhino|Trestle Troll|Daggerdrome Imp|Sluiceway Scorpion|Axebane Stag)" } 
+									] }
+					]
+				}
+			}
+			,{
+			"packName": "rtr-guild-booster-izzet",
+			"packDesc": "Return to Ravnica: Prerelease Izzet Guild Booster",
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Niv Mizzet, Dracogenius|Blistercoil Weird|Aquus Steed|Guttersnipe|Lobber Crew|Downsize|Goblin Electromancer|Pursuit of Flight|Runewing|Inspiration|Annihilating Fire|Dispel|Dynacharge|Essence Backlash)" }
+									,{ "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Counterflux|Goblin Rally|Blistercoil Weird|Izzet Keyrune|Chemister's Trick|Electrickery|Dynacharge|Stealer of Secrets|Voidwielder|Runewing|Annihilating Fire|Downsize|Essence Backlash|Tenement Crasher)" } 
+									,{ "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Firemind's Foresight|Civic Saber|Psychic Spiral|Nivix Guildmage|Cobblebrute|Electrickery|Dynacharge|Bellows Lizard|Essence Backlash|Frostburn Weird|Stealer of Secrets|Downsize|Paralyzing Grasp|Tenement Crasher)" } 
+									,{ "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Mercurial Chemister|Teleportal|Izzet Keyrune|Racecourse Fury|Inspiration|Frostburn Weird|Goblin Electromancer|Electrickery|Voidwielder|Mizzium Skin|Survey the Wreckage|Bellows Lizard|Paralyzing Grasp|Crosstown Courier)" } 
+									,{ "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Nivmagus Elemental|Thoughtflare|Street Spasm|Blustersquall|Chemister's Trick|Doorkeeper|Frostburn Weird|Traitorous Instinct|Runewing|Downsize|Explosive Impact|Viashino Racketeer|Voidwielder|Bellows Lizard)" } 
+									,{ "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Cyclonic Rift|Skyline Predator|Pyroconvergence|Izzet Staticaster|Inspiration|Goblin Electromancer|Viashino Racketeer|Pursuit of Flight|Batterhorn|Doorkeeper|Runewing|Traitorous Instinct|Mizzium Skin|Essence Backlash)" } 
+									,{ "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Conjured Currency|Izzet Charm|Minotaur Aggressor|Blustersquall|Cobblebrute|Frostburn Weird|Crosstown Courier|Stealer of Secrets|Explosive Impact|Transguild Promenade|Lobber Crew|Mizzium Skin|Inspiration|Essence Backlash)" }
+									,{ "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Mizzium Mortars|Izzet Staticaster|Vandalblast|Faerie Impostor|Tenement Crasher|Survey the Wreckage|Cobblebrute|Viashino Racketeer|Downsize|Runewing|Essence Backlash|Chemister's Trick|Doorkeeper|Cancel)" }
+									] }
+					]
+				}
+			}
+			,{
+			"packName": "rtr-guild-booster-rakdos",
+			"packDesc": "Return to Ravnica: Prerelease Rakdos Guild Booster",
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 12.5, "query": "take[*]>from[rtr]?title=(Rakdos, Lord of Riots|Rakdos Cackler|Shrieking Affliction|Minotaur Aggressor|Skull Rend|Tenement Crasher|Auger Spree|Cremate|Survey the Wreckage|Catacomb Slug|Dead Reveler|Destroy the Evidence|Gore House Chainwalker|Viashino Racketeer)" }
+									,{ "percent": 12.5, "query": "take[*]>from[rtr]?title=(Slaughter Games|Rakdos Keyrune|Hellhole Flailer|Rakdos Shred Freak|Launch Party|Batterhorn|Skull Rend|Deviant Glee|Drainpipe Vermin|Mind Rot|Lobber Crew|Survey the Wreckage|Annihilating Fire|Thrill Kill Assassin)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[rtr]?title=(Havoc Festival|Hellhole Flailer|Slum Reaper|Tablet of the Guilds|Cremate|Mind Rot|Rakdos Shred Freak|Gore House Chainwalker|Drainpipe Vermin|Splatter Thug|Traitorous Instinct|Spawn of Rix Maadi|Stab Wound|Ogre Jailbreaker)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[rtr]?title=(Dreadbore|Rakdos Keyrune|Rakdos Cackler|Shrieking Affliction|Auger Spree|Bellows Lizard|Survey the Wreckage|Splatter Thug|Cobblebrute|Spawn of Rix Maadi|Deviant Glee|Grim Roustabout|Mind Rot|Ogre Jailbreaker)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[rtr]?title=(Cryptborn Horror|Bloodfray Giant|Tavern Swindler|Rakdos Ringleader|Traitorous Instinct|Auger Spree|Splatter Thug|Daggerdrome Imp|Stab Wound|Gore House Chainwalker|Explosive Impact|Spawn of Rix Maadi|Drainpipe Vermin|Deviant Glee)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[rtr]?title=(Chaos Imps|Rix Maadi Guildmage|Ultimate Price|Goblin Rally|Perilous Shadow|Skull Rend|Bellows Lizard|Rakdos Shred Freak|Viashino Racketeer|Deviant Glee|Annihilating Fire|Grim Roustabout|Batterhorn|Catacomb Slug)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[rtr]?title=(Guild Feud|Pyroconvergence|Rakdos Charm|Dark Revenant|Auger Spree|Dead Reveler|Launch Party|Rakdos Shred-Freak|Splatter Thug|Batterhorn|Deviant Glee|Explosive Impact|Transguild Promenade|Gore-House Chainwalker)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[rtr]?title=(Desecration Demon|Rakdos Ragemutt|Guttersnipe|Assassin's Strike|Spawn of Rix Maadi|Grim Roustabout|Cobblebrute|Skull Rend|Dead Reveler|Destroy the Evidence|Bellows Lizard|Gore House Chainwalker|Deviant Glee|Batterhorn)" } 
+									] }
+					]
+				}
+			}
+			,{
+			"packName": "rtr-guild-booster-selesnya",
+			"packDesc": "Return to Ravnica: Prerelease Selesnya Guild Booster",
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Trostani, Selesnya's Voice|Arrest|Dryad Militant|Savage Surge|Centaur Healer|Common Bond|Ethereal Armor|Knightly Valor|Rootborn Defenses|Aerial Predation|Gatecreeper Vine|Eyes in the Skies|Axebane Stag|Druid's Deliverance)" }
+									,{ "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Loxodon Smiter|Sphere of Safety|Selesnya Keyrune|Vitu Ghazi Guildmage|Druid's Deliverance|Rubbleback Rhino|Swift Justice|Coursers' Accord|Horncaller's Chant|Ethereal Armor|Selesnya Sentry|Gatecreeper Vine|Rootborn Defenses|Common Bond)" } 
+									,{ "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Collective Blessing|Dryad Militant|Slime Molding|Codex Shredder|Druid's Deliverance|Sundering Growth|Common Bond|Centaur's Herald|Selesnya Sentry|Sunspire Griffin|Axebane Guardian|Horncaller's Chant|Trained Caracal|Eyes in the Skies)" } 
+									,{ "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Wayfaring Temple|Risen Sanctuary|Brushstrider|Selesnya Keyrune|Axebane Guardian|Chorus of Might|Druid's Deliverance|Trostani's Judgment|Rootborn Defenses|Sundering Growth|Eyes in the Skies|Centaur Healer|Giant Growth|Trained Caracal)" } 
+									,{ "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Growing Ranks|Phantom General|Archweaver|Heroes' Reunion|Sunspire Griffin|Centaur Healer|Trostani's Judgment|Centaur's Herald|Eyes in the Skies|Urban Burgeoning|Rubbleback Rhino|Sundering Growth|Trained Caracal|Aerial Predation)" } 
+									,{ "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Wild Beastmaster|Selesnya Charm|Gobbling Ooze|Soul Tithe|Armory Guard|Common Bond|Eyes in the Skies|Chorus of Might|Centaur Healer|Rubbleback Rhino|Centaur's Herald|Swift Justice|Druid's Deliverance|Keening Apparition)" }
+									,{ "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Mana Bloom|Fencing Ace|Oak Street Innkeeper|Call of the Conclave|Trostani's Judgment|Druid's Deliverance|Coursers' Accord|Chorus of Might|Centaur's Herald|Selesnya Sentry|Transguild Promenade|Seller of Songbirds|Eyes in the Skies|Sundering Growth)" }
+									,{ "percent": 16.666666667, "query": "take[*]>from[rtr]?title=(Precinct Captain|Call of the Conclave|Security Blockade|Seek the Horizon|Concordia Pegasus|Common Bond|Avenging Arrow|Ethereal Armor|Coursers' Accord|Axebane Stag|Urban Burgeoning|Towering Indrik|Selesnya Sentry|Horncaller's Chant)" }
+									] }
+					]
+				}
+			}
+			,{
+			"packName": "rtr-azorius-pack-ins",
+			"packDesc": "Return to Ravnica: Azorius Pack Ins",
+			"usableForDeckBuilding": false,
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 100, "query": "take[*]>from[rtr]?title=(Archon of the Triumvirate: Promo|Azorius Guild Sticker|Azorius Spindown Life Counter|Azorius Guildmaster Letter|Azorius Achievement Card)" } ] }
+					]
+				}
+			}
+			,{
+			"packName": "rtr-golgari-pack-ins",
+			"packDesc": "Return to Ravnica: Golgari Pack Ins",
+			"usableForDeckBuilding": false,
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 100, "query": "take[*]>from[rtr]?title=(Corpsejack Menace: Promo|Golgari Guild Sticker|Golgari Spindown Life Counter|Golgari Guildmaster Letter|Golgari Achievement Card)" } ] }
+					]
+				}
+			}
+			,{
+			"packName": "rtr-izzet-pack-ins",
+			"packDesc": "Return to Ravnica: Izzet Pack Ins",
+			"usableForDeckBuilding": false,
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 100, "query": "take[*]>from[rtr]?title=(Hypersonic Dragon: Promo|Izzet Guild Sticker|Izzet Spindown Life Counter|Izzet Guildmaster Letter|Izzet Achievement Card)" } ] }
+					]
+				}
+			}
+			,{
+			"packName": "rtr-rakdos-pack-ins",
+			"packDesc": "Return to Ravnica: Rakdos Pack Ins",
+			"usableForDeckBuilding": false,
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 100, "query": "take[*]>from[rtr]?title=(Carnival Hellsteed: Promo|Rakdos Guild Sticker|Rakdos Spindown Life Counter|Rakdos Guildmaster Letter|Rakdos Achievement Card)" } ] }
+					]
+				}
+			}
+			,{
+			"packName": "rtr-selesnya-pack-ins",
+			"packDesc": "Return to Ravnica: Selesnya Pack Ins",
+			"usableForDeckBuilding": false,
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 100, "query": "take[*]>from[rtr]?title=(Grove of the Guardian: Promo|Selesnya Guild Sticker|Selesnya Spindown Life Counter|Selesnya Guildmaster Letter|Selesnya Achievement Card)" } ] }
+					]
+				}
+			}
+			
+	]
+}

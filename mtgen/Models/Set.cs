@@ -12,6 +12,7 @@ namespace mtgen.Models
 		public int CardCount { get; set; }
 		public bool Incomplete { get; set; }
 		public DateTime CreatedDate { get; set; }
+		public string CreatedText { get; set; }
 		public string SetFile { get; set; }
 		public IList<string> CardFiles { get; set; }
 		public IList<string> PackFiles { get; set; }

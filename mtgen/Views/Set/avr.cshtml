@@ -1,0 +1,32 @@
+﻿@using mtgen.Models;
+@{
+    var set = new mtgen.Models.Set()
+    {
+        Code = "avr",
+        Name = "Avacyn Restored",
+        CreatedDate = new DateTime(2012, 4, 23),
+        CardCount = 244,
+        StartProductName = "avr-prerelease"
+    };
+
+    set.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2014, 9, 19),
+            HtmlString = "Upgraded to newest version, added all promos, Prerelease pack-ins, and the Fat Pack."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2012, 4, 7),
+            HtmlString = "Fixed Silverblade Paladin: Was Uncommon instead of Rare."
+        }
+    };
+
+    ViewBag.Set = set;
+
+    /* Defaults:
+        SetFile = "~/sets.json";
+        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+        PackFiles = new List<string>() { "packs.json" };
+        ProductFile = "products.json";
+     */
+}

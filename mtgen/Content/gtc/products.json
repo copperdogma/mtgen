@@ -1,0 +1,133 @@
+{
+"_comment": "full product list: http://archive.wizards.com/magic/tcg/productarticle.aspx?x=mtg/tcg/gatecrash/productinfo",
+"_comment": "NOTE: cannot do Intro Packs or Event Deck as they mix different sets",
+"_comment": "if there are no options the query/packNames will be auto-run"
+
+,"products": 
+	[
+		{
+			"productName": "gtc-all-cards"
+			,"productDesc": "All Cards"
+			,"sources": [ "http://archive.wizards.com/magic/tcg/productarticle.aspx?x=mtg/tcg/gatecrash/productinfo", "http://archive.wizards.com/magic/tcg/article.aspx?x=mtg/tcg/gatecrash/cig", "http://www.gatheringmagic.com/gatecrash-spoilers/", "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/1147" ]
+			,"isGenerated": false
+			,"initialSort": "colour"
+			,"packs": [
+				{ "packName":"gtc-all-cards" }
+			]
+		}
+
+		,{
+			"productName": "gtc-prerelease"
+			,"productDesc": "Prerelease"
+			,"sources": [ "http://archive.wizards.com/magic/magazine/article.aspx?x=mtg/daily/feature/231", "https://docs.google.com/spreadsheet/ccc?key=0Apln2HM4aSGbdDJ6MFk5cTBjb09sXzFWdndhTkx2V1E&usp=sharing#gid=2", "https://www.youtube.com/watch?v=MNRbB40N9_Y" ]
+			,"isGenerated": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"gtc-standard" }
+				,{ "packName":"gtc-guild-booster-orzhov" },{ "packName":"gtc-guild-booster-packins-orzhov" }
+				,{ "packName":"gtc-guild-booster-dimir" },{ "packName":"gtc-guild-booster-packins-dimir" }
+				,{ "packName":"gtc-guild-booster-gruul" },{ "packName":"gtc-guild-booster-packins-gruul" }
+				,{ "packName":"gtc-guild-booster-boros" },{ "packName":"gtc-guild-booster-packins-boros" }
+				,{ "packName":"gtc-guild-booster-simic" },{ "packName":"gtc-guild-booster-packins-simic" }
+				,{ "packName":"gtc-prerelease-promos" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "gtc-prerelease-guild-orzhov"
+						,"presetDesc": "The Orzhov Syndicate (White/Black)"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"gtc-guild-booster-orzhov" }
+							,{ "count":1, "defaultPackName":"gtc-guild-booster-packins-orzhov" }
+							,{ "count":5, "defaultPackName":"gtc-standard" }
+						]
+					}
+					,{
+						"presetName": "gtc-prerelease-guild-dimir"
+						,"presetDesc": "House Dimir (Blue/Black)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"gtc-guild-booster-dimir" }
+							,{ "count":1, "defaultPackName":"gtc-guild-booster-packins-dimir" }
+							,{ "count":5, "defaultPackName":"gtc-standard" }
+						]
+					}
+					,{
+						"presetName": "gtc-prerelease-guild-gruul"
+						,"presetDesc": "The Gruul Clans (Green/Red)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"gtc-guild-booster-gruul" }
+							,{ "count":1, "defaultPackName":"gtc-guild-booster-packins-gruul" }
+							,{ "count":5, "defaultPackName":"gtc-standard" }
+						]
+					}
+					,{
+						"presetName": "gtc-prerelease-guild-boros"
+						,"presetDesc": "The Boros Legion (Red/White)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"gtc-guild-booster-boros" }
+							,{ "count":1, "defaultPackName":"gtc-guild-booster-packins-boros" }
+							,{ "count":5, "defaultPackName":"gtc-standard" }
+						]
+					}
+					,{
+						"presetName": "gtc-prerelease-guild-simic"
+						,"presetDesc": "The Simic Combine (Green/Blue)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"gtc-guild-booster-simic" }
+							,{ "count":1, "defaultPackName":"gtc-guild-booster-packins-simic" }
+							,{ "count":5, "defaultPackName":"gtc-standard" }
+						]
+					}
+					,{
+						"presetName": "gtc-prerelease-promos"
+						,"presetDesc": "Gatecrash Prerelease Promos"
+						,"packs": [
+							{ "count":1, "defaultPackName":"gtc-prerelease-promos" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "gtc-fat-pack"
+			,"productDesc": "Fat Pack"
+			,"sources": [ "https://www.youtube.com/watch?v=JlEVMY9gIP8" ]
+			,"isGenerated": true
+			,"autoGenerate": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"gtc-standard" }
+				,{ "packName":"rtr-fat-pack-land" }
+				,{ "packName":"gtc-fat-pack-pack-ins" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "gtc-fat-pack"
+						,"presetDesc": "Gatecrash Fat Pack"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"gtc-fat-pack-pack-ins" }
+							,{ "count":9, "defaultPackName":"gtc-standard" }
+							,{ "count":1, "defaultPackName":"rtr-fat-pack-land" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "gtc-promos"
+			,"productDesc": "All Promos"
+			,"sources": [ "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/1057" ]
+			,"isGenerated": false
+			,"initialSort": "name"
+			,"packs": [
+				{ "packName":"gtc-promos" }
+			]
+		}
+
+	]
+}

@@ -107,9 +107,8 @@
         Want the latest updates? <a href="https://twitter.com/mtggen" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @@mtggen</a>
         <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
     </p>
-    <p>25-Jan-2013: This project has now been <a href="https://github.com/copperdogma/mtg-generator">open sourced on Github</a>. I will continue creating new generators as new sets come out, but if you have something you wish to contribute I'd love to hear from you. Enjoy!</p>
+    <p>12-Nov-2014: This project has now been <a href="https://github.com/copperdogma/mtgen">open sourced on Github</a>. I will continue creating new generators as new sets come out, but if you have something you wish to contribute I'd love to hear from you. Enjoy!</p>
     <h2>Sealed Deck Generator Sets</h2>
-    <!--<p><strong>UPDATE: 3-Jun-2013 evening: The Modern Masters generator is up! Enjoy.</strong></p>-->
     <table>
         <thead>
             <tr><th></th><th>Set</th><th>Generator Created Date</th><th>Prerelease Date</th><th>Release Date</th></tr>
@@ -152,60 +151,18 @@
         </tbody>
         <tbody class="block">
             <tr class="title"><td colspan="5">Return to Ravnica Block</td></tr>
-            <tr itemscope itemtype="http://schema.org/Event">
-                <td><a href="2013-dragons-maze"><img src="2013-dragons-maze/images/logo-sm.png" title="Dragon's Maze Deck Generator" alt="Dragon's Maze logo" height="31" width="150" itemprop="image" /></a></td>
-                <td itemprop="name">Dragon's Maze</td>
-                <td><time itemprop="startDate" datetime="2013-04-12">April 12, 2013</time></td>
-                <td><time itemprop="startDate" datetime="2013-04-28">April 28, 2013</time></td>
-                <td><time itemprop="startDate" datetime="2013-05-03">May 3, 2013</time></td>
-            </tr>
-            <tr itemscope itemtype="http://schema.org/Event">
-                <td><a href="2013-gatecrash"><img src="2013-gatecrash/images/logo-sm.png" title="Gatecrash Deck Generator" alt="Gatecrash logo" height="29" width="147" itemprop="image" /></a></td>
-                <td itemprop="name">Gatecrash</td>
-                <td><time itemprop="startDate" datetime="2013-01-21">January 21, 2013</time></td>
-                <td><time itemprop="startDate" datetime="2013-01-26">January 26, 2013</time></td>
-                <td><time itemprop="startDate" datetime="2013-02-01">February 1, 2013</time></td>
-            </tr>
-            <tr itemscope itemtype="http://schema.org/Event">
-                <td><a href="2013-return-to-ravnica"><img src="2013-return-to-ravnica/images/logo-sm.png" title="Return to Ravnica Deck Generator" alt="Return to Ravnica logo" height="37" width="126" itemprop="image" /></a></td>
-                <td itemprop="name">Return to Ravnica</td>
-                <td><time itemprop="startDate" datetime="2012-09-25">September 25, 2012</time></td>
-                <td><time itemprop="startDate" datetime="2013-01-26">September 29, 2012</time></td>
-                <td><time itemprop="startDate" datetime="2013-02-01">October 5, 2012</time></td>
-            </tr>
+            @DisplaySet("dgm")
+            @DisplaySet("gtc")
+            @DisplaySet("rtr")
         </tbody>
         <tbody class="core">
-            <tr itemscope itemtype="http://schema.org/Event">
-                <td><a href="2013-core"><img src="2013-core/images/logo-sm.jpg" title="2013 Core Set Deck Generator" alt="2013 Core Set logo" height="55" width="103" itemprop="image" /></a></td>
-                <td itemprop="name">2013 Core Set</td>
-                <td><time itemprop="startDate" datetime="2012-07-03">July 3, 2012</time></td>
-                <td><time itemprop="startDate" datetime="2012-07-07">July 7, 2012</time></td>
-                <td><time itemprop="startDate" datetime="2012-07-13">July 13, 2012</time></td>
-            </tr>
+            @DisplaySet("m13")
         </tbody>
         <tbody class="block">
             <tr class="title"><td colspan="5">Innistrad Block</td></tr>
-            <tr itemscope itemtype="http://schema.org/Event">
-                <td><a href="avacyn-restored"><img src="avacyn-restored/images/avacyn-restored-sm.png" title="Avacyn Restored Deck Generator" alt="Avacyn Restored logo" height="55" width="157" itemprop="image" /></a></td>
-                <td itemprop="name">Avacyn Restored</td>
-                <td><time itemprop="startDate" datetime="2012-04-23">April 23, 2012</time></td>
-                <td><time itemprop="startDate" datetime="2012-04-28">April 28, 2012</time></td>
-                <td><time itemprop="startDate" datetime="2012-05-04">May 4, 2012</time></td>
-            </tr>
-            <tr itemscope itemtype="http://schema.org/Event">
-                <td><a href="dark-ascension"><img src="dark-ascension/images/dark-ascension-sm.png" title="Dark Ascension Deck Generator" alt="Dark Ascension logo" height="60" width="157" itemprop="image" /></a></td>
-                <td itemprop="name">Dark Ascension</td>
-                <td><time itemprop="startDate" datetime="2012-01-25">January 25, 2012</time></td>
-                <td><time itemprop="startDate" datetime="2012-01-28">January 28, 2012</time></td>
-                <td><time itemprop="startDate" datetime="2012-02-03">February 3, 2012</time></td>
-            </tr>
-            <tr itemscope itemtype="http://schema.org/Event">
-                <td><a href="innistrad"><img src="innistrad/images/logo-sm.png" title="Innistrad Deck Generator" alt="Innistrad logo" height="60" width="136" itemprop="image" /></a></td>
-                <td itemprop="name">Innistrad</td>
-                <td><time itemprop="startDate" datetime="2011-09-24">September 24, 2011</time></td>
-                <td><time itemprop="startDate" datetime="2011-09-24">September 24, 2011</time></td>
-                <td><time itemprop="startDate" datetime="2011-09-30">September 30, 2011</time></td>
-            </tr>
+            @DisplaySet("avr")
+            @DisplaySet("dka")
+            @DisplaySet("isd")
         </tbody>
     </table>
     <p>Where are the previous sets? I started the generator on Innistrad, so older ones don't exist. I may add them one day. If you have a particular set you really want to see, <a href="mailto:cam.marsollier@gmail.com">let me know</a>.</p>

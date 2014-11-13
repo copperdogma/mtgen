@@ -1,0 +1,70 @@
+[
+  {
+  "_comment": "Defaults: use wotcTitle, overridden by finalTitle"
+  ,"_comment": "the 'title' is the title taken from Gathering Magic, but if it is corrected earlier in the json use the correct title in subsequent entries"
+  }
+ ,{
+  "title": "Wild Beastmistress",
+  "newValues": { "title": "Wild Beastmaster"}
+ }
+ ,{
+  "title": "Heroes Reunion",
+  "newValues": { "title": "Heroes' Reunion"}
+ }
+ ,{
+  "title": "Gatekeeper Vine",
+  "newValues": { "title": "Gatecreeper Vine"}
+ }
+ ,{
+  "title": "Grave Betrayal",
+  "newValues": { "type": "Enchantment"}
+ }
+ ,{
+  "title": "Azorius Arrester",
+  "newValues": { "guild": "azorius"}
+ }
+ ,{
+  "title": "Dreg Mangler",
+  "newValues": { "guild": "golgari"}
+ }
+ ,{
+  "title": "Goblin Electromancer",
+  "newValues": { "guild": "izzet"}
+ }
+ ,{
+  "title": "Golgari Guildgate",
+  "newValues": { "guild": "golgari"}
+ }
+ ,{
+  "title": "Grove of the Guardian",
+  "newValues": { "guild": "selesnya"}
+ }
+ ,{
+  "title": "Izzet Charm",
+  "newValues": { "guild": "izzet"}
+ }
+ ,{
+  "title": "Judge's Familiar",
+  "newValues": { "guild": "azorius"}
+ }
+ ,{
+  "title": "Korozda Guildmage",
+  "newValues": { "guild": "golgari"}
+ }
+ ,{
+  "title": "Rakdos Shred-Freak",
+  "newValues": { "guild": "rakdos"}
+ }
+ ,{
+  "title": "Sluiceway Scorpion",
+  "newValues": { "guild": "golgari"}
+ }
+ ,{
+  "title": "Street Spasm",
+  "newValues": { "guild": "izzet"}
+ }
+ ,{
+  "title": "Temple Garden",
+  "newValues": { "guild": "selesnya"}
+ }
+]

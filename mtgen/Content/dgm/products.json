@@ -1,0 +1,187 @@
+{
+"_comment": "full product list: http://archive.wizards.com/Magic/tcg/productarticle.aspx?x=mtg/tcg/dragonsmaze/productinfo",
+"_comment": "NOTE: cannot do Intro Packs or Event Deck as they mix different sets",
+"_comment": "if there are no options the query/packNames will be auto-run"
+
+,"products": 
+	[
+		{
+			"productName": "dgm-all-cards"
+			,"productDesc": "All Cards"
+			,"sources": [ "http://archive.wizards.com/Magic/tcg/productarticle.aspx?x=mtg/tcg/dragonsmaze/productinfo", "http://archive.wizards.com/Magic/tcg/article.aspx?x=mtg/tcg/dragonsmaze/cig", "http://www.gatheringmagic.com/dragons-maze-spoilers/" ]
+			,"isGenerated": false
+			,"initialSort": "colour"
+			,"packs": [
+				{ "packName":"dgm-all-cards" }
+			]
+		}
+
+		,{
+			"productName": "dgm-prerelease"
+			,"productDesc": "Prerelease"
+			,"sources": [ "http://archive.wizards.com/magic/magazine/article.aspx?x=mtg/daily/arcana/1156", "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/feature/244", "https://www.youtube.com/watch?v=M51RPqrM5eQ" ]
+			,"isGenerated": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"dgm-standard" }
+				,{ "packName":"dgm-guild-booster-azorius" }
+				,{ "packName":"dgm-guild-booster-golgari" }
+				,{ "packName":"dgm-guild-booster-izzet" }
+				,{ "packName":"dgm-guild-booster-rakdos" }
+				,{ "packName":"dgm-guild-booster-selesnya" }
+
+				,{ "packName":"dgm-guild-booster-orzhov" }
+				,{ "packName":"dgm-guild-booster-dimir" }
+				,{ "packName":"dgm-guild-booster-gruul" }
+				,{ "packName":"dgm-guild-booster-boros" }
+				,{ "packName":"dgm-guild-booster-simic" }
+
+				,{ "packName":"dgm-prerelease-promos" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "dgm-prerelease-guild-azorius"
+						,"presetDesc": "The Azorius Senate (White/Blue)"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"dgm-guild-booster-azorius" }
+							,{ "count":1, "randomDefaultPackName": [ "dgm-guild-booster-orzhov", "dgm-guild-booster-dimir", "dgm-guild-booster-boros", "dgm-guild-booster-simic" ] }
+							,{ "count":4, "defaultPackName":"dgm-standard" }
+						]
+					}
+					,{
+						"presetName": "dgm-prerelease-guild-golgari"
+						,"presetDesc": "The Golgari Swarm (Black/Green)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"dgm-guild-booster-golgari" }
+							,{ "count":1, "randomDefaultPackName": [ "dgm-guild-booster-orzhov", "dgm-guild-booster-dimir", "dgm-guild-booster-gruul", "dgm-guild-booster-simic" ] }
+							,{ "count":4, "defaultPackName":"dgm-standard" }
+						]
+					}
+					,{
+						"presetName": "dgm-prerelease-guild-izzet"
+						,"presetDesc": "The Izzet League (Black/Red)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"dgm-guild-booster-izzet" }
+							,{ "count":1, "randomDefaultPackName": [ "dgm-guild-booster-dimir", "dgm-guild-booster-gruul", "dgm-guild-booster-boros", "dgm-guild-booster-simic" ] }
+							,{ "count":4, "defaultPackName":"dgm-standard" }
+						]
+					}
+					,{
+						"presetName": "dgm-prerelease-guild-rakdos"
+						,"presetDesc": "The Cult of Rakdos (Black/Red)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"dgm-guild-booster-rakdos" }
+							,{ "count":1, "randomDefaultPackName": [ "dgm-guild-booster-orzhov", "dgm-guild-booster-dimir", "dgm-guild-booster-gruul", "dgm-guild-booster-boros" ] }
+							,{ "count":4, "defaultPackName":"dgm-standard" }
+						]
+					}
+					,{
+						"presetName": "dgm-prerelease-guild-selesnya"
+						,"presetDesc": "The Selesnya Conclave (Green/White)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"dgm-guild-booster-selesnya" }
+							,{ "count":1, "randomDefaultPackName": [ "dgm-guild-booster-orzhov", "dgm-guild-booster-gruul", "dgm-guild-booster-boros", "dgm-guild-booster-simic" ] }
+							,{ "count":4, "defaultPackName":"dgm-standard" }
+						]
+					}
+					
+					,{
+						"presetName": "dgm-prerelease-guild-orzhov"
+						,"presetDesc": "The Orzhov Syndicate (White/Black)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"dgm-guild-booster-orzhov" }
+							,{ "count":1, "randomDefaultPackName": [ "dgm-guild-booster-azorius", "dgm-guild-booster-rakdos", "dgm-guild-booster-golgari", "dgm-guild-booster-selesnya" ] }
+							,{ "count":4, "defaultPackName":"dgm-standard" }
+						]
+					}
+					,{
+						"presetName": "dgm-prerelease-guild-dimir"
+						,"presetDesc": "House Dimir (Blue/Black)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"dgm-guild-booster-dimir" }
+							,{ "count":1, "randomDefaultPackName": [ "dgm-guild-booster-azorius", "dgm-guild-booster-izzet", "dgm-guild-booster-rakdos", "dgm-guild-booster-golgari" ] }
+							,{ "count":4, "defaultPackName":"dgm-standard" }
+						]
+					}
+					,{
+						"presetName": "dgm-prerelease-guild-gruul"
+						,"presetDesc": "The Gruul Clans (Green/Red)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"dgm-guild-booster-gruul" }
+							,{ "count":1, "randomDefaultPackName": [ "dgm-guild-booster-izzet", "dgm-guild-booster-rakdos", "dgm-guild-booster-golgari", "dgm-guild-booster-selesnya" ] }
+							,{ "count":4, "defaultPackName":"dgm-standard" }
+						]
+					}
+					,{
+						"presetName": "dgm-prerelease-guild-boros"
+						,"presetDesc": "The Boros Legion (Red/White)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"dgm-guild-booster-boros" }
+							,{ "count":1, "randomDefaultPackName": [ "dgm-guild-booster-azorius", "dgm-guild-booster-izzet", "dgm-guild-booster-rakdos", "dgm-guild-booster-selesnya" ] }
+							,{ "count":4, "defaultPackName":"dgm-standard" }
+						]
+					}
+					,{
+						"presetName": "dgm-prerelease-guild-simic"
+						,"presetDesc": "The Simic Combine (Green/Blue)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"dgm-guild-booster-simic" }
+							,{ "count":1, "randomDefaultPackName": [ "dgm-guild-booster-azorius", "dgm-guild-booster-izzet", "dgm-guild-booster-golgari", "dgm-guild-booster-selesnya" ] }
+							,{ "count":4, "defaultPackName":"dgm-standard" }
+						]
+					}
+
+					,{
+						"presetName": "dgm-prerelease-promos"
+						,"presetDesc": "Dragon's Maze Prerelease Promos"
+						,"packs": [
+							{ "count":1, "defaultPackName":"dgm-prerelease-promos" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "dgm-fat-pack"
+			,"productDesc": "Fat Pack"
+			,"sources": [ "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/1207" ]
+			,"isGenerated": true
+			,"autoGenerate": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"dgm-standard" }
+				,{ "packName":"dgm-fat-pack-land" }
+				,{ "packName":"dgm-fat-pack-pack-ins" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "dgm-fat-pack"
+						,"presetDesc": "Dragon's Maze Fat Pack"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"dgm-fat-pack-pack-ins" }
+							,{ "count":9, "defaultPackName":"dgm-standard" }
+							,{ "count":1, "defaultPackName":"dgm-fat-pack-land" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "dgm-promos"
+			,"productDesc": "All Promos"
+			,"sources": [ "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/1057" ]
+			,"isGenerated": false
+			,"initialSort": "name"
+			,"packs": [
+				{ "packName":"dgm-promos" }
+			]
+		}
+
+	]
+}

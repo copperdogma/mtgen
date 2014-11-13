@@ -1,0 +1,132 @@
+{
+"_comment": "full product list: http://archive.wizards.com/Magic/tcg/productarticle.aspx?x=mtg/tcg/returntoravnica/productinfo",
+"_comment": "NOTE: cannot do Intro Packs or Event Deck as they mix different sets",
+"_comment": "if there are no options the query/packNames will be auto-run"
+
+,"products": 
+	[
+		{
+			"productName": "rtr-all-cards"
+			,"productDesc": "All Cards"
+			,"sources": [ "http://archive.wizards.com/Magic/tcg/productarticle.aspx?x=mtg/tcg/returntoravnica/productinfo", "http://archive.wizards.com/Magic/tcg/article.aspx?x=mtg/tcg/returntoravnica/cig", "http://www.gatheringmagic.com/return-to-ravnica-spoilers/" ]
+			,"isGenerated": false
+			,"initialSort": "colour"
+			,"packs": [
+				{ "packName":"rtr-all-cards" }
+			]
+		}
+
+		,{
+			"productName": "rtr-prerelease"
+			,"productDesc": "Prerelease"
+			,"sources": [ "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/feature/214", "https://docs.google.com/spreadsheet/ccc?key=0Apln2HM4aSGbdDJ6MFk5cTBjb09sXzFWdndhTkx2V1E&usp=sharing#gid=2", "https://www.youtube.com/watch?v=rd2N0b6Y01U" ]
+			,"isGenerated": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"rtr-standard" }
+				,{ "packName":"rtr-guild-booster-azorius" },{ "packName":"rtr-guild-booster-packins-azorius" }
+				,{ "packName":"rtr-guild-booster-golgari" },{ "packName":"rtr-guild-booster-packins-golgari" }
+				,{ "packName":"rtr-guild-booster-izzet" },{ "packName":"rtr-guild-booster-packins-izzet" }
+				,{ "packName":"rtr-guild-booster-rakdos" },{ "packName":"rtr-guild-booster-packins-rakdos" }
+				,{ "packName":"rtr-guild-booster-selesnya" },{ "packName":"rtr-guild-booster-packins-selesnya" }
+				,{ "packName":"rtr-prerelease-promos" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "rtr-prerelease-guild-azorius"
+						,"presetDesc": "The Azorius Senate (White/Blue)"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"rtr-guild-booster-azorius" }
+							,{ "count":1, "defaultPackName":"rtr-guild-booster-packins-azorius" }
+							,{ "count":5, "defaultPackName":"rtr-standard" }
+						]
+					}
+					,{
+						"presetName": "rtr-prerelease-guild-golgari"
+						,"presetDesc": "The Golgari Swarm (Black/Green)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"rtr-guild-booster-golgari" }
+							,{ "count":1, "defaultPackName":"rtr-guild-booster-packins-golgari" }
+							,{ "count":5, "defaultPackName":"rtr-standard" }
+						]
+					}
+					,{
+						"presetName": "rtr-prerelease-guild-izzet"
+						,"presetDesc": "The Izzet League (Black/Red)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"rtr-guild-booster-izzet" }
+							,{ "count":1, "defaultPackName":"rtr-guild-booster-packins-izzet" }
+							,{ "count":5, "defaultPackName":"rtr-standard" }
+						]
+					}
+					,{
+						"presetName": "rtr-prerelease-guild-rakdos"
+						,"presetDesc": "The Cult of Rakdos (Black/Red)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"rtr-guild-booster-rakdos" }
+							,{ "count":1, "defaultPackName":"rtr-guild-booster-packins-rakdos" }
+							,{ "count":5, "defaultPackName":"rtr-standard" }
+						]
+					}
+					,{
+						"presetName": "rtr-prerelease-guild-selesnya"
+						,"presetDesc": "The Selesnya Conclave (Green/White)"
+						,"packs": [
+							{ "count":1, "defaultPackName":"rtr-guild-booster-selesnya" }
+							,{ "count":1, "defaultPackName":"rtr-guild-booster-packins-selesnya" }
+							,{ "count":5, "defaultPackName":"rtr-standard" }
+						]
+					}
+					,{
+						"presetName": "rtr-prerelease-promos"
+						,"presetDesc": "Return to Ravnica Prerelease Promos"
+						,"packs": [
+							{ "count":1, "defaultPackName":"rtr-prerelease-promos" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "rtr-fat-pack"
+			,"productDesc": "Fat Pack"
+			,"isGenerated": true
+			,"autoGenerate": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"rtr-standard" }
+				,{ "packName":"rtr-fat-pack-land" }
+				,{ "packName":"rtr-fat-pack-pack-ins" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "rtr-fat-pack"
+						,"presetDesc": "Return to Ravnica Fat Pack"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"rtr-fat-pack-pack-ins" }
+							,{ "count":9, "defaultPackName":"rtr-standard" }
+							,{ "count":1, "defaultPackName":"rtr-fat-pack-land" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "rtr-promos"
+			,"productDesc": "All Promos"
+			,"sources": [ "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/1057" ]
+			,"isGenerated": false
+			,"initialSort": "name"
+			,"packs": [
+				{ "packName":"rtr-promos" }
+			]
+		}
+
+	]
+}

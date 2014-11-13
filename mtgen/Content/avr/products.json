@@ -1,0 +1,89 @@
+{
+"_comment": "full product list: http://archive.wizards.com/Magic/tcg/productarticle.aspx?x=mtg/tcg/avacynrestored/productinfo",
+"_comment": "NOTE: cannot do Intro Packs or Event Deck as they mix different sets",
+"_comment": "if there are no options the query/packNames will be auto-run"
+
+,"products": 
+	[
+		{
+			"productName": "avr-all-cards"
+			,"productDesc": "All Cards"
+			,"sources": [ "http://archive.wizards.com/Magic/tcg/article.aspx?x=mtg/tcg/avacynrestored/cig", "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/954", "http://www.gatheringmagic.com/magic-the-gathering-sets/innistrad/avacyn-restored-spoilers/" ]
+			,"isGenerated": false
+			,"initialSort": "colour"
+			,"packs": [
+				{ "packName":"avr-all-cards" }
+			]
+		}
+
+		,{
+			"productName": "avr-prerelease"
+			,"productDesc": "Prerelease"
+			,"sources": [ "http://archive.wizards.com/magic/magazine/Article.aspx?x=mtg/daily/feature/192", "http://archive.wizards.com/Magic/tcg/resources.aspx?x=magic/rules/wpnRulesAndDocuments/avrprereleaseachievementcard&date=4/30/2014", "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/963" ]
+			,"isGenerated": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"avr-standard" }
+				,{ "packName":"avr-prerelease-promos" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "avr-prerelease"
+						,"presetDesc": "Avacyn Restored Prerelease"
+						,"default": true
+						,"packs": [
+							{ "count":6, "defaultPackName":"avr-standard" }
+						]
+					}
+					,{
+						"presetName": "avr-prerelease-promos"
+						,"presetDesc": "Avacyn Restored Prerelease Promos"
+						,"packs": [
+							{ "count":1, "defaultPackName":"avr-prerelease-promos" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "avr-fat-pack"
+			,"productDesc": "Fat Pack"
+			,"isGenerated": true
+			,"autoGenerate": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"avr-standard" }
+				,{ "packName":"avr-fat-pack-land" }
+				,{ "packName":"avr-fat-pack-pack-ins" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "avr-fat-pack"
+						,"presetDesc": "Avacyn Restored Fat Pack"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"avr-fat-pack-pack-ins" }
+							,{ "count":9, "defaultPackName":"avr-standard" }
+							,{ "count":1, "defaultPackName":"avr-fat-pack-land" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "avr-promos"
+			,"productDesc": "All Promos"
+			,"sources": [ "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/947" ]
+			,"isGenerated": false
+			,"initialSort": "name"
+			,"packs": [
+				{ "packName":"avr-promos" }
+			]
+		}
+
+	]
+}

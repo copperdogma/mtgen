@@ -1,0 +1,29 @@
+﻿@using mtgen.Models;
+@{
+    var set = new mtgen.Models.Set()
+    {
+        Code = "isd",
+        Name = "Innistrad",
+        CreatedDate = new DateTime(2011, 9, 24),
+        CreatedText = "(yes, the day before the Innistrad Prerelease)",
+        CardCount = 264,
+        StartProductName = "isd-prerelease"
+    };
+
+    set.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2011,9,29),
+            HtmlString = "Double-Faced now replaced common. No duplicates allowed. Works in Firefox. (Thanks, Mike!)"
+        }
+    };
+
+    ViewBag.Set = set;
+
+    /* Defaults:
+        SetFile = "~/sets.json";
+        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+        PackFiles = new List<string>() { "packs.json" };
+        ProductFile = "products.json";
+     */
+}

@@ -1,0 +1,79 @@
+{
+"_comment": "if there are no options the query/packNames will be auto-run"
+,"products": 
+	[
+		{
+			"productName": "m13-all-cards"
+			,"productDesc": "All Cards"
+			,"sources": [ "http://archive.wizards.com/magic/tcg/article.aspx?x=mtg/tcg/magic2013/cig", "http://www.gatheringmagic.com/magic-the-gathering-sets/core-sets/magic-2013-spoilers/", "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/998", "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/1002" ]
+			,"isGenerated": false
+			,"initialSort": "colour"
+			,"packs": [
+				{ "packName":"m13-all-cards" }
+			]
+		}
+		,{
+			"productName": "m13-prerelease"
+			,"productDesc": "Prerelease"
+			,"sources": [ "http://archive.wizards.com/magic/magazine/article.aspx?x=mtg/daily/feature/202" ]
+			,"isGenerated": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"m13-standard" }
+				,{ "packName":"m13-prerelease-promos" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "m13-prerelease"
+						,"presetDesc": "Core 2014 Prerelease"
+						,"default": true
+						,"packs": [
+							{ "count":6, "defaultPackName":"m13-standard" }
+							,{ "count":1, "defaultPackName":"m13-prerelease-promos" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "m13-fat-pack"
+			,"productDesc": "Fat Pack"
+			,"sources": [ "https://www.youtube.com/watch?v=LtvxejnsBpw" ]
+			,"isGenerated": true
+			,"autoGenerate": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"m13-standard" }
+				,{ "packName":"m13-fat-pack-land" }
+				,{ "packName":"m13-fat-pack-pack-ins" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "m13-fat-pack"
+						,"presetDesc": "Core 2014 Fat Pack"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"m13-fat-pack-pack-ins" }
+							,{ "count":9, "defaultPackName":"m13-standard" }
+							,{ "count":1, "defaultPackName":"m13-fat-pack-land" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "m13-promos"
+			,"productDesc": "All Promos"
+			,"isGenerated": false
+			,"initialSort": "name"
+			,"packs": [
+				{ "packName":"m13-promos" }
+			]
+		}
+
+	]
+}

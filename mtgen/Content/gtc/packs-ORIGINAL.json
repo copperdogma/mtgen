@@ -1,0 +1,188 @@
+{
+	"defs": 
+		[
+			{
+				"defName": "gtc",
+				"query": "from[*]?set='gtc'"
+			},
+			{
+				"defName": "gtc_promo",
+				"query": "from[gtc]?promo=true"
+			},
+			{
+				"defName": "gtc_set",
+				"query": "from[gtc]-from[gtc_promo]"
+			},
+			{
+				"defName": "gtc_main",
+				"query": "from[gtc_set]-from[gtc_set]?type=(Tip|Token|Land)"
+			},
+			{
+				"defName": "gtc_foils",
+				"query": "from[gtc_main]"
+			}
+		]
+
+	,"packs": 
+		[
+	 		{
+			"packName": "gatecrash-standard",
+			"packDesc": "Gatecrash: Standard Booster",
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 100, "query": "from[gtc]?type='Land'" } ] }
+					,{ "percents": [ { "percent": 100, "query": "take[8]>from[gtc_main]?rarity='c'" } ] }
+					,{ "percents": [ { "percent": 75, "query": "from[gtc_main]?rarity='c'" }
+									,{ "percent": 25, "query": "from[gtc_foils]", "canBeDuplicate": true, "setValues": [ { "key" : "foil", "value" : "true" } ], "_comment": "25% change rare is a foil of any card, including land" }
+									] }
+					,{ "percents": [ { "percent": 100, "query": "take[3]>from[gtc_main]?rarity='u'" } ] }
+					,{ "percents": [ { "percent": 87.5, "query": "from[gtc_main]?rarity='r'" }
+									,{ "percent": 12.5, "query": "from[gtc_main]?rarity='mr'", "_comment": "rare=7/8, mythicRare=1/8" } 
+									] }
+					,{ "percents": [ { "percent": 50, "query": "from[gtc]?type='Tip'" }
+									,{ "percent": 50, "query": "from[gtc]?type='Token'" } 
+									] }
+					]
+				}		
+			}
+			
+			,{
+			"packName": "gatecrash-pre-boros",
+			"packDesc": "Gatecrash: Prerelease Boros Guild Booster",
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 12.5, "query": "take[*]>from[gtc]?title=(Aurelia, the Warleader|Hold the Gates|Ordruun Veteran|Cinder Elemental|Madcap Skills|Skyblinder Staff|Bomber Corps|Wojek Halberdiers|Prophetic Prism|Assault Griffin|Nav Squad Commandos|Shattering Blow|Act of Treason|Court Street Denizen)" }
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Spark Trooper|Hellraiser Goblin|Fortress Cyclops|Guardian of the Gateless|Foundry Street Denizen|Shattering Blow|Furious Resistance|Guildscorn Ward|Warmind Infantry|Assault Griffin|Structural Collapse|Wojek Halberdiers|Angelic Edict|Armored Transport)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Assemble the Legion|Crackling Perimeter|Truefire Paladin|Holy Mantle|Bomber Corps|Knight Watch|Towering Thunderfist|Shielded Passage|Martial Glory|Massive Raid|Guildscorn Ward|Madcap Skills|Wojek Halberdiers|Angelic Edict)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Firemane Avenger|Skullcrack|Sunhome Guildmage|Righteous Charge|Foundry Street Denizen|Skyknight Legionnaire|Aerial Maneuver|Madcap Skills|Smite|Bomber Corps|Millennial Gargoyle|Mugging|Knight Watch|Shattering Blow)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Boros Reckoner|Boros Charm|Homing Lightning|Boros Keyrune|Zarichi Tiger|Skyknight Legionnaire|Guildscorn Ward|Structural Collapse|Daring Skyjek|Martial Glory|Aerial Maneuver|Furious Resistance|Smite|Bomber Corps)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Frontline Medic|Firefist Striker|Arrows of Justice|Murder Investigation|Warmind Infantry|Assault Griffin|Furious Resistance|Zarichi Tiger|Towering Thunderfist|Martial Glory|Guildscorn Ward|Foundry Street Denizen|Skyknight Legionnaire|Razortip Whip)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Legion Loyalist|Arrows of Justice|Ripscale Predator|Urbis Protector|Riot Gear|Daring Skyjek|Nav Squad Commandos|Structural Collapse|Wojek Halberdiers|Martial Glory|Massive Raid|Bomber Corps|Court Street Denizen|Shielded Passage)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Molten Primordial|Mark for Death|Sunhome Guildmage|Boros Elite|Bomber Corps|Shielded Passage|Massive Raid|Skyknight Legionnaire|Guildscorn Ward|Warmind Infantry|Assault Griffin|Shattering Blow|Tin Street Market|Daring Skyjek)" } 
+									] }
+				]
+			}
+			},
+			{
+			"packName": "gatecrash-pre-dimir",
+			"packDesc": "Gatecrash: Prerelease Dimir Guild Booster",
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 12.5, "query": "take[*]>from[gtc]?title=(Lazav, Dimir Mastermind|Dying Wish|Gridlock|Bane Alley Broker|Midnight Recovery|Sage's Row Denizen|Psychic Strike|Metropolis Sprite|Grisly Spectacle|Way of the Thief|Horror of the Dim|Millennial Gargoyle|Spell Rupture|Deathcult Rogue)" }
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Mind Grind|Bane Alley Broker|Voidwalk|Wight of Precinct Six|Last Thoughts|Grisly Spectacle|Sage's Row Denizen|Mortus Strider|Shadow Slice|Metropolis Sprite|Paranoid Delusions|Midnight Recovery|Keymaster Rogue|Shadow Alley Denizen)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Soul Ransom|Mental Vapors|Mindeye Drake|Coerced Confession|Corpse Blockade|Mortus Strider|Death's Approach|Razortip Whip|Balustrade Spy|Skygames|Shadow Slice|Deathcult Rogue|Midnight Recovery|Hands of Binding)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Whispering Madness|Smog Elemental|Dinrova Horror|Sapphire Drake|Contaminated Ground|Prophetic Prism|Keymaster Rogue|Armored Transport|Skygames|Paranoid Delusions|Sage's Row Denizen|Gutter Skulk|Totally Lost|Mortus Strider)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Nightveil Specter|Agoraphobia|Killing Glare|Duskmantle Guildmage|Last Thoughts|Midnight Recovery|Deathcult Rogue|Scatter Arc|Slate Street Ruffian|Psychic Strike|Metropolis Sprite|Corpse Blockade|Skygames|Shadow Alley Denizen)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Undercity Plague|Call of the Nightwing|Gateway Shade|Incursion Specialist|Death's Approach|Spell Rupture|Deathcult Rogue|Keymaster Rogue|Contaminated Ground|Leyline Phantom|Skyblinder Staff|Skygames|Balustrade Spy|Psychic Strike)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Stolen Identity|Undercity Informer|Aetherize|Dimir Charm|Midnight Recovery|Metropolis Sprite|Grisly Spectacle|Skygames|Balustrade Spy|Psychic Strike|Shadow Slice|Deathcult Rogue|Spell Rupture|Shadow Alley Denizen)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Sepulchral Primordial|Dimir Keyrune|Illness in the Ranks|Dimir Charm|Horror of the Dim|Last Thoughts|Death's Approach|Deathcult Rogue|Riot Gear|Slate Street Ruffian|Sage's Row Denizen|Mortus Strider|Contaminated Ground|Totally Lost)" } 
+									] }
+				]
+			}
+			},
+			{
+			"packName": "gatecrash-pre-gruul",
+			"packDesc": "Gatecrash: Prerelease Gruul Guild Booster",
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 12.5, "query": "take[*]>from[gtc]?title=(Borborygmos Enraged|Hellraiser Goblin|Frenzied Tilling|Serene Remembrance|Ember Beast|Primal Visitation|Disciple of the Old Ways|Mugging|Predator's Rapport|Riot Gear|Greenside Watcher|Pit Fight|Act of Treason|Ivy Lane Denizen)" }
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Gruul Ragebeast|Crackling Perimeter|Ground Assault|Wasteland Viper|Skinbrand Goblin|Primal Visitation|Act of Treason|Slaughterhorn|Millennial Gargoyle|Zhur Taa Swine|Wildwood Rebirth|Scab Clan Charger|Madcap Skills|Disciple of the Old Ways)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Signal the Clans|Miming Slime|Rust Scarab|Ghor Clan Rampager|Prophetic Prism|Verdant Haven|Structural Collapse|Ruination Wurm|Scorchwalker|Skinbrand Goblin|Forced Adaptation|Zhur Taa Swine|Burst of Strength|Tin Street Market)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Clan Defiance|Ripscale Predator|Gruul Charm|Hindervines|Slaughterhorn|Act of Treason|Primal Visitation|Ember Beast|Disciple of the Old Ways|Zhur Taa Swine|Predator's Rapport|Skinbrand Goblin|Armored Transport|Scorchwalker)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Rubblebelt Raiders|Alpha Authority|Burning Tree Emissary|Homing Lightning|Tin Street Market|Razortip Whip|Foundry Street Denizen|Mugging|Ruination Wurm|Spire Tracer|Act of Treason|Slaughterhorn|Naturalize|Primal Visitation)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Wrecking Ogre|Skarrg Guildmage|Madcap Skills|Disciple of the Old Ways|Scab Clan Charger|Foundry Street Denizen|Ember Beast|Slaughterhorn|Mark for Death|Primal Visitation|Spire Tracer|Pit Fight|Forced Adaptation|Tower Defense)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Skarrg Goliath|Viashino Shanktail|Gruul Keyrune|Skullcrack|Structural Collapse|Pit Fight|Mugging|Disciple of the Old Ways|Ruination Wurm|Ember Beast|Predator's Rapport|Madcap Skills|Scab Clan Charger|Scorchwalker)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Sylvan Primordial|Gruul Charm|Cinder Elemental|Crowned Ceratok|Pit Fight|Act of Treason|Skyblinder Staff|Scorchwalker|Scab Clan Charger|Primal Visitation|Foundry Street Denizen|Wildwood Rebirth|Structural Collapse|Slaughterhorn)" } 
+									] }
+				]
+			}
+			},
+			{
+			"packName": "gatecrash-pre-orzhov",
+			"packDesc": "Gatecrash: Prerelease Orzhov Guild Booster",
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 12.5, "query": "take[*]>from[gtc]?title=(Obzedat, Ghost Council|Vizkopa Guildmage|Righteous Charge|Dying Wish|Executioner's Swing|Purge the Profane|Court Street Denizen|Knight Watch|Devour Flesh|Shadow Alley Denizen|Basilica Screecher|Gutter Skulk|Basilica Guards|Razortip Whip)" }
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Alms Beast|Gift of Orzhova|Thrull Parasite|Debtor's Pulpit|Assault Griffin|Prophetic Prism|Shadow Alley Denizen|Dutiful Thrull|Purge the Profane|Court Street Denizen|Devour Flesh|Beckon Apparition|Syndicate Enforcer|Zarichi Tiger)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(High Priest of Penance|Syndicate Enforcer|Riot Gear|Guardian of the Gateless|Illness in the Ranks|Dutiful Thrull|Syndic of Tithes|Vizkopa Confessor|Basilica Guards|Kingpin's Pet|Gutter Skulk|Knight Watch|Beckon Apparition|Grisly Spectacle)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Merciless Eviction|Hold the Gates|Orzhov Keyrune|Vizkopa Guildmage|Corpse Blockade|Basilica Screecher|Court Street Denizen|Beckon Apparition|Basilica Guards|Death's Approach|Devour Flesh|Dutiful Thrull|Slate Street Ruffian|Kingpin's Pet)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Immortal Servitude|Urbis Protector|Killing Glare|Orzhov Charm|Shadow Alley Denizen|Dutiful Thrull|Purge the Profane|Smite|Syndicate Enforcer|Court Street Denizen|Contaminated Ground|Kingpin's Pet|Skyblinder Staff|Corpse Blockade)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Crypt Ghast|Knight of Obligation|Cartel Aristocrat|Gateway Shade|Angelic Edict|Basilica Screecher|Purge the Profane|Smite|Armored Transport|Guildscorn Ward|Contaminated Ground|Basilica Guards|Beckon Apparition|Slate Street Ruffian)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Blind Obedience|One Thousand Lashes|Wight of Precinct Six|Murder Investigation|Slate Street Ruffian|Dutiful Thrull|Executioner's Swing|Knight Watch|Beckon Apparition|Basilica Guards|Syndicate Enforcer|Smite|Gutter Skulk|Syndic of Tithes)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Luminate Primordial|Vizkopa Confessor|Smog Elemental|Holy Mantle|Basilica Screecher|Purge the Profane|Shadow Alley Denizen|Smite|Devour Flesh|Kingpin's Pet|Aerial Maneuver|Slate Street Ruffian|Guildscorn Ward|Millennial Gargoyle)" } 
+									] }
+				]
+			}
+			},
+			{
+			"packName": "gatecrash-pre-simic",
+			"packDesc": "Gatecrash: Prerelease Simic Guild Booster",
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 12.5, "query": "take[*]>from[gtc]?title=(Prime Speaker Zegana|Alpha Authority|Nimbus Swimmer|Rapid Hybridization|Verdant Haven|Drakewing Krasis|Greenside Watcher|Frilled Oculus|Hydroform|Way of the Thief|Adaptive Snapjaw|Clinging Anemones|Armored Transport|Wildwood Rebirth)" }
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Unexpected Results|Metropolis Sprite|Zameck Guildmage|Miming Slime|Gridlock|Verdant Haven|Shambleshark|Adaptive Snapjaw|Scatter Arc|Crocanura|Keymaster Rogue|Forced Adaptation|Bioshift|Spire Tracer)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Mystic Genesis|Experiment One|Elusive Krasis|Simic Fluxmage|Spell Rupture|Naturalize|Cloudfin Raptor|Adaptive Snapjaw|Hydroform|Ivy Lane Denizen|Totally Lost|Drakewing Krasis|Greenside Watcher|Razortip Whip)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Biovisionary|Aetherize|Rust Scarab|Wildwood Rebirth|Scatter Arc|Crocanura|Frilled Oculus|Burst of Strength|Simic Charm|Hydroform|Leyline Phantom|Ivy Lane Denizen|Prophetic Prism|Shambleshark)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Biomass Mutation|Urban Evolution|Tower Defense|Sapphire Drake|Riot Gear|Adaptive Snapjaw|Totally Lost|Drakewing Krasis|Hydroform|Sage's Row Denizen|Predator's Rapport|Frilled Oculus|Ivy Lane Denizen|Cloudfin Raptor)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Gyre Sage|Elusive Krasis|Hindervines|Mindeye Drake|Greenside Watcher|Way of the Thief|Burst of Strength|Cloudfin Raptor|Shambleshark|Totally Lost|Wildwood Rebirth|Leyline Phantom|Bioshift|Keymaster Rogue)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Simic Manipulator|Merfolk of the Depths|Crowned Ceratok|Simic Keyrune|Crocanura|Spell Rupture|Bioshift|Millennial Gargoyle|Totally Lost|Spire Tracer|Drakewing Krasis|Clinging Anemones|Burst of Strength|Frilled Oculus)" } 
+									,{ "percent": 12.5, "query": "take[*]>from[gtc]?title=(Diluvian Primordial|Nimbus Swimmer|Serene Remembrance|Agoraphobia|Spire Tracer|Bioshift|Clinging Anemones|Adaptive Snapjaw|Skygames|Naturalize|Sage's Row Denizen|Burst of Strength|Shambleshark|Skyblinder Staff)" } 
+									] }
+				]
+			}
+			}
+
+
+			,{
+			"packName": "gatecrash-boros-pack-ins",
+			"packDesc": "Gatecrash: Boros Pack Ins",
+			"usableForDeckBuilding": false,
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 100, "query": "take[*]>from[gtc]?title=(Foundry Champion: Promo|Boros Guild Sticker|Boros Spindown Life Counter|Boros Guildmaster Letter|Gatecrash Achievement Card)" } ] }
+					]
+				}
+			}
+			,{
+			"packName": "gatecrash-dimir-pack-ins",
+			"packDesc": "Gatecrash: Dimir Pack Ins",
+			"usableForDeckBuilding": false,
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 100, "query": "take[*]>from[gtc]?title=(Consuming Aberration: Promo|Dimir Guild Sticker|Dimir Spindown Life Counter|Dimir Guildmaster Letter|Gatecrash Achievement Card)" } ] }
+					]
+				}
+			}
+			,{
+			"packName": "gatecrash-gruul-pack-ins",
+			"packDesc": "Gatecrash: Gruul Pack Ins",
+			"usableForDeckBuilding": false,
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 100, "query": "take[*]>from[gtc]?title=(Rubblehulk: Promo|Gruul Guild Sticker|Gruul Spindown Life Counter|Gruul Guildmaster Letter|Gatecrash Achievement Card)" } ] }
+					]
+				}
+			}
+			,{
+			"packName": "gatecrash-orzhov-pack-ins",
+			"packDesc": "Gatecrash: Orzhov Pack Ins",
+			"usableForDeckBuilding": false,
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 100, "query": "take[*]>from[gtc]?title=(Consuming Aberration: Promo|Orzhov Guild Sticker|Orzhov Spindown Life Counter|Orzhov Guildmaster Letter|Gatecrash Achievement Card)" } ] }
+					]
+				}
+			}
+			,{
+			"packName": "gatecrash-simic-pack-ins",
+			"packDesc": "Gatecrash: Simic Pack Ins",
+			"usableForDeckBuilding": false,
+			"cards": {
+				"card": [
+					{ "percents": [ { "percent": 100, "query": "take[*]>from[gtc]?title=(Fathom Mage: Promo|Simic Guild Sticker|Simic Spindown Life Counter|Simic Guildmaster Letter|Gatecrash Achievement Card)" } ] }
+					]
+				}
+			}
+			
+	]
+}

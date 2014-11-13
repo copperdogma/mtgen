@@ -1,0 +1,90 @@
+{
+"_comment": "full product list: http://archive.wizards.com/Magic/tcg/productarticle.aspx?x=mtg/tcg/innistrad/productinfo",
+"_comment": "NOTE: cannot do Intro Packs or Event Deck as they mix different sets",
+"_comment": "if there are no options the query/packNames will be auto-run"
+
+,"products": 
+	[
+		{
+			"productName": "isd-all-cards"
+			,"productDesc": "All Cards"
+			,"sources": [ "http://archive.wizards.com/Magic/tcg/article.aspx?x=mtg/tcg/innistrad/cig", "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/801", "http://www.gatheringmagic.com/magic-the-gathering-sets/innistrad/innistrad-spoilers/" ]
+			,"isGenerated": false
+			,"initialSort": "colour"
+			,"packs": [
+				{ "packName":"isd-all-cards" }
+			]
+		}
+
+		,{
+			"productName": "isd-prerelease"
+			,"productDesc": "Prerelease"
+			,"sources": [ "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/feature/160" ]
+			,"isGenerated": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"isd-standard" }
+				,{ "packName":"isd-prerelease-promos" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "isd-prerelease"
+						,"presetDesc": "Innistrad Prerelease"
+						,"default": true
+						,"packs": [
+							{ "count":6, "defaultPackName":"isd-standard" }
+						]
+					}
+					,{
+						"presetName": "isd-prerelease-promos"
+						,"presetDesc": "Innistrad Prerelease Promos"
+						,"packs": [
+							{ "count":1, "defaultPackName":"isd-prerelease-promos" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "isd-fat-pack"
+			,"productDesc": "Fat Pack"
+			,"sources": [ "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/796" ]
+			,"isGenerated": true
+			,"autoGenerate": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"isd-standard" }
+				,{ "packName":"isd-fat-pack-land" }
+				,{ "packName":"isd-fat-pack-pack-ins" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "isd-fat-pack"
+						,"presetDesc": "Innistrad Fat Pack"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"isd-fat-pack-pack-ins" }
+							,{ "count":9, "defaultPackName":"isd-standard" }
+							,{ "count":1, "defaultPackName":"isd-fat-pack-land" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "isd-promos"
+			,"productDesc": "All Promos"
+			,"sources": [ "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/786", "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/feature/160" ]
+			,"isGenerated": false
+			,"initialSort": "name"
+			,"packs": [
+				{ "packName":"isd-promos" }
+			]
+		}
+
+	]
+}

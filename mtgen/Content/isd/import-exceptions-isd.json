@@ -1,0 +1,175 @@
+[
+ { "_comment": "GM returns each side of a Double-Faces card as individual cards, increasing the total count of cards. I figure this is fine. Most of the exceptions below are translating between GM's format of just that single card's name to the WotC format of using that card's name along with the other Face's card's name in parenthesis."}
+ ,{ "_comment": "'useGmImg': true  :: stamps that on the card, telling the processor to use the GM image even if a WotC image exists"}
+
+ ,{
+  "title": "Ulruly Mob",
+  "newValues": { "title": "Unruly Mob"}
+ }
+
+ ,{
+  "title": "Cloistered Youth",
+  "newValues": { "title": "Cloistered Youth (Unholy Fiend)", "useGmImg": true }
+ }
+ ,{
+  "title": "Thraben Sentry",
+  "newValues": { "title": "Thraben Sentry (Thraben Militia)", "useGmImg": true }
+ }
+ ,{
+  "title": "Civilized Scholar",
+  "newValues": { "title": "Civilized Scholar (Homicidal Brute)", "useGmImg": true }
+ }
+ ,{
+  "title": "Delver of Secrets",
+  "newValues": { "title": "Delver of Secrets (Insectile Aberration)", "useGmImg": true }
+ }
+ ,{
+  "title": "Ludevic’s Test Subject",
+  "newValues": { "title": "Ludevic’s Test Subject (Ludevic’s Abomination)", "useGmImg": true }
+ }
+ ,{
+  "title": "Bloodline Keeper",
+  "newValues": { "title": "Bloodline Keeper (Lord of Lineage)", "useGmImg": true }
+ }
+ ,{
+  "title": "Screeching Bat",
+  "newValues": { "title": "Screeching Bat (Stalking Vampire)", "useGmImg": true }
+ }
+ ,{
+  "title": "Hanweir Watchkeep",
+  "newValues": { "title": "Hanweir Watchkeep (Bane of Hanweir)", "useGmImg": true }
+ }
+ ,{
+  "title": "Instigator Gang",
+  "newValues": { "title": "Instigator Gang (Wildblood Pack)", "useGmImg": true }
+ }
+ ,{
+  "title": "Kruin Outlaw",
+  "newValues": { "title": "Kruin Outlaw (Terror of Kruin Pass)", "useGmImg": true }
+ }
+ ,{
+  "title": "Reckless Waif",
+  "newValues": { "title": "Reckless Waif (Merciless Predator)", "useGmImg": true }
+ }
+ ,{
+  "title": "Tormented Pariah",
+  "newValues": { "title": "Tormented Pariah (Rampaging Werewolf)", "useGmImg": true }
+ }
+ ,{
+  "title": "Village Ironsmith",
+  "newValues": { "title": "Village Ironsmith (Ironfang)", "useGmImg": true }
+ }
+ ,{
+  "title": "Daybreak Ranger",
+  "newValues": { "title": "Daybreak Ranger (Nightfall Predator)", "useGmImg": true }
+ }
+ ,{
+  "title": "Garruk Relentless",
+  "newValues": { "title": "Garruk Relentless (Garruk, the Veil-Cursed)", "useGmImg": true }
+ }
+ ,{
+  "title": "Gatstaf Shepherd",
+  "newValues": { "title": "Gatstaf Shepherd (Gatstaf Howler)", "useGmImg": true }
+ }
+ ,{
+  "title": "Grizzled Outcasts",
+  "newValues": { "title": "Grizzled Outcasts (Krallenhorde Wantons)", "useGmImg": true }
+ }
+ ,{
+  "title": "Mayor of Avabruck",
+  "newValues": { "title": "Mayor of Avabruck (Howlpack Alpha)", "useGmImg": true }
+ }
+ ,{
+  "title": "Ulvenwald Mystics",
+  "newValues": { "title": "Ulvenwald Mystics (Ulvenwald Primordials)", "useGmImg": true }
+ }
+ ,{
+  "title": "Villagers of Estwald",
+  "newValues": { "title": "Villagers of Estwald (Howlpack of Estwald)", "useGmImg": true }
+ }
+
+ ,{
+  "title": "Unholy Fiend",
+  "newValues": { "title": "(Cloistered Youth) Unholy Fiend", "useGmImg": true }
+ }
+ ,{
+  "title": "Thraben Militia",
+  "newValues": { "title": "(Thraben Sentry) Thraben Militia", "useGmImg": true }
+ }
+ ,{
+  "title": "Homicidal Brute",
+  "newValues": { "title": "(Civilized Scholar) Homicidal Brute", "useGmImg": true }
+ }
+ ,{
+  "title": "Insectile Aberration",
+  "newValues": { "title": "(Delver of Secrets) Insectile Aberration", "useGmImg": true }
+ }
+ ,{
+  "title": "Ludevic’s Abomination",
+  "newValues": { "title": "(Ludevic’s Test Subject) Ludevic’s Abomination", "useGmImg": true }
+ }
+ ,{
+  "title": "Lord of Lineage",
+  "newValues": { "title": "(Bloodline Keeper) Lord of Lineage", "useGmImg": true }
+ }
+ ,{
+  "title": "Stalking Vampire",
+  "newValues": { "title": "(Screeching Bat) Stalking Vampire", "useGmImg": true }
+ }
+ ,{
+  "title": "Bane of Hanweir",
+  "newValues": { "title": "(Hanweir Watchkeep) Bane of Hanweir", "useGmImg": true }
+ }
+ ,{
+  "title": "Wildblood Pack",
+  "newValues": { "title": "(Instigator Gang) Wildblood Pack", "useGmImg": true }
+ }
+ ,{
+  "title": "Terror of Kruin Pass",
+  "newValues": { "title": "(Kruin Outlaw) Terror of Kruin Pass", "useGmImg": true }
+ }
+ ,{
+  "title": "Merciless Predator",
+  "newValues": { "title": "(Reckless Waif) Merciless Predator", "useGmImg": true }
+ }
+ ,{
+  "title": "Rampaging Werewolf",
+  "newValues": { "title": "(Tormented Pariah) Rampaging Werewolf", "useGmImg": true }
+ }
+ ,{
+  "title": "Ironfang",
+  "newValues": { "title": "(Village Ironsmith) Ironfang", "useGmImg": true }
+ }
+ ,{
+  "title": "Nightfall Predator",
+  "newValues": { "title": "(Daybreak Ranger) Nightfall Predator", "useGmImg": true }
+ }
+ ,{
+  "title": "Garruk, the Veil-Cursed",
+  "newValues": { "title": "(Garruk Relentless) Garruk, the Veil-Cursed", "useGmImg": true }
+ }
+ ,{
+  "title": "Gatstaf Howler",
+  "newValues": { "title": "(Gatstaf Shepherd) Gatstaf Howler", "useGmImg": true }
+ }
+ ,{
+  "title": "Krallenhorde Wantons",
+  "newValues": { "title": "(Grizzled Outcasts) Krallenhorde Wantons", "useGmImg": true }
+ }
+ ,{
+  "title": "Howlpack Alpha",
+  "newValues": { "title": "(Mayor of Avabruck) Howlpack Alpha", "useGmImg": true }
+ }
+ ,{
+  "title": "Ulvenwald Primordials",
+  "newValues": { "title": "(Ulvenwald Mystics) Ulvenwald Primordials", "useGmImg": true }
+ }
+ ,{
+  "title": "Howlpack of Estwald",
+  "newValues": { "title": "(Villagers of Estwald) Howlpack of Estwald", "useGmImg": true }
+ }
+]
+
+
+
+

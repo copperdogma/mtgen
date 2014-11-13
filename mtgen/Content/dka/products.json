@@ -1,0 +1,92 @@
+{
+"_comment": "full product list: http://archive.wizards.com/Magic/tcg/productarticle.aspx?x=mtg/tcg/darkascension/productinfo",
+"_comment": "NOTE: cannot do Intro Packs or Event Deck as they mix different sets",
+"_comment": "if there are no options the query/packNames will be auto-run"
+
+ ,"products": 
+	[
+		{
+			"productName": "dka-all-cards"
+			,"productDesc": "All Cards"
+			,"sources": [ "http://archive.wizards.com/Magic/tcg/article.aspx?x=mtg/tcg/darkascension/cig", "http://archive.wizards.com/Magic/Magazine/Article.aspx?x=mtg/daily/arcana/888", "http://www.gatheringmagic.com/magic-the-gathering-sets/innistrad/dark-ascension-spoilers/" ]
+			,"isGenerated": false
+			,"initialSort": "colour"
+			,"packs": [
+				{ "packName":"dka-all-cards" }
+			]
+		}
+
+		,{
+			"productName": "dka-prerelease"
+			,"productDesc": "Prerelease"
+			,"sources": [ "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/feature/179" ]
+			,"isGenerated": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"dka-standard" }
+				,{ "packName":"isd-standard" }
+				,{ "packName":"dka-prerelease-promos" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "dka-prerelease"
+						,"presetDesc": "Dark Ascension Prerelease"
+						,"default": true
+						,"packs": [
+							{ "count":3, "defaultPackName":"dka-standard" }
+							,{ "count":3, "defaultPackName":"isd-standard" }
+						]
+					}
+					,{
+						"presetName": "dka-prerelease-promos"
+						,"presetDesc": "Dark Ascension Prerelease Promos"
+						,"packs": [
+							{ "count":1, "defaultPackName":"dka-prerelease-promos" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "dka-fat-pack"
+			,"productDesc": "Fat Pack"
+			,"sources": [ "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/796", "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/886" ]
+			,"isGenerated": true
+			,"autoGenerate": true
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"dka-standard" }
+				,{ "packName":"dka-fat-pack-land" }
+				,{ "packName":"dka-fat-pack-pack-ins" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "dka-fat-pack"
+						,"presetDesc": "Dark Ascension Fat Pack"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"dka-fat-pack-pack-ins" }
+							,{ "count":9, "defaultPackName":"dka-standard" }
+							,{ "count":1, "defaultPackName":"dka-fat-pack-land" }
+						]
+					}
+				]
+			}
+		}
+
+		,{
+			"productName": "dka-promos"
+			,"productDesc": "All Promos"
+			,"sources": [ "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/881" ]
+			,"isGenerated": false
+			,"initialSort": "name"
+			,"packs": [
+				{ "packName":"dka-promos" }
+			]
+		}
+
+	]
+}
