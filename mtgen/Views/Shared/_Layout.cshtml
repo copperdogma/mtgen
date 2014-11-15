@@ -91,6 +91,7 @@
     <link rel="stylesheet" href="@Url.Content("~/Scripts/fancybox2/jquery.fancybox.css?v=2.1.5")" type="text/css" media="screen" />
     <script src="@Url.Content("~/Scripts/fancybox2/jquery.fancybox.pack.js?v=2.1.5")"></script>
     <script src="@Url.Content("~/Scripts/mtg-generator.js")"></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/holder/2.4.0/holder.js'></script>
     <script src="@Url.Content("~/Scripts/jquery.sticky-kit.min.js")"></script>
     <script>
         $(document).ready(function () {
@@ -110,11 +111,16 @@
             // dynamic card loading counts
             $("#card-count .total").text(mtgGen.setCardCount);
             var $currentCardCount = $("#card-count .current");
-            mtgGen.on('playableCardLoaded', function (setCardsLoadedCount) { $currentCardCount.text(setCardsLoadedCount); });
+            mtgGen.on('playableCardLoaded',function(setCardsLoadedCount) { $currentCardCount.text(setCardsLoadedCount);	});
+
+            mtgGen.on('ready',function(setCardsLoadedCount) { Holder.run(); });
 
             // sticky headers
-            mtgGen.on('layoutChanging', function (setCardsLoadedCount) { $(".result .set h2").trigger("sticky_kit:detach"); });
-            mtgGen.on('layoutChanged', function (setCardsLoadedCount) { $(".result .set h2").stick_in_parent(); });
+            mtgGen.on('layoutChanging',function(setCardsLoadedCount) { $(".result .set h2").trigger("sticky_kit:detach"); });
+            mtgGen.on('layoutChanged',function(setCardsLoadedCount) { 
+                $(".result .set h2").stick_in_parent();
+                Holder.run();
+            });
 
             // analytics event tracking
             var currProduct = "#products a.active";

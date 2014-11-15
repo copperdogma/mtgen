@@ -93,6 +93,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="SimpleMvcSitemap">
+      <HintPath>..\packages\SimpleMvcSitemap.1.0.0\lib\net45\SimpleMvcSitemap.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -181,6 +184,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SetController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SitemapController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -270,6 +274,9 @@
     <Content Include="Content\bng\images\symbol-original.png" />
     <Content Include="Content\bng\images\symbol.png" />
     <Content Include="Content\bng\set.css" />
+    <Content Include="Content\c14\images\logo-word-original.jpg" />
+    <Content Include="Content\dgm\cards\azorius-guild-button.jpg" />
+    <Content Include="Content\dgm\cards\boros-guild-button.jpg" />
     <Content Include="Content\dgm\cards\dgm-fat-pack-card-box.png" />
     <Content Include="Content\dgm\cards\dgm-fat-pack-deck-box.png" />
     <Content Include="Content\dgm\cards\dgm-fat-pack-mural.png" />
@@ -280,6 +287,14 @@
     <Content Include="Content\dgm\cards\dgm-spindown-life-counter-green.png" />
     <Content Include="Content\dgm\cards\dgm-spindown-life-counter-red.png" />
     <Content Include="Content\dgm\cards\dgm-spindown-life-counter-white.png" />
+    <Content Include="Content\dgm\cards\dimir-guild-button.jpg" />
+    <Content Include="Content\dgm\cards\golgari-guild-button.jpg" />
+    <Content Include="Content\dgm\cards\gruul-guild-button.jpg" />
+    <Content Include="Content\dgm\cards\izzet-guild-button.jpg" />
+    <Content Include="Content\dgm\cards\orzhov-guild-button.jpg" />
+    <Content Include="Content\dgm\cards\rakdos-guild-button.jpg" />
+    <Content Include="Content\dgm\cards\selesnya-guild-button.jpg" />
+    <Content Include="Content\dgm\cards\simic-guild-button.jpg" />
     <Content Include="Content\dgm\images\bg.jpg" />
     <Content Include="Content\dgm\images\logo-sm.png" />
     <Content Include="Content\dgm\images\logo-word.png" />
@@ -317,19 +332,12 @@
     <Content Include="Content\cns\images\symbol.png" />
     <Content Include="Content\cns\set.css" />
     <Content Include="Content\dka\set.css" />
-    <Content Include="Content\c14\cards\m15-wolf-token.png" />
-    <Content Include="Content\c14\cards\v14-collectors-guide.png" />
-    <Content Include="Content\c14\cards\v14-spindown-life-counter.png" />
-    <Content Include="Content\c14\images\bg-old.jpg" />
     <Content Include="Content\c14\images\bg.jpg" />
-    <Content Include="Content\c14\images\logo-word-original.png" />
     <Content Include="Content\c14\images\logo-word.png" />
     <Content Include="Content\c14\images\symbol-original.png" />
     <Content Include="Content\c14\images\symbol.png" />
     <Content Include="Content\c14\set.css" />
-    <Content Include="Content\dtk\images\bg-old.jpg" />
     <Content Include="Content\dtk\images\bg.jpg" />
-    <Content Include="Content\dtk\images\logo-word-original.png" />
     <Content Include="Content\dtk\images\logo-word.png" />
     <Content Include="Content\dtk\images\symbol-original.png" />
     <Content Include="Content\dtk\images\symbol.png" />
@@ -375,6 +383,15 @@
     <Content Include="Content\gtc\images\logo-word.png" />
     <Content Include="Content\gtc\images\symbol.png" />
     <Content Include="Content\gtc\set.css" />
+    <Content Include="Content\images\mtg-achievement-card-lg.jpg" />
+    <Content Include="Content\images\mtg-achievement-card.jpg" />
+    <Content Include="Content\images\mtg-fat-pack-card-box.png" />
+    <Content Include="Content\images\mtg-fat-pack-deck-box.png" />
+    <Content Include="Content\images\mtg-fat-pack-mural.png" />
+    <Content Include="Content\images\mtg-fat-pack-players-guide.png" />
+    <Content Include="Content\images\mtg-fat-pack-rules-reference-card.png" />
+    <Content Include="Content\images\mtg-marketing1.png" />
+    <Content Include="Content\images\mtg-marketing2.png" />
     <Content Include="Content\isd\cards\isd-fat-pack-card-box.png" />
     <Content Include="Content\isd\cards\isd-fat-pack-deck-box.png" />
     <Content Include="Content\isd\cards\isd-fat-pack-mural.png" />
@@ -564,10 +581,6 @@
     <Content Include="Content\ovm\images\symbol-original.jpg" />
     <Content Include="Content\ovm\images\symbol-original.png" />
     <Content Include="Content\ovm\images\symbol.png" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\generator.css" />
     <Content Include="Content\home.css" />
     <Content Include="Content\html5reset.css" />
@@ -676,11 +689,7 @@
     <Content Include="Content\ths\images\symbol-original.jpg" />
     <Content Include="Content\ths\images\symbol.png" />
     <Content Include="Content\ths\set.css" />
-    <Content Include="Content\frf\images\bg-old.jpg" />
-    <Content Include="Content\frf\images\bg.jpg" />
-    <Content Include="Content\frf\images\logo-word-original.png" />
     <Content Include="Content\frf\images\logo-word.png" />
-    <Content Include="Content\frf\images\symbol-original.png" />
     <Content Include="Content\frf\images\symbol.png" />
     <Content Include="Content\frf\set.css" />
     <Content Include="Content\v14\cards\m15-wolf-token.png" />
@@ -702,17 +711,11 @@
     <Content Include="Content\m15\images\symbol.png" />
     <Content Include="Content\m15\set.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\ai.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\v14\cardsMain.json" />
     <Content Include="Content\v14\cardsOther.json" />
     <Content Include="Content\v14\cardsToken.json" />
@@ -797,19 +800,14 @@
     <Content Include="Content\v14\.DS_Store" />
     <Content Include="Content\v14\cards\.DS_Store" />
     <Content Include="Content\v14\images\.DS_Store" />
-    <Content Include="Content\frf\images\.DS_Store" />
-    <Content Include="Content\dtk\images\.DS_Store" />
-    <Content Include="Content\c14\cards\.DS_Store" />
     <Content Include="Content\c14\cardsMain.json" />
     <Content Include="Content\c14\cardsOther.json" />
     <Content Include="Content\c14\cardsToken.json" />
-    <Content Include="Content\c14\images\.DS_Store" />
     <Content Include="Content\c14\packs.json" />
     <Content Include="Content\c14\products.json" />
     <Content Include="Content\ktk\cardsMain.json" />
     <Content Include="Content\ktk\cardsOther.json" />
     <Content Include="Content\ktk\cardsToken.json" />
-    <Content Include="Content\ktk\cards\.DS_Store" />
     <Content Include="Content\ktk\import-exceptions-ktk.json" />
     <Content Include="Content\ktk\import-settings-ktk.json" />
     <Content Include="Content\ktk\packs.json" />
@@ -819,7 +817,6 @@
     <Content Include="Content\dgm\cardsMain.json" />
     <Content Include="Content\dgm\cardsOther.json" />
     <Content Include="Content\dgm\cardsToken.json" />
-    <Content Include="Content\dgm\images\.DS_Store" />
     <Content Include="Content\dgm\import-exceptions-dgm.json" />
     <Content Include="Content\dgm\import-settings-dgm.json" />
     <Content Include="Content\dgm\packs-ORIGINAL.json" />
@@ -858,7 +855,6 @@
     <Content Include="Content\avr\cardsOther.json" />
     <Content Include="Content\avr\cardsToken.json" />
     <Content Include="Content\avr\cards\.DS_Store" />
-    <Content Include="Content\avr\images\.DS_Store" />
     <Content Include="Content\avr\import-exceptions-avr.json" />
     <Content Include="Content\avr\import-settings-avr.json" />
     <Content Include="Content\avr\packs.json" />
@@ -885,8 +881,6 @@
     <None Include="Properties\PublishProfiles\mtgen.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\backbone-min.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\fancybox2\blank.gif" />
     <Content Include="Scripts\fancybox2\fancybox_loading%402x.gif" />
     <Content Include="Scripts\fancybox2\fancybox_loading.gif" />
@@ -902,6 +896,7 @@
     <Content Include="Scripts\fancybox2\jquery.fancybox.css" />
     <Content Include="Scripts\fancybox2\jquery.fancybox.js" />
     <Content Include="Scripts\fancybox2\jquery.fancybox.pack.js" />
+    <Content Include="Scripts\holder.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
@@ -913,6 +908,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js-version-notes.txt" />
     <Content Include="Scripts\linq.js" />
     <Content Include="Scripts\linq.min.js" />
     <Content Include="Scripts\mdn.base64.min.js" />
@@ -923,6 +919,9 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\underscore-min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="robots.txt">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Shared\OLD_Layout.cshtml" />
     <Content Include="Content\sets.json" />
     <Content Include="Scripts\mtg-generator.js" />
@@ -990,6 +989,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Sitemap\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
