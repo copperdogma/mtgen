@@ -1,19 +1,21 @@
 [
  {
-  "src": "http://mtgen.net/content/images/mtg-marketing1.png",
+  "src": "http://mtgen.net/cards/mtg-marketing1.png",
   "title": "Tip/Marketing Card",
   "set": "gtc",
   "colour": "o",
+  "num": "001 Marketing",
   "rarity": "c",
   "type": "Marketing",
   "usableForDeckBuilding": false,
   "marketing": true
  },
  {
-  "src": "http://mtgen.net/content/images/mtg-marketing2.png",
+  "src": "http://mtgen.net/cards/mtg-marketing2.png",
   "title": "Tip/Marketing Card",
   "set": "gtc",
   "colour": "o",
+  "num": "002 Marketing",
   "rarity": "c",
   "type": "Marketing",
   "usableForDeckBuilding": false,
@@ -21,10 +23,11 @@
  },
 
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-sticker-orzhov.png",
+  "src": "http://mtgen.net/cards/gtc-sticker-orzhov.png",
   "set": "gtc",
   "title": "Orzhov Guild Sticker",
   "colour": "o",
+  "num": "001 Prerelease",
   "rarity": "c",
   "type": "Sticker",
   "guild": "Orzhov",
@@ -33,10 +36,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-sticker-dimir.png",
+  "src": "http://mtgen.net/cards/gtc-sticker-dimir.png",
   "set": "gtc",
   "title": "Dimir Guild Sticker",
   "colour": "o",
+  "num": "002 Prerelease",
   "rarity": "c",
   "type": "Sticker",
   "guild": "Dimir",
@@ -45,10 +49,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-sticker-gruul.png",
+  "src": "http://mtgen.net/cards/gtc-sticker-gruul.png",
   "set": "gtc",
   "title": "Gruul Guild Sticker",
   "colour": "o",
+  "num": "003 Prerelease",
   "rarity": "c",
   "type": "Sticker",
   "guild": "Gruul",
@@ -57,10 +62,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-sticker-boros.png",
+  "src": "http://mtgen.net/cards/gtc-sticker-boros.png",
   "set": "gtc",
   "title": "Boros Guild Sticker",
   "colour": "o",
+  "num": "004 Prerelease",
   "rarity": "c",
   "type": "Sticker",
   "guild": "Boros",
@@ -69,10 +75,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-sticker-simic.png",
+  "src": "http://mtgen.net/cards/gtc-sticker-simic.png",
   "set": "gtc",
   "title": "Simic Guild Sticker",
   "colour": "o",
+  "num": "005 Prerelease",
   "rarity": "c",
   "type": "Sticker",
   "guild": "Simic",
@@ -81,10 +88,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-spindown-life-counter-orzhov.png",
+  "src": "http://mtgen.net/cards/gtc-spindown-life-counter-orzhov.png",
   "set": "gtc",
   "title": "Orzhov Spindown Life Counter",
   "colour": "o",
+  "num": "001 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "guild": "Orzhov",
@@ -93,10 +101,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-spindown-life-counter-dimir.png",
+  "src": "http://mtgen.net/cards/gtc-spindown-life-counter-dimir.png",
   "set": "gtc",
   "title": "Dimir Spindown Life Counter",
   "colour": "o",
+  "num": "002 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "guild": "Dimir",
@@ -105,10 +114,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-spindown-life-counter-gruul.png",
+  "src": "http://mtgen.net/cards/gtc-spindown-life-counter-gruul.png",
   "set": "gtc",
   "title": "Gruul Spindown Life Counter",
   "colour": "o",
+  "num": "003 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "guild": "Gruul",
@@ -117,10 +127,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-spindown-life-counter-boros.png",
+  "src": "http://mtgen.net/cards/gtc-spindown-life-counter-boros.png",
   "set": "gtc",
   "title": "Boros Spindown Life Counter",
   "colour": "o",
+  "num": "004 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "guild": "Boros",
@@ -129,10 +140,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-spindown-life-counter-simic.png",
+  "src": "http://mtgen.net/cards/gtc-spindown-life-counter-simic.png",
   "set": "gtc",
   "title": "Simic Spindown Life Counter",
   "colour": "o",
+  "num": "005 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "guild": "Simic",
@@ -142,13 +154,14 @@
  },
  
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-welcome-letter-orzhov.jpg",
-  "src_large": "http://mtgen.net/content/gtc/cards/gtc-welcome-letter-orzhov-lg.jpg",
+  "src": "http://mtgen.net/cards/gtc-welcome-letter-orzhov.jpg",
+  "src_large": "http://mtgen.net/cards/gtc-welcome-letter-orzhov-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "gtc",
   "title": "Orzhov Welcome Letter",
   "colour": "o",
+  "num": "006 Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "guild": "Orzhov",
@@ -157,13 +170,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-welcome-letter-dimir.jpg",
-  "src_large": "http://mtgen.net/content/gtc/cards/gtc-welcome-letter-dimir-lg.jpg",
+  "src": "http://mtgen.net/cards/gtc-welcome-letter-dimir.jpg",
+  "src_large": "http://mtgen.net/cards/gtc-welcome-letter-dimir-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "gtc",
   "title": "Dimir Welcome Letter",
   "colour": "o",
+  "num": "007 Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "guild": "Dimir",
@@ -172,13 +186,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-welcome-letter-gruul.jpg",
-  "src_large": "http://mtgen.net/content/gtc/cards/gtc-welcome-letter-gruul-lg.jpg",
+  "src": "http://mtgen.net/cards/gtc-welcome-letter-gruul.jpg",
+  "src_large": "http://mtgen.net/cards/gtc-welcome-letter-gruul-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "gtc",
   "title": "Gruul Welcome Letter",
   "colour": "o",
+  "num": "008 Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "guild": "Gruul",
@@ -187,13 +202,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-welcome-letter-boros.jpg",
-  "src_large": "http://mtgen.net/content/gtc/cards/gtc-welcome-letter-boros-lg.jpg",
+  "src": "http://mtgen.net/cards/gtc-welcome-letter-boros.jpg",
+  "src_large": "http://mtgen.net/cards/gtc-welcome-letter-boros-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "gtc",
   "title": "Boros Welcome Letter",
   "colour": "o",
+  "num": "009 Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "guild": "Boros",
@@ -202,13 +218,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-welcome-letter-simic.jpg",
-  "src_large": "http://mtgen.net/content/gtc/cards/gtc-welcome-letter-simic-lg.jpg",
+  "src": "http://mtgen.net/cards/gtc-welcome-letter-simic.jpg",
+  "src_large": "http://mtgen.net/cards/gtc-welcome-letter-simic-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "gtc",
   "title": "Simic Welcome Letter",
   "colour": "o",
+  "num": "010 Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "guild": "Simic",
@@ -218,13 +235,14 @@
  },
  
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-achievement-card-orzhov.jpg",
-  "src_large": "http://mtgen.net/content/gtc/cards/gtc-achievement-card-orzhov-lg.jpg",
+  "src": "http://mtgen.net/cards/gtc-achievement-card-orzhov.jpg",
+  "src_large": "http://mtgen.net/cards/gtc-achievement-card-orzhov-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "gtc",
   "title": "Orzhov Achievement Card",
   "colour": "o",
+  "num": "011 Prerelease",
   "rarity": "c",
   "type": "Achievement Letter",
   "guild": "Orzhov",
@@ -233,13 +251,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-achievement-card-dimir.jpg",
-  "src_large": "http://mtgen.net/content/gtc/cards/gtc-achievement-card-dimir-lg.jpg",
+  "src": "http://mtgen.net/cards/gtc-achievement-card-dimir.jpg",
+  "src_large": "http://mtgen.net/cards/gtc-achievement-card-dimir-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "gtc",
   "title": "Dimir Achievement Card",
   "colour": "o",
+  "num": "012 Prerelease",
   "rarity": "c",
   "type": "Achievement Letter",
   "guild": "Dimir",
@@ -248,13 +267,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-achievement-card-gruul.jpg",
-  "src_large": "http://mtgen.net/content/gtc/cards/gtc-achievement-card-gruul-lg.jpg",
+  "src": "http://mtgen.net/cards/gtc-achievement-card-gruul.jpg",
+  "src_large": "http://mtgen.net/cards/gtc-achievement-card-gruul-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "gtc",
   "title": "Gruul Achievement Card",
   "colour": "o",
+  "num": "013 Prerelease",
   "rarity": "c",
   "type": "Achievement Letter",
   "guild": "Gruul",
@@ -263,13 +283,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-achievement-card-boros.jpg",
-  "src_large": "http://mtgen.net/content/gtc/cards/gtc-achievement-card-boros-lg.jpg",
+  "src": "http://mtgen.net/cards/gtc-achievement-card-boros.jpg",
+  "src_large": "http://mtgen.net/cards/gtc-achievement-card-boros-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "gtc",
   "title": "Boros Achievement Card",
   "colour": "o",
+  "num": "014 Prerelease",
   "rarity": "c",
   "type": "Achievement Letter",
   "guild": "Boros",
@@ -278,13 +299,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-achievement-card-simic.jpg",
-  "src_large": "http://mtgen.net/content/gtc/cards/gtc-achievement-card-simic-lg.jpg",
+  "src": "http://mtgen.net/cards/gtc-achievement-card-simic.jpg",
+  "src_large": "http://mtgen.net/cards/gtc-achievement-card-simic-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "gtc",
   "title": "Simic Achievement Card",
   "colour": "o",
+  "num": "015 Prerelease",
   "rarity": "c",
   "type": "Achievement Letter",
   "guild": "Simic",
@@ -298,6 +320,7 @@
   "set": "gtc",
   "src": "http://media.wizards.com/images/magic/daily/arcana/1138_prerelease_orzhov_hm688e7km6.jpg",
   "cost": "{4}{W}{B}",
+  "num": "201 Prerelease",
   "rarity": "r",
   "type": "Creature",
   "subtype": "Thrull",
@@ -314,6 +337,7 @@
   "set": "gtc",
   "src": "http://media.wizards.com/images/magic/daily/arcana/1138_prerelease_dimir_hm688e7km6.jpg",
   "cost": "{3}{U}{B}",
+  "num": "152 Prerelease",
   "rarity": "r",
   "type": "Creature",
   "subtype": "Horror",
@@ -330,6 +354,7 @@
   "set": "gtc",
   "src": "http://media.wizards.com/images/magic/daily/arcana/1138_prerelease_gruul_hm688e7km6.jpg",
   "cost": "{4}{R}{G}",
+  "num": "192 Prerelease",
   "rarity": "r",
   "type": "Creature",
   "subtype": "Elemental",
@@ -346,6 +371,7 @@
   "set": "gtc",
   "src": "http://media.wizards.com/images/magic/daily/arcana/1138_prerelease_boros_hm688e7km6.jpg",
   "cost": "{4}{R}{W}",
+  "num": "165 Prerelease",
   "rarity": "r",
   "type": "Creature",
   "subtype": "Elemental Soldier",
@@ -362,6 +388,7 @@
   "set": "gtc",
   "src": "http://media.wizards.com/images/magic/daily/arcana/1138_prerelease_simic_hm688e7km6.jpg",
   "cost": "{2}{G}{U}",
+  "num": "162 Prerelease",
   "rarity": "r",
   "type": "Creature",
   "subtype": "Human Wizard",
@@ -461,10 +488,11 @@
  },
 
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-fat-pack-players-guide.png",
+  "src": "http://mtgen.net/cards/gtc-fat-pack-players-guide.png",
   "set": "gtc",
   "title": "Gatecrash Player’s Guide",
   "colour": "other",
+  "num": "001 FatPack",
   "rarity": "c",
   "type": "Player's Guide",
   "promo": "true",
@@ -472,10 +500,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-fat-pack-rules-reference-card.png",
+  "src": "http://mtgen.net/cards/gtc-fat-pack-rules-reference-card.png",
   "set": "gtc",
   "title": "Gatecrash Rules Reference Card",
   "colour": "other",
+  "num": "002 FatPack",
   "rarity": "c",
   "type": "Rules Reference Card",
   "promo": "true",
@@ -483,10 +512,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-fat-pack-card-box.png",
+  "src": "http://mtgen.net/cards/gtc-fat-pack-card-box.png",
   "set": "gtc",
   "title": "Gatecrash Card Box",
   "colour": "other",
+  "num": "003 FatPack",
   "rarity": "c",
   "type": "Card Box",
   "promo": "true",
@@ -494,10 +524,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-fat-pack-mural.png",
+  "src": "http://mtgen.net/cards/gtc-fat-pack-mural.png",
   "set": "gtc",
   "title": "Gatecrash Mural",
   "colour": "other",
+  "num": "004 FatPack",
   "rarity": "c",
   "type": "Mural",
   "promo": "true",
@@ -505,10 +536,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-fat-pack-deck-box.png",
+  "src": "http://mtgen.net/cards/gtc-fat-pack-deck-box.png",
   "set": "gtc",
   "title": "Gatecrash Deck Box",
   "colour": "other",
+  "num": "005 FatPack",
   "rarity": "c",
   "type": "Deck Box",
   "promo": "true",
@@ -516,10 +548,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-spindown-life-counter-orzhov.png",
+  "src": "http://mtgen.net/cards/gtc-spindown-life-counter-orzhov.png",
   "set": "gtc",
   "title": "Special Edition Orzhov Spindown Life Counter",
   "colour": "o",
+  "num": "006 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -527,10 +560,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-spindown-life-counter-dimir.png",
+  "src": "http://mtgen.net/cards/gtc-spindown-life-counter-dimir.png",
   "set": "gtc",
   "title": "Special Edition Dimir Spindown Life Counter",
   "colour": "o",
+  "num": "007 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -538,10 +572,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-spindown-life-counter-gruul.png",
+  "src": "http://mtgen.net/cards/gtc-spindown-life-counter-gruul.png",
   "set": "gtc",
   "title": "Special Edition Gruul Spindown Life Counter",
   "colour": "o",
+  "num": "008 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -549,10 +584,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-spindown-life-counter-boros.png",
+  "src": "http://mtgen.net/cards/gtc-spindown-life-counter-boros.png",
   "set": "gtc",
   "title": "Special Edition Boros Spindown Life Counter",
   "colour": "o",
+  "num": "009 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -560,10 +596,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/gtc/cards/gtc-spindown-life-counter-simic.png",
+  "src": "http://mtgen.net/cards/gtc-spindown-life-counter-simic.png",
   "set": "gtc",
   "title": "Special Edition Simic Spindown Life Counter",
   "colour": "o",
+  "num": "010 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",

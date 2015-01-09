@@ -1,0 +1,28 @@
+﻿@using mtgen.Models;
+@{
+    var set = new mtgen.Models.Set()
+    {
+        Code = "m15",
+        Name = "TEST Set",
+        CreatedDate = new DateTime(2099, 12, 31),
+        CardCount = 269,
+        StartProductName = "m15-prerelease"
+    };
+
+    set.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2014,8,23),
+            HtmlString = "Just test stuff."
+        }
+    };
+
+    ViewBag.Set = set;
+
+    /* Defaults:
+        SetFile = "~/sets.json";
+        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+        PackFiles = new List<string>() { "packs.json" };
+        ProductFile = "products.json";
+     */
+}

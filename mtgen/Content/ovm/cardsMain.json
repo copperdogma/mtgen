@@ -5,9 +5,9 @@
   "cost": "{2}{W}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "w",
-  "num": "00?",
+  "num": "10",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Afterlife"
  },
  {
@@ -16,9 +16,9 @@
   "cost": "{2}{W}",
   "rarity": "u",
   "type": "Instant",
-  "instant": true,
   "colour": "w",
-  "num": "00?",
+  "num": "011",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Akroma%27s%20Blessing"
  },
  {
@@ -27,9 +27,9 @@
   "cost": "{3}{W}",
   "rarity": "m",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "w",
-  "num": "00?",
+  "num": "012",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Armageddon.jpg"
  },
  {
@@ -38,9 +38,9 @@
   "cost": "{2}{W}",
   "rarity": "u",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "w",
-  "num": "00?",
+  "num": "013",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Astralslide.jpg"
  },
  {
@@ -49,9 +49,9 @@
   "cost": "{1}{W}",
   "rarity": "m",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "w",
-  "num": "00?",
+  "num": "014",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Balance.jpg"
  },
  {
@@ -60,9 +60,9 @@
   "cost": "{2}{W}{W}",
   "rarity": "c",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "w",
-  "num": "00?",
+  "num": "015",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/BattleScreech.jpg"
  },
  {
@@ -72,11 +72,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Human Soldier",
-  "creature": true,
   "power": "1",
   "toughness": "2",
   "colour": "w",
-  "num": "00?",
+  "num": "016",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Benalish%20Trapper"
  },
  {
@@ -86,11 +86,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Human Cleric",
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "w",
-  "num": "00?",
+  "num": "017",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Benevolent%20Bodyguard"
  },
  {
@@ -99,9 +99,9 @@
   "cost": "{3}{W}",
   "rarity": "u",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "w",
-  "num": "00?",
+  "num": "018",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21022&type=card"
  },
  {
@@ -111,9 +111,9 @@
   "rarity": "c",
   "type": "Enchantment",
   "subtype": "Aura",
-  "enchantment": true,
   "colour": "w",
-  "num": "00?",
+  "num": "019",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Brilliant%20Halo"
  },
  {
@@ -123,9 +123,9 @@
   "cost": "{1}{W}{W}",
   "rarity": "r",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "w",
-  "num": "016"
+  "num": "020",
+  "fixedViaException": true
  },
  {
   "title": "Crescendo of War",
@@ -134,9 +134,9 @@
   "cost": "{3}{W}",
   "rarity": "r",
   "type": "",
-  "": true,
   "colour": "w",
-  "num": "00?"
+  "num": "021",
+  "fixedViaException": true
  },
  {
   "title": "Decree of Justice",
@@ -144,9 +144,9 @@
   "cost": "{X}{X}{2}{W}{W}",
   "rarity": "r",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "w",
-  "num": "00?",
+  "num": "022",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Decree%20of%20Justice.jpg"
  },
  {
@@ -156,11 +156,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Human Soldier",
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "w",
-  "num": "00?",
+  "num": "023",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Deftblade%20Elite"
  },
  {
@@ -170,11 +170,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Human Spellshaper",
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "w",
-  "num": "00?",
+  "num": "024",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Devout%20Witness"
  },
  {
@@ -184,9 +184,9 @@
   "rarity": "c",
   "type": "Enchantment",
   "subtype": "Aura",
-  "enchantment": true,
   "colour": "w",
-  "num": "00?",
+  "num": "025",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Empyrial%20Armor"
  },
  {
@@ -196,11 +196,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Dragon Spirit",
-  "creature": true,
   "power": "5",
   "toughness": "5",
   "colour": "w",
-  "num": "00?",
+  "num": "026",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Eternal%20Dragon"
  },
  {
@@ -209,9 +209,9 @@
   "cost": "{2}{W}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "w",
-  "num": "00?",
+  "num": "027",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Exile"
  },
  {
@@ -220,9 +220,9 @@
   "cost": "{W}",
   "rarity": "r",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "w",
-  "num": "00?",
+  "num": "028",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Gerrard%27s%20Battle%20Cry"
  },
  {
@@ -231,9 +231,9 @@
   "cost": "{1}{W}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "w",
-  "num": "00?",
+  "num": "029",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Gilded%20Light"
  },
  {
@@ -243,11 +243,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Bird Soldier",
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "w",
-  "num": "00?",
+  "num": "030",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Gustcloak%20Harrier"
  },
  {
@@ -257,12 +257,11 @@
   "rarity": "r",
   "type": "Legendary Creature",
   "subtype": "Cat Cleric",
-  "legendary": true,
-  "creature": true,
   "power": "4",
   "toughness": "7",
   "colour": "w",
-  "num": "00?",
+  "num": "031",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Jareth,%20Leonine%20Titan"
  },
  {
@@ -272,26 +271,25 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Angel Spirit",
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "w",
-  "num": "00?",
+  "num": "032",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Karmic%20Guide"
  },
  {
-  "title": "Kongming, \"Sleeping Dragon\"",
+  "title": "Kongming, “Sleeping Dragon”",
   "set": "ovm",
   "cost": "{2}{W}{W}",
   "rarity": "r",
   "type": "Legendary Creature",
   "subtype": "Human Advisor",
-  "legendary": true,
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "w",
-  "num": "00?",
+  "num": "033",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Kongming%20Sleeping%20Dragon.jpg"
  },
  {
@@ -301,11 +299,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Griffin",
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "w",
-  "num": "00?",
+  "num": "034",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Mistmoon%20Griffin"
  },
  {
@@ -315,11 +313,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Human Nomad Mystic",
-  "creature": true,
   "power": "2",
   "toughness": "4",
   "colour": "w",
-  "num": "00?",
+  "num": "035",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Mystic%20Zealot"
  },
  {
@@ -330,11 +328,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Human Cleric",
-  "creature": true,
   "power": "3",
   "toughness": "6",
   "colour": "w",
-  "num": "00?"
+  "num": "036",
+  "fixedViaException": true
  },
  {
   "title": "Parallax Wave",
@@ -342,9 +340,9 @@
   "cost": "{2}{W}{W}",
   "rarity": "r",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "w",
-  "num": "00?",
+  "num": "037",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Parallax-Wave.jpg"
  },
  {
@@ -354,11 +352,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Spirit Nomad",
-  "creature": true,
   "power": "0",
   "toughness": "0",
   "colour": "w",
-  "num": "00?",
+  "num": "038",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Phantom%20Nomad"
  },
  {
@@ -368,12 +366,11 @@
   "rarity": "r",
   "type": "Legendary Creature",
   "subtype": "Human Nomad",
-  "legendary": true,
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "w",
-  "num": "00?",
+  "num": "039",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Pianna,%20Nomad%20Captain"
  },
  {
@@ -383,12 +380,11 @@
   "rarity": "u",
   "type": "Legendary Creature",
   "subtype": "Angel",
-  "legendary": true,
-  "creature": true,
   "power": "3",
   "toughness": "3",
   "colour": "w",
-  "num": "00?",
+  "num": "040",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Radiant,%20Archangel"
  },
  {
@@ -397,9 +393,9 @@
   "cost": "{2}{W}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "w",
-  "num": "00?",
+  "num": "041",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Radiant%27s%20Judgment"
  },
  {
@@ -408,9 +404,9 @@
   "cost": "{2}{W}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "w",
-  "num": "00?",
+  "num": "042",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Renewed%20Faith"
  },
  {
@@ -419,9 +415,9 @@
   "cost": "{1}{W}",
   "rarity": "c",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "w",
-  "num": "00?",
+  "num": "043",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Seal%20of%20Cleansing"
  },
  {
@@ -430,30 +426,24 @@
   "cost": "{1}{W}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "w",
-  "num": "00?",
+  "num": "044",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Shelter"
  },
  {
-  "title": "Sidar Jibari",
+  "title": "Sidar Jabari",
   "set": "ovm",
   "cost": "{3}{W}",
   "rarity": "u",
   "type": "Legendary Creature",
   "subtype": "Human Knight",
-  "legendary": true,
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "w",
-  "num": "00?",
-  "gmTitle": "Sidar Jibari",
-  "wotcTitle": "Sidar Jabari",
-  "finalTitle": "Sidar Jibari",
-  "originalTitle": "Sidar Jibari",
+  "num": "045",
   "fixedViaException": true,
-  "src": "http://magic.mrpurple.de/Card/modern.php?style=modern.php&Titel=Sidar Jabari&Type=Legendary Creature&Color=White&Rarity=Uncommon&Subtype=- Human Knight&Power=2&Toughness=2&manawhite=1&manacolless=3"
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Sidar%20Jabari"
  },
  {
   "title": "Soltari Emissary",
@@ -462,11 +452,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Soltari Soldier",
-  "creature": true,
   "power": "2",
   "toughness": "1",
   "colour": "w",
-  "num": "00?",
+  "num": "046",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Soltari%20Emissary"
  },
  {
@@ -476,11 +466,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Soltari Soldier",
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "w",
-  "num": "00?",
+  "num": "047",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Soltari%20Trooper"
  },
  {
@@ -489,9 +479,9 @@
   "cost": "{2}{W}",
   "rarity": "u",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "w",
-  "num": "00?",
+  "num": "048",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Spirit%20Cairn"
  },
  {
@@ -500,9 +490,9 @@
   "cost": "{2}{W}{W}",
   "rarity": "r",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "w",
-  "num": "00?",
+  "num": "049",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Spirit%20Mirror"
  },
  {
@@ -512,11 +502,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Human Soldier",
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "w",
-  "num": "00?",
+  "num": "050",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Stoic%20Champion"
  },
  {
@@ -526,9 +516,9 @@
   "cost": "{W}",
   "rarity": "u",
   "type": "Instant",
-  "instant": true,
   "colour": "w",
-  "num": "084"
+  "num": "51",
+  "fixedViaException": true
  },
  {
   "title": "Teroh's Faithful",
@@ -537,11 +527,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Human Cleric",
-  "creature": true,
   "power": "1",
   "toughness": "4",
   "colour": "w",
-  "num": "00?",
+  "num": "052",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/TerohsFaithful.jpg"
  },
  {
@@ -550,9 +540,9 @@
   "cost": "{3}{W}{W}",
   "rarity": "r",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "w",
-  "num": "00?",
+  "num": "053",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Winds%20of%20Rath"
  },
  {
@@ -562,11 +552,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Human Knight",
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "w",
-  "num": "00?",
+  "num": "54",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Zhalfirin%20Crusader"
  },
  {
@@ -577,11 +567,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Human Wizard",
-  "creature": true,
   "power": "0",
   "toughness": "0",
   "colour": "u",
-  "num": "020"
+  "num": "55",
+  "fixedViaException": true
  },
  {
   "title": "Ancestral Recall",
@@ -589,9 +579,9 @@
   "cost": "{U}",
   "rarity": "m",
   "type": "Instant",
-  "instant": true,
   "colour": "u",
-  "num": "00?",
+  "num": "001",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Ancestral-Recal.jpg"
  },
  {
@@ -601,11 +591,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Elemental Beast",
-  "creature": true,
   "power": "1",
   "toughness": "3",
   "colour": "u",
-  "num": "00?",
+  "num": "056",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Aquamoeba"
  },
  {
@@ -614,9 +604,9 @@
   "cost": "{1}{U}",
   "rarity": "u",
   "type": "Instant",
-  "instant": true,
   "colour": "u",
-  "num": "00?",
+  "num": "057",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Brain%20Freeze"
  },
  {
@@ -626,9 +616,9 @@
   "cost": "{U}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "u",
-  "num": "00?"
+  "num": "058",
+  "fixedViaException": true
  },
  {
   "title": "Choking Tethers",
@@ -636,9 +626,9 @@
   "cost": "{3}{U}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "u",
-  "num": "00?",
+  "num": "059",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Choking%20Tethers"
  },
  {
@@ -647,9 +637,9 @@
   "cost": "{2}{U}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "u",
-  "num": "00?",
+  "num": "060",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/CircularLogic.jpg"
  },
  {
@@ -659,11 +649,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Djinn",
-  "creature": true,
   "power": "5",
   "toughness": "4",
   "colour": "u",
-  "num": "00?",
+  "num": "061",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Cloud%20Djinn"
  },
  {
@@ -673,11 +663,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Faerie",
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "u",
-  "num": "00?",
+  "num": "062",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Cloud%20of%20Faeries"
  },
  {
@@ -688,9 +678,9 @@
   "rarity": "r",
   "type": "Enchantment",
   "subtype": "Aura",
-  "enchantment": true,
   "colour": "u",
-  "num": "00?"
+  "num": "063",
+  "fixedViaException": true
  },
  {
   "title": "Counterspell",
@@ -698,9 +688,9 @@
   "cost": "{U}{U}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "u",
-  "num": "00?",
+  "num": "064",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Counterspell"
  },
  {
@@ -709,9 +699,9 @@
   "cost": "{3}{U}",
   "rarity": "c",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "u",
-  "num": "00?",
+  "num": "065",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Deep%20Analysis"
  },
  {
@@ -721,11 +711,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Illusion",
-  "creature": true,
   "power": "4",
   "toughness": "4",
   "colour": "u",
-  "num": "00?",
+  "num": "066",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Ephemeron"
  },
  {
@@ -735,9 +725,9 @@
   "cost": "{3}{U}",
   "rarity": "u",
   "type": "Instant",
-  "instant": true,
   "colour": "u",
-  "num": "00?"
+  "num": "067",
+  "fixedViaException": true
  },
  {
   "title": "Flusterstorm",
@@ -746,9 +736,9 @@
   "cost": "{U}",
   "rarity": "r",
   "type": "Instant",
-  "instant": true,
   "colour": "u",
-  "num": "00?"
+  "num": "068",
+  "fixedViaException": true
  },
  {
   "title": "Force of Will",
@@ -756,9 +746,9 @@
   "cost": "{3}{U}{U}",
   "rarity": "r",
   "type": "Instant",
-  "instant": true,
   "colour": "u",
-  "num": "00?",
+  "num": "069",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/ForceofWill.jpg"
  },
  {
@@ -767,9 +757,9 @@
   "cost": "{2}{U}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "u",
-  "num": "00?",
+  "num": "070",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Frantic%20Search"
  },
  {
@@ -778,9 +768,9 @@
   "cost": "{2}{U}{U}{U}",
   "rarity": "r",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "u",
-  "num": "00?",
+  "num": "071",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Future%20Sight"
  },
  {
@@ -789,9 +779,9 @@
   "cost": "{4}{U}",
   "rarity": "u",
   "type": "Instant",
-  "instant": true,
   "colour": "u",
-  "num": "00?",
+  "num": "072",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Gush"
  },
  {
@@ -800,9 +790,9 @@
   "cost": "{U}",
   "rarity": "u",
   "type": "Instant",
-  "instant": true,
   "colour": "u",
-  "num": "00?",
+  "num": "073",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=High%20Tide"
  },
  {
@@ -812,10 +802,10 @@
   "rarity": "m",
   "type": "Planeswalker",
   "subtype": "Jace",
-  "planeswalker": true,
   "loyalty": "3",
   "colour": "u",
-  "num": "00?",
+  "num": "074",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/JacetheMindSculptor.jpg"
  },
  {
@@ -825,11 +815,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Bird Soldier",
-  "creature": true,
   "power": "2",
   "toughness": "3",
   "colour": "u",
-  "num": "00?",
+  "num": "075",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Keeneye%20Aven"
  },
  {
@@ -839,11 +829,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Whale",
-  "creature": true,
   "power": "3",
   "toughness": "5",
   "colour": "u",
-  "num": "00?",
+  "num": "076",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Killer%20Whale"
  },
  {
@@ -853,11 +843,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Human Wizard",
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "u",
-  "num": "00?",
+  "num": "077",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Krovikan%20Sorcerer"
  },
  {
@@ -867,11 +857,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Jellyfish",
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "u",
-  "num": "00?",
+  "num": "079",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Man-o%27-War"
  },
  {
@@ -880,9 +870,9 @@
   "cost": "{U}{U}",
   "rarity": "m",
   "type": "Instant",
-  "instant": true,
   "colour": "u",
-  "num": "00?",
+  "num": "078",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Mana%20Drain.jpg"
  },
  {
@@ -891,9 +881,9 @@
   "cost": "{4}{U}{U}",
   "rarity": "r",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "u",
-  "num": "00?",
+  "num": "080",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Mind%27s%20Desire"
  },
  {
@@ -903,11 +893,11 @@
   "rarity": "m",
   "type": "Creature",
   "subtype": "Shapeshifter",
-  "creature": true,
   "power": "3",
   "toughness": "3",
   "colour": "u",
-  "num": "00?",
+  "num": "081",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Morphling.jpg"
  },
  {
@@ -918,12 +908,11 @@
   "rarity": "m",
   "type": "Legendary Creature",
   "subtype": "Human Artificer",
-  "legendary": true,
-  "creature": true,
   "power": "1",
   "toughness": "3",
   "colour": "u",
-  "num": "023"
+  "num": "082",
+  "fixedViaException": true
  },
  {
   "title": "Obsessive Search",
@@ -931,9 +920,9 @@
   "cost": "{U}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "u",
-  "num": "00?",
+  "num": "083",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Obsessive%20Search"
  },
  {
@@ -943,11 +932,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Snake",
-  "creature": true,
   "power": "1",
   "toughness": "3",
   "colour": "u",
-  "num": "00?",
+  "num": "084",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Ophidian"
  },
  {
@@ -957,11 +946,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Bird",
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "u",
-  "num": "00?",
+  "num": "085",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Owl%20Familiar"
  },
  {
@@ -971,11 +960,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Illusion",
-  "creature": true,
   "power": "4",
   "toughness": "5",
   "colour": "u",
-  "num": "00?",
+  "num": "086",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Palinchron"
  },
  {
@@ -985,9 +974,9 @@
   "cost": "{3}{U}",
   "rarity": "r",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "u",
-  "num": "024"
+  "num": "087",
+  "fixedViaException": true
  },
  {
   "title": "Power Sink",
@@ -995,9 +984,9 @@
   "cost": "{X}{U}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "u",
-  "num": "00?",
+  "num": "088",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Power%20Sink"
  },
  {
@@ -1006,9 +995,9 @@
   "cost": "{3}{U}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "u",
-  "num": "00?",
+  "num": "089",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Repel"
  },
  {
@@ -1017,9 +1006,9 @@
   "cost": "{1}{U}{U}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "u",
-  "num": "00?",
+  "num": "090",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Rescind"
  },
  {
@@ -1029,11 +1018,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Human Wizard",
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "u",
-  "num": "00?",
+  "num": "091",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Scrivener"
  },
  {
@@ -1043,11 +1032,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Drake",
-  "creature": true,
   "power": "4",
   "toughness": "3",
   "colour": "u",
-  "num": "00?",
+  "num": "092",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Sea%20Drake"
  },
  {
@@ -1057,11 +1046,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Efreet",
-  "creature": true,
   "power": "3",
   "toughness": "4",
   "colour": "u",
-  "num": "00?",
+  "num": "093",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Serendib%20Efreet"
  },
  {
@@ -1071,11 +1060,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Bird Soldier",
-  "creature": true,
   "power": "2",
   "toughness": "1",
   "colour": "u",
-  "num": "00?",
+  "num": "094",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Skywing%20Aven"
  },
  {
@@ -1084,9 +1073,9 @@
   "cost": "{X}{2}{U}",
   "rarity": "r",
   "type": "Instant",
-  "instant": true,
   "colour": "u",
-  "num": "00?",
+  "num": "095",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Stroke%20of%20Genius"
  },
  {
@@ -1095,9 +1084,9 @@
   "cost": "{4}{U}",
   "rarity": "c",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "u",
-  "num": "00?",
+  "num": "096",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/TemporalFissure.jpg"
  },
  {
@@ -1107,11 +1096,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Thalakos",
-  "creature": true,
   "power": "3",
   "toughness": "3",
   "colour": "u",
-  "num": "00?",
+  "num": "097",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Thalakos%20Drifters"
  },
  {
@@ -1120,9 +1109,9 @@
   "cost": "{1}{U}",
   "rarity": "m",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "u",
-  "num": "00?",
+  "num": "002",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Time-Walk.jpg"
  },
  {
@@ -1131,9 +1120,9 @@
   "cost": "{2}{U}",
   "rarity": "m",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "u",
-  "num": "00?",
+  "num": "003",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Timetwister.jpg"
  },
  {
@@ -1143,11 +1132,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Spirit",
-  "creature": true,
   "power": "1",
   "toughness": "4",
   "colour": "u",
-  "num": "00?",
+  "num": "098",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Tradewind%20Rider"
  },
  {
@@ -1156,9 +1145,9 @@
   "cost": "{2}{U}{U}",
   "rarity": "u",
   "type": "Instant",
-  "instant": true,
   "colour": "u",
-  "num": "00?",
+  "num": "099",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Turnabout"
  },
  {
@@ -1167,9 +1156,9 @@
   "cost": "{4}{U}{U}",
   "rarity": "m",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "u",
-  "num": "00?",
+  "num": "100",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Upheaval.jpg"
  },
  {
@@ -1179,11 +1168,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Shapeshifter",
-  "creature": true,
   "power": "0",
   "toughness": "1",
   "colour": "u",
-  "num": "00?",
+  "num": "101",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Volrath%27s%20Shapeshifter"
  },
  {
@@ -1193,11 +1182,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Merfolk Spellshaper",
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "u",
-  "num": "00?",
+  "num": "102",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Waterfront%20Bouncer"
  },
  {
@@ -1206,9 +1195,9 @@
   "cost": "{1}{B}",
   "rarity": "c",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "b",
-  "num": "00?",
+  "num": "103",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Addle"
  },
  {
@@ -1218,9 +1207,9 @@
   "rarity": "u",
   "type": "Enchantment",
   "subtype": "Aura",
-  "enchantment": true,
   "colour": "b",
-  "num": "00?",
+  "num": "104",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Animate%20Dead"
  },
  {
@@ -1231,11 +1220,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Elemental",
-  "creature": true,
   "power": "7",
   "toughness": "7",
   "colour": "b",
-  "num": "00?"
+  "num": "105",
+  "fixedViaException": true
  },
  {
   "title": "Cabal Ritual",
@@ -1243,9 +1232,9 @@
   "cost": "{1}{B}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "b",
-  "num": "00?",
+  "num": "106",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Cabal%20Ritual"
  },
  {
@@ -1255,11 +1244,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Zombie",
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "b",
-  "num": "00?",
+  "num": "107",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Carnophage"
  },
  {
@@ -1268,9 +1257,9 @@
   "cost": "{1}{B}",
   "rarity": "c",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "b",
-  "num": "00?",
+  "num": "108",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Chainer%27s%20Edict"
  },
  {
@@ -1279,9 +1268,9 @@
   "cost": "{1}{B}{B}",
   "rarity": "c",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "b",
-  "num": "00?",
+  "num": "109",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Choking%20Sands"
  },
  {
@@ -1291,12 +1280,11 @@
   "rarity": "r",
   "type": "Legendary Creature",
   "subtype": "Vampire",
-  "legendary": true,
-  "creature": true,
   "power": "0",
   "toughness": "0",
   "colour": "b",
-  "num": "00?",
+  "num": "110",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Crovax%20the%20Cursed"
  },
  {
@@ -1305,9 +1293,9 @@
   "cost": "{B}{B}{B}",
   "rarity": "r",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "b",
-  "num": "00?",
+  "num": "111",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Cruel-Bargain.jpg"
  },
  {
@@ -1317,11 +1305,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Horror",
-  "creature": true,
   "power": "3",
   "toughness": "3",
   "colour": "b",
-  "num": "00?",
+  "num": "112",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Dark%20Hatchling"
  },
  {
@@ -1330,9 +1318,9 @@
   "cost": "{B}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "b",
-  "num": "00?",
+  "num": "113",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Dark%20Ritual"
  },
  {
@@ -1342,11 +1330,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Dauthi Knight Mercenary",
-  "creature": true,
   "power": "2",
   "toughness": "1",
   "colour": "b",
-  "num": "00?",
+  "num": "114",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Dauthi%20Mercenary"
  },
  {
@@ -1356,11 +1344,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Bird",
-  "creature": true,
   "power": "2",
   "toughness": "1",
   "colour": "b",
-  "num": "00?",
+  "num": "115",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Death%27s-Head%20Buzzard"
  },
  {
@@ -1369,9 +1357,9 @@
   "cost": "{1}{B}",
   "rarity": "m",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "b",
-  "num": "00?",
+  "num": "116",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/DemonicTutor.jpg"
  },
  {
@@ -1382,11 +1370,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Zombie",
-  "creature": true,
   "power": "0",
   "toughness": "0",
   "colour": "b",
-  "num": "027"
+  "num": "117",
+  "fixedViaException": true
  },
  {
   "title": "Expunge",
@@ -1394,9 +1382,9 @@
   "cost": "{2}{B}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "b",
-  "num": "00?",
+  "num": "118",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Expunge"
  },
  {
@@ -1406,11 +1394,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Human Knight",
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "b",
-  "num": "00?",
+  "num": "119",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Fallen%20Askari"
  },
  {
@@ -1419,9 +1407,9 @@
   "cost": "{3}{B}{B}",
   "rarity": "u",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "b",
-  "num": "00?",
+  "num": "120",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Famine"
  },
  {
@@ -1431,11 +1419,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Djinn",
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "b",
-  "num": "00?",
+  "num": "121",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Fledgling%20Djinn"
  },
  {
@@ -1445,9 +1433,9 @@
   "cost": "{B}{B}",
   "rarity": "m",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "b",
-  "num": "00?"
+  "num": "122",
+  "fixedViaException": true
  },
  {
   "title": "Ichorid",
@@ -1456,11 +1444,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Horror",
-  "creature": true,
   "power": "3",
   "toughness": "1",
   "colour": "b",
-  "num": "00?",
+  "num": "123",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Ichorid.jpg"
  },
  {
@@ -1470,11 +1458,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Rabbit Beast",
-  "creature": true,
   "power": "4",
   "toughness": "4",
   "colour": "b",
-  "num": "00?",
+  "num": "124",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Kezzerdrix"
  },
  {
@@ -1484,11 +1472,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Nightmare Horror",
-  "creature": true,
   "power": "6",
   "toughness": "3",
   "colour": "b",
-  "num": "00?",
+  "num": "125",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Laquatus%27s%20Champion"
  },
  {
@@ -1497,9 +1485,9 @@
   "cost": "{3}{B}{B}",
   "rarity": "m",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "b",
-  "num": "00?",
+  "num": "126",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/LivingDeath.jpg"
  },
  {
@@ -1508,9 +1496,9 @@
   "cost": "{B}{B}{B}",
   "rarity": "u",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "b",
-  "num": "00?",
+  "num": "127",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Lurking%20Evil"
  },
  {
@@ -1520,11 +1508,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Nightmare Horror",
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "b",
-  "num": "00?",
+  "num": "128",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Mesmeric%20Fiend"
  },
  {
@@ -1533,9 +1521,9 @@
   "cost": "{2}{B}",
   "rarity": "r",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "b",
-  "num": "00?",
+  "num": "129",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/NaturesRuin.jpg"
  },
  {
@@ -1544,9 +1532,9 @@
   "cost": "{B}{B}{B}",
   "rarity": "r",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "b",
-  "num": "00?",
+  "num": "130",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Necropotence.jpg"
  },
  {
@@ -1556,11 +1544,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Zombie",
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "b",
-  "num": "00?",
+  "num": "131",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Nightscape%20Familiar"
  },
  {
@@ -1570,9 +1558,9 @@
   "rarity": "c",
   "type": "Enchantment",
   "subtype": "Aura",
-  "enchantment": true,
   "colour": "b",
-  "num": "00?",
+  "num": "132",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Paralyze"
  },
  {
@@ -1582,11 +1570,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Carrier",
-  "creature": true,
   "power": "3",
   "toughness": "3",
   "colour": "b",
-  "num": "00?",
+  "num": "133",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Phyrexian%20Defiler"
  },
  {
@@ -1596,11 +1584,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Nightstalker",
-  "creature": true,
   "power": "3",
   "toughness": "2",
   "colour": "b",
-  "num": "00?",
+  "num": "134",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/PredatoryNightstalker.jpg"
  },
  {
@@ -1610,11 +1598,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Zombie Imp",
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "b",
-  "num": "00?",
+  "num": "135",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Putrid%20Imp"
  },
  {
@@ -1623,9 +1611,9 @@
   "cost": "{B}",
   "rarity": "u",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "b",
-  "num": "00?",
+  "num": "136",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Reanimate.jpg"
  },
  {
@@ -1634,9 +1622,9 @@
   "cost": "{2}{B}",
   "rarity": "r",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "b",
-  "num": "00?",
+  "num": "137",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/RecurringNightmare.jpg"
  },
  {
@@ -1646,9 +1634,9 @@
   "cost": "{4}{B}{B}",
   "rarity": "r",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "b",
-  "num": "029"
+  "num": "138",
+  "fixedViaException": true
  },
  {
   "title": "Sarcomancy",
@@ -1656,9 +1644,9 @@
   "cost": "{B}",
   "rarity": "u",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "b",
-  "num": "00?",
+  "num": "139",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Sarcomancy"
  },
  {
@@ -1668,11 +1656,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Imp",
-  "creature": true,
   "power": "3",
   "toughness": "2",
   "colour": "b",
-  "num": "00?",
+  "num": "140",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Skirge%20Familiar"
  },
  {
@@ -1682,9 +1670,9 @@
   "rarity": "c",
   "type": "Enchantment",
   "subtype": "Aura",
-  "enchantment": true,
   "colour": "b",
-  "num": "00?",
+  "num": "141",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Spinal%20Graft"
  },
  {
@@ -1693,9 +1681,9 @@
   "cost": "{2}{B}{B}",
   "rarity": "u",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "b",
-  "num": "00?",
+  "num": "142",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Tendrils%20of%20Agony"
  },
  {
@@ -1705,9 +1693,9 @@
   "cost": "{1}{B}",
   "rarity": "c",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "b",
-  "num": "030"
+  "num": "143",
+  "fixedViaException": true
  },
  {
   "title": "Urborg Uprising",
@@ -1715,9 +1703,9 @@
   "cost": "{4}{B}",
   "rarity": "c",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "b",
-  "num": "00?",
+  "num": "144",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Urborg%20Uprising"
  },
  {
@@ -1726,9 +1714,9 @@
   "cost": "{B}",
   "rarity": "r",
   "type": "Instant",
-  "instant": true,
   "colour": "b",
-  "num": "00?",
+  "num": "145",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3629&type=card"
  },
  {
@@ -1738,12 +1726,11 @@
   "rarity": "r",
   "type": "Legendary Creature",
   "subtype": "Gorgon",
-  "legendary": true,
-  "creature": true,
   "power": "5",
   "toughness": "5",
   "colour": "b",
-  "num": "00?",
+  "num": "146",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Visara%20the%20Dreadful"
  },
  {
@@ -1752,9 +1739,9 @@
   "cost": "{4}{B}{B}",
   "rarity": "m",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "b",
-  "num": "00?",
+  "num": "147",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Yawgmoths%20Bargain.jpg"
  },
  {
@@ -1763,9 +1750,9 @@
   "cost": "{2}{B}",
   "rarity": "m",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "b",
-  "num": "00?",
+  "num": "148",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/YawgmothsWill.jpg"
  },
  {
@@ -1774,9 +1761,9 @@
   "cost": "{2}{R}{R}",
   "rarity": "c",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "r",
-  "num": "00?",
+  "num": "149",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Aftershock"
  },
  {
@@ -1786,11 +1773,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Goblin Soldier",
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "r",
-  "num": "00?",
+  "num": "150",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Beetleback%20Chief"
  },
  {
@@ -1799,9 +1786,9 @@
   "cost": "{4}{R}{R}",
   "rarity": "r",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "r",
-  "num": "00?",
+  "num": "151",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Burning%20of%20Xinye"
  },
  {
@@ -1810,9 +1797,9 @@
   "cost": "{1}{R}",
   "rarity": "r",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "r",
-  "num": "00?",
+  "num": "152",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Burning%20Wish"
  },
  {
@@ -1821,9 +1808,9 @@
   "cost": "{R}",
   "rarity": "c",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "r",
-  "num": "00?",
+  "num": "153",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Chain%20Lightning"
  },
  {
@@ -1833,9 +1820,9 @@
   "cost": "{2}{R}",
   "rarity": "r",
   "type": "Instant",
-  "instant": true,
   "colour": "r",
-  "num": "00?"
+  "num": "154",
+  "fixedViaException": true
  },
  {
   "title": "Chartooth Cougar",
@@ -1845,11 +1832,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Cat Beast",
-  "creature": true,
   "power": "4",
   "toughness": "4",
   "colour": "r",
-  "num": "00?"
+  "num": "155",
+  "fixedViaException": true
  },
  {
   "title": "Clickslither",
@@ -1858,11 +1845,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Insect",
-  "creature": true,
   "power": "3",
   "toughness": "3",
   "colour": "r",
-  "num": "00?",
+  "num": "156",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Clickslither"
  },
  {
@@ -1872,11 +1859,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Hellion Beast",
-  "creature": true,
   "power": "6",
   "toughness": "6",
   "colour": "r",
-  "num": "00?",
+  "num": "157",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Crater%20Hellion"
  },
  {
@@ -1885,9 +1872,9 @@
   "cost": "{1}{R}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "r",
-  "num": "00?",
+  "num": "158",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Falter"
  },
  {
@@ -1896,9 +1883,9 @@
   "cost": "{4}{R}{R}",
   "rarity": "u",
   "type": "Instant",
-  "instant": true,
   "colour": "r",
-  "num": "00?",
+  "num": "159",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Fireblast"
  },
  {
@@ -1908,11 +1895,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Kavu",
-  "creature": true,
   "power": "4",
   "toughness": "2",
   "colour": "r",
-  "num": "00?",
+  "num": "160",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Flametongue%20Kavu"
  },
  {
@@ -1922,11 +1909,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Hellion Beast",
-  "creature": true,
   "power": "3",
   "toughness": "3",
   "colour": "r",
-  "num": "00?",
+  "num": "161",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Flowstone%20Hellion"
  },
  {
@@ -1935,9 +1922,9 @@
   "cost": "{R}",
   "rarity": "r",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "r",
-  "num": "00?",
+  "num": "162",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Gamble"
  },
  {
@@ -1947,9 +1934,9 @@
   "rarity": "c",
   "type": "Enchantment",
   "subtype": "Aura",
-  "enchantment": true,
   "colour": "r",
-  "num": "00?",
+  "num": "163",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=4820&type=card"
  },
  {
@@ -1959,11 +1946,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Goblin",
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "r",
-  "num": "00?",
+  "num": "164",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Goblin-Commando.jpg"
  },
  {
@@ -1973,11 +1960,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Goblin Warrior",
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "r",
-  "num": "00?",
+  "num": "165",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/GoblinGeneral.jpg"
  },
  {
@@ -1987,11 +1974,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Goblin Mutant",
-  "creature": true,
   "power": "6",
   "toughness": "6",
   "colour": "r",
-  "num": "00?",
+  "num": "166",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/GoblinGoon.jpg"
  },
  {
@@ -2001,11 +1988,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Goblin",
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "r",
-  "num": "00?",
+  "num": "167",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Goblin%20Lackey"
  },
  {
@@ -2015,11 +2002,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Goblin",
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "r",
-  "num": "00?",
+  "num": "168",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Goblin%20Matron"
  },
  {
@@ -2029,11 +2016,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Goblin",
-  "creature": true,
   "power": "2",
   "toughness": "1",
   "colour": "r",
-  "num": "00?",
+  "num": "169",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Goblin%20Patrol"
  },
  {
@@ -2043,11 +2030,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Goblin Warrior",
-  "creature": true,
   "power": "1",
   "toughness": "2",
   "colour": "r",
-  "num": "00?",
+  "num": "170",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Goblin%20Piledriver"
  },
  {
@@ -2057,11 +2044,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Goblin",
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "r",
-  "num": "00?",
+  "num": "171",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Goblin%20Ringleader"
  },
  {
@@ -2071,11 +2058,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Goblin",
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "r",
-  "num": "00?",
+  "num": "172",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Goblin%20Settler.jpg"
  },
  {
@@ -2085,11 +2072,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Goblin Warrior",
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "r",
-  "num": "00?",
+  "num": "173",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Goblin%20Warchief.jpg"
  },
  {
@@ -2099,11 +2086,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Goblin",
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "r",
-  "num": "00?",
+  "num": "174",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Hulking-Goblin.jpg"
  },
  {
@@ -2112,9 +2099,9 @@
   "cost": "{X}{R}",
   "rarity": "u",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "r",
-  "num": "00?",
+  "num": "175",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/KaerveksTorch.jpg"
  },
  {
@@ -2123,9 +2110,9 @@
   "cost": "{1}{R}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "r",
-  "num": "00?",
+  "num": "176",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Kindle"
  },
  {
@@ -2135,11 +2122,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Dragon",
-  "creature": true,
   "power": "4",
   "toughness": "4",
   "colour": "r",
-  "num": "00?",
+  "num": "177",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Lightning%20Dragon"
  },
  {
@@ -2148,9 +2135,9 @@
   "cost": "{1}{R}",
   "rarity": "u",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "r",
-  "num": "00?",
+  "num": "178",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Lightning%20Rift"
  },
  {
@@ -2160,9 +2147,9 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Orc",
-  "creature": true,
   "colour": "r",
-  "num": "00?",
+  "num": "179",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Orcish%20Lumberjack.jpg"
  },
  {
@@ -2172,11 +2159,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Human Barbarian",
-  "creature": true,
   "power": "5",
   "toughness": "5",
   "colour": "r",
-  "num": "00?",
+  "num": "180",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Pillaging%20Horde"
  },
  {
@@ -2185,9 +2172,9 @@
   "cost": "{R}",
   "rarity": "c",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "r",
-  "num": "00?",
+  "num": "181",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Reckless%20Charge"
  },
  {
@@ -2196,9 +2183,9 @@
   "cost": "{R}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "r",
-  "num": "00?",
+  "num": "182",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Rites%20of%20Initiation"
  },
  {
@@ -2208,12 +2195,11 @@
   "rarity": "r",
   "type": "Legendary Creature",
   "subtype": "Dragon",
-  "legendary": true,
-  "creature": true,
   "power": "6",
   "toughness": "5",
   "colour": "r",
-  "num": "00?",
+  "num": "183",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Rorix%20Bladewing"
  },
  {
@@ -2224,11 +2210,11 @@
   "rarity": "m",
   "type": "Creature",
   "subtype": "Dragon",
-  "creature": true,
   "power": "5",
   "toughness": "5",
   "colour": "r",
-  "num": "035"
+  "num": "184",
+  "fixedViaException": true
  },
  {
   "title": "Skirk Drill Sergeant",
@@ -2237,11 +2223,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Goblin",
-  "creature": true,
   "power": "2",
   "toughness": "1",
   "colour": "r",
-  "num": "00?",
+  "num": "185",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Skirk%20Drill%20Sergeant"
  },
  {
@@ -2251,11 +2237,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Goblin",
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "r",
-  "num": "00?",
+  "num": "186",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Skirk%20Prospector"
  },
  {
@@ -2264,9 +2250,9 @@
   "cost": "{3}{R}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "r",
-  "num": "00?",
+  "num": "187",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/SolarBlast.jpg"
  },
  {
@@ -2275,9 +2261,9 @@
   "cost": "{R}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "r",
-  "num": "00?",
+  "num": "188",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Spark%20Spray"
  },
  {
@@ -2286,9 +2272,9 @@
   "cost": "{X}{R}{R}",
   "rarity": "r",
   "type": "Instant",
-  "instant": true,
   "colour": "r",
-  "num": "00?",
+  "num": "189",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Starstorm"
  },
  {
@@ -2298,9 +2284,9 @@
   "cost": "{1}{R}{R}",
   "rarity": "r",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "r",
-  "num": "00?"
+  "num": "190",
+  "fixedViaException": true
  },
  {
   "title": "Wall of Diffusion",
@@ -2309,11 +2295,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Wall",
-  "creature": true,
   "power": "0",
   "toughness": "5",
   "colour": "r",
-  "num": "00?",
+  "num": "191",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Wall%20of%20Diffusion"
  },
  {
@@ -2322,9 +2308,9 @@
   "cost": "{2}{R}",
   "rarity": "m",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "r",
-  "num": "00?",
+  "num": "192",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Wheel%20of%20Fortune.jpg"
  },
  {
@@ -2334,11 +2320,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Nightmare Dragon",
-  "creature": true,
   "power": "7",
   "toughness": "7",
   "colour": "r",
-  "num": "00?",
+  "num": "193",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Worldgorger%20Dragon"
  },
  {
@@ -2348,9 +2334,9 @@
   "rarity": "c",
   "type": "Enchantment",
   "subtype": "Aura",
-  "enchantment": true,
   "colour": "g",
-  "num": "00?",
+  "num": "194",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Armor%20of%20Thorns"
  },
  {
@@ -2360,11 +2346,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Wurm",
-  "creature": true,
   "power": "4",
   "toughness": "4",
   "colour": "g",
-  "num": "00?",
+  "num": "195",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/ArrogantWurm.jpg"
  },
  {
@@ -2374,11 +2360,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Lizard",
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "g",
-  "num": "00?",
+  "num": "196",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Basking%20Rootwalla"
  },
  {
@@ -2387,9 +2373,9 @@
   "cost": "{G}",
   "rarity": "r",
   "type": "Instant",
-  "instant": true,
   "colour": "g",
-  "num": "00?",
+  "num": "197",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Berserk"
  },
  {
@@ -2399,11 +2385,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Beast",
-  "creature": true,
   "power": "5",
   "toughness": "5",
   "colour": "g",
-  "num": "00?",
+  "num": "198",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Blastoderm"
  },
  {
@@ -2413,11 +2399,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Boar",
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "g",
-  "num": "00?",
+  "num": "199",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Brindle%20Shoat"
  },
  {
@@ -2426,9 +2412,9 @@
   "cost": "{G}{G}",
   "rarity": "m",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "g",
-  "num": "00?",
+  "num": "200",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Channel.jpg"
  },
  {
@@ -2437,9 +2423,9 @@
   "cost": "{3}{G}",
   "rarity": "c",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "g",
-  "num": "00?",
+  "num": "201",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Claws%20of%20Wirewood"
  },
  {
@@ -2449,11 +2435,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Elf",
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "g",
-  "num": "00?",
+  "num": "202",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Deranged%20Hermit"
  },
  {
@@ -2462,9 +2448,9 @@
   "cost": "{4}{G}{G}",
   "rarity": "u",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "g",
-  "num": "00?",
+  "num": "203",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=19638&type=card"
  },
  {
@@ -2474,11 +2460,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Human Druid",
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "g",
-  "num": "00?",
+  "num": "204",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Dreampod%20Druid"
  },
  {
@@ -2489,9 +2475,9 @@
   "rarity": "u",
   "type": "Enchantment",
   "subtype": "Aura",
-  "enchantment": true,
   "colour": "g",
-  "num": "00?"
+  "num": "205",
+  "fixedViaException": true
  },
  {
   "title": "Elvish Aberration",
@@ -2501,11 +2487,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Elf Mutant",
-  "creature": true,
   "power": "4",
   "toughness": "5",
   "colour": "g",
-  "num": "00?"
+  "num": "206",
+  "fixedViaException": true
  },
  {
   "title": "Erhnam Djinn",
@@ -2514,11 +2500,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Djinn",
-  "creature": true,
   "power": "4",
   "toughness": "5",
   "colour": "g",
-  "num": "00?",
+  "num": "207",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Erhnam%20Djinn"
  },
  {
@@ -2527,9 +2513,9 @@
   "cost": "{2}{G}{G}",
   "rarity": "m",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "g",
-  "num": "00?",
+  "num": "208",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Eureka.jpg"
  },
  {
@@ -2538,9 +2524,9 @@
   "cost": "{G}",
   "rarity": "m",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "g",
-  "num": "00?",
+  "num": "209",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Fastbond"
  },
  {
@@ -2551,11 +2537,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Elf Druid",
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "g",
-  "num": "00?"
+  "num": "210",
+  "fixedViaException": true
  },
  {
   "title": "Gaea's Embrace",
@@ -2564,9 +2550,9 @@
   "rarity": "u",
   "type": "Enchantment",
   "subtype": "Aura",
-  "enchantment": true,
   "colour": "g",
-  "num": "00?",
+  "num": "211",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Gaea%27s%20Embrace"
  },
  {
@@ -2576,11 +2562,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Incarnation",
-  "creature": true,
   "power": "4",
   "toughness": "4",
   "colour": "g",
-  "num": "00?",
+  "num": "212",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Genesis"
  },
  {
@@ -2590,11 +2576,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Insect",
-  "creature": true,
   "power": "2",
   "toughness": "4",
   "colour": "g",
-  "num": "00?",
+  "num": "213",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Giant%20Mantis"
  },
  {
@@ -2604,11 +2590,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Insect",
-  "creature": true,
   "power": "6",
   "toughness": "1",
   "colour": "g",
-  "num": "00?",
+  "num": "214",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Gigapede"
  },
  {
@@ -2617,9 +2603,9 @@
   "cost": "{3}{G}{G}",
   "rarity": "u",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "g",
-  "num": "00?",
+  "num": "215",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Grizzly%20Fate"
  },
  {
@@ -2629,11 +2615,11 @@
   "rarity": "m",
   "type": "Creature",
   "subtype": "Human Druid",
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "g",
-  "num": "00?",
+  "num": "216",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Hermit%20Druid"
  },
  {
@@ -2643,11 +2629,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Wurm",
-  "creature": true,
   "power": "5",
   "toughness": "5",
   "colour": "g",
-  "num": "00?",
+  "num": "217",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Jungle%20Wurm"
  },
  {
@@ -2657,11 +2643,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Boar Beast",
-  "creature": true,
   "power": "6",
   "toughness": "5",
   "colour": "g",
-  "num": "00?",
+  "num": "218",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Krosan%20Tusker"
  },
  {
@@ -2671,11 +2657,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Cat Beast",
-  "creature": true,
   "power": "3",
   "toughness": "2",
   "colour": "g",
-  "num": "00?",
+  "num": "219",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Krosan%20Vorine"
  },
  {
@@ -2684,9 +2670,9 @@
   "cost": "{1}{G}",
   "rarity": "c",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "g",
-  "num": "00?",
+  "num": "220",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Nature%27s%20Lore"
  },
  {
@@ -2696,11 +2682,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Elf Druid",
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "g",
-  "num": "00?",
+  "num": "221",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Norwood%20Priestess.jpg"
  },
  {
@@ -2709,9 +2695,9 @@
   "cost": "{G}{G}",
   "rarity": "u",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "g",
-  "num": "00?",
+  "num": "222",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Nostalgic%20Dreams"
  },
  {
@@ -2720,9 +2706,9 @@
   "cost": "{1}{G}",
   "rarity": "m",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "g",
-  "num": "00?",
+  "num": "223",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/OathofDruids.jpg"
  },
  {
@@ -2732,11 +2718,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Wurm",
-  "creature": true,
   "power": "6",
   "toughness": "6",
   "colour": "g",
-  "num": "00?",
+  "num": "224",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Penumbra%20Wurm"
  },
  {
@@ -2746,9 +2732,9 @@
   "cost": "{1}{G}",
   "rarity": "c",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "g",
-  "num": "00?"
+  "num": "225",
+  "fixedViaException": true
  },
  {
   "title": "Realm Seekers",
@@ -2758,9 +2744,9 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Elf Scout",
-  "creature": true,
   "colour": "g",
-  "num": "038"
+  "num": "226",
+  "fixedViaException": true
  },
  {
   "title": "Regrowth",
@@ -2768,9 +2754,9 @@
   "cost": "{1}{G}",
   "rarity": "r",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "g",
-  "num": "00?",
+  "num": "227",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Regrowth"
  },
  {
@@ -2779,9 +2765,9 @@
   "cost": "{6}{G}",
   "rarity": "u",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "g",
-  "num": "00?",
+  "num": "228",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Roar%20of%20the%20Wurm"
  },
  {
@@ -2791,12 +2777,11 @@
   "rarity": "r",
   "type": "Legendary Creature",
   "subtype": "Elf Druid",
-  "legendary": true,
-  "creature": true,
   "power": "2",
   "toughness": "1",
   "colour": "g",
-  "num": "00?",
+  "num": "229",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Rofellos,%20Llanowar%20Emissary"
  },
  {
@@ -2805,9 +2790,9 @@
   "cost": "{4}{G}",
   "rarity": "r",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "g",
-  "num": "00?",
+  "num": "230",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Saproling%20Burst"
  },
  {
@@ -2817,12 +2802,11 @@
   "rarity": "r",
   "type": "Legendary Creature",
   "subtype": "Elemental",
-  "legendary": true,
-  "creature": true,
   "power": "8",
   "toughness": "5",
   "colour": "g",
-  "num": "00?",
+  "num": "231",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Silvos,%20Rogue%20Elemental"
  },
  {
@@ -2832,11 +2816,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Ape",
-  "creature": true,
   "power": "3",
   "toughness": "4",
   "colour": "g",
-  "num": "00?",
+  "num": "232",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Simian%20Grunts"
  },
  {
@@ -2845,9 +2829,9 @@
   "cost": "{3}{G}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "g",
-  "num": "00?",
+  "num": "233",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Sudden%20Strength"
  },
  {
@@ -2856,9 +2840,9 @@
   "cost": "{1}{G}",
   "rarity": "r",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "g",
-  "num": "00?",
+  "num": "234",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Survival%20of%20the%20Fittest"
  },
  {
@@ -2868,9 +2852,9 @@
   "cost": "{1}{G}",
   "rarity": "r",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "g",
-  "num": "00?"
+  "num": "235",
+  "fixedViaException": true
  },
  {
   "title": "Symbiotic Wurm",
@@ -2879,11 +2863,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Wurm",
-  "creature": true,
   "power": "7",
   "toughness": "7",
   "colour": "g",
-  "num": "00?",
+  "num": "236",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Symbiotic%20Wurm"
  },
  {
@@ -2892,9 +2876,9 @@
   "cost": "{1}{G}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "g",
-  "num": "00?",
+  "num": "237",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Tangle"
  },
  {
@@ -2904,9 +2888,9 @@
   "cost": "{1}{G}",
   "rarity": "c",
   "type": "Instant",
-  "instant": true,
   "colour": "g",
-  "num": "00?"
+  "num": "238",
+  "fixedViaException": true
  },
  {
   "title": "Wild Mongrel",
@@ -2915,11 +2899,11 @@
   "rarity": "c",
   "type": "Creature",
   "subtype": "Hound",
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "g",
-  "num": "00?",
+  "num": "239",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Wild%20Mongrel"
  },
  {
@@ -2929,22 +2913,22 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Human Druid",
-  "creature": true,
   "power": "2",
   "toughness": "1",
   "colour": "g",
-  "num": "00?",
+  "num": "240",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/YavimayaElder.jpg"
  },
  {
-  "title": "AEther Mutation",
+  "title": "Æther Mutation",
   "set": "ovm",
   "cost": "{3}{G}{U}",
   "rarity": "u",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "m",
-  "num": "00?",
+  "num": "241",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=%C3%86ther%20Mutation"
  },
  {
@@ -2954,9 +2938,9 @@
   "rarity": "u",
   "type": "Enchantment",
   "subtype": "Aura",
-  "enchantment": true,
   "colour": "m",
-  "num": "00?",
+  "num": "242",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Armadillo%20Cloak"
  },
  {
@@ -2967,12 +2951,11 @@
   "rarity": "u",
   "type": "Artifact Creature",
   "subtype": "Bird",
-  "artifact": true,
-  "creature": true,
   "power": "1",
   "toughness": "1",
   "colour": "m",
-  "num": "00?"
+  "num": "243",
+  "fixedViaException": true
  },
  {
   "title": "Basandra, Battle Seraph",
@@ -2982,12 +2965,11 @@
   "rarity": "r",
   "type": "Creature Legendary",
   "subtype": "Angel",
-  "creature": true,
-  "legendary": true,
   "power": "4",
   "toughness": "4",
   "colour": "m",
-  "num": "00?"
+  "num": "244",
+  "fixedViaException": true
  },
  {
   "title": "Blazing Specter",
@@ -2996,11 +2978,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Specter",
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "m",
-  "num": "00?",
+  "num": "245",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Blazing%20Specter"
  },
  {
@@ -3010,12 +2992,11 @@
   "rarity": "r",
   "type": "Legendary Creature",
   "subtype": "Spirit",
-  "legendary": true,
-  "creature": true,
   "power": "2",
   "toughness": "4",
   "colour": "m",
-  "num": "00?",
+  "num": "246",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/BravoKingEternal.jpg"
  },
  {
@@ -3026,10 +3007,10 @@
   "rarity": "m",
   "type": "Planeswalker",
   "subtype": "Dack",
-  "planeswalker": true,
   "loyalty": "3",
   "colour": "m",
-  "num": "042"
+  "num": "247",
+  "fixedViaException": true
  },
  {
   "title": "Dack's Duplicate",
@@ -3039,11 +3020,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Shapeshifter",
-  "creature": true,
   "power": "0",
   "toughness": "0",
   "colour": "m",
-  "num": "043"
+  "num": "248",
+  "fixedViaException": true
  },
  {
   "title": "Death Grasp",
@@ -3051,9 +3032,9 @@
   "cost": "{X}{W}{B}",
   "rarity": "u",
   "type": "Sorcery",
-  "sorcery": true,
   "colour": "m",
-  "num": "00?",
+  "num": "249",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Death%20Grasp"
  },
  {
@@ -3063,9 +3044,9 @@
   "cost": "{2}{B}{G}",
   "rarity": "u",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "m",
-  "num": "044"
+  "num": "250",
+  "fixedViaException": true
  },
  {
   "title": "Edric, Spymaster of Trest",
@@ -3074,11 +3055,11 @@
   "cost": "{1}{G}{U}",
   "rarity": "r",
   "type": "",
-  "": true,
   "power": "2",
   "toughness": "2",
   "colour": "m",
-  "num": "00?"
+  "num": "251",
+  "fixedViaException": true
  },
  {
   "title": "Fires of Yavimaya",
@@ -3087,9 +3068,9 @@
   "cost": "{1}{R}{G}",
   "rarity": "u",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "m",
-  "num": "00?"
+  "num": "252",
+  "fixedViaException": true
  },
  {
   "title": "Goblin Trenches",
@@ -3097,9 +3078,9 @@
   "cost": "{1}{R}{W}",
   "rarity": "u",
   "type": "Enchantment",
-  "enchantment": true,
   "colour": "m",
-  "num": "00?",
+  "num": "253",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Goblin%20Trenches"
  },
  {
@@ -3110,12 +3091,11 @@
   "rarity": "r",
   "type": "Legendary Creature",
   "subtype": "Goblin Rogue",
-  "legendary": true,
-  "creature": true,
   "power": "2",
   "toughness": "2",
   "colour": "m",
-  "num": "047"
+  "num": "254",
+  "fixedViaException": true
  },
  {
   "title": "Magister of Worth",
@@ -3125,11 +3105,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Angel",
-  "creature": true,
   "power": "4",
   "toughness": "4",
   "colour": "m",
-  "num": "048"
+  "num": "255",
+  "fixedViaException": true
  },
  {
   "title": "Marchesa, the Black Rose",
@@ -3139,12 +3119,11 @@
   "rarity": "m",
   "type": "Legendary Creature",
   "subtype": "Human Wizard",
-  "legendary": true,
-  "creature": true,
   "power": "3",
   "toughness": "3",
   "colour": "m",
-  "num": "049"
+  "num": "256",
+  "fixedViaException": true
  },
  {
   "title": "Prophetic Bolt",
@@ -3152,9 +3131,9 @@
   "cost": "{3}{U}{R}",
   "rarity": "r",
   "type": "Instant",
-  "instant": true,
   "colour": "m",
-  "num": "00?",
+  "num": "257",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/PropheticBolt.jpg"
  },
  {
@@ -3164,11 +3143,11 @@
   "rarity": "u",
   "type": "Creature",
   "subtype": "Atog",
-  "creature": true,
   "power": "1",
   "toughness": "2",
   "colour": "m",
-  "num": "00?",
+  "num": "258",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Psychatog"
  },
  {
@@ -3177,9 +3156,9 @@
   "cost": "{2}{W}{U}",
   "rarity": "u",
   "type": "Instant",
-  "instant": true,
   "colour": "m",
-  "num": "00?",
+  "num": "259",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Reviving%20Vapors"
  },
  {
@@ -3190,8 +3169,6 @@
   "rarity": "r",
   "type": "Legendary Creature",
   "subtype": "Elf Scout",
-  "legendary": true,
-  "creature": true,
   "power": "2",
   "toughness": "4",
   "colour": "m",
@@ -3204,11 +3181,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Wurm",
-  "creature": true,
   "power": "7",
   "toughness": "7",
   "colour": "m",
-  "num": "00?",
+  "num": "261",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Shivan%20Wurm"
  },
  {
@@ -3219,11 +3196,11 @@
   "rarity": "r",
   "type": "Creature",
   "subtype": "Beast",
-  "creature": true,
   "power": "6",
   "toughness": "6",
   "colour": "m",
-  "num": "00?"
+  "num": "262",
+  "fixedViaException": true
  },
  {
   "title": "Ankh of Mishra",
@@ -3231,9 +3208,9 @@
   "cost": "{2}",
   "rarity": "r",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "263",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Ankh%20of%20Mishra"
  },
  {
@@ -3242,9 +3219,9 @@
   "cost": "{0}",
   "rarity": "m",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "004",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Black-Lotus.jpg"
  },
  {
@@ -3253,9 +3230,9 @@
   "cost": "{3}",
   "rarity": "u",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "264",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Chimeric%20Idol"
  },
  {
@@ -3264,9 +3241,9 @@
   "cost": "{2}",
   "rarity": "m",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "265",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/City%20in%20a%20Bottle.jpg"
  },
  {
@@ -3276,9 +3253,9 @@
   "cost": "{4}",
   "rarity": "m",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "056"
+  "num": "266",
+  "fixedViaException": true
  },
  {
   "title": "Cursed Scroll",
@@ -3286,9 +3263,9 @@
   "cost": "{1}",
   "rarity": "r",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "267",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Cursed%20Scroll"
  },
  {
@@ -3298,12 +3275,11 @@
   "rarity": "r",
   "type": "Artifact Creature",
   "subtype": "Shapeshifter",
-  "artifact": true,
-  "creature": true,
   "power": "4",
   "toughness": "4",
   "colour": "a",
-  "num": "00?",
+  "num": "268",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Flowstone%20Sculpture"
  },
  {
@@ -3312,9 +3288,9 @@
   "cost": "{1}",
   "rarity": "u",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "269",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Ivory%20Tower"
  },
  {
@@ -3324,13 +3300,11 @@
   "rarity": "r",
   "type": "Legendary Artifact Creature",
   "subtype": "Golem",
-  "legendary": true,
-  "artifact": true,
-  "creature": true,
   "power": "4",
   "toughness": "4",
   "colour": "a",
-  "num": "00?",
+  "num": "270",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Karn,%20Silver%20Golem"
  },
  {
@@ -3339,9 +3313,9 @@
   "cost": "{0}",
   "rarity": "m",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "271",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/LionsEyeDiamond.jpg"
  },
  {
@@ -3350,9 +3324,9 @@
   "cost": "{0}",
   "rarity": "m",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "272",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Mana%20Crypt.jpg"
  },
  {
@@ -3361,9 +3335,9 @@
   "cost": "{3}",
   "rarity": "c",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "273",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3256&type=card"
  },
  {
@@ -3372,9 +3346,9 @@
   "cost": "{1}",
   "rarity": "?",
   "type": "Art",
-  "art": true,
   "colour": "a",
-  "num": "00?",
+  "num": "274",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Mana%20Vault"
  },
  {
@@ -3384,10 +3358,9 @@
   "rarity": "r",
   "type": "Artifact Creature",
   "subtype": "Construct",
-  "artifact": true,
-  "creature": true,
   "colour": "a",
-  "num": "00?",
+  "num": "275",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Masticore"
  },
  {
@@ -3396,9 +3369,9 @@
   "cost": "{5}",
   "rarity": "m",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "276",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/MemoryJar.jpg"
  },
  {
@@ -3407,9 +3380,9 @@
   "cost": "{0}",
   "rarity": "m",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "005",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Mox%20Emerald.jpg"
  },
  {
@@ -3418,9 +3391,9 @@
   "cost": "{0}",
   "rarity": "m",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "006",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Mox%20Jet.jpg"
  },
  {
@@ -3429,9 +3402,9 @@
   "cost": "{0}",
   "rarity": "m",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "007",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Mox%20Pearl.jpg"
  },
  {
@@ -3440,9 +3413,9 @@
   "cost": "{0}",
   "rarity": "m",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "008",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Mox%20Ruby.jpg"
  },
  {
@@ -3451,9 +3424,9 @@
   "cost": "{0}",
   "rarity": "m",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "009",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Mox%20Sapphire.jpg"
  },
  {
@@ -3462,9 +3435,9 @@
   "cost": "{4}",
   "rarity": "r",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "277",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Nevinyrral%27s%20Disk"
  },
  {
@@ -3473,9 +3446,9 @@
   "cost": "{2}",
   "rarity": "r",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "278",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Null%20Rod"
  },
  {
@@ -3484,10 +3457,9 @@
   "cost": "{5}",
   "rarity": "r",
   "type": "Legendary Artifact",
-  "legendary": true,
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "279",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Predator,%20Flagship"
  },
  {
@@ -3496,9 +3468,9 @@
   "cost": "{3}",
   "rarity": "r",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "280",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Ring%20of%20Gix"
  },
  {
@@ -3508,9 +3480,9 @@
   "rarity": "m",
   "type": "Artifact",
   "subtype": "Equipment",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "281",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Skullclamp.jpg"
  },
  {
@@ -3519,9 +3491,9 @@
   "cost": "{4}",
   "rarity": "r",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "282",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Smokestack"
  },
  {
@@ -3530,9 +3502,9 @@
   "cost": "{1}",
   "rarity": "m",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "283",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Sol%20Ring"
  },
  {
@@ -3541,9 +3513,9 @@
   "cost": "{2}",
   "rarity": "r",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "284",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Sphere%20of%20Resistance"
  },
  {
@@ -3553,12 +3525,11 @@
   "rarity": "u",
   "type": "Artifact Creature",
   "subtype": "Construct",
-  "artifact": true,
-  "creature": true,
   "power": "4",
   "toughness": "4",
   "colour": "a",
-  "num": "00?",
+  "num": "285",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Su-Chi"
  },
  {
@@ -3568,12 +3539,11 @@
   "rarity": "u",
   "type": "Artifact Creature",
   "subtype": "Thopter",
-  "artifact": true,
-  "creature": true,
   "power": "0",
   "toughness": "0",
   "colour": "a",
-  "num": "00?",
+  "num": "286",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Thopter%20Squadron"
  },
  {
@@ -3582,9 +3552,9 @@
   "cost": "{2}",
   "rarity": "m",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "287",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Time%20Vault.jpg"
  },
  {
@@ -3593,9 +3563,9 @@
   "cost": "{1}",
   "rarity": "u",
   "type": "Artifact",
-  "artifact": true,
   "colour": "a",
-  "num": "00?",
+  "num": "288",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Triangle%20of%20War"
  },
  {
@@ -3605,9 +3575,9 @@
   "cost": "",
   "rarity": "m",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?"
+  "num": "289",
+  "fixedViaException": true
  },
  {
   "title": "Bad River",
@@ -3615,9 +3585,9 @@
   "cost": "",
   "rarity": "u",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "290",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Bad%20River"
  },
  {
@@ -3627,9 +3597,9 @@
   "rarity": "r",
   "type": "Land",
   "subtype": "Swamp Mountain",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "291",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Badlands"
  },
  {
@@ -3638,9 +3608,9 @@
   "cost": "",
   "rarity": "c",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "292",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Barren%20Moor"
  },
  {
@@ -3650,9 +3620,9 @@
   "rarity": "r",
   "type": "Land",
   "subtype": "Swamp Forest",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "293",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Bayou"
  },
  {
@@ -3661,9 +3631,9 @@
   "cost": "",
   "rarity": "m",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "294",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Bazaar%20of%20Baghdad.jpg"
  },
  {
@@ -3672,9 +3642,9 @@
   "cost": "",
   "rarity": "u",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "295",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Caldera%20Lake"
  },
  {
@@ -3683,9 +3653,9 @@
   "cost": "",
   "rarity": "u",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "296",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Flood%20Plain"
  },
  {
@@ -3694,9 +3664,9 @@
   "cost": "",
   "rarity": "c",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "297",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Forgotten%20Cave"
  },
  {
@@ -3705,9 +3675,9 @@
   "cost": "",
   "rarity": "r",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "298",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Grand%20Coliseum"
  },
  {
@@ -3716,9 +3686,9 @@
   "cost": "",
   "rarity": "u",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "299",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Grasslands"
  },
  {
@@ -3727,10 +3697,9 @@
   "cost": "",
   "rarity": "r",
   "type": "Legendary Land",
-  "legendary": true,
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "300",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Keldon%20Necropolis"
  },
  {
@@ -3739,9 +3708,9 @@
   "cost": "",
   "rarity": "r",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "301",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Kjeldoran%20Outpost"
  },
  {
@@ -3750,9 +3719,9 @@
   "cost": "",
   "rarity": "r",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "302",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Lake%20of%20the%20Dead"
  },
  {
@@ -3761,9 +3730,9 @@
   "cost": "",
   "rarity": "m",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "303",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Library%20of%20Alexandria.jpg"
  },
  {
@@ -3772,9 +3741,9 @@
   "cost": "",
   "rarity": "c",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "304",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Lonely%20Sandbar"
  },
  {
@@ -3783,9 +3752,9 @@
   "cost": "",
   "rarity": "m",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "305",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/Mishras%20Workshop.jpg"
  },
  {
@@ -3794,9 +3763,9 @@
   "cost": "",
   "rarity": "u",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "306",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Mountain%20Valley"
  },
  {
@@ -3805,9 +3774,9 @@
   "cost": "",
   "rarity": "u",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "307",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Pine%20Barrens"
  },
  {
@@ -3817,9 +3786,9 @@
   "rarity": "r",
   "type": "Land",
   "subtype": "Mountain Plains",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "308",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Plateau"
  },
  {
@@ -3828,9 +3797,9 @@
   "cost": "",
   "rarity": "u",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "309",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Rocky%20Tar%20Pit"
  },
  {
@@ -3839,9 +3808,9 @@
   "cost": "",
   "rarity": "u",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "310",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Salt%20Flats"
  },
  {
@@ -3851,9 +3820,9 @@
   "rarity": "r",
   "type": "Land",
   "subtype": "Forest Plains",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "311",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Savannah"
  },
  {
@@ -3862,9 +3831,9 @@
   "cost": "",
   "rarity": "u",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "312",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Scabland"
  },
  {
@@ -3874,9 +3843,9 @@
   "rarity": "r",
   "type": "Land",
   "subtype": "Plains Swamp",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "313",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Scrubland"
  },
  {
@@ -3885,9 +3854,9 @@
   "cost": "",
   "rarity": "c",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "314",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Secluded%20Steppe"
  },
  {
@@ -3896,9 +3865,9 @@
   "cost": "",
   "rarity": "u",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "315",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Skyshroud%20Forest"
  },
  {
@@ -3907,9 +3876,9 @@
   "cost": "",
   "rarity": "r",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "316",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Strip%20Mine"
  },
  {
@@ -3919,9 +3888,9 @@
   "rarity": "r",
   "type": "Land",
   "subtype": "Forest Mountain",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "317",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Taiga"
  },
  {
@@ -3930,9 +3899,9 @@
   "cost": "",
   "rarity": "r",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "318",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Thawing%20Glaciers"
  },
  {
@@ -3941,10 +3910,9 @@
   "cost": "",
   "rarity": "m",
   "type": "Legendary Land",
-  "legendary": true,
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "319",
+  "fixedViaException": true,
   "src": "http://media.wizards.com/images/magic/tcg/products/VMA/TolarianAcademy.jpg"
  },
  {
@@ -3953,9 +3921,9 @@
   "cost": "",
   "rarity": "c",
   "type": "Land",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "320",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Tranquil%20Thicket"
  },
  {
@@ -3965,9 +3933,9 @@
   "rarity": "r",
   "type": "Land",
   "subtype": "Forest Island",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "321",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Tropical%20Island"
  },
  {
@@ -3977,9 +3945,9 @@
   "rarity": "r",
   "type": "Land",
   "subtype": "Island Plains",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "322",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Tundra"
  },
  {
@@ -3989,9 +3957,9 @@
   "rarity": "r",
   "type": "Land",
   "subtype": "Swamp Island",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "323",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Underground%20Sea"
  },
  {
@@ -4001,9 +3969,9 @@
   "rarity": "r",
   "type": "Land",
   "subtype": "Island Mountain",
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "324",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Volcanic%20Island"
  },
  {
@@ -4012,10 +3980,9 @@
   "cost": "",
   "rarity": "r",
   "type": "Legendary Land",
-  "legendary": true,
-  "land": true,
   "colour": "l",
-  "num": "00?",
+  "num": "325",
+  "fixedViaException": true,
   "src": "http://gatherer.wizards.com/Handlers/Image.ashx?type=card&name=Yavimaya%20Hollow"
  }
 ]

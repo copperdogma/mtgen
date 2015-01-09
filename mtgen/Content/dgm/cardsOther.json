@@ -1,18 +1,20 @@
 [
  {
-  "src": "http://mtgen.net/content/images/mtg-marketing1.png",
+  "src": "http://mtgen.net/cards/mtg-marketing1.png",
   "title": "Tip/Marketing Card",
   "set": "dgm",
   "colour": "o",
+  "num": "001 Marketing",
   "rarity": "c",
   "type": "Marketing",
   "usableForDeckBuilding": false,
   "marketing": true
  },
  {
-  "src": "http://mtgen.net/content/images/mtg-marketing2.png",
+  "src": "http://mtgen.net/cards/mtg-marketing2.png",
   "title": "Tip/Marketing Card",
   "set": "dgm",
+  "num": "002 Marketing",
   "colour": "o",
   "rarity": "c",
   "type": "Marketing",
@@ -21,10 +23,11 @@
  },
 
  {
-  "src": "http://mtgen.net/content/dgm/cards/selesnya-guild-button.jpg",
+  "src": "http://mtgen.net/cards/dgm-selesnya-guild-button.jpg",
   "title": "Selesnya Guild Button",
   "set": "dgm",
   "colour": "other",
+  "num": "001 Prerelease",
   "cindex": 99,
   "rarity": "c",
   "type": "Button",
@@ -34,10 +37,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dgm/cards/golgari-guild-button.jpg",
+  "src": "http://mtgen.net/cards/dgm-golgari-guild-button.jpg",
   "title": "Golgari Guild Button",
   "set": "dgm",
   "colour": "other",
+  "num": "002 Prerelease",
   "cindex": 99,
   "rarity": "c",
   "type": "Button",
@@ -47,10 +51,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dgm/cards/rakdos-guild-button.jpg",
+  "src": "http://mtgen.net/cards/dgm-rakdos-guild-button.jpg",
   "title": "Rakdos Guild Button",
   "set": "dgm",
   "colour": "other",
+  "num": "003 Prerelease",
   "cindex": 99,
   "rarity": "c",
   "type": "Button",
@@ -60,10 +65,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dgm/cards/izzet-guild-button.jpg",
+  "src": "http://mtgen.net/cards/dgm-izzet-guild-button.jpg",
   "title": "Izzet Guild Button",
   "set": "dgm",
   "colour": "other",
+  "num": "004 Prerelease",
   "cindex": 99,
   "rarity": "c",
   "type": "Button",
@@ -73,10 +79,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dgm/cards/azorius-guild-button.jpg",
+  "src": "http://mtgen.net/cards/dgm-azorius-guild-button.jpg",
   "title": "Azorius Guild Button",
   "set": "dgm",
   "colour": "other",
+  "num": "005 Prerelease",
   "cindex": 99,
   "rarity": "c",
   "type": "Button",
@@ -86,10 +93,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dgm/cards/orzhov-guild-button.jpg",
+  "src": "http://mtgen.net/cards/dgm-orzhov-guild-button.jpg",
   "title": "Orzhov Guild Button",
   "set": "dgm",
   "colour": "other",
+  "num": "006 Prerelease",
   "cindex": 99,
   "rarity": "c",
   "type": "Button",
@@ -99,10 +107,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dgm/cards/dimir-guild-button.jpg",
+  "src": "http://mtgen.net/cards/dgm-dimir-guild-button.jpg",
   "title": "Dimir Guild Button",
   "set": "dgm",
   "colour": "other",
+  "num": "007 Prerelease",
   "cindex": 99,
   "rarity": "c",
   "type": "Button",
@@ -112,10 +121,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dgm/cards/gruul-guild-button.jpg",
+  "src": "http://mtgen.net/cards/dgm-gruul-guild-button.jpg",
   "title": "Gruul Guild Button",
   "set": "dgm",
   "colour": "other",
+  "num": "008 Prerelease",
   "cindex": 99,
   "rarity": "c",
   "type": "Button",
@@ -125,10 +135,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dgm/cards/boros-guild-button.jpg",
+  "src": "http://mtgen.net/cards/dgm-boros-guild-button.jpg",
   "title": "Boros Guild Button",
   "set": "dgm",
   "colour": "other",
+  "num": "009 Prerelease",
   "cindex": 99,
   "rarity": "c",
   "type": "Button",
@@ -138,10 +149,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dgm/cards/simic-guild-button.jpg",
+  "src": "http://mtgen.net/cards/dgm-simic-guild-button.jpg",
   "title": "Simic Guild Button",
   "set": "dgm",
   "colour": "other",
+  "num": "010 Prerelease",
   "cindex": 99,
   "rarity": "c",
   "type": "Button",
@@ -260,10 +272,11 @@
  }
  
  ,{
-  "src": "http://mtgen.net/content/dgm/cards/dgm-fat-pack-players-guide.png",
+  "src": "http://mtgen.net/cards/dgm-fat-pack-players-guide.png",
   "set": "dgm",
   "title": "Dragon's Maze Player’s Guide",
   "colour": "other",
+  "num": "001 FatPack",
   "rarity": "c",
   "type": "Player's Guide",
   "promo": "true",
@@ -271,10 +284,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dgm/cards/dgm-fat-pack-rules-reference-card.png",
+  "src": "http://mtgen.net/cards/dgm-fat-pack-rules-reference-card.png",
   "set": "dgm",
   "title": "Dragon's Maze Rules Reference Card",
   "colour": "other",
+  "num": "002 FatPack",
   "rarity": "c",
   "type": "Rules Reference Card",
   "promo": "true",
@@ -282,10 +296,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dgm/cards/dgm-fat-pack-card-box.png",
+  "src": "http://mtgen.net/cards/dgm-fat-pack-card-box.png",
   "set": "dgm",
   "title": "Dragon's Maze Card Box",
   "colour": "other",
+  "num": "003 FatPack",
   "rarity": "c",
   "type": "Card Box",
   "promo": "true",
@@ -293,10 +308,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dgm/cards/dgm-fat-pack-mural.png",
+  "src": "http://mtgen.net/cards/dgm-fat-pack-mural.png",
   "set": "dgm",
   "title": "Dragon's Maze Mural",
   "colour": "other",
+  "num": "004 FatPack",
   "rarity": "c",
   "type": "Mural",
   "promo": "true",
@@ -304,9 +320,10 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dgm/cards/dgm-fat-pack-deck-box.png",
+  "src": "http://mtgen.net/cards/dgm-fat-pack-deck-box.png",
   "set": "dgm",
   "title": "Dragon's Maze Deck Box",
+  "num": "005 FatPack",
   "colour": "other",
   "rarity": "c",
   "type": "Deck Box",
@@ -315,10 +332,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dgm/cards/dgm-spindown-life-counter-white.png",
+  "src": "http://mtgen.net/cards/dgm-spindown-life-counter-white.png",
   "set": "dgm",
   "title": "Special-Edition White Dragon's Maze Spindown Life Counter",
   "colour": "o",
+  "num": "001 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -326,10 +344,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dgm/cards/dgm-spindown-life-counter-blue.png",
+  "src": "http://mtgen.net/cards/dgm-spindown-life-counter-blue.png",
   "set": "dgm",
   "title": "Special-Edition Blue Dragon's Maze Spindown Life Counter",
   "colour": "o",
+  "num": "002 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -337,10 +356,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dgm/cards/dgm-spindown-life-counter-black.png",
+  "src": "http://mtgen.net/cards/dgm-spindown-life-counter-black.png",
   "set": "dgm",
   "title": "Special-Edition Black Dragon's Maze Spindown Life Counter",
   "colour": "o",
+  "num": "003 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -348,10 +368,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dgm/cards/dgm-spindown-life-counter-red.png",
+  "src": "http://mtgen.net/cards/dgm-spindown-life-counter-red.png",
   "set": "dgm",
   "title": "Special-Edition Red Dragon's Maze Spindown Life Counter",
   "colour": "o",
+  "num": "005 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -359,10 +380,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dgm/cards/dgm-spindown-life-counter-green.png",
+  "src": "http://mtgen.net/cards/dgm-spindown-life-counter-green.png",
   "set": "dgm",
   "title": "Special-Edition Green Dragon's Maze Spindown Life Counter",
   "colour": "o",
+  "num": "006 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",

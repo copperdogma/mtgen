@@ -12,28 +12,32 @@ namespace mtgen
 	{
 		public static void RegisterRoutes(RouteCollection routes)
 		{
-			routes.LowercaseUrls = true; 
+			routes.LowercaseUrls = true;
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+
+			// KILL: I like the new version better..
+			//routes.MapRoute(
+			//	name: "Set Images",
+			//	url: "{setCode}/cards/{imageFilename}.{extension}",
+			//	defaults: new { controller = "SetImages", action = "RedirectImageFile" },
+			//	constraints: new { setCode = @"^[a-zA-Z0-9]{3}$", extension = @"(?i:^(jpg|jpeg|gif|png)$)" }
+			//);
+
+			// allows convention-based mapping on the actual controlers: http://blogs.msdn.com/b/webdev/archive/2013/10/17/attribute-routing-in-asp-net-mvc-5.aspx
+			routes.MapMvcAttributeRoutes();
+
+			routes.MapRoute(
+				name: "Card Images",
+				url: "cards/{imageFilename}.{extension}",
+				defaults: new { controller = "SetImages", action = "RedirectCardImage" },
+				constraints: new { extension = @"(?i:^(jpg|jpeg|gif|png)$)" }
+			);
 
 			routes.MapRoute(
 				name: "Set",
 				url: "{setCode}",
-				defaults: new { controller = "Set", action = "Index", setCode = "thisssy" },
+				defaults: new { controller = "Set", action = "Index" },
 				constraints: new { setCode = @"^[a-zA-Z0-9]{3}$" }
-			);
-
-			//var route = new Route(
-			//	url: "{setCode}",
-			//	defaults: new RouteValueDictionary(new { controller = "Set", action = "IndexTest", id = UrlParameter.Optional }),
-			//	constraints: new RouteValueDictionary(new { setCode = @"^[a-zA-Z0-9]{4}$" }),
-			//	routeHandler: new ControllerLessRouteHandler());
-			//routes.Add(route);
-
-			routes.MapRoute(
-				name: "SetTest",
-				url: "{setCode}",
-				defaults: new { controller = "Set", action = "IndexTest", setCode = "thisssy" },
-				constraints: new { setCode = @"^[a-zA-Z0-9]{4}$" }
 			);
 
 			routes.MapRoute(

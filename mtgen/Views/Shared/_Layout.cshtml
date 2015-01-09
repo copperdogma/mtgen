@@ -137,6 +137,11 @@
                 $("aside.info p").removeClass('hidden');
             });
 
+            $('#testButton').on("click",function() {
+                $.getJSON( "Set/SaveDraw", function(url) {
+                    console.log( "success:"+url );
+                });
+            });
         });
     </script>
 </body>

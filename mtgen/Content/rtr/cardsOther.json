@@ -1,19 +1,21 @@
 [
  {
-  "src": "http://mtgen.net/content/images/mtg-marketing1.png",
+  "src": "http://mtgen.net/cards/mtg-marketing1.png",
   "title": "Tip/Marketing Card",
   "set": "rtr",
   "colour": "o",
+  "num": "001 Marketing",
   "rarity": "c",
   "type": "Marketing",
   "usableForDeckBuilding": false,
   "marketing": true
  },
  {
-  "src": "http://mtgen.net/content/images/mtg-marketing2.png",
+  "src": "http://mtgen.net/cards/mtg-marketing2.png",
   "title": "Tip/Marketing Card",
   "set": "rtr",
   "colour": "o",
+  "num": "002 Marketing",
   "rarity": "c",
   "type": "Marketing",
   "usableForDeckBuilding": false,
@@ -297,10 +299,11 @@
  },
 
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-sticker-azorius.png",
+  "src": "http://mtgen.net/cards/rtr-sticker-azorius.png",
   "set": "rtr",
   "title": "Azorius Guild Sticker",
   "colour": "o",
+  "num": "001 Prerelease",
   "rarity": "c",
   "type": "Sticker",
   "guild": "Azorius",
@@ -309,10 +312,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-sticker-golgari.png",
+  "src": "http://mtgen.net/cards/rtr-sticker-golgari.png",
   "set": "rtr",
   "title": "Golgari Guild Sticker",
   "colour": "o",
+  "num": "002 Prerelease",
   "rarity": "c",
   "type": "Sticker",
   "guild": "Golgari",
@@ -321,10 +325,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-sticker-izzet.png",
+  "src": "http://mtgen.net/cards/rtr-sticker-izzet.png",
   "set": "rtr",
   "title": "Izzet Guild Sticker",
   "colour": "o",
+  "num": "003 Prerelease",
   "rarity": "c",
   "type": "Sticker",
   "guild": "Izzet",
@@ -333,10 +338,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-sticker-rakdos.png",
+  "src": "http://mtgen.net/cards/rtr-sticker-rakdos.png",
   "set": "rtr",
   "title": "Rakdos Guild Sticker",
   "colour": "o",
+  "num": "004 Prerelease",
   "rarity": "c",
   "type": "Sticker",
   "guild": "Rakdos",
@@ -345,10 +351,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-sticker-selesnya.png",
+  "src": "http://mtgen.net/cards/rtr-sticker-selesnya.png",
   "set": "rtr",
   "title": "Selesnya Guild Sticker",
   "colour": "o",
+  "num": "005 Prerelease",
   "rarity": "c",
   "type": "Sticker",
   "guild": "Selesnya",
@@ -357,10 +364,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-spindown-life-counter-azorius.png",
+  "src": "http://mtgen.net/cards/rtr-spindown-life-counter-azorius.png",
   "set": "rtr",
   "title": "Azorius Spindown Life Counter",
   "colour": "o",
+  "num": "001 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "guild": "Azorius",
@@ -369,10 +377,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-spindown-life-counter-golgari.png",
+  "src": "http://mtgen.net/cards/rtr-spindown-life-counter-golgari.png",
   "set": "rtr",
   "title": "Golgari Spindown Life Counter",
   "colour": "o",
+  "num": "002 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "guild": "Golgari",
@@ -381,10 +390,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-spindown-life-counter-izzet.png",
+  "src": "http://mtgen.net/cards/rtr-spindown-life-counter-izzet.png",
   "set": "rtr",
   "title": "Izzet Spindown Life Counter",
   "colour": "o",
+  "num": "003 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "guild": "Izzet",
@@ -393,10 +403,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-spindown-life-counter-rakdos.png",
+  "src": "http://mtgen.net/cards/rtr-spindown-life-counter-rakdos.png",
   "set": "rtr",
   "title": "Rakdos Spindown Life Counter",
   "colour": "o",
+  "num": "004 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "guild": "Rakdos",
@@ -405,10 +416,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-spindown-life-counter-selesnya.png",
+  "src": "http://mtgen.net/cards/rtr-spindown-life-counter-selesnya.png",
   "set": "rtr",
   "title": "Selesnya Spindown Life Counter",
   "colour": "o",
+  "num": "005 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "guild": "Selesnya",
@@ -418,12 +430,13 @@
  },
  
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-azorius-welcome-letter.jpg",
-  "src_large": "http://mtgen.net/content/rtr/cards/rtr-azorius-welcome-letter-lg.jpg",
+  "src": "http://mtgen.net/cards/rtr-azorius-welcome-letter.jpg",
+  "src_large": "http://mtgen.net/cards/rtr-azorius-welcome-letter-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "rtr",
   "title": "Azorius Welcome Letter",
+  "num": "006 Prerelease",
   "colour": "o",
   "rarity": "c",
   "type": "Welcome Letter",
@@ -433,13 +446,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-golgari-welcome-letter.jpg",
-  "src_large": "http://mtgen.net/content/rtr/cards/rtr-golgari-welcome-letter-lg.jpg",
+  "src": "http://mtgen.net/cards/rtr-golgari-welcome-letter.jpg",
+  "src_large": "http://mtgen.net/cards/rtr-golgari-welcome-letter-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "rtr",
   "title": "Golgari Welcome Letter",
   "colour": "o",
+  "num": "007 Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "guild": "Golgari",
@@ -448,13 +462,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-izzet-welcome-letter.jpg",
-  "src_large": "http://mtgen.net/content/rtr/cards/rtr-izzet-welcome-letter-lg.jpg",
+  "src": "http://mtgen.net/cards/rtr-izzet-welcome-letter.jpg",
+  "src_large": "http://mtgen.net/cards/rtr-izzet-welcome-letter-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "rtr",
   "title": "Izzet Welcome Letter",
   "colour": "o",
+  "num": "008 Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "guild": "Izzet",
@@ -463,13 +478,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-rakdos-welcome-letter.jpg",
-  "src_large": "http://mtgen.net/content/rtr/cards/rtr-rakdos-welcome-letter-lg.jpg",
+  "src": "http://mtgen.net/cards/rtr-rakdos-welcome-letter.jpg",
+  "src_large": "http://mtgen.net/cards/rtr-rakdos-welcome-letter-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "rtr",
   "title": "Rakdos Welcome Letter",
   "colour": "o",
+  "num": "009 Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "guild": "Rakdos",
@@ -478,13 +494,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-selesnya-welcome-letter.jpg",
-  "src_large": "http://mtgen.net/content/rtr/cards/rtr-selesnya-welcome-letter-lg.jpg",
+  "src": "http://mtgen.net/cards/rtr-selesnya-welcome-letter.jpg",
+  "src_large": "http://mtgen.net/cards/rtr-selesnya-welcome-letter-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "rtr",
   "title": "Selesnya Welcome Letter",
   "colour": "o",
+  "num": "010 Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "guild": "Selesnya",
@@ -494,13 +511,14 @@
  },
  
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-azorius-achievement-card.jpg",
-  "src_large": "http://mtgen.net/content/rtr/cards/rtr-azorius-achievement-card-lg.jpg",
+  "src": "http://mtgen.net/cards/rtr-azorius-achievement-card.jpg",
+  "src_large": "http://mtgen.net/cards/rtr-azorius-achievement-card-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "rtr",
   "title": "Azorius Achievement Card",
   "colour": "o",
+  "num": "011 Prerelease",
   "rarity": "c",
   "type": "Achievement Letter",
   "guild": "Azorius",
@@ -509,13 +527,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-golgari-achievement-card.jpg",
-  "src_large": "http://mtgen.net/content/rtr/cards/rtr-golgari-achievement-card-lg.jpg",
+  "src": "http://mtgen.net/cards/rtr-golgari-achievement-card.jpg",
+  "src_large": "http://mtgen.net/cards/rtr-golgari-achievement-card-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "rtr",
   "title": "Golgari Achievement Card",
   "colour": "o",
+  "num": "012 Prerelease",
   "rarity": "c",
   "type": "Achievement Letter",
   "guild": "Golgari",
@@ -524,13 +543,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-izzet-achievement-card.jpg",
-  "src_large": "http://mtgen.net/content/rtr/cards/rtr-azorius-achievement-card-lg.jpg",
+  "src": "http://mtgen.net/cards/rtr-izzet-achievement-card.jpg",
+  "src_large": "http://mtgen.net/cards/rtr-azorius-achievement-card-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "rtr",
   "title": "Izzet Achievement Card",
   "colour": "o",
+  "num": "013 Prerelease",
   "rarity": "c",
   "type": "Achievement Letter",
   "guild": "Izzet",
@@ -539,13 +559,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-rakdos-achievement-card.jpg",
-  "src_large": "http://mtgen.net/content/rtr/cards/rtr-rakdos-achievement-card-lg.jpg",
+  "src": "http://mtgen.net/cards/rtr-rakdos-achievement-card.jpg",
+  "src_large": "http://mtgen.net/cards/rtr-rakdos-achievement-card-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "rtr",
   "title": "Rakdos Achievement Card",
   "colour": "o",
+  "num": "014 Prerelease",
   "rarity": "c",
   "type": "Achievement Letter",
   "guild": "Rakdos",
@@ -554,13 +575,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-selesnya-achievement-card.jpg",
-  "src_large": "http://mtgen.net/content/rtr/cards/rtr-selesnya-achievement-card-lg.jpg",
+  "src": "http://mtgen.net/cards/rtr-selesnya-achievement-card.jpg",
+  "src_large": "http://mtgen.net/cards/rtr-selesnya-achievement-card-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "rtr",
   "title": "Selesnya Achievement Card",
   "colour": "o",
+  "num": "015 Prerelease",
   "rarity": "c",
   "type": "Achievement Letter",
   "guild": "Selesnya",
@@ -574,6 +596,7 @@
   "set": "rtr",
   "src": "http://media.wizards.com/images/magic/daily/arcana/1057_ljcp3xren3_pre_1.jpg",
   "cost": "{5}{U}{W}",
+  "num": "142 Prerelease",
   "rarity": "r",
   "type": "Creature",
   "subtype": "Archon",
@@ -590,6 +613,7 @@
   "set": "rtr",
   "src": "http://media.wizards.com/images/magic/daily/arcana/1057_ljcp3xren3_pre_2.jpg",
   "cost": "{3}{U}{R}",
+  "num": "170 Prerelease",
   "rarity": "r",
   "type": "Creature",
   "subtype": "Dragon",
@@ -606,6 +630,7 @@
   "set": "rtr",
   "src": "http://media.wizards.com/images/magic/daily/arcana/1057_ljcp3xren3_pre_3.jpg",
   "cost": "{4}{B}{R}",
+  "num": "147 Prerelease",
   "rarity": "r",
   "type": "Creature",
   "subtype": "Nightmare Horse",
@@ -622,6 +647,7 @@
   "set": "rtr",
   "src": "http://media.wizards.com/images/magic/daily/arcana/1057_ljcp3xren3_pre_4.jpg",
   "cost": "{2}{B}{G}",
+  "num": "152 Prerelease",
   "rarity": "r",
   "type": "Creature",
   "subtype": "Fungus",
@@ -638,6 +664,7 @@
   "set": "rtr",
   "src": "http://media.wizards.com/images/magic/daily/arcana/1057_ljcp3xren3_pre_5.jpg",
   "cost": "",
+  "num": "240 Prerelease",
   "rarity": "r",
   "type": "Land",
   "colour": "l",
@@ -730,10 +757,11 @@
  },
 
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-fat-pack-players-guide.png",
+  "src": "http://mtgen.net/cards/rtr-fat-pack-players-guide.png",
   "set": "rtr",
   "title": "Return to Ravnica Player’s Guide",
   "colour": "other",
+  "num": "001 FatPack",
   "rarity": "c",
   "type": "Player's Guide",
   "promo": "true",
@@ -741,10 +769,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-fat-pack-rules-reference-card.png",
+  "src": "http://mtgen.net/cards/rtr-fat-pack-rules-reference-card.png",
   "set": "rtr",
   "title": "Return to Ravnica Rules Reference Card",
   "colour": "other",
+  "num": "002 FatPack",
   "rarity": "c",
   "type": "Rules Reference Card",
   "promo": "true",
@@ -752,10 +781,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-fat-pack-card-box.png",
+  "src": "http://mtgen.net/cards/rtr-fat-pack-card-box.png",
   "set": "rtr",
   "title": "Return to Ravnica Card Box",
   "colour": "other",
+  "num": "003 FatPack",
   "rarity": "c",
   "type": "Card Box",
   "promo": "true",
@@ -763,10 +793,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-fat-pack-mural.png",
+  "src": "http://mtgen.net/cards/rtr-fat-pack-mural.png",
   "set": "rtr",
   "title": "Return to Ravnica Mural",
   "colour": "other",
+  "num": "004 FatPack",
   "rarity": "c",
   "type": "Mural",
   "promo": "true",
@@ -774,10 +805,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-fat-pack-deck-box.png",
+  "src": "http://mtgen.net/cards/rtr-fat-pack-deck-box.png",
   "set": "rtr",
   "title": "Return to Ravnica Deck Box",
   "colour": "other",
+  "num": "005 FatPack",
   "rarity": "c",
   "type": "Deck Box",
   "promo": "true",
@@ -785,10 +817,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-spindown-life-counter-azorius.png",
+  "src": "http://mtgen.net/cards/rtr-spindown-life-counter-azorius.png",
   "set": "rtr",
   "title": "Special Edition Azorius Spindown Life Counter",
   "colour": "o",
+  "num": "006 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -796,10 +829,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-spindown-life-counter-golgari.png",
+  "src": "http://mtgen.net/cards/rtr-spindown-life-counter-golgari.png",
   "set": "rtr",
   "title": "Special Edition Golgari Spindown Life Counter",
   "colour": "o",
+  "num": "007 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -807,10 +841,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-spindown-life-counter-izzet.png",
+  "src": "http://mtgen.net/cards/rtr-spindown-life-counter-izzet.png",
   "set": "rtr",
   "title": "Special Edition Izzet Spindown Life Counter",
   "colour": "o",
+  "num": "008 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -818,10 +853,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-spindown-life-counter-rakdos.png",
+  "src": "http://mtgen.net/cards/rtr-spindown-life-counter-rakdos.png",
   "set": "rtr",
   "title": "Special Edition Rakdos Spindown Life Counter",
   "colour": "o",
+  "num": "009 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -829,10 +865,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/rtr/cards/rtr-spindown-life-counter-selesnya.png",
+  "src": "http://mtgen.net/cards/rtr-spindown-life-counter-selesnya.png",
   "set": "rtr",
   "title": "Special Edition Selesnya Spindown Life Counter",
   "colour": "o",
+  "num": "010 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",

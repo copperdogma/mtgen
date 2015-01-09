@@ -1,19 +1,21 @@
 [
  {
-  "src": "http://mtgen.net/content/images/mtg-marketing1.png",
+  "src": "http://mtgen.net/cards/mtg-marketing1.png",
   "title": "Tip/Marketing Card",
   "set": "avr",
   "colour": "o",
+  "num": "001 marketing",
   "rarity": "c",
   "type": "Marketing",
   "usableForDeckBuilding": false,
   "marketing": true
  },
  {
-  "src": "http://mtgen.net/content/images/mtg-marketing2.png",
+  "src": "http://mtgen.net/cards/mtg-marketing2.png",
   "title": "Tip/Marketing Card",
   "set": "avr",
   "colour": "o",
+  "num": "002 marketing",
   "rarity": "c",
   "type": "Marketing",
   "usableForDeckBuilding": false,
@@ -263,13 +265,14 @@
  },
 
  {
-  "src": "http://mtgen.net/content/avr/cards/avr-achivement-card1.jpg",
-  "src_large": "http://mtgen.net/content/avr/cards/avr-achivement-card1-lg.jpg",
+  "src": "http://mtgen.net/cards/avr-achivement-card1.jpg",
+  "src_large": "http://mtgen.net/cards/avr-achivement-card1-lg.jpg",
   "height": 370,
   "width": 518,
   "set": "avr",
   "title": "Avacyn Restored Helvault Achievement Card 1",
   "colour": "other",
+  "num": "001 Prerelease",
   "rarity": "c",
   "type": "Achievement Card",
   "promo": "true",
@@ -277,13 +280,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/avr/cards/avr-achivement-card2.jpg",
-  "src_large": "http://mtgen.net/content/avr/cards/avr-achivement-card2-lg.jpg",
+  "src": "http://mtgen.net/cards/avr-achivement-card2.jpg",
+  "src_large": "http://mtgen.net/cards/avr-achivement-card2-lg.jpg",
   "height": 370,
   "width": 518,
   "set": "avr",
   "title": "Avacyn Restored Helvault Achievement Card 2",
   "colour": "other",
+  "num": "002 Prerelease",
   "rarity": "c",
   "type": "Achievement Card",
   "promo": "true",
@@ -292,10 +296,11 @@
  },
 
  {
-  "src": "http://mtgen.net/content/avr/cards/avr-fat-pack-players-guide.png",
+  "src": "http://mtgen.net/cards/avr-fat-pack-players-guide.png",
   "set": "avr",
   "title": "Avacyn Restored Player’s Guide",
   "colour": "other",
+  "num": "001 FatPack",
   "rarity": "c",
   "type": "Player's Guide",
   "promo": "true",
@@ -303,10 +308,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/avr/cards/avr-fat-pack-rules-reference-card.png",
+  "src": "http://mtgen.net/cards/avr-fat-pack-rules-reference-card.png",
   "set": "avr",
   "title": "Avacyn Restored Rules Reference Card",
   "colour": "other",
+  "num": "002 FatPack",
   "rarity": "c",
   "type": "Rules Reference Card",
   "promo": "true",
@@ -314,10 +320,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/avr/cards/avr-fat-pack-card-box.png",
+  "src": "http://mtgen.net/cards/avr-fat-pack-card-box.png",
   "set": "avr",
   "title": "Avacyn Restored Card Box",
   "colour": "other",
+  "num": "003 FatPack",
   "rarity": "c",
   "type": "Card Box",
   "promo": "true",
@@ -325,10 +332,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/avr/cards/avr-fat-pack-mural.png",
+  "src": "http://mtgen.net/cards/avr-fat-pack-mural.png",
   "set": "avr",
   "title": "Avacyn Restored Mural",
   "colour": "other",
+  "num": "004 FatPack",
   "rarity": "c",
   "type": "Mural",
   "promo": "true",
@@ -336,10 +344,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/avr/cards/avr-fat-pack-deck-box.png",
+  "src": "http://mtgen.net/cards/avr-fat-pack-deck-box.png",
   "set": "avr",
   "title": "Avacyn Restored Deck Box",
   "colour": "other",
+  "num": "005 FatPack",
   "rarity": "c",
   "type": "Deck Box",
   "promo": "true",
@@ -347,10 +356,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/avr/cards/avr-spindown-life-counter-white.png",
+  "src": "http://mtgen.net/cards/avr-spindown-life-counter-white.png",
   "set": "avr",
   "title": "Special Edition White Spindown Life Counter",
   "colour": "o",
+  "num": "006 FatPack",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -358,10 +368,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/avr/cards/avr-spindown-life-counter-blue.png",
+  "src": "http://mtgen.net/cards/avr-spindown-life-counter-blue.png",
   "set": "avr",
   "title": "Special Edition Blue Spindown Life Counter",
   "colour": "o",
+  "num": "001 counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -369,10 +380,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/avr/cards/avr-spindown-life-counter-black.png",
+  "src": "http://mtgen.net/cards/avr-spindown-life-counter-black.png",
   "set": "avr",
   "title": "Special Edition Black Spindown Life Counter",
   "colour": "o",
+  "num": "002 counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -380,10 +392,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/avr/cards/avr-spindown-life-counter-red.png",
+  "src": "http://mtgen.net/cards/avr-spindown-life-counter-red.png",
   "set": "avr",
   "title": "Special Edition Red Spindown Life Counter",
   "colour": "o",
+  "num": "003 counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -391,10 +404,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/avr/cards/avr-spindown-life-counter-green.png",
+  "src": "http://mtgen.net/cards/avr-spindown-life-counter-green.png",
   "set": "avr",
   "title": "Special Edition Green Spindown Life Counter",
   "colour": "o",
+  "num": "004 counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",

@@ -1,21 +1,21 @@
 [
- { "_comment": "prerelease contents: http://archive.wizards.com/magic/magazine/article.aspx?x=mtg/daily/feature/265" },
- 
  {
-  "src": "http://mtgen.net/content/images/mtg-marketing1.png",
+  "src": "http://mtgen.net/cards/mtg-marketing1.png",
   "title": "Tip/Marketing Card",
   "set": "ths",
   "colour": "o",
+  "num": "001 Marketing",
   "rarity": "c",
   "type": "Marketing",
   "usableForDeckBuilding": false,
   "marketing": true
  },
  {
-  "src": "http://mtgen.net/content/images/mtg-marketing2.png",
+  "src": "http://mtgen.net/cards/mtg-marketing2.png",
   "title": "Tip/Marketing Card",
   "set": "ths",
   "colour": "o",
+  "num": "002 Marketing",
   "rarity": "c",
   "type": "Marketing",
   "usableForDeckBuilding": false,
@@ -280,6 +280,7 @@
   "src": "http://media.wizards.com/images/magic/daily/arcana/arc1309_5_2f4fundtuc.jpg",
   "set": "ths",
   "cost": "{5}{B}{B}",
+  "num": "075 Prerelease",
   "rarity": "r",
   "type": "Creature",
   "subtype": "Demon",
@@ -295,6 +296,7 @@
   "src": "http://media.wizards.com/images/magic/daily/arcana/arc1309_7_43zrcb6byf.jpg",
   "set": "ths",
   "cost": "{2}{R}{R}",
+  "num": "120 Prerelease",
   "rarity": "r",
   "type": "Creature",
   "subtype": "Elemental",
@@ -310,6 +312,7 @@
   "src": "http://media.wizards.com/images/magic/daily/arcana/arc1309_8_yzrw84l2op.jpg",
   "set": "ths",
   "cost": "{3}{G}{G}",
+  "num": "149 Prerelease",
   "rarity": "r",
   "type": "Legendary Creature",
   "subtype": "Human Warrior",
@@ -325,6 +328,7 @@
   "src": "http://media.wizards.com/images/magic/daily/arcana/arc1309_3_zgf64zarxt.jpg",
   "set": "ths",
   "cost": "{2}{U}{U}",
+  "num": "042 Release",
   "rarity": "r",
   "type": "Legendary Enchantment Artifact",
   "colour": "u",
@@ -338,6 +342,7 @@
   "src": "http://media.wizards.com/images/magic/daily/arcana/arc1309_2_1clfpz7gt5.jpg",
   "set": "ths",
   "cost": "{W}{W}",
+  "num": "26 Game Day",
   "rarity": "u",
   "type": "Creature",
   "subtype": "Human Soldier",
@@ -349,10 +354,11 @@
   "usableForDeckBuilding": false
  },
 {
-  "title": "Night Howler",
+  "title": "Nighthowler",
   "src": "http://media.wizards.com/images/magic/daily/arcana/arc1309_6_d5tjr2xgq7.jpg",
   "set": "ths",
   "cost": "{1}{B}{B}",
+  "num": "098 Game Day",
   "rarity": "r",
   "type": "Enchantment Creature",
   "subtype": "Horror",
@@ -368,6 +374,7 @@
   "src": "http://media.wizards.com/images/magic/daily/arcana/arc1309_9_ob0l906feh.jpg",
   "set": "ths",
   "cost": "{1}{G}",
+  "num": "180 Buy-a-Box",
   "rarity": "r",
   "type": "Creature",
   "subtype": "Plant",
@@ -379,11 +386,12 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-hero-protector.jpg",
+  "src": "http://mtgen.net/cards/ths-hero-protector.jpg",
   "width": 530,
   "set": "ths",
   "title": "The Protector",
   "colour": "o",
+  "num": "001 Prerelease",
   "rarity": "c",
   "type": "Hero",
   "promo": "true",
@@ -391,11 +399,12 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-hero-philosopher.jpg",
+  "src": "http://mtgen.net/cards/ths-hero-philosopher.jpg",
   "width": 530,
   "set": "ths",
   "title": "The Philosopher",
   "colour": "o",
+  "num": "002 Prerelease",
   "rarity": "c",
   "type": "Hero",
   "promo": "true",
@@ -403,11 +412,12 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-hero-avenger.jpg",
+  "src": "http://mtgen.net/cards/ths-hero-avenger.jpg",
   "width": 530,
   "set": "ths",
   "title": "The Avenger",
   "colour": "o",
+  "num": "003 Prerelease",
   "rarity": "c",
   "type": "Hero",
   "promo": "true",
@@ -415,11 +425,12 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-hero-warrior.jpg",
+  "src": "http://mtgen.net/cards/ths-hero-warrior.jpg",
   "width": 530,
   "set": "ths",
   "title": "The Warrior",
   "colour": "o",
+  "num": "004 Prerelease",
   "rarity": "c",
   "type": "Hero",
   "promo": "true",
@@ -427,11 +438,12 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-hero-hunter.jpg",
+  "src": "http://mtgen.net/cards/ths-hero-hunter.jpg",
   "width": 530,
   "set": "ths",
   "title": "The Hunter",
   "colour": "o",
+  "num": "005 Prerelease",
   "rarity": "c",
   "type": "Hero",
   "promo": "true",
@@ -439,10 +451,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-spindown-life-counter-white.png",
+  "src": "http://mtgen.net/cards/ths-spindown-life-counter-white.png",
   "set": "ths",
   "title": "White Spindown Life Counter",
   "colour": "o",
+  "num": "001 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -450,10 +463,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-spindown-life-counter-blue.png",
+  "src": "http://mtgen.net/cards/ths-spindown-life-counter-blue.png",
   "set": "ths",
   "title": "Blue Spindown Life Counter",
   "colour": "o",
+  "num": "002 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -461,10 +475,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-spindown-life-counter-black.png",
+  "src": "http://mtgen.net/cards/ths-spindown-life-counter-black.png",
   "set": "ths",
   "title": "Black Spindown Life Counter",
   "colour": "o",
+  "num": "003 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -472,10 +487,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-spindown-life-counter-red.png",
+  "src": "http://mtgen.net/cards/ths-spindown-life-counter-red.png",
   "set": "ths",
   "title": "Red Spindown Life Counter",
   "colour": "o",
+  "num": "004 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -483,10 +499,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-spindown-life-counter-green.png",
+  "src": "http://mtgen.net/cards/ths-spindown-life-counter-green.png",
   "set": "ths",
   "title": "Green Spindown Life Counter",
   "colour": "o",
+  "num": "005 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -494,13 +511,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-activity-card-choose-your-path-white.jpg",
-  "src_large": "http://mtgen.net/content/ths/cards/ths-activity-card-choose-your-path-white-lg.jpg",
+  "src": "http://mtgen.net/cards/ths-activity-card-choose-your-path-white.jpg",
+  "src_large": "http://mtgen.net/cards/ths-activity-card-choose-your-path-white-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "ths",
   "title": "White Choose Your Path Activity Card",
   "colour": "other",
+  "num": "006 Prerelease",
   "rarity": "c",
   "type": "Activity Card",
   "promo": "true",
@@ -508,13 +526,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-activity-card-choose-your-path-blue.jpg",
-  "src_large": "http://mtgen.net/content/ths/cards/ths-activity-card-choose-your-path-blue-lg.jpg",
+  "src": "http://mtgen.net/cards/ths-activity-card-choose-your-path-blue.jpg",
+  "src_large": "http://mtgen.net/cards/ths-activity-card-choose-your-path-blue-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "ths",
   "title": "Blue Choose Your Path Activity Card",
   "colour": "other",
+  "num": "007 Prerelease",
   "rarity": "c",
   "type": "Activity Card",
   "promo": "true",
@@ -522,13 +541,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-activity-card-choose-your-path-black.jpg",
-  "src_large": "http://mtgen.net/content/ths/cards/ths-activity-card-choose-your-path-black-lg.jpg",
+  "src": "http://mtgen.net/cards/ths-activity-card-choose-your-path-black.jpg",
+  "src_large": "http://mtgen.net/cards/ths-activity-card-choose-your-path-black-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "ths",
   "title": "Black Choose Your Path Activity Card",
   "colour": "other",
+  "num": "008 Prerelease",
   "rarity": "c",
   "type": "Activity Card",
   "promo": "true",
@@ -536,13 +556,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-activity-card-choose-your-path-red.jpg",
-  "src_large": "http://mtgen.net/content/ths/cards/ths-activity-card-choose-your-path-red-lg.jpg",
+  "src": "http://mtgen.net/cards/ths-activity-card-choose-your-path-red.jpg",
+  "src_large": "http://mtgen.net/cards/ths-activity-card-choose-your-path-red-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "ths",
   "title": "Red Choose Your Path Activity Card",
   "colour": "other",
+  "num": "009 Prerelease",
   "rarity": "c",
   "type": "Activity Card",
   "promo": "true",
@@ -550,13 +571,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-activity-card-choose-your-path-green.jpg",
-  "src_large": "http://mtgen.net/content/ths/cards/ths-activity-card-choose-your-path-green-lg.jpg",
+  "src": "http://mtgen.net/cards/ths-activity-card-choose-your-path-green.jpg",
+  "src_large": "http://mtgen.net/cards/ths-activity-card-choose-your-path-green-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "ths",
   "title": "Green Choose Your Path Activity Card",
   "colour": "other",
+  "num": "010 Prerelease",
   "rarity": "c",
   "type": "Activity Card",
   "promo": "true",
@@ -564,13 +586,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-welcome-letter-path-of-honor-white.jpg",
-  "src_large": "http://mtgen.net/content/ths/cards/ths-welcome-letter-path-of-honor-white-lg.jpg",
+  "src": "http://mtgen.net/cards/ths-welcome-letter-path-of-honor-white.jpg",
+  "src_large": "http://mtgen.net/cards/ths-welcome-letter-path-of-honor-white-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "ths",
   "title": "Path of Honor Welcome Letter",
   "colour": "other",
+  "num": "011 Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "promo": "true",
@@ -578,13 +601,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-welcome-letter-path-of-wisdom-blue.jpg",
-  "src_large": "http://mtgen.net/content/ths/cards/ths-welcome-letter-path-of-wisdom-blue-lg.jpg",
+  "src": "http://mtgen.net/cards/ths-welcome-letter-path-of-wisdom-blue.jpg",
+  "src_large": "http://mtgen.net/cards/ths-welcome-letter-path-of-wisdom-blue-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "ths",
   "title": "Path of Wisdom Welcome Letter",
   "colour": "other",
+  "num": "012 Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "promo": "true",
@@ -592,13 +616,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-welcome-letter-path-of-ambition-black.jpg",
-  "src_large": "http://mtgen.net/content/ths/cards/ths-welcome-letter-path-of-ambition-black-lg.jpg",
+  "src": "http://mtgen.net/cards/ths-welcome-letter-path-of-ambition-black.jpg",
+  "src_large": "http://mtgen.net/cards/ths-welcome-letter-path-of-ambition-black-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "ths",
   "title": "Path of Ambition Welcome Letter",
   "colour": "other",
+  "num": "013 Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "promo": "true",
@@ -606,13 +631,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-welcome-letter-path-of-battle-red.jpg",
-  "src_large": "http://mtgen.net/content/ths/cards/ths-welcome-letter-path-of-battle-red-lg.jpg",
+  "src": "http://mtgen.net/cards/ths-welcome-letter-path-of-battle-red.jpg",
+  "src_large": "http://mtgen.net/cards/ths-welcome-letter-path-of-battle-red-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "ths",
   "title": "Path of Battle Welcome Letter",
   "colour": "other",
+  "num": "014 Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "promo": "true",
@@ -620,13 +646,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-welcome-letter-path-of-might-green.jpg",
-  "src_large": "http://mtgen.net/content/ths/cards/ths-welcome-letter-path-of-might-green-lg.jpg",
+  "src": "http://mtgen.net/cards/ths-welcome-letter-path-of-might-green.jpg",
+  "src_large": "http://mtgen.net/cards/ths-welcome-letter-path-of-might-green-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "ths",
   "title": "Path of Might Welcome Letter",
   "colour": "other",
+  "num": "015 Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "promo": "true",
@@ -634,10 +661,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-spindown-life-counter-white.png",
+  "src": "http://mtgen.net/cards/ths-spindown-life-counter-white.png",
   "set": "ths",
   "title": "White Theros Spindown Life Counter",
   "colour": "o",
+  "num": "006 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -645,10 +673,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-spindown-life-counter-blue.png",
+  "src": "http://mtgen.net/cards/ths-spindown-life-counter-blue.png",
   "set": "ths",
   "title": "Blue Theros Spindown Life Counter",
   "colour": "o",
+  "num": "007 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -656,10 +685,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-spindown-life-counter-black.png",
+  "src": "http://mtgen.net/cards/ths-spindown-life-counter-black.png",
   "set": "ths",
   "title": "Black Theros Spindown Life Counter",
   "colour": "o",
+  "num": "008 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -667,10 +697,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-spindown-life-counter-red.png",
+  "src": "http://mtgen.net/cards/ths-spindown-life-counter-red.png",
   "set": "ths",
   "title": "Red Theros Spindown Life Counter",
   "colour": "o",
+  "num": "009 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -678,10 +709,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-spindown-life-counter-green.png",
+  "src": "http://mtgen.net/cards/ths-spindown-life-counter-green.png",
   "set": "ths",
   "title": "Green Theros Spindown Life Counter",
   "colour": "o",
+  "num": "010 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -690,10 +722,11 @@
  },
 
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-fat-pack-players-guide.png",
+  "src": "http://mtgen.net/cards/ths-fat-pack-players-guide.png",
   "set": "ths",
   "title": "Theros Player’s Guide",
   "colour": "other",
+  "num": "001 Fat Pack",
   "rarity": "c",
   "type": "Player's Guide",
   "promo": "true",
@@ -701,10 +734,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-fat-pack-card-box.png",
+  "src": "http://mtgen.net/cards/ths-fat-pack-card-box.png",
   "set": "ths",
   "title": "Theros Card Box",
   "colour": "other",
+  "num": "002 Fat Pack",
   "rarity": "c",
   "type": "Card Box",
   "promo": "true",
@@ -712,10 +746,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-fat-pack-mural.png",
+  "src": "http://mtgen.net/cards/ths-fat-pack-mural.png",
   "set": "ths",
   "title": "Theros Mural",
   "colour": "other",
+  "num": "003 Fat Pack",
   "rarity": "c",
   "type": "Mural",
   "promo": "true",
@@ -723,10 +758,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-fat-pack-deck-box.png",
+  "src": "http://mtgen.net/cards/ths-fat-pack-deck-box.png",
   "set": "ths",
   "title": "Theros Deck Box",
   "colour": "other",
+  "num": "004 Fat Pack",
   "rarity": "c",
   "type": "Deck Box",
   "promo": "true",
@@ -734,10 +770,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-spindown-life-counter-white.png",
+  "src": "http://mtgen.net/cards/ths-spindown-life-counter-white.png",
   "set": "ths",
   "title": "Special-Edition White Theros Spindown Life Counter",
   "colour": "o",
+  "num": "011 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -745,10 +782,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-spindown-life-counter-blue.png",
+  "src": "http://mtgen.net/cards/ths-spindown-life-counter-blue.png",
   "set": "ths",
   "title": "Special-Edition Blue Theros Spindown Life Counter",
   "colour": "o",
+  "num": "012 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -756,10 +794,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-spindown-life-counter-black.png",
+  "src": "http://mtgen.net/cards/ths-spindown-life-counter-black.png",
   "set": "ths",
   "title": "Special-Edition Black Theros Spindown Life Counter",
   "colour": "o",
+  "num": "013 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -767,10 +806,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-spindown-life-counter-red.png",
+  "src": "http://mtgen.net/cards/ths-spindown-life-counter-red.png",
   "set": "ths",
   "title": "Special-Edition Red Theros Spindown Life Counter",
   "colour": "o",
+  "num": "014 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -778,10 +818,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/ths/cards/ths-spindown-life-counter-green.png",
+  "src": "http://mtgen.net/cards/ths-spindown-life-counter-green.png",
   "set": "ths",
   "title": "Special-Edition Green Theros Spindown Life Counter",
   "colour": "o",
+  "num": "015 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",

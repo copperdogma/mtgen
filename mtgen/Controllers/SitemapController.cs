@@ -10,7 +10,7 @@ namespace mtgen.Controllers
 	public class SitemapController : Controller
 	{
 		// GET: /Sitemap/
-
+		[Route("sitemap.xml")]
 		public ActionResult Index()
 		{
 			var nodes = new List<SitemapNode>();

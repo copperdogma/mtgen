@@ -1,0 +1,44 @@
+img {
+	float: right;
+}
+img[itemprop=image] {
+	padding: 1em;
+}
+.ad {
+	float: right;
+	margin-left: 1em;
+}
+table {
+	text-align: left;
+    width: 100%;
+}
+td, th {
+	padding: .5em 1em;
+}
+.block {
+	background: gainsboro;
+}
+.current {
+	background: lightblue;
+}
+.title {
+	background: gray;
+	color: white;
+	font-weight: bold;
+}
+.future {
+	opacity: .3;
+}
+.error {
+	color: red;
+}
+.social {
+	height: 90px;
+}
+p.twitter-follow {
+	vertical-align: top;
+}
+.twitter-follow-button {
+	display: inline-block;
+	height: 24px;
+}

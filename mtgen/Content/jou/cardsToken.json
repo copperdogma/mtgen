@@ -2,7 +2,7 @@
  {
   "title": "Bird",
   "set": "jou",
-  "src": "http://mtgen.net/content/bng/cards/bng-bird2-token.jpg",
+  "src": "http://mtgen.net/cards/bng-bird2-token.jpg",
   "colour": "u",
   "rarity": "c",
   "type": "Enchantment Creature",
@@ -17,8 +17,9 @@
  {
   "title": "Soldier",
   "set": "jou",
-  "src": "http://mtgen.net/content/ths/cards/ths-soldier-token2.jpg",
+  "src": "http://mtgen.net/cards/ths-soldier-token2.jpg",
   "colour": "w",
+  "num": "2a/11",
   "rarity": "c",
   "type": "Token Creature",
   "subtype": "Soldier",
@@ -30,8 +31,9 @@
  {
   "title": "Soldier",
   "set": "jou",
-  "src": "http://mtgen.net/content/ths/cards/ths-soldier-token3.jpg",
+  "src": "http://mtgen.net/cards/ths-soldier-token3.jpg",
   "colour": "w",
+  "num": "2b/11",
   "rarity": "c",
   "type": "Token Creature",
   "subtype": "Soldier",
@@ -43,8 +45,9 @@
  {
   "title": "Satyr",
   "set": "jou",
-  "src": "http://mtgen.net/content/ths/cards/ths-satyr-token.jpg",
+  "src": "http://mtgen.net/cards/ths-satyr-token.jpg",
   "colour": "m",
+  "num": "9/11",
   "rarity": "c",
   "type": "Token Creature",
   "subtype": "Satyr",
@@ -55,7 +58,7 @@
  },
 
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-sphinx-token.jpg",
+  "src": "http://mtgen.net/cards/jou-sphinx-token.jpg",
   "set": "jou",
   "title": "Sphinx",
   "colour": "u",
@@ -69,7 +72,7 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-zombie-token.jpg",
+  "src": "http://mtgen.net/cards/jou-zombie-token.jpg",
   "set": "jou",
   "title": "Zombie",
   "colour": "b",
@@ -78,26 +81,26 @@
   "subtype": "Zombie",
   "power": "*",
   "toughness": "*",
-  "num": "1/6",
+  "num": "2/6",
   "token": "true",
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-minotaur-token.jpg",
+  "src": "http://mtgen.net/cards/jou-minotaur-token.jpg",
   "set": "jou",
-  "title": "Creature",
+  "title": "Minotaur",
   "colour": "r",
   "rarity": "c",
   "type": "Creature",
   "subtype": "Minotaur",
   "power": "2",
   "toughness": "3",
-  "num": "1/6",
+  "num": "3/6",
   "token": "true",
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-hydra-token.jpg",
+  "src": "http://mtgen.net/cards/jou-hydra-token.jpg",
   "set": "jou",
   "title": "Hydra",
   "colour": "g",
@@ -111,7 +114,7 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-spider-token.jpg",
+  "src": "http://mtgen.net/cards/jou-spider-token.jpg",
   "set": "jou",
   "title": "Spider",
   "colour": "g",
@@ -125,7 +128,7 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-snake-token.jpg",
+  "src": "http://mtgen.net/cards/jou-snake-token.jpg",
   "set": "jou",
   "title": "Snake",
   "colour": "m",

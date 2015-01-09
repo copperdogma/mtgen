@@ -23,6 +23,7 @@ Normally 15 cards per booster:
 
 - 1 in 4 boosters contains a foil which may be any card of any rarity (incl Basic Land), which replaces a Common
 
+3-Jan-2014: Added Other Colourless category to handle new FRF {8} Ugin, the Spirit Dragon.
 18-Sep-2014: Added Back to Top buttons.
 2-Sep-2014: Now includes clan support for ktk.
 1-Sep-2014: Now allows product.isVisible so you can leave templates in place while publishing out only products that are ready.
@@ -104,16 +105,17 @@ var mtgGen = (function (my, $) {
 
     /* NOTE: these colours and rarities are duplicated in importer-gm-json.js. If you change this here you must change it there. */
     my.colours = {
-        white: { sorder: 1, code: 'w', name: 'White' },
-        blue: { sorder: 2, code: 'u', name: 'Blue' },
-        black: { sorder: 3, code: 'b', name: 'Black' },
-        red: { sorder: 4, code: 'r', name: 'Red' },
-        green: { sorder: 5, code: 'g', name: 'Green' },
-        multicolour: { sorder: 6, code: 'm', name: 'Multicolour' },
-        artifact: { sorder: 17, code: 'a', name: 'Artifact', colourless: true },
-        land: { sorder: 27, code: 'l', name: 'Land', colourless: true },
-        other: { sorder: 37, code: 'o', name: 'Other: Token/Pack-In/Marketing', colourless: true },
-        unknown: { sorder: 97, code: '?', name: 'Unknown Colour', colourless: true },
+        white       : { sorder: 1, code: 'w', name: 'White' },
+        blue        : { sorder: 2, code: 'u', name: 'Blue' },
+        black       : { sorder: 3, code: 'b', name: 'Black' },
+        red         : { sorder: 4, code: 'r', name: 'Red' },
+        green       : { sorder: 5, code: 'g', name: 'Green' },
+        multicolour : { sorder: 6, code: 'm', name: 'Multicolour' },
+        artifact    : { sorder: 17, code: 'a', name: 'Artifact', colourless: true },
+        land        : { sorder: 27, code: 'l', name: 'Land' , colourless: true },
+        colorless   : { sorder: 30, code: 'c', name: 'Colourless', colourless: true },
+        other       : { sorder: 37, code: 'o', name: 'Other: Token/Pack-In/Marketing', colourless: true },
+        unknown     : { sorder: 97, code: '?', name: 'Unknown Colour' , colourless: true },
     };
     function getColourByCode(code) {
         for (var colour in my.colours) {
@@ -2005,6 +2007,78 @@ var mtgGen = (function (my, $) {
     return my;
 }(mtgGen || {}, jQuery));
 
+
+//// --------------------------------------------------------------------------------------------------------------------------------
+//// Save Draw module 
+//// --------------------------------------------------------------------------------------------------------------------------------
+//var mtgGen = (function (my, $) {
+//    'use strict';
+
+//    var SaveDrawView = Backbone.View.extend({
+//        el: "body"
+
+//		, initialize: function () {
+//		    this.$el.on('click', 'a.save-draw', this.saveDraw);
+
+//		    my.on('menusInitialized', function () {
+//		        my.mainView.mainMenu.addMenuItem("saveDraw", 99, function () { return '<a href="#saveDraw" class="button save-draw" data-save-draw="all">Save Draw</a>'; });
+//		        //my.mainView.setMenu.addMenuItem("export", 99, function () { return '<a href="#exporter" class="button export" data-export="set">Export</a>'; });
+//		    });
+//		}
+
+//		, saveDraw: function (event) {
+//		    //$.post("/Set/SaveDraw", { name: "John", time: "2pm" })
+//		    // JSON doesn't support my odd properties-on-an-array format (oops), so let's convert to something that JSON can handle
+//            // And for each card, we only need the set|cardNum as a unique composite key
+//		    var saveCards = [];
+//		    _.each(my.mainView.currentView.generatedSets, function (generatedSet) {
+//		        var set = {
+//                    cards: [],
+//                    includeWithUserCards: generatedSet.includeWithUserCards,
+//                    setName: generatedSet.setName,
+//                    sortOrder: generatedSet.sortOrder
+//		        };
+//		        _.each(generatedSet, function (card) {
+//		            set.cards.push({ set: card.set, num: card.num });
+//		        });
+//		        saveCards.push(set);
+//		    });
+
+//		    //_.reduce(my.mainView.currentView.generatedSets, function (memo, cardArray) {
+//		    //    return memo.concat(
+//            //        {
+//            //            cards: cardArray,
+//            //            cards2: _.reduce(cardArray, function (memo2, card) { return memo.concat({ set: card.set, num: card.num }); }, []),
+//            //            includeWithUserCards: cardArray.includeWithUserCards,
+//            //            setDesc: cardArray.setDesc,
+//            //            setName: cardArray.setName,
+//            //            sortOrder: cardArray.sortOrder
+//            //        });
+//		    //}, []);
+//		    //var saveCards = _.reduce(my.mainView.currentView.generatedSets, function (memo, cardArray) {
+//		    //    return memo.concat(
+//            //        {
+//            //            cards: cardArray,
+//            //            cards2: _.reduce(cardArray, function (memo2, card) { return memo.concat({ set: card.set, num: card.num }); }, []),
+//            //            includeWithUserCards: cardArray.includeWithUserCards,
+//            //            setDesc: cardArray.setDesc,
+//            //            setName: cardArray.setName,
+//            //            sortOrder: cardArray.sortOrder
+//            //        });
+//		    //}, []);
+//		    $.post("/Set/SaveDraw", { data: JSON.stringify(saveCards) })
+//              .done(function (data) {
+//                  alert("Data Loaded: " + data);
+//              });
+//		    return false;
+//		}
+
+//    });
+
+//    my.initViews.push(new SaveDrawView()); // hook this module into main rendering view
+
+//    return my;
+//}(mtgGen || {}, jQuery));
 
 // --------------------------------------------------------------------------------------------------------------------------------
 // Card Set Export module 

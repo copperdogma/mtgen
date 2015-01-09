@@ -1,19 +1,21 @@
 [
  {
-  "src": "http://mtgen.net/content/images/mtg-marketing1.png",
+  "src": "http://mtgen.net/cards/mtg-marketing1.png",
   "title": "Tip/Marketing Card",
   "set": "jou",
   "colour": "o",
+  "num": "001 Marketing",
   "rarity": "c",
   "type": "Marketing",
   "usableForDeckBuilding": false,
   "marketing": true
  },
  {
-  "src": "http://mtgen.net/content/images/mtg-marketing2.png",
+  "src": "http://mtgen.net/cards/mtg-marketing2.png",
   "title": "Tip/Marketing Card",
   "set": "jou",
   "colour": "o",
+  "num": "002 Marketing",
   "rarity": "c",
   "type": "Marketing",
   "usableForDeckBuilding": false,
@@ -32,7 +34,7 @@
   "power": "2",
   "toughness": "4",
   "colour": "w",
-  "num": "006 Prerelease",
+  "num": "*006 Prerelease",
   "promo": "true",
   "includedReason": "Prerelease Promo",
   "usableForDeckBuilding": true
@@ -112,6 +114,7 @@
   "src": "http://media.wizards.com/images/magic/daily/arcana/tbnuunqday_arc_hp_7a.jpg",
   "set": "jou",
   "colour": "a",
+  "num": "001 Prerelease",
   "rarity": "c",
   "type": "Hero Artifact",
   "subtype": "Equipment",
@@ -124,6 +127,7 @@
   "src": "http://media.wizards.com/images/magic/daily/arcana/tbnuunqday_arc_hp_7b.jpg",
   "set": "jou",
   "colour": "a",
+  "num": "002 Prerelease",
   "rarity": "c",
   "type": "Hero Artifact",
   "subtype": "Equipment",
@@ -136,6 +140,7 @@
   "src": "http://media.wizards.com/images/magic/daily/arcana/tbnuunqday_arc_hp_7c.jpg",
   "set": "jou",
   "colour": "a",
+  "num": "003 Prerelease",
   "rarity": "c",
   "type": "Hero Artifact",
   "subtype": "Equipment",
@@ -148,6 +153,7 @@
   "src": "http://media.wizards.com/images/magic/daily/arcana/tbnuunqday_arc_hp_7d.jpg",
   "set": "jou",
   "colour": "a",
+  "num": "004 Prerelease",
   "rarity": "c",
   "type": "Hero Artifact",
   "subtype": "Equipment",
@@ -160,6 +166,7 @@
   "src": "http://media.wizards.com/images/magic/daily/arcana/tbnuunqday_arc_hp_7e.jpg",
   "set": "jou",
   "colour": "a",
+  "num": "005 Prerelease",
   "rarity": "c",
   "type": "Hero Artifact",
   "subtype": "Equipment",
@@ -247,10 +254,11 @@
  },
  
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-spindown-life-counter-white.png",
+  "src": "http://mtgen.net/cards/jou-spindown-life-counter-white.png",
   "set": "jou",
   "title": "White Journey Into Nyx Spindown Life Counter",
   "colour": "o",
+  "num": "001 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -258,10 +266,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-spindown-life-counter-blue.png",
+  "src": "http://mtgen.net/cards/jou-spindown-life-counter-blue.png",
   "set": "jou",
   "title": "Blue Journey Into Nyx Spindown Life Counter",
   "colour": "o",
+  "num": "002 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -269,10 +278,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-spindown-life-counter-black.png",
+  "src": "http://mtgen.net/cards/jou-spindown-life-counter-black.png",
   "set": "jou",
   "title": "Black Journey Into Nyx Spindown Life Counter",
   "colour": "o",
+  "num": "003 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -280,10 +290,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-spindown-life-counter-red.png",
+  "src": "http://mtgen.net/cards/jou-spindown-life-counter-red.png",
   "set": "jou",
   "title": "Red Journey Into Nyx Spindown Life Counter",
   "colour": "o",
+  "num": "004 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -291,10 +302,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-spindown-life-counter-green.png",
+  "src": "http://mtgen.net/cards/jou-spindown-life-counter-green.png",
   "set": "jou",
   "title": "Green Journey Into Nyx Spindown Life Counter",
   "colour": "o",
+  "num": "005 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -303,10 +315,11 @@
  },
 
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-fat-pack-players-guide.png",
+  "src": "http://mtgen.net/cards/jou-fat-pack-players-guide.png",
   "set": "jou",
   "title": "Journey Into Nyx Player’s Guide",
   "colour": "other",
+  "num": "001 Fat Pack",
   "rarity": "c",
   "type": "Player's Guide",
   "promo": "true",
@@ -314,10 +327,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-fat-pack-card-box.png",
+  "src": "http://mtgen.net/cards/jou-fat-pack-card-box.png",
   "set": "jou",
   "title": "Journey Into Nyx Card Box",
   "colour": "other",
+  "num": "002 Fat Pack",
   "rarity": "c",
   "type": "Card Box",
   "promo": "true",
@@ -325,10 +339,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-fat-pack-mural.png",
+  "src": "http://mtgen.net/cards/jou-fat-pack-mural.png",
   "set": "jou",
   "title": "Journey Into Nyx Mural",
   "colour": "other",
+  "num": "003 Fat Pack",
   "rarity": "c",
   "type": "Mural",
   "promo": "true",
@@ -336,10 +351,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-fat-pack-deck-box.png",
+  "src": "http://mtgen.net/cards/jou-fat-pack-deck-box.png",
   "set": "jou",
   "title": "Journey Into Nyx Deck Box",
   "colour": "other",
+  "num": "004 Fat Pack",
   "rarity": "c",
   "type": "Deck Box",
   "promo": "true",
@@ -347,10 +363,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-spindown-life-counter-white.png",
+  "src": "http://mtgen.net/cards/jou-spindown-life-counter-white.png",
   "set": "jou",
   "title": "Special-Edition White Journey Into Nyx Spindown Life Counter",
   "colour": "o",
+  "num": "006 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -358,10 +375,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-spindown-life-counter-blue.png",
+  "src": "http://mtgen.net/cards/jou-spindown-life-counter-blue.png",
   "set": "jou",
   "title": "Special-Edition Blue Journey Into Nyx Spindown Life Counter",
   "colour": "o",
+  "num": "007 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -369,10 +387,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-spindown-life-counter-black.png",
+  "src": "http://mtgen.net/cards/jou-spindown-life-counter-black.png",
   "set": "jou",
   "title": "Special-Edition Black Journey Into Nyx Spindown Life Counter",
   "colour": "o",
+  "num": "008 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -380,10 +399,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-spindown-life-counter-red.png",
+  "src": "http://mtgen.net/cards/jou-spindown-life-counter-red.png",
   "set": "jou",
   "title": "Special-Edition Red Journey Into Nyx Spindown Life Counter",
   "colour": "o",
+  "num": "009 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -391,10 +411,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-spindown-life-counter-green.png",
+  "src": "http://mtgen.net/cards/jou-spindown-life-counter-green.png",
   "set": "jou",
   "title": "Special-Edition Green Journey Into Nyx Spindown Life Counter",
   "colour": "o",
+  "num": "010 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -403,13 +424,14 @@
  },
 
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-activity-card.jpg",
-  "src_large": "http://mtgen.net/content/jou/cards/jou-activity-card-lg.jpg",
+  "src": "http://mtgen.net/cards/jou-activity-card.jpg",
+  "src_large": "http://mtgen.net/cards/jou-activity-card-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "jou",
   "title": "Forge a Godslayer Activity Card",
   "colour": "o",
+  "num": "006 Prerelease",
   "rarity": "c",
   "type": "Activity Card",
   "promo": "true",
@@ -417,10 +439,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-sticker-elemental-stone.png",
+  "src": "http://mtgen.net/cards/jou-sticker-elemental-stone.png",
   "set": "jou",
   "title": "Forge a Godslayer Elemental Stone Sticker",
   "colour": "o",
+  "num": "007 Prerelease",
   "rarity": "c",
   "type": "Activity Card Sticker",
   "promo": "true",
@@ -428,10 +451,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-sticker-aether-mist.png",
+  "src": "http://mtgen.net/cards/jou-sticker-aether-mist.png",
   "set": "jou",
   "title": "Forge a Godslayer Æether Mist Sticker",
   "colour": "o",
+  "num": "008 Prerelease",
   "rarity": "c",
   "type": "Activity Card Sticker",
   "promo": "true",
@@ -439,10 +463,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-sticker-nyx-shard.png",
+  "src": "http://mtgen.net/cards/jou-sticker-nyx-shard.png",
   "set": "jou",
   "title": "Forge a Godslayer Nyx Shard Sticker",
   "colour": "o",
+  "num": "009 Prerelease",
   "rarity": "c",
   "type": "Activity Card Sticker",
   "promo": "true",
@@ -451,13 +476,14 @@
  },
 
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-welcome-letter-white.jpg",
-  "src_large": "http://mtgen.net/content/jou/cards/jou-welcome-letter-white-lg.jpg",
+  "src": "http://mtgen.net/cards/jou-welcome-letter-white.jpg",
+  "src_large": "http://mtgen.net/cards/jou-welcome-letter-white-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "jou",
   "title": "Forged in Glory Welcome Letter",
   "colour": "other",
+  "num": "010 Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "promo": "true",
@@ -465,13 +491,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-welcome-letter-white2.jpg",
-  "src_large": "http://mtgen.net/content/jou/cards/jou-welcome-letter-white2-lg.jpg",
+  "src": "http://mtgen.net/cards/jou-welcome-letter-white2.jpg",
+  "src_large": "http://mtgen.net/cards/jou-welcome-letter-white2-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "jou",
   "title": "Forged in Glory Welcome Letter: back",
   "colour": "other",
+  "num": "010b Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "promo": "true",
@@ -479,13 +506,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-welcome-letter-blue.jpg",
-  "src_large": "http://mtgen.net/content/jou/cards/jou-welcome-letter-blue-lg.jpg",
+  "src": "http://mtgen.net/cards/jou-welcome-letter-blue.jpg",
+  "src_large": "http://mtgen.net/cards/jou-welcome-letter-blue-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "jou",
   "title": "Forged in Intellect Welcome Letter",
   "colour": "other",
+  "num": "011 Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "promo": "true",
@@ -493,13 +521,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-welcome-letter-blue2.jpg",
-  "src_large": "http://mtgen.net/content/jou/cards/jou-welcome-letter-blue2-lg.jpg",
+  "src": "http://mtgen.net/cards/jou-welcome-letter-blue2.jpg",
+  "src_large": "http://mtgen.net/cards/jou-welcome-letter-blue2-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "jou",
   "title": "Forged in Intellect Welcome Letter: back",
   "colour": "other",
+  "num": "011b Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "promo": "true",
@@ -507,13 +536,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-welcome-letter-black.jpg",
-  "src_large": "http://mtgen.net/content/jou/cards/jou-welcome-letter-black-lg.jpg",
+  "src": "http://mtgen.net/cards/jou-welcome-letter-black.jpg",
+  "src_large": "http://mtgen.net/cards/jou-welcome-letter-black-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "jou",
   "title": "Forged in Tyrrany Welcome Letter",
   "colour": "other",
+  "num": "012 Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "promo": "true",
@@ -521,13 +551,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-welcome-letter-black2.jpg",
-  "src_large": "http://mtgen.net/content/jou/cards/jou-welcome-letter-black2-lg.jpg",
+  "src": "http://mtgen.net/cards/jou-welcome-letter-black2.jpg",
+  "src_large": "http://mtgen.net/cards/jou-welcome-letter-black2-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "jou",
   "title": "Forged in Tyrrany Welcome Letter: back",
   "colour": "other",
+  "num": "012b Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "promo": "true",
@@ -535,13 +566,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-welcome-letter-red.jpg",
-  "src_large": "http://mtgen.net/content/jou/cards/jou-welcome-letter-red-lg.jpg",
+  "src": "http://mtgen.net/cards/jou-welcome-letter-red.jpg",
+  "src_large": "http://mtgen.net/cards/jou-welcome-letter-red-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "jou",
   "title": "Forged in War Welcome Letter",
   "colour": "other",
+  "num": "013 Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "promo": "true",
@@ -549,13 +581,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-welcome-letter-red2.jpg",
-  "src_large": "http://mtgen.net/content/jou/cards/jou-welcome-letter-red2-lg.jpg",
+  "src": "http://mtgen.net/cards/jou-welcome-letter-red2.jpg",
+  "src_large": "http://mtgen.net/cards/jou-welcome-letter-red2-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "jou",
   "title": "Forged in War Welcome Letter: back",
   "colour": "other",
+  "num": "013b Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "promo": "true",
@@ -563,13 +596,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-welcome-letter-green.jpg",
-  "src_large": "http://mtgen.net/content/jou/cards/jou-welcome-letter-green-lg.jpg",
+  "src": "http://mtgen.net/cards/jou-welcome-letter-green.jpg",
+  "src_large": "http://mtgen.net/cards/jou-welcome-letter-green-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "jou",
   "title": "Forged in Pursuit Welcome Letter",
   "colour": "other",
+  "num": "014 Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "promo": "true",
@@ -577,13 +611,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/jou/cards/jou-welcome-letter-green2.jpg",
-  "src_large": "http://mtgen.net/content/jou/cards/jou-welcome-letter-green2-lg.jpg",
+  "src": "http://mtgen.net/cards/jou-welcome-letter-green2.jpg",
+  "src_large": "http://mtgen.net/cards/jou-welcome-letter-green2-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "jou",
   "title": "Forged in Pursuit Welcome Letter: back",
   "colour": "other",
+  "num": "014b Prerelease",
   "rarity": "c",
   "type": "Welcome Letter",
   "promo": "true",

@@ -1,13 +1,25 @@
 [
  {
-  "src": "http://placebox.es/265x370/cccccc/969696/Tip%20Card,20/",
-  "title": "Vintage Masters Tip Card",
+  "src": "http://mtgen.net/cards/mtg-marketing1.png",
+  "title": "Tip/Marketing Card",
   "set": "ovm",
-  "colour": "other",
-  "colourType": "o",
-  "cindex": 37,
+  "colour": "o",
+  "num": "001 Marketing",
   "rarity": "c",
-  "type": "Tip",
-  "usableForDeckBuilding": false
+  "type": "Marketing",
+  "usableForDeckBuilding": false,
+  "marketing": true
+ },
+ {
+  "src": "http://mtgen.net/cards/mtg-marketing2.png",
+  "title": "Tip/Marketing Card",
+  "set": "ovm",
+  "colour": "o",
+  "num": "002 Marketing",
+  "rarity": "c",
+  "type": "Marketing",
+  "usableForDeckBuilding": false,
+  "marketing": true
  }
+
 ]

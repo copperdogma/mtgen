@@ -1,19 +1,21 @@
 [
  {
-  "src": "http://mtgen.net/content/images/mtg-marketing1.png",
+  "src": "http://mtgen.net/cards/mtg-marketing1.png",
   "title": "Tip/Marketing Card",
   "set": "m14",
   "colour": "o",
+  "num": "001 Marketing",
   "rarity": "c",
   "type": "Marketing",
   "usableForDeckBuilding": false,
   "marketing": true
  },
  {
-  "src": "http://mtgen.net/content/images/mtg-marketing2.png",
+  "src": "http://mtgen.net/cards/mtg-marketing2.png",
   "title": "Tip/Marketing Card",
   "set": "m14",
   "colour": "o",
+  "num": "002 Marketing",
   "rarity": "c",
   "type": "Marketing",
   "usableForDeckBuilding": false,
@@ -25,6 +27,7 @@
   "set": "m14",
   "title": "Sliver Token",
   "colour": "o",
+  "num": "001 League",
   "rarity": "c",
   "type": "Creature",
   "subtype": "Sliver",
@@ -40,6 +43,7 @@
   "title": "Megantic Sliver",
   "set": "m14",
   "cost": "{5}{G}",
+  "num": "185 Prerelease",
   "rarity": "r",
   "type": "Creature",
   "subtype": "Sliver",
@@ -55,6 +59,7 @@
   "title": "Scavenging Ooze",
   "set": "m14",
   "cost": "{1}{G}",
+  "num": "1/3 Duels",
   "rarity": "r",
   "type": "Creature",
   "subtype": "Ooze",
@@ -70,6 +75,7 @@
   "title": "Ogre Battledriver",
   "set": "m14",
   "cost": "{2}{R}{R}",
+  "num": "2/3 Duels",
   "rarity": "r",
   "type": "Creature",
   "subtype": "Ogre Warrior",
@@ -85,6 +91,7 @@
   "title": "Bonescythe Sliver",
   "set": "m14",
   "cost": "{3}{W}",
+  "num": "3/3 Duels",
   "rarity": "r",
   "type": "Creature",
   "subtype": "Sliver",
@@ -100,6 +107,7 @@
   "title": "Colossal Whale",
   "set": "m14",
   "cost": "{5}{U}{U}",
+  "num": "048 Launch",
   "rarity": "r",
   "type": "Creature",
   "subtype": "Whale",
@@ -115,6 +123,7 @@
   "title": "Hive Stirrings",
   "set": "m14",
   "cost": "{2}{W}",
+  "num": "028 Game Day",
   "rarity": "c",
   "type": "Sorcery",
   "colour": "w",
@@ -127,6 +136,7 @@
   "title": "Goblin Diplomats",
   "set": "m14",
   "cost": "{1}{R}",
+  "num": "241 Game Day",
   "rarity": "r",
   "type": "Creature",
   "subtype": "Goblin",
@@ -142,6 +152,7 @@
   "title": "Ratchet Bomb",
   "set": "m14",
   "cost": "{2}",
+  "num": "251 Buy-a-Box",
   "rarity": "r",
   "type": "Artifact",
   "colour": "a",
@@ -392,13 +403,14 @@
  },
 
  {
-  "src": "http://mtgen.net/content/m14/cards/m14-achievement-card.jpg",
-  "src_large": "http://mtgen.net/content/m14/cards/m14-achievement-card-lg.jpg",
+  "src": "http://mtgen.net/cards/m14-achievement-card.jpg",
+  "src_large": "http://mtgen.net/cards/m14-achievement-card-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "m14",
   "title": "2014 Core Set Achievement Card",
   "colour": "o",
+  "num": "001 Prerelease",
   "rarity": "c",
   "type": "Achievement Card",
   "promo": "true",
@@ -407,10 +419,11 @@
  }
  
  ,{
-  "src": "http://mtgen.net/content/m14/cards/m14-fat-pack-players-guide.png",
+  "src": "http://mtgen.net/cards/m14-fat-pack-players-guide.png",
   "set": "m14",
   "title": "2014 Core Set Player’s Guide",
   "colour": "other",
+  "num": "001 Fat Pack",
   "rarity": "c",
   "type": "Player's Guide",
   "promo": "true",
@@ -418,10 +431,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m14/cards/m14-fat-pack-card-box.png",
+  "src": "http://mtgen.net/cards/m14-fat-pack-card-box.png",
   "set": "m14",
   "title": "2014 Core Set Card Box",
   "colour": "other",
+  "num": "002 Fat Pack",
   "rarity": "c",
   "type": "Card Box",
   "promo": "true",
@@ -429,10 +443,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m14/cards/m14-fat-pack-mural.png",
+  "src": "http://mtgen.net/cards/m14-fat-pack-mural.png",
   "set": "m14",
   "title": "2014 Core Set Mural",
   "colour": "other",
+  "num": "003 Fat Pack",
   "rarity": "c",
   "type": "Mural",
   "promo": "true",
@@ -440,10 +455,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m14/cards/m14-fat-pack-deck-box.png",
+  "src": "http://mtgen.net/cards/m14-fat-pack-deck-box.png",
   "set": "m14",
   "title": "2014 Core Set Deck Box",
   "colour": "other",
+  "num": "004 Fat Pack",
   "rarity": "c",
   "type": "Deck Box",
   "promo": "true",
@@ -451,10 +467,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m14/cards/m14-fat-pack-rules-reference-card.png",
+  "src": "http://mtgen.net/cards/m14-fat-pack-rules-reference-card.png",
   "title": "2014 Core Set Rules Reference Card",
   "set": "m14",
   "colour": "o",
+  "num": "005 Fat Pack",
   "rarity": "c",
   "type": "Rules Reference Card",
   "usableForDeckBuilding": false,
@@ -463,10 +480,11 @@
  },
 
  {
-  "src": "http://mtgen.net/content/m14/cards/m14-spindown-life-counter-white.png",
+  "src": "http://mtgen.net/cards/m14-spindown-life-counter-white.png",
   "set": "m14",
   "title": "White Spindown Life Counter",
   "colour": "o",
+  "num": "001 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -474,10 +492,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m14/cards/m14-spindown-life-counter-blue.png",
+  "src": "http://mtgen.net/cards/m14-spindown-life-counter-blue.png",
   "set": "m14",
   "title": "Blue Spindown Life Counter",
   "colour": "o",
+  "num": "002 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -485,10 +504,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m14/cards/m14-spindown-life-counter-black.png",
+  "src": "http://mtgen.net/cards/m14-spindown-life-counter-black.png",
   "set": "m14",
   "title": "Black Spindown Life Counter",
   "colour": "o",
+  "num": "003 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -496,10 +516,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m14/cards/m14-spindown-life-counter-red.png",
+  "src": "http://mtgen.net/cards/m14-spindown-life-counter-red.png",
   "set": "m14",
   "title": "Red Spindown Life Counter",
   "colour": "o",
+  "num": "004 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -507,10 +528,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m14/cards/m14-spindown-life-counter-green.png",
+  "src": "http://mtgen.net/cards/m14-spindown-life-counter-green.png",
   "set": "m14",
   "title": "Green Spindown Life Counter",
   "colour": "o",
+  "num": "005 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",

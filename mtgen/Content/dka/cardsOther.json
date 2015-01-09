@@ -1,19 +1,21 @@
 [
  {
-  "src": "http://mtgen.net/content/images/mtg-marketing1.png",
+  "src": "http://mtgen.net/cards/mtg-marketing1.png",
   "title": "Tip/Marketing Card",
   "set": "dka",
   "colour": "o",
+  "num": "001 marketing",
   "rarity": "c",
   "type": "Marketing",
   "usableForDeckBuilding": false,
   "marketing": true
  },
  {
-  "src": "http://mtgen.net/content/images/mtg-marketing2.png",
+  "src": "http://mtgen.net/cards/mtg-marketing2.png",
   "title": "Tip/Marketing Card",
   "set": "dka",
   "colour": "o",
+  "num": "002 marketing",
   "rarity": "c",
   "type": "Marketing",
   "usableForDeckBuilding": false,
@@ -28,12 +30,13 @@
   "rarity": "c",
   "type": "Marketing",
   "usableForDeckBuilding": false,
-  "marketing": true
+  "marketing": true,
+  "num": "001 chk"
  },
 
  {
   "title": "Ravenous Demon (Archdemon of Green)",
-  "src": "http://mtgen.net/content/dka/cards/dka-ravenous-demon--archdemon-of-greed.jpg",
+  "src": "http://mtgen.net/cards/dka-ravenous-demon--archdemon-of-greed.jpg",
   "width": 530,
   "set": "dka",
   "cost": "{3}{B}{B}",
@@ -50,7 +53,7 @@
  },
  {
   "title": "Mondronen Shaman (Tovolar's Magehunter)",
-  "src": "http://mtgen.net/content/dka/cards/dka-mondronen-shaman--tovolars-magehunter.jpg",
+  "src": "http://mtgen.net/cards/dka-mondronen-shaman--tovolars-magehunter.jpg",
   "width": 530,
   "set": "dka",
   "cost": "{3}{R}",
@@ -112,10 +115,11 @@
  },
 
  {
-  "src": "http://mtgen.net/content/dka/cards/dka-sticker-vampire.png",
+  "src": "http://mtgen.net/cards/dka-sticker-vampire.png",
   "set": "dka",
   "title": "Vampire Sticker",
   "colour": "other",
+  "num": "001 prerelease",
   "rarity": "c",
   "type": "Sticker",
   "promo": "true",
@@ -123,10 +127,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dka/cards/dka-sticker-werewolf.png",
+  "src": "http://mtgen.net/cards/dka-sticker-werewolf.png",
   "set": "dka",
   "title": "Werewolf Sticker",
   "colour": "other",
+  "num": "002 prerelease",
   "rarity": "c",
   "type": "Sticker",
   "promo": "true",
@@ -134,10 +139,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dka/cards/dka-sticker-zombie.png",
+  "src": "http://mtgen.net/cards/dka-sticker-zombie.png",
   "set": "dka",
   "title": "Zombie Sticker",
   "colour": "other",
+  "num": "003 prerelease",
   "rarity": "c",
   "type": "Sticker",
   "promo": "true",
@@ -145,10 +151,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dka/cards/dka-sticker-spirit.png",
+  "src": "http://mtgen.net/cards/dka-sticker-spirit.png",
   "set": "dka",
   "title": "Spirit Sticker",
   "colour": "other",
+  "num": "004 prerelease",
   "rarity": "c",
   "type": "Sticker",
   "promo": "true",
@@ -157,10 +164,11 @@
  },
 
  {
-  "src": "http://mtgen.net/content/dka/cards/dka-fat-pack-players-guide.png",
+  "src": "http://mtgen.net/cards/dka-fat-pack-players-guide.png",
   "set": "dka",
   "title": "Dark Ascension Player’s Guide",
   "colour": "other",
+  "num": "001 fatpack",
   "rarity": "c",
   "type": "Player's Guide",
   "promo": "true",
@@ -168,10 +176,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dka/cards/dka-fat-pack-rules-reference-card.png",
+  "src": "http://mtgen.net/cards/dka-fat-pack-rules-reference-card.png",
   "set": "dka",
   "title": "Dark Ascension Rules Reference Card",
   "colour": "other",
+  "num": "002 fatpack",
   "rarity": "c",
   "type": "Rules Reference Card",
   "promo": "true",
@@ -179,10 +188,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dka/cards/dka-fat-pack-card-box.png",
+  "src": "http://mtgen.net/cards/dka-fat-pack-card-box.png",
   "set": "dka",
   "title": "Dark Ascension Card Box",
   "colour": "other",
+  "num": "003 fatpack",
   "rarity": "c",
   "type": "Card Box",
   "promo": "true",
@@ -190,10 +200,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dka/cards/dka-fat-pack-mural.png",
+  "src": "http://mtgen.net/cards/dka-fat-pack-mural.png",
   "set": "dka",
   "title": "Dark Ascension Mural",
   "colour": "other",
+  "num": "004 fatpack",
   "rarity": "c",
   "type": "Mural",
   "promo": "true",
@@ -201,10 +212,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dka/cards/dka-fat-pack-deck-box.png",
+  "src": "http://mtgen.net/cards/dka-fat-pack-deck-box.png",
   "set": "dka",
   "title": "Dark Ascension Deck Box",
   "colour": "other",
+  "num": "005 fatpack",
   "rarity": "c",
   "type": "Deck Box",
   "promo": "true",
@@ -212,10 +224,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dka/cards/dka-spindown-life-counter-white.png",
+  "src": "http://mtgen.net/cards/dka-spindown-life-counter-white.png",
   "set": "dka",
   "title": "Special Edition White Spindown Life Counter",
   "colour": "o",
+  "num": "001 counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -223,10 +236,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dka/cards/dka-spindown-life-counter-blue.png",
+  "src": "http://mtgen.net/cards/dka-spindown-life-counter-blue.png",
   "set": "dka",
   "title": "Special Edition Blue Spindown Life Counter",
   "colour": "o",
+  "num": "002 counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -234,10 +248,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dka/cards/dka-spindown-life-counter-black.png",
+  "src": "http://mtgen.net/cards/dka-spindown-life-counter-black.png",
   "set": "dka",
   "title": "Special Edition Black Spindown Life Counter",
   "colour": "o",
+  "num": "003 counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -245,10 +260,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dka/cards/dka-spindown-life-counter-red.png",
+  "src": "http://mtgen.net/cards/dka-spindown-life-counter-red.png",
   "set": "dka",
   "title": "Special Edition Red Spindown Life Counter",
   "colour": "o",
+  "num": "004 counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -256,10 +272,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/dka/cards/dka-spindown-life-counter-green.png",
+  "src": "http://mtgen.net/cards/dka-spindown-life-counter-green.png",
   "set": "dka",
   "title": "Special Edition Green Spindown Life Counter",
   "colour": "o",
+  "num": "005 counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",

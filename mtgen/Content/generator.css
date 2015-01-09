@@ -280,7 +280,7 @@ main > em {
 	white-space: nowrap;
 }
 #boosters {
-	overflow-x: scroll;
+	overflow-x: auto;
 }
 #boosters input {
 	text-align: center;
@@ -380,7 +380,7 @@ main > em {
 	position: relative;
 }
 .foil:before {
-	background: url(../images/foil.png) no-repeat;
+	background: url(../cards/mtg-foil.png) no-repeat;
 	bottom: 0;
 	content: "";
 	left: 0;

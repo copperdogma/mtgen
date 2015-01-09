@@ -1,19 +1,21 @@
 [
  {
-  "src": "http://mtgen.net/content/images/mtg-marketing1.png",
+  "src": "http://mtgen.net/cards/mtg-marketing1.png",
   "title": "Tip/Marketing Card",
   "set": "m15",
   "colour": "o",
+  "num": "001 Marketing",
   "rarity": "c",
   "type": "Marketing",
   "usableForDeckBuilding": false,
   "marketing": true
  },
  {
-  "src": "http://mtgen.net/content/images/mtg-marketing2.png",
+  "src": "http://mtgen.net/cards/mtg-marketing2.png",
   "title": "Tip/Marketing Card",
   "set": "m15",
   "colour": "o",
+  "num": "002 Marketing",
   "rarity": "c",
   "type": "Marketing",
   "usableForDeckBuilding": false,
@@ -96,10 +98,11 @@
   "src": "http://media.wizards.com/images/magic/daily/arcana/1asldfuy9_0191_MTGM15_PRM_Prerelease_EN.png"
  },
  {
-  "src": "http://mtgen.net/content/m15/cards/m15-spindown-life-counter-white.png",
+  "src": "http://mtgen.net/cards/m15-spindown-life-counter-white.png",
   "set": "m15",
   "title": "White Spindown Life Counter",
   "colour": "o",
+  "num": "001 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -107,10 +110,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m15/cards/m15-spindown-life-counter-blue.png",
+  "src": "http://mtgen.net/cards/m15-spindown-life-counter-blue.png",
   "set": "m15",
   "title": "Blue Spindown Life Counter",
   "colour": "o",
+  "num": "002 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -118,10 +122,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m15/cards/m15-spindown-life-counter-black.png",
+  "src": "http://mtgen.net/cards/m15-spindown-life-counter-black.png",
   "set": "m15",
   "title": "Black Spindown Life Counter",
   "colour": "o",
+  "num": "003 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -129,10 +134,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m15/cards/m15-spindown-life-counter-red.png",
+  "src": "http://mtgen.net/cards/m15-spindown-life-counter-red.png",
   "set": "m15",
   "title": "Red Spindown Life Counter",
   "colour": "o",
+  "num": "004 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -140,10 +146,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m15/cards/m15-spindown-life-counter-green.png",
+  "src": "http://mtgen.net/cards/m15-spindown-life-counter-green.png",
   "set": "m15",
   "title": "Green Spindown Life Counter",
   "colour": "o",
+  "num": "005 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -151,13 +158,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m15/cards/m15-activity-insert-white.jpg",
-  "src_large": "http://mtgen.net/content/m15/cards/m15-activity-insert-white-lg.jpg",
+  "src": "http://mtgen.net/cards/m15-activity-insert-white.jpg",
+  "src_large": "http://mtgen.net/cards/m15-activity-insert-white-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "m15",
   "title": "White Activity Insert",
   "colour": "o",
+  "num": "001 Prereease",
   "rarity": "c",
   "type": "Activity Insert",
   "promo": "true",
@@ -165,13 +173,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m15/cards/m15-activity-insert-blue.jpg",
-  "src_large": "http://mtgen.net/content/m15/cards/m15-activity-insert-blue-lg.jpg",
+  "src": "http://mtgen.net/cards/m15-activity-insert-blue.jpg",
+  "src_large": "http://mtgen.net/cards/m15-activity-insert-blue-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "m15",
   "title": "Blue Activity Insert",
   "colour": "o",
+  "num": "002 Prereease",
   "rarity": "c",
   "type": "Activity Insert",
   "promo": "true",
@@ -179,13 +188,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m15/cards/m15-activity-insert-black.jpg",
-  "src_large": "http://mtgen.net/content/m15/cards/m15-activity-insert-black-lg.jpg",
+  "src": "http://mtgen.net/cards/m15-activity-insert-black.jpg",
+  "src_large": "http://mtgen.net/cards/m15-activity-insert-black-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "m15",
   "title": "Black Activity Insert",
   "colour": "o",
+  "num": "003 Prereease",
   "rarity": "c",
   "type": "Activity Insert",
   "promo": "true",
@@ -193,13 +203,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m15/cards/m15-activity-insert-red.jpg",
-  "src_large": "http://mtgen.net/content/m15/cards/m15-activity-insert-red-lg.jpg",
+  "src": "http://mtgen.net/cards/m15-activity-insert-red.jpg",
+  "src_large": "http://mtgen.net/cards/m15-activity-insert-red-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "m15",
   "title": "Red Activity Insert",
   "colour": "o",
+  "num": "004 Prereease",
   "rarity": "c",
   "type": "Activity Insert",
   "promo": "true",
@@ -207,13 +218,14 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m15/cards/m15-activity-insert-green.jpg",
-  "src_large": "http://mtgen.net/content/m15/cards/m15-activity-insert-green-lg.jpg",
+  "src": "http://mtgen.net/cards/m15-activity-insert-green.jpg",
+  "src_large": "http://mtgen.net/cards/m15-activity-insert-green-lg.jpg",
   "height": 370,
   "width": 487,
   "set": "m15",
   "title": "Green Activity Insert",
   "colour": "o",
+  "num": "005 Prereease",
   "rarity": "c",
   "type": "Activity Insert",
   "promo": "true",
@@ -750,10 +762,11 @@
  }
 
  ,{
-  "src": "http://mtgen.net/content/m15/cards/m15-fat-pack-players-guide.png",
+  "src": "http://mtgen.net/cards/m15-fat-pack-players-guide.png",
   "set": "m15",
   "title": "2015 Core Set Player’s Guide",
   "colour": "other",
+  "num": "001 Fat Pack",
   "rarity": "c",
   "type": "Player's Guide",
   "promo": "true",
@@ -761,10 +774,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m15/cards/m15-fat-pack-card-box.png",
+  "src": "http://mtgen.net/cards/m15-fat-pack-card-box.png",
   "set": "m15",
   "title": "2015 Core Set Card Box",
   "colour": "other",
+  "num": "002 Fat Pack",
   "rarity": "c",
   "type": "Card Box",
   "promo": "true",
@@ -772,10 +786,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m15/cards/m15-fat-pack-mural.png",
+  "src": "http://mtgen.net/cards/m15-fat-pack-mural.png",
   "set": "m15",
   "title": "2015 Core Set Mural",
   "colour": "other",
+  "num": "003 Fat Pack",
   "rarity": "c",
   "type": "Mural",
   "promo": "true",
@@ -783,10 +798,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m15/cards/m15-fat-pack-deck-box.png",
+  "src": "http://mtgen.net/cards/m15-fat-pack-deck-box.png",
   "set": "m15",
   "title": "2015 Core Set Deck Box",
   "colour": "other",
+  "num": "004 Fat Pack",
   "rarity": "c",
   "type": "Deck Box",
   "promo": "true",
@@ -794,10 +810,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m15/cards/m15-fat-pack-rules-reference-card.png",
+  "src": "http://mtgen.net/cards/m15-fat-pack-rules-reference-card.png",
   "title": "2015 Core Set Rules Reference Card",
   "set": "m15",
   "colour": "o",
+  "num": "005 Fat Pack",
   "rarity": "c",
   "type": "Rules Reference Card",
   "usableForDeckBuilding": false,
@@ -805,10 +822,11 @@
   "marketing": true
  },
  {
-  "src": "http://mtgen.net/content/m15/cards/m15-spindown-life-counter-white.png",
+  "src": "http://mtgen.net/cards/m15-spindown-life-counter-white.png",
   "set": "m15",
   "title": "White Spindown Life Counter",
   "colour": "o",
+  "num": "006 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -816,10 +834,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m15/cards/m15-spindown-life-counter-blue.png",
+  "src": "http://mtgen.net/cards/m15-spindown-life-counter-blue.png",
   "set": "m15",
   "title": "Blue Spindown Life Counter",
   "colour": "o",
+  "num": "007 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -827,10 +846,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m15/cards/m15-spindown-life-counter-black.png",
+  "src": "http://mtgen.net/cards/m15-spindown-life-counter-black.png",
   "set": "m15",
   "title": "Black Spindown Life Counter",
   "colour": "o",
+  "num": "008 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -838,10 +858,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m15/cards/m15-spindown-life-counter-red.png",
+  "src": "http://mtgen.net/cards/m15-spindown-life-counter-red.png",
   "set": "m15",
   "title": "Red Spindown Life Counter",
   "colour": "o",
+  "num": "009 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",
@@ -849,10 +870,11 @@
   "usableForDeckBuilding": false
  },
  {
-  "src": "http://mtgen.net/content/m15/cards/m15-spindown-life-counter-green.png",
+  "src": "http://mtgen.net/cards/m15-spindown-life-counter-green.png",
   "set": "m15",
   "title": "Green Spindown Life Counter",
   "colour": "o",
+  "num": "010 Counter",
   "rarity": "c",
   "type": "Life Counter",
   "promo": "true",

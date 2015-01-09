@@ -10,6 +10,7 @@ namespace mtgen.Models
 		public string Code { get; set; }
 		public string Name { get; set; }
 		public int CardCount { get; set; }
+		public string CardCountClass { get; set; }
 		public bool Incomplete { get; set; }
 		public DateTime CreatedDate { get; set; }
 		public string CreatedText { get; set; }

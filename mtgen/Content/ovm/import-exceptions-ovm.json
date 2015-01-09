@@ -1,11 +1,1306 @@
 [
-  {
-  "_comment": "Defaults: use wotcTitle, overridden by finalTitle"
-  }
- ,{
-  "gmTitle": "Sidar Jibari",
-  "wotcTitle": "Sidar Jabari",
-  "finalTitle": "Sidar Jibari"
- }
+    {
+        "_comment": "the 'title' is the title taken from Gathering Magic, but if it is corrected earlier in the json use the correct title in subsequent entries"
+    },
 
- ]
+    {
+        "title": "Sidar Jibari",
+        "newValues": { "title": "Sidar Jabari" }
+    },
+    {
+        "title": "Addle",
+        "newValues": { "num": "103" }
+    },
+    {
+        "title": "Council's Judgment",
+        "newValues": { "num": "020" }
+    },
+    {
+        "title": "Muzzio, Visionary Architect",
+        "newValues": { "num": "082" }
+    },
+    {
+        "title": "Plea for Power",
+        "newValues": { "num": "087" }
+    },
+    {
+        "title": "Drakestown Forgotten",
+        "newValues": { "num": "117" }
+    },
+    {
+        "title": "Reign of the Pit",
+        "newValues": { "num": "138" }
+    },
+    {
+        "title": "Tyrant's Choice",
+        "newValues": { "num": "143" }
+    },
+    {
+        "title": "Scourge of the Throne",
+        "newValues": { "num": "184" }
+    },
+    {
+        "title": "Realm Seekers",
+        "newValues": { "num": "226" }
+    },
+    {
+        "title": "Dack Fayden",
+        "newValues": { "num": "247" }
+    },
+    {
+        "title": "Dack's Duplicate",
+        "newValues": { "num": "248" }
+    },
+    {
+        "title": "Deathreap Ritual",
+        "newValues": { "num": "250" }
+    },
+    {
+        "title": "Grenzo, Dungeon Warden",
+        "newValues": { "num": "254" }
+    },
+    {
+        "title": "Magister of Worth",
+        "newValues": { "num": "255" }
+    },
+    {
+        "title": "Marchesa, the Black Rose",
+        "newValues": { "num": "256" }
+    },
+    {
+        "title": "Coercive Portal",
+        "newValues": { "num": "266" }
+    },
+    {
+        "title": "Swords to Plowshares",
+        "newValues": { "num": "51" }
+    },
+    {
+        "title": "Academy Elite",
+        "newValues": { "num": "55" }
+    },
+    {
+        "title": "AEther Mutation",
+        "newValues": { "num": "241" }
+    },
+    {
+        "title": "Afterlife",
+        "newValues": { "num": "10" }
+    },
+    {
+        "title": "Aftershock",
+        "newValues": { "num": "149" }
+    },
+    {
+        "title": "Akroma's Blessing",
+        "newValues": { "num": "011" }
+    },
+    {
+        "title": "Ancestral Recall",
+        "newValues": { "num": "001" }
+    },
+    {
+        "title": "Ancient Tomb",
+        "newValues": { "num": "289" }
+    },
+    {
+        "title": "Animate Dead",
+        "newValues": { "num": "104" }
+    },
+    {
+        "title": "Ankh of Mishra",
+        "newValues": { "num": "263" }
+    },
+    {
+        "title": "Aquamoeba",
+        "newValues": { "num": "056" }
+    },
+    {
+        "title": "Armadillo Cloak",
+        "newValues": { "num": "242" }
+    },
+    {
+        "title": "Armageddon",
+        "newValues": { "num": "012" }
+    },
+    {
+        "title": "Armor of Thorns",
+        "newValues": { "num": "194" }
+    },
+    {
+        "title": "Arrogant Wurm",
+        "newValues": { "num": "195" }
+    },
+    {
+        "title": "Astral Slide",
+        "newValues": { "num": "013" }
+    },
+    {
+        "title": "Bad River",
+        "newValues": { "num": "290" }
+    },
+    {
+        "title": "Badlands",
+        "newValues": { "num": "291" }
+    },
+    {
+        "title": "Balance",
+        "newValues": { "num": "014" }
+    },
+    {
+        "title": "Baleful Force",
+        "newValues": { "num": "105" }
+    },
+    {
+        "title": "Baleful Strix",
+        "newValues": { "num": "243" }
+    },
+    {
+        "title": "Barren Moor",
+        "newValues": { "num": "292" }
+    },
+    {
+        "title": "Basandra, Battle Seraph",
+        "newValues": { "num": "244" }
+    },
+    {
+        "title": "Basking Rootwalla",
+        "newValues": { "num": "196" }
+    },
+    {
+        "title": "Battle Screech",
+        "newValues": { "num": "015" }
+    },
+    {
+        "title": "Bayou",
+        "newValues": { "num": "293" }
+    },
+    {
+        "title": "Bazaar of Baghdad",
+        "newValues": { "num": "294" }
+    },
+    {
+        "title": "Beetleback Chief",
+        "newValues": { "num": "150" }
+    },
+    {
+        "title": "Benalish Trapper",
+        "newValues": { "num": "016" }
+    },
+    {
+        "title": "Benevolent Bodyguard",
+        "newValues": { "num": "017" }
+    },
+    {
+        "title": "Berserk",
+        "newValues": { "num": "197" }
+    },
+    {
+        "title": "Black Lotus",
+        "newValues": { "num": "004" }
+    },
+    {
+        "title": "Blastoderm",
+        "newValues": { "num": "198" }
+    },
+    {
+        "title": "Blazing Specter",
+        "newValues": { "num": "245" }
+    },
+    {
+        "title": "Brago, King Eternal",
+        "newValues": { "num": "246" }
+    },
+    {
+        "title": "Brain Freeze",
+        "newValues": { "num": "057" }
+    },
+    {
+        "title": "Brainstorm",
+        "newValues": { "num": "058" }
+    },
+    {
+        "title": "Breath of Life",
+        "newValues": { "num": "018" }
+    },
+    {
+        "title": "Brilliant Halo",
+        "newValues": { "num": "019" }
+    },
+    {
+        "title": "Brindle Shoat",
+        "newValues": { "num": "199" }
+    },
+    {
+        "title": "Burning of Xinye",
+        "newValues": { "num": "151" }
+    },
+    {
+        "title": "Burning Wish",
+        "newValues": { "num": "152" }
+    },
+    {
+        "title": "Cabal Ritual",
+        "newValues": { "num": "106" }
+    },
+    {
+        "title": "Caldera Lake",
+        "newValues": { "num": "295" }
+    },
+    {
+        "title": "Carnophage",
+        "newValues": { "num": "107" }
+    },
+    {
+        "title": "Chain Lightning",
+        "newValues": { "num": "153" }
+    },
+    {
+        "title": "Chainer's Edict",
+        "newValues": { "num": "108" }
+    },
+    {
+        "title": "Channel",
+        "newValues": { "num": "200" }
+    },
+    {
+        "title": "Chaos Warp",
+        "newValues": { "num": "154" }
+    },
+    {
+        "title": "Chartooth Cougar",
+        "newValues": { "num": "155" }
+    },
+    {
+        "title": "Chimeric Idol",
+        "newValues": { "num": "264" }
+    },
+    {
+        "title": "Choking Sands",
+        "newValues": { "num": "109" }
+    },
+    {
+        "title": "Choking Tethers",
+        "newValues": { "num": "059" }
+    },
+    {
+        "title": "Circular Logic",
+        "newValues": { "num": "060" }
+    },
+    {
+        "title": "City in a Bottle",
+        "newValues": { "num": "265" }
+    },
+    {
+        "title": "Claws of Wirewood",
+        "newValues": { "num": "201" }
+    },
+    {
+        "title": "Clickslither",
+        "newValues": { "num": "156" }
+    },
+    {
+        "title": "Cloud Djinn",
+        "newValues": { "num": "061" }
+    },
+    {
+        "title": "Cloud of Faeries",
+        "newValues": { "num": "062" }
+    },
+    {
+        "title": "Control Magic",
+        "newValues": { "num": "063" }
+    },
+    {
+        "title": "Counterspell",
+        "newValues": { "num": "064" }
+    },
+    {
+        "title": "Crater Hellion",
+        "newValues": { "num": "157" }
+    },
+    {
+        "title": "Crescendo of War",
+        "newValues": { "num": "021" }
+    },
+    {
+        "title": "Crovax the Cursed",
+        "newValues": { "num": "110" }
+    },
+    {
+        "title": "Cruel Bargain",
+        "newValues": { "num": "111" }
+    },
+    {
+        "title": "Cursed Scroll",
+        "newValues": { "num": "267" }
+    },
+    {
+        "title": "Dark Hatchling",
+        "newValues": { "num": "112" }
+    },
+    {
+        "title": "Dark Ritual",
+        "newValues": { "num": "113" }
+    },
+    {
+        "title": "Dauthi Mercenary",
+        "newValues": { "num": "114" }
+    },
+    {
+        "title": "Death Grasp",
+        "newValues": { "num": "249" }
+    },
+    {
+        "title": "Death's-Head Buzzard",
+        "newValues": { "num": "115" }
+    },
+    {
+        "title": "Decree of Justice",
+        "newValues": { "num": "022" }
+    },
+    {
+        "title": "Deep Analysis",
+        "newValues": { "num": "065" }
+    },
+    {
+        "title": "Deftblade Elite",
+        "newValues": { "num": "023" }
+    },
+    {
+        "title": "Demonic Tutor",
+        "newValues": { "num": "116" }
+    },
+    {
+        "title": "Deranged Hermit",
+        "newValues": { "num": "202" }
+    },
+    {
+        "title": "Desert Twister",
+        "newValues": { "num": "203" }
+    },
+    {
+        "title": "Devout Witness",
+        "newValues": { "num": "024" }
+    },
+    {
+        "title": "Dreampod Druid",
+        "newValues": { "num": "204" }
+    },
+    {
+        "title": "Edric, Spymaster of Trest",
+        "newValues": { "num": "251" }
+    },
+    {
+        "title": "Elephant Guide",
+        "newValues": { "num": "205" }
+    },
+    {
+        "title": "Elvish Aberration",
+        "newValues": { "num": "206" }
+    },
+    {
+        "title": "Empyrial Armor",
+        "newValues": { "num": "025" }
+    },
+    {
+        "title": "Ephemeron",
+        "newValues": { "num": "066" }
+    },
+    {
+        "title": "Erhnam Djinn",
+        "newValues": { "num": "207" }
+    },
+    {
+        "title": "Eternal Dragon",
+        "newValues": { "num": "026" }
+    },
+    {
+        "title": "Eureka",
+        "newValues": { "num": "208" }
+    },
+    {
+        "title": "Exile",
+        "newValues": { "num": "027" }
+    },
+    {
+        "title": "Expunge",
+        "newValues": { "num": "118" }
+    },
+    {
+        "title": "Fact or Fiction",
+        "newValues": { "num": "067" }
+    },
+    {
+        "title": "Fallen Askari",
+        "newValues": { "num": "119" }
+    },
+    {
+        "title": "Falter",
+        "newValues": { "num": "158" }
+    },
+    {
+        "title": "Famine",
+        "newValues": { "num": "120" }
+    },
+    {
+        "title": "Fastbond",
+        "newValues": { "num": "209" }
+    },
+    {
+        "title": "Fireblast",
+        "newValues": { "num": "159" }
+    },
+    {
+        "title": "Fires of Yavimaya",
+        "newValues": { "num": "252" }
+    },
+    {
+        "title": "Flametongue Kavu",
+        "newValues": { "num": "160" }
+    },
+    {
+        "title": "Fledgling Djinn",
+        "newValues": { "num": "121" }
+    },
+    {
+        "title": "Flood Plain",
+        "newValues": { "num": "296" }
+    },
+    {
+        "title": "Flowstone Hellion",
+        "newValues": { "num": "161" }
+    },
+    {
+        "title": "Flowstone Sculpture",
+        "newValues": { "num": "268" }
+    },
+    {
+        "title": "Flusterstorm",
+        "newValues": { "num": "068" }
+    },
+    {
+        "title": "Force of Will",
+        "newValues": { "num": "069" }
+    },
+    {
+        "title": "Forgotten Cave",
+        "newValues": { "num": "297" }
+    },
+    {
+        "title": "Frantic Search",
+        "newValues": { "num": "070" }
+    },
+    {
+        "title": "Future Sight",
+        "newValues": { "num": "071" }
+    },
+    {
+        "title": "Fyndhorn Elves",
+        "newValues": { "num": "210" }
+    },
+    {
+        "title": "Gaea's Embrace",
+        "newValues": { "num": "211" }
+    },
+    {
+        "title": "Gamble",
+        "newValues": { "num": "162" }
+    },
+    {
+        "title": "Genesis",
+        "newValues": { "num": "212" }
+    },
+    {
+        "title": "Gerrard's Battle Cry",
+        "newValues": { "num": "028" }
+    },
+    {
+        "title": "Giant Mantis",
+        "newValues": { "num": "213" }
+    },
+    {
+        "title": "Giant Strength",
+        "newValues": { "num": "163" }
+    },
+    {
+        "title": "Gigapede",
+        "newValues": { "num": "214" }
+    },
+    {
+        "title": "Gilded Light",
+        "newValues": { "num": "029" }
+    },
+    {
+        "title": "Goblin Commando",
+        "newValues": { "num": "164" }
+    },
+    {
+        "title": "Goblin General",
+        "newValues": { "num": "165" }
+    },
+    {
+        "title": "Goblin Goon",
+        "newValues": { "num": "166" }
+    },
+    {
+        "title": "Goblin Lackey",
+        "newValues": { "num": "167" }
+    },
+    {
+        "title": "Goblin Matron",
+        "newValues": { "num": "168" }
+    },
+    {
+        "title": "Goblin Patrol",
+        "newValues": { "num": "169" }
+    },
+    {
+        "title": "Goblin Piledriver",
+        "newValues": { "num": "170" }
+    },
+    {
+        "title": "Goblin Ringleader",
+        "newValues": { "num": "171" }
+    },
+    {
+        "title": "Goblin Settler",
+        "newValues": { "num": "172" }
+    },
+    {
+        "title": "Goblin Trenches",
+        "newValues": { "num": "253" }
+    },
+    {
+        "title": "Goblin Warchief",
+        "newValues": { "num": "173" }
+    },
+    {
+        "title": "Grand Coliseum",
+        "newValues": { "num": "298" }
+    },
+    {
+        "title": "Grasslands",
+        "newValues": { "num": "299" }
+    },
+    {
+        "title": "Grizzly Fate",
+        "newValues": { "num": "215" }
+    },
+    {
+        "title": "Gush",
+        "newValues": { "num": "072" }
+    },
+    {
+        "title": "Gustcloak Harrier",
+        "newValues": { "num": "030" }
+    },
+    {
+        "title": "Hermit Druid",
+        "newValues": { "num": "216" }
+    },
+    {
+        "title": "High Tide",
+        "newValues": { "num": "073" }
+    },
+    {
+        "title": "Hulking Goblin",
+        "newValues": { "num": "174" }
+    },
+    {
+        "title": "Hymn to Tourach",
+        "newValues": { "num": "122" }
+    },
+    {
+        "title": "Ichorid",
+        "newValues": { "num": "123" }
+    },
+    {
+        "title": "Ivory Tower",
+        "newValues": { "num": "269" }
+    },
+    {
+        "title": "Jace, the Mind Sculptor",
+        "newValues": { "num": "074" }
+    },
+    {
+        "title": "Jareth, Leonine Titan",
+        "newValues": { "num": "031" }
+    },
+    {
+        "title": "Jungle Wurm",
+        "newValues": { "num": "217" }
+    },
+    {
+        "title": "Kaervek's Torch",
+        "newValues": { "num": "175" }
+    },
+    {
+        "title": "Karmic Guide",
+        "newValues": { "num": "032" }
+    },
+    {
+        "title": "Karn, Silver Golem",
+        "newValues": { "num": "270" }
+    },
+    {
+        "title": "Keeneye Aven",
+        "newValues": { "num": "075" }
+    },
+    {
+        "title": "Keldon Necropolis",
+        "newValues": { "num": "300" }
+    },
+    {
+        "title": "Kezzerdrix",
+        "newValues": { "num": "124" }
+    },
+    {
+        "title": "Killer Whale",
+        "newValues": { "num": "076" }
+    },
+    {
+        "title": "Kindle",
+        "newValues": { "num": "176" }
+    },
+    {
+        "title": "Kjeldoran Outpost",
+        "newValues": { "num": "301" }
+    },
+    {
+        "title": "Kongming, 'Sleeping Dragon'",
+        "newValues": { "num": "033" }
+    },
+    {
+        "title": "Krosan Tusker",
+        "newValues": { "num": "218" }
+    },
+    {
+        "title": "Krosan Vorine",
+        "newValues": { "num": "219" }
+    },
+    {
+        "title": "Krovikan Sorcerer",
+        "newValues": { "num": "077" }
+    },
+    {
+        "title": "Lake of the Dead",
+        "newValues": { "num": "302" }
+    },
+    {
+        "title": "Laquatus's Champion",
+        "newValues": { "num": "125" }
+    },
+    {
+        "title": "Library of Alexandria",
+        "newValues": { "num": "303" }
+    },
+    {
+        "title": "Lightning Dragon",
+        "newValues": { "num": "177" }
+    },
+    {
+        "title": "Lightning Rift",
+        "newValues": { "num": "178" }
+    },
+    {
+        "title": "Lion's Eye Diamond",
+        "newValues": { "num": "271" }
+    },
+    {
+        "title": "Living Death",
+        "newValues": { "num": "126" }
+    },
+    {
+        "title": "Lonely Sandbar",
+        "newValues": { "num": "304" }
+    },
+    {
+        "title": "Lurking Evil",
+        "newValues": { "num": "127" }
+    },
+    {
+        "title": "Mana Crypt",
+        "newValues": { "num": "272" }
+    },
+    {
+        "title": "Mana Drain",
+        "newValues": { "num": "078" }
+    },
+    {
+        "title": "Mana Prism",
+        "newValues": { "num": "273" }
+    },
+    {
+        "title": "Mana Vault",
+        "newValues": { "num": "274" }
+    },
+    {
+        "title": "Man-o'-War",
+        "newValues": { "num": "079" }
+    },
+    {
+        "title": "Masticore",
+        "newValues": { "num": "275" }
+    },
+    {
+        "title": "Memory Jar",
+        "newValues": { "num": "276" }
+    },
+    {
+        "title": "Mesmeric Fiend",
+        "newValues": { "num": "128" }
+    },
+    {
+        "title": "Mind's Desire",
+        "newValues": { "num": "080" }
+    },
+    {
+        "title": "Mishra's Workshop",
+        "newValues": { "num": "305" }
+    },
+    {
+        "title": "Mistmoon Griffin",
+        "newValues": { "num": "034" }
+    },
+    {
+        "title": "Morphling",
+        "newValues": { "num": "081" }
+    },
+    {
+        "title": "Mountain Valley",
+        "newValues": { "num": "306" }
+    },
+    {
+        "title": "Mox Emerald",
+        "newValues": { "num": "005" }
+    },
+    {
+        "title": "Mox Jet",
+        "newValues": { "num": "006" }
+    },
+    {
+        "title": "Mox Pearl",
+        "newValues": { "num": "007" }
+    },
+    {
+        "title": "Mox Ruby",
+        "newValues": { "num": "008" }
+    },
+    {
+        "title": "Mox Sapphire",
+        "newValues": { "num": "009" }
+    },
+    {
+        "title": "Mystic Zealot",
+        "newValues": { "num": "035" }
+    },
+    {
+        "title": "Nature's Lore",
+        "newValues": { "num": "220" }
+    },
+    {
+        "title": "Nature's Ruin",
+        "newValues": { "num": "129" }
+    },
+    {
+        "title": "Necropotence",
+        "newValues": { "num": "130" }
+    },
+    {
+        "title": "Nevinyrral's Disk",
+        "newValues": { "num": "277" }
+    },
+    {
+        "title": "Nightscape Familiar",
+        "newValues": { "num": "131" }
+    },
+    {
+        "title": "Noble Templar",
+        "newValues": { "num": "036" }
+    },
+    {
+        "title": "Norwood Priestess",
+        "newValues": { "num": "221" }
+    },
+    {
+        "title": "Nostalgic Dreams",
+        "newValues": { "num": "222" }
+    },
+    {
+        "title": "Null Rod",
+        "newValues": { "num": "278" }
+    },
+    {
+        "title": "Oath of Druids",
+        "newValues": { "num": "223" }
+    },
+    {
+        "title": "Obsessive Search",
+        "newValues": { "num": "083" }
+    },
+    {
+        "title": "Ophidian",
+        "newValues": { "num": "084" }
+    },
+    {
+        "title": "Orcish Lumberjack",
+        "newValues": { "num": "179" }
+    },
+    {
+        "title": "Owl Familiar",
+        "newValues": { "num": "085" }
+    },
+    {
+        "title": "Palinchron",
+        "newValues": { "num": "086" }
+    },
+    {
+        "title": "Parallax Wave",
+        "newValues": { "num": "037" }
+    },
+    {
+        "title": "Paralyze",
+        "newValues": { "num": "132" }
+    },
+    {
+        "title": "Penumbra Wurm",
+        "newValues": { "num": "224" }
+    },
+    {
+        "title": "Phantom Nomad",
+        "newValues": { "num": "038" }
+    },
+    {
+        "title": "Phyrexian Defiler",
+        "newValues": { "num": "133" }
+    },
+    {
+        "title": "Pianna, Nomad Captain",
+        "newValues": { "num": "039" }
+    },
+    {
+        "title": "Pillaging Horde",
+        "newValues": { "num": "180" }
+    },
+    {
+        "title": "Pine Barrens",
+        "newValues": { "num": "307" }
+    },
+    {
+        "title": "Plateau",
+        "newValues": { "num": "308" }
+    },
+    {
+        "title": "Power Sink",
+        "newValues": { "num": "088" }
+    },
+    {
+        "title": "Predator, Flagship",
+        "newValues": { "num": "279" }
+    },
+    {
+        "title": "Predatory Nightstalker",
+        "newValues": { "num": "134" }
+    },
+    {
+        "title": "Prophetic Bolt",
+        "newValues": { "num": "257" }
+    },
+    {
+        "title": "Provoke",
+        "newValues": { "num": "225" }
+    },
+    {
+        "title": "Psychatog",
+        "newValues": { "num": "258" }
+    },
+    {
+        "title": "Putrid Imp",
+        "newValues": { "num": "135" }
+    },
+    {
+        "title": "Radiant, Archangel",
+        "newValues": { "num": "040" }
+    },
+    {
+        "title": "Radiant's Judgment",
+        "newValues": { "num": "041" }
+    },
+    {
+        "title": "Reanimate",
+        "newValues": { "num": "136" }
+    },
+    {
+        "title": "Reckless Charge",
+        "newValues": { "num": "181" }
+    },
+    {
+        "title": "Recurring Nightmare",
+        "newValues": { "num": "137" }
+    },
+    {
+        "title": "Regrowth",
+        "newValues": { "num": "227" }
+    },
+    {
+        "title": "Renewed Faith",
+        "newValues": { "num": "042" }
+    },
+    {
+        "title": "Repel",
+        "newValues": { "num": "089" }
+    },
+    {
+        "title": "Rescind",
+        "newValues": { "num": "090" }
+    },
+    {
+        "title": "Reviving Vapors",
+        "newValues": { "num": "259" }
+    },
+    {
+        "title": "Ring of Gix",
+        "newValues": { "num": "280" }
+    },
+    {
+        "title": "Rites of Initiation",
+        "newValues": { "num": "182" }
+    },
+    {
+        "title": "Roar of the Wurm",
+        "newValues": { "num": "228" }
+    },
+    {
+        "title": "Rocky Tar Pit",
+        "newValues": { "num": "309" }
+    },
+    {
+        "title": "Rofellos, Llanowar Emissary",
+        "newValues": { "num": "229" }
+    },
+    {
+        "title": "Rorix Bladewing",
+        "newValues": { "num": "183" }
+    },
+    {
+        "title": "Salt Flats",
+        "newValues": { "num": "310" }
+    },
+    {
+        "title": "Saproling Burst",
+        "newValues": { "num": "230" }
+    },
+    {
+        "title": "Sarcomancy",
+        "newValues": { "num": "139" }
+    },
+    {
+        "title": "Savannah",
+        "newValues": { "num": "311" }
+    },
+    {
+        "title": "Scabland",
+        "newValues": { "num": "312" }
+    },
+    {
+        "title": "Scrivener",
+        "newValues": { "num": "091" }
+    },
+    {
+        "title": "Scrubland",
+        "newValues": { "num": "313" }
+    },
+    {
+        "title": "Sea Drake",
+        "newValues": { "num": "092" }
+    },
+    {
+        "title": "Seal of Cleansing",
+        "newValues": { "num": "043" }
+    },
+    {
+        "title": "Secluded Steppe",
+        "newValues": { "num": "314" }
+    },
+    {
+        "title": "Serendib Efreet",
+        "newValues": { "num": "093" }
+    },
+    {
+        "title": "Shelter",
+        "newValues": { "num": "044" }
+    },
+    {
+        "title": "Shivan Wurm",
+        "newValues": { "num": "261" }
+    },
+    {
+        "title": "Sidar Jabari",
+        "newValues": { "num": "045" }
+    },
+    {
+        "title": "Silvos, Rogue Elemental",
+        "newValues": { "num": "231" }
+    },
+    {
+        "title": "Simian Grunts",
+        "newValues": { "num": "232" }
+    },
+    {
+        "title": "Skirge Familiar",
+        "newValues": { "num": "140" }
+    },
+    {
+        "title": "Skirk Drill Sergeant",
+        "newValues": { "num": "185" }
+    },
+    {
+        "title": "Skirk Prospector",
+        "newValues": { "num": "186" }
+    },
+    {
+        "title": "Skullclamp",
+        "newValues": { "num": "281" }
+    },
+    {
+        "title": "Skyshroud Forest",
+        "newValues": { "num": "315" }
+    },
+    {
+        "title": "Skywing Aven",
+        "newValues": { "num": "094" }
+    },
+    {
+        "title": "Smokestack",
+        "newValues": { "num": "282" }
+    },
+    {
+        "title": "Sol Ring",
+        "newValues": { "num": "283" }
+    },
+    {
+        "title": "Solar Blast",
+        "newValues": { "num": "187" }
+    },
+    {
+        "title": "Soltari Emissary",
+        "newValues": { "num": "046" }
+    },
+    {
+        "title": "Soltari Trooper",
+        "newValues": { "num": "047" }
+    },
+    {
+        "title": "Spark Spray",
+        "newValues": { "num": "188" }
+    },
+    {
+        "title": "Sphere of Resistance",
+        "newValues": { "num": "284" }
+    },
+    {
+        "title": "Spinal Graft",
+        "newValues": { "num": "141" }
+    },
+    {
+        "title": "Spirit Cairn",
+        "newValues": { "num": "048" }
+    },
+    {
+        "title": "Spirit Mirror",
+        "newValues": { "num": "049" }
+    },
+    {
+        "title": "Spiritmonger",
+        "newValues": { "num": "262" }
+    },
+    {
+        "title": "Starstorm",
+        "newValues": { "num": "189" }
+    },
+    {
+        "title": "Stoic Champion",
+        "newValues": { "num": "050" }
+    },
+    {
+        "title": "Strip Mine",
+        "newValues": { "num": "316" }
+    },
+    {
+        "title": "Stroke of Genius",
+        "newValues": { "num": "095" }
+    },
+    {
+        "title": "Su-Chi",
+        "newValues": { "num": "285" }
+    },
+    {
+        "title": "Sudden Strength",
+        "newValues": { "num": "233" }
+    },
+    {
+        "title": "Sulfuric Vortex",
+        "newValues": { "num": "190" }
+    },
+    {
+        "title": "Survival of the Fittest",
+        "newValues": { "num": "234" }
+    },
+    {
+        "title": "Sylvan Library",
+        "newValues": { "num": "235" }
+    },
+    {
+        "title": "Symbiotic Wurm",
+        "newValues": { "num": "236" }
+    },
+    {
+        "title": "Taiga",
+        "newValues": { "num": "317" }
+    },
+    {
+        "title": "Tangle",
+        "newValues": { "num": "237" }
+    },
+    {
+        "title": "Temporal Fissure",
+        "newValues": { "num": "096" }
+    },
+    {
+        "title": "Tendrils of Agony",
+        "newValues": { "num": "142" }
+    },
+    {
+        "title": "Teroh's Faithful",
+        "newValues": { "num": "052" }
+    },
+    {
+        "title": "Thalakos Drifters",
+        "newValues": { "num": "097" }
+    },
+    {
+        "title": "Thawing Glaciers",
+        "newValues": { "num": "318" }
+    },
+    {
+        "title": "Thopter Squadron",
+        "newValues": { "num": "286" }
+    },
+    {
+        "title": "Time Vault",
+        "newValues": { "num": "287" }
+    },
+    {
+        "title": "Time Walk",
+        "newValues": { "num": "002" }
+    },
+    {
+        "title": "Timetwister",
+        "newValues": { "num": "003" }
+    },
+    {
+        "title": "Tolarian Academy",
+        "newValues": { "num": "319" }
+    },
+    {
+        "title": "Tradewind Rider",
+        "newValues": { "num": "098" }
+    },
+    {
+        "title": "Tranquil Thicket",
+        "newValues": { "num": "320" }
+    },
+    {
+        "title": "Triangle of War",
+        "newValues": { "num": "288" }
+    },
+    {
+        "title": "Tribute to the Wild",
+        "newValues": { "num": "238" }
+    },
+    {
+        "title": "Tropical Island",
+        "newValues": { "num": "321" }
+    },
+    {
+        "title": "Tundra",
+        "newValues": { "num": "322" }
+    },
+    {
+        "title": "Turnabout",
+        "newValues": { "num": "099" }
+    },
+    {
+        "title": "Underground Sea",
+        "newValues": { "num": "323" }
+    },
+    {
+        "title": "Upheaval",
+        "newValues": { "num": "100" }
+    },
+    {
+        "title": "Urborg Uprising",
+        "newValues": { "num": "144" }
+    },
+    {
+        "title": "Vampiric Tutor",
+        "newValues": { "num": "145" }
+    },
+    {
+        "title": "Visara the Dreadful",
+        "newValues": { "num": "146" }
+    },
+    {
+        "title": "Volcanic Island",
+        "newValues": { "num": "324" }
+    },
+    {
+        "title": "Volrath's Shapeshifter",
+        "newValues": { "num": "101" }
+    },
+    {
+        "title": "Wall of Diffusion",
+        "newValues": { "num": "191" }
+    },
+    {
+        "title": "Waterfront Bouncer",
+        "newValues": { "num": "102" }
+    },
+    {
+        "title": "Wheel of Fortune",
+        "newValues": { "num": "192" }
+    },
+    {
+        "title": "Wild Mongrel",
+        "newValues": { "num": "239" }
+    },
+    {
+        "title": "Winds of Rath",
+        "newValues": { "num": "053" }
+    },
+    {
+        "title": "Worldgorger Dragon",
+        "newValues": { "num": "193" }
+    },
+    {
+        "title": "Yavimaya Elder",
+        "newValues": { "num": "240" }
+    },
+    {
+        "title": "Yavimaya Hollow",
+        "newValues": { "num": "325" }
+    },
+    {
+        "title": "Yawgmoth's Bargain",
+        "newValues": { "num": "147" }
+    },
+    {
+        "title": "Yawgmoth's Will",
+        "newValues": { "num": "148" }
+    },
+    {
+        "title": "Zhalfirin Crusader",
+        "newValues": { "num": "54" }
+    }
+]
