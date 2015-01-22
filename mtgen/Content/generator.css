@@ -99,6 +99,13 @@ h2 a.button.top {
 a.button.top:hover {
 	background: #000;
 }
+a.button.small {
+	display: inline-block;
+	margin-top: 1em;
+	padding-top: .1em;
+	padding-bottom: .1em;
+	font-size: 80%;
+}
 .back-to-top {
 	text-align: center;
 	margin-top: 3em;
@@ -347,6 +354,14 @@ main > em {
 	left: 0;
 	margin-top: 0;
 	width: 100% !important;
+}
+
+.caveat {
+	background: rgba(255, 245, 137, 0.5);
+	padding: 1em !important;
+	margin: 0 2em .5em;
+	border: 1px solid rgba(207, 190, 10, 0.8);
+	color: #565656;
 }
 
 .card {

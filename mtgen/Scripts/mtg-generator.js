@@ -1182,7 +1182,7 @@ var mtgGen = (function (my, $) {
     });
 
     // all results should be rendered through this function
-    my.displayResults = function (productName, html) {
+    my.displayResults = function (productName, html){ 
         my.trigger('layoutChanging');
         this.$contentElem.find('#product-content .' + productName + ' .result').html(html);
         setTimeout(function () { my.trigger('layoutChanged'); }, 500); // delay to let it render so target elements exist
@@ -1736,9 +1736,14 @@ var mtgGen = (function (my, $) {
 		    if (cardSets.length == 1) {
 		        title = cardSets[0].setDesc;
 		    }
+		    var caveats = '';
+		    if (this.options.hasOwnProperty('caveats')) {
+		        _.each(this.options.caveats, function (caveat, index) { caveats += "<div class='caveat'>" + caveat + "</div>"; });
+		    }
 		    var cardCount = my.CountCardsInSets(cardSets);
 		    var allCardsHtml = my.renderCardsTitle(title + ' - <span class="card-count">' + cardCount + ' cards')
 				+ my.mainView.mainMenu.render(cardSets)
+                + caveats
 				+ "<div>" + my.renderCardSets(cardSets) + "</div>";
 		    my.displayResults(this.productName, allCardsHtml);
 		}

@@ -1,163 +1,164 @@
 {
-"_comment": "if there are no options the query/packNames will be auto-run"
-,"products": 
-	[
-		{
-			"productName": "frf-all-cards"
-			,"productDesc": "All Cards"
-			,"sources": [ "http://magic.wizards.com/en/game-info/products/card-set-archive/fate-reforged", "http://magic.wizards.com/en/articles/archive/frf-cig-en", "http://magic.wizards.com/en/articles/archive/arcana/fate-reforged-basically-2015-01-05", "http://magic.wizards.com/en/articles/archive/arcana/tokens-reforged-2015-01-07" ]
-			,"isGenerated": false
-			,"initialSort": "colour"
-			,"packs": [
-				{ "packName":"frf-all-cards" }
-			]
-		}
-		,{
-			"productName": "frf-boosters"
-			,"productDesc": "Boosters"
-			,"isVisible": true
-			,"isGenerated": true
-			,"initialSort": "set"
-			,"packs": [
-				{ "packName":"frf-standard" }
-			]
-			,"options" : {
-				"presets": [
-					{
-						"presetName": "frf-boosters-six"
-						,"presetDesc": "Six Boosters"
-						,"default": true
-						,"packs": [
-							{ "count":6, "defaultPackName":"frf-standard" }
-						]
-					}
-				]
-			}
-		}
-		,{
-			"productName": "frf-prerelease"
-			,"productDesc": "Prerelease"
-			,"isVisible": true
-			,"sources": [ "http://magic.wizards.com/en/events/event-types/prerelease", "http://magic.wizards.com/en/articles/archive/feature/fetching-look-fate-reforged-2014-12-24", "http://wpn.wizards.com/en/products/fate-reforged" ]
-			,"isGenerated": true
-			,"initialSort": "set"
-			,"packs": [
-				{ "packName":"frf-standard" }, { "packName":"ktk-standard" }
-				,{ "packName":"frf-seeded-booster-abzan" },{ "packName":"frf-seeded-booster-packins-abzan" }
-				,{ "packName":"frf-seeded-booster-jeskai" } ,{ "packName":"frf-seeded-booster-packins-jeskai" }
-				,{ "packName":"frf-seeded-booster-sultai" },{ "packName":"frf-seeded-booster-packins-sultai" }
-				,{ "packName":"frf-seeded-booster-mardu" }  ,{ "packName":"frf-seeded-booster-packins-mardu" }
-				,{ "packName":"frf-seeded-booster-temur" },{ "packName":"frf-seeded-booster-packins-temur" }
-				,{ "packName":"frf-ugins-fate-booster" }
-				,{ "packName":"frf-prerelease-promos" }
-			]
-			,"options" : {
-				"presets": [
-					{
-						"presetName": "frf-prerelease-abzan"
-						,"presetDesc": "Abzan Houses (White/Black/Green)"
-						,"default": true
-						,"packs": [
-							{ "count":1, "defaultPackName":"frf-seeded-booster-abzan" }
-							,{ "count":1, "defaultPackName":"frf-seeded-booster-packins-abzan" }
-							,{ "count":1, "defaultPackName":"frf-ugins-fate-booster" }
-							,{ "count":1, "defaultPackName":"ktk-standard" }
-							,{ "count":4, "defaultPackName":"frf-standard" }
-						]
-					}
-					,{
-						"presetName": "frf-prerelease-jeskai"
-						,"presetDesc": "Jeskai Way (Blue/Red/White)"
-						,"packs": [
-							{ "count":1, "defaultPackName":"frf-seeded-booster-jeskai" }
-							,{ "count":1, "defaultPackName":"frf-seeded-booster-packins-jeskai" }
-							,{ "count":1, "defaultPackName":"frf-ugins-fate-booster" }
-							,{ "count":1, "defaultPackName":"ktk-standard" }
-							,{ "count":4, "defaultPackName":"frf-standard" }
-						]
-					}
-					,{
-						"presetName": "frf-prerelease-sultai"
-						,"presetDesc": "Sultai Brood (Black/Green/Blue)"
-						,"packs": [
-							{ "count":1, "defaultPackName":"frf-seeded-booster-sultai" }
-							,{ "count":1, "defaultPackName":"frf-seeded-booster-packins-sultai" }
-							,{ "count":1, "defaultPackName":"frf-ugins-fate-booster" }
-							,{ "count":1, "defaultPackName":"ktk-standard" }
-							,{ "count":4, "defaultPackName":"frf-standard" }
-						]
-					}
-					,{
-						"presetName": "frf-prerelease-mardu"
-						,"presetDesc": "Mardu Horde (Red/White/Black)"
-						,"packs": [
-							{ "count":1, "defaultPackName":"frf-seeded-booster-mardu" }
-							,{ "count":1, "defaultPackName":"frf-seeded-booster-packins-mardu" }
-							,{ "count":1, "defaultPackName":"frf-ugins-fate-booster" }
-							,{ "count":1, "defaultPackName":"ktk-standard" }
-							,{ "count":4, "defaultPackName":"frf-standard" }
-						]
-					}
-					,{
-						"presetName": "frf-prerelease-temur"
-						,"presetDesc": "Temur Frontier (Green/Blue/Red)"
-						,"packs": [
-							{ "count":1, "defaultPackName":"frf-seeded-booster-temur" }
-							,{ "count":1, "defaultPackName":"frf-seeded-booster-packins-temur" }
-							,{ "count":1, "defaultPackName":"frf-ugins-fate-booster" }
-							,{ "count":1, "defaultPackName":"ktk-standard" }
-							,{ "count":4, "defaultPackName":"frf-standard" }
-						]
-					}
-					,{
-						"presetName": "frf-prerelease-promos"
-						,"presetDesc": "Fate Reforged Prerelease Promos"
-						,"packs": [
-							{ "count":1, "defaultPackName":"frf-prerelease-promos" }
-						]
-					}
-				]
-			}
-		}
+    "_comment": "if there are no options the query/packNames will be auto-run",
+    "products": [
+        {
+            "productName": "frf-all-cards",
+            "productDesc": "All Cards",
+            "sources": [ "http://magic.wizards.com/en/game-info/products/card-set-archive/fate-reforged", "http://magic.wizards.com/en/articles/archive/frf-cig-en", "http://magic.wizards.com/en/articles/archive/arcana/fate-reforged-basically-2015-01-05", "http://magic.wizards.com/en/articles/archive/arcana/tokens-reforged-2015-01-07" ],
+            "isGenerated": false,
+            "initialSort": "colour",
+            "packs": [
+                { "packName": "frf-all-cards" }
+            ]
+        },
+        {
+            "productName": "frf-boosters",
+            "productDesc": "Boosters",
+            "isVisible": true,
+            "isGenerated": true,
+            "initialSort": "set",
+            "packs": [
+                { "packName": "frf-standard" }
+            ],
+            "options": {
+                "presets": [
+                    {
+                        "presetName": "frf-boosters-six",
+                        "presetDesc": "Six Boosters",
+                        "default": true,
+                        "packs": [
+                            { "count": 6, "defaultPackName": "frf-standard" }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "productName": "frf-prerelease",
+            "productDesc": "Prerelease",
+            "isVisible": true,
+            "sources": [ "http://magic.wizards.com/en/events/event-types/prerelease", "http://magic.wizards.com/en/articles/archive/feature/fetching-look-fate-reforged-2014-12-24", "http://wpn.wizards.com/en/products/fate-reforged", "https://docs.google.com/spreadsheet/ccc?key=0Apln2HM4aSGbdDJ6MFk5cTBjb09sXzFWdndhTkx2V1E#gid=10", "http://magic.wizards.com/en/articles/archive/arcana/ugins-fate-booster-contents-2015-01-19" ],
+            "_caveats": [ "Prerelease packins: The clan info cards are now different (I'm currently showing the ones from Khans of Tarkir) and the dice need to be updated. But I'm not sure anyone except me care about them;)"
+            ],
+            "isGenerated": true,
+            "initialSort": "set",
+            "packs": [
+                { "packName": "frf-standard" },
+                { "packName": "ktk-standard" },
+                { "packName": "frf-seeded-booster-abzan" },
+                { "packName": "frf-seeded-booster-packins-abzan" },
+                { "packName": "frf-seeded-booster-jeskai" },
+                { "packName": "frf-seeded-booster-packins-jeskai" },
+                { "packName": "frf-seeded-booster-sultai" },
+                { "packName": "frf-seeded-booster-packins-sultai" },
+                { "packName": "frf-seeded-booster-mardu" },
+                { "packName": "frf-seeded-booster-packins-mardu" },
+                { "packName": "frf-seeded-booster-temur" },
+                { "packName": "frf-seeded-booster-packins-temur" },
+                { "packName": "frf-ugins-fate-booster" },
+                { "packName": "frf-prerelease-promos" }
+            ],
+            "options": {
+                "presets": [
+                    {
+                        "presetName": "frf-prerelease-abzan",
+                        "presetDesc": "Abzan Houses (White/Black/Green)",
+                        "default": true,
+                        "packs": [
+                            { "count": 1, "defaultPackName": "frf-seeded-booster-abzan" },
+                            { "count": 1, "defaultPackName": "frf-seeded-booster-packins-abzan" },
+                            { "count": 1, "defaultPackName": "ktk-standard" },
+                            { "count": 4, "defaultPackName": "frf-standard" }
+                        ]
+                    },
+                    {
+                        "presetName": "frf-prerelease-jeskai",
+                        "presetDesc": "Jeskai Way (Blue/Red/White)",
+                        "packs": [
+                            { "count": 1, "defaultPackName": "frf-seeded-booster-jeskai" },
+                            { "count": 1, "defaultPackName": "frf-seeded-booster-packins-jeskai" },
+                            { "count": 1, "defaultPackName": "ktk-standard" },
+                            { "count": 4, "defaultPackName": "frf-standard" }
+                        ]
+                    },
+                    {
+                        "presetName": "frf-prerelease-sultai",
+                        "presetDesc": "Sultai Brood (Black/Green/Blue)",
+                        "packs": [
+                            { "count": 1, "defaultPackName": "frf-seeded-booster-sultai" },
+                            { "count": 1, "defaultPackName": "frf-seeded-booster-packins-sultai" },
+                            { "count": 1, "defaultPackName": "ktk-standard" },
+                            { "count": 4, "defaultPackName": "frf-standard" }
+                        ]
+                    },
+                    {
+                        "presetName": "frf-prerelease-mardu",
+                        "presetDesc": "Mardu Horde (Red/White/Black)",
+                        "packs": [
+                            { "count": 1, "defaultPackName": "frf-seeded-booster-mardu" },
+                            { "count": 1, "defaultPackName": "frf-seeded-booster-packins-mardu" },
+                            { "count": 1, "defaultPackName": "ktk-standard" },
+                            { "count": 4, "defaultPackName": "frf-standard" }
+                        ]
+                    },
+                    {
+                        "presetName": "frf-prerelease-temur",
+                        "presetDesc": "Temur Frontier (Green/Blue/Red)",
+                        "packs": [
+                            { "count": 1, "defaultPackName": "frf-seeded-booster-temur" },
+                            { "count": 1, "defaultPackName": "frf-seeded-booster-packins-temur" },
+                            { "count": 1, "defaultPackName": "ktk-standard" },
+                            { "count": 4, "defaultPackName": "frf-standard" }
+                        ]
+                    },
+                    {
+                        "presetName": "frf-prerelease-promos",
+                        "presetDesc": "Fate Reforged Prerelease Promos",
+                        "packs": [
+                            { "count": 1, "defaultPackName": "frf-ugins-fate-booster" },
+                            { "count": 1, "defaultPackName": "frf-prerelease-promos" }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "productName": "frf-fat-pack",
+            "isVisible": false,
+            "productDesc": "Fat Pack",
+            "isGenerated": true,
+            "autoGenerate": true,
+            "initialSort": "set",
+            "packs": [
+                { "packName": "frf-standard" },
+                { "packName": "frf-fat-pack-land" },
+                { "packName": "frf-fat-pack-pack-ins" }
+            ],
+            "options": {
+                "presets": [
+                    {
+                        "presetName": "frf-fat-pack",
+                        "presetDesc": "Fate Reforged Fat Pack",
+                        "default": true,
+                        "packs": [
+                            { "count": 1, "defaultPackName": "frf-fat-pack-pack-ins" },
+                            { "count": 9, "defaultPackName": "frf-standard" },
+                            { "count": 1, "defaultPackName": "frf-fat-pack-land" }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "productName": "frf-promos",
+            "productDesc": "All Promos",
+            "sources": [ "http://magic.wizards.com/en/articles/archive/arcana/fate-reforged-promos-2015-01-02" ],
+            "isGenerated": false,
+            "initialSort": "name",
+            "packs": [
+                { "packName": "frf-promos" }
+            ]
+        }
 
-		,{
-			"productName": "frf-fat-pack"
-			,"isVisible": false
-			,"productDesc": "Fat Pack"
-			,"isGenerated": true
-			,"autoGenerate": true
-			,"initialSort": "set"
-			,"packs": [
-				{ "packName":"frf-standard" }
-				,{ "packName":"frf-fat-pack-land" }
-				,{ "packName":"frf-fat-pack-pack-ins" }
-			]
-			,"options" : {
-				"presets": [
-					{
-						"presetName": "frf-fat-pack"
-						,"presetDesc": "Fate Reforged Fat Pack"
-						,"default": true
-						,"packs": [
-							{ "count":1, "defaultPackName":"frf-fat-pack-pack-ins" }
-							,{ "count":9, "defaultPackName":"frf-standard" }
-							,{ "count":1, "defaultPackName":"frf-fat-pack-land" }
-						]
-					}
-				]
-			}
-		}
-
-		,{
-			"productName": "frf-promos"
-			,"productDesc": "All Promos"
-			,"sources": [ "http://magic.wizards.com/en/articles/archive/arcana/fate-reforged-promos-2015-01-02" ]
-			,"isGenerated": false
-			,"initialSort": "name"
-			,"packs": [
-				{ "packName":"frf-promos" }
-			]
-		}
-
-	]
+    ]
 }

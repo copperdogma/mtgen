@@ -1,5 +1,5 @@
 {
-"_comment": "from: http://mtgsalvation.gamepedia.com/Khans_of_Tarkir#Prerelease",
+"_comment": "from: http://mtgsalvation.gamepedia.com/Fate_Reforged#Prerelease",
 "_comment": "You choose your clan for the prerelease. Each clan prerelease pack comes with a clan pin and a clan sticker. The prerelease pack further contains 5 regular booster packs, 1 seeded booster pack, 1 premium promo card, 1 activity insert and 1 Spindown life counter. Fate Reforged will feature 40 prerelease cards — one dated and stamped prerelease card random from a pool of eight for each Clan pack. One of which will be the Khan.",
 "_comment": "from: https://plus.google.com/events/cvi340m1q951bg6sphjihdmpg94",
 "_comment": "seeded boosters are the same as KTK: promo is one of 40 cards, 8 cards per clan",
@@ -17,7 +17,7 @@
 		,{
 			"defName": "frf-intro-packs",
 			"query": "from[frf]-from[frf]?promo=true"
-		}
+	}	
 		,{
 			"defName": "frf-foils",
 			"query": "from[frf-main]"
@@ -28,28 +28,46 @@
 		}
 
 		,{
-			"defName": "frf-no-clan",
-			"query": "from[frf-main]?clan=''"
+			"defName": "frf-ktk-main",
+			"query": "from[frf-main]+from[ktk-main]"
+		}
+
+		,{
+			"defName": "frf-dual-land",
+			"query": "from[frf]?type='Land'-from[frf]?rarity='r'-from[frf-promo]"
 		}
 		,{
+			"defName": "ktk-fetch-land",
+			"query": "from[ktk]?type='Land'-from[ktk]?rarity=contains(m|u|c|s)-from[ktk-promo]"
+		}
+		,{
+			"defName": "frf-ktk-no-clan",
+			"query": "from[frf-ktk-main]?clan=''"
+		}
+		,{
+			"defName": "frf-ugins-fate",
+			"query": "from[*]?includedReasonMatchTitle='Ugins Fate Promo'"
+		}
+
+		,{
 			"defName": "frf-abzan-seeded",
-			"query": "from[frf-main]?clan='abzan'+from[frf-no-clan]?cost=contains({W}|{B}|{G})"
+			"query": "from[frf-ktk-main]?clan='abzan'+from[frf-ktk-no-clan]?cost=contains({W}|{B}|{G})-from[frf-ktk-main]?cost=contains({U}|{R})"
 		}
 		,{
 			"defName": "frf-jeskai-seeded",
-			"query": "from[frf-main]?clan='jeskai'+from[frf-no-clan]?cost=contains({U}|{R}|{W})"
+			"query": "from[frf-ktk-main]?clan='jeskai'+from[frf-ktk-no-clan]?cost=contains({U}|{R}|{W})-from[frf-ktk-main]?cost=contains({B}|{G})"
 		}
 		,{
 			"defName": "frf-sultai-seeded",
-			"query": "from[frf-main]?clan='sultai'+from[frf-no-clan]?cost=contains({B}|{G}|{U})"
+			"query": "from[frf-ktk-main]?clan='sultai'+from[frf-ktk-no-clan]?cost=contains({B}|{G}|{U})-from[frf-ktk-main]?cost=contains({W}|{R})"
 		}
 		,{
 			"defName": "frf-mardu-seeded",
-			"query": "from[frf-main]?clan='mardu'+from[frf-no-clan]?cost=contains({R}|{W}|{B})"
+			"query": "from[frf-ktk-main]?clan='mardu'+from[frf-ktk-no-clan]?cost=contains({R}|{W}|{B})-from[frf-ktk-main]?cost=contains({U}|{G})"
 		}
 		,{
 			"defName": "frf-temur-seeded",
-			"query": "from[frf-main]?clan='temur'+from[frf-no-clan]?cost=contains({G}|{U}|{R})"
+			"query": "from[frf-ktk-main]?clan='temur'+from[frf-ktk-no-clan]?cost=contains({G}|{U}|{R})-from[frf-ktk-main]?cost=contains({W}|{B})"
 		}
 
 		,{
@@ -75,8 +93,8 @@
 		"packDesc": "Fate Reforged: Standard Booster",
 		"isGenerated": true,
 		"cards": [
-			{ "querySet": [ { "percent": 50, "query": "from[frf]?type='Basic Land'" }
-							,{ "percent": 50, "query": "from[frf]?type=(Land)" }
+			{ "querySet": [ { "percent": 87.5, "query": "from[frf-dual-land]" }
+							,{ "percent": 12.5, "query": "from[ktk-fetch-land]" }
 							] }
 			,{ "query": "take[9]>from[frf-main]?rarity='c'" }
 			,{ "querySet": [ { "percent": 75, "query": "from[frf-main]?rarity='c'" }
@@ -98,7 +116,8 @@
 		"isGenerated": false,
 		"includeWithUserCards": false,
 		"cards": [
-			{ "query": "take[*]>from[frf-promo]" }
+			{ "query": "take[*]>from[frf-promo]-from[frf-ugins-fate]" }
+			,{ "query": "take[*]>from[frf-ugins-fate]" }
 			]
 		}
 
@@ -109,18 +128,21 @@
 		"includeWithUserCards": false,
 		"cards": [
 			{ "query": "take[*]>from[frf-promo]?includedReason='Prerelease Promo'" }
+			,{ "query": "take[*]>from[frf-ugins-fate]" }
 			]
 		}
 		,{
 		"packName": "frf-ugins-fate-booster",
 		"packDesc": "Fate Reforged: Ugin's Fate Booster",
-	    "sources": [ "http://mtgsalvation.gamepedia.com/Fate_Reforged#Prerelease" ],
+	    "sources": [ "http://mtgsalvation.gamepedia.com/Fate_Reforged#Prerelease", "http://magic.wizards.com/en/articles/archive/feature/fate-reforged-prerelease-primer-2015-01-12" ],
 		"isGenerated": true,
 		"cards": [
-			{ "_query": "take[2]>from... of 40 alternate art cards with a holo foil stamp (mainly from Khans of Tarkir, a few from Fate Reforged, one mythic)" }
-			,{ "query": "take[2]>from[frf-foils]", "setValues": { "foil": true }}
-            ,{ "query": "from[frf]?token=true-from[frf]?promo=true" }
-			,{ "query": "from[frf]?type='Basic Land'" }
+			{ "query": "from[frf]?type='Basic Land'" }
+			,{ "querySet": [ { "percent": 87.5, "query": "from[frf-ugins-fate]?rarity='r'" }
+							,{ "percent": 12.5, "query": "from[frf-ugins-fate]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" } 
+							] }
+			,{ "query": "from[frf-ugins-fate]?rarity=contains(u|c)" }
+			,{ "query": "from[frf]?type='Marketing" }
 			]
 		}		
 		,{
@@ -128,9 +150,10 @@
 		"packDesc": "Fate Reforged: Abzan Seeded Booster",
 		"isGenerated": true,
 		"cards": [
-			{ "query": "from[frf-main]?title=(Anafenza, the Foremost|Abzan Ascendancy|Duneblast|Hardened Scales|Herald of Anafenza|High Sentinels of Arashin|Ivorytusk Fortress|Retribution of the Ancients|Siege Rhino)" }
-			,{ "query": "from[frf]?title='Abzan Banner'" }
-			,{ "query": "take[4]>from[frf-abzan-seeded]?rarity='u'" }
+			{ "query": "from[frf-main]?title=(Warden of the First Tree|Dromoka, the Eternal|Daghatar, the Adamant|Dragonscale General|Sandsteppe Mastodon|Rally the Ancestors)" }
+			,{ "query": "from[frf-ktk-main]?title='Abzan Banner'" }
+			,{ "query": "from[frf-ktk-main]?title='Sandsteppe Citadel'" }
+			,{ "query": "take[3]>from[frf-abzan-seeded]?rarity='u'" }
 			,{ "query": "take[10]>from[frf-abzan-seeded]?rarity='c'" }
 			]
 		}		
@@ -139,8 +162,8 @@
 		"packDesc": "Fate Reforged: Abzan Pack-Ins",
 		"isGenerated": false,
 		"cards": [
-			{ "query": "take[*]>from[frf]?title=(Abzan Activity Card|Abzan Spindown Life Counter)" }
-			,{ "query": "take[*]>from[ktk]?title=(Abzan Clan Info Card|Abzan Clan Button)" }
+			{ "query": "take[*]>from[frf]?title=(Abzan Clan Info Card|Ugin Achievement Card|Abzan Spindown Life Counter)" }
+			,{ "query": "take[*]>from[ktk]?title=(Abzan Clan Button)" }
 			]
 		}
 		
@@ -150,9 +173,10 @@
 		"packDesc": "Fate Reforged: Jeskai Seeded Booster",
 		"isGenerated": true,
 		"cards": [
-			{ "query": "from[frf]?title=contains(Narset, Enlightened Master|Dragon-Style Twins|Flying Crane Technique|Jeskai Ascendancy|Mantis Rider|Master of Pearls|Sage of the Inward Eye|Thousand Winds)" }
-			,{ "query": "from[frf]?title='Jeskai Banner'" }
-			,{ "query": "take[4]>from[frf-jeskai-seeded]?rarity='u'" }
+			{ "query": "from[frf-main]?title=(Soulfire Grand Master|Ojutai, Soul of Winter|Shu Yun, the Silent Tempest|Sage-Eye Avengers|Mastery of the Unseen|Jeskai Infiltrator)" }
+			,{ "query": "from[frf-ktk-main]?title='Jeskai Banner'" }
+			,{ "query": "from[frf-ktk-main]?title='Mystic Monastery'" }
+			,{ "query": "take[3]>from[frf-jeskai-seeded]?rarity='u'" }
 			,{ "query": "take[10]>from[frf-jeskai-seeded]?rarity='c'" }
 			]
 		}		
@@ -161,8 +185,8 @@
 		"packDesc": "Fate Reforged: Jeskai Pack-Ins",
 		"isGenerated": false,
 		"cards": [
-			{ "query": "take[*]>from[frf]?title=(Jeskai Activity Card|Jeskai Spindown Life Counter)" }
-			,{ "query": "take[*]>from[ktk]?title=(Jeskai Clan Info Card|Jeskai Clan Button)" }
+			{ "query": "take[*]>from[frf]?title=(Jeskai Clan Info Card|Ugin Achievement Card|Jeskai Spindown Life Counter)" }
+			,{ "query": "take[*]>from[ktk]?title=(Jeskai Clan Button)" }
 			]
 		}
 
@@ -172,9 +196,10 @@
 		"packDesc": "Fate Reforged: Sultai Seeded Booster",
 		"isGenerated": true,
 		"cards": [
-			{ "query": "from[frf]?title=contains(Sidisi, Brood Tyrant|Dig Through Time|Grim Haruspex|Kheru Lich Lord|Kheru Spellsnatcher|Meandering Towershell|Necropolis Fiend|Rakshasa Deathdealer|Rakshasa Vizier|Sultai Ascendancy|Villainous Wealth)" }
-			,{ "query": "from[frf]?title='Sultai Banner'" }
-			,{ "query": "take[4]>from[frf-sultai-seeded]?rarity='u'" }
+			{ "query": "from[frf-main]?title=(Torrent Elemental|Silumgar, the Drifting Death|Tasigur, the Golden Fang|Archfiend of Depravity|Soulflayer|Wildcall|Soulflayer)" }
+			,{ "query": "from[frf-ktk-main]?title='Sultai Banner'" }
+			,{ "query": "from[frf-ktk-main]?title='Opulent Palace'" }
+			,{ "query": "take[3]>from[frf-sultai-seeded]?rarity='u'" }
 			,{ "query": "take[10]>from[frf-sultai-seeded]?rarity='c'" }
 			]
 		}		
@@ -183,8 +208,8 @@
 		"packDesc": "Fate Reforged: Sultai Pack-Ins",
 		"isGenerated": false,
 		"cards": [
-			{ "query": "take[*]>from[frf]?title=(Sultai Activity Card|Sultai Spindown Life Counter)" }
-			,{ "query": "take[*]>from[ktk]?title=(Sultai Clan Info Card|Sultai Clan Button)" }
+			{ "query": "take[*]>from[frf]?title=(Sultai Clan Info Card|Ugin Achievement Card|Sultai Spindown Life Counter)" }
+			,{ "query": "take[*]>from[ktk]?title=(Sultai Clan Button)" }
 			]
 		}
 
@@ -194,9 +219,10 @@
 		"packDesc": "Fate Reforged: Mardu Seeded Booster",
 		"isGenerated": true,
 		"cards": [
-			{ "query": "from[frf]?title=contains(Zurgo Helmsmasher|Ankle Shanker|Bloodsoaked Champion|Butcher of the Horde|Crackling Doom|Howl of the Horde|Jeering Instigator|Mardu Ascendancy)" }
-			,{ "query": "from[frf]?title='Mardu Banner'" }
-			,{ "query": "take[4]>from[frf-mardu-seeded]?rarity='u'" }
+			{ "query": "from[frf-main]?title=(Brutal Hordechief|Kolaghan, the Storm's Fury|Alesha, Who Smiles at Death|Flamerush Rider|Mardu Strike Leader|Arcbond)" }
+			,{ "query": "from[frf-ktk-main]?title='Mardu Banner'" }
+			,{ "query": "from[frf-ktk-main]?title='Nomad Outpost'" }
+			,{ "query": "take[3]>from[frf-mardu-seeded]?rarity='u'" }
 			,{ "query": "take[10]>from[frf-mardu-seeded]?rarity='c'" }
 			]
 		}		
@@ -205,8 +231,8 @@
 		"packDesc": "Fate Reforged: Mardu Pack-Ins",
 		"isGenerated": false,
 		"cards": [
-			{ "query": "take[*]>from[frf]?title=(Mardu Activity Card|Mardu Spindown Life Counter)" }
-			,{ "query": "take[*]>from[ktk]?title=(Mardu Clan Info Card|Mardu Clan Button)" }
+			{ "query": "take[*]>from[frf]?title=(Mardu Clan Info Card|Ugin Achievement Card|Mardu Spindown Life Counter)" }
+			,{ "query": "take[*]>from[ktk]?title=(Mardu Clan Button)" }
 			]
 		}
 
@@ -216,9 +242,10 @@
 		"packDesc": "Fate Reforged: Temur Seeded Booster",
 		"isGenerated": true,
 		"cards": [
-			{ "query": "from[frf]?title=contains(Surrak Dragonclaw|Avalanche Tusker|Crater's Claws|Icy Blast|Rattleclaw Mystic|Savage Knuckleblade|Temur Ascendancy|Trap Essence)" }
-			,{ "query": "from[frf]?title='Temur Banner'" }
-			,{ "query": "take[4]>from[frf-temur-seeded]?rarity='u'" }
+			{ "query": "from[frf-main]?title=(Shaman of the Great Hunt|Atarka, World Render|Yasova Dragonclaw|Flamewake Phoenix|Supplant Form|Shamanic Revelation)" }
+			,{ "query": "from[frf-ktk-main]?title='Temur Banner'" }
+			,{ "query": "from[frf-ktk-main]?title='Frontier Bivouac'" }
+			,{ "query": "take[3]>from[frf-temur-seeded]?rarity='u'" }
 			,{ "query": "take[10]>from[frf-temur-seeded]?rarity='c'" }
 			]
 		}		
@@ -227,8 +254,8 @@
 		"packDesc": "Fate Reforged: Temur Pack-Ins",
 		"isGenerated": false,
 		"cards": [
-			{ "query": "take[*]>from[frf]?title=(Temur Activity Card|Temur Spindown Life Counter)" }
-			,{ "query": "take[*]>from[ktk]?title=(Temur Clan Info Card|Temur Clan Button)" }
+			{ "query": "take[*]>from[frf]?title=(Temur Clan Info Card|Ugin Achievement Card|Temur Spindown Life Counter)" }
+			,{ "query": "take[*]>from[ktk]?title=(Temur Clan Button)" }
 			]
 		}
 		

@@ -12,6 +12,86 @@
   "num": "001"
  },
  {
+  "title": "Abzan Advantage",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_yptuko26xj.png",
+  "set": "frf",
+  "cost": "{1}{W}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "w",
+  "num": "002",
+  "clan": "Abzan",
+  "fixedViaException": true
+ },
+ {
+  "title": "Abzan Runemark",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_0oz5jp09sg.png",
+  "set": "frf",
+  "cost": "{2}{W}",
+  "rarity": "c",
+  "type": "Enchantment",
+  "subtype": "Aura",
+  "colour": "w",
+  "num": "003",
+  "clan": "Abzan",
+  "fixedViaException": true
+ },
+ {
+  "title": "Abzan Skycaptain",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_cgh8joxscl.png",
+  "set": "frf",
+  "cost": "{3}{W}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Bird Soldier",
+  "power": "2",
+  "toughness": "2",
+  "colour": "w",
+  "num": "004",
+  "clan": "Abzan",
+  "fixedViaException": true
+ },
+ {
+  "title": "Arashin Cleric",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_t0d5gzknwk.png",
+  "set": "frf",
+  "cost": "{1}{W}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Human Cleric",
+  "power": "1",
+  "toughness": "3",
+  "colour": "w",
+  "num": "005",
+  "clan": "Abzan",
+  "fixedViaException": true
+ },
+ {
+  "title": "Aven Skirmisher",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_5p7gjkvreb.png",
+  "set": "frf",
+  "cost": "{W}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Bird Warrior",
+  "power": "1",
+  "toughness": "1",
+  "colour": "w",
+  "num": "006",
+  "clan": "Jeskai",
+  "fixedViaException": true
+ },
+ {
+  "title": "Channel Harm",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_2o2sacz6mk.png",
+  "set": "frf",
+  "cost": "{5}{W}",
+  "rarity": "u",
+  "type": "Instant",
+  "colour": "w",
+  "num": "007"
+ },
+ {
   "title": "Citadel Siege",
   "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_29gulmuzay.png",
   "set": "frf",
@@ -37,6 +117,21 @@
   "fixedViaException": true
  },
  {
+  "title": "Dragon Bell Monk",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_crssct2ur6.png",
+  "set": "frf",
+  "cost": "{2}{W}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Human Monk",
+  "power": "2",
+  "toughness": "2",
+  "colour": "w",
+  "num": "010",
+  "clan": "Jeskai",
+  "fixedViaException": true
+ },
+ {
   "title": "Dragonscale General",
   "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_fvh9kgsyya.png",
   "set": "frf",
@@ -50,6 +145,34 @@
   "num": "011",
   "clan": "Abzan",
   "fixedViaException": true
+ },
+ {
+  "title": "Elite Scaleguard",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_s094nmijb6.png",
+  "set": "frf",
+  "cost": "{4}{W}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Human Solider",
+  "power": "2",
+  "toughness": "3",
+  "colour": "w",
+  "num": "012",
+  "clan": "Abzan",
+  "fixedViaException": true
+ },
+ {
+  "title": "Great-Horn Krushok",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_kwtqypi82e.png",
+  "set": "frf",
+  "cost": "{4}{W}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Beast",
+  "power": "3",
+  "toughness": "5",
+  "colour": "w",
+  "num": "013"
  },
  {
   "title": "Honor’s Reward",
@@ -89,8 +212,23 @@
   "num": "016"
  },
  {
+  "title": "Lotus-Eye Mystics",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_5gad5j8pn8.png",
+  "set": "frf",
+  "cost": "{3}{W}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Human Monk",
+  "power": "3",
+  "toughness": "2",
+  "colour": "w",
+  "num": "017",
+  "clan": "Jeskai",
+  "fixedViaException": true
+ },
+ {
   "title": "Mardu Woe-Reaper",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/FRF/Mardu%20Woe-Reaper.jpg",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_df1x7z82mx.png",
   "set": "frf",
   "cost": "{W}",
   "rarity": "u",
@@ -129,18 +267,63 @@
   "fixedViaException": true
  },
  {
-  "title": "Raise the Ancestors",
+  "title": "Pressure Point",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_itjwvnthje.png",
+  "set": "frf",
+  "cost": "{1}{W}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "w",
+  "num": "021"
+ },
+ {
+  "title": "Rally the Ancestors",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_dn591intv3.png",
   "set": "frf",
   "cost": "{X}{W}{W}",
   "rarity": "r",
   "type": "Instant",
   "colour": "w",
   "num": "022",
-  "src": "holder.js/265x370/#e9e5da:#969696/text:Raise%20the%20Ancestors"
+  "fixedViaException": true
+ },
+ {
+  "title": "Sage’s Reverie",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_vx0rfak1ry.png",
+  "set": "frf",
+  "cost": "{3}{W}",
+  "rarity": "u",
+  "type": "Enchantment",
+  "subtype": "Aura",
+  "colour": "w",
+  "num": "023"
+ },
+ {
+  "title": "Sandblast",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_8wyht68btj.png",
+  "set": "frf",
+  "cost": "{2}{W}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "w",
+  "num": "024"
+ },
+ {
+  "title": "Sandsteppe Outcast",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_ebf2g2jbkm.png",
+  "set": "frf",
+  "cost": "{2}{W}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Human Warrion",
+  "power": "2",
+  "toughness": "1",
+  "colour": "w",
+  "num": "025"
  },
  {
   "title": "Soul Summons",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/FRF/Soul%20Summons.png",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_riypfjt7ww.png",
   "set": "frf",
   "cost": "{1}{W}",
   "rarity": "c",
@@ -202,8 +385,51 @@
   "num": "010"
  },
  {
+  "title": "Aven Surveyor",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_lxstywex7p.png",
+  "set": "frf",
+  "cost": "{3}{U}{U}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Bird Scout",
+  "power": "2",
+  "toughness": "2",
+  "colour": "u",
+  "num": "031"
+ },
+ {
+  "title": "Cloudform",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_686grbg2qw.png",
+  "set": "frf",
+  "cost": "{3}",
+  "rarity": "u",
+  "type": "Enchantment",
+  "colour": "u",
+  "num": "032"
+ },
+ {
+  "title": "Enhanced Awareness",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_ukjsl3xwfs.png",
+  "set": "frf",
+  "cost": "{4}{U}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "u",
+  "num": "033"
+ },
+ {
+  "title": "Fascination",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_xywqcf4meb.png",
+  "set": "frf",
+  "cost": "{X}{U}{U}",
+  "rarity": "u",
+  "type": "Sorcery",
+  "colour": "u",
+  "num": "034"
+ },
+ {
   "title": "Frost Walker",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/FRF/Frost%20Walker.jpg",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_opdyeopd2t.png",
   "set": "frf",
   "cost": "{1}{U}",
   "rarity": "u",
@@ -222,11 +448,25 @@
   "set": "frf",
   "cost": "{2}{U}",
   "rarity": "r",
-  "type": "Cynthia Sheppard",
+  "type": "Creature",
   "power": "2",
   "toughness": "3",
   "colour": "u",
   "num": "036",
+  "clan": "Jeskai",
+  "subtype": "Human Monk",
+  "fixedViaException": true
+ },
+ {
+  "title": "Jeskai Runemark",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_sfpzxsl62w.png",
+  "set": "frf",
+  "cost": "{2}{U}",
+  "rarity": "c",
+  "type": "Enchantment",
+  "subtype": "Aura",
+  "colour": "u",
+  "num": "037",
   "clan": "Jeskai",
   "fixedViaException": true
  },
@@ -242,6 +482,21 @@
   "toughness": "1",
   "colour": "u",
   "num": "038",
+  "clan": "Jeskai",
+  "fixedViaException": true
+ },
+ {
+  "title": "Lotus Path Djinn",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_pvk71n6u1h.png",
+  "set": "frf",
+  "cost": "{3}{U}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Djinn Monk",
+  "power": "2",
+  "toughness": "3",
+  "colour": "u",
+  "num": "039",
   "clan": "Jeskai",
   "fixedViaException": true
  },
@@ -274,6 +529,21 @@
   "num": "041"
  },
  {
+  "title": "Mistfire Adept",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_hvpk6gyh8a.png",
+  "set": "frf",
+  "cost": "{3}{U}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Human Monk",
+  "power": "3",
+  "toughness": "3",
+  "colour": "u",
+  "num": "042",
+  "clan": "Jeskai",
+  "fixedViaException": true
+ },
+ {
   "title": "Monastery Siege",
   "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_uaeht1tvvh.png",
   "set": "frf",
@@ -294,6 +564,16 @@
   "num": "044"
  },
  {
+  "title": "Rakshasa’s Disdain",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_962rl78a27.png",
+  "set": "frf",
+  "cost": "{2}{U}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "u",
+  "num": "045"
+ },
+ {
   "title": "Reality Shift",
   "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_7vh7q93zsv.png",
   "set": "frf",
@@ -301,11 +581,21 @@
   "rarity": "u",
   "type": "Instant",
   "colour": "u",
-  "num": "00?"
+  "num": "046"
+ },
+ {
+  "title": "Refocus",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_rn346464ze.png",
+  "set": "frf",
+  "cost": "{1}{U}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "u",
+  "num": "047"
  },
  {
   "title": "Renowned Weaponsmith",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/FRF/Renowned%20Weaponsmith.png",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_6eo72t2qop.png",
   "set": "frf",
   "cost": "{1}{U}",
   "rarity": "u",
@@ -315,6 +605,18 @@
   "toughness": "3",
   "colour": "u",
   "num": "048"
+ },
+ {
+  "title": "Rite of Undoing",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_go6pcc6h7t.png",
+  "set": "frf",
+  "cost": "{4}{U}",
+  "rarity": "u",
+  "type": "Instant",
+  "colour": "u",
+  "num": "049",
+  "clan": "Sultai",
+  "fixedViaException": true
  },
  {
   "title": "Sage-Eye Avengers",
@@ -332,6 +634,16 @@
   "fixedViaException": true
  },
  {
+  "title": "Shifting Loyalties",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_4mmteg78b4.png",
+  "set": "frf",
+  "cost": "{5}{U}",
+  "rarity": "u",
+  "type": "Sorcery",
+  "colour": "u",
+  "num": "051"
+ },
+ {
   "title": "Shu Yun, the Silent Tempest",
   "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_v081iddx0t.png",
   "set": "frf",
@@ -344,6 +656,21 @@
   "colour": "u",
   "num": "052",
   "clan": "Jeskai",
+  "fixedViaException": true
+ },
+ {
+  "title": "Sultai Skullkeeper",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_5bay7r9yix.png",
+  "set": "frf",
+  "cost": "{1}{U}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Naga Shaman",
+  "power": "2",
+  "toughness": "1",
+  "colour": "u",
+  "num": "053",
+  "clan": "Sultai",
   "fixedViaException": true
  },
  {
@@ -384,14 +711,62 @@
   "fixedViaException": true
  },
  {
+  "title": "Whisk Away",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_442nxz4s7o.png",
+  "set": "frf",
+  "cost": "{4}{U}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "u",
+  "num": "057"
+ },
+ {
+  "title": "Will of the Naga",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_z1n6xqyhn7.png",
+  "set": "frf",
+  "cost": "{4}{U}{U}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "u",
+  "num": "058",
+  "clan": "Sultai",
+  "fixedViaException": true
+ },
+ {
   "title": "Write into Being",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/FRF/Write%20into%20Being.JPG",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_fwobok1rru.png",
   "set": "frf",
   "cost": "{2}{U}",
   "rarity": "c",
   "type": "Sorcery",
   "colour": "u",
-  "num": "00?"
+  "num": "059"
+ },
+ {
+  "title": "Alesha’s Vanguard",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_bxct12ab4s.png",
+  "set": "frf",
+  "cost": "{3}{B}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Orc Warrior",
+  "power": "3",
+  "toughness": "3",
+  "colour": "b",
+  "num": "060",
+  "clan": "Mardu",
+  "fixedViaException": true
+ },
+ {
+  "title": "Ancestral Vengeance",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_tcieq9nbxd.png",
+  "set": "frf",
+  "cost": "{B}{B}",
+  "rarity": "c",
+  "type": "Enchantment",
+  "subtype": "Aura",
+  "colour": "b",
+  "num": "061"
  },
  {
   "title": "Archfiend of Depravity",
@@ -449,14 +824,64 @@
   "num": "065"
  },
  {
+  "title": "Dark Deal",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_8k9kwipkxp.png",
+  "set": "frf",
+  "cost": "{2}{B}",
+  "rarity": "u",
+  "type": "Sorcery",
+  "colour": "b",
+  "num": "066"
+ },
+ {
+  "title": "Diplomacy of the Wastes",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_n7yvrl3lue.png",
+  "set": "frf",
+  "cost": "{2}{B}",
+  "rarity": "u",
+  "type": "Sorcery",
+  "colour": "b",
+  "num": "067"
+ },
+ {
+  "title": "Douse in Gloom",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_6i5y7uwgx7.png",
+  "set": "frf",
+  "cost": "{2}{B}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "b",
+  "num": "068"
+ },
+ {
+  "title": "Fearsome Awakening",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_z9z7qqta47.png",
+  "set": "frf",
+  "cost": "{4}{B}",
+  "rarity": "u",
+  "type": "Sorcery",
+  "colour": "b",
+  "num": "069"
+ },
+ {
   "title": "Ghastly Conscription",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/FRF/GhastlyConscription.png",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_r00cr9lptm.png",
   "set": "frf",
   "cost": "{5}{B}{B}",
   "rarity": "m",
   "type": "Sorcery",
   "colour": "b",
   "num": "070"
+ },
+ {
+  "title": "Grave Strength",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_0a6o8b1gxw.png",
+  "set": "frf",
+  "cost": "{1}{B}",
+  "rarity": "u",
+  "type": "Sorcery",
+  "colour": "b",
+  "num": "071"
  },
  {
   "title": "Gurmag Angler",
@@ -517,6 +942,21 @@
   "fixedViaException": true
  },
  {
+  "title": "Merciless Executioner",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_j7umi0exz0.png",
+  "set": "frf",
+  "cost": "{2}{B}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Orc Warrior",
+  "power": "3",
+  "toughness": "1",
+  "colour": "b",
+  "num": "076",
+  "clan": "Abzan",
+  "fixedViaException": true
+ },
+ {
   "title": "Noxious Dragon",
   "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_pxt7zgyuwf.png",
   "set": "frf",
@@ -530,6 +970,21 @@
   "num": "077"
  },
  {
+  "title": "Orc Sureshot",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_h52i0rm1ba.png",
+  "set": "frf",
+  "cost": "{3}{B}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Orc Archer",
+  "power": "4",
+  "toughness": "2",
+  "colour": "b",
+  "num": "078",
+  "clan": "Mardu",
+  "fixedViaException": true
+ },
+ {
   "title": "Palace Siege",
   "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_bpd2s95l5m.png",
   "set": "frf",
@@ -538,6 +993,61 @@
   "type": "Enchantment",
   "colour": "b",
   "num": "079"
+ },
+ {
+  "title": "Qarsi High Priest",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_vlvlzqafja.png",
+  "set": "frf",
+  "cost": "{B}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Human Cleric",
+  "power": "0",
+  "toughness": "2",
+  "colour": "b",
+  "num": "080",
+  "clan": "Sultai",
+  "fixedViaException": true
+ },
+ {
+  "title": "Reach of Shadows",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_rw3lc8eiv0.png",
+  "set": "frf",
+  "cost": "{4}{B}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "b",
+  "num": "081"
+ },
+ {
+  "title": "Sibsig Host",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_mcr27pi9k5.png",
+  "set": "frf",
+  "cost": "{4}{B}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Zombie",
+  "power": "2",
+  "toughness": "6",
+  "colour": "b",
+  "num": "082",
+  "fixedViaException": true,
+  "clan": "Sultai"
+ },
+ {
+  "title": "Sibsig Muckdraggers",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_xmdktedy1f.png",
+  "set": "frf",
+  "cost": "{8}{B}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Zombie",
+  "power": "3",
+  "toughness": "6",
+  "colour": "b",
+  "num": "083",
+  "clan": "Sultai",
+  "fixedViaException": true
  },
  {
   "title": "Soulflayer",
@@ -556,7 +1066,7 @@
  },
  {
   "title": "Sultai Emissary",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/FRF/Sultai%20Emissary.JPG",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_n6fn39cm9c.png",
   "set": "frf",
   "cost": "{1}{B}",
   "rarity": "c",
@@ -565,7 +1075,20 @@
   "power": "1",
   "toughness": "1",
   "colour": "b",
-  "num": "00?",
+  "num": "085",
+  "clan": "Sultai",
+  "fixedViaException": true
+ },
+ {
+  "title": "Sultai Runemark",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_xichvuqlic.png",
+  "set": "frf",
+  "cost": "{2}{B}",
+  "rarity": "c",
+  "type": "Enchantment",
+  "subtype": "Aura",
+  "colour": "b",
+  "num": "086",
   "clan": "Sultai",
   "fixedViaException": true
  },
@@ -581,6 +1104,33 @@
   "toughness": "5",
   "colour": "b",
   "num": "087",
+  "clan": "Sultai",
+  "fixedViaException": true
+ },
+ {
+  "title": "Tasigur’s Cruelty",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_6xssuor7cq.png",
+  "set": "frf",
+  "cost": "{5}{B}",
+  "rarity": "c",
+  "type": "Sorcery",
+  "colour": "b",
+  "num": "088",
+  "clan": "Sultai",
+  "fixedViaException": true
+ },
+ {
+  "title": "Typhoid Rats",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_fofrr8fmh4.png",
+  "set": "frf",
+  "cost": "{B}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Rat",
+  "power": "1",
+  "toughness": "1",
+  "colour": "b",
+  "num": "089",
   "clan": "Sultai",
   "fixedViaException": true
  },
@@ -610,14 +1160,82 @@
   "num": "091"
  },
  {
+  "title": "Bathe in Dragonfire",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_co28potweb.png",
+  "set": "frf",
+  "cost": "{2}{R}",
+  "rarity": "c",
+  "type": "Sorcery",
+  "colour": "r",
+  "num": "092"
+ },
+ {
+  "title": "Bloodfire Enforcers",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_bmb5mjgpav.png",
+  "set": "frf",
+  "cost": "{3}{R}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Human Monk",
+  "power": "5",
+  "toughness": "2",
+  "colour": "r",
+  "num": "093",
+  "clan": "Jeskai",
+  "fixedViaException": true
+ },
+ {
+  "title": "Break Through the Line",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_y45fihap75.png",
+  "set": "frf",
+  "cost": "{1}{R}",
+  "rarity": "u",
+  "type": "Enchantment",
+  "colour": "r",
+  "num": "094"
+ },
+ {
+  "title": "Collateral Damage",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_pjnosjnisj.png",
+  "set": "frf",
+  "cost": "{R}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "r",
+  "num": "095"
+ },
+ {
+  "title": "Defiant Ogre",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_sh3p8myiyb.png",
+  "set": "frf",
+  "cost": "{5}{R}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Ogre Warrior",
+  "power": "3",
+  "toughness": "5",
+  "colour": "r",
+  "num": "096"
+ },
+ {
+  "title": "Dragonrage",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_z7u664km6n.png",
+  "set": "frf",
+  "cost": "{2}{R}",
+  "rarity": "u",
+  "type": "Instant",
+  "colour": "r",
+  "num": "097"
+ },
+ {
   "title": "Fierce Invocation",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/FRF/Fierce%20Invocation.JPG",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_z6af0p4mjr.png",
   "set": "frf",
   "cost": "{4}{R}",
   "rarity": "c",
   "type": "Sorcery",
   "colour": "r",
-  "num": "00?"
+  "num": "098"
  },
  {
   "title": "Flamerush Rider",
@@ -650,6 +1268,16 @@
   "fixedViaException": true
  },
  {
+  "title": "Friendly Fire",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_ubozg6rq5t.png",
+  "set": "frf",
+  "cost": "{3}{R}",
+  "rarity": "u",
+  "type": "Instant",
+  "colour": "r",
+  "num": "101"
+ },
+ {
   "title": "Goblin Heelcutter",
   "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_ohrremmpbu.png",
   "set": "frf",
@@ -663,6 +1291,19 @@
   "num": "102",
   "clan": "Mardu",
   "fixedViaException": true
+ },
+ {
+  "title": "Gore Swine",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_2k0zr2c1fu.png",
+  "set": "frf",
+  "cost": "{2}{R}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Board",
+  "power": "4",
+  "toughness": "1",
+  "colour": "r",
+  "num": "103"
  },
  {
   "title": "Humble Defector",
@@ -708,8 +1349,21 @@
   "num": "106"
  },
  {
+  "title": "Mardu Runemark",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_dvha689zk0.png",
+  "set": "frf",
+  "cost": "{2}{R}",
+  "rarity": "c",
+  "type": "Enchantment",
+  "subtype": "Aura",
+  "colour": "r",
+  "num": "107",
+  "clan": "Mardu",
+  "fixedViaException": true
+ },
+ {
   "title": "Mardu Scout",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/FRF/MarduScout.png",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_f1s2v8hs90.png",
   "set": "frf",
   "cost": "{R}{R}",
   "rarity": "c",
@@ -723,6 +1377,16 @@
   "fixedViaException": true
  },
  {
+  "title": "Mob Rule",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_k2mvm1gpd2.png",
+  "set": "frf",
+  "cost": "{4}{R}{R}",
+  "rarity": "r",
+  "type": "Sorcery",
+  "colour": "r",
+  "num": "109"
+ },
+ {
   "title": "Outpost Siege",
   "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_7etx813t13.png",
   "set": "frf",
@@ -731,6 +1395,16 @@
   "type": "Enchantment",
   "colour": "r",
   "num": "110"
+ },
+ {
+  "title": "Pyrotechnics",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_uae1qbhoz5.png",
+  "set": "frf",
+  "cost": "{4}{R}",
+  "rarity": "u",
+  "type": "Sorcery",
+  "colour": "r",
+  "num": "111"
  },
  {
   "title": "Rageform",
@@ -771,6 +1445,48 @@
   "num": "114"
  },
  {
+  "title": "Smoldering Efreet",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_g4gmj0ad1d.png",
+  "set": "frf",
+  "cost": "{1}{R}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Efreet Monk",
+  "power": "2",
+  "toughness": "2",
+  "colour": "r",
+  "num": "115",
+  "clan": "Jeskai",
+  "fixedViaException": true
+ },
+ {
+  "title": "Temur Battle Rage",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_b9bm6ykb63.png",
+  "set": "frf",
+  "cost": "{1}{R}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "r",
+  "num": "116",
+  "clan": "Temur",
+  "fixedViaException": true
+ },
+ {
+  "title": "Vaultbreaker",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_vttr11aiqq.png",
+  "set": "frf",
+  "cost": "{3}{R}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Orc Rogue",
+  "power": "4",
+  "toughness": "2",
+  "colour": "r",
+  "num": "117",
+  "clan": "Mardu",
+  "fixedViaException": true
+ },
+ {
   "title": "Wild Slash",
   "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_gde6d71s3y.png",
   "set": "frf",
@@ -780,6 +1496,21 @@
   "colour": "r",
   "num": "118",
   "clan": "Temur",
+  "fixedViaException": true
+ },
+ {
+  "title": "Abzan Beastmaster",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_k0iemph0a6.png",
+  "set": "frf",
+  "cost": "{2}{G}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Hound Shaman",
+  "power": "2",
+  "toughness": "1",
+  "colour": "g",
+  "num": "119",
+  "clan": "Abzan",
   "fixedViaException": true
  },
  {
@@ -798,6 +1529,19 @@
   "fixedViaException": true
  },
  {
+  "title": "Ainok Guide",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_6xvpyuvl7l.png",
+  "set": "frf",
+  "cost": "{1}{G}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Hound Scout",
+  "power": "1",
+  "toughness": "1",
+  "colour": "g",
+  "num": "121"
+ },
+ {
   "title": "Ambush Krotiq",
   "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_w8pqbpq5jj.png",
   "set": "frf",
@@ -814,7 +1558,7 @@
  },
  {
   "title": "Arashin War Beast",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/FRF/Arashin%20War%20Beast.JPG",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_9gjj83vdz8.png",
   "set": "frf",
   "cost": "{5}{G}{G}",
   "rarity": "u",
@@ -824,6 +1568,48 @@
   "toughness": "6",
   "colour": "g",
   "num": "123",
+  "clan": "Abzan",
+  "fixedViaException": true
+ },
+ {
+  "title": "Archers of Qarsi",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_6auf24f5rh.png",
+  "set": "frf",
+  "cost": "{3}{G}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Naga Archer",
+  "power": "5",
+  "toughness": "2",
+  "colour": "g",
+  "num": "124",
+  "clan": "Sultai",
+  "fixedViaException": true
+ },
+ {
+  "title": "Battlefront Krushok",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_fiu77hjf1z.png",
+  "set": "frf",
+  "cost": "{4}{G}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Beast",
+  "power": "3",
+  "toughness": "4",
+  "colour": "g",
+  "num": "125",
+  "clan": "Abzan",
+  "fixedViaException": true
+ },
+ {
+  "title": "Cached Defenses",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_ghlufsyftq.png",
+  "set": "frf",
+  "cost": "{2}{G}",
+  "rarity": "u",
+  "type": "Sorcery",
+  "colour": "g",
+  "num": "126",
   "clan": "Abzan",
   "fixedViaException": true
  },
@@ -841,14 +1627,27 @@
   "num": "127"
  },
  {
+  "title": "Feral Krushok",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_5a15fdg72l.png",
+  "set": "frf",
+  "cost": "{4}{G}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Beast",
+  "power": "5",
+  "toughness": "4",
+  "colour": "g",
+  "num": "128"
+ },
+ {
   "title": "Formless Nurturing",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/FRF/Formless%20Nurturing.JPG",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_zbxsst2e97.png",
   "set": "frf",
   "cost": "{3}{G}",
   "rarity": "c",
   "type": "Sorcery",
   "colour": "g",
-  "num": "00?"
+  "num": "129"
  },
  {
   "title": "Frontier Mastodon",
@@ -887,6 +1686,49 @@
   "num": "132"
  },
  {
+  "title": "Hunt the Weak",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_jl35u6zhar.png",
+  "set": "frf",
+  "cost": "{3}{G}",
+  "rarity": "c",
+  "type": "Sorcery",
+  "colour": "g",
+  "num": "133"
+ },
+ {
+  "title": "Map the Wastes",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_x93u1nij3l.png",
+  "set": "frf",
+  "cost": "{2}{G}",
+  "rarity": "c",
+  "type": "Sorcery",
+  "colour": "g",
+  "num": "134",
+  "fixedViaException": true,
+  "clan": "Abzan"
+ },
+ {
+  "title": "Return to the Earth",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_sb5mprjlrc.png",
+  "set": "frf",
+  "cost": "{3}{G}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "g",
+  "num": "135"
+ },
+ {
+  "title": "Ruthless Instincts",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_iiafr2edlb.png",
+  "set": "frf",
+  "cost": "{2}{G}",
+  "rarity": "u",
+  "type": "Instant",
+  "colour": "g",
+  "num": "136",
+  "fixedViaException": true
+ },
+ {
   "title": "Sandsteppe Mastodon",
   "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_4ms5v8e276.png",
   "set": "frf",
@@ -910,6 +1752,29 @@
   "type": "Sorcery",
   "colour": "g",
   "num": "138",
+  "clan": "Temur",
+  "fixedViaException": true
+ },
+ {
+  "title": "Sudden Reclamation",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_1hsrs9iuj7.png",
+  "set": "frf",
+  "cost": "{3}{G}",
+  "rarity": "u",
+  "type": "Instant",
+  "colour": "g",
+  "num": "139"
+ },
+ {
+  "title": "Temur Runemark",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_3pxs9ir5z6.png",
+  "set": "frf",
+  "cost": "{2}{G}",
+  "rarity": "c",
+  "type": "Enchantment",
+  "subtype": "Aura",
+  "colour": "g",
+  "num": "140",
   "clan": "Temur",
   "fixedViaException": true
  },
@@ -978,15 +1843,15 @@
   "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_bjph4xy49v.png",
   "set": "frf",
   "cost": "{3}{G}{G}",
-  "rarity": "r",
+  "rarity": "m",
   "type": "Creature",
   "subtype": "Elemental",
   "power": "4",
   "toughness": "4",
   "colour": "g",
   "num": "145",
-  "clan": "Temur",
-  "fixedViaException": true
+  "fixedViaException": true,
+  "clan": "Temur"
  },
  {
   "title": "Wildcall",
@@ -997,6 +1862,18 @@
   "type": "Sorcery",
   "colour": "g",
   "num": "146"
+ },
+ {
+  "title": "Winds of Qal Sisma",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_5rwpeac6uj.png",
+  "set": "frf",
+  "cost": "{1}{G}",
+  "rarity": "u",
+  "type": "Instant",
+  "colour": "g",
+  "num": "147",
+  "clan": "Temur",
+  "fixedViaException": true
  },
  {
   "title": "Yasova Dragonclaw",
@@ -1129,8 +2006,18 @@
   "num": "158"
  },
  {
-  "title": "Hero's Blade",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/FRF/HerosBlade.jpg",
+  "title": "Goblin Boom Keg",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_lfc000yy8m.png",
+  "set": "frf",
+  "cost": "{4}",
+  "rarity": "u",
+  "type": "Artifact",
+  "colour": "a",
+  "num": "159"
+ },
+ {
+  "title": "Hero’s Blade",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_zeokqmabu2.png",
   "set": "frf",
   "cost": "{2}",
   "rarity": "u",
@@ -1138,6 +2025,32 @@
   "subtype": "Equipment",
   "colour": "a",
   "num": "160"
+ },
+ {
+  "title": "Hewed Stone Retainers",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_dbn0udxogm.png",
+  "set": "frf",
+  "cost": "{3}",
+  "rarity": "u",
+  "type": "Artifact Creature",
+  "subtype": "Golem",
+  "power": "4",
+  "toughness": "4",
+  "colour": "a",
+  "num": "161"
+ },
+ {
+  "title": "Pilgrim of the Fires",
+  "src": "http://media.wizards.com/2014/ujehvsbfrf153/en_ib2nornohe.png",
+  "set": "frf",
+  "cost": "{7}",
+  "rarity": "u",
+  "type": "Artifact Creature",
+  "subtype": "Golem",
+  "power": "6",
+  "toughness": "4",
+  "colour": "a",
+  "num": "162"
  },
  {
   "title": "Scroll of the Masters",
