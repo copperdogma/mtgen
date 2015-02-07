@@ -1,0 +1,28 @@
+﻿@using mtgen.Models;
+@{
+    var set = new mtgen.Models.Set()
+    {
+        Code = "mmq",
+        Name = "Mercadian Masques",
+        CreatedDate = new DateTime(2015, 2, 4),
+        CardCount = 350,
+        StartProductName = "mmq-boosters"
+    };
+
+    //set.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2014,9,14),
+    //        HtmlString = "All cards now included."
+    //    }
+    //};
+
+    ViewBag.Set = set;
+
+    /* Defaults:
+        SetFile = "~/sets.json";
+        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+        PackFiles = new List<string>() { "packs.json" };
+        ProductFile = "products.json";
+     */
+}

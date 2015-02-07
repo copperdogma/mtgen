@@ -1,0 +1,46 @@
+{
+    "_comment": "from: http://mtgsalvation.gamepedia.com/Scourge",
+
+    "defs": [
+        {
+            "defName": "scg",
+            "query": "from[*]?set='scg'"
+        },
+        {
+            "defName": "scg-main",
+            "query": "from[scg]-from[scg]?type=(Marketing|Basic Land)-from[scg]?token=true-from[scg]?promo=true"
+        },
+        {
+            "defName": "scg-foils",
+            "query": "from[*]?set='scg'"
+        }
+
+    ],
+    "packs": [
+        {
+            "packName": "scg-all-cards",
+            "packDesc": "Scourge: All Cards",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[scg]" }
+            ]
+        },
+        {
+            "packName": "scg-standard",
+            "packDesc": "Scourge: Standard Booster",
+            "isGenerated": true,
+            "cards": [
+                { "query": "from[scg-main]?rarity='r'" },
+                { "query": "take[3]>from[scg-main]?rarity='u'" },
+                { "query": "take[10]>from[scg-main]?rarity='c'" },
+                {
+                    "querySet": [
+                        { "percent": 75, "query": "from[scg-main]?rarity='c'" },
+                        { "percent": 25, "query": "from[scg-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+                    ]
+                }
+            ]
+        }
+
+    ]
+}

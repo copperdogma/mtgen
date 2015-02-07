@@ -1,0 +1,41 @@
+{
+    "_comment": "from: http://en.wikipedia.org/wiki/Urza_block",
+
+    "defs": [
+        {
+            "defName": "usg",
+            "query": "from[*]?set='usg'"
+        },
+        {
+            "defName": "usg-main",
+            "query": "from[usg]-from[usg]?type=(Marketing|Basic Land)-from[usg]?token=true-from[usg]?promo=true"
+        },
+        {
+            "defName": "usg-foils",
+            "query": "from[*]?set='usg'"
+        }
+
+    ],
+    "packs": [
+        {
+            "packName": "usg-all-cards",
+            "packDesc": "Urza's Saga: All Cards",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[usg]" }
+            ]
+        },
+        {
+            "packName": "usg-standard",
+            "packDesc": "Urza's Saga: Standard Booster",
+            "isGenerated": true,
+            "_comment": "booster foils were not in use yet -- not until the next set, Urza's Legacy",
+            "cards": [
+                { "query": "from[usg-main]?rarity='r'" },
+                { "query": "take[3]>from[usg-main]?rarity='u'" },
+                { "query": "take[11]>from[usg-main]?rarity='c'" }
+            ]
+        }
+
+    ]
+}

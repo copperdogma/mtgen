@@ -1,0 +1,47 @@
+{
+    "_comment": "from: http://mtgsalvation.gamepedia.com/Urza%27s_Legacy",
+
+    "defs": [
+        {
+            "defName": "ulg",
+            "query": "from[*]?set='ulg'"
+        },
+        {
+            "defName": "ulg-main",
+            "query": "from[ulg]-from[ulg]?type=(Marketing|Basic Land)-from[ulg]?token=true-from[ulg]?promo=true"
+        },
+        {
+            "defName": "ulg-foils",
+            "query": "from[*]?set='ulg'"
+        }
+
+    ],
+    "packs": [
+        {
+            "packName": "ulg-all-cards",
+            "packDesc": "Urza's Legacy: All Cards",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[ulg]" }
+            ]
+        },
+        {
+            "packName": "ulg-standard",
+            "packDesc": "Urza's Legacy: Standard Booster",
+            "_comment": "first booster to contain random foil cards",
+            "isGenerated": true,
+            "cards": [
+                { "query": "from[ulg-main]?rarity='r'" },
+                { "query": "take[3]>from[ulg-main]?rarity='u'" },
+                { "query": "take[10]>from[ulg-main]?rarity='c'" },
+                {
+                    "querySet": [
+                        { "percent": 75, "query": "from[ulg-main]?rarity='c'" },
+                        { "percent": 25, "query": "from[ulg-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+                    ]
+                }
+            ]
+        }
+
+    ]
+}

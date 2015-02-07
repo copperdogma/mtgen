@@ -1,0 +1,46 @@
+{
+    "_comment": "from: http://mtgsalvation.gamepedia.com/Legions",
+
+    "defs": [
+        {
+            "defName": "lgn",
+            "query": "from[*]?set='lgn'"
+        },
+        {
+            "defName": "lgn-main",
+            "query": "from[lgn]-from[lgn]?type=(Marketing|Basic Land)-from[lgn]?token=true-from[lgn]?promo=true"
+        },
+        {
+            "defName": "lgn-foils",
+            "query": "from[*]?set='lgn'"
+        }
+
+    ],
+    "packs": [
+        {
+            "packName": "lgn-all-cards",
+            "packDesc": "Legions: All Cards",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[lgn]" }
+            ]
+        },
+        {
+            "packName": "lgn-standard",
+            "packDesc": "Legions: Standard Booster",
+            "isGenerated": true,
+            "cards": [
+                { "query": "from[lgn-main]?rarity='r'" },
+                { "query": "take[3]>from[lgn-main]?rarity='u'" },
+                { "query": "take[10]>from[lgn-main]?rarity='c'" },
+                {
+                    "querySet": [
+                        { "percent": 75, "query": "from[lgn-main]?rarity='c'" },
+                        { "percent": 25, "query": "from[lgn-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+                    ]
+                }
+            ]
+        }
+
+    ]
+}

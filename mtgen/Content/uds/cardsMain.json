@@ -1,0 +1,4102 @@
+[
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15138,
+  "name": "Academy Rector",
+  "subtypes": [
+   "Human",
+   "Cleric"
+  ],
+  "cmc": 4,
+  "rarity": "r",
+  "artist": "Heather Hudson",
+  "power": "1",
+  "toughness": "2",
+  "manaCost": "{3}{W}",
+  "text": "When Academy Rector dies, you may exile it. If you do, search your library for an enchantment card, put that card onto the battlefield, then shuffle your library.",
+  "number": "1",
+  "imageName": "academy rector",
+  "reserved": true,
+  "title": "Academy Rector",
+  "set": "uds",
+  "cost": "{3}{W}",
+  "colour": "w",
+  "num": "1",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15138&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 12612,
+  "name": "Æther Sting",
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Pete Venters",
+  "manaCost": "{3}{R}",
+  "text": "Whenever an opponent casts a creature spell, Æther Sting deals 1 damage to that player.",
+  "flavor": "When Gatha fell, he was called to account for each abomination he created.",
+  "number": "76",
+  "imageName": "aether sting",
+  "title": "Æther Sting",
+  "set": "uds",
+  "cost": "{3}{R}",
+  "colour": "r",
+  "num": "76",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=12612&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 16424,
+  "name": "Ancient Silverback",
+  "subtypes": [
+   "Ape"
+  ],
+  "cmc": 6,
+  "rarity": "r",
+  "artist": "Paolo Parente",
+  "power": "6",
+  "toughness": "5",
+  "manaCost": "{4}{G}{G}",
+  "text": "{G}: Regenerate Ancient Silverback. (The next time this creature would be destroyed this turn, it isn't. Instead tap it, remove all damage from it, and remove it from combat.)",
+  "flavor": "The Phyrexian killing machines couldn't have known the seriousness of their mistake in wounding the ape—they'd never seen it angry.",
+  "number": "101",
+  "imageName": "ancient silverback",
+  "title": "Ancient Silverback",
+  "set": "uds",
+  "cost": "{4}{G}{G}",
+  "colour": "g",
+  "num": "101",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=16424&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 14442,
+  "name": "Apprentice Necromancer",
+  "subtypes": [
+   "Zombie",
+   "Wizard"
+  ],
+  "cmc": 2,
+  "rarity": "r",
+  "artist": "Pete Venters",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{1}{B}",
+  "text": "{B}, {T}, Sacrifice Apprentice Necromancer: Return target creature card from your graveyard to the battlefield. That creature gains haste. At the beginning of the next end step, sacrifice it.",
+  "number": "51",
+  "imageName": "apprentice necromancer",
+  "title": "Apprentice Necromancer",
+  "set": "uds",
+  "cost": "{1}{B}",
+  "colour": "b",
+  "num": "51",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=14442&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15135,
+  "name": "Archery Training",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 1,
+  "rarity": "u",
+  "artist": "Mark Brill",
+  "manaCost": "{W}",
+  "text": "Enchant creature\nAt the beginning of your upkeep, you may put an arrow counter on Archery Training.\nEnchanted creature has \"{T}: This creature deals X damage to target attacking or blocking creature, where X is the number of arrow counters on Archery Training.\"",
+  "number": "2",
+  "imageName": "archery training",
+  "title": "Archery Training",
+  "set": "uds",
+  "cost": "{W}",
+  "colour": "w",
+  "num": "2",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15135&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 15191,
+  "name": "Attrition",
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "Scott M. Fischer",
+  "manaCost": "{1}{B}{B}",
+  "text": "{B}, Sacrifice a creature: Destroy target nonblack creature.",
+  "flavor": "\"I will trade life for life with the insurgents. Our resources, unlike theirs, are limitless.\"\n—Davvol, Evincar of Rath",
+  "number": "52",
+  "imageName": "attrition",
+  "title": "Attrition",
+  "set": "uds",
+  "cost": "{1}{B}{B}",
+  "colour": "b",
+  "num": "52",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15191&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 15261,
+  "name": "Aura Thief",
+  "subtypes": [
+   "Illusion"
+  ],
+  "cmc": 4,
+  "rarity": "r",
+  "artist": "Ron Spears",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{3}{U}",
+  "text": "Flying\nWhen Aura Thief dies, you gain control of all enchantments. (You don't get to move Auras.)",
+  "flavor": "Illusion steals reality from the unwise.",
+  "number": "26",
+  "imageName": "aura thief",
+  "title": "Aura Thief",
+  "set": "uds",
+  "cost": "{3}{U}",
+  "colour": "u",
+  "num": "26",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15261&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 15146,
+  "name": "Blizzard Elemental",
+  "subtypes": [
+   "Elemental"
+  ],
+  "cmc": 7,
+  "rarity": "r",
+  "artist": "Thomas M. Baxa",
+  "power": "5",
+  "toughness": "5",
+  "manaCost": "{5}{U}{U}",
+  "text": "Flying\n{3}{U}: Untap Blizzard Elemental.",
+  "flavor": "Students who had seen Rayne argue with Urza were certain she had summoned it to make him seem warmer by comparison.",
+  "number": "27",
+  "imageName": "blizzard elemental",
+  "title": "Blizzard Elemental",
+  "set": "uds",
+  "cost": "{5}{U}{U}",
+  "colour": "u",
+  "num": "27",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15146&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15214,
+  "name": "Bloodshot Cyclops",
+  "subtypes": [
+   "Cyclops",
+   "Giant"
+  ],
+  "cmc": 6,
+  "rarity": "r",
+  "artist": "Ray Lago",
+  "power": "4",
+  "toughness": "4",
+  "manaCost": "{5}{R}",
+  "text": "{T}, Sacrifice a creature: Bloodshot Cyclops deals damage equal to the sacrificed creature's power to target creature or player.",
+  "flavor": "After their first encounter, the goblins named him Chuck.",
+  "number": "77",
+  "imageName": "bloodshot cyclops",
+  "title": "Bloodshot Cyclops",
+  "set": "uds",
+  "cost": "{5}{R}",
+  "colour": "r",
+  "num": "77",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15214&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 15189,
+  "name": "Body Snatcher",
+  "subtypes": [
+   "Minion"
+  ],
+  "cmc": 4,
+  "rarity": "r",
+  "artist": "Mark Zug",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{2}{B}{B}",
+  "text": "When Body Snatcher enters the battlefield, exile it unless you discard a creature card.\nWhen Body Snatcher dies, exile Body Snatcher and return target creature card from your graveyard to the battlefield.",
+  "number": "53",
+  "imageName": "body snatcher",
+  "title": "Body Snatcher",
+  "set": "uds",
+  "cost": "{2}{B}{B}",
+  "colour": "b",
+  "num": "53",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15189&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "multiverseid": 15249,
+  "name": "Braidwood Cup",
+  "cmc": 3,
+  "rarity": "u",
+  "artist": "Greg & Tim Hildebrandt",
+  "manaCost": "{3}",
+  "text": "{T}: You gain 1 life.",
+  "flavor": "\"I think it no accident that every civilized people has discovered the art of distillation.\"\n—Rofellos of Llanowar",
+  "number": "126",
+  "imageName": "braidwood cup",
+  "title": "Braidwood Cup",
+  "set": "uds",
+  "cost": "{3}",
+  "colour": "?",
+  "num": "126",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15249&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "multiverseid": 15251,
+  "name": "Braidwood Sextant",
+  "cmc": 1,
+  "rarity": "u",
+  "artist": "Hazeltine",
+  "manaCost": "{1}",
+  "text": "{2}, {T}, Sacrifice Braidwood Sextant: Search your library for a basic land card, reveal that card, and put it into your hand. Then shuffle your library.",
+  "number": "127",
+  "imageName": "braidwood sextant",
+  "title": "Braidwood Sextant",
+  "set": "uds",
+  "cost": "{1}",
+  "colour": "?",
+  "num": "127",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15251&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Artifact",
+  "types": [
+   "Artifact",
+   "Creature"
+  ],
+  "multiverseid": 15245,
+  "name": "Brass Secretary",
+  "subtypes": [
+   "Construct"
+  ],
+  "cmc": 3,
+  "rarity": "u",
+  "artist": "DiTerlizzi",
+  "power": "2",
+  "toughness": "1",
+  "manaCost": "{3}",
+  "text": "{2}, Sacrifice Brass Secretary: Draw a card.",
+  "flavor": "The students disliked the secretary for its unfailing memory—until they discovered it couldn't dodge thrown objects.",
+  "number": "128",
+  "imageName": "brass secretary",
+  "title": "Brass Secretary",
+  "set": "uds",
+  "cost": "{3}",
+  "colour": "?",
+  "num": "128",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15245&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 15148,
+  "name": "Brine Seer",
+  "subtypes": [
+   "Human",
+   "Wizard"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Donato Giancola",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{3}{U}",
+  "text": "{2}{U}, {T}: Reveal any number of blue cards in your hand. Counter target spell unless its controller pays {1} for each card revealed this way.",
+  "number": "28",
+  "imageName": "brine seer",
+  "title": "Brine Seer",
+  "set": "uds",
+  "cost": "{3}{U}",
+  "colour": "u",
+  "num": "28",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15148&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 15783,
+  "name": "Bubbling Beebles",
+  "subtypes": [
+   "Beeble"
+  ],
+  "cmc": 5,
+  "rarity": "c",
+  "artist": "Jeff Miracola",
+  "power": "3",
+  "toughness": "3",
+  "manaCost": "{4}{U}",
+  "text": "Bubbling Beebles can't be blocked as long as defending player controls an enchantment.",
+  "flavor": "\"Chancellor Rayne canceled the annual beeble roast. I should have married a crueler woman.\"\n—Barrin",
+  "number": "29",
+  "imageName": "bubbling beebles",
+  "title": "Bubbling Beebles",
+  "set": "uds",
+  "cost": "{4}{U}",
+  "colour": "u",
+  "num": "29",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15783&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 15179,
+  "name": "Bubbling Muck",
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Greg & Tim Hildebrandt",
+  "manaCost": "{B}",
+  "text": "Until end of turn, whenever a player taps a Swamp for mana, that player adds {B} to his or her mana pool (in addition to the mana the land produces).",
+  "flavor": "The muck claims a hundred living things for each meager treasure it spews forth.",
+  "number": "54",
+  "imageName": "bubbling muck",
+  "title": "Bubbling Muck",
+  "set": "uds",
+  "cost": "{B}",
+  "colour": "b",
+  "num": "54",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15179&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "multiverseid": 15252,
+  "name": "Caltrops",
+  "cmc": 3,
+  "rarity": "u",
+  "artist": "Jeff Laubenstein",
+  "manaCost": "{3}",
+  "text": "Whenever a creature attacks, Caltrops deals 1 damage to it.",
+  "flavor": "Toward the end, Gatha struggled to keep his experiments in and his patrons out.",
+  "number": "129",
+  "imageName": "caltrops",
+  "title": "Caltrops",
+  "set": "uds",
+  "cost": "{3}",
+  "colour": "?",
+  "num": "129",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15252&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15125,
+  "name": "Capashen Knight",
+  "subtypes": [
+   "Human",
+   "Knight"
+  ],
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Kev Walker",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{1}{W}",
+  "text": "First strike (This creature deals combat damage before creatures without first strike.)\n{1}{W}: Capashen Knight gets +1/+0 until end of turn.",
+  "flavor": "Few warriors dare to challenge a knight of Capashen. Should one do so, there is one fewer.",
+  "number": "3",
+  "imageName": "capashen knight",
+  "title": "Capashen Knight",
+  "set": "uds",
+  "cost": "{1}{W}",
+  "colour": "w",
+  "num": "3",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15125&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 19095,
+  "name": "Capashen Standard",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Todd Lockwood",
+  "manaCost": "{W}",
+  "text": "Enchant creature\nEnchanted creature gets +1/+1.\n{2}, Sacrifice Capashen Standard: Draw a card.",
+  "flavor": "Benalia has no need for peacocks to serve as symbols of vanity. The Capashens strut more proudly than any bird.",
+  "number": "4",
+  "imageName": "capashen standard",
+  "title": "Capashen Standard",
+  "set": "uds",
+  "cost": "{W}",
+  "colour": "w",
+  "num": "4",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=19095&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15762,
+  "name": "Capashen Templar",
+  "subtypes": [
+   "Human",
+   "Knight"
+  ],
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Todd Lockwood",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{2}{W}",
+  "text": "{W}: Capashen Templar gets +0/+1 until end of turn.",
+  "flavor": "Their shields are Benalia's outermost battlements.",
+  "number": "5",
+  "imageName": "capashen templar",
+  "title": "Capashen Templar",
+  "set": "uds",
+  "cost": "{2}{W}",
+  "colour": "w",
+  "num": "5",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15762&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 19115,
+  "name": "Carnival of Souls",
+  "cmc": 2,
+  "rarity": "r",
+  "artist": "Brian Snõddy",
+  "manaCost": "{1}{B}",
+  "text": "Whenever a creature enters the battlefield, you lose 1 life and add {B} to your mana pool.",
+  "flavor": "\"‘Davvol, blast those elves.' ‘Davvol, transport those troops.' No one cares that today is my birthday.\"",
+  "number": "55",
+  "imageName": "carnival of souls",
+  "reserved": true,
+  "title": "Carnival of Souls",
+  "set": "uds",
+  "cost": "{1}{B}",
+  "colour": "b",
+  "num": "55",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=19115&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 15768,
+  "name": "Chime of Night",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Pete Venters",
+  "manaCost": "{1}{B}",
+  "text": "Enchant creature\nWhen Chime of Night is put into a graveyard from the battlefield, destroy target nonblack creature.",
+  "flavor": "Many sent to serve Davvol carried such instruments, as if to remind him who their true masters were.",
+  "number": "56",
+  "imageName": "chime of night",
+  "title": "Chime of Night",
+  "set": "uds",
+  "cost": "{1}{B}",
+  "colour": "b",
+  "num": "56",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15768&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15199,
+  "name": "Cinder Seer",
+  "subtypes": [
+   "Human",
+   "Wizard"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Donato Giancola",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{3}{R}",
+  "text": "{2}{R}, {T}: Reveal any number of red cards in your hand. Cinder Seer deals X damage to target creature or player, where X is the number of cards revealed this way.",
+  "number": "78",
+  "imageName": "cinder seer",
+  "title": "Cinder Seer",
+  "set": "uds",
+  "cost": "{3}{R}",
+  "colour": "r",
+  "num": "78",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15199&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15195,
+  "name": "Colos Yearling",
+  "subtypes": [
+   "Goat",
+   "Beast"
+  ],
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Patrick Ho",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{2}{R}",
+  "text": "Mountainwalk\n{R}: Colos Yearling gets +1/+0 until end of turn.",
+  "flavor": "A steed grows with its rider.",
+  "number": "79",
+  "imageName": "colos yearling",
+  "title": "Colos Yearling",
+  "set": "uds",
+  "cost": "{2}{R}",
+  "colour": "r",
+  "num": "79",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15195&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 15878,
+  "name": "Compost",
+  "cmc": 2,
+  "rarity": "u",
+  "artist": "Douglas Shuler",
+  "manaCost": "{1}{G}",
+  "text": "Whenever a black card is put into an opponent's graveyard from anywhere, you may draw a card.",
+  "flavor": "A fruit must rot before its seed can sprout.\n—Yavimaya saying",
+  "number": "102",
+  "imageName": "compost",
+  "title": "Compost",
+  "set": "uds",
+  "cost": "{1}{G}",
+  "colour": "g",
+  "num": "102",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15878&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15770,
+  "name": "Covetous Dragon",
+  "subtypes": [
+   "Dragon"
+  ],
+  "cmc": 5,
+  "rarity": "r",
+  "artist": "rk post",
+  "power": "6",
+  "toughness": "5",
+  "manaCost": "{4}{R}",
+  "text": "Flying\nWhen you control no artifacts, sacrifice Covetous Dragon.",
+  "flavor": "Gatha survived as long as he did by giving all Keld's predators exactly what they wanted.",
+  "number": "80",
+  "imageName": "covetous dragon",
+  "reserved": true,
+  "title": "Covetous Dragon",
+  "set": "uds",
+  "cost": "{4}{R}",
+  "colour": "r",
+  "num": "80",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15770&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 15151,
+  "name": "Disappear",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Edward P. Beard, Jr.",
+  "manaCost": "{2}{U}{U}",
+  "text": "Enchant creature\n{U}: Return enchanted creature and Disappear to their owners' hands.",
+  "flavor": "If at first you don't succeed, run away and hide.",
+  "number": "30",
+  "imageName": "disappear",
+  "title": "Disappear",
+  "set": "uds",
+  "cost": "{2}{U}{U}",
+  "colour": "u",
+  "num": "30",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15151&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 15169,
+  "name": "Disease Carriers",
+  "subtypes": [
+   "Rat"
+  ],
+  "cmc": 4,
+  "rarity": "c",
+  "artist": "Chippy & Matthew Wilson",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{2}{B}{B}",
+  "text": "When Disease Carriers dies, target creature gets -2/-2 until end of turn.",
+  "flavor": "Rath is a disease all its inhabitants carry.",
+  "number": "57",
+  "imageName": "disease carriers",
+  "title": "Disease Carriers",
+  "set": "uds",
+  "cost": "{2}{B}{B}",
+  "colour": "b",
+  "num": "57",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15169&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 15168,
+  "name": "Donate",
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "Jeff Miracola",
+  "manaCost": "{2}{U}",
+  "text": "Target player gains control of target permanent you control.",
+  "flavor": "Campus pranksters initiate new students with the old \"beeble bomb\" routine.",
+  "number": "31",
+  "imageName": "donate",
+  "reserved": true,
+  "title": "Donate",
+  "set": "uds",
+  "cost": "{2}{U}",
+  "colour": "u",
+  "num": "31",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15168&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 15183,
+  "name": "Dying Wail",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Brian Snõddy",
+  "manaCost": "{1}{B}",
+  "text": "Enchant creature\nWhen enchanted creature dies, target player discards two cards.",
+  "flavor": "This is a world of spiteful wasps that sting and kill even as they die.",
+  "number": "58",
+  "imageName": "dying wail",
+  "title": "Dying Wail",
+  "set": "uds",
+  "cost": "{1}{B}",
+  "colour": "b",
+  "num": "58",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15183&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 19109,
+  "name": "Elvish Lookout",
+  "subtypes": [
+   "Elf"
+  ],
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Greg & Tim Hildebrandt",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{G}",
+  "text": "Shroud (This creature can't be the target of spells or abilities.)",
+  "flavor": "Like a masterful quilter, Yavimaya stitches together patches of color to warn its denizens of threats.",
+  "number": "103",
+  "imageName": "elvish lookout",
+  "title": "Elvish Lookout",
+  "set": "uds",
+  "cost": "{G}",
+  "colour": "g",
+  "num": "103",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=19109&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 15241,
+  "name": "Elvish Piper",
+  "subtypes": [
+   "Elf",
+   "Shaman"
+  ],
+  "cmc": 4,
+  "rarity": "r",
+  "artist": "Scott M. Fischer",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{3}{G}",
+  "text": "{G}, {T}: You may put a creature card from your hand onto the battlefield.",
+  "flavor": "From Gaea grew the world, and the world was silent. From Gaea grew the world's elves, and the world was silent no more.\n—Elvish teaching",
+  "number": "104",
+  "imageName": "elvish piper",
+  "title": "Elvish Piper",
+  "set": "uds",
+  "cost": "{3}{G}",
+  "colour": "g",
+  "num": "104",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15241&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 15773,
+  "name": "Emperor Crocodile",
+  "subtypes": [
+   "Crocodile"
+  ],
+  "cmc": 4,
+  "rarity": "r",
+  "artist": "Kev Walker",
+  "power": "5",
+  "toughness": "5",
+  "manaCost": "{3}{G}",
+  "text": "When you control no other creatures, sacrifice Emperor Crocodile.",
+  "flavor": "The king of Yavimaya's waters pays constant attention to his subjects . . . and thrives on their adulation.",
+  "number": "105",
+  "imageName": "emperor crocodile",
+  "title": "Emperor Crocodile",
+  "set": "uds",
+  "cost": "{3}{G}",
+  "colour": "g",
+  "num": "105",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15773&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 15175,
+  "name": "Encroach",
+  "cmc": 1,
+  "rarity": "u",
+  "artist": "rk post",
+  "manaCost": "{B}",
+  "text": "Target player reveals his or her hand. You choose a nonbasic land card from it. That player discards that card.",
+  "flavor": "\"The rate of spread in this region is unacceptable. Start again.\"\n—Davvol, Evincar of Rath",
+  "number": "59",
+  "imageName": "encroach",
+  "title": "Encroach",
+  "set": "uds",
+  "cost": "{B}",
+  "colour": "b",
+  "num": "59",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15175&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 15186,
+  "name": "Eradicate",
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Kev Walker",
+  "manaCost": "{2}{B}{B}",
+  "text": "Exile target nonblack creature. Search its controller's graveyard, hand, and library for all cards with the same name as that creature and exile them. Then that player shuffles his or her library.",
+  "number": "60",
+  "imageName": "eradicate",
+  "title": "Eradicate",
+  "set": "uds",
+  "cost": "{2}{B}{B}",
+  "colour": "b",
+  "num": "60",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15186&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Artifact",
+  "types": [
+   "Artifact",
+   "Creature"
+  ],
+  "multiverseid": 15255,
+  "name": "Extruder",
+  "subtypes": [
+   "Juggernaut"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Mark Tedin",
+  "power": "4",
+  "toughness": "3",
+  "manaCost": "{4}",
+  "text": "Echo {4} (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.)\nSacrifice an artifact: Put a +1/+1 counter on target creature.",
+  "flavor": "As the invasion drew closer, Urza's means began to resemble Phyrexia's end.",
+  "number": "130",
+  "imageName": "extruder",
+  "title": "Extruder",
+  "set": "uds",
+  "cost": "{4}",
+  "colour": "?",
+  "num": "130",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15255&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15765,
+  "name": "False Prophet",
+  "subtypes": [
+   "Human",
+   "Cleric"
+  ],
+  "cmc": 4,
+  "rarity": "r",
+  "artist": "Eric Peterson",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{2}{W}{W}",
+  "text": "When False Prophet dies, exile all creatures.",
+  "flavor": "\"You lived for Serra's love. Will you not die for it?\"",
+  "number": "6",
+  "imageName": "false prophet",
+  "title": "False Prophet",
+  "set": "uds",
+  "cost": "{2}{W}{W}",
+  "colour": "w",
+  "num": "6",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15765&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 19098,
+  "name": "Fatigue",
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Jeff Miracola",
+  "manaCost": "{1}{U}",
+  "text": "Target player skips his or her next draw step.",
+  "flavor": "\"Mind if I just lie down right here for a few weeks?\"",
+  "number": "32",
+  "imageName": "fatigue",
+  "title": "Fatigue",
+  "set": "uds",
+  "cost": "{1}{U}",
+  "colour": "u",
+  "num": "32",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=19098&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15763,
+  "name": "Fend Off",
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Paolo Parente",
+  "manaCost": "{1}{W}",
+  "text": "Prevent all combat damage that would be dealt by target creature this turn.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+  "flavor": "The best defense is to not get hit.",
+  "number": "7",
+  "imageName": "fend off",
+  "title": "Fend Off",
+  "set": "uds",
+  "cost": "{1}{W}",
+  "colour": "w",
+  "num": "7",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15763&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 15184,
+  "name": "Festering Wound",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 2,
+  "rarity": "u",
+  "artist": "Chippy & Matthew Wilson",
+  "manaCost": "{1}{B}",
+  "text": "Enchant creature\nAt the beginning of your upkeep, you may put an infection counter on Festering Wound.\nAt the beginning of the upkeep of enchanted creature's controller, Festering Wound deals X damage to that player, where X is the number of infection counters on Festering Wound.",
+  "number": "61",
+  "imageName": "festering wound",
+  "title": "Festering Wound",
+  "set": "uds",
+  "cost": "{1}{B}",
+  "colour": "b",
+  "num": "61",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15184&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15121,
+  "name": "Field Surgeon",
+  "subtypes": [
+   "Human",
+   "Cleric"
+  ],
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Heather Hudson",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{1}{W}",
+  "text": "Tap an untapped creature you control: Prevent the next 1 damage that would be dealt to target creature this turn.",
+  "flavor": "Commanders order soldiers to attack. Field surgeons order them to heal. Both are obeyed without question.",
+  "number": "8",
+  "imageName": "field surgeon",
+  "title": "Field Surgeon",
+  "set": "uds",
+  "cost": "{1}{W}",
+  "colour": "w",
+  "num": "8",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15121&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15201,
+  "name": "Flame Jet",
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "John Avon",
+  "manaCost": "{1}{R}",
+  "text": "Flame Jet deals 3 damage to target player.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+  "flavor": "Did the land make the Keldons? Did the Keldons make the land? Or were they simply meant for each other?",
+  "number": "81",
+  "imageName": "flame jet",
+  "title": "Flame Jet",
+  "set": "uds",
+  "cost": "{1}{R}",
+  "colour": "r",
+  "num": "81",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15201&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 15145,
+  "name": "Fledgling Osprey",
+  "subtypes": [
+   "Bird"
+  ],
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Heather Hudson",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{U}",
+  "text": "Fledgling Osprey has flying as long as it's enchanted.",
+  "flavor": "It isn't truly born until its first flight.",
+  "number": "33",
+  "imageName": "fledgling osprey",
+  "title": "Fledgling Osprey",
+  "set": "uds",
+  "cost": "{U}",
+  "colour": "u",
+  "num": "33",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15145&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15127,
+  "name": "Flicker",
+  "cmc": 2,
+  "rarity": "r",
+  "artist": "Douglas Shuler",
+  "manaCost": "{1}{W}",
+  "text": "Exile target nontoken permanent, then return it to the battlefield under its owner's control.",
+  "flavor": "Who is truer: you who are, or you who are to be?",
+  "number": "9",
+  "imageName": "flicker",
+  "title": "Flicker",
+  "set": "uds",
+  "cost": "{1}{W}",
+  "colour": "w",
+  "num": "9",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15127&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "multiverseid": 15250,
+  "name": "Fodder Cannon",
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "DiTerlizzi",
+  "manaCost": "{4}",
+  "text": "{4}, {T}, Sacrifice a creature: Fodder Cannon deals 4 damage to target creature.",
+  "flavor": "Step 1: Find your cousin.\nStep 2: Get your cousin in the cannon.\nStep 3: Find another cousin.",
+  "number": "131",
+  "imageName": "fodder cannon",
+  "title": "Fodder Cannon",
+  "set": "uds",
+  "cost": "{4}",
+  "colour": "?",
+  "num": "131",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15250&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 15230,
+  "name": "Gamekeeper",
+  "subtypes": [
+   "Elf"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Scott Hampton",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{3}{G}",
+  "text": "When Gamekeeper dies, you may exile it. If you do, reveal cards from the top of your library until you reveal a creature card. Put that card onto the battlefield and put all other cards revealed this way into your graveyard.",
+  "number": "106",
+  "imageName": "gamekeeper",
+  "title": "Gamekeeper",
+  "set": "uds",
+  "cost": "{3}{G}",
+  "colour": "g",
+  "num": "106",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15230&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15876,
+  "name": "Goblin Berserker",
+  "subtypes": [
+   "Goblin",
+   "Berserker"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Christopher Rush",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{3}{R}",
+  "text": "First strike, haste",
+  "flavor": "Goblins don't know the meaning of the word \"tactics\"—or the word \"meaning,\" for that matter.",
+  "number": "82",
+  "imageName": "goblin berserker",
+  "title": "Goblin Berserker",
+  "set": "uds",
+  "cost": "{3}{R}",
+  "colour": "r",
+  "num": "82",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15876&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15771,
+  "name": "Goblin Festival",
+  "cmc": 2,
+  "rarity": "r",
+  "artist": "Jeff Laubenstein",
+  "manaCost": "{1}{R}",
+  "text": "{2}: Goblin Festival deals 1 damage to target creature or player. Flip a coin. If you lose the flip, choose one of your opponents. That player gains control of Goblin Festival.",
+  "flavor": "\"What are we celebratin' again?\"",
+  "number": "83",
+  "imageName": "goblin festival",
+  "title": "Goblin Festival",
+  "set": "uds",
+  "cost": "{1}{R}",
+  "colour": "r",
+  "num": "83",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15771&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15197,
+  "name": "Goblin Gardener",
+  "subtypes": [
+   "Goblin"
+  ],
+  "cmc": 4,
+  "rarity": "c",
+  "artist": "Dan Frazier",
+  "power": "2",
+  "toughness": "1",
+  "manaCost": "{3}{R}",
+  "text": "When Goblin Gardener dies, destroy target land.",
+  "flavor": "\"Grow food in dirt? Save time—eat dirt.\"",
+  "number": "84",
+  "imageName": "goblin gardener",
+  "title": "Goblin Gardener",
+  "set": "uds",
+  "cost": "{3}{R}",
+  "colour": "r",
+  "num": "84",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15197&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15212,
+  "name": "Goblin Marshal",
+  "subtypes": [
+   "Goblin",
+   "Warrior"
+  ],
+  "cmc": 6,
+  "rarity": "r",
+  "artist": "DiTerlizzi",
+  "power": "3",
+  "toughness": "3",
+  "manaCost": "{4}{R}{R}",
+  "text": "Echo {4}{R}{R} (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.)\nWhen Goblin Marshal enters the battlefield or dies, put two 1/1 red Goblin creature tokens onto the battlefield.",
+  "number": "85",
+  "imageName": "goblin marshal",
+  "title": "Goblin Marshal",
+  "set": "uds",
+  "cost": "{4}{R}{R}",
+  "colour": "r",
+  "num": "85",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15212&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15202,
+  "name": "Goblin Masons",
+  "subtypes": [
+   "Goblin"
+  ],
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "DiTerlizzi",
+  "power": "2",
+  "toughness": "1",
+  "manaCost": "{1}{R}",
+  "text": "When Goblin Masons dies, destroy target Wall.",
+  "flavor": "\"Goblins build with true zeal—and anything else within arm's reach.\"",
+  "number": "86",
+  "imageName": "goblin masons",
+  "title": "Goblin Masons",
+  "set": "uds",
+  "cost": "{1}{R}",
+  "colour": "r",
+  "num": "86",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15202&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 15223,
+  "name": "Goliath Beetle",
+  "subtypes": [
+   "Insect"
+  ],
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Hazeltine",
+  "power": "3",
+  "toughness": "1",
+  "manaCost": "{2}{G}",
+  "text": "Trample",
+  "flavor": "The balance of nature dictates that one day humans will be stepped on by bugs.",
+  "number": "107",
+  "imageName": "goliath beetle",
+  "title": "Goliath Beetle",
+  "set": "uds",
+  "cost": "{2}{G}",
+  "colour": "g",
+  "num": "107",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15223&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 15220,
+  "name": "Heart Warden",
+  "subtypes": [
+   "Elf",
+   "Druid"
+  ],
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Adam Rex",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{1}{G}",
+  "text": "{T}: Add {G} to your mana pool.\n{2}, Sacrifice Heart Warden: Draw a card.",
+  "flavor": "\"In Llanowar, we tend the forest's boughs and branches. In Yavimaya, we are a part of them.\"\n—Rofellos of Llanowar",
+  "number": "108",
+  "imageName": "heart warden",
+  "title": "Heart Warden",
+  "set": "uds",
+  "cost": "{1}{G}",
+  "colour": "g",
+  "num": "108",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15220&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15196,
+  "name": "Hulking Ogre",
+  "subtypes": [
+   "Ogre"
+  ],
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Greg & Tim Hildebrandt",
+  "power": "3",
+  "toughness": "3",
+  "manaCost": "{2}{R}",
+  "text": "Hulking Ogre can't block.",
+  "flavor": "\"The Keldons' ogre campaign provided more body parts than my meager facility could properly use.\"\n—Gatha, Tolarian renegade",
+  "number": "87",
+  "imageName": "hulking ogre",
+  "title": "Hulking Ogre",
+  "set": "uds",
+  "cost": "{2}{R}",
+  "colour": "r",
+  "num": "87",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15196&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 15219,
+  "name": "Hunting Moa",
+  "subtypes": [
+   "Bird",
+   "Beast"
+  ],
+  "cmc": 3,
+  "rarity": "u",
+  "artist": "DiTerlizzi",
+  "power": "3",
+  "toughness": "2",
+  "manaCost": "{2}{G}",
+  "text": "Echo {2}{G} (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.)\nWhen Hunting Moa enters the battlefield or dies, put a +1/+1 counter on target creature.",
+  "number": "109",
+  "imageName": "hunting moa",
+  "title": "Hunting Moa",
+  "set": "uds",
+  "cost": "{2}{G}",
+  "colour": "g",
+  "num": "109",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15219&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 19097,
+  "name": "Illuminated Wings",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Jim Nelson",
+  "manaCost": "{1}{U}",
+  "text": "Enchant creature\nEnchanted creature has flying.\n{2}, Sacrifice Illuminated Wings: Draw a card.",
+  "flavor": "For a moment, Urza thought not of war and destruction, but of the freedom of the skies.",
+  "number": "34",
+  "imageName": "illuminated wings",
+  "title": "Illuminated Wings",
+  "set": "uds",
+  "cost": "{1}{U}",
+  "colour": "u",
+  "num": "34",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=19097&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15217,
+  "name": "Impatience",
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "Mark Brill",
+  "manaCost": "{2}{R}",
+  "text": "At the beginning of each player's end step, if that player didn't cast a spell this turn, Impatience deals 2 damage to him or her.",
+  "flavor": "Ask a Keldon to hold his temper and you'll be left holding your guts.",
+  "number": "88",
+  "imageName": "impatience",
+  "title": "Impatience",
+  "set": "uds",
+  "cost": "{2}{R}",
+  "colour": "r",
+  "num": "88",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15217&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15211,
+  "name": "Incendiary",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 1,
+  "rarity": "u",
+  "artist": "Jeff Laubenstein",
+  "manaCost": "{R}",
+  "text": "Enchant creature\nAt the beginning of your upkeep, you may put a fuse counter on Incendiary.\nWhen enchanted creature dies, Incendiary deals X damage to target creature or player, where X is the number of fuse counters on Incendiary.",
+  "number": "89",
+  "imageName": "incendiary",
+  "title": "Incendiary",
+  "set": "uds",
+  "cost": "{R}",
+  "colour": "r",
+  "num": "89",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15211&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 15163,
+  "name": "Iridescent Drake",
+  "subtypes": [
+   "Drake"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Jim Nelson",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{3}{U}",
+  "text": "Flying\nWhen Iridescent Drake enters the battlefield, put target Aura card from a graveyard onto the battlefield under your control attached to Iridescent Drake.",
+  "number": "35",
+  "imageName": "iridescent drake",
+  "title": "Iridescent Drake",
+  "set": "uds",
+  "cost": "{3}{U}",
+  "colour": "u",
+  "num": "35",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15163&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 15224,
+  "name": "Ivy Seer",
+  "subtypes": [
+   "Elf",
+   "Wizard"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Donato Giancola",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{3}{G}",
+  "text": "{2}{G}, {T}: Reveal any number of green cards in your hand. Target creature gets +X/+X until end of turn, where X is the number of cards revealed this way.",
+  "number": "110",
+  "imageName": "ivy seer",
+  "title": "Ivy Seer",
+  "set": "uds",
+  "cost": "{3}{G}",
+  "colour": "g",
+  "num": "110",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15224&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15124,
+  "name": "Jasmine Seer",
+  "subtypes": [
+   "Human",
+   "Wizard"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Donato Giancola",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{3}{W}",
+  "text": "{2}{W}, {T}: Reveal any number of white cards in your hand. You gain 2 life for each card revealed this way.",
+  "number": "10",
+  "imageName": "jasmine seer",
+  "title": "Jasmine Seer",
+  "set": "uds",
+  "cost": "{3}{W}",
+  "colour": "w",
+  "num": "10",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15124&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Artifact",
+  "types": [
+   "Artifact",
+   "Creature"
+  ],
+  "multiverseid": 15256,
+  "name": "Junk Diver",
+  "subtypes": [
+   "Bird"
+  ],
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "Eric Peterson",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{3}",
+  "text": "Flying\nWhen Junk Diver dies, return another target artifact card from your graveyard to your hand.",
+  "flavor": "Garbage in, treasure out.",
+  "number": "132",
+  "imageName": "junk diver",
+  "title": "Junk Diver",
+  "set": "uds",
+  "cost": "{3}",
+  "colour": "?",
+  "num": "132",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15256&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15206,
+  "name": "Keldon Champion",
+  "subtypes": [
+   "Human",
+   "Barbarian"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Mark Tedin",
+  "power": "3",
+  "toughness": "2",
+  "manaCost": "{2}{R}{R}",
+  "text": "Haste\nEcho {2}{R}{R} (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.)\nWhen Keldon Champion enters the battlefield, it deals 3 damage to target player.",
+  "number": "90",
+  "imageName": "keldon champion",
+  "title": "Keldon Champion",
+  "set": "uds",
+  "cost": "{2}{R}{R}",
+  "colour": "r",
+  "num": "90",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15206&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15194,
+  "name": "Keldon Vandals",
+  "subtypes": [
+   "Human",
+   "Rogue"
+  ],
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Greg Staples",
+  "power": "4",
+  "toughness": "1",
+  "manaCost": "{2}{R}",
+  "text": "Echo {2}{R} (At the beginning of your upkeep, if this came under your control since the beginning of your last upkeep, sacrifice it unless you pay its echo cost.)\nWhen Keldon Vandals enters the battlefield, destroy target artifact.",
+  "flavor": "Keldons divide all their spoils into two groups: trophies and catapult ammunition.",
+  "number": "91",
+  "imageName": "keldon vandals",
+  "title": "Keldon Vandals",
+  "set": "uds",
+  "cost": "{2}{R}",
+  "colour": "r",
+  "num": "91",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15194&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 15147,
+  "name": "Kingfisher",
+  "subtypes": [
+   "Bird"
+  ],
+  "cmc": 4,
+  "rarity": "c",
+  "artist": "Edward P. Beard, Jr.",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{3}{U}",
+  "text": "Flying\nWhen Kingfisher dies, draw a card.",
+  "flavor": "It's tastiest when served with the fish it stole.",
+  "number": "36",
+  "imageName": "kingfisher",
+  "title": "Kingfisher",
+  "set": "uds",
+  "cost": "{3}{U}",
+  "colour": "u",
+  "num": "36",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15147&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 13821,
+  "name": "Landslide",
+  "cmc": 1,
+  "rarity": "u",
+  "artist": "Jeff Laubenstein",
+  "manaCost": "{R}",
+  "text": "Sacrifice any number of Mountains. Landslide deals that much damage to target player.",
+  "flavor": "Sometimes the mountain takes.\n—Keldon saying",
+  "number": "92",
+  "imageName": "landslide",
+  "title": "Landslide",
+  "set": "uds",
+  "cost": "{R}",
+  "colour": "r",
+  "num": "92",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=13821&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 19116,
+  "name": "Lurking Jackals",
+  "cmc": 1,
+  "rarity": "u",
+  "artist": "Greg Staples",
+  "manaCost": "{B}",
+  "text": "When an opponent has 10 or less life, if Lurking Jackals is an enchantment, it becomes a 3/2 Hound creature.",
+  "flavor": "Often it's not the hunter or the hunted but the opportunist who thrives in Rath.",
+  "number": "62",
+  "imageName": "lurking jackals",
+  "title": "Lurking Jackals",
+  "set": "uds",
+  "cost": "{B}",
+  "colour": "b",
+  "num": "62",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=19116&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 15819,
+  "name": "Magnify",
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Michael Sutfin",
+  "manaCost": "{G}",
+  "text": "All creatures get +1/+1 until end of turn.",
+  "flavor": "The seed torches' pollen gives off light, but the elves find it heightens their senses as well.",
+  "number": "111",
+  "imageName": "magnify",
+  "title": "Magnify",
+  "set": "uds",
+  "cost": "{G}",
+  "colour": "g",
+  "num": "111",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15819&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Artifact",
+  "types": [
+   "Artifact",
+   "Creature"
+  ],
+  "multiverseid": 15247,
+  "name": "Mantis Engine",
+  "subtypes": [
+   "Insect"
+  ],
+  "cmc": 5,
+  "rarity": "u",
+  "artist": "John Zeleznik",
+  "power": "3",
+  "toughness": "3",
+  "manaCost": "{5}",
+  "text": "{2}: Mantis Engine gains flying until end of turn. (It can't be blocked except by creatures with flying or reach.)\n{2}: Mantis Engine gains first strike until end of turn. (It deals combat damage before creatures without first strike.)",
+  "flavor": "Tawnos left a legacy of animal designs in many of Urza's creations.",
+  "number": "133",
+  "imageName": "mantis engine",
+  "title": "Mantis Engine",
+  "set": "uds",
+  "cost": "{5}",
+  "colour": "?",
+  "num": "133",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15247&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15203,
+  "name": "Mark of Fury",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Thomas M. Baxa",
+  "manaCost": "{R}",
+  "text": "Enchant creature\nEnchanted creature has haste.\nAt the beginning of the end step, return Mark of Fury to its owner's hand.",
+  "flavor": "Many Keldon warriors bear the mark of intentional insanity.",
+  "number": "93",
+  "imageName": "mark of fury",
+  "title": "Mark of Fury",
+  "set": "uds",
+  "cost": "{R}",
+  "colour": "r",
+  "num": "93",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15203&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 15222,
+  "name": "Marker Beetles",
+  "subtypes": [
+   "Insect"
+  ],
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Ron Spencer",
+  "power": "2",
+  "toughness": "3",
+  "manaCost": "{1}{G}{G}",
+  "text": "When Marker Beetles dies, target creature gets +1/+1 until end of turn.\n{2}, Sacrifice Marker Beetles: Draw a card.",
+  "flavor": "In case of emergency, crush bug.",
+  "number": "112",
+  "imageName": "marker beetles",
+  "title": "Marker Beetles",
+  "set": "uds",
+  "cost": "{1}{G}{G}",
+  "colour": "g",
+  "num": "112",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15222&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15129,
+  "name": "Mask of Law and Grace",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Kev Walker",
+  "manaCost": "{W}",
+  "text": "Enchant creature\nEnchanted creature has protection from black and from red.",
+  "flavor": "The archangels zealously drove Serra's light into every corner of their new home as if their creator still commanded them.",
+  "number": "11",
+  "imageName": "mask of law and grace",
+  "title": "Mask of Law and Grace",
+  "set": "uds",
+  "cost": "{W}",
+  "colour": "w",
+  "num": "11",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15129&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15874,
+  "name": "Master Healer",
+  "subtypes": [
+   "Human",
+   "Cleric"
+  ],
+  "cmc": 5,
+  "rarity": "r",
+  "artist": "Adam Rex",
+  "power": "1",
+  "toughness": "4",
+  "manaCost": "{4}{W}",
+  "text": "{T}: Prevent the next 4 damage that would be dealt to target creature or player this turn.",
+  "flavor": "Behind his eyes is the pain of every soldier his hands have healed.",
+  "number": "12",
+  "imageName": "master healer",
+  "title": "Master Healer",
+  "set": "uds",
+  "cost": "{4}{W}",
+  "colour": "w",
+  "num": "12",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15874&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Artifact",
+  "types": [
+   "Artifact",
+   "Creature"
+  ],
+  "multiverseid": 13087,
+  "name": "Masticore",
+  "subtypes": [
+   "Masticore"
+  ],
+  "cmc": 4,
+  "rarity": "r",
+  "artist": "Paolo Parente",
+  "power": "4",
+  "toughness": "4",
+  "manaCost": "{4}",
+  "text": "At the beginning of your upkeep, sacrifice Masticore unless you discard a card.\n{2}: Masticore deals 1 damage to target creature.\n{2}: Regenerate Masticore.",
+  "number": "134",
+  "imageName": "masticore",
+  "reserved": true,
+  "title": "Masticore",
+  "set": "uds",
+  "cost": "{4}",
+  "colour": "?",
+  "num": "134",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=13087&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 15158,
+  "name": "Mental Discipline",
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Edward P. Beard, Jr.",
+  "manaCost": "{1}{U}{U}",
+  "text": "{1}{U}, Discard a card: Draw a card.",
+  "flavor": "Barrin drowned his doubts about Urza's project by delving ever deeper into its details.",
+  "number": "37",
+  "imageName": "mental discipline",
+  "title": "Mental Discipline",
+  "set": "uds",
+  "cost": "{1}{U}{U}",
+  "colour": "u",
+  "num": "37",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15158&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Artifact",
+  "types": [
+   "Artifact",
+   "Creature"
+  ],
+  "multiverseid": 15246,
+  "name": "Metalworker",
+  "subtypes": [
+   "Construct"
+  ],
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "Hazeltine",
+  "power": "1",
+  "toughness": "2",
+  "manaCost": "{3}",
+  "text": "{T}: Reveal any number of artifact cards in your hand. Add {2} to your mana pool for each card revealed this way.",
+  "flavor": "\"At this rate I fully expect to be replaced by a clockwork golem by year's end.\"\n—Barrin",
+  "number": "135",
+  "imageName": "metalworker",
+  "reserved": true,
+  "title": "Metalworker",
+  "set": "uds",
+  "cost": "{3}",
+  "colour": "?",
+  "num": "135",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15246&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 15157,
+  "name": "Metathran Elite",
+  "subtypes": [
+   "Metathran",
+   "Soldier"
+  ],
+  "cmc": 3,
+  "rarity": "u",
+  "artist": "Jim Nelson",
+  "power": "2",
+  "toughness": "3",
+  "manaCost": "{1}{U}{U}",
+  "text": "Metathran Elite can't be blocked as long as it's enchanted.",
+  "flavor": "If the eyes are windows to the soul, their souls are not of this world.",
+  "number": "38",
+  "imageName": "metathran elite",
+  "title": "Metathran Elite",
+  "set": "uds",
+  "cost": "{1}{U}{U}",
+  "colour": "u",
+  "num": "38",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15157&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 19096,
+  "name": "Metathran Soldier",
+  "subtypes": [
+   "Metathran",
+   "Soldier"
+  ],
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Paolo Parente",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{1}{U}",
+  "text": "Metathran Soldier can't be blocked.",
+  "flavor": "Just as Serra crafted angels of light and faith, Urza constructed an army of sorcery and power to resist the coming invasion.",
+  "number": "39",
+  "imageName": "metathran soldier",
+  "title": "Metathran Soldier",
+  "set": "uds",
+  "cost": "{1}{U}",
+  "colour": "u",
+  "num": "39",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=19096&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 15235,
+  "name": "Momentum",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 3,
+  "rarity": "u",
+  "artist": "Carl Critchlow",
+  "manaCost": "{2}{G}",
+  "text": "Enchant creature\nAt the beginning of your upkeep, you may put a growth counter on Momentum.\nEnchanted creature gets +1/+1 for each growth counter on Momentum.",
+  "number": "113",
+  "imageName": "momentum",
+  "title": "Momentum",
+  "set": "uds",
+  "cost": "{2}{G}",
+  "colour": "g",
+  "num": "113",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15235&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 15228,
+  "name": "Multani's Decree",
+  "cmc": 4,
+  "rarity": "c",
+  "artist": "Eric Peterson",
+  "manaCost": "{3}{G}",
+  "text": "Destroy all enchantments. You gain 2 life for each enchantment destroyed this way.",
+  "flavor": "\"This is my place of power. Nothing can take root here unless I allow it.\"\n—Multani, maro-sorcerer",
+  "number": "114",
+  "imageName": "multani's decree",
+  "title": "Multani's Decree",
+  "set": "uds",
+  "cost": "{3}{G}",
+  "colour": "g",
+  "num": "114",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15228&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 15173,
+  "name": "Nightshade Seer",
+  "subtypes": [
+   "Human",
+   "Wizard"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Donato Giancola",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{3}{B}",
+  "text": "{2}{B}, {T}: Reveal any number of black cards in your hand. Target creature gets -X/-X until end of turn, where X is the number of cards revealed this way.",
+  "number": "63",
+  "imageName": "nightshade seer",
+  "title": "Nightshade Seer",
+  "set": "uds",
+  "cost": "{3}{B}",
+  "colour": "b",
+  "num": "63",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15173&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15142,
+  "name": "Opalescence",
+  "cmc": 4,
+  "rarity": "r",
+  "artist": "John Avon",
+  "manaCost": "{2}{W}{W}",
+  "text": "Each other non-Aura enchantment is a creature in addition to its other types and has base power and base toughness each equal to its converted mana cost.",
+  "number": "13",
+  "imageName": "opalescence",
+  "reserved": true,
+  "title": "Opalescence",
+  "set": "uds",
+  "cost": "{2}{W}{W}",
+  "colour": "w",
+  "num": "13",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15142&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 15162,
+  "name": "Opposition",
+  "cmc": 4,
+  "rarity": "r",
+  "artist": "Todd Lockwood",
+  "manaCost": "{2}{U}{U}",
+  "text": "Tap an untapped creature you control: Tap target artifact, creature, or land.",
+  "flavor": "\"Urza says he's sane. Perhaps, but measures of sanity among planeswalkers are hard to come by.\"\n—Barrin",
+  "number": "40",
+  "imageName": "opposition",
+  "title": "Opposition",
+  "set": "uds",
+  "cost": "{2}{U}{U}",
+  "colour": "u",
+  "num": "40",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15162&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 15234,
+  "name": "Pattern of Rebirth",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 4,
+  "rarity": "r",
+  "artist": "Mark Brill",
+  "manaCost": "{3}{G}",
+  "text": "Enchant creature\nWhen enchanted creature dies, that creature's controller may search his or her library for a creature card and put that card onto the battlefield. If that player does, he or she shuffles his or her library.",
+  "number": "115",
+  "imageName": "pattern of rebirth",
+  "title": "Pattern of Rebirth",
+  "set": "uds",
+  "cost": "{3}{G}",
+  "colour": "g",
+  "num": "115",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15234&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 19113,
+  "name": "Phyrexian Monitor",
+  "subtypes": [
+   "Skeleton"
+  ],
+  "cmc": 4,
+  "rarity": "c",
+  "artist": "Carl Critchlow",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{3}{B}",
+  "text": "{B}: Regenerate Phyrexian Monitor.",
+  "flavor": "Being one would be an honor, if the word \"honor\" had any meaning in Phyrexia.",
+  "number": "64",
+  "imageName": "phyrexian monitor",
+  "title": "Phyrexian Monitor",
+  "set": "uds",
+  "cost": "{3}{B}",
+  "colour": "b",
+  "num": "64",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=19113&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 5559,
+  "name": "Phyrexian Negator",
+  "subtypes": [
+   "Horror"
+  ],
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "John Zeleznik",
+  "power": "5",
+  "toughness": "5",
+  "manaCost": "{2}{B}",
+  "text": "Trample\nWhenever Phyrexian Negator is dealt damage, sacrifice that many permanents.",
+  "flavor": "They exist to cease.",
+  "number": "65",
+  "imageName": "phyrexian negator",
+  "reserved": true,
+  "title": "Phyrexian Negator",
+  "set": "uds",
+  "cost": "{2}{B}",
+  "colour": "b",
+  "num": "65",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=5559&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 15180,
+  "name": "Plague Dogs",
+  "subtypes": [
+   "Zombie",
+   "Hound"
+  ],
+  "cmc": 5,
+  "rarity": "u",
+  "artist": "Chippy & Matthew Wilson",
+  "power": "3",
+  "toughness": "3",
+  "manaCost": "{4}{B}",
+  "text": "When Plague Dogs dies, all creatures get -1/-1 until end of turn.\n{2}, Sacrifice Plague Dogs: Draw a card.",
+  "flavor": "\"They're not just retrievers, they're carriers.\"",
+  "number": "66",
+  "imageName": "plague dogs",
+  "title": "Plague Dogs",
+  "set": "uds",
+  "cost": "{4}{B}",
+  "colour": "b",
+  "num": "66",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15180&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 19239,
+  "name": "Plated Spider",
+  "subtypes": [
+   "Spider"
+  ],
+  "cmc": 5,
+  "rarity": "c",
+  "artist": "Ron Spencer",
+  "power": "4",
+  "toughness": "4",
+  "manaCost": "{4}{G}",
+  "text": "Reach (This creature can block creatures with flying.)",
+  "flavor": "Most spiders wait patiently for their prey to arrive. Most spiders aren't forty feet tall.",
+  "number": "116",
+  "imageName": "plated spider",
+  "title": "Plated Spider",
+  "set": "uds",
+  "cost": "{4}{G}",
+  "colour": "g",
+  "num": "116",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=19239&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 12628,
+  "name": "Plow Under",
+  "cmc": 5,
+  "rarity": "r",
+  "artist": "Edward P. Beard, Jr.",
+  "manaCost": "{3}{G}{G}",
+  "text": "Put two target lands on top of their owners' libraries.",
+  "flavor": "To renew the land, plow the land. To destroy the land, do nothing.\n—Druids' saying",
+  "number": "117",
+  "imageName": "plow under",
+  "title": "Plow Under",
+  "set": "uds",
+  "cost": "{3}{G}{G}",
+  "colour": "g",
+  "num": "117",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=12628&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "multiverseid": 15259,
+  "name": "Powder Keg",
+  "cmc": 2,
+  "rarity": "r",
+  "artist": "Dan Frazier",
+  "manaCost": "{2}",
+  "text": "At the beginning of your upkeep, you may put a fuse counter on Powder Keg.\n{T}, Sacrifice Powder Keg: Destroy each artifact and creature with converted mana cost equal to the number of fuse counters on Powder Keg.",
+  "number": "136",
+  "imageName": "powder keg",
+  "reserved": true,
+  "title": "Powder Keg",
+  "set": "uds",
+  "cost": "{2}",
+  "colour": "?",
+  "num": "136",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15259&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 15161,
+  "name": "Private Research",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 1,
+  "rarity": "u",
+  "artist": "Scott M. Fischer",
+  "manaCost": "{U}",
+  "text": "Enchant creature\nAt the beginning of your upkeep, you may put a page counter on Private Research.\nWhen enchanted creature dies, draw a card for each page counter on Private Research.",
+  "number": "41",
+  "imageName": "private research",
+  "title": "Private Research",
+  "set": "uds",
+  "cost": "{U}",
+  "colour": "u",
+  "num": "41",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15161&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 15160,
+  "name": "Quash",
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Don Hazeltine",
+  "manaCost": "{2}{U}{U}",
+  "text": "Counter target instant or sorcery spell. Search its controller's graveyard, hand, and library for all cards with the same name as that spell and exile them. Then that player shuffles his or her library.",
+  "number": "42",
+  "imageName": "quash",
+  "title": "Quash",
+  "set": "uds",
+  "cost": "{2}{U}{U}",
+  "colour": "u",
+  "num": "42",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15160&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 15177,
+  "name": "Rapid Decay",
+  "cmc": 2,
+  "rarity": "r",
+  "artist": "Chippy",
+  "manaCost": "{1}{B}",
+  "text": "Exile up to three target cards from a single graveyard.\nCycling {2} ({2}, Discard this card: Draw a card.)",
+  "flavor": "The grave robbers arrived the day after the burial. They were a day too late.",
+  "number": "67",
+  "imageName": "rapid decay",
+  "title": "Rapid Decay",
+  "set": "uds",
+  "cost": "{1}{B}",
+  "colour": "b",
+  "num": "67",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15177&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 15172,
+  "name": "Ravenous Rats",
+  "subtypes": [
+   "Rat"
+  ],
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Carl Critchlow",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{1}{B}",
+  "text": "When Ravenous Rats enters the battlefield, target opponent discards a card.",
+  "flavor": "\"For all the priceless tomes they have destroyed, one would think they would taste better.\"\n—Davvol, Evincar of Rath",
+  "number": "68",
+  "imageName": "ravenous rats",
+  "title": "Ravenous Rats",
+  "set": "uds",
+  "cost": "{1}{B}",
+  "colour": "b",
+  "num": "68",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15172&type=card"
+ },
+ {
+  "layout": "normal",
+  "supertypes": [
+   "Legendary"
+  ],
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 15164,
+  "name": "Rayne, Academy Chancellor",
+  "subtypes": [
+   "Human",
+   "Wizard"
+  ],
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "Matthew Wilson",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{2}{U}",
+  "text": "Whenever you or a permanent you control becomes the target of a spell or ability an opponent controls, you may draw a card. You may draw an additional card if Rayne, Academy Chancellor is enchanted.",
+  "number": "43",
+  "imageName": "rayne, academy chancellor",
+  "title": "Rayne, Academy Chancellor",
+  "set": "uds",
+  "cost": "{2}{U}",
+  "colour": "u",
+  "num": "43",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15164&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15204,
+  "name": "Reckless Abandon",
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Ron Spears",
+  "manaCost": "{R}",
+  "text": "As an additional cost to cast Reckless Abandon, sacrifice a creature.\nReckless Abandon deals 4 damage to target creature or player.",
+  "flavor": "The climax of a warlord's career is always death.",
+  "number": "94",
+  "imageName": "reckless abandon",
+  "title": "Reckless Abandon",
+  "set": "uds",
+  "cost": "{R}",
+  "colour": "r",
+  "num": "94",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15204&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15123,
+  "name": "Reliquary Monk",
+  "subtypes": [
+   "Human",
+   "Monk",
+   "Cleric"
+  ],
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Thomas M. Baxa",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{2}{W}",
+  "text": "When Reliquary Monk dies, destroy target artifact or enchantment.",
+  "flavor": "A thing of Serra's realm exists only by the grace of her followers' faith.",
+  "number": "14",
+  "imageName": "reliquary monk",
+  "title": "Reliquary Monk",
+  "set": "uds",
+  "cost": "{2}{W}",
+  "colour": "w",
+  "num": "14",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15123&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15216,
+  "name": "Repercussion",
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "Michael Sutfin",
+  "manaCost": "{1}{R}{R}",
+  "text": "Whenever a creature is dealt damage, Repercussion deals that much damage to that creature's controller.",
+  "flavor": "Not all Keld's warriors are found on the battlefield.",
+  "number": "95",
+  "imageName": "repercussion",
+  "title": "Repercussion",
+  "set": "uds",
+  "cost": "{1}{R}{R}",
+  "colour": "r",
+  "num": "95",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15216&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15143,
+  "name": "Replenish",
+  "cmc": 4,
+  "rarity": "r",
+  "artist": "Jim Nelson",
+  "manaCost": "{3}{W}",
+  "text": "Return all enchantment cards from your graveyard to the battlefield. (Auras with nothing to enchant remain in your graveyard.)",
+  "flavor": "Treasures, trinkets, trash—the relics of the past are brought forth again.",
+  "number": "15",
+  "imageName": "replenish",
+  "reserved": true,
+  "title": "Replenish",
+  "set": "uds",
+  "cost": "{3}{W}",
+  "colour": "w",
+  "num": "15",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15143&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 15154,
+  "name": "Rescue",
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Greg Staples",
+  "manaCost": "{U}",
+  "text": "Return target permanent you control to its owner's hand.",
+  "flavor": "\"Urza, I've discovered more promising students than you and my husband have, combined. And I haven't lost a single one.\"\n—Rayne, Academy Chancellor",
+  "number": "44",
+  "imageName": "rescue",
+  "title": "Rescue",
+  "set": "uds",
+  "cost": "{U}",
+  "colour": "u",
+  "num": "44",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15154&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 15877,
+  "name": "Rofellos's Gift",
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Pete Venters",
+  "manaCost": "{G}",
+  "text": "Reveal any number of green cards in your hand. Return an enchantment card from your graveyard to your hand for each card revealed this way.",
+  "flavor": "\"Rise, elf. We are both of Gaea, and thus we are equal.\"\n—Multani, to Rofellos",
+  "number": "119",
+  "imageName": "rofellos's gift",
+  "title": "Rofellos's Gift",
+  "set": "uds",
+  "cost": "{G}",
+  "colour": "g",
+  "num": "119",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15877&type=card"
+ },
+ {
+  "layout": "normal",
+  "supertypes": [
+   "Legendary"
+  ],
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 15237,
+  "name": "Rofellos, Llanowar Emissary",
+  "subtypes": [
+   "Elf",
+   "Druid"
+  ],
+  "cmc": 2,
+  "rarity": "r",
+  "artist": "Michael Sutfin",
+  "power": "2",
+  "toughness": "1",
+  "manaCost": "{G}{G}",
+  "text": "{T}: Add {G} to your mana pool for each Forest you control.",
+  "number": "118",
+  "imageName": "rofellos, llanowar emissary",
+  "reserved": true,
+  "title": "Rofellos, Llanowar Emissary",
+  "set": "uds",
+  "cost": "{G}{G}",
+  "colour": "g",
+  "num": "118",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15237&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15873,
+  "name": "Sanctimony",
+  "cmc": 2,
+  "rarity": "u",
+  "artist": "Mark Brill",
+  "manaCost": "{1}{W}",
+  "text": "Whenever an opponent taps a Mountain for mana, you may gain 1 life.",
+  "flavor": "\"To forgive our enemies is to forgive ourselves.\"",
+  "number": "16",
+  "imageName": "sanctimony",
+  "title": "Sanctimony",
+  "set": "uds",
+  "cost": "{1}{W}",
+  "colour": "w",
+  "num": "16",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15873&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 15266,
+  "name": "Scent of Brine",
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Greg Staples",
+  "manaCost": "{1}{U}",
+  "text": "Reveal any number of blue cards in your hand. Counter target spell unless its controller pays {1} for each card revealed this way.",
+  "number": "45",
+  "imageName": "scent of brine",
+  "title": "Scent of Brine",
+  "set": "uds",
+  "cost": "{1}{U}",
+  "colour": "u",
+  "num": "45",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15266&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15264,
+  "name": "Scent of Cinder",
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Marc Fishman",
+  "manaCost": "{1}{R}",
+  "text": "Reveal any number of red cards in your hand. Scent of Cinder deals X damage to target creature or player, where X is the number of cards revealed this way.",
+  "number": "96",
+  "imageName": "scent of cinder",
+  "title": "Scent of Cinder",
+  "set": "uds",
+  "cost": "{1}{R}",
+  "colour": "r",
+  "num": "96",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15264&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 15267,
+  "name": "Scent of Ivy",
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "John Avon",
+  "manaCost": "{G}",
+  "text": "Reveal any number of green cards in your hand. Target creature gets +X/+X until end of turn, where X is the number of cards revealed this way.",
+  "number": "120",
+  "imageName": "scent of ivy",
+  "title": "Scent of Ivy",
+  "set": "uds",
+  "cost": "{G}",
+  "colour": "g",
+  "num": "120",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15267&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15263,
+  "name": "Scent of Jasmine",
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Douglas Shuler",
+  "manaCost": "{W}",
+  "text": "Reveal any number of white cards in your hand. You gain 2 life for each card revealed this way.",
+  "number": "17",
+  "imageName": "scent of jasmine",
+  "title": "Scent of Jasmine",
+  "set": "uds",
+  "cost": "{W}",
+  "colour": "w",
+  "num": "17",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15263&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 15265,
+  "name": "Scent of Nightshade",
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "John Avon",
+  "manaCost": "{1}{B}",
+  "text": "Reveal any number of black cards in your hand. Target creature gets -X/-X until end of turn, where X is the number of cards revealed this way.",
+  "number": "69",
+  "imageName": "scent of nightshade",
+  "title": "Scent of Nightshade",
+  "set": "uds",
+  "cost": "{1}{B}",
+  "colour": "b",
+  "num": "69",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15265&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15134,
+  "name": "Scour",
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Eric Peterson",
+  "manaCost": "{2}{W}{W}",
+  "text": "Exile target enchantment. Search its controller's graveyard, hand, and library for all cards with the same name as that enchantment and exile them. Then that player shuffles his or her library.",
+  "number": "18",
+  "imageName": "scour",
+  "title": "Scour",
+  "set": "uds",
+  "cost": "{2}{W}{W}",
+  "colour": "w",
+  "num": "18",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15134&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "multiverseid": 15262,
+  "name": "Scrying Glass",
+  "cmc": 2,
+  "rarity": "r",
+  "artist": "Patrick Ho",
+  "manaCost": "{2}",
+  "text": "{3}, {T}: Choose a number greater than 0 and a color. Target opponent reveals his or her hand. If that opponent reveals exactly the chosen number of cards of the chosen color, you draw a card.",
+  "number": "137",
+  "imageName": "scrying glass",
+  "title": "Scrying Glass",
+  "set": "uds",
+  "cost": "{2}",
+  "colour": "?",
+  "num": "137",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15262&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 14485,
+  "name": "Serra Advocate",
+  "subtypes": [
+   "Angel"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Scott Hampton",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{3}{W}",
+  "text": "Flying\n{T}: Target attacking or blocking creature gets +2/+2 until end of turn.",
+  "flavor": "An angel's touch can prepare a soldier for battle more than a thousand military drills.",
+  "number": "19",
+  "imageName": "serra advocate",
+  "title": "Serra Advocate",
+  "set": "uds",
+  "cost": "{3}{W}",
+  "colour": "w",
+  "num": "19",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=14485&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 15784,
+  "name": "Sigil of Sleep",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Greg & Tim Hildebrandt",
+  "manaCost": "{U}",
+  "text": "Enchant creature\nWhenever enchanted creature deals damage to a player, return target creature that player controls to its owner's hand.",
+  "flavor": "Arrows are only one way to remove an enemy.",
+  "number": "46",
+  "imageName": "sigil of sleep",
+  "title": "Sigil of Sleep",
+  "set": "uds",
+  "cost": "{U}",
+  "colour": "u",
+  "num": "46",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15784&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 15787,
+  "name": "Skittering Horror",
+  "subtypes": [
+   "Horror"
+  ],
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Mark Zug",
+  "power": "4",
+  "toughness": "3",
+  "manaCost": "{2}{B}",
+  "text": "When you cast a creature spell, sacrifice Skittering Horror.",
+  "flavor": "\"This monstrosity will do—for now.\"\n—Davvol, Evincar of Rath",
+  "number": "70",
+  "imageName": "skittering horror",
+  "title": "Skittering Horror",
+  "set": "uds",
+  "cost": "{2}{B}",
+  "colour": "b",
+  "num": "70",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15787&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 15786,
+  "name": "Slinking Skirge",
+  "subtypes": [
+   "Imp"
+  ],
+  "cmc": 4,
+  "rarity": "c",
+  "artist": "Ron Spencer",
+  "power": "2",
+  "toughness": "1",
+  "manaCost": "{3}{B}",
+  "text": "Flying\n{2}, Sacrifice Slinking Skirge: Draw a card.",
+  "flavor": "Davvol encouraged the skirges; they made excellent sentries and were quite edible if properly seasoned.",
+  "number": "71",
+  "imageName": "slinking skirge",
+  "title": "Slinking Skirge",
+  "set": "uds",
+  "cost": "{3}{B}",
+  "colour": "b",
+  "num": "71",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15786&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15764,
+  "name": "Solidarity",
+  "cmc": 4,
+  "rarity": "c",
+  "artist": "John Zeleznik",
+  "manaCost": "{3}{W}",
+  "text": "Creatures you control get +0/+5 until end of turn.",
+  "flavor": "Their commitment to Serra is as solid as any shield.",
+  "number": "20",
+  "imageName": "solidarity",
+  "title": "Solidarity",
+  "set": "uds",
+  "cost": "{3}{W}",
+  "colour": "w",
+  "num": "20",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15764&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 15767,
+  "name": "Soul Feast",
+  "cmc": 5,
+  "rarity": "u",
+  "artist": "Ray Lago",
+  "manaCost": "{3}{B}{B}",
+  "text": "Target player loses 4 life and you gain 4 life.",
+  "flavor": "As no one has ever accepted a second invitation to Davvol's table, the evincar often dines alone.",
+  "number": "72",
+  "imageName": "soul feast",
+  "title": "Soul Feast",
+  "set": "uds",
+  "cost": "{3}{B}{B}",
+  "colour": "b",
+  "num": "72",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15767&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 19534,
+  "name": "Sowing Salt",
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Todd Lockwood",
+  "manaCost": "{2}{R}{R}",
+  "text": "Exile target nonbasic land. Search its controller's graveyard, hand, and library for all cards with the same name as that land and exile them. Then that player shuffles his or her library.",
+  "number": "97",
+  "imageName": "sowing salt",
+  "title": "Sowing Salt",
+  "set": "uds",
+  "cost": "{2}{R}{R}",
+  "colour": "r",
+  "num": "97",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=19534&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 15208,
+  "name": "Splinter",
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Daren Bader",
+  "manaCost": "{2}{G}{G}",
+  "text": "Exile target artifact. Search its controller's graveyard, hand, and library for all cards with the same name as that artifact and exile them. Then that player shuffles his or her library.",
+  "number": "121",
+  "imageName": "splinter",
+  "title": "Splinter",
+  "set": "uds",
+  "cost": "{2}{G}{G}",
+  "colour": "g",
+  "num": "121",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15208&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 15170,
+  "name": "Squirming Mass",
+  "subtypes": [
+   "Horror"
+  ],
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Ron Spencer",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{1}{B}",
+  "text": "Fear (This creature can't be blocked except by artifact creatures and/or black creatures.)",
+  "flavor": "Only the coldest hearts and the strongest stomachs can stand against it.",
+  "number": "73",
+  "imageName": "squirming mass",
+  "title": "Squirming Mass",
+  "set": "uds",
+  "cost": "{1}{B}",
+  "colour": "b",
+  "num": "73",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15170&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "multiverseid": 15260,
+  "name": "Storage Matrix",
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "Patrick Ho",
+  "manaCost": "{3}",
+  "text": "As long as Storage Matrix is untapped, each player chooses artifact, creature, or land during his or her untap step. That player can untap only permanents of the chosen type this step.",
+  "number": "138",
+  "imageName": "storage matrix",
+  "title": "Storage Matrix",
+  "set": "uds",
+  "cost": "{3}",
+  "colour": "?",
+  "num": "138",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15260&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 15221,
+  "name": "Taunting Elf",
+  "subtypes": [
+   "Elf"
+  ],
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Scott M. Fischer",
+  "power": "0",
+  "toughness": "1",
+  "manaCost": "{G}",
+  "text": "All creatures able to block Taunting Elf do so.",
+  "flavor": "Much to Multani's chagrin, Rofellos gleefully tutored Yavimaya's elves on the rudest and most vulgar words spoken in Llanowar.",
+  "number": "122",
+  "imageName": "taunting elf",
+  "title": "Taunting Elf",
+  "set": "uds",
+  "cost": "{G}",
+  "colour": "g",
+  "num": "122",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15221&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 15149,
+  "name": "Telepathic Spies",
+  "subtypes": [
+   "Human",
+   "Wizard"
+  ],
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Thomas M. Baxa",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{2}{U}",
+  "text": "When Telepathic Spies enters the battlefield, look at target opponent's hand.",
+  "flavor": "\"Do try to keep an open mind, would you?\"",
+  "number": "47",
+  "imageName": "telepathic spies",
+  "title": "Telepathic Spies",
+  "set": "uds",
+  "cost": "{2}{U}",
+  "colour": "u",
+  "num": "47",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15149&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 15875,
+  "name": "Temporal Adept",
+  "subtypes": [
+   "Human",
+   "Wizard"
+  ],
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "Heather Hudson",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{1}{U}{U}",
+  "text": "{U}{U}{U}, {T}: Return target permanent to its owner's hand.",
+  "flavor": "\"Of course she's at the head of her class. All her classmates have disappeared.\"\n—Gatha, Tolarian renegade",
+  "number": "48",
+  "imageName": "temporal adept",
+  "title": "Temporal Adept",
+  "set": "uds",
+  "cost": "{1}{U}{U}",
+  "colour": "u",
+  "num": "48",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15875&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15769,
+  "name": "Tethered Griffin",
+  "subtypes": [
+   "Griffin"
+  ],
+  "cmc": 1,
+  "rarity": "r",
+  "artist": "Matthew Wilson",
+  "power": "2",
+  "toughness": "3",
+  "manaCost": "{W}",
+  "text": "Flying\nWhen you control no enchantments, sacrifice Tethered Griffin.",
+  "flavor": "Poorly trained griffins sometimes attack the noble audiences that gather to watch their progress.",
+  "number": "21",
+  "imageName": "tethered griffin",
+  "title": "Tethered Griffin",
+  "set": "uds",
+  "cost": "{W}",
+  "colour": "w",
+  "num": "21",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15769&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 15156,
+  "name": "Thieving Magpie",
+  "subtypes": [
+   "Bird"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Una Fricker",
+  "power": "1",
+  "toughness": "3",
+  "manaCost": "{2}{U}{U}",
+  "text": "Flying (This creature can't be blocked except by creatures with flying or reach.)\nWhenever Thieving Magpie deals damage to an opponent, draw a card.",
+  "flavor": "Rayne once made several unkind comparisons between the bird's naked opportunism and Urza's.",
+  "number": "49",
+  "imageName": "thieving magpie",
+  "title": "Thieving Magpie",
+  "set": "uds",
+  "cost": "{2}{U}{U}",
+  "colour": "u",
+  "num": "49",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15156&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 15240,
+  "name": "Thorn Elemental",
+  "subtypes": [
+   "Elemental"
+  ],
+  "cmc": 7,
+  "rarity": "r",
+  "artist": "rk post",
+  "power": "7",
+  "toughness": "7",
+  "manaCost": "{5}{G}{G}",
+  "text": "You may have Thorn Elemental assign its combat damage as though it weren't blocked.",
+  "flavor": "Rain from this storm leaves you pinned to the ground like an insect.",
+  "number": "123",
+  "imageName": "thorn elemental",
+  "title": "Thorn Elemental",
+  "set": "uds",
+  "cost": "{5}{G}{G}",
+  "colour": "g",
+  "num": "123",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15240&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "multiverseid": 15248,
+  "name": "Thran Dynamo",
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Ron Spears",
+  "manaCost": "{4}",
+  "text": "{T}: Add {3} to your mana pool.",
+  "flavor": "Urza's metathran children were conceived, birthed, and nurtured by an integrated system of machines.",
+  "number": "139",
+  "imageName": "thran dynamo",
+  "title": "Thran Dynamo",
+  "set": "uds",
+  "cost": "{4}",
+  "colour": "?",
+  "num": "139",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15248&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "multiverseid": 19111,
+  "name": "Thran Foundry",
+  "cmc": 1,
+  "rarity": "u",
+  "artist": "John Zeleznik",
+  "manaCost": "{1}",
+  "text": "{1}, {T}, Exile Thran Foundry: Target player shuffles his or her graveyard into his or her library.",
+  "flavor": "\"What we do not use up, we use again.\"\n—Urza",
+  "number": "140",
+  "imageName": "thran foundry",
+  "title": "Thran Foundry",
+  "set": "uds",
+  "cost": "{1}",
+  "colour": "?",
+  "num": "140",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=19111&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Artifact",
+  "types": [
+   "Artifact",
+   "Creature"
+  ],
+  "multiverseid": 15254,
+  "name": "Thran Golem",
+  "subtypes": [
+   "Golem"
+  ],
+  "cmc": 5,
+  "rarity": "r",
+  "artist": "Ron Spears",
+  "power": "3",
+  "toughness": "3",
+  "manaCost": "{5}",
+  "text": "As long as Thran Golem is enchanted, it gets +2/+2 and has flying, first strike, and trample.",
+  "flavor": "Karn felt more secure about his value to Urza when he realized he didn't need regular trimming.",
+  "number": "141",
+  "imageName": "thran golem",
+  "title": "Thran Golem",
+  "set": "uds",
+  "cost": "{5}",
+  "colour": "?",
+  "num": "141",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15254&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 18287,
+  "name": "Tormented Angel",
+  "subtypes": [
+   "Angel"
+  ],
+  "cmc": 4,
+  "rarity": "c",
+  "artist": "Greg & Tim Hildebrandt",
+  "power": "1",
+  "toughness": "5",
+  "manaCost": "{3}{W}",
+  "text": "Flying",
+  "flavor": "Falling from heaven is not as painful as surviving the impact.",
+  "number": "22",
+  "imageName": "tormented angel",
+  "title": "Tormented Angel",
+  "set": "uds",
+  "cost": "{3}{W}",
+  "colour": "w",
+  "num": "22",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=18287&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 12148,
+  "name": "Treachery",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 5,
+  "rarity": "r",
+  "artist": "Matthew Wilson",
+  "manaCost": "{3}{U}{U}",
+  "text": "Enchant creature\nWhen Treachery enters the battlefield, untap up to five lands.\nYou control enchanted creature.",
+  "flavor": "\"The academy educates; I employ. It's a perfect arrangement.\"\n—Gatha, Tolarian renegade",
+  "number": "50",
+  "imageName": "treachery",
+  "reserved": true,
+  "title": "Treachery",
+  "set": "uds",
+  "cost": "{3}{U}{U}",
+  "colour": "u",
+  "num": "50",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=12148&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15200,
+  "name": "Trumpet Blast",
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Carl Critchlow",
+  "manaCost": "{2}{R}",
+  "text": "Attacking creatures get +2/+0 until end of turn.",
+  "flavor": "Keldon warriors don't need signals to tell them when to attack, but when to stop.",
+  "number": "98",
+  "imageName": "trumpet blast",
+  "title": "Trumpet Blast",
+  "set": "uds",
+  "cost": "{2}{R}",
+  "colour": "r",
+  "num": "98",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15200&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 19114,
+  "name": "Twisted Experiment",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "rk post",
+  "manaCost": "{1}{B}",
+  "text": "Enchant creature\nEnchanted creature gets +3/-1.",
+  "flavor": "Gatha showed remarkable prowess in increasing his subjects' stature. Their lifespans, however, were another matter.",
+  "number": "74",
+  "imageName": "twisted experiment",
+  "title": "Twisted Experiment",
+  "set": "uds",
+  "cost": "{1}{B}",
+  "colour": "b",
+  "num": "74",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=19114&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "multiverseid": 15257,
+  "name": "Urza's Incubator",
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "Pete Venters",
+  "manaCost": "{3}",
+  "text": "As Urza's Incubator enters the battlefield, choose a creature type.\nCreature spells of the chosen type cost {2} less to cast.",
+  "flavor": "\"Stop thinking like an artificer, Urza, and start thinking like a father!\"\n—Rayne, Academy Chancellor",
+  "number": "142",
+  "imageName": "urza's incubator",
+  "title": "Urza's Incubator",
+  "set": "uds",
+  "cost": "{3}",
+  "colour": "?",
+  "num": "142",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15257&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15132,
+  "name": "Voice of Duty",
+  "subtypes": [
+   "Angel"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Mark Zug",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{3}{W}",
+  "text": "Flying, protection from green",
+  "flavor": "\"Next to Law is Duty, and Duty must be obeyed. If the frame of Duty is broken, none shall weave life's fabric.\"\n—Song of All, canto 167",
+  "number": "23",
+  "imageName": "voice of duty",
+  "title": "Voice of Duty",
+  "set": "uds",
+  "cost": "{3}{W}",
+  "colour": "w",
+  "num": "23",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15132&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15131,
+  "name": "Voice of Reason",
+  "subtypes": [
+   "Angel"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Ray Lago",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{3}{W}",
+  "text": "Flying, protection from blue",
+  "flavor": "\"Next to Grace is Reason, and Reason must be retained. If the web of Reason comes unwoven, madness will escape.\"\n—Song of All, canto 167",
+  "number": "24",
+  "imageName": "voice of reason",
+  "title": "Voice of Reason",
+  "set": "uds",
+  "cost": "{3}{W}",
+  "colour": "w",
+  "num": "24",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15131&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15218,
+  "name": "Wake of Destruction",
+  "cmc": 6,
+  "rarity": "r",
+  "artist": "Todd Lockwood",
+  "manaCost": "{3}{R}{R}{R}",
+  "text": "Destroy target land and all other lands with the same name as that land.",
+  "flavor": "Land charred black, rivers boiled,\nCrops and wells alike despoiled,\nMountains leveled, forests felled—\nFootprints of the beasts of Keld.",
+  "number": "99",
+  "imageName": "wake of destruction",
+  "title": "Wake of Destruction",
+  "set": "uds",
+  "cost": "{3}{R}{R}{R}",
+  "colour": "r",
+  "num": "99",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15218&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 15120,
+  "name": "Wall of Glare",
+  "subtypes": [
+   "Wall"
+  ],
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Patrick Ho",
+  "power": "0",
+  "toughness": "5",
+  "manaCost": "{1}{W}",
+  "text": "Defender (This creature can't attack.)\nWall of Glare can block any number of creatures.",
+  "flavor": "The blinding barrier served Benalia better than a hundred shields.",
+  "number": "25",
+  "imageName": "wall of glare",
+  "title": "Wall of Glare",
+  "set": "uds",
+  "cost": "{1}{W}",
+  "colour": "w",
+  "num": "25",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15120&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 15198,
+  "name": "Wild Colos",
+  "subtypes": [
+   "Goat",
+   "Beast"
+  ],
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Marc Fishman",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{2}{R}",
+  "text": "Haste",
+  "flavor": "You'll never get a Keldon's goat.",
+  "number": "100",
+  "imageName": "wild colos",
+  "title": "Wild Colos",
+  "set": "uds",
+  "cost": "{2}{R}",
+  "colour": "r",
+  "num": "100",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15198&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 15225,
+  "name": "Yavimaya Elder",
+  "subtypes": [
+   "Human",
+   "Druid"
+  ],
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Ray Lago",
+  "power": "2",
+  "toughness": "1",
+  "manaCost": "{1}{G}{G}",
+  "text": "When Yavimaya Elder dies, you may search your library for up to two basic land cards, reveal them, and put them into your hand. If you do, shuffle your library.\n{2}, Sacrifice Yavimaya Elder: Draw a card.",
+  "number": "124",
+  "imageName": "yavimaya elder",
+  "title": "Yavimaya Elder",
+  "set": "uds",
+  "cost": "{1}{G}{G}",
+  "colour": "g",
+  "num": "124",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15225&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 15236,
+  "name": "Yavimaya Enchantress",
+  "subtypes": [
+   "Human",
+   "Druid"
+  ],
+  "cmc": 3,
+  "rarity": "u",
+  "artist": "Matthew Wilson",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{2}{G}",
+  "text": "Yavimaya Enchantress gets +1/+1 for each enchantment on the battlefield.",
+  "flavor": "From each seed, a world. From each world, a thousand seeds.",
+  "number": "125",
+  "imageName": "yavimaya enchantress",
+  "title": "Yavimaya Enchantress",
+  "set": "uds",
+  "cost": "{2}{G}",
+  "colour": "g",
+  "num": "125",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15236&type=card"
+ },
+ {
+  "layout": "normal",
+  "supertypes": [
+   "Legendary"
+  ],
+  "type": "Land",
+  "types": [
+   "Land"
+  ],
+  "multiverseid": 15772,
+  "name": "Yavimaya Hollow",
+  "rarity": "r",
+  "artist": "Douglas Shuler",
+  "text": "{T}: Add {1} to your mana pool.\n{G}, {T}: Regenerate target creature.",
+  "flavor": "For all its traps and defenses, Yavimaya has its havens, too.",
+  "number": "143",
+  "imageName": "yavimaya hollow",
+  "reserved": true,
+  "title": "Yavimaya Hollow",
+  "set": "uds",
+  "cost": "",
+  "colour": "?",
+  "num": "143",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15772&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 15193,
+  "name": "Yawgmoth's Bargain",
+  "cmc": 6,
+  "rarity": "r",
+  "artist": "Michael Sutfin",
+  "manaCost": "{4}{B}{B}",
+  "text": "Skip your draw step.\nPay 1 life: Draw a card.",
+  "flavor": "He craves only one commodity.",
+  "number": "75",
+  "imageName": "yawgmoth's bargain",
+  "reserved": true,
+  "title": "Yawgmoth's Bargain",
+  "set": "uds",
+  "cost": "{4}{B}{B}",
+  "colour": "b",
+  "num": "75",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=15193&type=card"
+ }
+]

@@ -1,0 +1,38 @@
+{
+    "_comment": "if there are no options the query/packNames will be auto-run",
+    "products": [
+        {
+            "productName": "pcy-all-cards",
+            "productDesc": "All Cards",
+            "soures": [ "http://mtgjson.com/json/pcy.json", "http://gatherer.wizards.com/" ],
+            "isGenerated": false,
+            "initialSort": "colour",
+            "packs": [
+                { "packName": "pcy-all-cards" }
+            ]
+        },
+        {
+            "productName": "pcy-boosters",
+            "productDesc": "Boosters",
+            "sources": [ "http://en.wikipedia.org/wiki/Masques_block" ],
+            "isGenerated": true,
+            "initialSort": "set",
+            "packs": [
+                { "packName": "pcy-standard" }
+            ],
+            "options": {
+                "presets": [
+                    {
+                        "presetName": "pcy-boosters-six",
+                        "presetDesc": "Six Boosters",
+                        "default": true,
+                        "packs": [
+                            { "count": 6, "defaultPackName": "pcy-standard" }
+                        ]
+                    }
+                ]
+            }
+        }
+
+    ]
+}

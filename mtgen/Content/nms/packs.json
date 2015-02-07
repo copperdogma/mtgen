@@ -1,0 +1,46 @@
+{
+    "_comment": "from: http://en.wikipedia.org/wiki/Masques_block",
+
+    "defs": [
+        {
+            "defName": "nms",
+            "query": "from[*]?set='nms'"
+        },
+        {
+            "defName": "nms-main",
+            "query": "from[nms]-from[nms]?type=(Marketing|Basic Land)-from[nms]?token=true-from[nms]?promo=true"
+        },
+        {
+            "defName": "nms-foils",
+            "query": "from[*]?set='nms'"
+        }
+
+    ],
+    "packs": [
+        {
+            "packName": "nms-all-cards",
+            "packDesc": "Nemesis: All Cards",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[nms]" }
+            ]
+        },
+        {
+            "packName": "nms-standard",
+            "packDesc": "Nemesis: Standard Booster",
+            "isGenerated": true,
+            "cards": [
+                { "query": "from[nms-main]?rarity='r'" },
+                { "query": "take[3]>from[nms-main]?rarity='u'" },
+                { "query": "take[10]>from[nms-main]?rarity='c'" },
+                {
+                    "querySet": [
+                        { "percent": 75, "query": "from[nms-main]?rarity='c'" },
+                        { "percent": 25, "query": "from[nms-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+                    ]
+                }
+            ]
+        }
+
+    ]
+}

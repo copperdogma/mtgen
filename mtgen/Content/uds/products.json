@@ -1,0 +1,38 @@
+{
+    "_comment": "if there are no options the query/packNames will be auto-run",
+    "products": [
+        {
+            "productName": "uds-all-cards",
+            "productDesc": "All Cards",
+            "soures": [ "http://mtgjson.com/json/uds.json", "http://gatherer.wizards.com/" ],
+            "isGenerated": false,
+            "initialSort": "colour",
+            "packs": [
+                { "packName": "uds-all-cards" }
+            ]
+        },
+        {
+            "productName": "uds-boosters",
+            "productDesc": "Boosters",
+            "sources": [ "http://en.wikipedia.org/wiki/Urza_block" ],
+            "isGenerated": true,
+            "initialSort": "set",
+            "packs": [
+                { "packName": "uds-standard" }
+            ],
+            "options": {
+                "presets": [
+                    {
+                        "presetName": "uds-boosters-six",
+                        "presetDesc": "Six Boosters",
+                        "default": true,
+                        "packs": [
+                            { "count": 6, "defaultPackName": "uds-standard" }
+                        ]
+                    }
+                ]
+            }
+        }
+
+    ]
+}

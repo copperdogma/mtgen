@@ -1,0 +1,38 @@
+{
+    "_comment": "if there are no options the query/packNames will be auto-run",
+    "products": [
+        {
+            "productName": "lgn-all-cards",
+            "productDesc": "All Cards",
+            "soures": [ "http://mtgjson.com/json/lgn.json", "http://gatherer.wizards.com/" ],
+            "isGenerated": false,
+            "initialSort": "colour",
+            "packs": [
+                { "packName": "lgn-all-cards" }
+            ]
+        },
+        {
+            "productName": "lgn-boosters",
+            "productDesc": "Boosters",
+            "sources": [ "http://mtgsalvation.gamepedia.com/Legions" ],
+            "isGenerated": true,
+            "initialSort": "set",
+            "packs": [
+                { "packName": "lgn-standard" }
+            ],
+            "options": {
+                "presets": [
+                    {
+                        "presetName": "lgn-boosters-six",
+                        "presetDesc": "Six Boosters",
+                        "default": true,
+                        "packs": [
+                            { "count": 6, "defaultPackName": "lgn-standard" }
+                        ]
+                    }
+                ]
+            }
+        }
+
+    ]
+}

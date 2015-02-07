@@ -1,0 +1,46 @@
+{
+    "_comment": "from: http://en.wikipedia.org/wiki/Masques_block",
+
+    "defs": [
+        {
+            "defName": "pcy",
+            "query": "from[*]?set='pcy'"
+        },
+        {
+            "defName": "pcy-main",
+            "query": "from[pcy]-from[pcy]?type=(Marketing|Basic Land)-from[pcy]?token=true-from[pcy]?promo=true"
+        },
+        {
+            "defName": "pcy-foils",
+            "query": "from[*]?set='pcy'"
+        }
+
+    ],
+    "packs": [
+        {
+            "packName": "pcy-all-cards",
+            "packDesc": "Prophecy: All Cards",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[pcy]" }
+            ]
+        },
+        {
+            "packName": "pcy-standard",
+            "packDesc": "Prophecy: Standard Booster",
+            "isGenerated": true,
+            "cards": [
+                { "query": "from[pcy-main]?rarity='r'" },
+                { "query": "take[3]>from[pcy-main]?rarity='u'" },
+                { "query": "take[10]>from[pcy-main]?rarity='c'" },
+                {
+                    "querySet": [
+                        { "percent": 75, "query": "from[pcy-main]?rarity='c'" },
+                        { "percent": 25, "query": "from[pcy-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+                    ]
+                }
+            ]
+        }
+
+    ]
+}

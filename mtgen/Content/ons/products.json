@@ -1,0 +1,38 @@
+{
+    "_comment": "if there are no options the query/packNames will be auto-run",
+    "products": [
+        {
+            "productName": "ons-all-cards",
+            "productDesc": "All Cards",
+            "soures": [ "http://mtgjson.com/json/ons.json", "http://gatherer.wizards.com/" ],
+            "isGenerated": false,
+            "initialSort": "colour",
+            "packs": [
+                { "packName": "ons-all-cards" }
+            ]
+        },
+        {
+            "productName": "ons-boosters",
+            "productDesc": "Boosters",
+            "sources": [ "http://mtgsalvation.gamepedia.com/Onslaught" ],
+            "isGenerated": true,
+            "initialSort": "set",
+            "packs": [
+                { "packName": "ons-standard" }
+            ],
+            "options": {
+                "presets": [
+                    {
+                        "presetName": "ons-boosters-six",
+                        "presetDesc": "Six Boosters",
+                        "default": true,
+                        "packs": [
+                            { "count": 6, "defaultPackName": "ons-standard" }
+                        ]
+                    }
+                ]
+            }
+        }
+
+    ]
+}

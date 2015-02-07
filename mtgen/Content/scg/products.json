@@ -1,0 +1,38 @@
+{
+    "_comment": "if there are no options the query/packNames will be auto-run",
+    "products": [
+        {
+            "productName": "scg-all-cards",
+            "productDesc": "All Cards",
+            "soures": [ "http://mtgjson.com/json/scg.json", "http://gatherer.wizards.com/" ],
+            "isGenerated": false,
+            "initialSort": "colour",
+            "packs": [
+                { "packName": "scg-all-cards" }
+            ]
+        },
+        {
+            "productName": "scg-boosters",
+            "productDesc": "Boosters",
+            "sources": [ "http://mtgsalvation.gamepedia.com/Scourge" ],
+            "isGenerated": true,
+            "initialSort": "set",
+            "packs": [
+                { "packName": "scg-standard" }
+            ],
+            "options": {
+                "presets": [
+                    {
+                        "presetName": "scg-boosters-six",
+                        "presetDesc": "Six Boosters",
+                        "default": true,
+                        "packs": [
+                            { "count": 6, "defaultPackName": "scg-standard" }
+                        ]
+                    }
+                ]
+            }
+        }
+
+    ]
+}

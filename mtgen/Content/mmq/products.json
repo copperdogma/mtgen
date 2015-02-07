@@ -1,0 +1,38 @@
+{
+    "_comment": "if there are no options the query/packNames will be auto-run",
+    "products": [
+        {
+            "productName": "mmq-all-cards",
+            "productDesc": "All Cards",
+            "soures": [ "http://mtgjson.com/json/mmq.json", "http://gatherer.wizards.com/" ],
+            "isGenerated": false,
+            "initialSort": "colour",
+            "packs": [
+                { "packName": "mmq-all-cards" }
+            ]
+        },
+        {
+            "productName": "mmq-boosters",
+            "productDesc": "Boosters",
+            "sources": [ "http://en.wikipedia.org/wiki/Masques_block" ],
+            "isGenerated": true,
+            "initialSort": "set",
+            "packs": [
+                { "packName": "mmq-standard" }
+            ],
+            "options": {
+                "presets": [
+                    {
+                        "presetName": "mmq-boosters-six",
+                        "presetDesc": "Six Boosters",
+                        "default": true,
+                        "packs": [
+                            { "count": 6, "defaultPackName": "mmq-standard" }
+                        ]
+                    }
+                ]
+            }
+        }
+
+    ]
+}
