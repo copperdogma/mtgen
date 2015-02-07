@@ -98,8 +98,8 @@
         <p>Keep current cardsMain.json's images but reprocess the card data:</p>
         <input id="reprocess-data" type="submit" value="Reprocess Card Data" style="font-size:150%" />
         <img id="set-img" src="http://fc03.deviantart.net/fs31/f/2008/212/9/8/Coalition_Symbol_by_Metallicfire0.jpg" width="256" />
+        <p id="status"></p>
         <p id="msg"></p>
-    </section>
     </section>
     <h2>Output</h2>
     <h3>Parsing Log</h3>
@@ -306,6 +306,8 @@
             }
 
             function loadAndProcessAllFiles(isProcessingDataOnly) {
+                $('#status').html("<strong>Started at " + (new Date()) + "</strong>");
+
                 // load all files and don't continue until all are loaded
                 var promises = [];
 
@@ -417,6 +419,8 @@
             */
 
             function createOutputJson(htmlCards, htmlImages, htmlTokens, jsonExceptions, cardsJson, isProcessingDataOnly, mtgJson) {
+                $('#status').html("<strong>Have data; now processing at " + (new Date()) + "</strong>");
+
                 $('#output-textarea').val('');
                 $('#output').empty;
                 var $html = $(htmlCards);
@@ -939,7 +943,7 @@
                 var jsonOtherStr = JSON.stringify(otherOut, null, ' ');
                 $('#out-other').val(jsonOtherStr);
 
-                $('#set-img').attr('src','http://mtgimage.com/symbol/set/'+setCode+'/r/256.png');
+                $('#set-img').attr('src', 'http://mtgimage.com/symbol/set/' + setCode + '/r/256.png');
 
                 $('#msg').html(
 					$wotcImages.length + " WotC images found</br>"
@@ -948,6 +952,8 @@
 					+ ". <ul><li>" + mainOut.length + ": cardsMain.json</li><li>"
 					+ tokenOut.length + ": cardsToken.json</li><li>"
 					+ otherOut.length + ": cardsOther.json</li></ul></strong>");
+
+                $('#status').html("<strong>Processing complete at " + (new Date()) + "</strong>");
             }
 
             function setSaveLinkToDownloadFile() {
