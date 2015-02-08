@@ -19,6 +19,7 @@
     <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel='stylesheet' href='@Url.Content("~/Content/html5reset.css")' type='text/css' />
     <link rel='stylesheet' href='@Url.Content("~/Content/generator.css")' type='text/css' />
+    <link rel='stylesheet' href='@Url.Content("~/Content/print.css")' type='text/css' media='print' />
     <link rel='stylesheet' href='@SetContent(set,"set.css")' type='text/css' />
 </head>
 <body class="home">
@@ -118,7 +119,7 @@
 
             // sticky headers
             mtgGen.on('layoutChanging',function(setCardsLoadedCount) { $(".result .set h2").trigger("sticky_kit:detach"); });
-            mtgGen.on('layoutChanged',function(setCardsLoadedCount) { 
+            mtgGen.on('layoutChanged',function(setCardsLoadedCount) {
                 $(".result .set h2").stick_in_parent();
                 Holder.run();
             });
