@@ -1,0 +1,38 @@
+{
+    "_comment": "if there are no options the query/packNames will be auto-run",
+    "products": [
+        {
+            "productName": "tpr-all-cards",
+            "productDesc": "All Cards",
+            "sources": [ "http://magic.wizards.com/en/MTGO/articles/archive/magic-online/announcing-tempest-remastered-2015-02-23", "http://magic.wizards.com/en/articles/archive/card-image-gallery/tempest-remastered-card-image-gallery-2015-03-30" ],
+            "isGenerated": false,
+            "initialSort": "colour",
+            "packs": [
+                { "packName": "tpr-all-cards" }
+            ]
+        },
+        {
+            "productName": "tpr-boosters",
+            "productDesc": "Boosters",
+            "isVisible": true,
+            "isGenerated": true,
+            "initialSort": "set",
+            "packs": [
+                { "packName": "tpr-standard" }
+            ],
+            "options": {
+                "presets": [
+                    {
+                        "presetName": "tpr-boosters",
+                        "presetDesc": "Six Boosters",
+                        "default": true,
+                        "packs": [
+                            { "count": 6, "defaultPackName": "tpr-standard" }
+                        ]
+                    }
+                ]
+            }
+        }
+
+    ]
+}

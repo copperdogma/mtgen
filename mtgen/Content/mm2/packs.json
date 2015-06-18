@@ -1,0 +1,57 @@
+{
+    "defs": [
+        {
+            "defName": "mm2",
+            "query": "from[*]?set='mm2'"
+        },
+        {
+            "defName": "mm2-main",
+            "query": "from[mm2]-from[mm2]?type=(Marketing|Basic Land)-from[mm2]?token=true"
+        },
+        {
+            "defName": "mm2-foils",
+            "query": "from[mm2-main]"
+        }
+
+    ],
+    "packs": [
+        {
+            "packName": "mm2-all-cards",
+            "packDesc": "Modern Masters 2015: All Cards",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[mm2]" }
+            ]
+        },
+        {
+            "packName": "mm2-standard",
+            "packDesc": "Modern Masters 2015: Standard Booster",
+            "isGenerated": true,
+            "cards": [
+                { "query": "take[10]>from[mm2-main]?rarity='c'" },
+                { "query": "take[3]>from[mm2-main]?rarity='u'" },
+                {
+                    "querySet": [
+                        { "percent": 87.5, "query": "from[mm2-main]?rarity='r'" },
+                        { "percent": 12.5, "query": "from[mm2-main]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" }
+                    ]
+                },
+                {
+                    "querySet": [
+                        { "percent": 71.43, "query": "from[mm2-foils]?rarity='c'", "canBeDuplicate": true, "setValues": { "foil": true } },
+                        { "percent": 21.43, "query": "from[mm2-foils]?rarity='u'", "canBeDuplicate": true, "setValues": { "foil": true } },
+                        { "percent": 6.25, "query": "from[mm2-foils]?rarity='r'", "canBeDuplicate": true, "setValues": { "foil": true } },
+                        { "percent": 0.89, "query": "from[mm2-foils]?rarity='m'", "canBeDuplicate": true, "setValues": { "foil": true } }
+                    ]
+                },
+                {
+                    "querySet": [
+                        { "percent": 50, "query": "from[mm2]?type='Marketing'" },
+                        { "percent": 50, "query": "from[mm2]?token=true" }
+                    ]
+                }
+            ]
+        }
+
+    ]
+}

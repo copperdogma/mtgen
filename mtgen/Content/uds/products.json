@@ -4,7 +4,7 @@
         {
             "productName": "uds-all-cards",
             "productDesc": "All Cards",
-            "soures": [ "http://mtgjson.com/json/uds.json", "http://gatherer.wizards.com/" ],
+            "sources": [ "http://mtgjson.com/json/uds.json", "http://gatherer.wizards.com/" ],
             "isGenerated": false,
             "initialSort": "colour",
             "packs": [

@@ -1,0 +1,213 @@
+[
+    {
+        "src": "http://mtgen.net/cards/mtg-marketing1.png",
+        "title": "Tip/Marketing Card",
+        "set": "mbs",
+        "colour": "o",
+        "num": "001 Marketing",
+        "rarity": "c",
+        "type": "Marketing",
+        "usableForDeckBuilding": false,
+        "marketing": true
+    },
+    {
+        "src": "http://mtgen.net/cards/mtg-marketing2.png",
+        "title": "Tip/Marketing Card",
+        "set": "mbs",
+        "colour": "o",
+        "num": "002 Marketing",
+        "rarity": "c",
+        "type": "Marketing",
+        "usableForDeckBuilding": false,
+        "marketing": true
+    },
+    {
+        "src": "http://magiccards.info/extras/tips-tricks/mirrodin-besieged/battle-cry.jpg",
+        "title": "Rules Tip: Battle Cry",
+        "set": "mbs",
+        "colour": "o",
+        "num": "1/5 Tip",
+        "rarity": "c",
+        "type": "Marketing",
+        "usableForDeckBuilding": false,
+        "marketing": true
+    },
+    {
+        "src": "http://magiccards.info/extras/tips-tricks/mirrodin-besieged/living-weapon.jpg",
+        "title": "Rules Tip: Living Weapon",
+        "set": "mbs",
+        "colour": "o",
+        "num": "3/5 Tip",
+        "rarity": "c",
+        "type": "Marketing",
+        "usableForDeckBuilding": false,
+        "marketing": true
+    },
+    {
+        "src": "http://magiccards.info/extras/tips-tricks/mirrodin-besieged/infect.jpg",
+        "title": "Rules Tip: Infect",
+        "set": "mbs",
+        "colour": "o",
+        "num": "4/5 Tip",
+        "rarity": "c",
+        "type": "Marketing",
+        "usableForDeckBuilding": false,
+        "marketing": true
+    },
+    {
+        "src": "http://magiccards.info/extras/tips-tricks/mirrodin-besieged/profilerate.jpg",
+        "title": "Rules Tip: Proliferate",
+        "set": "mbs",
+        "colour": "o",
+        "num": "5/5 Tip",
+        "rarity": "c",
+        "type": "Marketing",
+        "usableForDeckBuilding": false,
+        "marketing": true
+    },
+
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "White"
+        ],
+        "multiverseid": 214064,
+        "name": "Hero of Bladehold",
+        "subtypes": [
+            "Human",
+            "Knight"
+        ],
+        "cmc": 4,
+        "rarity": "m",
+        "artist": "Austin Hsu",
+        "power": "3",
+        "toughness": "4",
+        "manaCost": "{2}{W}{W}",
+        "text": "Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.)\nWhenever Hero of Bladehold attacks, put two 1/1 white Soldier creature tokens onto the battlefield tapped and attacking.",
+        "number": "8",
+        "watermark": "Mirran",
+        "imageName": "hero of bladehold",
+        "title": "Hero of Bladehold",
+        "set": "mbs",
+        "cost": "{2}{W}{W}",
+        "colour": "w",
+        "num": "8 Prerelease",
+        "src": "http://media.wizards.com/images/magic/daily/arcana/617_fxh45jijs4.jpg",
+        "faction": "Mirran",
+        "promo": "true",
+        "includedReason": "Prerelease Promo"
+    },
+    {
+        "layout": "normal",
+        "supertypes": [
+            "Legendary"
+        ],
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Black",
+            "Green"
+        ],
+        "multiverseid": 214072,
+        "name": "Glissa, the Traitor",
+        "subtypes": [
+            "Zombie",
+            "Elf"
+        ],
+        "cmc": 3,
+        "rarity": "m",
+        "artist": "Chris Rahn",
+        "power": "3",
+        "toughness": "3",
+        "manaCost": "{B}{G}{G}",
+        "text": "First strike, deathtouch\nWhenever a creature an opponent controls dies, you may return target artifact card from your graveyard to your hand.",
+        "number": "96",
+        "watermark": "Phyrexian",
+        "imageName": "glissa, the traitor",
+        "title": "Glissa, the Traitor",
+        "set": "mbs",
+        "cost": "{B}{G}{G}",
+        "colour": "m",
+        "num": "96 Prerelrease",
+        "src": "http://media.wizards.com/images/magic/daily/arcana/617_sbgjngx6p7.jpg",
+        "faction": "Phyrexian",
+        "promo": "true",
+        "includedReason": "Prerelease Promo"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 214039,
+        "name": "Thopter Assembly",
+        "subtypes": [
+            "Thopter"
+        ],
+        "cmc": 6,
+        "rarity": "r",
+        "artist": "Volkan Baga",
+        "power": "5",
+        "toughness": "5",
+        "manaCost": "{6}",
+        "text": "Flying\nAt the beginning of your upkeep, if you control no Thopters other than Thopter Assembly, return Thopter Assembly to its owner's hand and put five 1/1 colorless Thopter artifact creature tokens with flying onto the battlefield.",
+        "number": "140",
+        "watermark": "Mirran",
+        "imageName": "thopter assembly",
+        "title": "Thopter Assembly",
+        "set": "mbs",
+        "cost": "{6}",
+        "colour": "a",
+        "num": "140 Prerelease",
+        "src": "http://media.wizards.com/images/magic/daily/arcana/617_beu98s08d4.jpg",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran",
+        "promo": "true",
+        "includedReason": "Prerelease Promo"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "White"
+        ],
+        "multiverseid": 213802,
+        "name": "Mirran Crusader",
+        "subtypes": [
+            "Human",
+            "Knight"
+        ],
+        "cmc": 3,
+        "rarity": "r",
+        "artist": "Eric Deschamps",
+        "power": "2",
+        "toughness": "2",
+        "manaCost": "{1}{W}{W}",
+        "text": "Double strike, protection from black and from green",
+        "flavor": "A symbol of what Mirrodin once was and hope for what it will be again.",
+        "number": "14",
+        "watermark": "Mirran",
+        "imageName": "mirran crusader",
+        "title": "Mirran Crusader",
+        "set": "mbs",
+        "cost": "{1}{W}{W}",
+        "colour": "w",
+        "num": "14 Buy-a-Box",
+        "src": "http://archive.wizards.com/mtg/images/daily/events/promo/mbs_mirrancrusader_en.jpg",
+        "faction": "Mirran",
+        "promo": "true",
+        "includedReason": "Buy-a-Box Promo"
+    }
+]

@@ -1,0 +1,120 @@
+[
+    {
+        "_comment": "the 'title' is the title taken from Gathering Magic, but if it is corrected earlier in the json use the correct title in subsequent entries"
+    },
+    {
+        "title": "Eldrazi Temple",
+        "newValues": { "colour": "l" }
+    },
+    {
+        "title": "Long-Forgotten Gohei",
+        "newValues": { "colour": "a" }
+    },
+    {
+        "title": "AlgaeGharial",
+        "newValues": { "title": "Algae Gharial" }
+    },
+    {
+        "title": "Inner-Flame Ignite",
+        "newValues": { "title": "Inner-Flame Igniter" }
+    },
+    {
+        "title": "Selesya Guildmage",
+        "newValues": { "title": "Selesnya Guildmage" }
+    },
+    {
+        "title": "Cytoplast Root-Kin",
+        "newValues": { "rarity": "u" }
+    },
+    {
+        "title": "Skarrgan Firebird",
+        "newValues": { "rarity": "u" }
+    },
+    {
+        "title": "Tezzeret the Seeker",
+        "newValues": { "rarity": "m" }
+    },
+    {
+        "title": "Alloy Myr",
+        "newValues": { "rarity": "c" }
+    },
+    {
+        "title": "Arrest",
+        "newValues": { "rarity": "c" }
+    },
+    {
+        "title": "Skyhunter Skirmisher",
+        "newValues": { "rarity": "c" }
+    },
+    {
+        "title": "Terashi's Grasp",
+        "newValues": { "rarity": "c" }
+    },
+    {
+        "title": "Noble Hierarch",
+        "newValues": { "rarity": "r" }
+    },
+    {
+        "title": "Selesnya Sanctuary",
+        "newValues": { "rarity": "u" }
+    },
+    {
+        "title": "Spitebellows",
+        "newValues": { "rarity": "u" }
+    },
+    {
+        "title": "Shrivel",
+        "newValues": { "type": "Sorcery" }
+    },
+    {
+        "title": "Copper Carapace",
+        "newValues": { "type": "Artifact" }
+    },
+    {
+        "title": "Gust-Skimmer",
+        "newValues": { "type": "Artifact Creature" }
+    },
+    {
+        "title": "Karn Liberated",
+        "newValues": { "type": "Planeswalker" }
+    },
+    {
+        "title": "Mortarpod",
+        "newValues": { "type": "Artifact" }
+    },
+    {
+        "title": "Sickleslicer",
+        "newValues": { "type": "Artifact" }
+    },
+    {
+        "title": "Add New Card",
+        "newValues": {
+            "title": "Vendilion Clique",
+            "src": "http://media.wizards.com/2015/mm2_9vgauji43t9a/en_4sRXIOzwPJ.png",
+            "set": "mm2",
+            "cost": "{1}{U}{U}",
+            "rarity": "m",
+            "type": "Legendary Creature",
+            "subtype": "Faerie Wizard",
+            "power": "3",
+            "toughness": "1",
+            "colour": "u",
+            "num": "067"
+        }
+    },
+    {
+        "title": "Add New Card",
+        "newValues": {
+            "title": "Surgical Extraction",
+            "src": "http://media.wizards.com/2015/mm2_9vgauji43t9a/en_3rVJ4LhiWG.png",
+            "set": "mm2",
+            "cost": "{PB}",
+            "rarity": "r",
+            "type": "Instant",
+            "subtype": "",
+            "colour": "b",
+            "num": "099"
+        }
+    }
+
+]

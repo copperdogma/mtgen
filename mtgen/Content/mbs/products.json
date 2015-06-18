@@ -1,0 +1,49 @@
+{
+    "_comment": "if there are no options the query/packNames will be auto-run",
+    "products": [
+        {
+            "productName": "mbs-all-cards",
+            "productDesc": "All Cards",
+            "sources": [ "http://mtgjson.com/json/mbs.json", "http://archive.wizards.com/Magic/tcg/article.aspx?x=mtg/tcg/mirrodinbesieged/spoiler", "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/628", "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/617" ],
+            "isGenerated": false,
+            "initialSort": "colour",
+            "packs": [
+                { "packName": "mbs-all-cards" }
+            ]
+        },
+        {
+            "productName": "mbs-boosters",
+            "productDesc": "Boosters",
+            "sources": [ "http://mtgsalvation.gamepedia.com/Mirrodin_Besieged" ],
+            "isGenerated": true,
+            "initialSort": "set",
+            "packs": [
+                { "packName": "mbs-standard" },
+                { "packName": "som-standard" }
+            ],
+            "options": {
+                "presets": [
+                    {
+                        "presetName": "mbs-boosters-six",
+                        "presetDesc": "Six Boosters",
+                        "default": true,
+                        "packs": [
+                            { "count": 6, "defaultPackName": "mbs-standard" }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "productName": "mbs-promos",
+            "productDesc": "All Promos",
+            "sources": [ "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/617", "http://archive.wizards.com/Magic/magazine/Article.aspx?x=mtg/daily/events/mbsbuyaboxpromo" ],
+            "isGenerated": false,
+            "initialSort": "name",
+            "packs": [
+                { "packName": "mbs-promos" }
+            ]
+        }
+
+    ]
+}

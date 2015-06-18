@@ -1,0 +1,4753 @@
+﻿[
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "White"
+        ],
+        "multiverseid": 213818,
+        "name": "Accorder Paladin",
+        "subtypes": [
+            "Human",
+            "Knight"
+        ],
+        "cmc": 2,
+        "rarity": "u",
+        "artist": "Kekai Kotaki",
+        "power": "3",
+        "toughness": "1",
+        "manaCost": "{1}{W}",
+        "text": "Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.)",
+        "flavor": "\"I fight for the suns, the surface, and everything in between.\"",
+        "number": "1",
+        "watermark": "Mirran",
+        "imageName": "accorder paladin",
+        "title": "Accorder Paladin",
+        "set": "mbs",
+        "cost": "{1}{W}",
+        "colour": "w",
+        "num": "1",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213818&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "White"
+        ],
+        "multiverseid": 213794,
+        "name": "Ardent Recruit",
+        "subtypes": [
+            "Human",
+            "Soldier"
+        ],
+        "cmc": 1,
+        "rarity": "c",
+        "artist": "Mike Bierek",
+        "power": "1",
+        "toughness": "1",
+        "manaCost": "{W}",
+        "text": "Metalcraft — Ardent Recruit gets +2/+2 as long as you control three or more artifacts.",
+        "flavor": "\"We lost our homes and our kin. We won't let those rotters take our future as well.\"",
+        "number": "2",
+        "watermark": "Mirran",
+        "imageName": "ardent recruit",
+        "title": "Ardent Recruit",
+        "set": "mbs",
+        "cost": "{W}",
+        "colour": "w",
+        "num": "2",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213794&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Instant",
+        "types": [
+            "Instant"
+        ],
+        "colors": [
+            "White"
+        ],
+        "multiverseid": 213792,
+        "name": "Banishment Decree",
+        "cmc": 5,
+        "rarity": "c",
+        "artist": "James Ryman",
+        "manaCost": "{3}{W}{W}",
+        "text": "Put target artifact, creature, or enchantment on top of its owner's library.",
+        "flavor": "\"Unworthy of consecration.\"\n—Axsh, lesser cenobite",
+        "number": "3",
+        "watermark": "Phyrexian",
+        "imageName": "banishment decree",
+        "title": "Banishment Decree",
+        "set": "mbs",
+        "cost": "{3}{W}{W}",
+        "colour": "w",
+        "num": "3",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213792&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Sorcery",
+        "types": [
+            "Sorcery"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "multiverseid": 214061,
+        "name": "Black Sun's Zenith",
+        "cmc": 2,
+        "rarity": "r",
+        "artist": "Daniel Ljunggren",
+        "manaCost": "{X}{B}{B}",
+        "text": "Put X -1/-1 counters on each creature. Shuffle Black Sun's Zenith into its owner's library.",
+        "flavor": "\"Under the suns, Mirrodin kneels and begs us for perfection.\"\n—Geth, Lord of the Vault",
+        "number": "39",
+        "watermark": "Phyrexian",
+        "imageName": "black sun's zenith",
+        "title": "Black Sun's Zenith",
+        "set": "mbs",
+        "cost": "{X}{B}{B}",
+        "colour": "b",
+        "num": "39",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214061&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 214049,
+        "name": "Bladed Sentinel",
+        "subtypes": [
+            "Construct"
+        ],
+        "cmc": 4,
+        "rarity": "c",
+        "artist": "Tomasz Jedruszek",
+        "power": "2",
+        "toughness": "4",
+        "manaCost": "{4}",
+        "text": "{W}: Bladed Sentinel gains vigilance until end of turn.",
+        "flavor": "The Mirran partisans created hundreds of patrol sentinels to divert Phyrexian assaults from the Tangle.",
+        "number": "98",
+        "watermark": "Mirran",
+        "imageName": "bladed sentinel",
+        "title": "Bladed Sentinel",
+        "set": "mbs",
+        "cost": "{4}",
+        "colour": "a",
+        "num": "98",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214049&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 221563,
+        "name": "Blightsteel Colossus",
+        "subtypes": [
+            "Golem"
+        ],
+        "cmc": 12,
+        "rarity": "m",
+        "artist": "Chris Rahn",
+        "power": "11",
+        "toughness": "11",
+        "manaCost": "{12}",
+        "text": "Trample, infect, indestructible\nIf Blightsteel Colossus would be put into a graveyard from anywhere, reveal Blightsteel Colossus and shuffle it into its owner's library instead.",
+        "number": "99",
+        "watermark": "Phyrexian",
+        "imageName": "blightsteel colossus",
+        "title": "Blightsteel Colossus",
+        "set": "mbs",
+        "cost": "{12}",
+        "colour": "a",
+        "num": "99",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=221563&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Green"
+        ],
+        "multiverseid": 213820,
+        "name": "Blightwidow",
+        "subtypes": [
+            "Spider"
+        ],
+        "cmc": 4,
+        "rarity": "c",
+        "artist": "Daniel Ljunggren",
+        "power": "2",
+        "toughness": "4",
+        "manaCost": "{3}{G}",
+        "text": "Reach (This creature can block creatures with flying.)\nInfect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)",
+        "number": "77",
+        "watermark": "Phyrexian",
+        "imageName": "blightwidow",
+        "title": "Blightwidow",
+        "set": "mbs",
+        "cost": "{3}{G}",
+        "colour": "g",
+        "num": "77",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213820&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Red"
+        ],
+        "multiverseid": 213793,
+        "name": "Blisterstick Shaman",
+        "subtypes": [
+            "Goblin",
+            "Shaman"
+        ],
+        "cmc": 3,
+        "rarity": "c",
+        "artist": "Svetlin Velinov",
+        "power": "2",
+        "toughness": "1",
+        "manaCost": "{2}{R}",
+        "text": "When Blisterstick Shaman enters the battlefield, it deals 1 damage to target creature or player.",
+        "flavor": "A productive warren requires a good deal of prodding.",
+        "number": "58",
+        "watermark": "Mirran",
+        "imageName": "blisterstick shaman",
+        "title": "Blisterstick Shaman",
+        "set": "mbs",
+        "cost": "{2}{R}",
+        "colour": "r",
+        "num": "58",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213793&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Instant",
+        "types": [
+            "Instant"
+        ],
+        "colors": [
+            "Blue"
+        ],
+        "multiverseid": 221556,
+        "name": "Blue Sun's Zenith",
+        "cmc": 3,
+        "rarity": "r",
+        "artist": "Izzy",
+        "manaCost": "{X}{U}{U}{U}",
+        "text": "Target player draws X cards. Shuffle Blue Sun's Zenith into its owner's library.",
+        "flavor": "\"The Origin Query will wait. We must ensure we survive to return to it.\"\n—Pelyus, vedalken ordinar",
+        "number": "20",
+        "watermark": "Mirran",
+        "imageName": "blue sun's zenith",
+        "title": "Blue Sun's Zenith",
+        "set": "mbs",
+        "cost": "{X}{U}{U}{U}",
+        "colour": "u",
+        "num": "20",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=221556&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact"
+        ],
+        "multiverseid": 214040,
+        "name": "Bonehoard",
+        "subtypes": [
+            "Equipment"
+        ],
+        "cmc": 4,
+        "rarity": "r",
+        "artist": "Chippy",
+        "manaCost": "{4}",
+        "text": "Living weapon (When this Equipment enters the battlefield, put a 0/0 black Germ creature token onto the battlefield, then attach this to it.)\nEquipped creature gets +X/+X, where X is the number of creature cards in all graveyards.\nEquip {2}",
+        "number": "100",
+        "watermark": "Phyrexian",
+        "imageName": "bonehoard",
+        "title": "Bonehoard",
+        "set": "mbs",
+        "cost": "{4}",
+        "colour": "a",
+        "num": "100",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214040&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 213800,
+        "name": "Brass Squire",
+        "subtypes": [
+            "Myr"
+        ],
+        "cmc": 3,
+        "rarity": "u",
+        "artist": "Ryan Pancoast",
+        "power": "1",
+        "toughness": "3",
+        "manaCost": "{3}",
+        "text": "{T}: Attach target Equipment you control to target creature you control.",
+        "flavor": "\"I admire it. Few pull off pluck and subservience at the same time.\"\n—Ezuri, renegade leader",
+        "number": "101",
+        "watermark": "Mirran",
+        "imageName": "brass squire",
+        "title": "Brass Squire",
+        "set": "mbs",
+        "cost": "{3}",
+        "colour": "a",
+        "num": "101",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213800&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Instant",
+        "types": [
+            "Instant"
+        ],
+        "colors": [
+            "Red"
+        ],
+        "multiverseid": 213771,
+        "name": "Burn the Impure",
+        "cmc": 2,
+        "rarity": "c",
+        "artist": "Nic Klein",
+        "manaCost": "{1}{R}",
+        "text": "Burn the Impure deals 3 damage to target creature. If that creature has infect, Burn the Impure deals 3 damage to that creature's controller.",
+        "flavor": "Flame doesn't kneel to Phyrexia.",
+        "number": "59",
+        "watermark": "Mirran",
+        "imageName": "burn the impure",
+        "title": "Burn the Impure",
+        "set": "mbs",
+        "cost": "{1}{R}",
+        "colour": "r",
+        "num": "59",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213771&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "multiverseid": 213789,
+        "name": "Caustic Hound",
+        "subtypes": [
+            "Hound"
+        ],
+        "cmc": 6,
+        "rarity": "c",
+        "artist": "Dave Allsop",
+        "power": "4",
+        "toughness": "4",
+        "manaCost": "{5}{B}",
+        "text": "When Caustic Hound dies, each player loses 4 life.",
+        "flavor": "At first, the Mirrans aimed for its exposed gut. The survivors quickly learned to do otherwise.",
+        "number": "40",
+        "watermark": "Phyrexian",
+        "imageName": "caustic hound",
+        "title": "Caustic Hound",
+        "set": "mbs",
+        "cost": "{5}{B}",
+        "colour": "b",
+        "num": "40",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213789&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Instant",
+        "types": [
+            "Instant"
+        ],
+        "colors": [
+            "White"
+        ],
+        "multiverseid": 213808,
+        "name": "Choking Fumes",
+        "cmc": 3,
+        "rarity": "u",
+        "artist": "Scott Chou",
+        "manaCost": "{2}{W}",
+        "text": "Put a -1/-1 counter on each attacking creature.",
+        "flavor": "\"Fall to your knees and welcome our embrace.\"\n—Qal-Sha, Priest of Norn",
+        "number": "4",
+        "watermark": "Phyrexian",
+        "imageName": "choking fumes",
+        "title": "Choking Fumes",
+        "set": "mbs",
+        "cost": "{2}{W}",
+        "colour": "w",
+        "num": "4",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213808&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Sorcery",
+        "types": [
+            "Sorcery"
+        ],
+        "colors": [
+            "Red"
+        ],
+        "multiverseid": 213756,
+        "name": "Concussive Bolt",
+        "cmc": 5,
+        "rarity": "c",
+        "artist": "Johann Bodin",
+        "manaCost": "{3}{R}{R}",
+        "text": "Concussive Bolt deals 4 damage to target player.\nMetalcraft — If you control three or more artifacts, creatures that player controls can't block this turn.",
+        "flavor": "Shock one, awe the rest.",
+        "number": "60",
+        "watermark": "Mirran",
+        "imageName": "concussive bolt",
+        "title": "Concussive Bolt",
+        "set": "mbs",
+        "cost": "{3}{R}{R}",
+        "colour": "r",
+        "num": "60",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213756&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Blue"
+        ],
+        "multiverseid": 214063,
+        "name": "Consecrated Sphinx",
+        "subtypes": [
+            "Sphinx"
+        ],
+        "cmc": 6,
+        "rarity": "m",
+        "artist": "Mark Zug",
+        "power": "4",
+        "toughness": "6",
+        "manaCost": "{4}{U}{U}",
+        "text": "Flying\nWhenever an opponent draws a card, you may draw two cards.",
+        "flavor": "Blessed by the hands of Jin-Gitaxias.",
+        "number": "21",
+        "watermark": "Phyrexian",
+        "imageName": "consecrated sphinx",
+        "title": "Consecrated Sphinx",
+        "set": "mbs",
+        "cost": "{4}{U}{U}",
+        "colour": "u",
+        "num": "21",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214063&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Land",
+        "types": [
+            "Land"
+        ],
+        "multiverseid": 213775,
+        "name": "Contested War Zone",
+        "rarity": "r",
+        "artist": "Scott Chou",
+        "text": "Whenever a creature deals combat damage to you, that creature's controller gains control of Contested War Zone.\n{T}: Add {1} to your mana pool.\n{1}, {T}: Attacking creatures get +1/+0 until end of turn.",
+        "number": "144",
+        "watermark": "Mirran",
+        "imageName": "contested war zone",
+        "title": "Contested War Zone",
+        "set": "mbs",
+        "cost": "",
+        "colour": "l",
+        "num": "144",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213775&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact"
+        ],
+        "multiverseid": 213805,
+        "name": "Copper Carapace",
+        "subtypes": [
+            "Equipment"
+        ],
+        "cmc": 1,
+        "rarity": "c",
+        "artist": "Franz Vohwinkel",
+        "manaCost": "{1}",
+        "text": "Equipped creature gets +2/+2 and can't block.\nEquip {3} ({3}: Attach to target creature you control. Equip only as a sorcery.)",
+        "flavor": "\"We will fight as they do: our flesh protected behind metal.\"\n—Tae Aquil, Viridan weaponsmith",
+        "number": "102",
+        "watermark": "Mirran",
+        "imageName": "copper carapace",
+        "title": "Copper Carapace",
+        "set": "mbs",
+        "cost": "{1}",
+        "colour": "a",
+        "num": "102",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213805&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 213822,
+        "name": "Core Prowler",
+        "subtypes": [
+            "Horror"
+        ],
+        "cmc": 4,
+        "rarity": "u",
+        "artist": "Dave Allsop",
+        "power": "2",
+        "toughness": "2",
+        "manaCost": "{4}",
+        "text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\nWhen Core Prowler dies, proliferate. (You choose any number of permanents and/or players with counters on them, then give each another counter of a kind already there.)",
+        "number": "103",
+        "watermark": "Phyrexian",
+        "imageName": "core prowler",
+        "title": "Core Prowler",
+        "set": "mbs",
+        "cost": "{4}",
+        "colour": "a",
+        "num": "103",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213822&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Enchantment",
+        "types": [
+            "Enchantment"
+        ],
+        "colors": [
+            "Blue"
+        ],
+        "multiverseid": 214043,
+        "name": "Corrupted Conscience",
+        "subtypes": [
+            "Aura"
+        ],
+        "cmc": 5,
+        "rarity": "u",
+        "artist": "Jason Chan",
+        "manaCost": "{3}{U}{U}",
+        "text": "Enchant creature\nYou control enchanted creature.\nEnchanted creature has infect. (It deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)",
+        "flavor": "Karn's creation is now his master.",
+        "number": "22",
+        "watermark": "Phyrexian",
+        "imageName": "corrupted conscience",
+        "title": "Corrupted Conscience",
+        "set": "mbs",
+        "cost": "{3}{U}{U}",
+        "colour": "u",
+        "num": "22",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214043&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Sorcery",
+        "types": [
+            "Sorcery"
+        ],
+        "colors": [
+            "Green"
+        ],
+        "multiverseid": 214029,
+        "name": "Creeping Corrosion",
+        "cmc": 4,
+        "rarity": "r",
+        "artist": "Ryan Pancoast",
+        "manaCost": "{2}{G}{G}",
+        "text": "Destroy all artifacts.",
+        "flavor": "\"We will reveal the futility of their heresy by showing them how fragile their relics are.\"\n—Vorinclex, Voice of Hunger",
+        "number": "78",
+        "watermark": "Phyrexian",
+        "imageName": "creeping corrosion",
+        "title": "Creeping Corrosion",
+        "set": "mbs",
+        "cost": "{2}{G}{G}",
+        "colour": "g",
+        "num": "78",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214029&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Instant",
+        "types": [
+            "Instant"
+        ],
+        "colors": [
+            "Red"
+        ],
+        "multiverseid": 213806,
+        "name": "Crush",
+        "cmc": 1,
+        "rarity": "c",
+        "artist": "Matt Stewart",
+        "manaCost": "{R}",
+        "text": "Destroy target noncreature artifact.",
+        "flavor": "A golem's hands know no tenderness.",
+        "number": "61",
+        "watermark": "Mirran",
+        "imageName": "crush",
+        "title": "Crush",
+        "set": "mbs",
+        "cost": "{R}",
+        "colour": "r",
+        "num": "61",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213806&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Blue"
+        ],
+        "multiverseid": 214037,
+        "name": "Cryptoplasm",
+        "subtypes": [
+            "Shapeshifter"
+        ],
+        "cmc": 3,
+        "rarity": "r",
+        "artist": "Eric Deschamps",
+        "power": "2",
+        "toughness": "2",
+        "manaCost": "{1}{U}{U}",
+        "text": "At the beginning of your upkeep, you may have Cryptoplasm become a copy of another target creature. If you do, Cryptoplasm gains this ability.",
+        "flavor": "\"If left in the enemy's shape too long, it might be lost to them.\"\n—Vy Covalt, Neurok agent",
+        "number": "23",
+        "watermark": "Mirran",
+        "imageName": "cryptoplasm",
+        "title": "Cryptoplasm",
+        "set": "mbs",
+        "cost": "{1}{U}{U}",
+        "colour": "u",
+        "num": "23",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214037&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact"
+        ],
+        "multiverseid": 213749,
+        "name": "Darksteel Plate",
+        "subtypes": [
+            "Equipment"
+        ],
+        "cmc": 3,
+        "rarity": "r",
+        "artist": "Daniel Ljunggren",
+        "manaCost": "{3}",
+        "text": "Indestructible\nEquipped creature has indestructible.\nEquip {2}",
+        "flavor": "\"If there can be no victory, then I will fight forever.\"\n—Koth of the Hammer",
+        "number": "104",
+        "watermark": "Mirran",
+        "imageName": "darksteel plate",
+        "title": "Darksteel Plate",
+        "set": "mbs",
+        "cost": "{3}",
+        "colour": "a",
+        "num": "104",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213749&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact"
+        ],
+        "multiverseid": 214055,
+        "name": "Decimator Web",
+        "cmc": 4,
+        "rarity": "r",
+        "artist": "Daniel Ljunggren",
+        "manaCost": "{4}",
+        "text": "{4}, {T}: Target opponent loses 2 life, gets a poison counter, then puts the top six cards of his or her library into his or her graveyard.",
+        "flavor": "Mycosynth grew unfettered beneath the black lacuna, metastasizing into a matrix of noxious energy.",
+        "number": "105",
+        "watermark": "Phyrexian",
+        "imageName": "decimator web",
+        "title": "Decimator Web",
+        "set": "mbs",
+        "cost": "{4}",
+        "colour": "a",
+        "num": "105",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214055&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Sorcery",
+        "types": [
+            "Sorcery"
+        ],
+        "colors": [
+            "Blue"
+        ],
+        "multiverseid": 213765,
+        "name": "Distant Memories",
+        "cmc": 4,
+        "rarity": "r",
+        "artist": "Karl Kopinski",
+        "manaCost": "{2}{U}{U}",
+        "text": "Search your library for a card, exile it, then shuffle your library. Any opponent may have you put that card into your hand. If no player does, you draw three cards.",
+        "flavor": "\"The fleeting shadows of his primitive self have all but vanished.\"\n—Jin-Gitaxias, Core Augur",
+        "number": "24",
+        "watermark": "Phyrexian",
+        "imageName": "distant memories",
+        "title": "Distant Memories",
+        "set": "mbs",
+        "cost": "{2}{U}{U}",
+        "colour": "u",
+        "num": "24",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213765&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Instant",
+        "types": [
+            "Instant"
+        ],
+        "colors": [
+            "White"
+        ],
+        "multiverseid": 213760,
+        "name": "Divine Offering",
+        "cmc": 2,
+        "rarity": "c",
+        "artist": "Terese Nielsen",
+        "manaCost": "{1}{W}",
+        "text": "Destroy target artifact. You gain life equal to its converted mana cost.",
+        "flavor": "\"The Phyrexians are vulnerable. Do not despair. We will prevail!\"\n—Juryan, rebel leader",
+        "number": "5",
+        "watermark": "Mirran",
+        "imageName": "divine offering",
+        "title": "Divine Offering",
+        "set": "mbs",
+        "cost": "{1}{W}",
+        "colour": "w",
+        "num": "5",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213760&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 214032,
+        "name": "Dross Ripper",
+        "subtypes": [
+            "Hound"
+        ],
+        "cmc": 4,
+        "rarity": "c",
+        "artist": "David Rapoza",
+        "power": "3",
+        "toughness": "3",
+        "manaCost": "{4}",
+        "text": "{2}{B}: Dross Ripper gets +1/+1 until end of turn.",
+        "flavor": "\"Such a creation serves no purpose other than exterminating every one of us.\"\n—Sadra Alic, Neurok strategist",
+        "number": "106",
+        "watermark": "Phyrexian",
+        "imageName": "dross ripper",
+        "title": "Dross Ripper",
+        "set": "mbs",
+        "cost": "{4}",
+        "colour": "a",
+        "num": "106",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214032&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Green"
+        ],
+        "multiverseid": 213732,
+        "name": "Fangren Marauder",
+        "subtypes": [
+            "Beast"
+        ],
+        "cmc": 6,
+        "rarity": "c",
+        "artist": "James Ryman",
+        "power": "5",
+        "toughness": "5",
+        "manaCost": "{5}{G}",
+        "text": "Whenever an artifact is put into a graveyard from the battlefield, you may gain 5 life.",
+        "flavor": "\"The fangren fight without comfort of any kind. We can ask no less of ourselves.\"\n—Tilien, Sylvok partisan",
+        "number": "79",
+        "watermark": "Mirran",
+        "imageName": "fangren marauder",
+        "title": "Fangren Marauder",
+        "set": "mbs",
+        "cost": "{5}{G}",
+        "colour": "g",
+        "num": "79",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213732&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact"
+        ],
+        "multiverseid": 221560,
+        "name": "Flayer Husk",
+        "subtypes": [
+            "Equipment"
+        ],
+        "cmc": 1,
+        "rarity": "c",
+        "artist": "Igor Kieryluk",
+        "manaCost": "{1}",
+        "text": "Living weapon (When this Equipment enters the battlefield, put a 0/0 black Germ creature token onto the battlefield, then attach this to it.)\nEquipped creature gets +1/+1.\nEquip {2}",
+        "number": "107",
+        "watermark": "Phyrexian",
+        "imageName": "flayer husk",
+        "title": "Flayer Husk",
+        "set": "mbs",
+        "cost": "{1}",
+        "colour": "a",
+        "num": "107",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=221560&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "multiverseid": 213817,
+        "name": "Flensermite",
+        "subtypes": [
+            "Gremlin"
+        ],
+        "cmc": 2,
+        "rarity": "c",
+        "artist": "Dave Allsop",
+        "power": "1",
+        "toughness": "1",
+        "manaCost": "{1}{B}",
+        "text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\nLifelink (Damage dealt by this creature also causes you to gain that much life.)",
+        "number": "41",
+        "watermark": "Phyrexian",
+        "imageName": "flensermite",
+        "title": "Flensermite",
+        "set": "mbs",
+        "cost": "{1}{B}",
+        "colour": "b",
+        "num": "41",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213817&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "multiverseid": 213759,
+        "name": "Flesh-Eater Imp",
+        "subtypes": [
+            "Imp"
+        ],
+        "cmc": 4,
+        "rarity": "u",
+        "artist": "Johann Bodin",
+        "power": "2",
+        "toughness": "2",
+        "manaCost": "{3}{B}",
+        "text": "Flying\nInfect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\nSacrifice a creature: Flesh-Eater Imp gets +1/+1 until end of turn.",
+        "number": "42",
+        "watermark": "Phyrexian",
+        "imageName": "flesh-eater imp",
+        "title": "Flesh-Eater Imp",
+        "set": "mbs",
+        "cost": "{3}{B}",
+        "colour": "b",
+        "num": "42",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213759&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "supertypes": [
+            "Basic"
+        ],
+        "type": "Basic Land",
+        "types": [
+            "Land"
+        ],
+        "multiverseid": 214031,
+        "name": "Forest",
+        "subtypes": [
+            "Forest"
+        ],
+        "rarity": "b",
+        "artist": "Mark Tedin",
+        "number": "154",
+        "variations": [
+            214075
+        ],
+        "imageName": "forest1",
+        "title": "Forest",
+        "set": "mbs",
+        "cost": "",
+        "colour": "l",
+        "num": "154",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214031&type=card"
+    },
+    {
+        "layout": "normal",
+        "supertypes": [
+            "Basic"
+        ],
+        "type": "Basic Land",
+        "types": [
+            "Land"
+        ],
+        "multiverseid": 214075,
+        "name": "Forest",
+        "subtypes": [
+            "Forest"
+        ],
+        "rarity": "b",
+        "artist": "Mark Tedin",
+        "number": "155",
+        "variations": [
+            214031
+        ],
+        "imageName": "forest2",
+        "title": "Forest",
+        "set": "mbs",
+        "cost": "",
+        "colour": "l",
+        "num": "155",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214075&type=card"
+    },
+    {
+        "layout": "normal",
+        "type": "Instant",
+        "types": [
+            "Instant"
+        ],
+        "colors": [
+            "White"
+        ],
+        "multiverseid": 213791,
+        "name": "Frantic Salvage",
+        "cmc": 4,
+        "rarity": "c",
+        "artist": "Scott Chou",
+        "manaCost": "{3}{W}",
+        "text": "Put any number of target artifact cards from your graveyard on top of your library.\nDraw a card.",
+        "flavor": "\"We will mourn when there is time. For now, we survive.\"",
+        "number": "6",
+        "watermark": "Mirran",
+        "imageName": "frantic salvage",
+        "title": "Frantic Salvage",
+        "set": "mbs",
+        "cost": "{3}{W}",
+        "colour": "w",
+        "num": "6",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213791&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Instant",
+        "types": [
+            "Instant"
+        ],
+        "colors": [
+            "Blue"
+        ],
+        "multiverseid": 213736,
+        "name": "Fuel for the Cause",
+        "cmc": 4,
+        "rarity": "c",
+        "artist": "Steven Belledin",
+        "manaCost": "{2}{U}{U}",
+        "text": "Counter target spell, then proliferate. (You choose any number of permanents and/or players with counters on them, then give each another counter of a kind already there.)",
+        "flavor": "\"Your ideas will be discarded and your will repurposed.\"",
+        "number": "25",
+        "watermark": "Phyrexian",
+        "imageName": "fuel for the cause",
+        "title": "Fuel for the Cause",
+        "set": "mbs",
+        "cost": "{2}{U}{U}",
+        "colour": "u",
+        "num": "25",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213736&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Red"
+        ],
+        "multiverseid": 214053,
+        "name": "Galvanoth",
+        "subtypes": [
+            "Beast"
+        ],
+        "cmc": 5,
+        "rarity": "r",
+        "artist": "Kev Walker",
+        "power": "3",
+        "toughness": "3",
+        "manaCost": "{3}{R}{R}",
+        "text": "At the beginning of your upkeep, you may look at the top card of your library. If it's an instant or sorcery card, you may cast it without paying its mana cost.",
+        "flavor": "It chews open Mirrodin's husk and feeds on the outpouring of energy.",
+        "number": "62",
+        "watermark": "Mirran",
+        "imageName": "galvanoth",
+        "title": "Galvanoth",
+        "set": "mbs",
+        "cost": "{3}{R}{R}",
+        "colour": "r",
+        "num": "62",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214053&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Green"
+        ],
+        "multiverseid": 213783,
+        "name": "Glissa's Courier",
+        "subtypes": [
+            "Horror"
+        ],
+        "cmc": 3,
+        "rarity": "c",
+        "artist": "Dave Kendall",
+        "power": "2",
+        "toughness": "3",
+        "manaCost": "{1}{G}{G}",
+        "text": "Mountainwalk",
+        "flavor": "\"So, the survivors from Oxid Ridge are on the move. Let them come and witness predation in its purest form.\"\n—Glissa",
+        "number": "80",
+        "watermark": "Phyrexian",
+        "imageName": "glissa's courier",
+        "title": "Glissa's Courier",
+        "set": "mbs",
+        "cost": "{1}{G}{G}",
+        "colour": "g",
+        "num": "80",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213783&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "supertypes": [
+            "Legendary"
+        ],
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Black",
+            "Green"
+        ],
+        "multiverseid": 214072,
+        "name": "Glissa, the Traitor",
+        "subtypes": [
+            "Zombie",
+            "Elf"
+        ],
+        "cmc": 3,
+        "rarity": "m",
+        "artist": "Chris Rahn",
+        "power": "3",
+        "toughness": "3",
+        "manaCost": "{B}{G}{G}",
+        "text": "First strike, deathtouch\nWhenever a creature an opponent controls dies, you may return target artifact card from your graveyard to your hand.",
+        "number": "96",
+        "watermark": "Phyrexian",
+        "imageName": "glissa, the traitor",
+        "title": "Glissa, the Traitor",
+        "set": "mbs",
+        "cost": "{B}{G}{G}",
+        "colour": "m",
+        "num": "96",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214072&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Red"
+        ],
+        "multiverseid": 213763,
+        "name": "Gnathosaur",
+        "subtypes": [
+            "Lizard"
+        ],
+        "cmc": 6,
+        "rarity": "c",
+        "artist": "Jason Chan",
+        "power": "5",
+        "toughness": "4",
+        "manaCost": "{4}{R}{R}",
+        "text": "Sacrifice an artifact: Gnathosaur gains trample until end of turn.",
+        "flavor": "Mirran creatures that could withstand the Phyrexian oil found an abundance of crunchy snacks.",
+        "number": "63",
+        "watermark": "Mirran",
+        "imageName": "gnathosaur",
+        "title": "Gnathosaur",
+        "set": "mbs",
+        "cost": "{4}{R}{R}",
+        "colour": "r",
+        "num": "63",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213763&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Instant",
+        "types": [
+            "Instant"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "multiverseid": 213799,
+        "name": "Go for the Throat",
+        "cmc": 2,
+        "rarity": "u",
+        "artist": "David Rapoza",
+        "manaCost": "{1}{B}",
+        "text": "Destroy target nonartifact creature.",
+        "flavor": "Having flesh is increasingly a liability on Mirrodin.",
+        "number": "43",
+        "watermark": "Mirran",
+        "imageName": "go for the throat",
+        "title": "Go for the Throat",
+        "set": "mbs",
+        "cost": "{1}{B}",
+        "colour": "b",
+        "num": "43",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213799&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Red"
+        ],
+        "multiverseid": 213782,
+        "name": "Goblin Wardriver",
+        "subtypes": [
+            "Goblin",
+            "Warrior"
+        ],
+        "cmc": 2,
+        "rarity": "u",
+        "artist": "Chippy",
+        "power": "2",
+        "toughness": "2",
+        "manaCost": "{R}{R}",
+        "text": "Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.)",
+        "flavor": "\"A true warrior fights with whatever's handy.\"\n—Qerk of the Secret Warren",
+        "number": "64",
+        "watermark": "Mirran",
+        "imageName": "goblin wardriver",
+        "title": "Goblin Wardriver",
+        "set": "mbs",
+        "cost": "{R}{R}",
+        "colour": "r",
+        "num": "64",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213782&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "White"
+        ],
+        "multiverseid": 213798,
+        "name": "Gore Vassal",
+        "subtypes": [
+            "Hound"
+        ],
+        "cmc": 3,
+        "rarity": "u",
+        "artist": "Matt Cavotta",
+        "power": "2",
+        "toughness": "1",
+        "manaCost": "{2}{W}",
+        "text": "Sacrifice Gore Vassal: Put a -1/-1 counter on target creature. Then if that creature's toughness is 1 or greater, regenerate it.",
+        "flavor": "\"Rid them of their unfaithful organs. Bring new hearts to the unbelievers.\"\n—Tome of Machines, verse 1703",
+        "number": "7",
+        "watermark": "Phyrexian",
+        "imageName": "gore vassal",
+        "title": "Gore Vassal",
+        "set": "mbs",
+        "cost": "{2}{W}",
+        "colour": "w",
+        "num": "7",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213798&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Sorcery",
+        "types": [
+            "Sorcery"
+        ],
+        "colors": [
+            "Green"
+        ],
+        "multiverseid": 221559,
+        "name": "Green Sun's Zenith",
+        "cmc": 1,
+        "rarity": "r",
+        "artist": "David Rapoza",
+        "manaCost": "{X}{G}",
+        "text": "Search your library for a green creature card with converted mana cost X or less, put it onto the battlefield, then shuffle your library. Shuffle Green Sun's Zenith into its owner's library.",
+        "flavor": "As the green sun crowned, Phyrexian prophecies glowed on the Tree of Tales.",
+        "number": "81",
+        "watermark": "Phyrexian",
+        "imageName": "green sun's zenith",
+        "title": "Green Sun's Zenith",
+        "set": "mbs",
+        "cost": "{X}{G}",
+        "colour": "g",
+        "num": "81",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=221559&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Sorcery",
+        "types": [
+            "Sorcery"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "multiverseid": 214073,
+        "name": "Gruesome Encore",
+        "cmc": 3,
+        "rarity": "u",
+        "artist": "Adrian Smith",
+        "manaCost": "{2}{B}",
+        "text": "Put target creature card from an opponent's graveyard onto the battlefield under your control. It gains haste. Exile it at the beginning of the next end step. If that creature would leave the battlefield, exile it instead of putting it anywhere else.",
+        "number": "44",
+        "watermark": "Phyrexian",
+        "imageName": "gruesome encore",
+        "title": "Gruesome Encore",
+        "set": "mbs",
+        "cost": "{2}{B}",
+        "colour": "b",
+        "num": "44",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214073&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 213768,
+        "name": "Gust-Skimmer",
+        "subtypes": [
+            "Insect"
+        ],
+        "cmc": 2,
+        "rarity": "c",
+        "artist": "Dan Scott",
+        "power": "2",
+        "toughness": "1",
+        "manaCost": "{2}",
+        "text": "{U}: Gust-Skimmer gains flying until end of turn.",
+        "flavor": "Phyrexian smog clouds choked the skies, threatening creatures who couldn't comprehend the menace below.",
+        "number": "108",
+        "watermark": "Mirran",
+        "imageName": "gust-skimmer",
+        "title": "Gust-Skimmer",
+        "set": "mbs",
+        "cost": "{2}",
+        "colour": "a",
+        "num": "108",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213768&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Red"
+        ],
+        "multiverseid": 214052,
+        "name": "Hellkite Igniter",
+        "subtypes": [
+            "Dragon"
+        ],
+        "cmc": 7,
+        "rarity": "r",
+        "artist": "Jason Chan",
+        "power": "5",
+        "toughness": "5",
+        "manaCost": "{5}{R}{R}",
+        "text": "Flying, haste\n{1}{R}: Hellkite Igniter gets +X/+0 until end of turn, where X is the number of artifacts you control.",
+        "flavor": "Its flight sets the sky itself on fire.",
+        "number": "65",
+        "watermark": "Mirran",
+        "imageName": "hellkite igniter",
+        "title": "Hellkite Igniter",
+        "set": "mbs",
+        "cost": "{5}{R}{R}",
+        "colour": "r",
+        "num": "65",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214052&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "White"
+        ],
+        "multiverseid": 214064,
+        "name": "Hero of Bladehold",
+        "subtypes": [
+            "Human",
+            "Knight"
+        ],
+        "cmc": 4,
+        "rarity": "m",
+        "artist": "Austin Hsu",
+        "power": "3",
+        "toughness": "4",
+        "manaCost": "{2}{W}{W}",
+        "text": "Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.)\nWhenever Hero of Bladehold attacks, put two 1/1 white Soldier creature tokens onto the battlefield tapped and attacking.",
+        "number": "8",
+        "watermark": "Mirran",
+        "imageName": "hero of bladehold",
+        "title": "Hero of Bladehold",
+        "set": "mbs",
+        "cost": "{2}{W}{W}",
+        "colour": "w",
+        "num": "8",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214064&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Red"
+        ],
+        "multiverseid": 214028,
+        "name": "Hero of Oxid Ridge",
+        "subtypes": [
+            "Human",
+            "Knight"
+        ],
+        "cmc": 4,
+        "rarity": "m",
+        "artist": "Eric Deschamps",
+        "power": "4",
+        "toughness": "2",
+        "manaCost": "{2}{R}{R}",
+        "text": "Haste\nBattle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.)\nWhenever Hero of Oxid Ridge attacks, creatures with power 1 or less can't block this turn.",
+        "number": "66",
+        "watermark": "Mirran",
+        "imageName": "hero of oxid ridge",
+        "title": "Hero of Oxid Ridge",
+        "set": "mbs",
+        "cost": "{2}{R}{R}",
+        "colour": "r",
+        "num": "66",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214028&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 213807,
+        "name": "Hexplate Golem",
+        "subtypes": [
+            "Golem"
+        ],
+        "cmc": 7,
+        "rarity": "c",
+        "artist": "Matt Cavotta",
+        "power": "5",
+        "toughness": "7",
+        "manaCost": "{7}",
+        "flavor": "\"Use everything. Iron, rust, scrap . . .  even the ground must join our cause.\"\n—Ezuri, renegade leader",
+        "number": "109",
+        "watermark": "Mirran",
+        "imageName": "hexplate golem",
+        "title": "Hexplate Golem",
+        "set": "mbs",
+        "cost": "{7}",
+        "colour": "a",
+        "num": "109",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213807&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Sorcery",
+        "types": [
+            "Sorcery"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "multiverseid": 213723,
+        "name": "Horrifying Revelation",
+        "cmc": 1,
+        "rarity": "c",
+        "artist": "Shelly Wan",
+        "manaCost": "{B}",
+        "text": "Target player discards a card, then puts the top card of his or her library into his or her graveyard.",
+        "flavor": "\"Ours is a glorious transmission! Behold a future where all bow to the Father of Machines.\"\n—Isila, Priest of Sheoldred",
+        "number": "45",
+        "watermark": "Phyrexian",
+        "imageName": "horrifying revelation",
+        "title": "Horrifying Revelation",
+        "set": "mbs",
+        "cost": "{B}",
+        "colour": "b",
+        "num": "45",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213723&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact"
+        ],
+        "multiverseid": 213737,
+        "name": "Ichor Wellspring",
+        "cmc": 2,
+        "rarity": "c",
+        "artist": "Steven Belledin",
+        "manaCost": "{2}",
+        "text": "When Ichor Wellspring enters the battlefield or is put into a graveyard from the battlefield, draw a card.",
+        "flavor": "\"Our glorious infection has taken hold.\"\n—Elesh Norn, Grand Cenobite",
+        "number": "110",
+        "watermark": "Phyrexian",
+        "imageName": "ichor wellspring",
+        "title": "Ichor Wellspring",
+        "set": "mbs",
+        "cost": "{2}",
+        "colour": "a",
+        "num": "110",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213737&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Land",
+        "types": [
+            "Land"
+        ],
+        "multiverseid": 213731,
+        "name": "Inkmoth Nexus",
+        "rarity": "r",
+        "artist": "Jung Park",
+        "text": "{T}: Add {1} to your mana pool.\n{1}: Inkmoth Nexus becomes a 1/1 Blinkmoth artifact creature with flying and infect until end of turn. It's still a land. (It deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)",
+        "number": "145",
+        "watermark": "Phyrexian",
+        "imageName": "inkmoth nexus",
+        "title": "Inkmoth Nexus",
+        "set": "mbs",
+        "cost": "",
+        "colour": "l",
+        "num": "145",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213731&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Instant",
+        "types": [
+            "Instant"
+        ],
+        "colors": [
+            "Red"
+        ],
+        "multiverseid": 213788,
+        "name": "Into the Core",
+        "cmc": 4,
+        "rarity": "u",
+        "artist": "Whit Brachna",
+        "manaCost": "{2}{R}{R}",
+        "text": "Exile two target artifacts.",
+        "flavor": "\"They believe they're driving us back, but we're leading them to their doom.\"\n—Kethek, furnace stoker",
+        "number": "67",
+        "watermark": "Phyrexian",
+        "imageName": "into the core",
+        "title": "Into the Core",
+        "set": "mbs",
+        "cost": "{2}{R}{R}",
+        "colour": "r",
+        "num": "67",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213788&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "supertypes": [
+            "Basic"
+        ],
+        "type": "Basic Land",
+        "types": [
+            "Land"
+        ],
+        "multiverseid": 220369,
+        "name": "Island",
+        "subtypes": [
+            "Island"
+        ],
+        "rarity": "b",
+        "artist": "Jung Park",
+        "number": "148",
+        "variations": [
+            220365
+        ],
+        "imageName": "island1",
+        "title": "Island",
+        "set": "mbs",
+        "cost": "",
+        "colour": "l",
+        "num": "148",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=220369&type=card"
+    },
+    {
+        "layout": "normal",
+        "supertypes": [
+            "Basic"
+        ],
+        "type": "Basic Land",
+        "types": [
+            "Land"
+        ],
+        "multiverseid": 220365,
+        "name": "Island",
+        "subtypes": [
+            "Island"
+        ],
+        "rarity": "b",
+        "artist": "Jung Park",
+        "number": "149",
+        "variations": [
+            220369
+        ],
+        "imageName": "island2",
+        "title": "Island",
+        "set": "mbs",
+        "cost": "",
+        "colour": "l",
+        "num": "149",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=220365&type=card"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "White"
+        ],
+        "multiverseid": 214056,
+        "name": "Kemba's Legion",
+        "subtypes": [
+            "Cat",
+            "Soldier"
+        ],
+        "cmc": 7,
+        "rarity": "u",
+        "artist": "Anthony Francisco",
+        "power": "4",
+        "toughness": "6",
+        "manaCost": "{5}{W}{W}",
+        "text": "Vigilance\nKemba's Legion can block an additional creature for each Equipment attached to Kemba's Legion.",
+        "flavor": "The squabble over succession was quickly replaced by the struggle to survive.",
+        "number": "9",
+        "watermark": "Mirran",
+        "imageName": "kemba's legion",
+        "title": "Kemba's Legion",
+        "set": "mbs",
+        "cost": "{5}{W}{W}",
+        "colour": "w",
+        "num": "9",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214056&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact"
+        ],
+        "multiverseid": 214035,
+        "name": "Knowledge Pool",
+        "cmc": 6,
+        "rarity": "r",
+        "artist": "Mike Bierek",
+        "manaCost": "{6}",
+        "text": "Imprint — When Knowledge Pool enters the battlefield, each player exiles the top three cards of his or her library.\nWhenever a player casts a spell from his or her hand, that player exiles it. If the player does, he or she may cast another nonland card exiled with Knowledge Pool without paying that card's mana cost.",
+        "number": "111",
+        "watermark": "Mirran",
+        "imageName": "knowledge pool",
+        "title": "Knowledge Pool",
+        "set": "mbs",
+        "cost": "{6}",
+        "colour": "a",
+        "num": "111",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214035&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Red"
+        ],
+        "multiverseid": 213766,
+        "name": "Koth's Courier",
+        "subtypes": [
+            "Human",
+            "Rogue"
+        ],
+        "cmc": 3,
+        "rarity": "c",
+        "artist": "Wayne Reynolds",
+        "power": "2",
+        "toughness": "3",
+        "manaCost": "{1}{R}{R}",
+        "text": "Forestwalk",
+        "flavor": "Koth sent partisans into the Tangle to bring survivors to the safe haven of the tunnels below Kuldotha.",
+        "number": "68",
+        "watermark": "Mirran",
+        "imageName": "koth's courier",
+        "title": "Koth's Courier",
+        "set": "mbs",
+        "cost": "{1}{R}{R}",
+        "colour": "r",
+        "num": "68",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213766&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Red"
+        ],
+        "multiverseid": 213810,
+        "name": "Kuldotha Flamefiend",
+        "subtypes": [
+            "Elemental"
+        ],
+        "cmc": 6,
+        "rarity": "u",
+        "artist": "Raymond Swanland",
+        "power": "4",
+        "toughness": "4",
+        "manaCost": "{4}{R}{R}",
+        "text": "When Kuldotha Flamefiend enters the battlefield, you may sacrifice an artifact. If you do, Kuldotha Flamefiend deals 4 damage divided as you choose among any number of target creatures and/or players.",
+        "number": "69",
+        "watermark": "Mirran",
+        "imageName": "kuldotha flamefiend",
+        "title": "Kuldotha Flamefiend",
+        "set": "mbs",
+        "cost": "{4}{R}{R}",
+        "colour": "r",
+        "num": "69",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213810&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Red"
+        ],
+        "multiverseid": 213787,
+        "name": "Kuldotha Ringleader",
+        "subtypes": [
+            "Giant",
+            "Berserker"
+        ],
+        "cmc": 5,
+        "rarity": "c",
+        "artist": "Greg Staples",
+        "power": "4",
+        "toughness": "4",
+        "manaCost": "{4}{R}",
+        "text": "Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.)\nKuldotha Ringleader attacks each turn if able.",
+        "flavor": "Being surrounded by goblins is less objectionable when they're fighting for you.",
+        "number": "70",
+        "watermark": "Mirran",
+        "imageName": "kuldotha ringleader",
+        "title": "Kuldotha Ringleader",
+        "set": "mbs",
+        "cost": "{4}{R}",
+        "colour": "r",
+        "num": "70",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213787&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Sorcery",
+        "types": [
+            "Sorcery"
+        ],
+        "colors": [
+            "Green"
+        ],
+        "multiverseid": 213739,
+        "name": "Lead the Stampede",
+        "cmc": 3,
+        "rarity": "u",
+        "artist": "Efrem Palacios",
+        "manaCost": "{2}{G}",
+        "text": "Look at the top five cards of your library. You may reveal any number of creature cards from among them and put the revealed cards into your hand. Put the rest on the bottom of your library in any order.",
+        "number": "82",
+        "watermark": "Mirran",
+        "imageName": "lead the stampede",
+        "title": "Lead the Stampede",
+        "set": "mbs",
+        "cost": "{2}{G}",
+        "colour": "g",
+        "num": "82",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213739&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "White"
+        ],
+        "multiverseid": 222860,
+        "name": "Leonin Relic-Warder",
+        "subtypes": [
+            "Cat",
+            "Cleric"
+        ],
+        "cmc": 2,
+        "rarity": "u",
+        "artist": "Greg Staples",
+        "power": "2",
+        "toughness": "2",
+        "manaCost": "{W}{W}",
+        "text": "When Leonin Relic-Warder enters the battlefield, you may exile target artifact or enchantment.\nWhen Leonin Relic-Warder leaves the battlefield, return the exiled card to the battlefield under its owner's control.",
+        "number": "10",
+        "watermark": "Mirran",
+        "imageName": "leonin relic-warder",
+        "title": "Leonin Relic-Warder",
+        "set": "mbs",
+        "cost": "{W}{W}",
+        "colour": "w",
+        "num": "10",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=222860&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "White"
+        ],
+        "multiverseid": 213770,
+        "name": "Leonin Skyhunter",
+        "subtypes": [
+            "Cat",
+            "Knight"
+        ],
+        "cmc": 2,
+        "rarity": "c",
+        "artist": "Jana Schirmer & Johannes Voss",
+        "power": "2",
+        "toughness": "2",
+        "manaCost": "{W}{W}",
+        "text": "Flying",
+        "flavor": "\"The infection has spread farther than we could glimpse from the heights of Taj-Nar.\"",
+        "number": "11",
+        "watermark": "Mirran",
+        "imageName": "leonin skyhunter",
+        "title": "Leonin Skyhunter",
+        "set": "mbs",
+        "cost": "{W}{W}",
+        "colour": "w",
+        "num": "11",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213770&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "White"
+        ],
+        "multiverseid": 213761,
+        "name": "Loxodon Partisan",
+        "subtypes": [
+            "Elephant",
+            "Soldier"
+        ],
+        "cmc": 5,
+        "rarity": "c",
+        "artist": "Matt Stewart",
+        "power": "3",
+        "toughness": "4",
+        "manaCost": "{4}{W}",
+        "text": "Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.)",
+        "flavor": "\"This war is not about loxodon or leonin, Sylvok or Auriok. To defeat these rotters, we must do it together.\"",
+        "number": "12",
+        "watermark": "Mirran",
+        "imageName": "loxodon partisan",
+        "title": "Loxodon Partisan",
+        "set": "mbs",
+        "cost": "{4}{W}",
+        "colour": "w",
+        "num": "12",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213761&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 214059,
+        "name": "Lumengrid Gargoyle",
+        "subtypes": [
+            "Gargoyle"
+        ],
+        "cmc": 6,
+        "rarity": "u",
+        "artist": "Randis Albion",
+        "power": "4",
+        "toughness": "4",
+        "manaCost": "{6}",
+        "text": "Flying",
+        "flavor": "\"Anything that watches without sleep and fights without fear is a valuable ally against the Phyrexians.\"\n—Kara Vrist, Neurok agent",
+        "number": "112",
+        "watermark": "Mirran",
+        "imageName": "lumengrid gargoyle",
+        "title": "Lumengrid Gargoyle",
+        "set": "mbs",
+        "cost": "{6}",
+        "colour": "a",
+        "num": "112",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214059&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact"
+        ],
+        "multiverseid": 213740,
+        "name": "Magnetic Mine",
+        "cmc": 4,
+        "rarity": "r",
+        "artist": "David Rapoza",
+        "manaCost": "{4}",
+        "text": "Whenever another artifact is put into a graveyard from the battlefield, Magnetic Mine deals 2 damage to that artifact's controller.",
+        "number": "113",
+        "watermark": "Phyrexian",
+        "imageName": "magnetic mine",
+        "title": "Magnetic Mine",
+        "set": "mbs",
+        "cost": "{4}",
+        "colour": "a",
+        "num": "113",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213740&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "multiverseid": 214044,
+        "name": "Massacre Wurm",
+        "subtypes": [
+            "Wurm"
+        ],
+        "cmc": 6,
+        "rarity": "m",
+        "artist": "Jason Chan",
+        "power": "6",
+        "toughness": "5",
+        "manaCost": "{3}{B}{B}{B}",
+        "text": "When Massacre Wurm enters the battlefield, creatures your opponents control get -2/-2 until end of turn.\nWhenever a creature an opponent controls dies, that player loses 2 life.",
+        "number": "46",
+        "watermark": "Phyrexian",
+        "imageName": "massacre wurm",
+        "title": "Massacre Wurm",
+        "set": "mbs",
+        "cost": "{3}{B}{B}{B}",
+        "colour": "b",
+        "num": "46",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214044&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Instant",
+        "types": [
+            "Instant"
+        ],
+        "colors": [
+            "White"
+        ],
+        "multiverseid": 221554,
+        "name": "Master's Call",
+        "cmc": 3,
+        "rarity": "c",
+        "artist": "David Rapoza",
+        "manaCost": "{2}{W}",
+        "text": "Put two 1/1 colorless Myr artifact creature tokens onto the battlefield.",
+        "flavor": "The need to obey was inscribed on every plate in their bodies.",
+        "number": "13",
+        "watermark": "Mirran",
+        "imageName": "master's call",
+        "title": "Master's Call",
+        "set": "mbs",
+        "cost": "{2}{W}",
+        "colour": "w",
+        "num": "13",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=221554&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Green"
+        ],
+        "multiverseid": 213796,
+        "name": "Melira's Keepers",
+        "subtypes": [
+            "Human",
+            "Warrior"
+        ],
+        "cmc": 5,
+        "rarity": "u",
+        "artist": "Eric Deschamps",
+        "power": "4",
+        "toughness": "4",
+        "manaCost": "{4}{G}",
+        "text": "Melira's Keepers can't have counters placed on it.",
+        "flavor": "Her warriors are the last defense against the coming storm.",
+        "number": "83",
+        "watermark": "Mirran",
+        "imageName": "melira's keepers",
+        "title": "Melira's Keepers",
+        "set": "mbs",
+        "cost": "{4}{G}",
+        "colour": "g",
+        "num": "83",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213796&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Sorcery",
+        "types": [
+            "Sorcery"
+        ],
+        "colors": [
+            "Red"
+        ],
+        "multiverseid": 213812,
+        "name": "Metallic Mastery",
+        "cmc": 3,
+        "rarity": "u",
+        "artist": "Erica Yang",
+        "manaCost": "{2}{R}",
+        "text": "Gain control of target artifact until end of turn. Untap that artifact. It gains haste until end of turn.",
+        "flavor": "\"All will be reforged in the fires of glory.\"\n—Urabrask the Hidden",
+        "number": "71",
+        "watermark": "Phyrexian",
+        "imageName": "metallic mastery",
+        "title": "Metallic Mastery",
+        "set": "mbs",
+        "cost": "{2}{R}",
+        "colour": "r",
+        "num": "71",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213812&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "White"
+        ],
+        "multiverseid": 213802,
+        "name": "Mirran Crusader",
+        "subtypes": [
+            "Human",
+            "Knight"
+        ],
+        "cmc": 3,
+        "rarity": "r",
+        "artist": "Eric Deschamps",
+        "power": "2",
+        "toughness": "2",
+        "manaCost": "{1}{W}{W}",
+        "text": "Double strike, protection from black and from green",
+        "flavor": "A symbol of what Mirrodin once was and hope for what it will be again.",
+        "number": "14",
+        "watermark": "Mirran",
+        "imageName": "mirran crusader",
+        "title": "Mirran Crusader",
+        "set": "mbs",
+        "cost": "{1}{W}{W}",
+        "colour": "w",
+        "num": "14",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213802&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Instant",
+        "types": [
+            "Instant"
+        ],
+        "colors": [
+            "Green"
+        ],
+        "multiverseid": 213819,
+        "name": "Mirran Mettle",
+        "cmc": 1,
+        "rarity": "c",
+        "artist": "Karl Kopinski",
+        "manaCost": "{G}",
+        "text": "Target creature gets +2/+2 until end of turn.\nMetalcraft — That creature gets +4/+4 until end of turn instead if you control three or more artifacts.",
+        "flavor": "\"Our land will not yield to Phyrexian corruption!\"",
+        "number": "84",
+        "watermark": "Mirran",
+        "imageName": "mirran mettle",
+        "title": "Mirran Mettle",
+        "set": "mbs",
+        "cost": "{G}",
+        "colour": "g",
+        "num": "84",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213819&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Blue"
+        ],
+        "multiverseid": 213779,
+        "name": "Mirran Spy",
+        "subtypes": [
+            "Drone"
+        ],
+        "cmc": 3,
+        "rarity": "c",
+        "artist": "Dave Kendall",
+        "power": "1",
+        "toughness": "3",
+        "manaCost": "{2}{U}",
+        "text": "Flying\nWhenever you cast an artifact spell, you may untap target creature.",
+        "flavor": "Accurate information is a precious commodity in times of war.",
+        "number": "26",
+        "watermark": "Mirran",
+        "imageName": "mirran spy",
+        "title": "Mirran Spy",
+        "set": "mbs",
+        "cost": "{2}{U}",
+        "colour": "u",
+        "num": "26",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213779&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact"
+        ],
+        "multiverseid": 214068,
+        "name": "Mirrorworks",
+        "cmc": 5,
+        "rarity": "r",
+        "artist": "John Avon",
+        "manaCost": "{5}",
+        "text": "Whenever another nontoken artifact enters the battlefield under your control, you may pay {2}. If you do, put a token that's a copy of that artifact onto the battlefield.",
+        "flavor": "The faces of Geth's corpse-dredgers are disturbingly similar.",
+        "number": "114",
+        "watermark": "Phyrexian",
+        "imageName": "mirrorworks",
+        "title": "Mirrorworks",
+        "set": "mbs",
+        "cost": "{5}",
+        "colour": "a",
+        "num": "114",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214068&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Sorcery",
+        "types": [
+            "Sorcery"
+        ],
+        "colors": [
+            "Blue"
+        ],
+        "multiverseid": 214071,
+        "name": "Mitotic Manipulation",
+        "cmc": 3,
+        "rarity": "r",
+        "artist": "Dan Scott",
+        "manaCost": "{1}{U}{U}",
+        "text": "Look at the top seven cards of your library. You may put one of those cards onto the battlefield if it has the same name as a permanent. Put the rest on the bottom of your library in any order.",
+        "flavor": "\"They can't even comprehend nature. How could they improve it?\"\n—Venser",
+        "number": "27",
+        "watermark": "Phyrexian",
+        "imageName": "mitotic manipulation",
+        "title": "Mitotic Manipulation",
+        "set": "mbs",
+        "cost": "{1}{U}{U}",
+        "colour": "u",
+        "num": "27",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214071&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Sorcery",
+        "types": [
+            "Sorcery"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "multiverseid": 222863,
+        "name": "Morbid Plunder",
+        "cmc": 3,
+        "rarity": "c",
+        "artist": "Mike Bierek",
+        "manaCost": "{1}{B}{B}",
+        "text": "Return up to two target creature cards from your graveyard to your hand.",
+        "flavor": "Even the dead are raw materials for the Phyrexian vision of perfection.",
+        "number": "47",
+        "watermark": "Phyrexian",
+        "imageName": "morbid plunder",
+        "title": "Morbid Plunder",
+        "set": "mbs",
+        "cost": "{1}{B}{B}",
+        "colour": "b",
+        "num": "47",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=222863&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact"
+        ],
+        "multiverseid": 213725,
+        "name": "Mortarpod",
+        "subtypes": [
+            "Equipment"
+        ],
+        "cmc": 2,
+        "rarity": "u",
+        "artist": "Eric Deschamps",
+        "manaCost": "{2}",
+        "text": "Living weapon (When this Equipment enters the battlefield, put a 0/0 black Germ creature token onto the battlefield, then attach this to it.)\nEquipped creature gets +0/+1 and has \"Sacrifice this creature: This creature deals 1 damage to target creature or player.\"\nEquip {2}",
+        "number": "115",
+        "watermark": "Phyrexian",
+        "imageName": "mortarpod",
+        "title": "Mortarpod",
+        "set": "mbs",
+        "cost": "{2}",
+        "colour": "a",
+        "num": "115",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213725&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "supertypes": [
+            "Basic"
+        ],
+        "type": "Basic Land",
+        "types": [
+            "Land"
+        ],
+        "multiverseid": 214045,
+        "name": "Mountain",
+        "subtypes": [
+            "Mountain"
+        ],
+        "rarity": "b",
+        "artist": "Tomasz Jedruszek",
+        "number": "152",
+        "variations": [
+            214066
+        ],
+        "imageName": "mountain1",
+        "title": "Mountain",
+        "set": "mbs",
+        "cost": "",
+        "colour": "l",
+        "num": "152",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214045&type=card"
+    },
+    {
+        "layout": "normal",
+        "supertypes": [
+            "Basic"
+        ],
+        "type": "Basic Land",
+        "types": [
+            "Land"
+        ],
+        "multiverseid": 214066,
+        "name": "Mountain",
+        "subtypes": [
+            "Mountain"
+        ],
+        "rarity": "b",
+        "artist": "Tomasz Jedruszek",
+        "number": "153",
+        "variations": [
+            214045
+        ],
+        "imageName": "mountain2",
+        "title": "Mountain",
+        "set": "mbs",
+        "cost": "",
+        "colour": "l",
+        "num": "153",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214066&type=card"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 213734,
+        "name": "Myr Sire",
+        "subtypes": [
+            "Myr"
+        ],
+        "cmc": 2,
+        "rarity": "c",
+        "artist": "Jaime Jones",
+        "power": "1",
+        "toughness": "1",
+        "manaCost": "{2}",
+        "text": "When Myr Sire dies, put a 1/1 colorless Myr artifact creature token onto the battlefield.",
+        "flavor": "For the Phyrexians, death is not an end, nor a one-time occurrence.",
+        "number": "116",
+        "watermark": "Phyrexian",
+        "imageName": "myr sire",
+        "title": "Myr Sire",
+        "set": "mbs",
+        "cost": "{2}",
+        "colour": "a",
+        "num": "116",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213734&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact"
+        ],
+        "multiverseid": 213757,
+        "name": "Myr Turbine",
+        "cmc": 5,
+        "rarity": "r",
+        "artist": "Randis Albion",
+        "manaCost": "{5}",
+        "text": "{T}: Put a 1/1 colorless Myr artifact creature token onto the battlefield.\n{T}, Tap five untapped Myr you control: Search your library for a Myr creature card, put it onto the battlefield, then shuffle your library.",
+        "number": "117",
+        "watermark": "Mirran",
+        "imageName": "myr turbine",
+        "title": "Myr Turbine",
+        "set": "mbs",
+        "cost": "{5}",
+        "colour": "a",
+        "num": "117",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213757&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 214067,
+        "name": "Myr Welder",
+        "subtypes": [
+            "Myr"
+        ],
+        "cmc": 3,
+        "rarity": "r",
+        "artist": "Austin Hsu",
+        "power": "1",
+        "toughness": "4",
+        "manaCost": "{3}",
+        "text": "Imprint — {T}: Exile target artifact card from a graveyard.\nMyr Welder has all activated abilities of all cards exiled with it.",
+        "flavor": "Memnarch designed some myr to follow the levelers and reaffix lost parts. Mirran partisans put that instinct to good use.",
+        "number": "118",
+        "watermark": "Mirran",
+        "imageName": "myr welder",
+        "title": "Myr Welder",
+        "set": "mbs",
+        "cost": "{3}",
+        "colour": "a",
+        "num": "118",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214067&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "multiverseid": 213816,
+        "name": "Nested Ghoul",
+        "subtypes": [
+            "Zombie",
+            "Warrior"
+        ],
+        "cmc": 5,
+        "rarity": "u",
+        "artist": "Dave Kendall",
+        "power": "4",
+        "toughness": "2",
+        "manaCost": "{3}{B}{B}",
+        "text": "Whenever a source deals damage to Nested Ghoul, put a 2/2 black Zombie creature token onto the battlefield.",
+        "flavor": "\"The chest cavity is cleared of useless meat. I know just what to do with the space.\"\n—Gyed, Vault Priest",
+        "number": "48",
+        "watermark": "Phyrexian",
+        "imageName": "nested ghoul",
+        "title": "Nested Ghoul",
+        "set": "mbs",
+        "cost": "{3}{B}{B}",
+        "colour": "b",
+        "num": "48",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213816&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Blue"
+        ],
+        "multiverseid": 213754,
+        "name": "Neurok Commando",
+        "subtypes": [
+            "Human",
+            "Rogue"
+        ],
+        "cmc": 3,
+        "rarity": "u",
+        "artist": "Matt Stewart",
+        "power": "2",
+        "toughness": "1",
+        "manaCost": "{1}{U}{U}",
+        "text": "Shroud (This creature can't be the target of spells or abilities.)\nWhenever Neurok Commando deals combat damage to a player, you may draw a card.",
+        "flavor": "\"There's no more time for secluded study. Answers are there only for those with the courage to take them.\"",
+        "number": "28",
+        "watermark": "Mirran",
+        "imageName": "neurok commando",
+        "title": "Neurok Commando",
+        "set": "mbs",
+        "cost": "{1}{U}{U}",
+        "colour": "u",
+        "num": "28",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213754&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Blue"
+        ],
+        "multiverseid": 214036,
+        "name": "Oculus",
+        "subtypes": [
+            "Homunculus"
+        ],
+        "cmc": 2,
+        "rarity": "c",
+        "artist": "Dan Scott",
+        "power": "1",
+        "toughness": "1",
+        "manaCost": "{1}{U}",
+        "text": "When Oculus dies, you may draw a card.",
+        "flavor": "\"In its gaze I saw no mercy, no recognition that I was worthy to exist.\"\n—Kara Vrist, Neurok agent",
+        "number": "29",
+        "watermark": "Phyrexian",
+        "imageName": "oculus",
+        "title": "Oculus",
+        "set": "mbs",
+        "cost": "{1}{U}",
+        "colour": "u",
+        "num": "29",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214036&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Red"
+        ],
+        "multiverseid": 213795,
+        "name": "Ogre Resister",
+        "subtypes": [
+            "Ogre"
+        ],
+        "cmc": 4,
+        "rarity": "c",
+        "artist": "Efrem Palacios",
+        "power": "4",
+        "toughness": "3",
+        "manaCost": "{2}{R}{R}",
+        "flavor": "He didn't have a word for \"home,\" but he knew it was something to be defended.",
+        "number": "72",
+        "watermark": "Mirran",
+        "imageName": "ogre resister",
+        "title": "Ogre Resister",
+        "set": "mbs",
+        "cost": "{2}{R}{R}",
+        "colour": "r",
+        "num": "72",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213795&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 213781,
+        "name": "Peace Strider",
+        "subtypes": [
+            "Construct"
+        ],
+        "cmc": 4,
+        "rarity": "u",
+        "artist": "Igor Kieryluk",
+        "power": "3",
+        "toughness": "3",
+        "manaCost": "{4}",
+        "text": "When Peace Strider enters the battlefield, you gain 3 life.",
+        "flavor": "\"The Vanished must have sent it from beyond to aid us in this struggle.\"\n—Kessla, Sylvok shaman",
+        "number": "119",
+        "watermark": "Mirran",
+        "imageName": "peace strider",
+        "title": "Peace Strider",
+        "set": "mbs",
+        "cost": "{4}",
+        "colour": "a",
+        "num": "119",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213781&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Enchantment",
+        "types": [
+            "Enchantment"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "multiverseid": 213797,
+        "name": "Phyresis",
+        "subtypes": [
+            "Aura"
+        ],
+        "cmc": 2,
+        "rarity": "c",
+        "artist": "Izzy",
+        "manaCost": "{1}{B}",
+        "text": "Enchant creature\nEnchanted creature has infect. (It deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)",
+        "flavor": "\"Perfection is at hand. You have been freed of weakness and made compleat.\"\n—Sheoldred, Whispering One",
+        "number": "49",
+        "watermark": "Phyrexian",
+        "imageName": "phyresis",
+        "title": "Phyresis",
+        "set": "mbs",
+        "cost": "{1}{B}",
+        "colour": "b",
+        "num": "49",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213797&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "multiverseid": 213724,
+        "name": "Phyrexian Crusader",
+        "subtypes": [
+            "Zombie",
+            "Knight"
+        ],
+        "cmc": 3,
+        "rarity": "r",
+        "artist": "Eric Deschamps",
+        "power": "2",
+        "toughness": "2",
+        "manaCost": "{1}{B}{B}",
+        "text": "First strike, protection from red and from white\nInfect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)",
+        "number": "50",
+        "watermark": "Phyrexian",
+        "imageName": "phyrexian crusader",
+        "title": "Phyrexian Crusader",
+        "set": "mbs",
+        "cost": "{1}{B}{B}",
+        "colour": "b",
+        "num": "50",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213724&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 213743,
+        "name": "Phyrexian Digester",
+        "subtypes": [
+            "Construct"
+        ],
+        "cmc": 3,
+        "rarity": "c",
+        "artist": "Dave Allsop",
+        "power": "2",
+        "toughness": "1",
+        "manaCost": "{3}",
+        "text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)",
+        "flavor": "\"Our cause will ripen in the fertile flesh of the unworthy.\"\n—Sheoldred, Whispering One",
+        "number": "120",
+        "watermark": "Phyrexian",
+        "imageName": "phyrexian digester",
+        "title": "Phyrexian Digester",
+        "set": "mbs",
+        "cost": "{3}",
+        "colour": "a",
+        "num": "120",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213743&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Green"
+        ],
+        "multiverseid": 214060,
+        "name": "Phyrexian Hydra",
+        "subtypes": [
+            "Hydra"
+        ],
+        "cmc": 5,
+        "rarity": "r",
+        "artist": "Mike Bierek",
+        "power": "7",
+        "toughness": "7",
+        "manaCost": "{3}{G}{G}",
+        "text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\nIf damage would be dealt to Phyrexian Hydra, prevent that damage. Put a -1/-1 counter on Phyrexian Hydra for each 1 damage prevented this way.",
+        "number": "85",
+        "watermark": "Phyrexian",
+        "imageName": "phyrexian hydra",
+        "title": "Phyrexian Hydra",
+        "set": "mbs",
+        "cost": "{3}{G}{G}",
+        "colour": "g",
+        "num": "85",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214060&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 214038,
+        "name": "Phyrexian Juggernaut",
+        "subtypes": [
+            "Juggernaut"
+        ],
+        "cmc": 6,
+        "rarity": "u",
+        "artist": "Kev Walker",
+        "power": "5",
+        "toughness": "5",
+        "manaCost": "{6}",
+        "text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\nPhyrexian Juggernaut attacks each turn if able.",
+        "flavor": "Where nature impedes, Phyrexians overcome.",
+        "number": "121",
+        "watermark": "Phyrexian",
+        "imageName": "phyrexian juggernaut",
+        "title": "Phyrexian Juggernaut",
+        "set": "mbs",
+        "cost": "{6}",
+        "colour": "a",
+        "num": "121",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214038&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "multiverseid": 213804,
+        "name": "Phyrexian Rager",
+        "subtypes": [
+            "Horror"
+        ],
+        "cmc": 3,
+        "rarity": "c",
+        "artist": "Stephan Martiniere",
+        "power": "2",
+        "toughness": "2",
+        "manaCost": "{2}{B}",
+        "text": "When Phyrexian Rager enters the battlefield, you draw a card and you lose 1 life.",
+        "flavor": "\"I believe many worlds will bow to Phyrexia. Mirrodin is merely the first.\"\n—Sheoldred, Whispering One",
+        "number": "51",
+        "watermark": "Phyrexian",
+        "imageName": "phyrexian rager",
+        "title": "Phyrexian Rager",
+        "set": "mbs",
+        "cost": "{2}{B}",
+        "colour": "b",
+        "num": "51",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213804&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Sorcery",
+        "types": [
+            "Sorcery"
+        ],
+        "colors": [
+            "White"
+        ],
+        "multiverseid": 214048,
+        "name": "Phyrexian Rebirth",
+        "cmc": 6,
+        "rarity": "r",
+        "artist": "Scott Chou",
+        "manaCost": "{4}{W}{W}",
+        "text": "Destroy all creatures, then put an X/X colorless Horror artifact creature token onto the battlefield, where X is the number of creatures destroyed this way.",
+        "flavor": "As long as one drop of the oil exists, the joyous work continues.",
+        "number": "15",
+        "watermark": "Phyrexian",
+        "imageName": "phyrexian rebirth",
+        "title": "Phyrexian Rebirth",
+        "set": "mbs",
+        "cost": "{4}{W}{W}",
+        "colour": "w",
+        "num": "15",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214048&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 220589,
+        "name": "Phyrexian Revoker",
+        "subtypes": [
+            "Horror"
+        ],
+        "cmc": 2,
+        "rarity": "r",
+        "artist": "Kev Walker",
+        "power": "2",
+        "toughness": "1",
+        "manaCost": "{2}",
+        "text": "As Phyrexian Revoker enters the battlefield, name a nonland card.\nActivated abilities of sources with the chosen name can't be activated.",
+        "flavor": "Basic senses like sight and taste are reserved for those in power.",
+        "number": "122",
+        "watermark": "Phyrexian",
+        "imageName": "phyrexian revoker",
+        "title": "Phyrexian Revoker",
+        "set": "mbs",
+        "cost": "{2}",
+        "colour": "a",
+        "num": "122",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=220589&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "multiverseid": 214074,
+        "name": "Phyrexian Vatmother",
+        "subtypes": [
+            "Horror"
+        ],
+        "cmc": 4,
+        "rarity": "r",
+        "artist": "Stephan Martiniere",
+        "power": "4",
+        "toughness": "5",
+        "manaCost": "{2}{B}{B}",
+        "text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\nAt the beginning of your upkeep, you get a poison counter.",
+        "number": "52",
+        "watermark": "Phyrexian",
+        "imageName": "phyrexian vatmother",
+        "title": "Phyrexian Vatmother",
+        "set": "mbs",
+        "cost": "{2}{B}{B}",
+        "colour": "b",
+        "num": "52",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214074&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 221561,
+        "name": "Pierce Strider",
+        "subtypes": [
+            "Construct"
+        ],
+        "cmc": 4,
+        "rarity": "u",
+        "artist": "Igor Kieryluk",
+        "power": "3",
+        "toughness": "3",
+        "manaCost": "{4}",
+        "text": "When Pierce Strider enters the battlefield, target opponent loses 3 life.",
+        "flavor": "\"Pain isn't a negative stimulus. Pain is a sign of your imperfection.\"\n—Sheoldred, Whispering One",
+        "number": "123",
+        "watermark": "Phyrexian",
+        "imageName": "pierce strider",
+        "title": "Pierce Strider",
+        "set": "mbs",
+        "cost": "{4}",
+        "colour": "a",
+        "num": "123",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=221561&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact"
+        ],
+        "multiverseid": 213742,
+        "name": "Piston Sledge",
+        "subtypes": [
+            "Equipment"
+        ],
+        "cmc": 3,
+        "rarity": "u",
+        "artist": "Pete Venters",
+        "manaCost": "{3}",
+        "text": "When Piston Sledge enters the battlefield, attach it to target creature you control.\nEquipped creature gets +3/+1.\nEquip—Sacrifice an artifact.",
+        "flavor": "Only the goblins could make a simple machine so complex.",
+        "number": "124",
+        "watermark": "Mirran",
+        "imageName": "piston sledge",
+        "title": "Piston Sledge",
+        "set": "mbs",
+        "cost": "{3}",
+        "colour": "a",
+        "num": "124",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213742&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Instant",
+        "types": [
+            "Instant"
+        ],
+        "colors": [
+            "Green"
+        ],
+        "multiverseid": 213744,
+        "name": "Pistus Strike",
+        "cmc": 3,
+        "rarity": "c",
+        "artist": "Jaime Jones",
+        "manaCost": "{2}{G}",
+        "text": "Destroy target creature with flying. Its controller gets a poison counter.",
+        "flavor": "\"Even a nuisance such as the pistus fly has a purpose in our new world.\"\n—Glissa",
+        "number": "86",
+        "watermark": "Phyrexian",
+        "imageName": "pistus strike",
+        "title": "Pistus Strike",
+        "set": "mbs",
+        "cost": "{2}{G}",
+        "colour": "g",
+        "num": "86",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213744&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 213785,
+        "name": "Plague Myr",
+        "subtypes": [
+            "Myr"
+        ],
+        "cmc": 2,
+        "rarity": "u",
+        "artist": "Efrem Palacios",
+        "power": "1",
+        "toughness": "1",
+        "manaCost": "{2}",
+        "text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\n{T}: Add {1} to your mana pool.",
+        "flavor": "They watch for a new master, one more sinister than the last.",
+        "number": "125",
+        "watermark": "Phyrexian",
+        "imageName": "plague myr",
+        "title": "Plague Myr",
+        "set": "mbs",
+        "cost": "{2}",
+        "colour": "a",
+        "num": "125",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213785&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Green"
+        ],
+        "multiverseid": 213752,
+        "name": "Plaguemaw Beast",
+        "subtypes": [
+            "Beast"
+        ],
+        "cmc": 5,
+        "rarity": "u",
+        "artist": "Whit Brachna",
+        "power": "4",
+        "toughness": "3",
+        "manaCost": "{3}{G}{G}",
+        "text": "{T}, Sacrifice a creature: Proliferate. (You choose any number of permanents and/or players with counters on them, then give each another counter of a kind already there.)",
+        "flavor": "Phyrexia's spiral of consumption grows ever wider and darker.",
+        "number": "87",
+        "watermark": "Phyrexian",
+        "imageName": "plaguemaw beast",
+        "title": "Plaguemaw Beast",
+        "set": "mbs",
+        "cost": "{3}{G}{G}",
+        "colour": "g",
+        "num": "87",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213752&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "supertypes": [
+            "Basic"
+        ],
+        "type": "Basic Land",
+        "types": [
+            "Land"
+        ],
+        "multiverseid": 214057,
+        "name": "Plains",
+        "subtypes": [
+            "Plains"
+        ],
+        "rarity": "b",
+        "artist": "James Paick",
+        "number": "146",
+        "variations": [
+            220366
+        ],
+        "imageName": "plains1",
+        "title": "Plains",
+        "set": "mbs",
+        "cost": "",
+        "colour": "l",
+        "num": "146",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214057&type=card"
+    },
+    {
+        "layout": "normal",
+        "supertypes": [
+            "Basic"
+        ],
+        "type": "Basic Land",
+        "types": [
+            "Land"
+        ],
+        "multiverseid": 220366,
+        "name": "Plains",
+        "subtypes": [
+            "Plains"
+        ],
+        "rarity": "b",
+        "artist": "James Paick",
+        "number": "147",
+        "variations": [
+            214057
+        ],
+        "imageName": "plains2",
+        "title": "Plains",
+        "set": "mbs",
+        "cost": "",
+        "colour": "l",
+        "num": "147",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=220366&type=card"
+    },
+    {
+        "layout": "normal",
+        "type": "Sorcery",
+        "types": [
+            "Sorcery"
+        ],
+        "colors": [
+            "Green"
+        ],
+        "multiverseid": 214034,
+        "name": "Praetor's Counsel",
+        "cmc": 8,
+        "rarity": "m",
+        "artist": "Daarken",
+        "manaCost": "{5}{G}{G}{G}",
+        "text": "Return all cards from your graveyard to your hand. Exile Praetor's Counsel. You have no maximum hand size for the rest of the game.",
+        "flavor": "As the Phyrexian contagion corroded Karn's body, the praetors whispered psalms to corrupt his mind.",
+        "number": "88",
+        "watermark": "Phyrexian",
+        "imageName": "praetor's counsel",
+        "title": "Praetor's Counsel",
+        "set": "mbs",
+        "cost": "{5}{G}{G}{G}",
+        "colour": "g",
+        "num": "88",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214034&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "White"
+        ],
+        "multiverseid": 213814,
+        "name": "Priests of Norn",
+        "subtypes": [
+            "Cleric"
+        ],
+        "cmc": 3,
+        "rarity": "c",
+        "artist": "Igor Kieryluk",
+        "power": "1",
+        "toughness": "4",
+        "manaCost": "{2}{W}",
+        "text": "Vigilance\nInfect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)",
+        "flavor": "\"May our blessings sever the tongues of the forsaken.\"\n—Elesh Norn, Grand Cenobite",
+        "number": "16",
+        "watermark": "Phyrexian",
+        "imageName": "priests of norn",
+        "title": "Priests of Norn",
+        "set": "mbs",
+        "cost": "{2}{W}",
+        "colour": "w",
+        "num": "16",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213814&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 214047,
+        "name": "Psychosis Crawler",
+        "subtypes": [
+            "Horror"
+        ],
+        "cmc": 5,
+        "rarity": "r",
+        "artist": "Stephan Martiniere",
+        "power": "*",
+        "toughness": "*",
+        "manaCost": "{5}",
+        "text": "Psychosis Crawler's power and toughness are each equal to the number of cards in your hand.\nWhenever you draw a card, each opponent loses 1 life.",
+        "flavor": "\"If that brain can't figure out the secret of the serum, then add more brains.\"\n—Rhmir, Hand of the Augur",
+        "number": "126",
+        "watermark": "Phyrexian",
+        "imageName": "psychosis crawler",
+        "title": "Psychosis Crawler",
+        "set": "mbs",
+        "cost": "{5}",
+        "colour": "a",
+        "num": "126",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214047&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Instant",
+        "types": [
+            "Instant"
+        ],
+        "colors": [
+            "Blue"
+        ],
+        "multiverseid": 213762,
+        "name": "Quicksilver Geyser",
+        "cmc": 5,
+        "rarity": "c",
+        "artist": "Erica Yang",
+        "manaCost": "{4}{U}",
+        "text": "Return up to two target nonland permanents to their owners' hands.",
+        "flavor": "\"Phyrexians are tenacious. That's not the same thing as clever.\"\n—Tezzeret",
+        "number": "30",
+        "watermark": "Mirran",
+        "imageName": "quicksilver geyser",
+        "title": "Quicksilver Geyser",
+        "set": "mbs",
+        "cost": "{4}{U}",
+        "colour": "u",
+        "num": "30",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213762&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Green"
+        ],
+        "multiverseid": 213755,
+        "name": "Quilled Slagwurm",
+        "subtypes": [
+            "Wurm"
+        ],
+        "cmc": 7,
+        "rarity": "u",
+        "artist": "Matt Stewart",
+        "power": "8",
+        "toughness": "8",
+        "manaCost": "{4}{G}{G}{G}",
+        "flavor": "Vorinclex removed its teeth so it wouldn't waste time chewing before moving to the next kill.",
+        "number": "89",
+        "watermark": "Phyrexian",
+        "imageName": "quilled slagwurm",
+        "title": "Quilled Slagwurm",
+        "set": "mbs",
+        "cost": "{4}{G}{G}{G}",
+        "colour": "g",
+        "num": "89",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213755&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Instant",
+        "types": [
+            "Instant"
+        ],
+        "colors": [
+            "Red"
+        ],
+        "multiverseid": 213767,
+        "name": "Rally the Forces",
+        "cmc": 3,
+        "rarity": "c",
+        "artist": "Steven Belledin",
+        "manaCost": "{2}{R}",
+        "text": "Attacking creatures get +1/+0 and gain first strike until end of turn.",
+        "flavor": "\"Drive them back! Make their underworld into their grave!\"\n—Koth of the Hammer",
+        "number": "73",
+        "watermark": "Mirran",
+        "imageName": "rally the forces",
+        "title": "Rally the Forces",
+        "set": "mbs",
+        "cost": "{2}{R}",
+        "colour": "r",
+        "num": "73",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213767&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 213815,
+        "name": "Razorfield Rhino",
+        "subtypes": [
+            "Rhino"
+        ],
+        "cmc": 6,
+        "rarity": "c",
+        "artist": "Kekai Kotaki",
+        "power": "4",
+        "toughness": "4",
+        "manaCost": "{6}",
+        "text": "Metalcraft — Razorfield Rhino gets +2/+2 as long as you control three or more artifacts.",
+        "flavor": "Adapted to tread on razorgrass, the rhino proved adept at treading on Phyrexians as well.",
+        "number": "127",
+        "watermark": "Mirran",
+        "imageName": "razorfield rhino",
+        "title": "Razorfield Rhino",
+        "set": "mbs",
+        "cost": "{6}",
+        "colour": "a",
+        "num": "127",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213815&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Sorcery",
+        "types": [
+            "Sorcery"
+        ],
+        "colors": [
+            "Red"
+        ],
+        "multiverseid": 221558,
+        "name": "Red Sun's Zenith",
+        "cmc": 1,
+        "rarity": "r",
+        "artist": "Svetlin Velinov",
+        "manaCost": "{X}{R}",
+        "text": "Red Sun's Zenith deals X damage to target creature or player. If a creature dealt damage this way would die this turn, exile it instead. Shuffle Red Sun's Zenith into its owner's library.",
+        "number": "74",
+        "watermark": "Mirran",
+        "imageName": "red sun's zenith",
+        "title": "Red Sun's Zenith",
+        "set": "mbs",
+        "cost": "{X}{R}",
+        "colour": "r",
+        "num": "74",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=221558&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Green"
+        ],
+        "multiverseid": 213774,
+        "name": "Rot Wolf",
+        "subtypes": [
+            "Wolf"
+        ],
+        "cmc": 3,
+        "rarity": "c",
+        "artist": "Nils Hamm",
+        "power": "2",
+        "toughness": "2",
+        "manaCost": "{2}{G}",
+        "text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\nWhenever a creature dealt damage by Rot Wolf this turn dies, you may draw a card.",
+        "number": "90",
+        "watermark": "Phyrexian",
+        "imageName": "rot wolf",
+        "title": "Rot Wolf",
+        "set": "mbs",
+        "cost": "{2}{G}",
+        "colour": "g",
+        "num": "90",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213774&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 213746,
+        "name": "Rusted Slasher",
+        "subtypes": [
+            "Horror"
+        ],
+        "cmc": 4,
+        "rarity": "c",
+        "artist": "Adrian Smith",
+        "power": "4",
+        "toughness": "1",
+        "manaCost": "{4}",
+        "text": "Sacrifice an artifact: Regenerate Rusted Slasher.",
+        "flavor": "\"It's a beautiful vision. Discarded debris is reborn as a singular entity.\"\n—Urabrask the Hidden",
+        "number": "128",
+        "watermark": "Phyrexian",
+        "imageName": "rusted slasher",
+        "title": "Rusted Slasher",
+        "set": "mbs",
+        "cost": "{4}",
+        "colour": "a",
+        "num": "128",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213746&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "multiverseid": 214062,
+        "name": "Sangromancer",
+        "subtypes": [
+            "Vampire",
+            "Shaman"
+        ],
+        "cmc": 4,
+        "rarity": "r",
+        "artist": "Igor Kieryluk",
+        "power": "3",
+        "toughness": "3",
+        "manaCost": "{2}{B}{B}",
+        "text": "Flying\nWhenever a creature an opponent controls dies, you may gain 3 life.\nWhenever an opponent discards a card, you may gain 3 life.",
+        "number": "53",
+        "watermark": "Mirran",
+        "imageName": "sangromancer",
+        "title": "Sangromancer",
+        "set": "mbs",
+        "cost": "{2}{B}{B}",
+        "colour": "b",
+        "num": "53",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214062&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "multiverseid": 213751,
+        "name": "Scourge Servant",
+        "subtypes": [
+            "Zombie"
+        ],
+        "cmc": 5,
+        "rarity": "c",
+        "artist": "Daarken",
+        "power": "3",
+        "toughness": "3",
+        "manaCost": "{4}{B}",
+        "text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)",
+        "flavor": "\"The union of the oil and necrogen has produced many pleasing reactions.\"\n—Sheoldred, Whispering One",
+        "number": "54",
+        "watermark": "Phyrexian",
+        "imageName": "scourge servant",
+        "title": "Scourge Servant",
+        "set": "mbs",
+        "cost": "{4}{B}",
+        "colour": "b",
+        "num": "54",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213751&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "multiverseid": 213748,
+        "name": "Septic Rats",
+        "subtypes": [
+            "Rat"
+        ],
+        "cmc": 3,
+        "rarity": "u",
+        "artist": "Cos Koniotis",
+        "power": "2",
+        "toughness": "2",
+        "manaCost": "{1}{B}{B}",
+        "text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\nWhenever Septic Rats attacks, if defending player is poisoned, it gets +1/+1 until end of turn.",
+        "number": "55",
+        "watermark": "Phyrexian",
+        "imageName": "septic rats",
+        "title": "Septic Rats",
+        "set": "mbs",
+        "cost": "{1}{B}{B}",
+        "colour": "b",
+        "num": "55",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213748&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Blue"
+        ],
+        "multiverseid": 213780,
+        "name": "Serum Raker",
+        "subtypes": [
+            "Drake"
+        ],
+        "cmc": 4,
+        "rarity": "c",
+        "artist": "Austin Hsu",
+        "power": "3",
+        "toughness": "2",
+        "manaCost": "{2}{U}{U}",
+        "text": "Flying\nWhen Serum Raker dies, each player discards a card.",
+        "flavor": "The serum from the blinkmoths they gather greases the joints of witch engines.",
+        "number": "31",
+        "watermark": "Phyrexian",
+        "imageName": "serum raker",
+        "title": "Serum Raker",
+        "set": "mbs",
+        "cost": "{2}{U}{U}",
+        "colour": "u",
+        "num": "31",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213780&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 214042,
+        "name": "Shimmer Myr",
+        "subtypes": [
+            "Myr"
+        ],
+        "cmc": 3,
+        "rarity": "r",
+        "artist": "Jana Schirmer & Johannes Voss",
+        "power": "2",
+        "toughness": "2",
+        "manaCost": "{3}",
+        "text": "Flash\nYou may cast artifact cards as though they had flash.",
+        "flavor": "It evades Phyrexians by hiding in the spaces between seconds.",
+        "number": "129",
+        "watermark": "Mirran",
+        "imageName": "shimmer myr",
+        "title": "Shimmer Myr",
+        "set": "mbs",
+        "cost": "{3}",
+        "colour": "a",
+        "num": "129",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214042&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact"
+        ],
+        "multiverseid": 213786,
+        "name": "Shriekhorn",
+        "cmc": 1,
+        "rarity": "c",
+        "artist": "Erica Yang",
+        "manaCost": "{1}",
+        "text": "Shriekhorn enters the battlefield with three charge counters on it.\n{T}, Remove a charge counter from Shriekhorn: Target player puts the top two cards of his or her library into his or her graveyard.",
+        "number": "130",
+        "watermark": "Mirran",
+        "imageName": "shriekhorn",
+        "title": "Shriekhorn",
+        "set": "mbs",
+        "cost": "{1}",
+        "colour": "a",
+        "num": "130",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213786&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 213773,
+        "name": "Signal Pest",
+        "subtypes": [
+            "Pest"
+        ],
+        "cmc": 1,
+        "rarity": "u",
+        "artist": "Mark Zug",
+        "power": "0",
+        "toughness": "1",
+        "manaCost": "{1}",
+        "text": "Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.)\nSignal Pest can't be blocked except by creatures with flying or reach.",
+        "flavor": "It leaps from tree to tree, revealing the enemy's positions.",
+        "number": "131",
+        "watermark": "Mirran",
+        "imageName": "signal pest",
+        "title": "Signal Pest",
+        "set": "mbs",
+        "cost": "{1}",
+        "colour": "a",
+        "num": "131",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213773&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact"
+        ],
+        "multiverseid": 213738,
+        "name": "Silverskin Armor",
+        "subtypes": [
+            "Equipment"
+        ],
+        "cmc": 2,
+        "rarity": "u",
+        "artist": "Terese Nielsen",
+        "manaCost": "{2}",
+        "text": "Equipped creature gets +1/+1 and is an artifact in addition to its other types.\nEquip {2}",
+        "flavor": "Partisan spies warned that no armor would protect the body from Phyrexian infection. Neurok strategists took that as a challenge.",
+        "number": "132",
+        "watermark": "Mirran",
+        "imageName": "silverskin armor",
+        "title": "Silverskin Armor",
+        "set": "mbs",
+        "cost": "{2}",
+        "colour": "a",
+        "num": "132",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213738&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact"
+        ],
+        "multiverseid": 221562,
+        "name": "Skinwing",
+        "subtypes": [
+            "Equipment"
+        ],
+        "cmc": 4,
+        "rarity": "u",
+        "artist": "Igor Kieryluk",
+        "manaCost": "{4}",
+        "text": "Living weapon (When this Equipment enters the battlefield, put a 0/0 black Germ creature token onto the battlefield, then attach this to it.)\nEquipped creature gets +2/+2 and has flying.\nEquip {6}",
+        "number": "133",
+        "watermark": "Phyrexian",
+        "imageName": "skinwing",
+        "title": "Skinwing",
+        "set": "mbs",
+        "cost": "{4}",
+        "colour": "a",
+        "num": "133",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=221562&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Sorcery",
+        "types": [
+            "Sorcery"
+        ],
+        "colors": [
+            "Red"
+        ],
+        "multiverseid": 214054,
+        "name": "Slagstorm",
+        "cmc": 3,
+        "rarity": "r",
+        "artist": "Dan Scott",
+        "manaCost": "{1}{R}{R}",
+        "text": "Choose one —\n• Slagstorm deals 3 damage to each creature.\n• Slagstorm deals 3 damage to each player.",
+        "flavor": "\"As long as we have the will to fight, we are never without weapons.\"\n—Koth of the Hammer",
+        "number": "75",
+        "watermark": "Mirran",
+        "imageName": "slagstorm",
+        "title": "Slagstorm",
+        "set": "mbs",
+        "cost": "{1}{R}{R}",
+        "colour": "r",
+        "num": "75",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214054&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact"
+        ],
+        "multiverseid": 213776,
+        "name": "Sphere of the Suns",
+        "cmc": 2,
+        "rarity": "u",
+        "artist": "Jana Schirmer & Johannes Voss",
+        "manaCost": "{2}",
+        "text": "Sphere of the Suns enters the battlefield tapped and with three charge counters on it.\n{T}, Remove a charge counter from Sphere of the Suns: Add one mana of any color to your mana pool.",
+        "number": "134",
+        "watermark": "Mirran",
+        "imageName": "sphere of the suns",
+        "title": "Sphere of the Suns",
+        "set": "mbs",
+        "cost": "{2}",
+        "colour": "a",
+        "num": "134",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213776&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 214069,
+        "name": "Spin Engine",
+        "subtypes": [
+            "Construct"
+        ],
+        "cmc": 3,
+        "rarity": "c",
+        "artist": "Pete Venters",
+        "power": "3",
+        "toughness": "1",
+        "manaCost": "{3}",
+        "text": "{R}: Target creature can't block Spin Engine this turn.",
+        "flavor": "\"It will be battle-ready before our strike at Oxid Ridge, and it will guarantee our victory.\"\n—Ketuc of the Helm",
+        "number": "135",
+        "watermark": "Mirran",
+        "imageName": "spin engine",
+        "title": "Spin Engine",
+        "set": "mbs",
+        "cost": "{3}",
+        "colour": "a",
+        "num": "135",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214069&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact"
+        ],
+        "multiverseid": 214076,
+        "name": "Spine of Ish Sah",
+        "cmc": 7,
+        "rarity": "r",
+        "artist": "Daniel Ljunggren",
+        "manaCost": "{7}",
+        "text": "When Spine of Ish Sah enters the battlefield, destroy target permanent.\nWhen Spine of Ish Sah is put into a graveyard from the battlefield, return Spine of Ish Sah to its owner's hand.",
+        "number": "136",
+        "watermark": "Phyrexian",
+        "imageName": "spine of ish sah",
+        "title": "Spine of Ish Sah",
+        "set": "mbs",
+        "cost": "{7}",
+        "colour": "a",
+        "num": "136",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214076&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Red"
+        ],
+        "multiverseid": 222859,
+        "name": "Spiraling Duelist",
+        "subtypes": [
+            "Human",
+            "Berserker"
+        ],
+        "cmc": 4,
+        "rarity": "u",
+        "artist": "Karl Kopinski",
+        "power": "3",
+        "toughness": "1",
+        "manaCost": "{2}{R}{R}",
+        "text": "Metalcraft — Spiraling Duelist has double strike as long as you control three or more artifacts.",
+        "flavor": "\"I never move the same way twice. Those rotters can't grasp chaos.\"",
+        "number": "76",
+        "watermark": "Mirran",
+        "imageName": "spiraling duelist",
+        "title": "Spiraling Duelist",
+        "set": "mbs",
+        "cost": "{2}{R}{R}",
+        "colour": "r",
+        "num": "76",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=222859&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Blue"
+        ],
+        "multiverseid": 213801,
+        "name": "Spire Serpent",
+        "subtypes": [
+            "Serpent"
+        ],
+        "cmc": 5,
+        "rarity": "c",
+        "artist": "Johann Bodin",
+        "power": "3",
+        "toughness": "5",
+        "manaCost": "{4}{U}",
+        "text": "Defender\nMetalcraft — As long as you control three or more artifacts, Spire Serpent gets +2/+2 and can attack as though it didn't have defender.",
+        "flavor": "A mirror to draw its eye, a rod to rouse its rage, and a sword to break its bonds.",
+        "number": "32",
+        "watermark": "Mirran",
+        "imageName": "spire serpent",
+        "title": "Spire Serpent",
+        "set": "mbs",
+        "cost": "{4}{U}",
+        "colour": "u",
+        "num": "32",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213801&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Sorcery",
+        "types": [
+            "Sorcery"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "multiverseid": 221557,
+        "name": "Spread the Sickness",
+        "cmc": 5,
+        "rarity": "c",
+        "artist": "Jaime Jones",
+        "manaCost": "{4}{B}",
+        "text": "Destroy target creature, then proliferate. (You choose any number of permanents and/or players with counters on them, then give each another counter of a kind already there.)",
+        "flavor": "Life is ephemeral. Phyrexia is eternal.",
+        "number": "56",
+        "watermark": "Phyrexian",
+        "imageName": "spread the sickness",
+        "title": "Spread the Sickness",
+        "set": "mbs",
+        "cost": "{4}{B}",
+        "colour": "b",
+        "num": "56",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=221557&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Instant",
+        "types": [
+            "Instant"
+        ],
+        "colors": [
+            "Blue"
+        ],
+        "multiverseid": 213726,
+        "name": "Steel Sabotage",
+        "cmc": 1,
+        "rarity": "c",
+        "artist": "Daarken",
+        "manaCost": "{U}",
+        "text": "Choose one —\n• Counter target artifact spell.\n• Return target artifact to its owner's hand.",
+        "flavor": "\"You are hopelessly obsolete, my brothers. Come and join the Great Work.\"\n—Rhmir, Hand of the Augur",
+        "number": "33",
+        "watermark": "Phyrexian",
+        "imageName": "steel sabotage",
+        "title": "Steel Sabotage",
+        "set": "mbs",
+        "cost": "{U}",
+        "colour": "u",
+        "num": "33",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213726&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact"
+        ],
+        "multiverseid": 213790,
+        "name": "Strandwalker",
+        "subtypes": [
+            "Equipment"
+        ],
+        "cmc": 5,
+        "rarity": "u",
+        "artist": "Igor Kieryluk",
+        "manaCost": "{5}",
+        "text": "Living weapon (When this Equipment enters the battlefield, put a 0/0 black Germ creature token onto the battlefield, then attach this to it.)\nEquipped creature gets +2/+4 and has reach.\nEquip {4}",
+        "number": "137",
+        "watermark": "Phyrexian",
+        "imageName": "strandwalker",
+        "title": "Strandwalker",
+        "set": "mbs",
+        "cost": "{5}",
+        "colour": "a",
+        "num": "137",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213790&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "supertypes": [
+            "Basic"
+        ],
+        "type": "Basic Land",
+        "types": [
+            "Land"
+        ],
+        "multiverseid": 220367,
+        "name": "Swamp",
+        "subtypes": [
+            "Swamp"
+        ],
+        "rarity": "b",
+        "artist": "Lars Grant-West",
+        "number": "150",
+        "variations": [
+            220368
+        ],
+        "imageName": "swamp1",
+        "title": "Swamp",
+        "set": "mbs",
+        "cost": "",
+        "colour": "l",
+        "num": "150",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=220367&type=card"
+    },
+    {
+        "layout": "normal",
+        "supertypes": [
+            "Basic"
+        ],
+        "type": "Basic Land",
+        "types": [
+            "Land"
+        ],
+        "multiverseid": 220368,
+        "name": "Swamp",
+        "subtypes": [
+            "Swamp"
+        ],
+        "rarity": "b",
+        "artist": "Lars Grant-West",
+        "number": "151",
+        "variations": [
+            220367
+        ],
+        "imageName": "swamp2",
+        "title": "Swamp",
+        "set": "mbs",
+        "cost": "",
+        "colour": "l",
+        "num": "151",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=220368&type=card"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact"
+        ],
+        "multiverseid": 214070,
+        "name": "Sword of Feast and Famine",
+        "subtypes": [
+            "Equipment"
+        ],
+        "cmc": 3,
+        "rarity": "m",
+        "artist": "Chris Rahn",
+        "manaCost": "{3}",
+        "text": "Equipped creature gets +2/+2 and has protection from black and from green.\nWhenever equipped creature deals combat damage to a player, that player discards a card and you untap all lands you control.\nEquip {2}",
+        "number": "138",
+        "watermark": "Mirran",
+        "imageName": "sword of feast and famine",
+        "title": "Sword of Feast and Famine",
+        "set": "mbs",
+        "cost": "{3}",
+        "colour": "a",
+        "num": "138",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214070&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 214041,
+        "name": "Tangle Hulk",
+        "subtypes": [
+            "Beast"
+        ],
+        "cmc": 5,
+        "rarity": "c",
+        "artist": "Mark Zug",
+        "power": "5",
+        "toughness": "3",
+        "manaCost": "{5}",
+        "text": "{2}{G}: Regenerate Tangle Hulk.",
+        "flavor": "\"A true Phyrexian predator. It will never know death, just as nature intended.\"\n—Vorinclex, Voice of Hunger",
+        "number": "139",
+        "watermark": "Phyrexian",
+        "imageName": "tangle hulk",
+        "title": "Tangle Hulk",
+        "set": "mbs",
+        "cost": "{5}",
+        "colour": "a",
+        "num": "139",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214041&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Green"
+        ],
+        "multiverseid": 222862,
+        "name": "Tangle Mantis",
+        "subtypes": [
+            "Insect"
+        ],
+        "cmc": 4,
+        "rarity": "c",
+        "artist": "Chris Rahn",
+        "power": "3",
+        "toughness": "4",
+        "manaCost": "{2}{G}{G}",
+        "text": "Trample",
+        "flavor": "The fiercest hunters in the Tangle don't seek out the mantises. They are the mantises.",
+        "number": "91",
+        "watermark": "Mirran",
+        "imageName": "tangle mantis",
+        "title": "Tangle Mantis",
+        "set": "mbs",
+        "cost": "{2}{G}{G}",
+        "colour": "g",
+        "num": "91",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=222862&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Planeswalker",
+        "types": [
+            "Planeswalker"
+        ],
+        "colors": [
+            "Blue",
+            "Black"
+        ],
+        "multiverseid": 214065,
+        "name": "Tezzeret, Agent of Bolas",
+        "subtypes": [
+            "Tezzeret"
+        ],
+        "cmc": 4,
+        "rarity": "m",
+        "artist": "Aleksi Briclot",
+        "loyalty": 3,
+        "manaCost": "{2}{U}{B}",
+        "text": "+1: Look at the top five cards of your library. You may reveal an artifact card from among them and put it into your hand. Put the rest on the bottom of your library in any order.\n−1: Target artifact becomes an artifact creature with base power and toughness 5/5.\n−4: Target player loses X life and you gain X life, where X is twice the number of artifacts you control.",
+        "number": "97",
+        "imageName": "tezzeret, agent of bolas",
+        "title": "Tezzeret, Agent of Bolas",
+        "set": "mbs",
+        "cost": "{2}{U}{B}",
+        "colour": "m",
+        "num": "97",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214065&type=card"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 214039,
+        "name": "Thopter Assembly",
+        "subtypes": [
+            "Thopter"
+        ],
+        "cmc": 6,
+        "rarity": "r",
+        "artist": "Volkan Baga",
+        "power": "5",
+        "toughness": "5",
+        "manaCost": "{6}",
+        "text": "Flying\nAt the beginning of your upkeep, if you control no Thopters other than Thopter Assembly, return Thopter Assembly to its owner's hand and put five 1/1 colorless Thopter artifact creature tokens with flying onto the battlefield.",
+        "number": "140",
+        "watermark": "Mirran",
+        "imageName": "thopter assembly",
+        "title": "Thopter Assembly",
+        "set": "mbs",
+        "cost": "{6}",
+        "colour": "a",
+        "num": "140",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214039&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "supertypes": [
+            "Legendary"
+        ],
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Green"
+        ],
+        "multiverseid": 214050,
+        "name": "Thrun, the Last Troll",
+        "subtypes": [
+            "Troll",
+            "Shaman"
+        ],
+        "cmc": 4,
+        "rarity": "m",
+        "artist": "Jason Chan",
+        "power": "4",
+        "toughness": "4",
+        "manaCost": "{2}{G}{G}",
+        "text": "Thrun, the Last Troll can't be countered.\nHexproof (This creature can't be the target of spells or abilities your opponents control.)\n{1}{G}: Regenerate Thrun.",
+        "flavor": "His crime was silence, and now he suffers it eternally.",
+        "number": "92",
+        "watermark": "Mirran",
+        "imageName": "thrun, the last troll",
+        "title": "Thrun, the Last Troll",
+        "set": "mbs",
+        "cost": "{2}{G}{G}",
+        "colour": "g",
+        "num": "92",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214050&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "White"
+        ],
+        "multiverseid": 213758,
+        "name": "Tine Shrike",
+        "subtypes": [
+            "Bird"
+        ],
+        "cmc": 4,
+        "rarity": "c",
+        "artist": "Adrian Smith",
+        "power": "2",
+        "toughness": "1",
+        "manaCost": "{3}{W}",
+        "text": "Flying\nInfect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)",
+        "flavor": "A new bird of prey—one that hunts sentience.",
+        "number": "17",
+        "watermark": "Phyrexian",
+        "imageName": "tine shrike",
+        "title": "Tine Shrike",
+        "set": "mbs",
+        "cost": "{3}{W}",
+        "colour": "w",
+        "num": "17",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213758&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact"
+        ],
+        "multiverseid": 213730,
+        "name": "Titan Forge",
+        "cmc": 3,
+        "rarity": "r",
+        "artist": "Svetlin Velinov",
+        "manaCost": "{3}",
+        "text": "{3}, {T}: Put a charge counter on Titan Forge.\n{T}, Remove three charge counters from Titan Forge: Put a 9/9 colorless Golem artifact creature token onto the battlefield.",
+        "number": "141",
+        "watermark": "Mirran",
+        "imageName": "titan forge",
+        "title": "Titan Forge",
+        "set": "mbs",
+        "cost": "{3}",
+        "colour": "a",
+        "num": "141",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213730&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 213764,
+        "name": "Training Drone",
+        "subtypes": [
+            "Drone"
+        ],
+        "cmc": 3,
+        "rarity": "c",
+        "artist": "Matt Cavotta",
+        "power": "4",
+        "toughness": "4",
+        "manaCost": "{3}",
+        "text": "Training Drone can't attack or block unless it's equipped.",
+        "flavor": "\"Vulshok flail, Viridian shield, loxodon blade . . . Tazzir, bring the Moriok hook and assemble the rookies.\"\n—Vy Covalt, Neurok agent",
+        "number": "142",
+        "watermark": "Mirran",
+        "imageName": "training drone",
+        "title": "Training Drone",
+        "set": "mbs",
+        "cost": "{3}",
+        "colour": "a",
+        "num": "142",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213764&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Blue"
+        ],
+        "multiverseid": 213753,
+        "name": "Treasure Mage",
+        "subtypes": [
+            "Human",
+            "Wizard"
+        ],
+        "cmc": 3,
+        "rarity": "u",
+        "artist": "Ryan Pancoast",
+        "power": "2",
+        "toughness": "2",
+        "manaCost": "{2}{U}",
+        "text": "When Treasure Mage enters the battlefield, you may search your library for an artifact card with converted mana cost 6 or greater, reveal that card, and put it into your hand. If you do, shuffle your library.",
+        "number": "34",
+        "watermark": "Mirran",
+        "imageName": "treasure mage",
+        "title": "Treasure Mage",
+        "set": "mbs",
+        "cost": "{2}{U}",
+        "colour": "u",
+        "num": "34",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213753&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Instant",
+        "types": [
+            "Instant"
+        ],
+        "colors": [
+            "Blue"
+        ],
+        "multiverseid": 213821,
+        "name": "Turn the Tide",
+        "cmc": 2,
+        "rarity": "c",
+        "artist": "Jason Felix",
+        "manaCost": "{1}{U}",
+        "text": "Creatures your opponents control get -2/-0 until end of turn.",
+        "flavor": "\"Let their mindless armies come and face the might of genius.\"\n—Varil, Neurok partisan",
+        "number": "35",
+        "watermark": "Mirran",
+        "imageName": "turn the tide",
+        "title": "Turn the Tide",
+        "set": "mbs",
+        "cost": "{1}{U}",
+        "colour": "u",
+        "num": "35",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213821&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Instant",
+        "types": [
+            "Instant"
+        ],
+        "colors": [
+            "Green"
+        ],
+        "multiverseid": 213778,
+        "name": "Unnatural Predation",
+        "cmc": 1,
+        "rarity": "c",
+        "artist": "Shelly Wan",
+        "manaCost": "{G}",
+        "text": "Target creature gets +1/+1 and gains trample until end of turn.",
+        "flavor": "\"Domination by the strongest—that is all that matters in the Tangle now.\"\n—Vorinclex, Voice of Hunger",
+        "number": "93",
+        "watermark": "Phyrexian",
+        "imageName": "unnatural predation",
+        "title": "Unnatural Predation",
+        "set": "mbs",
+        "cost": "{G}",
+        "colour": "g",
+        "num": "93",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213778&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Blue"
+        ],
+        "multiverseid": 222861,
+        "name": "Vedalken Anatomist",
+        "subtypes": [
+            "Vedalken",
+            "Wizard"
+        ],
+        "cmc": 3,
+        "rarity": "u",
+        "artist": "Greg Staples",
+        "power": "1",
+        "toughness": "2",
+        "manaCost": "{2}{U}",
+        "text": "{2}{U}, {T}: Put a -1/-1 counter on target creature. You may tap or untap that creature.",
+        "flavor": "\"Specimen 211 examination report. Observation: graft sublimation incomplete. Result: death. Prepare specimen 212.\"",
+        "number": "36",
+        "watermark": "Phyrexian",
+        "imageName": "vedalken anatomist",
+        "title": "Vedalken Anatomist",
+        "set": "mbs",
+        "cost": "{2}{U}",
+        "colour": "u",
+        "num": "36",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=222861&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Blue"
+        ],
+        "multiverseid": 213750,
+        "name": "Vedalken Infuser",
+        "subtypes": [
+            "Vedalken",
+            "Wizard"
+        ],
+        "cmc": 4,
+        "rarity": "u",
+        "artist": "Ryan Pancoast",
+        "power": "1",
+        "toughness": "4",
+        "manaCost": "{3}{U}",
+        "text": "At the beginning of your upkeep, you may put a charge counter on target artifact.",
+        "flavor": "\"All plans begin as dreams. I intend to awaken them.\"",
+        "number": "37",
+        "watermark": "Mirran",
+        "imageName": "vedalken infuser",
+        "title": "Vedalken Infuser",
+        "set": "mbs",
+        "cost": "{3}{U}",
+        "colour": "u",
+        "num": "37",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213750&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "White"
+        ],
+        "multiverseid": 214030,
+        "name": "Victory's Herald",
+        "subtypes": [
+            "Angel"
+        ],
+        "cmc": 6,
+        "rarity": "r",
+        "artist": "rk post",
+        "power": "4",
+        "toughness": "4",
+        "manaCost": "{3}{W}{W}{W}",
+        "text": "Flying\nWhenever Victory's Herald attacks, attacking creatures gain flying and lifelink until end of turn.",
+        "flavor": "The corruption stirred the heavens above, awaking a shining champion.",
+        "number": "18",
+        "watermark": "Mirran",
+        "imageName": "victory's herald",
+        "title": "Victory's Herald",
+        "set": "mbs",
+        "cost": "{3}{W}{W}{W}",
+        "colour": "w",
+        "num": "18",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=214030&type=card",
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact"
+        ],
+        "multiverseid": 213784,
+        "name": "Viridian Claw",
+        "subtypes": [
+            "Equipment"
+        ],
+        "cmc": 2,
+        "rarity": "u",
+        "artist": "Marc Simonetti",
+        "manaCost": "{2}",
+        "text": "Equipped creature gets +1/+0 and has first strike.\nEquip {1}",
+        "flavor": "\"Phyrexians can't corrupt what they can't get close enough to touch.\"",
+        "number": "143",
+        "watermark": "Mirran",
+        "imageName": "viridian claw",
+        "title": "Viridian Claw",
+        "set": "mbs",
+        "cost": "{2}",
+        "colour": "a",
+        "num": "143",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213784&type=card",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Green"
+        ],
+        "multiverseid": 213772,
+        "name": "Viridian Corrupter",
+        "subtypes": [
+            "Elf",
+            "Shaman"
+        ],
+        "cmc": 3,
+        "rarity": "u",
+        "artist": "Matt Cavotta",
+        "power": "2",
+        "toughness": "2",
+        "manaCost": "{1}{G}{G}",
+        "text": "Infect (This creature deals damage to creatures in the form of -1/-1 counters and to players in the form of poison counters.)\nWhen Viridian Corrupter enters the battlefield, destroy target artifact.",
+        "number": "94",
+        "watermark": "Phyrexian",
+        "imageName": "viridian corrupter",
+        "title": "Viridian Corrupter",
+        "set": "mbs",
+        "cost": "{1}{G}{G}",
+        "colour": "g",
+        "num": "94",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213772&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Green"
+        ],
+        "multiverseid": 213728,
+        "name": "Viridian Emissary",
+        "subtypes": [
+            "Elf",
+            "Scout"
+        ],
+        "cmc": 2,
+        "rarity": "c",
+        "artist": "Matt Stewart",
+        "power": "2",
+        "toughness": "1",
+        "manaCost": "{1}{G}",
+        "text": "When Viridian Emissary dies, you may search your library for a basic land card, put it onto the battlefield tapped, then shuffle your library.",
+        "number": "95",
+        "watermark": "Phyrexian",
+        "imageName": "viridian emissary",
+        "title": "Viridian Emissary",
+        "set": "mbs",
+        "cost": "{1}{G}",
+        "colour": "g",
+        "num": "95",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213728&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Instant",
+        "types": [
+            "Instant"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "multiverseid": 213777,
+        "name": "Virulent Wound",
+        "cmc": 1,
+        "rarity": "c",
+        "artist": "Whit Brachna",
+        "manaCost": "{B}",
+        "text": "Put a -1/-1 counter on target creature. When that creature dies this turn, its controller gets a poison counter.",
+        "flavor": "Sadly, the extent of Gerkk's healing knowledge was \"don't pick at it.\"",
+        "number": "57",
+        "watermark": "Phyrexian",
+        "imageName": "virulent wound",
+        "title": "Virulent Wound",
+        "set": "mbs",
+        "cost": "{B}",
+        "colour": "b",
+        "num": "57",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213777&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Sorcery",
+        "types": [
+            "Sorcery"
+        ],
+        "colors": [
+            "Blue"
+        ],
+        "multiverseid": 213735,
+        "name": "Vivisection",
+        "cmc": 4,
+        "rarity": "c",
+        "artist": "Anthony Francisco",
+        "manaCost": "{3}{U}",
+        "text": "As an additional cost to cast Vivisection, sacrifice a creature.\nDraw three cards.",
+        "flavor": "Phyrexians research with the grace of surgeons and the finesse of butchers.",
+        "number": "38",
+        "watermark": "Phyrexian",
+        "imageName": "vivisection",
+        "title": "Vivisection",
+        "set": "mbs",
+        "cost": "{3}{U}",
+        "colour": "u",
+        "num": "38",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=213735&type=card",
+        "faction": "Phyrexian"
+    },
+    {
+        "layout": "normal",
+        "type": "Instant",
+        "types": [
+            "Instant"
+        ],
+        "colors": [
+            "White"
+        ],
+        "multiverseid": 221555,
+        "name": "White Sun's Zenith",
+        "cmc": 3,
+        "rarity": "r",
+        "artist": "Mike Bierek",
+        "manaCost": "{X}{W}{W}{W}",
+        "text": "Put X 2/2 white Cat creature tokens onto the battlefield. Shuffle White Sun's Zenith into its owner's library.",
+        "flavor": "After the Battle of Liet Field, the white sun crested above Taj-Nar, bringing hope to all who survived the carnage.",
+        "number": "19",
+        "watermark": "Mirran",
+        "imageName": "white sun's zenith",
+        "title": "White Sun's Zenith",
+        "set": "mbs",
+        "cost": "{X}{W}{W}{W}",
+        "colour": "w",
+        "num": "19",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=221555&type=card",
+        "faction": "Mirran"
+    }
+]

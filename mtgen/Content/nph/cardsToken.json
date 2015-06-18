@@ -1,0 +1,70 @@
+[
+ {
+  "title": "Myr",
+  "set": "nph",
+  "src": "http://media.wizards.com/images/magic/daily/arcana/689_myrtoken.jpg",
+  "colour": "a",
+  "rarity": "c",
+  "type": "Token Creature",
+  "subtype": "Myr",
+  "power": "1",
+  "toughness": "1",
+  "num": "1/4",
+  "token": "true",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "title": "Goblin",
+  "set": "nph",
+  "src": "http://media.wizards.com/images/magic/daily/arcana/689_goblintoken.jpg",
+  "colour": "r",
+  "rarity": "c",
+  "type": "Token Creature",
+  "subtype": "Goblin",
+  "power": "1",
+  "toughness": "1",
+  "num": "2/4",
+  "token": "true",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "title": "Golem",
+  "set": "nph",
+  "src": "http://media.wizards.com/images/magic/daily/arcana/689_golemtoken.jpg",
+  "colour": "a",
+  "rarity": "c",
+  "type": "Token Creature",
+  "subtype": "Golem",
+  "power": "3",
+  "toughness": "3",
+  "num": "3/4",
+  "token": "true",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "title": "Beast",
+  "set": "nph",
+  "src": "http://media.wizards.com/images/magic/daily/arcana/689_beasttoken.jpg",
+  "colour": "g",
+  "rarity": "c",
+  "type": "Token Creature",
+  "subtype": "Beast",
+  "power": "3",
+  "toughness": "3",
+  "num": "4/4",
+  "token": "true",
+  "usableForDeckBuilding": false
+ }
+ ,{
+  "title": "Poison",
+  "set": "nph",
+  "src": "http://magiccards.info/extras/token/new-phyrexia/poison-counter.jpg",
+  "colour": "o",
+  "rarity": "c",
+  "type": "Poison Token",
+  "num": "P",
+  "token": "true",
+  "usableForDeckBuilding": false
+ }
+
+]

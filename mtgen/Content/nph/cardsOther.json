@@ -1,0 +1,245 @@
+[
+    {
+        "src": "http://mtgen.net/cards/mtg-marketing1.png",
+        "title": "Tip/Marketing Card",
+        "set": "nph",
+        "colour": "o",
+        "num": "001 Marketing",
+        "rarity": "c",
+        "type": "Marketing",
+        "usableForDeckBuilding": false,
+        "marketing": true
+    },
+    {
+        "src": "http://mtgen.net/cards/mtg-marketing2.png",
+        "title": "Tip/Marketing Card",
+        "set": "nph",
+        "colour": "o",
+        "num": "002 Marketing",
+        "rarity": "c",
+        "type": "Marketing",
+        "usableForDeckBuilding": false,
+        "marketing": true
+    },
+    {
+        "src": "http://magiccards.info/extras/tips-tricks/new-phyrexia/phyrexian-mana.jpg",
+        "title": "Rules Tip: Phyrexian Mana",
+        "set": "nph",
+        "colour": "o",
+        "num": "1/4 Tip",
+        "rarity": "c",
+        "type": "Marketing",
+        "usableForDeckBuilding": false,
+        "marketing": true
+    },
+    {
+        "src": "http://magiccards.info/extras/tips-tricks/new-phyrexia/living-weapon.jpg",
+        "title": "Rules Tip: Living Weapon",
+        "set": "nph",
+        "colour": "o",
+        "num": "2/4 Tip",
+        "rarity": "c",
+        "type": "Marketing",
+        "usableForDeckBuilding": false,
+        "marketing": true
+    },
+    {
+        "src": "http://magiccards.info/extras/tips-tricks/new-phyrexia/infect.jpg",
+        "title": "Rules Tip: Infect",
+        "set": "nph",
+        "colour": "o",
+        "num": "3/4 Tip",
+        "rarity": "c",
+        "type": "Marketing",
+        "usableForDeckBuilding": false,
+        "marketing": true
+    },
+    {
+        "src": "http://magiccards.info/extras/tips-tricks/new-phyrexia/profilerate.jpg",
+        "title": "Rules Tip: Proliferate",
+        "set": "nph",
+        "colour": "o",
+        "num": "4/4 Tip",
+        "rarity": "c",
+        "type": "Marketing",
+        "usableForDeckBuilding": false,
+        "marketing": true
+    },
+
+    {
+        "layout": "normal",
+        "supertypes": [
+            "Legendary"
+        ],
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "multiverseid": 214382,
+        "name": "Sheoldred, Whispering One",
+        "subtypes": [
+            "Praetor"
+        ],
+        "cmc": 7,
+        "rarity": "m",
+        "artist": "Jana Schirmer & Johannes Voss",
+        "power": "6",
+        "toughness": "6",
+        "manaCost": "{5}{B}{B}",
+        "text": "Swampwalk\nAt the beginning of your upkeep, return target creature card from your graveyard to the battlefield.\nAt the beginning of each opponent's upkeep, that player sacrifices a creature.",
+        "number": "73",
+        "watermark": "Phyrexian",
+        "imageName": "sheoldred, whispering one",
+        "title": "Sheoldred, Whispering One",
+        "set": "nph",
+        "cost": "{5}{B}{B}",
+        "colour": "b",
+        "num": "73 Prerelease",
+        "src": "http://media.wizards.com/images/magic/daily/arcana/692_2zgxmuwsas.jpg",
+        "faction": "Phyrexian",
+        "promo": "true",
+        "includedReason": "Prerelease Promo"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "colors": [
+            "Blue"
+        ],
+        "multiverseid": 214375,
+        "name": "Phyrexian Metamorph",
+        "subtypes": [
+            "Shapeshifter"
+        ],
+        "cmc": 4,
+        "rarity": "r",
+        "artist": "Jana Schirmer & Johannes Voss",
+        "power": "0",
+        "toughness": "0",
+        "manaCost": "{3}{U/P}",
+        "text": "({U/P} can be paid with either {U} or 2 life.)\nYou may have Phyrexian Metamorph enter the battlefield as a copy of any artifact or creature on the battlefield, except it's an artifact in addition to its other types.",
+        "number": "42",
+        "watermark": "Phyrexian",
+        "imageName": "phyrexian metamorph",
+        "title": "Phyrexian Metamorph",
+        "set": "nph",
+        "cost": "{3}{U/P}",
+        "colour": "a",
+        "num": "42 Launch",
+        "src": "http://media.wizards.com/images/magic/daily/arcana/692_zveytfd3yo.jpg",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Phyrexian",
+        "promo": "true",
+        "includedReason": "Launch Promo"
+    },
+    {
+        "layout": "normal",
+        "type": "Instant",
+        "types": [
+            "Instant"
+        ],
+        "colors": [
+            "Black"
+        ],
+        "multiverseid": 233041,
+        "name": "Surgical Extraction",
+        "cmc": 1,
+        "rarity": "r",
+        "artist": "Steven Belledin",
+        "manaCost": "{B/P}",
+        "text": "({B/P} can be paid with either {B} or 2 life.)\nChoose target card in a graveyard other than a basic land card. Search its owner's graveyard, hand, and library for any number of cards with the same name as that card and exile them. Then that player shuffles his or her library.",
+        "number": "74",
+        "watermark": "Phyrexian",
+        "imageName": "surgical extraction",
+        "title": "Surgical Extraction",
+        "set": "nph",
+        "cost": "{B/P}",
+        "colour": "b",
+        "num": "74 Buy-a-Box",
+        "src": "http://archive.wizards.com/mtg/images/daily/events/promo/nph_surgicalextraction_en.jpg",
+        "faction": "Phyrexian",
+        "promo": "true",
+        "includedReason": "Buy-a-Box Promo"
+    },
+    {
+        "layout": "normal",
+        "type": "Creature",
+        "types": [
+            "Creature"
+        ],
+        "colors": [
+            "Red"
+        ],
+        "multiverseid": 218037,
+        "name": "Priest of Urabrask",
+        "subtypes": [
+            "Human",
+            "Cleric"
+        ],
+        "cmc": 3,
+        "rarity": "u",
+        "artist": "Kev Walker",
+        "power": "2",
+        "toughness": "1",
+        "manaCost": "{2}{R}",
+        "text": "When Priest of Urabrask enters the battlefield, add {R}{R}{R} to your mana pool.",
+        "flavor": "Even in New Phyrexia, red mana sparks glimmers of individualism, passion, and freedom.",
+        "number": "90",
+        "watermark": "Phyrexian",
+        "imageName": "priest of urabrask",
+        "title": "Priest of Urabrask",
+        "set": "nph",
+        "cost": "{2}{R}",
+        "colour": "r",
+        "num": "90 Game Day",
+        "src": "http://www.manaleak.com/store/images/new_phyrexia_game_day_participation_card___priest_of_urabrask.jpg",
+        "faction": "Phyrexian",
+        "promo": "true",
+        "includedReason": "Game Day Promo"
+    },
+    {
+        "layout": "normal",
+        "type": "Artifact",
+        "types": [
+            "Artifact",
+            "Creature"
+        ],
+        "multiverseid": 194275,
+        "name": "Myr Superion",
+        "subtypes": [
+            "Myr"
+        ],
+        "cmc": 2,
+        "rarity": "r",
+        "artist": "Jana Schirmer & Johannes Voss",
+        "power": "5",
+        "toughness": "6",
+        "manaCost": "{2}",
+        "text": "Spend only mana produced by creatures to cast Myr Superion.",
+        "flavor": "Two kinds of myr survive: the powerful and those that stay close by them.",
+        "number": "146",
+        "watermark": "Mirran",
+        "imageName": "myr superion",
+        "title": "Myr Superion",
+        "set": "nph",
+        "cost": "{2}",
+        "colour": "a",
+        "num": "146 Top-8",
+        "src": "http://crystal-cdn4.crystalcommerce.com/photos/684168/large/myr-superion-game-day-promo.png",
+        "sorder": 17,
+        "colourless": true,
+        "faction": "Mirran",
+        "promo": "true",
+        "includedReason": "Top-8 Promo"
+    }
+
+
+]

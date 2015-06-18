@@ -1,0 +1,38 @@
+{
+    "_comment": "if there are no options the query/packNames will be auto-run",
+    "products": [
+        {
+            "productName": "mm2-all-cards",
+            "productDesc": "All Cards",
+            "sources": [ "http://magic.wizards.com/en/game-info/products/card-set-archive/khans-of-tarkir", "http://magic.wizards.com/en/articles/archive/mm2-cig-en" ],
+            "isGenerated": false,
+            "initialSort": "colour",
+            "packs": [
+                { "packName": "mm2-all-cards" }
+            ]
+        },
+        {
+            "productName": "mm2-boosters",
+            "productDesc": "Boosters",
+            "sources":  [ "http://mtgsalvation.gamepedia.com/Modern_Masters_2015" ],
+            "isGenerated": true,
+            "initialSort": "set",
+            "packs": [
+                { "packName": "mm2-standard" }
+            ],
+            "options": {
+                "presets": [
+                    {
+                        "presetName": "mm2-boosters-six",
+                        "presetDesc": "Six Boosters",
+                        "default": true,
+                        "packs": [
+                            { "count": 6, "defaultPackName": "mm2-standard" }
+                        ]
+                    }
+                ]
+            }
+        }
+
+    ]
+}

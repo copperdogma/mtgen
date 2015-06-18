@@ -1,0 +1,68 @@
+{
+    "defs": [
+        {
+            "defName": "mbs",
+            "query": "from[*]?set='mbs'"
+        },
+        {
+            "defName": "mbs-main",
+            "query": "from[mbs]-from[mbs]?type=(Marketing|Basic Land)-from[mbs]?token=true-from[mbs]?promo=true"
+        },
+        {
+            "defName": "mbs-foils",
+            "query": "from[mbs-main]"
+        },
+        {
+            "defName": "mbs-promo",
+            "query": "from[mbs]?promo=true"
+        }
+
+    ],
+    "packs": [
+        {
+            "packName": "mbs-all-cards",
+            "packDesc": "Mirrodin Besieged: All Cards",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[mbs]" }
+            ]
+        },
+        {
+            "packName": "mbs-standard",
+            "packDesc": "Mirrodin Besieged: Standard Booster",
+            "isGenerated": true,
+            "cards": [
+                { "query": "from[mbs]?type='Basic Land'" },
+                { "query": "take[9]>from[mbs-main]?rarity='c'" },
+                {
+                    "querySet": [
+                        { "percent": 75, "query": "from[mbs-main]?rarity='c'" },
+                        { "percent": 25, "query": "from[mbs-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+                    ]
+                },
+                { "query": "take[3]>from[mbs-main]?rarity='u'" },
+                {
+                    "querySet": [
+                        { "percent": 87.5, "query": "from[mbs-main]?rarity='r'" },
+                        { "percent": 12.5, "query": "from[mbs-main]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" }
+                    ]
+                },
+                {
+                    "querySet": [
+                        { "percent": 50, "query": "from[mbs]?type='Marketing'" },
+                        { "percent": 50, "query": "from[mbs]?token=true-from[mbs]?promo=true" }
+                    ]
+                }
+            ]
+        },
+        {
+            "packName": "mbs-promos",
+            "packDesc": "Mirrodin Besieged: Promos",
+            "isGenerated": false,
+            "includeWithUserCards": false,
+            "cards": [
+                { "query": "take[*]>from[mbs-promo]" }
+            ]
+        }
+    ]
+}
