@@ -1,0 +1,93 @@
+{
+    "_comment": "from: http://magic.wizards.com/en/game-info/products/card-set-archive/duel-decks-elspeth-vs-kiora",
+
+    "defs": [
+        {
+            "defName": "ddo",
+            "query": "from[*]?set='ddo'"
+        }
+    ],
+    "packs": [
+        {
+            "packName": "ddo-all-cards",
+            "packDesc": "Duel Decks: Elspeth vs. Kiora: All Cards",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[ddo]" }
+            ]
+        },
+        {
+            "packName": "ddo-kiora",
+            "packDesc": "Duel Decks: Elspeth vs. Kiora: Kiora Deck",
+            "isGenerated": false,
+            "cards": [
+                { "query": "from[ddo]?title='Kiora, the Crashing Wave'" },
+                { "query": "from[ddo]?title='Inkwell Leviathan'" },
+                { "query": "from[ddo]?title='Simic Sky Swallower'" },
+                { "query": "from[ddo]?title='Scourge of Fleets'" },
+                { "query": "from[ddo]?title='Sealock Monster'" },
+                { "query": "from[ddo]?title='Kiora’s Follower'" },
+                { "query": "from[ddo]?title='Nessian Asp'" },
+                { "query": "take[2]>from[ddo]?title='Grazing Gladehart'", "canBeDuplicate": true },
+                { "query": "take[2]>from[ddo]?title='Surrakar Banisher'", "canBeDuplicate": true },
+                { "query": "take[2]>from[ddo]?title='Lorescale Coatl'", "canBeDuplicate": true },
+                { "query": "from[ddo]?title='Nimbus Swimmer'" },
+                { "query": "take[2]>from[ddo]?title='Coiling Oracle'", "canBeDuplicate": true },
+                { "query": "take[2]>from[ddo]?title='Man-o’-War'", "canBeDuplicate": true },
+                { "query": "from[ddo]?title='Omenspeaker'" },
+                { "query": "take[2]>from[ddo]?title='Netcaster Spider'", "canBeDuplicate": true },
+                { "query": "take[2]>from[ddo]?title='Explore'", "canBeDuplicate": true },
+                { "query": "take[2]>from[ddo]?title='Time to Feed'", "canBeDuplicate": true },
+                { "query": "from[ddo]?title='Explosive Vegetation'" },
+                { "query": "from[ddo]?title='Urban Evolution'" },
+                { "query": "from[ddo]?title='Whelming Wave'" },
+                { "query": "take[4]>from[ddo]?title='Accumulated Knowledge'", "canBeDuplicate": true },
+                { "query": "from[ddo]?title='Plasm Capture'" },
+                { "query": "from[ddo]?title='Peel from Reality'" },
+                { "query": "from[ddo]?title='Ætherize'" },
+                { "query": "from[ddo]?title='Temple of the False God'" },
+                { "query": "take[2]>from[ddo]?title='Evolving Wilds'", "canBeDuplicate": true },
+                { "query": "take[11]>from[ddo]?title='Forest'", "canBeDuplicate": true },
+                { "query": "take[11]>from[ddo]?title='Island'", "canBeDuplicate": true }
+            ]
+        },
+        {
+            "packName": "ddo-elspeth",
+            "packDesc": "Duel Decks: Elspeth vs. Kiora: Elspeth Deck",
+            "isGenerated": false,
+            "cards": [
+                { "query": "from[ddo]?title='Elspeth, Sun’s Champion'" },
+                { "query": "take[2]>from[ddo]?title='Icatian Javelineers'", "canBeDuplicate": true },
+                { "query": "from[ddo]?title='Mother of Runes'" },
+                { "query": "from[ddo]?title='Gustcloak Savior'" },
+                { "query": "from[ddo]?title='Gustcloak Sentinel'" },
+                { "query": "from[ddo]?title='Gustcloak Skirmisher'" },
+                { "query": "take[2]>from[ddo]?title='Gustcloak Harrier'", "canBeDuplicate": true },
+                { "query": "take[2]>from[ddo]?title='Veteran Swordsmith'", "canBeDuplicate": true },
+                { "query": "take[2]>from[ddo]?title='Veteran Armorsmith'", "canBeDuplicate": true },
+                { "query": "from[ddo]?title='Captain of the Watch'" },
+                { "query": "take[2]>from[ddo]?title='Loxodon Partisan'", "canBeDuplicate": true },
+                { "query": "from[ddo]?title='Noble Templar'" },
+                { "query": "from[ddo]?title='Banisher Priest'" },
+                { "query": "from[ddo]?title='Court Street Denizen'" },
+                { "query": "from[ddo]?title='Standing Troops'" },
+                { "query": "from[ddo]?title='Precinct Captain'" },
+                { "query": "from[ddo]?title='Kor Skyfisher'" },
+                { "query": "from[ddo]?title='Gempalm Avenger'" },
+                { "query": "take[2]>from[ddo]?title='Kinsbaile Skirmisher'", "canBeDuplicate": true },
+                { "query": "from[ddo]?title='Decree of Justice'" },
+                { "query": "take[2]>from[ddo]?title='Sunlance'", "canBeDuplicate": true },
+                { "query": "from[ddo]?title='Soul Parry'" },
+                { "query": "from[ddo]?title='Dauntless Onslaught'" },
+                { "query": "from[ddo]?title='Mortal’s Ardor'" },
+                { "query": "from[ddo]?title='Celestial Flare'" },
+                { "query": "from[ddo]?title='Mighty Leap'" },
+                { "query": "take[2]>from[ddo]?title='Raise the Alarm'", "canBeDuplicate": true },
+                { "query": "from[ddo]?title='Dictate of Heliod'" },
+                { "query": "take[22]>from[ddo]?title='Plains'", "canBeDuplicate": true },
+                { "query": "take[2]>from[ddo]?title='Secluded Steppe'", "canBeDuplicate": true }
+            ]
+        }
+
+    ]
+}

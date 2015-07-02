@@ -1,0 +1,40 @@
+{
+    "_comment": "if there are no options the query/packNames will be auto-run",
+    "products": [
+        {
+            "productName": "jud-all-cards",
+            "productDesc": "All Cards",
+            "sources": [ "http://mtgjson.com/json/jud.json" ],
+            "isGenerated": false,
+            "initialSort": "colour",
+            "packs": [
+                { "packName": "jud-all-cards" }
+            ]
+        },
+        {
+            "productName": "jud-boosters",
+            "productDesc": "Boosters",
+            "sources":  [ "http://mtgsalvation.gamepedia.com/judment" ],
+            "isGenerated": true,
+            "initialSort": "set",
+            "packs": [
+                { "packName": "ody-standard" },
+                { "packName": "tor-standard" },
+                { "packName": "jud-standard" }
+            ],
+            "options": {
+                "presets": [
+                    {
+                        "presetName": "jud-boosters-six",
+                        "presetDesc": "Six Boosters",
+                        "default": true,
+                        "packs": [
+                            { "count": 6, "defaultPackName": "jud-standard" }
+                        ]
+                    }
+                ]
+            }
+        }
+
+    ]
+}

@@ -1,0 +1,39 @@
+{
+    "_comment": "if there are no options the query/packNames will be auto-run",
+    "products": [
+        {
+            "productName": "tor-all-cards",
+            "productDesc": "All Cards",
+            "sources": [ "http://mtgjson.com/json/tor.json" ],
+            "isGenerated": false,
+            "initialSort": "colour",
+            "packs": [
+                { "packName": "tor-all-cards" }
+            ]
+        },
+        {
+            "productName": "tor-boosters",
+            "productDesc": "Boosters",
+            "sources":  [ "http://mtgsalvation.gamepedia.com/Torment" ],
+            "isGenerated": true,
+            "initialSort": "set",
+            "packs": [
+                { "packName": "tor-standard" },
+                { "packName": "ody-standard" }
+            ],
+            "options": {
+                "presets": [
+                    {
+                        "presetName": "tor-boosters-six",
+                        "presetDesc": "Six Boosters",
+                        "default": true,
+                        "packs": [
+                            { "count": 6, "defaultPackName": "tor-standard" }
+                        ]
+                    }
+                ]
+            }
+        }
+
+    ]
+}

@@ -1,0 +1,58 @@
+{
+    "defs": [
+        {
+            "defName": "ody",
+            "query": "from[*]?set='ody'"
+        },
+        {
+            "defName": "ody-main",
+            "query": "from[ody]-from[ody]?type=(Marketing|Basic Land)-from[ody]?token=true-from[ody]?promo=true"
+        },
+        {
+            "defName": "ody-foils",
+            "query": "from[ody-main]"
+        },
+        {
+            "defName": "ody-promo",
+            "query": "from[ody]?promo=true"
+        }
+
+    ],
+    "packs": [
+        {
+            "packName": "ody-all-cards",
+            "packDesc": "Odyssey: All Cards",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[ody]" }
+            ]
+        },
+        {
+            "packName": "ody-standard",
+            "packDesc": "Odyssey: Standard Booster",
+            "_comment": "Old school pack.. 15: 11c, 3u, 1r, no mythic, no land, no marketing/token",
+            "isGenerated": true,
+            "cards": [
+                { "query": "take[10]>from[ody-main]?rarity='c'" },
+                {
+                    "querySet": [
+                        { "percent": 75, "query": "from[ody-main]?rarity='c'" },
+                        { "percent": 25, "query": "from[ody-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+                    ]
+                },
+                { "query": "take[3]>from[ody-main]?rarity='u'" },
+                { "query": "take[1]>from[ody-main]?rarity='r'" }
+            ]
+        },
+        {
+            "packName": "ody-promos",
+            "packDesc": "Odyssey: Promos",
+            "isGenerated": false,
+            "includeWithUserCards": false,
+            "cards": [
+                { "query": "take[*]>from[ody-promo]" }
+            ]
+        }
+
+    ]
+}

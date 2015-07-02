@@ -1,0 +1,492 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimpleMvcSitemap</name>
+    </assembly>
+    <members>
+        <member name="F:SimpleMvcSitemap.ChangeFrequency.Always">
+            <summary>
+            The value "always" should be used to describe documents that change each time they are accessed.
+            </summary>
+        </member>
+        <member name="F:SimpleMvcSitemap.ChangeFrequency.Never">
+            <summary>
+            The value "never" should be used to describe archived URLs.
+            </summary>
+        </member>
+        <member name="T:SimpleMvcSitemap.VideoPlayerUrl">
+            <summary>
+            Encapsulates the information about player URL
+            </summary>
+        </member>
+        <member name="M:SimpleMvcSitemap.VideoPlayerUrl.#ctor(System.String)">
+            <summary>
+            Creates an instance of VideoPlayerUrl
+            </summary>
+            <param name="url">A URL pointing to a player for a specific video.</param>
+        </member>
+        <member name="P:SimpleMvcSitemap.VideoPlayerUrl.AllowEmbed">
+            <summary>
+            The optional attribute allow_embed specifies whether Google can embed the video in search results. Allowed values are Yes or No.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.VideoPlayerUrl.Autoplay">
+            <summary>
+            The optional attribute autoplay has a user-defined string (in the example above, ap=1) that Google may append (if appropriate) to the flashvars parameter
+             to enable autoplay of the video. For example: &lt;embed src="http://www.example.com/videoplayer.swf?video=123" autoplay="ap=1"/&gt;.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.VideoPlayerUrl.Url">
+            <summary>
+            A URL pointing to a player for a specific video. 
+            </summary>
+        </member>
+        <member name="M:SimpleMvcSitemap.VideoGallery.#ctor(System.String)">
+            <summary>
+            Creates an instance of video gallery
+            </summary>
+            <param name="url">A link to the gallery (collection of videos) in which this video appears</param>
+        </member>
+        <member name="P:SimpleMvcSitemap.VideoGallery.Title">
+            <summary>
+            The optional attribute title indicates the title of the gallery.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.VideoGallery.Url">
+            <summary>
+            A link to the gallery (collection of videos) in which this video appears
+            </summary>
+        </member>
+        <member name="M:SimpleMvcSitemap.VideoPrice.#ctor(System.String,System.Decimal)">
+            <summary>
+            Creates an instance of VideoPrice
+            </summary>
+            <param name="currency">Specifies the currency in ISO 4217 format</param>
+            <param name="value">The price to download or view the video.</param>
+        </member>
+        <member name="P:SimpleMvcSitemap.VideoPrice.Currency">
+            <summary>
+            The required attribute currency specifies the currency in ISO 4217 format.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.VideoPrice.Type">
+            <summary>
+            The optional attribute type specifies the purchase option. 
+            Allowed values are rent and own.
+            If this is not specified, the default value is own.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.VideoPrice.Resolution">
+            <summary>
+            The optional attribute resolution specifies the purchased resolution. 
+            Allows values are HD and SD.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.VideoPrice.Value">
+            <summary>
+            The price to download or view the video.
+            </summary>
+        </member>
+        <member name="T:SimpleMvcSitemap.VideoRestriction">
+            <summary>
+            List of countries where the video may or may not be played.
+            </summary>
+        </member>
+        <member name="M:SimpleMvcSitemap.VideoRestriction.#ctor(System.String,SimpleMvcSitemap.VideoRestrictionRelationship)">
+            <summary>
+            Creates an instance of VideoRestriction
+            </summary>
+            <param name="countries">A space-delimited list of countries where the video may or may not be played.
+            Allowed values are country codes in ISO 3166 format.</param>
+            <param name="relationship">Specifies whether the video is restricted or permitted for the specified countries.</param>
+        </member>
+        <member name="P:SimpleMvcSitemap.VideoRestriction.Relationship">
+            <summary>
+            The required attribute "relationship" specifies whether the video is restricted or permitted for the specified countries.
+            Allowed values are allow or deny.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.VideoRestriction.Countries">
+            <summary>
+            A space-delimited list of countries where the video may or may not be played. 
+            Allowed values are country codes in ISO 3166 format. 
+            </summary>
+        </member>
+        <member name="M:SimpleMvcSitemap.VideoUploader.#ctor(System.String)">
+            <summary>
+            Creates an instance of VideoUploader
+            </summary>
+            <param name="name">The video uploader's name.</param>
+        </member>
+        <member name="P:SimpleMvcSitemap.VideoUploader.Info">
+            <summary>
+            The optional attribute info specifies the URL of a webpage with additional information about this uploader.
+            This URL must be on the same domain as the &lt;loc&gt; tag.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.VideoUploader.Name">
+            <summary>
+            The video uploader's name.
+            </summary>
+        </member>
+        <member name="T:SimpleMvcSitemap.SitemapImage">
+            <summary>
+            Encloses all information about a single image
+            </summary>
+        </member>
+        <member name="M:SimpleMvcSitemap.SitemapImage.#ctor(System.String)">
+            <summary>
+            Creates an instance of SitemapImage
+            </summary>
+            <param name="url">The URL of the image.</param>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapImage.Url">
+            <summary>
+            The URL of the image.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapImage.Caption">
+            <summary>
+            The caption of the image.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapImage.Location">
+            <summary>
+            The geographic location of the image.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapImage.Title">
+            <summary>
+            The title of the image.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapImage.License">
+            <summary>
+            A URL to the license of the image.
+            </summary>
+        </member>
+        <member name="T:SimpleMvcSitemap.SitemapVideo">
+            <summary>
+            Encloses all information about the video.
+            </summary>
+        </member>
+        <member name="M:SimpleMvcSitemap.SitemapVideo.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates an instance of SitemapVideo
+            </summary>
+            <param name="title">The title of the video. Maximum 100 characters.</param>
+            <param name="description">The description of the video. Maximum 2048 characters.</param>
+            <param name="thumbnailUrl"></param>
+            <param name="contentUrl">A URL pointing to the actual video media file.
+                This file should be in .mpg, .mpeg, .mp4, .m4v, .mov, .wmv, .asf, .avi, .ra, .ram, .rm, .flv, or other video file format.</param>
+        </member>
+        <member name="M:SimpleMvcSitemap.SitemapVideo.#ctor(System.String,System.String,System.String,SimpleMvcSitemap.VideoPlayerUrl)">
+            <summary>
+            Creates an instance of SitemapVideo
+            </summary>
+            <param name="title">The title of the video. Maximum 100 characters.</param>
+            <param name="description">The description of the video. Maximum 2048 characters.</param>
+            <param name="thumbnailUrl"></param>
+            <param name="playerUrl">A URL pointing to a player for a specific video.</param>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapVideo.ThumbnailUrl">
+            <summary>
+            A URL pointing to the video thumbnail image file. 
+            Images must be at least 160 x 90 pixels and at most 1920x1080 pixels. 
+            We recommend images in .jpg, .png, or. gif formats.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapVideo.Title">
+            <summary>
+            The title of the video. Maximum 100 characters. 
+            The title must be in plain text only, and any HTML entities should be escaped or wrapped in a CDATA block.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapVideo.Description">
+            <summary>
+            The description of the video. Maximum 2048 characters. 
+            The description must be in plain text only, and any HTML entities should be escaped or wrapped in a CDATA block.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapVideo.ContentUrl">
+            <summary>
+            You must specify at least one of  &lt;video:player_loc&gt; or  &lt;video:content_loc&gt;.
+            A URL pointing to the actual video media file. This file should be in .mpg, .mpeg, .mp4, .m4v, .mov, .wmv, .asf, .avi, .ra, .ram, .rm, .flv, or other video file format.
+            Providing this file allows Google to generate video thumbnails and video previews, and can help Google verify your video.
+            Best practice: Ensure that only Googlebot accesses your content by using a reverse DNS lookup.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapVideo.PlayerUrl">
+            <summary>
+            You must specify at least one of  &lt;video:player_loc&gt; or  &lt;video:content_loc&gt;.
+            A URL pointing to a player for a specific video. 
+            Usually this is the information in the src element of an &lt;embed&gt; tag and should not be the same as the content of the &lt;loc&gt; tag. ​
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapVideo.Duration">
+            <summary>
+            The duration of the video in seconds. Value must be between 0 and 28800 (8 hours).
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapVideo.ExpirationDate">
+            <summary>
+            The date after which the video will no longer be available, in W3C format. Don't supply this information if your video does not expire.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapVideo.Rating">
+            <summary>
+            The rating of the video. Allowed values are float numbers in the range 0.0 to 5.0.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapVideo.ViewCount">
+            <summary>
+            The number of times the video has been viewed.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapVideo.PublicationDate">
+            <summary>
+            The date the video was first published, in W3C format. 
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapVideo.FamilyFriendly">
+            <summary>
+            No if the video should be available only to users with SafeSearch turned off.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapVideo.Tags">
+            <summary>
+            A tag associated with the video. 
+            Tags are generally very short descriptions of key concepts associated with a video or piece of content. 
+            A single video could have several tags, although it might belong to only one category. 
+            For example, a video about grilling food may belong in the Grilling category, but could be tagged "steak", "meat", "summer", and "outdoor". 
+            Create a new &lt;video:tag&gt; element for each tag associated with a video. A maximum of 32 tags is permitted.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapVideo.Category">
+            <summary>
+            The video's category. 
+            For example, cooking. The value should be a string no longer than 256 characters.
+            In general, categories are broad groupings of content by subject.
+            Usually a video will belong to a single category.
+            For example, a site about cooking could have categories for Broiling, Baking, and Grilling.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapVideo.Restriction">
+            <summary>
+            List of countries where the video may or may not be played. 
+            Only one &lt;video:restriction&gt; tag can appear for each video. If there is no &lt;video:restriction&gt; tag, 
+            it is assumed that the video can be played in all territories.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapVideo.Gallery">
+            <summary>
+            A link to the gallery (collection of videos) in which this video appears. 
+            Only one &lt;video:gallery_loc&gt; tag can be listed for each video.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapVideo.Prices">
+            <summary>
+            The price to download or view the video. Do not use this tag for free videos.
+            More than one &lt;video:price&gt; element can be listed (for example, in order to specify various currencies, purchasing options, or resolutions).
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapVideo.RequiresSubscription">
+            <summary>
+            Indicates whether a subscription (either paid or free) is required to view the video. Allowed values are yes or no.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapVideo.Uploader">
+            <summary>
+            The video uploader's name. Only one &lt;video:uploader&gt; is allowed per video.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapVideo.Platform">
+            <summary>
+            A list of space-delimited platforms where the video may or may not be played. 
+            Allowed values are web, mobile, and tv.
+            Only one &lt;video:platform&gt; tag can appear for each video. 
+            If there is no &lt;video:platform&gt; tag, it is assumed that the video can be played on all platforms.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapVideo.Live">
+            <summary>
+            Indicates whether the video is a live stream.
+            Allowed values are yes or no.
+            </summary>
+        </member>
+        <member name="T:SimpleMvcSitemap.SitemapNews">
+            <summary>
+            Encloses all information about the news article.
+            </summary>
+        </member>
+        <member name="M:SimpleMvcSitemap.SitemapNews.#ctor(SimpleMvcSitemap.NewsPublication,System.DateTime,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="newsPublication">Specifies the publication in which the article appears</param>
+            <param name="publicationDate">Article publication date</param>
+            <param name="title">The title of the news article. </param>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapNews.Publication">
+            <summary>
+            Specifies the publication in which the article appears. 
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapNews.Access">
+            <summary>
+            Possible values include "Subscription" or "Registration", describing the accessibility of the article.
+            If the article is accessible to Google News readers without a registration or subscription, this tag should be omitted.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapNews.Genres">
+            <summary>
+            A comma-separated list of properties characterizing the content of the article.
+            Values:
+            PressRelease (visible): an official press release.
+            Satire (visible): an article which ridicules its subject for didactic purposes.
+            Blog (visible): any article published on a blog, or in a blog format.
+            OpEd: an opinion-based article which comes specifically from the Op-Ed section of your site.
+            Opinion: any other opinion-based article not appearing on an Op-Ed page, i.e., reviews, interviews, etc.
+            UserGenerated: newsworthy user-generated content which has already gone through a formal editorial review process on your site.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapNews.PublicationDate">
+            <summary>
+            Article publication date
+            Please ensure that you give the original date and time at which the article was published on your site; do not give the time at which the article was added to your Sitemap.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapNews.Title">
+            <summary>
+            The title of the news article. 
+            Note: The title may be truncated for space reasons when shown on Google News.
+            Article title tags should only include the title of the article as it appears on your site.
+            Please make sure not to include the author name, the publication name, or publication date as part of the title tag.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapNews.Keywords">
+            <summary>
+            A comma-separated list of keywords describing the topic of the article. 
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapNews.StockTickers">
+            <summary>
+            A comma-separated list of up to 5 stock tickers of the companies, mutual funds, or other financial entities that are the main subject of the article.
+            Relevant primarily for business articles. Each ticker must be prefixed by the name of its stock exchange, and must match its entry in Google Finance.
+            For example, "NASDAQ:AMAT" (but not "NASD:AMAT"), or "BOM:500325" (but not "BOM:RIL").
+            </summary>
+        </member>
+        <member name="T:SimpleMvcSitemap.NewsPublication">
+            <summary>
+            Specifies the publication in which the article appears
+            </summary>
+        </member>
+        <member name="M:SimpleMvcSitemap.NewsPublication.#ctor(System.String,System.String)">
+            <summary>
+            Creates an instance of NewsPublication
+            </summary>
+            <param name="name">Name of the news publication</param>
+            <param name="language">The language of the publication</param>
+        </member>
+        <member name="P:SimpleMvcSitemap.NewsPublication.Name">
+            <summary>
+            Name of the news publication.
+            It must exactly match the name as it appears on your articles in news.google.com, omitting any trailing parentheticals.
+            For example, if the name appears in Google News as "The Example Times (subscription)", you should use the name, "The Example Times".
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.NewsPublication.Language">
+            <summary>
+            The language of the publication.
+            It should be an ISO 639 Language Code (either 2 or 3 letters).
+            Exception: For Chinese, please use zh-cn for Simplified Chinese or zh-tw for Traditional Chinese.
+            </summary>
+        </member>
+        <member name="T:SimpleMvcSitemap.SitemapIndexModel">
+            <summary>
+            Encapsulates information about all of the Sitemaps in the file.
+            </summary>
+        </member>
+        <member name="T:SimpleMvcSitemap.SitemapIndexNode">
+            <summary>
+            Encapsulates information about an individual Sitemap.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapIndexNode.Url">
+            <summary>
+            Identifies the location of the Sitemap.
+            This location can be a Sitemap, an Atom file, RSS file or a simple text file.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapIndexNode.LastModificationDate">
+            <summary>
+            Identifies the time that the corresponding Sitemap file was modified.
+            It does not correspond to the time that any of the pages listed in that Sitemap were changed.
+            By providing the last modification timestamp, you enable search engine crawlers to retrieve only a subset of the Sitemaps in the index
+             i.e. a crawler may only retrieve Sitemaps that were modified since a certain date.
+            This incremental Sitemap fetching mechanism allows for the rapid discovery of new URLs on very large sites.
+            </summary>
+        </member>
+        <member name="T:SimpleMvcSitemap.SitemapModel">
+            <summary>
+            Encapsulates the sitemap file and references the current protocol standard.
+            </summary>
+        </member>
+        <member name="T:SimpleMvcSitemap.SitemapNode">
+            <summary>
+            Encloses all information about a specific URL.
+            </summary>
+        </member>
+        <member name="M:SimpleMvcSitemap.SitemapNode.#ctor(System.String)">
+            <summary>
+            Creates a sitemap node
+            </summary>
+            <param name="url">Specifies the URL. For images and video, specifies the landing page (aka play page).</param>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapNode.Url">
+            <summary>
+            URL of the page.
+            This URL must begin with the protocol (such as http) and end with a trailing slash, if your web server requires it.
+            This value must be less than 2,048 characters.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapNode.LastModificationDate">
+            <summary>
+            Shows the date the URL was last modified, value is optional.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapNode.ChangeFrequency">
+            <summary>
+            How frequently the page is likely to change. 
+            This value provides general information to search engines and may not correlate exactly to how often they crawl the page.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapNode.Priority">
+            <summary>
+            The priority of this URL relative to other URLs on your site. Valid values range from 0.0 to 1.0. This value does not affect how your pages are compared to pages on other sites—it only lets the search engines know which pages you deem most important for the crawlers.
+            The default priority of a page is 0.5.
+            Please note that the priority you assign to a page is not likely to influence the position of your URLs in a search engine's result pages.
+            Search engines may use this information when selecting between URLs on the same site, 
+            so you can use this tag to increase the likelihood that your most important pages are present in a search index.
+            Also, please note that assigning a high priority to all of the URLs on your site is not likely to help you.
+            Since the priority is relative, it is only used to select between URLs on your site.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapNode.Images">
+            <summary>
+            Additional information about important images on the page.
+            It can include up to 1000 images.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapNode.News">
+            <summary>
+            Additional information about news article on the page.
+            </summary>
+        </member>
+        <member name="P:SimpleMvcSitemap.SitemapNode.Video">
+            <summary>
+            Additional information about video content on the page.
+            </summary>
+        </member>
+    </members>
+</doc>

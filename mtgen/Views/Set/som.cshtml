@@ -1,0 +1,31 @@
+﻿@using mtgen.Models;
+@{
+    var set = new mtgen.Models.Set()
+    {
+        Code = "som",
+        Name = "Scars of Mirrodin",
+        CreatedDate = new DateTime(2015, 6, 12),
+        CardCount = 249,
+        StartProductName = "som-boosters"
+    };
+
+    set.Updates = new List<Update>()
+    {
+        //new Update() {
+        //    UpdateDate = new DateTime(2014,9,2),
+        //    HtmlString = "Evening: Upgraded to newest version, added all Prerelease pack-ins, Fat Packs, and guild sorting."
+        //}
+    };
+
+    set.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    set.PackFiles = new List<string>() { "packs.json" };
+
+    ViewBag.Set = set;
+
+    /* Defaults:
+        SetFile = "~/sets.json";
+        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+        PackFiles = new List<string>() { "packs.json" };
+        ProductFile = "products.json";
+     */
+}

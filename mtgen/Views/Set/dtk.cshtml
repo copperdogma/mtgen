@@ -1,0 +1,59 @@
+﻿@using mtgen.Models;
+@{
+    var set = new mtgen.Models.Set()
+    {
+        Code = "dtk",
+        Name = "Dragons of Tarkir",
+        CreatedDate = new DateTime(2015, 3, 3),
+        CardCount = 264,
+        StartProductName = "dtk-prerelease",
+
+        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" },
+        PackFiles = new List<string>() { "../ktk/packs.json", "../frf/packs.json", "packs.json" }
+    };
+
+    set.CardFiles = set.CardFiles.Concat(new List<string>() { "../ktk/cardsMain.json", "../ktk/cardsToken.json", "../ktk/cardsOther.json" }).ToList();
+    set.CardFiles = set.CardFiles.Concat(new List<string>() { "../frf/cardsMain.json", "../frf/cardsToken.json", "../frf/cardsOther.json" }).ToList();
+
+    set.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2015,4,6),
+            HtmlString = "Evening: Prerelease: Added Fat Pack."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2015,3,31),
+            HtmlString = "Evening: Prerelease: Added actual Prerelease seeded pack contents plus clan info cards."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2015,3,17),
+            HtmlString = "Morning: Prerelease bugfixes: Logo fixed. Last booster is now Fate Regorged as intended. Seeded booster: now contains 15 cards (not 16), no Fate Reforged cards, and the Rare is a clan card."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2015,3,16),
+            HtmlString = "Evening: Added Prerelease section."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2015,3,13),
+            HtmlString = "Evening: All cards added!"
+        },
+        new Update() {
+            UpdateDate = new DateTime(2015,3,12),
+            HtmlString = "Evening: Added boosters, basic land, and more cards."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2015,3,11),
+            HtmlString = "Evening: Added the promos, tokens, and a lot more cards."
+        }
+
+    };
+
+    ViewBag.Set = set;
+
+    /* Defaults:
+        SetFile = "~/sets.json";
+        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+        PackFiles = new List<string>() { "packs.json" };
+        ProductFile = "products.json";
+     */
+}

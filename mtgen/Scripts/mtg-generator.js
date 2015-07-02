@@ -23,7 +23,8 @@ Normally 15 cards per booster:
 
 - 1 in 4 boosters contains a foil which may be any card of any rarity (incl Basic Land), which replaces a Common
 
-3-Jan-2014: Added Other Colourless category to handle new FRF {8} Ugin, the Spirit Dragon.
+13-Jun-2015: Added Faction support (for SOM block).
+3-Jan-2015: Added Other Colourless category to handle new FRF {8} Ugin, the Spirit Dragon.
 18-Sep-2014: Added Back to Top buttons.
 2-Sep-2014: Now includes clan support for ktk.
 1-Sep-2014: Now allows product.isVisible so you can leave templates in place while publishing out only products that are ready.
@@ -97,6 +98,7 @@ var mtgGen = (function (my, $) {
     my.cardsData = undefined;
     my.hasGuilds = false;
     my.hasClans = false;
+    my.hasFactions = false;
 
     my.initViews = []; // for modules to add their views to be run once at the start of the app
 
@@ -211,6 +213,13 @@ var mtgGen = (function (my, $) {
         sultai: { sorder: 3, code: 'sultai', name: 'Sultai', fullName: 'Sultai Brood' },
         mardu: { sorder: 4, code: 'mardu', name: 'Mardu', fullName: 'Mardu Horde' },
         temur: { sorder: 5, code: 'temur', name: 'Temur', fullName: 'Temur Frontier' },
+
+        dromoka: { sorder: 6, code: 'dromoka', name: 'Dromoka', fullName: 'Dromoka' },
+        ojutai: { sorder: 7, code: 'ojutai', name: 'Ojutai', fullName: 'Ojutai' },
+        silumgar: { sorder: 8, code: 'silumgar', name: 'Silumgar', fullName: 'Silumgar' },
+        kolaghan: { sorder: 9, code: 'kolaghan', name: 'Kolaghan', fullName: 'Kolaghan' },
+        atarka: { sorder: 10, code: 'atarka', name: 'Atarka', fullName: 'Atarka' },
+
         unknown: { sorder: 97, code: '?', name: 'Unknown', fullName: 'Unknown' }
     };
     function getClanByCode(code) {
@@ -220,6 +229,21 @@ var mtgGen = (function (my, $) {
             }
         }
         return my.clans.unknown;
+    }
+
+    my.factions = {
+        azorius: { sorder: 1, code: 'mirran', name: 'Mirran', fullName: 'Mirran' },
+        izzet: { sorder: 2, code: 'phyrexian', name: 'Phyrexian', fullName: 'Phyrexian' },
+
+        unknown: { sorder: 97, code: '?', name: 'Unknown', fullName: 'Unknown' }
+    };
+    function getFactionByCode(code) {
+        for (var faction in my.factions) {
+            if (my.factions[faction].code == code) {
+                return my.factions[faction];
+            }
+        }
+        return my.factions.unknown;
     }
 
     my.getRequiredOption = function (options, optionName, abortMsg) {
@@ -379,6 +403,11 @@ var mtgGen = (function (my, $) {
                         card.clan = createMatchTitle(card.clan);
                         card.clanOrder = getClanByCode(card.clan).sorder;
                         my.hasClans = true;
+                    }
+                    if (card.hasOwnProperty('faction')) {
+                        card.faction = createMatchTitle(card.faction);
+                        card.factionOrder = getFactionByCode(card.faction).sorder;
+                        my.hasFactions = true;
                     }
                     card.ccost = calculateConvertedCost(card.cost);
 
@@ -793,6 +822,7 @@ var mtgGen = (function (my, $) {
 		, set: { sort: 'set' }
 		, guild: { sort: 'guild' }
 		, clan: { sort: 'clan' }
+		, faction: { sort: 'faction' }
 		, order: { sort: 'order' } // opened order within the set
     };
 
@@ -1042,6 +1072,45 @@ var mtgGen = (function (my, $) {
         return sortedSets;
     };
 
+    my.sortAllByFaction = function (cardList) {
+        var sortedSets = [];
+
+        // for each faction, create a new card set
+        var mainCards = _.filter(cardList, function (card) { return card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token; });
+        var groupedCardSets = _.groupBy(mainCards, function (card) { return card.faction; });
+        var cardSets = this.sortIntoArray(groupedCardSets, my.factions);
+        _.each(cardSets, function (cardSet) {
+            var set = _.sortBy(cardSet, 'matchTitle');
+            set.setDesc = getFactionByCode(set[0].faction).name;
+            set.sortOrder = my.sortOrders.name;
+            sortedSets.push(set);
+        });
+
+        var basicLandCards = my.getBasicLandCards(cardList);
+
+        var factionAndBasicLandCards = basicLandCards.concat(_.flatten(sortedSets));
+
+        var nonFactionCards = my.getOtherCards(mainCards, factionAndBasicLandCards);
+        if (nonFactionCards.length > 0) {
+            nonFactionCards.setDesc = "Non-Faction";
+            sortedSets.push(nonFactionCards);
+        }
+
+        if (basicLandCards.length > 0) {
+            sortedSets.push(basicLandCards);
+        }
+
+        var selectedCards = _.flatten(sortedSets);
+        var otherCards = my.getOtherCards(cardList, selectedCards);
+        if (otherCards.length > 0) {
+            sortedSets.push(otherCards);
+        }
+
+        sortedSets.sortOrder = my.sortOrders.faction;
+
+        return sortedSets;
+    };
+
     /* --------- Sorting Sets --------------------------------------------------------------------------------------------------------------------- */
     my.sortByTitle = function (cardList) {
         var sortedCards = _.sortBy(cardList, 'matchTitle');
@@ -1082,6 +1151,12 @@ var mtgGen = (function (my, $) {
     my.sortByClan = function (cardList) {
         var sortedCards = _.sortBy(cardList, function (card) { return '' + padNum(card.clanOrder, 3) + card.matchTitle; }); // sort by clan then title
         sortedCards.sortOrder = my.sortOrders.clan;
+        return sortedCards;
+    };
+
+    my.sortByFaction = function (cardList) {
+        var sortedCards = _.sortBy(cardList, function (card) { return '' + padNum(card.factionOrder, 3) + card.matchTitle; }); // sort by faction then title
+        sortedCards.sortOrder = my.sortOrders.faction;
         return sortedCards;
     };
 
@@ -1369,7 +1444,12 @@ var mtgGen = (function (my, $) {
 					    return (my.hasClans) ? my.replaceActiveToken('clan', '<a href="#" class="button[[ACTIVE]] sort-all-by-clan">Clan</a>') : '';
 					}
 				);
-            this.addMenuItem("set", 18,
+            this.addMenuItem("faction", 18,
+					function () {
+					    return (my.hasFactions) ? my.replaceActiveToken('faction', '<a href="#" class="button[[ACTIVE]] sort-all-by-faction">Faction</a>') : '';
+					}
+				);
+            this.addMenuItem("set", 20,
 					function () {
 					    return (my.mainView.currentView.isGenerated) ? my.replaceActiveToken('set', '<a href="#" class="button[[ACTIVE]] sort-all-by-sets">Generated sets</a>')
  : '';
@@ -1399,6 +1479,11 @@ var mtgGen = (function (my, $) {
 		    this.addMenuItem("clan", 14,
 					function () {
 					    return (my.hasClans) ? my.replaceActiveToken('clan', '<a href="#" class="button[[ACTIVE]] sort-by-clan" data-setid="[[SETID]]">Clan</a>') : '';
+					}
+				);
+		    this.addMenuItem("faction", 14,
+					function () {
+					    return (my.hasFactions) ? my.replaceActiveToken('faction', '<a href="#" class="button[[ACTIVE]] sort-by-faction" data-setid="[[SETID]]">Faction</a>') : '';
 					}
 				);
 		    this.addMenuItem("order", 16,
@@ -1485,6 +1570,7 @@ var mtgGen = (function (my, $) {
 		    events["click #product-content ." + this.productName + " .sort-all-by-type"] = "sortAllByType";
 		    events["click #product-content ." + this.productName + " .sort-all-by-guild"] = "sortAllByGuild";
 		    events["click #product-content ." + this.productName + " .sort-all-by-clan"] = "sortAllByClan";
+		    events["click #product-content ." + this.productName + " .sort-all-by-faction"] = "sortAllByFaction";
 		    events["click #product-content ." + this.productName + " .sort-all-by-sets"] = "sortAllBySets";
 
 		    events["click #product-content ." + this.productName + " .set .sort-by-name"] = "sortByTitle";
@@ -1494,6 +1580,7 @@ var mtgGen = (function (my, $) {
 		    events["click #product-content ." + this.productName + " .set .sort-by-type"] = "sortByType";
 		    events["click #product-content ." + this.productName + " .set .sort-by-guild"] = "sortByGuild";
 		    events["click #product-content ." + this.productName + " .set .sort-by-clan"] = "sortByClan";
+		    events["click #product-content ." + this.productName + " .set .sort-by-faction"] = "sortByFaction";
 		    events["click #product-content ." + this.productName + " .set .sort-by-opened"] = "sortSetByOpenedOrder";
 
 		    if (this.hasPackPresets) {
@@ -1763,6 +1850,7 @@ var mtgGen = (function (my, $) {
 		            case my.sortOrders.type.sort: return this.sortAllByType;
 		            case my.sortOrders.guild.sort: return this.sortAllByGuild;
 		            case my.sortOrders.clan.sort: return this.sortAllByClan;
+		            case my.sortOrders.faction.sort: return this.sortAllByFaction;
 		            case my.sortOrders.set.sort: return this.sortAllBySets;
 		        }
 		    }
@@ -1814,6 +1902,12 @@ var mtgGen = (function (my, $) {
 
 		, sortAllByClan: function () {
 		    this.sortedSets = my.sortAllByClan(this.allCards);
+		    this.renderAllCardSets(this.sortedSets);
+		    return false;
+		}
+
+		, sortAllByFaction: function () {
+		    this.sortedSets = my.sortAllByFaction(this.allCards);
 		    this.renderAllCardSets(this.sortedSets);
 		    return false;
 		}
@@ -1894,6 +1988,15 @@ var mtgGen = (function (my, $) {
 		    var sortedCards = my.sortByClan(this.sortedSets[setID]);
 		    sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
 		    sortedCards.sortOrder = my.sortOrders.clan;
+		    my.renderSetUpdate(this.productName, setID, sortedCards, this.sortedSets);
+		    return false;
+		}
+
+		, sortByFaction: function (events) {
+		    var setID = $(events.currentTarget).attr('data-setid');
+		    var sortedCards = my.sortByFaction(this.sortedSets[setID]);
+		    sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
+		    sortedCards.sortOrder = my.sortOrders.faction;
 		    my.renderSetUpdate(this.productName, setID, sortedCards, this.sortedSets);
 		    return false;
 		}

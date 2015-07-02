@@ -1,0 +1,24 @@
+@page {
+  margin: 3mm 5mm;
+}
+body {
+	margin: 0;
+}
+section.set {
+	page-break-before: always;
+}
+#product-content .result>* {
+	padding: 0;
+}
+.card {
+	line-height: 0;
+	margin: 0;
+}
+.card img {
+	margin: 0;
+	height: 88mm;
+	width: 63mm;
+}
+.card em {
+	display: none;
+}

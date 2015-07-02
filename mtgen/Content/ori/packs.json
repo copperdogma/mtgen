@@ -1,0 +1,95 @@
+{
+    "defs": [
+        {
+            "defName": "ori",
+            "query": "from[*]?set='ori'"
+        },
+        {
+            "defName": "ori-main",
+            "query": "from[ori]-from[ori]?type=(Marketing|Basic Land)-from[ori]?token=true-from[ori]?promo=true"
+        },
+        {
+            "defName": "ori-foils",
+            "query": "from[ori-main]"
+        },
+        {
+            "defName": "ori-promo",
+            "query": "from[ori]?promo=true"
+        },
+        {
+            "defName": "ori-seeded-white",
+            "query": "from[ori-main]?cost=contains({W})"
+        }
+
+    ],
+    "packs": [
+        {
+            "packName": "ori-all-cards",
+            "packDesc": "Magic Origins: All Cards",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[ori]" }
+            ]
+        },
+        {
+            "packName": "ori-standard",
+            "packDesc": "Magic Origins: Standard Booster",
+            "isGenerated": true,
+            "cards": [
+                { "query": "from[ori]?type='Basic Land'" },
+                { "query": "take[9]>from[ori-main]?rarity='c'" },
+                {
+                    "querySet": [
+                        { "percent": 75, "query": "from[ori-main]?rarity='c'" },
+                        { "percent": 25, "query": "from[ori-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+                    ]
+                },
+                { "query": "take[3]>from[ori-main]?rarity='u'" },
+                {
+                    "querySet": [
+                        { "percent": 87.5, "query": "from[ori-main]?rarity='r'" },
+                        { "percent": 12.5, "query": "from[ori-main]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" }
+                    ]
+                },
+                {
+                    "querySet": [
+                        { "percent": 50, "query": "from[ori]?type='Marketing'" },
+                        { "percent": 50, "query": "from[ori]?token=true-from[ori]?promo=true" }
+                    ]
+                }
+            ]
+        },
+        {
+            "packName": "ori-promos",
+            "packDesc": "Magic Origins: Promos",
+            "isGenerated": false,
+            "includeWithUserCards": false,
+            "cards": [
+                { "query": "take[*]>from[ori-promo]" }
+            ]
+        },
+        {
+            "packName": "ori-seeded-booster-white",
+            "packDesc": "Magic Origins: White Seeded Booster (Gideon)",
+            "isGenerated": true,
+            "cards": [
+                { "query": "from[ori]?promo=true" },
+                { "query": "take[3]>from[ori-seeded-white]?rarity='c'" },
+                {
+                    "querySet": [
+                        { "percent": 75, "query": "from[ori-seeded-white]?rarity='c'" },
+                        { "percent": 25, "query": "from[ori-seeded-white]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+                    ]
+                },
+                { "query": "take[1]>from[ori-seeded-white]?rarity='u'" },
+                {
+                    "querySet": [
+                        { "percent": 87.5, "query": "from[ori-seeded-white]?rarity='r'" },
+                        { "percent": 12.5, "query": "from[ori-seeded-white]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" }
+                    ]
+                }
+            ]
+        }
+
+    ]
+}

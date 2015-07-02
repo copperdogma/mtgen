@@ -1,0 +1,30 @@
+﻿@using mtgen.Models;
+@{
+    var set = new mtgen.Models.Set()
+    {
+        Code = "ori",
+        Name = "Magic Origins",
+        CreatedDate = new DateTime(2015, 6, 23),
+        CardCount = 272,
+        StartProductName = "ori-boosters"
+    };
+
+    set.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2015,7,1),
+            HtmlString = "Evening: Up to 185 cards and added Tokens."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2015,6,30),
+            HtmlString = "Evening: Up to 164 cards and added Boosters section."
+        }
+    };
+
+    set.Incomplete = true;
+
+    set.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    set.PackFiles = new List<string>() { "packs.json" };
+
+    ViewBag.Set = set;
+}

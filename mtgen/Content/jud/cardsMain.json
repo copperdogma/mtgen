@@ -1,0 +1,4121 @@
+﻿[
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 34243,
+  "name": "Ancestor's Chosen",
+  "subtypes": [
+   "Human",
+   "Cleric"
+  ],
+  "cmc": 7,
+  "rarity": "u",
+  "artist": "Pete Venters",
+  "power": "4",
+  "toughness": "4",
+  "manaCost": "{5}{W}{W}",
+  "text": "First strike (This creature deals combat damage before creatures without first strike.)\nWhen Ancestor's Chosen enters the battlefield, you gain 1 life for each card in your graveyard.",
+  "flavor": "Empowered by generations of strength.",
+  "number": "1",
+  "imageName": "ancestor's chosen",
+  "title": "Ancestor's Chosen",
+  "set": "jud",
+  "cost": "{5}{W}{W}",
+  "colour": "w",
+  "num": "1",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34243&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 33717,
+  "name": "Anger",
+  "subtypes": [
+   "Incarnation"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "John Avon",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{3}{R}",
+  "text": "Haste\nAs long as Anger is in your graveyard and you control a Mountain, creatures you control have haste.",
+  "flavor": "\"For its time as a mortal, Anger chose a shell of boiling rock.\"\n—Scroll of Beginnings",
+  "number": "77",
+  "imageName": "anger",
+  "title": "Anger",
+  "set": "jud",
+  "cost": "{3}{R}",
+  "colour": "r",
+  "num": "77",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=33717&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 36039,
+  "name": "Anurid Barkripper",
+  "subtypes": [
+   "Frog",
+   "Beast"
+  ],
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Randy Gallegos",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{1}{G}{G}",
+  "text": "Threshold — Anurid Barkripper gets +2/+2 as long as seven or more cards are in your graveyard.",
+  "flavor": "When it croaks, so do you.",
+  "number": "104",
+  "imageName": "anurid barkripper",
+  "title": "Anurid Barkripper",
+  "set": "jud",
+  "cost": "{1}{G}{G}",
+  "colour": "g",
+  "num": "104",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36039&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White",
+   "Green"
+  ],
+  "multiverseid": 35059,
+  "name": "Anurid Brushhopper",
+  "subtypes": [
+   "Frog",
+   "Beast"
+  ],
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "Arnie Swekel",
+  "power": "3",
+  "toughness": "4",
+  "manaCost": "{1}{G}{W}",
+  "text": "Discard two cards: Exile Anurid Brushhopper. Return it to the battlefield under its owner's control at the beginning of the next end step.",
+  "flavor": "It's so tough it can frighten itself into hiding.",
+  "number": "137",
+  "imageName": "anurid brushhopper",
+  "title": "Anurid Brushhopper",
+  "set": "jud",
+  "cost": "{1}{G}{W}",
+  "colour": "m",
+  "num": "137",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35059&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 36453,
+  "name": "Anurid Swarmsnapper",
+  "subtypes": [
+   "Frog",
+   "Beast"
+  ],
+  "cmc": 3,
+  "rarity": "u",
+  "artist": "John Matson",
+  "power": "1",
+  "toughness": "4",
+  "manaCost": "{2}{G}",
+  "text": "Reach (This creature can block creatures with flying.)\n{1}{G}: Anurid Swarmsnapper can block an additional creature this turn.",
+  "flavor": "Anurids have the problem of airborne invaders licked.",
+  "number": "105",
+  "imageName": "anurid swarmsnapper",
+  "title": "Anurid Swarmsnapper",
+  "set": "jud",
+  "cost": "{2}{G}",
+  "colour": "g",
+  "num": "105",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36453&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 36430,
+  "name": "Arcane Teachings",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Mark Brill",
+  "manaCost": "{2}{R}",
+  "text": "Enchant creature (Target a creature as you cast this. This card enters the battlefield attached to that creature.)\nEnchanted creature gets +2/+2 and has \"{T}: This creature deals 1 damage to target creature or player.\"",
+  "flavor": "Dwarves may teach at the speed of stone, but their results are solid.",
+  "number": "78",
+  "imageName": "arcane teachings",
+  "title": "Arcane Teachings",
+  "set": "jud",
+  "cost": "{2}{R}",
+  "colour": "r",
+  "num": "78",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36430&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 21275,
+  "name": "Aven Fogbringer",
+  "subtypes": [
+   "Bird",
+   "Wizard"
+  ],
+  "cmc": 4,
+  "rarity": "c",
+  "artist": "Edward P. Beard, Jr.",
+  "power": "2",
+  "toughness": "1",
+  "manaCost": "{3}{U}",
+  "text": "Flying\nWhen Aven Fogbringer enters the battlefield, return target land to its owner's hand.",
+  "flavor": "\"I cover the land with blankets and it sleeps.\"",
+  "number": "34",
+  "imageName": "aven fogbringer",
+  "title": "Aven Fogbringer",
+  "set": "jud",
+  "cost": "{3}{U}",
+  "colour": "u",
+  "num": "34",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21275&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 34865,
+  "name": "Aven Warcraft",
+  "cmc": 3,
+  "rarity": "u",
+  "artist": "Roger Raupp",
+  "manaCost": "{2}{W}",
+  "text": "Creatures you control get +0/+2 until end of turn.\nThreshold — If seven or more cards are in your graveyard, choose a color. Creatures you control also gain protection from the chosen color until end of turn.",
+  "number": "2",
+  "imageName": "aven warcraft",
+  "title": "Aven Warcraft",
+  "set": "jud",
+  "cost": "{2}{W}",
+  "colour": "w",
+  "num": "2",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34865&type=card"
+ },
+ {
+  "layout": "normal",
+  "supertypes": [
+   "Legendary"
+  ],
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 20842,
+  "name": "Balthor the Defiled",
+  "subtypes": [
+   "Zombie",
+   "Dwarf"
+  ],
+  "cmc": 4,
+  "rarity": "r",
+  "artist": "Carl Critchlow",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{2}{B}{B}",
+  "text": "Minion creatures get +1/+1.\n{B}{B}{B}, Exile Balthor the Defiled: Each player returns all black and all red creature cards from his or her graveyard to the battlefield.",
+  "flavor": "He remembers enough of his life to weep for what he has lost.",
+  "number": "61",
+  "imageName": "balthor the defiled",
+  "title": "Balthor the Defiled",
+  "set": "jud",
+  "cost": "{2}{B}{B}",
+  "colour": "b",
+  "num": "61",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=20842&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 34818,
+  "name": "Barbarian Bully",
+  "subtypes": [
+   "Human",
+   "Barbarian"
+  ],
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Mike Ploog",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{2}{R}",
+  "text": "Discard a card at random: Barbarian Bully gets +2/+2 until end of turn unless a player has Barbarian Bully deal 4 damage to him or her. Activate this ability only once each turn.",
+  "flavor": "\"Out of my way!\"",
+  "number": "79",
+  "imageName": "barbarian bully",
+  "title": "Barbarian Bully",
+  "set": "jud",
+  "cost": "{2}{R}",
+  "colour": "r",
+  "num": "79",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34818&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 35079,
+  "name": "Battle Screech",
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Randy Gallegos",
+  "manaCost": "{2}{W}{W}",
+  "text": "Put two 1/1 white Bird creature tokens with flying onto the battlefield.\nFlashback—Tap three untapped white creatures you control. (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+  "number": "3",
+  "imageName": "battle screech",
+  "title": "Battle Screech",
+  "set": "jud",
+  "cost": "{2}{W}{W}",
+  "colour": "w",
+  "num": "3",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35079&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 36040,
+  "name": "Battlefield Scrounger",
+  "subtypes": [
+   "Centaur"
+  ],
+  "cmc": 5,
+  "rarity": "c",
+  "artist": "Daren Bader",
+  "power": "3",
+  "toughness": "3",
+  "manaCost": "{3}{G}{G}",
+  "text": "Threshold — Put three cards from your graveyard on the bottom of your library: Battlefield Scrounger gets +3/+3 until end of turn. Activate this ability only once each turn, and only if seven or more cards are in your graveyard.",
+  "number": "106",
+  "imageName": "battlefield scrounger",
+  "title": "Battlefield Scrounger",
+  "set": "jud",
+  "cost": "{3}{G}{G}",
+  "colour": "g",
+  "num": "106",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36040&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 34464,
+  "name": "Battlewise Aven",
+  "subtypes": [
+   "Bird",
+   "Soldier"
+  ],
+  "cmc": 4,
+  "rarity": "c",
+  "artist": "Wayne England",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{3}{W}",
+  "text": "Flying\nThreshold — As long as seven or more cards are in your graveyard, Battlewise Aven gets +1/+1 and has first strike.",
+  "flavor": "Experience is a good teacher, not a kind one.",
+  "number": "4",
+  "imageName": "battlewise aven",
+  "title": "Battlewise Aven",
+  "set": "jud",
+  "cost": "{3}{W}",
+  "colour": "w",
+  "num": "4",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34464&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 36118,
+  "name": "Benevolent Bodyguard",
+  "subtypes": [
+   "Human",
+   "Cleric"
+  ],
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Roger Raupp",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{W}",
+  "text": "Sacrifice Benevolent Bodyguard: Target creature you control gains protection from the color of your choice until end of turn.",
+  "flavor": "\"My destiny is to save others so their destinies may be achieved.\"",
+  "number": "5",
+  "imageName": "benevolent bodyguard",
+  "title": "Benevolent Bodyguard",
+  "set": "jud",
+  "cost": "{W}",
+  "colour": "w",
+  "num": "5",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36118&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 35891,
+  "name": "Book Burning",
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Dave Dorman",
+  "manaCost": "{1}{R}",
+  "text": "Any player may have Book Burning deal 6 damage to him or her. If no one does, target player puts the top six cards of his or her library into his or her graveyard.",
+  "flavor": "The wizard's spellbook was full of burning questions.",
+  "number": "80",
+  "imageName": "book burning",
+  "title": "Book Burning",
+  "set": "jud",
+  "cost": "{1}{R}",
+  "colour": "r",
+  "num": "80",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35891&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 34201,
+  "name": "Border Patrol",
+  "subtypes": [
+   "Human",
+   "Nomad"
+  ],
+  "cmc": 5,
+  "rarity": "c",
+  "artist": "Roger Raupp",
+  "power": "1",
+  "toughness": "6",
+  "manaCost": "{4}{W}",
+  "text": "Vigilance",
+  "flavor": "\"We have been victims of treachery, of the Cabal, and of our own ambitions. No more.\"\n—Commander Eesha",
+  "number": "6",
+  "imageName": "border patrol",
+  "title": "Border Patrol",
+  "set": "jud",
+  "cost": "{4}{W}",
+  "colour": "w",
+  "num": "6",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34201&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 33721,
+  "name": "Brawn",
+  "subtypes": [
+   "Incarnation"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Matt Cavotta",
+  "power": "3",
+  "toughness": "3",
+  "manaCost": "{3}{G}",
+  "text": "Trample\nAs long as Brawn is in your graveyard and you control a Forest, creatures you control have trample.",
+  "flavor": "\"‘I have arrived,' bellowed Brawn, and the plane shuddered.\"\n—Scroll of Beginnings",
+  "number": "107",
+  "imageName": "brawn",
+  "title": "Brawn",
+  "set": "jud",
+  "cost": "{3}{G}",
+  "colour": "g",
+  "num": "107",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=33721&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 29856,
+  "name": "Breaking Point",
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "Matthew D. Wilson",
+  "manaCost": "{1}{R}{R}",
+  "text": "Any player may have Breaking Point deal 6 damage to him or her. If no one does, destroy all creatures. Creatures destroyed this way can't be regenerated.",
+  "flavor": "\"Enough!\"",
+  "number": "81",
+  "imageName": "breaking point",
+  "title": "Breaking Point",
+  "set": "jud",
+  "cost": "{1}{R}{R}",
+  "colour": "r",
+  "num": "81",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=29856&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 36038,
+  "name": "Browbeat",
+  "cmc": 3,
+  "rarity": "u",
+  "artist": "Mark Tedin",
+  "manaCost": "{2}{R}",
+  "text": "Any player may have Browbeat deal 5 damage to him or her. If no one does, target player draws three cards.",
+  "flavor": "\"Even the threat of power has power.\"\n—Jeska, warrior adept",
+  "number": "82",
+  "imageName": "browbeat",
+  "title": "Browbeat",
+  "set": "jud",
+  "cost": "{2}{R}",
+  "colour": "r",
+  "num": "82",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36038&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 34403,
+  "name": "Burning Wish",
+  "cmc": 2,
+  "rarity": "r",
+  "artist": "Scott M. Fischer",
+  "manaCost": "{1}{R}",
+  "text": "You may choose a sorcery card you own from outside the game, reveal that card, and put it into your hand. Exile Burning Wish.",
+  "flavor": "She wished for a weapon, but not for the skill to wield it.",
+  "number": "83",
+  "imageName": "burning wish",
+  "title": "Burning Wish",
+  "set": "jud",
+  "cost": "{1}{R}",
+  "colour": "r",
+  "num": "83",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34403&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 34789,
+  "name": "Cabal Therapy",
+  "cmc": 1,
+  "rarity": "u",
+  "artist": "Ron Spencer",
+  "manaCost": "{B}",
+  "text": "Name a nonland card. Target player reveals his or her hand and discards all cards with that name.\nFlashback—Sacrifice a creature. (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+  "number": "62",
+  "imageName": "cabal therapy",
+  "title": "Cabal Therapy",
+  "set": "jud",
+  "cost": "{B}",
+  "colour": "b",
+  "num": "62",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34789&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 36117,
+  "name": "Cabal Trainee",
+  "subtypes": [
+   "Human",
+   "Minion"
+  ],
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Pete Venters",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{B}",
+  "text": "Sacrifice Cabal Trainee: Target creature gets -2/-0 until end of turn.",
+  "flavor": "\"Ah, a faceshredder. Very rare. Nearly unstoppable. Good luck\"\n—Cabal instructor",
+  "number": "63",
+  "imageName": "cabal trainee",
+  "title": "Cabal Trainee",
+  "set": "jud",
+  "cost": "{B}",
+  "colour": "b",
+  "num": "63",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36117&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 36429,
+  "name": "Cagemail",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Scott M. Fischer",
+  "manaCost": "{1}{W}",
+  "text": "Enchant creature\nEnchanted creature gets +2/+2 and can't attack.",
+  "flavor": "\"Power often costs too high a price.\"\n—Commander Eesha",
+  "number": "7",
+  "imageName": "cagemail",
+  "title": "Cagemail",
+  "set": "jud",
+  "cost": "{1}{W}",
+  "colour": "w",
+  "num": "7",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36429&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 36410,
+  "name": "Canopy Claws",
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Matthew Mitchell",
+  "manaCost": "{G}",
+  "text": "Target creature loses flying until end of turn.\nFlashback {G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+  "number": "108",
+  "imageName": "canopy claws",
+  "title": "Canopy Claws",
+  "set": "jud",
+  "cost": "{G}",
+  "colour": "g",
+  "num": "108",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36410&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 37120,
+  "name": "Centaur Rootcaster",
+  "subtypes": [
+   "Centaur",
+   "Druid"
+  ],
+  "cmc": 4,
+  "rarity": "c",
+  "artist": "Eric Peterson",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{3}{G}",
+  "text": "Whenever Centaur Rootcaster deals combat damage to a player, you may search your library for a basic land card and put that card onto the battlefield tapped. If you do, shuffle your library.",
+  "number": "109",
+  "imageName": "centaur rootcaster",
+  "title": "Centaur Rootcaster",
+  "set": "jud",
+  "cost": "{3}{G}",
+  "colour": "g",
+  "num": "109",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=37120&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 26728,
+  "name": "Cephalid Constable",
+  "subtypes": [
+   "Cephalid",
+   "Wizard"
+  ],
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "Alan Pollack",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{1}{U}{U}",
+  "text": "Whenever Cephalid Constable deals combat damage to a player, return up to that many target permanents that player controls to their owners' hands.",
+  "flavor": "Cephalids don't police people. They police loyalties.",
+  "number": "35",
+  "imageName": "cephalid constable",
+  "title": "Cephalid Constable",
+  "set": "jud",
+  "cost": "{1}{U}{U}",
+  "colour": "u",
+  "num": "35",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=26728&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 34784,
+  "name": "Cephalid Inkshrouder",
+  "subtypes": [
+   "Cephalid"
+  ],
+  "cmc": 3,
+  "rarity": "u",
+  "artist": "Tony Szczudlo",
+  "power": "2",
+  "toughness": "1",
+  "manaCost": "{2}{U}",
+  "text": "Discard a card: Cephalid Inkshrouder gains shroud until end of turn and can't be blocked this turn. (A creature with shroud can't be the target of spells or abilities.)",
+  "flavor": "Cephalids shrink from the harsh glare of scrutiny.",
+  "number": "36",
+  "imageName": "cephalid inkshrouder",
+  "title": "Cephalid Inkshrouder",
+  "set": "jud",
+  "cost": "{2}{U}",
+  "colour": "u",
+  "num": "36",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34784&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 34958,
+  "name": "Chastise",
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Carl Critchlow",
+  "manaCost": "{3}{W}",
+  "text": "Destroy target attacking creature. You gain life equal to its power.",
+  "flavor": "\"Why do we pray to the Ancestor? Because She listens.\"\n—Mystic elder",
+  "number": "8",
+  "imageName": "chastise",
+  "title": "Chastise",
+  "set": "jud",
+  "cost": "{3}{W}",
+  "colour": "w",
+  "num": "8",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34958&type=card"
+ },
+ {
+  "layout": "normal",
+  "supertypes": [
+   "Legendary"
+  ],
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 35893,
+  "name": "Commander Eesha",
+  "subtypes": [
+   "Bird",
+   "Soldier"
+  ],
+  "cmc": 4,
+  "rarity": "r",
+  "artist": "Rebecca Guay",
+  "power": "2",
+  "toughness": "4",
+  "manaCost": "{2}{W}{W}",
+  "text": "Flying, protection from creatures",
+  "flavor": "\"War glides on the simplest updrafts while peace struggles against hurricane winds. It is the way of the world. It must change.\"",
+  "number": "9",
+  "imageName": "commander eesha",
+  "title": "Commander Eesha",
+  "set": "jud",
+  "cost": "{2}{W}{W}",
+  "colour": "w",
+  "num": "9",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35893&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 35170,
+  "name": "Crush of Wurms",
+  "cmc": 9,
+  "rarity": "r",
+  "artist": "Christopher Moeller",
+  "manaCost": "{6}{G}{G}{G}",
+  "text": "Put three 6/6 green Wurm creature tokens onto the battlefield.\nFlashback {9}{G}{G}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+  "number": "110",
+  "imageName": "crush of wurms",
+  "title": "Crush of Wurms",
+  "set": "jud",
+  "cost": "{6}{G}{G}{G}",
+  "colour": "g",
+  "num": "110",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35170&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 34400,
+  "name": "Cunning Wish",
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "Jim Nelson",
+  "manaCost": "{2}{U}",
+  "text": "You may choose an instant card you own from outside the game, reveal that card, and put it into your hand. Exile Cunning Wish.",
+  "flavor": "He wished for knowledge, but not for the will to apply it.",
+  "number": "37",
+  "imageName": "cunning wish",
+  "title": "Cunning Wish",
+  "set": "jud",
+  "cost": "{2}{U}",
+  "colour": "u",
+  "num": "37",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34400&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 34402,
+  "name": "Death Wish",
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "Jeff Easley",
+  "manaCost": "{1}{B}{B}",
+  "text": "You may choose a card you own from outside the game and put it into your hand. You lose half your life, rounded up. Exile Death Wish.",
+  "flavor": "He wished for power, but not for the longevity to abuse it.",
+  "number": "64",
+  "imageName": "death wish",
+  "title": "Death Wish",
+  "set": "jud",
+  "cost": "{1}{B}{B}",
+  "colour": "b",
+  "num": "64",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34402&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 35076,
+  "name": "Defy Gravity",
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Ben Thompson",
+  "manaCost": "{U}",
+  "text": "Target creature gains flying until end of turn.\nFlashback {U} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+  "flavor": "Magical or not, it's still a cloud.",
+  "number": "38",
+  "imageName": "defy gravity",
+  "title": "Defy Gravity",
+  "set": "jud",
+  "cost": "{U}",
+  "colour": "u",
+  "num": "38",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35076&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 35074,
+  "name": "Dwarven Bloodboiler",
+  "subtypes": [
+   "Dwarf"
+  ],
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "Arnie Swekel",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{R}{R}{R}",
+  "text": "Tap an untapped Dwarf you control: Target creature gets +2/+0 until end of turn.",
+  "flavor": "His battle cry unleashes an avalanche of dwarves.",
+  "number": "84",
+  "imageName": "dwarven bloodboiler",
+  "title": "Dwarven Bloodboiler",
+  "set": "jud",
+  "cost": "{R}{R}{R}",
+  "colour": "r",
+  "num": "84",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35074&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 34950,
+  "name": "Dwarven Driller",
+  "subtypes": [
+   "Dwarf"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Edward P. Beard, Jr.",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{3}{R}",
+  "text": "{T}: Destroy target land unless its controller has Dwarven Driller deal 2 damage to him or her.",
+  "flavor": "\"Drill the planet, it's no trouble:\nMining granite, making rubble.\"\n—Dwarven drilling song",
+  "number": "85",
+  "imageName": "dwarven driller",
+  "title": "Dwarven Driller",
+  "set": "jud",
+  "cost": "{3}{R}",
+  "colour": "r",
+  "num": "85",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34950&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 36116,
+  "name": "Dwarven Scorcher",
+  "subtypes": [
+   "Dwarf"
+  ],
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Thomas M. Baxa",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{R}",
+  "text": "Sacrifice Dwarven Scorcher: Dwarven Scorcher deals 1 damage to target creature unless that creature's controller has Dwarven Scorcher deal 2 damage to him or her.",
+  "flavor": "Barbarians invented the blaze of glory. Dwarves perfected it.",
+  "number": "86",
+  "imageName": "dwarven scorcher",
+  "title": "Dwarven Scorcher",
+  "set": "jud",
+  "cost": "{R}",
+  "colour": "r",
+  "num": "86",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36116&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 35080,
+  "name": "Earsplitting Rats",
+  "subtypes": [
+   "Rat"
+  ],
+  "cmc": 4,
+  "rarity": "c",
+  "artist": "Heather Hudson",
+  "power": "2",
+  "toughness": "1",
+  "manaCost": "{3}{B}",
+  "text": "When Earsplitting Rats enters the battlefield, each player discards a card.\nDiscard a card: Regenerate Earsplitting Rats.",
+  "flavor": "Rats come in one amount: too many.",
+  "number": "65",
+  "imageName": "earsplitting rats",
+  "title": "Earsplitting Rats",
+  "set": "jud",
+  "cost": "{3}{B}",
+  "colour": "b",
+  "num": "65",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35080&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 12692,
+  "name": "Elephant Guide",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 3,
+  "rarity": "u",
+  "artist": "Jim Nelson",
+  "manaCost": "{2}{G}",
+  "text": "Enchant creature\nEnchanted creature gets +3/+3.\nWhen enchanted creature dies, put a 3/3 green Elephant creature token onto the battlefield.",
+  "flavor": "Nature's strength outlives the strong.",
+  "number": "111",
+  "imageName": "elephant guide",
+  "title": "Elephant Guide",
+  "set": "jud",
+  "cost": "{2}{G}",
+  "colour": "g",
+  "num": "111",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=12692&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 29862,
+  "name": "Ember Shot",
+  "cmc": 7,
+  "rarity": "c",
+  "artist": "Alan Pollack",
+  "manaCost": "{6}{R}",
+  "text": "Ember Shot deals 3 damage to target creature or player.\nDraw a card.",
+  "flavor": "Dwarves bring poor coal to market, use good coal in their homes, and throw their best coal away.",
+  "number": "87",
+  "imageName": "ember shot",
+  "title": "Ember Shot",
+  "set": "jud",
+  "cost": "{6}{R}",
+  "colour": "r",
+  "num": "87",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=29862&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 36414,
+  "name": "Envelop",
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Don Hazeltine",
+  "manaCost": "{U}",
+  "text": "Counter target sorcery spell.",
+  "flavor": "\"What you made will be unmade. What you learned will be unlearned. And when you're done, you will be undone.\"\n—Ambassador Laquatus",
+  "number": "39",
+  "imageName": "envelop",
+  "title": "Envelop",
+  "set": "jud",
+  "cost": "{U}",
+  "colour": "u",
+  "num": "39",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36414&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 33697,
+  "name": "Epic Struggle",
+  "cmc": 4,
+  "rarity": "r",
+  "artist": "Greg & Tim Hildebrandt",
+  "manaCost": "{2}{G}{G}",
+  "text": "At the beginning of your upkeep, if you control twenty or more creatures, you win the game.",
+  "flavor": "\"If our foes will not listen to words, perhaps hooves and claws will make them take notice.\"\n—Seton, centaur druid",
+  "number": "112",
+  "imageName": "epic struggle",
+  "title": "Epic Struggle",
+  "set": "jud",
+  "cost": "{2}{G}{G}",
+  "colour": "g",
+  "num": "112",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=33697&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 35553,
+  "name": "Erhnam Djinn",
+  "subtypes": [
+   "Djinn"
+  ],
+  "cmc": 4,
+  "rarity": "r",
+  "artist": "Greg Staples",
+  "power": "4",
+  "toughness": "5",
+  "manaCost": "{3}{G}",
+  "text": "At the beginning of your upkeep, target non-Wall creature an opponent controls gains forestwalk until your next upkeep.",
+  "flavor": "He provides a safe path to nowhere.",
+  "number": "113",
+  "imageName": "erhnam djinn",
+  "title": "Erhnam Djinn",
+  "set": "jud",
+  "cost": "{3}{G}",
+  "colour": "g",
+  "num": "113",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35553&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 29885,
+  "name": "Exoskeletal Armor",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 2,
+  "rarity": "u",
+  "artist": "Wayne England",
+  "manaCost": "{1}{G}",
+  "text": "Enchant creature\nEnchanted creature gets +X/+X, where X is the number of creature cards in all graveyards.",
+  "flavor": "\"We use only what we need—but in times of strife, our need becomes great.\"\n—Centaur warrior",
+  "number": "114",
+  "imageName": "exoskeletal armor",
+  "title": "Exoskeletal Armor",
+  "set": "jud",
+  "cost": "{1}{G}",
+  "colour": "g",
+  "num": "114",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=29885&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 33722,
+  "name": "Filth",
+  "subtypes": [
+   "Incarnation"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Thomas M. Baxa",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{3}{B}",
+  "text": "Swampwalk\nAs long as Filth is in your graveyard and you control a Swamp, creatures you control have swampwalk.",
+  "flavor": "\"As the portal closed, Filth oozed through. The stench of evil followed it in.\"\n—Scroll of Beginnings",
+  "number": "66",
+  "imageName": "filth",
+  "title": "Filth",
+  "set": "jud",
+  "cost": "{3}{B}",
+  "colour": "b",
+  "num": "66",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=33722&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 34929,
+  "name": "Firecat Blitz",
+  "cmc": 2,
+  "rarity": "u",
+  "artist": "David Martin",
+  "manaCost": "{X}{R}{R}",
+  "text": "Put X 1/1 red Elemental Cat creature tokens with haste onto the battlefield. Exile them at the beginning of the next end step.\nFlashback—{R}{R}, Sacrifice X Mountains. (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+  "number": "88",
+  "imageName": "firecat blitz",
+  "title": "Firecat Blitz",
+  "set": "jud",
+  "cost": "{X}{R}{R}",
+  "colour": "r",
+  "num": "88",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34929&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 34214,
+  "name": "Flaring Pain",
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Glen Angus",
+  "manaCost": "{1}{R}",
+  "text": "Damage can't be prevented this turn.\nFlashback {R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+  "flavor": "\"I don't rub salt in wounds. I use sulfur.\"\n—Matoc, lavamancer",
+  "number": "89",
+  "imageName": "flaring pain",
+  "title": "Flaring Pain",
+  "set": "jud",
+  "cost": "{1}{R}",
+  "colour": "r",
+  "num": "89",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34214&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 29831,
+  "name": "Flash of Insight",
+  "cmc": 2,
+  "rarity": "u",
+  "artist": "Ben Thompson",
+  "manaCost": "{X}{1}{U}",
+  "text": "Look at the top X cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order.\nFlashback—{1}{U}, Exile X blue cards from your graveyard. (You may cast this card from your graveyard for its flashback cost, then exile it. You can't exile Flash of Insight to pay for its own flashback cost.)",
+  "number": "40",
+  "imageName": "flash of insight",
+  "title": "Flash of Insight",
+  "set": "jud",
+  "cost": "{X}{1}{U}",
+  "colour": "u",
+  "num": "40",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=29831&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 34930,
+  "name": "Fledgling Dragon",
+  "subtypes": [
+   "Dragon"
+  ],
+  "cmc": 4,
+  "rarity": "r",
+  "artist": "Greg Staples",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{2}{R}{R}",
+  "text": "Flying\nThreshold — As long as seven or more cards are in your graveyard, Fledgling Dragon gets +3/+3 and has \"{R}: Fledgling Dragon gets +1/+0 until end of turn.\"",
+  "number": "90",
+  "imageName": "fledgling dragon",
+  "title": "Fledgling Dragon",
+  "set": "jud",
+  "cost": "{2}{R}{R}",
+  "colour": "r",
+  "num": "90",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34930&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 35071,
+  "name": "Folk Medicine",
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Matt Cavotta",
+  "manaCost": "{2}{G}",
+  "text": "You gain 1 life for each creature you control.\nFlashback {1}{W} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+  "flavor": "Sometimes the healers need healing.",
+  "number": "115",
+  "imageName": "folk medicine",
+  "title": "Folk Medicine",
+  "set": "jud",
+  "cost": "{2}{G}",
+  "colour": "g",
+  "num": "115",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35071&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 34244,
+  "name": "Forcemage Advocate",
+  "subtypes": [
+   "Centaur",
+   "Shaman"
+  ],
+  "cmc": 2,
+  "rarity": "u",
+  "artist": "Darrell Riche",
+  "power": "2",
+  "toughness": "1",
+  "manaCost": "{1}{G}",
+  "text": "{T}: Return target card from an opponent's graveyard to his or her hand. Put a +1/+1 counter on target creature.",
+  "flavor": "\"Our unity renews our strength.\"",
+  "number": "116",
+  "imageName": "forcemage advocate",
+  "title": "Forcemage Advocate",
+  "set": "jud",
+  "cost": "{1}{G}",
+  "colour": "g",
+  "num": "116",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34244&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 34889,
+  "name": "Funeral Pyre",
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Carl Critchlow",
+  "manaCost": "{W}",
+  "text": "Exile target card from a graveyard. Its owner puts a 1/1 white Spirit creature token with flying onto the battlefield.",
+  "flavor": "\"Raze the body. Raise the soul.\"\n—Mystic elder",
+  "number": "10",
+  "imageName": "funeral pyre",
+  "title": "Funeral Pyre",
+  "set": "jud",
+  "cost": "{W}",
+  "colour": "w",
+  "num": "10",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34889&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 34833,
+  "name": "Genesis",
+  "subtypes": [
+   "Incarnation"
+  ],
+  "cmc": 5,
+  "rarity": "r",
+  "artist": "Mark Zug",
+  "power": "4",
+  "toughness": "4",
+  "manaCost": "{4}{G}",
+  "text": "At the beginning of your upkeep, if Genesis is in your graveyard, you may pay {2}{G}. If you do, return target creature card from your graveyard to your hand.",
+  "flavor": "\"First through the Riftstone was Genesis—and the world was lifeless no more.\"\n—Scroll of Beginnings",
+  "number": "117",
+  "imageName": "genesis",
+  "title": "Genesis",
+  "set": "jud",
+  "cost": "{4}{G}",
+  "colour": "g",
+  "num": "117",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34833&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 36112,
+  "name": "Giant Warthog",
+  "subtypes": [
+   "Boar",
+   "Beast"
+  ],
+  "cmc": 6,
+  "rarity": "c",
+  "artist": "Kev Walker",
+  "power": "5",
+  "toughness": "5",
+  "manaCost": "{5}{G}",
+  "text": "Trample",
+  "flavor": "\"When the Ancestor saw the cruelty her human children were capable of, Her fury shook the world. From this outburst sprang the warthogs.\"\n—Nomad myth",
+  "number": "118",
+  "imageName": "giant warthog",
+  "title": "Giant Warthog",
+  "set": "jud",
+  "cost": "{5}{G}",
+  "colour": "g",
+  "num": "118",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36112&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 34822,
+  "name": "Glory",
+  "subtypes": [
+   "Incarnation"
+  ],
+  "cmc": 5,
+  "rarity": "r",
+  "artist": "Donato Giancola",
+  "power": "3",
+  "toughness": "3",
+  "manaCost": "{3}{W}{W}",
+  "text": "Flying\n{2}{W}: Choose a color. Creatures you control gain protection from the chosen color until end of turn. Activate this ability only if Glory is in your graveyard.",
+  "flavor": "\"Glory was gone; Glory was everywhere.\"\n—Scroll of Beginnings",
+  "number": "11",
+  "imageName": "glory",
+  "title": "Glory",
+  "set": "jud",
+  "cost": "{3}{W}{W}",
+  "colour": "w",
+  "num": "11",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34822&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 34399,
+  "name": "Golden Wish",
+  "cmc": 5,
+  "rarity": "r",
+  "artist": "Alan Pollack",
+  "manaCost": "{3}{W}{W}",
+  "text": "You may choose an artifact or enchantment card you own from outside the game, reveal that card, and put it into your hand. Exile Golden Wish.",
+  "flavor": "She wished for nobility, but not for a nation to honor it.",
+  "number": "12",
+  "imageName": "golden wish",
+  "title": "Golden Wish",
+  "set": "jud",
+  "cost": "{3}{W}{W}",
+  "colour": "w",
+  "num": "12",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34399&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 34917,
+  "name": "Goretusk Firebeast",
+  "subtypes": [
+   "Elemental",
+   "Boar",
+   "Beast"
+  ],
+  "cmc": 6,
+  "rarity": "c",
+  "artist": "Keith Garletts",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{5}{R}",
+  "text": "When Goretusk Firebeast enters the battlefield, it deals 4 damage to target player.",
+  "flavor": "As a youth, Kamahl took one for a pet. His hair has yet to grow back.",
+  "number": "91",
+  "imageName": "goretusk firebeast",
+  "title": "Goretusk Firebeast",
+  "set": "jud",
+  "cost": "{5}{R}",
+  "colour": "r",
+  "num": "91",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34917&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 35161,
+  "name": "Grave Consequences",
+  "cmc": 2,
+  "rarity": "u",
+  "artist": "Tim Hildebrandt",
+  "manaCost": "{1}{B}",
+  "text": "Each player may exile any number of cards from his or her graveyard. Then each player loses 1 life for each card in his or her graveyard.\nDraw a card.",
+  "flavor": "\"You call that a nightmare?\"\n—Braids, dementia summoner",
+  "number": "67",
+  "imageName": "grave consequences",
+  "title": "Grave Consequences",
+  "set": "jud",
+  "cost": "{1}{B}",
+  "colour": "b",
+  "num": "67",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35161&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 34808,
+  "name": "Grip of Amnesia",
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Bradley Williams",
+  "manaCost": "{1}{U}",
+  "text": "Counter target spell unless its controller exiles all cards from his or her graveyard.\nDraw a card.",
+  "flavor": "\"Would you abandon your past to save your future?\"\n—Ambassador Laquatus",
+  "number": "41",
+  "imageName": "grip of amnesia",
+  "title": "Grip of Amnesia",
+  "set": "jud",
+  "cost": "{1}{U}",
+  "colour": "u",
+  "num": "41",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34808&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 34209,
+  "name": "Grizzly Fate",
+  "cmc": 5,
+  "rarity": "u",
+  "artist": "Dave Dorman",
+  "manaCost": "{3}{G}{G}",
+  "text": "Put two 2/2 green Bear creature tokens onto the battlefield.\nThreshold — Put four 2/2 green Bear creature tokens onto the battlefield instead if seven or more cards are in your graveyard.\nFlashback {5}{G}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+  "number": "119",
+  "imageName": "grizzly fate",
+  "title": "Grizzly Fate",
+  "set": "jud",
+  "cost": "{3}{G}{G}",
+  "colour": "g",
+  "num": "119",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34209&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 36431,
+  "name": "Guided Strike",
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Dave Dorman",
+  "manaCost": "{1}{W}",
+  "text": "Target creature gets +1/+0 and gains first strike until end of turn.\nDraw a card.",
+  "flavor": "\"May the Ancestor strengthen my hand and guide my blade.\"\n—Nomad war prayer",
+  "number": "13",
+  "imageName": "guided strike",
+  "title": "Guided Strike",
+  "set": "jud",
+  "cost": "{1}{W}",
+  "colour": "w",
+  "num": "13",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36431&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 29890,
+  "name": "Guiltfeeder",
+  "subtypes": [
+   "Horror"
+  ],
+  "cmc": 5,
+  "rarity": "r",
+  "artist": "Mark Tedin",
+  "power": "0",
+  "toughness": "4",
+  "manaCost": "{3}{B}{B}",
+  "text": "Fear (This creature can't be blocked except by artifact creatures and/or black creatures.)\nWhenever Guiltfeeder attacks and isn't blocked, defending player loses 1 life for each card in his or her graveyard.",
+  "number": "68",
+  "imageName": "guiltfeeder",
+  "title": "Guiltfeeder",
+  "set": "jud",
+  "cost": "{3}{B}{B}",
+  "colour": "b",
+  "num": "68",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=29890&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 36115,
+  "name": "Hapless Researcher",
+  "subtypes": [
+   "Human",
+   "Wizard"
+  ],
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Ron Spears",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{U}",
+  "text": "Sacrifice Hapless Researcher: Draw a card, then discard a card.",
+  "flavor": "Scholars possess such lofty knowledge that it shouldn't be surprising when they fall.",
+  "number": "42",
+  "imageName": "hapless researcher",
+  "title": "Hapless Researcher",
+  "set": "jud",
+  "cost": "{U}",
+  "colour": "u",
+  "num": "42",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36115&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 36411,
+  "name": "Harvester Druid",
+  "subtypes": [
+   "Human",
+   "Druid"
+  ],
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "David Martin",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{1}{G}",
+  "text": "{T}: Add to your mana pool one mana of any color that a land you control could produce.",
+  "flavor": "\"In the end, the same soil lies atop the field, within the mountain, and under the sea.\"",
+  "number": "120",
+  "imageName": "harvester druid",
+  "title": "Harvester Druid",
+  "set": "jud",
+  "cost": "{1}{G}",
+  "colour": "g",
+  "num": "120",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36411&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "White",
+   "Green"
+  ],
+  "multiverseid": 35167,
+  "name": "Hunting Grounds",
+  "cmc": 2,
+  "rarity": "r",
+  "artist": "Mark Brill",
+  "manaCost": "{G}{W}",
+  "text": "Threshold — As long as seven or more cards are in your graveyard, Hunting Grounds has \"Whenever an opponent casts a spell, you may put a creature card from your hand onto the battlefield.\"",
+  "flavor": "In the heavy hush of Krosa, drawing on mana is like ringing a dinner bell.",
+  "number": "138",
+  "imageName": "hunting grounds",
+  "title": "Hunting Grounds",
+  "set": "jud",
+  "cost": "{G}{W}",
+  "colour": "m",
+  "num": "138",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35167&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 35087,
+  "name": "Infectious Rage",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 2,
+  "rarity": "u",
+  "artist": "Christopher Moeller",
+  "manaCost": "{1}{R}",
+  "text": "Enchant creature\nEnchanted creature gets +2/-1.\nWhen enchanted creature dies, choose a creature at random Infectious Rage can enchant. Return Infectious Rage to the battlefield attached to that creature.",
+  "number": "92",
+  "imageName": "infectious rage",
+  "title": "Infectious Rage",
+  "set": "jud",
+  "cost": "{1}{R}",
+  "colour": "r",
+  "num": "92",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35087&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 34758,
+  "name": "Ironshell Beetle",
+  "subtypes": [
+   "Insect"
+  ],
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Heather Hudson",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{1}{G}",
+  "text": "When Ironshell Beetle enters the battlefield, put a +1/+1 counter on target creature.",
+  "flavor": "\"Why waste time creating weapons? Nature provides us with all we need.\"\n—Centaur warrior",
+  "number": "121",
+  "imageName": "ironshell beetle",
+  "title": "Ironshell Beetle",
+  "set": "jud",
+  "cost": "{1}{G}",
+  "colour": "g",
+  "num": "121",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34758&type=card"
+ },
+ {
+  "layout": "normal",
+  "supertypes": [
+   "Legendary"
+  ],
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 36451,
+  "name": "Jeska, Warrior Adept",
+  "subtypes": [
+   "Human",
+   "Barbarian",
+   "Warrior"
+  ],
+  "cmc": 4,
+  "rarity": "r",
+  "artist": "rk post",
+  "power": "3",
+  "toughness": "1",
+  "manaCost": "{2}{R}{R}",
+  "text": "First strike, haste\n{T}: Jeska, Warrior Adept deals 1 damage to target creature or player.",
+  "flavor": "\"My brother and I both come from Balthor's forge. Kamahl has a temper of fire. I have a temper of steel.\"",
+  "number": "93",
+  "imageName": "jeska, warrior adept",
+  "title": "Jeska, Warrior Adept",
+  "set": "jud",
+  "cost": "{2}{R}{R}",
+  "colour": "r",
+  "num": "93",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36451&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 35168,
+  "name": "Keep Watch",
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Fred Rahmqvist",
+  "manaCost": "{2}{U}",
+  "text": "Draw a card for each attacking creature.",
+  "flavor": "\"I see their moral dilemmas. I see their raw courage. I see their self-sacrifice. I see our victory.\"",
+  "number": "43",
+  "imageName": "keep watch",
+  "title": "Keep Watch",
+  "set": "jud",
+  "cost": "{2}{U}",
+  "colour": "u",
+  "num": "43",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35168&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 36113,
+  "name": "Krosan Reclamation",
+  "cmc": 2,
+  "rarity": "u",
+  "artist": "Gary Ruddell",
+  "manaCost": "{1}{G}",
+  "text": "Target player shuffles up to two target cards from his or her graveyard into his or her library.\nFlashback {1}{G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+  "number": "122",
+  "imageName": "krosan reclamation",
+  "title": "Krosan Reclamation",
+  "set": "jud",
+  "cost": "{1}{G}",
+  "colour": "g",
+  "num": "122",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36113&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Land",
+  "types": [
+   "Land"
+  ],
+  "multiverseid": 30657,
+  "name": "Krosan Verge",
+  "rarity": "u",
+  "artist": "Tony Szczudlo",
+  "text": "Krosan Verge enters the battlefield tapped.\n{T}: Add {1} to your mana pool.\n{2}, {T}, Sacrifice Krosan Verge: Search your library for a Forest card and a Plains card and put them onto the battlefield tapped. Then shuffle your library.",
+  "number": "141",
+  "imageName": "krosan verge",
+  "title": "Krosan Verge",
+  "set": "jud",
+  "cost": "",
+  "colour": "l",
+  "num": "141",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=30657&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 35069,
+  "name": "Krosan Wayfarer",
+  "subtypes": [
+   "Human",
+   "Druid"
+  ],
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Edward P. Beard, Jr.",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{G}",
+  "text": "Sacrifice Krosan Wayfarer: You may put a land card from your hand onto the battlefield.",
+  "flavor": "\"The Krosan Forest lives, and druids are its seeds.\"\n—Seton, centaur druid",
+  "number": "123",
+  "imageName": "krosan wayfarer",
+  "title": "Krosan Wayfarer",
+  "set": "jud",
+  "cost": "{G}",
+  "colour": "g",
+  "num": "123",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35069&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 27145,
+  "name": "Laquatus's Disdain",
+  "cmc": 2,
+  "rarity": "u",
+  "artist": "Pete Venters",
+  "manaCost": "{1}{U}",
+  "text": "Counter target spell cast from a graveyard.\nDraw a card.",
+  "flavor": "\"The first time was amusing, but now you're getting tiresome.\"",
+  "number": "44",
+  "imageName": "laquatus's disdain",
+  "title": "Laquatus's Disdain",
+  "set": "jud",
+  "cost": "{1}{U}",
+  "colour": "u",
+  "num": "44",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=27145&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 29766,
+  "name": "Lava Dart",
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Darrell Riche",
+  "manaCost": "{R}",
+  "text": "Lava Dart deals 1 damage to target creature or player.\nFlashback—Sacrifice a Mountain. (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+  "number": "94",
+  "imageName": "lava dart",
+  "title": "Lava Dart",
+  "set": "jud",
+  "cost": "{R}",
+  "colour": "r",
+  "num": "94",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=29766&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 34768,
+  "name": "Lead Astray",
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Adam Rex",
+  "manaCost": "{1}{W}",
+  "text": "Tap up to two target creatures.",
+  "flavor": "\"Never underestimate our enemy's strength, brutality, . . . or stupidity.\"\n—Commander Eesha",
+  "number": "14",
+  "imageName": "lead astray",
+  "title": "Lead Astray",
+  "set": "jud",
+  "cost": "{1}{W}",
+  "colour": "w",
+  "num": "14",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34768&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 35083,
+  "name": "Liberated Dwarf",
+  "subtypes": [
+   "Dwarf"
+  ],
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Greg Hildebrandt",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{R}",
+  "text": "{R}, Sacrifice Liberated Dwarf: Target green creature gets +1/+0 and gains first strike until end of turn.",
+  "flavor": "Freed from their chains, these dwarves are bound only by honor.",
+  "number": "95",
+  "imageName": "liberated dwarf",
+  "title": "Liberated Dwarf",
+  "set": "jud",
+  "cost": "{R}",
+  "colour": "r",
+  "num": "95",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35083&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 34208,
+  "name": "Lightning Surge",
+  "cmc": 5,
+  "rarity": "r",
+  "artist": "Ron Spears",
+  "manaCost": "{3}{R}{R}",
+  "text": "Lightning Surge deals 4 damage to target creature or player.\nThreshold — If seven or more cards are in your graveyard, instead Lightning Surge deals 6 damage to that creature or player and the damage can't be prevented.\nFlashback {5}{R}{R} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+  "number": "96",
+  "imageName": "lightning surge",
+  "title": "Lightning Surge",
+  "set": "jud",
+  "cost": "{3}{R}{R}",
+  "colour": "r",
+  "num": "96",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34208&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 34405,
+  "name": "Living Wish",
+  "cmc": 2,
+  "rarity": "r",
+  "artist": "Eric Peterson",
+  "manaCost": "{1}{G}",
+  "text": "You may choose a creature or land card you own from outside the game, reveal that card, and put it into your hand. Exile Living Wish.",
+  "flavor": "He wished for growth, but not for a way to control it.",
+  "number": "124",
+  "imageName": "living wish",
+  "title": "Living Wish",
+  "set": "jud",
+  "cost": "{1}{G}",
+  "colour": "g",
+  "num": "124",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34405&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 34775,
+  "name": "Lost in Thought",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Ben Thompson",
+  "manaCost": "{1}{U}",
+  "text": "Enchant creature\nEnchanted creature can't attack or block, and its activated abilities can't be activated. Its controller may exile three cards from his or her graveyard for that player to ignore this effect until end of turn.",
+  "number": "45",
+  "imageName": "lost in thought",
+  "title": "Lost in Thought",
+  "set": "jud",
+  "cost": "{1}{U}",
+  "colour": "u",
+  "num": "45",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34775&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 34480,
+  "name": "Masked Gorgon",
+  "subtypes": [
+   "Gorgon"
+  ],
+  "cmc": 5,
+  "rarity": "r",
+  "artist": "Matthew D. Wilson",
+  "power": "5",
+  "toughness": "5",
+  "manaCost": "{4}{B}",
+  "text": "Green creatures and white creatures have protection from Gorgons.\nThreshold — Masked Gorgon has protection from green and from white as long as seven or more cards are in your graveyard.",
+  "number": "69",
+  "imageName": "masked gorgon",
+  "title": "Masked Gorgon",
+  "set": "jud",
+  "cost": "{4}{B}",
+  "colour": "b",
+  "num": "69",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34480&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 36114,
+  "name": "Mental Note",
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Bradley Williams",
+  "manaCost": "{U}",
+  "text": "Put the top two cards of your library into your graveyard.\nDraw a card.",
+  "flavor": "Some minds are more open than others.",
+  "number": "46",
+  "imageName": "mental note",
+  "title": "Mental Note",
+  "set": "jud",
+  "cost": "{U}",
+  "colour": "u",
+  "num": "46",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36114&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "White",
+   "Green"
+  ],
+  "multiverseid": 35057,
+  "name": "Mirari's Wake",
+  "cmc": 5,
+  "rarity": "r",
+  "artist": "David Martin",
+  "manaCost": "{3}{G}{W}",
+  "text": "Creatures you control get +1/+1.\nWhenever you tap a land for mana, add one mana to your mana pool of any type that land produced.",
+  "flavor": "The land drank power from the Mirari as though it had thirsted forever.",
+  "number": "139",
+  "imageName": "mirari's wake",
+  "title": "Mirari's Wake",
+  "set": "jud",
+  "cost": "{3}{G}{W}",
+  "colour": "m",
+  "num": "139",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35057&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 36413,
+  "name": "Mirror Wall",
+  "subtypes": [
+   "Wall"
+  ],
+  "cmc": 4,
+  "rarity": "c",
+  "artist": "Mark Brill",
+  "power": "3",
+  "toughness": "4",
+  "manaCost": "{3}{U}",
+  "text": "Defender (This creature can't attack.)\n{W}: Mirror Wall can attack this turn as though it didn't have defender.",
+  "flavor": "\"Breaking it would be about four hundred years bad luck.\"\n—Nomad sentry",
+  "number": "47",
+  "imageName": "mirror wall",
+  "title": "Mirror Wall",
+  "set": "jud",
+  "cost": "{3}{U}",
+  "colour": "u",
+  "num": "47",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36413&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 34777,
+  "name": "Mist of Stagnation",
+  "cmc": 5,
+  "rarity": "r",
+  "artist": "Mike Ploog",
+  "manaCost": "{3}{U}{U}",
+  "text": "Permanents don't untap during their controllers' untap steps.\nAt the beginning of each player's upkeep, that player chooses a permanent for each card in his or her graveyard, then untaps those permanents.",
+  "number": "48",
+  "imageName": "mist of stagnation",
+  "title": "Mist of Stagnation",
+  "set": "jud",
+  "cost": "{3}{U}{U}",
+  "colour": "u",
+  "num": "48",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34777&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 35171,
+  "name": "Morality Shift",
+  "cmc": 7,
+  "rarity": "r",
+  "artist": "Jerry Tiritilli",
+  "manaCost": "{5}{B}{B}",
+  "text": "Exchange your graveyard and library. Then shuffle your library.",
+  "flavor": "The mind sings, though at times it sings a dirge.",
+  "number": "70",
+  "imageName": "morality shift",
+  "title": "Morality Shift",
+  "set": "jud",
+  "cost": "{5}{B}{B}",
+  "colour": "b",
+  "num": "70",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35171&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Land",
+  "types": [
+   "Land"
+  ],
+  "multiverseid": 34401,
+  "name": "Nantuko Monastery",
+  "rarity": "u",
+  "artist": "Rob Alexander",
+  "text": "{T}: Add {1} to your mana pool.\nThreshold — {G}{W}: Nantuko Monastery becomes a 4/4 green and white Insect Monk creature with first strike until end of turn. It's still a land. Activate this ability only if seven or more cards are in your graveyard.",
+  "number": "142",
+  "imageName": "nantuko monastery",
+  "title": "Nantuko Monastery",
+  "set": "jud",
+  "cost": "",
+  "colour": "l",
+  "num": "142",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34401&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 36526,
+  "name": "Nantuko Tracer",
+  "subtypes": [
+   "Insect",
+   "Druid"
+  ],
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Greg Staples",
+  "power": "2",
+  "toughness": "1",
+  "manaCost": "{1}{G}",
+  "text": "When Nantuko Tracer enters the battlefield, you may put target card from a graveyard on the bottom of its owner's library.",
+  "flavor": "Your past is a map to where you will go.\n—Nantuko teaching",
+  "number": "125",
+  "imageName": "nantuko tracer",
+  "title": "Nantuko Tracer",
+  "set": "jud",
+  "cost": "{1}{G}",
+  "colour": "g",
+  "num": "125",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36526&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 34241,
+  "name": "Nomad Mythmaker",
+  "subtypes": [
+   "Human",
+   "Nomad",
+   "Cleric"
+  ],
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "Eric Peterson",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{2}{W}",
+  "text": "{W}, {T}: Put target Aura card from a graveyard onto the battlefield under your control attached to a creature you control.",
+  "flavor": "Nomads weave tales thicker than tapestries.",
+  "number": "15",
+  "imageName": "nomad mythmaker",
+  "title": "Nomad Mythmaker",
+  "set": "jud",
+  "cost": "{2}{W}",
+  "colour": "w",
+  "num": "15",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34241&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 34245,
+  "name": "Nullmage Advocate",
+  "subtypes": [
+   "Insect",
+   "Druid"
+  ],
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Darrell Riche",
+  "power": "2",
+  "toughness": "3",
+  "manaCost": "{2}{G}",
+  "text": "{T}: Return two target cards from an opponent's graveyard to his or her hand. Destroy target artifact or enchantment.",
+  "flavor": "\"Our unity unmasks your deceit.\"",
+  "number": "126",
+  "imageName": "nullmage advocate",
+  "title": "Nullmage Advocate",
+  "set": "jud",
+  "cost": "{2}{G}",
+  "colour": "g",
+  "num": "126",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34245&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 35073,
+  "name": "Phantom Centaur",
+  "subtypes": [
+   "Centaur",
+   "Spirit"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Carl Critchlow",
+  "power": "2",
+  "toughness": "0",
+  "manaCost": "{2}{G}{G}",
+  "text": "Protection from black\nPhantom Centaur enters the battlefield with three +1/+1 counters on it.\nIf damage would be dealt to Phantom Centaur, prevent that damage. Remove a +1/+1 counter from Phantom Centaur.",
+  "number": "127",
+  "imageName": "phantom centaur",
+  "title": "Phantom Centaur",
+  "set": "jud",
+  "cost": "{2}{G}{G}",
+  "colour": "g",
+  "num": "127",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35073&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 34932,
+  "name": "Phantom Flock",
+  "subtypes": [
+   "Bird",
+   "Soldier",
+   "Spirit"
+  ],
+  "cmc": 5,
+  "rarity": "u",
+  "artist": "David Martin",
+  "power": "0",
+  "toughness": "0",
+  "manaCost": "{3}{W}{W}",
+  "text": "Flying\nPhantom Flock enters the battlefield with three +1/+1 counters on it.\nIf damage would be dealt to Phantom Flock, prevent that damage. Remove a +1/+1 counter from Phantom Flock.",
+  "number": "16",
+  "imageName": "phantom flock",
+  "title": "Phantom Flock",
+  "set": "jud",
+  "cost": "{3}{W}{W}",
+  "colour": "w",
+  "num": "16",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34932&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 34948,
+  "name": "Phantom Nantuko",
+  "subtypes": [
+   "Insect",
+   "Spirit"
+  ],
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "Wayne England",
+  "power": "0",
+  "toughness": "0",
+  "manaCost": "{2}{G}",
+  "text": "Trample\nPhantom Nantuko enters the battlefield with two +1/+1 counters on it.\nIf damage would be dealt to Phantom Nantuko, prevent that damage. Remove a +1/+1 counter from Phantom Nantuko.\n{T}: Put a +1/+1 counter on Phantom Nantuko.",
+  "number": "128",
+  "imageName": "phantom nantuko",
+  "title": "Phantom Nantuko",
+  "set": "jud",
+  "cost": "{2}{G}",
+  "colour": "g",
+  "num": "128",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34948&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White",
+   "Green"
+  ],
+  "multiverseid": 37113,
+  "name": "Phantom Nishoba",
+  "subtypes": [
+   "Cat",
+   "Beast",
+   "Spirit"
+  ],
+  "cmc": 7,
+  "rarity": "r",
+  "artist": "Arnie Swekel",
+  "power": "0",
+  "toughness": "0",
+  "manaCost": "{5}{G}{W}",
+  "text": "Trample\nPhantom Nishoba enters the battlefield with seven +1/+1 counters on it.\nWhenever Phantom Nishoba deals damage, you gain that much life.\nIf damage would be dealt to Phantom Nishoba, prevent that damage. Remove a +1/+1 counter from Phantom Nishoba.",
+  "number": "140",
+  "imageName": "phantom nishoba",
+  "title": "Phantom Nishoba",
+  "set": "jud",
+  "cost": "{5}{G}{W}",
+  "colour": "m",
+  "num": "140",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=37113&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 34890,
+  "name": "Phantom Nomad",
+  "subtypes": [
+   "Spirit",
+   "Nomad"
+  ],
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Jim Nelson",
+  "power": "0",
+  "toughness": "0",
+  "manaCost": "{1}{W}",
+  "text": "Phantom Nomad enters the battlefield with two +1/+1 counters on it.\nIf damage would be dealt to Phantom Nomad, prevent that damage. Remove a +1/+1 counter from Phantom Nomad.",
+  "number": "17",
+  "imageName": "phantom nomad",
+  "title": "Phantom Nomad",
+  "set": "jud",
+  "cost": "{1}{W}",
+  "colour": "w",
+  "num": "17",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34890&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 34934,
+  "name": "Phantom Tiger",
+  "subtypes": [
+   "Cat",
+   "Spirit"
+  ],
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Brian Snõddy",
+  "power": "1",
+  "toughness": "0",
+  "manaCost": "{2}{G}",
+  "text": "Phantom Tiger enters the battlefield with two +1/+1 counters on it.\nIf damage would be dealt to Phantom Tiger, prevent that damage. Remove a +1/+1 counter from Phantom Tiger.",
+  "number": "129",
+  "imageName": "phantom tiger",
+  "title": "Phantom Tiger",
+  "set": "jud",
+  "cost": "{2}{G}",
+  "colour": "g",
+  "num": "129",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34934&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 35088,
+  "name": "Planar Chaos",
+  "cmc": 3,
+  "rarity": "u",
+  "artist": "Ron Spencer",
+  "manaCost": "{2}{R}",
+  "text": "At the beginning of your upkeep, flip a coin. If you lose the flip, sacrifice Planar Chaos.\nWhenever a player casts a spell, that player flips a coin. If he or she loses the flip, counter that spell.",
+  "number": "97",
+  "imageName": "planar chaos",
+  "title": "Planar Chaos",
+  "set": "jud",
+  "cost": "{2}{R}",
+  "colour": "r",
+  "num": "97",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35088&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 34233,
+  "name": "Prismatic Strands",
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Eric Peterson",
+  "manaCost": "{2}{W}",
+  "text": "Prevent all damage that sources of the color of your choice would deal this turn.\nFlashback—Tap an untapped white creature you control. (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+  "number": "18",
+  "imageName": "prismatic strands",
+  "title": "Prismatic Strands",
+  "set": "jud",
+  "cost": "{2}{W}",
+  "colour": "w",
+  "num": "18",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34233&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 35575,
+  "name": "Pulsemage Advocate",
+  "subtypes": [
+   "Human",
+   "Cleric"
+  ],
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "Jeff Easley",
+  "power": "1",
+  "toughness": "3",
+  "manaCost": "{2}{W}",
+  "text": "{T}: Return three target cards from an opponent's graveyard to his or her hand. Return target creature card from your graveyard to the battlefield.",
+  "flavor": "\"Our unity revives our hopes.\"",
+  "number": "19",
+  "imageName": "pulsemage advocate",
+  "title": "Pulsemage Advocate",
+  "set": "jud",
+  "cost": "{2}{W}",
+  "colour": "w",
+  "num": "19",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35575&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 20431,
+  "name": "Quiet Speculation",
+  "cmc": 2,
+  "rarity": "u",
+  "artist": "John Avon",
+  "manaCost": "{1}{U}",
+  "text": "Search target player's library for up to three cards with flashback and put them into that player's graveyard. Then the player shuffles his or her library.",
+  "flavor": "\"The best foresight is hindsight.\"\n—Empress Llawan",
+  "number": "49",
+  "imageName": "quiet speculation",
+  "title": "Quiet Speculation",
+  "set": "jud",
+  "cost": "{1}{U}",
+  "colour": "u",
+  "num": "49",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=20431&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 36412,
+  "name": "Rats' Feast",
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Bob Petillo",
+  "manaCost": "{X}{B}",
+  "text": "Exile X target cards from a single graveyard.",
+  "flavor": "\"That does it—I quit\"\n—Cabal grave robber",
+  "number": "71",
+  "imageName": "rats' feast",
+  "title": "Rats' Feast",
+  "set": "jud",
+  "cost": "{X}{B}",
+  "colour": "b",
+  "num": "71",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36412&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 34199,
+  "name": "Ray of Revelation",
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Doug Chaffee",
+  "manaCost": "{1}{W}",
+  "text": "Destroy target enchantment.\nFlashback {G} (You may cast this card from your graveyard for its flashback cost. Then exile it.)",
+  "flavor": "Webs of illusion unravel in the light of truth.",
+  "number": "20",
+  "imageName": "ray of revelation",
+  "title": "Ray of Revelation",
+  "set": "jud",
+  "cost": "{1}{W}",
+  "colour": "w",
+  "num": "20",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34199&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Land",
+  "types": [
+   "Land"
+  ],
+  "multiverseid": 34398,
+  "name": "Riftstone Portal",
+  "rarity": "u",
+  "artist": "Don Hazeltine",
+  "text": "{T}: Add {1} to your mana pool.\nAs long as Riftstone Portal is in your graveyard, lands you control have \"{T}: Add {G} or {W} to your mana pool.\"",
+  "number": "143",
+  "imageName": "riftstone portal",
+  "title": "Riftstone Portal",
+  "set": "jud",
+  "cost": "",
+  "colour": "l",
+  "num": "143",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34398&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 29928,
+  "name": "Scalpelexis",
+  "subtypes": [
+   "Beast"
+  ],
+  "cmc": 5,
+  "rarity": "r",
+  "artist": "Mark Tedin",
+  "power": "1",
+  "toughness": "5",
+  "manaCost": "{4}{U}",
+  "text": "Flying (This creature can't be blocked except by creatures with flying or reach.)\nWhenever Scalpelexis deals combat damage to a player, that player exiles the top four cards of his or her library. If two or more of those cards have the same name, repeat this process.",
+  "number": "50",
+  "imageName": "scalpelexis",
+  "title": "Scalpelexis",
+  "set": "jud",
+  "cost": "{4}{U}",
+  "colour": "u",
+  "num": "50",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=29928&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 34205,
+  "name": "Seedtime",
+  "cmc": 2,
+  "rarity": "r",
+  "artist": "Rebecca Guay",
+  "manaCost": "{1}{G}",
+  "text": "Cast Seedtime only during your turn.\nTake an extra turn after this one if an opponent cast a blue spell this turn.",
+  "flavor": "The hippo grows wings to fight the condor.\n—Nantuko teaching",
+  "number": "130",
+  "imageName": "seedtime",
+  "title": "Seedtime",
+  "set": "jud",
+  "cost": "{1}{G}",
+  "colour": "g",
+  "num": "130",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34205&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 34891,
+  "name": "Selfless Exorcist",
+  "subtypes": [
+   "Human",
+   "Cleric"
+  ],
+  "cmc": 5,
+  "rarity": "r",
+  "artist": "Christopher Moeller",
+  "power": "3",
+  "toughness": "4",
+  "manaCost": "{3}{W}{W}",
+  "text": "{T}: Exile target creature card from a graveyard. That card deals damage equal to its power to Selfless Exorcist.",
+  "number": "21",
+  "imageName": "selfless exorcist",
+  "title": "Selfless Exorcist",
+  "set": "jud",
+  "cost": "{3}{W}{W}",
+  "colour": "w",
+  "num": "21",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34891&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 36454,
+  "name": "Serene Sunset",
+  "cmc": 1,
+  "rarity": "u",
+  "artist": "David Martin",
+  "manaCost": "{X}{G}",
+  "text": "Prevent all combat damage X target creatures would deal this turn.",
+  "flavor": "The armies paused, silent, as the warriors reflected on the sunsets of their youth.",
+  "number": "131",
+  "imageName": "serene sunset",
+  "title": "Serene Sunset",
+  "set": "jud",
+  "cost": "{X}{G}",
+  "colour": "g",
+  "num": "131",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36454&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 34795,
+  "name": "Shaman's Trance",
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "Greg Hildebrandt",
+  "manaCost": "{2}{R}",
+  "text": "Until end of turn, other players can't play cards from their graveyards, and you may play cards from other players' graveyards as though they were in your graveyard.",
+  "number": "98",
+  "imageName": "shaman's trance",
+  "title": "Shaman's Trance",
+  "set": "jud",
+  "cost": "{2}{R}",
+  "colour": "r",
+  "num": "98",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34795&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 35067,
+  "name": "Shieldmage Advocate",
+  "subtypes": [
+   "Human",
+   "Cleric"
+  ],
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Christopher Moeller",
+  "power": "1",
+  "toughness": "3",
+  "manaCost": "{2}{W}",
+  "text": "{T}: Return target card from an opponent's graveyard to his or her hand. Prevent all damage that would be dealt to target creature or player this turn by a source of your choice.",
+  "flavor": "\"Our unity conquers all fears.\"",
+  "number": "22",
+  "imageName": "shieldmage advocate",
+  "title": "Shieldmage Advocate",
+  "set": "jud",
+  "cost": "{2}{W}",
+  "colour": "w",
+  "num": "22",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35067&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 36036,
+  "name": "Silver Seraph",
+  "subtypes": [
+   "Angel"
+  ],
+  "cmc": 8,
+  "rarity": "r",
+  "artist": "Matthew D. Wilson",
+  "power": "6",
+  "toughness": "6",
+  "manaCost": "{5}{W}{W}{W}",
+  "text": "Flying\nThreshold — Other creatures you control get +2/+2 as long as seven or more cards are in your graveyard.",
+  "flavor": "A symbol of hope for hopeless times.",
+  "number": "23",
+  "imageName": "silver seraph",
+  "title": "Silver Seraph",
+  "set": "jud",
+  "cost": "{5}{W}{W}{W}",
+  "colour": "w",
+  "num": "23",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36036&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 34769,
+  "name": "Solitary Confinement",
+  "cmc": 3,
+  "rarity": "r",
+  "artist": "Scott M. Fischer",
+  "manaCost": "{2}{W}",
+  "text": "At the beginning of your upkeep, sacrifice Solitary Confinement unless you discard a card.\nSkip your draw step.\nYou have shroud. (You can't be the target of spells or abilities.)\nPrevent all damage that would be dealt to you.",
+  "number": "24",
+  "imageName": "solitary confinement",
+  "title": "Solitary Confinement",
+  "set": "jud",
+  "cost": "{2}{W}",
+  "colour": "w",
+  "num": "24",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34769&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 35095,
+  "name": "Soulcatchers' Aerie",
+  "cmc": 2,
+  "rarity": "u",
+  "artist": "Rob Alexander",
+  "manaCost": "{1}{W}",
+  "text": "Whenever a Bird is put into your graveyard from the battlefield, put a feather counter on Soulcatchers' Aerie.\nBird creatures get +1/+1 for each feather counter on Soulcatchers' Aerie.",
+  "number": "25",
+  "imageName": "soulcatchers' aerie",
+  "title": "Soulcatchers' Aerie",
+  "set": "jud",
+  "cost": "{1}{W}",
+  "colour": "w",
+  "num": "25",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35095&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 34942,
+  "name": "Soulgorger Orgg",
+  "subtypes": [
+   "Nightmare",
+   "Orgg"
+  ],
+  "cmc": 5,
+  "rarity": "u",
+  "artist": "John Matson",
+  "power": "6",
+  "toughness": "6",
+  "manaCost": "{3}{R}{R}",
+  "text": "Trample\nWhen Soulgorger Orgg enters the battlefield, you lose all but 1 life.\nWhen Soulgorger Orgg leaves the battlefield, you gain life equal to the life you lost when it entered the battlefield.",
+  "number": "99",
+  "imageName": "soulgorger orgg",
+  "title": "Soulgorger Orgg",
+  "set": "jud",
+  "cost": "{3}{R}{R}",
+  "colour": "r",
+  "num": "99",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34942&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 25805,
+  "name": "Spellgorger Barbarian",
+  "subtypes": [
+   "Human",
+   "Nightmare",
+   "Barbarian"
+  ],
+  "cmc": 4,
+  "rarity": "c",
+  "artist": "Mark Romanoski",
+  "power": "3",
+  "toughness": "1",
+  "manaCost": "{3}{R}",
+  "text": "When Spellgorger Barbarian enters the battlefield, discard a card at random.\nWhen Spellgorger Barbarian leaves the battlefield, draw a card.",
+  "flavor": "The epidemic insanity had a lasting effect on certain barbarians—but no one noticed.",
+  "number": "100",
+  "imageName": "spellgorger barbarian",
+  "title": "Spellgorger Barbarian",
+  "set": "jud",
+  "cost": "{3}{R}",
+  "colour": "r",
+  "num": "100",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=25805&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 35169,
+  "name": "Spelljack",
+  "cmc": 6,
+  "rarity": "r",
+  "artist": "Pete Venters",
+  "manaCost": "{3}{U}{U}{U}",
+  "text": "Counter target spell. If that spell is countered this way, exile it instead of putting it into its owner's graveyard. You may play it without paying its mana cost for as long as it remains exiled. (If it has X in its mana cost, X is 0.)",
+  "number": "51",
+  "imageName": "spelljack",
+  "title": "Spelljack",
+  "set": "jud",
+  "cost": "{3}{U}{U}{U}",
+  "colour": "u",
+  "num": "51",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35169&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 34897,
+  "name": "Spirit Cairn",
+  "cmc": 3,
+  "rarity": "u",
+  "artist": "Gary Ruddell",
+  "manaCost": "{2}{W}",
+  "text": "Whenever a player discards a card, you may pay {W}. If you do, put a 1/1 white Spirit creature token with flying onto the battlefield.",
+  "flavor": "It marks the border between here and hereafter.",
+  "number": "26",
+  "imageName": "spirit cairn",
+  "title": "Spirit Cairn",
+  "set": "jud",
+  "cost": "{2}{W}",
+  "colour": "w",
+  "num": "26",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34897&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 34242,
+  "name": "Spurnmage Advocate",
+  "subtypes": [
+   "Human",
+   "Nomad"
+  ],
+  "cmc": 1,
+  "rarity": "u",
+  "artist": "Ron Spears",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{W}",
+  "text": "{T}: Return two target cards from an opponent's graveyard to his or her hand. Destroy target attacking creature.",
+  "flavor": "\"Our unity humbles our foes.\"",
+  "number": "27",
+  "imageName": "spurnmage advocate",
+  "title": "Spurnmage Advocate",
+  "set": "jud",
+  "cost": "{W}",
+  "colour": "w",
+  "num": "27",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34242&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 32209,
+  "name": "Stitch Together",
+  "cmc": 2,
+  "rarity": "u",
+  "artist": "Arnie Swekel",
+  "manaCost": "{B}{B}",
+  "text": "Return target creature card from your graveyard to your hand.\nThreshold — Return that card from your graveyard to the battlefield instead if seven or more cards are in your graveyard.",
+  "number": "72",
+  "imageName": "stitch together",
+  "title": "Stitch Together",
+  "set": "jud",
+  "cost": "{B}{B}",
+  "colour": "b",
+  "num": "72",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=32209&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 35114,
+  "name": "Sudden Strength",
+  "cmc": 4,
+  "rarity": "c",
+  "artist": "Alan Pollack",
+  "manaCost": "{3}{G}",
+  "text": "Target creature gets +3/+3 until end of turn.\nDraw a card.",
+  "flavor": "The Mirari's magic transformed the Krosan Forest—and its inhabitants.",
+  "number": "132",
+  "imageName": "sudden strength",
+  "title": "Sudden Strength",
+  "set": "jud",
+  "cost": "{3}{G}",
+  "colour": "g",
+  "num": "132",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35114&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 34207,
+  "name": "Suntail Hawk",
+  "subtypes": [
+   "Bird"
+  ],
+  "cmc": 1,
+  "rarity": "c",
+  "artist": "Heather Hudson",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{W}",
+  "text": "Flying",
+  "flavor": "\"Our forebears once flew like this—carefree, needing nothing but a warm nest and a full belly. Our intellect may be more burden than blessing.\"\n—Commander Eesha",
+  "number": "28",
+  "imageName": "suntail hawk",
+  "title": "Suntail Hawk",
+  "set": "jud",
+  "cost": "{W}",
+  "colour": "w",
+  "num": "28",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34207&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 29944,
+  "name": "Sutured Ghoul",
+  "subtypes": [
+   "Zombie"
+  ],
+  "cmc": 7,
+  "rarity": "r",
+  "artist": "Carl Critchlow",
+  "power": "*",
+  "toughness": "*",
+  "manaCost": "{4}{B}{B}{B}",
+  "text": "Trample\nAs Sutured Ghoul enters the battlefield, exile any number of creature cards from your graveyard.\nSutured Ghoul's power is equal to the total power of the exiled cards and its toughness is equal to their total toughness.",
+  "number": "73",
+  "imageName": "sutured ghoul",
+  "title": "Sutured Ghoul",
+  "set": "jud",
+  "cost": "{4}{B}{B}{B}",
+  "colour": "b",
+  "num": "73",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=29944&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 36119,
+  "name": "Swelter",
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Ben Thompson",
+  "manaCost": "{3}{R}",
+  "text": "Swelter deals 2 damage to each of two target creatures.",
+  "flavor": "No circle has a beginning, but many have foreseeable ends.",
+  "number": "101",
+  "imageName": "swelter",
+  "title": "Swelter",
+  "set": "jud",
+  "cost": "{3}{R}",
+  "colour": "r",
+  "num": "101",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36119&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 29762,
+  "name": "Swirling Sandstorm",
+  "cmc": 4,
+  "rarity": "c",
+  "artist": "Tony Szczudlo",
+  "manaCost": "{3}{R}",
+  "text": "Threshold — Swirling Sandstorm deals 5 damage to each creature without flying if seven or more cards are in your graveyard.",
+  "flavor": "As dust swept out, vultures swept in.",
+  "number": "102",
+  "imageName": "swirling sandstorm",
+  "title": "Swirling Sandstorm",
+  "set": "jud",
+  "cost": "{3}{R}",
+  "colour": "r",
+  "num": "102",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=29762&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 35062,
+  "name": "Sylvan Safekeeper",
+  "subtypes": [
+   "Human",
+   "Wizard"
+  ],
+  "cmc": 1,
+  "rarity": "r",
+  "artist": "Pete Venters",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{G}",
+  "text": "Sacrifice a land: Target creature you control gains shroud until end of turn. (It can't be the target of spells or abilities.)",
+  "flavor": "\"How could someone so small cause so much trouble?\"\n—Nomad sentry",
+  "number": "133",
+  "imageName": "sylvan safekeeper",
+  "title": "Sylvan Safekeeper",
+  "set": "jud",
+  "cost": "{G}",
+  "colour": "g",
+  "num": "133",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35062&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 5589,
+  "name": "Telekinetic Bonds",
+  "cmc": 5,
+  "rarity": "r",
+  "artist": "Jim Nelson",
+  "manaCost": "{2}{U}{U}{U}",
+  "text": "Whenever a player discards a card, you may pay {1}{U}. If you do, you may tap or untap target permanent.",
+  "flavor": "\"Nature's been fired. The oceans are under new management.\"\n—Ambassador Laquatus",
+  "number": "52",
+  "imageName": "telekinetic bonds",
+  "title": "Telekinetic Bonds",
+  "set": "jud",
+  "cost": "{2}{U}{U}{U}",
+  "colour": "u",
+  "num": "52",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=5589&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 29924,
+  "name": "Test of Endurance",
+  "cmc": 4,
+  "rarity": "r",
+  "artist": "Mike Ploog",
+  "manaCost": "{2}{W}{W}",
+  "text": "At the beginning of your upkeep, if you have 50 or more life, you win the game.",
+  "flavor": "\"If we have learned nothing else, we have learned to survive.\"\n—Mystic elder",
+  "number": "29",
+  "imageName": "test of endurance",
+  "title": "Test of Endurance",
+  "set": "jud",
+  "cost": "{2}{W}{W}",
+  "colour": "w",
+  "num": "29",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=29924&type=card"
+ },
+ {
+  "layout": "normal",
+  "supertypes": [
+   "Legendary"
+  ],
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 36525,
+  "name": "Thriss, Nantuko Primus",
+  "subtypes": [
+   "Insect",
+   "Druid"
+  ],
+  "cmc": 7,
+  "rarity": "r",
+  "artist": "John Avon",
+  "power": "5",
+  "toughness": "5",
+  "manaCost": "{5}{G}{G}",
+  "text": "{G}, {T}: Target creature gets +5/+5 until end of turn.",
+  "flavor": "\"When you live for others, you live for yourself.\"",
+  "number": "134",
+  "imageName": "thriss, nantuko primus",
+  "title": "Thriss, Nantuko Primus",
+  "set": "jud",
+  "cost": "{5}{G}{G}",
+  "colour": "g",
+  "num": "134",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36525&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 36416,
+  "name": "Toxic Stench",
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Bradley Williams",
+  "manaCost": "{1}{B}",
+  "text": "Target nonblack creature gets -1/-1 until end of turn.\nThreshold — If seven or more cards are in your graveyard, instead destroy that creature. It can't be regenerated.",
+  "number": "74",
+  "imageName": "toxic stench",
+  "title": "Toxic Stench",
+  "set": "jud",
+  "cost": "{1}{B}",
+  "colour": "b",
+  "num": "74",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36416&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 35068,
+  "name": "Trained Pronghorn",
+  "subtypes": [
+   "Antelope"
+  ],
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "John Matson",
+  "power": "1",
+  "toughness": "1",
+  "manaCost": "{1}{W}",
+  "text": "Discard a card: Prevent all damage that would be dealt to Trained Pronghorn this turn.",
+  "flavor": "\"The desert asked the Ancestor for children, and the antelope were born.\"\n—Nomad myth",
+  "number": "30",
+  "imageName": "trained pronghorn",
+  "title": "Trained Pronghorn",
+  "set": "jud",
+  "cost": "{1}{W}",
+  "colour": "w",
+  "num": "30",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35068&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 34788,
+  "name": "Treacherous Vampire",
+  "subtypes": [
+   "Vampire"
+  ],
+  "cmc": 5,
+  "rarity": "u",
+  "artist": "Kev Walker",
+  "power": "4",
+  "toughness": "4",
+  "manaCost": "{4}{B}",
+  "text": "Flying\nWhenever Treacherous Vampire attacks or blocks, sacrifice it unless you exile a card from your graveyard.\nThreshold — As long as seven or more cards are in your graveyard, Treacherous Vampire gets +2/+2 and has \"When Treacherous Vampire dies, you lose 6 life.\"",
+  "number": "75",
+  "imageName": "treacherous vampire",
+  "title": "Treacherous Vampire",
+  "set": "jud",
+  "cost": "{4}{B}",
+  "colour": "b",
+  "num": "75",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34788&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "multiverseid": 36037,
+  "name": "Treacherous Werewolf",
+  "subtypes": [
+   "Werewolf",
+   "Minion"
+  ],
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Mark Tedin",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{2}{B}",
+  "text": "Threshold — As long as seven or more cards are in your graveyard, Treacherous Werewolf gets +2/+2 and has \"When Treacherous Werewolf dies, you lose 4 life.\"",
+  "number": "76",
+  "imageName": "treacherous werewolf",
+  "title": "Treacherous Werewolf",
+  "set": "jud",
+  "cost": "{2}{B}",
+  "colour": "b",
+  "num": "76",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36037&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 26370,
+  "name": "Tunneler Wurm",
+  "subtypes": [
+   "Wurm"
+  ],
+  "cmc": 8,
+  "rarity": "u",
+  "artist": "Jeff Easley",
+  "power": "6",
+  "toughness": "6",
+  "manaCost": "{6}{G}{G}",
+  "text": "Discard a card: Regenerate Tunneler Wurm.",
+  "flavor": "If an anurid's lucky, it'll find a warm tunnel for bedtime. If a wurm's lucky, it'll find a warm anurid for breakfast.",
+  "number": "135",
+  "imageName": "tunneler wurm",
+  "title": "Tunneler Wurm",
+  "set": "jud",
+  "cost": "{6}{G}{G}",
+  "colour": "g",
+  "num": "135",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=26370&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 24541,
+  "name": "Unquestioned Authority",
+  "subtypes": [
+   "Aura"
+  ],
+  "cmc": 3,
+  "rarity": "u",
+  "artist": "Alex Horley-Orlandelli",
+  "manaCost": "{2}{W}",
+  "text": "Enchant creature\nWhen Unquestioned Authority enters the battlefield, draw a card.\nEnchanted creature has protection from creatures.",
+  "flavor": "\"Only the Ancestor should be revered.\"\n—Mystic heretic",
+  "number": "31",
+  "imageName": "unquestioned authority",
+  "title": "Unquestioned Authority",
+  "set": "jud",
+  "cost": "{2}{W}",
+  "colour": "w",
+  "num": "31",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=24541&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 33719,
+  "name": "Valor",
+  "subtypes": [
+   "Incarnation"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Kev Walker",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{3}{W}",
+  "text": "First strike\nAs long as Valor is in your graveyard and you control a Plains, creatures you control have first strike.",
+  "flavor": "\"The cracks widened, the shell crumbled, and Valor spread throughout the land.\"\n—Scroll of Beginnings",
+  "number": "32",
+  "imageName": "valor",
+  "title": "Valor",
+  "set": "jud",
+  "cost": "{3}{W}",
+  "colour": "w",
+  "num": "32",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=33719&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "multiverseid": 36409,
+  "name": "Venomous Vines",
+  "cmc": 4,
+  "rarity": "c",
+  "artist": "Ron Spencer",
+  "manaCost": "{2}{G}{G}",
+  "text": "Destroy target enchanted permanent.",
+  "flavor": "\"True strength comes from within. The false promise of unnatural power only incurs Krosa's wrath.\"\n—Seton, centaur druid",
+  "number": "136",
+  "imageName": "venomous vines",
+  "title": "Venomous Vines",
+  "set": "jud",
+  "cost": "{2}{G}{G}",
+  "colour": "g",
+  "num": "136",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36409&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "White"
+  ],
+  "multiverseid": 36035,
+  "name": "Vigilant Sentry",
+  "subtypes": [
+   "Human",
+   "Nomad"
+  ],
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Eric Peterson",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{1}{W}{W}",
+  "text": "Threshold — As long as seven or more cards are in your graveyard, Vigilant Sentry gets +1/+1 and has \"{T}: Target attacking or blocking creature gets +3/+3 until end of turn.\"",
+  "number": "33",
+  "imageName": "vigilant sentry",
+  "title": "Vigilant Sentry",
+  "set": "jud",
+  "cost": "{1}{W}{W}",
+  "colour": "w",
+  "num": "33",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=36035&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 34823,
+  "name": "Web of Inertia",
+  "cmc": 3,
+  "rarity": "u",
+  "artist": "Don Hazeltine",
+  "manaCost": "{2}{U}",
+  "text": "At the beginning of combat on each opponent's turn, that player may exile a card from his or her graveyard. If the player doesn't, creatures he or she controls can't attack you this turn.",
+  "flavor": "Cephalids specialize in lose-lose situations.",
+  "number": "53",
+  "imageName": "web of inertia",
+  "title": "Web of Inertia",
+  "set": "jud",
+  "cost": "{2}{U}",
+  "colour": "u",
+  "num": "53",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34823&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 33720,
+  "name": "Wonder",
+  "subtypes": [
+   "Incarnation"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Rebecca Guay",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{3}{U}",
+  "text": "Flying\nAs long as Wonder is in your graveyard and you control an Island, creatures you control have flying.",
+  "flavor": "\"The awestruck birds gazed at Wonder. Slowly, timidly, they rose into the air.\"\n—Scroll of Beginnings",
+  "number": "54",
+  "imageName": "wonder",
+  "title": "Wonder",
+  "set": "jud",
+  "cost": "{3}{U}",
+  "colour": "u",
+  "num": "54",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=33720&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "multiverseid": 35056,
+  "name": "Worldgorger Dragon",
+  "subtypes": [
+   "Nightmare",
+   "Dragon"
+  ],
+  "cmc": 6,
+  "rarity": "r",
+  "artist": "Wayne England",
+  "power": "7",
+  "toughness": "7",
+  "manaCost": "{3}{R}{R}{R}",
+  "text": "Flying, trample\nWhen Worldgorger Dragon enters the battlefield, exile all other permanents you control.\nWhen Worldgorger Dragon leaves the battlefield, return the exiled cards to the battlefield under their owners' control.",
+  "number": "103",
+  "imageName": "worldgorger dragon",
+  "title": "Worldgorger Dragon",
+  "set": "jud",
+  "cost": "{3}{R}{R}{R}",
+  "colour": "r",
+  "num": "103",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=35056&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 34811,
+  "name": "Wormfang Behemoth",
+  "subtypes": [
+   "Nightmare",
+   "Fish",
+   "Beast"
+  ],
+  "cmc": 5,
+  "rarity": "r",
+  "artist": "Heather Hudson",
+  "power": "5",
+  "toughness": "5",
+  "manaCost": "{3}{U}{U}",
+  "text": "When Wormfang Behemoth enters the battlefield, exile all cards from your hand.\nWhen Wormfang Behemoth leaves the battlefield, return the exiled cards to their owner's hand.",
+  "number": "55",
+  "imageName": "wormfang behemoth",
+  "title": "Wormfang Behemoth",
+  "set": "jud",
+  "cost": "{3}{U}{U}",
+  "colour": "u",
+  "num": "55",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34811&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 34927,
+  "name": "Wormfang Crab",
+  "subtypes": [
+   "Nightmare",
+   "Crab"
+  ],
+  "cmc": 4,
+  "rarity": "u",
+  "artist": "Glen Angus",
+  "power": "3",
+  "toughness": "6",
+  "manaCost": "{3}{U}",
+  "text": "Wormfang Crab can't be blocked.\nWhen Wormfang Crab enters the battlefield, an opponent chooses a permanent you control other than Wormfang Crab and exiles it.\nWhen Wormfang Crab leaves the battlefield, return the exiled card to the battlefield under its owner's control.",
+  "number": "56",
+  "imageName": "wormfang crab",
+  "title": "Wormfang Crab",
+  "set": "jud",
+  "cost": "{3}{U}",
+  "colour": "u",
+  "num": "56",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34927&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 25974,
+  "name": "Wormfang Drake",
+  "subtypes": [
+   "Nightmare",
+   "Drake"
+  ],
+  "cmc": 3,
+  "rarity": "c",
+  "artist": "Thomas M. Baxa",
+  "power": "3",
+  "toughness": "4",
+  "manaCost": "{2}{U}",
+  "text": "Flying\nWhen Wormfang Drake enters the battlefield, sacrifice it unless you exile a creature you control other than Wormfang Drake.\nWhen Wormfang Drake leaves the battlefield, return the exiled card to the battlefield under its owner's control.",
+  "number": "57",
+  "imageName": "wormfang drake",
+  "title": "Wormfang Drake",
+  "set": "jud",
+  "cost": "{2}{U}",
+  "colour": "u",
+  "num": "57",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=25974&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 34939,
+  "name": "Wormfang Manta",
+  "subtypes": [
+   "Nightmare",
+   "Fish",
+   "Beast"
+  ],
+  "cmc": 7,
+  "rarity": "r",
+  "artist": "Heather Hudson",
+  "power": "6",
+  "toughness": "1",
+  "manaCost": "{5}{U}{U}",
+  "text": "Flying\nWhen Wormfang Manta enters the battlefield, you skip your next turn.\nWhen Wormfang Manta leaves the battlefield, you take an extra turn after this one.",
+  "number": "58",
+  "imageName": "wormfang manta",
+  "title": "Wormfang Manta",
+  "set": "jud",
+  "cost": "{5}{U}{U}",
+  "colour": "u",
+  "num": "58",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34939&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 34809,
+  "name": "Wormfang Newt",
+  "subtypes": [
+   "Nightmare",
+   "Salamander",
+   "Beast"
+  ],
+  "cmc": 2,
+  "rarity": "c",
+  "artist": "Doug Chaffee",
+  "power": "2",
+  "toughness": "2",
+  "manaCost": "{1}{U}",
+  "text": "When Wormfang Newt enters the battlefield, exile a land you control.\nWhen Wormfang Newt leaves the battlefield, return the exiled card to the battlefield under its owner's control.",
+  "flavor": "Spawned by mages emulating the insane.",
+  "number": "59",
+  "imageName": "wormfang newt",
+  "title": "Wormfang Newt",
+  "set": "jud",
+  "cost": "{1}{U}",
+  "colour": "u",
+  "num": "59",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34809&type=card"
+ },
+ {
+  "layout": "normal",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "multiverseid": 34954,
+  "name": "Wormfang Turtle",
+  "subtypes": [
+   "Nightmare",
+   "Turtle",
+   "Beast"
+  ],
+  "cmc": 3,
+  "rarity": "u",
+  "artist": "John Avon",
+  "power": "2",
+  "toughness": "4",
+  "manaCost": "{2}{U}",
+  "text": "When Wormfang Turtle enters the battlefield, exile a land you control.\nWhen Wormfang Turtle leaves the battlefield, return the exiled card to the battlefield under its owner's control.",
+  "flavor": "Chainer's admirers keep his dreams alive.",
+  "number": "60",
+  "imageName": "wormfang turtle",
+  "title": "Wormfang Turtle",
+  "set": "jud",
+  "cost": "{2}{U}",
+  "colour": "u",
+  "num": "60",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=34954&type=card"
+ }
+]

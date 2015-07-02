@@ -1,0 +1,45 @@
+{
+    "defs": [
+        {
+            "defName": "jud",
+            "query": "from[*]?set='jud'"
+        },
+        {
+            "defName": "jud-main",
+            "query": "from[jud]-from[jud]?type=(Marketing|Basic Land)-from[jud]?token=true-from[jud]?promo=true"
+        },
+        {
+            "defName": "jud-foils",
+            "query": "from[jud-main]"
+        }
+
+    ],
+    "packs": [
+        {
+            "packName": "jud-all-cards",
+            "packDesc": "Judgement: All Cards",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[jud]" }
+            ]
+        },
+        {
+            "packName": "jud-standard",
+            "packDesc": "Judgement: Standard Booster",
+            "_comment": "Old school pack.. 15: 11c, 3u, 1r, no mythic, no land, no marketing/token",
+            "isGenerated": true,
+            "cards": [
+                { "query": "take[10]>from[jud-main]?rarity='c'" },
+                {
+                    "querySet": [
+                        { "percent": 75, "query": "from[jud-main]?rarity='c'" },
+                        { "percent": 25, "query": "from[jud-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+                    ]
+                },
+                { "query": "take[3]>from[jud-main]?rarity='u'" },
+                { "query": "take[1]>from[jud-main]?rarity='r'" }
+            ]
+        }
+
+    ]
+}

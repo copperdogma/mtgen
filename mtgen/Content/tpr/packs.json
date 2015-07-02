@@ -1,0 +1,50 @@
+{
+    "_comment": "from: http://magic.wizards.com/en/game-info/products/card-set-archive/duel-decks-elspeth-vs-kiora",
+
+    "defs": [
+        {
+            "defName": "tpr",
+            "query": "from[*]?set='tpr'"
+        },
+        {
+            "defName": "tpr-main",
+            "query": "from[tpr]-from[tpr]?type=(Marketing|Basic Land|Land)-from[tpr]?token=true-from[tpr]?promo=true"
+        },
+        {
+            "defName": "tpr-foils",
+            "query": "from[tpr-main]"
+        }
+    ],
+    "packs": [
+        {
+            "packName": "tpr-all-cards",
+            "packDesc": "Tempest Remastered: All Cards",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[tpr]" }
+            ]
+        },
+        {
+            "packName": "tpr-standard",
+            "packDesc": "Tempest Remastered: Standard Booster",
+            "isGenerated": true,
+            "cards": [
+                { "query": "from[tpr]?type='Basic Land'" },
+                { "query": "take[9]>from[tpr-main]?rarity='c'" },
+                {
+                    "querySet": [
+                        { "percent": 75, "query": "from[tpr-main]?rarity='c'" },
+                        { "percent": 25, "query": "from[tpr-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+                    ]
+                },
+                { "query": "take[3]>from[tpr-main]?rarity='u'" },
+                {
+                    "querySet": [
+                        { "percent": 87.5, "query": "from[tpr-main]?rarity='r'" },
+                        { "percent": 12.5, "query": "from[tpr-main]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" }
+                    ]
+                }
+            ]
+        }
+    ]
+}

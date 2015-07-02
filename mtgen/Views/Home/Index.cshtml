@@ -10,6 +10,7 @@
     string createdTitle = null, string prereleaseTitle = null, string releaseTitle = null)
 {
     var set = mtgen.Logic.SetLogic.Instance.GetSetStub(setCode);
+    if (set == null) { throw new Exception("Set " + setCode + " does not exist in sets.json."); }
     var currentClass = (current) ? "current" : null;
     var futureClass = (future) ? "future" : null;
     <tr class="@currentClass @futureClass" itemscope itemtype="http://schema.org/Event">
@@ -55,8 +56,8 @@
 <html dir="ltr" lang="en-US">
 <head>
     <meta charset="UTF-8" />
-    <title>Magic: The Gathering: Card Generator</title>
-    <meta name="Description" content="Magic: The Gathering Sealed Deck Card Generator">
+    <title>Magic: The Gathering: Sealed Deck Generator</title>
+    <meta name="Description" content="Magic: The Gathering Sealed Deck Card Generator, Simulates opening boosters for many sets">
     <link rel='stylesheet' href='@Url.Content("~/content/home.css")' type='text/css' />
     <script type="text/javascript">
         (function () {
@@ -111,15 +112,33 @@
             <tr><th></th><th>Set</th><th>Generator Created Date</th><th>Prerelease Date</th><th>Release Date</th></tr>
         </thead>
         <tbody>
-            @DisplaySet("evk", future: true)
+            @DisplaySet("bfz", future: true)
+        </tbody>
+        <tbody>
+            @DisplaySet("zve", future: true)
+        </tbody>
+        <tbody>
+            @DisplaySet("v15", future: true)
+        </tbody>
+        <tbody>
+            @DisplaySet("ori", current: true)
+        </tbody>
+        <tbody>
+            @DisplaySet("mm2", current: true)
+        </tbody>
+        <tbody>
+            @DisplaySet("tpr", current: true)
+        </tbody>
+        <tbody>
+            @DisplaySet("ddo", current: true)
         </tbody>
         <tbody>
             @DisplaySet("c14", current: true)
         </tbody>
         <tbody class="block">
             <tr class="title"><td colspan="5">Khans of Tarkir Block</td></tr>
-            @DisplaySet("dtk", future: true)
-            @DisplaySet("frf", current: true)
+            @DisplaySet("dtk")
+            @DisplaySet("frf")
             @DisplaySet("ktk")
         </tbody>
         <tbody>
@@ -162,10 +181,22 @@
             @DisplaySet("isd")
         </tbody>
         <tbody class="block">
+            <tr class="title"><td colspan="5">Scars of Mirrodin Block</td></tr>
+            @DisplaySet("som")
+            @DisplaySet("mbs")
+            @DisplaySet("nph")
+        </tbody>
+        <tbody class="block">
             <tr class="title"><td colspan="5">Onslaught Block</td></tr>
             @DisplaySet("ons")
             @DisplaySet("lgn")
             @DisplaySet("scg")
+        </tbody>
+        <tbody class="block">
+            <tr class="title"><td colspan="5">Odyssey Block</td></tr>
+            @DisplaySet("ody")
+            @DisplaySet("tor")
+            @DisplaySet("jud")
         </tbody>
         <tbody class="block">
             <tr class="title"><td colspan="5">Masques Block</td></tr>

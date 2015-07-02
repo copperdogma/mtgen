@@ -1,0 +1,123 @@
+{
+    "_comment": "if there are no options the query/packNames will be auto-run",
+    "products": [
+        {
+            "productName": "ori-all-cards",
+            "productDesc": "All Cards",
+            "sources": [ "http://magic.wizards.com/en/articles/archive/card-image-gallery/magicorigins", "http://www.gatheringmagic.com/magic-the-gathering-sets/core-sets/magic-origins-spoiler/", "http://magic.wizards.com/en/articles/archive/feature/magic-origins-mechanics-article-2015-06-22", "http://magic.wizards.com/en/articles/archive/arcana/origins-basic-lands-2015-06-29", "http://magic.wizards.com/en/articles/archive/arcana/tokens-origins-2015-07-01" ],
+            "isGenerated": false,
+            "initialSort": "colour",
+            "packs": [
+                { "packName": "ori-all-cards" }
+            ]
+        },
+        {
+            "productName": "ori-boosters",
+            "productDesc": "Boosters",
+            "isGenerated": true,
+            "isVisible": true,
+            "initialSort": "set",
+            "packs": [
+                { "packName": "ori-standard" }
+            ],
+            "options": {
+                "presets": [
+                    {
+                        "presetName": "ori-boosters-six",
+                        "presetDesc": "Six Boosters",
+                        "default": true,
+                        "packs": [
+                            { "count": 6, "defaultPackName": "ori-standard" }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "productName": "ori-prerelease",
+            "productDesc": "Prerelease",
+            "isVisible": false,
+            "sources": [ "http://wpn.wizards.com/en/products/magic-origins" ],
+            "isGenerated": false,
+            "initialSort": "set",
+            "packs": [
+                { "packName": "ori-standard" },
+                { "packName": "ori-seeded-booster-white" },
+                { "packName": "ori-seeded-booster-blue" },
+                { "packName": "ori-seeded-booster-black" },
+                { "packName": "ori-seeded-booster-red" },
+                { "packName": "ori-seeded-booster-green" },
+                { "packName": "ori-prerelease-promos" }
+            ],
+            "options": {
+                "presets": [
+                    {
+                        "presetName": "ori-prerelease-white",
+                        "presetDesc": "Gideon (White)",
+                        "default": true,
+                        "packs": [
+                            { "count": 1, "defaultPackName": "ori-seeded-booster-white" },
+                            { "count": 1, "defaultPackName": "ori-seeded-booster-packins-white" },
+                            { "count": 6, "defaultPackName": "ori-standard" }
+                        ]
+                    },
+                    {
+                        "presetName": "ori-prerelease-blue",
+                        "presetDesc": "Jace (Blue)",
+                        "packs": [
+                            { "count": 1, "defaultPackName": "ori-seeded-booster-blue" },
+                            { "count": 1, "defaultPackName": "ori-seeded-booster-packins-blue" },
+                            { "count": 6, "defaultPackName": "ori-standard" }
+                        ]
+                    },
+                    {
+                        "presetName": "ori-prerelease-black",
+                        "presetDesc": "Liliana (Black)",
+                        "packs": [
+                            { "count": 1, "defaultPackName": "ori-seeded-booster-black" },
+                            { "count": 1, "defaultPackName": "ori-seeded-booster-packins-black" },
+                            { "count": 6, "defaultPackName": "ori-standard" }
+                        ]
+                    },
+                    {
+                        "presetName": "ori-prerelease-red",
+                        "presetDesc": "Chandr (Red)",
+                        "packs": [
+                            { "count": 1, "defaultPackName": "ori-seeded-booster-red" },
+                            { "count": 1, "defaultPackName": "ori-seeded-booster-packins-red" },
+                            { "count": 6, "defaultPackName": "ori-standard" }
+                        ]
+                    },
+                    {
+                        "presetName": "ori-prerelease-green",
+                        "presetDesc": "Nissa (Green)",
+                        "packs": [
+                            { "count": 1, "defaultPackName": "ori-seeded-booster-green" },
+                            { "count": 1, "defaultPackName": "ori-seeded-booster-packins-green" },
+                            { "count": 6, "defaultPackName": "ori-standard" }
+                        ]
+                    },
+                    {
+                        "presetName": "ori-prerelease-promos",
+                        "presetDesc": "Magic Origins Prerelease Promos",
+                        "packs": [
+                            { "count": 1, "defaultPackName": "ori-prerelease-promos" }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "productName": "ori-promos",
+            "productDesc": "All Promos",
+            "sources": [ "http://magic.wizards.com/en/articles/archive/arcana/origins-promo-cards-2015-06-23", "http://io9.com/these-comic-con-exclusive-magic-cards-will-drive-collec-1714268138" ],
+            "isGenerated": false,
+            "isVisible": true,
+            "initialSort": "name",
+            "packs": [
+                { "packName": "ori-promos" }
+            ]
+        }
+
+    ]
+}

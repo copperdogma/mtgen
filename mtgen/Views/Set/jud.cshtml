@@ -1,0 +1,27 @@
+﻿@using mtgen.Models;
+@{
+    var set = new mtgen.Models.Set()
+    {
+        Code = "jud",
+        Name = "Judgement",
+        CreatedDate = new DateTime(2015, 6, 21),
+        CardCount = 143,
+        StartProductName = "jud-boosters"
+    };
+
+    set.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    set.PackFiles = new List<string>() { "../tor/packs.json", "../ody/packs.json", "packs.json" };
+
+    set.CardFiles = set.CardFiles.Concat(new List<string>() { "../ody/cardsMain.json", "../ody/cardsToken.json", "../ody/cardsOther.json" }).ToList();
+    set.CardFiles = set.CardFiles.Concat(new List<string>() { "../tor/cardsMain.json", "../tor/cardsToken.json", "../tor/cardsOther.json" }).ToList();
+
+    //set.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2014,9,14),
+    //        HtmlString = "All cards now included."
+    //    }
+    //};
+
+    ViewBag.Set = set;
+}

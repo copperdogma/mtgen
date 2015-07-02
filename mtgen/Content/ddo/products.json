@@ -1,0 +1,46 @@
+{
+"_comment": "if there are no options the query/packNames will be auto-run"
+,"products": 
+	[
+		{
+			"productName": "ddo-all-cards"
+			,"productDesc": "All Cards"
+			,"sources": [ "http://magic.wizards.com/en/game-info/products/card-set-archive/duel-decks-elspeth-vs-kiora" ]
+			,"isGenerated": false
+			,"initialSort": "colour"
+			,"packs": [
+				{ "packName":"ddo-all-cards" }
+			]
+		}
+		,{
+			"productName": "ddo-decks"
+			,"productDesc": "Decks"
+			,"isGenerated": false
+			,"initialSort": "set"
+			,"packs": [
+				{ "packName":"ddo-kiora" },
+				{ "packName":"ddo-elspeth" }
+			]
+			,"options" : {
+				"presets": [
+					{
+						"presetName": "ddo-kiora"
+						,"presetDesc": "Duel Decks: Elspeth vs. Kiora: Kiora Deck"
+						,"default": true
+						,"packs": [
+							{ "count":1, "defaultPackName":"ddo-kiora" }
+						]
+					},
+					{
+						"presetName": "ddo-elspeth"
+						,"presetDesc": "Duel Decks: Elspeth vs. Kiora: Elspeth Deck"
+						,"packs": [
+							{ "count":1, "defaultPackName":"ddo-elspeth" }
+						]
+					}
+				]
+			}
+		}
+
+	]
+}

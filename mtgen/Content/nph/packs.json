@@ -1,0 +1,69 @@
+{
+    "defs": [
+        {
+            "defName": "nph",
+            "query": "from[*]?set='nph'"
+        },
+        {
+            "defName": "nph-main",
+            "query": "from[nph]-from[nph]?type=(Marketing|Basic Land)-from[nph]?token=true-from[nph]?promo=true"
+        },
+        {
+            "defName": "nph-foils",
+            "query": "from[nph-main]"
+        },
+        {
+            "defName": "nph-promo",
+            "query": "from[nph]?promo=true"
+        }
+
+    ],
+    "packs": [
+        {
+            "packName": "nph-all-cards",
+            "packDesc": "New Phyrexia: All Cards",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[nph]" }
+            ]
+        },
+        {
+            "packName": "nph-standard",
+            "packDesc": "New Phyrexia: Standard Booster",
+            "isGenerated": true,
+            "cards": [
+                { "query": "from[nph]?type='Basic Land'" },
+                { "query": "take[9]>from[nph-main]?rarity='c'" },
+                {
+                    "querySet": [
+                        { "percent": 75, "query": "from[nph-main]?rarity='c'" },
+                        { "percent": 25, "query": "from[nph-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+                    ]
+                },
+                { "query": "take[3]>from[nph-main]?rarity='u'" },
+                {
+                    "querySet": [
+                        { "percent": 87.5, "query": "from[nph-main]?rarity='r'" },
+                        { "percent": 12.5, "query": "from[nph-main]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" }
+                    ]
+                },
+                {
+                    "querySet": [
+                        { "percent": 50, "query": "from[nph]?type='Marketing'" },
+                        { "percent": 50, "query": "from[nph]?token=true-from[nph]?promo=true" }
+                    ]
+                }
+            ]
+        },
+        {
+            "packName": "nph-promos",
+            "packDesc": "New Phyrexia: Promos",
+            "isGenerated": false,
+            "includeWithUserCards": false,
+            "cards": [
+                { "query": "take[*]>from[nph-promo]" }
+            ]
+        }
+
+    ]
+}

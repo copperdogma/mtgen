@@ -1,0 +1,45 @@
+{
+    "defs": [
+        {
+            "defName": "tor",
+            "query": "from[*]?set='tor'"
+        },
+        {
+            "defName": "tor-main",
+            "query": "from[tor]-from[tor]?type=(Marketing|Basic Land)-from[tor]?token=true-from[tor]?promo=true"
+        },
+        {
+            "defName": "tor-foils",
+            "query": "from[tor-main]"
+        }
+
+    ],
+    "packs": [
+        {
+            "packName": "tor-all-cards",
+            "packDesc": "Torment: All Cards",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[tor]" }
+            ]
+        },
+        {
+            "packName": "tor-standard",
+            "packDesc": "Torment: Standard Booster",
+            "_comment": "Old school pack.. 15: 11c, 3u, 1r, no mythic, no land, no marketing/token",
+            "isGenerated": true,
+            "cards": [
+                { "query": "take[10]>from[tor-main]?rarity='c'" },
+                {
+                    "querySet": [
+                        { "percent": 75, "query": "from[tor-main]?rarity='c'" },
+                        { "percent": 25, "query": "from[tor-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+                    ]
+                },
+                { "query": "take[3]>from[tor-main]?rarity='u'" },
+                { "query": "take[1]>from[tor-main]?rarity='r'" }
+            ]
+        }
+
+    ]
+}

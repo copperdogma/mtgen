@@ -1,0 +1,166 @@
+{
+    "_comment": "if there are no options the query/packNames will be auto-run",
+    "products": [
+        {
+            "productName": "dtk-all-cards",
+            "productDesc": "All Cards",
+            "sources": [ "http://magic.wizards.com/en/articles/archive/card-image-gallery/dragonsoftarkir", "http://magic.wizards.com/en/articles/archive/dtk-cig-en", "http://magic.wizards.com/en/articles/archive/arcana/tokens-dragons-tarkir-2015-03-10" ],
+            "isGenerated": false,
+            "initialSort": "colour",
+            "packs": [
+                { "packName": "dtk-all-cards" }
+            ]
+        },
+        {
+            "productName": "dtk-boosters",
+            "productDesc": "Boosters",
+            "isVisible": true,
+            "isGenerated": true,
+            "initialSort": "set",
+            "packs": [
+                { "packName": "dtk-standard" },
+                { "packName": "frf-standard" },
+                { "packName": "ktk-standard" }
+            ],
+            "options": {
+                "presets": [
+                    {
+                        "presetName": "dtk-boosters-six",
+                        "presetDesc": "Six Boosters",
+                        "default": true,
+                        "packs": [
+                            { "count": 6, "defaultPackName": "dtk-standard" }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "productName": "dtk-prerelease",
+            "productDesc": "Prerelease",
+            "isVisible": true,
+            "sources": [ "http://magic.wizards.com/en/events/event-types/prerelease", "http://magic.wizards.com/en/articles/archive/feature/dragons-tarkir-prerelease-primer-2015-03-16", "https://www.youtube.com/watch?v=oQeyBP6HOA0&t=134", "https://docs.google.com/spreadsheet/ccc?key=0Apln2HM4aSGbdDJ6MFk5cTBjb09sXzFWdndhTkx2V1E#gid=11" ],
+            "_caveats": [
+                "Prerelease seeded boosters: I guessed as to what is in them. Looks like a Dragonlord (promo), then I'm guessing 1 rare, 3 uncommon, and 10 uncommon, with no land (15 cards total).",
+                "Prerelease seeded boosters: The Dragonlords should be the promo images (stamped with the Prerelase date) but they aren't yet available."
+            ],
+            "isGenerated": true,
+            "initialSort": "set",
+            "packs": [
+                { "packName": "dtk-standard" },
+                { "packName": "frf-standard" },
+                { "packName": "dtk-seeded-booster-dromoka" },
+                { "packName": "dtk-seeded-booster-packins-dromoka" },
+                { "packName": "dtk-seeded-booster-ojutai" },
+                { "packName": "dtk-seeded-booster-packins-ojutai" },
+                { "packName": "dtk-seeded-booster-silumgar" },
+                { "packName": "dtk-seeded-booster-packins-silumgar" },
+                { "packName": "dtk-seeded-booster-kolaghan" },
+                { "packName": "dtk-seeded-booster-packins-kolaghan" },
+                { "packName": "dtk-seeded-booster-atarka" },
+                { "packName": "dtk-seeded-booster-packins-atarka" },
+                { "packName": "dtk-prerelease-promos" }
+            ],
+            "options": {
+                "presets": [
+                    {
+                        "presetName": "dtk-prerelease-dromoka",
+                        "presetDesc": "Dromoka Clan (Green/White)",
+                        "default": true,
+                        "packs": [
+                            { "count": 1, "defaultPackName": "dtk-seeded-booster-dromoka" },
+                            { "count": 1, "defaultPackName": "dtk-seeded-booster-packins-dromoka" },
+                            { "count": 4, "defaultPackName": "dtk-standard" },
+                            { "count": 1, "defaultPackName": "frf-standard" }
+                        ]
+                    },
+                    {
+                        "presetName": "dtk-prerelease-ojutai",
+                        "presetDesc": "Ojutai Clan (White/Blue)",
+                        "packs": [
+                            { "count": 1, "defaultPackName": "dtk-seeded-booster-ojutai" },
+                            { "count": 1, "defaultPackName": "dtk-seeded-booster-packins-ojutai" },
+                            { "count": 4, "defaultPackName": "dtk-standard" },
+                            { "count": 1, "defaultPackName": "frf-standard" }
+                        ]
+                    },
+                    {
+                        "presetName": "dtk-prerelease-silumgar",
+                        "presetDesc": "Silumgar Clan (Blue/Black)",
+                        "packs": [
+                            { "count": 1, "defaultPackName": "dtk-seeded-booster-silumgar" },
+                            { "count": 1, "defaultPackName": "dtk-seeded-booster-packins-silumgar" },
+                            { "count": 4, "defaultPackName": "dtk-standard" },
+                            { "count": 1, "defaultPackName": "frf-standard" }
+                        ]
+                    },
+                    {
+                        "presetName": "dtk-prerelease-kolaghan",
+                        "presetDesc": "Kolaghan Clan (Black/Red)",
+                        "packs": [
+                            { "count": 1, "defaultPackName": "dtk-seeded-booster-kolaghan" },
+                            { "count": 1, "defaultPackName": "dtk-seeded-booster-packins-kolaghan" },
+                            { "count": 4, "defaultPackName": "dtk-standard" },
+                            { "count": 1, "defaultPackName": "frf-standard" }
+                        ]
+                    },
+                    {
+                        "presetName": "dtk-prerelease-atarka",
+                        "presetDesc": "Atarka Clan (Red/Green)",
+                        "packs": [
+                            { "count": 1, "defaultPackName": "dtk-seeded-booster-atarka" },
+                            { "count": 1, "defaultPackName": "dtk-seeded-booster-packins-atarka" },
+                            { "count": 4, "defaultPackName": "dtk-standard" },
+                            { "count": 1, "defaultPackName": "frf-standard" }
+                        ]
+                    },
+                    {
+                        "presetName": "dtk-prerelease-promos",
+                        "presetDesc": "Dragons of Tarkir Prerelease Promos",
+                        "packs": [
+                            { "count": 1, "defaultPackName": "dtk-prerelease-promos" }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "productName": "dtk-fat-pack",
+            "isVisible": true,
+            "productDesc": "Fat Pack",
+            "isGenerated": true,
+            "autoGenerate": true,
+            "initialSort": "set",
+            "packs": [
+                { "packName": "dtk-standard" },
+                { "packName": "dtk-fat-pack-land" },
+                { "packName": "dtk-fat-pack-pack-ins" }
+            ],
+            "options": {
+                "presets": [
+                    {
+                        "presetName": "dtk-fat-pack",
+                        "presetDesc": "Dragons of Tarkir Fat Pack",
+                        "default": true,
+                        "packs": [
+                            { "count": 1, "defaultPackName": "dtk-fat-pack-pack-ins" },
+                            { "count": 9, "defaultPackName": "dtk-standard" },
+                            { "count": 1, "defaultPackName": "dtk-fat-pack-land" }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "productName": "dtk-promos",
+            "isVisible": true,
+            "productDesc": "All Promos",
+            "sources": [ "http://magic.wizards.com/en/articles/archive/arcana/dragons-tarkir-promos-2015-03-04" ],
+            "isGenerated": false,
+            "initialSort": "name",
+            "packs": [
+                { "packName": "dtk-promos" }
+            ]
+        }
+    ]
+}

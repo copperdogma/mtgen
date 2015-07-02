@@ -23,6 +23,7 @@
     <ApplicationInsightsResourceId>/subscriptions/9cb6489d-b920-412c-af0a-dbbc4fa7db20/resourcegroups/Default-ApplicationInsights-CentralUS/providers/microsoft.insights/components/mtgen</ApplicationInsightsResourceId>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>1e7250e3</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,61 +49,87 @@
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ApplicationInsights">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.0.9.0-build06428\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    <Reference Include="Microsoft.ApplicationInsights, Version=0.17.0.576, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.ApplicationInsights.0.17.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.ApplicationInsights.Platform">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.0.9.0-build06428\lib\net45\Microsoft.ApplicationInsights.Platform.dll</HintPath>
+    <Reference Include="Microsoft.ApplicationInsights.Extensibility.PerfCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.0.17.0\lib\net45\Microsoft.ApplicationInsights.Extensibility.PerfCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.0.17.0\lib\net45\Microsoft.ApplicationInsights.Extensibility.RuntimeTelemetry.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.Extensibility.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.0.17.0\lib\net45\Microsoft.ApplicationInsights.Extensibility.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights.Web.TelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.TelemetryChannel.0.17.0\lib\net45\Microsoft.ApplicationInsights.Web.TelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Owin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    <Reference Include="Microsoft.Diagnostics.Instrumentation.Extensions.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.17.0\lib\net45\Microsoft.Diagnostics.Instrumentation.Extensions.Intercept.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security.Facebook, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security.Google, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Owin.Security.Google, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Security.Twitter, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.6.0.7\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="SimpleMvcSitemap">
-      <HintPath>..\packages\SimpleMvcSitemap.1.0.0\lib\net45\SimpleMvcSitemap.dll</HintPath>
+    <Reference Include="SimpleMvcSitemap, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SimpleMvcSitemap.2.3.1\lib\net45\SimpleMvcSitemap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -115,27 +142,27 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
@@ -163,15 +190,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.AspNet.Identity.Core">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.Owin">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
@@ -226,6 +244,8 @@
     <Content Include="Content\avr\images\logo-word.png" />
     <Content Include="Content\avr\images\symbol.png" />
     <Content Include="Content\avr\set.css" />
+    <Content Include="Content\bfz\images\logo-word.png" />
+    <Content Include="Content\bfz\images\symbol.png" />
     <Content Include="Content\bng\cards\bng-activity-card-black-lg.jpg" />
     <Content Include="Content\bng\cards\bng-activity-card-black.jpg" />
     <Content Include="Content\bng\cards\bng-activity-card-blue-lg.jpg" />
@@ -377,6 +397,22 @@
     <Content Include="Content\cards\dka-sticker-vampire.png" />
     <Content Include="Content\cards\dka-sticker-werewolf.png" />
     <Content Include="Content\cards\dka-sticker-zombie.png" />
+    <Content Include="Content\cards\dtk-achievement-card-lg.jpg" />
+    <Content Include="Content\cards\dtk-clan-info-atarka-lg.jpg" />
+    <Content Include="Content\cards\dtk-clan-info-dromoka-lg.jpg" />
+    <Content Include="Content\cards\dtk-clan-info-kolaghan-lg.jpg" />
+    <Content Include="Content\cards\dtk-clan-info-ojutai-lg.jpg" />
+    <Content Include="Content\cards\dtk-clan-info-silumgar-lg.jpg" />
+    <Content Include="Content\cards\dtk-fat-pack-card-box.png" />
+    <Content Include="Content\cards\dtk-fat-pack-deck-box.png" />
+    <Content Include="Content\cards\dtk-fat-pack-mural.png" />
+    <Content Include="Content\cards\dtk-fat-pack-players-guide.png" />
+    <Content Include="Content\cards\dtk-fat-pack-rules-reference-card.png" />
+    <Content Include="Content\cards\dtk-spindown-life-counter-atarka.png" />
+    <Content Include="Content\cards\dtk-spindown-life-counter-dromoka.png" />
+    <Content Include="Content\cards\dtk-spindown-life-counter-kolaghan.png" />
+    <Content Include="Content\cards\dtk-spindown-life-counter-ojutai.png" />
+    <Content Include="Content\cards\dtk-spindown-life-counter-silumgar.png" />
     <Content Include="Content\cards\frf-achievement-card-lg.jpg" />
     <Content Include="Content\cards\frf-clan-info-abzan-lg.jpg" />
     <Content Include="Content\cards\frf-clan-info-jeskai-lg.jpg" />
@@ -581,6 +617,27 @@
     <Content Include="Content\cards\mtg-spindown-life-counter-green.png" />
     <Content Include="Content\cards\mtg-spindown-life-counter-red.png" />
     <Content Include="Content\cards\mtg-spindown-life-counter-white.png" />
+    <Content Include="Content\cards\ody-bear-token.png" />
+    <Content Include="Content\cards\ody-beast-token.png" />
+    <Content Include="Content\cards\ody-elephant-token.png" />
+    <Content Include="Content\cards\ody-squirrel-token.png" />
+    <Content Include="Content\cards\ody-wurm-token.png" />
+    <Content Include="Content\cards\ody-zombie-token.png" />
+    <Content Include="Content\cards\ori-chandra-fire-of-kaladesh--chandra-roaring-flame-promo-lg.png" />
+    <Content Include="Content\cards\ori-chandra-fire-of-kaladesh--chandra-roaring-flame-promo.png" />
+    <Content Include="Content\cards\ori-chandra-fire-of-kaladesh--chandra-roaring-flame.png" />
+    <Content Include="Content\cards\ori-jace-vyrns-prodigy--jace-telepath-unbound-promo-lg.png" />
+    <Content Include="Content\cards\ori-jace-vyrns-prodigy--jace-telepath-unbound-promo.png" />
+    <Content Include="Content\cards\ori-jace-vyrns-prodigy--jace-telepath-unbound.png" />
+    <Content Include="Content\cards\ori-kytheon-hero-of-akros--gideon-battle-forged-promo-lg.png" />
+    <Content Include="Content\cards\ori-kytheon-hero-of-akros--gideon-battle-forged-promo.png" />
+    <Content Include="Content\cards\ori-kytheon-hero-of-akros--gideon-battle-forged.png" />
+    <Content Include="Content\cards\ori-liliana-heretical-healer--liliana-defiant-necromancer-promo-lg.png" />
+    <Content Include="Content\cards\ori-liliana-heretical-healer--liliana-defiant-necromancer-promo.png" />
+    <Content Include="Content\cards\ori-liliana-heretical-healer--liliana-defiant-necromancer.png" />
+    <Content Include="Content\cards\ori-nissa-vastwood-seer--nissa-sage-animist-promo-lg.png" />
+    <Content Include="Content\cards\ori-nissa-vastwood-seer--nissa-sage-animist-promo.png" />
+    <Content Include="Content\cards\ori-nissa-vastwood-seer--nissa-sage-animist.png" />
     <Content Include="Content\cards\rtr-azorius-achievement-card-lg.jpg" />
     <Content Include="Content\cards\rtr-azorius-achievement-card.jpg" />
     <Content Include="Content\cards\rtr-azorius-welcome-letter-lg.jpg" />
@@ -616,6 +673,16 @@
     <Content Include="Content\cards\rtr-sticker-izzet.png" />
     <Content Include="Content\cards\rtr-sticker-rakdos.png" />
     <Content Include="Content\cards\rtr-sticker-selesnya.png" />
+    <Content Include="Content\cards\som-fat-pack-card-box.png" />
+    <Content Include="Content\cards\som-fat-pack-mural.png" />
+    <Content Include="Content\cards\som-fat-pack-players-guide.png" />
+    <Content Include="Content\cards\som-fat-pack-rules-reference-card.png" />
+    <Content Include="Content\cards\som-fat-pack-sample-chapter.png" />
+    <Content Include="Content\cards\som-spindown-life-counter-black.png" />
+    <Content Include="Content\cards\som-spindown-life-counter-blue.png" />
+    <Content Include="Content\cards\som-spindown-life-counter-green.png" />
+    <Content Include="Content\cards\som-spindown-life-counter-red.png" />
+    <Content Include="Content\cards\som-spindown-life-counter-white.png" />
     <Content Include="Content\cards\ths-activity-card-choose-your-path-black-lg.jpg" />
     <Content Include="Content\cards\ths-activity-card-choose-your-path-black.jpg" />
     <Content Include="Content\cards\ths-activity-card-choose-your-path-blue-lg.jpg" />
@@ -663,6 +730,66 @@
     <Content Include="Content\cards\ths-welcome-letter-path-of-wisdom-blue.jpg" />
     <Content Include="Content\cards\v14-collectors-guide.png" />
     <Content Include="Content\cards\v14-spindown-life-counter.png" />
+    <Content Include="Content\m15\cards\m15-activity-insert-black-lg.jpg" />
+    <Content Include="Content\m15\cards\m15-activity-insert-black.jpg" />
+    <Content Include="Content\m15\cards\m15-activity-insert-blue-lg.jpg" />
+    <Content Include="Content\m15\cards\m15-activity-insert-blue.jpg" />
+    <Content Include="Content\m15\cards\m15-activity-insert-green-lg.jpg" />
+    <Content Include="Content\m15\cards\m15-activity-insert-green.jpg" />
+    <Content Include="Content\m15\cards\m15-activity-insert-red-lg.jpg" />
+    <Content Include="Content\m15\cards\m15-activity-insert-red.jpg" />
+    <Content Include="Content\m15\cards\m15-activity-insert-white-lg.jpg" />
+    <Content Include="Content\m15\cards\m15-activity-insert-white.jpg" />
+    <Content Include="Content\m15\cards\m15-fat-pack-card-box.png" />
+    <Content Include="Content\m15\cards\m15-fat-pack-deck-box.png" />
+    <Content Include="Content\m15\cards\m15-fat-pack-mural.png" />
+    <Content Include="Content\m15\cards\m15-fat-pack-players-guide.png" />
+    <Content Include="Content\m15\cards\m15-fat-pack-rules-reference-card.png" />
+    <Content Include="Content\m15\cards\m15-spindown-life-counter-black.png" />
+    <Content Include="Content\m15\cards\m15-spindown-life-counter-blue.png" />
+    <Content Include="Content\m15\cards\m15-spindown-life-counter-green.png" />
+    <Content Include="Content\m15\cards\m15-spindown-life-counter-red.png" />
+    <Content Include="Content\m15\cards\m15-spindown-life-counter-white.png" />
+    <Content Include="Content\m15\cards\m15-wolf-token.png" />
+    <Content Include="Content\mbs\images\bg.jpg" />
+    <Content Include="Content\mbs\images\logo-word.png" />
+    <Content Include="Content\mbs\images\symbol.png" />
+    <Content Include="Content\mbs\set.css" />
+    <Content Include="Content\mm2\images\bg.jpg" />
+    <Content Include="Content\mm2\set.css" />
+    <Content Include="Content\jud\images\bg.jpg" />
+    <Content Include="Content\jud\images\logo-word.png" />
+    <Content Include="Content\jud\images\symbol.png" />
+    <Content Include="Content\jud\set.css" />
+    <Content Include="Content\ori\images\bg.jpg" />
+    <Content Include="Content\tor\images\bg.jpg" />
+    <Content Include="Content\tor\images\logo-word.png" />
+    <Content Include="Content\tor\images\symbol.png" />
+    <Content Include="Content\tor\set.css" />
+    <Content Include="Content\ody\images\bg.jpg" />
+    <Content Include="Content\ody\images\logo-word.png" />
+    <Content Include="Content\ody\images\symbol.png" />
+    <Content Include="Content\ody\set.css" />
+    <Content Include="Content\nph\images\bg.jpg" />
+    <Content Include="Content\nph\images\logo-word.png" />
+    <Content Include="Content\nph\images\symbol.png" />
+    <Content Include="Content\nph\set.css" />
+    <Content Include="Content\ori\images\logo-word.png" />
+    <Content Include="Content\ori\images\symbol.png" />
+    <Content Include="Content\ori\set.css" />
+    <Content Include="Content\som\images\bg.jpg" />
+    <Content Include="Content\som\images\logo-word.png" />
+    <Content Include="Content\som\images\symbol.png" />
+    <Content Include="Content\som\set.css" />
+    <Content Include="Content\tpr\images\bg.jpg" />
+    <Content Include="Content\tpr\images\logo-word-original.png" />
+    <Content Include="Content\tpr\images\logo-word.png" />
+    <Content Include="Content\tpr\images\symbol.png" />
+    <Content Include="Content\tpr\set.css" />
+    <Content Include="Content\ddo\images\bg.jpg" />
+    <Content Include="Content\ddo\images\logo-word.png" />
+    <Content Include="Content\ddo\images\symbol.png" />
+    <Content Include="Content\ddo\set.css" />
     <Content Include="Content\dgm\cards\dgm-azorius-guild-button.jpg" />
     <Content Include="Content\dgm\cards\dgm-boros-guild-button.jpg" />
     <Content Include="Content\dgm\cards\dgm-fat-pack-card-box.png" />
@@ -708,11 +835,8 @@
     <Content Include="Content\dka\images\bg.jpg" />
     <Content Include="Content\dka\images\logo-word.png" />
     <Content Include="Content\dka\images\symbol.png" />
-    <Content Include="Content\evk\images\bg.jpg" />
-    <Content Include="Content\evk\images\logo-word.png" />
-    <Content Include="Content\evk\images\symbol-original.png" />
-    <Content Include="Content\evk\images\symbol.png" />
-    <Content Include="Content\evk\set.css" />
+    <Content Include="Content\dtk\images\symbol-original.png" />
+    <Content Include="Content\dtk\images\symbol.png" />
     <Content Include="Content\cns\images\bg.jpg" />
     <Content Include="Content\cns\images\logo-word-original.png" />
     <Content Include="Content\cns\images\logo-word.png" />
@@ -727,10 +851,10 @@
     <Content Include="Content\c14\set.css" />
     <Content Include="Content\dtk\images\bg.jpg" />
     <Content Include="Content\dtk\images\logo-word.png" />
-    <Content Include="Content\dtk\images\symbol-original.png" />
-    <Content Include="Content\dtk\images\symbol.png" />
     <Content Include="Content\dtk\set.css" />
     <Content Include="Content\frf\images\bg.jpg" />
+    <Content Include="Content\mm2\images\logo-word.png" />
+    <Content Include="Content\mm2\images\symbol.png" />
     <Content Include="Content\print.css" />
     <Content Include="Content\gtc\cards\gtc-achievement-card-boros-lg.jpg" />
     <Content Include="Content\gtc\cards\gtc-achievement-card-boros.jpg" />
@@ -961,26 +1085,6 @@
     <Content Include="Content\m14\images\logo.png" />
     <Content Include="Content\m14\images\symbol.png" />
     <Content Include="Content\m14\set.css" />
-    <Content Include="Content\m15\cards\m15-activity-insert-black-lg.jpg" />
-    <Content Include="Content\m15\cards\m15-activity-insert-black.jpg" />
-    <Content Include="Content\m15\cards\m15-activity-insert-blue-lg.jpg" />
-    <Content Include="Content\m15\cards\m15-activity-insert-blue.jpg" />
-    <Content Include="Content\m15\cards\m15-activity-insert-green-lg.jpg" />
-    <Content Include="Content\m15\cards\m15-activity-insert-green.jpg" />
-    <Content Include="Content\m15\cards\m15-activity-insert-red-lg.jpg" />
-    <Content Include="Content\m15\cards\m15-activity-insert-red.jpg" />
-    <Content Include="Content\m15\cards\m15-activity-insert-white-lg.jpg" />
-    <Content Include="Content\m15\cards\m15-activity-insert-white.jpg" />
-    <Content Include="Content\m15\cards\m15-fat-pack-card-box.png" />
-    <Content Include="Content\m15\cards\m15-fat-pack-deck-box.png" />
-    <Content Include="Content\m15\cards\m15-fat-pack-mural.png" />
-    <Content Include="Content\m15\cards\m15-fat-pack-players-guide.png" />
-    <Content Include="Content\m15\cards\m15-fat-pack-rules-reference-card.png" />
-    <Content Include="Content\m15\cards\m15-spindown-life-counter-black.png" />
-    <Content Include="Content\m15\cards\m15-spindown-life-counter-blue.png" />
-    <Content Include="Content\m15\cards\m15-spindown-life-counter-green.png" />
-    <Content Include="Content\m15\cards\m15-spindown-life-counter-red.png" />
-    <Content Include="Content\m15\cards\m15-spindown-life-counter-white.png" />
     <Content Include="Content\mma\images\bg.jpg" />
     <Content Include="Content\mma\images\logo-word-orig.png" />
     <Content Include="Content\mma\images\logo-word-sm.png" />
@@ -1107,6 +1211,8 @@
     <Content Include="Content\frf\images\symbol.png" />
     <Content Include="Content\frf\set.css" />
     <Content Include="Content\util\ba-simple-proxy.php" />
+    <Content Include="Content\util\importer-decklist.html" />
+    <Content Include="Content\util\importer-gm-json.html" />
     <Content Include="Content\util\style.css" />
     <Content Include="Content\v14\cards\m15-wolf-token.png" />
     <Content Include="Content\v14\cards\v14-collectors-guide.png" />
@@ -1118,7 +1224,6 @@
     <Content Include="Content\v14\images\symbol-original.png" />
     <Content Include="Content\v14\images\symbol.png" />
     <Content Include="Content\v14\set.css" />
-    <Content Include="Content\m15\cards\m15-wolf-token.png" />
     <Content Include="Content\m15\images\bg.jpg" />
     <Content Include="Content\m15\images\logo-word-original.png" />
     <Content Include="Content\m15\images\logo-word-sm.png" />
@@ -1126,6 +1231,10 @@
     <Content Include="Content\m15\images\symbol-original.png" />
     <Content Include="Content\m15\images\symbol.png" />
     <Content Include="Content\m15\set.css" />
+    <Content Include="Content\v15\images\logo-word.png" />
+    <Content Include="Content\v15\images\symbol.png" />
+    <Content Include="Content\zve\images\logo-word.png" />
+    <Content Include="Content\zve\images\symbol.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\ai.js" />
@@ -1303,11 +1412,6 @@
     <Content Include="Content\ulg\cardsToken.json" />
     <Content Include="Content\ulg\packs.json" />
     <Content Include="Content\ulg\products.json" />
-    <Content Include="Content\uds\cardsMain.json" />
-    <Content Include="Content\uds\cardsOther.json" />
-    <Content Include="Content\uds\cardsToken.json" />
-    <Content Include="Content\uds\packs.json" />
-    <Content Include="Content\uds\products.json" />
     <Content Include="Content\ons\cardsMain.json" />
     <Content Include="Content\ons\cardsOther.json" />
     <Content Include="Content\ons\cardsToken.json" />
@@ -1323,9 +1427,90 @@
     <Content Include="Content\scg\cardsToken.json" />
     <Content Include="Content\scg\packs.json" />
     <Content Include="Content\scg\products.json" />
+    <Content Include="Content\dtk\import-settings-dtk.json" />
+    <Content Include="Content\dtk\import-exceptions-dtk.json" />
+    <Content Include="Content\dtk\cardsMain.json" />
+    <Content Include="Content\dtk\cardsOther.json" />
+    <Content Include="Content\dtk\cardsToken.json" />
+    <Content Include="Content\dtk\packs.json" />
+    <Content Include="Content\dtk\products.json" />
+    <Content Include="Content\ddo\import-exceptions.json" />
+    <Content Include="Content\ddo\import-settings.json" />
+    <Content Include="Content\ddo\cardsMain.json" />
+    <Content Include="Content\ddo\packs.json" />
+    <Content Include="Content\ddo\products.json" />
+    <Content Include="Content\ddo\cardsOther.json" />
+    <Content Include="Content\ddo\cardsToken.json" />
+    <Content Include="Content\tpr\cardsMain.json" />
+    <Content Include="Content\tpr\cardsOther.json" />
+    <Content Include="Content\tpr\cardsToken.json" />
+    <Content Include="Content\tpr\import-exceptions.json" />
+    <Content Include="Content\tpr\import-settings.json" />
+    <Content Include="Content\tpr\packs.json" />
+    <Content Include="Content\tpr\products.json" />
+    <Content Include="Content\mm2\cardsMain.json" />
+    <Content Include="Content\mm2\cardsOther.json" />
+    <Content Include="Content\mm2\cardsToken.json" />
+    <Content Include="Content\mm2\import-exceptions.json" />
+    <Content Include="Content\mm2\import-settings.json" />
+    <Content Include="Content\mm2\packs.json" />
+    <Content Include="Content\mm2\products.json" />
+    <Content Include="Content\som\cardsMain.json" />
+    <Content Include="Content\som\cardsOther.json" />
+    <Content Include="Content\som\cardsToken.json" />
+    <Content Include="Content\som\import-exceptions.json" />
+    <Content Include="Content\som\import-settings.json" />
+    <Content Include="Content\som\packs.json" />
+    <Content Include="Content\som\products.json" />
+    <Content Include="Content\mbs\cardsMain.json" />
+    <Content Include="Content\mbs\cardsOther.json" />
+    <Content Include="Content\mbs\cardsToken.json" />
+    <Content Include="Content\mbs\import-exceptions.json" />
+    <Content Include="Content\mbs\import-settings.json" />
+    <Content Include="Content\mbs\packs.json" />
+    <Content Include="Content\mbs\products.json" />
+    <Content Include="Content\nph\cardsMain.json" />
+    <Content Include="Content\nph\cardsOther.json" />
+    <Content Include="Content\nph\cardsToken.json" />
+    <Content Include="Content\nph\import-exceptions.json" />
+    <Content Include="Content\nph\import-settings.json" />
+    <Content Include="Content\nph\packs.json" />
+    <Content Include="Content\nph\products.json" />
+    <Content Include="Content\ori\cardsMain.json" />
+    <Content Include="Content\ori\cardsOther.json" />
+    <Content Include="Content\ori\cardsToken.json" />
+    <Content Include="Content\ori\import-exceptions.json" />
+    <Content Include="Content\ori\import-settings.json" />
+    <Content Include="Content\ori\packs.json" />
+    <Content Include="Content\ori\products.json" />
+    <Content Include="Content\uds\cardsMain.json" />
+    <Content Include="Content\uds\cardsOther.json" />
+    <Content Include="Content\uds\cardsToken.json" />
+    <Content Include="Content\uds\packs.json" />
+    <Content Include="Content\uds\products.json" />
+    <Content Include="Content\ody\cardsMain.json" />
+    <Content Include="Content\ody\cardsOther.json" />
+    <Content Include="Content\ody\cardsToken.json" />
+    <Content Include="Content\ody\import-exceptions.json" />
+    <Content Include="Content\ody\import-settings.json" />
+    <Content Include="Content\ody\packs.json" />
+    <Content Include="Content\ody\products.json" />
+    <Content Include="Content\tor\cardsMain.json" />
+    <Content Include="Content\tor\cardsOther.json" />
+    <Content Include="Content\tor\cardsToken.json" />
+    <Content Include="Content\tor\import-exceptions.json" />
+    <Content Include="Content\tor\import-settings.json" />
+    <Content Include="Content\tor\packs.json" />
+    <Content Include="Content\tor\products.json" />
+    <Content Include="Content\jud\cardsMain.json" />
+    <Content Include="Content\jud\cardsOther.json" />
+    <Content Include="Content\jud\cardsToken.json" />
+    <Content Include="Content\jud\import-exceptions.json" />
+    <Content Include="Content\jud\import-settings.json" />
+    <Content Include="Content\jud\packs.json" />
+    <Content Include="Content\jud\products.json" />
     <None Include="Properties\PublishProfiles\mtgen-local.pubxml" />
     <None Include="Properties\PublishProfiles\mtgen.pubxml" />
-    <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\backbone-min.js" />
     <Content Include="Scripts\fancybox2\blank.gif" />
     <Content Include="Scripts\fancybox2\fancybox_loading%402x.gif" />
@@ -1343,12 +1528,14 @@
     <Content Include="Scripts\fancybox2\jquery.fancybox.js" />
     <Content Include="Scripts\fancybox2\jquery.fancybox.pack.js" />
     <Content Include="Scripts\holder.js" />
-    <Content Include="Scripts\jquery-2.1.1.js" />
-    <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery.base64.min.js" />
     <Content Include="Scripts\jquery.eventable.js" />
     <Content Include="Scripts\jquery.sticky-kit.min.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -1371,8 +1558,6 @@
     <Content Include="Views\Shared\OLD_Layout.cshtml" />
     <Content Include="Content\sets.json" />
     <Content Include="Scripts\mtg-generator.js" />
-    <Content Include="Content\util\importer-decklist.html" />
-    <Content Include="Content\util\importer-gm-json.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1446,6 +1631,17 @@
     <Content Include="Views\Set\ons.cshtml" />
     <Content Include="Views\Set\lgn.cshtml" />
     <Content Include="Views\Set\scg.cshtml" />
+    <Content Include="Views\Set\dtk.cshtml" />
+    <Content Include="Views\Set\ddo.cshtml" />
+    <Content Include="Views\Set\tpr.cshtml" />
+    <Content Include="Views\Set\mm2.cshtml" />
+    <Content Include="Views\Set\som.cshtml" />
+    <Content Include="Views\Set\mbs.cshtml" />
+    <Content Include="Views\Set\nph.cshtml" />
+    <Content Include="Views\Set\ori.cshtml" />
+    <Content Include="Views\Set\ody.cshtml" />
+    <Content Include="Views\Set\tor.cshtml" />
+    <Content Include="Views\Set\jud.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1455,7 +1651,6 @@
     <Folder Include="Content\ons\cards\" />
     <Folder Include="Content\pcy\cards\" />
     <Folder Include="Content\scg\cards\" />
-    <Folder Include="Content\uds\cards\" />
     <Folder Include="Content\ulg\cards\" />
     <Folder Include="Content\usg\cards\" />
     <Folder Include="Views\Proxy\" />
@@ -1498,7 +1693,9 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.17.0\build\Microsoft.ApplicationInsights.Agent.Intercept.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.17.0\build\Microsoft.ApplicationInsights.Agent.Intercept.targets'))" />
   </Target>
+  <Import Project="..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.17.0\build\Microsoft.ApplicationInsights.Agent.Intercept.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.Agent.Intercept.0.17.0\build\Microsoft.ApplicationInsights.Agent.Intercept.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
