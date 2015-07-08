@@ -23,6 +23,7 @@ Normally 15 cards per booster:
 
 - 1 in 4 boosters contains a foil which may be any card of any rarity (incl Basic Land), which replaces a Common
 
+8-Jul-2015: Fixed bug where it was allowing duplicates.
 13-Jun-2015: Added Faction support (for SOM block).
 3-Jan-2015: Added Other Colourless category to handle new FRF {8} Ugin, the Spirit Dragon.
 18-Sep-2014: Added Back to Top buttons.
@@ -790,7 +791,11 @@ var mtgGen = (function (my, $) {
         var validCards = _.clone(cards);
         if (excludeIndices) {
             // reject cards whose index is in the excludeIndices
-            validCards = _.reject(validCards, function (card) { _.find(excludeIndices, function (index) { return card.index == index; }); });
+            // TODO: the new way I'm doing this looks expensive.. the line below this is compact but WRONG, but a good starting point?
+            //validCards = _.reject(validCards, function (card) { _.find(excludeIndices, function (index) { return card.index == index; }) === undefined; });
+            var validIndices = _.reduce(validCards, function (memo, validCard) { return memo.concat(validCard.index); }, []);
+            var newValidIndices = _.difference(validIndices, excludeIndices);
+            validCards = _.filter(validCards, function (card) { return _.find(newValidIndices, function (validIndex) { return card.index == validIndex; }) });
             if (num > validCards.length) {
                 console.warn("ERROR: Trying to choose " + num + " cards but after excluded cards, only " + validCards.length + " available. Taking all:", validCards);
             }
