@@ -23,6 +23,7 @@ Normally 15 cards per booster:
 
 - 1 in 4 boosters contains a foil which may be any card of any rarity (incl Basic Land), which replaces a Common
 
+8-Jul-2015: Export now replaces ’ with ' (the former messed up Cockatrice).
 8-Jul-2015: Fixed bug where it was allowing duplicates.
 13-Jun-2015: Added Faction support (for SOM block).
 3-Jan-2015: Added Other Colourless category to handle new FRF {8} Ugin, the Spirit Dragon.
@@ -376,7 +377,6 @@ var mtgGen = (function (my, $) {
             if (my.cards === undefined || my.cards.length < 1) {
                 my.throwTerminalError(errorMsg + "Missing cards, which should be in cardsMain.json\nCannot continue.");
             }
-
 
             // add card indicies and sort orders for internal use
             var setCardsLoadedCount = 0;
@@ -2337,6 +2337,7 @@ var mtgGen = (function (my, $) {
             } else {
                 countedCards[matchTitle].count++;
             }
+            card.title = card.title.replace("’", "'"); // ’ messes up cockatrice
         });
 
         // convert associative array to numeric array
