@@ -1,0 +1,1149 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <title>JSON Magic: The Gathering: Card Generator Gathering Magic IMPORTER</title>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="/scripts/jquery.base64.min.js"></script>
+</head>
+<body class="home">
+    <h1>JSON Magic: The Gathering Sealed Deck Card Generator Gathering Magic IMPORTER</h1>
+    <img itemprop="image" src="http://copper-dog.com/mtg-generator/images/mtg_logo.jpg" />
+    <p>This page imports card data from the <a href="http://www.gatheringmagic.com/" target="_blank">Gathering Magic spoiler list</a>, <a href="https://www.google.com/search?q=card+image+gallery+wizards+of+the+coast" target="_blank">WotC card images</a>, and <a href="https://www.google.com/search?q=tokens+wizards+of+the+coast" target="_blank">WotC tokens</a> to help create the Sealed Deck Card Generator pages for each release.</p>
+    <ul>
+        <li>23-Jun-2015: Now supports Delete Card in import-exceptions.json (starting with ORI).</li>
+        <li>13-Jun-2015: Added support for SOM-block factions via mtgjson import.</li>
+        <li>12-Jun-2015: Now works even if you don't supply an exceptions file.</li>
+        <li>10-May-2015: Now supports Add New Card in import-exceptions.json (starting with MM2).</li>
+        <li>9-Mar-2015: Now sorts card logging outputs.</li>
+        <!--OLDER
+        <li>4-Feb-2015: Added mtgjson.com importer.</li>
+        <li>29-Oct-2014: Switched to client-side holder.js for placeholder card generation -- the other ones kept going dead on me.</li>
+        <li>1-Sep-2014: NEW wotc processor to deal with yet another card gallery format (ktk). Also added a switch for guild/clan GM metadata based on set code.</li>
+        <li>27-Aug-2014: No longer stamps cards with the types. This is done better and dynamically with cardTypes in mtg-generator.js now.</li>
+        <li>11-Jul-2014: Now allows reprocessing of card data while keeping original image src from cardsMain.json.</li>
+        <li>11-Jul-2014: Once again defaults to GM images (if it exists) if WotC image is missing.</li>
+        <li>10-Jul-2014: Now includes GM card numbers.</li>
+        <li>4-Jul-2014: Now grabs new wotc-format tokens.</li>
+        <li>26-Jun-2014: You can now skip the token file.</li>
+        <li>26-Jun-2014: Added colours and rarities, killed cindex.</li>
+        <li>25-Jun-2014: Now uses http://mrpurple.de/ to generate placeholder cards.</li>
+        <li>23-Jun-2014: Modified to use the newly redesigned WotC site.</li>
+        <li>4-Jun-2014: Now ignores punctuation differences when matching GM and WotC cards which makes for MUCH smaller exception lists.</li>
+        <li>28-May-2014: Now uses http://placebox.es/265x370/cccccc/969696/Tip%20Card,20/ instead of http://placehold.it/265x370&text=Tip+Card for placeholder cards.</li>
+        <li>24-Jan-2014: Now uses .colour to determine proper colour type (and if it's multi-colour).</li>
+        <li>16-May-2013: Now uses crappy generated cards if there's a GM entry but no image.</li>
+        <li>16-May-2013: Will now run even if you don't provide a WotC link for images.</li>
+        <li>5-May-2013: Rewritten: Dynamically loads html from urls, one output for each of the 3 json files.</li>
+        <li>5-Jan-2012: Added option to generate tip card.</li>
+        <li>3-Jan-2012: Created. The MtG Salvation has a TERRIBLE html format. Gathering Magic is better.</li>
+        -->
+    </ul>
+    <br />
+    <h2 id='local-error' class='error' style="display:none">NOTE: You CANNOT run this thing locally. It won't work. It needs to run through the ba-simple-proxy.php to work..</h2>
+    <section id="options">
+        <label for="load-settings">Load Existing Settings:</label> <input id="load-settings" type="file" accept="application/json" />
+        <br />
+        <br />
+        <label for="url-cards">Gathering Magic URL from which to import card data:</label>
+        <br />
+        <input id="url-cards" size="100" />
+        <br />
+        <br />
+        <label for="url-images">WotC URL from which to retrieve card images. <em>(If none supplied or no image match found, it'll use the GM image. If no GM image, it'll generate a card from Mr. Purple.)</em>:</label>
+        <br />
+        <input id="url-images" size="100" />
+        <br />
+        <br />
+        <label for="url-tokens">WotC URL from which to retrieve token images:</label>
+        <br />
+        <input id="url-tokens" size="100" />
+        <br />
+        <br />
+        <label for="url-exceptions">Exceptions JSON file that handles any parsing errors:</label>
+        <br />
+        <input id="url-exceptions" size="100" />
+        <br />
+        <br />
+        <label for="url-current-json">Existing cardsMain.json file, used with Reprocess Card Data button below. <em>(Used to retain old wotc images when we can no longer find that larger size, but load new card data):</em></label>
+        <br />
+        <input id="url-current-json" size="100" />
+        <br />
+        <br />
+        <label for="url-mtgjson">mtgjson.com file (If supplied, the only other thing that would be used is exceptions):</label>
+        <br />
+        <input id="url-mtgjson" size="100" />
+        <br />
+        <br />
+        <input id="opt-tokens-only" type="radio" name="token-parsing" value="card-size" checked="checked" /> <label for="opt-tokens-only">Only take 265-wide images</label><br />
+        <input id="opt-tokens-all" type="radio" name="token-parsing" value="all" /> <label for="opt-tokens-all">Take all images -- I'll sort them out</label>
+        <br />
+        <br />
+        <label for="set-name">Set name (e.g.: Dragon's Maze):</label>
+        <br />
+        <input id="set-name" />
+        <br />
+        <label for="set-code">Set code (e.g.: dgm):</label>
+        <br />
+        <input id="set-code" />
+        <br />
+        <label for="marketing-card-src">Marketing card img src (Google search or try <a href="http://www.wizards.com/Magic/Magazine/Archive.aspx?tag=arcana&description=Arcana">here</a>):</label>
+        <br />
+        <input id="marketing-card-src" value="http://placebox.es/265x370/cccccc/969696/Marketing%20Card,20/" size="100" />
+        <br />
+        <br />
+        <a id="save-settings" href="#">Save These Settings</a>
+        <br />
+        <br />
+        <p>Create everything from scratch:</p>
+        <input id="import" type="submit" value="Import Card Data" style="font-size:150%" />
+        <br />
+        <br />
+        <p>Keep current cardsMain.json's images but reprocess the card data:</p>
+        <input id="reprocess-data" type="submit" value="Reprocess Card Data" style="font-size:150%" />
+        <img id="set-img" src="http://fc03.deviantart.net/fs31/f/2008/212/9/8/Coalition_Symbol_by_Metallicfire0.jpg" width="256" />
+        <p id="status"></p>
+        <p id="msg"></p>
+    </section>
+    <h2>Output</h2>
+    <h3>Parsing Log</h3>
+    <p>Use an exceptions JSON file (like <a href="http://copper-dog.com/mtg-generator/rtr/import-exceptions-rtr.json" target="_blank">this one</a>) to fix any errors below.</p>
+    <section id="log"></section>
+    <h3>cardsMain.json</h3>
+    <textarea id="out-main" cols="100" rows="20"></textarea>
+    <h3>cardsToken.json</h3>
+    <textarea id="out-tokens" cols="100" rows="20"></textarea>
+    <h3>cardsOther.json</h3>
+    <textarea id="out-other" cols="100" rows="20"></textarea>
+    <footer>
+        <p>Created by: Cam Marsollier - <a href="mailto:cam.marsollier@gmail.com">cam.marsollier@gmail.com</a></p>
+        <p>Note that this site has no affiliation with <a href="http://www.wizards.com/Magic/">Wizards of the Coast</a>, owner of Magic: The Gathering.</p>
+    </footer>
+    <script>
+        'use strict';
+        $(document).ready(function () {
+            /*
+				Typical url: http://www.mtgsalvation.com/printable-gatecrash-spoiler.html
+
+				Typical card:
+					<div class="spoiler-card w-card type-Creature subtype-Human subtype-Soldier confirmed r-common wm-orzhov num-5" "="">
+						<a name="num-5"></a>
+						<div class="cost"><nobr><img src="http://s3.mananation.com/images/mana/2.gif" class="mana" alt="{2}"><img src="http://s3.mananation.com/images/mana/w.gif" class="mana" alt="{W}"></nobr></div>
+						<p><span class="title"><a href="http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/GTC/Basilica_Guards.jpg" class="thickbox"><img style="margin: 0px 5px 0px 0px;" src="http://s3.gatheringmagic.com/images/spoilers/pic.png" alt=""></a> <a href="http://www.coolstuffinc.com/main_viewCard.php?Card_Name=Basilica Guards&amp;viewtype=Magic%20the%20Gathering%20Cards">Basilica Guards</a></span></p>
+						<div class="rarity smallertext">Com.</div>
+						<p><span class="type smallertext">Creature – Human Soldier</span></p>
+						<div class="text">Defender<br>
+						Extort <i>(Whenever you cast a spell, you may pay {wb}. If you do, each opponent loses 1 life and you gain that much life.)</i></div>
+						<div class="powtou">1/4</div>
+						<div class="artist">Dan Scott</div>
+						<div class="cardnum">5/249</div>
+						<div class="source"><a href="http://www.wizards.com/magic/magazine/article.aspx?x=mtg/daily/feature/228">Gatecrash Mechanics</a></div>
+					</div>
+ 			 */
+
+            if (window.location.protocol == 'file:') { $('#local-error').show(); }
+
+            /* NOTE: these colours and rarities are duplicated in the mtg-generator.js files. If you change this here you must change it in those files. */
+            var colours = {
+                white: { sorder: 1, code: 'w', name: 'White' },
+                blue: { sorder: 2, code: 'u', name: 'Blue' },
+                black: { sorder: 3, code: 'b', name: 'Black' },
+                red: { sorder: 4, code: 'r', name: 'Red' },
+                green: { sorder: 5, code: 'g', name: 'Green' },
+                multicolour: { sorder: 6, code: 'm', name: 'Multicolour' },
+                artifact: { sorder: 17, code: 'a', name: 'Artifact', colourless: true },
+                land: { sorder: 27, code: 'l', name: 'Land', colourless: true },
+                colorless: { sorder: 30, code: 'c', name: 'Colourless', colourless: true },
+                other: { sorder: 37, code: 'o', name: 'Other: Token/Pack-In/Marketing', colourless: true },
+                unknown: { sorder: 97, code: '?', name: 'Unknown Colour', colourless: true },
+            };
+
+            function getColourByCode(code) {
+                for (var colour in colours) {
+                    if (colours[colour].code == code) {
+                        return colours[colour];
+                    }
+                }
+                return colours.unknown;
+            }
+
+            var rarities = {
+                common: { sorder: 1, code: 'c', name: 'Common' },
+                uncommon: { sorder: 2, code: 'u', name: 'Uncommon' },
+                rare: { sorder: 3, code: 'r', name: 'Rare' },
+                mythic: { sorder: 4, code: 'm', name: 'Mythic Rare' },
+                special: { sorder: 5, code: 's', name: 'Special' },
+                unknown: { sorder: 97, code: '?', name: 'Unknown' },
+            };
+
+            function getRarityByCode(code) {
+                for (var rarity in rarities) {
+                    if (rarities[rarity].code == code) {
+                        return rarities[rarity];
+                    }
+                }
+                return rarities.unknown;
+            }
+
+            function sortByTitle(a, b) {
+                var aName = createMatchTitle(a.title);
+                var bName = createMatchTitle(b.title);
+                return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
+            }
+
+            function isBadResponse(response) {
+                if (response == null) { return true; }
+                if (!response.indexOf) { return true; }
+                if (response.indexOf('ERROR') == 0 || response.indexOf('HTTP/1.1 301') == 0) { return true; }
+                if (response.indexOf("The resource you are looking for has been removed, had its name changed, or is temporarily unavailable.") > -1) { return true; }
+                if (response.indexOf('CopperDog - Design::Web::Programming') > -1) { return true; } // we load copper-dog.com if there's a blank entry
+                if (response.indexOf("404 Not Found") > -1) { return true; }
+                return false;
+            }
+
+            //from: http://stackoverflow.com/questions/10073699/pad-a-number-with-leading-zeros-in-javascript
+            // example usage
+            //	pad(10, 4);      // 0010
+            //	pad(9, 4);       // 0009
+            //	pad(123, 4);     // 0123
+            //	pad(10, 4, '-'); // --10
+            function pad(n, width, z) {
+                z = z || '0';
+                n = n + '';
+                return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+            }
+
+            // adapted from: http://guegue.net/friendlyURL_JS
+            function cardTitleUrl(str, max) {
+                if (max === undefined) max = 32;
+                var a_chars = new Array(
+                  new Array("a", /[áàâãªÁÀÂÃ]/g),
+                  new Array("e", /[éèêÉÈÊ]/g),
+                  new Array("i", /[íìîÍÌÎ]/g),
+                  new Array("o", /[òóôõºÓÒÔÕ]/g),
+                  new Array("u", /[úùûÚÙÛ]/g),
+                  new Array("c", /[çÇ]/g),
+                  new Array("n", /[Ññ]/g)
+                );
+                // Replace vowel with accent without them
+                for (var i = 0; i < a_chars.length; i++)
+                    str = str.replace(a_chars[i][1], a_chars[i][0]);
+                // first replace whitespace by +, second remove repeated + by just one,
+                // third delete all chars which are not between a-z or 0-9, fourth trim the string and
+                // the last step truncate the string to 32 chars
+                return str.replace(/\s+/gi, '~').replace(/[^a-z0-9\~]/gi, '').replace(/\-{2,}/gi, '~').replace(/~/gi, '%20').replace(/(^\s*)|(\s*$)/gi, '').substr(0, max);
+            }
+
+            function getCardColourFromCard(card) {
+                // derived from casting cost
+                var cardColours = card.cost.toLowerCase().replace(/{|[0-9]/g, "").replace(/}/g, " ").trim().split(" ");
+                var arrayUnique = function (a) {
+                    return a.reduce(function (p, c) {
+                        if (p.indexOf(c) < 0) p.push(c);
+                        return p;
+                    }, []);
+                };
+                var uniqueColours = arrayUnique(cardColours);
+                var uniqueColoursString = uniqueColours.join('');
+
+                var colourCount = 0;
+                var uniqueColourIndex = 0; // used only if the card ends up being single colour
+                var uniqueColourType = ""; // used only if the card ends up being single colour
+                if (uniqueColoursString.indexOf('w') > -1) { colourCount++; uniqueColourIndex = 1; uniqueColourType = "w"; }
+                if (uniqueColoursString.indexOf('u') > -1) { colourCount++; uniqueColourIndex = 2; uniqueColourType = "u"; }
+                if (uniqueColoursString.indexOf('b') > -1) { colourCount++; uniqueColourIndex = 3; uniqueColourType = "b"; }
+                if (uniqueColoursString.indexOf('r') > -1) { colourCount++; uniqueColourIndex = 4; uniqueColourType = "r"; }
+                if (uniqueColoursString.indexOf('g') > -1) { colourCount++; uniqueColourIndex = 5; uniqueColourType = "g"; }
+
+                // colourTypes from GatheringMagic:
+                //	w = white
+                //	u = blue
+                //	b = black
+                //	r = red
+                //	g = green
+                //	m = multi-colour
+                //	c = colourless
+                var finalColour = '';
+                switch (colourCount) {
+                    case 0:
+                        // colourless - determine sub-type
+                        if (card.colour == 'c') {
+                            var cardType = card.type.toLowerCase();
+                            // manually determine colour because GM didn't do it
+                            if (cardType.indexOf('artifact') > -1) {
+                                finalColour = colours.artifact.code;
+                            }
+                            else if (cardType.indexOf('land') > -1) {
+                                finalColour = colours.land.code;
+                            }
+                            else {
+                                console.log('Could not identify colour from GM "' + card.colour + '" on card: ' + card.title + '. Set to Other Colourless. Usually check the type (which we have already checked to be not artifact or land): ' + card.type);
+                                finalColour = colours.colorless.code;
+                            }
+                        }
+                        else {
+                            finalColour = getColourByCode(card.colour).code; // should result in a, l, o, or ?
+                        }
+                        break;
+                    case 1: // single-colour, as determined above
+                        finalColour = uniqueColourType;
+                        break;
+                    default: // multi-colour
+                        finalColour = colours.multicolour.code;
+                        break;
+                }
+                return finalColour;
+            }
+
+            function loadAndProcessAllFiles(isProcessingDataOnly) {
+                $('#status').html("<strong>Started at " + (new Date()) + "</strong>");
+
+                // load all files and don't continue until all are loaded
+                var promises = [];
+
+                //promises.push($.get('ba-simple-proxy.php?mode=native&url='+$('#url-cards').val()));
+                //promises.push($.get('ba-simple-proxy.php?mode=native&url='+$('#url-images').val()));
+
+                // it's hard to parse the results unless they're all there, so we'll force something to be loaded for each even if it's missing
+
+                if ($('#url-cards').val().length > 0) {
+                    promises.push($.get('ba-simple-proxy.php?mode=native&url=' + $('#url-cards').val()));
+                }
+                else {
+                    promises.push($.get('ba-simple-proxy.php?mode=native&url=http://copper-dog.com/'));
+                }
+
+                if ($('#url-images').val().length > 0) {
+                    promises.push($.get('ba-simple-proxy.php?mode=native&url=' + $('#url-images').val()));
+                }
+                else {
+                    promises.push($.get('ba-simple-proxy.php?mode=native&url=http://copper-dog.com/'));
+                }
+
+                if ($('#url-tokens').val().length > 0) {
+                    promises.push($.get('ba-simple-proxy.php?mode=native&url=' + $('#url-tokens').val()));
+                }
+                else {
+                    promises.push($.get('ba-simple-proxy.php?mode=native&url=http://copper-dog.com/'));
+                }
+
+                if ($('#url-exceptions').val().length > 0) {
+                    promises.push($.get('ba-simple-proxy.php?mode=native&url=' + $('#url-exceptions').val()));
+                }
+                else {
+                    promises.push($.get('ba-simple-proxy.php?mode=native&url=http://copper-dog.com/'));
+                }
+
+                if ($('#url-current-json').val().length > 0) {
+                    promises.push($.get('ba-simple-proxy.php?mode=native&url=' + $('#url-current-json').val()));
+                }
+                else {
+                    promises.push($.get('ba-simple-proxy.php?mode=native&url=http://copper-dog.com/'));
+                }
+
+                // if mtgjson.com file supplied, ignore all the rest and just load that
+                if ($('#url-mtgjson').val().length > 0) {
+                    promises.push($.get('ba-simple-proxy.php?mode=native&url=' + $('#url-mtgjson').val()));
+                }
+
+                $.when.apply($, promises).done(function () {
+                    var htmlCards = arguments[0][0];
+                    // the first result is essential (unless mtgjson is specified)
+                    if (isBadResponse(htmlCards) && arguments[4][0] === undefined) {
+                        alert("ERROR: No data retrieved from " + $('#url-cards').val() + ". Response:" + htmlCards);
+                    }
+
+                    var htmlImages = arguments[1][0];
+                    if (isBadResponse(htmlImages)) {
+                        htmlImages = undefined; // this is okay -- it'll just default to using all GM images
+                    }
+
+                    var htmlTokens = arguments[2][0];
+                    if (isBadResponse(htmlTokens)) {
+                        htmlTokens = undefined; // this is okay -- it's optional
+                    }
+
+                    var jsonExceptions = arguments[3][0];
+                    if (isBadResponse(jsonExceptions)) {
+                        jsonExceptions = undefined; // this is okay -- it's optional
+                    }
+
+                    var cardsJson = arguments[4][0];
+                    if (isBadResponse(cardsJson)) {
+                        if (isProcessingDataOnly == true) {
+                            alert("ERROR: You requested to reprocess but no data retrieved from " + $('#url-current-json').val() + ". Response:" + cardsJson);
+                        }
+                        else {
+                            cardsJson = undefined; // this is okay -- it's optional
+                        }
+                    }
+
+                    if (arguments[5] !== undefined) {
+                        var mtgJson = arguments[5][0];
+                        if (isBadResponse(mtgJson)) {
+                            cardsJson = undefined; // this is okay -- it's optional
+                        }
+                    }
+
+                    createOutputJson(htmlCards, htmlImages, htmlTokens, jsonExceptions, cardsJson, isProcessingDataOnly, mtgJson);
+                });
+
+            }
+
+            // Create a sanitized title to avoid the punctuation differences
+            // Site to lookup chars: http://www.fileformat.info/info/unicode/char/search.htm
+            function createMatchTitle(title) {
+                var clean = title.trim().replace(/\u00C6/g, 'ae').toLowerCase(); // \u00C6 = Æ = LATIN CAPITAL LETTER AE
+                clean = clean.replace(/\+/g, ' '); // GM uses names like "Catch+Release" with no space
+                clean = clean.replace(/[^a-z0-9 �]+/g, '');
+                clean = clean.replace(/ +/, ' ');
+                return clean;
+            }
+
+            function createOutputJson(htmlCards, htmlImages, htmlTokens, jsonExceptions, cardsJson, isProcessingDataOnly, mtgJson) {
+                $('#status').html("<strong>Have data; now processing at " + (new Date()) + "</strong>");
+
+                $('#output-textarea').val('');
+                $('#output').empty;
+                var $html = $(htmlCards);
+                var hasWotcImages = !(htmlImages == undefined || htmlImages == null || htmlImages.length < 1);
+                var $images = $(htmlImages);
+                var $tokens = $(htmlTokens);
+                var mainOut = [];
+                var tokenOut = [];
+                var otherOut = [];
+                var noMtgMatch = [];
+                var missingImage = [];
+                var fixedViaExceptions = [];
+                var deletedViaExceptions = [];
+                var guildClanType;
+
+                var setCode = $('#set-code').val().trim();
+
+                // generate standard cards if requsted
+                var marketingCard = {};
+                marketingCard.src = $('#marketing-card-src').val();
+                if (marketingCard.src.length > 0) {
+                    marketingCard.title = ($('#set-name').val() + ' Marketing Card').trim();
+                    marketingCard.set = setCode;
+                    marketingCard.colour = colours.other.code;
+                    marketingCard.rarity = rarities.common.code;
+                    marketingCard.type = 'Marketing';
+                    marketingCard.marketing = true;
+                    marketingCard.usableForDeckBuilding = false;
+                    otherOut.push(marketingCard);
+                }
+                else {
+                    var marketingCard1 = {};
+                    marketingCard1.src = 'http://copper-dog.com/mtg-generator/images/mtg-marketing1.png';
+                    marketingCard1.title = 'Tip/Marketing Card';
+                    marketingCard1.set = setCode;
+                    marketingCard1.colour = colours.other.code;
+                    marketingCard1.rarity = rarities.common.code;
+                    marketingCard.type = 'Marketing';
+                    marketingCard.marketing = true;
+                    marketingCard.usableForDeckBuilding = false;
+                    otherOut.push(marketingCard1);
+
+                    var marketingCard2 = {};
+                    marketingCard2.src = 'http://copper-dog.com/mtg-generator/images/mtg-marketing2.png';
+                    marketingCard2.title = 'Tip/Marketing Card';
+                    marketingCard2.set = setCode;
+                    marketingCard2.colour = colours.other.code;
+                    marketingCard2.rarity = rarities.common.code;
+                    marketingCard.type = 'Marketing';
+                    marketingCard.marketing = true;
+                    marketingCard.usableForDeckBuilding = false;
+                    otherOut.push(marketingCard2);
+                }
+
+                // create dictionary of wotc images/titles
+                var wotcImages = [];
+                var wotcImage;
+
+                // v1 - original wotc site
+                var $rawWotcImages = $images.find('img[alt].article-image');
+                if ($rawWotcImages.length > 0) {
+                    $rawWotcImages.each(function (index, value) {
+                        wotcImage = {};
+                        wotcImage.title = value.alt.trim();
+                        wotcImage.matchTitle = createMatchTitle(wotcImage.title);
+                        wotcImage.src = value.src;
+                        wotcImages[wotcImage.matchTitle] = wotcImage;
+                    });
+                }
+
+                // v2 - 2014 site redesign, m15 gallery
+                if (wotcImages.length < 1) {
+                    $rawWotcImages = $images.find('.advanced-card-gallery-container img[alt]');
+                    if ($rawWotcImages.length > 0) {
+                        $rawWotcImages.each(function (index, value) {
+                            wotcImage = {};
+                            wotcImage.title = value.alt.trim();
+                            wotcImage.matchTitle = createMatchTitle(wotcImage.title);
+                            wotcImage.src = value.src;
+                            wotcImages[wotcImage.matchTitle] = wotcImage;
+                        });
+                    }
+                }
+
+                // v3 - 20140901, ktk gallery -- hard to scan as anything unique is added by js
+                if (wotcImages.length < 1) {
+                    var $wotcImages = $images.find('img.noborder');
+                    if ($wotcImages.length > 0) {
+                        var $wotcImageContainer, $cardTitle;
+                        $wotcImages.each(function (index, img) {
+                            $wotcImageContainer = $(img).parent();
+                            $cardTitle = $wotcImageContainer.find("i");
+                            if ($cardTitle.length === 1) {
+                                wotcImage = {};
+                                wotcImage.title = $cardTitle.text().trim();
+                                wotcImage.matchTitle = createMatchTitle(wotcImage.title);
+                                wotcImage.src = img.src;
+                                wotcImages[wotcImage.matchTitle] = wotcImage;
+                            }
+                        });
+                    }
+                }
+
+                // v4 - 20150305, dtk gallery -- hard to scan as anything unique is added by js
+                if (wotcImages.length < 1) {
+                    var $wotcImages = $images.find('#content-detail-page-of-an-article img');
+                    if ($wotcImages.length > 0) {
+                        var $wotcImageContainer, $cardTitle;
+                        $wotcImages.each(function (index, img) {
+                            $wotcImageContainer = $(img).parent();
+                            $cardTitle = $wotcImageContainer.find("i");
+                            if ($cardTitle.length === 1) {
+                                wotcImage = {};
+                                wotcImage.title = $cardTitle.text().trim();
+                                wotcImage.matchTitle = createMatchTitle(wotcImage.title);
+                                wotcImage.src = img.src;
+                                wotcImages[wotcImage.matchTitle] = wotcImage;
+                            }
+                        });
+                    }
+                }
+
+                // see if cardsMain.json data exists
+                var hasCardsMainJson = isProcessingDataOnly;
+                if (isProcessingDataOnly && !(cardsJson instanceof Array)) {
+                    alert("Data reprocessing requested but cardsMain.json url not supplied or file at that url is invalid.");
+                    hasCardsMainJson = false;
+                }
+
+                // if mtgJson exists, process into mainOut, which will cause the next (process GM cards) step to be skipped
+                if (mtgJson !== undefined) {
+                    // add each card, converting from mtgjson.com's format to our own
+                    $.each(mtgJson.cards, function (index, card) {
+                        //console.log('converting: ' + card.name);
+                        card.title = card.name;
+                        card.matchTitle = createMatchTitle(card.title); // used for matching Gathering Magic vs. WotC titles and card titles vs. exception titles
+                        card.set = setCode;
+                        card.cost = card.manaCost || '';
+                        card.rarity = card.rarity.substr(0, 1).toLowerCase();
+                        card.type = card.types[0];
+                        if (card.hasOwnProperty('subTypes') && card.subTypes.length > 0) {
+                            card.subtype = card.subtypes[0];
+                        }
+                        card.colour = getCardColourFromCard(card);
+                        card.num = card.number;
+                        card.src = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + card.multiverseid + "&type=card";
+
+                        // Adjust some of mtgJSON's format to our own:
+                        // Change their type from Land to Basic Land
+                        if (card.matchTitle === 'plains' || card.matchTitle === 'forest' || card.matchTitle === 'swamp' || card.matchTitle === 'island' || card.matchTitle === 'mountain') {
+                            card.type = "Basic Land";
+                            card.colour = "l";
+                        }
+                        if (card.hasOwnProperty('layout') && card.layout === 'token') {
+                            card.token = true;
+                        }
+                        if (card.hasOwnProperty('type') && card.type === 'Land') {
+                            card.colour = "l";
+                        }
+                        if (card.hasOwnProperty('type') && card.type === 'Artifact') {
+                            card.colour = "a";
+                            card.sorder = 17;
+                            card.colourless = true;
+                        }
+                        if (card.hasOwnProperty('watermark') && (card.set === 'som' || card.set === 'mbs' || card.set === 'nph')) {
+                            card.faction = card.watermark;
+                        }
+
+                        mainOut.push(card);
+                    });
+                }
+
+                // if jsonExceptions exists, create matchTitles for its entries
+                if (jsonExceptions !== undefined) {
+                    $.each(jsonExceptions, function (index, ex) {
+                        if (ex.hasOwnProperty('title')) {
+                            ex.matchTitle = createMatchTitle(ex.title);
+                        }
+                    });
+                }
+
+                // get all GM cards (or at least the mtgJson cards have to exist)
+                var $cards = $html.find('.spoiler-card');
+                if ($cards.length === 0 && mainOut.length === 0) {
+                    alert("No cards from Gathering Magic found. Note that you CANNOT run this thing locally. It won't work. It needs to run through the ba-simple-proxy.php to work.");
+                }
+                $.each($cards, function (index, el) {
+                    var card = new Object();
+                    el = $(el);
+
+                    var title = el.find('.title');
+                    if (title.length > 0) {
+                        card.title = title[0].textContent.trim();
+                        card.matchTitle = createMatchTitle(card.title); // used for matching Gathering Magic vs. WotC titles and card titles vs. exception titles
+                        var img = $(title).find('.thickbox');
+                        if (img.length > 0) {
+                            card.src = img[0].href;
+                            if (el.hasClass('wm-day') || el.hasClass('wm-night')) { // Double-Faced card
+                                card.width = 536;
+                            }
+                        }
+                    }
+
+                    card.set = setCode;
+
+                    card.cost = "";
+                    el.find('.cost img').each(function (index, value) {
+                        card.cost += $(value).attr('alt');
+                    });
+
+                    var rarity = el.find('.rarity');
+                    if (rarity.length > 0) {
+                        card.rarity = rarity[0].textContent[0].toLowerCase();
+                    }
+
+                    var type = el.find('.type');
+                    if (type.length > 0) {
+                        var types = type[0].textContent.split(' – ');
+                        card.type = types[0].trim();
+                        if (types.length > 1) {
+                            card.subtype = types[1].trim();
+                        }
+                        //KILL:card = addTypes(card);
+                    }
+
+                    var pt = el.find('.powtou');
+                    if (pt.length > 0) {
+                        var pts = pt[0].textContent.split('/');
+                        if (pts.length > 1) {
+                            card.power = pts[0].trim();
+                            card.toughness = pts[1].trim();
+                        }
+                        else if (pts.length == 1) {
+                            card.loyalty = pts[0].replace('[', '').replace(']', '').trim(); // must be a planeswalker
+                        }
+                        // otherwise it's something without power/toughness|loytlty, i.e.: land, spell, etc
+                    }
+
+                    if (el[0].classList.length > 1) {
+                        card.colour = el[0].classList[1][0];
+                    }
+
+                    // derived from casting cost
+                    card.colour = getCardColourFromCard(card);
+
+                    var cnum = el.find('.cardnum');
+                    if (cnum.length > 0) {
+                        var cnums = cnum[0].textContent.split('/');
+                        if (cnums.length > 1) {
+                            card.num = pad(cnums[0].trim(), 3);
+                        }
+                    }
+
+                    // if it has a guild or clan, save that
+                    $(el[0].classList).each(function (index, value) {
+                        if (value.indexOf('wm-') == 0) {
+                            if (guildClanType === undefined) {
+                                switch (setCode.toLowerCase()) {
+                                    case "rtr": // Guilds: Return to Ravniva, Gatecrash, Dragon's Maze
+                                    case "gtc":
+                                    case "dgm":
+                                        guildClanType = "guild";
+                                        break;
+
+                                    case "ktk": // Clans: Khans of Tarkir, Fate Reforged, Dragons of Tarkir
+                                    case "frf":
+                                    case "dtk":
+                                        guildClanType = "clan";
+                                        break;
+                                }
+                            }
+                            if (guildClanType !== undefined) {
+                                card[guildClanType] = value.replace('wm-', '').replace('//', '/');
+                            }
+                            else {
+                                console.log("WARNING: found wm-* class data in GM HTML but set code doesn't belong to anything with guilds/clans.");
+                            }
+                        }
+                    });
+
+                    // Use the image url from the WotC HTML if it has one (otherwise it will keep the one it got from MtG Salvation
+                    // Match on a sanitized title to avoid the punctuation differences
+                    if (!card.hasOwnProperty("useGmImg") || card.useGmImg !== true) { // don't look for an image if an exception has already overriden one
+                        var imgSrc = wotcImages[card.matchTitle];
+                        if (imgSrc) {
+                            card.src = imgSrc.src;
+                            card.title = imgSrc.title;
+                        }
+                        else {
+                            // warn if we can't find a matching MtG card
+                            if (hasWotcImages) {
+                                noMtgMatch.push(card);
+                            }
+
+                            // if no GM image and no WotC images supplied: create replacement card
+                            if (!card.src) {
+                                missingImage.push(card);
+                                card.src = createPlaceholderCardSrc(card);
+                                //card.src = createMrPurpleCardSrc(card);
+                            }
+                        }
+                    }
+
+                    // if we're doing data reprocessing, salvage the image from the old cardsMain.json file and use that (if we find a match and it has an image)
+                    if (hasCardsMainJson) {
+                        $.each(cardsJson, function (index, cardJson) {
+                            if (createMatchTitle(cardJson.title) == card.matchTitle) {
+                                card.src = cardJson.src;
+                            }
+                        });
+                    }
+
+                    // if the Exceptions provided us with a final card title, use it
+                    if (card.finalTitle) {
+                        card.title = card.finalTitle;
+                    }
+
+                    mainOut.push(card);
+                });
+
+
+                // apply the exceptions if there are any
+                // DUPLICATED above (the above one is lesser; this is the real one)
+                var exceptionsUnused = [];
+                $.each(mainOut, function (index, card) {
+                    if (jsonExceptions != null && jsonExceptions.length > 0) {
+                        $.each(jsonExceptions, function (index, ex) {
+                            /*
+                             the old format is:
+                             ,{
+                              "gmTitle": "Wild Beastmistress",
+                              "wotcTitle": "Wild Beastmaster",
+                              "finalTitle": "Wild Beastmaster"
+                             }
+                             we'll keep supporting this one for backwards compatability (FOR NOW)
+                            */
+                            // rename each gmTitle match to the wotcTitle
+                            if (ex.hasOwnProperty('gmTitle')) {
+                                if (card.title == ex.gmTitle) {
+                                    // add all Exception properties into the card for posterity
+                                    $.extend(card, ex);
+                                    ex.wasUsed = true;
+
+                                    if (ex.wotcTitle) {
+                                        card.originalTitle = card.title;
+                                        if (card.title == ex.wotcTitle) {
+                                            if (!ex.hasOwnProperty("redundantValues")) {
+                                                ex.redundantValues = {};
+                                            }
+                                            ex.redundantValues.wotcTitle = ex.wotcTitle;
+                                        }
+                                        card.title = ex.wotcTitle;
+                                        card.matchTitle = createMatchTitle(card.title); // used for sorting final output
+                                        card.fixedViaException = true;
+                                        fixedViaExceptions.push(card);
+                                    }
+                                }
+                            }
+                            /*
+                             the new format is:
+                             ,{
+                              "title": "Grave Betrayal",
+                              "newValues": { "type": "Enchantment"}
+                             },
+                            {
+                                "title": "Add New Card",
+                                "newValues": {
+                                    "title": "Vendilion Clique",
+                                    "src": "http://media.wizards.com/2015/mm2_9vgauji43t9a/en_4sRXIOzwPJ.png",
+                                    "set": "mm2",
+                                    "cost": "{1}{U}{U}",
+                                    "rarity": "m",
+                                    "type": "Legendary Creature",
+                                    "subtype": "Faerie Wizard",
+                                    "power": "3",
+                                    "toughness": "1",
+                                    "colour": "u",
+                                    "num": "067"
+                                }
+                            },
+                            {
+                                "title": "Delete Card",
+                                "newValues": {
+                                    "title": "Aegis Angel"
+                                }
+                            }
+                            */
+                            var exCard;
+                            if (ex.hasOwnProperty('matchTitle')) {
+                                if (card.matchTitle === ex.matchTitle) {
+                                    console.log('Found exception match for:' + card.matchTitle);
+                                    if (ex.hasOwnProperty('newValues')) {
+                                        console.log('Has newValues:' + card.matchTitle);
+                                        // check each exception; if it wasn't necessary record it so we can clean up the exception file
+                                        if (card.matchTitle !== "add new card") {
+                                            $.each(ex.newValues, function (prop, newVal) {
+                                                if (card.hasOwnProperty(prop) && card[prop] === newVal) {
+                                                    console.log('Exception property already exists on card:' + card.matchTitle);
+                                                    if (!ex.hasOwnProperty("redundantValues")) {
+                                                        ex.redundantValues = {};
+                                                    }
+                                                    ex.redundantValues[prop] = newVal;
+                                                }
+                                            });
+                                        }
+
+                                        // add all Exception properties into the card for posterity
+                                        $.extend(card, ex.newValues);
+                                        ex.wasUsed = true;
+                                        console.log('Marking ' + ex.title + ' as used.');
+                                        card.matchTitle = createMatchTitle(card.title); // redo the matchTitle in case we just fixed the title
+                                        card.fixedViaException = true;
+                                        fixedViaExceptions.push(card);
+                                    }
+                                }
+                            }
+                        });
+                    }
+
+                });// done processing exceptions
+
+                // see if there are any Add New Card or Deleted Card cards and add those
+                if (jsonExceptions !== undefined) {
+                    var cardsToDelete = [];
+                    $.each(jsonExceptions, function (index, ex) {
+                        if (ex.matchTitle === "add new card") {
+                            // add all Exception properties into the card
+                            var card = {};
+                            $.extend(card, ex.newValues);
+                            ex.wasUsed = true;
+                            console.log('Marking ' + ex.title + ' as used.');
+                            card.matchTitle = createMatchTitle(card.title); // redo the matchTitle in case we just fixed the title
+                            card.fixedViaException = true;
+                            fixedViaExceptions.push(card);
+                            mainOut.push(card);
+                        }
+                        else if (ex.matchTitle === "delete card") {
+                            console.log('Card flagged for deletion:' + ex.newValues.title);
+                            cardsToDelete.push(createMatchTitle(ex.newValues.title));
+                            ex.wasUsed = true; // marking it true even though I'm not sure if it's used -- that's hard and I don't care right now
+                        }
+                    });
+
+                    // if there are any cards flagged for deletion, delete them
+                    if (cardsToDelete.length > 0) {
+                        var cardsToKeep = [];
+                        $.each(mainOut, function (index, card) {
+                            if (cardsToDelete.indexOf(card.matchTitle) === -1) {
+                                cardsToKeep.push(card);
+                            }
+                            else {
+                                deletedViaExceptions.push(card);
+                                console.log('Deleted card:' + card.title);
+                            }
+                        });
+                        mainOut = cardsToKeep;
+                    }
+                }
+
+                // report any unused or redundant exceptions so we can clean up the exceptions file
+                if (jsonExceptions !== undefined && jsonExceptions.length > 0) {
+                    $.each(jsonExceptions, function (index, ex) {
+                        if (ex.hasOwnProperty("title")) { // no title means it was probably just a comment
+                            if (!ex.hasOwnProperty("wasUsed") || ex.wasUsed === false) {
+                                console.log('Marking ' + ex.title + ' as NEVER used.');
+                                exceptionsUnused.push("'" + ex.title + "' was never used");
+                            }
+                            if (ex.hasOwnProperty("redundantValues")) {
+                                $.each(ex.redundantValues, function (prop, newVal) {
+                                    exceptionsUnused.push("'" + ex.title + "'." + prop + ":" + newVal + " --- is redundant");
+                                });
+                            }
+                        }
+                    });
+                }
+
+                // go through all wotc cards and catalog those without GM matches
+                var wotcUnmatched = [];
+                for (var wotcImage in wotcImages) {
+                    var match = false;
+                    var wotcImg = wotcImages[wotcImage];
+                    var outMatch = $(mainOut).each(function (index, mainCard) {
+                        if (mainCard.matchTitle == wotcImg.matchTitle) {
+                            match = true;
+                            return false;
+                        }
+                    });
+                    if (match == false) {
+                        wotcUnmatched.push(wotcImg.title);
+                    }
+                };
+
+                // add the tokens in if there are any
+                var getAllImagesForTokens = ($('input:radio[name=token-parsing]:checked').val() == "all");
+                $tokens.find('.content img').each(function (index, img) {
+                    if ((!getAllImagesForTokens && img.width == 265) || getAllImagesForTokens) {
+                        var token = new Object();
+                        token.title = img.title;
+                        token.set = setCode;
+                        token.src = img.src;
+                        token.colour = colours.other.code;
+                        token.rarity = rarities.common.code;
+                        token.type = 'Token Creature';
+                        token.token = true;
+                        token.subtype = '';
+                        token.num = '000 T';
+                        token.usableForDeckBuilding = false;
+                        //KILL:token = addTypes(token);
+
+                        tokenOut.push(token);
+                    }
+                });
+
+                // kill the matchtitle; it was just for this run
+                $(mainOut).each(function (index, mainCard) { delete mainCard.matchTitle; });
+
+                var out = "";
+                if (!hasWotcImages) {
+                    out += "<p>WARNING: No MtG images supplied. Using any images found with Gathering Magic card data.</p>";
+                }
+                else if (noMtgMatch.length < 1) {
+                    out += "<p>No parsing errors.</p>";
+                }
+                else {
+                    out += "<p>The following Gathering Magic cards do not match WotC cards:</p><ul>";
+                    noMtgMatch = noMtgMatch.sort(sortByTitle);
+                    $.each(noMtgMatch, function (index, value) {
+                        var comment = "";
+                        if (value._comment) {
+                            comment = "<em> - " + value._comment + "</em>";
+                        }
+                        out += "<li style='color:red'>" + value.title + comment + "</li>";
+                    });
+                    out += "</ul>";
+                }
+                if (missingImage.length > 0) {
+                    out += "<p>The following Gathering Magic cards have no images and no WotC images, so an image was created using <a href='http://placehold.it/' target='_blank'>placehold.it</a>:</p><ul>";
+                    $.each(missingImage, function (index, value) {
+                        out += "<li style='color:red'>" + value.title + "</li>";
+                    });
+                    out += "</ul>";
+                }
+                if (wotcUnmatched.length > 0) {
+                    out += "<p>The following WotC cards do not match Gathering Magic cards:</p><ul>";
+                    $.each(wotcUnmatched, function (index, value) {
+                        out += "<li style='color:red'>" + value + "</li>";
+                    });
+                    out += "</ul>";
+                }
+                if (fixedViaExceptions.length > 0) {
+                    out += "<p>The following Gathering Magic cards have been fixed via exceptions:</p><ul>";
+                    fixedViaExceptions = fixedViaExceptions.sort(sortByTitle);
+                    $.each(fixedViaExceptions, function (index, value) {
+                        var comment = "";
+                        if (value._comment) {
+                            comment = "<em> - " + value._comment + "</em>";
+                        }
+                        out += "<li style='color:green'>" + value.title + comment + "</li>";
+                    });
+                    out += "</ul>";
+                }
+                if (deletedViaExceptions.length > 0) {
+                    out += "<p>The following Gathering Magic cards have been <strong style='color:red'>deleted</strong> via exceptions:</p><ul>";
+                    deletedViaExceptions = deletedViaExceptions.sort(sortByTitle);
+                    $.each(deletedViaExceptions, function (index, value) {
+                        var comment = "";
+                        if (value._comment) {
+                            comment = "<em> - " + value._comment + "</em>";
+                        }
+                        out += "<li style='color:green'>" + value.title + comment + "</li>";
+                    });
+                    out += "</ul>";
+                }
+                if (exceptionsUnused.length > 0) {
+                    out += "<p>The following exceptions are not used/redundant:</p><ul>";
+                    $.each(exceptionsUnused, function (index, value) {
+                        out += "<li style='color:red'>" + value + "</li>";
+                    });
+                    out += "</ul>";
+                }
+                $('#log').html(out);
+
+                var jsonMainStr = JSON.stringify(mainOut, null, ' ');
+                $('#out-main').val(jsonMainStr);
+
+                var jsonTokenStr = JSON.stringify(tokenOut, null, ' ');
+                $('#out-tokens').val(jsonTokenStr);
+
+                var jsonOtherStr = JSON.stringify(otherOut, null, ' ');
+                $('#out-other').val(jsonOtherStr);
+
+                $('#set-img').attr('src', 'http://mtgimage.com/symbol/set/' + setCode + '/r/256.png');
+
+                $('#msg').html(
+					$wotcImages.length + " WotC images found</br>"
+					+ $cards.length + " GM cards found</br>"
+					+ "<br/><strong>" + (mainOut.length + tokenOut.length + otherOut.length) + " cards generated at " + (new Date())
+					+ ". <ul><li>" + mainOut.length + ": cardsMain.json</li><li>"
+					+ tokenOut.length + ": cardsToken.json</li><li>"
+					+ otherOut.length + ": cardsOther.json</li></ul></strong>");
+
+                $('#status').html("<strong>Processing complete at " + (new Date()) + "</strong>");
+            }
+
+            function setSaveLinkToDownloadFile() {
+                var settingsJson = JSON.stringify(getSettings(), null, ' ');
+                var encodedContent = $.base64.encode(settingsJson);
+                $('#save-settings').attr('href', 'data:text/octet-stream;base64,' + encodedContent);
+                $('#save-settings').attr('download', 'import-settings-' + $('input#set-code').val().trim() + '.json'); // 'download' attr is Chrome/FF-only to set download filename
+            }
+
+            function getSettings() {
+                var settings = new Object();
+                settings.gatheringMagicUrl = $('input#url-cards').val().trim();
+                settings.imagesUrl = $('input#url-images').val().trim();
+                settings.tokensUrl = $('input#url-tokens').val().trim();
+                settings.exceptionsUrl = $('input#url-exceptions').val().trim();
+                settings.currentJson = $('input#url-current-json').val().trim();
+                settings.mtgJson = $('input#url-mtgjson').val().trim();
+                settings.tokensParseType = $('input:radio[name=token-parsing]:checked').val().trim();
+                settings.setName = $('input#set-name').val().trim();
+                settings.setCode = $('input#set-code').val().trim();
+                settings.marketingCardImgSrc = $('input#marketing-card-src').val().trim();
+                return settings;
+            }
+
+            function setSettings(settings) {
+                $('input#url-cards').val(settings.gatheringMagicUrl);
+                $('input#url-images').val(settings.imagesUrl);
+                $('input#url-tokens').val(settings.tokensUrl);
+                $('input#url-exceptions').val(settings.exceptionsUrl);
+                $('input#url-mtgjson').val(settings.mtgJson);
+                $('input:radio[name=token-parsing]:checked').val(settings.tokensParseType);
+                $('input#set-name').val(settings.setName);
+                $('input#set-code').val(settings.setCode);
+                $('input#marketing-card-src').val(settings.marketingCardImgSrc);
+            }
+
+            function createPlaceholderCardSrc(card) {
+                var cardBgColour = "cccccc";
+                var cardTextColour = "969696";
+                switch (card.colour) {
+                    case 'w': cardBgColour = 'e9e5da'; break;
+                    case 'u': cardBgColour = 'cddfed'; break;
+                    case 'b': cardBgColour = '000000'; cardTextColour = 'ffffff'; break;
+                    case 'r': cardBgColour = 'f6d1be'; break;
+                    case 'g': cardBgColour = 'c7d4ca'; break;
+                }
+                return "holder.js/265x370/#" + cardBgColour + ":#" + cardTextColour + "/text:" + cardTitleUrl(card.title, 500);
+            }
+
+            function createPlaceboxesCardSrc(card) {
+                var cardBgColour = "cccccc";
+                var cardTextColour = "969696";
+                switch (card.colourType) {
+                    case 'w': cardBgColour = 'e9e5da'; break;
+                    case 'u': cardBgColour = 'cddfed'; break;
+                    case 'b': cardBgColour = '000000'; cardTextColour = 'ffffff'; break;
+                    case 'r': cardBgColour = 'f6d1be'; break;
+                    case 'g': cardBgColour = 'c7d4ca'; break;
+                }
+                return "http://placebox.es/265x370/" + cardBgColour + "/" + cardTextColour + "/" + cardTitleUrl(card.title, 500) + ",20/";
+            }
+
+            function createMrPurpleCardSrc(card) {
+                var url = "http://magic.mrpurple.de/";
+                if (card.type == 'Planeswalker') {
+                    url += "Planeswalker/server-side.php?Titel=" + card.title + "&Type=" + card.type;
+                    if (card.loyalty) { url += '&loyalty=' + card.loyalty; }
+                }
+                else {
+                    url += "Card/modern.php?style=modern.php&Titel=" + card.title + "&Type=" + card.type;
+                }
+
+                url += '&Color=';
+                switch (card.colour) {
+                    case colours.multicolour:
+                        url += 'Multicolor';
+                        break;
+                    case colours.other:
+                    case colours.unknown:
+                        url += 'Colorless';
+                        break;
+                    default:
+                        url += getColourByCode(card.colour).name;
+                        break;
+                }
+
+                url += '&Rarity=' + getRarityByCode(card.rarity).name.replace("Mythic Rare", "Mythic", "gi");
+                if (card.subtype) { url += '&Subtype=- ' + card.subtype; }
+                if (card.power) { url += '&Power=' + card.power; }
+                if (card.toughness) { url += '&Toughness=' + card.toughness; }
+
+                if (card.cost) {
+                    var wCount = 0;
+                    var uCount = 0;
+                    var bCount = 0;
+                    var rCount = 0;
+                    var gCount = 0;
+                    var cCount = 0;
+                    var colourCosts = card.cost.toLowerCase().replace(/{/g, "").replace(/}/g, " ").trim().split(" ");
+                    for (var i in colourCosts) {
+                        switch (colourCosts[i]) {
+                            case 'w': wCount++; break;
+                            case 'u': uCount++; break;
+                            case 'b': bCount++; break;
+                            case 'r': rCount++; break;
+                            case 'g': gCount++; break;
+                            default: cCount += parseInt(colourCosts[i]); break;
+                        }
+                    }
+                    if (wCount > 0) { url += "&manawhite=" + wCount; }
+                    if (uCount > 0) { url += "&manablue=" + uCount; }
+                    if (bCount > 0) { url += "&manablack=" + bCount; }
+                    if (rCount > 0) { url += "&manared=" + rCount; }
+                    if (gCount > 0) { url += "&managreen=" + gCount; }
+                    if (cCount > 0) { url += "&manacolless=" + cCount; }
+                }
+
+                return url;
+            }
+
+            $('input#import').on('click', function () { loadAndProcessAllFiles(false); });
+            $('input#reprocess-data').on('click', function () { loadAndProcessAllFiles(true); });
+            $('input').on('change', function () { setSaveLinkToDownloadFile(); });
+            $('#load-settings').on('change', function (e) {
+                var file = e.target.files[0];
+                var reader = new FileReader();
+                // Closure to capture the file information.
+                reader.onload = (function (theFile) {
+                    return function (e) {
+                        var jsonSettings = e.target.result;
+                        var settings = JSON.parse(jsonSettings);
+                        setSettings(settings);
+                    };
+                })(file);
+
+                reader.readAsText(file);
+            });
+        });
+    </script>
+</body>
+</html>

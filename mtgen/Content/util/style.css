@@ -1,5 +1,6 @@
 img {
 	float: right;
+	max-width: 200px;
 }
 img[itemprop=image] {
 	padding: 1em;
