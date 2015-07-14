@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
 	<meta charset="UTF-8" />
@@ -11,7 +11,8 @@
 	<h1>Magic: The Gathering: Decklist IMPORTER</h1>
 	<p>This page imports decklists and outputs them in my query language for use in the packs.json file. It's used for creating those decks for use in the generator as an option in the drop-down.</p>
 	<ul>
-		<li>9-Jul-2014: Created.</li>
+        <li>13-Jul-2015: Added option to auto-correct card names.</li>
+        <li>9-Jul-2014: Created.</li>
 	</ul>
 	<br/>
 	<form>
@@ -71,12 +72,15 @@ Lands (25)
 17 Island
 					</textarea>
 				</td>
-				<td>
-					<label for="output-query">Output packs.json query:</label><br/>
-					<textarea id="output-query" rows="30" cols="80"></textarea>
-				</td>
+                <td>
+                    <label for="output-query">Output packs.json query:</label><br />
+                    <textarea id="output-query" rows="30" cols="80"></textarea>
+                </td>
 			</tr>
 		</table>
+        <br />
+        <input id="auto-correct-cards" type="checkbox" checked />
+        <label for="auto-correct-cards">Auto-correct card names</label><br />
 		<br/>
 		<input id="process" type="submit" value="Process Decklist" style="font-size:150%"/>
 		<p id="msg"></p>
@@ -127,9 +131,11 @@ Lands (25)
 	 			 if (validTitles) {
 		 			 var match = validTitles[title.toLowerCase()];
 		 			 if (match===undefined) {
-		 			 	mismatchedCardsList.push(title);
+		 			     mismatchedCardsList.push(title);
+		 			     return false;
 		 			 }
 	 			 }
+	 			 return true;
  			 }
 
  			 $('input#process').on('click',function() {
@@ -182,6 +188,8 @@ Lands (25)
 		 			alert("Minimum acceptable card count must be a number!");
 		 			minCardCount = 15;
 	 			}
+
+	 			var autoCorrectCardNames = $('#auto-correct-cards').is(':checked');
 	 			
 	 			var outputSetTemplate;
 	 			var outputText = '';
@@ -201,14 +209,20 @@ Lands (25)
 	 			var card,take,duplicate,parts,title;
 	 			for(var i=0;i<deckListLines.length;i++) {
 		 			var parts = deckListLines[i].trim().split(' ');
-		 			if (parts.length>1) {
+		 			if (parts.length > 1) {
 		 				var count = parseInt(parts[0],10);
 		 				if (!isNaN((count))) {
 		 					take = (count>1) ? 'take['+count+']>' : '';
 		 					duplicate = (count>1) ? ', "canBeDuplicate": true' : '';
 		 					title = parts.slice(1).join(' ').replace("'","\u2019").trim(); // Unicode escape \u2019 = right single quotation mark: ’
-		 					validateCardTitle(title);
-				 			card = outputCardTemplate
+		 					var isValid = validateCardTitle(title);
+		 					if (!isValid && autoCorrectCardNames) {
+		 					    var closestTitles = title.related(10, possibleTitles); // max LD distance = 10
+		 					    if (closestTitles.length > 0) {
+		 					        title = closestTitles[0].s;
+		 					    }
+		 					}
+		 					card = outputCardTemplate
 				 				.replace('[[TAKE_TOKEN]]',take)
 				 				.replace('[[QUERY_SET_TOKEN]]',querySet)
 				 				.replace('[[TITLE_TOKEN]]',"'"+title+"'")
@@ -266,7 +280,13 @@ Lands (25)
 						 				if (packs[j][packNum]===undefined) {
 							 				packs[j][packNum] = [];
 						 				}
-						 				validateCardTitle(cell);
+						 				var isValid = validateCardTitle(cell);
+						 				if (!isValid && autoCorrectCardNames) {
+						 				    var closestTitles = cell.related(10, possibleTitles); // max LD distance = 10
+						 				    if (closestTitles.length > 0) {
+						 				        cell = closestTitles[0].s;
+						 				    }
+						 				}
 						 				packs[j][packNum].push(cell);
 						 				totalCount++;
 					 				}
@@ -288,7 +308,13 @@ Lands (25)
 			 			for(var i=0;i<deckListLines.length;i++) {
 			 				 deckListLine = deckListLines[i].trim();
 			 				if (deckListLine.length>0) {
-			 					validateCardTitle(deckListLine);
+			 					var isValid = validateCardTitle(deckListLine);
+			 					if (!isValid && autoCorrectCardNames) {
+			 					    var closestTitles = deckListLine.related(10, possibleTitles); // max LD distance = 10
+			 					    if (closestTitles.length > 0) {
+			 					        deckListLine = closestTitles[0].s;
+			 					    }
+			 					}
 			 					singleCards.push(deckListLine);
 			 					totalCount++;
 			 				}
@@ -355,7 +381,7 @@ Lands (25)
 	 			}
 				$('#msg').html(output);
  			 }
- 			
+ 	
 	// from: http://guegue.net/friendlyURL_JS
 	function friendly_url(str,max) {
 	  if (max === undefined) max = 32;
