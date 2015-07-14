@@ -36,10 +36,11 @@
         {
             "productName": "ori-prerelease",
             "productDesc": "Prerelease",
-            "isVisible": false,
-            "sources": [ "http://wpn.wizards.com/en/products/magic-origins" ],
+            "isVisible": true,
+            "sources": [ "http://wpn.wizards.com/en/products/magic-origins", "http://magic.wizards.com/en/articles/archive/feature/magic-origins-prerelease-primer-2015-07-06", "http://magic.wizards.com/en/MTGO/articles/archive/magic-online/magic-online-magic-origins-prerelease-and-release-events-2015-06-29" ],
             "isGenerated": false,
             "initialSort": "set",
+            "_comment": "Each seed booster contains seven cards, including a premium rare or mythic rare and a run of commons and uncommons, all sharing the color of the seed booster.",
             "packs": [
                 { "packName": "ori-standard" },
                 { "packName": "ori-seeded-booster-white" },
@@ -47,6 +48,11 @@
                 { "packName": "ori-seeded-booster-black" },
                 { "packName": "ori-seeded-booster-red" },
                 { "packName": "ori-seeded-booster-green" },
+                { "packName": "ori-seeded-booster-packins-white" },
+                { "packName": "ori-seeded-booster-packins-blue" },
+                { "packName": "ori-seeded-booster-packins-black" },
+                { "packName": "ori-seeded-booster-packins-red" },
+                { "packName": "ori-seeded-booster-packins-green" },
                 { "packName": "ori-prerelease-promos" }
             ],
             "options": {
@@ -81,7 +87,7 @@
                     },
                     {
                         "presetName": "ori-prerelease-red",
-                        "presetDesc": "Chandr (Red)",
+                        "presetDesc": "Chandra (Red)",
                         "packs": [
                             { "count": 1, "defaultPackName": "ori-seeded-booster-red" },
                             { "count": 1, "defaultPackName": "ori-seeded-booster-packins-red" },

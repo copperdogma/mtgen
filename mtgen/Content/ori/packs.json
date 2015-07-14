@@ -19,6 +19,22 @@
         {
             "defName": "ori-seeded-white",
             "query": "from[ori-main]?cost=contains({W})"
+        },
+        {
+            "defName": "ori-seeded-blue",
+            "query": "from[ori-main]?cost=contains({U})"
+        },
+        {
+            "defName": "ori-seeded-black",
+            "query": "from[ori-main]?cost=contains({B})"
+        },
+        {
+            "defName": "ori-seeded-red",
+            "query": "from[ori-main]?cost=contains({R})"
+        },
+        {
+            "defName": "ori-seeded-green",
+            "query": "from[ori-main]?cost=contains({G})"
         }
 
     ],
@@ -69,25 +85,223 @@
             ]
         },
         {
+            "packName": "ori-prerelease-promos",
+            "packDesc": "Magic Origins: Prerelease Promos",
+            "isGenerated": false,
+            "includeWithUserCards": false,
+            "cards": [
+                { "query": "take[*]>from[ori-promo]?includedReason='Prerelease Promo'" }
+            ]
+        },
+        {
+            "packName": "ori-seeded-booster-white-GUESS",
+            "packDesc": "Magic Origins: White Seeded Booster (Gideon)",
+            "isGenerated": true,
+            "cards": [
+                {
+                    "querySet": [
+                        { "percent": 87.5, "query": "from[ori-seeded-white]?rarity='r'" },
+                        { "percent": 12.5, "query": "from[ori-main]?title='Gideon, Battle-Forged (Kytheon, Hero of Akros)'", "_comment": "rare=7/8, mythicRare=1/8" }
+                    ]
+                },
+                { "query": "take[2]>from[ori-seeded-white]?rarity='u'" },
+                { "query": "take[4]>from[ori-seeded-white]?rarity='c'" }
+            ]
+        },
+        {
             "packName": "ori-seeded-booster-white",
             "packDesc": "Magic Origins: White Seeded Booster (Gideon)",
             "isGenerated": true,
             "cards": [
-                { "query": "from[ori]?promo=true" },
-                { "query": "take[3]>from[ori-seeded-white]?rarity='c'" },
+                { "query": "take[1]>from[ori-main]?title=(Gideon, Battle-Forged (Kytheon, Hero of Akros)|Vryn Wingmare|Gideon's Phalanx|Hixus, Prison Warden|Knight of the White Orchid|Kytheon's Irregulars|Tragic Arrogance|Relic Seeker)" },
                 {
                     "querySet": [
-                        { "percent": 75, "query": "from[ori-seeded-white]?rarity='c'" },
-                        { "percent": 25, "query": "from[ori-seeded-white]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
-                    ]
-                },
-                { "query": "take[1]>from[ori-seeded-white]?rarity='u'" },
-                {
-                    "querySet": [
-                        { "percent": 87.5, "query": "from[ori-seeded-white]?rarity='r'" },
-                        { "percent": 12.5, "query": "from[ori-seeded-white]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" }
+                        { "query": "take[*]>from[ori-main]?title=(Consul's Lieutenant|Patron of the Valiant|Charging Griffin|Knight of the Pilgrim's Road|Enshrouding Mist|Suppression Bonds)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Blessed Spirits|War Oracle|Suppression Bonds|Charging Griffin|Mighty Leap|Knight of the Pilgrim's Road)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Blessed Spirits|War Oracle|Aven Battle Priest|Charging Griffin|Topan Freeblade|Yoked Ox)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Valor in Akros|Patron of the Valiant|Topan Freeblade|Cleric of the Forward Order|Suppression Bonds|Celestial Flare)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Swift Reckoning|Sentinel of the Eternal Watch|Stalwart Aven|Suppression Bonds|Mighty Leap|Knight of the Pilgrim's Road)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Knightly Valor|War Oracle|Ampryn Tactician|Stalwart Aven|Celestial Flare|Suppression Bonds)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(War Oracle|Blessed Spirits|Kytheon's Tactics|Suppression Bonds|Knight of the Pilgrim's Road|Topan Freeblade)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Anointer of Champions|Patron of the Valiant|Charging Griffin|Cleric of the Forward Order|Knight of the Pilgrim's Road|Suppression Bonds)", "inOrder": true }
                     ]
                 }
+            ]
+        },
+        {
+            "packName": "ori-seeded-booster-packins-white",
+            "packDesc": "Magic Origins: White Pack-Ins",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[ori]?title=(White Spindown Life Counter|Gideon Story Booklet)" }
+            ]
+        },
+        {
+            "packName": "ori-seeded-booster-blue-GUESS",
+            "packDesc": "Magic Origins: Blue Seeded Booster (Jace)",
+            "isGenerated": true,
+            "cards": [
+                {
+                    "querySet": [
+                        { "percent": 87.5, "query": "from[ori-seeded-blue]?rarity='r'" },
+                        { "percent": 12.5, "query": "from[ori-main]?title='Jace, Telepath Unbound (Jace, Vryn’s Prodigy)'", "_comment": "rare=7/8, mythicRare=1/8" }
+                    ]
+                },
+                { "query": "take[2]>from[ori-seeded-blue]?rarity='u'" },
+                { "query": "take[4]>from[ori-seeded-blue]?rarity='c'" }
+            ]
+        },
+        {
+            "packName": "ori-seeded-booster-blue",
+            "packDesc": "Magic Origins: Blue Seeded Booster (Jace)",
+            "isGenerated": true,
+            "cards": [
+                { "query": "take[1]>from[ori-main]?title=(Jace, Telepath Unbound (Jace, Vryn's Prodigy)|Alhammarret, High Arbiter|Harbinger of the Tides|Mizzium Meddler|Soulblade Djinn|Talent of the Telepath|Thopter Spy Network|Willbreaker)" },
+                {
+                    "querySet": [
+                        { "query": "take[*]>from[ori-main]?title=(Skaab Goliath|Sigiled Starfish|Claustrophobia|Maritime Guard|Ringwarden Owl|Aspiring Aeronaut)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Hydrolash|Jhessian Thief|Aspiring Aeronaut|Separatist Voidmage|Claustrophobia|Watercourser)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Clash of Wills|Anchor to the Aether|Separatist Voidmage|Maritime Guard|Ringwarden Owl|Aspiring Aeronaut)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Turn to Frog|Anchor to the Aether|Aspiring Aeronaut|Send to Sleep|Ringwarden Owl|Scrapskin Drake)", "inOrder": true }
+                    ]
+                }
+            ]
+        },
+        {
+            "packName": "ori-seeded-booster-packins-blue",
+            "packDesc": "Magic Origins: Blue Pack-Ins",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[ori]?title=(Blue Spindown Life Counter|Jace Story Booklet)" }
+            ]
+        },
+        {
+            "packName": "ori-seeded-booster-black-GUESS",
+            "packDesc": "Magic Origins: Black Seeded Booster (Liliana)",
+            "isGenerated": true,
+            "cards": [
+                {
+                    "querySet": [
+                        { "percent": 87.5, "query": "from[ori-seeded-black]?rarity='r'" },
+                        { "percent": 12.5, "query": "from[ori-main]?title='Liliana, Defiant Necromancer (Liliana, Heretical Healer)'", "_comment": "rare=7/8, mythicRare=1/8" }
+                    ]
+                },
+                { "query": "take[2]>from[ori-seeded-black]?rarity='u'" },
+                { "query": "take[4]>from[ori-seeded-black]?rarity='c'" }
+            ]
+        },
+        {
+            "packName": "ori-seeded-booster-black",
+            "packDesc": "Magic Origins: Black Seeded Booster (Liliana)",
+            "isGenerated": true,
+            "cards": [
+                { "query": "take[1]>from[ori-main]?title=(Liliana, Defiant Necromancer (Liliana, Heretical Healer)|Dark Petition|Despoiler of Souls|Graveblade Marauder|Kothophed, Soul Hoarder|Languish|Priest of the Blood Rite|Gilt-Leaf Winnower)" },
+                {
+                    "querySet": [
+                        { "query": "take[*]>from[ori-main]?title=(Consecrated by Blood|Revenant|Nantuko Husk|Rabid Bloodsucker|Reave Soul|Eyeblight Assassin)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Consecrated By Blood|Fleshbag Marauder|Shambling Ghoul|Nantuko Husk|Weight of the Underworld|Reave Soul)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Cruel Revival|Shadows of the Past|Returned Centaur|Unholy Hunger|Read the Bones|Undead Servant)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Consecrated by Blood|Gnarlroot Trapper|Rabid Bloodsucker|Read the Bones|Reave Soul|Fetid Imp)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Eyeblight Massacre|Necromantic Summons|Fetid Imp|Eyeblight Assassin|Read the Bones|Weight of the Underworld)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Blightcaster|Necromantic Summons|Nantuko Husk|Weight of the Underworld|Reave Soul|Shambling Ghoul)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Eyeblight Massacre|Consecrated By Blood|Nantuko Husk|Undead Servant|Reave Soul|Eyeblight Assassin)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Eyeblight Massacre|Revenant|Rabid Bloodsucker|Shambling Ghoul|Weight of the Underworld|Unholy Hunger)", "inOrder": true }
+                    ]
+                }
+            ]
+        },
+        {
+            "packName": "ori-seeded-booster-packins-black",
+            "packDesc": "Magic Origins: Black Pack-Ins",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[ori]?title=(Black Spindown Life Counter|Liliana Story Booklet)" }
+            ]
+        },
+        {
+            "packName": "ori-seeded-booster-red-GUESS",
+            "packDesc": "Magic Origins: Red Seeded Booster (Chandra)",
+            "isGenerated": true,
+            "cards": [
+                {
+                    "querySet": [
+                        { "percent": 87.5, "query": "from[ori-seeded-red]?rarity='r'" },
+                        { "percent": 12.5, "query": "from[ori-main]?title='Chandra, Roaring Flame (Chandra, Fire of Kaladesh)'", "_comment": "rare=7/8, mythicRare=1/8" }
+                    ]
+                },
+                { "query": "take[2]>from[ori-seeded-red]?rarity='u'" },
+                { "query": "take[4]>from[ori-seeded-red]?rarity='c'" }
+            ]
+        },
+        {
+            "packName": "ori-seeded-booster-red",
+            "packDesc": "Magic Origins: Red Seeded Booster (Chandra)",
+            "isGenerated": true,
+            "cards": [
+                { "query": "take[1]>from[ori-main]?title=(Chandra, Roaring Flame (Chandra, Fire of Kaladesh)|Exquisite Firecraft|Chandra’s Ignition|Embermaw Hellion|Goblin Piledriver|Abbot of Keral Keep|Pia and Kiran Nalaar|Scab-Clan Berserker)" },
+                {
+                    "querySet": [
+                        { "query": "take[*]>from[ori-main]?title=(Skyraker Giant|Fiery Conclusion|Ghirapur Gearcrafter|Akroan Sergeant|Firefiend Elemental|Lightning Javelin)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Skyraker Giant|Call of the Full Moon|Ghirapur Gearcrafter|Mage-Ring Bully|Boggart Brute|Chandra’s Fury)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Seismic Elemental|Ravaging Blaze|Boggart Brute|Mage-Ring Bully|Volcanic Rambler|Ghirapur Gearcrafter)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Ravaging Blaze|Enthralling Victor|Fiery Impulse|Mage-Ring Bully|Volcanic Rambler|Lightning Javelin)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Skyraker Giant|Enthralling Victor|Ghirapur Gearcrafter|Act of Treason|Volcanic Rambler|Boggart Brute)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Skyraker Giant|Ravaging Blaze|Fiery Impulse|Chandra’s Fury|Lightning Javelin|Mage-Ring Bully)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Acolyte of the Inferno|Thopter Engineer|Lightning Javelin|Subterranean Scout|Prickleboar|Fiery Impulse)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Ghirapur Gearcrafter|Goblin Glory Chaser|Boggart Brute|Subterranean Scout|Titan’s Strength|Seismic Elemental)", "inOrder": true }
+                    ]
+                }
+            ]
+        },
+        {
+            "packName": "ori-seeded-booster-packins-red",
+            "packDesc": "Magic Origins: Red Pack-Ins",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[ori]?title=(Red Spindown Life Counter|Chandra Story Booklet)" }
+            ]
+        },
+        {
+            "packName": "ori-seeded-booster-green-GUESS",
+            "packDesc": "Magic Origins: Green Seeded Booster (Nissa)",
+            "isGenerated": true,
+            "cards": [
+                {
+                    "querySet": [
+                        { "percent": 87.5, "query": "from[ori-seeded-green]?rarity='r'" },
+                        { "percent": 12.5, "query": "from[ori-main]?title='Nissa, Sage Animist (Nissa, Vastwood Seer)'", "_comment": "rare=7/8, mythicRare=1/8" }
+                    ]
+                },
+                { "query": "take[2]>from[ori-seeded-green]?rarity='u'" },
+                { "query": "take[4]>from[ori-seeded-green]?rarity='c'" }
+            ]
+        },
+        {
+            "packName": "ori-seeded-booster-green",
+            "packDesc": "Magic Origins: Green Seeded Booster (Nissa)",
+            "isGenerated": true,
+            "cards": [
+                { "query": "take[1]>from[ori-main]?title=(Nissa, Sage Animist (Nissa, Vastwood Seer)|Outland Colossus|Evolutionary Leap|Dwynen, Gilt-Leaf Daen|Nissa’s Revelation|Gaea’s Revenge|Honored Hierarch|Managorger Hydra)", "inOrder": true },
+                {
+                    "querySet": [
+                        { "query": "take[*]>from[ori-main]?title=(Joraga Invocation|Conclave Naturalists|Llanowar Empath|Timberpack Wolf|Might of the Masses|Rhox Maulers)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Joraga Invocation|Sylvan Messenger|Llanowar Empath|Orchard Spirit|Titanic Growth|Rhox Maulers)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Dwynen’s Elite|Somberwald Alpha|Wild Instincts|Llanowar Empath|Might of the Masses|Titanic Growth)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Dwynen’s Elite|Undercity Troll|Rhox Maulers|Yeva’s Forcemage|Titanic Growth|Leaf Gilder)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Undercity Troll|Conclave Naturalists|Titanic Growth|Rhox Maulers|Elvish Visionary|Llanowar Empath)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Joraga Invocation|Gather the Pack|Llanowar Empath|Pharika’s Disciple|Orchard Spirit|Wild Instincts)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Dwynen’s Elite|Valeron Wardens|Wild Instincts|Pharika’s Disciple|Timberpack Wolf|Leaf Gilder)", "inOrder": true },
+                        { "query": "take[*]>from[ori-main]?title=(Skysnare Spider|Undercity Troll|Leaf Gilder|Pharika’s Disciple|Titanic Growth|Llanowar Empath)", "inOrder": true }
+                    ]
+                }
+            ]
+        },
+        {
+            "packName": "ori-seeded-booster-packins-green",
+            "packDesc": "Magic Origins: Green Pack-Ins",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[ori]?title=(Green Spindown Life Counter|Nissa Story Booklet)" }
             ]
         }
 

@@ -1,16 +1,43 @@
-[
+﻿[
     {
         "_comment": "the 'title' is the title taken from Gathering Magic, but if it is corrected earlier in the json use the correct title in subsequent entries"
     },
 
     {
-        "title": "Mana-Glutton Hydra",
-        "newValues": { "title": "Managorger Hydra", "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_ONrzrMmVhw.png" }
-    },
-
-    {
         "title": "Disciple of the Rings",
-        "newValues": { "title": "Disciple of the Ring" }
+        "newValues": { "title": "Disciple of the Ring", "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_tEQ8qXP2WS.png" }
+    },
+    {
+        "title": "Erebos' Titan",
+        "newValues": { "title": "Erebos's Titan", "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_ZFYxrThEf5.png" }
+    },
+    {
+        "title": "Ghirapur �ther Grid",
+        "newValues": { "title": "Ghirapur Æther Grid" }
+    },
+    {
+        "title": "Embermaw Hellion",
+        "newValues": { "rarity": "r" }
+    },
+    {
+        "title": "Cruel Revival",
+        "newValues": { "rarity": "u" }
+    },
+    {
+        "title": "Fiery Conclusion",
+        "newValues": { "rarity": "u" }
+    },
+    {
+        "title": "Caustic Caterpillar",
+        "newValues": { "rarity": "c" }
+    },
+    {
+        "title": "Fetid Imp",
+        "newValues": { "rarity": "c" }
+    },
+    {
+        "title": "Dreadwaters",
+        "newValues": { "num": "056" }
     },
 
     {
@@ -23,35 +50,35 @@
     },
     {
         "title": "Jace, Vryn's Prodigy",
-        "newValues": { "title": "Jace, Vryn�s Prodigy (Jace, Telepath Unbound)", "num": "060a", "width": 530, "height": 370, "src": "http://mtgen.net/cards/ori-jace-vyrns-prodigy--jace-telepath-unbound.png" }
+        "newValues": { "title": "Jace, Vryn’s Prodigy (Jace, Telepath Unbound)", "num": "060a", "width": 530, "height": 370, "src": "http://mtgen.net/cards/ori-jace-vyrns-prodigy--jace-telepath-unbound.png" }
     },
     {
         "title": "Jace, Telepath Unbound",
-        "newValues": { "title": "Jace, Telepath Unbound (Jace, Vryn�s Prodigy)", "num": "060b", "width": 530, "height": 370, "src": "http://mtgen.net/cards/ori-jace-vyrns-prodigy--jace-telepath-unbound.png" }
+        "newValues": { "title": "Jace, Telepath Unbound (Jace, Vryn’s Prodigy)", "num": "060b", "width": 530, "height": 370, "src": "http://mtgen.net/cards/ori-jace-vyrns-prodigy--jace-telepath-unbound.png", "rarity":  "m" }
     },
     {
         "title": "Kytheon, Hero of Akros",
-        "newValues": { "title": "Kytheon, Hero of Akros (Gideon, Battle-Forged)", "width": 530, "height": 370, "src": "http://mtgen.net/cards/ori-kytheon-hero-of-akros--gideon-battle-forged.png" }
+        "newValues": { "title": "Kytheon, Hero of Akros (Gideon, Battle-Forged)", "num": "023a", "width": 530, "height": 370, "src": "http://mtgen.net/cards/ori-kytheon-hero-of-akros--gideon-battle-forged.png" }
     },
     {
         "title": "Gideon, Battle-Forged",
-        "newValues": { "title": "Gideon, Battle-Forged (Kytheon, Hero of Akros)", "width": 530, "height": 370, "src": "http://mtgen.net/cards/ori-kytheon-hero-of-akros--gideon-battle-forged.png" }
+        "newValues": { "title": "Gideon, Battle-Forged (Kytheon, Hero of Akros)", "num": "023b", "width": 530, "height": 370, "src": "http://mtgen.net/cards/ori-kytheon-hero-of-akros--gideon-battle-forged.png" }
     },
     {
         "title": "Liliana, Heretical Healer",
-        "newValues": { "title": "Liliana, Heretical Healer (Liliana, Defiant Necromancer)", "width": 530, "height": 370, "src": "http://mtgen.net/cards/ori-liliana-heretical-healer--liliana-defiant-necromancer.png" }
+        "newValues": { "title": "Liliana, Heretical Healer (Liliana, Defiant Necromancer)", "num": "106a", "width": 530, "height": 370, "src": "http://mtgen.net/cards/ori-liliana-heretical-healer--liliana-defiant-necromancer.png" }
     },
     {
         "title": "Liliana, Defiant Necromancer",
-        "newValues": { "title": "Liliana, Defiant Necromancer (Liliana, Heretical Healer)", "width": 530, "height": 370, "src": "http://mtgen.net/cards/ori-liliana-heretical-healer--liliana-defiant-necromancer.png" }
+        "newValues": { "title": "Liliana, Defiant Necromancer (Liliana, Heretical Healer)", "num": "106b", "width": 530, "height": 370, "src": "http://mtgen.net/cards/ori-liliana-heretical-healer--liliana-defiant-necromancer.png" }
     },
     {
         "title": "Nissa, Vastwood Seer",
-        "newValues": { "title": "Nissa, Vastwood Seer (Nissa, Sage Animist)", "width": 530, "height": 370, "src": "http://mtgen.net/cards/ori-nissa-vastwood-seer--nissa-sage-animist.png" }
+        "newValues": { "title": "Nissa, Vastwood Seer (Nissa, Sage Animist)", "num": "189a", "width": 530, "height": 370, "src": "http://mtgen.net/cards/ori-nissa-vastwood-seer--nissa-sage-animist.png" }
     },
     {
         "title": "Nissa, Sage Animist",
-        "newValues": { "title": "Nissa, Sage Animist (Nissa, Vastwood Seer)", "width": 530, "height": 370, "src": "http://mtgen.net/cards/ori-nissa-vastwood-seer--nissa-sage-animist.png" }
+        "newValues": { "title": "Nissa, Sage Animist (Nissa, Vastwood Seer)", "num": "189b", "width": 530, "height": 370, "src": "http://mtgen.net/cards/ori-nissa-vastwood-seer--nissa-sage-animist.png" }
     },
 
     {

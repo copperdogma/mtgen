@@ -13,8 +13,21 @@
   "num": "001"
  },
  {
+  "title": "Ampryn Tactician",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_i7ZJbOazkM.png",
+  "set": "ori",
+  "cost": "{2}{W}{W}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Human Soldier",
+  "power": "3",
+  "toughness": "3",
+  "colour": "w",
+  "num": "002"
+ },
+ {
   "title": "Anointer of Champions",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/Anount.jpg",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_GAcoPxiV0E.png",
   "set": "ori",
   "cost": "{W}",
   "rarity": "u",
@@ -23,7 +36,7 @@
   "power": "1",
   "toughness": "1",
   "colour": "w",
-  "num": "002"
+  "num": "003"
  },
  {
   "title": "Archangel of Tithes",
@@ -40,7 +53,7 @@
  },
  {
   "title": "Auramancer",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/Aura.jpg",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_UaFblHEpR5.png",
   "set": "ori",
   "cost": "{2}{W}",
   "rarity": "c",
@@ -50,6 +63,19 @@
   "toughness": "2",
   "colour": "w",
   "num": "005"
+ },
+ {
+  "title": "Aven Battle Priest",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_wRGDslj072.png",
+  "set": "ori",
+  "cost": "{5}{W}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Bird Cleric",
+  "power": "3",
+  "toughness": "3",
+  "colour": "w",
+  "num": "006"
  },
  {
   "title": "Blessed Spirits",
@@ -65,6 +91,16 @@
   "num": "007"
  },
  {
+  "title": "Celestial Flare",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_h7Nf2YN8qk.png",
+  "set": "ori",
+  "cost": "{W}{W}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "w",
+  "num": "008"
+ },
+ {
   "title": "Charging Griffin",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_YukqGtKir6.png",
   "set": "ori",
@@ -76,6 +112,45 @@
   "toughness": "2",
   "colour": "w",
   "num": "009"
+ },
+ {
+  "title": "Cleric of the Forward Order",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_XApV2wwx6d.png",
+  "set": "ori",
+  "cost": "{1}{W}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Human Cleric",
+  "power": "2",
+  "toughness": "2",
+  "colour": "w",
+  "num": "010"
+ },
+ {
+  "title": "Consul’s Lieutenant",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_gnlMe4QbFt.png",
+  "set": "ori",
+  "cost": "{W}{W}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Human Soldier",
+  "power": "2",
+  "toughness": "1",
+  "colour": "w",
+  "num": "011"
+ },
+ {
+  "title": "Enlightened Ascetic",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_rzcPGGZlgm.png",
+  "set": "ori",
+  "cost": "{1}{W}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Cat Monk",
+  "power": "1",
+  "toughness": "1",
+  "colour": "w",
+  "num": "012"
  },
  {
   "title": "Enshrouding Mist",
@@ -97,7 +172,7 @@
   "subtype": "Gideon",
   "loyalty": "3",
   "colour": "w",
-  "num": "23b",
+  "num": "023b",
   "width": 530,
   "height": 370,
   "fixedViaException": true
@@ -134,6 +209,16 @@
   "num": "016"
  },
  {
+  "title": "Healing Hands",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_ssGsLFGZnF.png",
+  "set": "ori",
+  "cost": "{2}{W}",
+  "rarity": "c",
+  "type": "Sorcery",
+  "colour": "w",
+  "num": "017"
+ },
+ {
   "title": "Heavy Infantry",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_5jGlqOZJrA.png",
   "set": "ori",
@@ -160,7 +245,7 @@
   "num": "019"
  },
  {
-  "title": "Knight of the Pilgrim’s Road",
+  "title": "Knight of the Pilgrim's Road",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_7opmSVYYka.png",
   "set": "ori",
   "cost": "{2}{W}",
@@ -186,6 +271,17 @@
   "num": "021"
  },
  {
+  "title": "Knightly Valor",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_ZjCf9LRcEj.png",
+  "set": "ori",
+  "cost": "{4}{W}",
+  "rarity": "u",
+  "type": "Enchantment",
+  "subtype": "Aura",
+  "colour": "w",
+  "num": "022"
+ },
+ {
   "title": "Kytheon, Hero of Akros (Gideon, Battle-Forged)",
   "src": "http://mtgen.net/cards/ori-kytheon-hero-of-akros--gideon-battle-forged.png",
   "set": "ori",
@@ -196,7 +292,7 @@
   "power": "2",
   "toughness": "1",
   "colour": "w",
-  "num": "23a",
+  "num": "023a",
   "width": 530,
   "height": 370,
   "fixedViaException": true
@@ -215,6 +311,16 @@
   "num": "024"
  },
  {
+  "title": "Kytheon’s Tactics",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_bKxmOkViRK.png",
+  "set": "ori",
+  "cost": "{1}{W}{W}",
+  "rarity": "c",
+  "type": "Sorcery",
+  "colour": "w",
+  "num": "025"
+ },
+ {
   "title": "Mighty Leap",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_jAQNeOdBpQ.png",
   "set": "ori",
@@ -223,6 +329,17 @@
   "type": "Instant",
   "colour": "w",
   "num": "026"
+ },
+ {
+  "title": "Murder Investigation",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_skALDXK2T1.png",
+  "set": "ori",
+  "cost": "{1}{W}",
+  "rarity": "u",
+  "type": "Enchantment",
+  "subtype": "Aura",
+  "colour": "w",
+  "num": "027"
  },
  {
   "title": "Patron of the Valiant",
@@ -263,8 +380,18 @@
   "num": "030"
  },
  {
+  "title": "Sigil of the Empty Throne",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_8Tehs5EN8r.png",
+  "set": "ori",
+  "cost": "{3}{W}{W}",
+  "rarity": "r",
+  "type": "Enchantment",
+  "colour": "w",
+  "num": "031"
+ },
+ {
   "title": "Stalwart Aven",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/Stalw.jpg",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_giukOWytvL.png",
   "set": "ori",
   "cost": "{2}{W}",
   "rarity": "c",
@@ -286,6 +413,27 @@
   "num": "033"
  },
  {
+  "title": "Suppression Bonds",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_j4jIPceKnj.png",
+  "set": "ori",
+  "cost": "{3}{W}",
+  "rarity": "c",
+  "type": "Enchantment",
+  "subtype": "Aura",
+  "colour": "w",
+  "num": "034"
+ },
+ {
+  "title": "Swift Reckoning",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_4GBwnQLqbp.png",
+  "set": "ori",
+  "cost": "{1}{W}",
+  "rarity": "u",
+  "type": "Sorcery",
+  "colour": "w",
+  "num": "035"
+ },
+ {
   "title": "Topan Freeblade",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_Gm13jtnCAy.png",
   "set": "ori",
@@ -299,8 +447,21 @@
   "num": "036"
  },
  {
+  "title": "Totem-Guide Hartebeest",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_TZFZRnHQrD.png",
+  "set": "ori",
+  "cost": "{4}{W}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Antelope",
+  "power": "2",
+  "toughness": "5",
+  "colour": "w",
+  "num": "037"
+ },
+ {
   "title": "Tragic Arrogance",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/Tragic.jpg",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_ZvgnxRnNhy.png",
   "set": "ori",
   "cost": "{3}{W}{W}",
   "rarity": "r",
@@ -332,6 +493,19 @@
   "num": "040"
  },
  {
+  "title": "War Oracle",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_56V75k0rKy.png",
+  "set": "ori",
+  "cost": "{2}{W}{W}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Human Cleric",
+  "power": "3",
+  "toughness": "3",
+  "colour": "w",
+  "num": "041"
+ },
+ {
   "title": "Yoked Ox",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_cwt1KzSYtD.png",
   "set": "ori",
@@ -358,8 +532,18 @@
   "num": "043"
  },
  {
-  "title": "Artificer's Epiphany",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/Artificer.jpg",
+  "title": "Anchor to the Æther",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_FSXkgipuFV.png",
+  "set": "ori",
+  "cost": "{2}{U}",
+  "rarity": "u",
+  "type": "Sorcery",
+  "colour": "u",
+  "num": "044"
+ },
+ {
+  "title": "Artificer’s Epiphany",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_MaKavl0Fhy.png",
   "set": "ori",
   "cost": "{2}{U}",
   "rarity": "c",
@@ -379,6 +563,26 @@
   "toughness": "2",
   "colour": "u",
   "num": "046"
+ },
+ {
+  "title": "Bone to Ash",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_vVS84ub05T.png",
+  "set": "ori",
+  "cost": "{2}{U}{U}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "u",
+  "num": "047"
+ },
+ {
+  "title": "Calculated Dismissal",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_SLNOGDwe9E.png",
+  "set": "ori",
+  "cost": "{2}{U}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "u",
+  "num": "048"
  },
  {
   "title": "Clash of Wills",
@@ -412,8 +616,21 @@
   "num": "051"
  },
  {
+  "title": "Deep-Sea Terror",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_DXvYcnJbzd.png",
+  "set": "ori",
+  "cost": "{4}{U}{U}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Serpent",
+  "power": "6",
+  "toughness": "6",
+  "colour": "u",
+  "num": "052"
+ },
+ {
   "title": "Disciple of the Ring",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/rings.jpg",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_tEQ8qXP2WS.png",
   "set": "ori",
   "cost": "{3}{U}{U}",
   "rarity": "m",
@@ -446,6 +663,30 @@
   "num": "055"
  },
  {
+  "title": "Dreadwaters",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_Or6XOVzpPl.png",
+  "set": "ori",
+  "cost": "{3}{U}",
+  "rarity": "c",
+  "type": "Sorcery",
+  "colour": "u",
+  "num": "056",
+  "fixedViaException": true
+ },
+ {
+  "title": "Faerie Miscreant",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_Om3f1BbwsL.png",
+  "set": "ori",
+  "cost": "{U}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Faerie Rogue",
+  "power": "1",
+  "toughness": "1",
+  "colour": "u",
+  "num": "057"
+ },
+ {
   "title": "Harbinger of the Tides",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_e1SXO7m1Tu.png",
   "set": "ori",
@@ -469,11 +710,11 @@
   "num": "059"
  },
  {
-  "title": "Jace, Telepath Unbound (Jace, Vryn�s Prodigy)",
+  "title": "Jace, Telepath Unbound (Jace, Vryn's Prodigy)",
   "src": "http://mtgen.net/cards/ori-jace-vyrns-prodigy--jace-telepath-unbound.png",
   "set": "ori",
   "cost": "",
-  "rarity": "r",
+  "rarity": "m",
   "type": "Planeswalker",
   "subtype": "Jace",
   "loyalty": "5",
@@ -484,7 +725,7 @@
   "fixedViaException": true
  },
  {
-  "title": "Jace, Vryn�s Prodigy (Jace, Telepath Unbound)",
+  "title": "Jace, Vryn's Prodigy (Jace, Telepath Unbound)",
   "src": "http://mtgen.net/cards/ori-jace-vyrns-prodigy--jace-telepath-unbound.png",
   "set": "ori",
   "cost": "{1}{U}",
@@ -549,6 +790,39 @@
   "num": "064"
  },
  {
+  "title": "Negate",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_7XFOSkE2yy.png",
+  "set": "ori",
+  "cost": "{1}{U}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "u",
+  "num": "065"
+ },
+ {
+  "title": "Nivix Barrier",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_01Vq2R6goA.png",
+  "set": "ori",
+  "cost": "{3}{U}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Illusion Wall",
+  "power": "0",
+  "toughness": "4",
+  "colour": "u",
+  "num": "066"
+ },
+ {
+  "title": "Psychic Rebuttal",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_mAaHOHaNny.png",
+  "set": "ori",
+  "cost": "{1}{U}",
+  "rarity": "u",
+  "type": "Instant",
+  "colour": "u",
+  "num": "067"
+ },
+ {
   "title": "Ringwarden Owl",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_q0EXOObPkj.png",
   "set": "ori",
@@ -575,6 +849,19 @@
   "num": "069"
  },
  {
+  "title": "Screeching Skaab",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_PNlUR7b6R6.png",
+  "set": "ori",
+  "cost": "{1}{U}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Zombie",
+  "power": "2",
+  "toughness": "1",
+  "colour": "u",
+  "num": "070"
+ },
+ {
   "title": "Send to Sleep",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_ec5CXHiD9D.png",
   "set": "ori",
@@ -598,6 +885,32 @@
   "num": "072"
  },
  {
+  "title": "Sigiled Starfish",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_rsCZgqZfDh.png",
+  "set": "ori",
+  "cost": "{1}{U}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Starfish",
+  "power": "0",
+  "toughness": "3",
+  "colour": "u",
+  "num": "073"
+ },
+ {
+  "title": "Skaab Goliath",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_5rHZXEhuUh.png",
+  "set": "ori",
+  "cost": "{5}{U}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Zombie Giant",
+  "power": "6",
+  "toughness": "9",
+  "colour": "u",
+  "num": "074"
+ },
+ {
   "title": "Soulblade Djinn",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_vgPpOssKyR.png",
   "set": "ori",
@@ -619,6 +932,17 @@
   "type": "Enchantment",
   "colour": "u",
   "num": "076"
+ },
+ {
+  "title": "Stratus Walk",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_UWhWibR54b.png",
+  "set": "ori",
+  "cost": "{1}{U}",
+  "rarity": "c",
+  "type": "Enchantment",
+  "subtype": "Aura",
+  "colour": "u",
+  "num": "077"
  },
  {
   "title": "Talent of the Telepath",
@@ -654,8 +978,31 @@
   "num": "080"
  },
  {
+  "title": "Turn to Frog",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_kYEirQbkQY.png",
+  "set": "ori",
+  "cost": "{1}{U}",
+  "rarity": "u",
+  "type": "Instant",
+  "colour": "u",
+  "num": "081"
+ },
+ {
+  "title": "Watercourser",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_uPrflEEVvc.png",
+  "set": "ori",
+  "cost": "{2}{U}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Elemental",
+  "power": "2",
+  "toughness": "3",
+  "colour": "u",
+  "num": "082"
+ },
+ {
   "title": "Whirler Rogue",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/Whirler.jpg",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_l3aaSBIlJu.png",
   "set": "ori",
   "cost": "{2}{U}{U}",
   "rarity": "u",
@@ -667,8 +1014,21 @@
   "num": "083"
  },
  {
+  "title": "Willbreaker",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_Aqho1AhimD.png",
+  "set": "ori",
+  "cost": "{3}{U}{U}",
+  "rarity": "r",
+  "type": "Creature",
+  "subtype": "Human Wizard",
+  "power": "2",
+  "toughness": "3",
+  "colour": "u",
+  "num": "084"
+ },
+ {
   "title": "Blightcaster",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/Blight.jpg",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_MgY2a1YBU5.png",
   "set": "ori",
   "cost": "{3}{B}",
   "rarity": "u",
@@ -677,7 +1037,7 @@
   "power": "2",
   "toughness": "3",
   "colour": "b",
-  "num": "084"
+  "num": "085"
  },
  {
   "title": "Catacomb Slug",
@@ -693,14 +1053,36 @@
   "num": "086"
  },
  {
+  "title": "Consecrated by Blood",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_WPYDSnWPKa.png",
+  "set": "ori",
+  "cost": "{2}{B}{B}",
+  "rarity": "u",
+  "type": "Enchantment",
+  "subtype": "Aura",
+  "colour": "b",
+  "num": "087"
+ },
+ {
   "title": "Cruel Revival",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_uSnVvgHvyN.png",
   "set": "ori",
   "cost": "{4}{B}",
+  "rarity": "u",
+  "type": "Instant",
+  "colour": "b",
+  "num": "088",
+  "fixedViaException": true
+ },
+ {
+  "title": "Dark Dabbling",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_aXuibuxKlW.png",
+  "set": "ori",
+  "cost": "{2}{B}",
   "rarity": "c",
   "type": "Instant",
   "colour": "b",
-  "num": "088"
+  "num": "089"
  },
  {
   "title": "Dark Petition",
@@ -749,8 +1131,8 @@
   "num": "093"
  },
  {
-  "title": "Erebos' Titan",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/Titan%20of%20Erebos.png",
+  "title": "Erebos's Titan",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_ZFYxrThEf5.png",
   "set": "ori",
   "cost": "{1}{B}{B}{B}",
   "rarity": "m",
@@ -759,7 +1141,8 @@
   "power": "5",
   "toughness": "5",
   "colour": "b",
-  "num": "094"
+  "num": "094",
+  "fixedViaException": true
  },
  {
   "title": "Eyeblight Assassin",
@@ -775,8 +1158,32 @@
   "num": "095"
  },
  {
+  "title": "Eyeblight Massacre",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_uSlMKHaFaT.png",
+  "set": "ori",
+  "cost": "{2}{B}{B}",
+  "rarity": "u",
+  "type": "Sorcery",
+  "colour": "b",
+  "num": "096"
+ },
+ {
+  "title": "Fetid Imp",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_0eo8JrNqFE.png",
+  "set": "ori",
+  "cost": "{1}{B}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Imp",
+  "power": "1",
+  "toughness": "2",
+  "colour": "b",
+  "num": "097",
+  "fixedViaException": true
+ },
+ {
   "title": "Fleshbag Marauder",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/Fleshbag.jpg",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_RYrsPuiwRx.png",
   "set": "ori",
   "cost": "{2}{B}",
   "rarity": "u",
@@ -785,24 +1192,11 @@
   "power": "3",
   "toughness": "1",
   "colour": "b",
-  "num": "097"
- },
- {
-  "title": "Funeral-Blade Predator",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/predator.png",
-  "set": "ori",
-  "cost": "{2}{B}",
-  "rarity": "r",
-  "type": "Creature",
-  "subtype": "Human Warrior",
-  "power": "1",
-  "toughness": "4",
-  "colour": "b",
-  "num": "101"
+  "num": "098"
  },
  {
   "title": "Gilt-Leaf Winnower",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/Giltleaf.png",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_4HBqDiirUt.png",
   "set": "ori",
   "cost": "{3}{B}{B}",
   "rarity": "r",
@@ -825,6 +1219,19 @@
   "toughness": "1",
   "colour": "b",
   "num": "100"
+ },
+ {
+  "title": "Graveblade Marauder",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_2PNrcnnl3r.png",
+  "set": "ori",
+  "cost": "{2}{B}",
+  "rarity": "r",
+  "type": "Creature",
+  "subtype": "Human Warrior",
+  "power": "1",
+  "toughness": "4",
+  "colour": "b",
+  "num": "101"
  },
  {
   "title": "Infernal Scarring",
@@ -880,7 +1287,7 @@
   "subtype": "Liliana",
   "loyalty": "3",
   "colour": "b",
-  "num": "106",
+  "num": "106b",
   "width": 530,
   "height": 370,
   "fixedViaException": true
@@ -896,10 +1303,20 @@
   "power": "2",
   "toughness": "3",
   "colour": "b",
-  "num": "106",
+  "num": "106a",
   "width": 530,
   "height": 370,
   "fixedViaException": true
+ },
+ {
+  "title": "Macabre Waltz",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_re2LB7LIma.png",
+  "set": "ori",
+  "cost": "{1}{B}",
+  "rarity": "c",
+  "type": "Sorcery",
+  "colour": "b",
+  "num": "107"
  },
  {
   "title": "Malakir Cullblade",
@@ -915,6 +1332,19 @@
   "num": "108"
  },
  {
+  "title": "Nantuko Husk",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_0Zb0ujbAt9.png",
+  "set": "ori",
+  "cost": "{2}{B}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Zombie Insect",
+  "power": "2",
+  "toughness": "2",
+  "colour": "b",
+  "num": "109"
+ },
+ {
   "title": "Necromantic Summons",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_n08Npn1vap.png",
   "set": "ori",
@@ -923,6 +1353,16 @@
   "type": "Sorcery",
   "colour": "b",
   "num": "110"
+ },
+ {
+  "title": "Nightsnare",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_ssyxyTanWb.png",
+  "set": "ori",
+  "cost": "{3}{B}",
+  "rarity": "c",
+  "type": "Sorcery",
+  "colour": "b",
+  "num": "111"
  },
  {
   "title": "Priest of the Blood Rite",
@@ -951,6 +1391,16 @@
   "num": "113"
  },
  {
+  "title": "Read the Bones",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_uNZTSTJ3yo.png",
+  "set": "ori",
+  "cost": "{2}{B}",
+  "rarity": "c",
+  "type": "Sorcery",
+  "colour": "b",
+  "num": "114"
+ },
+ {
   "title": "Reave Soul",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_OB9ILyK4ER.png",
   "set": "ori",
@@ -959,6 +1409,42 @@
   "type": "Sorcery",
   "colour": "b",
   "num": "115"
+ },
+ {
+  "title": "Returned Centaur",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_1fFbGWIecn.png",
+  "set": "ori",
+  "cost": "{3}{B}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Zombie Centaur",
+  "power": "2",
+  "toughness": "4",
+  "colour": "b",
+  "num": "116"
+ },
+ {
+  "title": "Revenant",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_JusNxMtnWB.png",
+  "set": "ori",
+  "cost": "{4}{B}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Spirit",
+  "power": "*",
+  "toughness": "*",
+  "colour": "b",
+  "num": "117"
+ },
+ {
+  "title": "Shadows of the Past",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_194FjQ6eCo.png",
+  "set": "ori",
+  "cost": "{1}{B}",
+  "rarity": "u",
+  "type": "Enchantment",
+  "colour": "b",
+  "num": "118"
  },
  {
   "title": "Shambling Ghoul",
@@ -982,6 +1468,52 @@
   "type": "Enchantment",
   "colour": "b",
   "num": "120"
+ },
+ {
+  "title": "Thornbow Archer",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_ENLUvh2tMR.png",
+  "set": "ori",
+  "cost": "{B}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Elf Archer",
+  "power": "1",
+  "toughness": "2",
+  "colour": "b",
+  "num": "121"
+ },
+ {
+  "title": "Tormented Thoughts",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_EarCYxcRqR.png",
+  "set": "ori",
+  "cost": "{2}{B}",
+  "rarity": "u",
+  "type": "Sorcery",
+  "colour": "b",
+  "num": "122"
+ },
+ {
+  "title": "Touch of Moonglove",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_wU6hnmKHRD.png",
+  "set": "ori",
+  "cost": "{B}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "b",
+  "num": "123"
+ },
+ {
+  "title": "Undead Servant",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_aP2C6Not8b.png",
+  "set": "ori",
+  "cost": "{3}{B}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Zombie",
+  "power": "3",
+  "toughness": "2",
+  "colour": "b",
+  "num": "124"
  },
  {
   "title": "Unholy Hunger",
@@ -1018,6 +1550,19 @@
   "num": "127"
  },
  {
+  "title": "Acolyte of the Inferno",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_G69ZcSEIdx.png",
+  "set": "ori",
+  "cost": "{2}{R}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Human Monk",
+  "power": "3",
+  "toughness": "1",
+  "colour": "r",
+  "num": "128"
+ },
+ {
   "title": "Act of Treason",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_QYhI2opY7V.png",
   "set": "ori",
@@ -1026,6 +1571,19 @@
   "type": "Sorcery",
   "colour": "r",
   "num": "129"
+ },
+ {
+  "title": "Akroan Sergeant",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_ujJWEwBYm5.png",
+  "set": "ori",
+  "cost": "{2}{R}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Human Soldier",
+  "power": "2",
+  "toughness": "2",
+  "colour": "r",
+  "num": "130"
  },
  {
   "title": "Avaricious Dragon",
@@ -1065,6 +1623,17 @@
   "toughness": "2",
   "colour": "r",
   "num": "133"
+ },
+ {
+  "title": "Call of the Full Moon",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_smSVj9Ttq1.png",
+  "set": "ori",
+  "cost": "{1}{R}",
+  "rarity": "u",
+  "type": "Enchantment",
+  "subtype": "Aura",
+  "colour": "r",
+  "num": "134"
  },
  {
   "title": "Chandra, Fire of Kaladesh (Chandra, Roaring Flame)",
@@ -1131,17 +1700,38 @@
   "num": "138"
  },
  {
+  "title": "Demolish",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_4tVR1r6RPr.png",
+  "set": "ori",
+  "cost": "{3}{R}",
+  "rarity": "c",
+  "type": "Sorcery",
+  "colour": "r",
+  "num": "139"
+ },
+ {
+  "title": "Dragon Fodder",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_YKAEMp40Bi.png",
+  "set": "ori",
+  "cost": "{1}{R}",
+  "rarity": "c",
+  "type": "Sorcery",
+  "colour": "r",
+  "num": "140"
+ },
+ {
   "title": "Embermaw Hellion",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_B6h2XwFY7s.png",
   "set": "ori",
   "cost": "{3}{R}{R}",
-  "rarity": "m",
+  "rarity": "r",
   "type": "Creature",
   "subtype": "Hellion",
   "power": "4",
   "toughness": "5",
   "colour": "r",
-  "num": "141"
+  "num": "141",
+  "fixedViaException": true
  },
  {
   "title": "Enthralling Victor",
@@ -1171,10 +1761,11 @@
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_HeYgPxUCwp.png",
   "set": "ori",
   "cost": "{1}{R}",
-  "rarity": "c",
+  "rarity": "u",
   "type": "Instant",
   "colour": "r",
-  "num": "144"
+  "num": "144",
+  "fixedViaException": true
  },
  {
   "title": "Fiery Impulse",
@@ -1187,6 +1778,19 @@
   "num": "145"
  },
  {
+  "title": "Firefiend Elemental",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_972GI6p9Cv.png",
+  "set": "ori",
+  "cost": "{3}{R}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Elemental",
+  "power": "3",
+  "toughness": "2",
+  "colour": "r",
+  "num": "146"
+ },
+ {
   "title": "Flameshadow Conjuring",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_LW7TkUIBUj.png",
   "set": "ori",
@@ -1197,8 +1801,19 @@
   "num": "147"
  },
  {
+  "title": "Ghirapur Æther Grid",
+  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/ghirapur.png",
+  "set": "ori",
+  "cost": "{2}{R}",
+  "rarity": "u",
+  "type": "Enchantment",
+  "colour": "r",
+  "num": "148",
+  "fixedViaException": true
+ },
+ {
   "title": "Ghirapur Gearcrafter",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/Ghirt.jpg",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_M88XQLPIxG.png",
   "set": "ori",
   "cost": "{2}{R}",
   "rarity": "c",
@@ -1236,6 +1851,17 @@
   "num": "151"
  },
  {
+  "title": "Infectious Bloodlust",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_HaMPpvhKJz.png",
+  "set": "ori",
+  "cost": "{1}{R}",
+  "rarity": "c",
+  "type": "Enchantment",
+  "subtype": "Aura",
+  "colour": "r",
+  "num": "152"
+ },
+ {
   "title": "Lightning Javelin",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_9zWHiaYn8E.png",
   "set": "ori",
@@ -1246,8 +1872,21 @@
   "num": "153"
  },
  {
+  "title": "Mage-Ring Bully",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_rillUERh3C.png",
+  "set": "ori",
+  "cost": "{1}{R}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Human Warrior",
+  "power": "2",
+  "toughness": "2",
+  "colour": "r",
+  "num": "154"
+ },
+ {
   "title": "Magmatic Insight",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/Magma.jpg",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_givYxEN6D3.png",
   "set": "ori",
   "cost": "{R}",
   "rarity": "u",
@@ -1277,6 +1916,19 @@
   "toughness": "2",
   "colour": "r",
   "num": "157"
+ },
+ {
+  "title": "Prickleboar",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_ceIlHC52yz.png",
+  "set": "ori",
+  "cost": "{4}{R}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Boar",
+  "power": "3",
+  "toughness": "3",
+  "colour": "r",
+  "num": "158"
  },
  {
   "title": "Ravaging Blaze",
@@ -1315,6 +1967,29 @@
   "num": "161"
  },
  {
+  "title": "Skyraker Giant",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_4paHf3my5B.png",
+  "set": "ori",
+  "cost": "{2}{R}{R}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Giant",
+  "power": "4",
+  "toughness": "3",
+  "colour": "r",
+  "num": "162"
+ },
+ {
+  "title": "Smash to Smithereens",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_53t0BL9cMp.png",
+  "set": "ori",
+  "cost": "{1}{R}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "r",
+  "num": "163"
+ },
+ {
   "title": "Subterranean Scout",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_UL5aclBcXf.png",
   "set": "ori",
@@ -1326,6 +2001,18 @@
   "toughness": "1",
   "colour": "r",
   "num": "164"
+ },
+ {
+  "title": "Thopter Engineer",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_2CLF9zIakb.png",
+  "set": "ori",
+  "cost": "{2}{R}",
+  "rarity": "u",
+  "type": "Creature- Human Artificer",
+  "power": "1",
+  "toughness": "3",
+  "colour": "r",
+  "num": "165"
  },
  {
   "title": "Titan’s Strength",
@@ -1351,6 +2038,16 @@
   "num": "167"
  },
  {
+  "title": "Aerial Volley",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_R1vlEjk9jg.png",
+  "set": "ori",
+  "cost": "{G}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "g",
+  "num": "168"
+ },
+ {
   "title": "Animist’s Awakening",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_8vOQXWPADy.png",
   "set": "ori",
@@ -1359,6 +2056,20 @@
   "type": "Sorcery",
   "colour": "g",
   "num": "169"
+ },
+ {
+  "title": "Caustic Caterpillar",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_fIE8eNUxRB.png",
+  "set": "ori",
+  "cost": "{G}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Insect",
+  "power": "1",
+  "toughness": "1",
+  "colour": "g",
+  "num": "170",
+  "fixedViaException": true
  },
  {
   "title": "Conclave Naturalists",
@@ -1424,7 +2135,7 @@
  },
  {
   "title": "Evolutionary Leap",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/evol.jpg",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_na6qm2udfL.png",
   "set": "ori",
   "cost": "{1}{G}",
   "rarity": "r",
@@ -1446,8 +2157,18 @@
   "num": "177"
  },
  {
+  "title": "Gather the Pack",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_z40iV3I8aq.png",
+  "set": "ori",
+  "cost": "{1}{G}",
+  "rarity": "u",
+  "type": "Sorcery",
+  "colour": "g",
+  "num": "178"
+ },
+ {
   "title": "Herald of the Pantheon",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/Herald.png",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_RMl3NTngGE.png",
   "set": "ori",
   "cost": "{1}{G}",
   "rarity": "r",
@@ -1508,6 +2229,19 @@
   "num": "184"
  },
  {
+  "title": "Llanowar Empath",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_rYgpChY17z.png",
+  "set": "ori",
+  "cost": "{3}{G}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Elf Shaman",
+  "power": "2",
+  "toughness": "2",
+  "colour": "g",
+  "num": "185"
+ },
+ {
   "title": "Managorger Hydra",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_ONrzrMmVhw.png",
   "set": "ori",
@@ -1518,8 +2252,7 @@
   "power": "1",
   "toughness": "1",
   "colour": "g",
-  "num": "186",
-  "fixedViaException": true
+  "num": "186"
  },
  {
   "title": "Mantle of Webs",
@@ -1533,6 +2266,16 @@
   "num": "187"
  },
  {
+  "title": "Might of the Masses",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_BCPy5mOcuP.png",
+  "set": "ori",
+  "cost": "{G}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "g",
+  "num": "188"
+ },
+ {
   "title": "Nissa, Sage Animist (Nissa, Vastwood Seer)",
   "src": "http://mtgen.net/cards/ori-nissa-vastwood-seer--nissa-sage-animist.png",
   "set": "ori",
@@ -1542,7 +2285,7 @@
   "subtype": "Nissa",
   "loyalty": "3",
   "colour": "g",
-  "num": "189",
+  "num": "189b",
   "width": 530,
   "height": 370,
   "fixedViaException": true
@@ -1558,7 +2301,7 @@
   "power": "2",
   "toughness": "2",
   "colour": "g",
-  "num": "189",
+  "num": "189a",
   "width": 530,
   "height": 370,
   "fixedViaException": true
@@ -1574,14 +2317,27 @@
   "num": "190"
  },
  {
-  "title": "Nissa's Revelation",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/revel.jpg",
+  "title": "Nissa’s Revelation",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_iD5PFkzqxh.png",
   "set": "ori",
   "cost": "{5}{G}{G}",
   "rarity": "r",
   "type": "Sorcery",
   "colour": "g",
   "num": "191"
+ },
+ {
+  "title": "Orchard Spirit",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_XLlWzYg5Ka.png",
+  "set": "ori",
+  "cost": "{2}{G}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Spirit",
+  "power": "2",
+  "toughness": "2",
+  "colour": "g",
+  "num": "192"
  },
  {
   "title": "Outland Colossus",
@@ -1595,6 +2351,29 @@
   "toughness": "6",
   "colour": "g",
   "num": "193"
+ },
+ {
+  "title": "Pharika’s Disciple",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_hENZoPKNV5.png",
+  "set": "ori",
+  "cost": "{3}{G}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Centaur Warrior",
+  "power": "2",
+  "toughness": "3",
+  "colour": "g",
+  "num": "194"
+ },
+ {
+  "title": "Reclaim",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_BiJ7AuVIAZ.png",
+  "set": "ori",
+  "cost": "{G}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "g",
+  "num": "195"
  },
  {
   "title": "Rhox Maulers",
@@ -1611,7 +2390,7 @@
  },
  {
   "title": "Skysnare Spider",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/Skysna.jpg",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_E3pGB56ivb.png",
   "set": "ori",
   "cost": "{4}{G}{G}",
   "rarity": "u",
@@ -1624,7 +2403,7 @@
  },
  {
   "title": "Somberwald Alpha",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/Somber.jpg",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_x3pltQL2ZO.png",
   "set": "ori",
   "cost": "{3}{G}",
   "rarity": "u",
@@ -1659,6 +2438,19 @@
   "num": "179"
  },
  {
+  "title": "Timberpack Wolf",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_YHwjXwcuL0.png",
+  "set": "ori",
+  "cost": "{1}{G}",
+  "rarity": "c",
+  "type": "Creature",
+  "subtype": "Wolf",
+  "power": "2",
+  "toughness": "2",
+  "colour": "g",
+  "num": "200"
+ },
+ {
   "title": "Titanic Growth",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_g4mozqQjND.png",
   "set": "ori",
@@ -1667,6 +2459,19 @@
   "type": "Instant",
   "colour": "g",
   "num": "201"
+ },
+ {
+  "title": "Undercity Troll",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_FHbJIMKumN.png",
+  "set": "ori",
+  "cost": "{1}{G}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Troll",
+  "power": "2",
+  "toughness": "2",
+  "colour": "g",
+  "num": "202"
  },
  {
   "title": "Valeron Wardens",
@@ -1695,6 +2500,26 @@
   "num": "204"
  },
  {
+  "title": "Vine Snare",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_HXtv6dBlTn.png",
+  "set": "ori",
+  "cost": "{2}{G}",
+  "rarity": "c",
+  "type": "Instant",
+  "colour": "g",
+  "num": "205"
+ },
+ {
+  "title": "Wild Instincts",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_onxtrEafZd.png",
+  "set": "ori",
+  "cost": "{3}{G}",
+  "rarity": "c",
+  "type": "Sorcery",
+  "colour": "g",
+  "num": "206"
+ },
+ {
   "title": "Woodland Bellower",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_uMwE19JOkq.png",
   "set": "ori",
@@ -1721,8 +2546,8 @@
   "num": "208"
  },
  {
-  "title": "Zendikar's Roil",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/Zendika.jpg",
+  "title": "Zendikar’s Roil",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_oM4aKCOyRd.png",
   "set": "ori",
   "cost": "{3}{G}{G}",
   "rarity": "u",
@@ -1745,7 +2570,7 @@
  },
  {
   "title": "Blood-Cursed Knight",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/Blood.jpg",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_vqTMLhYGvc.png",
   "set": "ori",
   "cost": "{1}{W}{B}",
   "rarity": "u",
@@ -1783,8 +2608,34 @@
   "num": "213"
  },
  {
+  "title": "Iroas’s Champion",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_m9rDzt4Jkz.png",
+  "set": "ori",
+  "cost": "{1}{R}{W}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Human Soldier",
+  "power": "2",
+  "toughness": "2",
+  "colour": "m",
+  "num": "214"
+ },
+ {
+  "title": "Possessed Skaab",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_Z5MYbccd6o.png",
+  "set": "ori",
+  "cost": "{3}{U}{B}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Zombie",
+  "power": "3",
+  "toughness": "2",
+  "colour": "m",
+  "num": "215"
+ },
+ {
   "title": "Reclusive Artificer",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/Reclus.jpg",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_1HIMDp2zl9.png",
   "set": "ori",
   "cost": "{2}{U}{R}",
   "rarity": "u",
@@ -1809,6 +2660,19 @@
   "num": "217"
  },
  {
+  "title": "Thunderclap Wyvern",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_srss4UQzNK.png",
+  "set": "ori",
+  "cost": "{2}{W}{U}",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Drake",
+  "power": "2",
+  "toughness": "3",
+  "colour": "m",
+  "num": "218"
+ },
+ {
   "title": "Zendikar Incarnate",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_QXqp9wVM16.png",
   "set": "ori",
@@ -1822,6 +2686,16 @@
   "num": "219"
  },
  {
+  "title": "Alchemist’s Vial",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_m7ovhZrBze.png",
+  "set": "ori",
+  "cost": "{2}",
+  "rarity": "c",
+  "type": "Artifact",
+  "colour": "a",
+  "num": "220"
+ },
+ {
   "title": "Alhammarret’s Archive",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_G7iY2B7HW0.png",
   "set": "ori",
@@ -1832,8 +2706,18 @@
   "num": "221"
  },
  {
+  "title": "Angel’s Tomb",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_9zHoRlllEZ.png",
+  "set": "ori",
+  "cost": "{3}",
+  "rarity": "u",
+  "type": "Artifact",
+  "colour": "a",
+  "num": "222"
+ },
+ {
   "title": "Bonded Construct",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/Bonded.jpg",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_Jfr7dpOAo8.png",
   "set": "ori",
   "cost": "{1}",
   "rarity": "c",
@@ -1845,8 +2729,19 @@
   "num": "223"
  },
  {
+  "title": "Brawler’s Plate",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_Z06MlxEIzS.png",
+  "set": "ori",
+  "cost": "{3}",
+  "rarity": "u",
+  "type": "Artifact",
+  "subtype": "Equipment",
+  "colour": "a",
+  "num": "224"
+ },
+ {
   "title": "Chief of the Foundry",
-  "src": "http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/DTK/Cheif.jpg",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_iO68k9vtKK.png",
   "set": "ori",
   "cost": "{3}",
   "rarity": "u",
@@ -1869,6 +2764,32 @@
   "toughness": "4",
   "colour": "a",
   "num": "226"
+ },
+ {
+  "title": "Guardian Automaton",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_Lpu7pMpU56.png",
+  "set": "ori",
+  "cost": "{4}",
+  "rarity": "c",
+  "type": "Artifact Creature",
+  "subtype": "Construct",
+  "power": "3",
+  "toughness": "3",
+  "colour": "a",
+  "num": "227"
+ },
+ {
+  "title": "Guardians of Meletis",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_PTv3hVZq8h.png",
+  "set": "ori",
+  "cost": "{3}",
+  "rarity": "c",
+  "type": "Artifact Creature",
+  "subtype": "Golem",
+  "power": "0",
+  "toughness": "6",
+  "colour": "a",
+  "num": "228"
  },
  {
   "title": "Hangarback Walker",
@@ -1905,6 +2826,19 @@
   "num": "231"
  },
  {
+  "title": "Mage-Ring Responder",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_PesnW2vuQn.png",
+  "set": "ori",
+  "cost": "{7}",
+  "rarity": "r",
+  "type": "Artifact Creature",
+  "subtype": "Golem",
+  "power": "7",
+  "toughness": "7",
+  "colour": "a",
+  "num": "232"
+ },
+ {
   "title": "Meteorite",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_BKD76gs1TE.png",
   "set": "ori",
@@ -1915,6 +2849,26 @@
   "num": "233"
  },
  {
+  "title": "Orbs of Warding",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_jnySQa0Kar.png",
+  "set": "ori",
+  "cost": "{5}",
+  "rarity": "r",
+  "type": "Artifact",
+  "colour": "a",
+  "num": "234"
+ },
+ {
+  "title": "Prism Ring",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_VEOKyfJN6F.png",
+  "set": "ori",
+  "cost": "{1}",
+  "rarity": "u",
+  "type": "Artifact",
+  "colour": "a",
+  "num": "235"
+ },
+ {
   "title": "Pyromancer’s Goggles",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_BX7Cza3AYv.png",
   "set": "ori",
@@ -1923,6 +2877,19 @@
   "type": "Legendary Artifact",
   "colour": "a",
   "num": "236"
+ },
+ {
+  "title": "Ramroller",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_w3V8XlWueF.png",
+  "set": "ori",
+  "cost": "{3}",
+  "rarity": "u",
+  "type": "Artifact Creature",
+  "subtype": "Juggernaut",
+  "power": "2",
+  "toughness": "3",
+  "colour": "a",
+  "num": "237"
  },
  {
   "title": "Runed Servitor",
@@ -1938,6 +2905,39 @@
   "num": "238"
  },
  {
+  "title": "Sigil of Valor",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_GN3OpsLwjq.png",
+  "set": "ori",
+  "cost": "{2}",
+  "rarity": "u",
+  "type": "Artifact",
+  "subtype": "Equipment",
+  "colour": "a",
+  "num": "239"
+ },
+ {
+  "title": "Sword of the Animist",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_NbvScAhNlt.png",
+  "set": "ori",
+  "cost": "{2}",
+  "rarity": "r",
+  "type": "Legendary Artifact",
+  "subtype": "Equipment",
+  "colour": "a",
+  "num": "240"
+ },
+ {
+  "title": "Throwing Knife",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_Msw2ehgPkY.png",
+  "set": "ori",
+  "cost": "{2}",
+  "rarity": "u",
+  "type": "Artifact",
+  "subtype": "Equipment",
+  "colour": "a",
+  "num": "241"
+ },
+ {
   "title": "Veteran’s Sidearm",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_0eOJtAri53.png",
   "set": "ori",
@@ -1947,6 +2947,16 @@
   "subtype": "Equipment",
   "colour": "a",
   "num": "242"
+ },
+ {
+  "title": "War Horn",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_LEIzb2njQm.png",
+  "set": "ori",
+  "cost": "{3}",
+  "rarity": "u",
+  "type": "Artifact",
+  "colour": "a",
+  "num": "243"
  },
  {
   "title": "Battlefield Forge",
@@ -1969,6 +2979,26 @@
   "num": "245"
  },
  {
+  "title": "Evolving Wilds",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_R7O2eAso4h.png",
+  "set": "ori",
+  "cost": "",
+  "rarity": "c",
+  "type": "Land",
+  "colour": "l",
+  "num": "246"
+ },
+ {
+  "title": "Foundry of the Consuls",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_0t1o6eIuSL.png",
+  "set": "ori",
+  "cost": "",
+  "rarity": "u",
+  "type": "Land",
+  "colour": "l",
+  "num": "247"
+ },
+ {
   "title": "Llanowar Wastes",
   "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_KZzRzrdaWl.png",
   "set": "ori",
@@ -1977,6 +3007,26 @@
   "type": "Land",
   "colour": "l",
   "num": "248"
+ },
+ {
+  "title": "Mage-Ring Network",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_tiOYYQh6s8.png",
+  "set": "ori",
+  "cost": "",
+  "rarity": "u",
+  "type": "Land",
+  "colour": "l",
+  "num": "249"
+ },
+ {
+  "title": "Rogue’s Passage",
+  "src": "http://media.wizards.com/2015/origins_askdf9aj2399v/en_QV52qcbBIF.png",
+  "set": "ori",
+  "cost": "",
+  "rarity": "u",
+  "type": "Land",
+  "colour": "l",
+  "num": "250"
  },
  {
   "title": "Shivan Reef",
