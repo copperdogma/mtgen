@@ -95,28 +95,28 @@ var cardDataImporter = (function (my, $) {
     function createOutputJson(setCode, htmlCards, htmlImages, jsonExceptions) {
         // Get card data -------------------------------------------------------------------------------------------------
         // All card data source come with image data that we usually want to override in the next step.
-        var mainOut = getCardData(htmlCards.data, htmlCards.urlSource, setCode);
+        var mainOut = api.getCardData(htmlCards.data, htmlCards.urlSource, setCode);
         var initialCardDataCount = mainOut.length;
 
         // Get image data -------------------------------------------------------------------------------------------------
-        var mainImages = getImageData(htmlImages.data, htmlImages.urlSource);
+        var mainImages = api.getImageData(htmlImages.data, htmlImages.urlSource);
         var imageDataCount = Object.size(mainImages);
 
         // Apply Exceptions -------------------------------------------------------------------------------------------------
         jsonExceptions = addMatchTitles(jsonExceptions.data);
 
-        mainOut = applyPropertyExceptions(mainOut, jsonExceptions);
+        mainOut = api.applyPropertyExceptions(mainOut, jsonExceptions);
 
-        mainOut = applyAdditionDeletionExceptions(mainOut, jsonExceptions);
+        mainOut = api.applyAdditionDeletionExceptions(mainOut, jsonExceptions);
 
         // Add images to cards -------------------------------------------------------------------------------------------------
-        mainOut = applyImagesToCards(mainOut, mainImages);
+        mainOut = api.applyImagesToCards(mainOut, mainImages);
 
         // Apply Exceptions AGAIN -------------------------------------------------------------------------------------------------
         // issue: if I don't do the title fix from the exceptions NOW, it won't properly match the images...
         //        but if I ONLY do it now and there's a SRC override it'll ignore that...
         //        so for now we'll just do the exceptions TWICE
-        mainOut = applyPropertyExceptions(mainOut, jsonExceptions);
+        mainOut = api.applyPropertyExceptions(mainOut, jsonExceptions);
 
 
         // Reporting -------------------------------------------------------------------------------------------------
@@ -465,13 +465,13 @@ var cardDataImporter = (function (my, $) {
         // Determine from where the card data was sourced and therefore the parser needed.
         var lowercaseCardDataUrlSource = cardDataUrlSource.toLowerCase();
         if (lowercaseCardDataUrlSource.indexOf('gatheringmagic.com') > -1) {
-            cards = getCardsFromGatheringMagicData(cardData, setCode);
+            cards = my.api.getCardsFromGatheringMagicData(cardData, setCode);
         }
         else if (lowercaseCardDataUrlSource.indexOf('mtgjson.com') > -1) {
-            cards = getCardsFromMtgJsonData(cardData, setCode);
+            cards = my.api.getCardsFromMtgJsonData(cardData, setCode);
         }
         else {
-            alert("Card data url unknown. Only gatheringmagic.com and mtgjson.com supported. '" + cardDataUrlSource + "'");
+            throw new Error("Card data url unknown. Only gatheringmagic.com and mtgjson.com supported. '" + cardDataUrlSource + "'");
         }
 
         return cards;
@@ -1043,6 +1043,24 @@ var cardDataImporter = (function (my, $) {
 
         return url;
     }
+
+    // set of internal function calls for testing purposes
+    my.api = {
+        createOutputJson: createOutputJson,
+
+        getCardData: getCardData,
+        getCardsFromGatheringMagicData: getCardsFromGatheringMagicData,
+        getCardsFromMtgJsonData: getCardsFromMtgJsonData,
+
+        getImageData: getImageData,
+        getImagesFromWotcSpoilers: getImagesFromWotcSpoilers,
+        getImagesFromMtgJsonData: getImagesFromMtgJsonData,
+        getImagesFromCardsMainData: getImagesFromCardsMainData,
+
+        applyPropertyExceptions: applyPropertyExceptions,
+        applyAdditionDeletionExceptions: applyAdditionDeletionExceptions,
+        applyImagesToCards: applyImagesToCards
+    };
 
     return my;
 }(cardDataImporter || {}, jQuery));

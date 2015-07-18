@@ -21,3 +21,4 @@
 /// <reference path="jquery-2.1.4.js" />
 /// <reference path="jquery.validate.unobtrusive.min.js" />
 /// <reference path="../content/util/js/card-data-importer.js" />
+/// <reference path="../content/util/js/sinon-1.15.4.js" />
