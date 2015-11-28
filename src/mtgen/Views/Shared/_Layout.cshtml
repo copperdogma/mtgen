@@ -1,0 +1,141 @@
+﻿@using System.Linq;
+@{
+    var set = (mtgen.Models.Set)ViewBag.Set;
+}
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" itemscope itemtype="http://schema.org/MtG Deck Generator">
+<head>
+    <meta charset="UTF-8" />
+    <title>@set.Name - Magic: The Gathering: Card Generator</title>
+    <meta name="Description" content="@set.Name Sealed Deck Card Generator for Magic: The Gathering">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link href="http://fonts.googleapis.com/css?family=IM+Fell+DW+Pica:400,400italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="~/css/html5reset.css" type="text/css" />
+    <link rel="stylesheet" href="~/css/generator.css" type="text/css" />
+    <link rel="stylesheet" href="~/css/print.css" type="text/css" media="print" />
+    <link rel="stylesheet" href="~/@set.Code/set.css" type="text/css" />
+</head>
+<body class="home">
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-25921884-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <aside class="info">
+        <p class="created-date">Created: @set.CreatedDate.ToString("dd-MMM-yyy"). @set.CreatedText</p>
+        @{
+            var first = true;
+            foreach (var update in set.Updates)
+            {
+                if (first)
+                {
+                    first = false;
+                    <p class="update-new">Updated: @update.UpdateDate.ToString("dd-MMM-yyy"): @Html.Raw(update.HtmlString)</p>
+                }
+                else
+                {
+                    <p class="update hidden">@update.UpdateDate.ToString("dd-MMM-yyy"): @Html.Raw(update.HtmlString)</p>
+
+                }
+            }
+            if (set.Updates.Count() > 1)
+            {
+                <a class="update-more button" href="#">@(set.Updates.Count() - 1) More ></a>
+            }
+        }
+    </aside>
+    @if (set.Incomplete)
+    {
+        <div class="warning">WARNING: All cards have not yet been released. Placeholders have been created for cards we know exist but we don't yet have good images for them.</div>
+    }
+    <header>
+        <div class="symbol">
+            <img itemprop="image" src="~/@set.Code/images/symbol.png" alt="symbol" />
+            <a asp-controller="Home" asp-action="Index" class="button"><span>Back to </span>Home</a>
+            <a href="http://eepurl.com/bbdyO5" class="button small" title="Subscribe to email updates">Subscribe</a>
+            <a href="https://twitter.com/mtggen" class="button small" title="Follow @@mtggen on Twitter">@@mtggen</a>
+        </div>
+        <h1 itemprop="name"><span class="mtg">Magic: The Gathering</span> <span class="set-name">@set.Name</span> <span class="sdg">Sealed Deck Card Generator</span></h1>
+        <div id="card-count">
+            <span class="current">...</span>/<span class="total"></span> cards
+        </div>
+    </header>
+    <main>
+        <em>Loading ...</em>
+        @RenderBody()
+    </main>
+    <footer>
+        <p>Created by: Cam Marsollier - <a href="mailto:cam.marsollier@gmail.com">cam.marsollier@gmail.com</a></p>
+        <p>Design by: KUMO - <a href="http://www.kumokumo.com.ar">www.kumokumo.com.ar</a></p>
+        <p>Wizards of the Coast, Magic: The Gathering, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. © 2009 Wizards. All Rights Reserved.</p>
+        <p>MtG Generator is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC. MtG Generator may use the trademarks and other intellectual property of Wizards of the Coast LLC, which is permitted under Wizards' Fan Site Policy. For more information about Wizards of the Coast or any of Wizards' trademarks or other intellectual property, please visit their website at <a href="http://www.wizards.com">www.wizards.com</a>.</p>
+    </footer>
+    @RenderSection("scripts", required: false)
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/underscore/underscore-min.js"></script>
+    <script src="~/lib/backbone/backbone.js"></script>
+    <script src="~/lib/mdn.base64.min.js"></script>
+    <link rel="stylesheet" href="~/lib/fancybox2/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+    <script src="~/lib/fancybox2/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script src="~/lib/mtg-generator.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.4.0/holder.js"></script>
+    <script src="~/lib/jquery.sticky-kit.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            mtgGen.run({
+                setCode: "@set.Code"
+                , setFile: "@set.SetFile"
+                , cardFiles: [ @Html.Raw(string.Join(", ",set.CardFiles.Select(cardFile => $"'/{set.Code}/{cardFile}'"))) ]
+                , packFiles: [ @Html.Raw(string.Join(", ",set.PackFiles.Select(packFile => $"'/{set.Code}/{packFile}'"))) ]
+                , productFile: "/@set.Code/@set.ProductFile"
+                , startProductName: "@set.StartProductName"
+                , setCardCount: "@set.CardCount"
+                , contentElem: "main"
+            });
+
+            $("#product-content .card a").fancybox();
+
+            // dynamic card loading counts
+            $("#card-count .total").text(mtgGen.setCardCount);
+            var $currentCardCount = $("#card-count .current");
+            mtgGen.on('playableCardLoaded',function(setCardsLoadedCount) { $currentCardCount.text(setCardsLoadedCount);	});
+
+            mtgGen.on('ready',function(setCardsLoadedCount) { Holder.run(); });
+
+            // sticky headers
+            mtgGen.on('layoutChanging',function(setCardsLoadedCount) { $(".result .set h2").trigger("sticky_kit:detach"); });
+            mtgGen.on('layoutChanged',function(setCardsLoadedCount) {
+                $(".result .set h2").stick_in_parent();
+                Holder.run();
+            });
+
+            // analytics event tracking
+            var currProduct = "#products a.active";
+            var currOption = "#product-content>section.active .options a.active";
+            mtgGen.on('cardSetsGenerated', function (setCode) {
+                ga('send', 'event', setCode.toUpperCase(), 'Generate', setCode.toUpperCase() + ": generate: " + $(currProduct).text() + ", " + $(currOption).text());
+            });
+            $('.export-download').on('click', function (setCode) {
+                ga('send', 'event', setCode.toUpperCase(), 'Export', setCode.toUpperCase() + ": export: " + $(currProduct).text() + ", " + $(currOption).text());
+            });
+
+            $("aside.info a.update-more").on('click', function (event) {
+                $(event.currentTarget).hide();
+                $("aside.info p").removeClass('hidden');
+            });
+
+            $('#testButton').on("click",function() {
+                $.getJSON( "Set/SaveDraw", function(url) {
+                    console.log( "success:"+url );
+                });
+            });
+        });
+    </script>
+</body>
+</html>

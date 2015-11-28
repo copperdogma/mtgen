@@ -1,0 +1,26 @@
+﻿@using mtgen.Models;
+@{
+    var set = new mtgen.Models.Set()
+    {
+        Code = "c15",
+        Name = "Commander 2015",
+        CreatedDate = new DateTime(2015, 11, 13),
+        CardCount = 342,
+        StartProductName = "c15-commander-decks"
+    };
+
+    set.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2015,11,14),
+            HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+        }
+    };
+
+    //set.Incomplete = true;
+
+    set.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    set.PackFiles = new List<string>() { "packs.json" };
+
+    ViewBag.Set = set;
+}

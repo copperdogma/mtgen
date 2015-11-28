@@ -1,0 +1,31 @@
+﻿@{
+    var set = new Set()
+    {
+        Code = "ovm",
+        Name = "Vintage Masters",
+        CreatedDate = new DateTime(2014, 5, 29),
+        CardCount = 325,
+        StartProductName = "ovm-boosters"
+    };
+
+    set.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2014,8,23),
+            HtmlString = "Upgraded to the new generator version."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014, 5, 29),
+            HtmlString = "Morning: There is now only a one in 53 chance per pack of getting a Power Nine card. Thanks, x1a4!"
+        }
+    };
+
+    ViewBag.Set = set;
+
+    /* Defaults:
+        SetFile = "~/sets.json";
+        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+        PackFiles = new List<string>() { "packs.json" };
+        ProductFile = "products.json";
+     */
+}

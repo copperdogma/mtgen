@@ -1,0 +1,20 @@
+﻿@{
+    var set = new mtgen.Models.Set();
+    set.Code = "v15";
+    set.Name = "From The Vault: Angels";
+    set.CreatedDate = new DateTime(2015, 9, 12);
+    set.CardCount = 15;
+    set.StartProductName = "v15-all-cards";
+
+    set.CardFiles = new List<string>() { "cardsMain.json" };
+    
+    ViewBag.Set = set;
+    
+    
+    /* Defaults:
+        SetFile = "~/sets.json";
+        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+        PackFiles = new List<string>() { "packs.json" };
+        ProductFile = "products.json";
+     */
+}

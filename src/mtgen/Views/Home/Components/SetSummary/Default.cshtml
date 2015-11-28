@@ -1,0 +1,38 @@
+﻿@model SetStubSummary
+<tr class="@(Model.IsCurrentSet ? "current" : "") @(Model.IsFutureSet ? "future" : "")" itemscope itemtype="http://schema.org/Event">
+    <td>
+        @if(Model.SetStub.GeneratorCreatedDate.HasValue)
+        {
+            <a href="/@Model.SetStub.Code.ToLower()/"><img src="/@Model.SetStub.Code.ToLower()/images/@Model.SetStub.Image" title="@Model.SetStub.Name" alt="@Model.SetStub.Name logo" itemprop="image" /></a>
+        }
+        else
+        {
+            <img src="/@Model.SetStub.Code.ToLower()/images/@Model.SetStub.Image" title="@Model.SetStub.Name" alt="@Model.SetStub.Name logo" itemprop="image" />
+        }
+    </td>
+    <td itemprop='name'>@Model.SetStub.Name</td>
+    @if (Model.SetStub.GeneratorCreatedDate.HasValue)
+    {
+        <td><time itemprop="startDate" datetime="@Model.SetStub.GeneratorCreatedDate.Value.ToString("yyyy-MM-dd")" title="@Model.CreatedTitle">@Model.SetStub.GeneratorCreatedDate.Value.ToString("MMMM d, yyyy")</time></td>
+    }
+    else
+    {
+        <td class='not-yet'>not yet created</td>
+    }
+    @if (Model.SetStub.PrereleaseDate.HasValue)
+    {
+        <td><time itemprop="startDate" datetime="@Model.SetStub.PrereleaseDate.Value.ToString("yyyy-MM-dd")" title="@Model.PrereleaseTitle">@Model.SetStub.PrereleaseDate.Value.ToString("MMMM d, yyyy")</time></td>
+    }
+    else
+    {
+        <td><em>none</em></td>
+    }
+    @if (Model.SetStub.ReleaseDate.HasValue)
+    {
+        <td><time itemprop="startDate" datetime="@Model.SetStub.ReleaseDate.Value.ToString("yyyy-MM-dd")" title="@Model.ReleaseTitle">@Model.SetStub.ReleaseDate.Value.ToString("MMMM d, yyyy")</time></td>
+    }
+    else
+    {
+        <td><em>none</em></td>
+    }
+</tr>

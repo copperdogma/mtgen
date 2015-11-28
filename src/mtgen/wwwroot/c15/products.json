@@ -1,0 +1,86 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "c15-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://magic.wizards.com/en/content/commander-2015-cards", "http://magic.wizards.com/en/articles/archive/arcana/tokens-commander-2015-edition-2015-11-05" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "c15-all-cards" }
+      ]
+    },
+    {
+      "productName": "c15-commander-decks",
+      "productDesc": "Commander Decks",
+      "sources": [ "http://magic.wizards.com/en/content/commander-2015-decklists" ],
+      "isGenerated": false,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "c15-deck-call-the-spirits" },
+        { "packName": "c15-deck-seize-control" },
+        { "packName": "c15-deck-plunder-the-graves" },
+        { "packName": "c15-deck-wade-into-battle" },
+        { "packName": "c15-deck-swell-the-host" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "c15-deck-call-the-spirits",
+            "presetDesc": "Call the Spirits",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "c15-deck-call-the-spirits"
+              }
+            ]
+          },
+          {
+            "presetName": "c15-deck-seize-control",
+            "presetDesc": "Seize Control",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "c15-deck-seize-control"
+              }
+            ]
+          },
+          {
+            "presetName": "c15-deck-plunder-the-graves",
+            "presetDesc": "Plunder the Graves",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "c15-deck-plunder-the-graves"
+              }
+            ]
+          },
+          {
+            "presetName": "c15-deck-wade-into-battle",
+            "presetDesc": "Wade Into Battle",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "c15-deck-wade-into-battle"
+              }
+            ]
+          },
+          {
+            "presetName": "c15-deck-swell-the-host",
+            "presetDesc": "Swell the Host",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "c15-deck-swell-the-host"
+              }
+            ]
+          }
+
+        ]
+      }
+    }
+
+  ]
+}

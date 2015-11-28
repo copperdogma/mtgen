@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <title>TESTS: JSON Magic: The Gathering: Card Generator Gathering Magic IMPORTER</title>
+    <link rel="stylesheet" href="//code.jquery.com/qunit/qunit-1.18.0.css">
+</head>
+<body>
+    <h1>TESTS: JSON Magic: The Gathering Sealed Deck Card Generator Gathering Magic IMPORTER</h1>
+    <p>This page imports card data from the <a href="http://www.gatheringmagic.com/" target="_blank">Gathering Magic spoiler list</a>, <a href="https://www.google.com/search?q=card+image+gallery+wizards+of+the+coast" target="_blank">WotC card images</a>, and <a href="http://mtgjson.com" target="_blank">mtgjson.com</a> to help create the Sealed Deck Card Generator pages for each release.</p>
+    <ul>
+        <li>18-Jul-2015: Created..</li>
+    </ul>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <footer>
+        <p>Created by: Cam Marsollier - <a href="mailto:cam.marsollier@gmail.com">cam.marsollier@gmail.com</a></p>
+        <p>Note that this site has no affiliation with <a href="http://www.wizards.com/Magic/">Wizards of the Coast</a>, owner of Magic: The Gathering.</p>
+    </footer>
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//code.jquery.com/qunit/qunit-1.18.0.js"></script>
+    <script src="/Content/util/js/sinon-1.15.4.js"></script>
+    <script src="/scripts/jquery.base64.min.js"></script>
+    <script src="/scripts/underscore-min.js"></script>
+    <script src="/scripts/backbone-min.js"></script>
+    <script src="/Content/util/js/card-data-importer.js"></script>
+    <script>
+        QUnit.module("getCardData");
+        QUnit.test("ShouldCallGetCardsFromGatheringMagicData_WhenCardDataUrlSourceIsFromGatheringMagic", function (assert) {
+            sinon.stub(cardDataImporter.api, "getCardsFromGatheringMagicData");
+            cardDataImporter.api.getCardData(null, "http://www.gatheringmagic.com/magic-the-gathering-sets/core-sets/magic-origins-spoiler/", null);
+            ok(cardDataImporter.api.getCardsFromGatheringMagicData.calledOnce);
+            cardDataImporter.api.getCardsFromGatheringMagicData.restore();
+        });
+        QUnit.test("ShouldCallGetCardsFromMtgJsonData_WhenCardDataUrlSourceIsFromMtgJson", function (assert) {
+            sinon.stub(cardDataImporter.api, "getCardsFromMtgJsonData");
+            cardDataImporter.api.getCardData(null, "http://mtgjson.com/json/DDO.json", null);
+            ok(cardDataImporter.api.getCardsFromMtgJsonData.calledOnce);
+            cardDataImporter.api.getCardsFromMtgJsonData.restore();
+        });
+        QUnit.test("ShouldThrowError_WhenCardDataUrlSourceIsNotSupported", function (assert) {
+            assert.throws(function () { cardDataImporter.api.getCardData(null, "http://copper-dog.com", null) });
+        });
+
+        //TODO: QUnit.module("getCardsFromGatheringMagicData");
+        //TODO: QUnit.module("getCardsFromMtgJsonData");
+        //TODO: QUnit.module("getImageData");
+        //TODO: QUnit.module("getImagesFromWotcSpoilers");
+        //TODO: QUnit.module("getImagesFromMtgJsonData");
+        //TODO: QUnit.module("getImagesFromCardsMainData");
+        //TODO: QUnit.module("applyPropertyExceptions");
+        //TODO: QUnit.module("applyAdditionDeletionExceptions");
+        //TODO: QUnit.module("applyImagesToCards");
+
+        QUnit.module("Integration: createOutputJson");
+        // BUG: Normally the secondary image src will be used, but if an import exception fixes the title it will erroneously use the card data src
+        QUnit.test("ShouldUseCardDataSrc_WhenImportExceptionsFixesTitle_AndSecondaryImageSourceIncludesSrc", function (assert) {
+            var cardData = {
+                "title": "Disciple of the Rings",
+                "src": "image url that should NOT be used",
+                "imageSource": "card data",
+                "set": "ori",
+                "cost": "{3}{U}{U}",
+                "rarity": "m",
+                "type": "Creature",
+                "subtype": "Human Wizard",
+                "power": "3",
+                "toughness": "4",
+                "colour": "u",
+                "num": "053"
+            };
+            sinon.stub(cardDataImporter.api, "getCardData", function () { return cardData; });
+
+            var imageData = {};
+            imageData["disciple of the ring"] = {
+                "matchTitle": "disciple of the ring",
+                "src": "image url that SHOULD be used",
+                "imageSource": "image data"
+            };
+            sinon.stub(cardDataImporter.api, "getImageData", function () { return imageData; });
+
+            var exceptions = {
+                "title": "Disciple of the Rings",
+                "newValues": { "title": "Disciple of the Ring" }
+            };
+
+            var outputJson = cardDataImporter.api.createOutputJson(null, { data: null }, { data: null }, exceptions);
+
+            ok(outputJson[0].src === "image url that SHOULD be used");
+
+            cardDataImporter.api.getCardData.restore();
+            cardDataImporter.api.getImageData.restore();
+        });
+
+    </script>
+</body>
+</html>

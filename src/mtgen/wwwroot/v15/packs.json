@@ -1,0 +1,20 @@
+{
+    "defs": [
+        {
+            "defName": "v15",
+            "query": "from[*]?set='v15'"
+        }
+
+    ],
+    "packs": [
+        {
+            "packName": "v15-all-cards",
+            "packDesc": "From the Vault: Angels: All Cards",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[v15]" }
+            ]
+        }
+
+    ]
+}

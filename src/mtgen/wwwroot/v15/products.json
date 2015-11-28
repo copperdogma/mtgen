@@ -1,0 +1,16 @@
+{
+    "_comment": "if there are no options the query/packNames will be auto-run",
+    "products": [
+        {
+            "productName": "v15-all-cards",
+            "productDesc": "All Cards",
+            "sources": [ "http://magic.wizards.com/en/articles/archive/feature/vault-angels-2015-08-10", "http://www.gatheringmagic.com/magic-the-gathering-setsfrom-the-vaultftvangels/", "http://mtgsalvation.gamepedia.com/From_the_Vault:_Angels" ],
+            "isGenerated": false,
+            "initialSort": "colour",
+            "packs": [
+                { "packName": "v15-all-cards" }
+            ]
+        }
+
+    ]
+}
