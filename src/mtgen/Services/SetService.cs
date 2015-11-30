@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Caching.Memory;
+﻿using Microsoft.AspNet.Hosting;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.PlatformAbstractions;
 using mtgen.Models;
 using Newtonsoft.Json;
@@ -12,21 +13,21 @@ namespace mtgen.Services
     public class SetService : ISetService
     {
         private readonly IMemoryCache _memoryCache;
-        private readonly IApplicationEnvironment _appEnvironment;
+        private readonly IHostingEnvironment _hostingEnvironment;
 
-        public SetService(IMemoryCache memoryCache, IApplicationEnvironment appEnvironment)
+        public SetService(IMemoryCache memoryCache, IHostingEnvironment hostingEnvironment)
         {
             _memoryCache = memoryCache;
-            _appEnvironment = appEnvironment;
+            _hostingEnvironment = hostingEnvironment;
         }
-        
+
         public IList<SetStub> GetSetStubs()
         {
             var setStubs = _memoryCache.Get("SetStubs") as IList<SetStub>;
             if (setStubs == null)
             {
                 // Load up the set stubs
-                var setsJsonPath = _appEnvironment.ApplicationBasePath + "\\wwwroot\\sets.json";
+                var setsJsonPath = _hostingEnvironment.MapPath("sets.json");
                 var setsJson = File.ReadAllText(setsJsonPath);
                 setStubs = JsonConvert.DeserializeObject<List<SetStub>>(setsJson);
                 SetSetStubs(setStubs);
@@ -55,7 +56,7 @@ namespace mtgen.Services
         }
         public IList<Card> GetCardsFromJsonFile(string jsonFilePath)
         {
-            var cardsPath = _appEnvironment.ApplicationBasePath + jsonFilePath;
+            var cardsPath = _hostingEnvironment.MapPath(jsonFilePath);
             var cardsFile = File.ReadAllText(cardsPath);
             var cards = JsonConvert.DeserializeObject<IList<Card>>(cardsFile);
             return cards;

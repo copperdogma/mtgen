@@ -62,6 +62,9 @@ namespace mtgen
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            // CAMKILL: temp
+            //app.UseDeveloperExceptionPage();
+
             if (env.IsDevelopment())
             {
                 app.UseBrowserLink();
@@ -70,6 +73,7 @@ namespace mtgen
             }
             else
             {
+                //CAMKILL: put back
                 app.UseExceptionHandler("/Home/Error");
 
                 // For more details on creating database during deployment see http://go.microsoft.com/fwlink/?LinkID=615859
