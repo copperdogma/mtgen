@@ -1,4 +1,4 @@
-﻿namespace mtgen.Models
+﻿namespace mtgen.ViewModels
 {
     public class Card
 	{

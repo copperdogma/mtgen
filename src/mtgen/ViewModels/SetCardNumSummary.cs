@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace mtgen.Models
+namespace mtgen.ViewModels
 {
     public class SetCardNumSummary
 	{

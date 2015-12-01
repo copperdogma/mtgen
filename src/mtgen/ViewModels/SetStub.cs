@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace mtgen.Models
+namespace mtgen.ViewModels
 {
     public class SetStub
 	{

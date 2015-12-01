@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNet.Mvc;
-using mtgen.Models;
+using mtgen.ViewModels;
 using mtgen.Services;
-using System.Linq;
 
 namespace mtgen.ViewComponents
 {

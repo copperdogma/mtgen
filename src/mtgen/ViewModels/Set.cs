@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace mtgen.Models
+namespace mtgen.ViewModels
 {
     public class Set
 	{

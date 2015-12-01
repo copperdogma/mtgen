@@ -1,59 +1,6 @@
-﻿@using mtgen.Models;
-@{
+﻿@{
     Layout = null;
 }
-@*
-        //KILL
-    @helper DisplayDate(DateTime date, string title)
-    {
-        <td><time itemprop="startDate" datetime="@date.ToString("yyyy-MM-dd")" title="@title">@date.ToString("MMMM d, yyyy")</time></td>
-    }
-    @helper DisplaySet(string setCode, bool current = false, bool future = false,
-        string createdTitle = null, string prereleaseTitle = null, string releaseTitle = null)
-    {
-        var set = mtgen.Logic.SetLogic.Instance.GetSetStub(setCode);
-        if (set == null) { throw new Exception("Set " + setCode + " does not exist in sets.json."); }
-        var currentClass = (current) ? "current" : null;
-        var futureClass = (future) ? "future" : null;
-        <tr class="@currentClass @futureClass" itemscope itemtype="http://schema.org/Event">
-            <td>
-                @if (set.GeneratorCreatedDate.HasValue)
-                {
-                    @Html.Raw("<a href='/" + set.Code.ToLower() + "/'>");
-                }
-                <img src="@Url.Content("~/content/"+set.Code.ToLower()+"/images/"+set.Image)" title="@set.Name" alt="@set.Name logo" itemprop="image" />
-                @if (set.GeneratorCreatedDate.HasValue)
-                {
-                    @Html.Raw("</a>");
-                }
-            </td>
-            <td itemprop="name">@set.Name</td>
-            @if (set.GeneratorCreatedDate.HasValue)
-            {
-                @DisplayDate(set.GeneratorCreatedDate.Value, createdTitle)
-            }
-            else
-            {
-                <td class="not-yet">not yet created</td>
-            }
-            @if (set.PrereleaseDate.HasValue)
-            {
-                @DisplayDate(set.PrereleaseDate.Value, prereleaseTitle)
-            }
-            else
-            {
-                <td><em>none</em></td>
-            }
-            @if (set.ReleaseDate.HasValue)
-            {
-                @DisplayDate(set.ReleaseDate.Value, releaseTitle)
-            }
-            else
-            {
-                <td><em>none</em></td>
-            }
-        </tr>
-    }*@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>

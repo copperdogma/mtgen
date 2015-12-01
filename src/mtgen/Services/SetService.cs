@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNet.Hosting;
 using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.PlatformAbstractions;
-using mtgen.Models;
+using mtgen.ViewModels;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

@@ -1,4 +1,4 @@
-﻿using mtgen.Models;
+﻿using mtgen.ViewModels;
 using System.Collections.Generic;
 
 namespace mtgen.Services
