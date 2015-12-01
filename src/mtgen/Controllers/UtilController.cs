@@ -29,7 +29,6 @@ namespace mtgen.Controllers
                     var setSummary = new SetCardNumSummary();
                     setSummary.SetCode = set.Code;
 
-                    //var allSetCards = Logic.SetLogic.Instance.GetAllCardsForSet(set.Code);
                     var allSetCards = _setService.GetAllCardsForSet(set.Code);
                     foreach (var card in allSetCards)
                     {
@@ -53,6 +52,7 @@ namespace mtgen.Controllers
                     setSummaries.Add(setSummary);
                 }
             }
+
             // summarize by set/file: #of cards, # of unqiue cards, list of cards missing numbers or having non-unique numbers
             return View(setSummaries);
         }
