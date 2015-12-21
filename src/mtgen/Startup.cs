@@ -71,6 +71,11 @@ namespace mtgen
                     constraints: new { setCode = @"^[a-zA-Z0-9]{3}$" });
 
                 routes.MapRoute(
+                    name: "proxy",
+                    defaults: new { controller = "Proxy", action = "Index" },
+                    template: "{url}");
+
+                routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
 

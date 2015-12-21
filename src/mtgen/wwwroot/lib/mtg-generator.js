@@ -1317,8 +1317,7 @@ var mtgGen = (function (my, $) {
     */
 
     my.renderCards = function (cards) {
-        //var htmlOut = '';
-        var cardTemplate = '<span class="card[[FOIL]]" title="[[TITLE]]">[[A_START]]<img data-usable-for-deck-building="[[UFDB]]" src="[[SRC]]" alt="[[TITLE]]" title="[[TITLE]]" width="[[WIDTH]]" height="370" /><em class="title">[[TITLE]]</em>[[REASON]][[A_END]]</span>';
+        var cardTemplate = '<span class="card[[FOIL]]" title="[[TITLE]]">[[A_START]]<img data-usable-for-deck-building="[[UFDB]]" src="[[SRC]]" alt="[[TITLE]]" title="[[TITLE]]" width="[[WIDTH]]" height="[[HEIGHT]]" /><em class="title">[[TITLE]]</em>[[REASON]][[A_END]]</span>';
 
         var htmlOut = _.reduce(cards, function (memo, card) {
             var foilClass = ''
@@ -1340,6 +1339,7 @@ var mtgGen = (function (my, $) {
                         .replace('[[A_START]]', aStart)
                         .replace('[[A_END]]', aEnd)
                         .replace('[[WIDTH]]', (card.width || 265))
+                        .replace('[[HEIGHT]]', (card.height || 370))
                         .replace('[[REASON]]', (card.includedReason !== undefined) ? '<em class="reason">(' + card.includedReason + ')</em>' : '');
         }, '');
 

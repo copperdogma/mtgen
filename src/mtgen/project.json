@@ -31,7 +31,13 @@
   },
 
   "frameworks": {
-    "dnx451": { },
+    "dnx451": {
+      "dependencies": {
+      },
+      "frameworkAssemblies": {
+        "System.Net": "4.0.0.0"
+      }
+    },
     "dnxcore50": { }
   },
 

@@ -37,21 +37,22 @@ var cardDataImporter = (function (my, $) {
         // load all files and don't continue until all are loaded
         var promises = [];
 
-        promises.push($.get('ba-simple-proxy.php?mode=native&url=' + my.cardDataUrl));
+        //CAMKILL: original: promises.push($.get('/proxy?u=' + my.cardDataUrl));
+        promises.push($.get('/proxy?u=' + my.cardDataUrl));
 
         // it's hard to parse the results unless they're all there, so we'll force something to be loaded for each even if it's missing
         if (my.imagesUrl !== undefined && my.imagesUrl.length > 0) {
-            promises.push($.get('ba-simple-proxy.php?mode=native&url=' + my.imagesUrl));
+            promises.push($.get('/proxy?u=' + my.imagesUrl));
         }
         else {
-            promises.push($.get('ba-simple-proxy.php?mode=native&url=http://copper-dog.com/'));
+            promises.push($.get('/proxy?u=http://copper-dog.com/'));
         }
 
         if (my.exceptionsUrl !== undefined && my.exceptionsUrl.length > 0) {
-            promises.push($.get('ba-simple-proxy.php?mode=native&url=' + my.exceptionsUrl));
+            promises.push($.get('/proxy?u=' + my.exceptionsUrl));
         }
         else {
-            promises.push($.get('ba-simple-proxy.php?mode=native&url=http://copper-dog.com/'));
+            promises.push($.get('/proxy?u=http://copper-dog.com/'));
         }
 
         my.trigger('data-loading');
@@ -198,23 +199,23 @@ var cardDataImporter = (function (my, $) {
             out += "</ul>";
         }
 
-        var deletedViaExceptions = $.grep(jsonExceptions, function (ex, index) { return ex.matchTitle === "delete card" && ex.wasUsed === true; });
-        if (deletedViaExceptions.length > 0) {
-            out += "<p>The following cards have been <strong style='color:red'>deleted</strong> via exceptions:</p><ul>";
-            deletedViaExceptions = deletedViaExceptions.sort(sortByTitle);
-            $.each(deletedViaExceptions, function (index, ex) {
-                var comment = "";
-                if (ex._comment) {
-                    comment = "<em> - " + ex._comment + "</em>";
-                }
-                out += "<li style='color:green'>" + ex.newValues.title + comment + "</li>";
-            });
-            out += "</ul>";
-        }
-
-        // report any unused or redundant exceptions so we can clean up the exceptions file
-        var unusedExceptions = [];
         if (jsonExceptions !== undefined && jsonExceptions.length > 0) {
+            var deletedViaExceptions = $.grep(jsonExceptions, function (ex, index) { return ex.matchTitle === "delete card" && ex.wasUsed === true; });
+            if (deletedViaExceptions.length > 0) {
+                out += "<p>The following cards have been <strong style='color:red'>deleted</strong> via exceptions:</p><ul>";
+                deletedViaExceptions = deletedViaExceptions.sort(sortByTitle);
+                $.each(deletedViaExceptions, function (index, ex) {
+                    var comment = "";
+                    if (ex._comment) {
+                        comment = "<em> - " + ex._comment + "</em>";
+                    }
+                    out += "<li style='color:green'>" + ex.newValues.title + comment + "</li>";
+                });
+                out += "</ul>";
+            }
+
+            // report any unused or redundant exceptions so we can clean up the exceptions file
+            var unusedExceptions = [];
             $.each(jsonExceptions, function (index, ex) {
                 if (ex.hasOwnProperty("title")) { // no title means it was probably just a comment
                     if (!ex.hasOwnProperty("wasUsed") || ex.wasUsed === false) {
@@ -228,13 +229,13 @@ var cardDataImporter = (function (my, $) {
                     }
                 }
             });
-        }
-        if (unusedExceptions.length > 0) {
-            out += "<p>The following exceptions are not used/redundant:</p><ul>";
-            $.each(unusedExceptions, function (index, ex) {
-                out += "<li style='color:red'>" + ex + "</li>";
-            });
-            out += "</ul>";
+            if (unusedExceptions.length > 0) {
+                out += "<p>The following exceptions are not used/redundant:</p><ul>";
+                $.each(unusedExceptions, function (index, ex) {
+                    out += "<li style='color:red'>" + ex + "</li>";
+                });
+                out += "</ul>";
+            }
         }
 
         my.trigger('log-complete', out);
@@ -250,10 +251,9 @@ var cardDataImporter = (function (my, $) {
             delete card.imageSource;
         });
 
-        my.trigger('data-processing-complete', initialCardDataCount, imageDataCount, mainOut.length);
-
         var jsonMainStr = JSON.stringify(mainOut, null, ' ');
-        return jsonMainStr;
+
+        my.trigger('data-processing-complete', jsonMainStr, initialCardDataCount, imageDataCount, mainOut.length);
     }
 
     // Create a sanitized title to avoid the punctuation differences
@@ -485,7 +485,7 @@ var cardDataImporter = (function (my, $) {
         var $html = $(rawCardData);
         var $cards = $html.find('.spoiler-card');
         if ($cards.length === 0) {
-            alert("No cards from Gathering Magic found. Note that you CANNOT run this thing locally. It won't work. It needs to run through the ba-simple-proxy.php to work.");
+            alert("No cards from Gathering Magic found. Note that you CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.");
         }
         $.each($cards, function (index, el) {
             var card = {};
@@ -591,11 +591,13 @@ var cardDataImporter = (function (my, $) {
     function getCardsFromMtgJsonData(rawCardData, setCode) {
         var cards = [];
 
+        rawCardData = JSON.parse(rawCardData);
+
         if (rawCardData === undefined || !rawCardData.hasOwnProperty('cards')) {
-            alert("Missing card data from mtgjson.com. Note that you CANNOT run this thing locally. It won't work. It needs to run through the ba-simple-proxy.php to work.");
+            alert("Missing card data from mtgjson.com. Note that you CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.");
         }
         if (rawCardData.cards.length < 1) {
-            alert("No cards from mtgjson.com found. Note that you CANNOT run this thing locally. It won't work. It needs to run through the ba-simple-proxy.php to work.");
+            alert("No cards from mtgjson.com found. Note that you CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.");
         }
 
         // add each card, converting from mtgjson.com's format to our own
@@ -650,6 +652,9 @@ var cardDataImporter = (function (my, $) {
         if (lowercaseImageDataUrlSource.indexOf('magic.wizards.com') > -1) {
             images = getImagesFromWotcSpoilers(imageData);
         }
+        else if (lowercaseImageDataUrlSource.indexOf('archive.wizards.com') > -1) {
+            images = getImagesFromWotcArchive(imageData);
+        }
         else if (lowercaseImageDataUrlSource.indexOf('mtgjson.com') > -1) {
             images = getImagesFromMtgJsonData(imageData);
         }
@@ -662,6 +667,18 @@ var cardDataImporter = (function (my, $) {
 
         return images;
     }
+
+    //CAMKILL: only used for archive.wizards.com, so embedded it within there
+    //function convertImgSrcToAbsoluteUrls(imageDataUrlSource, images) {
+    //    images.forEach(function (image) {
+    //        if (image.hasOwnProperty('src')) {
+    //            if (image.src.toLowerCase().indexOf(imageDataUrlSource.toLowerCase()) < 0) {
+    //                image.src += imageDataUrlSource + image.src;
+    //            }
+    //        }
+    //    });
+    //    return images;
+    //}
 
     function getImagesFromWotcSpoilers(rawHtmlImageData) {
         var image;
@@ -735,8 +752,43 @@ var cardDataImporter = (function (my, $) {
             }
         }
 
-        $.each(finalImages, function (image, index) {
+        finalImages.forEach(function (image) {
             image.imageSource = "wotc-spoilers";
+        });
+
+        return finalImages;
+    }
+
+    function getImagesFromWotcArchive(rawHtmlImageData) {
+        var image;
+        var finalImages = [];
+
+        var $images = $(rawHtmlImageData);
+
+        var $rawimages = $images.find('.article-image');
+        if ($rawimages.length > 0) {
+            var $imageContainer, $cardTitle;
+            $rawimages.each(function (index, img) {
+                var enLoc = img.src.indexOf('/EN/');
+                if (enLoc > -1) {
+                    var imgNum = img.src.substr(enLoc + 4, 4);
+                    var num = parseInt(imgNum);
+                    if (!isNaN(num)) {
+                        image = {};
+                        image.src = img.src;
+                        var thisHostStartIndex = image.src.indexOf("/mtg/images/");
+                        if (thisHostStartIndex > 0) {
+                            image.src = "http://archive.wizards.com" + image.src.substr(thisHostStartIndex);
+                        }
+                        image.num = num;
+                        finalImages[image.num] = image;
+                    }
+                }
+            });
+        }
+
+        finalImages.forEach(function (image) {
+            image.imageSource = "wotc-archive";
         });
 
         return finalImages;
@@ -747,10 +799,10 @@ var cardDataImporter = (function (my, $) {
         var finalImages = [];
 
         if (rawImageData === undefined || !rawImageData.hasOwnProperty('cards')) {
-            alert("Missing image data from mtgjson.com. Note that you CANNOT run this thing locally. It won't work. It needs to run through the ba-simple-proxy.php to work.");
+            alert("Missing image data from mtgjson.com. Note that you CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.");
         }
         if (rawImageData.cards.length < 1) {
-            alert("No images from mtgjson.com found. Note that you CANNOT run this thing locally. It won't work. It needs to run through the ba-simple-proxy.php to work.");
+            alert("No images from mtgjson.com found. Note that you CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.");
         }
 
         // add each card, converting from mtgjson.com's format to our own
@@ -771,11 +823,11 @@ var cardDataImporter = (function (my, $) {
         var finalImages = [];
 
         if (rawImageData === undefined) {
-            alert("Missing image data from cardsMain.json. Note that you CANNOT run this thing locally. It won't work. It needs to run through the ba-simple-proxy.php to work.");
+            alert("Missing image data from cardsMain.json. Note that you CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.");
             return finalImages;
         }
         if (rawImageData.length < 1) {
-            alert("No images from mtgjson.com found. Note that you CANNOT run this thing locally. It won't work. It needs to run through the ba-simple-proxy.php to work.");
+            alert("No images from mtgjson.com found. Note that you CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.");
             return finalImages;
         }
 
@@ -936,6 +988,12 @@ var cardDataImporter = (function (my, $) {
     function applyImagesToCards(cards, images) {
         $.each(cards, function (index, card) {
             var image = images[card.matchTitle];
+
+            // archive.wizards.com images have no titles; they're indexed by image
+            if (image === undefined) {
+                image = images[card.num];
+            }
+
             if (image !== undefined) {
                 card.srcOriginal = card.src;
                 card.imageSourceOriginal = card.src;

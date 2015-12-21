@@ -7,13 +7,14 @@
 </head>
 <body class="home">
     <h1>JSON Magic: The Gathering Sealed Deck Card Generator Gathering Magic IMPORTER</h1>
-    <img itemprop="image" src="http://mtgen.net/content/images/mtg-logo.jpg" />
+    <img itemprop="image" src="http://mtgen.net/images/mtg-logo.jpg" />
     <p>This page imports card data from the <a href="http://www.gatheringmagic.com/" target="_blank">Gathering Magic spoiler list</a>, <a href="https://www.google.com/search?q=card+image+gallery+wizards+of+the+coast" target="_blank">WotC card images</a>, and <a href="http://mtgjson.com" target="_blank">mtgjson.com</a> to help create the Sealed Deck Card Generator pages for each release.</p>
     <ul>
         <li>4-Jul-2015: New version created.</li>
+        <li>11-Dec-2015: Paths adjusted for MVC5 layout.</li>
     </ul>
     <br />
-    <h2 id='local-error' class='error' style="display:none">NOTE: You CANNOT run this thing locally. It won't work. It needs to run through the ba-simple-proxy.php to work.</h2>
+    <h2 id='local-error' class='error' style="display:none">NOTE: You CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.</h2>
     <section id="options">
         <label for="load-settings">Load Existing Settings:</label> <input id="load-settings" type="file" accept="application/json" />
         <br />
@@ -57,22 +58,21 @@
         <p>Note that this site has no affiliation with <a href="http://www.wizards.com/Magic/">Wizards of the Coast</a>, owner of Magic: The Gathering.</p>
     </footer>
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="/scripts/jquery.base64.min.js"></script>
-    <script src="/scripts/underscore-min.js"></script>
-    <script src="/scripts/backbone-min.js"></script>
-    <script src="/Content/util/js/card-data-importer.js"></script>
+    <script src="/lib/jquery.base64.min.js"></script>
+    <script src="/lib/underscore/underscore-min.js"></script>
+    <script src="/lib/backbone/backbone.js"></script>
+    <script src="/util/js/card-data-importer.js"></script>
     <script>
         $(document).ready(function () {
             if (window.location.protocol == 'file:') { $('#local-error').show(); }
 
             $('input#import').on('click', function () {
-                var cardsMainJson = cardDataImporter.loadAndProcessAllFiles({
+                cardDataImporter.loadAndProcessAllFiles({
                     cardDataUrl: $('#url-card-data').val()
                     , imagesUrl: $('#url-images').val()
                     , exceptionsUrl: $('#url-exceptions').val()
                     , setCode: $('input#set-code').val()
                 });
-                $('#out-main').val(cardsMainJson);
             });
 
             $('input').on('change', function () { setSaveLinkToDownloadFile(); });
@@ -118,12 +118,13 @@
                 $('#output').empty;
             });
             cardDataImporter.on('log-complete', function (logText) { $('#log').html(logText); });
-            cardDataImporter.on('data-processing-complete', function (initialCardDataCount, imageDataCount, finalCardCount) {
+            cardDataImporter.on('data-processing-complete', function (cardsMainJson, initialCardDataCount, imageDataCount, finalCardCount) {
                 $('#msg').html(
                     initialCardDataCount + " cards found from " + $('#url-card-data').val() + "</br>"
                     + imageDataCount + " images found from " + $('#url-images').val() + "</br>"
                     + "<br/><strong>" + finalCardCount + " final cardsMain.json cards generated at " + (new Date()) + ".");
                 $('#status').html("<strong>Processing complete at " + (new Date()) + "</strong>");
+                $('#out-main').val(cardsMainJson);
             });
 
         });

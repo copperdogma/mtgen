@@ -20162,7 +20162,9 @@
       "Microsoft.Extensions.Logging.Debug >= 1.0.0-rc1-final",
       "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0-rc1-final"
     ],
-    "DNX,Version=v4.5.1": [],
+    "DNX,Version=v4.5.1": [
+      "fx/System.Net >= 4.0.0"
+    ],
     "DNXCore,Version=v5.0": []
   }
 }
