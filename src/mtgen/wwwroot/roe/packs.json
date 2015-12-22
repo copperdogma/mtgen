@@ -1,0 +1,88 @@
+{
+    "defs": [
+        {
+            "defName": "roe",
+            "query": "from[*]?set='roe'"
+        },
+        {
+            "defName": "roe-main",
+            "query": "from[roe]-from[roe]?type=(Marketing|Basic Land)-from[roe]?token=true-from[roe]?promo=true"
+        },
+        {
+            "defName": "roe-foils",
+            "query": "from[roe-main]"
+        },
+        {
+            "defName": "roe-promo",
+            "query": "from[roe]?promo=true"
+        }
+    ],
+    "packs": [
+        {
+            "packName": "roe-all-cards",
+            "packDesc": "Rise of the Eldrazi: All Cards",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[roe]" }
+            ]
+        },
+        {
+            "packName": "roe-standard",
+            "packDesc": "Rise of the Eldrazi: Standard Booster",
+            "isGenerated": true,
+            "cards": [
+                { "query": "from[roe]?type='Basic Land'" },
+                { "query": "take[9]>from[roe-main]?rarity='c'" },
+                {
+                    "querySet": [
+                        { "percent": 75, "query": "from[roe-main]?rarity='c'" },
+                        { "percent": 25, "query": "from[roe-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+                    ]
+                },
+                { "query": "take[3]>from[roe-main]?rarity='u'" },
+                {
+                    "querySet": [
+                        { "percent": 87.5, "query": "from[roe-main]?rarity='r'" },
+                        { "percent": 12.5, "query": "from[roe-main]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" }
+                    ]
+                },
+                {
+                    "querySet": [
+                        { "percent": 50, "query": "from[roe]?type='Marketing'" },
+                        { "percent": 50, "query": "from[roe]?token=true-from[roe]?promo=true" }
+                    ]
+                }
+            ]
+        },
+        {
+            "packName": "roe-promos",
+            "packDesc": "Rise of the Eldrazi: Promos",
+            "isGenerated": false,
+            "includeWithUserCards": false,
+            "cards": [
+                { "query": "take[*]>from[roe-promo]" }
+            ]
+        },
+        {
+            "packName": "roe-fat-pack-pack-ins",
+            "packDesc": "Rise of the Eldrazi Fat Pack: Pack-Ins",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[roe]?title=(Rise of the Eldrazi Player’s Guide|Rise of the Eldrazi Test of Metal Sample Book Chapter|Rise of the Eldrazi Mural|Rise of the Eldrazi Rules Reference Card)" },
+                { "query": "from[roe-fatpack]?type='Life Counter'", "canBeDuplicate": true }
+            ]
+        },
+        {
+            "packName": "roe-fat-pack-land",
+            "packDesc": "Rise of the Eldrazi Fat Pack: Land",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[16]>from[roe]?title='Plains'", "canBeDuplicate": true },
+                { "query": "take[16]>from[roe]?title='Island'", "canBeDuplicate": true },
+                { "query": "take[16]>from[roe]?title='Swamp'", "canBeDuplicate": true },
+                { "query": "take[16]>from[roe]?title='Forest'", "canBeDuplicate": true },
+                { "query": "take[16]>from[roe]?title='Mountain'", "canBeDuplicate": true }
+            ]
+        }
+    ]
+}

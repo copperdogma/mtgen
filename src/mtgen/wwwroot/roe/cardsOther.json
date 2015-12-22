@@ -1,0 +1,199 @@
+[
+  {
+    "src": "http://mtgen.net/cards/mtg-marketing1.png",
+    "title": "Tip/Marketing Card",
+    "set": "roe",
+    "colour": "o",
+    "num": "001 Marketing",
+    "rarity": "c",
+    "type": "Marketing",
+    "usableForDeckBuilding": false,
+    "marketing": true
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-marketing2.png",
+    "title": "Tip/Marketing Card",
+    "set": "roe",
+    "colour": "o",
+    "num": "002 Marketing",
+    "rarity": "c",
+    "type": "Marketing",
+    "usableForDeckBuilding": false,
+    "marketing": true
+  },
+  {
+    "artist": "Mark Tedin",
+    "cmc": 15,
+    "id": "cec9dae08709429d3d8917429e99abf011414d2a",
+    "imageName": "emrakul, the aeons torn",
+    "layout": "normal",
+    "manaCost": "{15}",
+    "multiverseid": 193452,
+    "name": "Emrakul, the Aeons Torn",
+    "number": "4",
+    "power": "15",
+    "rarity": "m",
+    "subtypes": [
+      "Eldrazi"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "text": "Emrakul, the Aeons Torn can't be countered.\nWhen you cast Emrakul, take an extra turn after this one.\nFlying, protection from colored spells, annihilator 6\nWhen Emrakul is put into a graveyard from anywhere, its owner shuffles his or her graveyard into his or her library.",
+    "toughness": "15",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "title": "Emrakul, the Aeons Torn",
+    "set": "roe",
+    "cost": "{15}",
+    "colour": "?",
+    "num": "*4",
+    "src": "http://archive.wizards.com/mtg/images/daily/arcana/417_vcjx0r83p1.jpg",
+    "promo": "true",
+    "includedReason": "Prerelease Promo"
+  },
+  {
+    "artist": "Kekai Kotaki",
+    "cmc": 4,
+    "colorIdentity": [
+      "R"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "id": "ec6b926879c827a26a34036f58287a161fbc60f8",
+    "imageName": "lord of shatterskull pass",
+    "layout": "leveler",
+    "manaCost": "{3}{R}",
+    "multiverseid": 198164,
+    "name": "Lord of Shatterskull Pass",
+    "number": "156",
+    "power": "3",
+    "rarity": "r",
+    "subtypes": [
+      "Minotaur",
+      "Shaman"
+    ],
+    "text": "Level up {1}{R} ({1}{R}: Put a level counter on this. Level up only as a sorcery.)\nLEVEL 1-5\n6/6\nLEVEL 6+\n6/6\nWhenever Lord of Shatterskull Pass attacks, it deals 6 damage to each creature defending player controls.",
+    "toughness": "3",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "title": "Lord of Shatterskull Pass",
+    "set": "roe",
+    "cost": "{3}{R}",
+    "colour": "r",
+    "num": "*156",
+    "src": "http://www.blackborder.com/q/sites/default/files/images/LordofShatterskullPass_0.jpg",
+    "promo": "true",
+    "includedReason": "Launch Promo"
+  },
+  {
+    "artist": "Raymond Swanland",
+    "cmc": 3,
+    "colorIdentity": [
+      "R"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "id": "e219247fc119b5aa4aa37dc2dbd78abec5dfd4a8",
+    "imageName": "staggershock",
+    "layout": "normal",
+    "manaCost": "{2}{R}",
+    "multiverseid": 193571,
+    "name": "Staggershock",
+    "number": "166",
+    "rarity": "c",
+    "text": "Staggershock deals 2 damage to target creature or player.\nRebound (If you cast this spell from your hand, exile it as it resolves. At the beginning of your next upkeep, you may cast this card from exile without paying its mana cost.)",
+    "type": "Instant",
+    "types": [
+      "Instant"
+    ],
+    "title": "Staggershock",
+    "set": "roe",
+    "cost": "{2}{R}",
+    "colour": "r",
+    "num": "48 DCI",
+    "src": "http://archive.wizards.com/mtg/images/daily/arcana/442_staggershock.jpg",
+    "promo": "true",
+    "includedReason": "Game Day Promo"
+  },
+  {
+    "artist": "Johann Bodin",
+    "cmc": 6,
+    "colorIdentity": [
+      "W"
+    ],
+    "colors": [
+      "White"
+    ],
+    "flavor": "I should have died that day, but I suffered not a scratch. I awoke in a lake of blood, none of it apparently my own.\"\n—The War Diaries",
+    "id": "16b31d39e921022e29f8d6077218c62d0c2cce87",
+    "imageName": "deathless angel",
+    "layout": "normal",
+    "manaCost": "{4}{W}{W}",
+    "multiverseid": 193629,
+    "name": "Deathless Angel",
+    "number": "17",
+    "power": "5",
+    "rarity": "r",
+    "subtypes": [
+      "Angel"
+    ],
+    "text": "Flying\n{W}{W}: Target creature gains indestructible until end of turn.",
+    "toughness": "7",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "title": "Deathless Angel",
+    "set": "roe",
+    "cost": "{4}{W}{W}",
+    "colour": "w",
+    "num": "49 DCI",
+    "src": "http://archive.wizards.com/mtg/images/daily/arcana/442_deathlessangel.jpg",
+    "promo": "true",
+    "includedReason": "Game Day Top 8 Promo"
+  },
+  {
+    "artist": "James Ryman",
+    "cmc": 1,
+    "colorIdentity": [
+      "B"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "id": "e42f51bec9bc248d43381c55b14fba93da8c6c05",
+    "imageName": "guul draz assassin",
+    "layout": "leveler",
+    "manaCost": "{B}",
+    "multiverseid": 193612,
+    "name": "Guul Draz Assassin",
+    "number": "112",
+    "power": "1",
+    "rarity": "r",
+    "subtypes": [
+      "Vampire",
+      "Assassin"
+    ],
+    "text": "Level up {1}{B} ({1}{B}: Put a level counter on this. Level up only as a sorcery.)\nLEVEL 2-3\n2/2\n{B}, {T}: Target creature gets -2/-2 until end of turn.\nLEVEL 4+\n4/4\n{B}, {T}: Target creature gets -4/-4 until end of turn.",
+    "toughness": "1",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "title": "Guul Draz Assassin",
+    "set": "roe",
+    "cost": "{B}",
+    "colour": "b",
+    "num": "*112",
+    "src": "http://archive.wizards.com/mtg/images/daily/events/promo/roe_guuldrazassassin_en.jpg",
+    "promo": "true",
+    "includedReason": "Buy-a-Box Promo"
+  }
+]

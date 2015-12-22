@@ -1,0 +1,197 @@
+[
+  {
+    "src": "http://mtgen.net/cards/mtg-marketing1.png",
+    "title": "Tip/Marketing Card",
+    "set": "wwk",
+    "colour": "o",
+    "num": "001 Marketing",
+    "rarity": "c",
+    "type": "Marketing",
+    "usableForDeckBuilding": false,
+    "marketing": true
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-marketing2.png",
+    "title": "Tip/Marketing Card",
+    "set": "wwk",
+    "colour": "o",
+    "num": "002 Marketing",
+    "rarity": "c",
+    "type": "Marketing",
+    "usableForDeckBuilding": false,
+    "marketing": true
+  },
+
+  {
+    "artist": "Jung Park",
+    "cmc": 2,
+    "colorIdentity": [
+      "R"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "id": "25920c389683bd3747be40a2baab50aa296874a8",
+    "imageName": "comet storm",
+    "layout": "normal",
+    "manaCost": "{X}{R}{R}",
+    "multiverseid": 197766,
+    "name": "Comet Storm",
+    "number": "76",
+    "rarity": "m",
+    "text": "Multikicker {1} (You may pay an additional {1} any number of times as you cast this spell.)\nChoose target creature or player, then choose another target creature or player for each time Comet Storm was kicked. Comet Storm deals X damage to each of them.",
+    "type": "Instant",
+    "types": [
+      "Instant"
+    ],
+    "title": "Comet Storm",
+    "set": "wwk",
+    "cost": "{X}{R}{R}",
+    "colour": "r",
+    "num": "*76",
+    "src": "http://archive.wizards.com/mtg/images/daily/arcana/361_3vov15ew8m.jpg",
+    "promo": "true",
+    "includedReason": "Prerelease Promo"
+  },
+  {
+    "artist": "Steven Belledin",
+    "cmc": 1,
+    "colorIdentity": [
+      "G"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "id": "1a0007fce2aa04b0ad907da5cb7d701e2ffdbdf0",
+    "imageName": "joraga warcaller",
+    "layout": "normal",
+    "manaCost": "{G}",
+    "multiverseid": 197765,
+    "name": "Joraga Warcaller",
+    "number": "106",
+    "power": "1",
+    "rarity": "r",
+    "subtypes": [
+      "Elf",
+      "Warrior"
+    ],
+    "text": "Multikicker {1}{G} (You may pay an additional {1}{G} any number of times as you cast this spell.)\nJoraga Warcaller enters the battlefield with a +1/+1 counter on it for each time it was kicked.\nOther Elf creatures you control get +1/+1 for each +1/+1 counter on Joraga Warcaller.",
+    "toughness": "1",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "title": "Joraga Warcaller",
+    "set": "wwk",
+    "cost": "{G}",
+    "colour": "g",
+    "num": "106",
+    "src": "http://archive.wizards.com/mtg/images/daily/arcana/361_bn4cd6ayoh.jpg",
+    "promo": "true",
+    "includedReason": "Release Promo"
+  },
+  {
+    "artist": "Cyril Van Der Haegen",
+    "cmc": 1,
+    "colorIdentity": [
+      "W"
+    ],
+    "colors": [
+      "White"
+    ],
+    "flavor": "I toiled in Kazuul's mines when I was eight. I think I'm tough enough for a little hiking.",
+    "id": "c7f9fb9af0a8ed162bbc5644d09de8a8e979fb5e",
+    "imageName": "hada freeblade",
+    "layout": "normal",
+    "manaCost": "{W}",
+    "multiverseid": 198400,
+    "name": "Hada Freeblade",
+    "number": "7",
+    "power": "0",
+    "rarity": "u",
+    "subtypes": [
+      "Human",
+      "Soldier",
+      "Ally"
+    ],
+    "text": "Whenever Hada Freeblade or another Ally enters the battlefield under your control, you may put a +1/+1 counter on Hada Freeblade.",
+    "toughness": "1",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "title": "Hada Freeblade",
+    "set": "wwk",
+    "cost": "{W}",
+    "colour": "w",
+    "num": "38 DCI",
+    "src": "http://archive.wizards.com/mtg/images/daily/arcana/399_freeblade.jpg",
+    "promo": "true",
+    "includedReason": "Game Day Promo"
+  },
+  {
+    "artist": "D. Alexander Gregory",
+    "cmc": 2,
+    "colorIdentity": [
+      "B"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "flavor": "Each of Malakir's great families boasts a contingent of nulls appropriate to its rank in society.",
+    "id": "f93028db3a8054e893dadf572604acd8b1006b6e",
+    "imageName": "kalastria highborn",
+    "layout": "normal",
+    "manaCost": "{B}{B}",
+    "multiverseid": 197118,
+    "name": "Kalastria Highborn",
+    "number": "59",
+    "power": "2",
+    "rarity": "r",
+    "subtypes": [
+      "Vampire",
+      "Shaman"
+    ],
+    "text": "Whenever Kalastria Highborn or another Vampire you control dies, you may pay {B}. If you do, target player loses 2 life and you gain 2 life.",
+    "toughness": "2",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "title": "Kalastria Highborn",
+    "set": "wwk",
+    "cost": "{B}{B}",
+    "colour": "b",
+    "num": "39 DCI",
+    "src": "http://s3.gatheringmagic.com/uploads/2010/02/kalastria-highborn-fullart.jpg",
+    "promo": "true",
+    "includedReason": "Game Day Top 8 Promo"
+  },
+  {
+    "artist": "Eric Deschamps",
+    "colorIdentity": [
+      "W",
+      "U"
+    ],
+    "id": "871aaa13f38beacc2246b6c73fdaa685fbc29cc4",
+    "imageName": "celestial colonnade",
+    "layout": "normal",
+    "multiverseid": 177545,
+    "name": "Celestial Colonnade",
+    "number": "133",
+    "rarity": "r",
+    "text": "Celestial Colonnade enters the battlefield tapped.\n{T}: Add {W} or {U} to your mana pool.\n{3}{W}{U}: Until end of turn, Celestial Colonnade becomes a 4/4 white and blue Elemental creature with flying and vigilance. It's still a land.",
+    "type": "Land",
+    "types": [
+      "Land"
+    ],
+    "title": "Celestial Colonnade",
+    "set": "wwk",
+    "cost": "",
+    "colour": "l",
+    "num": "*133",
+    "src": "http://archive.wizards.com/mtg/images/daily/events/promo/wwk_colonnade_en.jpg",
+    "promo": "true",
+    "includedReason": "Buy-a-Box Promo"
+  }
+]

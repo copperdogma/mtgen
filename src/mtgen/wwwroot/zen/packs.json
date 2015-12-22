@@ -1,0 +1,88 @@
+{
+    "defs": [
+        {
+            "defName": "zen",
+            "query": "from[*]?set='zen'"
+        },
+        {
+            "defName": "zen-main",
+            "query": "from[zen]-from[zen]?type=(Marketing|Basic Land)-from[zen]?token=true-from[zen]?promo=true"
+        },
+        {
+            "defName": "zen-foils",
+            "query": "from[zen-main]"
+        },
+        {
+            "defName": "zen-promo",
+            "query": "from[zen]?promo=true"
+        }
+    ],
+    "packs": [
+        {
+            "packName": "zen-all-cards",
+            "packDesc": "Zendikar: All Cards",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[zen]" }
+            ]
+        },
+        {
+            "packName": "zen-standard",
+            "packDesc": "Zendikar: Standard Booster",
+            "isGenerated": true,
+            "cards": [
+                { "query": "from[zen]?type='Basic Land'" },
+                { "query": "take[9]>from[zen-main]?rarity='c'" },
+                {
+                    "querySet": [
+                        { "percent": 75, "query": "from[zen-main]?rarity='c'" },
+                        { "percent": 25, "query": "from[zen-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
+                    ]
+                },
+                { "query": "take[3]>from[zen-main]?rarity='u'" },
+                {
+                    "querySet": [
+                        { "percent": 87.5, "query": "from[zen-main]?rarity='r'" },
+                        { "percent": 12.5, "query": "from[zen-main]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" }
+                    ]
+                },
+                {
+                    "querySet": [
+                        { "percent": 50, "query": "from[zen]?type='Marketing'" },
+                        { "percent": 50, "query": "from[zen]?token=true-from[zen]?promo=true" }
+                    ]
+                }
+            ]
+        },
+        {
+            "packName": "zen-promos",
+            "packDesc": "Zendikar: Promos",
+            "isGenerated": false,
+            "includeWithUserCards": false,
+            "cards": [
+                { "query": "take[*]>from[zen-promo]" }
+            ]
+        },
+        {
+            "packName": "zen-fat-pack-pack-ins",
+            "packDesc": "Zendikar Fat Pack: Pack-Ins",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[*]>from[zen]?title=(Zendikar Player’s Guide|Zendikar Test of Metal Sample Book Chapter|Zendikar Mural|Zendikar Rules Reference Card)" },
+                { "query": "from[zen-fatpack]?type='Life Counter'", "canBeDuplicate": true }
+            ]
+        },
+        {
+            "packName": "zen-fat-pack-land",
+            "packDesc": "Zendikar Fat Pack: Land",
+            "isGenerated": false,
+            "cards": [
+                { "query": "take[16]>from[zen]?title='Plains'", "canBeDuplicate": true },
+                { "query": "take[16]>from[zen]?title='Island'", "canBeDuplicate": true },
+                { "query": "take[16]>from[zen]?title='Swamp'", "canBeDuplicate": true },
+                { "query": "take[16]>from[zen]?title='Forest'", "canBeDuplicate": true },
+                { "query": "take[16]>from[zen]?title='Mountain'", "canBeDuplicate": true }
+            ]
+        }
+    ]
+}

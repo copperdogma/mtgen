@@ -1,0 +1,50 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "wwk-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/wwk.json", "http://archive.wizards.com/Magic/tcg/article.aspx?x=mtg/tcg/Worldwake/spoiler#", "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/283", "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/371" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "wwk-all-cards" }
+      ]
+    },
+    {
+      "productName": "wwk-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Worldwake" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "wwk-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "wwk-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "wwk-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "wwk-promos",
+      "productDesc": "All Promos",
+      "isGenerated": false,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "wwk-promos" }
+      ]
+    }
+
+  ]
+}
