@@ -1,0 +1,66 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "lea-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/LEA.json", "http://mtgsalvation.gamepedia.com/Alpha" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "lea-all-cards" }
+      ]
+    },
+    {
+      "productName": "lea-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Alpha" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "lea-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "lea-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "lea-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "lea-starter-decks",
+      "productDesc": "Starter Decks",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Alpha" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "lea-starter-deck" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "lea-starter-deck",
+            "presetDesc": "Single Starter Deck",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "lea-starter-deck"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+  ]
+}

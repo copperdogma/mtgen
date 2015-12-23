@@ -100,8 +100,11 @@ var cardDataImporter = (function (my, $) {
         var initialCardDataCount = mainOut.length;
 
         // Get image data -------------------------------------------------------------------------------------------------
-        var mainImages = my.api.getImageData(htmlImages.data, htmlImages.urlSource);
-        var imageDataCount = Object.size(mainImages);
+        var imageDataCount = 0;
+        if (htmlImages.data !== undefined) {
+            var mainImages = my.api.getImageData(htmlImages.data, htmlImages.urlSource);
+            imageDataCount = Object.size(mainImages);
+        }
 
         // Apply Exceptions -------------------------------------------------------------------------------------------------
         jsonExceptions = addMatchTitles(jsonExceptions.data);
@@ -986,23 +989,28 @@ var cardDataImporter = (function (my, $) {
     }
 
     function applyImagesToCards(cards, images) {
+        if (images !== undefined) {
+            $.each(cards, function (index, card) {
+                var image = images[card.matchTitle];
+
+                // archive.wizards.com images have no titles; they're indexed by image
+                if (image === undefined) {
+                    image = images[card.num];
+                }
+
+                if (image !== undefined) {
+                    card.srcOriginal = card.src;
+                    card.imageSourceOriginal = card.src;
+                    card.src = image.src;
+                    card.imageSource = image.imageSource;
+                    image.wasUsed = true;
+                }
+            });
+        }
+
+        // if no image found at all at this point, create replacement card
         $.each(cards, function (index, card) {
-            var image = images[card.matchTitle];
-
-            // archive.wizards.com images have no titles; they're indexed by image
-            if (image === undefined) {
-                image = images[card.num];
-            }
-
-            if (image !== undefined) {
-                card.srcOriginal = card.src;
-                card.imageSourceOriginal = card.src;
-                card.src = image.src;
-                card.imageSource = image.imageSource;
-                image.wasUsed = true;
-            }
-            else if (!card.src) {
-                // if no image found at all at this point, create replacement card
+            if (!card.src) {
                 card.imageSource = "placeholder";
                 card.src = createPlaceholderCardSrc(card);
             }

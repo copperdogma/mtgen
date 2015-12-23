@@ -1,0 +1,58 @@
+{
+  "defs": [
+    {
+      "defName": "lea",
+      "query": "from[*]?set='lea"
+    },
+    {
+      "defName": "lea-main",
+      "query": "from[lea]"
+    },
+    {
+      "defName": "lea-rare",
+      "query": "from[lea]?rarity='r'+from[lea]?title='Island'+from[lea]?title='Island",
+      "_comment": "4 Islands were included on the rare sheet = 4 Islands = 3.31% chance of getting one"
+    },
+    {
+      "defName": "lea-uncommon",
+      "query": "from[lea]?rarity='u'+from[lea]?type='Basic Land'+from[lea]?type='Basic Land",
+      "_comment": "Basic Lands were included on the uncommon sheet = 20 lands = 21.5% chance of getting one"
+    },
+    {
+      "defName": "lea-common",
+      "query": "from[lea]?rarity='c'+from[lea]?type='Basic Land'+from[lea]?type='Basic Land'+from[lea]?title=(Plains|Swamp|Mountain|Forest)",
+      "_comment": "Basic Lands were included on the common sheet = 28 lands = 38.02% chance of getting one"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "lea-all-cards",
+      "packDesc": "Limited Edition Alpha: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[lea]" }
+      ]
+    },
+    {
+      "packName": "lea-standard",
+      "packDesc": "Limited Edition Alpha: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[11]>from[lea-common]" },
+        { "query": "take[3]>from[lea-uncommon]" },
+        { "query": "take[1]>from[lea-rare]" }
+      ]
+    },
+    {
+      "packName": "lea-starter-deck",
+      "packDesc": "Limited Edition Alpha: Starter Deck",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[2]>from[lea-rare]" },
+        { "query": "take[12]>from[lea-uncommon]" },
+        { "query": "take[46]>from[lea-rare]" }
+      ]
+    }
+  ]
+}

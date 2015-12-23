@@ -1,0 +1,66 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "leb-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/leb.json", "http://mtgsalvation.gamepedia.com/Beta" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "leb-all-cards" }
+      ]
+    },
+    {
+      "productName": "leb-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Beta" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "leb-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "leb-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "leb-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "leb-starter-decks",
+      "productDesc": "Starter Decks",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Beta" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "leb-starter-deck" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "leb-starter-deck",
+            "presetDesc": "Single Starter Deck",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "leb-starter-deck"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+  ]
+}

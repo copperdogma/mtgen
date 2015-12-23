@@ -502,6 +502,7 @@ var mtgGen = (function (my, $) {
     // SHOULD NOT BE CALLED EXCEPT BY executeQuery()
     // Returns only the card indices
     function executeSimpleQuery(fullSet, defs, query, isOrderImportant) {
+        //console.log('executeSimpleQuery:' + query);
         var from = query.match(/from\[(.+)\]/i);
         if (!from) {
             console.warn("ERROR: executeSimpleQuery(): missing 'from' in query: " + query);
@@ -553,8 +554,7 @@ var mtgGen = (function (my, $) {
                 }
                 else {
                     clause = clause.toLowerCase();
-                    //matchingCards = _.filter(sourceSet,function(card) { return card[query2[1]]!==undefined && card[query2[1]].toLowerCase().match(clause); });
-                    matchingCards = _.filter(sourceSet, function (card) { return card.hasOwnProperty(query2[1]) && card[query2[1]].toLowerCase().match(clause); });
+                    matchingCards = _.filter(sourceSet, function (card) { return card.hasOwnProperty(query2[1]) && card[query2[1]].toString().toLowerCase().match(clause); });
                 }
 
                 // if it's a title query and the query specified "inOrder:true" then the order of the cards is important; sort by that
@@ -619,6 +619,7 @@ var mtgGen = (function (my, $) {
             // on the first run though, the initial query should just be the base
             if (firstRun === true) {
                 resultIndices = executeSimpleQuery(fullSet, defs, query, isOrderImportant); // returns only indices
+                //console.log('executeSimpleQuery count/query:' + resultIndices.length + '/' + query);
                 firstRun = false;
             }
             else {
@@ -628,6 +629,7 @@ var mtgGen = (function (my, $) {
                 }
                 else {
                     var set = executeSimpleQuery(fullSet, defs, query, isOrderImportant); // returns only indices
+                    //console.log('executeSimpleQuery count/query:' + set.length + '/' + query);
                     switch (operator) {
                         case "+": resultIndices = resultIndices.concat(set); break;
                         case "-": resultIndices = _.difference(resultIndices, set); break;

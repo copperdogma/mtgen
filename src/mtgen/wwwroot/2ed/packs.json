@@ -1,0 +1,58 @@
+{
+  "defs": [
+    {
+      "defName": "2ed",
+      "query": "from[*]?set='2ed"
+    },
+    {
+      "defName": "2ed-main",
+      "query": "from[2ed]"
+    },
+    {
+      "defName": "2ed-rare",
+      "query": "from[2ed]?rarity='r'+from[2ed]?title='Island'+from[2ed]?multiverseid=594",
+      "_comment": "4 Islands were included on the rare sheet = 4 Islands = 3.31% chance of getting one"
+    },
+    {
+      "defName": "2ed-uncommon",
+      "query": "from[2ed]?rarity='u'+from[2ed]?type='Basic Land'+from[2ed]?multiverseid=(586|594|589|595|575)",
+      "_comment": "Basic Lands were included on the uncommon sheet = 20 lands = 21.5% chance of getting one"
+    },
+    {
+      "defName": "2ed-common",
+      "query": "from[2ed]?rarity='c'+from[2ed]?type='Basic Land'+from[2ed]?type='Basic Land'-from[2ed]?multiverseid=594",
+      "_comment": "Basic Lands were included on the common sheet = 28 lands = 38.02% chance of getting one"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "2ed-all-cards",
+      "packDesc": "Unlimited Edition: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[2ed]" }
+      ]
+    },
+    {
+      "packName": "2ed-standard",
+      "packDesc": "Unlimited Edition: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[11]>from[2ed-common]" },
+        { "query": "take[3]>from[2ed-uncommon]" },
+        { "query": "take[1]>from[2ed-rare]" }
+      ]
+    },
+    {
+      "packName": "2ed-starter-deck",
+      "packDesc": "Unlimited Edition: Starter Deck",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[3]>from[2ed-rare]" },
+        { "query": "take[12]>from[2ed-uncommon]" },
+        { "query": "take[45]>from[2ed-rare]" }
+      ]
+    }
+  ]
+}

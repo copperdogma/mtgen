@@ -1,0 +1,66 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "2ed-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/2ed.json", "http://mtgsalvation.gamepedia.com/Beta" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "2ed-all-cards" }
+      ]
+    },
+    {
+      "productName": "2ed-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Beta" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "2ed-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "2ed-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "2ed-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "2ed-starter-decks",
+      "productDesc": "Starter Decks",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Beta" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "2ed-starter-deck" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "2ed-starter-deck",
+            "presetDesc": "Single Starter Deck",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "2ed-starter-deck"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+  ]
+}

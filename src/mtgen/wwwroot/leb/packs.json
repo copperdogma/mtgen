@@ -1,0 +1,58 @@
+{
+  "defs": [
+    {
+      "defName": "leb",
+      "query": "from[*]?set='leb"
+    },
+    {
+      "defName": "leb-main",
+      "query": "from[leb]"
+    },
+    {
+      "defName": "leb-rare",
+      "query": "from[leb]?rarity='r'+from[leb]?title='Island'+from[leb]?multiverseid=594",
+      "_comment": "4 Islands were included on the rare sheet = 4 Islands = 3.31% chance of getting one"
+    },
+    {
+      "defName": "leb-uncommon",
+      "query": "from[leb]?rarity='u'+from[leb]?type='Basic Land'+from[leb]?multiverseid=(586|594|589|595|575)",
+      "_comment": "Basic Lands were included on the uncommon sheet = 20 lands = 21.5% chance of getting one"
+    },
+    {
+      "defName": "leb-common",
+      "query": "from[leb]?rarity='c'+from[leb]?type='Basic Land'+from[leb]?type='Basic Land'-from[leb]?multiverseid=594",
+      "_comment": "Basic Lands were included on the common sheet = 28 lands = 38.02% chance of getting one"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "leb-all-cards",
+      "packDesc": "Limited Edition Beta: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[leb]" }
+      ]
+    },
+    {
+      "packName": "leb-standard",
+      "packDesc": "Limited Edition Beta: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[11]>from[leb-common]" },
+        { "query": "take[3]>from[leb-uncommon]" },
+        { "query": "take[1]>from[leb-rare]" }
+      ]
+    },
+    {
+      "packName": "leb-starter-deck",
+      "packDesc": "Limited Edition Beta: Starter Deck",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[3]>from[leb-rare]" },
+        { "query": "take[12]>from[leb-uncommon]" },
+        { "query": "take[45]>from[leb-rare]" }
+      ]
+    }
+  ]
+}
