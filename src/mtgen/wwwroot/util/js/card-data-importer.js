@@ -107,6 +107,9 @@ var cardDataImporter = (function (my, $) {
         }
 
         // Apply Exceptions -------------------------------------------------------------------------------------------------
+        if (jsonExceptions.data !== undefined) {
+            jsonExceptions.data = JSON.parse(jsonExceptions.data);
+        }
         jsonExceptions = addMatchTitles(jsonExceptions.data);
 
         mainOut = my.api.applyPropertyExceptions(mainOut, jsonExceptions);
