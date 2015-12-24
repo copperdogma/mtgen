@@ -1,0 +1,31 @@
+{
+  "defs": [
+    {
+      "defName": "arn",
+      "query": "from[*]?set='arn"
+    },
+    {
+      "defName": "arn-main",
+      "query": "from[arn]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "arn-all-cards",
+      "packDesc": "Arabian Nights: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[arn]" }
+      ]
+    },
+    {
+      "packName": "arn-standard",
+      "packDesc": "Arabian Nights: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[2]>from[arn]?rarity='u'" },
+        { "query": "take[6]>from[arn]?rarity='c'" }
+      ]
+    }
+  ]
+}

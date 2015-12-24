@@ -1,0 +1,31 @@
+{
+  "defs": [
+    {
+      "defName": "atq",
+      "query": "from[*]?set='atq"
+    },
+    {
+      "defName": "atq-main",
+      "query": "from[atq]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "atq-all-cards",
+      "packDesc": "Antiquities: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[atq]" }
+      ]
+    },
+    {
+      "packName": "atq-standard",
+      "packDesc": "Antiquities: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[2]>from[atq]?rarity='u'" },
+        { "query": "take[6]>from[atq]?rarity='c'" }
+      ]
+    }
+  ]
+}

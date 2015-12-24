@@ -1,0 +1,40 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "atq-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/ATQ.json", "http://mtgsalvation.gamepedia.com/Antiquities" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "atq-all-cards" }
+      ]
+    },
+    {
+      "productName": "atq-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Antiquities" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "atq-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "atq-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "atq-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

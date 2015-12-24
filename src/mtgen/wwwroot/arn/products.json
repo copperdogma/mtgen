@@ -1,0 +1,40 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "arn-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/arn.json", "http://mtgsalvation.gamepedia.com/Arabian_Nights" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "arn-all-cards" }
+      ]
+    },
+    {
+      "productName": "arn-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Arabian_Nights" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "arn-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "arn-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "arn-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
