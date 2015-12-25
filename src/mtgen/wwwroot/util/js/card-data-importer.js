@@ -37,7 +37,6 @@ var cardDataImporter = (function (my, $) {
         // load all files and don't continue until all are loaded
         var promises = [];
 
-        //CAMKILL: original: promises.push($.get('/proxy?u=' + my.cardDataUrl));
         promises.push($.get('/proxy?u=' + my.cardDataUrl));
 
         // it's hard to parse the results unless they're all there, so we'll force something to be loaded for each even if it's missing
@@ -424,7 +423,17 @@ var cardDataImporter = (function (my, $) {
                     }
                 }
                 else {
-                    finalColour = getColourByCode(card.colour).code; // should result in a, l, o, or ?
+                    var nativeCardColour = '';
+                    if (card.hasOwnProperty('colour')) {
+                        nativeCardColour = card.colour;
+                    }
+                    else if (card.hasOwnProperty('color')) {
+                        nativeCardColour = card.color; // I made this one up.. does anything have this?
+                    }
+                    else if (card.hasOwnProperty('colorIdentity') && card.colorIdentity.length > 0) {
+                        nativeCardColour = card.colorIdentity[0].toLowerCase(); // mtgjson if casting cost is 0
+                    }
+                    finalColour = getColourByCode(nativeCardColour).code; // should result in a, l, o, or ?
                 }
                 break;
             case 1: // single-colour, as determined above
@@ -530,7 +539,6 @@ var cardDataImporter = (function (my, $) {
                 if (types.length > 1) {
                     card.subtype = types[1].trim();
                 }
-                //KILL:card = addTypes(card);
             }
 
             var pt = el.find('.powtou');
@@ -673,18 +681,6 @@ var cardDataImporter = (function (my, $) {
 
         return images;
     }
-
-    //CAMKILL: only used for archive.wizards.com, so embedded it within there
-    //function convertImgSrcToAbsoluteUrls(imageDataUrlSource, images) {
-    //    images.forEach(function (image) {
-    //        if (image.hasOwnProperty('src')) {
-    //            if (image.src.toLowerCase().indexOf(imageDataUrlSource.toLowerCase()) < 0) {
-    //                image.src += imageDataUrlSource + image.src;
-    //            }
-    //        }
-    //    });
-    //    return images;
-    //}
 
     function getImagesFromWotcSpoilers(rawHtmlImageData) {
         var image;
