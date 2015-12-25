@@ -1,0 +1,31 @@
+{
+  "defs": [
+    {
+      "defName": "fem",
+      "query": "from[*]?set='fem"
+    },
+    {
+      "defName": "fem-main",
+      "query": "from[fem]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "fem-all-cards",
+      "packDesc": "Fallen Empires: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[fem]" }
+      ]
+    },
+    {
+      "packName": "fem-standard",
+      "packDesc": "Fallen Empires: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[2]>from[fem]?rarity='u'" },
+        { "query": "take[6]>from[fem]?rarity='c'" }
+      ]
+    }
+  ]
+}

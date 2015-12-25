@@ -1,0 +1,40 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "fem-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/fem.json", "http://mtgsalvation.gamepedia.com/Arabian_Nights" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "fem-all-cards" }
+      ]
+    },
+    {
+      "productName": "fem-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Arabian_Nights" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "fem-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "fem-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "fem-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
