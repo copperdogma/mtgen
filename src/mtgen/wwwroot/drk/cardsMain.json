@@ -1,0 +1,3540 @@
+﻿[
+ {
+  "artist": "Mark Poole",
+  "cmc": 6,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"When one has witnessed the unspeakable, 'tis sometimes better to forget.\" —Vervamon the Elder",
+  "id": "e660fe7d9c11e349b8da6e3ceb27ec94072d8e38",
+  "imageName": "amnesia",
+  "layout": "normal",
+  "manaCost": "{3}{U}{U}{U}",
+  "multiverseid": 1746,
+  "name": "Amnesia",
+  "rarity": "u",
+  "text": "Target player reveals his or her hand and discards all nonland cards.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "title": "Amnesia",
+  "set": "drk",
+  "cost": "{3}{U}{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1746&type=card"
+ },
+ {
+  "artist": "Drew Tucker",
+  "cmc": 4,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "id": "714c4346402c62c6a29769c8e822f12924cb0700",
+  "imageName": "angry mob",
+  "layout": "normal",
+  "manaCost": "{2}{W}{W}",
+  "multiverseid": 1801,
+  "name": "Angry Mob",
+  "power": "2+*",
+  "rarity": "u",
+  "subtypes": [
+   "Human"
+  ],
+  "text": "Trample\nAs long as it's your turn, Angry Mob's power and toughness are each equal to 2 plus the number of Swamps your opponents control. As long as it's not your turn, Angry Mob's power and toughness are each 2.",
+  "toughness": "2+*",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Angry Mob",
+  "set": "drk",
+  "cost": "{2}{W}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1801&type=card"
+ },
+ {
+  "artist": "Dan Frazier",
+  "cmc": 3,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "id": "89abdf027dae15553143376035f178051d4688f2",
+  "imageName": "apprentice wizard",
+  "layout": "normal",
+  "manaCost": "{1}{U}{U}",
+  "multiverseid": 1747,
+  "name": "Apprentice Wizard",
+  "power": "0",
+  "rarity": "u",
+  "subtypes": [
+   "Human",
+   "Wizard"
+  ],
+  "text": "{U}, {T}: Add {3} to your mana pool.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Apprentice Wizard",
+  "set": "drk",
+  "cost": "{1}{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1747&type=card"
+ },
+ {
+  "artist": "Drew Tucker",
+  "cmc": 3,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"All rivers eventually run to the sea. My job is to sort out who goes first.\"\n—Maeveen O'Donagh, Memoirs of a Soldier",
+  "id": "02bfc5005f19ae6018668a077524f6381ba87bb4",
+  "imageName": "ashes to ashes",
+  "layout": "normal",
+  "manaCost": "{1}{B}{B}",
+  "multiverseid": 1728,
+  "name": "Ashes to Ashes",
+  "rarity": "c",
+  "text": "Exile two target nonartifact creatures. Ashes to Ashes deals 5 damage to you.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "title": "Ashes to Ashes",
+  "set": "drk",
+  "cost": "{1}{B}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1728&type=card"
+ },
+ {
+  "artist": "Quinton Hoover",
+  "cmc": 3,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "id": "d7e1cba15888f4a6e82081a4c14123136fb9eb85",
+  "imageName": "ball lightning",
+  "layout": "normal",
+  "manaCost": "{R}{R}{R}",
+  "multiverseid": 1783,
+  "name": "Ball Lightning",
+  "power": "6",
+  "rarity": "u",
+  "subtypes": [
+   "Elemental"
+  ],
+  "text": "Trample (If this creature would assign enough damage to its blockers to destroy them, you may have it assign the rest of its damage to defending player or planeswalker.)\nHaste (This creature can attack and {T} as soon as it comes under your control.)\nAt the beginning of the end step, sacrifice Ball Lightning.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Ball Lightning",
+  "set": "drk",
+  "cost": "{R}{R}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1783&type=card"
+ },
+ {
+  "artist": "Jesper Myrfors",
+  "cmc": 4,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "Some say Banshees are the hounds of Death, baying to herd their prey into the arms of their master.",
+  "id": "1bcfc345d19f8ab8b2c351583c3f774596af8f86",
+  "imageName": "banshee",
+  "layout": "normal",
+  "manaCost": "{2}{B}{B}",
+  "multiverseid": 1729,
+  "name": "Banshee",
+  "power": "0",
+  "rarity": "u",
+  "subtypes": [
+   "Spirit"
+  ],
+  "text": "{X}, {T}: Banshee deals half X damage, rounded down, to target creature or player, and half X damage, rounded up, to you.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Banshee",
+  "set": "drk",
+  "cost": "{2}{B}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1729&type=card"
+ },
+ {
+  "artist": "Tom Wänerstrand",
+  "cmc": 4,
+  "flavor": "For a dozen years the Cage had held Lord Ith, but as the Pretender Mairsil's power weakened, so did the bars.",
+  "id": "c753843bdf95b8fd8814277377e79e35f898d4a7",
+  "imageName": "barl's cage",
+  "layout": "normal",
+  "manaCost": "{4}",
+  "multiverseid": 1708,
+  "name": "Barl's Cage",
+  "rarity": "u",
+  "text": "{3}: Target creature doesn't untap during its controller's next untap step.",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "title": "Barl's Cage",
+  "set": "drk",
+  "cost": "{4}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1708&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Tom Wänerstrand",
+  "cmc": 3,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "Heavy light flooded across the landscape, cloaking everything in deep crimson.",
+  "id": "444602a0dd7985d21feafd7518459ff4ac35b6b3",
+  "imageName": "blood moon",
+  "layout": "normal",
+  "manaCost": "{2}{R}",
+  "multiverseid": 1784,
+  "name": "Blood Moon",
+  "rarity": "u",
+  "text": "Nonbasic lands are Mountains.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Blood Moon",
+  "set": "drk",
+  "cost": "{2}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1784&type=card"
+ },
+ {
+  "artist": "Christopher Rush",
+  "cmc": 3,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "The willow knows what the storm does not: that the power to endure harm outlives the power to inflict it.",
+  "id": "89466cbd87ec6c23e2c4fe6e0d653c72f870d27a",
+  "imageName": "blood of the martyr",
+  "layout": "normal",
+  "manaCost": "{W}{W}{W}",
+  "multiverseid": 1802,
+  "name": "Blood of the Martyr",
+  "rarity": "u",
+  "text": "Until end of turn, if damage would be dealt to any creature, you may have that damage dealt to you instead.",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "title": "Blood of the Martyr",
+  "set": "drk",
+  "cost": "{W}{W}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1802&type=card"
+ },
+ {
+  "artist": "Ron Spencer",
+  "cmc": 2,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "On guard for larger dangers, we underestimated the power and speed of the Imp's muck-crusted claws.",
+  "id": "92efc297683ca60ff68c5e24de0be4d239eb522c",
+  "imageName": "bog imp",
+  "layout": "normal",
+  "manaCost": "{1}{B}",
+  "multiverseid": 1730,
+  "name": "Bog Imp",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Imp"
+  ],
+  "text": "Flying (This creature can't be blocked except by creatures with flying or reach.)",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Bog Imp",
+  "set": "drk",
+  "cost": "{1}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1730&type=card"
+ },
+ {
+  "artist": "Ron Spencer",
+  "cmc": 1,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "Their stench was vile and strong enough, but not nearly as powerful as their hunger.",
+  "id": "51dc1c9f8fcfb31eeb97c9fdf70297d7b12ae631",
+  "imageName": "bog rats",
+  "layout": "normal",
+  "manaCost": "{B}",
+  "multiverseid": 1731,
+  "name": "Bog Rats",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Rat"
+  ],
+  "text": "Bog Rats can't be blocked by Walls.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Bog Rats",
+  "set": "drk",
+  "cost": "{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1731&type=card"
+ },
+ {
+  "artist": "Christopher Rush",
+  "cmc": 3,
+  "flavor": "After the Battle of Pitdown, Lady Ursnell fashioned the first such instrument out of Lord Ursnell's left leg.",
+  "id": "2599ea655fe8bb19d529afdb50e8799fa4e19c48",
+  "imageName": "bone flute",
+  "layout": "normal",
+  "manaCost": "{3}",
+  "multiverseid": 1709,
+  "name": "Bone Flute",
+  "rarity": "u",
+  "text": "{2}, {T}: All creatures get -1/-0 until end of turn.",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "title": "Bone Flute",
+  "set": "drk",
+  "cost": "{3}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1709&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Sandra Everingham",
+  "cmc": 6,
+  "id": "a99320ea59c678b2341db1e5092e5abc3c13bbc4",
+  "imageName": "book of rass",
+  "layout": "normal",
+  "manaCost": "{6}",
+  "multiverseid": 1710,
+  "name": "Book of Rass",
+  "rarity": "u",
+  "text": "{2}, Pay 2 life: Draw a card.",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "title": "Book of Rass",
+  "set": "drk",
+  "cost": "{6}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1710&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Pete Venters",
+  "cmc": 1,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"They're not your friends; they despise you. I'm the only one you can count on. Trust me.\"",
+  "id": "72d59db47d0d1e59bbd2c64e7f68fffd68ba81ea",
+  "imageName": "brainwash",
+  "layout": "normal",
+  "manaCost": "{W}",
+  "multiverseid": 1803,
+  "name": "Brainwash",
+  "rarity": "c",
+  "subtypes": [
+   "Aura"
+  ],
+  "text": "Enchant creature\nEnchanted creature can't attack unless its controller pays {3}.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Brainwash",
+  "set": "drk",
+  "cost": "{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1803&type=card"
+ },
+ {
+  "artist": "Mark Tedin",
+  "cmc": 3,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "Fire is never a gentle master.",
+  "id": "963e6d06704ca1bc67a487991c6903ee42577530",
+  "imageName": "brothers of fire",
+  "layout": "normal",
+  "manaCost": "{1}{R}{R}",
+  "multiverseid": 1785,
+  "name": "Brothers of Fire",
+  "power": "2",
+  "rarity": "u",
+  "subtypes": [
+   "Human",
+   "Shaman"
+  ],
+  "text": "{1}{R}{R}: Brothers of Fire deals 1 damage to target creature or player and 1 damage to you.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Brothers of Fire",
+  "set": "drk",
+  "cost": "{1}{R}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1785&type=card"
+ },
+ {
+  "artist": "Quinton Hoover",
+  "cmc": 4,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"It had a mouth like that of a great beast, and gnashed its teeth as it strained to reach us. I am thankful it possessed no means of locomotion.\" —Vervamon the Elder",
+  "id": "43f1a40bcac2af56dc1a85012cff52e92ddb3a4e",
+  "imageName": "carnivorous plant",
+  "layout": "normal",
+  "manaCost": "{3}{G}",
+  "multiverseid": 1765,
+  "name": "Carnivorous Plant",
+  "power": "4",
+  "rarity": "c",
+  "subtypes": [
+   "Plant",
+   "Wall"
+  ],
+  "text": "Defender",
+  "toughness": "5",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Carnivorous Plant",
+  "set": "drk",
+  "cost": "{3}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1765&type=card"
+ },
+ {
+  "artist": "Drew Tucker",
+  "cmc": 3,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "id": "c3781cab411a521d81f88a9e87c21bc30811af13",
+  "imageName": "cave people",
+  "layout": "normal",
+  "manaCost": "{1}{R}{R}",
+  "multiverseid": 1786,
+  "name": "Cave People",
+  "power": "1",
+  "rarity": "u",
+  "subtypes": [
+   "Human"
+  ],
+  "text": "Whenever Cave People attacks, it gets +1/-2 until end of turn.\n{1}{R}{R}, {T}: Target creature gains mountainwalk until end of turn. (It can't be blocked as long as defending player controls a Mountain.)",
+  "toughness": "4",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Cave People",
+  "set": "drk",
+  "cost": "{1}{R}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1786&type=card"
+ },
+ {
+  "artist": "Tom Wänerstrand",
+  "id": "0dea34ee48ef8fcd9ab62fde8c282b12ecae90a4",
+  "imageName": "city of shadows",
+  "layout": "normal",
+  "multiverseid": 1823,
+  "name": "City of Shadows",
+  "rarity": "u",
+  "reserved": true,
+  "text": "{T}, Exile a creature you control: Put a storage counter on City of Shadows.\n{T}: Add {X} to your mana pool, where X is the number of storage counters on City of Shadows.",
+  "type": "Land",
+  "types": [
+   "Land"
+  ],
+  "title": "City of Shadows",
+  "set": "drk",
+  "cost": "",
+  "colour": "l",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1823&type=card"
+ },
+ {
+  "artist": "Pete Venters",
+  "cmc": 3,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "id": "4c989d310d7eb953d692ccb4fc0b1fe2ff3738e7",
+  "imageName": "cleansing",
+  "layout": "normal",
+  "manaCost": "{W}{W}{W}",
+  "multiverseid": 1804,
+  "name": "Cleansing",
+  "rarity": "u",
+  "reserved": true,
+  "text": "For each land, destroy that land unless any player pays 1 life.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "title": "Cleansing",
+  "set": "drk",
+  "cost": "{W}{W}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1804&type=card"
+ },
+ {
+  "artist": "Christopher Rush",
+  "cmc": 5,
+  "colorIdentity": [
+   "R"
+  ],
+  "flavor": "\"Three such creatures stood burning at the crest of the hill. Only seconds later, the Fireball struck our front line.\" —Lydia, Countess Brellis",
+  "id": "972065ea05f767596df696548312453d82c927b0",
+  "imageName": "coal golem",
+  "layout": "normal",
+  "manaCost": "{5}",
+  "multiverseid": 1711,
+  "name": "Coal Golem",
+  "power": "3",
+  "rarity": "u",
+  "subtypes": [
+   "Golem"
+  ],
+  "text": "{3}, Sacrifice Coal Golem: Add {R}{R}{R} to your mana pool.",
+  "toughness": "3",
+  "type": "Artifact",
+  "types": [
+   "Artifact",
+   "Creature"
+  ],
+  "title": "Coal Golem",
+  "set": "drk",
+  "cost": "{5}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1711&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Mark Tedin",
+  "cmc": 4,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "Voska feared the artifact had come too easily.",
+  "id": "897a100631eff1314c10483cff4087d0a6a53bbf",
+  "imageName": "curse artifact",
+  "layout": "normal",
+  "manaCost": "{2}{B}{B}",
+  "multiverseid": 1732,
+  "name": "Curse Artifact",
+  "rarity": "u",
+  "subtypes": [
+   "Aura"
+  ],
+  "text": "Enchant artifact\nAt the beginning of the upkeep of enchanted artifact's controller, Curse Artifact deals 2 damage to that player unless he or she sacrifices that artifact.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Curse Artifact",
+  "set": "drk",
+  "cost": "{2}{B}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1732&type=card"
+ },
+ {
+  "artist": "Sandra Everingham",
+  "cmc": 2,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "id": "aa884cb0840104f2fe906e93e776d7bba6ced6fe",
+  "imageName": "dance of many",
+  "layout": "normal",
+  "manaCost": "{U}{U}",
+  "multiverseid": 1748,
+  "name": "Dance of Many",
+  "rarity": "u",
+  "text": "When Dance of Many enters the battlefield, put a token that's a copy of target nontoken creature onto the battlefield.\nWhen Dance of Many leaves the battlefield, exile the token.\nWhen the token leaves the battlefield, sacrifice Dance of Many.\nAt the beginning of your upkeep, sacrifice Dance of Many unless you pay {U}{U}.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Dance of Many",
+  "set": "drk",
+  "cost": "{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1748&type=card"
+ },
+ {
+  "artist": "Christopher Rush",
+  "cmc": 2,
+  "colorIdentity": [
+   "B",
+   "G"
+  ],
+  "colors": [
+   "Black",
+   "Green"
+  ],
+  "flavor": "Even the Goblins shun this haunted place, where the tree limbs twist in agony and the ground seems to scuttle under your feet.",
+  "id": "88c5783840af456fbfdd51d05074d7fd7f60f673",
+  "imageName": "dark heart of the wood",
+  "layout": "normal",
+  "manaCost": "{B}{G}",
+  "multiverseid": 1820,
+  "name": "Dark Heart of the Wood",
+  "rarity": "c",
+  "text": "Sacrifice a Forest: You gain 3 life.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Dark Heart of the Wood",
+  "set": "drk",
+  "cost": "{B}{G}",
+  "colour": "m",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1820&type=card"
+ },
+ {
+  "artist": "Mark Tedin",
+  "cmc": 0,
+  "flavor": "\"I was struck senseless for a moment, but revived when the strange curiosity I carried fell to the ground, screaming like a dying animal.\" —Barl, Lord Ith",
+  "id": "fb442fb65bf99b276a9fa20bc5d751a12e7fcb17",
+  "imageName": "dark sphere",
+  "layout": "normal",
+  "manaCost": "{0}",
+  "multiverseid": 1712,
+  "name": "Dark Sphere",
+  "rarity": "u",
+  "text": "{T}, Sacrifice Dark Sphere: The next time a source of your choice would deal damage to you this turn, prevent half that damage, rounded down.",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "title": "Dark Sphere",
+  "set": "drk",
+  "cost": "{0}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1712&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Jeff A. Menges",
+  "cmc": 2,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "id": "f945d15314cc43540786076c914097ec5b7b7d37",
+  "imageName": "deep water",
+  "layout": "normal",
+  "manaCost": "{U}{U}",
+  "multiverseid": 1749,
+  "name": "Deep Water",
+  "rarity": "c",
+  "text": "{U}: Until end of turn, if you tap a land you control for mana, it produces {U} instead of any other type.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Deep Water",
+  "set": "drk",
+  "cost": "{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1749&type=card"
+ },
+ {
+  "artist": "Anson Maddocks",
+  "cmc": 7,
+  "flavor": "\"The bolts of our ballistae smashed into the monstrous thing, but our hopes died in our chests as its gears continued turning.\" —Sevti Mukul, The Fall of Alsoor",
+  "id": "8c2769a91e84bbe0a86b2430ff28d542b2cfbbcf",
+  "imageName": "diabolic machine",
+  "layout": "normal",
+  "manaCost": "{7}",
+  "multiverseid": 1713,
+  "name": "Diabolic Machine",
+  "power": "4",
+  "rarity": "u",
+  "subtypes": [
+   "Construct"
+  ],
+  "text": "{3}: Regenerate Diabolic Machine.",
+  "toughness": "4",
+  "type": "Artifact",
+  "types": [
+   "Artifact",
+   "Creature"
+  ],
+  "title": "Diabolic Machine",
+  "set": "drk",
+  "cost": "{7}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1713&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Quinton Hoover",
+  "cmc": 2,
+  "colorIdentity": [
+   "U",
+   "B"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "We asked Captain Soll what became of the Serafina, but all he said was, \"Ships that go down shouldn't come back up.\"",
+  "id": "e94ea658911cc11a2fdacdde5f0b3d8244052f12",
+  "imageName": "drowned",
+  "layout": "normal",
+  "manaCost": "{1}{U}",
+  "multiverseid": 1750,
+  "name": "Drowned",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Zombie"
+  ],
+  "text": "{B}: Regenerate Drowned.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Drowned",
+  "set": "drk",
+  "cost": "{1}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1750&type=card"
+ },
+ {
+  "artist": "Drew Tucker",
+  "cmc": 3,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "Tervish never noticed that the amulet had vanished. It had disappeared not only from his possession, but from his memory as well.",
+  "id": "e5939383483aaf6d0b41d2288fd627facf54f9af",
+  "imageName": "dust to dust",
+  "layout": "normal",
+  "manaCost": "{1}{W}{W}",
+  "multiverseid": 1805,
+  "name": "Dust to Dust",
+  "rarity": "c",
+  "text": "Exile two target artifacts.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "title": "Dust to Dust",
+  "set": "drk",
+  "cost": "{1}{W}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1805&type=card"
+ },
+ {
+  "artist": "Jesper Myrfors",
+  "cmc": 5,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "Even the putrid muscles of the dead can provide strength to those loathsome enough to consume them.",
+  "id": "7da3c3dd425f4dc62ee41f34f3fd3a179f43d3da",
+  "imageName": "eater of the dead",
+  "layout": "normal",
+  "manaCost": "{4}{B}",
+  "multiverseid": 1733,
+  "name": "Eater of the Dead",
+  "power": "3",
+  "rarity": "u",
+  "subtypes": [
+   "Horror"
+  ],
+  "text": "{0}: If Eater of the Dead is tapped, exile target creature card from a graveyard and untap Eater of the Dead.",
+  "toughness": "4",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Eater of the Dead",
+  "set": "drk",
+  "cost": "{4}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1733&type=card"
+ },
+ {
+  "artist": "Anson Maddocks",
+  "cmc": 1,
+  "colorIdentity": [
+   "U",
+   "R"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "id": "ebc3b554ac83776a8ddb7d3920b6108fa0dfecd4",
+  "imageName": "electric eel",
+  "layout": "normal",
+  "manaCost": "{U}",
+  "multiverseid": 1751,
+  "name": "Electric Eel",
+  "power": "1",
+  "rarity": "u",
+  "subtypes": [
+   "Fish"
+  ],
+  "text": "When Electric Eel enters the battlefield, it deals 1 damage to you.\n{R}{R}: Electric Eel gets +2/+0 until end of turn and deals 1 damage to you.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Electric Eel",
+  "set": "drk",
+  "cost": "{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1751&type=card"
+ },
+ {
+  "artist": "Jesper Myrfors",
+  "cmc": 1,
+  "colorIdentity": [
+   "G",
+   "B"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"They are aberrations who have turned on everything we hold sacred. Let them be cast out.\" —Ailheen, Speaker of the Council",
+  "id": "43651306b46b9c778ea85a36fcec430f2746cad5",
+  "imageName": "elves of deep shadow",
+  "layout": "normal",
+  "manaCost": "{G}",
+  "multiverseid": 1766,
+  "name": "Elves of Deep Shadow",
+  "power": "1",
+  "rarity": "u",
+  "subtypes": [
+   "Elf",
+   "Druid"
+  ],
+  "text": "{T}: Add {B} to your mana pool. Elves of Deep Shadow deals 1 damage to you.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Elves of Deep Shadow",
+  "set": "drk",
+  "cost": "{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1766&type=card"
+ },
+ {
+  "artist": "Pete Venters",
+  "cmc": 3,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "id": "b72a46fea944a0f3afd6dc625df87f016c38a07a",
+  "imageName": "erosion",
+  "layout": "normal",
+  "manaCost": "{U}{U}{U}",
+  "multiverseid": 1752,
+  "name": "Erosion",
+  "rarity": "c",
+  "subtypes": [
+   "Aura"
+  ],
+  "text": "Enchant land\nAt the beginning of the upkeep of enchanted land's controller, destroy that land unless that player pays {1} or 1 life.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Erosion",
+  "set": "drk",
+  "cost": "{U}{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1752&type=card"
+ },
+ {
+  "artist": "Mark Poole",
+  "cmc": 4,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "id": "2d570c66573c639e66b46296b33b05a1a6e34ea9",
+  "imageName": "eternal flame",
+  "layout": "normal",
+  "manaCost": "{2}{R}{R}",
+  "multiverseid": 1787,
+  "name": "Eternal Flame",
+  "rarity": "u",
+  "reserved": true,
+  "text": "Eternal Flame deals X damage to target opponent, where X is the number of Mountains you control. It deals half X damage, rounded up, to you.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "title": "Eternal Flame",
+  "set": "drk",
+  "cost": "{2}{R}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1787&type=card"
+ },
+ {
+  "artist": "Drew Tucker",
+  "cmc": 2,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "Though they often bore little greater charm than the demons they battled, exorcists were always welcome in Scarwood.",
+  "id": "bd55a5602b7b3f7caad9fa9fc099e4ef0543b33d",
+  "imageName": "exorcist",
+  "layout": "normal",
+  "manaCost": "{W}{W}",
+  "multiverseid": 1806,
+  "name": "Exorcist",
+  "power": "1",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Human",
+   "Cleric"
+  ],
+  "text": "{1}{W}, {T}: Destroy target black creature.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Exorcist",
+  "set": "drk",
+  "cost": "{W}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1806&type=card"
+ },
+ {
+  "artist": "Douglas Shuler",
+  "cmc": 1,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "id": "884d48fdbbebf1ae83fb4ccb42b7dd65e5057ab1",
+  "imageName": "fasting",
+  "layout": "normal",
+  "manaCost": "{W}",
+  "multiverseid": 1807,
+  "name": "Fasting",
+  "rarity": "u",
+  "text": "At the beginning of your upkeep, put a hunger counter on Fasting. Then destroy Fasting if it has five or more hunger counters on it.\nIf you would begin your draw step, you may skip that step instead. If you do, you gain 2 life.\nWhen you draw a card, destroy Fasting.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Fasting",
+  "set": "drk",
+  "cost": "{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1807&type=card"
+ },
+ {
+  "artist": "Quinton Hoover",
+  "cmc": 2,
+  "flavor": "\"What do you have that I cannot obtain?\"\n—Mairsil, called the Pretender",
+  "id": "04ec7a957a78c45224299ab3a473bea9611e66ef",
+  "imageName": "fellwar stone",
+  "layout": "normal",
+  "manaCost": "{2}",
+  "multiverseid": 1714,
+  "name": "Fellwar Stone",
+  "rarity": "u",
+  "text": "{T}: Add to your mana pool one mana of any color that a land an opponent controls could produce.",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "title": "Fellwar Stone",
+  "set": "drk",
+  "cost": "{2}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1714&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Mark Poole",
+  "cmc": 1,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "Only after the townsfolk had drawn us into their merry celebration did we discover that their holiday rituals held a deeper purpose.",
+  "id": "388c616b787db1b1df20d6cc9f64fcad7033b354",
+  "imageName": "festival",
+  "layout": "normal",
+  "manaCost": "{W}",
+  "multiverseid": 1808,
+  "name": "Festival",
+  "rarity": "c",
+  "text": "Cast Festival only during an opponent's upkeep.\nCreatures can't attack this turn.",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "title": "Festival",
+  "set": "drk",
+  "cost": "{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1808&type=card"
+ },
+ {
+  "artist": "Jeff A. Menges",
+  "cmc": 5,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "id": "62dffa0a469fcbf6d70187bdd3a59101d2105e53",
+  "imageName": "fire and brimstone",
+  "layout": "normal",
+  "manaCost": "{3}{W}{W}",
+  "multiverseid": 1809,
+  "name": "Fire and Brimstone",
+  "rarity": "u",
+  "text": "Fire and Brimstone deals 4 damage to target player who declared an attacking creature this turn and 4 damage to you.",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "title": "Fire and Brimstone",
+  "set": "drk",
+  "cost": "{3}{W}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1809&type=card"
+ },
+ {
+  "artist": "Christopher Rush",
+  "cmc": 3,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "id": "6e2497dc36baeca12dc4f9e11dc531e94de3edb9",
+  "imageName": "fire drake",
+  "layout": "normal",
+  "manaCost": "{1}{R}{R}",
+  "multiverseid": 1788,
+  "name": "Fire Drake",
+  "power": "1",
+  "rarity": "u",
+  "subtypes": [
+   "Drake"
+  ],
+  "text": "Flying\n{R}: Fire Drake gets +1/+0 until end of turn. Activate this ability only once each turn.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Fire Drake",
+  "set": "drk",
+  "cost": "{1}{R}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1788&type=card"
+ },
+ {
+  "artist": "Douglas Shuler",
+  "cmc": 5,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"Must not all things at the last be swallowed up in death?\" —Plato",
+  "id": "15f6df06b9a646796fbb99d6558bdd688c4a60c6",
+  "imageName": "fissure",
+  "layout": "normal",
+  "manaCost": "{3}{R}{R}",
+  "multiverseid": 1789,
+  "name": "Fissure",
+  "rarity": "c",
+  "text": "Destroy target creature or land. It can't be regenerated.",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "title": "Fissure",
+  "set": "drk",
+  "cost": "{3}{R}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1789&type=card"
+ },
+ {
+  "artist": "Dennis Detwiller",
+  "cmc": 1,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"A dash of cool water does wonders to clear a cluttered battlefield.\"\n—Vibekke Ragnild, Witches and War",
+  "id": "ac6fd180e4b7c253023e8e6fab3039ee6948b2b6",
+  "imageName": "flood",
+  "layout": "normal",
+  "manaCost": "{U}",
+  "multiverseid": 1753,
+  "name": "Flood",
+  "rarity": "u",
+  "text": "{U}{U}: Tap target creature without flying.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Flood",
+  "set": "drk",
+  "cost": "{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1753&type=card"
+ },
+ {
+  "artist": "Daniel Gelon",
+  "cmc": 0,
+  "flavor": "The Fountain had stood in the town square for centuries, but only the pigeons knew its secret.",
+  "id": "60c029d60292f8eef870e0bef8337b9fa69dc751",
+  "imageName": "fountain of youth",
+  "layout": "normal",
+  "manaCost": "{0}",
+  "multiverseid": 1715,
+  "name": "Fountain of Youth",
+  "rarity": "u",
+  "text": "{2}, {T}: You gain 1 life.",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "title": "Fountain of Youth",
+  "set": "drk",
+  "cost": "{0}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1715&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Anson Maddocks",
+  "cmc": 2,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "id": "84d6fadda5112f8876c2cc1b1aa26ed890a02b48",
+  "imageName": "frankenstein's monster",
+  "layout": "normal",
+  "manaCost": "{X}{B}{B}",
+  "multiverseid": 1734,
+  "name": "Frankenstein's Monster",
+  "power": "0",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Zombie"
+  ],
+  "text": "As Frankenstein's Monster enters the battlefield, exile X creature cards from your graveyard. If you can't, put Frankenstein's Monster into its owner's graveyard instead of onto the battlefield. For each creature card exiled this way, Frankenstein's Monster enters the battlefield with a +2/+0, +1/+1, or +0/+2 counter on it.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Frankenstein's Monster",
+  "set": "drk",
+  "cost": "{X}{B}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1734&type=card"
+ },
+ {
+  "artist": "Mark Poole",
+  "cmc": 2,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "id": "850f9fcdf0acfa0070bd9cf723478d7ab479b3c0",
+  "imageName": "gaea's touch",
+  "layout": "normal",
+  "manaCost": "{G}{G}",
+  "multiverseid": 1767,
+  "name": "Gaea's Touch",
+  "rarity": "c",
+  "text": "{0}: You may put a basic Forest card from your hand onto the battlefield. Activate this ability only any time you could cast a sorcery and only once each turn.\nSacrifice Gaea's Touch: Add {G}{G} to your mana pool.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Gaea's Touch",
+  "set": "drk",
+  "cost": "{G}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1767&type=card"
+ },
+ {
+  "artist": "Tom Wänerstrand",
+  "cmc": 4,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"That phantom prow split the storm as lightning cast its long shadow on the battlefield below.\" —Mireille Gaetane, The Valeriad",
+  "id": "a65eb72df185682f50bd873f29cec03bb5cc564c",
+  "imageName": "ghost ship",
+  "layout": "normal",
+  "manaCost": "{2}{U}{U}",
+  "multiverseid": 1754,
+  "name": "Ghost Ship",
+  "power": "2",
+  "rarity": "c",
+  "subtypes": [
+   "Spirit"
+  ],
+  "text": "Flying\n{U}{U}{U}: Regenerate Ghost Ship.",
+  "toughness": "4",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Ghost Ship",
+  "set": "drk",
+  "cost": "{2}{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1754&type=card"
+ },
+ {
+  "artist": "Tom Wänerstrand",
+  "cmc": 6,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "id": "a87c293a025dbac769e4bc49a267f8c52f51a332",
+  "imageName": "giant shark",
+  "layout": "normal",
+  "manaCost": "{5}{U}",
+  "multiverseid": 1755,
+  "name": "Giant Shark",
+  "power": "4",
+  "rarity": "c",
+  "subtypes": [
+   "Fish"
+  ],
+  "text": "Giant Shark can't attack unless defending player controls an Island.\nWhenever Giant Shark blocks or becomes blocked by a creature that has been dealt damage this turn, Giant Shark gets +2/+0 and gains trample until end of turn.\nWhen you control no Islands, sacrifice Giant Shark.",
+  "toughness": "4",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Giant Shark",
+  "set": "drk",
+  "cost": "{5}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1755&type=card"
+ },
+ {
+  "artist": "Drew Tucker",
+  "cmc": 3,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "The stench of countless generations of unspeakable activities was enough to loosen both our footing and our stomachs.",
+  "id": "aafd369139ba31d62e855303d5051bc0e890dae0",
+  "imageName": "goblin caves",
+  "layout": "normal",
+  "manaCost": "{1}{R}{R}",
+  "multiverseid": 1790,
+  "name": "Goblin Caves",
+  "rarity": "c",
+  "subtypes": [
+   "Aura"
+  ],
+  "text": "Enchant land\nAs long as enchanted land is a basic Mountain, Goblin creatures get +0/+2.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Goblin Caves",
+  "set": "drk",
+  "cost": "{1}{R}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1790&type=card"
+ },
+ {
+  "artist": "Ron Spencer",
+  "cmc": 1,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"From down here we can make the whole wall collapse!\" \"Uh, yeah, boss, but how do we get out?\"",
+  "id": "63e56b1482486d4295874ec37928c8de0fb03655",
+  "imageName": "goblin digging team",
+  "layout": "normal",
+  "manaCost": "{R}",
+  "multiverseid": 1791,
+  "name": "Goblin Digging Team",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Goblin"
+  ],
+  "text": "{T}, Sacrifice Goblin Digging Team: Destroy target Wall.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Goblin Digging Team",
+  "set": "drk",
+  "cost": "{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1791&type=card"
+ },
+ {
+  "artist": "Mark Tedin",
+  "cmc": 3,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "They attacked in an orgy of rage and madness, but only one seemed as focused on killing us as on the sheer joy of battle.",
+  "id": "73c5d3900d11c5998d07ccff88a5a1ec664ccf53",
+  "imageName": "goblin hero",
+  "layout": "normal",
+  "manaCost": "{2}{R}",
+  "multiverseid": 1792,
+  "name": "Goblin Hero",
+  "power": "2",
+  "rarity": "c",
+  "subtypes": [
+   "Goblin"
+  ],
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Goblin Hero",
+  "set": "drk",
+  "cost": "{2}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1792&type=card"
+ },
+ {
+  "artist": "Dennis Detwiller",
+  "cmc": 2,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "id": "7e68b48169ea8318e986cef3b391a7c8595ac66f",
+  "imageName": "goblin rock sled",
+  "layout": "normal",
+  "manaCost": "{1}{R}",
+  "multiverseid": 1793,
+  "name": "Goblin Rock Sled",
+  "power": "3",
+  "rarity": "c",
+  "subtypes": [
+   "Goblin"
+  ],
+  "text": "Trample\nGoblin Rock Sled doesn't untap during your untap step if it attacked during your last turn.\nGoblin Rock Sled can't attack unless defending player controls a Mountain.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Goblin Rock Sled",
+  "set": "drk",
+  "cost": "{1}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1793&type=card"
+ },
+ {
+  "artist": "Ron Spencer",
+  "cmc": 3,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"I knew it weren't no ordinary pile of—you know.\" —Norin the Wary",
+  "id": "5fd07a7e7b046ef1fc515a4bc4cdc269ee149367",
+  "imageName": "goblin shrine",
+  "layout": "normal",
+  "manaCost": "{1}{R}{R}",
+  "multiverseid": 1794,
+  "name": "Goblin Shrine",
+  "rarity": "c",
+  "subtypes": [
+   "Aura"
+  ],
+  "text": "Enchant land\nAs long as enchanted land is a basic Mountain, Goblin creatures get +1/+0.\nWhen Goblin Shrine leaves the battlefield, it deals 1 damage to each Goblin creature.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Goblin Shrine",
+  "set": "drk",
+  "cost": "{1}{R}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1794&type=card"
+ },
+ {
+  "artist": "Daniel Gelon",
+  "cmc": 4,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "id": "1c42794e342f6b57b5321280adf9f0552e39945f",
+  "imageName": "goblin wizard",
+  "layout": "normal",
+  "manaCost": "{2}{R}{R}",
+  "multiverseid": 1795,
+  "name": "Goblin Wizard",
+  "power": "1",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Goblin",
+   "Wizard"
+  ],
+  "text": "{T}: You may put a Goblin permanent card from your hand onto the battlefield.\n{R}: Target Goblin gains protection from white until end of turn.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Goblin Wizard",
+  "set": "drk",
+  "cost": "{2}{R}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1795&type=card"
+ },
+ {
+  "artist": "Tom Wänerstrand",
+  "cmc": 1,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "id": "2a9f8deece489f36276be6bb2a6ad1f89c0faaf5",
+  "imageName": "goblins of the flarg",
+  "layout": "normal",
+  "manaCost": "{R}",
+  "multiverseid": 1796,
+  "name": "Goblins of the Flarg",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Goblin",
+   "Warrior"
+  ],
+  "text": "Mountainwalk (This creature can't be blocked as long as defending player controls a Mountain.)\nWhen you control a Dwarf, sacrifice Goblins of the Flarg.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Goblins of the Flarg",
+  "set": "drk",
+  "cost": "{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1796&type=card"
+ },
+ {
+  "artist": "Quinton Hoover",
+  "cmc": 3,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"If you don't have your health, you don't have anything.\" —Proverb",
+  "id": "a3c6eaa368a54a63da46af3ed7159d95d0dd52c3",
+  "imageName": "grave robbers",
+  "layout": "normal",
+  "manaCost": "{1}{B}{B}",
+  "multiverseid": 1735,
+  "name": "Grave Robbers",
+  "power": "1",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Human",
+   "Rogue"
+  ],
+  "text": "{B}, {T}: Exile target artifact card from a graveyard. You gain 2 life.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Grave Robbers",
+  "set": "drk",
+  "cost": "{1}{B}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1735&type=card"
+ },
+ {
+  "artist": "Rob Alexander",
+  "cmc": 6,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"Where moments before we were lost beyond hope, the strange, floating lights showed us the way and restored our morale.\" —Vervamon the Elder",
+  "id": "d0fa241785ef27518c3eb42c7b4e95fe27f7cf38",
+  "imageName": "hidden path",
+  "layout": "normal",
+  "manaCost": "{2}{G}{G}{G}{G}",
+  "multiverseid": 1768,
+  "name": "Hidden Path",
+  "rarity": "u",
+  "reserved": true,
+  "text": "Green creatures have forestwalk. (They can't be blocked as long as defending player controls a Forest.)",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Hidden Path",
+  "set": "drk",
+  "cost": "{2}{G}{G}{G}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1768&type=card"
+ },
+ {
+  "artist": "Drew Tucker",
+  "cmc": 3,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"Bathed in hallowed light, the infidels looked upon the impurities of their souls and despaired.\" —The Book of Tal",
+  "id": "a2e1173a2a34131e41ce8029beb43841724610cc",
+  "imageName": "holy light",
+  "layout": "normal",
+  "manaCost": "{2}{W}",
+  "multiverseid": 1810,
+  "name": "Holy Light",
+  "rarity": "c",
+  "text": "Nonwhite creatures get -1/-1 until end of turn.",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "title": "Holy Light",
+  "set": "drk",
+  "cost": "{2}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1810&type=card"
+ },
+ {
+  "artist": "Randy Asplund-Faith",
+  "cmc": 7,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"Any scrap of compassion that still existed in my soul was permanently snuffed out when they cast me out into the flames.\" —Mairsil, called the Pretender",
+  "id": "980338365e655f9a571a27719138c01344f80576",
+  "imageName": "inferno",
+  "layout": "normal",
+  "manaCost": "{5}{R}{R}",
+  "multiverseid": 1797,
+  "name": "Inferno",
+  "rarity": "u",
+  "text": "Inferno deals 6 damage to each creature and each player.",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "title": "Inferno",
+  "set": "drk",
+  "cost": "{5}{R}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1797&type=card"
+ },
+ {
+  "artist": "Anson Maddocks",
+  "cmc": 3,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "Many of those entrusted to Primata Delphine's care tended to express themselves with screams.",
+  "id": "99ff1c75186610bca4475174b63f6ed07d0159c7",
+  "imageName": "inquisition",
+  "layout": "normal",
+  "manaCost": "{2}{B}",
+  "multiverseid": 1736,
+  "name": "Inquisition",
+  "rarity": "c",
+  "text": "Target player reveals his or her hand. Inquisition deals damage to that player equal to the number of white cards in his or her hand.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "title": "Inquisition",
+  "set": "drk",
+  "cost": "{2}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1736&type=card"
+ },
+ {
+  "artist": "Christopher Rush",
+  "cmc": 4,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"With a great cry, the Goblin host broke and ran as the first wave of Knights penetrated its ranks.\" —Tivadar of Thorn, History of the Goblin Wars",
+  "id": "437d948076044881153945e80dad1dc8314b202b",
+  "imageName": "knights of thorn",
+  "layout": "normal",
+  "manaCost": "{3}{W}",
+  "multiverseid": 1811,
+  "name": "Knights of Thorn",
+  "power": "2",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Human",
+   "Knight"
+  ],
+  "text": "Protection from red; banding (Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are blocking or being blocked by a creature, you divide that creature's combat damage, not its controller, among any of the creatures it's being blocked by or is blocking.)",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Knights of Thorn",
+  "set": "drk",
+  "cost": "{3}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1811&type=card"
+ },
+ {
+  "artist": "Quinton Hoover",
+  "cmc": 3,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"The standard cure for leeches requires the application of burning embers. Alternative methods must be devised should an ember of sufficient size prove more harmful than the leech.\" —Vervamon the Elder",
+  "id": "40d5516de087d87d39701febff5f9eb5125199d0",
+  "imageName": "land leeches",
+  "layout": "normal",
+  "manaCost": "{1}{G}{G}",
+  "multiverseid": 1769,
+  "name": "Land Leeches",
+  "power": "2",
+  "rarity": "c",
+  "subtypes": [
+   "Leech"
+  ],
+  "text": "First strike",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Land Leeches",
+  "set": "drk",
+  "cost": "{1}{G}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1769&type=card"
+ },
+ {
+  "artist": "Mark Tedin",
+  "cmc": 9,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "id": "cb8f3e580c967bf4f9568aeeb532f3e86d01efab",
+  "imageName": "leviathan",
+  "layout": "normal",
+  "manaCost": "{5}{U}{U}{U}{U}",
+  "multiverseid": 1756,
+  "name": "Leviathan",
+  "power": "10",
+  "rarity": "u",
+  "subtypes": [
+   "Leviathan"
+  ],
+  "text": "Trample\nLeviathan enters the battlefield tapped and doesn't untap during your untap step.\nAt the beginning of your upkeep, you may sacrifice two Islands. If you do, untap Leviathan.\nLeviathan can't attack unless you sacrifice two Islands. (This cost is paid as attackers are declared.)",
+  "toughness": "10",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Leviathan",
+  "set": "drk",
+  "cost": "{5}{U}{U}{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1756&type=card"
+ },
+ {
+  "artist": "Anson Maddocks",
+  "cmc": 4,
+  "flavor": "Though it affords excellent protection, few don this armor. The process is uncomfortable and not easily reversed.",
+  "id": "b698191c4d4cbc6c5cecddd46b9e548525801f47",
+  "imageName": "living armor",
+  "layout": "normal",
+  "manaCost": "{4}",
+  "multiverseid": 1716,
+  "name": "Living Armor",
+  "rarity": "u",
+  "text": "{T}, Sacrifice Living Armor: Put X +0/+1 counters on target creature, where X is that creature's converted mana cost.",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "title": "Living Armor",
+  "set": "drk",
+  "cost": "{4}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1716&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Anson Maddocks",
+  "cmc": 3,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"Each night we felt it watching us from the darkness beyond our fire. We only had one pack horse left.\"\n—Maeveen O'Donagh, Memoirs of a Soldier",
+  "id": "e27b443dd55119ae4d7ff20d45608fbd0adbaf7f",
+  "imageName": "lurker",
+  "layout": "normal",
+  "manaCost": "{2}{G}",
+  "multiverseid": 1770,
+  "name": "Lurker",
+  "power": "2",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Beast"
+  ],
+  "text": "Lurker can't be the target of spells unless it attacked or blocked this turn.",
+  "toughness": "3",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Lurker",
+  "set": "drk",
+  "cost": "{2}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1770&type=card"
+ },
+ {
+  "artist": "Mark Tedin",
+  "cmc": 1,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "id": "33c08837518e10837c89cee244472ea1cee3eb71",
+  "imageName": "mana clash",
+  "layout": "normal",
+  "manaCost": "{R}",
+  "multiverseid": 1798,
+  "name": "Mana Clash",
+  "rarity": "u",
+  "text": "You and target opponent each flip a coin. Mana Clash deals 1 damage to each player whose coin comes up tails. Repeat this process until both players' coins come up heads on the same flip.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "title": "Mana Clash",
+  "set": "drk",
+  "cost": "{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1798&type=card"
+ },
+ {
+  "artist": "Douglas Shuler",
+  "cmc": 3,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "id": "77ed98d2c84fbaab5f6ffd7b9381e9c9dafd6922",
+  "imageName": "mana vortex",
+  "layout": "normal",
+  "manaCost": "{1}{U}{U}",
+  "multiverseid": 1757,
+  "name": "Mana Vortex",
+  "rarity": "u",
+  "reserved": true,
+  "text": "When you cast Mana Vortex, counter it unless you sacrifice a land.\nAt the beginning of each player's upkeep, that player sacrifices a land.\nWhen there are no lands on the battlefield, sacrifice Mana Vortex.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Mana Vortex",
+  "set": "drk",
+  "cost": "{1}{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1757&type=card"
+ },
+ {
+  "artist": "Douglas Shuler",
+  "cmc": 1,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"Comes right outta th' ground. If ya can smell it, it's too late.\" —Keevy Bogsbury",
+  "id": "b1c552775e9c7508c30149764b4be1440e20beda",
+  "imageName": "marsh gas",
+  "layout": "normal",
+  "manaCost": "{B}",
+  "multiverseid": 1737,
+  "name": "Marsh Gas",
+  "rarity": "c",
+  "text": "All creatures get -2/-0 until end of turn.",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "title": "Marsh Gas",
+  "set": "drk",
+  "cost": "{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1737&type=card"
+ },
+ {
+  "artist": "Quinton Hoover",
+  "cmc": 2,
+  "colorIdentity": [
+   "B",
+   "R"
+  ],
+  "colors": [
+   "Black",
+   "Red"
+  ],
+  "flavor": "Even the other Goblin races shun the Marsh Goblins, thanks to certain unwholesome customs they practice.",
+  "id": "d283f1ca077f7a4eb29df8a9aef99dcee3e21163",
+  "imageName": "marsh goblins",
+  "layout": "normal",
+  "manaCost": "{B}{R}",
+  "multiverseid": 1821,
+  "name": "Marsh Goblins",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Goblin"
+  ],
+  "text": "Swampwalk (This creature can't be blocked as long as defending player controls a Swamp.)",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Marsh Goblins",
+  "set": "drk",
+  "cost": "{B}{R}",
+  "colour": "m",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1821&type=card"
+ },
+ {
+  "artist": "Ron Spencer",
+  "cmc": 4,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"All we had left were their black and bloated bodies.\" —Maeveen O'Donagh, Memoirs of a Soldier",
+  "id": "edfb50cd59f98cea93fffa21ab7a17b91f537695",
+  "imageName": "marsh viper",
+  "layout": "normal",
+  "manaCost": "{3}{G}",
+  "multiverseid": 1771,
+  "name": "Marsh Viper",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Snake"
+  ],
+  "text": "Whenever Marsh Viper deals damage to a player, that player gets two poison counters. (A player with ten or more poison counters loses the game.)",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Marsh Viper",
+  "set": "drk",
+  "cost": "{3}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1771&type=card"
+ },
+ {
+  "artist": "Jeff A. Menges",
+  "cmc": 2,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"It is only fitting that one such as I should die in pursuit of knowledge.\" —Vervamon the Elder",
+  "id": "74078638831d1db013f61ffb72febc1050bae2bd",
+  "imageName": "martyr's cry",
+  "layout": "normal",
+  "manaCost": "{W}{W}",
+  "multiverseid": 1812,
+  "name": "Martyr's Cry",
+  "rarity": "u",
+  "reserved": true,
+  "text": "Exile all white creatures. For each creature exiled this way, its controller draws a card.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "title": "Martyr's Cry",
+  "set": "drk",
+  "cost": "{W}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1812&type=card"
+ },
+ {
+  "artist": "Anson Maddocks",
+  "id": "fc8a1bd1b65a96adf59a8bc8c5472c7b077cab70",
+  "imageName": "maze of ith",
+  "layout": "normal",
+  "multiverseid": 1824,
+  "name": "Maze of Ith",
+  "rarity": "u",
+  "text": "{T}: Untap target attacking creature. Prevent all combat damage that would be dealt to and dealt by that creature this turn.",
+  "type": "Land",
+  "types": [
+   "Land"
+  ],
+  "title": "Maze of Ith",
+  "set": "drk",
+  "cost": "",
+  "colour": "l",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1824&type=card"
+ },
+ {
+  "artist": "Dennis Detwiller",
+  "cmc": 2,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "id": "e75d3077e545d784c060f87ee6694db272a3f180",
+  "imageName": "merfolk assassin",
+  "layout": "normal",
+  "manaCost": "{U}{U}",
+  "multiverseid": 1758,
+  "name": "Merfolk Assassin",
+  "power": "1",
+  "rarity": "u",
+  "subtypes": [
+   "Merfolk",
+   "Assassin"
+  ],
+  "text": "{T}: Destroy target creature with islandwalk.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Merfolk Assassin",
+  "set": "drk",
+  "cost": "{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1758&type=card"
+ },
+ {
+  "artist": "Mark Tedin",
+  "cmc": 1,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "id": "ffb4a6b101675512321ec2b076491eaf0428d49d",
+  "imageName": "mind bomb",
+  "layout": "normal",
+  "manaCost": "{U}",
+  "multiverseid": 1759,
+  "name": "Mind Bomb",
+  "rarity": "u",
+  "text": "Each player may discard up to three cards. Mind Bomb deals damage to each player equal to 3 minus the number of cards he or she discarded this way.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "title": "Mind Bomb",
+  "set": "drk",
+  "cost": "{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1759&type=card"
+ },
+ {
+  "artist": "Ron Spencer",
+  "cmc": 1,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"Those blessed hands could bring surcease to even the most tainted soul.\" —Sister Betje, Miracles of the Saints",
+  "id": "8c0fe28f15cf6e452ceb8a8b4aa0c01d235cbae0",
+  "imageName": "miracle worker",
+  "layout": "normal",
+  "manaCost": "{W}",
+  "multiverseid": 1813,
+  "name": "Miracle Worker",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Human",
+   "Cleric"
+  ],
+  "text": "{T}: Destroy target Aura attached to a creature you control.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Miracle Worker",
+  "set": "drk",
+  "cost": "{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1813&type=card"
+ },
+ {
+  "artist": "Mark Poole",
+  "cmc": 3,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"After Lacjsi's speech, the Knights grew determined to crush their ancient enemies clan by clan.\" —Tivadar of Thorn, History of the Goblin Wars",
+  "id": "0319d17865def6893094955bb41c083a2c8e590c",
+  "imageName": "morale",
+  "layout": "normal",
+  "manaCost": "{1}{W}{W}",
+  "multiverseid": 1814,
+  "name": "Morale",
+  "rarity": "c",
+  "text": "Attacking creatures get +1/+1 until end of turn.",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "title": "Morale",
+  "set": "drk",
+  "cost": "{1}{W}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1814&type=card"
+ },
+ {
+  "artist": "Drew Tucker",
+  "cmc": 4,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "When Raganorn unsealed the catacombs, he found more than the dead and their treasures.",
+  "id": "47297df5b2104f90df6a615b108306c2d4ccef4a",
+  "imageName": "murk dwellers",
+  "layout": "normal",
+  "manaCost": "{3}{B}",
+  "multiverseid": 1738,
+  "name": "Murk Dwellers",
+  "power": "2",
+  "rarity": "c",
+  "subtypes": [
+   "Zombie"
+  ],
+  "text": "Whenever Murk Dwellers attacks and isn't blocked, it gets +2/+0 until end of combat.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Murk Dwellers",
+  "set": "drk",
+  "cost": "{3}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1738&type=card"
+ },
+ {
+  "artist": "Quinton Hoover",
+  "cmc": 4,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "id": "15e28d2ecf59cfa5af17a787b2a3e7179e64484b",
+  "imageName": "nameless race",
+  "layout": "normal",
+  "manaCost": "{3}{B}",
+  "multiverseid": 1739,
+  "name": "Nameless Race",
+  "power": "*",
+  "rarity": "u",
+  "reserved": true,
+  "text": "Trample\nAs Nameless Race enters the battlefield, pay any amount of life. The amount you pay can't be more than the total number of white nontoken permanents your opponents control plus the total number of white cards in their graveyards.\nNameless Race's power and toughness are each equal to the life paid as it entered the battlefield.",
+  "toughness": "*",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Nameless Race",
+  "set": "drk",
+  "cost": "{3}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1739&type=card"
+ },
+ {
+  "artist": "NéNé Thomas",
+  "cmc": 5,
+  "id": "7173d1d774896303e5b47259924e5f5d2546434a",
+  "imageName": "necropolis",
+  "layout": "normal",
+  "manaCost": "{5}",
+  "multiverseid": 1717,
+  "name": "Necropolis",
+  "power": "0",
+  "rarity": "u",
+  "subtypes": [
+   "Wall"
+  ],
+  "text": "Defender (This creature can't attack.)\nExile a creature card from your graveyard: Put X +0/+1 counters on Necropolis, where X is the exiled card's converted mana cost.",
+  "toughness": "1",
+  "type": "Artifact",
+  "types": [
+   "Artifact",
+   "Creature"
+  ],
+  "title": "Necropolis",
+  "set": "drk",
+  "cost": "{5}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1717&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Christopher Rush",
+  "cmc": 3,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "This is his domain, and while you remain here you must value all life as you value your own.",
+  "id": "01e1257fc1b10b1902b75eb34a8a509cb6cb3710",
+  "imageName": "niall silvain",
+  "layout": "normal",
+  "manaCost": "{G}{G}{G}",
+  "multiverseid": 1772,
+  "name": "Niall Silvain",
+  "power": "2",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Ouphe"
+  ],
+  "text": "{G}{G}{G}{G}, {T}: Regenerate target creature.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Niall Silvain",
+  "set": "drk",
+  "cost": "{G}{G}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1772&type=card"
+ },
+ {
+  "artist": "Jesper Myrfors",
+  "cmc": 3,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"Your army must fear you more than the enemy. Only then will you triumph.\" —Malga Phlegmtooth",
+  "id": "3a35faf578416c506b202f32cdeb3d23dc0e4d83",
+  "imageName": "orc general",
+  "layout": "normal",
+  "manaCost": "{2}{R}",
+  "multiverseid": 1799,
+  "name": "Orc General",
+  "power": "2",
+  "rarity": "u",
+  "subtypes": [
+   "Orc",
+   "Warrior"
+  ],
+  "text": "{T}, Sacrifice another Orc or Goblin: Other Orc creatures get +1/+1 until end of turn.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Orc General",
+  "set": "drk",
+  "cost": "{2}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1799&type=card"
+ },
+ {
+  "artist": "Drew Tucker",
+  "cmc": 2,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"Their rain of arrows left only myself alive, cowering within a tree hollow. They did not even come out to loot the bodies.\" —Vervamon the Elder",
+  "id": "eb10ac577775db5fe7c9b3979af5653aabae66fe",
+  "imageName": "people of the woods",
+  "layout": "normal",
+  "manaCost": "{G}{G}",
+  "multiverseid": 1773,
+  "name": "People of the Woods",
+  "power": "1",
+  "rarity": "u",
+  "subtypes": [
+   "Human"
+  ],
+  "text": "People of the Woods's toughness is equal to the number of Forests you control.",
+  "toughness": "*",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "People of the Woods",
+  "set": "drk",
+  "cost": "{G}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1773&type=card"
+ },
+ {
+  "artist": "Dennis Detwiller",
+  "cmc": 2,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"As the cavalry bore down, we faced them with swords drawn and pikes hidden in the grass at our feet. ‘Don't lift your pikes 'til I give the word,' I said.\" —Maeveen O'Donagh, Memoirs of a Soldier",
+  "id": "3aae00072a81589de279963e7c7def30ed1e0085",
+  "imageName": "pikemen",
+  "layout": "normal",
+  "manaCost": "{1}{W}",
+  "multiverseid": 1815,
+  "name": "Pikemen",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Human",
+   "Soldier"
+  ],
+  "text": "First strike; banding (Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are blocking or being blocked by a creature, you divide that creature's combat damage, not its controller, among any of the creatures it's being blocked by or is blocking.)",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Pikemen",
+  "set": "drk",
+  "cost": "{1}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1815&type=card"
+ },
+ {
+  "artist": "Quinton Hoover",
+  "cmc": 3,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "id": "3764452e83809ac49340c57fcda8a0a1db8718ff",
+  "imageName": "preacher",
+  "layout": "normal",
+  "manaCost": "{1}{W}{W}",
+  "multiverseid": 1816,
+  "name": "Preacher",
+  "power": "1",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Human",
+   "Cleric"
+  ],
+  "text": "You may choose not to untap Preacher during your untap step.\n{T}: For as long as Preacher remains tapped, gain control of target creature of an opponent's choice he or she controls.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Preacher",
+  "set": "drk",
+  "cost": "{1}{W}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1816&type=card"
+ },
+ {
+  "artist": "Mark Tedin",
+  "cmc": 5,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "id": "e95541804eb9ce857d031160044cab324678abba",
+  "imageName": "psychic allergy",
+  "layout": "normal",
+  "manaCost": "{3}{U}{U}",
+  "multiverseid": 1760,
+  "name": "Psychic Allergy",
+  "rarity": "u",
+  "reserved": true,
+  "text": "As Psychic Allergy enters the battlefield, choose a color.\nAt the beginning of each opponent's upkeep, Psychic Allergy deals X damage to that player, where X is the number of nontoken permanents of the chosen color he or she controls.\nAt the beginning of your upkeep, destroy Psychic Allergy unless you sacrifice two Islands.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Psychic Allergy",
+  "set": "drk",
+  "cost": "{3}{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1760&type=card"
+ },
+ {
+  "artist": "Daniel Gelon",
+  "cmc": 4,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"Aw, he's just a silly, dirty little man. What's to be afraid of?\"",
+  "id": "a0007de77b13d0f916de822da08d27914ec64de6",
+  "imageName": "rag man",
+  "layout": "normal",
+  "manaCost": "{2}{B}{B}",
+  "multiverseid": 1740,
+  "name": "Rag Man",
+  "power": "2",
+  "rarity": "u",
+  "subtypes": [
+   "Human",
+   "Minion"
+  ],
+  "text": "{B}{B}{B}, {T}: Target opponent reveals his or her hand and discards a creature card at random. Activate this ability only during your turn.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Rag Man",
+  "set": "drk",
+  "cost": "{2}{B}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1740&type=card"
+ },
+ {
+  "artist": "Mark Poole",
+  "cmc": 4,
+  "id": "2c947e3a88a3beaab5cc8129d34d4b3c26ee4b2a",
+  "imageName": "reflecting mirror",
+  "layout": "normal",
+  "manaCost": "{4}",
+  "multiverseid": 1718,
+  "name": "Reflecting Mirror",
+  "rarity": "u",
+  "text": "{X}, {T}: Change the target of target spell with a single target if that target is you. The new target must be a player. X is twice the converted mana cost of that spell.",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "title": "Reflecting Mirror",
+  "set": "drk",
+  "cost": "{4}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1718&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Randy Asplund-Faith",
+  "cmc": 1,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "id": "d52b4fb2dfc2fe7b2f5e1ceda1e3cfebee39a5f9",
+  "imageName": "riptide",
+  "layout": "normal",
+  "manaCost": "{U}",
+  "multiverseid": 1761,
+  "name": "Riptide",
+  "rarity": "c",
+  "text": "Tap all blue creatures.",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "title": "Riptide",
+  "set": "drk",
+  "cost": "{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1761&type=card"
+ },
+ {
+  "artist": "Christopher Rush",
+  "cmc": 6,
+  "id": "45d6bef7beed3a264020244a8192a21ac07c8e0c",
+  "imageName": "runesword",
+  "layout": "normal",
+  "manaCost": "{6}",
+  "multiverseid": 1719,
+  "name": "Runesword",
+  "rarity": "u",
+  "text": "{3}, {T}: Target attacking creature gets +2/+0 until end of turn. When that creature leaves the battlefield this turn, sacrifice Runesword. If the creature deals damage to a creature this turn, the creature dealt damage can't be regenerated this turn. If a creature dealt damage by the targeted creature would die this turn, exile that creature instead.",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "title": "Runesword",
+  "set": "drk",
+  "cost": "{6}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1719&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Christopher Rush",
+  "id": "6110906e97b8ecefc85fe3c42fba48a55212ef33",
+  "imageName": "safe haven",
+  "layout": "normal",
+  "multiverseid": 1825,
+  "name": "Safe Haven",
+  "rarity": "u",
+  "text": "{2}, {T}: Exile target creature you control.\nAt the beginning of your upkeep, you may sacrifice Safe Haven. If you do, return each card exiled with Safe Haven to the battlefield under its owner's control.",
+  "type": "Land",
+  "types": [
+   "Land"
+  ],
+  "title": "Safe Haven",
+  "set": "drk",
+  "cost": "",
+  "colour": "l",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1825&type=card"
+ },
+ {
+  "artist": "Ron Spencer",
+  "cmc": 1,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"Purity of magic can only come from purity of the land. How can a meal nourish if the ingredients are spoiled?\" —Sidaine of Savaen",
+  "id": "789276626c5dfa01a02e1ca650c4837caf54ecc4",
+  "imageName": "savaen elves",
+  "layout": "normal",
+  "manaCost": "{G}",
+  "multiverseid": 1774,
+  "name": "Savaen Elves",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Elf"
+  ],
+  "text": "{G}{G}, {T}: Destroy target Aura attached to a land.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Savaen Elves",
+  "set": "drk",
+  "cost": "{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1774&type=card"
+ },
+ {
+  "artist": "Anson Maddocks",
+  "cmc": 5,
+  "flavor": "There was more malice in its button eyes than should have been possible in something that had never known life.",
+  "id": "3408c87855f384c72ef39e3e792015ae2d99f006",
+  "imageName": "scarecrow",
+  "layout": "normal",
+  "manaCost": "{5}",
+  "multiverseid": 1720,
+  "name": "Scarecrow",
+  "power": "2",
+  "rarity": "u",
+  "subtypes": [
+   "Scarecrow"
+  ],
+  "text": "{6}, {T}: Prevent all damage that would be dealt to you this turn by creatures with flying.",
+  "toughness": "2",
+  "type": "Artifact",
+  "types": [
+   "Artifact",
+   "Creature"
+  ],
+  "title": "Scarecrow",
+  "set": "drk",
+  "cost": "{5}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1720&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Mark Poole",
+  "cmc": 4,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "id": "6b5c8f3eb8b1b4784a77f31ddf7db2c203ce1a2e",
+  "imageName": "scarwood bandits",
+  "layout": "normal",
+  "manaCost": "{2}{G}{G}",
+  "multiverseid": 1775,
+  "name": "Scarwood Bandits",
+  "power": "2",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Human",
+   "Rogue"
+  ],
+  "text": "Forestwalk (This creature can't be blocked as long as defending player controls a Forest.)\n{2}{G}, {T}: Unless an opponent pays {2}, gain control of target artifact for as long as Scarwood Bandits remains on the battlefield.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Scarwood Bandits",
+  "set": "drk",
+  "cost": "{2}{G}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1775&type=card"
+ },
+ {
+  "artist": "Ron Spencer",
+  "cmc": 2,
+  "colorIdentity": [
+   "R",
+   "G"
+  ],
+  "colors": [
+   "Red",
+   "Green"
+  ],
+  "flavor": "Larger and more cunning than most Goblins, Scarwood Goblins are thankfully found only in isolated pockets.",
+  "id": "3ac2c2521d3e57eae45969d47297046ecbbc37cf",
+  "imageName": "scarwood goblins",
+  "layout": "normal",
+  "manaCost": "{R}{G}",
+  "multiverseid": 1822,
+  "name": "Scarwood Goblins",
+  "power": "2",
+  "rarity": "c",
+  "subtypes": [
+   "Goblin"
+  ],
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Scarwood Goblins",
+  "set": "drk",
+  "cost": "{R}{G}",
+  "colour": "m",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1822&type=card"
+ },
+ {
+  "artist": "Anson Maddocks",
+  "cmc": 2,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "id": "95f8a3a5069cabd967bf9bea4f1fd72580cb41c8",
+  "imageName": "scarwood hag",
+  "layout": "normal",
+  "manaCost": "{1}{G}",
+  "multiverseid": 1776,
+  "name": "Scarwood Hag",
+  "power": "1",
+  "rarity": "u",
+  "subtypes": [
+   "Hag"
+  ],
+  "text": "{G}{G}{G}{G}, {T}: Target creature gains forestwalk until end of turn. (It can't be blocked as long as defending player controls a Forest.)\n{T}: Target creature loses forestwalk until end of turn.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Scarwood Hag",
+  "set": "drk",
+  "cost": "{1}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1776&type=card"
+ },
+ {
+  "artist": "Dennis Detwiller",
+  "cmc": 1,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "String, weapons, wax, or jewels—it makes no difference. Leave nothing unguarded in Scarwood.",
+  "id": "2eca330350b4ed9ce28f134f81fd5fd508bf57cb",
+  "imageName": "scavenger folk",
+  "layout": "normal",
+  "manaCost": "{G}",
+  "multiverseid": 1777,
+  "name": "Scavenger Folk",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Human"
+  ],
+  "text": "{G}, {T}, Sacrifice Scavenger Folk: Destroy target artifact.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Scavenger Folk",
+  "set": "drk",
+  "cost": "{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1777&type=card"
+ },
+ {
+  "artist": "Jesper Myrfors",
+  "cmc": 3,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "id": "50484f292e204b12245eea2ec354e2473d6da09b",
+  "imageName": "season of the witch",
+  "layout": "normal",
+  "manaCost": "{B}{B}{B}",
+  "multiverseid": 1741,
+  "name": "Season of the Witch",
+  "rarity": "u",
+  "reserved": true,
+  "text": "At the beginning of your upkeep, sacrifice Season of the Witch unless you pay 2 life.\nAt the beginning of the end step, destroy all untapped creatures that didn't attack this turn, except for creatures that couldn't attack.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Season of the Witch",
+  "set": "drk",
+  "cost": "{B}{B}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1741&type=card"
+ },
+ {
+  "artist": "Jesper Myrfors",
+  "cmc": 3,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "We are many wicks sharing a common tallow; we feed the skies with the ashes of our prey.",
+  "id": "da71f1f885c74fecc42cf9aefb79511cc77b64f3",
+  "imageName": "sisters of the flame",
+  "layout": "normal",
+  "manaCost": "{1}{R}{R}",
+  "multiverseid": 1800,
+  "name": "Sisters of the Flame",
+  "power": "2",
+  "rarity": "u",
+  "subtypes": [
+   "Human",
+   "Shaman"
+  ],
+  "text": "{T}: Add {R} to your mana pool.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Sisters of the Flame",
+  "set": "drk",
+  "cost": "{1}{R}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1800&type=card"
+ },
+ {
+  "artist": "Tom Wänerstrand",
+  "cmc": 3,
+  "flavor": "Though lifeless, the Skull still possessed a strange power over the flow of magic.",
+  "id": "00a8cb32cf78779d76229def528ecd6fb50a1c95",
+  "imageName": "skull of orm",
+  "layout": "normal",
+  "manaCost": "{3}",
+  "multiverseid": 1721,
+  "name": "Skull of Orm",
+  "rarity": "u",
+  "text": "{5}, {T}: Return target enchantment card from your graveyard to your hand.",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "title": "Skull of Orm",
+  "set": "drk",
+  "cost": "{3}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1721&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Randy Asplund-Faith",
+  "id": "0206139ea48314cc60c714ffe9aef2d531f187cd",
+  "imageName": "sorrow's path",
+  "layout": "normal",
+  "multiverseid": 1826,
+  "name": "Sorrow's Path",
+  "rarity": "u",
+  "reserved": true,
+  "text": "{T}: Choose two target blocking creatures an opponent controls. If each of those creatures could block all creatures that the other is blocking, remove both of them from combat. Each one then blocks all creatures the other was blocking.\nWhenever Sorrow's Path becomes tapped, it deals 2 damage to you and each creature you control.",
+  "type": "Land",
+  "types": [
+   "Land"
+  ],
+  "title": "Sorrow's Path",
+  "set": "drk",
+  "cost": "",
+  "colour": "l",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1826&type=card"
+ },
+ {
+  "artist": "Anson Maddocks",
+  "cmc": 3,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "id": "f428438edd1ac3a0de7333b80e292f87307a0f18",
+  "imageName": "spitting slug",
+  "layout": "normal",
+  "manaCost": "{1}{G}{G}",
+  "multiverseid": 1778,
+  "name": "Spitting Slug",
+  "power": "2",
+  "rarity": "u",
+  "subtypes": [
+   "Slug"
+  ],
+  "text": "Whenever Spitting Slug blocks or becomes blocked, you may pay {1}{G}. If you do, Spitting Slug gains first strike until end of turn. Otherwise, each creature blocking or blocked by Spitting Slug gains first strike until end of turn.",
+  "toughness": "4",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Spitting Slug",
+  "set": "drk",
+  "cost": "{1}{G}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1778&type=card"
+ },
+ {
+  "artist": "Dennis Detwiller",
+  "cmc": 2,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"Of twenty yeer of age he was, I gesse. Of his stature he was of even lengthe. And wonderly deliver, and greete of strengthe.\" —Geoffrey Chaucer, The Canterbury Tales",
+  "id": "84bb772acb41c274dea3419fbac3e4ff66d67dd0",
+  "imageName": "squire",
+  "layout": "normal",
+  "manaCost": "{1}{W}",
+  "multiverseid": 1817,
+  "name": "Squire",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Human",
+   "Soldier"
+  ],
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Squire",
+  "set": "drk",
+  "cost": "{1}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1817&type=card"
+ },
+  {
+    "artist": "Sandra Everingham",
+    "cmc": 3,
+    "id": "8d1398571996b5624c6b48070e6f42aabbd3fd9f",
+    "imageName": "standing stones",
+    "layout": "normal",
+    "manaCost": "{3}",
+    "multiverseid": 1722,
+    "name": "Standing Stones",
+    "rarity": "u",
+    "text": "{1}, {T}, Pay 1 life: Add one mana of any color to your mana pool.",
+    "type": "Artifact",
+    "types": [
+      "Artifact"
+    ],
+    "title": "Standing Stones",
+    "set": "drk",
+    "cost": "{3}",
+    "colour": "a",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1722&type=card",
+    "sorder": 17,
+    "colourless": true
+  },
+ {
+  "artist": "Amy Weber",
+  "cmc": 5,
+  "flavor": "The Pretender Mairsil ordered a great Calendar drawn up to show when the paths to the Dark Lands were strongest.",
+  "id": "969520658258280605e01a6ea6794265d2d43d8c",
+  "imageName": "stone calendar",
+  "layout": "normal",
+  "manaCost": "{5}",
+  "multiverseid": 1723,
+  "name": "Stone Calendar",
+  "rarity": "u",
+  "reserved": true,
+  "text": "Spells you cast cost up to {1} less to cast.",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "title": "Stone Calendar",
+  "set": "drk",
+  "cost": "{5}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1723&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Jesper Myrfors",
+  "cmc": 2,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "id": "d44bb8627c6862fa638b8cd0d919bd6aac098fd5",
+  "imageName": "sunken city",
+  "layout": "normal",
+  "manaCost": "{U}{U}",
+  "multiverseid": 1762,
+  "name": "Sunken City",
+  "rarity": "c",
+  "text": "At the beginning of your upkeep, sacrifice Sunken City unless you pay {U}{U}.\nBlue creatures get +1/+1.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Sunken City",
+  "set": "drk",
+  "cost": "{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1762&type=card"
+ },
+ {
+  "artist": "Rob Alexander",
+  "cmc": 1,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "id": "b33b44f83ccb933e894f593ad5f770f3af688ab2",
+  "imageName": "tangle kelp",
+  "layout": "normal",
+  "manaCost": "{U}",
+  "multiverseid": 1763,
+  "name": "Tangle Kelp",
+  "rarity": "u",
+  "subtypes": [
+   "Aura"
+  ],
+  "text": "Enchant creature\nWhen Tangle Kelp enters the battlefield, tap enchanted creature.\nEnchanted creature doesn't untap during its controller's untap step if it attacked during its controller's last turn.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Tangle Kelp",
+  "set": "drk",
+  "cost": "{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1763&type=card"
+ },
+ {
+  "artist": "Jesper Myrfors",
+  "cmc": 4,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "Magic often masters those who cannot master it.",
+  "id": "45763ee3980c54349ab7892f71cf1a9d5740c275",
+  "imageName": "the fallen",
+  "layout": "normal",
+  "manaCost": "{1}{B}{B}{B}",
+  "multiverseid": 1742,
+  "name": "The Fallen",
+  "power": "2",
+  "rarity": "u",
+  "subtypes": [
+   "Zombie"
+  ],
+  "text": "At the beginning of your upkeep, The Fallen deals 1 damage to each opponent it has dealt damage to this game.",
+  "toughness": "3",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "The Fallen",
+  "set": "drk",
+  "cost": "{1}{B}{B}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1742&type=card"
+ },
+ {
+  "artist": "Dennis Detwiller",
+  "cmc": 3,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "id": "590343aada75b2a5108bdd166755005034c94a67",
+  "imageName": "tivadar's crusade",
+  "layout": "normal",
+  "manaCost": "{1}{W}{W}",
+  "multiverseid": 1818,
+  "name": "Tivadar's Crusade",
+  "rarity": "u",
+  "text": "Destroy all Goblins.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "title": "Tivadar's Crusade",
+  "set": "drk",
+  "cost": "{1}{W}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1818&type=card"
+ },
+ {
+  "artist": "Christopher Rush",
+  "cmc": 0,
+  "flavor": "The dark opening seemed to breathe the cold, damp air of the dead earth in a steady rhythm.",
+  "id": "c8e31991a82f187a7e072034833e3e07a2b601c3",
+  "imageName": "tormod's crypt",
+  "layout": "normal",
+  "manaCost": "{0}",
+  "multiverseid": 1724,
+  "name": "Tormod's Crypt",
+  "rarity": "u",
+  "text": "{T}, Sacrifice Tormod's Crypt: Exile all cards from target player's graveyard.",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "title": "Tormod's Crypt",
+  "set": "drk",
+  "cost": "{0}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1724&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Dan Frazier",
+  "cmc": 2,
+  "id": "a3ab7c25e5ce52fb721f81392b230c2383fbdb9a",
+  "imageName": "tower of coireall",
+  "layout": "normal",
+  "manaCost": "{2}",
+  "multiverseid": 1725,
+  "name": "Tower of Coireall",
+  "rarity": "u",
+  "text": "{T}: Target creature can't be blocked by Walls this turn.",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "title": "Tower of Coireall",
+  "set": "drk",
+  "cost": "{2}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1725&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Jeff A. Menges",
+  "cmc": 3,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "id": "2c771332fdfb41146049fd6f80cfc4b28a89a0df",
+  "imageName": "tracker",
+  "layout": "normal",
+  "manaCost": "{2}{G}",
+  "multiverseid": 1779,
+  "name": "Tracker",
+  "power": "2",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Human"
+  ],
+  "text": "{G}{G}, {T}: Tracker deals damage equal to its power to target creature. That creature deals damage equal to its power to Tracker.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Tracker",
+  "set": "drk",
+  "cost": "{2}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1779&type=card"
+ },
+ {
+  "artist": "Daniel Gelon",
+  "cmc": 4,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "Solitude drove the old hermit insane. Now he only keeps company with those he can catch.",
+  "id": "28aa5f652f7046a1ee9c8272d0959d0a54503bb3",
+  "imageName": "uncle istvan",
+  "layout": "normal",
+  "manaCost": "{1}{B}{B}{B}",
+  "multiverseid": 1743,
+  "name": "Uncle Istvan",
+  "power": "1",
+  "rarity": "u",
+  "subtypes": [
+   "Human"
+  ],
+  "text": "Prevent all damage that would be dealt to Uncle Istvan by creatures.",
+  "toughness": "3",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Uncle Istvan",
+  "set": "drk",
+  "cost": "{1}{B}{B}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1743&type=card"
+ },
+ {
+  "artist": "Tom Wänerstrand",
+  "cmc": 3,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"I told him it was just a flesh wound, a wee scratch, but the next time I looked at him, poor Tadhg was dead and gone.\" —Maeveen O'Donagh, Memoirs of a Soldier",
+  "id": "76e8a11e187776f4f87ee83c3c0b4cfbbf5f4120",
+  "imageName": "venom",
+  "layout": "normal",
+  "manaCost": "{1}{G}{G}",
+  "multiverseid": 1780,
+  "name": "Venom",
+  "rarity": "c",
+  "subtypes": [
+   "Aura"
+  ],
+  "text": "Enchant creature\nWhenever enchanted creature blocks or becomes blocked by a non-Wall creature, destroy the other creature at end of combat.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Venom",
+  "set": "drk",
+  "cost": "{1}{G}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1780&type=card"
+ },
+ {
+  "artist": "Quinton Hoover",
+  "cmc": 4,
+  "id": "0e0f3c7e0cafec34ab69672bf5a10b43210b6cd9",
+  "imageName": "wand of ith",
+  "layout": "normal",
+  "manaCost": "{4}",
+  "multiverseid": 1726,
+  "name": "Wand of Ith",
+  "rarity": "u",
+  "text": "{3}, {T}: Target player reveals a card at random from his or her hand. If it's a land card, that player discards it unless he or she pays 1 life. If it isn't a land card, the player discards it unless he or she pays life equal to its converted mana cost. Activate this ability only during your turn.",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "title": "Wand of Ith",
+  "set": "drk",
+  "cost": "{4}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1726&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Tom Wänerstrand",
+  "cmc": 4,
+  "id": "4ce6d5db9654cc2de2eeb60168722546ed21c031",
+  "imageName": "war barge",
+  "layout": "normal",
+  "manaCost": "{4}",
+  "multiverseid": 1727,
+  "name": "War Barge",
+  "rarity": "u",
+  "text": "{3}: Target creature gains islandwalk until end of turn. When War Barge leaves the battlefield this turn, destroy that creature. A creature destroyed this way can't be regenerated. (A creature with islandwalk can't be blocked as long as defending player controls an Island.)",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "title": "War Barge",
+  "set": "drk",
+  "cost": "{4}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1727&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Ron Spencer",
+  "cmc": 1,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "id": "c7f20b96c057748d091ebd061fb745005ca9d6da",
+  "imageName": "water wurm",
+  "layout": "normal",
+  "manaCost": "{U}",
+  "multiverseid": 1764,
+  "name": "Water Wurm",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Wurm"
+  ],
+  "text": "Water Wurm gets +0/+1 as long as an opponent controls an Island.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Water Wurm",
+  "set": "drk",
+  "cost": "{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1764&type=card"
+ },
+ {
+  "artist": "Douglas Shuler",
+  "cmc": 1,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "If the Whippoorwill remains silent, the soul has not reached its reward.",
+  "id": "871d2c55f9559629b3d231bff3a33d17d4ac1d1a",
+  "imageName": "whippoorwill",
+  "layout": "normal",
+  "manaCost": "{G}",
+  "multiverseid": 1781,
+  "name": "Whippoorwill",
+  "power": "1",
+  "rarity": "u",
+  "subtypes": [
+   "Bird"
+  ],
+  "text": "{G}{G}, {T}: Target creature can't be regenerated this turn. Damage that would be dealt to that creature this turn can't be prevented or dealt instead to another creature or player. When the creature dies this turn, exile the creature.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Whippoorwill",
+  "set": "drk",
+  "cost": "{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1781&type=card"
+ },
+ {
+  "artist": "Jesper Myrfors",
+  "cmc": 4,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "id": "ab8695981f477dc78e7bb37f8f31e1f5887f190a",
+  "imageName": "witch hunter",
+  "layout": "normal",
+  "manaCost": "{2}{W}{W}",
+  "multiverseid": 1819,
+  "name": "Witch Hunter",
+  "power": "1",
+  "rarity": "u",
+  "subtypes": [
+   "Human",
+   "Cleric"
+  ],
+  "text": "{T}: Witch Hunter deals 1 damage to target player.\n{1}{W}{W}, {T}: Return target creature an opponent controls to its owner's hand.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Witch Hunter",
+  "set": "drk",
+  "cost": "{2}{W}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1819&type=card"
+ },
+ {
+  "artist": "Ron Spencer",
+  "cmc": 2,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"That was the worst experience of my days, standing there helpless as they killed my whole troop.\" —Maeveen O'Donagh, Memoirs of a Soldier",
+  "id": "0592eae4e462105adfd3567bea975e093d69b7cb",
+  "imageName": "word of binding",
+  "layout": "normal",
+  "manaCost": "{X}{B}{B}",
+  "multiverseid": 1744,
+  "name": "Word of Binding",
+  "rarity": "c",
+  "text": "Tap X target creatures.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "title": "Word of Binding",
+  "set": "drk",
+  "cost": "{X}{B}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1744&type=card"
+ },
+ {
+  "artist": "Anson Maddocks",
+  "cmc": 5,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "The ground collapsed, leaving nothing but the great Worms' mucous residues.",
+  "id": "4962194de7a474a03dfd687d7788bfafc935b8b5",
+  "imageName": "worms of the earth",
+  "layout": "normal",
+  "manaCost": "{2}{B}{B}{B}",
+  "multiverseid": 1745,
+  "name": "Worms of the Earth",
+  "rarity": "u",
+  "reserved": true,
+  "text": "Players can't play lands.\nLands can't enter the battlefield.\nAt the beginning of each upkeep, any player may sacrifice two lands or have Worms of the Earth deal 5 damage to him or her. If a player does either, destroy Worms of the Earth.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Worms of the Earth",
+  "set": "drk",
+  "cost": "{2}{B}{B}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1745&type=card"
+ },
+ {
+  "artist": "Jesper Myrfors",
+  "cmc": 5,
+  "colorIdentity": [
+   "G",
+   "B"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "id": "bf17868794c04f7a5b2d5de383a99222ccfa1975",
+  "imageName": "wormwood treefolk",
+  "layout": "normal",
+  "manaCost": "{3}{G}{G}",
+  "multiverseid": 1782,
+  "name": "Wormwood Treefolk",
+  "power": "4",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Treefolk"
+  ],
+  "text": "{G}{G}: Wormwood Treefolk gains forestwalk until end of turn and deals 2 damage to you. (It can't be blocked as long as defending player controls a Forest.)\n{B}{B}: Wormwood Treefolk gains swampwalk until end of turn and deals 2 damage to you. (It can't be blocked as long as defending player controls a Swamp.)",
+  "toughness": "4",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Wormwood Treefolk",
+  "set": "drk",
+  "cost": "{3}{G}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=1782&type=card"
+ }
+]

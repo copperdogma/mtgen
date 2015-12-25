@@ -1,0 +1,40 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "drk-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/drk.json", "http://mtgsalvation.gamepedia.com/The_Dark" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "drk-all-cards" }
+      ]
+    },
+    {
+      "productName": "drk-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/The_Dark" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "drk-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "drk-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "drk-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

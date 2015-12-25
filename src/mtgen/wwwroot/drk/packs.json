@@ -1,0 +1,31 @@
+{
+  "defs": [
+    {
+      "defName": "drk",
+      "query": "from[*]?set='drk"
+    },
+    {
+      "defName": "drk-main",
+      "query": "from[drk]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "drk-all-cards",
+      "packDesc": "The Dark: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[drk]" }
+      ]
+    },
+    {
+      "packName": "drk-standard",
+      "packDesc": "The Dark: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[2]>from[drk]?rarity='u'" },
+        { "query": "take[6]>from[drk]?rarity='c'" }
+      ]
+    }
+  ]
+}
