@@ -1,0 +1,33 @@
+{
+  "defs": [
+    {
+      "defName": "leg",
+      "query": "from[*]?set='leg"
+    },
+    {
+      "defName": "leg-main",
+      "query": "from[leg]-from[leg]?type=Marketing"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "leg-all-cards",
+      "packDesc": "Legends: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[leg]" }
+      ]
+    },
+    {
+      "packName": "leg-standard",
+      "packDesc": "Legends: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[leg]?title='Rules Card'" },
+        { "query": "take[1]>from[leg]?rarity='r" },
+        { "query": "take[3]>from[leg]?rarity='u" },
+        { "query": "take[11]>from[leg]?rarity='c" }
+      ]
+    }
+  ]
+}

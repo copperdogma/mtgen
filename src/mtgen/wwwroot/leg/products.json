@@ -1,0 +1,40 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "leg-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/leg.json", "http://mtgsalvation.gamepedia.com/Legends" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "leg-all-cards" }
+      ]
+    },
+    {
+      "productName": "leg-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Legends", "https://www.youtube.com/watch?v=zzMSoSS3Kh8" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "leg-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "leg-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "leg-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
