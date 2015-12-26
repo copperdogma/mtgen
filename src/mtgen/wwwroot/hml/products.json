@@ -1,0 +1,40 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "hml-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/hml.json", "http://mtgsalvation.gamepedia.com/Homelands" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "hml-all-cards" }
+      ]
+    },
+    {
+      "productName": "hml-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Homelands" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "hml-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "hml-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "hml-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

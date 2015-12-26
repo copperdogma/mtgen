@@ -1,0 +1,31 @@
+{
+  "defs": [
+    {
+      "defName": "hml",
+      "query": "from[*]?set='hml"
+    },
+    {
+      "defName": "hml-main",
+      "query": "from[hml]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "hml-all-cards",
+      "packDesc": "Homelands: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[hml]" }
+      ]
+    },
+    {
+      "packName": "hml-standard",
+      "packDesc": "Homelands: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[2]>from[hml]?rarity='u'" },
+        { "query": "take[6]>from[hml]?rarity='c'" }
+      ]
+    }
+  ]
+}

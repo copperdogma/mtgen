@@ -1,0 +1,31 @@
+﻿@using mtgen.ViewModels;
+@{
+    var set = new mtgen.ViewModels.Set()
+    {
+        Code = "hml",
+        Name = "Homelands",
+        CreatedDate = new DateTime(2015, 12, 25),
+        CardCount = 140,
+        StartProductName = "hml-boosters"
+    };
+
+    set.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2015,12,25),
+            HtmlString = "Note: There are completely duplicated cards, but Gatherer just has the first image again for the alternate version."
+        }
+    };
+
+    set.CardFiles = new List<string>() { "cardsMain.json" };
+    set.PackFiles = new List<string>() { "packs.json" };
+
+    ViewBag.Set = set;
+
+    /* Defaults:
+        SetFile = "~/sets.json";
+        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+        PackFiles = new List<string>() { "packs.json" };
+        ProductFile = "products.json";
+     */
+}

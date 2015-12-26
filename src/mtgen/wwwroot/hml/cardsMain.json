@@ -1,0 +1,4577 @@
+﻿[
+ {
+  "artist": "Christopher Rush",
+  "cmc": 5,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"Though Serra has not been seen for twenty years, her Gargoyles still watch over our city and punish the guilty.\"\n—Gulsen, Abbey Matron",
+  "id": "2c15c0028ecb8965534811ef70a57e3e26986eb1",
+  "imageName": "abbey gargoyles",
+  "layout": "normal",
+  "manaCost": "{2}{W}{W}{W}",
+  "multiverseid": 3010,
+  "name": "Abbey Gargoyles",
+  "power": "3",
+  "rarity": "u",
+  "subtypes": [
+   "Gargoyle"
+  ],
+  "text": "Flying, protection from red",
+  "toughness": "4",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Abbey Gargoyles",
+  "set": "hml",
+  "cost": "{2}{W}{W}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3010&type=card"
+ },
+ {
+  "artist": "Mike Kimble",
+  "cmc": 3,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"The Matrons are kindly souls, but don't ask one for an ale.\"\n—Halina, Dwarven Trader",
+  "id": "791a6cf4094e14ff821cc0deca4418596c7f1a45",
+  "imageName": "abbey matron1",
+  "layout": "normal",
+  "manaCost": "{2}{W}",
+  "multiverseid": 3011,
+  "name": "Abbey Matron",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Human",
+   "Cleric"
+  ],
+  "text": "{W}, {T}: Abbey Matron gets +0/+3 until end of turn.",
+  "toughness": "3",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   3012
+  ],
+  "title": "Abbey Matron",
+  "set": "hml",
+  "cost": "{2}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3011&type=card"
+ },
+ {
+  "artist": "Mike Kimble",
+  "cmc": 3,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"The Matrons still say Serra is coming back. I bet she never even existed.\"\n—Murat, Death Speaker",
+  "id": "6658d285f3bfa6ccf9c65565fa43c8da0f5083d7",
+  "imageName": "abbey matron2",
+  "layout": "normal",
+  "manaCost": "{2}{W}",
+  "multiverseid": 3012,
+  "name": "Abbey Matron",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Human",
+   "Cleric"
+  ],
+  "text": "{W}, {T}: Abbey Matron gets +0/+3 until end of turn.",
+  "toughness": "3",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   3011
+  ],
+  "title": "Abbey Matron",
+  "set": "hml",
+  "cost": "{2}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3012&type=card"
+ },
+ {
+  "artist": "Mark Tedin",
+  "cmc": 4,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"I do love the rain . . . but this storm feels somehow wrong, Taysir.\"\n—Daria",
+  "id": "ce318cd145452847157bc1f658a064edb23747f1",
+  "imageName": "aether storm",
+  "layout": "normal",
+  "manaCost": "{3}{U}",
+  "multiverseid": 2935,
+  "name": "Æther Storm",
+  "rarity": "u",
+  "text": "Creature spells can't be cast.\nPay 4 life: Destroy Æther Storm. It can't be regenerated. Any player may activate this ability.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Æther Storm",
+  "set": "hml",
+  "cost": "{3}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2935&type=card"
+ },
+ {
+  "artist": "Jeff A. Menges",
+  "cmc": 2,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"The people of Aysen built their roads with stones from these wonders. Aliban would be pleased with their ingenuity.\"\n—Baki, Wizard Attendant",
+  "id": "f6eb3ca54965286db011e02cc7a490a7ef4c8e8b",
+  "imageName": "aliban's tower1",
+  "layout": "normal",
+  "manaCost": "{1}{R}",
+  "multiverseid": 2985,
+  "name": "Aliban's Tower",
+  "rarity": "c",
+  "text": "Target blocking creature gets +3/+1 until end of turn.",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "variations": [
+   2986
+  ],
+  "title": "Aliban's Tower",
+  "set": "hml",
+  "cost": "{1}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2985&type=card"
+ },
+ {
+  "artist": "Jeff A. Menges",
+  "cmc": 2,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"Those who hide in hollow towers would do well to remember the rain.\"\n—Reyhan, Samite Alchemist",
+  "id": "827a30238133214767fbe0c156a8e9b0e0d4f2a1",
+  "imageName": "aliban's tower2",
+  "layout": "normal",
+  "manaCost": "{1}{R}",
+  "multiverseid": 2986,
+  "name": "Aliban's Tower",
+  "rarity": "c",
+  "text": "Target blocking creature gets +3/+1 until end of turn.",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "variations": [
+   2985
+  ],
+  "title": "Aliban's Tower",
+  "set": "hml",
+  "cost": "{1}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2986&type=card"
+ },
+ {
+  "artist": "Alan Rabinowitz",
+  "cmc": 4,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"Don't these goons have anything better to do?\"\n—Joskun, An-Havva Constable",
+  "id": "98010b75f088163280c1204f66ccb8d0aefdfe8f",
+  "imageName": "ambush",
+  "layout": "normal",
+  "manaCost": "{3}{R}",
+  "multiverseid": 2987,
+  "name": "Ambush",
+  "rarity": "c",
+  "text": "Blocking creatures gain first strike until end of turn.",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "title": "Ambush",
+  "set": "hml",
+  "cost": "{3}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2987&type=card"
+ },
+ {
+  "artist": "Mark Poole",
+  "cmc": 5,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"Call it a cost of doing business. The best way to protect against thieves is to hire better thieves.\"\n—Eron the Relentless",
+  "id": "53e290c3e5a68a4251169f0e3ec0a51b0962f22e",
+  "imageName": "ambush party1",
+  "layout": "normal",
+  "manaCost": "{4}{R}",
+  "multiverseid": 2989,
+  "name": "Ambush Party",
+  "power": "3",
+  "rarity": "c",
+  "subtypes": [
+   "Human",
+   "Rogue"
+  ],
+  "text": "First strike, haste",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2988
+  ],
+  "title": "Ambush Party",
+  "set": "hml",
+  "cost": "{4}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2989&type=card"
+ },
+ {
+  "artist": "Mark Poole",
+  "cmc": 5,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"The roads to Koskun Keep are mostly safe these days. Mostly.\"\n—Joskun, An-Havva Constable",
+  "id": "3b61effe48e7a99517abcda4d2dfec3e1fdcb6b8",
+  "imageName": "ambush party2",
+  "layout": "normal",
+  "manaCost": "{4}{R}",
+  "multiverseid": 2988,
+  "name": "Ambush Party",
+  "power": "3",
+  "rarity": "c",
+  "subtypes": [
+   "Human",
+   "Rogue"
+  ],
+  "text": "First strike, haste",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2989
+  ],
+  "title": "Ambush Party",
+  "set": "hml",
+  "cost": "{4}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2988&type=card"
+ },
+ {
+  "artist": "Dan Frazier",
+  "cmc": 3,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"Joskun and the other Constables serve with passion, if not with grace.\"\n—Devin, Faerie Noble",
+  "id": "3cbd5835be7788ca933afb15b0636691d08feb11",
+  "imageName": "an-havva constable",
+  "layout": "normal",
+  "manaCost": "{1}{G}{G}",
+  "multiverseid": 2960,
+  "name": "An-Havva Constable",
+  "power": "2",
+  "rarity": "u",
+  "subtypes": [
+   "Human"
+  ],
+  "text": "An-Havva Constable's toughness is equal to 1 plus the number of green creatures on the battlefield.",
+  "toughness": "1+*",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "An-Havva Constable",
+  "set": "hml",
+  "cost": "{1}{G}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2960&type=card"
+ },
+ {
+  "artist": "Brian Snõddy",
+  "cmc": 3,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"The Inn was ever a steady source of good cheer and kindness. Greatly do I miss it, now that I am gone.\"\n—Ihsan's Shade",
+  "id": "ebb26592d49dcedc90247fcedd0e6c18d9e1318c",
+  "imageName": "an-havva inn",
+  "layout": "normal",
+  "manaCost": "{1}{G}{G}",
+  "multiverseid": 2961,
+  "name": "An-Havva Inn",
+  "rarity": "u",
+  "text": "You gain X plus 1 life, where X is the number of green creatures on the battlefield.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "title": "An-Havva Inn",
+  "set": "hml",
+  "cost": "{1}{G}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2961&type=card"
+ },
+ {
+  "artist": "Liz Danforth",
+  "colorIdentity": [
+   "G",
+   "R",
+   "W"
+  ],
+  "flavor": "Folk of good heart will always find a home.",
+  "id": "21b41986caf105237deeac3b6aebe6387d2886c9",
+  "imageName": "an-havva township",
+  "layout": "normal",
+  "multiverseid": 3035,
+  "name": "An-Havva Township",
+  "rarity": "u",
+  "text": "{T}: Add {1} to your mana pool.\n{1}, {T}: Add {G} to your mana pool.\n{2}, {T}: Add {R} or {W} to your mana pool.",
+  "type": "Land",
+  "types": [
+   "Land"
+  ],
+  "title": "An-Havva Township",
+  "set": "hml",
+  "cost": "",
+  "colour": "l",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3035&type=card"
+ },
+ {
+  "artist": "Dennis Detwiller",
+  "cmc": 4,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"The An-Zerrins have served me well, ever since I first killed them.\"\n—Baron Sengir",
+  "id": "b42d692a8ff1fbae908ee2c2284060bf5a7e79c9",
+  "imageName": "an-zerrin ruins",
+  "layout": "normal",
+  "manaCost": "{2}{R}{R}",
+  "multiverseid": 2990,
+  "name": "An-Zerrin Ruins",
+  "rarity": "u",
+  "reserved": true,
+  "text": "As An-Zerrin Ruins enters the battlefield, choose a creature type.\nCreatures of the chosen type don't untap during their controllers' untap steps.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "An-Zerrin Ruins",
+  "set": "hml",
+  "cost": "{2}{R}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2990&type=card"
+ },
+ {
+  "artist": "Anson Maddocks",
+  "cmc": 2,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"The Ancestors are the wisdom of the tribe and the soul of the Homelands. I am eternally in their debt.\"\n—Taysir",
+  "id": "25d3d37c9f6db07d996777cdd4a576639f63f429",
+  "imageName": "anaba ancestor",
+  "layout": "normal",
+  "manaCost": "{1}{R}",
+  "multiverseid": 2991,
+  "name": "Anaba Ancestor",
+  "power": "1",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Minotaur",
+   "Spirit"
+  ],
+  "text": "{T}: Another target Minotaur creature gets +1/+1 until end of turn.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Anaba Ancestor",
+  "set": "hml",
+  "cost": "{1}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2991&type=card"
+ },
+ {
+  "artist": "Anson Maddocks",
+  "cmc": 4,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"Not all Minotaurs are tribal. Some are freelance.\"\n—Eron the Relentless",
+  "id": "1e85cd2465a008eaca24b86ac17bd609265ac03f",
+  "imageName": "anaba bodyguard1",
+  "layout": "normal",
+  "manaCost": "{3}{R}",
+  "multiverseid": 2992,
+  "name": "Anaba Bodyguard",
+  "power": "2",
+  "rarity": "c",
+  "subtypes": [
+   "Minotaur"
+  ],
+  "text": "First strike (This creature deals combat damage before creatures without first strike.)",
+  "toughness": "3",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2993
+  ],
+  "title": "Anaba Bodyguard",
+  "set": "hml",
+  "cost": "{3}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2992&type=card"
+ },
+ {
+  "artist": "Anson Maddocks",
+  "cmc": 4,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"Not someone to pick a fight with, unless you're fond of pain.\"\n—Halina, Dwarven Trader",
+  "id": "9edaa61172ee58ccee7439a64758d4e4efa68ab6",
+  "imageName": "anaba bodyguard2",
+  "layout": "normal",
+  "manaCost": "{3}{R}",
+  "multiverseid": 2993,
+  "name": "Anaba Bodyguard",
+  "power": "2",
+  "rarity": "c",
+  "subtypes": [
+   "Minotaur"
+  ],
+  "text": "First strike (This creature deals combat damage before creatures without first strike.)",
+  "toughness": "3",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2992
+  ],
+  "title": "Anaba Bodyguard",
+  "set": "hml",
+  "cost": "{3}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2993&type=card"
+ },
+ {
+  "artist": "Anson Maddocks",
+  "cmc": 4,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"The Shamans? Ha They are mere craven cows not capable of true magic.\"\n—Irini Sengir",
+  "id": "eb8dd42f035b57e9f5710333852d9ec9515f1dee",
+  "imageName": "anaba shaman1",
+  "layout": "normal",
+  "manaCost": "{3}{R}",
+  "multiverseid": 2995,
+  "name": "Anaba Shaman",
+  "power": "2",
+  "rarity": "c",
+  "subtypes": [
+   "Minotaur",
+   "Shaman"
+  ],
+  "text": "{R}, {T}: Anaba Shaman deals 1 damage to target creature or player.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2994
+  ],
+  "title": "Anaba Shaman",
+  "set": "hml",
+  "cost": "{3}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2995&type=card"
+ },
+ {
+  "artist": "Anson Maddocks",
+  "cmc": 4,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"Few master the powers of the earth as well as do the Shamans of the Minotaurs.\"\n—Baki, Wizard Attendant",
+  "id": "86f7c679b61e2e69a8998c3c70fbe545d0718f9b",
+  "imageName": "anaba shaman2",
+  "layout": "normal",
+  "manaCost": "{3}{R}",
+  "multiverseid": 2994,
+  "name": "Anaba Shaman",
+  "power": "2",
+  "rarity": "c",
+  "subtypes": [
+   "Minotaur",
+   "Shaman"
+  ],
+  "text": "{R}, {T}: Anaba Shaman deals 1 damage to target creature or player.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2995
+  ],
+  "title": "Anaba Shaman",
+  "set": "hml",
+  "cost": "{3}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2994&type=card"
+ },
+ {
+  "artist": "Anson Maddocks",
+  "cmc": 4,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"The Spirit Crafters sing of all our people. They sing of those lost, of those found, and of those who are yet to be.\"\n—Onatah, Anaba Shaman",
+  "id": "06d0b444aaa42ae84c6cc81d3537d1786b244f89",
+  "imageName": "anaba spirit crafter",
+  "layout": "normal",
+  "manaCost": "{2}{R}{R}",
+  "multiverseid": 2996,
+  "name": "Anaba Spirit Crafter",
+  "power": "1",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Minotaur",
+   "Shaman"
+  ],
+  "text": "Minotaur creatures get +1/+0.",
+  "toughness": "3",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Anaba Spirit Crafter",
+  "set": "hml",
+  "cost": "{2}{R}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2996&type=card"
+ },
+ {
+  "artist": "Mark Poole",
+  "cmc": 2,
+  "flavor": "\"One day, or another, perhaps I shall ring my pretty chime . . . loudly, so that all may hear.\"\n—Grandmother Sengir",
+  "id": "332e47b3ff6e6448894e96489048b4c4783156c5",
+  "imageName": "apocalypse chime",
+  "layout": "normal",
+  "manaCost": "{2}",
+  "multiverseid": 2900,
+  "name": "Apocalypse Chime",
+  "rarity": "u",
+  "reserved": true,
+  "text": "{2}, {T}, Sacrifice Apocalypse Chime: Destroy all nontoken permanents originally printed in the Homelands expansion. They can't be regenerated.",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "title": "Apocalypse Chime",
+  "set": "hml",
+  "cost": "{2}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2900&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Margaret Organ-Kean",
+  "cmc": 6,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"We must shake her limbs and rattle her brains.\"\n—Grandmother Sengir",
+  "id": "c59014e1f01758c3de24a99a81c741c67b57685d",
+  "imageName": "autumn willow",
+  "layout": "normal",
+  "manaCost": "{4}{G}{G}",
+  "multiverseid": 2962,
+  "name": "Autumn Willow",
+  "power": "4",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Avatar"
+  ],
+  "supertypes": [
+   "Legendary"
+  ],
+  "text": "Shroud (This creature can't be the target of spells or abilities.)\n{G}: Until end of turn, Autumn Willow can be the target of spells and abilities controlled by target player as though it didn't have shroud.",
+  "toughness": "4",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Autumn Willow",
+  "set": "hml",
+  "cost": "{4}{G}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2962&type=card"
+ },
+ {
+  "artist": "Liz Danforth",
+  "colorIdentity": [
+   "W",
+   "G",
+   "U"
+  ],
+  "flavor": "Serra's gift to her people: a symbol of faith and hope.",
+  "id": "fd97dfa3b847affaca48d77b8212e6e9cb2753d9",
+  "imageName": "aysen abbey",
+  "layout": "normal",
+  "multiverseid": 3036,
+  "name": "Aysen Abbey",
+  "rarity": "u",
+  "text": "{T}: Add {1} to your mana pool.\n{1}, {T}: Add {W} to your mana pool.\n{2}, {T}: Add {G} or {U} to your mana pool.",
+  "type": "Land",
+  "types": [
+   "Land"
+  ],
+  "title": "Aysen Abbey",
+  "set": "hml",
+  "cost": "",
+  "colour": "l",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3036&type=card"
+ },
+ {
+  "artist": "Alan Rabinowitz",
+  "cmc": 2,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"I would say that our Bureaucrats are no better than vipers—but I shouldn't insult the vipers.\"\n—Murat, Death Speaker",
+  "id": "67b39d7df5e6b1fefb2363f375bbb95db448bb0f",
+  "imageName": "aysen bureaucrats1",
+  "layout": "normal",
+  "manaCost": "{1}{W}",
+  "multiverseid": 3013,
+  "name": "Aysen Bureaucrats",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Human",
+   "Advisor"
+  ],
+  "text": "{T}: Tap target creature with power 2 or less.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   3014
+  ],
+  "title": "Aysen Bureaucrats",
+  "set": "hml",
+  "cost": "{1}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3013&type=card"
+ },
+ {
+  "artist": "Alan Rabinowitz",
+  "cmc": 2,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"All the tortures of my vault of horrors pale in comparison to dealing with those petty Bureaucrats.\"\n—Baron Sengir",
+  "id": "4eb84e1e7c9615e095d3d8bb7c979e74fdd2f22f",
+  "imageName": "aysen bureaucrats2",
+  "layout": "normal",
+  "manaCost": "{1}{W}",
+  "multiverseid": 3014,
+  "name": "Aysen Bureaucrats",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Human",
+   "Advisor"
+  ],
+  "text": "{T}: Tap target creature with power 2 or less.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   3013
+  ],
+  "title": "Aysen Bureaucrats",
+  "set": "hml",
+  "cost": "{1}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3014&type=card"
+ },
+ {
+  "artist": "NéNé Thomas",
+  "cmc": 4,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"A renegade rallying the rabble does not a true Crusader make.\"\n—Irini Sengir",
+  "id": "50aeeb3e9592fd80685469682a4f2b1c925f7883",
+  "imageName": "aysen crusader",
+  "layout": "normal",
+  "manaCost": "{2}{W}{W}",
+  "multiverseid": 3015,
+  "name": "Aysen Crusader",
+  "power": "2+*",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Human",
+   "Knight"
+  ],
+  "text": "Aysen Crusader's power and toughness are each equal to 2 plus the number of Soldiers and Warriors you control.",
+  "toughness": "2+*",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Aysen Crusader",
+  "set": "hml",
+  "cost": "{2}{W}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3015&type=card"
+ },
+ {
+  "artist": "NéNé Thomas",
+  "cmc": 6,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"Tread the roads of righteousness, Murat, lest you lose your way and be consumed.\"\n—Baris, Serra Inquisitor",
+  "id": "80783990ef91e52f73862c44de330e76972b3a3c",
+  "imageName": "aysen highway",
+  "layout": "normal",
+  "manaCost": "{3}{W}{W}{W}",
+  "multiverseid": 3016,
+  "name": "Aysen Highway",
+  "rarity": "u",
+  "reserved": true,
+  "text": "White creatures have plainswalk. (They can't be blocked as long as defending player controls a Plains.)",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Aysen Highway",
+  "set": "hml",
+  "cost": "{3}{W}{W}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3016&type=card"
+ },
+ {
+  "artist": "Nicola Leonard",
+  "cmc": 4,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"Those who fling spells too quickly should have reason to regret it.\"\n—Baki, Wizard Attendant",
+  "id": "b2e56473b0bb1aca362b6ba18c6ef245d7cc7520",
+  "imageName": "baki's curse",
+  "layout": "normal",
+  "manaCost": "{2}{U}{U}",
+  "multiverseid": 2936,
+  "name": "Baki's Curse",
+  "rarity": "u",
+  "reserved": true,
+  "text": "Baki's Curse deals 2 damage to each creature for each Aura attached to that creature.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "title": "Baki's Curse",
+  "set": "hml",
+  "cost": "{2}{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2936&type=card"
+ },
+ {
+  "artist": "Pete Venters",
+  "cmc": 8,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"Beast. Defiler. The source of all my pain.\" —Ihsan's Shade",
+  "id": "c64f968c4aadb25d66e11e785657c3658325f02c",
+  "imageName": "baron sengir",
+  "layout": "normal",
+  "manaCost": "{5}{B}{B}{B}",
+  "multiverseid": 2910,
+  "name": "Baron Sengir",
+  "power": "5",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Vampire"
+  ],
+  "supertypes": [
+   "Legendary"
+  ],
+  "text": "Flying\nWhenever a creature dealt damage by Baron Sengir this turn dies, put a +2/+2 counter on Baron Sengir.\n{T}: Regenerate another target Vampire.",
+  "toughness": "5",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Baron Sengir",
+  "set": "hml",
+  "cost": "{5}{B}{B}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2910&type=card"
+ },
+ {
+  "artist": "Heather Hudson",
+  "cmc": 3,
+  "colorIdentity": [
+   "W",
+   "G"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"The Beast Walkers do a great service to Aysen. As humans or as beasts, their heart is yet to Serra true.\"\n—Baris, Serra Inquisitor",
+  "id": "beeb1185977c5fbb31a8f4e7fb1a08033c90811b",
+  "imageName": "beast walkers",
+  "layout": "normal",
+  "manaCost": "{1}{W}{W}",
+  "multiverseid": 3017,
+  "name": "Beast Walkers",
+  "power": "2",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Human",
+   "Beast",
+   "Soldier"
+  ],
+  "text": "{G}: Beast Walkers gains banding until end of turn. (Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding you control are blocking or being blocked by a creature, you divide that creature's combat damage, not its controller, among any of the creatures it's being blocked by or is blocking.)",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Beast Walkers",
+  "set": "hml",
+  "cost": "{1}{W}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3017&type=card"
+ },
+ {
+  "artist": "David A. Cherry",
+  "cmc": 5,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"The Baron's drivers are also driven.\"\n—Chandler",
+  "id": "ecd1f60f6dc1092c3c1dcc4a1a7ba4a0c008a214",
+  "imageName": "black carriage",
+  "layout": "normal",
+  "manaCost": "{3}{B}{B}",
+  "multiverseid": 2911,
+  "name": "Black Carriage",
+  "power": "4",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Horse"
+  ],
+  "text": "Trample\nBlack Carriage doesn't untap during your untap step.\nSacrifice a creature: Untap Black Carriage. Activate this ability only during your upkeep.",
+  "toughness": "4",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Black Carriage",
+  "set": "hml",
+  "cost": "{3}{B}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2911&type=card"
+ },
+ {
+  "artist": "Mike Kimble",
+  "cmc": 5,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "id": "5853e9654784e9e97419879a11f307fc5776b748",
+  "imageName": "broken visage",
+  "layout": "normal",
+  "manaCost": "{4}{B}",
+  "multiverseid": 2912,
+  "name": "Broken Visage",
+  "rarity": "u",
+  "text": "Destroy target nonartifact attacking creature. It can't be regenerated. Put a black Spirit creature token with that creature's power and toughness onto the battlefield. Sacrifice the token at the beginning of the next end step.",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "title": "Broken Visage",
+  "set": "hml",
+  "cost": "{4}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2912&type=card"
+ },
+ {
+  "artist": "Anson Maddocks",
+  "cmc": 1,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"The tougher to crack, the sweeter the snack.\"\n—Kakra, Sea Troll",
+  "id": "a70824c3234851161771d6dc632e3929e1bb6cdf",
+  "imageName": "carapace1",
+  "layout": "normal",
+  "manaCost": "{G}",
+  "multiverseid": 2963,
+  "name": "Carapace",
+  "rarity": "c",
+  "subtypes": [
+   "Aura"
+  ],
+  "text": "Enchant creature\nEnchanted creature gets +0/+2.\nSacrifice Carapace: Regenerate enchanted creature.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "variations": [
+   2964
+  ],
+  "title": "Carapace",
+  "set": "hml",
+  "cost": "{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2963&type=card"
+ },
+ {
+  "artist": "Anson Maddocks",
+  "cmc": 1,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"Now, that's a fashion statement.\"\n—Devin, Faerie Noble",
+  "id": "9f2a135efbe5568fe6737309b639b7be202cc96b",
+  "imageName": "carapace2",
+  "layout": "normal",
+  "manaCost": "{G}",
+  "multiverseid": 2964,
+  "name": "Carapace",
+  "rarity": "c",
+  "subtypes": [
+   "Aura"
+  ],
+  "text": "Enchant creature\nEnchanted creature gets +0/+2.\nSacrifice Carapace: Regenerate enchanted creature.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "variations": [
+   2963
+  ],
+  "title": "Carapace",
+  "set": "hml",
+  "cost": "{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2964&type=card"
+ },
+ {
+  "artist": "Pete Venters",
+  "colorIdentity": [
+   "B",
+   "U",
+   "R"
+  ],
+  "flavor": "Where hope has no champion, evil rules all.",
+  "id": "3f16414f60ad5f2b30a6ad8c9b9f8c4f59b73b97",
+  "imageName": "castle sengir",
+  "layout": "normal",
+  "multiverseid": 3037,
+  "name": "Castle Sengir",
+  "rarity": "u",
+  "text": "{T}: Add {1} to your mana pool.\n{1}, {T}: Add {B} to your mana pool.\n{2}, {T}: Add {U} or {R} to your mana pool.",
+  "type": "Land",
+  "types": [
+   "Land"
+  ],
+  "title": "Castle Sengir",
+  "set": "hml",
+  "cost": "",
+  "colour": "l",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3037&type=card"
+ },
+ {
+  "artist": "Melissa A. Benson",
+  "cmc": 3,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"It keeps some out, yes. It also keeps others in\"\n—Grandmother Sengir",
+  "id": "f7a1292dac99aa861d3f501653969595ed12038c",
+  "imageName": "cemetery gate1",
+  "layout": "normal",
+  "manaCost": "{2}{B}",
+  "multiverseid": 2913,
+  "name": "Cemetery Gate",
+  "power": "0",
+  "rarity": "c",
+  "subtypes": [
+   "Wall"
+  ],
+  "text": "Defender (This creature can't attack.)\nProtection from black",
+  "toughness": "5",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2914
+  ],
+  "title": "Cemetery Gate",
+  "set": "hml",
+  "cost": "{2}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2913&type=card"
+ },
+ {
+  "artist": "Melissa A. Benson",
+  "cmc": 3,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"Just the place for a picnic.\"\n—Murat, Death Speaker",
+  "id": "960dd99077c44e66e4d7c76e2d52689b92010275",
+  "imageName": "cemetery gate2",
+  "layout": "normal",
+  "manaCost": "{2}{B}",
+  "multiverseid": 2914,
+  "name": "Cemetery Gate",
+  "power": "0",
+  "rarity": "c",
+  "subtypes": [
+   "Wall"
+  ],
+  "text": "Defender (This creature can't attack.)\nProtection from black",
+  "toughness": "5",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2913
+  ],
+  "title": "Cemetery Gate",
+  "set": "hml",
+  "cost": "{2}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2914&type=card"
+ },
+ {
+  "artist": "Pat Morrissey",
+  "cmc": 1,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"Here we go again.\"\n—Kakra, Sea Troll",
+  "id": "84d4f80dea62579de15fb848fea0845964359bf4",
+  "imageName": "chain stasis",
+  "layout": "normal",
+  "manaCost": "{U}",
+  "multiverseid": 2937,
+  "name": "Chain Stasis",
+  "rarity": "u",
+  "reserved": true,
+  "text": "You may tap or untap target creature. Then that creature's controller may pay {2}{U}. If the player does, he or she may copy this spell and may choose a new target for that copy.",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "title": "Chain Stasis",
+  "set": "hml",
+  "cost": "{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2937&type=card"
+ },
+ {
+  "artist": "Douglas Shuler",
+  "cmc": 5,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"Never brag about the latest wonder you've created, students. Chandler might be listening.\"\n—Reveka, Wizard Savant",
+  "id": "444e37cde5836855f4f84cca942c0be0a54f6b4d",
+  "imageName": "chandler",
+  "layout": "normal",
+  "manaCost": "{4}{R}",
+  "multiverseid": 2997,
+  "name": "Chandler",
+  "power": "3",
+  "rarity": "c",
+  "subtypes": [
+   "Human",
+   "Rogue"
+  ],
+  "supertypes": [
+   "Legendary"
+  ],
+  "text": "{R}{R}{R}, {T}: Destroy target artifact creature.",
+  "toughness": "3",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Chandler",
+  "set": "hml",
+  "cost": "{4}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2997&type=card"
+ },
+ {
+  "artist": "Douglas Shuler",
+  "cmc": 4,
+  "flavor": "\"Until I came to the Floating Isle, I never had to oil the servants.\"\n—Baki, Wizard Attendant",
+  "id": "b9680c30d395bf11ac15d08e8b51a7ac0581682d",
+  "imageName": "clockwork gnomes",
+  "layout": "normal",
+  "manaCost": "{4}",
+  "multiverseid": 2901,
+  "name": "Clockwork Gnomes",
+  "power": "2",
+  "rarity": "c",
+  "subtypes": [
+   "Gnome"
+  ],
+  "text": "{3}, {T}: Regenerate target artifact creature.",
+  "toughness": "2",
+  "type": "Artifact",
+  "types": [
+   "Artifact",
+   "Creature"
+  ],
+  "title": "Clockwork Gnomes",
+  "set": "hml",
+  "cost": "{4}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2901&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Amy Weber",
+  "cmc": 4,
+  "id": "9964cb399f50ca72b092ef97987874d56094e018",
+  "imageName": "clockwork steed",
+  "layout": "normal",
+  "manaCost": "{4}",
+  "multiverseid": 2902,
+  "name": "Clockwork Steed",
+  "power": "0",
+  "rarity": "c",
+  "subtypes": [
+   "Horse"
+  ],
+  "text": "Clockwork Steed enters the battlefield with four +1/+0 counters on it.\nClockwork Steed can't be blocked by artifact creatures.\nAt end of combat, if Clockwork Steed attacked or blocked this combat, remove a +1/+0 counter from it.\n{X}, {T}: Put up to X +1/+0 counters on Clockwork Steed. This ability can't cause the total number of +1/+0 counters on Clockwork Steed to be greater than four. Activate this ability only during your upkeep.",
+  "toughness": "3",
+  "type": "Artifact",
+  "types": [
+   "Artifact",
+   "Creature"
+  ],
+  "title": "Clockwork Steed",
+  "set": "hml",
+  "cost": "{4}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2902&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Amy Weber",
+  "cmc": 4,
+  "id": "3d27c09ed18b16907d0cbb93178c8ce3303746ec",
+  "imageName": "clockwork swarm",
+  "layout": "normal",
+  "manaCost": "{4}",
+  "multiverseid": 2903,
+  "name": "Clockwork Swarm",
+  "power": "0",
+  "rarity": "c",
+  "subtypes": [
+   "Insect"
+  ],
+  "text": "Clockwork Swarm enters the battlefield with four +1/+0 counters on it.\nClockwork Swarm can't be blocked by Walls.\nAt end of combat, if Clockwork Swarm attacked or blocked this combat, remove a +1/+0 counter from it.\n{X}, {T}: Put up to X +1/+0 counters on Clockwork Swarm. This ability can't cause the total number of +1/+0 counters on Clockwork Swarm to be greater than four. Activate this ability only during your upkeep.",
+  "toughness": "3",
+  "type": "Artifact",
+  "types": [
+   "Artifact",
+   "Creature"
+  ],
+  "title": "Clockwork Swarm",
+  "set": "hml",
+  "cost": "{4}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2903&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Amy Weber",
+  "cmc": 2,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "id": "aa4a6d5e9596a32c01acc70d9677826d324f6050",
+  "imageName": "coral reef",
+  "layout": "normal",
+  "manaCost": "{U}{U}",
+  "multiverseid": 2938,
+  "name": "Coral Reef",
+  "rarity": "c",
+  "text": "Coral Reef enters the battlefield with four polyp counters on it.\nSacrifice an Island: Put two polyp counters on Coral Reef.\n{U}, Tap an untapped blue creature you control, Remove a polyp counter from Coral Reef: Put a +0/+1 counter on target creature.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Coral Reef",
+  "set": "hml",
+  "cost": "{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2938&type=card"
+ },
+ {
+  "artist": "Rob Alexander",
+  "cmc": 5,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"The path of faith is fortunately fraught with failure.\"\n—Irini Sengir",
+  "id": "fe1ff0f25a790f8fc231c0f1213e965270c2251b",
+  "imageName": "dark maze1",
+  "layout": "normal",
+  "manaCost": "{4}{U}",
+  "multiverseid": 2940,
+  "name": "Dark Maze",
+  "power": "4",
+  "rarity": "c",
+  "subtypes": [
+   "Wall"
+  ],
+  "text": "Defender (This creature can't attack.)\n{0}: Dark Maze can attack this turn as though it didn't have defender.  Exile it at the beginning of the next end step.",
+  "toughness": "5",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2939
+  ],
+  "title": "Dark Maze",
+  "set": "hml",
+  "cost": "{4}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2940&type=card"
+ },
+ {
+  "artist": "Rob Alexander",
+  "cmc": 5,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"Stray not into the path of darkness, or be lost forever.\"\n—Baki, Wizard Attendant",
+  "id": "10a38435bb7ffaa8ec864d9a1e94c28c93a9497d",
+  "imageName": "dark maze2",
+  "layout": "normal",
+  "manaCost": "{4}{U}",
+  "multiverseid": 2939,
+  "name": "Dark Maze",
+  "power": "4",
+  "rarity": "c",
+  "subtypes": [
+   "Wall"
+  ],
+  "text": "Defender (This creature can't attack.)\n{0}: Dark Maze can attack this turn as though it didn't have defender.  Exile it at the beginning of the next end step.",
+  "toughness": "5",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2940
+  ],
+  "title": "Dark Maze",
+  "set": "hml",
+  "cost": "{4}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2939&type=card"
+ },
+ {
+  "artist": "Margaret Organ-Kean",
+  "cmc": 4,
+  "colorIdentity": [
+   "G",
+   "W"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"Those who say that Serra is dead have never met the Autumn Willow's daughters. They are as kind and as generous as Serra would wish us to be.\"\n—Gulsen, Abbey Matron",
+  "id": "874759e3ce62005bc97c470e3366547202ae2934",
+  "imageName": "daughter of autumn",
+  "layout": "normal",
+  "manaCost": "{2}{G}{G}",
+  "multiverseid": 2965,
+  "name": "Daughter of Autumn",
+  "power": "2",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Avatar"
+  ],
+  "supertypes": [
+   "Legendary"
+  ],
+  "text": "{W}: The next 1 damage that would be dealt to target white creature this turn is dealt to Daughter of Autumn instead.",
+  "toughness": "4",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Daughter of Autumn",
+  "set": "hml",
+  "cost": "{2}{G}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2965&type=card"
+ },
+ {
+  "artist": "Douglas Shuler",
+  "cmc": 1,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"Such innocent little birds. They sing a sweet song, sitting on their fragile branch.\"\n—Grandmother Sengir",
+  "id": "7125177e8657a733fb7c3a71111b390b5fb933f3",
+  "imageName": "death speakers",
+  "layout": "normal",
+  "manaCost": "{W}",
+  "multiverseid": 3018,
+  "name": "Death Speakers",
+  "power": "1",
+  "rarity": "u",
+  "subtypes": [
+   "Human",
+   "Cleric"
+  ],
+  "text": "Protection from black",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Death Speakers",
+  "set": "hml",
+  "cost": "{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3018&type=card"
+ },
+ {
+  "artist": "Melissa A. Benson",
+  "cmc": 1,
+  "flavor": "\"Play the song of he who delivered us. Play the song of Feroz.\"\n—Onatah, Anaba Shaman",
+  "id": "d1494b5d2e896e5e1158d6f98bbb36e1edf88c2a",
+  "imageName": "didgeridoo",
+  "layout": "normal",
+  "manaCost": "{1}",
+  "multiverseid": 2904,
+  "name": "Didgeridoo",
+  "rarity": "u",
+  "reserved": true,
+  "text": "{3}: You may put a Minotaur permanent card from your hand onto the battlefield.",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "title": "Didgeridoo",
+  "set": "hml",
+  "cost": "{1}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2904&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "NéNé Thomas",
+  "cmc": 2,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "id": "20fa4eb342981db316ca94a82b46f3ac4e2a1c19",
+  "imageName": "drudge spell",
+  "layout": "normal",
+  "manaCost": "{B}{B}",
+  "multiverseid": 2915,
+  "name": "Drudge Spell",
+  "rarity": "u",
+  "text": "{B}, Exile two creature cards from your graveyard: Put a 1/1 black Skeleton creature token onto the battlefield. It has \"{B}: Regenerate this creature.\"\nWhen Drudge Spell leaves the battlefield, destroy all Skeleton tokens. They can't be regenerated.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Drudge Spell",
+  "set": "hml",
+  "cost": "{B}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2915&type=card"
+ },
+ {
+  "artist": "Brian Snõddy",
+  "cmc": 2,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"Wherever water is lacking, all things suffer.\"\n—Autumn Willow",
+  "id": "b0008c0419550b07f499901dd47deeca18726c35",
+  "imageName": "dry spell1",
+  "layout": "normal",
+  "manaCost": "{1}{B}",
+  "multiverseid": 2916,
+  "name": "Dry Spell",
+  "rarity": "c",
+  "text": "Dry Spell deals 1 damage to each creature and each player.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "variations": [
+   2917
+  ],
+  "title": "Dry Spell",
+  "set": "hml",
+  "cost": "{1}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2916&type=card"
+ },
+ {
+  "artist": "Brian Snõddy",
+  "cmc": 2,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"My soul thirsts for Serra's salvation, as does my body for life's breath.\"\n—Ihsan's Shade",
+  "id": "b6cdef83384ec0705d21144ba4f7cdd998ccf73e",
+  "imageName": "dry spell2",
+  "layout": "normal",
+  "manaCost": "{1}{B}",
+  "multiverseid": 2917,
+  "name": "Dry Spell",
+  "rarity": "c",
+  "text": "Dry Spell deals 1 damage to each creature and each player.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "variations": [
+   2916
+  ],
+  "title": "Dry Spell",
+  "set": "hml",
+  "cost": "{1}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2917&type=card"
+ },
+ {
+  "artist": "Margaret Organ-Kean",
+  "cmc": 1,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"I hear Halina's got a pony that can count to six—and likes to eat meat.\"\n—Chandler",
+  "id": "eb37d3d5eb5f52100764cf031554a483b924cbfb",
+  "imageName": "dwarven pony",
+  "layout": "normal",
+  "manaCost": "{R}",
+  "multiverseid": 2998,
+  "name": "Dwarven Pony",
+  "power": "1",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Horse"
+  ],
+  "text": "{1}{R}, {T}: Target Dwarf creature gains mountainwalk until end of turn. (It can't be blocked as long as defending player controls a Mountain.)",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Dwarven Pony",
+  "set": "hml",
+  "cost": "{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2998&type=card"
+ },
+ {
+  "artist": "Amy Weber",
+  "cmc": 3,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"No dwarf alive can best one of my crew dead.\"\n—Zeki, Reef Pirate",
+  "id": "d547b6b64daa7d82a5c192c48d404ae66141ab05",
+  "imageName": "dwarven sea clan",
+  "layout": "normal",
+  "manaCost": "{2}{R}",
+  "multiverseid": 2999,
+  "name": "Dwarven Sea Clan",
+  "power": "1",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Dwarf"
+  ],
+  "text": "{T}: Choose target attacking or blocking creature whose controller controls an Island. Dwarven Sea Clan deals 2 damage to that creature at end of combat. Activate this ability only before the end of combat step.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Dwarven Sea Clan",
+  "set": "hml",
+  "cost": "{2}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2999&type=card"
+ },
+ {
+  "artist": "Margaret Organ-Kean",
+  "cmc": 1,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"Their definition of ‘fair profit' is certainly novel.\"\n—Reveka, Wizard Savant",
+  "id": "9f39d55b3716876dc14f0110a8bc28146086d8e2",
+  "imageName": "dwarven trader1",
+  "layout": "normal",
+  "manaCost": "{R}",
+  "multiverseid": 3000,
+  "name": "Dwarven Trader",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Dwarf"
+  ],
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   3001
+  ],
+  "title": "Dwarven Trader",
+  "set": "hml",
+  "cost": "{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3000&type=card"
+ },
+ {
+  "artist": "Margaret Organ-Kean",
+  "cmc": 1,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"They wouldn't sell their own families—at least, not for cheap.\"\n—Zeki, Reef Pirate",
+  "id": "46b11ef0fe97fc8693f7dec3680d2899e91686ba",
+  "imageName": "dwarven trader2",
+  "layout": "normal",
+  "manaCost": "{R}",
+  "multiverseid": 3001,
+  "name": "Dwarven Trader",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Dwarf"
+  ],
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   3000
+  ],
+  "title": "Dwarven Trader",
+  "set": "hml",
+  "cost": "{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3001&type=card"
+ },
+ {
+  "artist": "Amy Weber",
+  "cmc": 7,
+  "flavor": "\"That Rhino would fetch us a tidy sum, Joven. Perhaps it's time to make it ours.\"\n—Chandler",
+  "id": "fb811c7d03e2188d1eabc1eab53862dd0cd99898",
+  "imageName": "ebony rhino",
+  "layout": "normal",
+  "manaCost": "{7}",
+  "multiverseid": 2905,
+  "name": "Ebony Rhino",
+  "power": "4",
+  "rarity": "c",
+  "subtypes": [
+   "Rhino"
+  ],
+  "text": "Trample",
+  "toughness": "5",
+  "type": "Artifact",
+  "types": [
+   "Artifact",
+   "Creature"
+  ],
+  "title": "Ebony Rhino",
+  "set": "hml",
+  "cost": "{7}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2905&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Christopher Rush",
+  "cmc": 5,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"Eron would be much less of a hassle if only he were mortal.\"\n—Reyhan, Samite Alchemist",
+  "id": "d395be2b78e872f0a635faf7c4b5379488bcf87b",
+  "imageName": "eron the relentless",
+  "layout": "normal",
+  "manaCost": "{3}{R}{R}",
+  "multiverseid": 3002,
+  "name": "Eron the Relentless",
+  "power": "5",
+  "rarity": "u",
+  "subtypes": [
+   "Human",
+   "Rogue"
+  ],
+  "supertypes": [
+   "Legendary"
+  ],
+  "text": "Haste\n{R}{R}{R}: Regenerate Eron the Relentless.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Eron the Relentless",
+  "set": "hml",
+  "cost": "{3}{R}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3002&type=card"
+ },
+ {
+  "artist": "Alan Rabinowitz",
+  "cmc": 3,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"The body is a temple with a foundation of sand.\"\n—Autumn Willow",
+  "id": "89441b3d1b0636c78ddf269e04e2f3690db442ec",
+  "imageName": "evaporate",
+  "layout": "normal",
+  "manaCost": "{2}{R}",
+  "multiverseid": 3003,
+  "name": "Evaporate",
+  "rarity": "u",
+  "text": "Evaporate deals 1 damage to each white and/or blue creature.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "title": "Evaporate",
+  "set": "hml",
+  "cost": "{2}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3003&type=card"
+ },
+ {
+  "artist": "Susan Van Camp",
+  "cmc": 3,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"Faeries talk all in riddles and tricky bits, ‘cept the Nobles. Now, there's some straight talkers.\"\n—Joskun, An-Havva Constable",
+  "id": "5714a53c6786a797d9a36f8b9c423447f6a3a3ef",
+  "imageName": "faerie noble",
+  "layout": "normal",
+  "manaCost": "{2}{G}",
+  "multiverseid": 2966,
+  "name": "Faerie Noble",
+  "power": "1",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Faerie"
+  ],
+  "text": "Flying\nOther Faerie creatures you control get +0/+1.\n{T}: Other Faerie creatures you control get +1/+0 until end of turn.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Faerie Noble",
+  "set": "hml",
+  "cost": "{2}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2966&type=card"
+ },
+ {
+  "artist": "Dennis Detwiller",
+  "cmc": 4,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"Some delicacies are not to be savored, save by the callous.\"\n—Baron Sengir",
+  "id": "cee6f16489783def403d3965384829560f00801a",
+  "imageName": "feast of the unicorn1",
+  "layout": "normal",
+  "manaCost": "{3}{B}",
+  "multiverseid": 2918,
+  "name": "Feast of the Unicorn",
+  "rarity": "c",
+  "subtypes": [
+   "Aura"
+  ],
+  "text": "Enchant creature\nEnchanted creature gets +4/+0.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "variations": [
+   2919
+  ],
+  "title": "Feast of the Unicorn",
+  "set": "hml",
+  "cost": "{3}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2918&type=card"
+ },
+ {
+  "artist": "Dennis Detwiller",
+  "cmc": 4,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"Could there be a fouler act? No doubt the Baron knows of one.\"\n—Autumn Willow",
+  "id": "e7c9fdf9a6dcbbad958b867cf84cd03163bab883",
+  "imageName": "feast of the unicorn2",
+  "layout": "normal",
+  "manaCost": "{3}{B}",
+  "multiverseid": 2919,
+  "name": "Feast of the Unicorn",
+  "rarity": "c",
+  "subtypes": [
+   "Aura"
+  ],
+  "text": "Enchant creature\nEnchanted creature gets +4/+0.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "variations": [
+   2918
+  ],
+  "title": "Feast of the Unicorn",
+  "set": "hml",
+  "cost": "{3}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2919&type=card"
+ },
+ {
+  "artist": "Heather Hudson",
+  "cmc": 6,
+  "flavor": "\"Without the protection of Feroz's Ban, I fear the Homelands are lost.\"\n—Daria",
+  "id": "43915984c0ccbc9f9914f3bf19cbba1438a28a57",
+  "imageName": "feroz's ban",
+  "layout": "normal",
+  "manaCost": "{6}",
+  "multiverseid": 2906,
+  "name": "Feroz's Ban",
+  "rarity": "u",
+  "text": "Creature spells cost {2} more to cast.",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "title": "Feroz's Ban",
+  "set": "hml",
+  "cost": "{6}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2906&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Julie Baroh",
+  "cmc": 1,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"This town's only for good folk. The rest can go to the city.\"\n—Joskun, An-Havva Constable",
+  "id": "01343d9093794bf5c90031f8382127966b0e241e",
+  "imageName": "folk of an-havva1",
+  "layout": "normal",
+  "manaCost": "{G}",
+  "multiverseid": 2968,
+  "name": "Folk of An-Havva",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Human"
+  ],
+  "text": "Whenever Folk of An-Havva blocks, it gets +2/+0 until end of turn.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2967
+  ],
+  "title": "Folk of An-Havva",
+  "set": "hml",
+  "cost": "{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2968&type=card"
+ },
+ {
+  "artist": "Julie Baroh",
+  "cmc": 1,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"There are those who accept being told what to do, what to think, and what to say. Then there are the Folk of An-Havva.\"\n—Reyhan, Samite Alchemist",
+  "id": "313a6cb62126585b96f4f1f9052ead6d733362ba",
+  "imageName": "folk of an-havva2",
+  "layout": "normal",
+  "manaCost": "{G}",
+  "multiverseid": 2967,
+  "name": "Folk of An-Havva",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Human"
+  ],
+  "text": "Whenever Folk of An-Havva blocks, it gets +2/+0 until end of turn.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2968
+  ],
+  "title": "Folk of An-Havva",
+  "set": "hml",
+  "cost": "{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2967&type=card"
+ },
+ {
+  "artist": "Mike Kimble",
+  "cmc": 2,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "id": "77499541e6b0669c827c6f1a7c5d8f8d1a5c81c5",
+  "imageName": "forget",
+  "layout": "normal",
+  "manaCost": "{U}{U}",
+  "multiverseid": 2941,
+  "name": "Forget",
+  "rarity": "u",
+  "text": "Target player discards two cards, then draws as many cards as he or she discarded this way.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "title": "Forget",
+  "set": "hml",
+  "cost": "{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2941&type=card"
+ },
+ {
+  "artist": "Melissa A. Benson",
+  "cmc": 3,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"This party is such fun—but it's a shame to mourn just one.\"\n—Irini Sengir",
+  "id": "f0f1ec26e501bc4ed159fb1c6e613d479763a76e",
+  "imageName": "funeral march",
+  "layout": "normal",
+  "manaCost": "{1}{B}{B}",
+  "multiverseid": 2920,
+  "name": "Funeral March",
+  "rarity": "c",
+  "subtypes": [
+   "Aura"
+  ],
+  "text": "Enchant creature\nWhen enchanted creature leaves the battlefield, its controller sacrifices a creature.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Funeral March",
+  "set": "hml",
+  "cost": "{1}{B}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2920&type=card"
+ },
+ {
+  "artist": "Jeff A. Menges",
+  "cmc": 2,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "id": "aa08f5aca1eb502c6f6bdea10444b9a978f4a6a0",
+  "imageName": "ghost hounds",
+  "layout": "normal",
+  "manaCost": "{1}{B}",
+  "multiverseid": 2921,
+  "name": "Ghost Hounds",
+  "power": "1",
+  "rarity": "u",
+  "subtypes": [
+   "Hound",
+   "Spirit"
+  ],
+  "text": "Vigilance\nWhenever Ghost Hounds blocks or becomes blocked by a white creature, Ghost Hounds gains first strike until end of turn.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Ghost Hounds",
+  "set": "hml",
+  "cost": "{1}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2921&type=card"
+ },
+ {
+  "artist": "David A. Cherry",
+  "cmc": 2,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "id": "0cd08d66546850a05b82457fcc1e795edbb09a10",
+  "imageName": "giant albatross1",
+  "layout": "normal",
+  "manaCost": "{1}{U}",
+  "multiverseid": 2942,
+  "name": "Giant Albatross",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Bird"
+  ],
+  "text": "Flying\nWhen Giant Albatross dies, you may pay {1}{U}. If you do, for each creature that dealt damage to Giant Albatross this turn, destroy that creature unless its controller pays 2 life. A creature destroyed this way can't be regenerated.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2943
+  ],
+  "title": "Giant Albatross",
+  "set": "hml",
+  "cost": "{1}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2942&type=card"
+ },
+ {
+  "artist": "David A. Cherry",
+  "cmc": 2,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "id": "093ede550b0d6a92761d31ab877ced45d241f6c9",
+  "imageName": "giant albatross2",
+  "layout": "normal",
+  "manaCost": "{1}{U}",
+  "multiverseid": 2943,
+  "name": "Giant Albatross",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Bird"
+  ],
+  "text": "Flying\nWhen Giant Albatross dies, you may pay {1}{U}. If you do, for each creature that dealt damage to Giant Albatross this turn, destroy that creature unless its controller pays 2 life. A creature destroyed this way can't be regenerated.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2942
+  ],
+  "title": "Giant Albatross",
+  "set": "hml",
+  "cost": "{1}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2943&type=card"
+ },
+ {
+  "artist": "Nicola Leonard",
+  "cmc": 4,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "id": "abafb93bbf0a381eecf847373c12af55e864d547",
+  "imageName": "giant oyster",
+  "layout": "normal",
+  "manaCost": "{2}{U}{U}",
+  "multiverseid": 2944,
+  "name": "Giant Oyster",
+  "power": "0",
+  "rarity": "u",
+  "subtypes": [
+   "Oyster"
+  ],
+  "text": "You may choose not to untap Giant Oyster during your untap step.\n{T}: For as long as Giant Oyster remains tapped, target tapped creature doesn't untap during its controller's untap step, and at the beginning of each of your draw steps, put a -1/-1 counter on that creature. When Giant Oyster leaves the battlefield or becomes untapped, remove all -1/-1 counters from the creature.",
+  "toughness": "3",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Giant Oyster",
+  "set": "hml",
+  "cost": "{2}{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2944&type=card"
+ },
+ {
+  "artist": "Pete Venters",
+  "cmc": 5,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"Rarely have power and madness been so delightfully wed as they have in our dear Grandmother.\"\n—Baron Sengir",
+  "id": "4d535d159c67731b09808d45dd692e61d5d0932d",
+  "imageName": "grandmother sengir",
+  "layout": "normal",
+  "manaCost": "{4}{B}",
+  "multiverseid": 2922,
+  "name": "Grandmother Sengir",
+  "power": "3",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Human",
+   "Wizard"
+  ],
+  "supertypes": [
+   "Legendary"
+  ],
+  "text": "{1}{B}, {T}: Target creature gets -1/-1 until end of turn.",
+  "toughness": "3",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Grandmother Sengir",
+  "set": "hml",
+  "cost": "{4}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2922&type=card"
+ },
+ {
+  "artist": "Dennis Detwiller",
+  "cmc": 5,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"The wolf-things are no mere beasts, but the lieutenants of the Baron.\"\n—Taysir",
+  "id": "068ec2819927265ddfc13abbe9faa38302f5bf43",
+  "imageName": "greater werewolf",
+  "layout": "normal",
+  "manaCost": "{4}{B}",
+  "multiverseid": 2923,
+  "name": "Greater Werewolf",
+  "power": "2",
+  "rarity": "c",
+  "subtypes": [
+   "Werewolf"
+  ],
+  "text": "At end of combat, put a -0/-2 counter on each creature blocking or blocked by Greater Werewolf.",
+  "toughness": "4",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Greater Werewolf",
+  "set": "hml",
+  "cost": "{4}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2923&type=card"
+ },
+ {
+  "artist": "Dan Frazier",
+  "cmc": 5,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"Soon, Serra will return and choose the Abbot's successor, else we are lost.\"\n—Gulsen, Abbey Matron",
+  "id": "d29b92a4ac075e184c00b5236fb8e91f4eb14004",
+  "imageName": "hazduhr the abbot",
+  "layout": "normal",
+  "manaCost": "{3}{W}{W}",
+  "multiverseid": 3019,
+  "name": "Hazduhr the Abbot",
+  "power": "2",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Human",
+   "Cleric"
+  ],
+  "supertypes": [
+   "Legendary"
+  ],
+  "text": "{X}, {T}: The next X damage that would be dealt this turn to target white creature you control is dealt to Hazduhr the Abbot instead.",
+  "toughness": "5",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Hazduhr the Abbot",
+  "set": "hml",
+  "cost": "{3}{W}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3019&type=card"
+ },
+ {
+  "artist": "David A. Cherry",
+  "cmc": 2,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"Your headstone is the last page in the book of your life.\"\n—Murat, Death Speaker",
+  "id": "88e4502eb0cbc075dcb614bc186e5723de97891e",
+  "imageName": "headstone",
+  "layout": "normal",
+  "manaCost": "{1}{B}",
+  "multiverseid": 2924,
+  "name": "Headstone",
+  "rarity": "c",
+  "text": "Exile target card from a graveyard.\nDraw a card at the beginning of the next turn's upkeep.",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "title": "Headstone",
+  "set": "hml",
+  "cost": "{1}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2924&type=card"
+ },
+ {
+  "artist": "Margaret Organ-Kean",
+  "cmc": 4,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "id": "010b61ab353a29856fdce93d9bc7d4dbc96cb6ab",
+  "imageName": "heart wolf",
+  "layout": "normal",
+  "manaCost": "{3}{R}",
+  "multiverseid": 3004,
+  "name": "Heart Wolf",
+  "power": "2",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Wolf"
+  ],
+  "text": "First strike\n{T}: Target Dwarf creature gets +2/+0 and gains first strike until end of turn. When that creature leaves the battlefield this turn, sacrifice Heart Wolf. Activate this ability only during combat.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Heart Wolf",
+  "set": "hml",
+  "cost": "{3}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3004&type=card"
+ },
+ {
+  "artist": "Heather Hudson",
+  "cmc": 4,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"All things must eat, after all. Even the air can hunger.\"\n—Gemma, Willow Priestess",
+  "id": "26cdd8b65cdff867fc97d8161159e0af4e3ea639",
+  "imageName": "hungry mist1",
+  "layout": "normal",
+  "manaCost": "{2}{G}{G}",
+  "multiverseid": 2969,
+  "name": "Hungry Mist",
+  "power": "6",
+  "rarity": "c",
+  "subtypes": [
+   "Elemental"
+  ],
+  "text": "At the beginning of your upkeep, sacrifice Hungry Mist unless you pay {G}{G}.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2970
+  ],
+  "title": "Hungry Mist",
+  "set": "hml",
+  "cost": "{2}{G}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2969&type=card"
+ },
+ {
+  "artist": "Heather Hudson",
+  "cmc": 4,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"If the air must feed, let it take the self-righteous.\"\n—Murat, Death Speaker",
+  "id": "241c7a140d076459d2d10ba9bd534650d92f6177",
+  "imageName": "hungry mist2",
+  "layout": "normal",
+  "manaCost": "{2}{G}{G}",
+  "multiverseid": 2970,
+  "name": "Hungry Mist",
+  "power": "6",
+  "rarity": "c",
+  "subtypes": [
+   "Elemental"
+  ],
+  "text": "At the beginning of your upkeep, sacrifice Hungry Mist unless you pay {G}{G}.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2969
+  ],
+  "title": "Hungry Mist",
+  "set": "hml",
+  "cost": "{2}{G}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2970&type=card"
+ },
+  {
+    "artist": "Christopher Rush",
+    "cmc": 6,
+    "colorIdentity": [
+      "B"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "flavor": "Ihsan, the weak. Ihsan, the fallen. Ihsan, the betrayer. He has brought shame to the Serra Paladins where none existed before. May his suffering equal his betrayal.\"\n—Baris, Serra Inquisitor",
+    "id": "4ca204b158e017b19ac83aa980fa11df15d5ffc0",
+    "imageName": "ihsan's shade",
+    "layout": "normal",
+    "manaCost": "{3}{B}{B}{B}",
+    "multiverseid": 2925,
+    "name": "Ihsan's Shade",
+    "power": "5",
+    "rarity": "u",
+    "subtypes": [
+      "Shade",
+      "Knight"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "text": "Protection from white",
+    "toughness": "5",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "title": "Ihsan's Shade",
+    "set": "hml",
+    "cost": "{3}{B}{B}{B}",
+    "colour": "b",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2925&type=card"
+  },
+ {
+  "artist": "Pete Venters",
+  "cmc": 4,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"That cruel being brings shame to all her fellow Dwarves and misery to all the land. She is Sengir's daughter in spirit if not in blood.\"\n—Reveka, Wizard Savant",
+  "id": "42bfa8474b15a1be97f15e0a1a4de4f547409e5d",
+  "imageName": "irini sengir",
+  "layout": "normal",
+  "manaCost": "{2}{B}{B}",
+  "multiverseid": 2926,
+  "name": "Irini Sengir",
+  "power": "2",
+  "rarity": "u",
+  "subtypes": [
+   "Vampire",
+   "Dwarf"
+  ],
+  "supertypes": [
+   "Legendary"
+  ],
+  "text": "Green enchantment spells and white enchantment spells cost {2} more to cast.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Irini Sengir",
+  "set": "hml",
+  "cost": "{2}{B}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2926&type=card"
+ },
+ {
+  "artist": "Dennis Detwiller",
+  "cmc": 1,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "id": "5a65c0ae471d49b3eeb3b7c4e4f16e23411f2e21",
+  "imageName": "ironclaw curse",
+  "layout": "normal",
+  "manaCost": "{R}",
+  "multiverseid": 3005,
+  "name": "Ironclaw Curse",
+  "rarity": "u",
+  "subtypes": [
+   "Aura"
+  ],
+  "text": "Enchant creature\nEnchanted creature gets -0/-1.\nEnchanted creature can't block creatures with power equal to or greater than the enchanted creature's toughness.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Ironclaw Curse",
+  "set": "hml",
+  "cost": "{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3005&type=card"
+ },
+ {
+  "artist": "Mike Kimble",
+  "cmc": 2,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"What wizards upset, the land soon rights.\"\n—Gemma, Willow Priestess",
+  "id": "e82e57f710764ca7c4b9130a1dd7027961d6a09d",
+  "imageName": "jinx",
+  "layout": "normal",
+  "manaCost": "{1}{U}",
+  "multiverseid": 2945,
+  "name": "Jinx",
+  "rarity": "c",
+  "text": "Target land becomes the basic land type of your choice until end of turn.\nDraw a card at the beginning of the next turn's upkeep.",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "title": "Jinx",
+  "set": "hml",
+  "cost": "{1}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2945&type=card"
+ },
+ {
+  "artist": "Douglas Shuler",
+  "cmc": 5,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "flavor": "\"Joven, you're almost as good a thief as I. But Eron hates you even more.\"\n—Chandler",
+  "id": "ac47c49126b99d31322fba55940ff6dee0edb900",
+  "imageName": "joven",
+  "layout": "normal",
+  "manaCost": "{3}{R}{R}",
+  "multiverseid": 3006,
+  "name": "Joven",
+  "power": "3",
+  "rarity": "c",
+  "subtypes": [
+   "Human",
+   "Rogue"
+  ],
+  "supertypes": [
+   "Legendary"
+  ],
+  "text": "{R}{R}{R}, {T}: Destroy target noncreature artifact.",
+  "toughness": "3",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Joven",
+  "set": "hml",
+  "cost": "{3}{R}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3006&type=card"
+ },
+ {
+  "artist": "Amy Weber",
+  "cmc": 1,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "id": "5251a41dbb511a4501da5a346c99635d7ec23d48",
+  "imageName": "joven's ferrets",
+  "layout": "normal",
+  "manaCost": "{G}",
+  "multiverseid": 2971,
+  "name": "Joven's Ferrets",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Ferret"
+  ],
+  "text": "Whenever Joven's Ferrets attacks, it gets +0/+2 until end of turn.\nAt end of combat, tap all creatures that blocked Joven's Ferrets this turn. They don't untap during their controller's next untap step.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Joven's Ferrets",
+  "set": "hml",
+  "cost": "{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2971&type=card"
+ },
+ {
+  "artist": "Nicola Leonard",
+  "cmc": 6,
+  "flavor": "\"If that thief Joven ever shows his head around here again, make sure he leaves without it.\"\n—Eron the Relentless",
+  "id": "c116db0bae7b925875cf53f2c36ee90f982589fd",
+  "imageName": "joven's tools",
+  "layout": "normal",
+  "manaCost": "{6}",
+  "multiverseid": 2907,
+  "name": "Joven's Tools",
+  "rarity": "u",
+  "text": "{4}, {T}: Target creature can't be blocked this turn except by Walls.",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "title": "Joven's Tools",
+  "set": "hml",
+  "cost": "{6}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2907&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Rob Alexander",
+  "cmc": 4,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "id": "4ca676ae040ddc54f3e25d1001f468496d48256a",
+  "imageName": "koskun falls",
+  "layout": "normal",
+  "manaCost": "{2}{B}{B}",
+  "multiverseid": 2927,
+  "name": "Koskun Falls",
+  "rarity": "u",
+  "reserved": true,
+  "supertypes": [
+   "World"
+  ],
+  "text": "At the beginning of your upkeep, sacrifice Koskun Falls unless you tap an untapped creature you control.\nCreatures can't attack you unless their controller pays {2} for each creature he or she controls that's attacking you.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Koskun Falls",
+  "set": "hml",
+  "cost": "{2}{B}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2927&type=card"
+ },
+ {
+  "artist": "Pat Morrissey",
+  "colorIdentity": [
+   "R",
+   "B",
+   "G"
+  ],
+  "flavor": "Treachery and anarchy make poor partners.",
+  "id": "6e541e7061225b89f4ac76dde65dd2790e3ed67d",
+  "imageName": "koskun keep",
+  "layout": "normal",
+  "multiverseid": 3038,
+  "name": "Koskun Keep",
+  "rarity": "u",
+  "text": "{T}: Add {1} to your mana pool.\n{1}, {T}: Add {R} to your mana pool.\n{2}, {T}: Add {B} or {G} to your mana pool.",
+  "type": "Land",
+  "types": [
+   "Land"
+  ],
+  "title": "Koskun Keep",
+  "set": "hml",
+  "cost": "",
+  "colour": "l",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3038&type=card"
+ },
+ {
+  "artist": "Anson Maddocks",
+  "cmc": 4,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"I doubt any Labyrinth Minotaurs still live—but then again, we Minotaurs are stubborn beings.\"\n—Onatah, Anaba Shaman",
+  "id": "df2285acac4b16c4bbfcf7c134097537483c5251",
+  "imageName": "labyrinth minotaur1",
+  "layout": "normal",
+  "manaCost": "{3}{U}",
+  "multiverseid": 2947,
+  "name": "Labyrinth Minotaur",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Minotaur"
+  ],
+  "text": "Whenever Labyrinth Minotaur blocks a creature, that creature doesn't untap during its controller's next untap step.",
+  "toughness": "4",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2946
+  ],
+  "title": "Labyrinth Minotaur",
+  "set": "hml",
+  "cost": "{3}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2947&type=card"
+ },
+ {
+  "artist": "Anson Maddocks",
+  "cmc": 4,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"Legend says they got a treasure cave, but it don't say where to find it.\"\n—Zeki, Reef Pirate",
+  "id": "5ad5ab95b33883fe50e1203b362ca734515b7d7c",
+  "imageName": "labyrinth minotaur2",
+  "layout": "normal",
+  "manaCost": "{3}{U}",
+  "multiverseid": 2946,
+  "name": "Labyrinth Minotaur",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Minotaur"
+  ],
+  "text": "Whenever Labyrinth Minotaur blocks a creature, that creature doesn't untap during its controller's next untap step.",
+  "toughness": "4",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2947
+  ],
+  "title": "Labyrinth Minotaur",
+  "set": "hml",
+  "cost": "{3}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2946&type=card"
+ },
+ {
+  "artist": "Amy Weber",
+  "cmc": 3,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"I never question the Autumn Willow about her motives, not even when she turns people into Lizards. It's her way.\"\n—Devin, Faerie Noble",
+  "id": "e8623094ef81a501f5194c8b6c26bedeeba936aa",
+  "imageName": "leaping lizard",
+  "layout": "normal",
+  "manaCost": "{1}{G}{G}",
+  "multiverseid": 2972,
+  "name": "Leaping Lizard",
+  "power": "2",
+  "rarity": "c",
+  "subtypes": [
+   "Lizard"
+  ],
+  "text": "{1}{G}: Leaping Lizard gets -0/-1 and gains flying until end of turn.",
+  "toughness": "3",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Leaping Lizard",
+  "set": "hml",
+  "cost": "{1}{G}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2972&type=card"
+ },
+ {
+  "artist": "Alan Rabinowitz",
+  "cmc": 3,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"Where our potions and powders fail, perhaps nature will succeed.\"\n—Reyhan, Samite Alchemist",
+  "id": "c298862dd1bc4914fa99c7834229ef4916f77738",
+  "imageName": "leeches",
+  "layout": "normal",
+  "manaCost": "{1}{W}{W}",
+  "multiverseid": 3020,
+  "name": "Leeches",
+  "rarity": "u",
+  "reserved": true,
+  "text": "Target player loses all poison counters. Leeches deals that much damage to that player.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "title": "Leeches",
+  "set": "hml",
+  "cost": "{1}{W}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3020&type=card"
+ },
+ {
+  "artist": "Melissa A. Benson",
+  "cmc": 4,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "id": "69ebed01a1e45dcef68dd3ce6a99f9a93d1ccecf",
+  "imageName": "mammoth harness",
+  "layout": "normal",
+  "manaCost": "{3}{G}",
+  "multiverseid": 2973,
+  "name": "Mammoth Harness",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Aura"
+  ],
+  "text": "Enchant creature\nEnchanted creature loses flying.\nWhenever enchanted creature blocks or becomes blocked by a creature, the other creature gains first strike until end of turn.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Mammoth Harness",
+  "set": "hml",
+  "cost": "{3}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2973&type=card"
+ },
+ {
+  "artist": "Daniel Gelon",
+  "cmc": 7,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "id": "3ce3c9428eacc9406510ecf5103dc3b2cbf5a42d",
+  "imageName": "marjhan",
+  "layout": "normal",
+  "manaCost": "{5}{U}{U}",
+  "multiverseid": 2948,
+  "name": "Marjhan",
+  "power": "8",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Leviathan"
+  ],
+  "text": "Marjhan doesn't untap during your untap step.\n{U}{U}, Sacrifice a creature: Untap Marjhan. Activate this ability only during your upkeep.\nMarjhan can't attack unless defending player controls an Island.\n{U}{U}: Marjhan gets -1/-0 until end of turn and deals 1 damage to target attacking creature without flying.\nWhen you control no Islands, sacrifice Marjhan.",
+  "toughness": "8",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Marjhan",
+  "set": "hml",
+  "cost": "{5}{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2948&type=card"
+ },
+ {
+  "artist": "Mark Tedin",
+  "cmc": 2,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"Um . . . oh . . . what was I saying?\"\n—Reveka, Wizard Savant",
+  "id": "2c4c61fc11437b4353fcb6f9775822886c8a6677",
+  "imageName": "memory lapse1",
+  "layout": "normal",
+  "manaCost": "{1}{U}",
+  "multiverseid": 2949,
+  "name": "Memory Lapse",
+  "rarity": "c",
+  "text": "Counter target spell. If that spell is countered this way, put it on top of its owner's library instead of into that player's graveyard.",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "variations": [
+   2950
+  ],
+  "title": "Memory Lapse",
+  "set": "hml",
+  "cost": "{1}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2949&type=card"
+ },
+ {
+  "artist": "Mark Tedin",
+  "cmc": 2,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"Oh, I had a conscience once. But alas, I seem to have forgotten where I put it.\"\n—Chandler",
+  "id": "49b54ae86d3d482cc4a7ddce3742de9022f4b871",
+  "imageName": "memory lapse2",
+  "layout": "normal",
+  "manaCost": "{1}{U}",
+  "multiverseid": 2950,
+  "name": "Memory Lapse",
+  "rarity": "c",
+  "text": "Counter target spell. If that spell is countered this way, put it on top of its owner's library instead of into that player's graveyard.",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "variations": [
+   2949
+  ],
+  "title": "Memory Lapse",
+  "set": "hml",
+  "cost": "{1}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2950&type=card"
+ },
+ {
+  "artist": "Liz Danforth",
+  "cmc": 2,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"There's no trade without trust.\"\n—Eron, the Relentless",
+  "id": "caef33ccb2b36657427fbf6af8be074e73021581",
+  "imageName": "merchant scroll",
+  "layout": "normal",
+  "manaCost": "{1}{U}",
+  "multiverseid": 2951,
+  "name": "Merchant Scroll",
+  "rarity": "c",
+  "text": "Search your library for a blue instant card, reveal that card, and put it into your hand. Then shuffle your library.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "title": "Merchant Scroll",
+  "set": "hml",
+  "cost": "{1}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2951&type=card"
+ },
+ {
+  "artist": "Mark Poole",
+  "cmc": 2,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"The faith of Serra is borne on wings of hope.\"\n—Gulsen, Abbey Matron",
+  "id": "0a2fe668c5ac7869c6f181aeb9ef7525e0f65a66",
+  "imageName": "mesa falcon1",
+  "layout": "normal",
+  "manaCost": "{1}{W}",
+  "multiverseid": 3022,
+  "name": "Mesa Falcon",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Bird"
+  ],
+  "text": "Flying\n{1}{W}: Mesa Falcon gets +0/+1 until end of turn.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   3021
+  ],
+  "title": "Mesa Falcon",
+  "set": "hml",
+  "cost": "{1}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3022&type=card"
+ },
+ {
+  "artist": "Mark Poole",
+  "cmc": 2,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"Pretty Falcon, friend to Soraya. Will you send her my greetings?\"\n—Gemma, Willow Priestess",
+  "id": "f746785a2b5eae8690bdb9fccfcd04bc6f4ebc5b",
+  "imageName": "mesa falcon2",
+  "layout": "normal",
+  "manaCost": "{1}{W}",
+  "multiverseid": 3021,
+  "name": "Mesa Falcon",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Bird"
+  ],
+  "text": "Flying\n{1}{W}: Mesa Falcon gets +0/+1 until end of turn.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   3022
+  ],
+  "title": "Mesa Falcon",
+  "set": "hml",
+  "cost": "{1}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3021&type=card"
+ },
+ {
+  "artist": "Liz Danforth",
+  "cmc": 4,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"Curse Reveka, and curse her coddled conjurers. Their sorcerers' school shall yet be ours.\"\n—Irini Sengir",
+  "id": "13ff90fd0c51f0b2a4e58e464991515df4df76b0",
+  "imageName": "mystic decree",
+  "layout": "normal",
+  "manaCost": "{2}{U}{U}",
+  "multiverseid": 2952,
+  "name": "Mystic Decree",
+  "rarity": "u",
+  "reserved": true,
+  "supertypes": [
+   "World"
+  ],
+  "text": "All creatures lose flying and islandwalk.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Mystic Decree",
+  "set": "hml",
+  "cost": "{2}{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2952&type=card"
+ },
+ {
+  "artist": "David A. Cherry",
+  "cmc": 4,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"Who needs a spear? Ya break off the horn, and ya stab the fish with it. Easy!\"\n—Kakra, Sea Troll",
+  "id": "57b5216e78ec18daac7e74ba2a4a294be48c3c9e",
+  "imageName": "narwhal",
+  "layout": "normal",
+  "manaCost": "{2}{U}{U}",
+  "multiverseid": 2953,
+  "name": "Narwhal",
+  "power": "2",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Whale"
+  ],
+  "text": "First strike, protection from red",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Narwhal",
+  "set": "hml",
+  "cost": "{2}{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2953&type=card"
+ },
+ {
+  "artist": "Kaja Foglio",
+  "cmc": 3,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "id": "528ff5f835a2284e31b5fc6f484bb142b7f75b4f",
+  "imageName": "orcish mine",
+  "layout": "normal",
+  "manaCost": "{1}{R}{R}",
+  "multiverseid": 3007,
+  "name": "Orcish Mine",
+  "rarity": "u",
+  "subtypes": [
+   "Aura"
+  ],
+  "text": "Enchant land\nOrcish Mine enters the battlefield with three ore counters on it.\nAt the beginning of your upkeep or whenever enchanted land becomes tapped, remove an ore counter from Orcish Mine.\nWhen the last ore counter is removed from Orcish Mine, destroy enchanted land and Orcish Mine deals 2 damage to that land's controller.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Orcish Mine",
+  "set": "hml",
+  "cost": "{1}{R}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3007&type=card"
+ },
+ {
+  "artist": "Rob Alexander",
+  "cmc": 4,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"It's strange, but I can feel it when the land is corrupted. I understand why the Autumn Willow is so protective.\"\n—Daria",
+  "id": "ebb2d89a7da8f098ba18a765851b85e07cda6f4b",
+  "imageName": "primal order",
+  "layout": "normal",
+  "manaCost": "{2}{G}{G}",
+  "multiverseid": 2974,
+  "name": "Primal Order",
+  "rarity": "u",
+  "text": "At the beginning of each player's upkeep, Primal Order deals damage to that player equal to the number of nonbasic lands he or she controls.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Primal Order",
+  "set": "hml",
+  "cost": "{2}{G}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2974&type=card"
+ },
+ {
+  "artist": "Christopher Rush",
+  "cmc": 1,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "id": "e5767140914259348a85d2a285f2ba4622f41ed3",
+  "imageName": "prophecy",
+  "layout": "normal",
+  "manaCost": "{W}",
+  "multiverseid": 3023,
+  "name": "Prophecy",
+  "rarity": "c",
+  "text": "Reveal the top card of target opponent's library. If it's a land, you gain 1 life. Then that player shuffles his or her library.\nDraw a card at the beginning of the next turn's upkeep.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "title": "Prophecy",
+  "set": "hml",
+  "cost": "{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3023&type=card"
+ },
+ {
+  "artist": "Christopher Rush",
+  "cmc": 5,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"Rarely be the prey so haughty as to hunt the hunter.\"\n—Baron Sengir",
+  "id": "2b60577f246321d11e85874f1c8b2bf0f6e692aa",
+  "imageName": "rashka the slayer",
+  "layout": "normal",
+  "manaCost": "{3}{W}{W}",
+  "multiverseid": 3024,
+  "name": "Rashka the Slayer",
+  "power": "3",
+  "rarity": "u",
+  "subtypes": [
+   "Human",
+   "Archer"
+  ],
+  "supertypes": [
+   "Legendary"
+  ],
+  "text": "Reach (This creature can block creatures with flying.)\nWhenever Rashka the Slayer blocks one or more black creatures, Rashka gets +1/+2 until end of turn.",
+  "toughness": "3",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Rashka the Slayer",
+  "set": "hml",
+  "cost": "{3}{W}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3024&type=card"
+ },
+ {
+  "artist": "Tom Wänerstrand",
+  "cmc": 3,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"Corpses for crew don't sit well with me. Zeki and his dead ship had best keep their distance.\"\n—Joskun, An-Havva Constable",
+  "id": "fdd0884f387e4a703a6105bea228bd696c984b7d",
+  "imageName": "reef pirates1",
+  "layout": "normal",
+  "manaCost": "{1}{U}{U}",
+  "multiverseid": 2955,
+  "name": "Reef Pirates",
+  "power": "2",
+  "rarity": "c",
+  "subtypes": [
+   "Zombie",
+   "Pirate"
+  ],
+  "text": "Whenever Reef Pirates deals damage to an opponent, that player puts the top card of his or her library into his or her graveyard.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2954
+  ],
+  "title": "Reef Pirates",
+  "set": "hml",
+  "cost": "{1}{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2955&type=card"
+ },
+ {
+  "artist": "Tom Wänerstrand",
+  "cmc": 3,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"Zeki sails with a dead crew not out of villainy, but pragmatism.\"\n—Baron Sengir",
+  "id": "61c7f0b8afee7d8266e3593492203b51055acabc",
+  "imageName": "reef pirates2",
+  "layout": "normal",
+  "manaCost": "{1}{U}{U}",
+  "multiverseid": 2954,
+  "name": "Reef Pirates",
+  "power": "2",
+  "rarity": "c",
+  "subtypes": [
+   "Zombie",
+   "Pirate"
+  ],
+  "text": "Whenever Reef Pirates deals damage to an opponent, that player puts the top card of his or her library into his or her graveyard.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2955
+  ],
+  "title": "Reef Pirates",
+  "set": "hml",
+  "cost": "{1}{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2954&type=card"
+ },
+ {
+  "artist": "Kaja Foglio",
+  "cmc": 3,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "id": "48e32c0231a0256df675db7c21a37356a94eed1d",
+  "imageName": "renewal",
+  "layout": "normal",
+  "manaCost": "{2}{G}",
+  "multiverseid": 2975,
+  "name": "Renewal",
+  "rarity": "c",
+  "text": "As an additional cost to cast Renewal, sacrifice a land.\nSearch your library for a basic land card and put that card onto the battlefield. Then shuffle your library.\nDraw a card at the beginning of the next turn's upkeep.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "title": "Renewal",
+  "set": "hml",
+  "cost": "{2}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2975&type=card"
+ },
+ {
+  "artist": "Mark Tedin",
+  "cmc": 4,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "id": "c09c680112df18c93c6debdbbb824cdb14bc30cc",
+  "imageName": "retribution",
+  "layout": "normal",
+  "manaCost": "{2}{R}{R}",
+  "multiverseid": 3008,
+  "name": "Retribution",
+  "rarity": "u",
+  "text": "Choose two target creatures an opponent controls. That player chooses and sacrifices one of those creatures. Put a -1/-1 counter on the other.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "title": "Retribution",
+  "set": "hml",
+  "cost": "{2}{R}{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3008&type=card"
+ },
+ {
+  "artist": "Susan Van Camp",
+  "cmc": 4,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"It's nice to see a sister Dwarf in a position of such power, but why'd it have to be one of those seafaring muleheads?\"\n—Halina, Dwarven Trader",
+  "id": "8e73e11249910e3d49309703270851946adb182e",
+  "imageName": "reveka, wizard savant",
+  "layout": "normal",
+  "manaCost": "{2}{U}{U}",
+  "multiverseid": 2956,
+  "name": "Reveka, Wizard Savant",
+  "power": "0",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Dwarf",
+   "Wizard"
+  ],
+  "supertypes": [
+   "Legendary"
+  ],
+  "text": "{T}: Reveka, Wizard Savant deals 2 damage to target creature or player and doesn't untap during your next untap step.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Reveka, Wizard Savant",
+  "set": "hml",
+  "cost": "{2}{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2956&type=card"
+ },
+ {
+  "artist": "Mike Kimble",
+  "cmc": 4,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"They're not half as fierce if they don't see you coming.\"\n—Devin, Faerie Noble",
+  "id": "26911bbee0c470609cb64ab24124e7b1f8194d9e",
+  "imageName": "root spider",
+  "layout": "normal",
+  "manaCost": "{3}{G}",
+  "multiverseid": 2976,
+  "name": "Root Spider",
+  "power": "2",
+  "rarity": "u",
+  "subtypes": [
+   "Spider"
+  ],
+  "text": "Whenever Root Spider blocks, it gets +1/+0 and gains first strike until end of turn.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Root Spider",
+  "set": "hml",
+  "cost": "{3}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2976&type=card"
+ },
+ {
+  "artist": "Nicola Leonard",
+  "cmc": 4,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"That which nourishes can also bind.\"\n—Gemma, Willow Priestess",
+  "id": "5a8be24bcd278774dc4224a17a1efd7ad9f3b35e",
+  "imageName": "roots",
+  "layout": "normal",
+  "manaCost": "{3}{G}",
+  "multiverseid": 2977,
+  "name": "Roots",
+  "rarity": "u",
+  "subtypes": [
+   "Aura"
+  ],
+  "text": "Enchant creature without flying\nWhen Roots enters the battlefield, tap enchanted creature.\nEnchanted creature doesn't untap during its controller's untap step.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Roots",
+  "set": "hml",
+  "cost": "{3}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2977&type=card"
+ },
+ {
+  "artist": "Amy Weber",
+  "cmc": 1,
+  "flavor": "\"The Roterothopter is as insidious as it is ingenious. It is one of the few creations of our school that I take no pride in.\" —Baki, Wizard Attendant",
+  "id": "3951cfda221812322f1e110273c9342370591bce",
+  "imageName": "roterothopter",
+  "layout": "normal",
+  "manaCost": "{1}",
+  "multiverseid": 2908,
+  "name": "Roterothopter",
+  "power": "0",
+  "rarity": "c",
+  "subtypes": [
+   "Thopter"
+  ],
+  "text": "Flying\n{2}: Roterothopter gets +1/+0 until end of turn. Activate this ability no more than twice each turn.",
+  "toughness": "2",
+  "type": "Artifact",
+  "types": [
+   "Artifact",
+   "Creature"
+  ],
+  "title": "Roterothopter",
+  "set": "hml",
+  "cost": "{1}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2908&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Heather Hudson",
+  "cmc": 3,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "id": "171dba344b9408d913f982b758a56baa07e50052",
+  "imageName": "rysorian badger",
+  "layout": "normal",
+  "manaCost": "{2}{G}",
+  "multiverseid": 2978,
+  "name": "Rysorian Badger",
+  "power": "2",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Badger"
+  ],
+  "text": "Whenever Rysorian Badger attacks and isn't blocked, you may exile up to two target creature cards from defending player's graveyard. If you do, you gain 1 life for each card exiled this way and Rysorian Badger assigns no combat damage this turn.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Rysorian Badger",
+  "set": "hml",
+  "cost": "{2}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2978&type=card"
+ },
+ {
+  "artist": "Tom Wänerstrand",
+  "cmc": 4,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"The wisest of Aysen dwell not in the Abbey, but in the laboratory.\"\n—Taysir",
+  "id": "9ad47a92a2f57f63ec3c562922378bb0819b1906",
+  "imageName": "samite alchemist1",
+  "layout": "normal",
+  "manaCost": "{3}{W}",
+  "multiverseid": 3026,
+  "name": "Samite Alchemist",
+  "power": "0",
+  "rarity": "c",
+  "subtypes": [
+   "Human",
+   "Cleric"
+  ],
+  "text": "{W}{W}, {T}: Prevent the next 4 damage that would be dealt this turn to target creature you control. Tap that creature. It doesn't untap during your next untap step.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   3025
+  ],
+  "title": "Samite Alchemist",
+  "set": "hml",
+  "cost": "{3}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3026&type=card"
+ },
+ {
+  "artist": "Tom Wänerstrand",
+  "cmc": 4,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"Powders and potions are nothing compared to faith.\"\n—Baris, Serra Inquisitor",
+  "id": "ab98221cc2c7ab141ba4ae092ca1f689c3886e72",
+  "imageName": "samite alchemist2",
+  "layout": "normal",
+  "manaCost": "{3}{W}",
+  "multiverseid": 3025,
+  "name": "Samite Alchemist",
+  "power": "0",
+  "rarity": "c",
+  "subtypes": [
+   "Human",
+   "Cleric"
+  ],
+  "text": "{W}{W}, {T}: Prevent the next 4 damage that would be dealt this turn to target creature you control. Tap that creature. It doesn't untap during your next untap step.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   3026
+  ],
+  "title": "Samite Alchemist",
+  "set": "hml",
+  "cost": "{3}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3025&type=card"
+ },
+ {
+  "artist": "Susan Van Camp",
+  "cmc": 2,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"No one can catch what won't be caught.\"\n—Kakra, Sea Troll",
+  "id": "cfbaf788fff4e50b87e3e5a7c1dabe5f33d4e50d",
+  "imageName": "sea sprite",
+  "layout": "normal",
+  "manaCost": "{1}{U}",
+  "multiverseid": 2957,
+  "name": "Sea Sprite",
+  "power": "1",
+  "rarity": "u",
+  "subtypes": [
+   "Faerie"
+  ],
+  "text": "Flying, protection from red",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Sea Sprite",
+  "set": "hml",
+  "cost": "{1}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2957&type=card"
+ },
+ {
+  "artist": "Daniel Gelon",
+  "cmc": 3,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"I've seen those Trolls devour a drowning sailor faster than his lungs could fill with water.\"\n—Zeki, Reef Pirate",
+  "id": "ac5300cc8b077e22e366846de40d6efb85de024d",
+  "imageName": "sea troll",
+  "layout": "normal",
+  "manaCost": "{2}{U}",
+  "multiverseid": 2958,
+  "name": "Sea Troll",
+  "power": "2",
+  "rarity": "u",
+  "subtypes": [
+   "Troll"
+  ],
+  "text": "{U}: Regenerate Sea Troll. Activate this ability only if Sea Troll blocked or was blocked by a blue creature this turn.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Sea Troll",
+  "set": "hml",
+  "cost": "{2}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2958&type=card"
+ },
+ {
+  "artist": "David A. Cherry",
+  "cmc": 4,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"A thankless job, and a death sentence besides.\"\n—Eron the Relentless",
+  "id": "d14e7aba33d659fc6d999598eb9b7d5a5e20956d",
+  "imageName": "sengir autocrat",
+  "layout": "normal",
+  "manaCost": "{3}{B}",
+  "multiverseid": 2928,
+  "name": "Sengir Autocrat",
+  "power": "2",
+  "rarity": "u",
+  "subtypes": [
+   "Human"
+  ],
+  "text": "When Sengir Autocrat enters the battlefield, put three 0/1 black Serf creature tokens onto the battlefield.\nWhen Sengir Autocrat leaves the battlefield, exile all Serf tokens.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Sengir Autocrat",
+  "set": "hml",
+  "cost": "{3}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2928&type=card"
+ },
+ {
+  "artist": "Dan Frazier",
+  "cmc": 3,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"They are the eyes of the Baron, and they know your fears.\"\n—Ihsan's Shade",
+  "id": "e3fc5aef16fb8031e179aa3ceef167f8599ca9e6",
+  "imageName": "sengir bats1",
+  "layout": "normal",
+  "manaCost": "{1}{B}{B}",
+  "multiverseid": 2930,
+  "name": "Sengir Bats",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Bat"
+  ],
+  "text": "Flying\nWhenever a creature dealt damage by Sengir Bats this turn dies, put a +1/+1 counter on Sengir Bats.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2929
+  ],
+  "title": "Sengir Bats",
+  "set": "hml",
+  "cost": "{1}{B}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2930&type=card"
+ },
+ {
+  "artist": "Dan Frazier",
+  "cmc": 3,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"In the face of every one I see the Baron.\"\n—Daria",
+  "id": "b3859fe958145e450f28a4a17b262988b8f7cc2c",
+  "imageName": "sengir bats2",
+  "layout": "normal",
+  "manaCost": "{1}{B}{B}",
+  "multiverseid": 2929,
+  "name": "Sengir Bats",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Bat"
+  ],
+  "text": "Flying\nWhenever a creature dealt damage by Sengir Bats this turn dies, put a +1/+1 counter on Sengir Bats.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2930
+  ],
+  "title": "Sengir Bats",
+  "set": "hml",
+  "cost": "{1}{B}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2929&type=card"
+ },
+ {
+  "artist": "Nicola Leonard",
+  "cmc": 4,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"Serra, like Feroz, is long since dead. But remember, Daria: her spirit shall survive so long as the Homelands do.\"\n—Taysir",
+  "id": "c3ed7a8f2dfd8276f6af985b9ba7eb5b3d8e5b5f",
+  "imageName": "serra aviary",
+  "layout": "normal",
+  "manaCost": "{3}{W}",
+  "multiverseid": 3027,
+  "name": "Serra Aviary",
+  "rarity": "u",
+  "reserved": true,
+  "supertypes": [
+   "World"
+  ],
+  "text": "Creatures with flying get +1/+1.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Serra Aviary",
+  "set": "hml",
+  "cost": "{3}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3027&type=card"
+ },
+ {
+  "artist": "Anson Maddocks",
+  "cmc": 2,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "id": "80094fc182a844597dcacee403b79e6f085d04f3",
+  "imageName": "serra bestiary",
+  "layout": "normal",
+  "manaCost": "{W}{W}",
+  "multiverseid": 3028,
+  "name": "Serra Bestiary",
+  "rarity": "c",
+  "subtypes": [
+   "Aura"
+  ],
+  "text": "Enchant creature\nAt the beginning of your upkeep, sacrifice Serra Bestiary unless you pay {W}{W}.\nEnchanted creature can't attack or block, and its activated abilities with {T} in their costs can't be activated.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "title": "Serra Bestiary",
+  "set": "hml",
+  "cost": "{W}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3028&type=card"
+ },
+ {
+  "artist": "Dennis Detwiller",
+  "cmc": 5,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "id": "283c13cfe2295cb8cf2528233efadc226721110d",
+  "imageName": "serra inquisitors",
+  "layout": "normal",
+  "manaCost": "{4}{W}",
+  "multiverseid": 3029,
+  "name": "Serra Inquisitors",
+  "power": "3",
+  "rarity": "u",
+  "subtypes": [
+   "Human",
+   "Cleric"
+  ],
+  "text": "Whenever Serra Inquisitors blocks or becomes blocked by one or more black creatures, Serra Inquisitors gets +2/+0 until end of turn.",
+  "toughness": "3",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Serra Inquisitors",
+  "set": "hml",
+  "cost": "{4}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3029&type=card"
+ },
+ {
+  "artist": "Pete Venters",
+  "cmc": 4,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"Would that I could be a Paladin again, but the dead hold no place among their ranks.\"\n—Ihsan's Shade",
+  "id": "de77938ac867a065254ad5ee2b2195ff32152f01",
+  "imageName": "serra paladin",
+  "layout": "normal",
+  "manaCost": "{2}{W}{W}",
+  "multiverseid": 3030,
+  "name": "Serra Paladin",
+  "power": "2",
+  "rarity": "c",
+  "subtypes": [
+   "Human",
+   "Knight"
+  ],
+  "text": "{T}: Prevent the next 1 damage that would be dealt to target creature or player this turn.\n{1}{W}{W}, {T}: Target creature gains vigilance until end of turn.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Serra Paladin",
+  "set": "hml",
+  "cost": "{2}{W}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3030&type=card"
+ },
+ {
+  "artist": "David A. Cherry",
+  "cmc": 4,
+  "id": "2232250e18c7304c0eef2952c6a27c200fffa3de",
+  "imageName": "serrated arrows",
+  "layout": "normal",
+  "manaCost": "{4}",
+  "multiverseid": 2909,
+  "name": "Serrated Arrows",
+  "rarity": "c",
+  "text": "Serrated Arrows enters the battlefield with three arrowhead counters on it.\nAt the beginning of your upkeep, if there are no arrowhead counters on Serrated Arrows, sacrifice it.\n{T}, Remove an arrowhead counter from Serrated Arrows: Put a -1/-1 counter on target creature.",
+  "type": "Artifact",
+  "types": [
+   "Artifact"
+  ],
+  "title": "Serrated Arrows",
+  "set": "hml",
+  "cost": "{4}",
+  "colour": "a",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2909&type=card",
+  "sorder": 17,
+  "colourless": true
+ },
+ {
+  "artist": "Liz Danforth",
+  "cmc": 1,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"The smallest beast can yet have the greatest heart.\"\n—Gemma, Willow Priestess",
+  "id": "c41efe2e62bbb917295fcf9b74de37945efd763f",
+  "imageName": "shrink1",
+  "layout": "normal",
+  "manaCost": "{G}",
+  "multiverseid": 2979,
+  "name": "Shrink",
+  "rarity": "c",
+  "text": "Target creature gets -5/-0 until end of turn.",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "variations": [
+   2980
+  ],
+  "title": "Shrink",
+  "set": "hml",
+  "cost": "{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2979&type=card"
+ },
+ {
+  "artist": "Liz Danforth",
+  "cmc": 1,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"Do not fear adversity. Let your courage be your strength.\"\n—Onatah, Anaba Shaman",
+  "id": "f1a4a73df7eed702f67398a16ae8963af54233e3",
+  "imageName": "shrink2",
+  "layout": "normal",
+  "manaCost": "{G}",
+  "multiverseid": 2980,
+  "name": "Shrink",
+  "rarity": "c",
+  "text": "Target creature gets -5/-0 until end of turn.",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "variations": [
+   2979
+  ],
+  "title": "Shrink",
+  "set": "hml",
+  "cost": "{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2980&type=card"
+ },
+ {
+  "artist": "Dennis Detwiller",
+  "cmc": 3,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"Soraya speaks with the hunters of the air, as do all of her family line.\"\n—Autumn Willow",
+  "id": "75da6708b7350669dd2b75901e87d31c0555eab6",
+  "imageName": "soraya the falconer",
+  "layout": "normal",
+  "manaCost": "{1}{W}{W}",
+  "multiverseid": 3031,
+  "name": "Soraya the Falconer",
+  "power": "2",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Human"
+  ],
+  "supertypes": [
+   "Legendary"
+  ],
+  "text": "Bird creatures get +1/+1.\n{1}{W}: Target Bird creature gains banding until end of turn. (Any creatures with banding, and up to one without, can attack in a band. Bands are blocked as a group. If any creatures with banding a player controls are blocking or being blocked by a creature, that player divides that creature's combat damage, not its controller, among any of the creatures it's being blocked by or is blocking.)",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Soraya the Falconer",
+  "set": "hml",
+  "cost": "{1}{W}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3031&type=card"
+ },
+ {
+  "artist": "Pat Morrissey",
+  "cmc": 2,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"I hear there are Bears—or spirits—that guard caravans passing through the forest.\" —Gulsen, Abbey Matron",
+  "id": "34540b5b56ddec3039ebe2ad294b58b35749bb85",
+  "imageName": "spectral bears",
+  "layout": "normal",
+  "manaCost": "{1}{G}",
+  "multiverseid": 2981,
+  "name": "Spectral Bears",
+  "power": "3",
+  "rarity": "u",
+  "subtypes": [
+   "Bear",
+   "Spirit"
+  ],
+  "text": "Whenever Spectral Bears attacks, if defending player controls no black nontoken permanents, it doesn't untap during your next untap step.",
+  "toughness": "3",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Spectral Bears",
+  "set": "hml",
+  "cost": "{1}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2981&type=card"
+ },
+ {
+  "artist": "Mike Kimble",
+  "cmc": 3,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "id": "dbc00e178d799ce774d30ce146dec991b75f549a",
+  "imageName": "timmerian fiends",
+  "layout": "normal",
+  "manaCost": "{1}{B}{B}",
+  "multiverseid": 2931,
+  "name": "Timmerian Fiends",
+  "power": "1",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Horror"
+  ],
+  "text": "Remove Timmerian Fiends from your deck before playing if you're not playing for ante.\n{B}{B}{B}, Sacrifice Timmerian Fiends: The owner of target artifact may ante the top card of his or her library. If that player doesn't, exchange ownership of that artifact and Timmerian Fiends. Put the artifact card into your graveyard and Timmerian Fiends from anywhere into that player's graveyard. This change in ownership is permanent.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Timmerian Fiends",
+  "set": "hml",
+  "cost": "{1}{B}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2931&type=card"
+ },
+ {
+  "artist": "Mark Tedin",
+  "cmc": 1,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"Oh, they scream, right enough, and plead, too—but the Baron keeps no mercy in his vault of horrors.\"\n—Zeki, Reef Pirate",
+  "id": "b7260328a2cd7932d502c08f9b1cf307f271fadc",
+  "imageName": "torture1",
+  "layout": "normal",
+  "manaCost": "{B}",
+  "multiverseid": 2932,
+  "name": "Torture",
+  "rarity": "c",
+  "subtypes": [
+   "Aura"
+  ],
+  "text": "Enchant creature\n{1}{B}: Put a -1/-1 counter on enchanted creature.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "variations": [
+   2933
+  ],
+  "title": "Torture",
+  "set": "hml",
+  "cost": "{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2932&type=card"
+ },
+ {
+  "artist": "Mark Tedin",
+  "cmc": 1,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"It helps you pass the time until you die.\"\n—Grandmother Sengir",
+  "id": "cb3bcbc63e524afc6e7b696d0fe7a3b724433bfe",
+  "imageName": "torture2",
+  "layout": "normal",
+  "manaCost": "{B}",
+  "multiverseid": 2933,
+  "name": "Torture",
+  "rarity": "c",
+  "subtypes": [
+   "Aura"
+  ],
+  "text": "Enchant creature\n{1}{B}: Put a -1/-1 counter on enchanted creature.",
+  "type": "Enchantment",
+  "types": [
+   "Enchantment"
+  ],
+  "variations": [
+   2932
+  ],
+  "title": "Torture",
+  "set": "hml",
+  "cost": "{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2933&type=card"
+ },
+ {
+  "artist": "Kaja Foglio",
+  "cmc": 1,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "id": "d1077eb8fc24c4920bde11a57b36102fe980361a",
+  "imageName": "trade caravan1",
+  "layout": "normal",
+  "manaCost": "{W}",
+  "multiverseid": 3032,
+  "name": "Trade Caravan",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Human",
+   "Nomad"
+  ],
+  "text": "At the beginning of your upkeep, put a currency counter on Trade Caravan.\nRemove two currency counters from Trade Caravan: Untap target basic land. Activate this ability only during an opponent's upkeep.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   3033
+  ],
+  "title": "Trade Caravan",
+  "set": "hml",
+  "cost": "{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3032&type=card"
+ },
+ {
+  "artist": "Kaja Foglio",
+  "cmc": 1,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "id": "57eaea0e55306d5b179a289230ad7ed84356afe2",
+  "imageName": "trade caravan2",
+  "layout": "normal",
+  "manaCost": "{W}",
+  "multiverseid": 3033,
+  "name": "Trade Caravan",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Human",
+   "Nomad"
+  ],
+  "text": "At the beginning of your upkeep, put a currency counter on Trade Caravan.\nRemove two currency counters from Trade Caravan: Untap target basic land. Activate this ability only during an opponent's upkeep.",
+  "toughness": "1",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   3032
+  ],
+  "title": "Trade Caravan",
+  "set": "hml",
+  "cost": "{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3033&type=card"
+ },
+ {
+  "artist": "Melissa A. Benson",
+  "cmc": 3,
+  "colorIdentity": [
+   "W"
+  ],
+  "colors": [
+   "White"
+  ],
+  "flavor": "\"The people of Aysen feed us, and we don't kill them. That's my kind of truce.\"\n—Eron the Relentless",
+  "id": "1995a20f72dcc6d98a3ee31ee9e1f1f54a65a0d7",
+  "imageName": "truce",
+  "layout": "normal",
+  "manaCost": "{2}{W}",
+  "multiverseid": 3034,
+  "name": "Truce",
+  "rarity": "u",
+  "text": "Each player may draw up to two cards. For each card less than two a player draws this way, that player gains 2 life.",
+  "type": "Instant",
+  "types": [
+   "Instant"
+  ],
+  "title": "Truce",
+  "set": "hml",
+  "cost": "{2}{W}",
+  "colour": "w",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3034&type=card"
+ },
+ {
+  "artist": "Susan Van Camp",
+  "cmc": 7,
+  "colorIdentity": [
+   "B"
+  ],
+  "colors": [
+   "Black"
+  ],
+  "flavor": "\"Poor, foolish Veldrane. He goes wherever the Baron wills him. One day, he'll go to die.\"\n—Halina, Dwarven Trader",
+  "id": "b8f8e7bfeeac2fd5576e82c3aba226a97fb835d7",
+  "imageName": "veldrane of sengir",
+  "layout": "normal",
+  "manaCost": "{5}{B}{B}",
+  "multiverseid": 2934,
+  "name": "Veldrane of Sengir",
+  "power": "5",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Human",
+   "Rogue"
+  ],
+  "supertypes": [
+   "Legendary"
+  ],
+  "text": "{1}{B}{B}: Veldrane of Sengir gets -3/-0 and gains forestwalk until end of turn. (It can't be blocked as long as defending player controls a Forest.)",
+  "toughness": "5",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Veldrane of Sengir",
+  "set": "hml",
+  "cost": "{5}{B}{B}",
+  "colour": "b",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2934&type=card"
+ },
+ {
+  "artist": "Alan Rabinowitz",
+  "cmc": 2,
+  "colorIdentity": [
+   "U"
+  ],
+  "colors": [
+   "Blue"
+  ],
+  "flavor": "\"Ya can eat it or ya can weave it, but ya can't fight in it.\"\n—Zeki, Reef Pirate",
+  "id": "d4fd3b63222383c90e21165460fa15bffda760f4",
+  "imageName": "wall of kelp",
+  "layout": "normal",
+  "manaCost": "{U}{U}",
+  "multiverseid": 2959,
+  "name": "Wall of Kelp",
+  "power": "0",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Plant",
+   "Wall"
+  ],
+  "text": "Defender (This creature can't attack.)\n{U}{U}, {T}: Put a 0/1 blue Plant Wall creature token with defender named Kelp onto the battlefield.",
+  "toughness": "3",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Wall of Kelp",
+  "set": "hml",
+  "cost": "{U}{U}",
+  "colour": "u",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2959&type=card"
+ },
+ {
+  "artist": "Susan Van Camp",
+  "cmc": 2,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"The Autumn Willow cannot be everywhere at once—that's what her grandchildren are for.\"\n—Gulsen, Abbey Matron",
+  "id": "03ef5f21de749c8062915bedd900367d5f3cff6e",
+  "imageName": "willow faerie1",
+  "layout": "normal",
+  "manaCost": "{1}{G}",
+  "multiverseid": 2982,
+  "name": "Willow Faerie",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Faerie"
+  ],
+  "text": "Flying",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2983
+  ],
+  "title": "Willow Faerie",
+  "set": "hml",
+  "cost": "{1}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2982&type=card"
+ },
+ {
+  "artist": "Susan Van Camp",
+  "cmc": 2,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"Swift as the wind and harder to catch— that's the Faeries for you.\"\n—Daria",
+  "id": "b4b924e2924d0236ae6f74504bb1814de63f4569",
+  "imageName": "willow faerie2",
+  "layout": "normal",
+  "manaCost": "{1}{G}",
+  "multiverseid": 2983,
+  "name": "Willow Faerie",
+  "power": "1",
+  "rarity": "c",
+  "subtypes": [
+   "Faerie"
+  ],
+  "text": "Flying",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "variations": [
+   2982
+  ],
+  "title": "Willow Faerie",
+  "set": "hml",
+  "cost": "{1}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2983&type=card"
+ },
+ {
+  "artist": "Susan Van Camp",
+  "cmc": 4,
+  "colorIdentity": [
+   "G"
+  ],
+  "colors": [
+   "Green"
+  ],
+  "flavor": "\"Those of faith are those of strength.\"\n—Autumn Willow",
+  "id": "6406c241e6c91c253bbbc82f32543648cc052721",
+  "imageName": "willow priestess",
+  "layout": "normal",
+  "manaCost": "{2}{G}{G}",
+  "multiverseid": 2984,
+  "name": "Willow Priestess",
+  "power": "2",
+  "rarity": "u",
+  "reserved": true,
+  "subtypes": [
+   "Faerie",
+   "Druid"
+  ],
+  "text": "{T}: You may put a Faerie permanent card from your hand onto the battlefield.\n{2}{G}: Target green creature gains protection from black until end of turn.",
+  "toughness": "2",
+  "type": "Creature",
+  "types": [
+   "Creature"
+  ],
+  "title": "Willow Priestess",
+  "set": "hml",
+  "cost": "{2}{G}{G}",
+  "colour": "g",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=2984&type=card"
+ },
+ {
+  "artist": "Mike Kimble",
+  "cmc": 1,
+  "colorIdentity": [
+   "R"
+  ],
+  "colors": [
+   "Red"
+  ],
+  "id": "9aa9f055e779cc204308f216402e13d2a23ace2a",
+  "imageName": "winter sky",
+  "layout": "normal",
+  "manaCost": "{R}",
+  "multiverseid": 3009,
+  "name": "Winter Sky",
+  "rarity": "u",
+  "reserved": true,
+  "text": "Flip a coin. If you win the flip, Winter Sky deals 1 damage to each creature and each player. If you lose the flip, each player draws a card.",
+  "type": "Sorcery",
+  "types": [
+   "Sorcery"
+  ],
+  "title": "Winter Sky",
+  "set": "hml",
+  "cost": "{R}",
+  "colour": "r",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3009&type=card"
+ },
+ {
+  "artist": "Pat Morrissey",
+  "colorIdentity": [
+   "U",
+   "W",
+   "B"
+  ],
+  "flavor": "The legacy of Feroz lives on.",
+  "id": "595dbb41f3ac3857e49f8fe9823081373634509b",
+  "imageName": "wizards' school",
+  "layout": "normal",
+  "multiverseid": 3039,
+  "name": "Wizards' School",
+  "rarity": "u",
+  "text": "{T}: Add {1} to your mana pool.\n{1}, {T}: Add {U} to your mana pool.\n{2}, {T}: Add {W} or {B} to your mana pool.",
+  "type": "Land",
+  "types": [
+   "Land"
+  ],
+  "title": "Wizards' School",
+  "set": "hml",
+  "cost": "",
+  "colour": "l",
+  "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=3039&type=card"
+ }
+]
