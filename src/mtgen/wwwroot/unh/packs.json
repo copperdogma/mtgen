@@ -1,0 +1,65 @@
+{
+  "defs": [
+    {
+      "defName": "unh",
+      "query": "from[*]?set='unh"
+    },
+    {
+      "defName": "unh-main",
+      "query": "from[unh]-from[unh]?promo=true"
+    },
+    {
+      "defName": "unh-foils",
+      "query": "from[unh-main]"
+    },
+    {
+      "defName": "unh-promo",
+      "query": "from[unh]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "unh-all-cards",
+      "packDesc": "Unhinged: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[unh]" }
+      ]
+    },
+    {
+      "packName": "unh-standard",
+      "packDesc": "Unhinged: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[9]>from[unh-main]?rarity='c" },
+        {
+          "querySet": [
+            {
+              "percent": 75,
+              "query": "from[unh-main]?rarity='c"
+            },
+            {
+              "percent": 25,
+              "query": "from[unh-foils]",
+              "canBeDuplicate": true,
+              "setValues": { "foil": true },
+              "_comment": "25% chance rare is a foil of any card, including land"
+            }
+          ]
+        },
+        { "query": "take[3]>from[unh-main]?rarity='u" },
+        { "query": "take[1]>from[unh-main]?type='Basic Land" },
+        { "query": "take[1]>from[unh-main]?rarity='r" }
+      ]
+    },
+    {
+      "packName": "unh-promos",
+      "packDesc": "Unhinged: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[unh-promo]" }
+      ]
+    }
+  ]
+}

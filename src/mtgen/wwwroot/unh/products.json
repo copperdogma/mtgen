@@ -1,0 +1,51 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "unh-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/unh.json", "http://mtgsalvation.gamepedia.com/Unhinged" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "unh-all-cards" }
+      ]
+    },
+    {
+      "productName": "unh-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Unhinged" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "unh-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "unh-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "unh-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "unh-promos",
+      "isVisible": true,
+      "productDesc": "All Promos",
+      "sources": [ "http://archive.wizards.com/Magic/magazine/article.aspx?x=mtgcom/arcana/966" ],
+      "isGenerated": false,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "unh-promos" }
+      ]
+    }
+  ]
+}
