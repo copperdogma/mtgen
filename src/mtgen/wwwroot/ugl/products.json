@@ -1,0 +1,40 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "ugl-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/ugl.json", "http://mtgsalvation.gamepedia.com/Unglued" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "ugl-all-cards" }
+      ]
+    },
+    {
+      "productName": "ugl-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Unglued" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "ugl-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "ugl-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "ugl-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

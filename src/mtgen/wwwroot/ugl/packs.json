@@ -1,0 +1,37 @@
+{
+  "defs": [
+    {
+      "defName": "ugl",
+      "query": "from[*]?set='ugl"
+    },
+    {
+      "defName": "ugl-main",
+      "query": "from[ugl]"
+    },
+    {
+      "defName": "ugl-uncommon",
+      "query": "from[ugl-main]?rarity='u'+from[ugl-main]?toke=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "ugl-all-cards",
+      "packDesc": "Unglued: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[ugl]" }
+      ]
+    },
+    {
+      "packName": "ugl-standard",
+      "packDesc": "Unglued: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[6]>from[ugl]?rarity='c'" },
+        { "query": "take[2]>from[ugl-uncommon]?rarity='u'" },
+        { "query": "take[1]>from[ugl]?rarity='r'" },
+        { "query": "take[1]>from[ugl]?colour='l'" }
+      ]
+    }
+  ]
+}
