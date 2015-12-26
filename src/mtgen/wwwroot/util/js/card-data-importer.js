@@ -622,7 +622,12 @@ var cardDataImporter = (function (my, $) {
             card.set = setCode;
             card.cost = card.manaCost || '';
             card.rarity = card.rarity.substr(0, 1).toLowerCase();
-            card.type = card.types[0];
+            if (card.hasOwnProperty("types") && card.types.length > 0) {
+                card.type = card.types[0];
+            }
+            else {
+                card.type = card.type;
+            }
             if (card.hasOwnProperty('subTypes') && card.subTypes.length > 0) {
                 card.subtype = card.subtypes[0];
             }
