@@ -37,18 +37,18 @@ var cardDataImporter = (function (my, $) {
         // load all files and don't continue until all are loaded
         var promises = [];
 
-        promises.push($.get('/proxy?u=' + my.cardDataUrl));
+        promises.push($.get('/proxy?u=' + encodeURIComponent(my.cardDataUrl)));
 
         // it's hard to parse the results unless they're all there, so we'll force something to be loaded for each even if it's missing
         if (my.imagesUrl !== undefined && my.imagesUrl.length > 0) {
-            promises.push($.get('/proxy?u=' + my.imagesUrl));
+            promises.push($.get('/proxy?u=' + encodeURIComponent(my.imagesUrl)));
         }
         else {
             promises.push($.get('/proxy?u=http://copper-dog.com/'));
         }
 
         if (my.exceptionsUrl !== undefined && my.exceptionsUrl.length > 0) {
-            promises.push($.get('/proxy?u=' + my.exceptionsUrl));
+            promises.push($.get('/proxy?u=' + encodeURIComponent(my.exceptionsUrl)));
         }
         else {
             promises.push($.get('/proxy?u=http://copper-dog.com/'));
@@ -376,8 +376,12 @@ var cardDataImporter = (function (my, $) {
     }
 
     function getCardColourFromCard(card) {
+        if (card.hasOwnProperty('type') && card.type.length > 0 && card.type.trim().toLowerCase() === "land") {
+            return colours.land.code;
+        }
+
         // derived from casting cost
-        var cardColours = card.cost.toLowerCase().replace(/{|[0-9]/g, "").replace(/}/g, " ").trim().split(" ");
+        var cardColours = card.cost.toLowerCase().replace(/{|[0-9]/g, "").replace(/}/g, " ").trim().replace(/ /g, '').split("");
         var arrayUnique = function (a) {
             return a.reduce(function (p, c) {
                 if (p.indexOf(c) < 0) p.push(c);
@@ -480,7 +484,10 @@ var cardDataImporter = (function (my, $) {
 
         // Determine from where the card data was sourced and therefore the parser needed.
         var lowercaseCardDataUrlSource = cardDataUrlSource.toLowerCase();
-        if (lowercaseCardDataUrlSource.indexOf('gatheringmagic.com') > -1) {
+        if (lowercaseCardDataUrlSource.indexOf('mtgsalvation.com') > -1) {
+            cards = my.api.getCardsFromMtgSalvationData(cardData, setCode);
+        }
+        else if (lowercaseCardDataUrlSource.indexOf('gatheringmagic.com') > -1) {
             cards = my.api.getCardsFromGatheringMagicData(cardData, setCode);
         }
         else if (lowercaseCardDataUrlSource.indexOf('mtgjson.com') > -1) {
@@ -489,6 +496,129 @@ var cardDataImporter = (function (my, $) {
         else {
             throw new Error("Card data url unknown. Only gatheringmagic.com and mtgjson.com supported. '" + cardDataUrlSource + "'");
         }
+
+        return cards;
+    }
+
+    function getCardsFromMtgSalvationData(rawCardData, setCode) {
+        var cards = [];
+
+        // get all MtgS cards
+        var $html = $("<html/>").html(rawCardData);
+        var $cards = $html.find('.t-spoiler-wrapper');
+        if ($cards.length === 0) {
+            alert("No cards from MtG Salvation cards found. Note that you CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.");
+        }
+        $.each($cards, function (index, el) {
+            var card = {};
+            el = $(el);
+
+            var title = el.find('h2');
+            if (title.length > 0) {
+                card.title = title[0].textContent.trim();
+                card.matchTitle = createMatchTitle(card.title); // used for matching MtG Salvation vs. WotC titles and card titles vs. exception titles
+            }
+
+            var img = el.find('.spoiler-card-img img');
+            if (img.length > 0) {
+                card.src = img[0].src;
+                card.imageSource = "mtg-salvation";
+                // from GatheringMagic version, but don't know what this looks like under this site
+                //if (el.hasClass('wm-day') || el.hasClass('wm-night')) { // Double-Faced card
+                //    card.width = 536;
+                //}
+            }
+
+            card.set = setCode;
+
+            var mana = el.find('.t-spoiler-mana');
+            if (mana.length > 0) {
+                card.cost = mana[0].textContent.replace(/ /g, '').replace(/\n/g, '');
+            }
+
+            var rarity = el.find('.t-spoiler-header');
+            if (rarity.length > 0) {
+                if (rarity[0].classList.length > 1) {
+                    card.rarity = rarity[0].classList[1].toLowerCase();
+                }
+            }
+
+            var type = el.find('.t-spoiler-type');
+            if (type.length > 0) {
+                var types = type[0].textContent.split(' - ');
+                card.type = types[0].trim();
+                if (types.length > 1) {
+                    card.subtype = types[1].trim();
+                }
+            }
+
+            var pt = el.find(".t-spoiler-stat");
+            if (pt.length > 0) {
+                var pts = pt[0].textContent.split('/');
+                if (pts.length > 1) {
+                    card.power = pts[0].trim();
+                    card.toughness = pts[1].trim();
+                }
+                else if (pts.length == 1) {
+                    card.loyalty = pts[0].replace('[', '').replace(']', '').trim(); // must be a planeswalker
+                }
+                // otherwise it's something without power/toughness|loytlty, i.e.: land, spell, etc
+            }
+
+            var colour = el.find('.t-spoiler');
+            if (colour.length > 0) {
+                $.each(colour[0].classList, function (index, className) {
+                    if (className.indexOf('card-color-') > -1) {
+                        var cardColour = className.replace('card-color-', '');
+                        if (cardColour.length > 0) {
+                            card.colour = cardColour[0].toLowerCase();
+                        }
+                    }
+                });
+            }
+
+            // derived from casting cost
+            card.colour = getCardColourFromCard(card);
+
+            var cnum = el.find('.t-spoiler-artist');
+            if (cnum.length > 0) {
+                var cnums = cnum[0].textContent.split('#');
+                if (cnums.length > 1) {
+                    cnums = cnums[1].split('/');
+                    card.num = pad(cnums[0].trim(), 3);
+                }
+            }
+
+            // from GatheringMagic version, but don't know what this looks like under this site
+            //// if it has a guild or clan, save that
+            //$(el[0].classList).each(function (index, value) {
+            //    if (value.indexOf('wm-') == 0) {
+            //        if (guildClanType === undefined) {
+            //            switch (setCode.toLowerCase()) {
+            //                case "rtr": // Guilds: Return to Ravniva, Gatecrash, Dragon's Maze
+            //                case "gtc":
+            //                case "dgm":
+            //                    guildClanType = "guild";
+            //                    break;
+
+            //                case "ktk": // Clans: Khans of Tarkir, Fate Reforged, Dragons of Tarkir
+            //                case "frf":
+            //                case "dtk":
+            //                    guildClanType = "clan";
+            //                    break;
+            //            }
+            //        }
+            //        if (guildClanType !== undefined) {
+            //            card[guildClanType] = value.replace('wm-', '').replace('//', '/');
+            //        }
+            //        else {
+            //            console.log("WARNING: found wm-* class data in GM HTML but set code doesn't belong to anything with guilds/clans.");
+            //        }
+            //    }
+            //});
+
+            cards.push(card);
+        });
 
         return cards;
     }
@@ -1124,7 +1254,7 @@ var cardDataImporter = (function (my, $) {
         getCardsFromMtgJsonData: getCardsFromMtgJsonData,
 
         getImageData: getImageData,
-        getImagesFromWotcSpoilers: getImagesFromWotcSpoilers,
+        getCardsFromMtgSalvationData: getCardsFromMtgSalvationData,
         getImagesFromMtgJsonData: getImagesFromMtgJsonData,
         getImagesFromCardsMainData: getImagesFromCardsMainData,
 
