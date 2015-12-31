@@ -24,7 +24,7 @@
         <input id="set-code" />
         <br />
         <br />
-        <label for="url-card-data">URL from which to import card data (Gathering Magic or mtgjson.com):</label>
+        <label for="url-card-data">URL from which to import card data (mtgen.net/localhost, MTG Salvation, Gathering Magic, or mtgjson.com):</label>
         <br />
         <input id="url-card-data" size="100" />
         <br />
@@ -58,11 +58,13 @@
         <p>Note that this site has no affiliation with <a href="http://www.wizards.com/Magic/">Wizards of the Coast</a>, owner of Magic: The Gathering.</p>
     </footer>
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!--<script src="/lib/jquery/dist/jquery.js"></script>-->
     <script src="/lib/jquery.base64.min.js"></script>
     <script src="/lib/underscore/underscore-min.js"></script>
     <script src="/lib/backbone/backbone.js"></script>
+    <script src="/lib/mtg-generator-lib.js"></script>
     <script src="/util/js/card-data-importer.js"></script>
-    <script>
+   <script>
         $(document).ready(function () {
             if (window.location.protocol == 'file:') { $('#local-error').show(); }
 

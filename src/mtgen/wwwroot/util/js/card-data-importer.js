@@ -1,7 +1,7 @@
 ﻿/*
     Typical url: http://www.mtgsalvation.com/printable-gatecrash-spoiler.html
 
-    Typical card:
+    Typical card from Gathering Magic (defunct):
         <div class="spoiler-card w-card type-Creature subtype-Human subtype-Soldier confirmed r-common wm-orzhov num-5" "="">
             <a name="num-5"></a>
             <div class="cost"><nobr><img src="http://s3.mananation.com/images/mana/2.gif" class="mana" alt="{2}"><img src="http://s3.mananation.com/images/mana/w.gif" class="mana" alt="{W}"></nobr></div>
@@ -15,6 +15,64 @@
             <div class="cardnum">5/249</div>
             <div class="source"><a href="http://www.wizards.com/magic/magazine/article.aspx?x=mtg/daily/feature/228">Gatecrash Mechanics</a></div>
         </div>
+
+    Typical card from MTG Salvation (new main source):
+        <div id="card-26202" class="t-spoiler-wrapper">
+            <div class="card-flip-wrapper ">
+                <div class="spoiler-card-text">
+                    <div class="t-spoiler card-color-Colorless card-type-Creature">
+                        <div class="t-spoiler-container">
+                            <header class="t-spoiler-header mythic rare">
+                                <h2><a class="j-search-html" href="http://www.mtgsalvation.com/cards/oath-of-the-gatewatch/26202-kozilek-the-great-distortion">Kozilek, the Great Distortion</a></h2>
+                                <ul class="t-spoiler-mana">
+                                    <span class="mana-icon mana-colorless-08 tip" title="8 Colorless Mana">8</span>
+                                    <span class="mana-icon mana-generic tip" title="1 Colorless Mana">C</span>
+                                    <span class="mana-icon mana-generic tip" title="1 Colorless Mana">C</span>
+                                </ul>
+                            </header>
+                            <section class="t-spoiler-content">
+                                <div class="t-spoiler-meta">
+                                    <span class="t-spoiler-type j-search-html">Legendary Creature - Eldrazi</span>
+                                    <span class="t-spoiler-rarity"><span class="mtg-set-icon mtg-set-oath-of-the-gatewatch-mythic"><img src="http://media-dominaria.cursecdn.com/avatars/thumbnails/80/954/22/14/OGW.png"></span></span>
+                                </div>
+                                <div class="t-spoiler-ability">
+                                    <p>When you cast Kozilek, the Great Distortion, if you have fewer than seven cards in hand, draw cards equal to the difference.</p>
+                                    <p></p>
+                                    <p>Menace</p>
+                                    <p></p>
+                                    <p>Discard a card with converted mana cost X: Counter target spell with converted mana cost X.</p>
+                                    <input class="j-search-val" type="hidden" value="When you cast Kozilek, the Great Distortion, if you have fewer than seven cards in hand, draw cards equal to the difference.
+                                        Menace
+                                        Discard a card with converted mana cost X: Counter target spell with converted mana cost X.">
+                                </div>
+                                <div class="t-spoiler-flavor">
+                                    <p>A void as cryptic as reality itself.</p>
+                                </div>
+                                <div class="t-spoiler-edition">
+                                    <span class="t-spoiler-artist"><p>illus. Aleksi Briclot # 4/184</p></span>
+                                </div>
+                            </section>
+                            <footer class="t-spoiler-footer">
+                                <p>
+                                    <a href="http://www.mtgsalvation.com/forums/magic-fundamentals/the-rumor-mill/648035-ogw-kozilek-the-great-distortion-and-new-basic" class="tip" title="Confirmation and Discussion">C&amp;D</a>
+                                    <a href="https://twitter.com/mtgfocus" class="tip" title="MTG Focus Podcast">SRC</a>
+                                </p>
+                                <span class="t-spoiler-stat">12/12</span>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+                <div class="spoiler-card-img">
+                    <a href="http://www.mtgsalvation.com/cards/oath-of-the-gatewatch/26202-kozilek-the-great-distortion" data-tooltip-disabled="true">
+                        <img src="http://media-dominaria.cursecdn.com/avatars/thumbnails/80/972/200/283/635834472657386509.jpeg">
+                    </a>
+                </div>
+            </div>
+            <div class="card-show-text">
+                <a class="j-show-text" data-no-img="True">Show Text</a>
+            </div>
+        </div>
+
  */
 var cardDataImporter = (function (my, $) {
     'use strict';
@@ -27,7 +85,7 @@ var cardDataImporter = (function (my, $) {
         //$.each(options, function (value, key) {
         //    my[key] = value;
         //});
-        $.extend(my, options);
+        _.extend(my, options);
 
         if (my.cardDataUrl === undefined || my.cardDataUrl.length < 1) {
             alert("ERROR: No card data url supplied. Cannot continue.");
@@ -109,21 +167,13 @@ var cardDataImporter = (function (my, $) {
         if (jsonExceptions.data !== undefined) {
             jsonExceptions.data = JSON.parse(jsonExceptions.data);
         }
-        jsonExceptions = addMatchTitles(jsonExceptions.data);
 
-        mainOut = my.api.applyPropertyExceptions(mainOut, jsonExceptions);
-
-        mainOut = my.api.applyAdditionDeletionExceptions(mainOut, jsonExceptions);
+        // Returns both the updated set of cards AND the modified exceptions (the latter for reporitng purposes).
+        var exceptionsResults = my.api.applyExceptions(mainOut, jsonExceptions.data);
+        mainOut = exceptionsResults.cards;
 
         // Add images to cards -------------------------------------------------------------------------------------------------
         mainOut = my.api.applyImagesToCards(mainOut, mainImages);
-
-        // Apply Exceptions AGAIN -------------------------------------------------------------------------------------------------
-        // issue: if I don't do the title fix from the exceptions NOW, it won't properly match the images...
-        //        but if I ONLY do it now and there's a SRC override it'll ignore that...
-        //        so for now we'll just do the exceptions TWICE
-        mainOut = my.api.applyPropertyExceptions(mainOut, jsonExceptions);
-
 
         // Reporting -------------------------------------------------------------------------------------------------
 
@@ -176,71 +226,56 @@ var cardDataImporter = (function (my, $) {
             out += "</ul>";
         }
 
-        var fixedViaExceptions = $.grep(mainOut, function (card, index) { return card.fixedViaException === true; });
-        if (fixedViaExceptions.length > 0) {
-            out += "<p>The following cards have been fixed via exceptions:</p><ul>";
-            fixedViaExceptions = fixedViaExceptions.sort(sortByTitle);
-            $.each(fixedViaExceptions, function (index, card) {
-                var comment = "";
-                if (card._comment) {
-                    comment = "<em> - " + card._comment + "</em>";
+        var exceptions = exceptionsResults.exceptions;
+        var hasExceptions = (exceptions !== undefined && exceptions !== null && exceptions.length > 0);
+        if (!hasExceptions) {
+            out += "<p>No exceptions provided.</p>";
+        }
+        else {
+            out += "<p>The supplied exceptions were processed as follows:</p><ul>";
+            exceptions.forEach(function (exception, index) {
+                if (exception.result === undefined || exception.result === null) {
+                    exception.result = { success: false, error: "PROCESSING FAILURE: no result given at all for this exception!" };
                 }
-                out += "<li style='color:green'>" + card.title + comment + "</li>";
+                if (exception.comment === true) {
+                    out += "<li style='color: gray'>#" + (index+1) + ": Comment; ignored.</li>";
+                }
+                else if (exception.result.success === true) {
+                    if (exception.result.affectedCards > 0) {
+                        out += "<li style='color: green'>#" + (index + 1) + ": ";
+                    }
+                    else {
+                        out += "<li style='color: DarkGoldenrod'>#" + (index + 1) + ": ";
+                    }
+                    if (exception.add === true) {
+                        out += 'Added new card: ' + exception.newValues.title;
+                    }
+                    else if (exception.delete === true) {
+                        var deletedCards = _.sortBy(exception.result.deletedCards, "title");
+                        out += 'Deleted ' + deletedCards.length + " cards via query: " + exception.where;
+                        if (deletedCards.length > 0) {
+                            out += "<ul>";
+                            deletedCards.forEach(function (card) { out += "<li>" + card.title + "</li>"; });
+                            out += "</ul>";
+                        }
+                    }
+                    else {
+                        var modifiedCards = _.sortBy(exception.result.modifiedCards, "title");
+                        out += 'Modified ' + modifiedCards.length + " cards via query: " + exception.where + "<br/>";
+                        out += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New values: ' + JSON.stringify(exception.newValues);
+                        if (modifiedCards.length > 0) {
+                            out += "<ul>";
+                            modifiedCards.forEach(function (card) { out += "<li>" + card.title + "</li>"; });
+                            out += "</ul>";
+                        }
+                    }
+                }
+                else {
+                    out += "<li style='color: red'>#" + (index+1) + ": " + exception.result.error;
+                }
+                out += "</li>";
             });
             out += "</ul>";
-        }
-
-        var addedViaExceptions = $.grep(mainOut, function (card, index) { return card.addedViaException === true; });
-        if (addedViaExceptions.length > 0) {
-            out += "<p>The following cards have been added via exceptions:</p><ul>";
-            addedViaExceptions = addedViaExceptions.sort(sortByTitle);
-            $.each(addedViaExceptions, function (index, card) {
-                var comment = "";
-                if (card._comment) {
-                    comment = "<em> - " + card._comment + "</em>";
-                }
-                out += "<li style='color:green'>" + card.title + comment + "</li>";
-            });
-            out += "</ul>";
-        }
-
-        if (jsonExceptions !== undefined && jsonExceptions.length > 0) {
-            var deletedViaExceptions = $.grep(jsonExceptions, function (ex, index) { return ex.matchTitle === "delete card" && ex.wasUsed === true; });
-            if (deletedViaExceptions.length > 0) {
-                out += "<p>The following cards have been <strong style='color:red'>deleted</strong> via exceptions:</p><ul>";
-                deletedViaExceptions = deletedViaExceptions.sort(sortByTitle);
-                $.each(deletedViaExceptions, function (index, ex) {
-                    var comment = "";
-                    if (ex._comment) {
-                        comment = "<em> - " + ex._comment + "</em>";
-                    }
-                    out += "<li style='color:green'>" + ex.newValues.title + comment + "</li>";
-                });
-                out += "</ul>";
-            }
-
-            // report any unused or redundant exceptions so we can clean up the exceptions file
-            var unusedExceptions = [];
-            $.each(jsonExceptions, function (index, ex) {
-                if (ex.hasOwnProperty("title")) { // no title means it was probably just a comment
-                    if (!ex.hasOwnProperty("wasUsed") || ex.wasUsed === false) {
-                        console.log('Marking ' + ex.title + ' as NEVER used.');
-                        unusedExceptions.push("'" + ex.title + "' was never used");
-                    }
-                    if (ex.hasOwnProperty("redundantValues")) {
-                        $.each(ex.redundantValues, function (prop, newVal) {
-                            unusedExceptions.push("'" + ex.title + "'." + prop + ":" + newVal + " --- is redundant");
-                        });
-                    }
-                }
-            });
-            if (unusedExceptions.length > 0) {
-                out += "<p>The following exceptions are not used/redundant:</p><ul>";
-                $.each(unusedExceptions, function (index, ex) {
-                    out += "<li style='color:red'>" + ex + "</li>";
-                });
-                out += "</ul>";
-            }
         }
 
         my.trigger('log-complete', out);
@@ -261,72 +296,20 @@ var cardDataImporter = (function (my, $) {
         my.trigger('data-processing-complete', jsonMainStr, initialCardDataCount, imageDataCount, mainOut.length);
     }
 
-    // Create a sanitized title to avoid the punctuation differences
-    // Site to lookup chars: http://www.fileformat.info/info/unicode/char/search.htm
-    function createMatchTitle(title) {
-        var clean = title.trim().replace(/\u00C6/g, 'ae').toLowerCase(); // \u00C6 = Æ = LATIN CAPITAL LETTER AE
-        clean = clean.replace(/\+/g, ' '); // GM uses names like "Catch+Release" with no space
-        clean = clean.replace(/[^a-z0-9 �]+/g, '');
-        clean = clean.replace(/ +/, ' ');
-        return clean;
-    }
-
     function addMatchTitles(itemArray) {
         if (itemArray !== undefined) {
             $.each(itemArray, function (index, item) {
                 if (item.hasOwnProperty('title')) {
-                    item.matchTitle = createMatchTitle(item.title);
+                    item.matchTitle = mtgGen.createMatchTitle(item.title);
                 }
             });
         }
         return itemArray;
     }
 
-    /* NOTE: these colours and rarities are duplicated in the mtg-generator.js files. If you change this here you must change it in those files. */
-    var colours = {
-        white: { sorder: 1, code: 'w', name: 'White' },
-        blue: { sorder: 2, code: 'u', name: 'Blue' },
-        black: { sorder: 3, code: 'b', name: 'Black' },
-        red: { sorder: 4, code: 'r', name: 'Red' },
-        green: { sorder: 5, code: 'g', name: 'Green' },
-        multicolour: { sorder: 6, code: 'm', name: 'Multicolour' },
-        artifact: { sorder: 17, code: 'a', name: 'Artifact', colourless: true },
-        land: { sorder: 27, code: 'l', name: 'Land', colourless: true },
-        colorless: { sorder: 30, code: 'c', name: 'Colourless', colourless: true },
-        other: { sorder: 37, code: 'o', name: 'Other: Token/Pack-In/Marketing', colourless: true },
-        unknown: { sorder: 97, code: '?', name: 'Unknown Colour', colourless: true },
-    };
-
-    function getColourByCode(code) {
-        for (var colour in colours) {
-            if (colours[colour].code == code) {
-                return colours[colour];
-            }
-        }
-        return colours.unknown;
-    }
-
-    var rarities = {
-        common: { sorder: 1, code: 'c', name: 'Common' },
-        uncommon: { sorder: 2, code: 'u', name: 'Uncommon' },
-        rare: { sorder: 3, code: 'r', name: 'Rare' },
-        mythic: { sorder: 4, code: 'm', name: 'Mythic Rare' },
-        special: { sorder: 5, code: 's', name: 'Special' },
-        unknown: { sorder: 97, code: '?', name: 'Unknown' },
-    };
-
-    function getRarityByCode(code) {
-        for (var rarity in rarities) {
-            if (rarities[rarity].code == code) {
-                return rarities[rarity];
-            }
-        }
-        return rarities.unknown;
-    }
-
     function sortByTitle(a, b) {
-        var aName = createMatchTitle(a.title);
-        var bName = createMatchTitle(b.title);
+        var aName = mtgGen.createMatchTitle(a.title);
+        var bName = mtgGen.createMatchTitle(b.title);
         return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
     }
 
@@ -377,7 +360,7 @@ var cardDataImporter = (function (my, $) {
 
     function getCardColourFromCard(card) {
         if (card.hasOwnProperty('type') && card.type.length > 0 && card.type.trim().toLowerCase() === "land") {
-            return colours.land.code;
+            return mtgGen.colours.land.code;
         }
 
         // derived from casting cost
@@ -416,14 +399,14 @@ var cardDataImporter = (function (my, $) {
                     var cardType = card.type.toLowerCase();
                     // manually determine colour because GM didn't do it
                     if (cardType.indexOf('artifact') > -1) {
-                        finalColour = colours.artifact.code;
+                        finalColour = mtgGen.colours.artifact.code;
                     }
                     else if (cardType.indexOf('land') > -1) {
-                        finalColour = colours.land.code;
+                        finalColour = mtgGen.colours.land.code;
                     }
                     else {
                         console.log('Could not identify colour from GM "' + card.colour + '" on card: ' + card.title + '. Set to Other Colourless. Usually check the type (which we have already checked to be not artifact or land): ' + card.type);
-                        finalColour = colours.colorless.code;
+                        finalColour = mtgGen.colours.colorless.code;
                     }
                 }
                 else {
@@ -444,7 +427,7 @@ var cardDataImporter = (function (my, $) {
                 finalColour = uniqueColourType;
                 break;
             default: // multi-colour
-                finalColour = colours.multicolour.code;
+                finalColour = mtgGen.colours.multicolour.code;
                 break;
         }
         return finalColour;
@@ -493,9 +476,15 @@ var cardDataImporter = (function (my, $) {
         else if (lowercaseCardDataUrlSource.indexOf('mtgjson.com') > -1) {
             cards = my.api.getCardsFromMtgJsonData(cardData, setCode);
         }
-        else {
-            throw new Error("Card data url unknown. Only gatheringmagic.com and mtgjson.com supported. '" + cardDataUrlSource + "'");
+        else if (lowercaseCardDataUrlSource.indexOf('localhost') > -1 || lowercaseCardDataUrlSource.indexOf('mtgen.net') > -1) {
+            cards = JSON.parse(cardData); // native format -- used for upgrading the images or file format
         }
+        else {
+            throw new Error("Card data url unknown. Only mtgen.net/localhost, mtgsalvation.com, gatheringmagic.com, and mtgjson.com supported. '" + cardDataUrlSource + "'");
+        }
+
+        // Add card indicies for later use in queries.
+        cards.forEach(function (card, index) { card.index = index; });
 
         return cards;
     }
@@ -516,7 +505,7 @@ var cardDataImporter = (function (my, $) {
             var title = el.find('h2');
             if (title.length > 0) {
                 card.title = title[0].textContent.trim();
-                card.matchTitle = createMatchTitle(card.title); // used for matching MtG Salvation vs. WotC titles and card titles vs. exception titles
+                card.matchTitle = mtgGen.createMatchTitle(card.title); // used for matching MtG Salvation vs. WotC titles and card titles vs. exception titles
             }
 
             var img = el.find('.spoiler-card-img img');
@@ -539,7 +528,7 @@ var cardDataImporter = (function (my, $) {
             var rarity = el.find('.t-spoiler-header');
             if (rarity.length > 0) {
                 if (rarity[0].classList.length > 1) {
-                    card.rarity = rarity[0].classList[1].toLowerCase();
+                    card.rarity = rarity[0].classList[1][0].toLowerCase();
                 }
             }
 
@@ -639,7 +628,7 @@ var cardDataImporter = (function (my, $) {
             var title = el.find('.title');
             if (title.length > 0) {
                 card.title = title[0].textContent.trim();
-                card.matchTitle = createMatchTitle(card.title); // used for matching Gathering Magic vs. WotC titles and card titles vs. exception titles
+                card.matchTitle = mtgGen.createMatchTitle(card.title); // used for matching Gathering Magic vs. WotC titles and card titles vs. exception titles
                 var img = $(title).find('.thickbox');
                 if (img.length > 0) {
                     card.src = img[0].href;
@@ -748,7 +737,7 @@ var cardDataImporter = (function (my, $) {
         $.each(rawCardData.cards, function (index, card) {
             //console.log('converting: ' + card.name);
             card.title = card.name;
-            card.matchTitle = createMatchTitle(card.title); // used for matching Gathering Magic vs. WotC titles and card titles vs. exception titles
+            card.matchTitle = mtgGen.createMatchTitle(card.title); // used for matching Gathering Magic vs. WotC titles and card titles vs. exception titles
             card.set = setCode;
             card.cost = card.manaCost || '';
             card.rarity = card.rarity.substr(0, 1).toLowerCase();
@@ -834,7 +823,7 @@ var cardDataImporter = (function (my, $) {
                     if ($cardTitle.length === 1) {
                         image = {};
                         image.title = $cardTitle.text().trim();
-                        image.matchTitle = createMatchTitle(image.title);
+                        image.matchTitle = mtgGen.createMatchTitle(image.title);
                         image.src = img.src;
                         finalImages[image.matchTitle] = image;
                     }
@@ -853,7 +842,7 @@ var cardDataImporter = (function (my, $) {
                     if ($cardTitle.length === 1) {
                         image = {};
                         image.title = $cardTitle.text().trim();
-                        image.matchTitle = createMatchTitle(image.title);
+                        image.matchTitle = mtgGen.createMatchTitle(image.title);
                         image.src = img.src;
                         finalImages[image.matchTitle] = image;
                     }
@@ -868,7 +857,7 @@ var cardDataImporter = (function (my, $) {
                 $rawimages.each(function (index, value) {
                     image = {};
                     image.title = value.alt.trim();
-                    image.matchTitle = createMatchTitle(image.title);
+                    image.matchTitle = mtgGen.createMatchTitle(image.title);
                     image.src = value.src;
                     finalImages[image.matchTitle] = image;
                 });
@@ -882,7 +871,7 @@ var cardDataImporter = (function (my, $) {
                 $rawimages.each(function (index, value) {
                     image = {};
                     image.title = value.alt.trim();
-                    image.matchTitle = createMatchTitle(image.title);
+                    image.matchTitle = mtgGen.createMatchTitle(image.title);
                     image.src = value.src;
                     finalImages[image.matchTitle] = image;
                 });
@@ -946,7 +935,7 @@ var cardDataImporter = (function (my, $) {
         $.each(rawImageData.cards, function (index, card) {
             image = {};
             image.title = card.name;
-            image.matchTitle = createMatchTitle(image.title);
+            image.matchTitle = mtgGen.createMatchTitle(image.title);
             image.src = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + card.multiverseid + "&type=card";
             image.imageSource = "mtgjson";
             finalImages[image.matchTitle] = image;
@@ -971,7 +960,7 @@ var cardDataImporter = (function (my, $) {
         $.each(rawImageData, function (index, card) {
             image = {};
             image.title = card.title;
-            image.matchTitle = createMatchTitle(image.title);
+            image.matchTitle = mtgGen.createMatchTitle(image.title);
             image.src = card.src;
             image.imageSource = "cardsMain.json";
             finalImages[image.matchTitle] = image;
@@ -980,146 +969,140 @@ var cardDataImporter = (function (my, $) {
         return finalImages;
     }
 
-    function applyPropertyExceptions(cards, exceptions) {
-        // apply the exceptions if there are any
-        // DUPLICATED above (the above one is lesser; this is the real one)
-        $.each(cards, function (index, card) {
-            if (exceptions != null && exceptions.length > 0) {
-                $.each(exceptions, function (index, ex) {
-                    /*
-                     the old format is:
-                     ,{
-                      "gmTitle": "Wild Beastmistress",
-                      "wotcTitle": "Wild Beastmaster",
-                      "finalTitle": "Wild Beastmaster"
-                     }
-                     we'll keep supporting this one for backwards compatability (FOR NOW)
-                    */
-                    // rename each gmTitle match to the wotcTitle
-                    if (ex.hasOwnProperty('gmTitle')) {
-                        if (card.title == ex.gmTitle) {
-                            // add all Exception properties into the card for posterity
-                            $.extend(card, ex);
-                            ex.wasUsed = true;
+    function applyExceptions(cards, exceptions) {
+        // Example:
+        //  {
+        //      where: "rarity=(mr|r)",
+        //      delete: true
+        //  },
+        //  {
+        //      where: "title='Serra Angel'",
+        //      newValues {
+        //          title: "Sengir Angel",
+        //          rarity: "mr"
+        //      }
+        //  },
+        //  {
+        //      where: "rarity='r'",
+        //      newValues {
+        //          rarity: "u"
+        //      }
+        //  },
+        //  {
+        //      HMMM... what does it look like when I ADD a card? Maybe it's the one time there is no where...
+        //      add: true,
+        //      newValues: {
+        //          title: "New Card Title",
+        //          src: "src here",
+        //          etc: "etc"
+        //      }
+        //  },
+        //  }
+        if (exceptions !== undefined && exceptions !== null) {
+            exceptions.forEach(function (exception, index) {
+                if (exception._comments !== undefined && Object.keys(exception).length === 1) {
+                    exception.comment = true;
+                    return; // just a comment node; ignore
+                }
 
-                            if (ex.wotcTitle) {
-                                card.originalTitle = card.title;
-                                if (card.title == ex.wotcTitle) {
-                                    if (!ex.hasOwnProperty("redundantValues")) {
-                                        ex.redundantValues = {};
-                                    }
-                                    ex.redundantValues.wotcTitle = ex.wotcTitle;
-                                }
-                                card.title = ex.wotcTitle;
-                                card.matchTitle = createMatchTitle(card.title); // used for sorting final output
-                                card.fixedViaException = true;
-                            }
-                        }
+                exception.result = { index: index, success: true };
+
+                if (exception.add === true) {
+                    if (exception.newValues === undefined) {
+                        exception.result.success = false;
+                        exception.result.error = "add=true but missing required newValues {}; cannot continue processing this exception";
+                        return;
                     }
-                    /*
-                     the new format is:
-                     ,{
-                      "title": "Grave Betrayal",
-                      "newValues": { "type": "Enchantment"}
-                     },
-                    {
-                        "title": "Add New Card",
-                        "newValues": {
-                            "title": "Vendilion Clique",
-                            "src": "http://media.wizards.com/2015/mm2_9vgauji43t9a/en_4sRXIOzwPJ.png",
-                            "set": "mm2",
-                            "cost": "{1}{U}{U}",
-                            "rarity": "m",
-                            "type": "Legendary Creature",
-                            "subtype": "Faerie Wizard",
-                            "power": "3",
-                            "toughness": "1",
-                            "colour": "u",
-                            "num": "067"
-                        }
-                    },
-                    {
-                        "title": "Delete Card",
-                        "newValues": {
-                            "title": "Aegis Angel"
-                        }
+                    if (exception.newValues.title === undefined || exception.newValues.title.length < 1) {
+                        exception.result.success = false;
+                        exception.result.error = "add=true but missing required newValues.title; cannot continue processing this exception";
+                        return;
                     }
-                    */
-                    var exCard;
-                    if (ex.hasOwnProperty('matchTitle')) {
-                        if (card.matchTitle === ex.matchTitle) {
-                            console.log('Found exception match for:' + card.matchTitle);
-                            if (ex.hasOwnProperty('newValues')) {
-                                console.log('Has newValues:' + card.matchTitle);
-                                // check each exception; if it wasn't necessary record it so we can clean up the exception file
-                                if (card.matchTitle !== "add new card") {
-                                    $.each(ex.newValues, function (prop, newVal) {
-                                        if (card.hasOwnProperty(prop) && card[prop] === newVal) {
-                                            console.log('Exception property already exists on card:' + card.matchTitle);
-                                            if (!ex.hasOwnProperty("redundantValues")) {
-                                                ex.redundantValues = {};
-                                            }
-                                            ex.redundantValues[prop] = newVal;
-                                        }
-                                    });
-                                }
 
-                                // add all Exception properties into the card for posterity
-                                $.extend(card, ex.newValues);
-                                ex.wasUsed = true;
-                                console.log('Marking ' + ex.title + ' as used.');
-                                card.matchTitle = createMatchTitle(card.title); // redo the matchTitle in case we just fixed the title
-                                card.fixedViaException = true;
-                            }
-                        }
-                    }
-                });
-            }
-
-        });// done processing exceptions
-
-        return cards;
-    }
-
-    function applyAdditionDeletionExceptions(cards, exceptions) {
-        // see if there are any Add New Card or Deleted Card cards and add those
-        if (exceptions !== undefined) {
-            var cardsToDelete = [];
-            $.each(exceptions, function (index, ex) {
-                if (ex.matchTitle === "add new card") {
                     // add all Exception properties into the card
                     var card = {};
-                    $.extend(card, ex.newValues);
-                    ex.wasUsed = true;
-                    console.log('Marking ' + ex.title + ' as used.');
-                    card.matchTitle = createMatchTitle(card.title); // redo the matchTitle in case we just fixed the title
-                    card.fixedViaException = true;
-                    card.addedViaException = true;
+                    _.extend(card, exception.newValues);
+                    exception.result.affectedCards = 1;
+                    console.log('Added new card: ' + exception.newValues.title);
+                    card.matchTitle = mtgGen.createMatchTitle(card.title);
+
+                    card.addedViaException = exception;
+
                     cards.push(card);
+
+                    // Rebuild indices otherwise future queries will be off.
+                    cards.forEach(function (card, index) { card.index = index; });
+
+                    return;
                 }
-                else if (ex.matchTitle === "delete card") {
-                    console.log('Card flagged for deletion:' + ex.newValues.title);
-                    cardsToDelete.push(createMatchTitle(ex.newValues.title));
-                    ex.wasUsed = true; // marking it true even though I'm not sure if it's used -- that's hard and I don't care right now
+
+                var where = exception.where;
+                if (where === undefined || where.length < 1) {
+                    exception.result.success = false;
+                    exception.result.error = "missing required where clause; cannot continue processing this exception";
+                    return;
                 }
+
+                // Add the from[*] the query engine expects.
+                // The card importer works on a single set at a time, so from[*] is always implied,
+                // but we don't require it in the import json for convenience.
+                var where = where.trim();
+                if (where.toLowerCase().indexOf("from[") < 0) {
+                    where = "from[*]?" + where;
+                }
+
+                var matchingCards = mtgGen.executeQuery(cards, null, where);
+
+                // If it's a Delete exception, delete any cards matching the query.
+                if (exception.delete === true) {
+                    cards = _.difference(cards, matchingCards);
+                    exception.result.deletedCards = matchingCards;
+                    exception.result.affectedCards = matchingCards.length;
+
+                    // Rebuild indices otherwise future queries will be off.
+                    cards.forEach(function (card, index) { card.index = index; });
+
+                    return;
+                }
+
+                // Otherwise it's an Update exception; apply the changes.
+
+                // Record all exceptions that weren't useful so we can clean up the exceptions file.
+                // REWRITE THIS:
+                //$.each(ex.newValues, function (prop, newVal) {
+                //    if (card.hasOwnProperty(prop) && card[prop] === newVal) {
+                //        console.log('Exception property already exists on card:' + card.matchTitle);
+                //        if (!ex.hasOwnProperty("redundantValues")) {
+                //            ex.redundantValues = {};
+                //        }
+                //        ex.redundantValues[prop] = newVal;
+                //    }
+                //});
+
+                // Remove all of the matching cards -- we'll add them back after we modify them.
+                cards = _.difference(cards, matchingCards);
+
+                // Apply the changes to all of the matching cards.
+                matchingCards.forEach(function (card) {
+                    _.extend(card, exception.newValues);
+                    card.matchTitle = mtgGen.createMatchTitle(card.title);
+                });
+                exception.result.modifiedCards = matchingCards;
+                exception.result.affectedCards = matchingCards.length;
+
+                // Add the modifed cards back in.
+                cards = _.union(cards, matchingCards);
             });
 
-            // if there are any cards flagged for deletion, delete them
-            if (cardsToDelete.length > 0) {
-                var cardsToKeep = [];
-                $.each(cards, function (index, card) {
-                    if (cardsToDelete.indexOf(card.matchTitle) === -1) {
-                        cardsToKeep.push(card);
-                    }
-                    else {
-                        console.log('Deleted card:' + card.title);
-                    }
-                });
-                cards = cardsToKeep;
-            }
+            // Sort the final result so they're in the order they were originally sent in (for debugging).
+            cards = _.sortBy(cards, "index");
         }
 
-        return cards;
+        // Return both the updated set of cards AND the modified exceptions (the latter for reporitng purposes).
+        var result = {};
+        result.cards = cards;
+        result.exceptions = exceptions;
+        return result;
     }
 
     function applyImagesToCards(cards, images) {
@@ -1199,11 +1182,11 @@ var cardDataImporter = (function (my, $) {
 
         url += '&Color=';
         switch (card.colour) {
-            case colours.multicolour:
+            case mtgGen.colours.multicolour:
                 url += 'Multicolor';
                 break;
-            case colours.other:
-            case colours.unknown:
+            case mtgGen.colours.other:
+            case mtgGen.colours.unknown:
                 url += 'Colorless';
                 break;
             default:
@@ -1258,8 +1241,7 @@ var cardDataImporter = (function (my, $) {
         getImagesFromMtgJsonData: getImagesFromMtgJsonData,
         getImagesFromCardsMainData: getImagesFromCardsMainData,
 
-        applyPropertyExceptions: applyPropertyExceptions,
-        applyAdditionDeletionExceptions: applyAdditionDeletionExceptions,
+        applyExceptions: applyExceptions,
         applyImagesToCards: applyImagesToCards
     };
 
