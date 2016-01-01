@@ -514,8 +514,24 @@ var mtgGen = (function (my, $) {
                     if (query2[2] === undefined || query2[2] == '') {
                         matchingCards = _.filter(sourceSet, function (card) { return !card.hasOwnProperty(query2[1]) || card[query2[1]] == query2[2]; });
                     }
+                        // if it's a boolean query, convert both sides to boolean and test
+                    else if (query2[2] === true || query2[2] === 'true' || query2[2] === false || query2[2] === 'false') {
+                        var boolQueryValue = JSON.parse(query2[2]);
+                        matchingCards = _.filter(sourceSet, function (card) {
+                            if (card[query2[1]] !== undefined) {
+                                if (boolQueryValue === true) {
+                                    return (card[query2[1]] === true || card[query2[1]] === 'true');
+                                }
+                                else {
+                                    return (card[query2[1]] === false || card[query2[1]] === 'false');
+                                }
+                            }
+                        });
+                    }
                     else {
-                        matchingCards = _.filter(sourceSet, function (card) { return card[query2[1]] && card[query2[1]] == query2[2]; });
+                        matchingCards = _.filter(sourceSet, function (card) {
+                            return card[query2[1]] !== undefined && card[query2[1]] == query2[2];
+                        });
                     }
                 }
                 result = _.pluck(matchingCards, 'index');
