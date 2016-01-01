@@ -238,7 +238,7 @@ var cardDataImporter = (function (my, $) {
                     exception.result = { success: false, error: "PROCESSING FAILURE: no result given at all for this exception!" };
                 }
                 if (exception.comment === true) {
-                    out += "<li style='color: gray'>#" + (index+1) + ": Comment; ignored.</li>";
+                    out += "<li style='color: gray'>#" + (index + 1) + ": Comment; ignored.</li>";
                 }
                 else if (exception.result.success === true) {
                     if (exception.result.affectedCards > 0) {
@@ -253,7 +253,12 @@ var cardDataImporter = (function (my, $) {
                     else if (exception.delete === true) {
                         var deletedCards = _.sortBy(exception.result.deletedCards, "title");
                         out += 'Deleted ' + deletedCards.length + " cards via query: " + exception.where;
-                        if (deletedCards.length > 0) {
+                        if (deletedCards.length > 20) {
+                            out += "<ul>";
+                            out += _.pluck(deletedCards, "title").join(", ");
+                            out += "</ul>";
+                        }
+                        else if (deletedCards.length > 0) {
                             out += "<ul>";
                             deletedCards.forEach(function (card) { out += "<li>" + card.title + "</li>"; });
                             out += "</ul>";
@@ -263,7 +268,12 @@ var cardDataImporter = (function (my, $) {
                         var modifiedCards = _.sortBy(exception.result.modifiedCards, "title");
                         out += 'Modified ' + modifiedCards.length + " cards via query: " + exception.where + "<br/>";
                         out += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New values: ' + JSON.stringify(exception.newValues);
-                        if (modifiedCards.length > 0) {
+                        if (modifiedCards.length > 20) {
+                            out += "<ul>";
+                            out += _.pluck(modifiedCards, "title").join(", ");
+                            out += "</ul>";
+                        }
+                        else if (modifiedCards.length > 0) {
                             out += "<ul>";
                             modifiedCards.forEach(function (card) { out += "<li>" + card.title + "</li>"; });
                             out += "</ul>";
@@ -271,7 +281,7 @@ var cardDataImporter = (function (my, $) {
                     }
                 }
                 else {
-                    out += "<li style='color: red'>#" + (index+1) + ": " + exception.result.error;
+                    out += "<li style='color: red'>#" + (index + 1) + ": " + exception.result.error;
                 }
                 out += "</li>";
             });
@@ -359,7 +369,7 @@ var cardDataImporter = (function (my, $) {
     }
 
     function getCardColourFromCard(card) {
-        if (card.hasOwnProperty('type') && card.type.length > 0 && card.type.trim().toLowerCase() === "land") {
+        if (card.hasOwnProperty('type') && card.type.length > 0 && card.type.toLowerCase().indexOf("land") > -1) {
             return mtgGen.colours.land.code;
         }
 
@@ -1037,7 +1047,7 @@ var cardDataImporter = (function (my, $) {
                 }
 
                 var where = exception.where;
-                if (where === undefined || where.length < 1) {
+                if (where === undefined) {
                     exception.result.success = false;
                     exception.result.error = "missing required where clause; cannot continue processing this exception";
                     return;
