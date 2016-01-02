@@ -42,7 +42,7 @@ var mtgGen = (function (my, $) {
         other: { sorder: 37, code: 'o', name: 'Other: Token/Pack-In/Marketing', colourless: true },
         unknown: { sorder: 97, code: '?', name: 'Unknown Colour', colourless: true },
     };
-    function getColourByCode(code) {
+    my.getColourByCode = function(code) {
         for (var colour in my.colours) {
             if (my.colours[colour].code == code) {
                 return my.colours[colour];
@@ -511,7 +511,7 @@ var mtgGen = (function (my, $) {
                     matchingCards = _.filter(sourceSet, function (card) { return card.hasOwnProperty('matchTitle') && card['matchTitle'] == matchTitle; });
                 }
                 else {
-                    if (query2[2] === undefined || query2[2] == '') {
+                    if (query2[2] === undefined || query2[2] === '') {
                         matchingCards = _.filter(sourceSet, function (card) { return !card.hasOwnProperty(query2[1]) || card[query2[1]] == query2[2]; });
                     }
                         // if it's a boolean query, convert both sides to boolean and test
