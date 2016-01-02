@@ -470,7 +470,7 @@ var mtgGen = (function (my, $) {
                     queryMatchTitles = _.map(queryTitles, function (title) { return my.createMatchTitle(title); });
                     clause = '^(' + queryMatchTitles.join('|') + ')$';
                     // TODO: wtf? I'm doing a creteMatchTitle() on card['matchTitle']??
-                    matchingCards = _.filter(sourceSet, function (card) { return card.hasOwnProperty('matchTitle') && my.s(card['matchTitle']).match(clause); });
+                    matchingCards = _.filter(sourceSet, function (card) { return card.hasOwnProperty('matchTitle') && my.createMatchTitle(card['matchTitle']).match(clause); });
                 }
                 else {
                     clause = clause.toLowerCase();
