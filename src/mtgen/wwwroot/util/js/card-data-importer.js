@@ -1032,7 +1032,8 @@ var cardDataImporter = (function (my, $) {
             for (var i = 0; i < exceptions.length; i++) {
                 var exception = exceptions[i];
 
-                if (exception._comments !== undefined && Object.keys(exception).length === 1) {
+                if (Object.keys(exception).length === 1
+                    && (exception._comments !== undefined || exception._comment !== undefined)) {
                     exception.comment = true;
                     continue; // just a comment node; ignore
                 }
