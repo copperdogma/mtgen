@@ -1,0 +1,40 @@
+﻿[
+  {
+    "_comments": [
+      "add a new card = add:true, newValues {}",
+      "delete a card  = delete:true, where",
+      "update card(s) = where, newValues {}"
+    ]
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "New Card Title",
+      "src": "src here",
+      "etc": "etc"
+    }
+  },
+  {
+    "where": "rarity=(m|r)",
+    "delete": true
+  },
+  {
+    "where": "title='Comparative Anaylsis'",
+    "newValues": {
+      "title": "CAPPYBARA title"
+    }
+  },
+  {
+    "where": "type='Creature'",
+    "newValues": {
+      "myNewType": "new type thing here",
+      "power": 99
+    }
+  },
+  {
+    "where": "title='matches no cards'",
+    "newValues": {
+      "valueShouldNotBeApplied": "because where clause matched no cards"
+    }
+  }
+]
