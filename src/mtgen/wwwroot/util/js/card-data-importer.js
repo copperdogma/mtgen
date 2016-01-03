@@ -1115,6 +1115,8 @@ var cardDataImporter = (function (my, $) {
                 // Remove all of the matching cards -- we'll add them back after we modify them.
                 cards = _.difference(cards, matchingCards);
 
+                var replacementTokenRegex = /{{(.*?)}}/g;
+
                 // Apply the changes to all of the matching cards.
                 for (var j = 0; j < matchingCards.length; j++) {
                     var card = matchingCards[j];
@@ -1122,12 +1124,15 @@ var cardDataImporter = (function (my, $) {
                     // e.g.: "originalTitle": "{{title}}",
                     for (var prop in exception.newValues) {
                         var propValue = exception.newValues[prop];
-                        if (propValue !== undefined && (typeof propValue === "string") && propValue.indexOf("{{") === 0) {
-                            var existingPropName = propValue.replace("{{", "").replace("}}", "");
-                            if (card[existingPropName] !== undefined) {
-                                exception.newValues[prop] = card[existingPropName];
+                        var newPropValue = propValue;
+                        var token;
+                        while ((token = replacementTokenRegex.exec(propValue)) !== null) {
+                            var propName = token[1];
+                            if (card[propName] !== undefined) {
+                                newPropValue = newPropValue.replace(token[0], card[propName]);
                             }
                         }
+                        exception.newValues[prop] = newPropValue;
                     }
 
                     // Apply new values from exception.
