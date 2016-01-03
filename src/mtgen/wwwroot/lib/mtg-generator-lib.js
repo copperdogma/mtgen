@@ -42,7 +42,7 @@ var mtgGen = (function (my, $) {
         other: { sorder: 37, code: 'o', name: 'Other: Token/Pack-In/Marketing', colourless: true },
         unknown: { sorder: 97, code: '?', name: 'Unknown Colour', colourless: true },
     };
-    my.getColourByCode = function(code) {
+    my.getColourByCode = function (code) {
         for (var colour in my.colours) {
             if (my.colours[colour].code == code) {
                 return my.colours[colour];
@@ -65,7 +65,7 @@ var mtgGen = (function (my, $) {
         special: { sorder: 5, code: 's', name: 'Special' },
         unknown: { sorder: 97, code: '?', name: 'Unknown' },
     };
-    function getRarityByCode(code) {
+    my.getRarityByCode = function (code) {
         for (var rarity in my.rarities) {
             if (my.rarities[rarity].code == code) {
                 return my.rarities[rarity];
@@ -311,8 +311,8 @@ var mtgGen = (function (my, $) {
                     card.matchTitle = my.createMatchTitle(card.title);
                     //console.log(card.title,card.matchTitle);
 
-                    card.colourOrder = getColourByCode(card.colour).sorder;
-                    card.rarityOrder = getRarityByCode(card.rarity).sorder;
+                    card.colourOrder = my.getColourByCode(card.colour).sorder;
+                    card.rarityOrder = my.getRarityByCode(card.rarity).sorder;
                     var cardType = getCardTypeByName(card.type);
                     card.typeCode = cardType.code;
                     card.typeOrder = cardType.sorder;
@@ -409,7 +409,7 @@ var mtgGen = (function (my, $) {
         var packDefs = [];
         if (defs) {
             _.each(defs, function (def) {
-                var defSet = executeQuery(my.cards, packDefs, def.query);
+                var defSet = my.executeQuery(my.cards, packDefs, def.query);
                 packDefs[def.defName] = defSet;
                 if (defSet.length < 1) {
                     console.warn("WARNING: createPackDefs(): no results from pack definition '" + def.defName + "': " + def.query);
@@ -656,7 +656,7 @@ var mtgGen = (function (my, $) {
         var isOrderImportant;
         _.each(cardQueries, function (cardDef) {
             isOrderImportant = cardDef.inOrder && cardDef.inOrder === true;
-            var possibleCards = executeQuery(my.cards, my.packDefs, cardDef.query, isOrderImportant);
+            var possibleCards = my.executeQuery(my.cards, my.packDefs, cardDef.query, isOrderImportant);
 
             var takeCount = 1;
             var take = cardDef.query.match(/take\[(.+)\]>/i);
@@ -826,7 +826,7 @@ var mtgGen = (function (my, $) {
         var cardSets = this.sortIntoArray(groupedCardSets, my.colours);
         _.each(cardSets, function (cardSet) {
             var set = _.sortBy(cardSet, 'matchTitle');
-            var colour = getColourByCode(set[0].colour);
+            var colour = my.getColourByCode(set[0].colour);
             set.setDesc = colour.name;
             set.sortOrder = my.sortOrders.name;
             sortedSets.push(set);
@@ -857,7 +857,7 @@ var mtgGen = (function (my, $) {
         var cardSets = this.sortIntoArray(groupedCardSets, my.rarities);
         _.each(cardSets, function (cardSet) {
             var set = _.sortBy(cardSet, 'matchTitle');
-            var colour = getRarityByCode(set[0].rarity);
+            var colour = my.getRarityByCode(set[0].rarity);
             set.setDesc = colour.name;
             set.sortOrder = my.sortOrders.name;
             sortedSets.push(set);
