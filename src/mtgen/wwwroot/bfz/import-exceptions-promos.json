@@ -1,0 +1,70 @@
+﻿[
+  {
+    "_comments": [
+      "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+    ]
+  },
+  {
+    "_comment": "add promo:false to ALL cards with the intention of deleting them later",
+    "where": "",
+    "newValues": {
+      "promo": false
+    }
+  },
+  {
+    "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+    "where": "title='Blight Herder",
+    "newValues": {
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_eoPGHZmSnV.png",
+      "num": "002 Launch",
+      "promo": true,
+      "includedReason": "Launch Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "where": "title='Ruinous Path'",
+    "newValues": {
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_FS2C2dohkZ.png",
+      "num": "123 Buy-a-Box",
+      "promo": true,
+      "includedReason": "Buy-a-Box Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "where": "title='Radiant Flames'",
+    "newValues": {
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_xiUxhsY6RB.png",
+      "num": "151 Game Day",
+      "promo": true,
+      "includedReason": "Game Day Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "where": "title='Stasis Snare'",
+    "newValues": {
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_1eU3EcMxE9.png",
+      "num": "050 Game Day",
+      "promo": true,
+      "includedReason": "Game Day Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "where": "title='Scythe Leopard'",
+    "newValues": {
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_Eh2kcthqFa.png",
+      "num": "188 Gift Box",
+      "promo": true,
+      "includedReason": "Gift Box Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "_comment": "delete all cards that still have promo=false, which leaves just our modified promo cards",
+    "delete": true,
+    "where": "promo=false"
+  }
+]
