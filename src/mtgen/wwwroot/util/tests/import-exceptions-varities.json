@@ -19,22 +19,33 @@
     "delete": true
   },
   {
-    "where": "title='Comparative Anaylsis'",
+    "where": "title='Comparative Anaylsis",
     "newValues": {
       "title": "CAPPYBARA title"
     }
   },
   {
-    "where": "type='Creature'",
+    "where": "type='Creature",
     "newValues": {
       "myNewType": "new type thing here",
       "power": 99
     }
   },
   {
-    "where": "title='matches no cards'",
+    "where": "title='matches no cards",
     "newValues": {
       "valueShouldNotBeApplied": "because where clause matched no cards"
+    }
+  },
+  {
+    "_comment": "multiple token replacements",
+    "where": "title='Endbringer",
+    "newValues": {
+      "src": "http://media.wizards.com/2015/ogw_239nCi30ks3/en_t3YL46BbHv.png",
+      "num": "{{num}} and {{title}} P Launch",
+      "promo": true,
+      "includedReason": "Launch Promo",
+      "usableForDeckBuilding": false
     }
   }
 ]
