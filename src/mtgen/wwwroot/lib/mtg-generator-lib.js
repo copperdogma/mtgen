@@ -36,9 +36,9 @@ var mtgGen = (function (my, $) {
         red: { sorder: 4, code: 'r', name: 'Red' },
         green: { sorder: 5, code: 'g', name: 'Green' },
         multicolour: { sorder: 6, code: 'm', name: 'Multicolour' },
+        colorless: { sorder: 10, code: 'c', name: 'Colourless', colourless: true },
         artifact: { sorder: 17, code: 'a', name: 'Artifact', colourless: true },
         land: { sorder: 27, code: 'l', name: 'Land', colourless: true },
-        colorless: { sorder: 30, code: 'c', name: 'Colourless', colourless: true },
         other: { sorder: 37, code: 'o', name: 'Other: Token/Pack-In/Marketing', colourless: true },
         unknown: { sorder: 97, code: '?', name: 'Unknown Colour', colourless: true },
     };
