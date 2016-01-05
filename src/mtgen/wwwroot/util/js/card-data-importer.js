@@ -364,74 +364,23 @@ var cardDataImporter = (function (my, $) {
     }
 
     function getCardColourFromCard(card) {
-        if (card.hasOwnProperty('type') && card.type.length > 0 && card.type.toLowerCase().indexOf("land") > -1) {
-            return mtgGen.colours.land.code;
+        if (card.type !== undefined) {
+            if (card.type.toLowerCase().indexOf("land") > -1) { return mtgGen.colours.land.code; }
+            if (card.type.toLowerCase().indexOf("artifact") > -1) { return mtgGen.colours.artifact.code; }
         }
 
-        // derived from casting cost
-        var cardColours = card.cost.toLowerCase().replace(/{|[0-9]/g, "").replace(/}/g, " ").trim().replace(/ /g, '').split("");
-        var arrayUnique = function (a) {
-            return a.reduce(function (p, c) {
-                if (p.indexOf(c) < 0) p.push(c);
-                return p;
-            }, []);
-        };
-        var uniqueColours = arrayUnique(cardColours);
-        var uniqueColoursString = uniqueColours.join('');
+        // Derived from casting cost:
+        // Only keep card colours (bcgkruw), then collapse into the colour-specific counts.
+        var cardColours = card.cost.toLowerCase().replace(/[^bcgkruw]/g, "").split("");
+        var uniqueColours = _.toArray(_.countBy(cardColours, function (colour) { return colour; }));
 
-        var colourCount = 0;
-        var uniqueColourIndex = 0; // used only if the card ends up being single colour
-        var uniqueColourType = ""; // used only if the card ends up being single colour
-        if (uniqueColoursString.indexOf('w') > -1) { colourCount++; uniqueColourIndex = 1; uniqueColourType = "w"; }
-        if (uniqueColoursString.indexOf('u') > -1) { colourCount++; uniqueColourIndex = 2; uniqueColourType = "u"; }
-        if (uniqueColoursString.indexOf('b') > -1) { colourCount++; uniqueColourIndex = 3; uniqueColourType = "b"; }
-        if (uniqueColoursString.indexOf('r') > -1) { colourCount++; uniqueColourIndex = 4; uniqueColourType = "r"; }
-        if (uniqueColoursString.indexOf('g') > -1) { colourCount++; uniqueColourIndex = 5; uniqueColourType = "g"; }
-
-        // colourTypes from GatheringMagic:
-        //	w = white
-        //	u = blue
-        //	b = black
-        //	r = red
-        //	g = green
-        //	m = multi-colour
-        //	c = colourless
         var finalColour = '';
-        switch (colourCount) {
-            case 0:
-                // colourless - determine sub-type
-                if (card.colour == 'c') {
-                    var cardType = card.type.toLowerCase();
-                    // manually determine colour because data card source didn't do it
-                    if (cardType.indexOf('artifact') > -1) {
-                        finalColour = mtgGen.colours.artifact.code;
-                    }
-                    else if (cardType.indexOf('land') > -1) {
-                        finalColour = mtgGen.colours.land.code;
-                    }
-                    else {
-                        // I THINK with the new MTG Savlation source I'm supposed to be parsing card colour,
-                        // but we'll just see how well it does with pure casting cost + card type guessing...
-                        //console.log('Could not identify colour from "' + card.colour + '" on card: ' + card.title + '. Set to Other Colourless. Usually check the type (which we have already checked to be not artifact or land): ' + card.type);
-                        finalColour = mtgGen.colours.colorless.code;
-                    }
-                }
-                else {
-                    var nativeCardColour = '';
-                    if (card.hasOwnProperty('colour')) {
-                        nativeCardColour = card.colour;
-                    }
-                    else if (card.hasOwnProperty('color')) {
-                        nativeCardColour = card.color; // I made this one up.. does anything have this?
-                    }
-                    else if (card.hasOwnProperty('colorIdentity') && card.colorIdentity.length > 0) {
-                        nativeCardColour = card.colorIdentity[0].toLowerCase(); // mtgjson if casting cost is 0
-                    }
-                    finalColour = mtgGen.getColourByCode(nativeCardColour).code; // should result in a, l, o, or ?
-                }
+        switch (uniqueColours.length) {
+            case 0: // 0 unique colours = colourless
+                finalColour = mtgGen.colours.generic.code;
                 break;
             case 1: // single-colour, as determined above
-                finalColour = uniqueColourType;
+                finalColour = cardColours[0];
                 break;
             default: // multi-colour
                 finalColour = mtgGen.colours.multicolour.code;
@@ -576,6 +525,7 @@ var cardDataImporter = (function (my, $) {
 
             // derived from casting cost
             card.colour = getCardColourFromCard(card);
+            //console.log(card.colour + ": " + card.cost + ": " + card.type + ": " + card.subtype + ": " + card.title);
 
             var cnum = el.find('.t-spoiler-artist');
             if (cnum.length > 0) {
