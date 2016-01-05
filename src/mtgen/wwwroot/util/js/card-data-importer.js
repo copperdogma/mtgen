@@ -1,4 +1,6 @@
 ﻿/*
+4-Jan-2016: Rewrote getCardColourFromCard() -- MUCH simpler and now uses new (as of OGW) generic (x) and colourless (c) mana types
+
     Typical url: http://www.mtgsalvation.com/printable-gatecrash-spoiler.html
 
     Typical card from Gathering Magic (defunct):

@@ -5,6 +5,7 @@ Shared/base functions.
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
+4-Jan-2016: Renamed "colourless" (c) mana to "generic" (g) (new in OGW set)
 27-Dec-2015: Broke out this file from mtg-generator.js.
 
 */
