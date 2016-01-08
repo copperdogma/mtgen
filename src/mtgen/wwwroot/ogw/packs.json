@@ -1,0 +1,131 @@
+{
+  "defs": [
+    {
+      "defName": "ogw",
+      "query": "from[*]?set='ogw"
+    },
+    {
+      "defName": "exp",
+      "query": "from[*]?set='exp"
+    },
+    {
+      "defName": "ogw-main",
+      "query": "from[ogw]-from[ogw]?type=(Marketing|Basic Land)-from[ogw]?token=true-from[ogw]?promo=true-from[ogw]?expeditions=true"
+    },
+    {
+      "defName": "ogw-foils",
+      "query": "from[ogw-main]"
+    },
+    {
+      "defName": "ogw-foils-expeditions",
+      "query": "from[exp]?pairedSet='ogw"
+    },
+    {
+      "defName": "ogw-promo",
+      "query": "from[ogw]?promo=true"
+    }
+
+  ],
+  "packs": [
+    {
+      "packName": "ogw-all-cards",
+      "packDesc": "Oath of the Gatewatch: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[ogw]" }
+      ]
+    },
+    {
+      "packName": "ogw-standard",
+      "packDesc": "Oath of the Gatewatch: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[9]>from[ogw-main]?rarity='c" },
+        {
+          "querySet": [
+            {
+              "percent": 75,
+              "query": "from[ogw-main]?rarity='c"
+            },
+            {
+              "percent": 24,
+              "query": "from[ogw-foils]",
+              "canBeDuplicate": true,
+              "setValues": { "foil": true },
+              "_comment": "25% chance rare is a foil of any card, including land"
+            },
+            {
+              "percent": 1,
+              "query": "from[ogw-foils-expeditions]",
+              "setValues": { "foil": true },
+              "_comment": "mythic rare foil"
+            }
+          ]
+        },
+        { "query": "take[3]>from[ogw-main]?rarity='u" },
+        {
+          "querySet": [
+            {
+              "percent": 87.5,
+              "query": "from[ogw-main]?rarity='r"
+            },
+            {
+              "percent": 12.5,
+              "query": "from[ogw-main]?rarity='m",
+              "_comment": "rare=7/8, mythicRare=1/8"
+            }
+          ]
+        },
+        { "query": "from[ogw]?type='Basic Land" },
+        { "query": "from[ogw]?token=true-from[ogw]?promo=true" }
+      ]
+    },
+    {
+      "packName": "ogw-promos",
+      "packDesc": "Oath of the Gatewatch: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[ogw-promo]" }
+      ]
+    },
+    {
+      "packName": "ogw-prerelease-promo-packins",
+      "packDesc": "Oath of the Gatewatch: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "percent": 87.5,
+              "query": "from[ogw-main]?rarity='r'",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": 12.5,
+              "query": "from[ogw-main]?rarity='m'",
+              "setValues": { "foil": true },
+              "_comment": "rare=7/8, mythicRare=1/8"
+            }
+          ]
+        },
+        { "query": "take[1]>from[ogw-promo]?type='Life Counter'" },
+        { "query": "from[ogw-promo]?title='Deck Box'" },
+        { "query": "from[ogw-promo]?title='Deck Box Divider'" },
+        { "query": "from[ogw-promo]?title='Deckbuilding Advice Insert'" }
+
+      ]
+    },
+    {
+      "packName": "ogw-prerelease-promos",
+      "packDesc": "Oath of the Gatewatch: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[ogw-promo]?includedReason='Prerelease Promo'" }
+      ]
+    }
+
+  ]
+}

@@ -1,0 +1,27 @@
+﻿@using mtgen.ViewModels;
+@{
+    var set = new mtgen.ViewModels.Set()
+    {
+        Code = "ogw",
+        Name = "Oath of the Gatewatch",
+        CreatedDate = new DateTime(2016, 1, 2),
+        CardCount = 184,
+        StartProductName = "ogw-all-cards"
+    };
+
+    set.Updates = new List<Update>()
+    {
+        //new Update() {
+        //    UpdateDate = new DateTime(2015,10,9),
+        //    HtmlString = "Morning: Added prerelease pack-ins."
+        //}
+    };
+
+    //set.Incomplete = true;
+
+    set.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json",
+        "../exp/cardsMain.json" };
+    set.PackFiles = new List<string>() { "packs.json" };
+
+    ViewBag.Set = set;
+}
