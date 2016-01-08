@@ -1,0 +1,941 @@
+﻿[
+  {
+    "_comments": [
+      "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false",
+      "There were two sets of Basic Land cards for BFZ: regular and full art, and for each card num there was one of each.",
+      "The basic import takes the full art. These exceptions are needed to add the half-art (regular) cards."
+    ]
+  },
+  {
+    "_comment": "add promo:false to ALL cards with the intention of deleting them later",
+    "where": "",
+    "newValues": {
+      "promo": false
+    }
+  },
+  {
+    "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+    "where": "title='Blight Herder",
+    "newValues": {
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_eoPGHZmSnV.png",
+      "num": "002 Launch",
+      "promo": true,
+      "includedReason": "Launch Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "where": "title='Ruinous Path",
+    "newValues": {
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_FS2C2dohkZ.png",
+      "num": "123 Buy-a-Box",
+      "promo": true,
+      "includedReason": "Buy-a-Box Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "where": "title='Radiant Flames",
+    "newValues": {
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_xiUxhsY6RB.png",
+      "num": "151 Game Day",
+      "promo": true,
+      "includedReason": "Game Day Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "where": "title='Stasis Snare",
+    "newValues": {
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_1eU3EcMxE9.png",
+      "num": "050 Game Day",
+      "promo": true,
+      "includedReason": "Game Day Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "where": "title='Scythe Leopard",
+    "newValues": {
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_Eh2kcthqFa.png",
+      "num": "188 Gift Box",
+      "promo": true,
+      "includedReason": "Gift Box Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "_comment": "delete all cards that still have promo=false, which leaves just our modified promo cards",
+    "delete": true,
+    "where": "promo=false"
+  },
+
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/bfz-spindown-life-counter-white.png",
+      "set": "bfz",
+      "title": "White Spindown Life Counter",
+      "colour": "o",
+      "num": "001 Counter",
+      "rarity": "c",
+      "type": "Life Counter",
+      "promo": "true",
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/bfz-spindown-life-counter-blue.png",
+      "set": "bfz",
+      "title": "Blue Spindown Life Counter",
+      "colour": "o",
+      "num": "002 Counter",
+      "rarity": "c",
+      "type": "Life Counter",
+      "promo": "true",
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/bfz-spindown-life-counter-black.png",
+      "set": "bfz",
+      "title": "Black Spindown Life Counter",
+      "colour": "o",
+      "num": "003 Counter",
+      "rarity": "c",
+      "type": "Life Counter",
+      "promo": "true",
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/bfz-spindown-life-counter-red.png",
+      "set": "bfz",
+      "title": "Red Spindown Life Counter",
+      "colour": "o",
+      "num": "004 Counter",
+      "rarity": "c",
+      "type": "Life Counter",
+      "promo": "true",
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/bfz-spindown-life-counter-green.png",
+      "set": "bfz",
+      "title": "Green Spindown Life Counter",
+      "colour": "o",
+      "num": "005 Counter",
+      "rarity": "c",
+      "type": "Life Counter",
+      "promo": "true",
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/bfz-deckbuilding-info.jpg",
+      "src_large": "http://mtgen.net/cards/bfz-deckbuilding-info-lg.jpg",
+      "height": 370,
+      "width": 515,
+      "set": "bfz",
+      "title": "Deckbuilding Advice Insert",
+      "colour": "o",
+      "num": "006 Insert",
+      "rarity": "c",
+      "type": "Insert",
+      "promo": "true",
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/bfz-prerelease-deck-box.png",
+      "set": "bfz",
+      "title": "Deck Box",
+      "colour": "o",
+      "num": "007 Deck Box",
+      "rarity": "c",
+      "type": "Insert",
+      "promo": "true",
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/bfz-prerelease-card-divider.png",
+      "set": "bfz",
+      "title": "Deck Box Divider",
+      "colour": "o",
+      "num": "008 Deck Box Divider",
+      "rarity": "c",
+      "type": "Insert",
+      "promo": "true",
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+
+  {
+    "add": true,
+    "newValues": {
+      "title": "Swamp",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_QpyrFWWhiX.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Swamp",
+      "colour": "l",
+      "num": "260"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Swamp",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_fZbVfLvWys.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Swamp",
+      "colour": "l",
+      "num": "260"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Swamp",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_s9RbAUSUyf.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Swamp",
+      "colour": "l",
+      "num": "261"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Swamp",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_6EfBf7sTPU.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Swamp",
+      "colour": "l",
+      "num": "261"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Swamp",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_kYu8sfXPCC.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Swamp",
+      "colour": "l",
+      "num": "262"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Swamp",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_LLfcNjDOGy.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Swamp",
+      "colour": "l",
+      "num": "262"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Swamp",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_1hbShWPYYr.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Swamp",
+      "colour": "l",
+      "num": "263"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Swamp",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_d1Bnw6GKOm.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Swamp",
+      "colour": "l",
+      "num": "263"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Swamp",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_L6bTN7cOC1.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Swamp",
+      "colour": "l",
+      "num": "264"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Swamp",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_ZssiHPZHle.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Swamp",
+      "colour": "l",
+      "num": "264"
+    }
+  },
+
+  {
+    "add": true,
+    "newValues": {
+      "title": "Forest",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_Iydy3NiZEy.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Forest",
+      "colour": "l",
+      "num": "270",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Forest",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_6XSC9VME1v.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Forest",
+      "colour": "l",
+      "num": "270",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Forest",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_b3kGlUA7Dt.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Forest",
+      "colour": "l",
+      "num": "271",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Forest",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_lW4q89l6fF.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Forest",
+      "colour": "l",
+      "num": "271",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Forest",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_hElEHv0R8M.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Forest",
+      "colour": "l",
+      "num": "272",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Forest",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_GiziGvthM4.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Forest",
+      "colour": "l",
+      "num": "272",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Forest",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_Bmq1VhhBCr.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Forest",
+      "colour": "l",
+      "num": "273",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Forest",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_LQVVsBBW00.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Forest",
+      "colour": "l",
+      "num": "273",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Forest",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_6j6v0NUkqD.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Forest",
+      "colour": "l",
+      "num": "274",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Forest",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_XujyzHBsjG.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Forest",
+      "colour": "l",
+      "num": "264",
+      "addedViaException": true
+    }
+  },
+
+  {
+    "add": true,
+    "newValues": {
+      "title": "Island",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_Ti8tyhSPNv.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Island",
+      "colour": "l",
+      "num": "255",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Island",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_vS5zoi29bs.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Island",
+      "colour": "l",
+      "num": "255",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Island",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_KK0EaAfYiL.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Island",
+      "colour": "l",
+      "num": "256",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Island",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_csFEOysirf.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Island",
+      "colour": "l",
+      "num": "256",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Island",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_bxvK4UWGCj.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Island",
+      "colour": "l",
+      "num": "257",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Island",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_3dSFG9fO31.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Island",
+      "colour": "l",
+      "num": "257",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Island",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_LjCJX2nJMI.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Island",
+      "colour": "l",
+      "num": "258",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Island",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_u3XoS2L7pO.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Island",
+      "colour": "l",
+      "num": "258",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Island",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_fiFRpsNpNM.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Island",
+      "colour": "l",
+      "num": "259",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Island",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_FmxRrGSFTQ.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Island",
+      "colour": "l",
+      "num": "259",
+      "addedViaException": true
+    }
+  },
+
+  {
+    "add": true,
+    "newValues": {
+      "title": "Mountain",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_iFQlzL9IRe.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Mountain",
+      "colour": "l",
+      "num": "265",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Mountain",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_L4AuWrczS8.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Mountain",
+      "colour": "l",
+      "num": "265",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Mountain",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_IXZ13eDCrd.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Mountain",
+      "colour": "l",
+      "num": "266",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Mountain",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_MzMXDLwomS.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Mountain",
+      "colour": "l",
+      "num": "266",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Mountain",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_RfL1MEjowz.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Mountain",
+      "colour": "l",
+      "num": "267",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Mountain",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_qhKDEk122J.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Mountain",
+      "colour": "l",
+      "num": "267",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Mountain",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_KLN9B6w7S5.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Mountain",
+      "colour": "l",
+      "num": "268",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Mountain",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_Y9uIgZZj6P.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Mountain",
+      "colour": "l",
+      "num": "268",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Mountain",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_ILGlLeswyB.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Mountain",
+      "colour": "l",
+      "num": "269",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Mountain",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_KX5Za58qMv.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Mountain",
+      "colour": "l",
+      "num": "269",
+      "addedViaException": true
+    }
+  },
+
+  {
+    "add": true,
+    "newValues": {
+      "title": "Plains",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_wZVwmRbywR.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Plains",
+      "colour": "l",
+      "num": "250",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Plains",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_Lkje09e5Lk.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Plains",
+      "colour": "l",
+      "num": "250",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Plains",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_5aQmCl9vXD.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Plains",
+      "colour": "l",
+      "num": "251",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Plains",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_ijnL5loQw2.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Plains",
+      "colour": "l",
+      "num": "251",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Plains",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_TQmjNuGh11.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Plains",
+      "colour": "l",
+      "num": "252",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Plains",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_s2Vt3RlK6M.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Plains",
+      "colour": "l",
+      "num": "252",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Plains",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_0Jx3BpYJ6r.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Plains",
+      "colour": "l",
+      "num": "253",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Plains",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_Q7VV0CSBRo.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Plains",
+      "colour": "l",
+      "num": "253",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Plains",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_v816mBGkbK.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Plains",
+      "colour": "l",
+      "num": "254",
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Plains",
+      "src": "http://media.wizards.com/2015/bfz_8asdifk2Sk2cs/en_Eo5IaxtJTm.png",
+      "set": "bfz",
+      "cost": "",
+      "rarity": "b",
+      "type": "Basic Land",
+      "subtype": "Plains",
+      "colour": "l",
+      "num": "253",
+      "addedViaException": true
+    }
+  }
+]

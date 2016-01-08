@@ -1,102 +1,131 @@
 {
-    "defs": [
-        {
-            "defName": "bfz",
-            "query": "from[*]?set='bfz'"
-        },
-        {
-            "defName": "bfz-main",
-            "query": "from[bfz]-from[bfz]?type=(Marketing|Basic Land)-from[bfz]?token=true-from[bfz]?promo=true-from[bfz]?expeditions=true"
-        },
-        {
-            "defName": "bfz-foils",
-            "query": "from[bfz-main]"
-        },
-        {
-            "defName": "bfz-foils-expeditions",
-            "query": "from[bfz]?expeditions=true"
-        },
-        {
-            "defName": "bfz-promo",
-            "query": "from[bfz]?promo=true"
-        }
+  "defs": [
+    {
+      "defName": "bfz",
+      "query": "from[*]?set='bfz"
+    },
+    {
+      "defName": "exp",
+      "query": "from[*]?set='exp"
+    },
+    {
+      "defName": "bfz-main",
+      "query": "from[bfz]-from[bfz]?type=(Marketing|Basic Land)-from[bfz]?token=true-from[bfz]?promo=true-from[bfz]?expeditions=true"
+    },
+    {
+      "defName": "bfz-foils",
+      "query": "from[bfz-main]"
+    },
+    {
+      "defName": "bfz-foils-expeditions",
+      "query": "from[exp]?pairedSet='bfz"
+    },
+    {
+      "defName": "bfz-promo",
+      "query": "from[bfz]?promo=true"
+    }
 
-    ],
-    "packs": [
+  ],
+  "packs": [
+    {
+      "packName": "bfz-all-cards",
+      "packDesc": "Battle for Zendikar: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[bfz]" }
+      ]
+    },
+    {
+      "packName": "bfz-standard",
+      "packDesc": "Battle for Zendikar: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[9]>from[bfz-main]?rarity='c" },
         {
-            "packName": "bfz-all-cards",
-            "packDesc": "Battle for Zendikar: All Cards",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[bfz]" }
-            ]
+          "querySet": [
+            {
+              "percent": 75,
+              "query": "from[bfz-main]?rarity='c"
+            },
+            {
+              "percent": 24,
+              "query": "from[bfz-foils]",
+              "canBeDuplicate": true,
+              "setValues": { "foil": true },
+              "_comment": "25% chance rare is a foil of any card, including land"
+            },
+            {
+              "percent": 1,
+              "query": "from[bfz-foils-expeditions]",
+              "setValues": { "foil": true },
+              "_comment": "mythic rare foil"
+            }
+          ]
         },
+        { "query": "take[3]>from[bfz-main]?rarity='u" },
         {
-            "packName": "bfz-standard",
-            "packDesc": "Battle for Zendikar: Standard Booster",
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[bfz]?type='Basic Land'" },
-                { "query": "take[9]>from[bfz-main]?rarity='c'" },
-                {
-                    "querySet": [
-                        { "percent": 75, "query": "from[bfz-main]?rarity='c'" },
-                        { "percent": 24, "query": "from[bfz-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" },
-                        { "percent": 1, "query": "from[bfz-foils-expeditions]", "setValues": { "foil": true }, "_comment": "mythic rare foil" }
-                    ]
-                },
-                { "query": "take[3]>from[bfz-main]?rarity='u'" },
-                {
-                    "querySet": [
-                        { "percent": 87.5, "query": "from[bfz-main]?rarity='r'" },
-                        { "percent": 12.5, "query": "from[bfz-main]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" }
-                    ]
-                },
-                {
-                    "querySet": [
-                        { "percent": 50, "query": "from[bfz]?type='Marketing'" },
-                        { "percent": 50, "query": "from[bfz]?token=true-from[bfz]?promo=true" }
-                    ]
-                }
-            ]
+          "querySet": [
+            {
+              "percent": 87.5,
+              "query": "from[bfz-main]?rarity='r"
+            },
+            {
+              "percent": 12.5,
+              "query": "from[bfz-main]?rarity='m",
+              "_comment": "rare=7/8, mythicRare=1/8"
+            }
+          ]
         },
+        { "query": "from[bfz]?type='Basic Land" },
+        { "query": "from[bfz]?token=true-from[bfz]?promo=true" }
+      ]
+    },
+    {
+      "packName": "bfz-promos",
+      "packDesc": "Battle for Zendikar: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[bfz-promo]" }
+      ]
+    },
+    {
+      "packName": "bfz-prerelease-promo-packins",
+      "packDesc": "Battle for Zendikar: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
         {
-            "packName": "bfz-promos",
-            "packDesc": "Battle for Zendikar: Promos",
-            "isGenerated": false,
-            "includeWithUserCards": false,
-            "cards": [
-                { "query": "take[*]>from[bfz-promo]" }
-            ]
+          "querySet": [
+            {
+              "percent": 87.5,
+              "query": "from[bfz-main]?rarity='r'",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": 12.5,
+              "query": "from[bfz-main]?rarity='m'",
+              "setValues": { "foil": true },
+              "_comment": "rare=7/8, mythicRare=1/8"
+            }
+          ]
         },
-        {
-            "packName": "bfz-prerelease-promo-packins",
-            "packDesc": "Battle for Zendikar: Prerelease Packins",
-            "isGenerated": false,
-            "includeWithUserCards": false,
-            "cards": [
-                {
-                    "querySet": [
-                        { "percent": 87.5, "query": "from[bfz-main]?rarity='r'", "setValues": { "foil": true } },
-                        { "percent": 12.5, "query": "from[bfz-main]?rarity='m'", "setValues": { "foil": true }, "_comment": "rare=7/8, mythicRare=1/8" }
-                    ]
-                },
-                { "query": "take[1]>from[bfz-promo]?type='Life Counter'" },
-                { "query": "from[bfz-promo]?title='Deck Box'" },
-                { "query": "from[bfz-promo]?title='Deck Box Divider'" },
-                { "query": "from[bfz-promo]?title='Deckbuilding Advice Insert'" }
-            
-            ]
-        },
-        {
-            "packName": "bfz-prerelease-promos",
-            "packDesc": "Battle for Zendikar: Prerelease Promos",
-            "isGenerated": false,
-            "includeWithUserCards": false,
-            "cards": [
-                { "query": "take[*]>from[bfz-promo]?includedReason='Prerelease Promo'" }
-            ]
-        }
+        { "query": "take[1]>from[bfz-promo]?type='Life Counter'" },
+        { "query": "from[bfz-promo]?title='Deck Box'" },
+        { "query": "from[bfz-promo]?title='Deck Box Divider'" },
+        { "query": "from[bfz-promo]?title='Deckbuilding Advice Insert'" }
 
-    ]
+      ]
+    },
+    {
+      "packName": "bfz-prerelease-promos",
+      "packDesc": "Battle for Zendikar: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[bfz-promo]?includedReason='Prerelease Promo'" }
+      ]
+    }
+
+  ]
 }
