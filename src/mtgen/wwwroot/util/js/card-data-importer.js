@@ -1011,7 +1011,7 @@ var cardDataImporter = (function (my, $) {
                     console.log('Added new card: ' + exception.newValues.title);
                     card.matchTitle = mtgGen.createMatchTitle(card.title);
 
-                    card.addedViaException = exception;
+                    card.addedViaException = true;
 
                     cards.push(card);
 
