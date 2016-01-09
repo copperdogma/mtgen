@@ -13,6 +13,10 @@
       "query": "from[ogw]-from[ogw]?type=(Marketing|Basic Land)-from[ogw]?token=true-from[ogw]?promo=true-from[ogw]?expeditions=true"
     },
     {
+      "defName": "ogw-common",
+      "query": "from[ogw-main]?rarity='c'+from[ogw]?title='Wastes'"
+    },
+    {
       "defName": "ogw-foils",
       "query": "from[ogw-main]"
     },
@@ -40,12 +44,12 @@
       "packDesc": "Oath of the Gatewatch: Standard Booster",
       "isGenerated": true,
       "cards": [
-        { "query": "take[9]>from[ogw-main]?rarity='c" },
+        { "query": "take[9]>from[ogw-common]" },
         {
           "querySet": [
             {
               "percent": 75,
-              "query": "from[ogw-main]?rarity='c"
+              "query": "from[ogw-common]"
             },
             {
               "percent": 24,
@@ -76,7 +80,7 @@
             }
           ]
         },
-        { "query": "from[ogw]?type='Basic Land" },
+        { "query": "from[bfz]?type='Basic Land" },
         { "query": "from[ogw]?token=true-from[ogw]?promo=true" }
       ]
     },
@@ -112,7 +116,6 @@
         },
         { "query": "take[1]>from[ogw-promo]?type='Life Counter'" },
         { "query": "from[ogw-promo]?title='Deck Box'" },
-        { "query": "from[ogw-promo]?title='Deck Box Divider'" },
         { "query": "from[ogw-promo]?title='Deckbuilding Advice Insert'" }
 
       ]

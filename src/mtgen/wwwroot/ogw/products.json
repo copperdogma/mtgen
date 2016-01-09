@@ -1,77 +1,91 @@
 {
-    "_comment": "if there are no options the query/packNames will be auto-run",
-    "products": [
-        {
-            "productName": "ogw-all-cards",
-            "productDesc": "All Cards",
-            "sources": [ "http://magic.wizards.com/en/content/battle-zendikar-cards", "http://www.gatheringmagic.com/battle-for-zendikar-spoilers/", "http://mtgsalvation.gamepedia.com/Battle_for_Zendikar", "http://magic.wizards.com/en/articles/archive/arcana/basic-lands-battle-zendikar-2015-09-14", "http://magic.wizards.com/en/articles/archive/arcana/tokens-battle-zendikar-2015-09-16", "http://magic.wizards.com/en/articles/archive/arcana/all-expeditions-2015-09-17" ],
-            "isGenerated": false,
-            "initialSort": "colour",
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "ogw-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://magic.wizards.com/en/content/battle-zendikar-cards", "http://www.gatheringmagic.com/battle-for-zendikar-spoilers/", "http://mtgsalvation.gamepedia.com/Battle_for_Zendikar", "http://magic.wizards.com/en/articles/archive/arcana/basic-lands-battle-zendikar-2015-09-14", "http://magic.wizards.com/en/articles/archive/arcana/tokens-battle-zendikar-2015-09-16", "http://magic.wizards.com/en/articles/archive/arcana/all-expeditions-2015-09-17" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "ogw-all-cards" }
+      ]
+    },
+    {
+      "productName": "ogw-boosters",
+      "productDesc": "Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "ogw-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "ogw-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
             "packs": [
-                { "packName": "ogw-all-cards" }
+              {
+                "count": 6,
+                "defaultPackName": "ogw-standard"
+              }
             ]
-        },
-        {
-            "productName": "ogw-boosters",
-            "productDesc": "Boosters",
-            "isGenerated": true,
-            "isVisible": true,
-            "initialSort": "set",
+          }
+        ]
+      }
+    },
+    {
+      "productName": "ogw-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://mtgsalvation.gamepedia.com/Battle_for_Zendikar" ],
+      "isGenerated": false,
+      "initialSort": "set",
+      "_comment": "Inside each Prerelease box, there will be six regular Oath of the Gatewatch Booster packs along with a randomized, date-stamped premium promo card, a spindown life counter, a deckbuilding guide and a story insert.",
+      "packs": [
+        { "packName": "ogw-standard" },
+        { "packName": "bfz-standard" },
+        { "packName": "ogw-prerelease-promo-packins" },
+        { "packName": "ogw-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "ogw-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
             "packs": [
-                { "packName": "ogw-standard" }
-            ],
-            "options": {
-                "presets": [
-                    {
-                        "presetName": "ogw-boosters-six",
-                        "presetDesc": "Six Boosters",
-                        "default": true,
-                        "packs": [
-                            { "count": 6, "defaultPackName": "ogw-standard" }
-                        ]
-                    }
-                ]
-            }
-        },
-        {
-            "productName": "ogw-prerelease",
-            "productDesc": "Prerelease",
-            "isVisible": true,
-            "sources": [ "http://mtgsalvation.gamepedia.com/Battle_for_Zendikar" ],
-            "isGenerated": false,
-            "initialSort": "set",
-            "_comment": "Inside each Prerelease box, there will be six regular Oath of the Gatewatch Booster packs along with a randomized, date-stamped premium promo card, a spindown life counter, a deckbuilding guide and a story insert.",
-            "packs": [
-                { "packName": "ogw-standard" },
-                { "packName": "ogw-prerelease-promo-packins" },
-                { "packName": "ogw-prerelease-promos" }
-            ],
-            "options": {
-                "presets": [
-                    {
-                        "presetName": "ogw-prerelease",
-                        "presetDesc": "Prerelease Pack",
-                        "default": true,
-                        "packs": [
-                            { "count": 1, "defaultPackName": "ogw-prerelease-promo-packins" },
-                            { "count": 6, "defaultPackName": "ogw-standard" }
-                        ]
-                    }
-                ]
-            }
-
-        },
-        {
-            "productName": "ogw-promos",
-            "productDesc": "All Promos",
-            "sources": [ "http://magic.wizards.com/en/articles/archive/arcana/promos-battle-zendikar-2015-09-07" ],
-            "isGenerated": false,
-            "isVisible": true,
-            "initialSort": "name",
-            "packs": [
-                { "packName": "ogw-promos" }
+              {
+                "count": 1,
+                "defaultPackName": "ogw-prerelease-promo-packins"
+              },
+              {
+                "count": 4,
+                "defaultPackName": "ogw-standard"
+              },
+              {
+                "count": 2,
+                "defaultPackName": "bfz-standard"
+              }
             ]
-        }
+          }
+        ]
+      }
 
-    ]
+    },
+    {
+      "productName": "ogw-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/arcana/promos-battle-zendikar-2015-09-07" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "ogw-promos" }
+      ]
+    }
+
+  ]
 }

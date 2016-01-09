@@ -5,5 +5,10 @@
       "delete a card  = delete:true, where",
       "update card(s) = where, newValues {}"
     ]
+  },
+  {
+    "_comment": "There are four card with the same name, so we kill them/recreate them in import-settings-other.json",
+    "delete": true,
+    "where": "title='Wastes"
   }
 ]

@@ -4,7 +4,7 @@
     {
         Code = "ogw",
         Name = "Oath of the Gatewatch",
-        CreatedDate = new DateTime(2016, 1, 2),
+        CreatedDate = new DateTime(2016, 1, 9),
         CardCount = 184,
         StartProductName = "ogw-all-cards"
     };
@@ -20,8 +20,8 @@
     //set.Incomplete = true;
 
     set.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json",
-        "../exp/cardsMain.json" };
-    set.PackFiles = new List<string>() { "packs.json" };
+        "../exp/cardsMain.json", "../bfz/cardsMain.json", "../bfz/cardsOther.json" };
+    set.PackFiles = new List<string>() { "packs.json", "../bfz/packs.json" };
 
     ViewBag.Set = set;
 }
