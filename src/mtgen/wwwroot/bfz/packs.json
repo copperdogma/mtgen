@@ -13,6 +13,10 @@
       "query": "from[bfz]-from[bfz]?type=(Marketing|Basic Land)-from[bfz]?token=true-from[bfz]?promo=true-from[bfz]?expeditions=true"
     },
     {
+      "defName": "bfz-basic-land-full-art",
+      "query": "from[bfz]?fullArt=true"
+    },
+    {
       "defName": "bfz-foils",
       "query": "from[bfz-main]"
     },
@@ -76,7 +80,7 @@
             }
           ]
         },
-        { "query": "from[bfz]?type='Basic Land" },
+        { "query": "from[bfz-basic-land-full-art]" },
         { "query": "from[bfz]?token=true-from[bfz]?promo=true" }
       ]
     },
