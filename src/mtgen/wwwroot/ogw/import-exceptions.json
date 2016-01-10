@@ -10,5 +10,18 @@
     "_comment": "There are four card with the same name, so we kill them/recreate them in import-settings-other.json",
     "delete": true,
     "where": "title='Wastes"
+  },
+  {
+    "where": "title='Brute Strength",
+    "newValues": {
+      "rarity": "c"
+    }
+  },
+  {
+    "where": "title='Slip Through Space",
+    "newValues": {
+      "cost": "U",
+      "colour": "u"
+    }
   }
 ]
