@@ -40,17 +40,31 @@
       "packDesc": "Oath of the Gatewatch: Standard Booster",
       "isGenerated": true,
       "cards": [
-        { "query": "take[8]>from[ogw-main]?rarity='c" },
+        { "query": "take[7]>from[ogw-main]?rarity='c" },
         {
           "querySet": [
             {
               "percent": 80,
-              "query": "from[ogw-main]?rarity='c'"
+              "query": "from[ogw-main]?rarity='c"
             },
             {
               "_comment": "Should be generated at double the rate of a regular Common (20% to offset the fact 8 other commons are generated before this with no chance of a Wastes)",
               "percent": 20,
-              "query": "from[ogw]?title='Wastes'"
+              "query": "from[ogw]?title='Wastes"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": 93,
+              "query": "from[ogw-main]?rarity='c"
+            },
+            {
+              "_comment": "Should be generated at a rate slighly larger than a premium mythic (I'll say 7%)",
+              "percent": 7,
+              "query": "from[ogw-foils-expeditions]",
+              "setValues": { "foil": true }
             }
           ]
         },
@@ -61,7 +75,7 @@
               "query": "from[ogw-main]?rarity='c"
             },
             {
-              "percent": 24,
+              "percent": 25,
               "query": "from[ogw-foils]",
               "canBeDuplicate": true,
               "setValues": { "foil": true },
