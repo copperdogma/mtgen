@@ -389,8 +389,36 @@ var mtgGen = (function (my, $) {
     function calculateConvertedCost(cost) {
         var ccost = 0;
         if (cost !== undefined && cost.length > 0) {
-            var costParts = cost.replace(/\}/g, '').toLowerCase().split('{');
-            _.each(costParts, function (mana) {
+            var fixedCost = cost.trim().toLowerCase();
+
+            var costParts = [];
+            // Three possible formats:
+            // ONE (older): {8}{G}{BG}
+            var regEx = /{([^}]+)}/g;
+            var match;
+            do {
+                match = regEx.exec(fixedCost);
+                if (match) {
+                    costParts.push(match[1]);
+                }
+            } while (match);
+
+            // TWO (newer): (R///) (R///)
+            regEx = /\(([^\)]+)\)/g;
+            do {
+                match = regEx.exec(fixedCost);
+                if (match) {
+                    costParts.push(match[1]);
+                }
+            } while (match);
+
+            // THREE (newer): 8GB
+            if (costParts.length < 1) {
+                costParts = fixedCost.split("");
+            }
+
+            for (var i = 0; i < costParts.length; i++) {
+                var mana = costParts[i];
                 var intCost = parseInt(mana, 10);
                 if (isNaN(intCost) && mana.length > 0) {
                     // rules for converted cost on {X}: http://www.wizards.com/magic/comprules/MagicCompRules_20121001.txt
@@ -401,9 +429,8 @@ var mtgGen = (function (my, $) {
                     intCost = 0;
                 }
                 ccost += intCost;
-            });
+            }
         }
-
         return ccost;
     }
 
