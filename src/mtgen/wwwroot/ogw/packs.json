@@ -57,12 +57,12 @@
         {
           "querySet": [
             {
-              "percent": 93,
+              "percent": 99,
               "query": "from[ogw-main]?rarity='c"
             },
             {
-              "_comment": "Should be generated at a rate slighly larger than a premium mythic (I'll say 7%)",
-              "percent": 7,
+              "_comment": "Should be generated at a rate slighly larger than a premium (foil) mythic (which is 1/216 packs)",
+              "percent": 1,
               "query": "from[ogw-foils-expeditions]",
               "setValues": { "foil": true }
             }
