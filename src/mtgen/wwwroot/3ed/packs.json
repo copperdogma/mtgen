@@ -1,0 +1,58 @@
+{
+  "defs": [
+    {
+      "defName": "3ed",
+      "query": "from[*]?set='3ed"
+    },
+    {
+      "defName": "3ed-main",
+      "query": "from[3ed]"
+    },
+    {
+      "defName": "3ed-rare",
+      "query": "from[3ed]?rarity='r'+from[3ed]?title='Island'+from[3ed]?multiverseid=594",
+      "_comment": "4 Islands were included on the rare sheet = 4 Islands = 3.31% chance of getting one"
+    },
+    {
+      "defName": "3ed-uncommon",
+      "query": "from[3ed]?rarity='u'+from[3ed]?type='Basic Land'+from[3ed]?multiverseid=(586|594|589|595|575)",
+      "_comment": "Basic Lands were included on the uncommon sheet = 20 lands = 21.5% chance of getting one"
+    },
+    {
+      "defName": "3ed-common",
+      "query": "from[3ed]?rarity='c'+from[3ed]?type='Basic Land'+from[3ed]?type='Basic Land'-from[3ed]?multiverseid=594",
+      "_comment": "Basic Lands were included on the common sheet = 28 lands = 38.02% chance of getting one"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "3ed-all-cards",
+      "packDesc": "Revised Edition: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[3ed]" }
+      ]
+    },
+    {
+      "packName": "3ed-standard",
+      "packDesc": "Revised Edition: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[11]>from[3ed-common]" },
+        { "query": "take[3]>from[3ed-uncommon]" },
+        { "query": "take[1]>from[3ed-rare]" }
+      ]
+    },
+    {
+      "packName": "3ed-starter-deck",
+      "packDesc": "Revised Edition: Starter Deck",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[3]>from[3ed-rare]" },
+        { "query": "take[12]>from[3ed-uncommon]" },
+        { "query": "take[45]>from[3ed-common]" }
+      ]
+    }
+  ]
+}

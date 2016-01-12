@@ -1,0 +1,66 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "3ed-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/3ed.json", "http://mtgsalvation.gamepedia.com/Revised_Edition" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "3ed-all-cards" }
+      ]
+    },
+    {
+      "productName": "3ed-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Revised_Edition" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "3ed-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "3ed-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "3ed-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "3ed-starter-decks",
+      "productDesc": "Starter Decks",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Revised_Edition" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "3ed-starter-deck" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "3ed-starter-deck",
+            "presetDesc": "Single Starter Deck",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "3ed-starter-deck"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+  ]
+}
