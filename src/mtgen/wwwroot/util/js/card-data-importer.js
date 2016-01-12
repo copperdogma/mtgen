@@ -89,11 +89,6 @@ var cardDataImporter = (function (my, $) {
         //});
         _.extend(my, options);
 
-        if (my.cardDataUrl === undefined || my.cardDataUrl.length < 1) {
-            alert("ERROR: No card data url supplied. Cannot continue.");
-            return;
-        }
-
         // load all files and don't continue until all are loaded
         var promises = [];
 
@@ -171,7 +166,7 @@ var cardDataImporter = (function (my, $) {
         }
 
         // Returns both the updated set of cards AND the modified exceptions (the latter for reporitng purposes).
-        var exceptionsResults = my.api.applyExceptions(mainOut, jsonExceptions.data);
+        var exceptionsResults = my.api.applyExceptions(mainOut, jsonExceptions.data, setCode);
         mainOut = exceptionsResults.cards;
 
         // Add images to cards -------------------------------------------------------------------------------------------------
@@ -426,8 +421,11 @@ var cardDataImporter = (function (my, $) {
         var cards = [];
 
         // Determine from where the card data was sourced and therefore the parser needed.
-        var lowercaseCardDataUrlSource = cardDataUrlSource.toLowerCase();
-        if (lowercaseCardDataUrlSource.indexOf('mtgsalvation.com') > -1) {
+        var lowercaseCardDataUrlSource = cardDataUrlSource.trim().toLowerCase();
+        if (lowercaseCardDataUrlSource.length < 1) {
+            console.log("No card data source supplied: this is used when the exceptions file is used to generate cards");
+        }
+        else if (lowercaseCardDataUrlSource.indexOf('mtgsalvation.com') > -1) {
             cards = my.api.getCardsFromMtgSalvationData(cardData, setCode);
         }
         else if (lowercaseCardDataUrlSource.indexOf('gatheringmagic.com') > -1) {
@@ -953,7 +951,7 @@ var cardDataImporter = (function (my, $) {
         return finalImages;
     }
 
-    function applyExceptions(cards, exceptions) {
+    function applyExceptions(cards, exceptions, setCode) {
         // Example:
         //  {
         //      where: "rarity=(mr|r)",
@@ -1074,8 +1072,9 @@ var cardDataImporter = (function (my, $) {
                 // Apply the changes to all of the matching cards.
                 for (var j = 0; j < matchingCards.length; j++) {
                     var card = matchingCards[j];
-                    // Replace any references properties with the current values,
+                    // Replace any 'reference' properties with the current card values,
                     // e.g.: "originalTitle": "{{title}}",
+                    var replacementReferenceValues = {};
                     for (var prop in exception.newValues) {
                         var propValue = exception.newValues[prop];
                         var newPropValue = propValue;
@@ -1085,12 +1084,17 @@ var cardDataImporter = (function (my, $) {
                             if (card[propName] !== undefined) {
                                 newPropValue = newPropValue.replace(token[0], card[propName]);
                             }
+                            else if (propName === 'setCode') {
+                                newPropValue = setCode;
+                            }
                         }
-                        exception.newValues[prop] = newPropValue;
+                        //exception.newValues[prop] = newPropValue;
+                        replacementReferenceValues[prop] = newPropValue;
                     }
 
                     // Apply new values from exception.
                     _.extend(card, exception.newValues);
+                    _.extend(card, replacementReferenceValues);
 
                     card.matchTitle = mtgGen.createMatchTitle(card.title);
                 };
