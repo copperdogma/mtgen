@@ -108,7 +108,7 @@
   {
     "add": true,
     "newValues": {
-      "src": "http://mtgen.net/cards/mtg-spindown-life-counter-red.png",
+      "src": "http://mtgen.net/cards/ogw-spindown-life-counter-red.png",
       "set": "ogw",
       "title": "Red Spindown Life Counter",
       "colour": "o",
@@ -138,10 +138,10 @@
     }
   },
   {
-    "add": false,
+    "add": true,
     "newValues": {
-      "src": "http://mtgen.net/cards/mtg-deckbuilding-info.jpg",
-      "src_large": "http://mtgen.net/cards/mtg-deckbuilding-info-lg.jpg",
+      "src": "http://mtgen.net/cards/ogw-deckbuilding-info.jpg",
+      "src_large": "http://mtgen.net/cards/ogw-deckbuilding-info-lg.jpg",
       "height": 370,
       "width": 515,
       "set": "ogw",
@@ -152,8 +152,7 @@
       "type": "Insert",
       "promo": "true",
       "includedReason": "Prerelease Promo",
-      "usableForDeckBuilding": false,
-      "addedViaException": true
+      "usableForDeckBuilding": false
     }
   },
   {

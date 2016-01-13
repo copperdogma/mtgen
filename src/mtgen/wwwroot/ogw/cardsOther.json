@@ -100,7 +100,7 @@
     "addedViaException": true
   },
   {
-    "src": "http://mtgen.net/cards/mtg-spindown-life-counter-red.png",
+    "src": "http://mtgen.net/cards/ogw-spindown-life-counter-red.png",
     "set": "ogw",
     "title": "Red Spindown Life Counter",
     "colour": "o",
@@ -120,6 +120,22 @@
     "num": "005 Counter",
     "rarity": "c",
     "type": "Life Counter",
+    "promo": "true",
+    "includedReason": "Prerelease Promo",
+    "usableForDeckBuilding": false,
+    "addedViaException": true
+  },
+  {
+    "src": "http://mtgen.net/cards/ogw-deckbuilding-info.jpg",
+    "src_large": "http://mtgen.net/cards/ogw-deckbuilding-info-lg.jpg",
+    "height": 370,
+    "width": 515,
+    "set": "ogw",
+    "title": "Deckbuilding Advice Insert",
+    "colour": "o",
+    "num": "006 Insert",
+    "rarity": "c",
+    "type": "Insert",
     "promo": "true",
     "includedReason": "Prerelease Promo",
     "usableForDeckBuilding": false,
