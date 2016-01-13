@@ -1,0 +1,66 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "4ed-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/4ed.json", "http://mtgsalvation.gamepedia.com/Fourth_Edition" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "4ed-all-cards" }
+      ]
+    },
+    {
+      "productName": "4ed-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Fourth_Edition" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "4ed-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "4ed-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "4ed-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "4ed-starter-decks",
+      "productDesc": "Starter Decks",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Fourth_Edition" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "4ed-starter-deck" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "4ed-starter-deck",
+            "presetDesc": "Single Starter Deck",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "4ed-starter-deck"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+  ]
+}

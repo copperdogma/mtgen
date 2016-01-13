@@ -1,0 +1,44 @@
+{
+  "defs": [
+    {
+      "defName": "ice",
+      "query": "from[*]?set='ice"
+    },
+    {
+      "defName": "ice-main",
+      "query": "from[ice]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "ice-all-cards",
+      "packDesc": "Ice Age: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[ice]" }
+      ]
+    },
+    {
+      "packName": "ice-standard",
+      "packDesc": "Ice Age: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[3]>from[ice-main]?rarity='u'" },
+        { "query": "take[1]>from[ice-main]?rarity='r'" },
+        { "query": "take[11]>from[ice-main]?rarity='c" }
+      ]
+    },
+    {
+      "packName": "ice-starter-deck",
+      "packDesc": "Ice Age: Starter Deck",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[3]>from[ice-main]?rarity='u" },
+        { "query": "take[9]>from[ice-main]?rarity='r" },
+        { "query": "take[26]>from[ice-main]?rarity='c" },
+        { "query": "take[22]>from[ice-main]?type='Basic Land'" }
+      ]
+    }
+  ]
+}

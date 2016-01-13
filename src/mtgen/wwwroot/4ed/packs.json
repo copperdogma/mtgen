@@ -1,0 +1,44 @@
+{
+  "defs": [
+    {
+      "defName": "4ed",
+      "query": "from[*]?set='4ed"
+    },
+    {
+      "defName": "4ed-main",
+      "query": "from[4ed]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "4ed-all-cards",
+      "packDesc": "Fourth Edition: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[4ed]" }
+      ]
+    },
+    {
+      "packName": "4ed-standard",
+      "packDesc": "Fourth Edition: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[3]>from[4ed-main]?rarity='u'" },
+        { "query": "take[1]>from[4ed-main]?rarity='r'" },
+        { "query": "take[11]>from[4ed-main]?rarity='c" }
+      ]
+    },
+    {
+      "packName": "4ed-starter-deck",
+      "packDesc": "Fourth Edition: Starter Deck",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[3]>from[4ed-main]?rarity='u" },
+        { "query": "take[9]>from[4ed-main]?rarity='r" },
+        { "query": "take[26]>from[4ed-main]?rarity='c" },
+        { "query": "take[22]>from[4ed-main]?type='Basic Land'" }
+      ]
+    }
+  ]
+}

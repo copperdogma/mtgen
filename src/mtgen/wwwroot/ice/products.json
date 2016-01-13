@@ -1,0 +1,66 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "ice-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/ice.json", "http://mtgsalvation.gamepedia.com/Fourth_Edition" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "ice-all-cards" }
+      ]
+    },
+    {
+      "productName": "ice-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Fourth_Edition" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "ice-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "ice-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "ice-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "ice-starter-decks",
+      "productDesc": "Starter Decks",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Fourth_Edition" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "ice-starter-deck" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "ice-starter-deck",
+            "presetDesc": "Single Starter Deck",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "ice-starter-deck"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+  ]
+}
