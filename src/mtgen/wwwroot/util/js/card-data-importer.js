@@ -370,7 +370,7 @@ var cardDataImporter = (function (my, $) {
         // Only keep card colours (bcgkruw), then collapse into the colour-specific counts.
         // OLDER: {} are groups around split colour {RG}
         // NEWER: () are groups around split colour (R///)
-        var cardColours = card.cost.toLowerCase().replace(/[^bcgkruw{}\(\)]/g, "").split("");
+        var cardColours = card.cost.toLowerCase().replace(/[^bcgkruw]/g, "").split("");
         var uniqueColours = _.toArray(_.countBy(cardColours, function (colour) { return colour; }));
 
         var finalColour = '';
