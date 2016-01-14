@@ -5,6 +5,7 @@ Shared/base functions.
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
+14-Jan-2016: Percents within querySets can now be expressed as fractions ("7/8") in addition to percents (87.5).
 4-Jan-2016: Renamed "colourless" (c) mana to "generic" (g) (new in OGW set)
 27-Dec-2015: Broke out this file from mtg-generator.js.
 
@@ -363,6 +364,25 @@ var mtgGen = (function (my, $) {
                                     querySetPercentAvg = 100 / cardsDef.querySet.length;
                                     _.each(cardsDef.querySet, function (querySet) {
                                         querySet.percent = querySetPercentAvg;
+                                    });
+                                }
+                                else {
+                                    _.each(cardsDef.querySet, function (querySet) {
+                                        var percentValue = Number(querySet.percent);
+                                        // if it's not a number, assume it's a fraction and attempt to convert to percent
+                                        if (Number.isNaN(percentValue)) {
+                                            var parts = querySet.percent.split("/");
+                                            if (parts.length !== 2) {
+                                                console.log("ERROR: bad percent (only decimals or fractions allowed): " + querySet.percent);
+                                            }
+                                            else {
+                                                querySet.percent = (parts[0] / parts[1]) * 100;
+                                            }
+                                        }
+                                        // otherwise it's a number -- just keep it like that
+                                        else {
+                                            querySet.percent = percentValue;
+                                        }
                                     });
                                 }
                             }
