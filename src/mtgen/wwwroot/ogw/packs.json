@@ -10,7 +10,11 @@
     },
     {
       "defName": "ogw-main",
-      "query": "from[ogw]-from[ogw]?type=(Marketing|Basic Land)-from[ogw]?token=true-from[ogw]?promo=true-from[ogw]?expeditions=true"
+      "query": "from[ogw]-from[ogw]?type=(Marketing|Basic Land)-from[ogw]?token=true-from[ogw]?promo=true"
+    },
+    {
+      "defName": "ogw-common",
+      "query": "from[ogw-main]?rarity='c'+from[ogw]?title='Wastes"
     },
     {
       "defName": "ogw-foils",
@@ -40,29 +44,16 @@
       "packDesc": "Oath of the Gatewatch: Standard Booster",
       "isGenerated": true,
       "cards": [
-        { "query": "take[7]>from[ogw-main]?rarity='c" },
+        { "query": "take[8]>from[ogw-common]" },
         {
           "querySet": [
             {
-              "percent": 80,
-              "query": "from[ogw-main]?rarity='c"
-            },
-            {
-              "_comment": "Should be generated at double the rate of a regular Common (20% to offset the fact 8 other commons are generated before this with no chance of a Wastes)",
-              "percent": 20,
-              "query": "from[ogw]?title='Wastes"
-            }
-          ]
-        },
-        {
-          "querySet": [
-            {
-              "percent": 99,
-              "query": "from[ogw-main]?rarity='c"
+              "percent": "215/216",
+              "query": "from[ogw-common]"
             },
             {
               "_comment": "Should be generated at a rate slighly larger than a premium (foil) mythic (which is 1/216 packs)",
-              "percent": 1,
+              "percent": "1/216",
               "query": "from[ogw-foils-expeditions]",
               "setValues": { "foil": true }
             }
@@ -71,21 +62,15 @@
         {
           "querySet": [
             {
-              "percent": 75,
-              "query": "from[ogw-main]?rarity='c"
+              "percent": "3/4",
+              "query": "from[ogw-common]"
             },
             {
-              "percent": 25,
+              "percent": "1/4",
               "query": "from[ogw-foils]",
               "canBeDuplicate": true,
               "setValues": { "foil": true },
               "_comment": "25% chance rare is a foil of any card, including land"
-            },
-            {
-              "percent": 1,
-              "query": "from[ogw-foils-expeditions]",
-              "setValues": { "foil": true },
-              "_comment": "mythic rare foil"
             }
           ]
         },
@@ -124,21 +109,20 @@
         {
           "querySet": [
             {
-              "percent": 87.5,
-              "query": "from[ogw-main]?rarity='r'",
+              "percent": "7/8",
+              "query": "from[ogw-main]?rarity='r",
               "setValues": { "foil": true }
             },
             {
-              "percent": 12.5,
-              "query": "from[ogw-main]?rarity='m'",
-              "setValues": { "foil": true },
-              "_comment": "rare=7/8, mythicRare=1/8"
+              "percent": "1/8",
+              "query": "from[ogw-main]?rarity='m",
+              "setValues": { "foil": true }
             }
           ]
         },
-        { "query": "take[1]>from[ogw-promo]?type='Life Counter'" },
-        { "query": "from[ogw-promo]?title='Deck Box'" },
-        { "query": "from[ogw-promo]?title='Deckbuilding Advice Insert'" }
+        { "query": "take[1]>from[ogw-promo]?type='Life Counter" },
+        { "query": "from[ogw-promo]?title='Deck Box" },
+        { "query": "from[ogw-promo]?title='Deckbuilding Advice Insert" }
 
       ]
     },
@@ -148,7 +132,7 @@
       "isGenerated": false,
       "includeWithUserCards": false,
       "cards": [
-        { "query": "take[*]>from[ogw-promo]?includedReason='Prerelease Promo'" }
+        { "query": "take[*]>from[ogw-promo]?includedReason='Prerelease Promo" }
       ]
     }
 
