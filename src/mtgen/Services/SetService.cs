@@ -51,11 +51,13 @@ namespace mtgen.Services
 
         public string GetPathForSetFile(string setCode, string fileName)
         {
-            return $"\\wwwroot\\{setCode}\\{fileName}";
+            return $"{setCode}\\{fileName}";
         }
         public IList<Card> GetCardsFromJsonFile(string jsonFilePath)
         {
             var cardsPath = _hostingEnvironment.MapPath(jsonFilePath);
+            if (!File.Exists(cardsPath)) return new List<Card>();
+
             var cardsFile = File.ReadAllText(cardsPath);
             var cards = JsonConvert.DeserializeObject<IList<Card>>(cardsFile);
             return cards;
@@ -76,9 +78,10 @@ namespace mtgen.Services
 
         public IList<Card> GetAllCardsForSet(string setCode)
         {
-            var cards = this.GetMainCardsForSet(setCode).ToList();
-            cards.AddRange(this.GetTokenCardsForSet(setCode));
-            cards.AddRange(this.GetOtherCardsForSet(setCode));
+            var lowerCaseSetCode = setCode.ToLower();
+            var cards = this.GetMainCardsForSet(lowerCaseSetCode).ToList();
+            cards.AddRange(this.GetTokenCardsForSet(lowerCaseSetCode));
+            cards.AddRange(this.GetOtherCardsForSet(lowerCaseSetCode));
             return cards;
         }
     }
