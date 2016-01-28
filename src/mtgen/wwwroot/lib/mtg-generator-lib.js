@@ -1,10 +1,11 @@
 /*
-MtG Generator script v2 - LIB
+MtG Generator script v2.1 - LIB
 
 Shared/base functions.
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
+26-Jan-2016: Now uses mtgenId instead of index.
 14-Jan-2016: Percents within querySets can now be expressed as fractions ("7/8") in addition to percents (87.5).
 4-Jan-2016: Renamed "colourless" (c) mana to "generic" (g) (new in OGW set)
 27-Dec-2015: Broke out this file from mtg-generator.js.
@@ -18,6 +19,7 @@ Author: Cam Marsollier cam.marsollier@gmail.com
 var mtgGen = (function (my, $) {
     'use strict';
     // globals
+    my.version = "2.2";
     my.setData = undefined;
     my.packData = undefined;
     my.cardsData = undefined;
@@ -194,6 +196,13 @@ var mtgGen = (function (my, $) {
         return clean;
     }
 
+    my.getQuerystringParamByName = function (name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    };
+
     my.throwTerminalError = function (abortMsg) {
         console.error(abortMsg);
         alert(abortMsg);
@@ -252,6 +261,15 @@ var mtgGen = (function (my, $) {
 
         promises.push($.getJSON(my.productFile));
 
+        // If a draw was specified, try to load that
+        var drawId = my.getQuerystringParamByName('draw');
+        if (drawId) {
+            promises.push($.getJSON("/" + options.setCode + "/LoadDraw/" + drawId).fail(function (xjr, textStatus, error) {
+                console.error("ERROR retrieving draw '" + this.url + "'. Will continue with normal load. Error message:" + error);
+            })
+			);
+        }
+
         // Load all of the data once it all arrives
         $.when.apply($, promises).done(function () {
             // first item is the set data; turn them into an associative array
@@ -269,11 +287,21 @@ var mtgGen = (function (my, $) {
                 console.warn("WARNING: Cannot find setCode: " + my.setCode);
             }
 
-            // we have a variable number of defs/packs and cards files, so we need to detect what file type we're reading
+            // We have a variable number of defs/packs, cards files, and maybe a saved draw,
+            // so we need to detect what file type we're reading.
             my.defs = [];
             my.packs = [];
             my.cards = [];
             my.products = [];
+            my.draw = undefined;
+            my.hasDraw = function () { return my.draw !== undefined; }
+            my.hasDrawForCurrentProduct = function () {
+                var options = my.mainView.currentView.options;
+                return my.draw && my.draw.sets && my.draw.sets.length > 0
+                    && options !== undefined
+                    && options.originalProductName !== undefined
+                    && options.originalProductName === my.draw.productName;
+            }
             _.each(arguments, function (value, index) {
                 if (index > 0) {
                     if (value[0].defs) {
@@ -287,6 +315,11 @@ var mtgGen = (function (my, $) {
                     }
                     if (value[0].defs === undefined && value[0].packs === undefined && value[0]["_comment"] === undefined) {
                         my.cards = my.cards.concat(value[0]);
+                    }
+
+                    // A draw was specified to be loaded
+                    if (value[0].drawVersion) {
+                        my.draw = value[0];
                     }
                 }
             });
@@ -304,11 +337,12 @@ var mtgGen = (function (my, $) {
 
             // add card indicies and sort orders for internal use
             var setCardsLoadedCount = 0;
-            var goodCards = [];
-            var index = 0;
+            var goodCards = {};
+            var finalCards = {};
             _.each(my.cards, function (card) {
                 if (card.hasOwnProperty("title")) {
-                    card.index = index++;
+                    card.num = card.num || card.multiverseid || card.id; // num is required, so ensure we have one
+                    card.mtgenId = card.set + "|" + card.num;
 
                     // create a sanitized matchTitle stripped of all punctuation, special chars, etc to be used for matching
                     card.matchTitle = my.createMatchTitle(card.title);
@@ -347,7 +381,10 @@ var mtgGen = (function (my, $) {
                         setCardsLoadedCount++;
                         my.trigger('playableCardLoaded', setCardsLoadedCount);
                     }
-                    goodCards.push(card);
+                    if (goodCards[card.mtgenId] !== undefined) {
+                        console.warn("WARNING: duplicate mtgenId: " + card.mtgenId + " : " + card.title);
+                    }
+                    goodCards[card.mtgenId] = card;
                 }
             });
             my.cards = goodCards;
@@ -379,7 +416,7 @@ var mtgGen = (function (my, $) {
                                                 querySet.percent = (parts[0] / parts[1]) * 100;
                                             }
                                         }
-                                        // otherwise it's a number -- just keep it like that
+                                            // otherwise it's a number -- just keep it like that
                                         else {
                                             querySet.percent = percentValue;
                                         }
@@ -499,7 +536,7 @@ var mtgGen = (function (my, $) {
 
         // execute the query on the set
         if (!query2) {
-            result = _.pluck(sourceSet, 'index');
+            result = _.pluck(sourceSet, 'mtgenId');
         }
         else {
             var matchingCards, clause, queryTitles, queryMatchTitles;
@@ -507,7 +544,7 @@ var mtgGen = (function (my, $) {
                 // 'contains' clause, like colour=contains({W}|{G}), i.e.: we're basically letting the user specify a regex within the contains()
                 clause = query2[2].replace(/contains\(/g, '').replace(/\)/g, '');
                 matchingCards = _.filter(sourceSet, function (card) { return card[query2[1]] && card[query2[1]].match(clause); });
-                result = _.pluck(matchingCards, 'index');
+                result = _.pluck(matchingCards, 'mtgenId');
             }
             else if (query2[2].indexOf('(') > -1) {
                 // 'in' clause
@@ -538,7 +575,7 @@ var mtgGen = (function (my, $) {
                     });
                     matchingCards = sortedCards;
                 }
-                result = _.pluck(matchingCards, 'index');
+                result = _.pluck(matchingCards, 'mtgenId');
 
                 // if we're dealing with named cards, check if any items in the list are missing -- we'll call this an error and generate an error card
                 if (query2[1] == 'title' && result.length < queryMatchTitles.length) {
@@ -583,7 +620,7 @@ var mtgGen = (function (my, $) {
                         });
                     }
                 }
-                result = _.pluck(matchingCards, 'index');
+                result = _.pluck(matchingCards, 'mtgenId');
             }
         }
 
@@ -741,7 +778,7 @@ var mtgGen = (function (my, $) {
                 if (card.usableForDeckBuilding === undefined) {
                     card.usableForDeckBuilding = usableForDeckBuilding;
                 }
-                cardIndices.push(card.index);
+                cardIndices.push(card.mtgenId);
                 cardSet.push(card);
             });
         });
@@ -781,9 +818,9 @@ var mtgGen = (function (my, $) {
             // reject cards whose index is in the excludeIndices
             // TODO: the new way I'm doing this looks expensive.. the line below this is compact but WRONG, but a good starting point?
             //validCards = _.reject(validCards, function (card) { _.find(excludeIndices, function (index) { return card.index == index; }) === undefined; });
-            var validIndices = _.reduce(validCards, function (memo, validCard) { return memo.concat(validCard.index); }, []);
+            var validIndices = _.reduce(validCards, function (memo, validCard) { return memo.concat(validCard.mtgenId); }, []);
             var newValidIndices = _.difference(validIndices, excludeIndices);
-            validCards = _.filter(validCards, function (card) { return _.find(newValidIndices, function (validIndex) { return card.index == validIndex; }) });
+            validCards = _.filter(validCards, function (card) { return _.find(newValidIndices, function (validIndex) { return card.mtgenId == validIndex; }) });
             if (num > validCards.length) {
                 console.warn("ERROR: Trying to choose " + num + " cards but after excluded cards, only " + validCards.length + " available. Source query: " + queryDefForDebug + " Taking all:", validCards);
             }
@@ -1193,678 +1230,3 @@ var mtgGen = (function (my, $) {
 
     return my;
 }(mtgGen || {}, jQuery));
-
-// --------------------------------------------------------------------------------------------------------------------------------
-// ProductView module - products are All Cards, Prerelease, Duel Deck, Intro Packs, etc.
-// --------------------------------------------------------------------------------------------------------------------------------
-var mtgGen = (function (my, $) {
-    'use strict';
-
-    my.ProductView = Backbone.View.extend({
-        options: {}
-
-		, productName: undefined
-		, typeButtonId: undefined
-		, $productTab: undefined
-
-		, hasOptions: false
-		, hasPackPresets: false
-		, hasButtonOptions: false
-		, isInitialized: false
-		, isGenerated: false
-
-        // used by all subsequent display/sort methods
-		, allCards: []
-		, generatedSets: [] // stores the last generated sets of cards
-		, sortedSets: [] // stores the last sorted version of generatedSets
-
-		, initialize: function (options) {
-		    // save all options
-		    var context = this;
-		    var xxx = 1;
-		    this.options = options;
-		    _.each(options, function (value, key) {
-		        context.options[key] = value;
-		    });
-
-		    this.productName = my.getRequiredOption(options, 'productName');
-		    if (this.productName.indexOf('product-') !== 0) { my.throwTerminalError('ProductView requires a productName parameter, prefixed with "product-". Supplied: ' + this.productName); }
-		    this.productDesc = my.getRequiredOption(options, 'productDesc');
-		    this.typeButtonId = 'show-' + this.productName;
-		    this.isGenerated = this.options.isGenerated || false;
-		    this.hasOptions = (this.hasOwnProperty("options") && this.options.hasOwnProperty("options"));
-		    this.hasPackPresets = (this.hasOptions && this.options.options.hasOwnProperty("presets"));
-		    this.hasButtonOptions = (this.hasOptions && this.options.options.hasOwnProperty("buttons"));
-
-		    return this;
-		}
-
-        // TODO: Incompatible with Backbone >=v1.2.0: Views now always delegate their events in setElement.
-        //      You can no longer modify the events hash or your view's el property in initialize.
-		, events: function () {
-		    var events = {};
-		    events["click #products #" + this.typeButtonId] = "showTab";
-		    events["click #product-content ." + this.productName + " .sort-all-by-name"] = "sortAllByTitle";
-		    events["click #product-content ." + this.productName + " .sort-all-by-colour"] = "sortAllByColour";
-		    events["click #product-content ." + this.productName + " .sort-all-by-rarity"] = "sortAllByRarity";
-		    events["click #product-content ." + this.productName + " .sort-all-by-cost"] = "sortAllByCost";
-		    events["click #product-content ." + this.productName + " .sort-all-by-type"] = "sortAllByType";
-		    events["click #product-content ." + this.productName + " .sort-all-by-guild"] = "sortAllByGuild";
-		    events["click #product-content ." + this.productName + " .sort-all-by-clan"] = "sortAllByClan";
-		    events["click #product-content ." + this.productName + " .sort-all-by-faction"] = "sortAllByFaction";
-		    events["click #product-content ." + this.productName + " .sort-all-by-sets"] = "sortAllBySets";
-
-		    events["click #product-content ." + this.productName + " .set .sort-by-name"] = "sortByTitle";
-		    events["click #product-content ." + this.productName + " .set .sort-by-colour"] = "sortByColour";
-		    events["click #product-content ." + this.productName + " .set .sort-by-rarity"] = "sortByRarity";
-		    events["click #product-content ." + this.productName + " .set .sort-by-cost"] = "sortByCost";
-		    events["click #product-content ." + this.productName + " .set .sort-by-type"] = "sortByType";
-		    events["click #product-content ." + this.productName + " .set .sort-by-guild"] = "sortByGuild";
-		    events["click #product-content ." + this.productName + " .set .sort-by-clan"] = "sortByClan";
-		    events["click #product-content ." + this.productName + " .set .sort-by-faction"] = "sortByFaction";
-		    events["click #product-content ." + this.productName + " .set .sort-by-opened"] = "sortSetByOpenedOrder";
-
-		    if (this.hasPackPresets) {
-		        events["click #product-content ." + this.productName + " .presets a.button"] = "switchPreset";
-
-		        events["click #product-content ." + this.productName + " .options #add-booster"] = "addBooster";
-		        events["click #product-content ." + this.productName + " .options .remove-input"] = "removeBooster";
-		        events["click #product-content ." + this.productName + " .options #generate"] = "renderResultsFromOptions";
-		    }
-
-		    if (this.hasButtonOptions) {
-		        events["click #product-content ." + this.productName + " .options a.button"] = "renderPack";
-		    }
-
-		    return events;
-		}
-
-		, renderType: function () {
-		    this.$el.find('#product-content').append("<section class='" + this.productName + "'><section class='options'></section><section class='result' class='stickem-container'></section></section>");
-		    this.$el.find('#products').append('<a href="#" id="' + this.typeButtonId + '" class="button">' + this.productDesc + '</a>');
-		    this.$productTab = $(this.$el.find('#product-content .' + this.productName));
-		    return this;
-		}
-
-		, showTab: function () {
-		    // set active tab's css class
-		    this.$el.find('#products .button').removeClass('active');
-		    this.$el.find('#' + this.typeButtonId).addClass('active');
-
-		    my.mainView.currentView = this;
-
-		    // render the options if not already done, hide old tab, show new tab
-		    if (!this.isInitialized) {
-		        this.isInitialized = true;
-		        this.renderOptions();
-		    }
-		    $('#product-content > section').removeClass('active');
-		    $('#product-content .' + this.productName).addClass('active');
-
-		    return false;
-		}
-
-		, renderOptions: function () {
-		    var topThis = this;
-		    if (!this.hasOptions) {
-		        this.renderResultsFromOptions();
-		    }
-		    else if (this.hasPackPresets) {
-		        // render the preset buttons so the user can toggle between presets
-		        var presetsOut = "";
-		        var defaultPreset;
-		        if (this.options.options.presets.length > 1) {
-		            _.each(this.options.options.presets, function (preset) {
-		                var defaultActive = '';
-		                if (preset.hasOwnProperty("default") && preset.default === true) {
-		                    defaultPreset = preset;
-		                    defaultActive = ' active';
-		                }
-		                presetsOut += "<a href='#' class='button" + defaultActive + "' data-preset='" + preset.presetName + "'>" + preset.presetDesc + "</a>";
-		            });
-		        }
-
-		        presetsOut = "<div class='presets'>" + presetsOut + "</div>";
-		        if (defaultPreset === undefined) {
-		            defaultPreset = this.options.options.presets[0]; // if not specfied, use the first one
-		        }
-
-		        var packsOut = "<div class='packs'>" + this.renderPackPreset(this.options.packs, defaultPreset) + "</div>";
-
-		        this.$productTab.find('.options').html(presetsOut + packsOut);
-
-		        if (this.options.hasOwnProperty("autoGenerate") && this.options.autoGenerate === true) {
-		            this.renderResultsFromOptions();
-		        }
-		    }
-		    else if (this.hasButtonOptions) {
-
-		        var htmlOut = "";
-		        var defaultPack;
-		        _.each(this.options.options.buttons, function (pack) {
-		            var defaultActive = '';
-		            if (pack.hasOwnProperty("default") && pack.default === true) {
-		                defaultPack = pack;
-		                defaultActive = ' active';
-		            }
-		            var mainPack = my.getPack(pack.packName);
-		            var packDesc = (mainPack === undefined) ? console.error("ERROR: Missing packName: " + pack.packName) : mainPack.packDesc;
-		            htmlOut += "<a href='#' class='button" + defaultActive + "' data-pack='" + pack.packName + "'>" + packDesc + "</a>";
-		        });
-
-		        this.$productTab.find('.options').html(htmlOut);
-
-		        if (this.options.hasOwnProperty("autoGenerate") && this.options.autoGenerate === true) {
-		            this.renderResultsFromOptions();
-		        }
-		    }
-		    else {
-		        console.error("Cannot render options for product: " + this.productName);
-		    }
-
-		    return this;
-		}
-
-		, renderPackPreset: function (allPacks, preset) {
-		    var packsOut = "";
-		    var topThis = this;
-
-		    _.each(preset.packs, function (pack, packIndex) {
-		        packsOut += topThis.renderInput(allPacks, pack, packIndex);
-		    });
-
-		    packsOut += this.renderInput(allPacks); // will render a booster template for dynamic js addition
-		    packsOut += "<button id='add-booster'>Add Booster</button>";
-		    packsOut = "<section id='boosters'>" + packsOut + "</section>";
-		    packsOut += "<input id='generate' type='submit' value='Generate my sets!' />";
-
-		    return packsOut;
-		}
-
-		, renderResultsFromOptions: function () {
-		    // if there were options rendered (but not buttons), generate the sets based on the filled-in options
-		    if (this.hasButtonOptions) {
-		        var activeButton = this.$productTab.find('.button.active');
-		        if (activeButton.length < 1) {
-		            console.error("ERROR: autoGenerate specified but cannot find active button");
-		        }
-		        else {
-		            var packName = activeButton.attr('data-pack');
-		            var packs = [{ packName: packName, count: 1 }];
-		            this.generatedSets = my.generateCardSetsFromPacks(packs);
-		        }
-		    }
-		    else if (this.hasOptions) {
-		        this.generatedSets = this.generateSetsFromInput();
-		    }
-
-		        // otherwise directly execute the packs as defined by the product
-		    else {
-		        var packs = _.reduce(this.options.packs, function (memo, pack) { return memo.concat({ packName: pack.packName, count: 1 }); }, []);
-		        this.generatedSets = my.generateCardSetsFromPacks(packs);
-		    }
-
-		    this.renderResults(this.generatedSets);
-
-		    my.trigger('cardSetsGenerated', my.setCode); // triggers google analytics booster-generation tracking event on index.html
-
-		    return this;
-		}
-
-		, renderPack: function (event) {
-		    var $button = $(event.currentTarget);
-		    $button.parent().find('a.button').removeClass('active');
-		    $button.addClass('active');
-
-		    var packName = $button.attr('data-pack');
-
-		    this.generatedSets = [];
-		    this.generatedSets.push(my.generateCardSetFromPack(packName));
-
-		    this.renderResults(this.generatedSets);
-
-		    my.trigger('cardSetsGenerated', my.setCode); // triggers google analytics booster-generation tracking event on index.html
-
-		    return false;
-		}
-
-        // should only be called from renderPack and renderResultsFromOptions
-		, renderResults: function (sets) {
-		    this.allCards = _.reduce(sets, function (memo, set) { return memo.concat(set); }, []);
-		    if (sets.length == 1 && sets[0].setDesc) {
-		        this.allCards.setDesc = this.generatedSets[0].setDesc;
-		    }
-
-		    var sortAllAndRenderFunction = this.getSortAllFunction(this.options.initialSort);
-		    if (this.options.initialSort == my.sortOrders.set.sort) {
-		        sortAllAndRenderFunction.call(this, this.generatedSets);
-		    }
-		    else {
-		        sortAllAndRenderFunction.call(this, this.allCards);
-		    }
-
-		    return this;
-		}
-
-		, switchPreset: function (event) {
-		    var $button = $(event.currentTarget);
-		    $button.parent().find('a.button').removeClass('active');
-		    $button.addClass('active');
-
-		    var presetName = $button.attr('data-preset');
-
-		    // get preset
-		    var chosenPreset;
-		    _.each(this.options.options.presets, function (preset) {
-		        if (preset.presetName == presetName) {
-		            chosenPreset = preset;
-		            return;
-		        }
-		    });
-		    if (chosenPreset === undefined) {
-		        console.error("Cannot find requested presetName: " + presetName);
-		        return;
-		    }
-
-		    var packsOut = this.renderPackPreset(this.options.packs, chosenPreset);
-
-		    this.$productTab.find('.packs').html(packsOut);
-
-		    return false;
-		}
-
-        // render all cards in a single list (e.g.: by name)
-		, renderAllCards: function (cards) {
-		    var title = cards.setDesc || 'All Cards';
-		    var allCardsHtml = my.renderCardsTitle(title + ' <span class="card-count">(' + cards.length + ')')
-				+ my.mainView.mainMenu.render(cards)
-				+ "<div>" + my.renderCards(cards) + "</div>";
-		    my.displayResults(this.productName, allCardsHtml);
-		}
-
-        // render all cards grouped into sets (e.g.: by colour, rarity, etc)
-		, renderAllCardSets: function (cardSets) {
-		    // add setID onto each set to uniquely identify it in this screen
-		    _.each(cardSets, function (cardSet, setID) { cardSet.setID = setID; });
-
-		    var summaryMenu = "<section class='menu jump'>" + _.reduce(cardSets, function (memo, cardSet) {
-		        return memo += "<a class='jump' href='#" + my.friendly_url(cardSet.setDesc) + "-" + cardSet.setID + "'>" + cardSet.setDesc + "<span class='card-count'> (" + cardSet.length + ")</a>";
-		    }, '') + "</section>";
-		    var cardCount = my.CountCardsInSets(cardSets);
-		    var allCardsHtml = my.renderCardsTitle('All Cards <span class="card-count">(' + cardCount + ')')
-				+ my.mainView.mainMenu.render(cardSets)
-				+ summaryMenu
-				+ "<div>" + my.renderCardSets(cardSets) + "</div>";
-		    my.displayResults(this.productName, allCardsHtml);
-		}
-
-        // render top-level sets (e.g.: a bunch of card packs)
-		, renderCardSets: function (cardSets) {
-		    var title = cardSets.length + ' Sets Generated';
-		    if (cardSets.length == 1) {
-		        title = cardSets[0].setDesc;
-		    }
-		    var caveats = '';
-		    if (this.options.hasOwnProperty('caveats')) {
-		        _.each(this.options.caveats, function (caveat, index) { caveats += "<div class='caveat'>" + caveat + "</div>"; });
-		    }
-		    var cardCount = my.CountCardsInSets(cardSets);
-		    var allCardsHtml = my.renderCardsTitle(title + ' - <span class="card-count">' + cardCount + ' cards')
-				+ my.mainView.mainMenu.render(cardSets)
-                + caveats
-				+ "<div>" + my.renderCardSets(cardSets) + "</div>";
-		    my.displayResults(this.productName, allCardsHtml);
-		}
-
-        // Sorting all cards  ----------------------------------------------------------------------------------------------------
-		, getSortAllFunction: function (sortName) {
-		    if (sortName === undefined) {
-		        return this.sortAllByNothing;
-		    }
-		    else {
-		        switch (sortName.toLowerCase()) {
-		            case my.sortOrders.none.sort: return this.sortAllByNothing;
-		            case my.sortOrders.name.sort: return this.sortAllByTitle;
-		            case my.sortOrders.colour.sort: return this.sortAllByColour;
-		            case my.sortOrders.rarity.sort: return this.sortAllByRarity;
-		            case my.sortOrders.cost.sort: return this.sortAllByCost;
-		            case my.sortOrders.type.sort: return this.sortAllByType;
-		            case my.sortOrders.guild.sort: return this.sortAllByGuild;
-		            case my.sortOrders.clan.sort: return this.sortAllByClan;
-		            case my.sortOrders.faction.sort: return this.sortAllByFaction;
-		            case my.sortOrders.set.sort: return this.sortAllBySets;
-		        }
-		    }
-		    return undefined;
-		}
-
-        // these all exist (as mostly pass-throughs) becuase we're using this.events which binds to function names on this
-		, sortAllByNothing: function () {
-		    var cards = my.sortAllByNothing(this.allCards);
-		    this.renderAllCards(cards);
-		    return false;
-		}
-
-		, sortAllByTitle: function () {
-		    var cards = my.sortAllByTitle(this.allCards);
-		    this.renderAllCards(cards);
-		    return false;
-		}
-
-		, sortAllByColour: function () {
-		    this.sortedSets = my.sortAllByColour(this.allCards);
-		    this.renderAllCardSets(this.sortedSets);
-		    return false;
-		}
-
-		, sortAllByRarity: function () {
-		    this.sortedSets = my.sortAllByRarity(this.allCards);
-		    this.renderAllCardSets(this.sortedSets);
-		    return false;
-		}
-
-		, sortAllByCost: function () {
-		    this.sortedSets = my.sortAllByCost(this.allCards);
-		    this.renderAllCardSets(this.sortedSets);
-		    return false;
-		}
-
-		, sortAllByType: function () {
-		    this.sortedSets = my.sortAllByType(this.allCards);
-		    this.renderAllCardSets(this.sortedSets);
-		    return false;
-		}
-
-		, sortAllByGuild: function () {
-		    this.sortedSets = my.sortAllByGuild(this.allCards);
-		    this.renderAllCardSets(this.sortedSets);
-		    return false;
-		}
-
-		, sortAllByClan: function () {
-		    this.sortedSets = my.sortAllByClan(this.allCards);
-		    this.renderAllCardSets(this.sortedSets);
-		    return false;
-		}
-
-		, sortAllByFaction: function () {
-		    this.sortedSets = my.sortAllByFaction(this.allCards);
-		    this.renderAllCardSets(this.sortedSets);
-		    return false;
-		}
-
-		, sortAllBySets: function () {
-		    // initial generated sets will already be 'by set'
-		    this.sortedSets = _.clone(this.generatedSets);
-		    for (var i = 0; i < this.sortedSets.length; i++) {
-		        this.sortedSets[i].sortOrder = my.sortOrders.order;
-		    }
-		    this.sortedSets.sortOrder = my.sortOrders.set;
-		    if (this.sortedSets.length == 1) {
-		        this.renderAllCards(this.sortedSets[0], this.sortedSets[0].setDesc);
-		    }
-		    else {
-		        this.renderCardSets(this.sortedSets);
-		    }
-		    return false;
-		}
-
-        // Sorting individual sets  -----------------------------------------------------------------------------------------------
-		, sortByTitle: function (events) {
-		    var setID = $(events.currentTarget).attr('data-setid');
-		    var sortedCards = my.sortByTitle(this.sortedSets[setID]);
-		    sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
-		    sortedCards.sortOrder = my.sortOrders.name;
-		    my.renderSetUpdate(this.productName, setID, sortedCards, this.sortedSets);
-		    return false;
-		}
-
-		, sortByColour: function (events) {
-		    var setID = $(events.currentTarget).attr('data-setid');
-		    var sortedCards = my.sortByColour(this.sortedSets[setID]);
-		    sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
-		    sortedCards.sortOrder = my.sortOrders.colour;
-		    my.renderSetUpdate(this.productName, setID, sortedCards, this.sortedSets);
-		    return false;
-		}
-
-		, sortByRarity: function (events) {
-		    var setID = $(events.currentTarget).attr('data-setid');
-		    var sortedCards = my.sortByRarity(this.sortedSets[setID]);
-		    sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
-		    sortedCards.sortOrder = my.sortOrders.rarity;
-		    my.renderSetUpdate(this.productName, setID, sortedCards, this.sortedSets);
-		    return false;
-		}
-
-		, sortByCost: function (events) {
-		    var setID = $(events.currentTarget).attr('data-setid');
-		    var sortedCards = my.sortByCost(this.sortedSets[setID]);
-		    sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
-		    sortedCards.sortOrder = my.sortOrders.cost;
-		    my.renderSetUpdate(this.productName, setID, sortedCards, this.sortedSets);
-		    return false;
-		}
-
-		, sortByType: function (events) {
-		    var setID = $(events.currentTarget).attr('data-setid');
-		    var sortedCards = my.sortByType(this.sortedSets[setID]);
-		    sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
-		    sortedCards.sortOrder = my.sortOrders.type;
-		    my.renderSetUpdate(this.productName, setID, sortedCards, this.sortedSets);
-		    return false;
-		}
-
-		, sortByGuild: function (events) {
-		    var setID = $(events.currentTarget).attr('data-setid');
-		    var sortedCards = my.sortByGuild(this.sortedSets[setID]);
-		    sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
-		    sortedCards.sortOrder = my.sortOrders.guild;
-		    my.renderSetUpdate(this.productName, setID, sortedCards, this.sortedSets);
-		    return false;
-		}
-
-		, sortByClan: function (events) {
-		    var setID = $(events.currentTarget).attr('data-setid');
-		    var sortedCards = my.sortByClan(this.sortedSets[setID]);
-		    sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
-		    sortedCards.sortOrder = my.sortOrders.clan;
-		    my.renderSetUpdate(this.productName, setID, sortedCards, this.sortedSets);
-		    return false;
-		}
-
-		, sortByFaction: function (events) {
-		    var setID = $(events.currentTarget).attr('data-setid');
-		    var sortedCards = my.sortByFaction(this.sortedSets[setID]);
-		    sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
-		    sortedCards.sortOrder = my.sortOrders.faction;
-		    my.renderSetUpdate(this.productName, setID, sortedCards, this.sortedSets);
-		    return false;
-		}
-
-		, sortSetByOpenedOrder: function (events) {
-		    var setID = $(events.currentTarget).attr('data-setid');
-
-		    // just revert back to original set sort order
-		    this.sortedSets[setID] = _.clone(this.generatedSets[setID]);
-		    this.sortedSets[setID].setDesc = this.generatedSets[setID].setDesc; // add the desc back
-		    this.sortedSets[setID].sortOrder = my.sortOrders.order;
-		    my.renderSetUpdate(this.productName, setID, this.sortedSets[setID], this.sortedSets);
-		    return false;
-		}
-
-        // OPTIONS - Input templates (dropdowns)  -----------------------------------------------------------------------------------------------
-
-        // Render an input template (text box for count, drop-down for pack).
-        // If no booster and boosterIndex provided, renders a template version for use in dynamic js addition.
-		, renderInput: function (packsInDropdown, inputSettings, boosterIndex) {
-		    // if no inputSettings provided, we're creating an empty template
-		    var htmlOut = (inputSettings) ? "<div class='booster-input'>" : "<div class='booster-input-template' style='display:none'>";
-
-		    // each input gets a unique ID so we know which was clicked later
-		    var boosterIndex2 = "template";
-		    if (boosterIndex) {
-		        boosterIndex2 = (boosterIndex + 1);
-		    }
-
-		    // each input has a count next to it (defaults to 1 if not supplied by inputSettings)
-		    var inputElId = "booster-count-" + boosterIndex2;
-		    var boosterCount = 1;
-		    if (inputSettings) {
-		        boosterCount = inputSettings.count;
-		    }
-		    htmlOut += "<input id='" + inputElId + "' type='number' min='0' max='99' value='" + boosterCount + "'>";
-
-		    // render the dropdown containing all available packs
-		    htmlOut += "<select id='booster-" + boosterIndex2 + "' data-count-el='" + inputElId + "'>";
-		    // if randomDefaultPackName is specified, choose one and use that in place of defaultPackName
-		    if (inputSettings && inputSettings.hasOwnProperty('randomDefaultPackName') && _.isArray(inputSettings.randomDefaultPackName)) {
-		        inputSettings.defaultPackName = inputSettings.randomDefaultPackName[_.random(0, (inputSettings.randomDefaultPackName.length - 1))];
-		    }
-		    _.each(packsInDropdown, function (packName) {
-		        var selected = "";
-
-		        // if we were passed the actual set of packs, dig one level deeper to get the pack name
-		        // otherwise we've just been passed a simple packname/packdesc array from the UI
-		        var packName2 = packName;
-		        if (packName.packName) {
-		            packName2 = packName.packName;
-		        }
-
-		        // set the default pack showing in the drop-down if provided
-		        if (inputSettings && packName2 == inputSettings.defaultPackName) {
-		            selected = " selected";
-		        }
-
-		        var pack = my.getPack(packName2);
-		        var packDesc = (pack === undefined) ? console.error("ERROR: Missing packName: " + packName2) : pack.packDesc;
-
-		        htmlOut += "<option value='" + packName2 + "'" + selected + ">" + packDesc + "</option>";
-		    });
-		    htmlOut += "</select>";
-		    htmlOut += "<button class='remove-input' title='Remove Booster'>-</button>";
-		    htmlOut += "</div>";
-
-		    return htmlOut;
-		}
-
-		, addBooster: function () {
-		    var html = $('#boosters .booster-input-template').html();
-
-		    var boosterCount = $('#boosters .booster-input').length + 1;
-		    while ($('#boosters .booster-' + boosterCount).length > 0) {
-		        boosterCount++;
-		    }
-
-		    html = html.replace(/booster-count-template/g, 'booster-count-' + boosterCount)
-						.replace(/booster-template/g, 'booster-' + boosterCount);
-		    html = "<div class='booster-input'>" + html + "</div>";
-
-		    $(html).insertBefore(this.$productTab.find('#boosters .booster-input-template'));
-		}
-
-		, removeBooster: function (event) {
-		    $(event.currentTarget).parent().remove();
-		}
-
-		, generateSetsFromInput: function () {
-		    var packs = [];
-
-		    // convert the pack option elements into an array of set names to be generated
-		    var topThis = this;
-		    var packEls = this.$productTab.find(".options .booster-input select");
-		    _.each(packEls, function (el) {
-		        var boosterCount = 1;
-		        var boosterCountEl = topThis.$productTab.find('#' + $(el).attr('data-count-el'));
-		        if (boosterCountEl.length < 1) {
-		            console.warn("Missing booster count (data-count-el) for " + el.id);
-		        }
-		        else {
-		            boosterCount = $(boosterCountEl[0]).val();
-		        }
-		        var pack = { count: boosterCount, packName: el.value };
-		        packs.push(pack);
-		    });
-
-		    var sets = my.generateCardSetsFromPacks(packs);
-
-		    return sets;
-		}
-
-    });
-
-    return my;
-}(mtgGen || {}, jQuery));
-
-
-//// --------------------------------------------------------------------------------------------------------------------------------
-//// Save Draw module 
-//// --------------------------------------------------------------------------------------------------------------------------------
-//var mtgGen = (function (my, $) {
-//    'use strict';
-
-//    var SaveDrawView = Backbone.View.extend({
-//        el: "body"
-
-//		, initialize: function () {
-//		    this.$el.on('click', 'a.save-draw', this.saveDraw);
-
-//		    my.on('menusInitialized', function () {
-//		        my.mainView.mainMenu.addMenuItem("saveDraw", 99, function () { return '<a href="#saveDraw" class="button save-draw" data-save-draw="all">Save Draw</a>'; });
-//		        //my.mainView.setMenu.addMenuItem("export", 99, function () { return '<a href="#exporter" class="button export" data-export="set">Export</a>'; });
-//		    });
-//		}
-
-//		, saveDraw: function (event) {
-//		    //$.post("/Set/SaveDraw", { name: "John", time: "2pm" })
-//		    // JSON doesn't support my odd properties-on-an-array format (oops), so let's convert to something that JSON can handle
-//            // And for each card, we only need the set|cardNum as a unique composite key
-//		    var saveCards = [];
-//		    _.each(my.mainView.currentView.generatedSets, function (generatedSet) {
-//		        var set = {
-//                    cards: [],
-//                    includeWithUserCards: generatedSet.includeWithUserCards,
-//                    setName: generatedSet.setName,
-//                    sortOrder: generatedSet.sortOrder
-//		        };
-//		        _.each(generatedSet, function (card) {
-//		            set.cards.push({ set: card.set, num: card.num });
-//		        });
-//		        saveCards.push(set);
-//		    });
-
-//		    //_.reduce(my.mainView.currentView.generatedSets, function (memo, cardArray) {
-//		    //    return memo.concat(
-//            //        {
-//            //            cards: cardArray,
-//            //            cards2: _.reduce(cardArray, function (memo2, card) { return memo.concat({ set: card.set, num: card.num }); }, []),
-//            //            includeWithUserCards: cardArray.includeWithUserCards,
-//            //            setDesc: cardArray.setDesc,
-//            //            setName: cardArray.setName,
-//            //            sortOrder: cardArray.sortOrder
-//            //        });
-//		    //}, []);
-//		    //var saveCards = _.reduce(my.mainView.currentView.generatedSets, function (memo, cardArray) {
-//		    //    return memo.concat(
-//            //        {
-//            //            cards: cardArray,
-//            //            cards2: _.reduce(cardArray, function (memo2, card) { return memo.concat({ set: card.set, num: card.num }); }, []),
-//            //            includeWithUserCards: cardArray.includeWithUserCards,
-//            //            setDesc: cardArray.setDesc,
-//            //            setName: cardArray.setName,
-//            //            sortOrder: cardArray.sortOrder
-//            //        });
-//		    //}, []);
-//		    $.post("/Set/SaveDraw", { data: JSON.stringify(saveCards) })
-//              .done(function (data) {
-//                  alert("Data Loaded: " + data);
-//              });
-//		    return false;
-//		}
-
-//    });
-
-//    my.initViews.push(new SaveDrawView()); // hook this module into main rendering view
-
-//    return my;
-//}(mtgGen || {}, jQuery));

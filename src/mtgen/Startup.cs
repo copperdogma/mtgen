@@ -33,8 +33,12 @@ namespace mtgen
         {
             services.AddMvc();
 
+            services.AddOptions();
+            services.Configure<AzureConfiguration>(Configuration);
+
             // Add application services.
             services.AddTransient<ISetService, SetService>();
+            services.AddTransient<IStorageContext, StorageContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,7 +47,7 @@ namespace mtgen
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            // CAMKILL: temp
+            // FOR DEBUGGING:
             //app.UseDeveloperExceptionPage();
 
             if (env.IsDevelopment())
@@ -67,8 +71,17 @@ namespace mtgen
                 routes.MapRoute(
                     name: "set",
                     defaults: new { controller = "Set", action = "Index" },
-                    template: "{setCode}",
+                    template: "{setCode}/{action}",
                     constraints: new { setCode = @"^[a-zA-Z0-9]{3}$" });
+
+                routes.MapRoute(
+                    name: "set-LoadDraw",
+                    defaults: new { controller = "Set", action = "LoadDraw" },
+                    template: "{setCode}/LoadDraw/{drawId}",
+                    constraints: new {
+                        setCode = @"^[a-zA-Z0-9]{3}$",
+                        drawId = @"^[a-zA-Z0-9]+$"
+                    });
 
                 routes.MapRoute(
                     name: "proxy",

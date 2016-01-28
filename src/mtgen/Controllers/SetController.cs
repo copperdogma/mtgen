@@ -1,18 +1,22 @@
 ﻿using Microsoft.AspNet.Mvc;
 using Microsoft.Extensions.PlatformAbstractions;
 using mtgen.Services;
+using System;
+using System.Threading.Tasks;
 
 namespace mtgen.Controllers
 {
     public class SetController : Controller
     {
         private readonly ISetService _setService;
-        //private readonly IViewEngine _viewEngine; 20150726: Can't get this to instantiate under MVC6
+        private readonly IStorageContext _storageContext;
+        //private readonly IViewEngine _viewEngine; 20150726: Can't get s to instantiate under MVC6
         private readonly IApplicationEnvironment _appEnvironment;
 
-        public SetController(ISetService setService, IApplicationEnvironment appEnvironment)
+        public SetController(ISetService setService, IStorageContext storageContext, IApplicationEnvironment appEnvironment)
         {
             _setService = setService;
+            _storageContext = storageContext;
             //_viewEngine = viewEngine;
             _appEnvironment = appEnvironment;
         }
@@ -20,50 +24,65 @@ namespace mtgen.Controllers
         public ActionContext ControllerContext { get; private set; }
 
         // GET: { 3-letter set name }
-        public ActionResult Index(string setCode, string saved)
-		{
-			var lowerCaseSetCode = setCode.ToLower();
-			ViewBag.SetCode = lowerCaseSetCode;
-			if (SetViewExists(lowerCaseSetCode))
-			{
-				return View(lowerCaseSetCode);
-			}
-			else if (_setService.SetExists(setCode))
-			{
-				var setStub = _setService.GetSetStub(setCode);
-				ViewBag.SetName = setStub.Name;
-				return View("ErrorSetNotYetCreated");
-			}
-			return View("ErrorNoSuchSet");
-		}
+        // There may be a ?draw=xxxxxx querystring param, but we ignore that here;
+        //  it's used by the client and asynchronously calls back to LoadDraw()
+        public ActionResult Index(string setCode)
+        {
+            var lowerCaseSetCode = setCode.ToLower();
+            ViewBag.SetCode = lowerCaseSetCode;
+            if (SetViewExists(lowerCaseSetCode))
+            {
+                return View(lowerCaseSetCode);
+            }
+            else if (_setService.SetExists(setCode))
+            {
+                var setStub = _setService.GetSetStub(setCode);
+                ViewBag.SetName = setStub.Name;
+                return View("ErrorSetNotYetCreated");
+            }
+            return View("ErrorNoSuchSet");
+        }
 
-        //[HttpPost]
-        //public JsonResult SaveDraw(string data)
-        //{
-        //	var permanentUrl = "";
-        //	var permaGuid = Convert.ToBase64String(Guid.NewGuid().ToByteArray()); // there is always a == at the end
-        //	permaGuid = permaGuid.Substring(0, permaGuid.Length - 2);
-        //	Session[permaGuid] = data;
+        [HttpPost]
+        async public Task<JsonResult> SaveDraw(string setCode, string data)
+        {
+            // See if the user already has a userDrawId. If not, create one for them.
+            // This (will be used) to tie a user's draws together so they can see a list of them.
+            var userDrawId = HttpContext.Request.Cookies["userDrawId"];
+            if (string.IsNullOrWhiteSpace(userDrawId))
+            {
+                // A GUID to hold the cartId. 
+                userDrawId = Guid.NewGuid().ToString();
 
-        //	// this will return something like: http://localhost:1491/LoadDraw/?saved=ahlaYo3tP069pjTvizXlVg
-        //	permanentUrl = Request.Url.ToString().Replace("SaveDraw","LoadDraw") + "?saved=" + permaGuid.ToString();
+                // Send cart Id as a cookie to the client.
+                HttpContext.Response.Cookies.Append("userDrawId", userDrawId);
+            }
 
-        //	return Json(permanentUrl, JsonRequestBehavior.AllowGet);
-        //}
+            var drawEntity = new DrawEntity();
+            drawEntity.SetCode = setCode;
+            drawEntity.Results = data;
+            drawEntity.UserDrawId = userDrawId;
 
-        //[HttpGet]
-        //public JsonResult LoadDraw(string saved)
-        //{
-        //	// TODO: need to add some sort of counter for every LoadDraw called for a particular saved guid
-        //	//	so we know which have been used/used a lot/not used and can be deleted
-        //	var savedData = Session[saved];
-        //	if (savedData == null)
-        //	{
-        //		return Json("No data", JsonRequestBehavior.AllowGet);
-        //	}
+            var uniqueId = await _storageContext.SaveDraw(drawEntity);
 
-        //	return Json(savedData, JsonRequestBehavior.AllowGet);
-        //}
+            // This will return something like: http://localhost:1491/ogw?draw=TvizXlV
+            var returnJson = $"{{ \"drawId\": \"{uniqueId}\", \"url\": \"/{setCode}?draw={uniqueId}\" }}";
+
+            return Json(returnJson);
+        }
+
+        // Used by the client if the set url looks like xxx?draw=yyyyyy
+        [HttpGet]
+        public async Task<IActionResult> LoadDraw(string setCode, string drawId)
+        {
+            if (drawId == null || drawId.Trim().Length == 0) { return HttpNotFound(); }
+
+            var drawJson = await _storageContext.LoadDraw(setCode, drawId);
+
+            if (drawJson == null) { return HttpNotFound(); }
+
+            return new ObjectResult(drawJson.Results);
+        }
 
         //private bool SetViewExists(string name)
         //{

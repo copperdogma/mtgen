@@ -23,6 +23,7 @@ Normally 15 cards per booster:
 
 - 1 in 4 boosters contains a foil which may be any card of any rarity (incl Basic Land), which replaces a Common
 
+26-Jan-2016: Now uses mtgenId instead of index.
 3-Jan-2016: Moved the core logic into mtg-generator-lib.js.
 22-Sep-2015: Now exports text formats with \r\n instead of just \n (for Windows/Notepad).
 8-Jul-2015: Export now replaces ’ with ' (the former messed up Cockatrice).
@@ -138,8 +139,12 @@ var mtgGen = (function (my, $) {
 		        $("#products>a.button").hide();
 		    }
 
-		    // if specified, auto-showTab the startup product
-		    if (my.startProductName) {
+		    // If specified, auto-showTab the startup product from the Draw (if there is one),
+		    // if not check if one is specified in the normal startup data.
+		    if (my.hasDraw() && my.draw.productName && this.ProductViews[my.draw.productName] !== undefined) {
+		        this.ProductViews[my.draw.productName].showTab();
+		    }
+		    else if (my.startProductName) {
 		        this.ProductViews[my.startProductName].showTab();
 		    }
 		    return this;
@@ -435,7 +440,6 @@ var mtgGen = (function (my, $) {
 		, initialize: function (options) {
 		    // save all options
 		    var context = this;
-		    var xxx = 1;
 		    this.options = options;
 		    _.each(options, function (value, key) {
 		        context.options[key] = value;
@@ -519,6 +523,55 @@ var mtgGen = (function (my, $) {
 		}
 
 		, renderOptions: function () {
+		    // Short-circuit if there's a saved deck for this tab.
+		    if (my.hasDrawForCurrentProduct()) {
+		        // Determine the sets that are to be displayed and how many of each.
+		        var setCounts = _.countBy(my.draw.sets, 'setName');
+
+		        // Render the preset buttons so the user can toggle between presets
+		        var presetsOut = "";
+
+		        var defaultPreset = { "packs": [] };
+		        for (var setCount in setCounts) {
+		            defaultPreset.packs.push({ "count": setCounts[setCount], "defaultPackName": setCount });
+		        }
+
+		        presetsOut = "<div class='presets'>" + presetsOut + "</div>";
+
+		        var packsOut = "<div class='packs'>" + this.renderPackPreset(this.options.packs, defaultPreset) + "</div>";
+
+		        this.$productTab.find('.options').html(presetsOut + packsOut);
+
+		        // Render the "results" from the saved draw data
+		        var savedDrawSets = [];
+		        _.each(my.draw.sets, function (drawSet) {
+		            var packDef = my.getPack(drawSet.setName);
+
+		            var set = [];
+		            set.setName = drawSet.setName;
+		            set.setDesc = packDef.packDesc;
+		            if (packDef.includeWithUserCards !== undefined) {
+		                set.includeWithUserCards = packDef.includeWithUserCards;
+		            }
+
+		            // Look up the cards.
+		            _.each(drawSet.mtgenIds, function (mtgenId) {
+		                var foundCard = my.cards[mtgenId];
+		                if (foundCard) {
+		                    set.push(foundCard);
+		                }
+		                else {
+		                    console.warn("Cannot find card saved in draw: " + mtgenId);
+		                }
+		            });
+		            savedDrawSets.push(set);
+		        });
+		        this.generatedSets = savedDrawSets;
+		        this.renderResults(savedDrawSets);
+
+		        return;
+		    }
+
 		    var topThis = this;
 		    if (!this.hasOptions) {
 		        this.renderResultsFromOptions();
@@ -552,7 +605,6 @@ var mtgGen = (function (my, $) {
 		        }
 		    }
 		    else if (this.hasButtonOptions) {
-
 		        var htmlOut = "";
 		        var defaultPack;
 		        _.each(this.options.options.buttons, function (pack) {
@@ -596,6 +648,13 @@ var mtgGen = (function (my, $) {
 		}
 
 		, renderResultsFromOptions: function () {
+		    var packs = [];
+
+		    // If there WAS a draw for this product, clear it.
+		    if (my.hasDrawForCurrentProduct()) {
+		        my.draw = undefined;
+		    }
+
 		    // if there were options rendered (but not buttons), generate the sets based on the filled-in options
 		    if (this.hasButtonOptions) {
 		        var activeButton = this.$productTab.find('.button.active');
@@ -604,20 +663,20 @@ var mtgGen = (function (my, $) {
 		        }
 		        else {
 		            var packName = activeButton.attr('data-pack');
-		            var packs = [{ packName: packName, count: 1 }];
-		            this.generatedSets = my.generateCardSetsFromPacks(packs);
+		            packs = [{ packName: packName, count: 1 }];
 		        }
 		    }
+		        // Normal tab, like Prerelease, that shows a few drop downs and a Generate button.
 		    else if (this.hasOptions) {
-		        this.generatedSets = this.generateSetsFromInput();
+		        packs = this.getPacksFromInput();
 		    }
-
-		        // otherwise directly execute the packs as defined by the product
+		        // Otherwise directly execute the packs as defined by the product (like All Cards).
 		    else {
-		        var packs = _.reduce(this.options.packs, function (memo, pack) { return memo.concat({ packName: pack.packName, count: 1 }); }, []);
-		        this.generatedSets = my.generateCardSetsFromPacks(packs);
+		        packs = _.reduce(this.options.packs, function (memo, pack) { return memo.concat({ packName: pack.packName, count: 1 }); }, []);
 		    }
 
+		    // Generate the cards, one set per pack, and render them to the UI.
+		    this.generatedSets = my.generateCardSetsFromPacks(packs);
 		    this.renderResults(this.generatedSets);
 
 		    my.trigger('cardSetsGenerated', my.setCode); // triggers google analytics booster-generation tracking event on index.html
@@ -714,7 +773,13 @@ var mtgGen = (function (my, $) {
 
         // render top-level sets (e.g.: a bunch of card packs)
 		, renderCardSets: function (cardSets) {
-		    var title = cardSets.length + ' Sets Generated';
+		    var title = "";
+		    if (my.hasDrawForCurrentProduct()) {
+		        title += "<strong title='Saved on " + (new Date(my.draw.timestamp)) + "'>Saved Draw:</strong> " + cardSets.length + " Sets Recreated";
+		    }
+		    else {
+		        title += cardSets.length + " Sets Generated";
+		    }
 		    if (cardSets.length == 1) {
 		        title = cardSets[0].setDesc;
 		    }
@@ -981,7 +1046,7 @@ var mtgGen = (function (my, $) {
 		    $(event.currentTarget).parent().remove();
 		}
 
-		, generateSetsFromInput: function () {
+		, getPacksFromInput: function () {
 		    var packs = [];
 
 		    // convert the pack option elements into an array of set names to be generated
@@ -1000,9 +1065,7 @@ var mtgGen = (function (my, $) {
 		        packs.push(pack);
 		    });
 
-		    var sets = my.generateCardSetsFromPacks(packs);
-
-		    return sets;
+		    return packs;
 		}
 
     });
@@ -1011,77 +1074,99 @@ var mtgGen = (function (my, $) {
 }(mtgGen || {}, jQuery));
 
 
-//// --------------------------------------------------------------------------------------------------------------------------------
-//// Save Draw module 
-//// --------------------------------------------------------------------------------------------------------------------------------
-//var mtgGen = (function (my, $) {
-//    'use strict';
+// --------------------------------------------------------------------------------------------------------------------------------
+// Save Draw module 
+// --------------------------------------------------------------------------------------------------------------------------------
+var mtgGen = (function (my, $) {
+    'use strict';
 
-//    var SaveDrawView = Backbone.View.extend({
-//        el: "body"
+    var SaveDrawView = Backbone.View.extend({
+        el: "body"
 
-//		, initialize: function () {
-//		    this.$el.on('click', 'a.save-draw', this.saveDraw);
+		, initialize: function () {
+		    this.$el.find('a.save-draw').fancybox();
+		    this.$el.on('click', 'a.save-draw', this.saveDraw);
 
-//		    my.on('menusInitialized', function () {
-//		        my.mainView.mainMenu.addMenuItem("saveDraw", 99, function () { return '<a href="#saveDraw" class="button save-draw" data-save-draw="all">Save Draw</a>'; });
-//		        //my.mainView.setMenu.addMenuItem("export", 99, function () { return '<a href="#exporter" class="button export" data-export="set">Export</a>'; });
-//		    });
-//		}
+		    my.on('menusInitialized', function () {
+		        my.mainView.mainMenu.addMenuItem("saveDraw", 99, function () {
+		            // If it's a generated view or there's already a draw saved for the current product, 
+		            // don't show the Save Draw button
+		            if (!my.mainView.currentView.isGenerated || my.hasDrawForCurrentProduct()) {
+		                return "";
+		            }
+		            return '<a href="#save-draw" class="button save-draw" data-save-draw="all" title="Save/Share your draw">Save Draw</a>'
+		        });
+		    });
 
-//		, saveDraw: function (event) {
-//		    //$.post("/Set/SaveDraw", { name: "John", time: "2pm" })
-//		    // JSON doesn't support my odd properties-on-an-array format (oops), so let's convert to something that JSON can handle
-//            // And for each card, we only need the set|cardNum as a unique composite key
-//		    var saveCards = [];
-//		    _.each(my.mainView.currentView.generatedSets, function (generatedSet) {
-//		        var set = {
-//                    cards: [],
-//                    includeWithUserCards: generatedSet.includeWithUserCards,
-//                    setName: generatedSet.setName,
-//                    sortOrder: generatedSet.sortOrder
-//		        };
-//		        _.each(generatedSet, function (card) {
-//		            set.cards.push({ set: card.set, num: card.num });
-//		        });
-//		        saveCards.push(set);
-//		    });
+		    my.on('cardSetsGenerated', function (setCode) {
+		        // Erase out storage of the last draw once a new one has been created.
+		        // It will be re-saved when the user clicks Save Draw again.
+		        my.mainView.currentView.saveDrawResults = undefined;
+		    });
+		}
 
-//		    //_.reduce(my.mainView.currentView.generatedSets, function (memo, cardArray) {
-//		    //    return memo.concat(
-//            //        {
-//            //            cards: cardArray,
-//            //            cards2: _.reduce(cardArray, function (memo2, card) { return memo.concat({ set: card.set, num: card.num }); }, []),
-//            //            includeWithUserCards: cardArray.includeWithUserCards,
-//            //            setDesc: cardArray.setDesc,
-//            //            setName: cardArray.setName,
-//            //            sortOrder: cardArray.sortOrder
-//            //        });
-//		    //}, []);
-//		    //var saveCards = _.reduce(my.mainView.currentView.generatedSets, function (memo, cardArray) {
-//		    //    return memo.concat(
-//            //        {
-//            //            cards: cardArray,
-//            //            cards2: _.reduce(cardArray, function (memo2, card) { return memo.concat({ set: card.set, num: card.num }); }, []),
-//            //            includeWithUserCards: cardArray.includeWithUserCards,
-//            //            setDesc: cardArray.setDesc,
-//            //            setName: cardArray.setName,
-//            //            sortOrder: cardArray.sortOrder
-//            //        });
-//		    //}, []);
-//		    $.post("/Set/SaveDraw", { data: JSON.stringify(saveCards) })
-//              .done(function (data) {
-//                  alert("Data Loaded: " + data);
-//              });
-//		    return false;
-//		}
+		, saveDraw: function (event) {
+		    //$.post("/[set]/SaveDraw", { name: "John", time: "2pm" })
+		    // JSON doesn't support my odd properties-on-an-array format (oops), so let's convert to something that JSON can handle
+		    // And for each card, we only need the set|cardNum as a unique composite key
+		    var drawData = {};
+		    drawData.generatorVersion = my.version;
+		    drawData.drawVersion = "1.0";
+		    drawData.useCount = 1;
+		    drawData.productName = my.mainView.currentView.options.originalProductName;
+		    drawData.sets = [];
+		    _.each(my.mainView.currentView.generatedSets, function (generatedSet) {
+		        var set = {
+		            mtgenIds: _.pluck(generatedSet, "mtgenId"),
+		            setName: generatedSet.setName,
+		            sortOrder: generatedSet.sortOrder.sort
+		        };
+		        drawData.sets.push(set);
+		    });
 
-//    });
+		    if (my.mainView.currentView.saveDrawResults !== undefined) {
+		        displayDrawResults(my.mainView.currentView.saveDrawResults);
+		    }
+		    else {
+		        $("#save-draw input").val("Loading...");
+		        $.post("/" + my.setCode + "/SaveDraw", { data: JSON.stringify(drawData) })
+                  .done(function (returnJson) {
+                      // e.g. return: { "drawId": "m09mJw", "url": "ogw?draw=m09mJw" }
+                      var returnData = JSON.parse(returnJson);
+                      displayDrawResults(returnData);
+                  });
+		    }
 
-//    my.initViews.push(new SaveDrawView()); // hook this module into main rendering view
+		    my.trigger('drawSaved', my.setCode); // triggers google analytics tracking event
 
-//    return my;
-//}(mtgGen || {}, jQuery));
+		    // no 'return false;' so fancybox can trigger afterward
+		}
+
+        , render: function () {
+            this.$el.append("<div style='display: none'>"
+                    + "<aside id='save-draw' class='modal'>"
+                        + "<h2>Save or Share Your Draw</h2>"
+                        + "<section>"
+                            + "<p>Bookmark this page or copy and save/share the following link:</p>"
+                            + "<p><input type='text' /></p>"
+                        + "</section class='export-set'>"
+                    + "</aside>"
+                + "</div>");
+            return this;
+        }
+    });
+
+    my.initViews.push(new SaveDrawView()); // hook this module into main rendering view
+
+    function displayDrawResults(drawData) {
+        history.pushState({ setCode: my.setCode, drawId: drawData.drawId },
+            my.set.name + " Draw", drawData.url); // change the url to match the saved draw
+        my.mainView.currentView.saveDrawResults = drawData; // save it so we don't regenerate it
+        $("#save-draw input").val(window.location.href).select().focus(); // display it
+    }
+
+    return my; // END Save Draw module
+}(mtgGen || {}, jQuery));
 
 // --------------------------------------------------------------------------------------------------------------------------------
 // Card Set Export module 
@@ -1119,7 +1204,6 @@ var mtgGen = (function (my, $) {
 		            sets.push(my.mainView.currentView.generatedSets[setID]);
 		        }
 		        addExportableTextFormats(sets);
-
 		    }
 		    // no 'return false;' so fancybox can trigger afterward
 		}
@@ -1130,7 +1214,7 @@ var mtgGen = (function (my, $) {
 
 		, render: function () {
 		    this.$el.append("<div style='display: none'>"
-					+ "<aside id='exporter'>"
+					+ "<aside id='exporter' class='modal'>"
 						+ "<h2>Export Your Boosters</h2>"
 						+ "<section class='export-set'>"
 							+ "<p>A variety of programs allow you to import cards in a certain format. Choose your format and copy &amp; paste the result or click Download to get a file.</p>"
@@ -1301,5 +1385,5 @@ var mtgGen = (function (my, $) {
         return output;
     }
 
-    return my;
+    return my; // END Card Export module
 }(mtgGen || {}, jQuery));

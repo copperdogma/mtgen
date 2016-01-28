@@ -1,5 +1,5 @@
 ﻿@using System.Linq;
-@using mtgen.ViewModels;
+@using mtgen.Services;
 @{
     var set = (mtgen.ViewModels.Set)ViewBag.Set;
 }
@@ -122,6 +122,9 @@
             var currOption = "#product-content>section.active .options a.active";
             mtgGen.on('cardSetsGenerated', function (setCode) {
                 ga('send', 'event', setCode.toUpperCase(), 'Generate', setCode.toUpperCase() + ": generate: " + $(currProduct).text() + ", " + $(currOption).text());
+            });
+            mtgGen.on('drawSaved', function (setCode) {
+                ga('send', 'event', setCode.toUpperCase(), 'SaveDraw', setCode.toUpperCase() + ": save-draw: " + $(currProduct).text());
             });
             $('.export-download').on('click', function (setCode) {
                 ga('send', 'event', setCode.toUpperCase(), 'Export', setCode.toUpperCase() + ": export: " + $(currProduct).text() + ", " + $(currOption).text());

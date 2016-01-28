@@ -325,6 +325,9 @@ main > em {
 	position: relative;
 	transition: .2s;
 }
+#product-content .result h2 strong {
+    color: greenyellow;
+}
 #product-content .result .card-count {
 	opacity: .3;
 }
@@ -411,12 +414,12 @@ footer a {
 	color: #fff;
 }
 
-#exporter {
+.modal {
 	max-width: 100%;
 	width: 70em;
 	padding: 2em;
 }
-#exporter h2 {
+.modal h2 {
 	font-size: 260%;
 	font-weight: normal;
 	text-shadow: none;
@@ -453,8 +456,23 @@ footer a {
 	width: 100%;
 }
 
+#save-draw input {
+    background: transparent;
+    border: none;
+    font-size: 200%;
+    font-style: italic;
+    padding: .5em .5em 1em .5em;
+    width: 100%;
+}
+#save-draw input:focus {
+    outline: none;
+}
+@media (max-width: 660px) {
+	#save-draw input {
+        font-size: inherit;        
+	}
+}
 
-/* Dragon's Maze */
 .guild {
 	background: rgba(0,0,0,.5);
 	margin-bottom: 1em;

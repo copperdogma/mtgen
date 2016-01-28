@@ -22,7 +22,9 @@
     "Microsoft.Extensions.Logging": "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging.Console": "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging.Debug": "1.0.0-rc1-final",
-    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-rc1-final"
+    "Microsoft.Framework.Configuration.Json": "1.0.0-beta8",
+    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-rc1-final",
+    "WindowsAzure.Storage": "6.2.2-preview"
   },
 
   "commands": {
@@ -33,6 +35,10 @@
   "frameworks": {
     "dnx451": {
       "dependencies": {
+        "Microsoft.Data.Edm": "5.6.3",
+        "Microsoft.Data.OData": "5.6.3",
+        "Microsoft.Data.Services.Client": "5.6.3",
+        "System.Spatial": "5.6.3"
       },
       "frameworkAssemblies": {
         "System.Net": "4.0.0.0"

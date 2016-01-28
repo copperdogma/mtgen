@@ -53,6 +53,7 @@ namespace mtgen.Services
         {
             return $"{setCode}\\{fileName}";
         }
+
         public IList<Card> GetCardsFromJsonFile(string jsonFilePath)
         {
             var cardsPath = _hostingEnvironment.MapPath(jsonFilePath);

@@ -1,4 +1,5 @@
 ﻿/*
+27-Jan-2016: Updated to add/use mtgenIds and associative arrays on "cards".
 4-Jan-2016: Rewrote getCardColourFromCard() -- MUCH simpler and now uses new (as of OGW) generic (x) and colourless (c) mana types
 
     Typical url: http://www.mtgsalvation.com/printable-gatecrash-spoiler.html
@@ -151,7 +152,7 @@ var cardDataImporter = (function (my, $) {
         // Get card data -------------------------------------------------------------------------------------------------
         // All card data source come with image data that we usually want to override in the next step.
         var mainOut = my.api.getCardData(htmlCards.data, htmlCards.urlSource, setCode);
-        var initialCardDataCount = mainOut.length;
+        var initialCardDataCount = Object.keys(mainOut).length;
 
         // Get image data -------------------------------------------------------------------------------------------------
         var imageDataCount = 0;
@@ -171,9 +172,6 @@ var cardDataImporter = (function (my, $) {
 
         // Add images to cards -------------------------------------------------------------------------------------------------
         mainOut = my.api.applyImagesToCards(mainOut, mainImages);
-
-        // Remove .index, which was added in getCardData()
-        for (var i = 0; i < mainOut.length; i++) { delete mainOut[i].index; }
 
         // Reporting -------------------------------------------------------------------------------------------------
 
@@ -218,11 +216,20 @@ var cardDataImporter = (function (my, $) {
             }
         }
 
-        var cardsWithPlaceholderImages = $.grep(mainOut, function (card, index) { return card.imageSource === "placeholder"; });
+        var cardsWithPlaceholderImages = _.filter(mainOut, function (card) { return card.imageSource === "placeholder"; });
         if (cardsWithPlaceholderImages.length > 0) {
             out += "<p>The following cards have no primary images or images supplied from your image source, so an image was created using <a href='http://placehold.it/' target='_blank'>placehold.it</a>:</p><ul>";
             for (var i = 0; i < cardsWithPlaceholderImages.length; i++) {
                 out += "<li style='color:red'>" + cardsWithPlaceholderImages[i].title + "</li>";
+            }
+            out += "</ul>";
+        }
+
+        var duplicateCards = _.filter(mainOut, function (card) { return card.duplicateNum !== undefined; });
+        if (duplicateCards.length > 0) {
+            out += "<p>The following cards have duplicate Titles:</p><ul>";
+            for (var i = 0; i < duplicateCards.length; i++) {
+                out += "<li style='color:DarkGoldenrod'>" + duplicateCards[i].mtgenId + ": " + duplicateCards[i].title + "</li>";
             }
             out += "</ul>";
         }
@@ -296,17 +303,20 @@ var cardDataImporter = (function (my, $) {
         // Final JSON output -------------------------------------------------------------------------------------------------
 
         // clean our temporary data out of the final card data
-        for (var i = 0; i < mainOut.length; i++) {
-            delete mainOut[i].matchTitle;
-            delete mainOut[i].srcOriginal;
-            delete mainOut[i].imageSourceOriginal;
-            delete mainOut[i].fixedViaException;
-            delete mainOut[i].imageSource;
-        }
+        //for (var i = 0; i < mainOut.length; i++) {
+        var finalOut = [];
+        _.each(mainOut, function (card) {
+            delete card.matchTitle;
+            delete card.srcOriginal;
+            delete card.imageSourceOriginal;
+            delete card.fixedViaException;
+            delete card.imageSource;
+            finalOut.push(card);
+        });
 
-        var jsonMainStr = JSON.stringify(mainOut, null, ' ');
+        var jsonMainStr = JSON.stringify(finalOut, null, ' ');
 
-        my.trigger('data-processing-complete', jsonMainStr, initialCardDataCount, imageDataCount, mainOut.length);
+        my.trigger('data-processing-complete', jsonMainStr, initialCardDataCount, imageDataCount, finalOut.length);
     }
 
     function sortByTitle(a, b) {
@@ -418,7 +428,7 @@ var cardDataImporter = (function (my, $) {
     }
 
     function getCardData(cardData, cardDataUrlSource, setCode) {
-        var cards = [];
+        var cards = {};
 
         // Determine from where the card data was sourced and therefore the parser needed.
         var lowercaseCardDataUrlSource = cardDataUrlSource.trim().toLowerCase();
@@ -441,14 +451,42 @@ var cardDataImporter = (function (my, $) {
             throw new Error("Card data url unknown. Only mtgen.net/localhost, mtgsalvation.com, gatheringmagic.com, and mtgjson.com supported. '" + cardDataUrlSource + "'");
         }
 
-        // Add card indicies for later use in queries.
-        for (var i = 0; i < cards.length; i++) { cards[i].index = i; }
+        return cards;
+    }
 
+    // Fix num (and any duplicates), add mtgenId, add into the cards object.
+    function addCardToCards(cards, newCard) {
+        var alphabet = "abcedfghijklmnopqrstuvwxyz";
+        newCard.num = newCard.num || newCard.multiverseid || newCard.id; // num is required, so ensure we have one
+        newCard.mtgenId = newCard.set + "|" + newCard.num;
+        if (cards[newCard.mtgenId] === undefined) {
+            cards[newCard.mtgenId] = newCard;
+        }
+        else {
+            // Duplicate cards found -- fix it!
+            var originalCard = cards[newCard.mtgenId];
+            var mtgenVariant = 1;
+            if (originalCard.mtgenVariant === undefined) {
+                delete cards[originalCard.mtgenId];
+                originalCard.mtgenVariant = mtgenVariant;
+                originalCard.mtgenId += ":" + alphabet[mtgenVariant - 1];
+                originalCard.duplicateNum = true;
+                cards[originalCard.mtgenId] = originalCard;
+                mtgenVariant++
+            }
+            else {
+                mtgenVariant = originalCard.mtgenVariant + 1;
+            }
+            newCard.mtgenVariant = mtgenVariant;
+            newCard.mtgenId += ":" + alphabet[mtgenVariant - 1];
+            newCard.duplicateNum = true;
+            cards[newCard.mtgenId] = newCard;
+        }
         return cards;
     }
 
     function getCardsFromMtgSalvationData(rawCardData, setCode) {
-        var cards = [];
+        var cards = {};
 
         // get all MtgS cards
         var $html = $("<html/>").html(rawCardData);
@@ -566,7 +604,7 @@ var cardDataImporter = (function (my, $) {
             //    }
             //});
 
-            cards.push(card);
+            cards = addCardToCards(cards, card);
         }
 
         return cards;
@@ -574,7 +612,7 @@ var cardDataImporter = (function (my, $) {
 
     // 20160101: defunct as of Battle for Zendikar -- they now post everything to Facebook. Switching to MTG Salvation.
     function getCardsFromGatheringMagicData(rawCardData, setCode) {
-        var cards = [];
+        var cards = {};
 
         // get all GM cards (or at least the mtgJson cards have to exist)
         var $html = $(rawCardData);
@@ -676,14 +714,14 @@ var cardDataImporter = (function (my, $) {
                 }
             });
 
-            cards.push(card);
+            cards = addCardToCards(cards, card);
         });
 
         return cards;
     }
 
     function getCardsFromMtgJsonData(rawCardData, setCode) {
-        var cards = [];
+        var cards = {};
 
         rawCardData = JSON.parse(rawCardData);
 
@@ -739,7 +777,7 @@ var cardDataImporter = (function (my, $) {
                 card.faction = card.watermark;
             }
 
-            cards.push(card);
+            cards = addCardToCards(cards, card);
         }
 
         return cards;
@@ -1013,10 +1051,7 @@ var cardDataImporter = (function (my, $) {
 
                     card.addedViaException = true;
 
-                    cards.push(card);
-
-                    // Rebuild indices otherwise future queries will be off.
-                    for (var j = 0; j < cards.length; j++) { cards[j].index = j; }
+                    cards = addCardToCards(cards, card);
 
                     continue;
                 }
@@ -1040,12 +1075,11 @@ var cardDataImporter = (function (my, $) {
 
                 // If it's a Delete exception, delete any cards matching the query.
                 if (exception.delete === true) {
-                    cards = _.difference(cards, matchingCards);
+                    _.each(matchingCards, function (matchingCard) {
+                        delete cards[matchingCard.mtgenId];
+                    });
                     exception.result.deletedCards = matchingCards;
                     exception.result.affectedCards = matchingCards.length;
-
-                    // Rebuild indices otherwise future queries will be off.
-                    for (var j = 0; j < cards.length; j++) { cards[j].index = j; }
 
                     continue;
                 }
@@ -1065,7 +1099,9 @@ var cardDataImporter = (function (my, $) {
                 //});
 
                 // Remove all of the matching cards -- we'll add them back after we modify them.
-                cards = _.difference(cards, matchingCards);
+                _.each(matchingCards, function (matchingCard) {
+                    delete cards[matchingCard.mtgenId];
+                });
 
                 var replacementTokenRegex = /{{(.*?)}}/g;
 
@@ -1102,15 +1138,14 @@ var cardDataImporter = (function (my, $) {
                 exception.result.affectedCards = matchingCards.length;
 
                 // Add the modifed cards back in.
-                cards = _.union(cards, matchingCards);
-
-                // Rebuild indices otherwise future queries will be off.
-                for (var j = 0; j < cards.length; j++) { cards[j].index = j; }
+                _.each(matchingCards, function (matchingCard) {
+                    cards = addCardToCards(cards, matchingCard);
+                });
             }
         }
 
         // Sort the final result so they're in the order they were originally sent in (for debugging).
-        cards = _.sortBy(cards, "index");
+        //CAMKILL:cards = _.sortBy(cards, "index");
 
         // Return both the updated set of cards AND the modified exceptions (the latter for reporitng purposes).
         var result = {};
@@ -1121,8 +1156,7 @@ var cardDataImporter = (function (my, $) {
 
     function applyImagesToCards(cards, images) {
         if (images !== undefined) {
-            for (var i = 0; i < cards.length; i++) {
-                var card = cards[i];
+            _.each(cards, function (card) {
                 var image = images[card.matchTitle];
 
                 // archive.wizards.com images have no titles; they're indexed by image
@@ -1137,17 +1171,16 @@ var cardDataImporter = (function (my, $) {
                     card.imageSource = image.imageSource;
                     image.wasUsed = true;
                 }
-            }
+            });
         }
 
         // if no image found at all at this point, create replacement card
-        for (var i = 0; i < cards.length; i++) {
-            var card = cards[i];
+        _.each(cards, function (card) {
             if (!card.src) {
                 card.imageSource = "placeholder";
                 card.src = createPlaceholderCardSrc(card);
             }
-        }
+        });
 
         return cards;
     }
