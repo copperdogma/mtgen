@@ -65,6 +65,12 @@ namespace mtgen
 
             app.UseStaticFiles();
 
+            app.UseCookieAuthentication(options => {
+                options.AutomaticAuthenticate = true;
+                options.AutomaticChallenge = true;
+                options.LoginPath = "/Admin/Login";
+            });
+
             // Add MVC to the request pipeline.
             app.UseMvc(routes =>
             {
@@ -91,9 +97,6 @@ namespace mtgen
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
-
-                // Uncomment the following line to add a route for porting Web API 2 controllers.
-                // routes.MapWebApiRoute("DefaultApi", "api/{controller}/{id?}");
             });
         }
 

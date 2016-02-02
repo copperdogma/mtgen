@@ -12,14 +12,14 @@ namespace mtgen.Services
 
         public DrawEntity() { }
 
-        [IgnorePropertyAttribute]
+        [IgnoreProperty]
         public string DrawId
         {
             get { return this.RowKey; }
             set { this.RowKey = value; }
         }
 
-        [IgnorePropertyAttribute]
+        [IgnoreProperty]
         public string SetCode
         {
             get { return this.PartitionKey; }
