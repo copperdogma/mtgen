@@ -1,31 +1,30 @@
 ﻿using Microsoft.AspNet.Authentication.Cookies;
 using Microsoft.AspNet.Authorization;
 using Microsoft.AspNet.Mvc;
-using mtgen.ViewModels.Account;
+using mtgen.Areas.Admin.ViewModels;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace mtgen.Controllers
+namespace mtgen.Areas.Admin.Controllers
 {
-    [Authorize]
-    public class AdminController : Controller
+    [AllowAnonymous]
+    [Area("Admin")]
+    public class LoginController : Controller
     {
         //
-        // GET: /Account/Login
+        // GET: /Admin/Login
         [HttpGet]
-        [AllowAnonymous]
-        public IActionResult Login(string returnUrl = null)
+        public IActionResult Index(string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
 
         //
-        // POST: /Account/Login
+        // POST: /Admin/Login
         [HttpPost]
-        [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
+        public async Task<IActionResult> Index(LoginViewModel model, string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
@@ -41,7 +40,7 @@ namespace mtgen.Controllers
 
                     if (string.IsNullOrWhiteSpace(returnUrl))
                     {
-                        return RedirectToAction("Index");
+                        return RedirectToAction("Index","Admin");
                     }
                     return RedirectToLocal(returnUrl);
                 }
@@ -62,19 +61,8 @@ namespace mtgen.Controllers
             }
             else
             {
-                return RedirectToAction(nameof(AdminController.Index), "Index");
+                return RedirectToAction(nameof(HomeController.Index), "Index");
             }
-        }
-
-        [Route("[controller]")]
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Error()
-        {
-            return View();
         }
     }
 }

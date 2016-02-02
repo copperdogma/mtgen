@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace mtgen.ViewModels.Account
+namespace mtgen.Areas.Admin.ViewModels
 {
     public class LoginViewModel
     {

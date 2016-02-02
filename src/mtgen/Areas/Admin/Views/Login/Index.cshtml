@@ -1,20 +1,17 @@
 ﻿@using System.Collections.Generic
 @using Microsoft.AspNet.Http
 @using Microsoft.AspNet.Http.Authentication
-@using mtgen.ViewModels.Account
 @model LoginViewModel
-@*@inject SignInManager<ApplicationUser> SignInManager*@
 
 @{
     ViewData["Title"] = "Log in";
-    Layout = "_LayoutAdmin";
 }
 
 <h2>@ViewData["Title"].</h2>
 <div class="row">
     <div class="col-md-8">
         <section>
-            <form asp-controller="Account" asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal" role="form">
+            <form asp-route-area="Admin" asp-controller="Login" asp-action="Index" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal" role="form">
                 <h4>Use a local account to log in.</h4>
                 <hr />
                 <div asp-validation-summary="ValidationSummary.All" class="text-danger"></div>
