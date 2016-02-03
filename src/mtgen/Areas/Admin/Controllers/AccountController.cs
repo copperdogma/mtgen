@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNet.Authentication.Cookies;
-using Microsoft.AspNet.Authorization;
 using Microsoft.AspNet.Mvc;
 using mtgen.Areas.Admin.ViewModels;
 using System.Security.Claims;
@@ -7,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace mtgen.Areas.Admin.Controllers
 {
-    [AllowAnonymous]
     [Area("Admin")]
-    public class LoginController : Controller
+    public class AccountController : Controller
     {
         //
         // GET: /Admin/Login
         [HttpGet]
-        public IActionResult Index(string returnUrl = null)
+        [Route("Admin/Login")]
+        public IActionResult Login(string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
             return View();
@@ -23,8 +22,9 @@ namespace mtgen.Areas.Admin.Controllers
         //
         // POST: /Admin/Login
         [HttpPost]
+        [Route("Admin/Login")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Index(LoginViewModel model, string returnUrl = null)
+        public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
@@ -63,6 +63,15 @@ namespace mtgen.Areas.Admin.Controllers
             {
                 return RedirectToAction(nameof(HomeController.Index), "Index");
             }
+        }
+
+        //
+        // [GET|POST]: /Admin/Logout
+        [Route("Admin/Logout")]
+        public IActionResult Logout()
+        {
+            HttpContext.Authentication.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return Redirect("/");
         }
     }
 }

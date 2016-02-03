@@ -7,7 +7,7 @@ namespace mtgen.Areas.Admin.Controllers
     [Area("Admin")]
     public class HomeController : Controller
     {
-        //CAMKILL: enabling this makes /Admin/Home, /Admin/Home/Index not work at all [Route("[controller]")]
+        [Route("Admin")]
         public IActionResult Index()
         {
             return View();

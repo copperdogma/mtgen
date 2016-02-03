@@ -65,7 +65,8 @@ namespace mtgen
 
             app.UseStaticFiles();
 
-            app.UseCookieAuthentication(options => {
+            app.UseCookieAuthentication(options =>
+            {
                 options.AutomaticAuthenticate = true;
                 options.AutomaticChallenge = true;
                 options.LoginPath = "/Admin/Login";
@@ -84,7 +85,8 @@ namespace mtgen
                     name: "set-LoadDraw",
                     defaults: new { controller = "Set", action = "LoadDraw" },
                     template: "{setCode}/LoadDraw/{drawId}",
-                    constraints: new {
+                    constraints: new
+                    {
                         setCode = @"^[a-zA-Z0-9]{3}$",
                         drawId = @"^[a-zA-Z0-9]+$"
                     });
@@ -99,8 +101,8 @@ namespace mtgen
                     template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                        name: "default",
+                        template: "{controller=Home}/{action=Index}/{id?}");
             });
         }
 
