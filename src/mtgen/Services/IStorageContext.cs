@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace mtgen.Services
 {
@@ -6,5 +7,6 @@ namespace mtgen.Services
     {
         Task<string> SaveDraw(DrawEntity pullEntity);
         Task<DrawEntity> LoadDraw(string setCode, string drawId);
+        Task<IList<DrawEntity>> GetPopularDraws();
     }
 }

@@ -1,0 +1,25 @@
+﻿@using mtgen.Services;
+@model Task<IList<DrawEntity>>
+@{
+    ViewData["Title"] = "Draw Statistics";
+}
+
+<h1>Draw Statistics</h1>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead><tr><th>Draw Url</th><th>Use Count</th><th>Last Viewed</th></tr></thead>
+        <tbody>
+            @foreach (var draw in await Model)
+            {
+                var drawUrl = $"/{draw.SetCode}?draw={draw.DrawId}";
+                <tr>
+                    <td><a href="@drawUrl" target="_blank">@draw.DrawId</a></td>
+                    <td>@draw.UseCount</td>
+                    <td>@draw.LastUsedDateTime.ToLocalTime().ToString("dd-MMM-yyyy h:mm tt")</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>

@@ -4,8 +4,10 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
 using System.Threading.Tasks;
 using Microsoft.Extensions.OptionsModel;
+using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using System.Linq;
 
 namespace mtgen.Services
 {
@@ -38,15 +40,18 @@ namespace mtgen.Services
 
         async public Task<string> SaveDraw(DrawEntity drawEntity)
         {
-            var uniqueDrawId = await GetUniqueId(drawEntity.SetCode);
-            drawEntity.DrawId = uniqueDrawId;
+            if (string.IsNullOrEmpty(drawEntity.DrawId))
+            {
+                var uniqueDrawId = await GetUniqueId(drawEntity.SetCode);
+                drawEntity.DrawId = uniqueDrawId;
+            }
 
             // Create the TableOperation object that inserts the customer entity.
-            var insertOperation = TableOperation.Insert(drawEntity);
+            var upsertOperation = TableOperation.InsertOrReplace(drawEntity);
 
             // Execute the insert operation.
             var drawTable = await GetDrawTable();
-            await drawTable.ExecuteAsync(insertOperation);
+            await drawTable.ExecuteAsync(upsertOperation);
 
             return drawEntity.DrawId;
         }
@@ -66,7 +71,7 @@ namespace mtgen.Services
 
         async private Task<DrawEntity> GetDraw(string setCode, string drawId)
         {
-            // Create a retrieve operation that takes a customer entity.
+            // Create a retrieve operation that takes a Draw entity.
             var retrieveOperation = TableOperation.Retrieve<DrawEntity>(setCode, drawId);
 
             // Execute the retrieve operation.
@@ -83,12 +88,14 @@ namespace mtgen.Services
             if (draw == null) return null;
 
             var jsonData = JObject.Parse(draw.Results);
-            var useCount = jsonData.Value<int?>("useCount") ?? 1;
-            useCount++;
-            jsonData["useCount"] = useCount;
+            //var useCount = jsonData.Value<int?>("useCount") ?? 1;
+            //useCount++;
+            //jsonData["useCount"] = useCount;
             jsonData["timestamp"] = draw.Timestamp;
 
             draw.Results = jsonData.ToString(Formatting.None); // Don't add spaces/returns.
+            draw.UseCount++;
+            draw.LastUsedDateTime = DateTime.UtcNow;
 
             SaveDraw(draw); // Not guaranteed to finish running.
 
@@ -132,6 +139,20 @@ namespace mtgen.Services
             }
 
             return stringSet.ToString();
+        }
+
+        async public Task<IList<DrawEntity>> GetPopularDraws()
+        {
+            var drawTable = await GetDrawTable();
+
+            var tableContinutionToken = new TableContinuationToken();
+            var popularDrawsQuery = new TableQuery<DrawEntity>()
+                .Where(TableQuery.GenerateFilterConditionForLong("UseCount", QueryComparisons.GreaterThanOrEqual, 1));
+            var popularDraws = await drawTable.ExecuteQuerySegmentedAsync(popularDrawsQuery, tableContinutionToken);
+
+            var sortedPopularDraws = popularDraws.Results.OrderByDescending(d => d.UseCount).ToList();
+
+            return sortedPopularDraws;
         }
 
     }

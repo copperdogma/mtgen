@@ -1,4 +1,5 @@
 ﻿using Microsoft.WindowsAzure.Storage.Table;
+using System;
 
 namespace mtgen.Services
 {
@@ -28,5 +29,7 @@ namespace mtgen.Services
 
         public string Results { get; set; }
         public string UserDrawId { get; set; }
+        public long UseCount { get; set; }
+        public DateTime LastUsedDateTime { get; set; }
     }
 }
