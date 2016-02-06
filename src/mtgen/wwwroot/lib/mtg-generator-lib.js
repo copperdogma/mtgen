@@ -785,6 +785,7 @@ var mtgGen = (function (my, $) {
 
         cardSet.setName = pack.packName;
         cardSet.setDesc = pack.packDesc;
+        cardSet.packVersion = pack.packVersion;
 
         // used to ensure things like promos aren't included when you sort all cards by colour
         // NOTE: this isn't really used right now -- I'm leaving it in in case it's useful when we start actually letting the user build decks

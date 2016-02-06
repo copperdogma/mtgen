@@ -1119,7 +1119,8 @@ var mtgGen = (function (my, $) {
 		        var set = {
 		            mtgenIds: _.pluck(generatedSet, "mtgenId"),
 		            setName: generatedSet.setName,
-		            sortOrder: generatedSet.sortOrder.sort
+		            sortOrder: generatedSet.sortOrder.sort,
+		            packVersion: generatedSet.packVersion || "1.0"
 		        };
 		        drawData.sets.push(set);
 		    });

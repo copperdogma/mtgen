@@ -46,6 +46,9 @@ namespace mtgen.Services
                 drawEntity.DrawId = uniqueDrawId;
             }
 
+            drawEntity.UseCount++;
+            drawEntity.LastUsedDateTime = DateTime.UtcNow;
+
             // Create the TableOperation object that inserts the customer entity.
             var upsertOperation = TableOperation.InsertOrReplace(drawEntity);
 
@@ -94,8 +97,6 @@ namespace mtgen.Services
             jsonData["timestamp"] = draw.Timestamp;
 
             draw.Results = jsonData.ToString(Formatting.None); // Don't add spaces/returns.
-            draw.UseCount++;
-            draw.LastUsedDateTime = DateTime.UtcNow;
 
             SaveDraw(draw); // Not guaranteed to finish running.
 
