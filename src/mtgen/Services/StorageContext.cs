@@ -72,7 +72,7 @@ namespace mtgen.Services
             }
         }
 
-        async private Task<DrawEntity> GetDraw(string setCode, string drawId)
+        async public Task<DrawEntity> GetDraw(string setCode, string drawId)
         {
             // Create a retrieve operation that takes a Draw entity.
             var retrieveOperation = TableOperation.Retrieve<DrawEntity>(setCode, drawId);
