@@ -707,7 +707,7 @@ var mtgGen = (function (my, $) {
                 var totalWeight = _.reduce(cardDef.querySet, function (memo, query) { return memo + query.percent; }, 0);
 
                 // choose the card query percent; we want decimal numbers because the cards can be specified as such (e.g.: 1/8 chance = 12.5%)
-                var percent = Math.random() * totalWeight + 1;
+                var percent = Math.random() * totalWeight;
                 if (percent > totalWeight) { percent = totalWeight; }
 
                 // choose the card query that matches that weighted percentage
