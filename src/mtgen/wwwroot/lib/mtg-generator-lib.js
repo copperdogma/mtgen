@@ -342,7 +342,9 @@ var mtgGen = (function (my, $) {
             _.each(my.cards, function (card) {
                 if (card.hasOwnProperty("title")) {
                     card.num = card.num || card.multiverseid || card.id; // num is required, so ensure we have one
-                    card.mtgenId = card.set + "|" + card.num;
+                    if (card.mtgenId === undefined) {
+                        card.mtgenId = card.set + "|" + card.num;
+                    }
 
                     // create a sanitized matchTitle stripped of all punctuation, special chars, etc to be used for matching
                     card.matchTitle = my.createMatchTitle(card.title);
