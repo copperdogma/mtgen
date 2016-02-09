@@ -1,0 +1,59 @@
+{
+  "defs": [
+    {
+      "defName": "csp",
+      "query": "from[*]?set='csp"
+    },
+    {
+      "defName": "csp-main",
+      "query": "from[csp]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "csp-all-cards",
+      "packDesc": "Cold Snap: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[csp]" }
+      ]
+    },
+    {
+      "packName": "csp-standard",
+      "packDesc": "Cold Snap: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "_comment": "common rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "from[csp-main]?rarity='c"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[csp-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[csp-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[csp-main]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[10]>from[csp-main]?rarity='c" },
+        { "query": "take[3]>from[csp-main]?rarity='u" },
+        { "query": "take[1]>from[csp-main]?rarity='r" }
+      ]
+    }
+  ]
+}

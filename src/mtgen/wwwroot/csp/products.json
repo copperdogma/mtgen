@@ -1,0 +1,41 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "csp-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/CSP.json", "http://mtgsalvation.gamepedia.com/Coldsnap" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "csp-all-cards" }
+      ]
+    },
+    {
+      "productName": "csp-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Coldsnap" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "csp-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "csp-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "csp-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+  ]
+}
