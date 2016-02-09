@@ -1,0 +1,32 @@
+{
+  "defs": [
+    {
+      "defName": "all",
+      "query": "from[*]?set='all"
+    },
+    {
+      "defName": "all-main",
+      "query": "from[all]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "all-all-cards",
+      "packDesc": "Alliances: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[all]" }
+      ]
+    },
+    {
+      "packName": "all-standard",
+      "packDesc": "Alliances: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[3]>from[all-main]?rarity='u" },
+        { "query": "take[1]>from[all-main]?rarity='r" },
+        { "query": "take[11]>from[all-main]?rarity='c" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "all-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/ALL.json", "http://mtgsalvation.gamepedia.com/Alliances" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "all-all-cards" }
+      ]
+    },
+    {
+      "productName": "all-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Alliances" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "all-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "all-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "all-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+  ]
+}
