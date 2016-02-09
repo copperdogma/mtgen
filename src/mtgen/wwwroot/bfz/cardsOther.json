@@ -11,6 +11,7 @@
     "toughness": "5",
     "colour": "x",
     "num": "002 Launch",
+    "mtgenId": "bfz|002 Launch",
     "promo": true,
     "includedReason": "Launch Promo",
     "usableForDeckBuilding": false
@@ -24,6 +25,7 @@
     "type": "Sorcery",
     "colour": "b",
     "num": "123 Buy-a-Box",
+    "mtgenId": "bfz|123 Buy-a-Box",
     "promo": true,
     "includedReason": "Buy-a-Box Promo",
     "usableForDeckBuilding": false
@@ -37,6 +39,7 @@
     "type": "Sorcery",
     "colour": "r",
     "num": "151 Game Day",
+    "mtgenId": "bfz|151 Game Day",
     "promo": true,
     "includedReason": "Game Day Promo",
     "usableForDeckBuilding": false
@@ -50,6 +53,7 @@
     "type": "Enchantment",
     "colour": "w",
     "num": "050 Game Day",
+    "mtgenId": "bfz|050 Game Day",
     "promo": true,
     "includedReason": "Game Day Promo",
     "usableForDeckBuilding": false
@@ -66,6 +70,7 @@
     "toughness": "1",
     "colour": "g",
     "num": "188 Gift Box",
+    "mtgenId": "bfz|188 Gift Box",
     "promo": true,
     "includedReason": "Gift Box Promo",
     "usableForDeckBuilding": false
@@ -81,7 +86,8 @@
     "promo": "true",
     "includedReason": "Prerelease Promo",
     "usableForDeckBuilding": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|001 Counter"
   },
   {
     "src": "http://mtgen.net/cards/bfz-spindown-life-counter-blue.png",
@@ -94,7 +100,8 @@
     "promo": "true",
     "includedReason": "Prerelease Promo",
     "usableForDeckBuilding": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|002 Counter"
   },
   {
     "src": "http://mtgen.net/cards/bfz-spindown-life-counter-black.png",
@@ -107,7 +114,8 @@
     "promo": "true",
     "includedReason": "Prerelease Promo",
     "usableForDeckBuilding": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|003 Counter"
   },
   {
     "src": "http://mtgen.net/cards/bfz-spindown-life-counter-red.png",
@@ -120,7 +128,8 @@
     "promo": "true",
     "includedReason": "Prerelease Promo",
     "usableForDeckBuilding": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|004 Counter"
   },
   {
     "src": "http://mtgen.net/cards/bfz-spindown-life-counter-green.png",
@@ -133,7 +142,8 @@
     "promo": "true",
     "includedReason": "Prerelease Promo",
     "usableForDeckBuilding": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|005 Counter"
   },
   {
     "src": "http://mtgen.net/cards/bfz-deckbuilding-info.jpg",
@@ -149,7 +159,8 @@
     "promo": "true",
     "includedReason": "Prerelease Promo",
     "usableForDeckBuilding": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|006 Insert"
   },
   {
     "src": "http://mtgen.net/cards/bfz-prerelease-deck-box.png",
@@ -162,7 +173,8 @@
     "promo": "true",
     "includedReason": "Prerelease Promo",
     "usableForDeckBuilding": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|007 Deck Box"
   },
   {
     "src": "http://mtgen.net/cards/bfz-prerelease-card-divider.png",
@@ -175,7 +187,8 @@
     "promo": "true",
     "includedReason": "Prerelease Promo",
     "usableForDeckBuilding": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|008 Deck Box Divider"
   },
   {
     "title": "Swamp",
@@ -188,7 +201,10 @@
     "colour": "l",
     "num": "260",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|260:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Swamp",
@@ -201,7 +217,10 @@
     "colour": "l",
     "num": "260",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|260:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Swamp",
@@ -214,7 +233,10 @@
     "colour": "l",
     "num": "261",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|261:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Swamp",
@@ -227,7 +249,10 @@
     "colour": "l",
     "num": "261",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|261:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Swamp",
@@ -240,7 +265,10 @@
     "colour": "l",
     "num": "262",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|262:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Swamp",
@@ -253,7 +281,10 @@
     "colour": "l",
     "num": "262",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|262:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Swamp",
@@ -266,7 +297,10 @@
     "colour": "l",
     "num": "263",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|263:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Swamp",
@@ -279,7 +313,10 @@
     "colour": "l",
     "num": "263",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|263:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Swamp",
@@ -292,7 +329,10 @@
     "colour": "l",
     "num": "264",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|264:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Swamp",
@@ -305,7 +345,10 @@
     "colour": "l",
     "num": "264",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|264:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Forest",
@@ -318,7 +361,10 @@
     "colour": "l",
     "num": "270",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|270:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Forest",
@@ -331,7 +377,10 @@
     "colour": "l",
     "num": "270",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|270:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Forest",
@@ -344,7 +393,10 @@
     "colour": "l",
     "num": "271",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|271:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Forest",
@@ -357,7 +409,10 @@
     "colour": "l",
     "num": "271",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|271:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Forest",
@@ -370,7 +425,10 @@
     "colour": "l",
     "num": "272",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|272:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Forest",
@@ -383,7 +441,10 @@
     "colour": "l",
     "num": "272",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|272:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Forest",
@@ -396,7 +457,10 @@
     "colour": "l",
     "num": "273",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|273:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Forest",
@@ -409,7 +473,10 @@
     "colour": "l",
     "num": "273",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|273:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Forest",
@@ -422,7 +489,8 @@
     "colour": "l",
     "num": "274",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|274"
   },
   {
     "title": "Forest",
@@ -435,7 +503,8 @@
     "colour": "l",
     "num": "264",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|264"
   },
   {
     "title": "Island",
@@ -448,7 +517,10 @@
     "colour": "l",
     "num": "255",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|255:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Island",
@@ -461,7 +533,10 @@
     "colour": "l",
     "num": "255",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|255:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Island",
@@ -474,7 +549,10 @@
     "colour": "l",
     "num": "256",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|256:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Island",
@@ -487,7 +565,10 @@
     "colour": "l",
     "num": "256",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|256:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Island",
@@ -500,7 +581,10 @@
     "colour": "l",
     "num": "257",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|257:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Island",
@@ -513,7 +597,10 @@
     "colour": "l",
     "num": "257",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|257:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Island",
@@ -526,7 +613,10 @@
     "colour": "l",
     "num": "258",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|258:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Island",
@@ -539,7 +629,10 @@
     "colour": "l",
     "num": "258",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|258:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Island",
@@ -552,7 +645,10 @@
     "colour": "l",
     "num": "259",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|259:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Island",
@@ -565,7 +661,10 @@
     "colour": "l",
     "num": "259",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|259:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Mountain",
@@ -578,7 +677,10 @@
     "colour": "l",
     "num": "265",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|265:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Mountain",
@@ -591,7 +693,10 @@
     "colour": "l",
     "num": "265",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|265:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Mountain",
@@ -604,7 +709,10 @@
     "colour": "l",
     "num": "266",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|266:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Mountain",
@@ -617,7 +725,10 @@
     "colour": "l",
     "num": "266",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|266:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Mountain",
@@ -630,7 +741,10 @@
     "colour": "l",
     "num": "267",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|267:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Mountain",
@@ -643,7 +757,10 @@
     "colour": "l",
     "num": "267",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|267:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Mountain",
@@ -656,7 +773,10 @@
     "colour": "l",
     "num": "268",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|268:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Mountain",
@@ -669,7 +789,10 @@
     "colour": "l",
     "num": "268",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|268:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Mountain",
@@ -682,7 +805,10 @@
     "colour": "l",
     "num": "269",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|269:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Mountain",
@@ -695,7 +821,10 @@
     "colour": "l",
     "num": "269",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|269:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Plains",
@@ -708,7 +837,10 @@
     "colour": "l",
     "num": "250",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|250:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Plains",
@@ -721,7 +853,10 @@
     "colour": "l",
     "num": "250",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|250:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Plains",
@@ -734,7 +869,10 @@
     "colour": "l",
     "num": "251",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|251:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Plains",
@@ -747,7 +885,10 @@
     "colour": "l",
     "num": "251",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|251:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Plains",
@@ -760,7 +901,10 @@
     "colour": "l",
     "num": "252",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|252:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Plains",
@@ -773,7 +917,10 @@
     "colour": "l",
     "num": "252",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|252:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Plains",
@@ -786,7 +933,10 @@
     "colour": "l",
     "num": "253",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|253:a",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "title": "Plains",
@@ -799,7 +949,10 @@
     "colour": "l",
     "num": "253",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|253:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "title": "Plains",
@@ -812,7 +965,8 @@
     "colour": "l",
     "num": "254",
     "fullArt": true,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|254"
   },
   {
     "title": "Plains",
@@ -825,6 +979,7 @@
     "colour": "l",
     "num": "253",
     "fullArt": false,
-    "addedViaException": true
+    "addedViaException": true,
+    "mtgenId": "bfz|253"
   }
 ]
