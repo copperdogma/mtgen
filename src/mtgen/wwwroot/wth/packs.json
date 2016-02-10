@@ -1,0 +1,32 @@
+{
+  "defs": [
+    {
+      "defName": "wth",
+      "query": "from[*]?set='wth"
+    },
+    {
+      "defName": "wth-main",
+      "query": "from[wth]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "wth-all-cards",
+      "packDesc": "Weatherlight: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[wth]" }
+      ]
+    },
+    {
+      "packName": "wth-standard",
+      "packDesc": "Weatherlight: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[11]>from[wth-main]?rarity='c" },
+        { "query": "take[3]>from[wth-main]?rarity='u" },
+        { "query": "take[1]>from[wth-main]?rarity='r" }
+      ]
+    }
+  ]
+}

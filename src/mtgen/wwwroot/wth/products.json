@@ -1,0 +1,41 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "wth-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/wth.json", "http://mtgsalvation.gamepedia.com/Weatherlight" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "wth-all-cards" }
+      ]
+    },
+    {
+      "productName": "wth-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Weatherlight" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "wth-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "wth-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "wth-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+  ]
+}

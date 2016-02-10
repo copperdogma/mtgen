@@ -1,0 +1,41 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "vis-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/vis.json", "http://mtgsalvation.gamepedia.com/Visions" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "vis-all-cards" }
+      ]
+    },
+    {
+      "productName": "vis-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Visions" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "vis-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "vis-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "vis-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+  ]
+}

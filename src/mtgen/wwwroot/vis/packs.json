@@ -1,0 +1,32 @@
+{
+  "defs": [
+    {
+      "defName": "vis",
+      "query": "from[*]?set='vis"
+    },
+    {
+      "defName": "vis-main",
+      "query": "from[vis]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "vis-all-cards",
+      "packDesc": "Visions: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[vis]" }
+      ]
+    },
+    {
+      "packName": "vis-standard",
+      "packDesc": "Visions: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[11]>from[vis-main]?rarity='c" },
+        { "query": "take[3]>from[vis-main]?rarity='u" },
+        { "query": "take[1]>from[vis-main]?rarity='r" }
+      ]
+    }
+  ]
+}
