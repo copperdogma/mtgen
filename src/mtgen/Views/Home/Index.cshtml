@@ -154,6 +154,10 @@
         </tbody>
         @Component.Invoke("SetSummary", new SetStubSummary { Code = "ugl" })
         <tbody class="block">
+            <tr class="title"><td colspan="5">Mirage Block</td></tr>
+            @Component.Invoke("SetSummary", new SetStubSummary { Code = "mir" })
+        </tbody>
+        <tbody class="block">
             <tr class="title"><td colspan="5">Ice Age Block</td></tr>
             @Component.Invoke("SetSummary", new SetStubSummary { Code = "csp" })
             @Component.Invoke("SetSummary", new SetStubSummary { Code = "all" })

@@ -1,0 +1,44 @@
+{
+  "defs": [
+    {
+      "defName": "mir",
+      "query": "from[*]?set='mir"
+    },
+    {
+      "defName": "mir-main",
+      "query": "from[mir]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "mir-all-cards",
+      "packDesc": "Mirage: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[mir]" }
+      ]
+    },
+    {
+      "packName": "mir-standard",
+      "packDesc": "Mirage: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[11]>from[mir-main]?rarity='c" },
+        { "query": "take[3]>from[mir-main]?rarity='u" },
+        { "query": "take[1]>from[mir-main]?rarity='r" }
+      ]
+    },
+    {
+      "packName": "mir-starter-deck",
+      "packDesc": "Mirage: Starter Deck",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[9]>from[mir-main]?rarity='u" },
+        { "query": "take[3]>from[mir-main]?rarity='r" },
+        { "query": "take[26]>from[mir-main]?rarity='c" },
+        { "query": "take[22]>from[mir-main]?type='Basic Land" }
+      ]
+    }
+  ]
+}

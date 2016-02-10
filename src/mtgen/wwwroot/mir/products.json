@@ -1,0 +1,65 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "mir-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/mir.json", "http://mtgsalvation.gamepedia.com/Mirage" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "mir-all-cards" }
+      ]
+    },
+    {
+      "productName": "mir-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Mirage" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "mir-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "mir-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "mir-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "mir-starter-decks",
+      "productDesc": "Starter Decks",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Mirage" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "mir-starter-deck" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "mir-starter-deck",
+            "presetDesc": "Single Starter Deck",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "mir-starter-deck"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
