@@ -1,0 +1,84 @@
+{
+  "defs": [
+    {
+      "defName": "inv",
+      "query": "from[*]?set='inv"
+    },
+    {
+      "defName": "inv-main",
+      "query": "from[inv]"
+    },
+    {
+      "defName": "inv-promo",
+      "query": "from[inv]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "inv-all-cards",
+      "packDesc": "Invasion: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[inv]" }
+      ]
+    },
+    {
+      "packName": "inv-standard",
+      "packDesc": "Invasion: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "_comment": "common rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "from[inv-main]?rarity='c"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[inv-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[inv-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[inv-main]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[10]>from[inv-main]?rarity='c" },
+        { "query": "take[3]>from[inv-main]?rarity='u" },
+        { "query": "take[1]>from[inv-main]?rarity='r" }
+      ]
+    },
+    {
+      "packName": "inv-promos",
+      "packDesc": "Invasion: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[inv-promo]" }
+      ]
+    },
+    {
+      "packName": "inv-starter-deck",
+      "packDesc": "Invasion: Starter Deck",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[9]>from[inv-main]?rarity='u" },
+        { "query": "take[3]>from[inv-main]?rarity='r" },
+        { "query": "take[26]>from[inv-main]?rarity='c" },
+        { "query": "take[22]>from[inv-main]?type='Basic Land" }
+      ]
+    }
+  ]
+}

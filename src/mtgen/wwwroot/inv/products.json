@@ -1,0 +1,77 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "inv-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/inv.json", "http://mtgsalvation.gamepedia.com/Invasion" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "inv-all-cards" }
+      ]
+    },
+    {
+      "productName": "inv-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Invasion" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "inv-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "inv-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "inv-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "inv-starter-decks",
+      "productDesc": "Starter Decks",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Invasion" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "inv-starter-deck" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "inv-starter-deck",
+            "presetDesc": "Single Starter Deck",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "inv-starter-deck"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "inv-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Invasion" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "inv-promos" }
+      ]
+    }
+
+  ]
+}
