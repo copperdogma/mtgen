@@ -1,0 +1,31 @@
+﻿[
+  {
+    "_comments": [
+      "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+    ]
+  },
+  {
+    "_comment": "add promo:false to ALL cards with the intention of deleting them later",
+    "where": "",
+    "newValues": {
+      "promo": false
+    }
+  },
+  {
+    "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+    "where": "title='Dirtcowl Wurm",
+    "newValues": {
+      "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=97043&type=card",
+      "num": "{{num}} P",
+      "promo": true,
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "_comment": "delete all cards that still have promo=false, which leaves just our modified promo cards",
+    "delete": true,
+    "where": "promo=false"
+  }
+
+]

@@ -1,0 +1,77 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "tmp-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/tmp.json", "http://mtgsalvation.gamepedia.com/Tempest" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "tmp-all-cards" }
+      ]
+    },
+    {
+      "productName": "tmp-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Tempest" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "tmp-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "tmp-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "tmp-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "tmp-starter-decks",
+      "productDesc": "Starter Decks",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Tempest" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "tmp-starter-deck" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "tmp-starter-deck",
+            "presetDesc": "Single Starter Deck",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "tmp-starter-deck"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "tmp-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Tempest" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "tmp-promos" }
+      ]
+    }
+
+  ]
+}

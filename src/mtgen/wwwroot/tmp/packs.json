@@ -1,0 +1,57 @@
+{
+  "defs": [
+    {
+      "defName": "tmp",
+      "query": "from[*]?set='tmp"
+    },
+    {
+      "defName": "tmp-main",
+      "query": "from[tmp]"
+    },
+    {
+      "defName": "tmp-promo",
+      "query": "from[tmp]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "tmp-all-cards",
+      "packDesc": "Tempest: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[tmp]" }
+      ]
+    },
+    {
+      "packName": "tmp-standard",
+      "packDesc": "Tempest: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[11]>from[tmp-main]?rarity='c" },
+        { "query": "take[3]>from[tmp-main]?rarity='u" },
+        { "query": "take[1]>from[tmp-main]?rarity='r" }
+      ]
+    },
+    {
+      "packName": "tmp-promos",
+      "packDesc": "Tempest: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[tmp-promo]" }
+      ]
+    },
+    {
+      "packName": "tmp-starter-deck",
+      "packDesc": "Tempest: Starter Deck",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[9]>from[tmp-main]?rarity='u" },
+        { "query": "take[3]>from[tmp-main]?rarity='r" },
+        { "query": "take[26]>from[tmp-main]?rarity='c" },
+        { "query": "take[22]>from[tmp-main]?type='Basic Land" }
+      ]
+    }
+  ]
+}
