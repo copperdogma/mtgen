@@ -1,0 +1,52 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "exo-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/exo.json", "http://mtgsalvation.gamepedia.com/Exodus" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "exo-all-cards" }
+      ]
+    },
+    {
+      "productName": "exo-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Exodus" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "exo-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "exo-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "exo-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "exo-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Exodus" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "exo-promos" }
+      ]
+    }
+
+  ]
+}

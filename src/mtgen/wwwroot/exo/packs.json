@@ -1,0 +1,57 @@
+{
+  "defs": [
+    {
+      "defName": "exo",
+      "query": "from[*]?set='exo"
+    },
+    {
+      "defName": "exo-main",
+      "query": "from[exo]"
+    },
+    {
+      "defName": "exo-promo",
+      "query": "from[exo]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "exo-all-cards",
+      "packDesc": "Exodus: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[exo]" }
+      ]
+    },
+    {
+      "packName": "exo-standard",
+      "packDesc": "Exodus: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[11]>from[exo-main]?rarity='c" },
+        { "query": "take[3]>from[exo-main]?rarity='u" },
+        { "query": "take[1]>from[exo-main]?rarity='r" }
+      ]
+    },
+    {
+      "packName": "exo-promos",
+      "packDesc": "Exodus: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[exo-promo]" }
+      ]
+    },
+    {
+      "packName": "exo-starter-deck",
+      "packDesc": "Exodus: Starter Deck",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[9]>from[exo-main]?rarity='u" },
+        { "query": "take[3]>from[exo-main]?rarity='r" },
+        { "query": "take[26]>from[exo-main]?rarity='c" },
+        { "query": "take[22]>from[exo-main]?type='Basic Land" }
+      ]
+    }
+  ]
+}
