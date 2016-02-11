@@ -1,0 +1,57 @@
+{
+  "defs": [
+    {
+      "defName": "sth",
+      "query": "from[*]?set='sth"
+    },
+    {
+      "defName": "sth-main",
+      "query": "from[sth]"
+    },
+    {
+      "defName": "sth-promo",
+      "query": "from[sth]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "sth-all-cards",
+      "packDesc": "Stronghold: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[sth]" }
+      ]
+    },
+    {
+      "packName": "sth-standard",
+      "packDesc": "Stronghold: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[11]>from[sth-main]?rarity='c" },
+        { "query": "take[3]>from[sth-main]?rarity='u" },
+        { "query": "take[1]>from[sth-main]?rarity='r" }
+      ]
+    },
+    {
+      "packName": "sth-promos",
+      "packDesc": "Stronghold: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[sth-promo]" }
+      ]
+    },
+    {
+      "packName": "sth-starter-deck",
+      "packDesc": "Stronghold: Starter Deck",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[9]>from[sth-main]?rarity='u" },
+        { "query": "take[3]>from[sth-main]?rarity='r" },
+        { "query": "take[26]>from[sth-main]?rarity='c" },
+        { "query": "take[22]>from[sth-main]?type='Basic Land" }
+      ]
+    }
+  ]
+}
