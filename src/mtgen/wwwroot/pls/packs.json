@@ -1,0 +1,72 @@
+{
+  "defs": [
+    {
+      "defName": "pls",
+      "query": "from[*]?set='pls"
+    },
+    {
+      "defName": "pls-main",
+      "query": "from[pls]"
+    },
+    {
+      "defName": "pls-promo",
+      "query": "from[pls]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "pls-all-cards",
+      "packDesc": "Planeshift: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[pls]" }
+      ]
+    },
+    {
+      "packName": "pls-standard",
+      "packDesc": "Planeshift: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "_comment": "common rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "from[pls-main]?rarity='c"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[pls-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[pls-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[pls-main]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[10]>from[pls-main]?rarity='c" },
+        { "query": "take[3]>from[pls-main]?rarity='u" },
+        { "query": "take[1]>from[pls-main]?rarity='r" }
+      ]
+    },
+    {
+      "packName": "pls-promos",
+      "packDesc": "Planeshift: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[pls-promo]" }
+      ]
+    }
+  ]
+}
