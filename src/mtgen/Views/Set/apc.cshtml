@@ -18,7 +18,9 @@
     };
 
     set.CardFiles = new List<string>() { "cardsMain.json", "cardsOther.json" };
-    set.PackFiles = new List<string>() { "packs.json" };
+    set.PackFiles = new List<string>() { "packs.json", "../inv/packs.json", "../pls/packs.json" };
+
+    set.CardFiles = set.CardFiles.Concat(new List<string>() { "../inv/cardsMain.json", "../pls/cardsMain.json" }).ToList();
 
     ViewBag.Set = set;
 

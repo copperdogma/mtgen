@@ -18,7 +18,9 @@
       "isGenerated": true,
       "initialSort": "set",
       "packs": [
-        { "packName": "pls-standard" }
+        { "packName": "inv-standard" },
+        { "packName": "pls-standard" },
+        { "packName": "apc-standard" }
       ],
       "options": {
         "presets": [
