@@ -1,0 +1,41 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "8ed-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/8ed.json", "http://mtgsalvation.gamepedia.com/Eighth_Edition" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "8ed-all-cards" }
+      ]
+    },
+    {
+      "productName": "8ed-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Eighth_Edition" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "8ed-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "8ed-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "8ed-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+  ]
+}
