@@ -1,0 +1,44 @@
+{
+  "defs": [
+    {
+      "defName": "6ed",
+      "query": "from[*]?set='6ed"
+    },
+    {
+      "defName": "6ed-main",
+      "query": "from[6ed]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "6ed-all-cards",
+      "packDesc": "Classic Sixth Edition: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[6ed]" }
+      ]
+    },
+    {
+      "packName": "6ed-standard",
+      "packDesc": "Classic Sixth Edition: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[11]>from[6ed-main]?rarity='c" },
+        { "query": "take[3]>from[6ed-main]?rarity='u" },
+        { "query": "take[1]>from[6ed-main]?rarity='r" }
+      ]
+    },
+    {
+      "packName": "6ed-tournament-deck",
+      "packDesc": "Classic Sixth Edition: Tournament Deck",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[10]>from[6ed-main]?rarity='u" },
+        { "query": "take[3]>from[6ed-main]?rarity='r" },
+        { "query": "take[32]>from[6ed-main]?rarity='c" },
+        { "query": "take[30]>from[6ed-main]?type='Basic Land" }
+      ]
+    }
+  ]
+}

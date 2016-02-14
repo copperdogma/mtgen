@@ -1,0 +1,66 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "6ed-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/6ed.json", "http://mtgsalvation.gamepedia.com/Classic_Sixth_Edition" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "6ed-all-cards" }
+      ]
+    },
+    {
+      "productName": "6ed-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Classic_Sixth_Edition" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "6ed-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "6ed-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "6ed-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "6ed-tournament-decks",
+      "productDesc": "Tournament Decks",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Classic_Sixth_Edition" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "6ed-tournament-deck" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "6ed-tournament-deck",
+            "presetDesc": "Single Tournament Deck",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "6ed-tournament-deck"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+  ]
+}
