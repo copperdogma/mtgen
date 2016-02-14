@@ -1,0 +1,41 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "7ed-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/7ed.json", "http://mtgsalvation.gamepedia.com/Seventh_Edition" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "7ed-all-cards" }
+      ]
+    },
+    {
+      "productName": "7ed-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Seventh_Edition" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "7ed-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "7ed-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "7ed-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+  ]
+}

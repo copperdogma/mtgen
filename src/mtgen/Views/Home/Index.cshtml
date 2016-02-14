@@ -107,7 +107,6 @@
         </tbody>
         <tbody class="core">
             @Component.Invoke("SetSummary", new SetStubSummary { Code = "m13" })
-            <tr asp-set-code="m13" />
         </tbody>
         <tbody class="block">
             <tr class="title"><td colspan="5">Innistrad Block</td></tr>
@@ -121,6 +120,7 @@
             @Component.Invoke("SetSummary", new SetStubSummary { Code = "mbs" })
             @Component.Invoke("SetSummary", new SetStubSummary { Code = "nph" })
         </tbody>
+        @Component.Invoke("SetSummary", new SetStubSummary { Code = "7ed" })
         <tbody class="block">
             <tr class="title"><td colspan="5">Zendikar </td></tr>
             @Component.Invoke("SetSummary", new SetStubSummary { Code = "zen" })

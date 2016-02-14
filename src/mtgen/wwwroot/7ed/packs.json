@@ -1,0 +1,60 @@
+{
+  "defs": [
+    {
+      "defName": "7ed",
+      "query": "from[*]?set='7ed"
+    },
+    {
+      "defName": "7ed-main",
+      "query": "from[7ed]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "7ed-all-cards",
+      "packDesc": "Seventh Edition: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[7ed]" }
+      ]
+    },
+    {
+      "packName": "7ed-standard",
+      "packDesc": "Seventh Edition: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[7ed-main]?rarity='c" },
+        { "query": "take[3]>from[7ed-main]?rarity='u" },
+        { "query": "take[1]>from[7ed-main]?rarity='r" },
+        {
+          "querySet": [
+            {
+              "_comment": "common rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "from[7ed-main]?type='Basic Land"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[7ed-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[7ed-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[7ed-main]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+
+      ]
+    }
+  ]
+}
