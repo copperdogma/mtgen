@@ -1,0 +1,44 @@
+{
+  "defs": [
+    {
+      "defName": "5ed",
+      "query": "from[*]?set='5ed"
+    },
+    {
+      "defName": "5ed-main",
+      "query": "from[5ed]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "5ed-all-cards",
+      "packDesc": "Fifth Edition: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[5ed]" }
+      ]
+    },
+    {
+      "packName": "5ed-standard",
+      "packDesc": "Fifth Edition: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[11]>from[5ed-main]?rarity='c" },
+        { "query": "take[3]>from[5ed-main]?rarity='u" },
+        { "query": "take[1]>from[5ed-main]?rarity='r" }
+      ]
+    },
+    {
+      "packName": "5ed-starter-deck",
+      "packDesc": "Fifth Edition: Starter Deck",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[9]>from[5ed-main]?rarity='u" },
+        { "query": "take[3]>from[5ed-main]?rarity='r" },
+        { "query": "take[26]>from[5ed-main]?rarity='c" },
+        { "query": "take[22]>from[5ed-main]?type='Basic Land" }
+      ]
+    }
+  ]
+}
