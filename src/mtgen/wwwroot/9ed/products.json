@@ -1,0 +1,41 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "9ed-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/9ed.json", "http://mtgsalvation.gamepedia.com/Ninth_Edition" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "9ed-all-cards" }
+      ]
+    },
+    {
+      "productName": "9ed-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Ninth_Edition" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "9ed-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "9ed-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "9ed-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+  ]
+}

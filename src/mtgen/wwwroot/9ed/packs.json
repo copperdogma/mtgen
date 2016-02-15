@@ -1,0 +1,60 @@
+{
+  "defs": [
+    {
+      "defName": "9ed",
+      "query": "from[*]?set='9ed"
+    },
+    {
+      "defName": "9ed-main",
+      "query": "from[9ed]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "9ed-all-cards",
+      "packDesc": "Ninth Edition: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[9ed]" }
+      ]
+    },
+    {
+      "packName": "9ed-standard",
+      "packDesc": "Ninth Edition: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[9ed-main]?rarity='c" },
+        { "query": "take[3]>from[9ed-main]?rarity='u" },
+        { "query": "take[1]>from[9ed-main]?rarity='r" },
+        {
+          "querySet": [
+            {
+              "_comment": "common rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "from[9ed-main]?type='Basic Land"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[9ed-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[9ed-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[9ed-main]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+
+      ]
+    }
+  ]
+}
