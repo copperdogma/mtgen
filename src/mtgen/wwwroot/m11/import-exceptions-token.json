@@ -1,0 +1,105 @@
+﻿[
+  {
+    "add": true,
+    "newValues": {
+      "title": "Avatar",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/m11-avatar-token.png",
+      "colour": "w",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Avatar",
+      "power": "*",
+      "toughness": "*",
+      "num": "001/006 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Bird",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/m11-bird-token.png",
+      "colour": "w",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Bird",
+      "power": "3",
+      "toughness": "3",
+      "num": "002/006 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Zombie",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/m11-zombie-token.png",
+      "colour": "b",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Zombie",
+      "power": "2",
+      "toughness": "2",
+      "num": "003/006 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Beast",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/m11-beast-token.png",
+      "colour": "g",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Beast",
+      "power": "3",
+      "toughness": "3",
+      "num": "004/006 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Ooze",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/m11-ooze-token.png",
+      "colour": "g",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Ooze",
+      "power": "2",
+      "toughness": "2",
+      "num": "005/006 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Ooze",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/m11-ooze-token2.png",
+      "colour": "g",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Ooze",
+      "power": "1",
+      "toughness": "1",
+      "num": "006/006 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  }
+
+]

@@ -1,0 +1,94 @@
+{
+  "defs": [
+    {
+      "defName": "m11",
+      "query": "from[*]?set='m11"
+    },
+    {
+      "defName": "m11-main",
+      "query": "from[m11]-from[m11]?type=(Marketing|Basic Land|Land)-from[m11]?token=true-from[m11]?promo=true"
+    },
+    {
+      "defName": "m11-promo",
+      "query": "from[m11]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "m11-all-cards",
+      "packDesc": "Magic 2011: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[m11]" }
+      ]
+    },
+    {
+      "packName": "m11-standard",
+      "packDesc": "Magic 2011: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[m11-main]?rarity='c" },
+        { "query": "take[3]>from[m11-main]?rarity='u" },
+        { "query": "take[1]>from[m11-main]?rarity='r" },
+        {
+          "querySet": [
+            {
+              "_comment": "common rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "from[m11]?type='Basic Land"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[m11-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[m11-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[m11-main]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[m11]?token=true"
+            },
+            {
+              "percent": "50",
+              "query": "from[m11]?type='Marketing"
+            }
+          ]
+        }
+
+      ]
+    },
+    {
+      "packName": "m11-prerelease-promos",
+      "packDesc": "Magic 2011: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[m11]?includedReason='Prerelease Promo" }
+      ]
+    },
+    {
+      "packName": "m11-promos",
+      "packDesc": "Magic 2011: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[m11-promo]" }
+      ]
+    }
+  ]
+}
