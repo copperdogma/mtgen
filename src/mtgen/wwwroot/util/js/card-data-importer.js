@@ -1047,6 +1047,31 @@ var cardDataImporter = (function (my, $) {
                     _.extend(card, exception.newValues);
                     exception.result.affectedCards = 1;
                     console.log('Added new card: ' + exception.newValues.title);
+
+                    // Replace any 'reference' properties with the current card values,
+                    // e.g.: "originalTitle": "{{title}}",
+                    var replacementTokenRegex = /{{(.*?)}}/g;
+                    var replacementReferenceValues = {};
+                    for (var prop in exception.newValues) {
+                        var propValue = exception.newValues[prop];
+                        var newPropValue = propValue;
+                        var token;
+                        while ((token = replacementTokenRegex.exec(propValue)) !== null) {
+                            var propName = token[1];
+                            if (card[propName] !== undefined) {
+                                newPropValue = newPropValue.replace(token[0], card[propName]);
+                            }
+                            else if (propName === 'setCode') {
+                                newPropValue = setCode;
+                            }
+                        }
+                        //exception.newValues[prop] = newPropValue;
+                        replacementReferenceValues[prop] = newPropValue;
+                    }
+
+                    // Apply new values from exception.
+                    _.extend(card, replacementReferenceValues);
+
                     card.matchTitle = mtgGen.createMatchTitle(card.title);
 
                     card.addedViaException = true;
