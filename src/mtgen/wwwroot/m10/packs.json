@@ -7,6 +7,10 @@
     {
       "defName": "m10-main",
       "query": "from[m10]-from[m10]?type=(Marketing|Basic Land|Land)-from[m10]?token=true-from[m10]?promo=true"
+    },
+    {
+      "defName": "m10-promo",
+      "query": "from[m10]?promo=true"
     }
   ],
   "packs": [
@@ -75,6 +79,15 @@
       "includeWithUserCards": false,
       "cards": [
         { "query": "take[*]>from[m10]?includedReason='Prerelease Promo" }
+      ]
+    },
+    {
+      "packName": "m10-promos",
+      "packDesc": "Magic 2010: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[m10-promo]" }
       ]
     }
   ]

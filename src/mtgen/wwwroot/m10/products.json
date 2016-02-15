@@ -67,6 +67,17 @@
         ]
       }
 
+    },
+    {
+      "productName": "m10-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Magic_2010" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "m10-promos" }
+      ]
     }
 
   ]
