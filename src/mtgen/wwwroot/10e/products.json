@@ -1,0 +1,41 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "10e-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/10e.json", "http://mtgsalvation.gamepedia.com/Tenth_Edition" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "10e-all-cards" }
+      ]
+    },
+    {
+      "productName": "10e-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Tenth_Edition" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "10e-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "10e-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "10e-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+  ]
+}

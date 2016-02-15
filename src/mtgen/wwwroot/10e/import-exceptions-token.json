@@ -1,0 +1,105 @@
+﻿[
+  {
+    "add": true,
+    "newValues": {
+      "title": "Soldier",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/10e-soldier-token.png",
+      "colour": "w",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Soldier",
+      "power": "1",
+      "toughness": "1",
+      "num": "001/006 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Zombie",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/10e-zombie-token.png",
+      "colour": "b",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Zombie",
+      "power": "2",
+      "toughness": "2",
+      "num": "002/006 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Dragon",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/10e-dragon-token.png",
+      "colour": "r",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Dragon",
+      "power": "5",
+      "toughness": "5",
+      "num": "003/006 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Goblin",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/10e-goblin-token.png",
+      "colour": "r",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Goblin",
+      "power": "1",
+      "toughness": "1",
+      "num": "004/006 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Saproling",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/10e-saproling-token.png",
+      "colour": "g",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Saproling",
+      "power": "1",
+      "toughness": "1",
+      "num": "005/006 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Wasp",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/10e-wasp-token.png",
+      "colour": "a",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Wasp",
+      "power": "1",
+      "toughness": "1",
+      "num": "006/006 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  }
+
+]

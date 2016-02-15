@@ -1,0 +1,72 @@
+{
+  "defs": [
+    {
+      "defName": "10e",
+      "query": "from[*]?set='10e"
+    },
+    {
+      "defName": "10e-main",
+      "query": "from[10e]-from[10e]?type=(Marketing|Basic Land|Land)-from[10e]?token=true-from[10e]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "10e-all-cards",
+      "packDesc": "Tenth Edition: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[10e]" }
+      ]
+    },
+    {
+      "packName": "10e-standard",
+      "packDesc": "Tenth Edition: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[10e-main]?rarity='c" },
+        { "query": "take[3]>from[10e-main]?rarity='u" },
+        { "query": "take[1]>from[10e-main]?rarity='r" },
+        {
+          "querySet": [
+            {
+              "_comment": "common rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "from[10e]?type='Basic Land"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[10e-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[10e-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[10e-main]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[10e]?token=true"
+            },
+            {
+              "percent": "50",
+              "query": "from[10e]?type='Marketing"
+            }
+          ]
+        }
+
+      ]
+    }
+  ]
+}
