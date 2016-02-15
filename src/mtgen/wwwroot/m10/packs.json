@@ -1,0 +1,81 @@
+{
+  "defs": [
+    {
+      "defName": "m10",
+      "query": "from[*]?set='m10"
+    },
+    {
+      "defName": "m10-main",
+      "query": "from[m10]-from[m10]?type=(Marketing|Basic Land|Land)-from[m10]?token=true-from[m10]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "m10-all-cards",
+      "packDesc": "Magic 2010: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[m10]" }
+      ]
+    },
+    {
+      "packName": "m10-standard",
+      "packDesc": "Magic 2010: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[m10-main]?rarity='c" },
+        { "query": "take[3]>from[m10-main]?rarity='u" },
+        { "query": "take[1]>from[m10-main]?rarity='r" },
+        {
+          "querySet": [
+            {
+              "_comment": "common rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "from[m10]?type='Basic Land"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[m10-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[m10-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[m10-main]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[m10]?token=true"
+            },
+            {
+              "percent": "50",
+              "query": "from[m10]?type='Marketing"
+            }
+          ]
+        }
+
+      ]
+    },
+    {
+      "packName": "m10-prerelease-promos",
+      "packDesc": "Magic 2010: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[m10]?includedReason='Prerelease Promo" }
+      ]
+    }
+  ]
+}

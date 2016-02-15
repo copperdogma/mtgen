@@ -1,0 +1,73 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "m10-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/m10.json", "http://mtgsalvation.gamepedia.com/Magic_2010" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "m10-all-cards" }
+      ]
+    },
+    {
+      "productName": "m10-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Magic_2010" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "m10-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "m10-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "m10-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "m10-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://mtgsalvation.gamepedia.com/10th_Edition" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "m10-standard" },
+        { "packName": "m10-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "m10-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "m10-prerelease-promos"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "m10-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    }
+
+  ]
+}

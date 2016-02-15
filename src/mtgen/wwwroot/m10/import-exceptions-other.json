@@ -1,0 +1,257 @@
+﻿[
+  {
+    "_comment": "add promo:false to ALL cards with the intention of deleting them later",
+    "where": "",
+    "newValues": {
+      "promo": false
+    }
+  },
+  {
+    "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+    "where": "title='Ant Queen",
+    "newValues": {
+      "src": "http://archive.wizards.com/mtg/images/daily/arcana/222_lp_EN.jpg",
+      "num": "{{num}} P Launch",
+      "promo": true,
+      "includedReason": "Launch Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "where": "title='Vampire Nocturnus",
+    "newValues": {
+      "src": "http://archive.wizards.com/mtg/images/daily/arcana/222_pre_EN.jpg",
+      "num": "{{num}} P Prerelease",
+      "promo": true,
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "where": "title='Honor of the Pure",
+    "newValues": {
+      "src": "http://archive.wizards.com/mtg/images/daily/td/td45_k8z3tylbts.jpg",
+      "num": "{{num}} P Buy-a-Box",
+      "promo": true,
+      "includedReason": "Buy-a-Box Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+
+  {
+    "_comment": "delete all cards that still have promo=false, which leaves just our modified promo cards",
+    "delete": true,
+    "where": "promo=false"
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/m10-tip01.png",
+      "title": "Tip/Marketing Card",
+      "set": "{{setCode}}",
+      "colour": "o",
+      "num": "001 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/m10-tip02.png",
+      "title": "Tip/Marketing Card",
+      "set": "{{setCode}}",
+      "colour": "o",
+      "num": "002 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/m10-tip03.png",
+      "title": "Tip/Marketing Card",
+      "set": "{{setCode}}",
+      "colour": "o",
+      "num": "003 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/m10-tip04.png",
+      "title": "Tip/Marketing Card",
+      "set": "{{setCode}}",
+      "colour": "o",
+      "num": "004 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/m10-tip05.png",
+      "title": "Tip/Marketing Card",
+      "set": "{{setCode}}",
+      "colour": "o",
+      "num": "005 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/m10-tip06.png",
+      "title": "Tip/Marketing Card",
+      "set": "{{setCode}}",
+      "colour": "o",
+      "num": "006 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/m10-tip07.png",
+      "title": "Tip/Marketing Card",
+      "set": "{{setCode}}",
+      "colour": "o",
+      "num": "007 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/m10-tip08.png",
+      "title": "Tip/Marketing Card",
+      "set": "{{setCode}}",
+      "colour": "o",
+      "num": "008 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/m10-tip09.png",
+      "title": "Tip/Marketing Card",
+      "set": "{{setCode}}",
+      "colour": "o",
+      "num": "009 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/m10-tip10.png",
+      "title": "Tip/Marketing Card",
+      "set": "{{setCode}}",
+      "colour": "o",
+      "num": "010 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/m10-tip11.png",
+      "title": "Tip/Marketing Card",
+      "set": "{{setCode}}",
+      "colour": "o",
+      "num": "011 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/m10-tip12.png",
+      "title": "Tip/Marketing Card",
+      "set": "{{setCode}}",
+      "colour": "o",
+      "num": "012 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/m10-tip13.png",
+      "title": "Tip/Marketing Card",
+      "set": "{{setCode}}",
+      "colour": "o",
+      "num": "013 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/m10-tip14.png",
+      "title": "Tip/Marketing Card",
+      "set": "{{setCode}}",
+      "colour": "o",
+      "num": "014 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/m10-tip15.png",
+      "title": "Tip/Marketing Card",
+      "set": "{{setCode}}",
+      "colour": "o",
+      "num": "015 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  }
+
+]

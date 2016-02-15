@@ -1,0 +1,139 @@
+﻿[
+  {
+    "add": true,
+    "newValues": {
+      "title": "Avatar",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/m10-avatar-token.png",
+      "colour": "w",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Avatar",
+      "power": "*",
+      "toughness": "*",
+      "num": "001/008 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Soldier",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/m10-soldier-token.png",
+      "colour": "w",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Soldier",
+      "power": "1",
+      "toughness": "1",
+      "num": "002/008 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Zombie",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/m10-zombie-token.png",
+      "colour": "b",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Zombie",
+      "power": "2",
+      "toughness": "2",
+      "num": "003/008 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Goblin",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/m10-goblin-token.png",
+      "colour": "r",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Goblin",
+      "power": "1",
+      "toughness": "1",
+      "num": "004/008 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Beast",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/m10-beast-token.png",
+      "colour": "g",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Beast",
+      "power": "3",
+      "toughness": "3",
+      "num": "005/008 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Insect",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/m10-insect-token.png",
+      "colour": "g",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Insect",
+      "power": "1",
+      "toughness": "1",
+      "num": "006/008 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Wolf",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/m10-wolf-token.png",
+      "colour": "g",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Wolf",
+      "power": "2",
+      "toughness": "2",
+      "num": "007/008 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Gargoyle",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/m10-gargoyle-token.png",
+      "colour": "a",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Gargoyle",
+      "power": "3",
+      "toughness": "4",
+      "num": "008/008 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  }
+
+]
