@@ -1,0 +1,84 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "m12-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/m12.json", "http://mtgsalvation.gamepedia.com/Magic_2012" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "m12-all-cards" }
+      ]
+    },
+    {
+      "productName": "m12-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Magic_2012" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "m12-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "m12-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "m12-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "m12-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://mtgsalvation.gamepedia.com/10th_Edition" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "m12-standard" },
+        { "packName": "m12-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "m12-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "m12-prerelease-promos"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "m12-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "m12-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Magic_2012" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "m12-promos" }
+      ]
+    }
+
+  ]
+}

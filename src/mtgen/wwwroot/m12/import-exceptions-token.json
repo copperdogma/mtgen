@@ -1,0 +1,122 @@
+﻿[
+  {
+    "add": true,
+    "newValues": {
+      "title": "Bird",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/m12-bird-token.png",
+      "colour": "w",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Bird",
+      "power": "3",
+      "toughness": "3",
+      "num": "001/007 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Soldier",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/m12-soldier-token.png",
+      "colour": "w",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Soldier",
+      "power": "1",
+      "toughness": "1",
+      "num": "002/007 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Zombie",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/m12-zombie-token.png",
+      "colour": "b",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Zombie",
+      "power": "2",
+      "toughness": "2",
+      "num": "003/007 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Beast",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/m12-beast-token.png",
+      "colour": "g",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Beast",
+      "power": "3",
+      "toughness": "3",
+      "num": "004/007 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Saproling",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/m12-saproling-token.png",
+      "colour": "g",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Saproling",
+      "power": "1",
+      "toughness": "1",
+      "num": "005/007 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Wurm",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/m12-wurm-token.png",
+      "colour": "g",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Wurm",
+      "power": "1",
+      "toughness": "1",
+      "num": "006/007 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Pentavite",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/m12-pentavite-token.png",
+      "colour": "a",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Pentavite",
+      "power": "1",
+      "toughness": "1",
+      "num": "007/007 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  }
+
+]

@@ -1,0 +1,94 @@
+{
+  "defs": [
+    {
+      "defName": "m12",
+      "query": "from[*]?set='m12"
+    },
+    {
+      "defName": "m12-main",
+      "query": "from[m12]-from[m12]?type=(Marketing|Basic Land|Land)-from[m12]?token=true-from[m12]?promo=true"
+    },
+    {
+      "defName": "m12-promo",
+      "query": "from[m12]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "m12-all-cards",
+      "packDesc": "Magic 2012: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[m12]" }
+      ]
+    },
+    {
+      "packName": "m12-standard",
+      "packDesc": "Magic 2012: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[m12-main]?rarity='c" },
+        { "query": "take[3]>from[m12-main]?rarity='u" },
+        { "query": "take[1]>from[m12-main]?rarity='r" },
+        {
+          "querySet": [
+            {
+              "_comment": "common rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "from[m12]?type='Basic Land"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[m12-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[m12-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[m12-main]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[m12]?token=true"
+            },
+            {
+              "percent": "50",
+              "query": "from[m12]?type='Marketing"
+            }
+          ]
+        }
+
+      ]
+    },
+    {
+      "packName": "m12-prerelease-promos",
+      "packDesc": "Magic 2012: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[m12]?includedReason='Prerelease Promo" }
+      ]
+    },
+    {
+      "packName": "m12-promos",
+      "packDesc": "Magic 2012: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[m12-promo]" }
+      ]
+    }
+  ]
+}
