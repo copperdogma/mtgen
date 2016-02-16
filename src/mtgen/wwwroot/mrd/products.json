@@ -1,0 +1,84 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "mrd-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/mrd.json", "http://mtgsalvation.gamepedia.com/Magic_2011" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "mrd-all-cards" }
+      ]
+    },
+    {
+      "productName": "mrd-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Magic_2011" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "mrd-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "mrd-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "mrd-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "mrd-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://mtgsalvation.gamepedia.com/10th_Edition" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "mrd-standard" },
+        { "packName": "mrd-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "mrd-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "mrd-prerelease-promos"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "mrd-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "mrd-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Magic_2011" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "mrd-promos" }
+      ]
+    }
+
+  ]
+}
