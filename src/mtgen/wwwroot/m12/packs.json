@@ -29,7 +29,18 @@
       "cards": [
         { "query": "take[10]>from[m12-main]?rarity='c" },
         { "query": "take[3]>from[m12-main]?rarity='u" },
-        { "query": "take[1]>from[m12-main]?rarity='r" },
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[m12-main]?rarity='r"
+            },
+            {
+              "percent": "1/8",
+              "query": "from[m12-main]?rarity='m"
+            }
+          ]
+        },
         {
           "querySet": [
             {
