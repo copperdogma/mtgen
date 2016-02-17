@@ -4,7 +4,7 @@
     {
       "productName": "mrd-all-cards",
       "productDesc": "All Cards",
-      "sources": [ "http://mtgjson.com/json/mrd.json", "http://mtgsalvation.gamepedia.com/Magic_2011" ],
+      "sources": [ "http://mtgjson.com/json/mrd.json", "http://mtgsalvation.gamepedia.com/Mirrodin" ],
       "isGenerated": false,
       "initialSort": "colour",
       "packs": [
@@ -14,7 +14,7 @@
     {
       "productName": "mrd-boosters",
       "productDesc": "Boosters",
-      "sources": [ "http://mtgsalvation.gamepedia.com/Magic_2011" ],
+      "sources": [ "http://mtgsalvation.gamepedia.com/Mirrodin" ],
       "isGenerated": true,
       "initialSort": "set",
       "packs": [
@@ -71,7 +71,7 @@
     {
       "productName": "mrd-promos",
       "productDesc": "All Promos",
-      "sources": [ "http://mtgsalvation.gamepedia.com/Magic_2011" ],
+      "sources": [ "http://mtgsalvation.gamepedia.com/Mirrodin" ],
       "isGenerated": false,
       "isVisible": true,
       "initialSort": "name",

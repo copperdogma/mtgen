@@ -16,7 +16,7 @@
   "packs": [
     {
       "packName": "mrd-all-cards",
-      "packDesc": "Magic 2011: All Cards",
+      "packDesc": "Mirrodin: All Cards",
       "isGenerated": false,
       "cards": [
         { "query": "take[*]>from[mrd]" }
@@ -24,7 +24,7 @@
     },
     {
       "packName": "mrd-standard",
-      "packDesc": "Magic 2011: Standard Booster",
+      "packDesc": "Mirrodin: Standard Booster",
       "isGenerated": true,
       "cards": [
         { "query": "take[10]>from[mrd-main]?rarity='c" },
@@ -62,7 +62,7 @@
     },
     {
       "packName": "mrd-prerelease-promos",
-      "packDesc": "Magic 2011: Prerelease Promos",
+      "packDesc": "Mirrodin: Prerelease Promos",
       "isGenerated": false,
       "includeWithUserCards": false,
       "cards": [
@@ -71,7 +71,7 @@
     },
     {
       "packName": "mrd-promos",
-      "packDesc": "Magic 2011: Promos",
+      "packDesc": "Mirrodin: Promos",
       "isGenerated": false,
       "includeWithUserCards": false,
       "cards": [
