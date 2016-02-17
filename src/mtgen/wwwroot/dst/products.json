@@ -1,0 +1,84 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "dst-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/dst.json", "http://mtgsalvation.gamepedia.com/Darksteel" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "dst-all-cards" }
+      ]
+    },
+    {
+      "productName": "dst-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Darksteel" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "dst-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "dst-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "dst-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "dst-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://mtgsalvation.gamepedia.com/10th_Edition" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "dst-standard" },
+        { "packName": "dst-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "dst-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "dst-prerelease-promos"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "dst-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "dst-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Darksteel" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "dst-promos" }
+      ]
+    }
+
+  ]
+}

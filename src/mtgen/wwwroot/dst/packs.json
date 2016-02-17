@@ -1,0 +1,81 @@
+{
+  "defs": [
+    {
+      "defName": "dst",
+      "query": "from[*]?set='dst"
+    },
+    {
+      "defName": "dst-main",
+      "query": "from[dst]-from[dst]?type=(Marketing|Basic Land|Land)-from[dst]?token=true-from[dst]?promo=true"
+    },
+    {
+      "defName": "dst-promo",
+      "query": "from[dst]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "dst-all-cards",
+      "packDesc": "Darksteel: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[dst]" }
+      ]
+    },
+    {
+      "packName": "dst-standard",
+      "packDesc": "Darksteel: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[11]>from[dst-main]?rarity='c" },
+        { "query": "take[3]>from[dst-main]?rarity='u" },
+        {
+          "querySet": [
+            {
+              "_comment": "rare rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "take[1]>from[dst-main]?rarity='r"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[dst-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[dst-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[dst-main]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+
+      ]
+    },
+    {
+      "packName": "dst-prerelease-promos",
+      "packDesc": "Darksteel: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[dst]?includedReason='Prerelease Promo" }
+      ]
+    },
+    {
+      "packName": "dst-promos",
+      "packDesc": "Darksteel: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[dst-promo]" }
+      ]
+    }
+  ]
+}
