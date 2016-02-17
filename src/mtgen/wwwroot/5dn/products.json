@@ -1,0 +1,84 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "5dn-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/5dn.json", "http://mtgsalvation.gamepedia.com/Fifth_Dawn" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "5dn-all-cards" }
+      ]
+    },
+    {
+      "productName": "5dn-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Fifth_Dawn" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "5dn-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "5dn-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "5dn-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "5dn-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://mtgsalvation.gamepedia.com/Fifth_Dawn" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "5dn-standard" },
+        { "packName": "5dn-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "5dn-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "5dn-prerelease-promos"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "5dn-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "5dn-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Fifth_Dawn" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "5dn-promos" }
+      ]
+    }
+
+  ]
+}

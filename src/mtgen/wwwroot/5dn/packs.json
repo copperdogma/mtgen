@@ -1,0 +1,81 @@
+{
+  "defs": [
+    {
+      "defName": "5dn",
+      "query": "from[*]?set='5dn"
+    },
+    {
+      "defName": "5dn-main",
+      "query": "from[5dn]-from[5dn]?type=(Marketing|Basic Land|Land)-from[5dn]?token=true-from[5dn]?promo=true"
+    },
+    {
+      "defName": "5dn-promo",
+      "query": "from[5dn]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "5dn-all-cards",
+      "packDesc": "Fifth Dawn: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[5dn]" }
+      ]
+    },
+    {
+      "packName": "5dn-standard",
+      "packDesc": "Fifth Dawn: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[11]>from[5dn-main]?rarity='c" },
+        { "query": "take[3]>from[5dn-main]?rarity='u" },
+        {
+          "querySet": [
+            {
+              "_comment": "rare rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "take[1]>from[5dn-main]?rarity='r"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[5dn-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[5dn-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[5dn-main]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+
+      ]
+    },
+    {
+      "packName": "5dn-prerelease-promos",
+      "packDesc": "Fifth Dawn: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[5dn]?includedReason='Prerelease Promo" }
+      ]
+    },
+    {
+      "packName": "5dn-promos",
+      "packDesc": "Fifth Dawn: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[5dn-promo]" }
+      ]
+    }
+  ]
+}
