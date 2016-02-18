@@ -738,7 +738,7 @@ var mtgGen = (function (my, $) {
             usableForDeckBuilding = pack.usableForDeckBuilding;
         }
 
-        // execute each card tempalate's query to choose the actual card
+        // execute each card template's query to choose the actual card
         var cardSet = [];
         var cardIndices = [];
         var isOrderImportant;

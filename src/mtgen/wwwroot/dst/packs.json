@@ -27,14 +27,13 @@
       "packDesc": "Darksteel: Standard Booster",
       "isGenerated": true,
       "cards": [
-        { "query": "take[11]>from[dst-main]?rarity='c" },
-        { "query": "take[3]>from[dst-main]?rarity='u" },
+        { "query": "take[10]>from[dst-main]?rarity='c" },
         {
           "querySet": [
             {
-              "_comment": "rare rate = 5/6 * 15 = 75/90",
+              "_comment": "common rate = 5/6 * 15 = 75/90",
               "percent": "75/90",
-              "query": "take[1]>from[dst-main]?rarity='r"
+              "query": "take[1]>from[dst-main]?rarity='c"
             },
             {
               "_comment": "foil common rate = 11/15 = 11/90",
@@ -55,8 +54,9 @@
               "setValues": { "foil": true }
             }
           ]
-        }
-
+        },
+        { "query": "take[3]>from[dst-main]?rarity='u" },
+        { "query": "take[1]>from[dst-main]?rarity='r" }
       ]
     },
     {
