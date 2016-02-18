@@ -1,0 +1,81 @@
+[
+  {
+    "artist": "Kev Walker",
+    "cmc": 5,
+    "colorIdentity": [
+      "W"
+    ],
+    "colors": [
+      "White"
+    ],
+    "id": "44056b93d172775dcb3c0590c64db923f642d10e",
+    "imageName": "kiyomaro, first to stand",
+    "layout": "normal",
+    "manaCost": "{3}{W}{W}",
+    "multiverseid": 74054,
+    "name": "Kiyomaro, First to Stand",
+    "number": "18",
+    "power": "*",
+    "rarity": "r",
+    "subtypes": [
+      "Spirit"
+    ],
+    "supertypes": [
+      "Legendary"
+    ],
+    "text": "Kiyomaro, First to Stand's power and toughness are each equal to the number of cards in your hand.\nAs long as you have four or more cards in hand, Kiyomaro has vigilance.\nWhenever Kiyomaro deals damage, if you have seven or more cards in hand, you gain 7 life.",
+    "toughness": "*",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "title": "Kiyomaro, First to Stand",
+    "set": "sok",
+    "cost": "{3}{W}{W}",
+    "colour": "w",
+    "num": "18 P Prerelease",
+    "src": "http://mtgen.net/cards/sok-kiyomaro-first-to-stand-prerelease-promo.png",
+    "mtgenId": "sok|18 P Prerelease",
+    "promo": true,
+    "includedReason": "Prerelease Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "artist": "Ittoku",
+    "cmc": 3,
+    "colorIdentity": [
+      "R"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "id": "e4d0f805b0fdd467430e85e494006f3374ea867d",
+    "imageName": "ghost-lit raider",
+    "layout": "normal",
+    "manaCost": "{2}{R}",
+    "multiverseid": 87341,
+    "name": "Ghost-Lit Raider",
+    "number": "99",
+    "power": "2",
+    "rarity": "u",
+    "subtypes": [
+      "Spirit"
+    ],
+    "text": "{2}{R}, {T}: Ghost-Lit Raider deals 2 damage to target creature.\nChannel — {3}{R}, Discard Ghost-Lit Raider: Ghost-Lit Raider deals 4 damage to target creature.",
+    "toughness": "1",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "title": "Ghost-Lit Raider",
+    "set": "sok",
+    "cost": "{2}{R}",
+    "colour": "r",
+    "num": "99 P Launch",
+    "src": "http://mtgen.net/cards/sok-ghost-lit-raider-release-promo.png",
+    "mtgenId": "sok|99 P Launch",
+    "promo": true,
+    "includedReason": "Launch Promo",
+    "usableForDeckBuilding": false
+  }
+]

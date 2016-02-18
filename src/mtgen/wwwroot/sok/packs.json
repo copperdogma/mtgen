@@ -1,0 +1,81 @@
+{
+  "defs": [
+    {
+      "defName": "sok",
+      "query": "from[*]?set='sok"
+    },
+    {
+      "defName": "sok-main",
+      "query": "from[sok]-from[sok]?type=(Marketing|Basic Land|Land)-from[sok]?token=true-from[sok]?promo=true"
+    },
+    {
+      "defName": "sok-promo",
+      "query": "from[sok]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "sok-all-cards",
+      "packDesc": "Saviors of Kamigawa: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[sok]" }
+      ]
+    },
+    {
+      "packName": "sok-standard",
+      "packDesc": "Saviors of Kamigawa: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[sok-main]?rarity='c" },
+        {
+          "querySet": [
+            {
+              "_comment": "common rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "take[1]>from[sok-main]?rarity='c"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[sok-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[sok-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[sok-main]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[3]>from[sok-main]?rarity='u" },
+        { "query": "take[1]>from[sok-main]?rarity='r" }
+      ]
+    },
+    {
+      "packName": "sok-prerelease-promos",
+      "packDesc": "Saviors of Kamigawa: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[sok]?includedReason='Prerelease Promo" }
+      ]
+    },
+    {
+      "packName": "sok-promos",
+      "packDesc": "Saviors of Kamigawa: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[sok-promo]" }
+      ]
+    }
+  ]
+}

@@ -2,34 +2,34 @@
   "_comment": "if there are no options the query/packNames will be auto-run",
   "products": [
     {
-      "productName": "bok-all-cards",
+      "productName": "sok-all-cards",
       "productDesc": "All Cards",
-      "sources": [ "http://mtgjson.com/json/bok.json", "http://mtgsalvation.gamepedia.com/Betrayers_of_Kamigawa" ],
+      "sources": [ "http://mtgjson.com/json/sok.json", "http://mtgsalvation.gamepedia.com/Saviors_of_Kamigawa" ],
       "isGenerated": false,
       "initialSort": "colour",
       "packs": [
-        { "packName": "bok-all-cards" }
+        { "packName": "sok-all-cards" }
       ]
     },
     {
-      "productName": "bok-boosters",
+      "productName": "sok-boosters",
       "productDesc": "Boosters",
-      "sources": [ "http://mtgsalvation.gamepedia.com/Betrayers_of_Kamigawa" ],
+      "sources": [ "http://mtgsalvation.gamepedia.com/Saviors_of_Kamigawa" ],
       "isGenerated": true,
       "initialSort": "set",
       "packs": [
-        { "packName": "bok-standard" }
+        { "packName": "sok-standard" }
       ],
       "options": {
         "presets": [
           {
-            "presetName": "bok-boosters-six",
+            "presetName": "sok-boosters-six",
             "presetDesc": "Six Boosters",
             "default": true,
             "packs": [
               {
                 "count": 6,
-                "defaultPackName": "bok-standard"
+                "defaultPackName": "sok-standard"
               }
             ]
           }
@@ -37,30 +37,30 @@
       }
     },
     {
-      "productName": "bok-prerelease",
+      "productName": "sok-prerelease",
       "productDesc": "Prerelease",
       "isVisible": true,
-      "sources": [ "http://mtgsalvation.gamepedia.com/Betrayers_of_Kamigawa" ],
+      "sources": [ "http://mtgsalvation.gamepedia.com/Saviors_of_Kamigawa" ],
       "isGenerated": true,
       "initialSort": "set",
       "packs": [
-        { "packName": "bok-standard" },
-        { "packName": "bok-prerelease-promos" }
+        { "packName": "sok-standard" },
+        { "packName": "sok-prerelease-promos" }
       ],
       "options": {
         "presets": [
           {
-            "presetName": "bok-prerelease",
+            "presetName": "sok-prerelease",
             "presetDesc": "Prerelease Pack",
             "default": true,
             "packs": [
               {
                 "count": 1,
-                "defaultPackName": "bok-prerelease-promos"
+                "defaultPackName": "sok-prerelease-promos"
               },
               {
                 "count": 6,
-                "defaultPackName": "bok-standard"
+                "defaultPackName": "sok-standard"
               }
             ]
           }
@@ -69,14 +69,14 @@
 
     },
     {
-      "productName": "bok-promos",
+      "productName": "sok-promos",
       "productDesc": "All Promos",
-      "sources": [ "http://mtgsalvation.gamepedia.com/Betrayers_of_Kamigawa" ],
+      "sources": [ "http://mtgsalvation.gamepedia.com/Saviors_of_Kamigawa" ],
       "isGenerated": false,
       "isVisible": true,
       "initialSort": "name",
       "packs": [
-        { "packName": "bok-promos" }
+        { "packName": "sok-promos" }
       ]
     }
 
