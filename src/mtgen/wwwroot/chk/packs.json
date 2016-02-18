@@ -1,0 +1,94 @@
+{
+  "defs": [
+    {
+      "defName": "chk",
+      "query": "from[*]?set='chk"
+    },
+    {
+      "defName": "chk-main",
+      "query": "from[chk]-from[chk]?type=(Marketing|Basic Land|Land)-from[chk]?token=true-from[chk]?promo=true"
+    },
+    {
+      "defName": "chk-promo",
+      "query": "from[chk]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "chk-all-cards",
+      "packDesc": "Champions of Kamigawa: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[chk]" }
+      ]
+    },
+    {
+      "packName": "chk-standard",
+      "packDesc": "Champions of Kamigawa: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[chk-main]?rarity='c" },
+        { "query": "take[3]>from[chk-main]?rarity='u" },
+        { "query": "take[1]>from[chk-main]?rarity='r" },
+        {
+          "querySet": [
+            {
+              "_comment": "common rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "from[chk]?type='Basic Land"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[chk-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[chk-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[chk-main]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+
+      ]
+    },
+    {
+      "packName": "chk-prerelease-promos",
+      "packDesc": "Champions of Kamigawa: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[chk]?includedReason='Prerelease Promo" }
+      ]
+    },
+    {
+      "packName": "chk-promos",
+      "packDesc": "Champions of Kamigawa: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[chk-promo]" }
+      ]
+    },
+    {
+      "packName": "chk-tournament-deck",
+      "packDesc": "Champions of Kamigawa: Tournament Deck",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[10]>from[chk-main]?rarity='u" },
+        { "query": "take[3]>from[chk-main]?rarity='r" },
+        { "query": "take[32]>from[chk-main]?rarity='c" },
+        { "query": "take[30]>from[chk]?type='Basic Land" }
+      ]
+    }
+  ]
+}
