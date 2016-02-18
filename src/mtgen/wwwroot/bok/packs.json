@@ -1,0 +1,81 @@
+{
+  "defs": [
+    {
+      "defName": "bok",
+      "query": "from[*]?set='bok"
+    },
+    {
+      "defName": "bok-main",
+      "query": "from[bok]-from[bok]?type=(Marketing|Basic Land|Land)-from[bok]?token=true-from[bok]?promo=true"
+    },
+    {
+      "defName": "bok-promo",
+      "query": "from[bok]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "bok-all-cards",
+      "packDesc": "Betrayers of Kamigawa: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[bok]" }
+      ]
+    },
+    {
+      "packName": "bok-standard",
+      "packDesc": "Betrayers of Kamigawa: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[bok-main]?rarity='c" },
+        {
+          "querySet": [
+            {
+              "_comment": "common rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "take[1]>from[bok-main]?rarity='c"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[bok-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[bok-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[bok-main]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[3]>from[bok-main]?rarity='u" },
+        { "query": "take[1]>from[bok-main]?rarity='r" }
+      ]
+    },
+    {
+      "packName": "bok-prerelease-promos",
+      "packDesc": "Betrayers of Kamigawa: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[bok]?includedReason='Prerelease Promo" }
+      ]
+    },
+    {
+      "packName": "bok-promos",
+      "packDesc": "Betrayers of Kamigawa: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[bok-promo]" }
+      ]
+    }
+  ]
+}

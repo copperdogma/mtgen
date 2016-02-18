@@ -1,0 +1,37 @@
+﻿[
+  {
+    "_comment": "add promo:false to ALL cards with the intention of deleting them later",
+    "where": "",
+    "newValues": {
+      "promo": false
+    }
+  },
+  {
+    "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+    "where": "title='Ink-Eyes, Servant of Oni",
+    "newValues": {
+      "src": "http://mtgen.net/cards/bok-ink-eyes-servant-of-oni-prerelease-promo.png",
+      "num": "{{num}} P Prerelease",
+      "promo": true,
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "where": "title='Budoka Pupil",
+    "newValues": {
+      "src": "http://mtgen.net/cards/bok-budoka-pupil-release-promo.png",
+      "num": "{{num}} P Launch",
+      "promo": true,
+      "includedReason": "Launch Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+
+  {
+    "_comment": "delete all cards that still have promo=false, which leaves just our modified promo cards",
+    "delete": true,
+    "where": "promo=false"
+  }
+
+]
