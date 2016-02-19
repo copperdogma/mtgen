@@ -773,8 +773,25 @@ var cardDataImporter = (function (my, $) {
                 card.sorder = 17;
                 card.colourless = true;
             }
-            if (card.hasOwnProperty('watermark') && (card.set === 'som' || card.set === 'mbs' || card.set === 'nph')) {
-                card.faction = card.watermark;
+            if (card.hasOwnProperty('watermark')) {
+                switch (card.set) {
+                    case "som":
+                    case "mbs":
+                    case "nph":
+                        card.faction = card.watermark;
+                        break;
+                    case "rav":
+                    case "rtr":
+                    case "gtc":
+                    case "dgm":
+                        card.guild = card.watermark;
+                        break;
+                    case "ktk":
+                    case "frf":
+                    case "dtk":
+                        card.clan = card.watermark;
+                        break;
+                }
             }
 
             cards = addCardToCards(cards, card);
