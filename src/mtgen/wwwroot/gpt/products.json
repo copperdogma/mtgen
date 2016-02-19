@@ -1,0 +1,84 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "gpt-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/gpt.json", "http://mtgsalvation.gamepedia.com/Guildpact" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "gpt-all-cards" }
+      ]
+    },
+    {
+      "productName": "gpt-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Guildpact" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "gpt-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "gpt-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "gpt-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "gpt-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://mtgsalvation.gamepedia.com/Guildpact" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "gpt-standard" },
+        { "packName": "gpt-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "gpt-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "gpt-prerelease-promos"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "gpt-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "gpt-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Guildpact" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "gpt-promos" }
+      ]
+    }
+
+  ]
+}
