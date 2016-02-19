@@ -1,0 +1,109 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "rav-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/rav.json", "http://mtgsalvation.gamepedia.com/Ravnica:_City_of_Guilds" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "rav-all-cards" }
+      ]
+    },
+    {
+      "productName": "rav-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Ravnica:_City_of_Guilds" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "rav-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "rav-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "rav-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "rav-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://mtgsalvation.gamepedia.com/Ravnica:_City_of_Guilds" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "rav-standard" },
+        { "packName": "rav-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "rav-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "rav-prerelease-promos"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "rav-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "rav-tournament-decks",
+      "productDesc": "Tournament Decks",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Ravnica:_City_of_Guilds" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "rav-tournament-deck" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "rav-tournament-deck",
+            "presetDesc": "Single Tournament Deck",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "rav-tournament-deck"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "rav-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Ravnica:_City_of_Guilds" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "rav-promos" }
+      ]
+    }
+
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "defs": [
+    {
+      "defName": "rav",
+      "query": "from[*]?set='rav"
+    },
+    {
+      "defName": "rav-main",
+      "query": "from[rav]-from[rav]?type=(Marketing|Basic Land|Land)-from[rav]?token=true-from[rav]?promo=true"
+    },
+    {
+      "defName": "rav-promo",
+      "query": "from[rav]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "rav-all-cards",
+      "packDesc": "Ravnica: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[rav]" }
+      ]
+    },
+    {
+      "packName": "rav-standard",
+      "packDesc": "Ravnica: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[rav-main]?rarity='c" },
+        { "query": "take[3]>from[rav-main]?rarity='u" },
+        { "query": "take[1]>from[rav-main]?rarity='r" },
+        {
+          "querySet": [
+            {
+              "_comment": "common rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "from[rav]?type='Basic Land"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[rav-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[rav-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[rav-main]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+
+      ]
+    },
+    {
+      "packName": "rav-prerelease-promos",
+      "packDesc": "Ravnica: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[rav]?includedReason='Prerelease Promo" }
+      ]
+    },
+    {
+      "packName": "rav-promos",
+      "packDesc": "Ravnica: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[rav-promo]" }
+      ]
+    },
+    {
+      "packName": "rav-tournament-deck",
+      "packDesc": "Ravnica: Tournament Deck",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[10]>from[rav-main]?rarity='u" },
+        { "query": "take[3]>from[rav-main]?rarity='r" },
+        { "query": "take[32]>from[rav-main]?rarity='c" },
+        { "query": "take[30]>from[rav]?type='Basic Land" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+[
+  {
+    "artist": "Dave Allsop",
+    "cmc": 6,
+    "colorIdentity": [
+      "B",
+      "G"
+    ],
+    "colors": [
+      "Black",
+      "Green"
+    ],
+    "id": "556050bade6a20918a56e6c0c9bb952c9dae5ea2",
+    "imageName": "gleancrawler",
+    "layout": "normal",
+    "manaCost": "{3}{B/G}{B/G}{B/G}",
+    "mciNumber": "247",
+    "multiverseid": 83702,
+    "name": "Gleancrawler",
+    "number": "247",
+    "power": "6",
+    "rarity": "r",
+    "subtypes": [
+      "Insect",
+      "Horror"
+    ],
+    "text": "({B/G} can be paid with either {B} or {G}.)\nTrample\nAt the beginning of your end step, return to your hand all creature cards in your graveyard that were put there from the battlefield this turn.",
+    "toughness": "6",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "watermark": "Golgari",
+    "title": "Gleancrawler",
+    "set": "rav",
+    "cost": "{3}{B/G}{B/G}{B/G}",
+    "colour": "m",
+    "num": "247 P Prerelease",
+    "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/magic/images/RavPreCard.JPG",
+    "guild": "Golgari",
+    "mtgenId": "rav|247 P Prerelease",
+    "promo": true,
+    "includedReason": "Prerelease Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "artist": "Adam Rex",
+    "cmc": 2,
+    "colorIdentity": [
+      "U",
+      "B"
+    ],
+    "colors": [
+      "Blue",
+      "Black"
+    ],
+    "id": "588259d6d9d53e86f12f859d3e3e5c0638d5e473",
+    "imageName": "dimir guildmage",
+    "layout": "normal",
+    "manaCost": "{U/B}{U/B}",
+    "mciNumber": "245",
+    "multiverseid": 87990,
+    "name": "Dimir Guildmage",
+    "number": "245",
+    "power": "2",
+    "rarity": "u",
+    "subtypes": [
+      "Human",
+      "Wizard"
+    ],
+    "text": "({U/B} can be paid with either {U} or {B}.)\n{3}{U}: Target player draws a card. Activate this ability only any time you could cast a sorcery.\n{3}{B}: Target player discards a card. Activate this ability only any time you could cast a sorcery.",
+    "toughness": "2",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "watermark": "Dimir",
+    "title": "Dimir Guildmage",
+    "set": "rav",
+    "cost": "{U/B}{U/B}",
+    "colour": "m",
+    "num": "245 P Release",
+    "src": "http://mtgen.net/cards/rav-dimir-guildmage-release-promo.png",
+    "guild": "Dimir",
+    "mtgenId": "rav|245 P Release",
+    "promo": true,
+    "includedReason": "Release Promo",
+    "usableForDeckBuilding": false
+  }
+]
