@@ -781,6 +781,8 @@ var cardDataImporter = (function (my, $) {
                         card.faction = card.watermark;
                         break;
                     case "rav":
+                    case "gpt":
+                    case "dis":
                     case "rtr":
                     case "gtc":
                     case "dgm":
