@@ -1,0 +1,84 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "dis-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/dis.json", "http://mtgsalvation.gamepedia.com/Dissension" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "dis-all-cards" }
+      ]
+    },
+    {
+      "productName": "dis-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Dissension" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "dis-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "dis-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "dis-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "dis-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://mtgsalvation.gamepedia.com/Dissension" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "dis-standard" },
+        { "packName": "dis-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "dis-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "dis-prerelease-promos"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "dis-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "dis-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Dissension" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "dis-promos" }
+      ]
+    }
+
+  ]
+}

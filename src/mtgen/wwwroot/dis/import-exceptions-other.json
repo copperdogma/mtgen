@@ -1,0 +1,37 @@
+﻿[
+  {
+    "_comment": "add promo:false to ALL cards with the intention of deleting them later",
+    "where": "",
+    "newValues": {
+      "promo": false
+    }
+  },
+  {
+    "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+    "where": "title='Avatar of Discord",
+    "newValues": {
+      "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/magic/images/mtgcom/arcana1000/1059_avatar_6284172.jpg",
+      "num": "{{num}} P Prerelease",
+      "promo": true,
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "where": "title='Azorius Guildmage",
+    "newValues": {
+      "src": "http://mtgen.net/cards/dis-azorius-guildmage-release-promo.png",
+      "num": "{{num}} P Launch",
+      "promo": true,
+      "includedReason": "Launch Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+
+  {
+    "_comment": "delete all cards that still have promo=false, which leaves just our modified promo cards",
+    "delete": true,
+    "where": "promo=false"
+  }
+
+]

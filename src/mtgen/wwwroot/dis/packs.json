@@ -1,0 +1,81 @@
+{
+  "defs": [
+    {
+      "defName": "dis",
+      "query": "from[*]?set='dis"
+    },
+    {
+      "defName": "dis-main",
+      "query": "from[dis]-from[dis]?type=(Marketing|Basic Land|Land)-from[dis]?token=true-from[dis]?promo=true"
+    },
+    {
+      "defName": "dis-promo",
+      "query": "from[dis]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "dis-all-cards",
+      "packDesc": "Dissension: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[dis]" }
+      ]
+    },
+    {
+      "packName": "dis-standard",
+      "packDesc": "Dissension: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[dis-main]?rarity='c" },
+        {
+          "querySet": [
+            {
+              "_comment": "common rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "take[1]>from[dis-main]?rarity='c"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[dis-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[dis-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[dis-main]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[3]>from[dis-main]?rarity='u" },
+        { "query": "take[1]>from[dis-main]?rarity='r" }
+      ]
+    },
+    {
+      "packName": "dis-prerelease-promos",
+      "packDesc": "Dissension: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[dis]?includedReason='Prerelease Promo" }
+      ]
+    },
+    {
+      "packName": "dis-promos",
+      "packDesc": "Dissension: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[dis-promo]" }
+      ]
+    }
+  ]
+}
