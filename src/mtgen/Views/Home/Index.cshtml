@@ -38,6 +38,7 @@
         <thead>
             <tr><th></th><th>Set</th><th>Generator Created Date</th><th>Prerelease Date</th><th>Release Date</th></tr>
         </thead>
+        @Component.Invoke("SetSummary", new SetStubSummary { Code = "cn2", IsFutureSet = true })
         @Component.Invoke("SetSummary", new SetStubSummary { Code = "ema", IsFutureSet = true })
         <tbody class="block">
             <tr class="title"><td colspan="5">Shadows over Innistrad Block</td></tr>
