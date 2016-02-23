@@ -1,0 +1,109 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "tsp-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/tsp.json", "http://mtgsalvation.gamepedia.com/Time_Spiral" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "tsp-all-cards" }
+      ]
+    },
+    {
+      "productName": "tsp-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Time_Spiral" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "tsp-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "tsp-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "tsp-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "tsp-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://mtgsalvation.gamepedia.com/Time_Spiral" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "tsp-standard" },
+        { "packName": "tsp-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "tsp-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "tsp-prerelease-promos"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "tsp-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "tsp-tournament-decks",
+      "productDesc": "Tournament Decks",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Time_Spiral" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "tsp-tournament-deck" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "tsp-tournament-deck",
+            "presetDesc": "Single Tournament Deck",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "tsp-tournament-deck"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "tsp-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Time_Spiral" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "tsp-promos" }
+      ]
+    }
+
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "plc-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/plc.json", "http://mtgsalvation.gamepedia.com/Planar_Chaos" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "plc-all-cards" }
+      ]
+    },
+    {
+      "productName": "plc-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Planar_Chaos" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "plc-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "plc-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "plc-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "plc-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://mtgsalvation.gamepedia.com/Planar_Chaos" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "plc-standard" },
+        { "packName": "plc-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "plc-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "plc-prerelease-promos"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "plc-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "plc-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Planar_Chaos" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "plc-promos" }
+      ]
+    }
+
+  ]
+}

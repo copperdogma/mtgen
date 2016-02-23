@@ -1,0 +1,63 @@
+[
+  {
+    "artist": "Mark Zug",
+    "id": "428e6c419ae6ca03738ac782e9534b3c46ec0164",
+    "imageName": "lotus bloom",
+    "layout": "normal",
+    "multiverseid": 114904,
+    "name": "Lotus Bloom",
+    "number": "259",
+    "rarity": "r",
+    "text": "Suspend 3—{0} (Rather than cast this card from your hand, pay {0} and exile it with three time counters on it. At the beginning of your upkeep, remove a time counter. When the last is removed, cast it without paying its mana cost.)\n{T}, Sacrifice Lotus Bloom: Add three mana of any one color to your mana pool.",
+    "type": "Artifact",
+    "types": [
+      "Artifact"
+    ],
+    "title": "Lotus Bloom",
+    "set": "tsp",
+    "cost": "",
+    "colour": "a",
+    "num": "259 P Prerelease",
+    "src": "http://mtgen.net/cards/tsp-lotus-bloom-prerelease-promo.png",
+    "sorder": 17,
+    "colourless": true,
+    "mtgenId": "tsp|259 P Prerelease",
+    "promo": true,
+    "includedReason": "Prerelease Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "artist": "Vance Kovacs",
+    "cmc": 2,
+    "colorIdentity": [
+      "R"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "flavor": "Arc mages aren't known for their patience.",
+    "id": "e0411706685541dcfa2560166ad1cb45288c2203",
+    "imageName": "sudden shock",
+    "layout": "normal",
+    "manaCost": "{1}{R}",
+    "multiverseid": 114911,
+    "name": "Sudden Shock",
+    "number": "179",
+    "rarity": "u",
+    "text": "Split second (As long as this spell is on the stack, players can't cast spells or activate abilities that aren't mana abilities.)\nSudden Shock deals 2 damage to target creature or player.",
+    "type": "Instant",
+    "types": [
+      "Instant"
+    ],
+    "title": "Sudden Shock",
+    "set": "tsp",
+    "cost": "{1}{R}",
+    "colour": "r",
+    "num": "179 P Release",
+    "src": "http://mtgen.net/cards/tsp-sudden-shock-release-promo.png",
+    "mtgenId": "tsp|179 P Release",
+    "promo": true,
+    "includedReason": "Release Promo",
+    "usableForDeckBuilding": false
+  }
+]

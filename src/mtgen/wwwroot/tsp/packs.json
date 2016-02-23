@@ -1,0 +1,103 @@
+{
+  "defs": [
+    {
+      "defName": "tsp",
+      "query": "from[*]?set='tsp"
+    },
+    {
+      "defName": "tsb",
+      "query": "from[*]?set='tsb"
+    },
+    {
+      "defName": "tsp-tsb",
+      "query": "from[tsp]+from[tsb]"
+    },
+    {
+      "defName": "tsp-main",
+      "query": "from[tsp]-from[tsp]?type=(Marketing|Basic Land|Land)-from[tsp]?token=true-from[tsp]?promo=true"
+    },
+    {
+      "defName": "tsp-promo",
+      "query": "from[tsp]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "tsp-all-cards",
+      "packDesc": "Time Spiral: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[tsp-tsb]" }
+      ]
+    },
+    {
+      "packName": "tsp-standard",
+      "packDesc": "Time Spiral: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[9]>from[tsp-main]?rarity='c" },
+        {
+          "querySet": [
+            {
+              "_comment": "common rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "from[tsp]?rarity='c"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[tsp-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[tsp-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[tsp-main]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[3]>from[tsp-main]?rarity='u" },
+        { "query": "take[1]>from[tsp-main]?rarity='r" },
+        { "query": "take[1]>from[tsb]" }
+      ]
+    },
+    {
+      "packName": "tsp-prerelease-promos",
+      "packDesc": "Time Spiral: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[tsp]?includedReason='Prerelease Promo" }
+      ]
+    },
+    {
+      "packName": "tsp-promos",
+      "packDesc": "Time Spiral: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[tsp-promo]" }
+      ]
+    },
+    {
+      "packName": "tsp-tournament-deck",
+      "packDesc": "Time Spiral: Tournament Deck",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[10]>from[tsp-main]?rarity='u" },
+        { "query": "take[3]>from[tsp-main]?rarity='r" },
+        { "query": "take[29]>from[tsp-main]?rarity='c" },
+        { "query": "take[3]>from[tsb]" },
+        { "query": "take[30]>from[tsp]?type='Basic Land" }
+      ]
+    }
+  ]
+}

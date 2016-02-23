@@ -1,0 +1,71 @@
+{
+  "defs": [
+    {
+      "defName": "plc",
+      "query": "from[*]?set='plc'-from[*]?timeshifted=true"
+    },
+    {
+      "defName": "plc-timeshifted",
+      "query": "from[*]?timeshifted=true"
+    },
+    {
+      "defName": "plc-main",
+      "query": "from[plc]-from[plc]?type=(Marketing|Basic Land|Land)-from[plc]?token=true-from[plc]?promo=true"
+    },
+    {
+      "defName": "plc-promo",
+      "query": "from[*]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "plc-all-cards",
+      "packDesc": "Planar Chaos: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[plc]" }
+      ]
+    },
+    {
+      "packName": "plc-standard",
+      "packDesc": "Planar Chaos: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[8]>from[plc-main]?rarity='c" },
+        { "query": "take[3]>from[plc-timeshifted]?rarity='c" },
+        { "query": "take[2]>from[plc-main]?rarity='u" },
+        { "query": "take[1]>from[plc-main]?rarity='r" },
+        {
+          "querySet": [
+            {
+              "percent": "3/4",
+              "query": "from[plc-timeshifted]?rarity='u"
+            },
+            {
+              "percent": "1/4",
+              "query": "from[plc-timeshifted]?rarity='r"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "plc-prerelease-promos",
+      "packDesc": "Planar Chaos: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[plc]?includedReason='Prerelease Promo" }
+      ]
+    },
+    {
+      "packName": "plc-promos",
+      "packDesc": "Planar Chaos: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[plc-promo]" }
+      ]
+    }
+  ]
+}
