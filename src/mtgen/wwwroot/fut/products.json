@@ -1,0 +1,84 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "fut-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/fut.json", "http://mtgsalvation.gamepedia.com/Future_Sight" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "fut-all-cards" }
+      ]
+    },
+    {
+      "productName": "fut-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Future_Sight" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "fut-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "fut-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "fut-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "fut-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://mtgsalvation.gamepedia.com/Future_Sight" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "fut-standard" },
+        { "packName": "fut-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "fut-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "fut-prerelease-promos"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "fut-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "fut-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Future_Sight" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "fut-promos" }
+      ]
+    }
+
+  ]
+}
