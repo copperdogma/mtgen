@@ -2,7 +2,7 @@
   "defs": [
     {
       "defName": "plc",
-      "query": "from[*]?set='plc'-from[*]?timeshifted=true"
+      "query": "from[*]?set='plc'"
     },
     {
       "defName": "plc-timeshifted",
@@ -10,11 +10,11 @@
     },
     {
       "defName": "plc-main",
-      "query": "from[plc]-from[plc]?type=(Marketing|Basic Land|Land)-from[plc]?token=true-from[plc]?promo=true"
+      "query": "from[plc]-from[plc]?type=(Marketing|Basic Land|Land)-from[plc]?token=true-from[plc]?promo=true-from[*]?timeshifted=true"
     },
     {
       "defName": "plc-promo",
-      "query": "from[*]?promo=true"
+      "query": "from[plc]?promo=true"
     }
   ],
   "packs": [
