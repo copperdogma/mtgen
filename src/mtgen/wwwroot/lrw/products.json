@@ -1,0 +1,109 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "lrw-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/lrw.json", "http://mtgsalvation.gamepedia.com/Lorwyn" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "lrw-all-cards" }
+      ]
+    },
+    {
+      "productName": "lrw-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Lorwyn" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "lrw-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "lrw-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "lrw-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "lrw-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://mtgsalvation.gamepedia.com/Lorwyn" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "lrw-standard" },
+        { "packName": "lrw-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "lrw-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "lrw-prerelease-promos"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "lrw-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "lrw-tournament-decks",
+      "productDesc": "Tournament Decks",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Lorwyn" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "lrw-tournament-deck" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "lrw-tournament-deck",
+            "presetDesc": "Single Tournament Deck",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "lrw-tournament-deck"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "lrw-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Lorwyn" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "lrw-promos" }
+      ]
+    }
+
+  ]
+}

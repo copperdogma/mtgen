@@ -132,6 +132,10 @@
         </tbody>
         @Component.Invoke("SetSummary", new SetStubSummary { Code = "m10" })
         <tbody class="block">
+            <tr class="title"><td colspan="5">Lorwyn Block</td></tr>
+            @Component.Invoke("SetSummary", new SetStubSummary { Code = "lrw" })
+        </tbody>
+        <tbody class="block">
             <tr class="title"><td colspan="5">Time Spiral Block</td></tr>
             @Component.Invoke("SetSummary", new SetStubSummary { Code = "tsp" })
             @Component.Invoke("SetSummary", new SetStubSummary { Code = "plc" })

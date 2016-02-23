@@ -1,0 +1,190 @@
+﻿[
+  {
+    "add": true,
+    "newValues": {
+      "title": "Avatar",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/lrw-avatar-token.png",
+      "colour": "w",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Avatar",
+      "power": "*",
+      "toughness": "*",
+      "num": "001/011 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Elemental",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/lrw-elemental-token.png",
+      "colour": "w",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Elemental",
+      "power": "4",
+      "toughness": "4",
+      "num": "002/011 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Kithkin Soldier",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/lrw-kithkin-soldier-token.png",
+      "colour": "w",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Kithkin Soldier",
+      "power": "1",
+      "toughness": "1",
+      "num": "003/011 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Merfolk Wizard",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/lrw-merfolk-wizard-token.png",
+      "colour": "u",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Merfolk Wizard",
+      "power": "1",
+      "toughness": "1",
+      "num": "004/011 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Goblin Rogue",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/lrw-goblin-rogue-token.png",
+      "colour": "b",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Goblin Rogue",
+      "power": "1",
+      "toughness": "1",
+      "num": "005/011 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Elemental Shaman",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/lrw-elemental-shaman-token.png",
+      "colour": "r",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Elemental Shaman",
+      "power": "3",
+      "toughness": "1",
+      "num": "006/011 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Beast",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/lrw-beast-token.png",
+      "colour": "g",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Beast",
+      "power": "3",
+      "toughness": "3",
+      "num": "007/011 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Elemental",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/lrw-elemental2-token.png",
+      "colour": "g",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Elemental",
+      "power": "4",
+      "toughness": "4",
+      "num": "008/011 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Elf Warrior",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/lrw-elf-warrior-token.png",
+      "colour": "g",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Elf Warrior",
+      "power": "1",
+      "toughness": "1",
+      "num": "009/011 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Wolf",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/lrw-wolf-token.png",
+      "colour": "g",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Wolf",
+      "power": "2",
+      "toughness": "2",
+      "num": "010/011 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Shapeshifter",
+      "set": "{{setCode}}",
+      "src": "http://mtgen.net/cards/lrw-shapeshifter-token.png",
+      "colour": "o",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Shapeshifter",
+      "power": "1",
+      "toughness": "1",
+      "num": "011/011 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  }
+
+]

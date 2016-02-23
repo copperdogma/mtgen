@@ -1,0 +1,105 @@
+{
+  "defs": [
+    {
+      "defName": "lrw",
+      "query": "from[*]?set='lrw"
+    },
+    {
+      "defName": "lrw-main",
+      "query": "from[lrw]-from[lrw]?type=(Marketing|Basic Land|Land)-from[lrw]?token=true-from[lrw]?promo=true"
+    },
+    {
+      "defName": "lrw-promo",
+      "query": "from[lrw]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "lrw-all-cards",
+      "packDesc": "Lorwyn: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[lrw]" }
+      ]
+    },
+    {
+      "packName": "lrw-standard",
+      "packDesc": "Lorwyn: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[lrw-main]?rarity='c" },
+        {
+          "querySet": [
+            {
+              "_comment": "common rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "from[lrw-main]?rarity='c"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[lrw-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[lrw-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[lrw-main]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[3]>from[lrw-main]?rarity='u" },
+        { "query": "take[1]>from[lrw-main]?rarity='r" },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[lrw]?token=true"
+            },
+            {
+              "percent": "50",
+              "query": "from[lrw]?type='Marketing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "lrw-prerelease-promos",
+      "packDesc": "Lorwyn: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[lrw]?includedReason='Prerelease Promo" }
+      ]
+    },
+    {
+      "packName": "lrw-promos",
+      "packDesc": "Lorwyn: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[lrw-promo]" }
+      ]
+    },
+    {
+      "packName": "lrw-tournament-deck",
+      "packDesc": "Lorwyn: Tournament Deck",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[10]>from[lrw-main]?rarity='u" },
+        { "query": "take[3]>from[lrw-main]?rarity='r" },
+        { "query": "take[32]>from[lrw-main]?rarity='c" },
+        { "query": "take[30]>from[lrw]?type='Basic Land" }
+      ]
+    }
+  ]
+}
