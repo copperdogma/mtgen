@@ -1,0 +1,109 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "shm-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/shm.json", "http://mtgsalvation.gamepedia.com/Shadowmoor" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "shm-all-cards" }
+      ]
+    },
+    {
+      "productName": "shm-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Shadowmoor" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "shm-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "shm-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "shm-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "shm-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://mtgsalvation.gamepedia.com/Shadowmoor" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "shm-standard" },
+        { "packName": "shm-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "shm-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "shm-prerelease-promos"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "shm-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "shm-tournament-decks",
+      "productDesc": "Tournament Decks",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Shadowmoor" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "shm-tournament-deck" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "shm-tournament-deck",
+            "presetDesc": "Single Tournament Deck",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "shm-tournament-deck"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "shm-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Shadowmoor" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "shm-promos" }
+      ]
+    }
+
+  ]
+}
