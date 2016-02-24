@@ -1,0 +1,84 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "mor-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/mor.json", "http://mtgsalvation.gamepedia.com/Morningtide" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "mor-all-cards" }
+      ]
+    },
+    {
+      "productName": "mor-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Morningtide" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "mor-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "mor-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "mor-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "mor-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://mtgsalvation.gamepedia.com/Morningtide" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "mor-standard" },
+        { "packName": "mor-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "mor-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "mor-prerelease-promos"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "mor-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "mor-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Morningtide" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "mor-promos" }
+      ]
+    }
+
+  ]
+}

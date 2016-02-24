@@ -1,0 +1,54 @@
+﻿[
+  {
+    "add": true,
+    "newValues": {
+      "title": "Giant Warrior",
+      "set": "{{setCode}}",
+      "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/magic/images/mtgcom/arcana1000/1511_Token3.jpg",
+      "colour": "w",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Giant Warrior",
+      "power": "5",
+      "toughness": "5",
+      "num": "001/003 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Faerie Rogue",
+      "set": "{{setCode}}",
+      "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/magic/images/mtgcom/arcana1000/1511_Token2.jpg",
+      "colour": "b",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Faerie Rogue",
+      "power": "1",
+      "toughness": "1",
+      "num": "002/003 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Treefolk Shaman",
+      "set": "{{setCode}}",
+      "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/magic/images/mtgcom/arcana1000/1511_Token1.jpg",
+      "colour": "g",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Treefolk Shaman",
+      "power": "2",
+      "toughness": "5",
+      "num": "003/003 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  }
+
+]

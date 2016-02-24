@@ -1,0 +1,101 @@
+{
+  "defs": [
+    {
+      "defName": "mor",
+      "query": "from[*]?set='mor"
+    },
+    {
+      "defName": "lrw",
+      "query": "from[*]?set='lrw"
+    },
+    {
+      "defName": "mor-main",
+      "query": "from[mor]-from[mor]?type=(Marketing|Basic Land|Land)-from[mor]?token=true-from[mor]?promo=true"
+    },
+    {
+      "defName": "mor-promo",
+      "query": "from[mor]?promo=true"
+    },
+    {
+      "defName": "mor-tokens",
+      "query": "from[lrw]?token=true+from[mor]?token=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "mor-all-cards",
+      "packDesc": "Morningtide: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[mor]+from[lrw]?token=true" }
+      ]
+    },
+    {
+      "packName": "mor-standard",
+      "packDesc": "Morningtide: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[mor-main]?rarity='c" },
+        {
+          "querySet": [
+            {
+              "_comment": "common rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "from[mor-main]?rarity='c"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[mor-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[mor-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[mor-main]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[3]>from[mor-main]?rarity='u" },
+        { "query": "take[1]>from[mor-main]?rarity='r" },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[mor-tokens]"
+            },
+            {
+              "percent": "50",
+              "query": "from[mor]?type='Marketing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "mor-prerelease-promos",
+      "packDesc": "Morningtide: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[mor]?includedReason='Prerelease Promo" }
+      ]
+    },
+    {
+      "packName": "mor-promos",
+      "packDesc": "Morningtide: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[mor-promo]" }
+      ]
+    }
+  ]
+}
