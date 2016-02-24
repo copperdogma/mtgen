@@ -8,6 +8,6 @@ namespace mtgen.Services
         Task<DrawEntity> GetDraw(string setCode, string drawId);
         Task<string> SaveDraw(DrawEntity pullEntity);
         Task<DrawEntity> LoadDraw(string setCode, string drawId);
-        Task<IList<DrawEntity>> GetPopularDraws();
+        Task<IList<DrawEntity>> GetPopularDraws(int minDrawCount);
     }
 }

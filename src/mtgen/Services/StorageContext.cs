@@ -142,13 +142,13 @@ namespace mtgen.Services
             return stringSet.ToString();
         }
 
-        async public Task<IList<DrawEntity>> GetPopularDraws()
+        async public Task<IList<DrawEntity>> GetPopularDraws(int minDrawCount = 1)
         {
             var drawTable = await GetDrawTable();
 
             var tableContinutionToken = new TableContinuationToken();
             var popularDrawsQuery = new TableQuery<DrawEntity>()
-                .Where(TableQuery.GenerateFilterConditionForLong("UseCount", QueryComparisons.GreaterThanOrEqual, 1));
+                .Where(TableQuery.GenerateFilterConditionForLong("UseCount", QueryComparisons.GreaterThanOrEqual, minDrawCount));
             var popularDraws = await drawTable.ExecuteQuerySegmentedAsync(popularDrawsQuery, tableContinutionToken);
 
             var sortedPopularDraws = popularDraws.Results.OrderByDescending(d => d.UseCount).ToList();
