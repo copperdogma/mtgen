@@ -1,0 +1,84 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "eve-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/eve.json", "http://mtgsalvation.gamepedia.com/Eventide" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "eve-all-cards" }
+      ]
+    },
+    {
+      "productName": "eve-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Eventide" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "eve-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "eve-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "eve-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "eve-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://mtgsalvation.gamepedia.com/Eventide" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "eve-standard" },
+        { "packName": "eve-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "eve-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "eve-prerelease-promos"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "eve-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "eve-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Eventide" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "eve-promos" }
+      ]
+    }
+
+  ]
+}
