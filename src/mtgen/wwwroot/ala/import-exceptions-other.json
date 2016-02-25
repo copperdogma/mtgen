@@ -1,0 +1,97 @@
+﻿[
+  {
+    "_comment": "add promo:false to ALL cards with the intention of deleting them later",
+    "where": "",
+    "newValues": {
+      "promo": false
+    }
+  },
+  {
+    "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+    "where": "title='Ajani Vengeant",
+    "newValues": {
+      "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/magic/images/mtgcom/arcana1000/1660_jt3sc2ib_EN.jpg",
+      "num": "{{num}} P Prerelease",
+      "promo": true,
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+
+  {
+    "_comment": "delete all cards that still have promo=false, which leaves just our modified promo cards",
+    "delete": true,
+    "where": "promo=false"
+  },
+
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/ala-tip01.png",
+      "title": "Tip/Marketing Card",
+      "set": "{{setCode}}",
+      "colour": "o",
+      "num": "001 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/ala-tip02.png",
+      "title": "Tip/Marketing Card",
+      "set": "{{setCode}}",
+      "colour": "o",
+      "num": "002 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/ala-tip03.png",
+      "title": "Tip/Marketing Card",
+      "set": "{{setCode}}",
+      "colour": "o",
+      "num": "003 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/ala-tip04.png",
+      "title": "Tip/Marketing Card",
+      "set": "{{setCode}}",
+      "colour": "o",
+      "num": "004 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/ala-tip05.png",
+      "title": "Tip/Marketing Card",
+      "set": "{{setCode}}",
+      "colour": "o",
+      "num": "005 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  }
+]

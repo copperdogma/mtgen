@@ -1,0 +1,152 @@
+{
+  "defs": [
+    {
+      "defName": "ala",
+      "query": "from[*]?set='ala"
+    },
+    {
+      "defName": "ala-main",
+      "query": "from[ala]-from[ala]?type=(Marketing|Basic Land|Land)-from[ala]?token=true-from[ala]?promo=true"
+    },
+    {
+      "defName": "ala-promo",
+      "query": "from[ala]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "ala-all-cards",
+      "packDesc": "Shards of Alara: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[ala]" }
+      ]
+    },
+    {
+      "packName": "ala-standard",
+      "packDesc": "Shards of Alara: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[9]>from[ala-main]?rarity='c" },
+        {
+          "querySet": [
+            {
+              "_comment": "common rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "from[ala-main]?rarity='c"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[ala-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[ala-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[ala-main]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[3]>from[ala-main]?rarity='u" },
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[ala-main]?rarity='r"
+            },
+            {
+              "percent": "1/8",
+              "query": "from[ala-main]?rarity='m"
+            }
+          ]
+        },
+        { "query": "take[1]>from[ala]?type='Basic Land" },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[ala]?token=true"
+            },
+            {
+              "percent": "50",
+              "query": "from[ala]?type='Marketing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "ala-prerelease-promos",
+      "packDesc": "Shards of Alara: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[ala]?includedReason='Prerelease Promo" }
+      ]
+    },
+    {
+      "packName": "ala-promos",
+      "packDesc": "Shards of Alara: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[ala-promo]" }
+      ]
+    },
+    {
+      "packName": "ala-tournament-deck",
+      "packDesc": "Shards of Alara: Tournament Deck",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[10]>from[ala-main]?rarity='u" },
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[ala-main]?rarity='r"
+            },
+            {
+              "percent": "1/8",
+              "query": "from[ala-main]?rarity='m"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[ala-main]?rarity='r"
+            },
+            {
+              "percent": "1/8",
+              "query": "from[ala-main]?rarity='m"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[ala-main]?rarity='r"
+            },
+            {
+              "percent": "1/8",
+              "query": "from[ala-main]?rarity='m"
+            }
+          ]
+        },
+        { "query": "take[32]>from[ala-main]?rarity='c" },
+        { "query": "take[30]>from[ala]?type='Basic Land" }
+      ]
+    }
+  ]
+}

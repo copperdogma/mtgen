@@ -1,0 +1,109 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "ala-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/ala.json", "http://mtgsalvation.gamepedia.com/Shards_of_Alara" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "ala-all-cards" }
+      ]
+    },
+    {
+      "productName": "ala-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Shards_of_Alara" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "ala-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "ala-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "ala-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "ala-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://mtgsalvation.gamepedia.com/Shards_of_Alara" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "ala-standard" },
+        { "packName": "ala-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "ala-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "ala-prerelease-promos"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "ala-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "ala-tournament-decks",
+      "productDesc": "Tournament Decks",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Shards_of_Alara" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "ala-tournament-deck" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "ala-tournament-deck",
+            "presetDesc": "Single Tournament Deck",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "ala-tournament-deck"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "ala-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Shards_of_Alara" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "ala-promos" }
+      ]
+    }
+
+  ]
+}
