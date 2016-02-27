@@ -1,0 +1,113 @@
+{
+  "defs": [
+    {
+      "defName": "arb",
+      "query": "from[*]?set='arb"
+    },
+    {
+      "defName": "ala",
+      "query": "from[*]?set='ala"
+    },
+    {
+      "defName": "arb-main",
+      "query": "from[arb]-from[arb]?type=(Marketing|Basic Land|Land)-from[arb]?token=true-from[arb]?promo=true"
+    },
+    {
+      "defName": "arb-promo",
+      "query": "from[arb]?promo=true"
+    },
+    {
+      "defName": "arb-all",
+      "query": "from[arb]+from[ala-tokens]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "arb-all-cards",
+      "packDesc": "Alara Reborn: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[arb-all]" }
+      ]
+    },
+    {
+      "packName": "arb-standard",
+      "packDesc": "Alara Reborn: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[9]>from[arb-main]?rarity='c" },
+        {
+          "querySet": [
+            {
+              "_comment": "common rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "from[arb-main]?rarity='c"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[arb-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[arb-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[arb-main]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[3]>from[arb-main]?rarity='u" },
+        { "query": "take[1]>from[ala]?type='Basic Land" },
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[arb-main]?rarity='r"
+            },
+            {
+              "percent": "1/8",
+              "query": "from[arb-main]?rarity='m"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[arb]?token=true"
+            },
+            {
+              "percent": "50",
+              "query": "from[arb]?type='Marketing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "arb-prerelease-promos",
+      "packDesc": "Alara Reborn: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[arb]?includedReason='Prerelease Promo" }
+      ]
+    },
+    {
+      "packName": "arb-promos",
+      "packDesc": "Alara Reborn: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[arb-promo]" }
+      ]
+    }
+  ]
+}

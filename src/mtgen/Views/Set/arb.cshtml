@@ -1,0 +1,32 @@
+﻿@using mtgen.ViewModels;
+@{
+    var set = new mtgen.ViewModels.Set()
+    {
+        Code = "arb",
+        Name = "Alara Reborn",
+        CreatedDate = new DateTime(2016, 1, 27),
+        CardCount = 145,
+        StartProductName = "arb-boosters"
+    };
+
+    set.Updates = new List<Update>()
+    {
+        //new Update() {
+        //    UpdateDate = new DateTime(2014,9,2),
+        //    HtmlString = "Evening: Upgraded to newest version, added all Prerelease pack-ins, Fat Packs, and guild sorting."
+        //}
+    };
+
+    set.CardFiles = new List<string>() { "cardsMain.json", "cardsOther.json", "cardsToken.json",
+        "../ala/cardsMain.json" };
+    set.PackFiles = new List<string>() { "packs.json" };
+
+    ViewBag.Set = set;
+
+    /* Defaults:
+        SetFile = "~/sets.json";
+        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+        PackFiles = new List<string>() { "packs.json" };
+        ProductFile = "products.json";
+     */
+}

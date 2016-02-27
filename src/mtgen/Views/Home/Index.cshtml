@@ -134,6 +134,8 @@
         <tbody class="block">
             <tr class="title"><td colspan="5">Alara Block</td></tr>
             @Component.Invoke("SetSummary", new SetStubSummary { Code = "ala" })
+            @* This one is weird becuase "con" is a reserved word in VS *@
+            @Component.Invoke("SetSummary", new SetStubSummary { Code = "con_" })
             @Component.Invoke("SetSummary", new SetStubSummary { Code = "con_" })
         </tbody>
         <tbody class="block">

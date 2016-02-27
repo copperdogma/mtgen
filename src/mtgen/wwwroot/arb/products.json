@@ -1,0 +1,84 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "arb-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/arb.json", "http://mtgsalvation.gamepedia.com/Alara_Reborn" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "arb-all-cards" }
+      ]
+    },
+    {
+      "productName": "arb-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Alara_Reborn" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "arb-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "arb-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "arb-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "arb-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://mtgsalvation.gamepedia.com/Alara_Reborn" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "arb-standard" },
+        { "packName": "arb-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "arb-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "arb-prerelease-promos"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "arb-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "arb-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Alara_Reborn" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "arb-promos" }
+      ]
+    }
+
+  ]
+}
