@@ -1,0 +1,37 @@
+﻿[
+  {
+    "add": true,
+    "newValues": {
+      "title": "Angel",
+      "set": "{{setCode}}",
+      "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/mtg/images/daily/arcana/106_token1.jpg",
+      "colour": "w",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Angel",
+      "power": "4",
+      "toughness": "4",
+      "num": "001/002 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "title": "Elemental",
+      "set": "{{setCode}}",
+      "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/mtg/images/daily/arcana/106_token2.jpg",
+      "colour": "r",
+      "rarity": "c",
+      "type": "Token Creature",
+      "subtype": "Elemental",
+      "power": "3",
+      "toughness": "1",
+      "num": "002/002 T",
+      "token": "true",
+      "usableForDeckBuilding": false
+    }
+  }
+
+]

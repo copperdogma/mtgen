@@ -75,11 +75,12 @@ namespace mtgen
             // Add MVC to the request pipeline.
             app.UseMvc(routes =>
             {
+                // The _? at the end is to take care of reserved words like "con" which I needed to make "con_"
                 routes.MapRoute(
                     name: "set",
                     defaults: new { controller = "Set", action = "Index" },
                     template: "{setCode}/{action}",
-                    constraints: new { setCode = @"^[a-zA-Z0-9]{3}$" });
+                    constraints: new { setCode = @"^[a-zA-Z0-9]{3}_?$" });
 
                 routes.MapRoute(
                     name: "set-LoadDraw",
@@ -87,7 +88,7 @@ namespace mtgen
                     template: "{setCode}/LoadDraw/{drawId}",
                     constraints: new
                     {
-                        setCode = @"^[a-zA-Z0-9]{3}$",
+                        setCode = @"^[a-zA-Z0-9]{3}_?$",
                         drawId = @"^[a-zA-Z0-9]+$"
                     });
 

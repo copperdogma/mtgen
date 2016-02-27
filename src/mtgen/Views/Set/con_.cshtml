@@ -1,0 +1,32 @@
+﻿@using mtgen.ViewModels;
+@{
+    var set = new mtgen.ViewModels.Set()
+    {
+        Code = "con_",
+        Name = "Conflux",
+        CreatedDate = new DateTime(2016, 1, 26),
+        CardCount = 145,
+        StartProductName = "con-boosters"
+    };
+
+    set.Updates = new List<Update>()
+    {
+        //new Update() {
+        //    UpdateDate = new DateTime(2014,9,2),
+        //    HtmlString = "Evening: Upgraded to newest version, added all Prerelease pack-ins, Fat Packs, and guild sorting."
+        //}
+    };
+
+    set.CardFiles = new List<string>() { "cardsMain.json", "cardsOther.json", "cardsToken.json",
+        "../ala/cardsMain.json", "../ala/cardsToken.json" };
+    set.PackFiles = new List<string>() { "packs.json" };
+
+    ViewBag.Set = set;
+
+    /* Defaults:
+        SetFile = "~/sets.json";
+        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+        PackFiles = new List<string>() { "packs.json" };
+        ProductFile = "products.json";
+     */
+}

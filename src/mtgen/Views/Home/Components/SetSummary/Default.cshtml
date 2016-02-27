@@ -1,7 +1,7 @@
 ﻿@model SetStubSummary
 <tr class="@(Model.IsCurrentSet ? "current" : "") @(Model.IsFutureSet ? "future" : "")" itemscope itemtype="http://schema.org/Event">
     <td>
-        @if(Model.SetStub.GeneratorCreatedDate.HasValue)
+        @if (Model.SetStub.GeneratorCreatedDate.HasValue)
         {
             <a href="/@Model.SetStub.Code.ToLower()/"><img src="/@Model.SetStub.Code.ToLower()/images/@Model.SetStub.Image" title="@Model.SetStub.Name" alt="@Model.SetStub.Name logo" itemprop="image" /></a>
         }

@@ -1,0 +1,84 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "con-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgjson.com/json/con.json", "http://mtgsalvation.gamepedia.com/Conflux" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "con-all-cards" }
+      ]
+    },
+    {
+      "productName": "con-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Conflux" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "con-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "con-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "con-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "con-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://mtgsalvation.gamepedia.com/Conflux" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "con-standard" },
+        { "packName": "con-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "con-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "con-prerelease-promos"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "con-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "con-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Conflux" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "con-promos" }
+      ]
+    }
+
+  ]
+}

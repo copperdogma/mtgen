@@ -34,6 +34,11 @@ namespace mtgen.Controllers
             {
                 return View(lowerCaseSetCode);
             }
+            // Certain words are reserved (con, aux, etc) so I suffix them with _
+            else if (SetViewExists(lowerCaseSetCode + "_"))
+            {
+                return View(lowerCaseSetCode + "_");
+            }
             else if (_setService.SetExists(setCode))
             {
                 var setStub = _setService.GetSetStub(setCode);
