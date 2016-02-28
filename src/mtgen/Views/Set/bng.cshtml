@@ -1,15 +1,14 @@
-﻿@using mtgen.ViewModels;
+﻿@model Set
 @{
-    var set = new mtgen.ViewModels.Set()
-    {
-        Code = "bng",
-        Name = "Born of the Gods",
-        CreatedDate = new DateTime(2014, 1, 19),
-        CardCount = 165,
-        StartProductName = "bng-prerelease"
-    };
+    Model.StartProductName = "bng-prerelease";
 
-    set.Updates = new List<Update>()
+    Model.CardFiles.Add("../ths/cardsMain.json");
+    Model.CardFiles.Add("../ths/cardsOther.json");
+    Model.CardFiles.Add("../ths/cardsToken.json");
+
+    Model.PackFiles.Add("../ths/packs.json");
+
+    Model.Updates = new List<Update>()
     {
         new Update() {
             UpdateDate = new DateTime(2014,8,25),
@@ -33,18 +32,15 @@
         }
     };
 
-    set.CardFiles.Add("../ths/cardsMain.json");
-    set.CardFiles.Add("../ths/cardsOther.json");
-    set.CardFiles.Add("../ths/cardsToken.json");
-
-    set.PackFiles.Add("../ths/packs.json");
-                
-    ViewBag.Set = set;
-
-    /* Defaults:
-        SetFile = "~/sets.json";
-        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
-        PackFiles = new List<string>() { "packs.json" };
-        ProductFile = "products.json";
-     */
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
 }

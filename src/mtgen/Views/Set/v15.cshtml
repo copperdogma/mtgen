@@ -1,20 +1,18 @@
-﻿@{
-    var set = new mtgen.ViewModels.Set();
-    set.Code = "v15";
-    set.Name = "From The Vault: Angels";
-    set.CreatedDate = new DateTime(2015, 9, 12);
-    set.CardCount = 15;
-    set.StartProductName = "v15-all-cards";
+﻿@model Set
+@{
+    Model.StartProductName = "v15-all-cards";
 
-    set.CardFiles = new List<string>() { "cardsMain.json" };
-    
-    ViewBag.Set = set;
-    
-    
-    /* Defaults:
-        SetFile = "~/sets.json";
-        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
-        PackFiles = new List<string>() { "packs.json" };
-        ProductFile = "products.json";
-     */
+    Model.CardFiles = new List<string>() { "cardsMain.json" };
+
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
 }

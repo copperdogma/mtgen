@@ -1,14 +1,8 @@
-﻿@{
-    var set = new Set()
-    {
-        Code = "ovm",
-        Name = "Vintage Masters",
-        CreatedDate = new DateTime(2014, 5, 29),
-        CardCount = 325,
-        StartProductName = "ovm-boosters"
-    };
+﻿@model Set
+@{
+    Model.StartProductName = "ovm-boosters";
 
-    set.Updates = new List<Update>()
+    Model.Updates = new List<Update>()
     {
         new Update() {
             UpdateDate = new DateTime(2014,8,23),
@@ -20,12 +14,15 @@
         }
     };
 
-    ViewBag.Set = set;
-
-    /* Defaults:
-        SetFile = "~/sets.json";
-        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
-        PackFiles = new List<string>() { "packs.json" };
-        ProductFile = "products.json";
-     */
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
 }

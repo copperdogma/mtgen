@@ -1,21 +1,16 @@
-﻿@using mtgen.ViewModels;
+﻿@model Set
 @{
-    var set = new mtgen.ViewModels.Set()
-    {
-        Code = "ody",
-        Name = "Odyssey",
-        CreatedDate = new DateTime(2015, 6, 21),
-        CardCount = 350,
-        StartProductName = "ody-boosters"
-    };
+    Model.StartProductName = "ody-boosters";
 
-    //set.Updates = new List<Update>()
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
     //{
     //    new Update() {
-    //        UpdateDate = new DateTime(2014,9,14),
-    //        HtmlString = "All cards now included."
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
     //    }
     //};
-
-    ViewBag.Set = set;
 }

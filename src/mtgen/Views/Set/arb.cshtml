@@ -1,35 +1,23 @@
-﻿@using mtgen.ViewModels;
+﻿@model Set
 @{
-    var set = new mtgen.ViewModels.Set()
-    {
-        Code = "arb",
-        Name = "Alara Reborn",
-        CreatedDate = new DateTime(2016, 1, 27),
-        CardCount = 145,
-        StartProductName = "arb-boosters"
-    };
+    Model.StartProductName = "arb-boosters";
 
-    set.Updates = new List<Update>()
-    {
-        //new Update() {
-        //    UpdateDate = new DateTime(2014,9,2),
-        //    HtmlString = "Evening: Upgraded to newest version, added all Prerelease pack-ins, Fat Packs, and guild sorting."
-        //}
-    };
-
-    set.CardFiles = new List<string>() {
+    Model.CardFiles = new List<string>() {
         "cardsMain.json", "cardsOther.json", "cardsToken.json",
         "../con_/cardsMain.json", "../con_/cardsOther.json", "../con_/cardsToken.json",
         "../ala/cardsMain.json", "../ala/cardsOther.json", "../ala/cardsToken.json"
     };
-    set.PackFiles = new List<string>() { "packs.json", "../con_/packs.json", "../ala/packs.json" };
+    Model.PackFiles = new List<string>() { "packs.json", "../con_/packs.json", "../ala/packs.json" };
 
-    ViewBag.Set = set;
-
-    /* Defaults:
-        SetFile = "~/sets.json";
-        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
-        PackFiles = new List<string>() { "packs.json" };
-        ProductFile = "products.json";
-     */
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
 }

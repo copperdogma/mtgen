@@ -1,15 +1,8 @@
-﻿@using mtgen.ViewModels;
+﻿@model Set
 @{
-    var set = new mtgen.ViewModels.Set()
-    {
-        Code = "ktk",
-        Name = "Khans of Tarkir",
-        CreatedDate = new DateTime(2014, 9, 1),
-        CardCount = 269,
-        StartProductName = "ktk-prerelease"
-    };
+    Model.StartProductName = "ktk-prerelease";
 
-    set.Updates = new List<Update>()
+    Model.Updates = new List<Update>()
     {
         new Update() {
             UpdateDate = new DateTime(2015,4,4),
@@ -56,13 +49,16 @@
             HtmlString = "All cards now included."
         }
     };
-
-    ViewBag.Set = set;
-
-    /* Defaults:
-        SetFile = "~/sets.json";
-        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
-        PackFiles = new List<string>() { "packs.json" };
-        ProductFile = "products.json";
-     */
+    
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
 }

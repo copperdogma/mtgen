@@ -1,15 +1,10 @@
-﻿@using mtgen.ViewModels;
+﻿@model Set
 @{
-    var set = new mtgen.ViewModels.Set()
-    {
-        Code = "gtc",
-        Name = "Gatecrash",
-        CreatedDate = new DateTime(2013, 1, 1),
-        CardCount = 249,
-        StartProductName = "gtc-prerelease"
-    };
+    Model.StartProductName = "gtc-prerelease";
 
-    set.Updates = new List<Update>()
+    Model.CardFiles.Add("../rtr/cardsOther.json");
+
+    Model.Updates = new List<Update>()
     {
         new Update() {
             UpdateDate = new DateTime(2014,8,30),
@@ -17,14 +12,15 @@
         }
     };
 
-    set.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json", "../rtr/cardsOther.json" };
-
-    ViewBag.Set = set;
-
-    /* Defaults:
-        SetFile = "~/sets.json";
-        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
-        PackFiles = new List<string>() { "packs.json" };
-        ProductFile = "products.json";
-     */
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
 }

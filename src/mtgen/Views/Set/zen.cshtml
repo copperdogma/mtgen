@@ -1,31 +1,16 @@
-﻿@using mtgen.ViewModels;
+﻿@model Set
 @{
-    var set = new mtgen.ViewModels.Set()
-    {
-        Code = "zen",
-        Name = "Zendikar",
-        CreatedDate = new DateTime(2015, 12, 17),
-        CardCount = 249,
-        StartProductName = "zen-boosters"
-    };
+    Model.StartProductName = "zen-boosters";
 
-    set.Updates = new List<Update>()
-    {
-        //new Update() {
-        //    UpdateDate = new DateTime(2014,9,2),
-        //    HtmlString = "Evening: Upgraded to newest version, added all Prerelease pack-ins, Fat Packs, and guild sorting."
-        //}
-    };
-
-    set.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
-    set.PackFiles = new List<string>() { "packs.json" };
-
-    ViewBag.Set = set;
-
-    /* Defaults:
-        SetFile = "~/sets.json";
-        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
-        PackFiles = new List<string>() { "packs.json" };
-        ProductFile = "products.json";
-     */
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
 }

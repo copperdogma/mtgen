@@ -1,31 +1,16 @@
-﻿@using mtgen.ViewModels;
+﻿@model Set
 @{
-    var set = new mtgen.ViewModels.Set()
-    {
-        Code = "tpr",
-        Name = "Tempest Remastered",
-        CreatedDate = new DateTime(2015, 5, 6),
-        CardCount = 269,
-        StartProductName = "tpr-all-cards",
+    Model.StartProductName = "tpr-boosters";
 
-        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" }
-    };
-
-    set.Updates = new List<Update>()
-    {
-        //new Update() {
-        //    UpdateDate = new DateTime(2015,3,11),
-        //    HtmlString = "Evening: Added the promos, tokens, and a lot more cards."
-        //}
-
-    };
-
-    ViewBag.Set = set;
-
-    /* Defaults:
-        SetFile = "~/sets.json";
-        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
-        PackFiles = new List<string>() { "packs.json" };
-        ProductFile = "products.json";
-     */
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
 }

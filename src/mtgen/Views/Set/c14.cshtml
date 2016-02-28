@@ -1,15 +1,8 @@
-﻿@using mtgen.ViewModels;
+﻿@model Set
 @{
-    var set = new mtgen.ViewModels.Set()
-    {
-        Code = "c14",
-        Name = "Commander 2014",
-        CreatedDate = new DateTime(2014, 10, 30),
-        CardCount = 337,
-        StartProductName = "c14-commander-decks"
-    };
+    Model.StartProductName = "c14-commander-decks";
 
-    set.Updates = new List<Update>()
+    Model.Updates = new List<Update>()
     {
         new Update() {
             UpdateDate = new DateTime(2014,11,4),
@@ -21,12 +14,15 @@
         }
     };
 
-    ViewBag.Set = set;
-
-    /* Defaults:
-        SetFile = "~/sets.json";
-        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
-        PackFiles = new List<string>() { "packs.json" };
-        ProductFile = "products.json";
-     */
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
 }

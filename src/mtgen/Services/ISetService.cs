@@ -5,9 +5,8 @@ namespace mtgen.Services
 {
     public interface ISetService
     {
-        IList<SetStub> GetSetStubs();
-        SetStub GetSetStub(string setCode);
-        bool SetExists(string setCode);
+        IList<Set> GetSets();
+        Set GetSet(string setCode);
         string GetPathForSetFile(string setCode, string fileName);
         IList<Card> GetCardsFromJsonFile(string jsonFilePath);
         IList<Card> GetMainCardsForSet(string setCode);

@@ -1,15 +1,13 @@
-﻿@using mtgen.ViewModels;
+﻿@model Set
 @{
-    var set = new mtgen.ViewModels.Set()
-    {
-        Code = "dgm",
-        Name = "Dragon's Maze",
-        CreatedDate = new DateTime(2013, 4, 12),
-        CardCount = 156,
-        StartProductName = "dgm-prerelease"
-    };
+    Model.StartProductName = "dgm-prerelease";
 
-    set.Updates = new List<Update>()
+    Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json",
+                                        "../gtc/cardsMain.json", "../gtc/cardsToken.json", "../gtc/cardsOther.json",
+                                        "../rtr/cardsMain.json", "../rtr/cardsToken.json", "../rtr/cardsOther.json" };
+    Model.PackFiles = new List<string>() { "packs.json", "../gtc/packs.json", "../rtr/packs.json" };
+
+    Model.Updates = new List<Update>()
     {
         new Update() {
             UpdateDate = new DateTime(2014,9,2),
@@ -25,17 +23,15 @@
         }
     };
 
-    set.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json",
-										"../gtc/cardsMain.json", "../gtc/cardsToken.json", "../gtc/cardsOther.json",
-										"../rtr/cardsMain.json", "../rtr/cardsToken.json", "../rtr/cardsOther.json" };
-    set.PackFiles = new List<string>() { "packs.json", "../gtc/packs.json", "../rtr/packs.json" };
-
-    ViewBag.Set = set;
-
-    /* Defaults:
-        SetFile = "~/sets.json";
-        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
-        PackFiles = new List<string>() { "packs.json" };
-        ProductFile = "products.json";
-     */
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
 }

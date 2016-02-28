@@ -1,15 +1,8 @@
-﻿@using mtgen.ViewModels;
+﻿@model Set
 @{
-    var set = new mtgen.ViewModels.Set()
-    {
-        Code = "avr",
-        Name = "Avacyn Restored",
-        CreatedDate = new DateTime(2012, 4, 23),
-        CardCount = 244,
-        StartProductName = "avr-prerelease"
-    };
+    Model.StartProductName = "avr-prerelease";
 
-    set.Updates = new List<Update>()
+    Model.Updates = new List<Update>()
     {
         new Update() {
             UpdateDate = new DateTime(2014, 9, 19),
@@ -21,12 +14,15 @@
         }
     };
 
-    ViewBag.Set = set;
-
-    /* Defaults:
-        SetFile = "~/sets.json";
-        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
-        PackFiles = new List<string>() { "packs.json" };
-        ProductFile = "products.json";
-     */
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
 }

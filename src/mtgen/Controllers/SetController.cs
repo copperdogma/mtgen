@@ -28,23 +28,25 @@ namespace mtgen.Controllers
         //  it's used by the client and asynchronously calls back to LoadDraw()
         public ActionResult Index(string setCode)
         {
+            var set = _setService.GetSet(setCode);
+
             var lowerCaseSetCode = setCode.ToLower();
-            ViewBag.SetCode = lowerCaseSetCode;
+
             if (SetViewExists(lowerCaseSetCode))
             {
-                return View(lowerCaseSetCode);
+                return View(lowerCaseSetCode, set);
             }
             // Certain words are reserved (con, aux, etc) so I suffix them with _
             else if (SetViewExists(lowerCaseSetCode + "_"))
             {
-                return View(lowerCaseSetCode + "_");
+                return View(lowerCaseSetCode + "_", set);
             }
-            else if (_setService.SetExists(setCode))
+            else if (set != null)
             {
-                var setStub = _setService.GetSetStub(setCode);
-                ViewBag.SetName = setStub.Name;
+                ViewBag.SetName = set.Name;
                 return View("ErrorSetNotYetCreated");
             }
+
             return View("ErrorNoSuchSet");
         }
 
@@ -56,7 +58,7 @@ namespace mtgen.Controllers
             var userDrawId = HttpContext.Request.Cookies["userDrawId"];
             if (string.IsNullOrWhiteSpace(userDrawId))
             {
-                // A GUID to hold the cartId. 
+                // A GUID to hold the cartId.
                 userDrawId = Guid.NewGuid().ToString();
 
                 // Send cart Id as a cookie to the client.
@@ -88,13 +90,6 @@ namespace mtgen.Controllers
 
             return new ObjectResult(drawJson.Results);
         }
-
-        //private bool SetViewExists(string name)
-        //{
-        //	var path = Server.MapPath("~/Views/" + name.Trim());
-        //	var findResult = System.IO.Directory.Exists(path);
-        //	return findResult;
-        //}
 
         private bool SetViewExists(string setCode)
         {

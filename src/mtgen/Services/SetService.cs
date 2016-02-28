@@ -14,39 +14,36 @@ namespace mtgen.Services
         private readonly IMemoryCache _memoryCache;
         private readonly IHostingEnvironment _hostingEnvironment;
 
+        private const string SETS_KEY = "SetsKey";
+
         public SetService(IMemoryCache memoryCache, IHostingEnvironment hostingEnvironment)
         {
             _memoryCache = memoryCache;
             _hostingEnvironment = hostingEnvironment;
         }
 
-        public IList<SetStub> GetSetStubs()
+        public IList<Set> GetSets()
         {
-            var setStubs = _memoryCache.Get("SetStubs") as IList<SetStub>;
-            if (setStubs == null)
+            var sets = _memoryCache.Get(SETS_KEY) as IList<Set>;
+            if (sets == null)
             {
-                // Load up the set stubs
+                // Load up the sets
                 var setsJsonPath = _hostingEnvironment.MapPath("sets.json");
                 var setsJson = File.ReadAllText(setsJsonPath);
-                setStubs = JsonConvert.DeserializeObject<List<SetStub>>(setsJson);
-                SetSetStubs(setStubs);
+                sets = JsonConvert.DeserializeObject<List<Set>>(setsJson);
+                SetSets(sets);
             }
-            return setStubs;
+            return sets;
         }
 
-        private void SetSetStubs(IList<SetStub> setStubs)
+        private void SetSets(IList<Set> sets)
         {
-            _memoryCache.Set("SetStubs", setStubs);
+            _memoryCache.Set(SETS_KEY, sets);
         }
 
-        public SetStub GetSetStub(string setCode)
+        public Set GetSet(string setCode)
         {
-            return this.GetSetStubs().Where(s => String.Equals(s.Code, setCode, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
-        }
-
-        public bool SetExists(string setCode)
-        {
-            return (this.GetSetStub(setCode) != null);
+            return GetSets().Where(s => string.Equals(s.Code, setCode, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
         }
 
         public string GetPathForSetFile(string setCode, string fileName)
@@ -66,23 +63,23 @@ namespace mtgen.Services
 
         public IList<Card> GetMainCardsForSet(string setCode)
         {
-            return this.GetCardsFromJsonFile(this.GetPathForSetFile(setCode, FilenameConstants.MainCards));
+            return GetCardsFromJsonFile(GetPathForSetFile(setCode, FilenameConstants.MainCards));
         }
         public IList<Card> GetTokenCardsForSet(string setCode)
         {
-            return this.GetCardsFromJsonFile(this.GetPathForSetFile(setCode, FilenameConstants.TokenCards));
+            return GetCardsFromJsonFile(GetPathForSetFile(setCode, FilenameConstants.TokenCards));
         }
         public IList<Card> GetOtherCardsForSet(string setCode)
         {
-            return this.GetCardsFromJsonFile(this.GetPathForSetFile(setCode, FilenameConstants.OtherCards));
+            return GetCardsFromJsonFile(GetPathForSetFile(setCode, FilenameConstants.OtherCards));
         }
 
         public IList<Card> GetAllCardsForSet(string setCode)
         {
             var lowerCaseSetCode = setCode.ToLower();
-            var cards = this.GetMainCardsForSet(lowerCaseSetCode).ToList();
-            cards.AddRange(this.GetTokenCardsForSet(lowerCaseSetCode));
-            cards.AddRange(this.GetOtherCardsForSet(lowerCaseSetCode));
+            var cards = GetMainCardsForSet(lowerCaseSetCode).ToList();
+            cards.AddRange(GetTokenCardsForSet(lowerCaseSetCode));
+            cards.AddRange(GetOtherCardsForSet(lowerCaseSetCode));
             return cards;
         }
     }

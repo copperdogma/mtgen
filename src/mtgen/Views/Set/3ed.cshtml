@@ -1,31 +1,18 @@
-﻿@using mtgen.ViewModels;
+﻿@model Set
 @{
-    var set = new mtgen.ViewModels.Set()
-    {
-        Code = "3ed",
-        Name = "Revised Edition",
-        CreatedDate = new DateTime(2016, 1, 11),
-        CardCount = 306,
-        StartProductName = "3ed-boosters"
-    };
+    Model.StartProductName = "3ed-boosters";
 
-    set.Updates = new List<Update>()
-    {
-        //new Update() {
-        //    UpdateDate = new DateTime(2014,9,2),
-        //    HtmlString = "Evening: Upgraded to newest version, added all Prerelease pack-ins, Fat Packs, and guild sorting."
-        //}
-    };
+    Model.CardFiles = new List<string>() { "cardsMain.json" };
 
-    set.CardFiles = new List<string>() { "cardsMain.json" };
-    set.PackFiles = new List<string>() { "packs.json" };
-
-    ViewBag.Set = set;
-
-    /* Defaults:
-        SetFile = "~/sets.json";
-        CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
-        PackFiles = new List<string>() { "packs.json" };
-        ProductFile = "products.json";
-     */
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
 }

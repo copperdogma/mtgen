@@ -1,10 +1,10 @@
 ﻿namespace mtgen.ViewModels
 {
-    public class SetStubSummary
+    public class SetSummary
 	{
         public string Code { set; get; } // repeated for convenience of Invoke method
 
-        public SetStub SetStub { get; set; }
+        public Set Set { get; set; }
 
         public bool IsCurrentSet { get; set; }
         public bool IsFutureSet { get; set; }

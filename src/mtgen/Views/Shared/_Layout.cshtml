@@ -1,21 +1,18 @@
 ﻿@using System.Linq;
-@using mtgen.Services;
-@{
-    var set = (mtgen.ViewModels.Set)ViewBag.Set;
-}
+@model Set
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US" itemscope itemtype="http://schema.org/MtG Deck Generator">
 <head>
     <meta charset="UTF-8" />
-    <title>@set.Name - Magic: The Gathering: Card Generator</title>
-    <meta name="Description" content="@set.Name Sealed Deck Card Generator for Magic: The Gathering">
+    <title>@Model.Name - Magic: The Gathering: Card Generator</title>
+    <meta name="Description" content="@Model.Name Sealed Deck Card Generator for Magic: The Gathering">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link href="http://fonts.googleapis.com/css?family=IM+Fell+DW+Pica:400,400italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="~/css/html5reset.css" type="text/css" />
     <link rel="stylesheet" href="~/css/generator.css" type="text/css" />
     <link rel="stylesheet" href="~/css/print.css" type="text/css" media="print" />
-    <link rel="stylesheet" href="~/@set.Code/set.css" type="text/css" />
+    <link rel="stylesheet" href="~/@Model.Code/set.css" type="text/css" />
 </head>
 <body class="home">
     <script>
@@ -29,10 +26,10 @@
         ga('send', 'pageview');
     </script>
     <aside class="info">
-        <p class="created-date">Created: @set.CreatedDate.ToString("dd-MMM-yyy"). @set.CreatedText</p>
+        <p class="created-date">Created: @Model.GeneratorCreatedDate?.ToString("dd-MMM-yyy"). @Model.CreatedText</p>
         @{
             var first = true;
-            foreach (var update in set.Updates)
+            foreach (var update in Model.Updates)
             {
                 if (first)
                 {
@@ -45,24 +42,24 @@
 
                 }
             }
-            if (set.Updates.Count() > 1)
+            if (Model.Updates.Count() > 1)
             {
-                <a class="update-more button" href="#">@(set.Updates.Count() - 1) More ></a>
+                <a class="update-more button" href="#">@(Model.Updates.Count() - 1) More ></a>
             }
         }
     </aside>
-    @if (set.Incomplete)
+    @if (Model.Incomplete)
     {
         <div class="warning">WARNING: All cards have not yet been released. Placeholders have been created for cards we know exist but we don't yet have good images for them.</div>
     }
     <header>
         <div class="symbol">
-            <img itemprop="image" src="~/@set.Code/images/symbol.png" alt="symbol" />
+            <img itemprop="image" src="~/@Model.Code/images/symbol.png" alt="symbol" />
             <a asp-controller="Home" asp-action="Index" class="button"><span>Back to </span>Home</a>
             <a href="http://eepurl.com/bbdyO5" class="button small" title="Subscribe to email updates">Subscribe</a>
             <a href="https://twitter.com/mtggen" class="button small" title="Follow @@mtggen on Twitter">@@mtggen</a>
         </div>
-        <h1 itemprop="name"><span class="mtg">Magic: The Gathering</span> <span class="set-name">@set.Name</span> <span class="sdg">Sealed Deck Card Generator</span></h1>
+        <h1 itemprop="name"><span class="mtg">Magic: The Gathering</span> <span class="set-name">@Model.Name</span> <span class="sdg">Sealed Deck Card Generator</span></h1>
         <div id="card-count">
             <span class="current">...</span>/<span class="total"></span> cards
         </div>
@@ -91,13 +88,13 @@
     <script>
         $(document).ready(function () {
             mtgGen.run({
-                setCode: "@set.Code"
-                , setFile: "@set.SetFile"
-                , cardFiles: [ @Html.Raw(string.Join(", ",set.CardFiles.Select(cardFile => $"'/{set.Code}/{cardFile}'"))) ]
-                , packFiles: [ @Html.Raw(string.Join(", ",set.PackFiles.Select(packFile => $"'/{set.Code}/{packFile}'"))) ]
-                , productFile: "/@set.Code/@set.ProductFile"
-                , startProductName: "@set.StartProductName"
-                , setCardCount: "@set.CardCount"
+                setCode: "@Model.Code"
+                , setFile: "@Model.SetFile"
+                , cardFiles: [ @Html.Raw(string.Join(", ", Model.CardFiles.Select(cardFile => $"'/{Model.Code}/{cardFile}'"))) ]
+                , packFiles: [ @Html.Raw(string.Join(", ", Model.PackFiles.Select(packFile => $"'/{Model.Code}/{packFile}'"))) ]
+                , productFile: "/@Model.Code/@Model.ProductFile"
+                , startProductName: "@Model.StartProductName"
+                , setCardCount: "@Model.CardCount"
                 , contentElem: "main"
             });
 

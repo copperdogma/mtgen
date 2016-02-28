@@ -1,15 +1,12 @@
-﻿@using mtgen.ViewModels;
+﻿@model Set
 @{
-    var set = new mtgen.ViewModels.Set()
-    {
-        Code = "ogw",
-        Name = "Oath of the Gatewatch",
-        CreatedDate = new DateTime(2016, 1, 9),
-        CardCount = 184,
-        StartProductName = "ogw-prerelease"
-    };
+    Model.StartProductName = "ogw-prerelease";
 
-    set.Updates = new List<Update>()
+    Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json",
+        "../exp/cardsMain.json", "../bfz/cardsMain.json", "../bfz/cardsOther.json", "../bfz/cardsToken.json" };
+    Model.PackFiles = new List<string>() { "packs.json", "../bfz/packs.json" };
+
+    Model.Updates = new List<Update>()
     {
         new Update() {
             UpdateDate = new DateTime(2016,1,11),
@@ -17,11 +14,15 @@
         }
     };
 
-    //set.Incomplete = true;
-
-    set.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json",
-        "../exp/cardsMain.json", "../bfz/cardsMain.json", "../bfz/cardsOther.json", "../bfz/cardsToken.json" };
-    set.PackFiles = new List<string>() { "packs.json", "../bfz/packs.json" };
-
-    ViewBag.Set = set;
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
 }

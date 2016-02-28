@@ -21,8 +21,8 @@ namespace mtgen.Controllers
             var setSummaries = new List<SetCardNumSummary>();
 
             // for each view
-            var setStubs = _setService.GetSetStubs();
-            foreach (var set in setStubs)
+            var sets = _setService.GetSets();
+            foreach (var set in sets)
             {
                 if (set.GeneratorCreatedDate.HasValue)
                 {

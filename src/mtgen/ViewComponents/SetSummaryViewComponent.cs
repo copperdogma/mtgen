@@ -13,11 +13,11 @@ namespace mtgen.ViewComponents
             _setService = setService;
         }
 
-        public IViewComponentResult Invoke(SetStubSummary setStubSummary)
+        public IViewComponentResult Invoke(SetSummary setSummary)
         {
-            setStubSummary.SetStub = _setService.GetSetStub(setStubSummary.Code);
+            setSummary.Set = _setService.GetSet(setSummary.Code);
 
-            return View(setStubSummary);
+            return View(setSummary);
         }
     }
 }
