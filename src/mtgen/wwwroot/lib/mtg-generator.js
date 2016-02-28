@@ -1328,7 +1328,7 @@ var mtgGen = (function (my, $) {
     // sample (under ".dec File Format"): http://www.deckedbuilder.com/faq.html
     function renderDecFormat(cards, attrib) {
         var output = '// ' + attrib + '\r\n' + _.reduce(cards, function (memo, card) {
-            return memo += 'SB: ' + card.count + ' ' + card.title + '\r\n';
+            return memo += card.count + ' ' + card.title + '\r\n';
         }, '');
         return output;
     }
