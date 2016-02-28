@@ -17,9 +17,12 @@
         //}
     };
 
-    set.CardFiles = new List<string>() { "cardsMain.json", "cardsOther.json", "cardsToken.json",
-        "../ala/cardsMain.json" };
-    set.PackFiles = new List<string>() { "packs.json" };
+    set.CardFiles = new List<string>() {
+        "cardsMain.json", "cardsOther.json", "cardsToken.json",
+        "../con_/cardsMain.json", "../con_/cardsOther.json", "../con_/cardsToken.json",
+        "../ala/cardsMain.json", "../ala/cardsOther.json", "../ala/cardsToken.json"
+    };
+    set.PackFiles = new List<string>() { "packs.json", "../con_/packs.json", "../ala/packs.json" };
 
     ViewBag.Set = set;
 

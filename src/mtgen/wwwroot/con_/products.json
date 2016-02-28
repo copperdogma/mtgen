@@ -18,7 +18,9 @@
       "isGenerated": true,
       "initialSort": "set",
       "packs": [
-        { "packName": "con-standard" }
+        { "packName": "ala-standard" },
+        { "packName": "con-standard" },
+        { "packName": "arb-standard" }
       ],
       "options": {
         "presets": [
