@@ -1,35 +1,35 @@
-﻿@model SetSummary
-<tr class="@(Model.Set.IsCurrentSet ? "current" : "") @(Model.Set.IsFutureSet ? "future" : "")" itemscope itemtype="http://schema.org/Event">
+﻿@model Set
+<tr class="@(Model.IsCurrentSet ? "current" : "") @(Model.IsFutureSet ? "future" : "")" itemscope itemtype="http://schema.org/Event">
     <td>
-        @if (Model.Set.GeneratorCreatedDate.HasValue)
+        @if (Model.GeneratorCreatedDate.HasValue)
         {
-            <a href="/@Model.Set.Code.ToLower()/"><img src="/@Model.Set.Code.ToLower()/images/@Model.Set.Image" title="@Model.Set.Name" alt="@Model.Set.Name logo" itemprop="image" /></a>
+            <a href="/@Model.Code.ToLower()/"><img src="/@Model.Code.ToLower()/images/@Model.Image" title="@Model.Name" alt="@Model.Name logo" itemprop="image" /></a>
         }
         else
         {
-            <img src="/@Model.Set.Code.ToLower()/images/@Model.Set.Image" title="@Model.Set.Name" alt="@Model.Set.Name logo" itemprop="image" />
+            <img src="/@Model.Code.ToLower()/images/@Model.Image" title="@Model.Name" alt="@Model.Name logo" itemprop="image" />
         }
     </td>
-    <td itemprop='name'>@Model.Set.Name</td>
-    @if (Model.Set.GeneratorCreatedDate.HasValue)
+    <td itemprop='name'>@Model.Name</td>
+    @if (Model.GeneratorCreatedDate.HasValue)
     {
-        <td><time itemprop="startDate" datetime="@Model.Set.GeneratorCreatedDate.Value.ToString("yyyy-MM-dd")">@Model.Set.GeneratorCreatedDate.Value.ToString("MMMM d, yyyy")</time></td>
+        <td><time itemprop="startDate" datetime="@Model.GeneratorCreatedDate.Value.ToString("yyyy-MM-dd")">@Model.GeneratorCreatedDate.Value.ToString("MMMM d, yyyy")</time></td>
     }
     else
     {
         <td class='not-yet'>not yet created</td>
     }
-    @if (Model.Set.PrereleaseDate.HasValue)
+    @if (Model.PrereleaseDate.HasValue)
     {
-        <td><time itemprop="startDate" datetime="@Model.Set.PrereleaseDate.Value.ToString("yyyy-MM-dd")">@Model.Set.PrereleaseDate.Value.ToString("MMMM d, yyyy")</time></td>
+        <td><time itemprop="startDate" datetime="@Model.PrereleaseDate.Value.ToString("yyyy-MM-dd")">@Model.PrereleaseDate.Value.ToString("MMMM d, yyyy")</time></td>
     }
     else
     {
         <td><em>none</em></td>
     }
-    @if (Model.Set.ReleaseDate.HasValue)
+    @if (Model.ReleaseDate.HasValue)
     {
-        <td><time itemprop="startDate" datetime="@Model.Set.ReleaseDate.Value.ToString("yyyy-MM-dd")">@Model.Set.ReleaseDate.Value.ToString("MMMM d, yyyy")</time></td>
+        <td><time itemprop="startDate" datetime="@Model.ReleaseDate.Value.ToString("yyyy-MM-dd")">@Model.ReleaseDate.Value.ToString("MMMM d, yyyy")</time></td>
     }
     else
     {

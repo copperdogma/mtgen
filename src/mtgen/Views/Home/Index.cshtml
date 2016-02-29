@@ -1,12 +1,13 @@
 ﻿@{
     Layout = null;
+    var sets = Model as List<Set>;
 }
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
     <meta charset="UTF-8" />
     <title>Magic: The Gathering: Sealed Deck Generator</title>
-    <meta name="Description" content="Magic: The Gathering Sealed Deck Card Generator, Simulates opening boosters for many sets">
+    <meta name="Description" content="Magic: The Gathering Sealed Deck Card Generator, Simulat es opening boosters for many sets">
     <link rel='stylesheet' href='@Url.Content("~/css/home.css")' type='text/css' />
 </head>
 <body class="home">
@@ -38,208 +39,25 @@
         <thead>
             <tr><th></th><th>Set</th><th>Generator Created Date</th><th>Prerelease Date</th><th>Release Date</th></tr>
         </thead>
-        @Component.Invoke("SetSummary", new SetSummary { Code = "cn2" })
-        @Component.Invoke("SetSummary", new SetSummary { Code = "ema" })
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Shadows over Innistrad Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "emn" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "soi" })
-        </tbody>
-        <tbody>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "c15" })
-        </tbody>
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Battle for Zendikar Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "ogw" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "bfz" })
-        </tbody>
-        <tbody>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "v15" })
-        </tbody>
-        <tbody>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "ori" })
-        </tbody>
-        <tbody>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "mm2" })
-        </tbody>
-        <tbody>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "tpr" })
-        </tbody>
-        <tbody>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "ddo" })
-        </tbody>
-        <tbody>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "c14" })
-        </tbody>
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Khans of Tarkir Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "dtk" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "frf" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "ktk" })
-        </tbody>
-        <tbody>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "v14" })
-        </tbody>
-        <tbody class="core">
-            @Component.Invoke("SetSummary", new SetSummary { Code = "m15" })
-        </tbody>
-        <tbody>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "ovm" })
-        </tbody>
-        <tbody>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "cns" })
-        </tbody>
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Theros Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "jou" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "bng" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "ths" })
-        </tbody>
-        <tbody class="core">
-            @Component.Invoke("SetSummary", new SetSummary { Code = "m14" })
-        </tbody>
-        <tbody>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "mma" })
-        </tbody>
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Return to Ravnica Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "dgm" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "gtc" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "rtr" })
-        </tbody>
-        <tbody class="core">
-            @Component.Invoke("SetSummary", new SetSummary { Code = "m13" })
-        </tbody>
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Innistrad Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "avr" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "dka" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "isd" })
-        </tbody>
-        @Component.Invoke("SetSummary", new SetSummary { Code = "m12" })
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Scars of Mirrodin Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "som" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "mbs" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "nph" })
-        </tbody>
-        @Component.Invoke("SetSummary", new SetSummary { Code = "m11" })
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Zendikar </td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "zen" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "wwk" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "roe" })
-        </tbody>
-        @Component.Invoke("SetSummary", new SetSummary { Code = "m10" })
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Alara Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "ala" })
-            @* This one is weird becuase "con" is a reserved word in VS *@
-            @Component.Invoke("SetSummary", new SetSummary { Code = "con_" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "arb" })
-        </tbody>
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Shadowmoor Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "shm" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "eve" })
-        </tbody>
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Lorwyn Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "lrw" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "mor" })
-        </tbody>
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Time Spiral Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "tsp" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "plc" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "fut" })
-        </tbody>
-        @Component.Invoke("SetSummary", new SetSummary { Code = "10e" })
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Ravnica Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "rav" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "gpt" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "dis" })
-        </tbody>
-        @Component.Invoke("SetSummary", new SetSummary { Code = "9ed" })
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Kamigawa Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "chk" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "bok" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "sok" })
-        </tbody>
-        @Component.Invoke("SetSummary", new SetSummary { Code = "unh" })
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Mirrodin Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "mrd" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "dst" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "5dn" })
-        </tbody>
-        @Component.Invoke("SetSummary", new SetSummary { Code = "8ed" })
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Onslaught Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "ons" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "lgn" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "scg" })
-        </tbody>
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Odyssey Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "ody" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "tor" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "jud" })
-        </tbody>
-        @Component.Invoke("SetSummary", new SetSummary { Code = "7ed" })
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Invasion Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "inv" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "pls" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "apc" })
-        </tbody>
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Masques Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "mmq" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "nms" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "pcy" })
-        </tbody>
-        @Component.Invoke("SetSummary", new SetSummary { Code = "6ed" })
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Urza Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "usg" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "ulg" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "uds" })
-        </tbody>
-        @Component.Invoke("SetSummary", new SetSummary { Code = "ugl" })
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Tempest Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "tmp" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "sth" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "exo" })
-        </tbody>
-        @Component.Invoke("SetSummary", new SetSummary { Code = "5ed" })
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Mirage Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "mir" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "vis" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "wth" })
-        </tbody>
-        <tbody class="block">
-            <tr class="title"><td colspan="5">Ice Age Block</td></tr>
-            @Component.Invoke("SetSummary", new SetSummary { Code = "ice" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "all" })
-            @Component.Invoke("SetSummary", new SetSummary { Code = "csp" })
-        </tbody>
-        @Component.Invoke("SetSummary", new SetSummary { Code = "hml" })
-        @Component.Invoke("SetSummary", new SetSummary { Code = "4ed" })
-        @Component.Invoke("SetSummary", new SetSummary { Code = "fem" })
-        @Component.Invoke("SetSummary", new SetSummary { Code = "drk" })
-        @Component.Invoke("SetSummary", new SetSummary { Code = "leg" })
-        @Component.Invoke("SetSummary", new SetSummary { Code = "3ed" })
-        @Component.Invoke("SetSummary", new SetSummary { Code = "atq" })
-        @Component.Invoke("SetSummary", new SetSummary { Code = "arn" })
-        @Component.Invoke("SetSummary", new SetSummary { Code = "2ed" })
-        @Component.Invoke("SetSummary", new SetSummary { Code = "leb" })
-        @Component.Invoke("SetSummary", new SetSummary { Code = "lea" })
+        @foreach (var set in sets)
+        {
+            @if (set.IsBlockSet)
+            {
+                <tbody class="block">
+                    <tr class="title"><td colspan="5">@set.Block</td></tr>
+                    @foreach (var blockSet in set.BlockSets)
+                    {
+                        @Component.Invoke("SetSummary", blockSet)
+                    }
+                </tbody>
+            }
+            else
+            {
+                @Component.Invoke("SetSummary", set)
+            }
+        }
     </table>
+
     <p>Where are the previous sets? I started the generator on Innistrad, so older ones don't exist. I may add them one day. If you have a particular set you really want to see, <a href="mailto:cam.marsollier@gmail.com">let me know</a>.</p>
     <footer>
         <p>Created by: Cam Marsollier - <a href="mailto:cam.marsollier@gmail.com">cam.marsollier@gmail.com</a></p>

@@ -13,11 +13,9 @@ namespace mtgen.ViewComponents
             _setService = setService;
         }
 
-        public IViewComponentResult Invoke(SetSummary setSummary)
+        public IViewComponentResult Invoke(Set set)
         {
-            setSummary.Set = _setService.GetSet(setSummary.Code);
-
-            return View(setSummary);
+            return View(set);
         }
     }
 }

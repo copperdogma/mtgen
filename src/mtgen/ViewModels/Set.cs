@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace mtgen.ViewModels
 {
+    [DebuggerDisplay("Code:{Code} Name:{Name} Block:{Block} IsFutureSet:{IsFutureSet}")]
     public class Set
     {
         public string Code { get; set; }
@@ -24,17 +26,24 @@ namespace mtgen.ViewModels
         public DateTime? PrereleaseDate { get; set; }
         public DateTime? ReleaseDate { set; get; }
 
+        public bool IsCoreSet { get; set; }
+        public string Block { get; set; }
+        public bool IsBlockSet => !string.IsNullOrEmpty(Block);
+        public IList<Set> BlockSets { get; set; } // will be filled in by HomeController for the Index page
+
         public bool IsFutureSet { get; set; }
         public bool IsCurrentSet { get; set; }
 
         public Set(string code, string name, string image, int cardCount,
             string generatorCreatedDate, string prereleaseDate, string releaseDate, 
-            bool isCurrentSet, bool isFutureSet)
+            bool isCoreSet, string block, bool isCurrentSet, bool isFutureSet)
         {
             Code = code.ToLower();
             Name = name;
             Image = image;
             CardCount = cardCount;
+            IsCoreSet = isCoreSet;
+            Block = block;
             IsCurrentSet = isCurrentSet;
             IsFutureSet = isFutureSet;
 

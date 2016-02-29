@@ -2,6 +2,7 @@
   {
     "name": "Limited Edition Alpha",
     "code": "LEA",
+    "isCoreSet": true,
     "image": "logo-word.png",
     "generatorCreatedDate": "22-Dec-2015",
     "releaseDate": "5-Aug-1993",
@@ -10,6 +11,7 @@
   {
     "name": "Limited Edition Beta",
     "code": "LEB",
+    "isCoreSet": true,
     "image": "logo-word.png",
     "generatorCreatedDate": "22-Dec-2015",
     "releaseDate": "1-Oct-1993",
@@ -18,6 +20,7 @@
   {
     "name": "Unlimited Edition",
     "code": "2ED",
+    "isCoreSet": true,
     "image": "logo-word.png",
     "generatorCreatedDate": "23-Dec-2015",
     "releaseDate": "1-Dec-1993",
@@ -44,12 +47,13 @@
     "code": "ATQ",
     "image": "logo-word.png",
     "generatorCreatedDate": "24-Dec-2015",
-    "releaseDate": "4-Mar-1993",
+    "releaseDate": "4-Mar-1994",
     "CardCount": 100
   },
   {
     "name": "Revised Edition",
     "code": "3ED",
+    "isCoreSet": true,
     "image": "logo-word.png",
     "generatorCreatedDate": "11-Jan-2016",
     "releaseDate": "10-Jun-1994",
@@ -82,6 +86,7 @@
   {
     "name": "Fourth Edition",
     "code": "4ED",
+    "isCoreSet": true,
     "image": "logo-word.png",
     "generatorCreatedDate": "12-Jan-2016",
     "releaseDate": "1-Apr-1995",
@@ -90,6 +95,7 @@
   {
     "name": "Ice Age",
     "code": "ICE",
+    "block": "Ice Age",
     "image": "logo-word.png",
     "generatorCreatedDate": "12-Jan-2016",
     "releaseDate": "10-Jun-1995",
@@ -119,6 +125,7 @@
   {
     "name": "Alliances",
     "code": "ALL",
+    "block": "Ice Age",
     "image": "logo-word.png",
     "generatorCreatedDate": "25-Dec-2015",
     "prereleaseDate": "18-May-1996",
@@ -132,6 +139,7 @@
   {
     "name": "Mirage",
     "code": "MIR",
+    "block": "Mirage",
     "image": "logo-word.png",
     "generatorCreatedDate": "9-Feb-2016",
     "prereleaseDate": "21-Sep-1996",
@@ -141,6 +149,7 @@
   {
     "name": "Visions",
     "code": "VIS",
+    "block": "Mirage",
     "image": "logo-word.png",
     "generatorCreatedDate": "9-Feb-2016",
     "prereleaseDate": "11-Jan-1997",
@@ -150,6 +159,7 @@
   {
     "name": "Fifth Edition",
     "code": "5ED",
+    "isCoreSet": true,
     "image": "logo-word.png",
     "generatorCreatedDate": "13-Feb-2015",
     "releaseDate": "24-Mar-1997",
@@ -166,6 +176,7 @@
   {
     "name": "Weatherlight",
     "code": "WTH",
+    "block": "Mirage",
     "image": "logo-word.png",
     "generatorCreatedDate": "9-Feb-2016",
     "prereleaseDate": "31-May-1997",
@@ -175,6 +186,7 @@
   {
     "name": "Tempest",
     "code": "TMP",
+    "block": "Tempest",
     "image": "logo-word.png",
     "generatorCreatedDate": "10-Feb-2016",
     "prereleaseDate": "4-Oct-1997",
@@ -184,6 +196,7 @@
   {
     "name": "Stronghold",
     "code": "STH",
+    "block": "Tempest",
     "image": "logo-word.png",
     "generatorCreatedDate": "10-Feb-2016",
     "prereleaseDate": "21-Feb-1998",
@@ -197,6 +210,7 @@
   {
     "name": "Exodus",
     "code": "EXO",
+    "block": "Tempest",
     "image": "logo-word.png",
     "generatorCreatedDate": "10-Feb-2016",
     "prereleaseDate": "6-Jun-1998",
@@ -215,6 +229,7 @@
   {
     "name": "Urza's Saga",
     "code": "USG",
+    "block": "Urza",
     "image": "logo-word.png",
     "generatorCreatedDate": "5-Feb-2015",
     "prereleaseDate": "",
@@ -228,6 +243,7 @@
   {
     "name": "Urza's Legacy",
     "code": "ULG",
+    "block": "Urza",
     "image": "logo-word.png",
     "generatorCreatedDate": "5-Feb-2015",
     "prereleaseDate": "",
@@ -237,6 +253,7 @@
   {
     "name": "Classic (Sixth Edition)",
     "code": "6ED",
+    "isCoreSet": true,
     "image": "logo-word.png",
     "generatorCreatedDate": "13-Feb-2015",
     "releaseDate": "28-Apr-1999",
@@ -249,6 +266,7 @@
   {
     "name": "Urza's Destiny",
     "code": "UDS",
+    "block": "Urza",
     "image": "logo-word.png",
     "generatorCreatedDate": "5-Feb-2015",
     "prereleaseDate": "",
@@ -262,6 +280,7 @@
   {
     "name": "Mercadian Masques",
     "code": "mmq",
+    "block": "Masques",
     "image": "logo-word.png",
     "generatorCreatedDate": "4-Feb-2015",
     "prereleaseDate": "",
@@ -275,6 +294,7 @@
   {
     "name": "Nemesis",
     "code": "NMS",
+    "block": "Masques",
     "image": "logo-word.png",
     "generatorCreatedDate": "5-Feb-2015",
     "prereleaseDate": "",
@@ -284,6 +304,7 @@
   {
     "name": "Prophecy",
     "code": "PCY",
+    "block": "Masques",
     "image": "logo-word.png",
     "generatorCreatedDate": "5-Feb-2015",
     "prereleaseDate": "",
@@ -297,6 +318,7 @@
   {
     "name": "Invasion",
     "code": "INV",
+    "block": "Invasion",
     "image": "logo-word.png",
     "generatorCreatedDate": "11-Feb-2015",
     "prereleaseDate": "23-Sep-2000",
@@ -310,6 +332,7 @@
   {
     "name": "Planeshift",
     "code": "PLS",
+    "block": "Invasion",
     "image": "logo-word.png",
     "generatorCreatedDate": "13-Feb-2015",
     "prereleaseDate": "27-Jan-2001",
@@ -319,6 +342,7 @@
   {
     "name": "Seventh Edition",
     "code": "7ED",
+    "isCoreSet": true,
     "image": "logo-word.png",
     "generatorCreatedDate": "14-Feb-2015",
     "releaseDate": "11-Apr-2001",
@@ -327,6 +351,7 @@
   {
     "name": "Apocalypse",
     "code": "APC",
+    "block": "Invasion",
     "image": "logo-word.png",
     "generatorCreatedDate": "13-Feb-2015",
     "prereleaseDate": "26-May-2001",
@@ -336,6 +361,7 @@
   {
     "name": "Odyssey",
     "code": "ODY",
+    "block": "Odyssey",
     "image": "logo-word.png",
     "generatorCreatedDate": "21-Jun-2015",
     "prereleaseDate": "none",
@@ -349,6 +375,7 @@
   {
     "name": "Torment",
     "code": "TOR",
+    "block": "Odyssey",
     "image": "logo-word.png",
     "generatorCreatedDate": "21-Jun-2015",
     "prereleaseDate": "none",
@@ -358,6 +385,7 @@
   {
     "name": "Judgment",
     "code": "JUD",
+    "block": "Odyssey",
     "image": "logo-word.png",
     "generatorCreatedDate": "21-Jun-2015",
     "prereleaseDate": "none",
@@ -367,6 +395,7 @@
   {
     "name": "Onslaught",
     "code": "ONS",
+    "block": "Onslaught",
     "image": "logo-word.png",
     "generatorCreatedDate": "5-Feb-2015",
     "prereleaseDate": "",
@@ -376,6 +405,7 @@
   {
     "name": "Legions",
     "code": "LGN",
+    "block": "Onslaught",
     "image": "logo-word.png",
     "generatorCreatedDate": "5-Feb-2015",
     "prereleaseDate": "",
@@ -385,6 +415,7 @@
   {
     "name": "Scourge",
     "code": "SCG",
+    "block": "Onslaught",
     "image": "logo-word.png",
     "generatorCreatedDate": "5-Feb-2015",
     "prereleaseDate": "",
@@ -394,6 +425,7 @@
   {
     "name": "Core Set - Eighth Edition",
     "code": "8ED",
+    "isCoreSet": true,
     "image": "logo-word.png",
     "generatorCreatedDate": "14-Feb-2015",
     "releaseDate": "28-Jul-2003",
@@ -402,6 +434,7 @@
   {
     "name": "Mirrodin",
     "code": "MRD",
+    "block": "Mirrodin",
     "image": "logo-word.png",
     "generatorCreatedDate": "15-Feb-2016",
     "prereleaseDate": "20-Sep-2003",
@@ -411,6 +444,7 @@
   {
     "name": "Darksteel",
     "code": "DST",
+    "block": "Mirrodin",
     "image": "logo-word.png",
     "generatorCreatedDate": "16-Feb-2016",
     "prereleaseDate": "24-Jan-2004",
@@ -420,6 +454,7 @@
   {
     "name": "Fifth Dawn",
     "code": "5DN",
+    "block": "Mirrodin",
     "image": "logo-word.png",
     "generatorCreatedDate": "16-Feb-2016",
     "prereleaseDate": "22-May-2004",
@@ -429,6 +464,7 @@
   {
     "name": "Champions of Kamigawa",
     "code": "CHK",
+    "block": "Kamigawa",
     "image": "logo-word.png",
     "generatorCreatedDate": "17-Feb-2016",
     "prereleaseDate": "18-Sep-2004",
@@ -447,6 +483,7 @@
   {
     "name": "Betrayers of Kamigawa",
     "code": "BOK",
+    "block": "Kamigawa",
     "image": "logo-word.png",
     "generatorCreatedDate": "17-Feb-2016",
     "prereleaseDate": "22-Jan-2005",
@@ -456,6 +493,7 @@
   {
     "name": "Saviors of Kamigawa",
     "code": "SOK",
+    "block": "Kamigawa",
     "image": "logo-word.png",
     "generatorCreatedDate": "17-Feb-2016",
     "prereleaseDate": "21-May-2005",
@@ -465,6 +503,7 @@
   {
     "name": "Core Set - Ninth Edition",
     "code": "9ED",
+    "isCoreSet": true,
     "image": "logo-word.png",
     "generatorCreatedDate": "14-Feb-2015",
     "releaseDate": "29-Jul-2005",
@@ -473,6 +512,7 @@
   {
     "name": "Ravnica: City of Guilds",
     "code": "RAV",
+    "block": "Ravnica",
     "image": "logo-word.png",
     "generatorCreatedDate": "17-Feb-2016",
     "prereleaseDate": "24-Sep-2005",
@@ -482,6 +522,7 @@
   {
     "name": "Guildpact",
     "code": "GPT",
+    "block": "Ravnica",
     "image": "logo-word.png",
     "generatorCreatedDate": "18-Feb-2016",
     "prereleaseDate": "21-Jan-2006",
@@ -491,6 +532,7 @@
   {
     "name": "Dissension",
     "code": "DIS",
+    "block": "Ravnica",
     "image": "logo-word.png",
     "generatorCreatedDate": "18-Feb-2016",
     "prereleaseDate": "22-Apr-2006",
@@ -500,6 +542,7 @@
   {
     "name": "Coldsnap",
     "code": "CSP",
+    "block": "Ice Age",
     "image": "logo-word.png",
     "generatorCreatedDate": "25-Dec-2015",
     "prereleaseDate": "8-Jul-2006",
@@ -509,6 +552,7 @@
   {
     "name": "Time Spiral",
     "code": "TSP",
+    "block": "Time Spiral",
     "image": "logo-word.png",
     "generatorCreatedDate": "18-Feb-2016",
     "prereleaseDate": "23-Sep-2006",
@@ -518,6 +562,7 @@
   {
     "name": "Planar Chaos",
     "code": "PLC",
+    "block": "Time Spiral",
     "image": "logo-word.png",
     "generatorCreatedDate": "21-Feb-2016",
     "prereleaseDate": "20-Jan-2007",
@@ -527,6 +572,7 @@
   {
     "name": "Future Sight",
     "code": "FUT",
+    "block": "Time Spiral",
     "image": "logo-word.png",
     "generatorCreatedDate": "22-Feb-2016",
     "prereleaseDate": "21-Apr-2007",
@@ -536,6 +582,7 @@
   {
     "name": "Core Set - Tenth Edition",
     "code": "10E",
+    "isCoreSet": true,
     "image": "logo-word.png",
     "generatorCreatedDate": "14-Feb-2015",
     "releaseDate": "13-Jul-2007",
@@ -544,6 +591,7 @@
   {
     "name": "Lorwyn",
     "code": "LRW",
+    "block": "Lorwyn",
     "image": "logo-word.png",
     "generatorCreatedDate": "22-Feb-2016",
     "prereleaseDate": "29-Sep-2007",
@@ -557,6 +605,7 @@
   {
     "name": "Morningtide",
     "code": "MOR",
+    "block": "Lorwyn",
     "image": "logo-word.png",
     "generatorCreatedDate": "23-Feb-2016",
     "prereleaseDate": "19-Jan-2008",
@@ -566,6 +615,7 @@
   {
     "name": "Shadowmoor",
     "code": "SHM",
+    "block": "Shadowmoor",
     "image": "logo-word.png",
     "generatorCreatedDate": "23-Feb-2016",
     "prereleaseDate": "12-Jul-2008",
@@ -575,6 +625,7 @@
   {
     "name": "Eventide",
     "code": "EVE",
+    "block": "Shadowmoor",
     "image": "logo-word.png",
     "generatorCreatedDate": "23-Feb-2016",
     "prereleaseDate": "19-Apr-2008",
@@ -588,6 +639,7 @@
   {
     "name": "Shards of Alara",
     "code": "ALA",
+    "block": "Alara",
     "image": "logo-word.png",
     "generatorCreatedDate": "24-Feb-2016",
     "prereleaseDate": "27-Sep-2008",
@@ -601,6 +653,7 @@
   {
     "name": "Conflux",
     "code": "CON_",
+    "block": "Alara",
     "image": "logo-word.png",
     "generatorCreatedDate": "26-Feb-2016",
     "prereleaseDate": "31-Jan-2009",
@@ -614,6 +667,7 @@
   {
     "name": "Alara Reborn",
     "code": "ARB",
+    "block": "Alara",
     "image": "logo-word.png",
     "generatorCreatedDate": "27-Feb-2016",
     "prereleaseDate": "25-Apr-2009",
@@ -623,6 +677,7 @@
   {
     "name": "Magic 2010",
     "code": "M10",
+    "isCoreSet": true,
     "image": "logo-word.png",
     "generatorCreatedDate": "14-Feb-2015",
     "prereleaseDate": "11-Jul-2009",
@@ -640,6 +695,7 @@
   {
     "name": "Zendikar",
     "code": "ZEN",
+    "block": "Zendikar",
     "image": "logo-word.png",
     "generatorCreatedDate": "21-Dec-2015",
     "prereleaseDate": "26-Sep-2009",
@@ -657,6 +713,7 @@
   {
     "name": "Worldwake",
     "code": "WWK",
+    "block": "Zendikar",
     "image": "logo-word.png",
     "generatorCreatedDate": "21-Dec-2015",
     "prereleaseDate": "30-Jan-2010",
@@ -670,6 +727,7 @@
   {
     "name": "Rise of the Eldrazi",
     "code": "ROE",
+    "block": "Zendikar",
     "image": "logo-word.png",
     "generatorCreatedDate": "21-Dec-2015",
     "prereleaseDate": "17-Apr-2010",
@@ -687,6 +745,7 @@
   {
     "name": "Magic 2011",
     "code": "M11",
+    "isCoreSet": true,
     "image": "logo-word.png",
     "generatorCreatedDate": "15-Feb-2015",
     "prereleaseDate": "10-Jul-2010",
@@ -704,6 +763,7 @@
   {
     "name": "Scars of Mirrodin",
     "code": "SOM",
+    "block": "Mirrodin",
     "image": "logo-word.png",
     "generatorCreatedDate": "12-Jun-2015",
     "prereleaseDate": "25-Sep-2010",
@@ -717,6 +777,7 @@
   {
     "name": "Mirrodin Besieged",
     "code": "MBS",
+    "block": "Mirrodin",
     "image": "logo-word.png",
     "generatorCreatedDate": "12-Jun-2015",
     "prereleaseDate": "29-Jan-2011",
@@ -730,6 +791,7 @@
   {
     "name": "New Phyrexia",
     "code": "NPH",
+    "block": "Mirrodin",
     "image": "logo-word.png",
     "generatorCreatedDate": "12-Jun-2015",
     "prereleaseDate": "7-May-2011",
@@ -743,6 +805,7 @@
   {
     "name": "Magic 2012",
     "code": "M12",
+    "isCoreSet": true,
     "image": "logo-word.png",
     "generatorCreatedDate": "15-Feb-2015",
     "prereleaseDate": "9-Jul-2011",
@@ -760,6 +823,7 @@
   {
     "name": "Innistrad",
     "code": "ISD",
+    "block": "Innistrad",
     "image": "logo-word.png",
     "generatorCreatedDate": "24-Sep-2011",
     "prereleaseDate": "24-Sep-2011",
@@ -773,6 +837,7 @@
   {
     "name": "Dark Ascension",
     "code": "DKA",
+    "block": "Innistrad",
     "image": "logo-word.png",
     "generatorCreatedDate": "25-Jan-2012",
     "prereleaseDate": "28-Jan-2012",
@@ -786,6 +851,7 @@
   {
     "name": "Avacyn Restored",
     "code": "AVR",
+    "block": "Innistrad",
     "image": "logo-word.png",
     "generatorCreatedDate": "23-Apr-2012",
     "prereleaseDate": "28-Apr-2012",
@@ -799,6 +865,7 @@
   {
     "name": "Magic 2013",
     "code": "M13",
+    "isCoreSet": true,
     "image": "symbol.png",
     "generatorCreatedDate": "3-Jul-2012",
     "prereleaseDate": "7-Jul-2012",
@@ -816,6 +883,7 @@
   {
     "name": "Return to Ravnica",
     "code": "RTR",
+    "block": "Return to Ravnica",
     "image": "logo-sm.png",
     "generatorCreatedDate": "25-Sep-2012",
     "prereleaseDate": "29-Sep-2012",
@@ -829,6 +897,7 @@
   {
     "name": "Gatecrash",
     "code": "GTC",
+    "block": "Return to Ravnica",
     "image": "logo-word.png",
     "generatorCreatedDate": "21-Jan-2013",
     "prereleaseDate": "26-Jan-2013",
@@ -842,6 +911,7 @@
   {
     "name": "Dragon's Maze",
     "code": "DGM",
+    "block": "Return to Ravnica",
     "image": "logo-word.png",
     "generatorCreatedDate": "12-Apr-2013",
     "prereleaseDate": "28-Apr-2013",
@@ -860,6 +930,7 @@
   {
     "name": "2014 Core Set",
     "code": "M14",
+    "isCoreSet": true,
     "image": "symbol.png",
     "generatorCreatedDate": "5-Jul-2013",
     "prereleaseDate": "13-Jul-2013",
@@ -869,6 +940,7 @@
   {
     "name": "Theros",
     "code": "THS",
+    "block": "Theros",
     "image": "logo-word.png",
     "generatorCreatedDate": "14-Sep-2013",
     "prereleaseDate": "21-Sep-2013",
@@ -878,6 +950,7 @@
   {
     "name": "Born of the Gods",
     "code": "BNG",
+    "block": "Theros",
     "image": "logo-word.png",
     "generatorCreatedDate": "19-Jan-2014",
     "prereleaseDate": "1-Feb-2014",
@@ -887,6 +960,7 @@
   {
     "name": "Journey Into Nyx",
     "code": "JOU",
+    "block": "Theros",
     "image": "logo-word.png",
     "generatorCreatedDate": "16-Apr-2014",
     "prereleaseDate": "26-Apr-2014",
@@ -914,12 +988,12 @@
   {
     "name": "Magic 2015 Core Set",
     "code": "M15",
+    "isCoreSet": true,
     "image": "symbol.png",
     "generatorCreatedDate": "25-Jun-2014",
     "prereleaseDate": "12-Jul-2014",
     "releaseDate": "18-Jul-2014",
-    "CardCount": 269,
-    "IsCurrentSet": true
+    "CardCount": 269
   },
   {
     "name": "From The Vault: Annihilation",
@@ -934,6 +1008,7 @@
   {
     "name": "Khans of Tarkir",
     "code": "KTK",
+    "block": "Khans of Tarkir",
     "image": "logo-word.png",
     "generatorCreatedDate": "1-Sep-2014",
     "prereleaseDate": "20-Sep-2014",
@@ -943,6 +1018,7 @@
   {
     "name": "Fate Reforged",
     "code": "FRF",
+    "block": "Khans of Tarkir",
     "image": "logo-word.png",
     "generatorCreatedDate": "4-Jan-2015",
     "prereleaseDate": "17-Jan-2015",
@@ -952,6 +1028,7 @@
   {
     "name": "Dragons of Tarkir",
     "code": "DTK",
+    "block": "Khans of Tarkir",
     "image": "logo-word.png",
     "generatorCreatedDate": "3-Mar-2015",
     "prereleaseDate": "21-Mar-2015",
@@ -1000,6 +1077,7 @@
   {
     "name": "Battle for Zendikar",
     "code": "BFZ",
+    "block": "Battle for Zendikar",
     "image": "logo-word.png",
     "generatorCreatedDate": "12-Sep-2015",
     "prereleaseDate": "26-Sep-2015",
@@ -1022,6 +1100,7 @@
   {
     "name": "Magic Origins",
     "code": "ORI",
+    "isCoreSet": true,
     "image": "logo-word.png",
     "generatorCreatedDate": "23-Jun-2015",
     "prereleaseDate": "11-Jul-2015",
@@ -1052,6 +1131,7 @@
   {
     "name": "Oath of the Gatewatch",
     "code": "OGW",
+    "block": "Battle for Zendikar",
     "image": "logo-word.png",
     "generatorCreatedDate": "9-Jan-2016",
     "prereleaseDate": "16-Jan-2016",
@@ -1062,6 +1142,7 @@
   {
     "name": "Shadows over Innistrad",
     "code": "soi",
+    "block": "Shadows over Innistrad",
     "image": "logo-word.png",
     "generatorCreatedDate": "",
     "prereleaseDate": "2-Apr-2016",
@@ -1072,6 +1153,7 @@
   {
     "name": "Eldritch Moon",
     "code": "emn",
+    "block": "Shadows over Innistrad",
     "image": "logo-word.png",
     "generatorCreatedDate": "",
     "prereleaseDate": "16-Jul-2016",
