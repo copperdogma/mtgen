@@ -43,10 +43,12 @@ namespace mtgen.Controllers
             }
             else if (set != null)
             {
+                ViewBag.SetCode = setCode;
                 ViewBag.SetName = set.Name;
                 return View("ErrorSetNotYetCreated");
             }
 
+            ViewBag.SetCode = setCode;
             return View("ErrorNoSuchSet");
         }
 
