@@ -1,5 +1,5 @@
 ﻿@model SetSummary
-<tr class="@(Model.IsCurrentSet ? "current" : "") @(Model.IsFutureSet ? "future" : "")" itemscope itemtype="http://schema.org/Event">
+<tr class="@(Model.Set.IsCurrentSet ? "current" : "") @(Model.Set.IsFutureSet ? "future" : "")" itemscope itemtype="http://schema.org/Event">
     <td>
         @if (Model.Set.GeneratorCreatedDate.HasValue)
         {
@@ -13,7 +13,7 @@
     <td itemprop='name'>@Model.Set.Name</td>
     @if (Model.Set.GeneratorCreatedDate.HasValue)
     {
-        <td><time itemprop="startDate" datetime="@Model.Set.GeneratorCreatedDate.Value.ToString("yyyy-MM-dd")" title="@Model.CreatedTitle">@Model.Set.GeneratorCreatedDate.Value.ToString("MMMM d, yyyy")</time></td>
+        <td><time itemprop="startDate" datetime="@Model.Set.GeneratorCreatedDate.Value.ToString("yyyy-MM-dd")">@Model.Set.GeneratorCreatedDate.Value.ToString("MMMM d, yyyy")</time></td>
     }
     else
     {
@@ -21,7 +21,7 @@
     }
     @if (Model.Set.PrereleaseDate.HasValue)
     {
-        <td><time itemprop="startDate" datetime="@Model.Set.PrereleaseDate.Value.ToString("yyyy-MM-dd")" title="@Model.PrereleaseTitle">@Model.Set.PrereleaseDate.Value.ToString("MMMM d, yyyy")</time></td>
+        <td><time itemprop="startDate" datetime="@Model.Set.PrereleaseDate.Value.ToString("yyyy-MM-dd")">@Model.Set.PrereleaseDate.Value.ToString("MMMM d, yyyy")</time></td>
     }
     else
     {
@@ -29,7 +29,7 @@
     }
     @if (Model.Set.ReleaseDate.HasValue)
     {
-        <td><time itemprop="startDate" datetime="@Model.Set.ReleaseDate.Value.ToString("yyyy-MM-dd")" title="@Model.ReleaseTitle">@Model.Set.ReleaseDate.Value.ToString("MMMM d, yyyy")</time></td>
+        <td><time itemprop="startDate" datetime="@Model.Set.ReleaseDate.Value.ToString("yyyy-MM-dd")">@Model.Set.ReleaseDate.Value.ToString("MMMM d, yyyy")</time></td>
     }
     else
     {

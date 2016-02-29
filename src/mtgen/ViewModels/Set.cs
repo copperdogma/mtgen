@@ -24,13 +24,19 @@ namespace mtgen.ViewModels
         public DateTime? PrereleaseDate { get; set; }
         public DateTime? ReleaseDate { set; get; }
 
+        public bool IsFutureSet { get; set; }
+        public bool IsCurrentSet { get; set; }
+
         public Set(string code, string name, string image, int cardCount,
-            string generatorCreatedDate, string prereleaseDate, string releaseDate)
+            string generatorCreatedDate, string prereleaseDate, string releaseDate, 
+            bool isCurrentSet, bool isFutureSet)
         {
             Code = code.ToLower();
             Name = name;
             Image = image;
             CardCount = cardCount;
+            IsCurrentSet = isCurrentSet;
+            IsFutureSet = isFutureSet;
 
             DateTime date;
             if (DateTime.TryParse(generatorCreatedDate, out date))
