@@ -44,7 +44,7 @@
             @if (set.IsBlockSet)
             {
                 <tbody class="block">
-                    <tr class="title"><td colspan="5">@set.Block</td></tr>
+                    <tr class="title"><td colspan="5">@set.Block Block</td></tr>
                     @foreach (var blockSet in set.BlockSets)
                     {
                         @Component.Invoke("SetSummary", blockSet)
