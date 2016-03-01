@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNet.Mvc;
 using mtgen.Services;
-using mtgen.ViewModels;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace mtgen.Controllers
