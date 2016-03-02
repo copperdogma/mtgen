@@ -15,6 +15,7 @@ namespace mtgen.Services
         private readonly IHostingEnvironment _hostingEnvironment;
 
         private const string SETS_KEY = "SetsKey";
+        private const string BLOCKS_AND_SETS_KEY = "BlocksAndSetsKey";
 
         public SetService(IMemoryCache memoryCache, IHostingEnvironment hostingEnvironment)
         {
@@ -39,6 +40,36 @@ namespace mtgen.Services
         private void SetSets(IList<Set> sets)
         {
             _memoryCache.Set(SETS_KEY, sets);
+        }
+
+        public IList<Set> GetGroupedBlocksAndSets()
+        {
+            var blocksAndSets = _memoryCache.Get(BLOCKS_AND_SETS_KEY) as IList<Set>;
+            if (blocksAndSets == null)
+            {
+                var allSets = GetSets().Where(s => s.ReleaseDate.HasValue);
+
+                blocksAndSets = allSets.Where(s => !s.IsBlockSet).ToList();
+
+                var blockNames = allSets.Where(s => s.IsBlockSet).Select(s => s.Block).Distinct().ToList();
+                foreach (var blockName in blockNames)
+                {
+                    // For the blocks, gather the sets and put them within
+                    var blockSet = allSets.Where(s => s.Block == blockName).OrderBy(s => s.ReleaseDate).First();
+                    blockSet.BlockSets = allSets.Where(s => s.Block == blockName)
+                        .OrderByDescending(s => s.ReleaseDate).ToList();
+
+                    blocksAndSets.Add(blockSet);
+                }
+                SetBlocksAndSets(blocksAndSets);
+            }
+
+            return blocksAndSets;
+        }
+
+        private void SetBlocksAndSets(IList<Set> blocksAndSets)
+        {
+            _memoryCache.Set(BLOCKS_AND_SETS_KEY, blocksAndSets);
         }
 
         public Set GetSet(string setCode)

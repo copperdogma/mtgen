@@ -6,6 +6,7 @@ namespace mtgen.Services
     public interface ISetService
     {
         IList<Set> GetSets();
+        IList<Set> GetGroupedBlocksAndSets();
         Set GetSet(string setCode);
         string GetPathForSetFile(string setCode, string fileName);
         IList<Card> GetCardsFromJsonFile(string jsonFilePath);

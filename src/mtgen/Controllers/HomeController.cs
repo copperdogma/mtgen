@@ -15,24 +15,11 @@ namespace mtgen.Controllers
 
         public IActionResult Index()
         {
-            var allSets = _setService.GetSets().Where(s => s.ReleaseDate.HasValue);
+            var groupedBlocksAndSets = _setService.GetGroupedBlocksAndSets();
 
-            var blocksAndSets = allSets.Where(s => !s.IsBlockSet).ToList();
+            var sortedGroupedBlocksAndSets = groupedBlocksAndSets.OrderByDescending(s => s.ReleaseDate).ToList();
 
-            var blockNames = allSets.Where(s => s.IsBlockSet).Select(s => s.Block).Distinct().ToList();
-            foreach (var blockName in blockNames)
-            {
-                // For the blocks, gather the sets and put them within
-                var blockSet = allSets.Where(s => s.Block == blockName).OrderBy(s => s.ReleaseDate).First();
-                blockSet.BlockSets = allSets.Where(s => s.Block == blockName)
-                    .OrderByDescending(s => s.ReleaseDate).ToList();
-
-                blocksAndSets.Add(blockSet);
-            }
-
-            var allSortedSets = blocksAndSets.OrderByDescending(s => s.ReleaseDate).ToList();
-
-            return View(allSortedSets);
+            return View(sortedGroupedBlocksAndSets);
         }
 
         public IActionResult Error()
