@@ -60,7 +60,7 @@
   {
     "add": true,
     "newValues": {
-      "src": "http://mtgen.net/cards/mtg-spindown-life-counter-white.png",
+      "src": "http://mtgen.net/cards/ogw-spindown-life-counter-white.png",
       "set": "ogw",
       "title": "White Spindown Life Counter",
       "colour": "o",
@@ -76,7 +76,7 @@
   {
     "add": true,
     "newValues": {
-      "src": "http://mtgen.net/cards/mtg-spindown-life-counter-blue.png",
+      "src": "http://mtgen.net/cards/ogw-spindown-life-counter-blue.png",
       "set": "ogw",
       "title": "Blue Spindown Life Counter",
       "colour": "o",
@@ -92,7 +92,7 @@
   {
     "add": true,
     "newValues": {
-      "src": "http://mtgen.net/cards/mtg-spindown-life-counter-black.png",
+      "src": "http://mtgen.net/cards/ogw-spindown-life-counter-black.png",
       "set": "ogw",
       "title": "Black Spindown Life Counter",
       "colour": "o",
@@ -124,7 +124,7 @@
   {
     "add": true,
     "newValues": {
-      "src": "http://mtgen.net/cards/mtg-spindown-life-counter-green.png",
+      "src": "http://mtgen.net/cards/ogw-spindown-life-counter-green.png",
       "set": "ogw",
       "title": "Green Spindown Life Counter",
       "colour": "o",
@@ -163,6 +163,22 @@
       "title": "Deck Box",
       "colour": "o",
       "num": "007 Deck Box",
+      "rarity": "c",
+      "type": "Insert",
+      "promo": "true",
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false,
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/ogw-prerelease-card-divider.png",
+      "set": "ogw",
+      "title": "Prerelease Card Divider",
+      "colour": "o",
+      "num": "008 Prerelease Card Divider",
       "rarity": "c",
       "type": "Insert",
       "promo": "true",
