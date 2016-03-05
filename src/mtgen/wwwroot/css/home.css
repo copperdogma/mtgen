@@ -101,6 +101,9 @@ a.set-link {
 a.set-link:hover {
     background: #444;
 }
+.set.future>* {
+    opacity: .5;
+}
 .set-logo img {
     max-height: 4em;
     max-width: 13em;
