@@ -50,6 +50,9 @@ a.button {
 	background: #464646;
 	border: 1px solid #555;
 	color: #b2b2b2;
+    display: inline-block;
+    margin: .2em 0;
+    min-width: 6.5em;
 	padding: .5em 1em;
 	text-align: center;
 	text-decoration: none;
@@ -110,6 +113,19 @@ a.set-link:hover {
 }
 .set-dates span.none {
     display: none;
+}
+
+.content {
+    background: rgba(0,0,0,.5);
+    color: #b2b2b2;
+    padding: 2em;
+    text-align: left;
+}
+.content a {
+    color: #fff;
+}
+.content hr {
+    margin: 2em 0;
 }
 
 @media only screen and (min-width: 52em) {

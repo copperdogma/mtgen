@@ -22,6 +22,11 @@ namespace mtgen.Controllers
             return View(sortedGroupedBlocksAndSets);
         }
 
+        public IActionResult About()
+        {
+            return View();
+        }
+
         public IActionResult Error()
         {
             return View();

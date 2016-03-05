@@ -6,15 +6,15 @@
 <html dir="ltr" lang="en-US">
 <head>
     <meta charset="UTF-8" />
-    <title>Magic: The Gathering: Sealed Deck Generator</title>
-    <meta name="Description" content="Magic: The Gathering Sealed Deck Card Generator: Generate accurate random Magic: The Gathering boosters and other such madness.">
+    <title>About: Magic: The Gathering: Sealed Deck Generator</title>
+    <meta name="Description" content="About this Magic: The Gathering Sealed Deck Card Generator: Generate accurate random Magic: The Gathering boosters and other such madness.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link href="http://fonts.googleapis.com/css?family=IM+Fell+DW+Pica:400,400italic" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="~/css/html5reset.css" type="text/css" />
     <link rel='stylesheet' href='@Url.Content("~/css/home.css")' type='text/css' />
 </head>
-<body class="home">
+<body>
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
@@ -31,33 +31,27 @@
         <h1>Sealed Deck Card Generator</h1>
         <h2>Generate accurate random Magic: The Gathering boosters and other such madness.</h2>
         <div class="links">
-            <a asp-controller="Home" asp-action="About" class="button" title="About me and this site">About</a>
+            <a asp-controller="Home" asp-action="Index" class="button">Home</a>
             <a href="http://eepurl.com/bbdyO5" class="button" title="Subscribe to email updates">Subscribe</a>
             <a href="https://twitter.com/mtggen" class="button" title="Follow @@mtggen on Twitter">@@mtggen</a>
             <a href="https://github.com/copperdogma/mtgen" class="button" title="Open sourced on Github">github</a>
         </div>
     </header>
-    <main>
-        @foreach (var set in sets)
-            {
-            @if (set.IsBlockSet)
-                {
-                <div class="block">
-                    <h2 class="block-title">@set.Block Block</h2>
-                    @foreach (var blockSet in set.BlockSets)
-                    {
-                        @Component.Invoke("SetSummary", blockSet)
-                    }
-                </div>
-            }
-            else
-            {
-                @Component.Invoke("SetSummary", set)
-            }
-        }
+    <main class="content">
+        <h1>Welcome!</h1>
+        <p>This site exists because I'm not a very good Magic player. Really I only play during the prereleases, and I've half-forgotten the rules every time. It takes me forever to build my deck, and my poor friends need to use some of their time to help me out. That's not really cool. So to help me, thank them, and hopefully help others, I present to you my crappy thrown-together-in-a-Saturday-afternoon MtG Card Generator!</p>
+        <p>Well, I've evolved it considerably since it started. But that's how it started.</p>
+        <p>The idea is to let it generate, using a hopefully <em>somewhat</em> accurate algorithm, what you're get at a <a href="http://magic.wizards.com/en/content/prerelease-events-types-events">MtG Prerelease</a> event. Then you can take your time, check out the cards, try to remember the rules, and maybe figure out what deck you'd build.</p>
+        <p>I enjoy building and enhancing this thing, so I'll try to keep doing it for every new set.</p>
+        <p>Technically these Prereleases use a format called <a href="http://magic.wizards.com/en/gameinfo/gameplay/formats/sealeddeck">Sealed Deck</a>, where you get 6 packs of sealed boosters, open them, and construct your deck from only those cards.</p>
+        <p class="twitter-follow">
+            Want the latest updates? Follow <a href="https://twitter.com/mtggen" target="_blank">@@mtggen on Twitter</a> or <a href="http://eepurl.com/bbdyO5">subscribe to the email update list</a>.
+        </p>
+        <hr/>
+        <p>12-Nov-2014: This project has now been <a href="https://github.com/copperdogma/mtgen">open sourced on Github</a>. I will continue creating new generators as new sets come out, but if you have something you wish to contribute I'd love to hear from you. Enjoy!</p>
     </main>
     <footer>
-        <p>Created by: Cam Marsollier - <a href="mailto:cam.marsollier@gmail.com">cam.marsollier@gmail.com</a> - <a asp-controller="Home" asp-action="About">About me and this site.</a></p>
+        <p>Created by: Cam Marsollier - <a href="mailto:cam.marsollier@gmail.com">cam.marsollier@gmail.com</a></p>
         <p>Wizards of the Coast, Magic: The Gathering, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. © 2009 Wizards. All Rights Reserved.</p>
         <p>MtG Generator is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC. MtG Generator may use the trademarks and other intellectual property of Wizards of the Coast LLC, which is permitted under Wizards' Fan Site Policy. For more information about Wizards of the Coast or any of Wizards' trademarks or other intellectual property, please visit their website at <a href="http://www.wizards.com">www.wizards.com</a>.</p>
     </footer>
