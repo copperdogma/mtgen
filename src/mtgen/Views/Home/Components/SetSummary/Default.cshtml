@@ -31,6 +31,10 @@
             }
         </div>
     </div>
+    @if (Model.IsFutureSet)
+    {
+        <div class="future-set"><em>Coming Soon</em></div>
+    }
 </div>
 @if (Model.GeneratorCreatedDate.HasValue)
 {

@@ -114,6 +114,9 @@ a.set-link:hover {
 .set-dates span.none {
     display: none;
 }
+.set.future .future-set {
+    opacity: 1;
+}
 
 .content {
     background: rgba(0,0,0,.5);
@@ -171,5 +174,8 @@ a.set-link:hover {
     .set-dates span.none {
         display: inline-block;
         visibility: hidden;
+    }
+    .future-set {
+        display: none;
     }
 }
