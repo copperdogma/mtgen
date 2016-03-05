@@ -1,38 +1,38 @@
 ﻿@model Set
-<tr class="@(Model.IsCurrentSet ? "current" : "") @(Model.IsFutureSet ? "future" : "")" itemscope itemtype="http://schema.org/Event">
-    <td>
-        @if (Model.GeneratorCreatedDate.HasValue)
-        {
-            <a href="/@Model.Code.ToLower()/"><img src="/@Model.Code.ToLower()/images/@Model.Image" title="@Model.Name" alt="@Model.Name logo" itemprop="image" /></a>
-        }
-        else
-        {
-            <img src="/@Model.Code.ToLower()/images/@Model.Image" title="@Model.Name" alt="@Model.Name logo" itemprop="image" />
-        }
-    </td>
-    <td itemprop='name'>@Model.Name</td>
-    @if (Model.GeneratorCreatedDate.HasValue)
-    {
-        <td><time itemprop="startDate" datetime="@Model.GeneratorCreatedDate.Value.ToString("yyyy-MM-dd")">@Model.GeneratorCreatedDate.Value.ToString("MMMM d, yyyy")</time></td>
+@if (Model.GeneratorCreatedDate.HasValue)
+{
+    @:<a class="set-link" href="/@Model.Code.ToLower()/">
     }
-    else
-    {
-        <td class='not-yet'>not yet created</td>
-    }
-    @if (Model.PrereleaseDate.HasValue)
-    {
-        <td><time itemprop="startDate" datetime="@Model.PrereleaseDate.Value.ToString("yyyy-MM-dd")">@Model.PrereleaseDate.Value.ToString("MMMM d, yyyy")</time></td>
-    }
-    else
-    {
-        <td><em>none</em></td>
-    }
-    @if (Model.ReleaseDate.HasValue)
-    {
-        <td><time itemprop="startDate" datetime="@Model.ReleaseDate.Value.ToString("yyyy-MM-dd")">@Model.ReleaseDate.Value.ToString("MMMM d, yyyy")</time></td>
-    }
-    else
-    {
-        <td><em>none</em></td>
-    }
-</tr>
+<div class="set @(Model.IsCurrentSet ? "current" : "") @(Model.IsFutureSet ? "future" : "")">
+    <div class="set-logo">
+        <img src="/@Model.Code.ToLower()/images/logo-word.png" title="@Model.Name" alt="@Model.Name logo" />
+    </div>
+    <div class="set-name">@Model.Name</div>
+    <div class="set-count">@Model.CardCount cards</div>
+    <div class="set-dates">
+        <div class="set-prerelease-date">
+            @if (Model.PrereleaseDate.HasValue)
+            {
+                <span>Prerelease:</span> <time datetime="@Model.PrereleaseDate.Value.ToString("yyyy-MM-dd")">@Model.PrereleaseDate.Value.ToString("MMMM d, yyyy")</time>
+            }
+            else
+            {
+                <span class="none">Prerelease:</span> <em>No prerelease</em>
+            }
+        </div>
+        <div class="set-release-date">
+            @if (Model.ReleaseDate.HasValue)
+            {
+                <span>Release:</span> <time datetime="@Model.ReleaseDate.Value.ToString("yyyy-MM-dd")">@Model.ReleaseDate.Value.ToString("MMMM d, yyyy")</time>
+            }
+            else
+            {
+                <span class="none">Release:</span>  <em>No release</em>
+            }
+        </div>
+    </div>
+</div>
+@if (Model.GeneratorCreatedDate.HasValue)
+{
+    @:</a>
+}
