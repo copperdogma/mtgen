@@ -124,6 +124,9 @@ a.set-link:hover {
     padding: 2em;
     text-align: left;
 }
+.content p {
+    margin: 1em 0;
+}
 .content a {
     color: #fff;
 }
