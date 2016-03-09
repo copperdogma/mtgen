@@ -204,14 +204,45 @@ var mtgGen = (function (my, $) {
             });
     */
 
+    my.renderCardImage = function (card, foilClass, finalTitle) {
+        var cardImageTemplate = '<img data-usable-for-deck-building="[[UFDB]]" src="[[SRC]]" alt="[[TITLE]]" title="[[TITLE]]" width="[[WIDTH]]" height="[[HEIGHT]]" />';
+
+        var foilClass = '';
+        var title = card.title;
+        if (card.foil) {
+            foilClass = ' foil';
+            title += ' - Foil';
+        }
+
+        var htmlOut = cardImageTemplate.replace('[[FOIL]]', foilClass)
+                        .replace(/\[\[TITLE\]\]/g, finalTitle)
+                        .replace('[[UFDB]]', card.usableForDeckBuilding)
+                        .replace('[[SRC]]', card.src)
+                        .replace('[[WIDTH]]', (card.width || 265))
+                        .replace('[[HEIGHT]]', (card.height || 370));
+
+        return htmlOut;
+    };
+
     my.renderCards = function (cards) {
-        var cardTemplate = '<span class="card[[FOIL]]" title="[[TITLE]]">[[A_START]]<img data-usable-for-deck-building="[[UFDB]]" src="[[SRC]]" alt="[[TITLE]]" title="[[TITLE]]" width="[[WIDTH]]" height="[[HEIGHT]]" /><em class="title">[[TITLE]]</em>[[REASON]][[A_END]]</span>';
+        var cardTemplate = '<span class="card[[FOIL]][[DBLFACE]]" title="[[TITLE]]">[[A_START]][[IMGS]]<em class="title">[[TITLE]]</em>[[REASON]][[A_END]]</span>';
 
         var htmlOut = _.reduce(cards, function (memo, card) {
-            var foilClass = ''
-                , aStart = ''
-                , aEnd = '';
+            var foilClass = '', doubleFaceClass = '', aStart = '', aEnd = '';
             var title = card.title;
+
+            var cardImageHtml = my.renderCardImage(card);
+            if (card.cardBack !== undefined) {
+                cardImageHtml += my.renderCardImage(card.cardBack);
+                title += '/' + card.cardBack.title;
+                doubleFaceClass = ' doubleface';
+            }
+            else if (card.cardFront !== undefined) {
+                cardImageHtml += my.renderCardImage(card.cardFront);
+                title += '/' + card.cardFront.title;
+                doubleFaceClass = ' doubleface';
+            }
+
             if (card.foil) {
                 foilClass = ' foil';
                 title += ' - Foil';
@@ -220,15 +251,14 @@ var mtgGen = (function (my, $) {
                 aStart = "<a href='" + card.src_large + "' title='" + title + "'>";
                 aEnd = "</a>";
             }
+
             return memo += cardTemplate.replace('[[FOIL]]', foilClass)
+                        .replace('[[DBLFACE]]', doubleFaceClass)
                         .replace(/\[\[TITLE\]\]/g, title)
-                        .replace('[[UFDB]]', card.usableForDeckBuilding)
-                        .replace('[[SRC]]', card.src)
                         .replace('[[A_START]]', aStart)
                         .replace('[[A_END]]', aEnd)
-                        .replace('[[WIDTH]]', (card.width || 265))
-                        .replace('[[HEIGHT]]', (card.height || 370))
-                        .replace('[[REASON]]', (card.includedReason !== undefined) ? '<em class="reason">(' + card.includedReason + ')</em>' : '');
+                        .replace('[[REASON]]', (card.includedReason !== undefined) ? '<em class="reason">(' + card.includedReason + ')</em>' : '')
+                        .replace('[[IMGS]]', cardImageHtml);
         }, '');
 
         return htmlOut;

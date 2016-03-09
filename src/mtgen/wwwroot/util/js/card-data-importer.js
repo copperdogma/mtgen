@@ -1,4 +1,6 @@
 ﻿/*
+8-Mar-2016: Now supports loading double-faced card data from wotc and mtgsalvation.
+8-Mar-2016: getCardColourFromCard() now defaults to the existing card colour if one exists.
 27-Jan-2016: Updated to add/use mtgenIds and associative arrays on "cards".
 4-Jan-2016: Rewrote getCardColourFromCard() -- MUCH simpler and now uses new (as of OGW) generic (x) and colourless (c) mana types
 
@@ -386,7 +388,12 @@ var cardDataImporter = (function (my, $) {
         var finalColour = '';
         switch (uniqueColours.length) {
             case 0: // 0 unique colours = colourless
-                finalColour = mtgGen.colours.generic.code;
+                if (card.colour.length === 0) {
+                    finalColour = mtgGen.colours.generic.code;
+                }
+                else {
+                    finalColour = card.colour;
+                }
                 break;
             case 1: // single-colour, as determined above
                 finalColour = cardColours[0];
@@ -832,6 +839,44 @@ var cardDataImporter = (function (my, $) {
 
         var $images = $(rawHtmlImageData);
 
+        // v6 - 20160307, soi gallery
+        if (finalImages.length < 1) {
+            var $rawimages = $images.find('#content-detail-page-of-an-article .rtecenter img');
+            if ($rawimages.length > 0) {
+                var $imageContainer;
+                for (var i = 0; i < $rawimages.length; i++) {
+                    var img = $rawimages[i];
+                    if (img.alt.length > 0) {
+                        image = {};
+                        image.title = img.alt.trim();
+                        image.matchTitle = mtgGen.createMatchTitle(image.title);
+                        image.src = img.src;
+
+                        // Support for double-faced cards.
+                        var $parent = $($rawimages[i]).parent();
+                        if ($parent.hasClass('side')) {
+                            if ($parent.hasClass('front')) {
+                                var $backCard = $parent.parent().find(".side.back img");
+                                if ($backCard.length > 0) {
+                                    image.matchTitleBack = mtgGen.createMatchTitle($backCard[0].alt);
+                                    image.doubleFaceCard = true;
+                                }
+                            }
+                            else if ($parent.hasClass('back')) {
+                                var $frontCard = $parent.parent().find(".side.front img");
+                                if ($frontCard.length > 0) {
+                                    image.matchTitleFront = mtgGen.createMatchTitle($frontCard[0].alt);
+                                    image.doubleFaceCard = true;
+                                }
+                            }
+                        }
+
+                        finalImages[image.matchTitle] = image;
+                    }
+                }
+            }
+        }
+
         // v5 - 20160101, bfz gallery
         if (finalImages.length < 1) {
             var $rawimages = $images.find('#content img');
@@ -1200,6 +1245,12 @@ var cardDataImporter = (function (my, $) {
 
     function applyImagesToCards(cards, images) {
         if (images !== undefined) {
+            // Indexed for double-faced cards.
+            var cardsByMatchTitle = {};
+            _.each(cards, function (card) {
+                cardsByMatchTitle[card.matchTitle] = card;
+            });
+
             _.each(cards, function (card) {
                 var image = images[card.matchTitle];
 
@@ -1213,6 +1264,22 @@ var cardDataImporter = (function (my, $) {
                     card.imageSourceOriginal = card.src;
                     card.src = image.src;
                     card.imageSource = image.imageSource;
+
+                    // Properties for double-sided images
+                    if (image.doubleFaceCard !== undefined) { card.doubleFaceCard = image.doubleFaceCard; }
+                    if (image.matchTitleFront !== undefined) {
+                        var cardFront = cardsByMatchTitle[image.matchTitleFront];
+                        if (cardFront !== undefined) {
+                            card.mtgenIdFront = cardFront.mtgenId;
+                        }
+                    }
+                    if (image.matchTitleBack !== undefined) {
+                        var cardBack = cardsByMatchTitle[image.matchTitleBack];
+                        if (cardBack !== undefined) {
+                            card.mtgenIdBack = cardBack.mtgenId;
+                        }
+                    }
+
                     image.wasUsed = true;
                 }
             });

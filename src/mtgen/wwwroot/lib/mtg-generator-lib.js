@@ -391,6 +391,23 @@ var mtgGen = (function (my, $) {
             });
             my.cards = goodCards;
 
+            // Go through all the cards again now that they're all guaranteed to have Ids.
+            _.each(my.cards, function (card) {
+                // Load up the alternate side card on double-faced cards
+                if (card.mtgenIdBack !== undefined) {
+                    var cardBack = my.cards[card.mtgenIdBack];
+                    if (cardBack !== undefined) {
+                        card.cardBack = cardBack;
+                    }
+                }
+                if (card.mtgenIdFront !== undefined) {
+                    var cardFront = my.cards[card.mtgenIdFront];
+                    if (cardFront !== undefined) {
+                        card.cardFront = cardFront;
+                    }
+                }
+            });
+
             // make any post-load changes to the packs
             var querySetPercentAvg;
             _.each(my.packs, function (pack) {

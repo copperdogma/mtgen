@@ -371,6 +371,10 @@ main > em {
 .card img {
 	margin: 0 .6em 0 0;
 }
+.card.doubleface img:first-child {
+    margin-right: 0;
+}
+
 @media (min-width: 480px) and (max-width: 610px) {
 	#product-content .result .card img {
 		height: 321px;
