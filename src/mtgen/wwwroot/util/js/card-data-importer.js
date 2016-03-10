@@ -1271,12 +1271,14 @@ var cardDataImporter = (function (my, $) {
                         var cardFront = cardsByMatchTitle[image.matchTitleFront];
                         if (cardFront !== undefined) {
                             card.mtgenIdFront = cardFront.mtgenId;
+                            card.doulbleFaceBackCard = true;
                         }
                     }
                     if (image.matchTitleBack !== undefined) {
                         var cardBack = cardsByMatchTitle[image.matchTitleBack];
                         if (cardBack !== undefined) {
                             card.mtgenIdBack = cardBack.mtgenId;
+                            card.doulbleFaceFrontCard = true;
                         }
                     }
 
