@@ -1053,6 +1053,38 @@ var cardDataImporter = (function (my, $) {
         return finalImages;
     }
 
+    function getLandImagesFromWotcArticle(rawHtmlImageData, requiredImageWidth, requiredImageHeight) {
+        var image;
+        var finalImages = [];
+
+        var $images = $(rawHtmlImageData);
+
+        // v1 - 20150914, bfz gallery -- hard to scan as anything unique is added by js
+        if (finalImages.length < 1) {
+            var $rawimages = $images.find('#content img');
+            if ($rawimages.length > 0) {
+                var $imageContainer, $cardTitle;
+                var requiredImageHeightInt = parseInt(requiredImageHeight, 10);
+                var requiredImageWidthInt = parseInt(requiredImageWidth, 10);
+                $rawimages.each(function (index, img) {
+                    if (!isNaN(requiredImageHeightInt) && requiredImageHeightInt !== img.height) return true;
+                    if (!isNaN(requiredImageWidthInt) && requiredImageWidthInt !== img.width) return true;
+                    image = {};
+                    image.src = img.src;
+                    image.height = img.height;
+                    image.width = img.width;
+                    finalImages.push(image);
+                });
+            }
+        }
+
+        $.each(finalImages, function (image, index) {
+            image.imageSource = "wotc-article";
+        });
+
+        return finalImages;
+    }
+
     function applyExceptions(cards, exceptions, setCode) {
         // Example:
         //  {
@@ -1298,6 +1330,187 @@ var cardDataImporter = (function (my, $) {
         return cards;
     }
 
+    // Land files -------------------------------------------------------------------------------------------
+
+    my.loadAndProcessLandFile = function (options) {
+        // Import options into instance variables
+        //$.each(options, function (value, key) {
+        //    my[key] = value;
+        //});
+        $.extend(my, options);
+
+        if (my.landDataUrl === undefined || my.landDataUrl.length < 1) {
+            alert("ERROR: No land data url supplied. Cannot continue.");
+            return;
+        }
+
+        // load all files and don't continue until all are loaded
+        var promises = [];
+
+        $.ajaxSetup({ timeout: 5000 });
+
+        //CAMKILL:promises.push($.get('ba-simple-proxy.php?mode=native&url=' + my.landDataUrl));
+        promises.push($.get('/proxy?u=' + encodeURIComponent(my.landDataUrl)));
+
+        my.trigger('data-loading');
+
+        $.when.apply($, promises).done(function (data) {
+            // the first result is essential
+            var landImages = {
+                //data: arguments[0][0],
+                data: data,
+                urlSource: my.landDataUrl
+            }
+            if (isBadResponse(landImages.data)) {
+                alert("ERROR: No data retrieved from " + my.cardDataUrl + ". Response:" + landImages);
+                return;
+            }
+
+            var setCode = my.setCode.trim();
+
+            my.trigger('data-loaded');
+
+            setTimeout(function () {
+                createLandOutputJson(setCode, landImages, my.requiredImageWidth, my.requiredImageHeight, my.startingCardNum, my.numLandPerType, my.landOrder, my.landOrderOverride);
+            }, 100); // delay to let ui render
+        });
+
+    }
+
+    function getLandTypeFromCode(code) {
+        switch (code) {
+            case "w": return "Plains";
+            case "u": return "Island";
+            case "b": return "Swamp";
+            case "r": return "Mountain";
+            case "g": return "Forest";
+            default: return "Unknown type: " + code + " -- should be one of: w u r b g";
+        }
+    }
+
+    function createLandOutputJson(setCode, landImages, requiredImageWidth, requiredImageHeight, startingCardNum, numLandPerType, landOrder, landOrderOverride) {
+        // Get image data -------------------------------------------------------------------------------------------------
+        var landImages = my.api.getLandImagesFromWotcArticle(landImages.data, requiredImageWidth, requiredImageHeight);
+        var imageDataCount = Object.size(landImages);
+
+        // NEXT: of course the FIRST one I do is weird.. cuz it has the four out-of-order ones at the top...
+        // - grab all images, make list of sizes, auto-choose most common size and call them "land"
+        // - work this back in to the main importer? maybe? it would make import/export of settings easier...
+        // - replace the save/load functionality
+
+        // If land order overide specified, parse it
+        var landOrderOverrides = [];
+        if (landOrderOverride.trim().length > 0) {
+            var overrideItems = landOrderOverride.replace(/(?:\r\n|\r|\n)/g, ',');
+            landOrderOverrides = overrideItems.trim().toLowerCase().split(',');
+        }
+
+        // Create land cards out of each image
+        var cards = {};
+        var skippedCards = [];
+        var cardNum = startingCardNum;
+        var landTypeCount = 0;
+        var landTypeIndex = 0;
+        var landOrderLower = landOrder.toLowerCase();
+        var landOrderOverrideIndex = 0;
+        $.each(landImages, function (index, image) {
+            var card = {};
+
+            Object.assign(card, image); // src, height, width, imageSource
+
+            // If overrides exist, use the entire pattern given, e.g.: w250,u251,b252,r253,g254 etc -- use x to skip a card
+            var skipCard = false;
+            if (landOrderOverrides.length) {
+                if (landOrderOverrides.length <= landOrderOverrideIndex) {
+                    card.title = "Ran out of Land Order Overrides";
+                }
+                else {
+                    if (landOrderOverrides[landOrderOverrideIndex][0] === 'x') {
+                        skipCard = true;
+                        card.skippedCardIndex = index;
+                        skippedCards.push(card);
+                    }
+                    else {
+                        card.title = getLandTypeFromCode(landOrderOverrides[landOrderOverrideIndex][0]);
+                        card.num = landOrderOverrides[landOrderOverrideIndex].substr(1);
+                    }
+                }
+                landOrderOverrideIndex++;
+            }
+            else {
+                if (landTypeCount > numLandPerType - 1) {
+                    landTypeCount = 0;
+                    landTypeIndex++;
+                }
+                card.title = getLandTypeFromCode(landOrderLower[landTypeIndex]);
+                card.num = cardNum++;
+
+                landTypeCount++;
+            }
+
+            if (!skipCard) {
+                card.matchTitle = mtgGen.createMatchTitle(card.title);
+                card.set = setCode;
+                card.cost = "";
+                card.rarity = "c";
+                card.type = "Basic Land";
+                card.subtype = card.title;
+                card.colour = "l";
+
+                cards = addCardToCards(cards, card);
+            }
+        });
+
+        // Reporting -------------------------------------------------------------------------------------------------
+
+        var out = "";
+        var cardsLength = Object.size(cards);
+        if (cardsLength < 1) {
+            out += "<p>WARNING: No images found at url.</p>";
+        }
+
+        if (skippedCards.length > 0) {
+            out += "<p>The following " + skippedCards.length + " cards were skipped due to 'x's in your Land Override Patterns setting:</p><ul class='skipped-cards'>";
+            $.each(skippedCards, function (index, card) {
+                out += "<li><img src='" + card.src + "' height='" + Math.round(card.height / 2) + "' width='" + Math.round(card.width / 2) + "' />";
+                out += "<p>Card #" + (card.skippedCardIndex + 1) + "</p></li>";
+            });
+            out += "</ul>";
+        }
+
+        my.trigger('log-complete', out);
+
+        // Final JSON output -------------------------------------------------------------------------------------------------
+
+        var finalOut = [];
+        _.each(cards, function (card) {
+            delete card.matchTitle;
+            delete card.srcOriginal;
+            delete card.imageSourceOriginal;
+            delete card.fixedViaException;
+            delete card.imageSource;
+
+            // Create the card as an exception.
+            var exception = {
+                "add": true,
+                "newValues": card
+            };
+            finalOut.push(exception);
+        });
+
+        var jsonMainStr = JSON.stringify(finalOut, null, ' ');
+
+        var cardsHtmlSample = '';
+        _.each(cards, function (card) {
+            cardsHtmlSample += "<div class='card'><img src='" + card.src + "' height='"
+                + (card.height) + "' width='" + (card.width) + "' /><p>"
+                + card.num + ":" + card.title + "</p></div>";
+        });
+
+        my.trigger('data-processing-complete', cardsLength, jsonMainStr, cardsHtmlSample);
+    }
+
+
     function createPlaceholderCardSrc(card) {
         var cardBgColour = "cccccc";
         var cardTextColour = "969696";
@@ -1402,6 +1615,7 @@ var cardDataImporter = (function (my, $) {
         getCardsFromMtgSalvationData: getCardsFromMtgSalvationData,
         getImagesFromMtgJsonData: getImagesFromMtgJsonData,
         getImagesFromCardsMainData: getImagesFromCardsMainData,
+        getLandImagesFromWotcArticle: getLandImagesFromWotcArticle,
 
         applyExceptions: applyExceptions,
         applyImagesToCards: applyImagesToCards

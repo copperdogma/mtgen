@@ -43,3 +43,19 @@ p.twitter-follow {
 	display: inline-block;
 	height: 24px;
 }
+
+.skipped-cards {
+	padding: 0;
+}
+.skipped-cards li {
+	display: inline-block;
+	list-style: none;
+	margin-right: 1em;
+}
+.sample-cards .card {
+	display: inline-block;
+    text-align: center;
+}
+.sample-cards img {
+	max-width: none;
+}
