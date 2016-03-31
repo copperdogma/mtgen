@@ -57,6 +57,22 @@
             }
           ]
         },
+        {
+          "querySet": [
+            {
+              "percent": "56/64",
+              "query": "from[soi-main]?rarity='c"
+            },
+            {
+              "percent": "7/64",
+              "query": "from[soi-doubleface]?rarity='r"
+            },
+            {
+              "percent": "1/64",
+              "query": "from[soi-doubleface]?rarity='m"
+            }
+          ]
+        },
         { "query": "take[3]>from[soi-main]?rarity='u" },
         {
           "querySet": [
@@ -73,20 +89,12 @@
         {
           "querySet": [
             {
-              "percent": "88/120",
+              "percent": "10/13",
               "query": "from[soi-doubleface]?rarity='c"
             },
             {
-              "percent": "24/120",
+              "percent": "3/10",
               "query": "from[soi-doubleface]?rarity='u"
-            },
-            {
-              "percent": "7/120",
-              "query": "from[soi-doubleface]?rarity='r"
-            },
-            {
-              "percent": "1/120",
-              "query": "from[soi-doubleface]?rarity='m"
             }
           ]
         },
