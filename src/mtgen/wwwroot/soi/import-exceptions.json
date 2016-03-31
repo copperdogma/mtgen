@@ -1,0 +1,44 @@
+﻿[
+  {
+    "_comments": [
+      "add a new card = add:true, newValues {}",
+      "delete a card  = delete:true, where",
+      "update card(s) = where, newValues {}"
+    ]
+  },
+  {
+    "_comment": "mtg salvation included the basic lands, which I need to import separately",
+    "delete": true,
+    "where": "type='Basic Land"
+  },
+  {
+    "where": "title=(Dance With Devils|Reckless Scholar)",
+    "newValues": {
+      "rarity": "u"
+    }
+  },
+  {
+    "where": "title=Morkut Necropod",
+    "newValues": {
+      "title": "Morkrut Necropod"
+    }
+  },
+  {
+    "where": "title=Unimpeded Tresspasser",
+    "newValues": {
+      "title": "Unimpeded Trespasser"
+    }
+  },
+  {
+    "where": "title=Lilianna's Indgnation",
+    "newValues": {
+      "title": "Liliana's Indignation"
+    }
+  },
+  {
+    "where": "title=Devil's Playground",
+    "newValues": {
+      "title": "Devils' Playground"
+    }
+  }
+]

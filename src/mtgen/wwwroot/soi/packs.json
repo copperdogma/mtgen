@@ -1,0 +1,166 @@
+{
+  "defs": [
+    {
+      "defName": "soi",
+      "query": "from[*]?set='soi"
+    },
+    {
+      "defName": "soi-base",
+      "query": "from[soi]-from[soi]?type=(Marketing|Basic Land)-from[soi]?token=true-from[soi]?promo=true"
+    },
+    {
+      "defName": "soi-main",
+      "query": "from[soi-base]-from[soi]?doubleFaceCard=true"
+    },
+    {
+      "defName": "soi-doubleface",
+      "query": "from[soi-base]?doubleFaceFrontCard=true"
+    },
+    {
+      "defName": "soi-foils",
+      "query": "from[soi-main]"
+    },
+    {
+      "defName": "soi-promo",
+      "query": "from[soi]?promo=true"
+    }
+
+  ],
+  "packs": [
+    {
+      "packName": "soi-all-cards",
+      "packDesc": "Shadows Over Innistrad: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[soi]" }
+      ]
+    },
+    {
+      "packName": "soi-standard",
+      "packDesc": "Shadows Over Innistrad: Standard Booster",
+      "packVersion": "1.1",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[8]>from[soi-main]?rarity='c" },
+        {
+          "querySet": [
+            {
+              "percent": "3/4",
+              "query": "from[soi-main]?rarity='c"
+            },
+            {
+              "percent": "1/4",
+              "query": "from[soi-foils]",
+              "canBeDuplicate": true,
+              "setValues": { "foil": true },
+              "_comment": "25% chance rare is a foil of any card, including land"
+            }
+          ]
+        },
+        { "query": "take[3]>from[soi-main]?rarity='u" },
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[soi-main]?rarity='r"
+            },
+            {
+              "percent": "1/8",
+              "query": "from[soi-main]?rarity='m"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "88/120",
+              "query": "from[soi-doubleface]?rarity='c"
+            },
+            {
+              "percent": "24/120",
+              "query": "from[soi-doubleface]?rarity='u"
+            },
+            {
+              "percent": "7/120",
+              "query": "from[soi-doubleface]?rarity='r"
+            },
+            {
+              "percent": "1/120",
+              "query": "from[soi-doubleface]?rarity='m"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[soi]?title='Checklist Card"
+            },
+            {
+              "percent": "50",
+              "query": "from[soi]?type='Basic Land"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[soi]?title='Tip/Marketing Card"
+            },
+            {
+              "percent": "50",
+              "query": "from[soi]?token=true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "soi-promos",
+      "packDesc": "Shadows Over Innistrad: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[soi-promo]" }
+      ]
+    },
+    {
+      "packName": "soi-prerelease-promo-packins",
+      "packDesc": "Shadows Over Innistrad: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[soi-base]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[soi-base]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[1]>from[soi-promo]?type='Life Counter" },
+        { "query": "from[soi-promo]?title='Deck Box" },
+        { "query": "from[soi-promo]?title='Prerelease Card Divider" },
+        { "query": "from[soi-promo]?title='Deckbuilding Advice Insert" }
+
+      ]
+    },
+    {
+      "packName": "soi-prerelease-promos",
+      "packDesc": "Shadows Over Innistrad: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[soi-promo]?includedReason='Prerelease Promo" }
+      ]
+    }
+
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "soi-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/card-image-gallery/shadowsoverinnistrad", "http://www.mtgsalvation.com/spoilers/170-shadows-over-innistrad" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "soi-all-cards" }
+      ]
+    },
+    {
+      "productName": "soi-boosters",
+      "productDesc": "Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "soi-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "soi-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "soi-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "soi-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://magic.wizards.com/en/articles/archive/feature/shadows-over-innistrad-prerelease-primer" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "soi-standard" },
+        { "packName": "soi-prerelease-promo-packins" },
+        { "packName": "soi-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "soi-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "soi-prerelease-promo-packins"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "soi-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "soi-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/card-preview/shadows-over-innistrad-intro-packs-and-promo-cards-2016-03-14", "http://magic.wizards.com/en/articles/archive/feature/shadows-over-innistrad-packaging-2016-03-07" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "soi-promos" }
+      ]
+    }
+
+  ]
+}
