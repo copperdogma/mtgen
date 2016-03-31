@@ -229,9 +229,10 @@ var cardDataImporter = (function (my, $) {
 
         var duplicateCards = _.filter(mainOut, function (card) { return card.duplicateNum !== undefined; });
         if (duplicateCards.length > 0) {
-            out += "<p>The following cards have duplicate Titles:</p><ul>";
-            for (var i = 0; i < duplicateCards.length; i++) {
-                out += "<li style='color:DarkGoldenrod'>" + duplicateCards[i].mtgenId + ": " + duplicateCards[i].title + "</li>";
+            var sortedDuplicateCards = _.sortBy(duplicateCards, "mtgenId");
+            out += "<p>The following cards have duplicate mtgenIds:</p><ul>";
+            for (var i = 0; i < sortedDuplicateCards.length; i++) {
+                out += "<li style='color:DarkGoldenrod'>" + sortedDuplicateCards[i].mtgenId + ": " + sortedDuplicateCards[i].title + "</li>";
             }
             out += "</ul>";
         }
@@ -466,28 +467,64 @@ var cardDataImporter = (function (my, $) {
         var alphabet = "abcedfghijklmnopqrstuvwxyz";
         newCard.num = newCard.num || newCard.multiverseid || newCard.id; // num is required, so ensure we have one
         newCard.mtgenId = newCard.set + "|" + newCard.num;
-        if (cards[newCard.mtgenId] === undefined) {
+        var firstVariant = newCard.mtgenId + ":a";
+        if (cards[newCard.mtgenId] === undefined && cards[firstVariant] === undefined) {
             cards[newCard.mtgenId] = newCard;
         }
         else {
             // Duplicate cards found -- fix it!
-            var originalCard = cards[newCard.mtgenId];
-            var mtgenVariant = 1;
+
+            // Find the next available variant.
+            var nextAvailableVariantMtgenId;
+            var nextAvailableVariantNum;
+            for (var i = 0; i < alphabet.length; i++) {
+                var mtgenId = newCard.mtgenId + ":" + alphabet[i];
+                if (cards[mtgenId] === undefined) {
+                    nextAvailableVariantNum = i + 1;
+                    break;
+                }
+            }
+
+            var originalCard = cards[newCard.mtgenId] || cards[firstVariant];
+
+            // If it's a duplicate mtgenId AND title it's the SAME card.. ditch it
+            if (originalCard !== undefined) {
+                if (originalCard.matchTitle === newCard.matchTitle) {
+                    return cards;
+                    console.log("DUPLICATE CARD: " + newCard.title);
+                }
+            }
+
             if (originalCard.mtgenVariant === undefined) {
                 delete cards[originalCard.mtgenId];
-                originalCard.mtgenVariant = mtgenVariant;
-                originalCard.mtgenId += ":" + alphabet[mtgenVariant - 1];
+                originalCard.mtgenVariant = nextAvailableVariantNum;
+                originalCard.mtgenId += ":" + alphabet[nextAvailableVariantNum - 1];
                 originalCard.duplicateNum = true;
                 cards[originalCard.mtgenId] = originalCard;
-                mtgenVariant++
+                nextAvailableVariantNum++;
             }
-            else {
-                mtgenVariant = originalCard.mtgenVariant + 1;
-            }
-            newCard.mtgenVariant = mtgenVariant;
-            newCard.mtgenId += ":" + alphabet[mtgenVariant - 1];
+            newCard.mtgenVariant = nextAvailableVariantNum;
+            newCard.mtgenId += ":" + alphabet[nextAvailableVariantNum - 1];
             newCard.duplicateNum = true;
             cards[newCard.mtgenId] = newCard;
+
+            //var originalCard = cards[newCard.mtgenId];
+            //var mtgenVariant = 1;
+            //if (originalCard.mtgenVariant === undefined) {
+            //    delete cards[originalCard.mtgenId];
+            //    originalCard.mtgenVariant = mtgenVariant;
+            //    originalCard.mtgenId += ":" + alphabet[mtgenVariant - 1];
+            //    originalCard.duplicateNum = true;
+            //    cards[originalCard.mtgenId] = originalCard;
+            //    mtgenVariant++
+            //}
+            //else {
+            //    mtgenVariant = originalCard.mtgenVariant + 1;
+            //}
+            //newCard.mtgenVariant = mtgenVariant;
+            //newCard.mtgenId += ":" + alphabet[mtgenVariant - 1];
+            //newCard.duplicateNum = true;
+            //cards[newCard.mtgenId] = newCard;
         }
         return cards;
     }
@@ -564,7 +601,18 @@ var cardDataImporter = (function (my, $) {
                     if (className.indexOf('card-color-') > -1) {
                         var cardColour = className.replace('card-color-', '');
                         if (cardColour.length > 0) {
-                            card.colour = cardColour[0].toLowerCase();
+                            switch (cardColour.trim().toLowerCase()) {
+                                case "white": card.colour = "w"; break;
+                                case "blue": card.colour = "u"; break;
+                                case "red": card.colour = "r"; break;
+                                case "black": card.colour = "b"; break;
+                                case "green": card.colour = "g"; break;
+                                case "multicolored": card.colour = "m"; break;
+                                case "colorless": card.colour = "c"; break;
+                                default:
+                                    console.log("WARNING: unknown card colour: " + cardColour);
+                                    break;
+                            }
                         }
                     }
                 }
@@ -1114,6 +1162,7 @@ var cardDataImporter = (function (my, $) {
         //      }
         //  },
         //  }
+        var cardNumsChanged = false;
         if (exceptions !== undefined && exceptions !== null) {
             for (var i = 0; i < exceptions.length; i++) {
                 var exception = exceptions[i];
@@ -1258,7 +1307,7 @@ var cardDataImporter = (function (my, $) {
                 exception.result.modifiedCards = matchingCards;
                 exception.result.affectedCards = matchingCards.length;
 
-                // Add the modifed cards back in.
+                // Add the modified cards back in.
                 _.each(matchingCards, function (matchingCard) {
                     cards = addCardToCards(cards, matchingCard);
                 });
@@ -1266,11 +1315,12 @@ var cardDataImporter = (function (my, $) {
         }
 
         // Sort the final result so they're in the order they were originally sent in (for debugging).
-        //CAMKILL:cards = _.sortBy(cards, "index");
+        cards = _.sortBy(cards, "index");
 
         // Return both the updated set of cards AND the modified exceptions (the latter for reporitng purposes).
         var result = {};
         result.cards = cards;
+
         result.exceptions = exceptions;
         return result;
     }
@@ -1303,14 +1353,14 @@ var cardDataImporter = (function (my, $) {
                         var cardFront = cardsByMatchTitle[image.matchTitleFront];
                         if (cardFront !== undefined) {
                             card.mtgenIdFront = cardFront.mtgenId;
-                            card.doulbleFaceBackCard = true;
+                            card.doubleFaceBackCard = true;
                         }
                     }
                     if (image.matchTitleBack !== undefined) {
                         var cardBack = cardsByMatchTitle[image.matchTitleBack];
                         if (cardBack !== undefined) {
                             card.mtgenIdBack = cardBack.mtgenId;
-                            card.doulbleFaceFrontCard = true;
+                            card.doubleFaceFrontCard = true;
                         }
                     }
 
