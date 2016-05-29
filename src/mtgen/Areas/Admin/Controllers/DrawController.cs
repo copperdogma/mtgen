@@ -18,7 +18,7 @@ namespace mtgen.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            var popularDraws = _storageContext.GetPopularDraws(3);
+            var popularDraws = _storageContext.GetPopularDraws(100);
             return View(popularDraws);
         }
 
