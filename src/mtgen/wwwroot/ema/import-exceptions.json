@@ -1,0 +1,15 @@
+﻿[
+  {
+    "_comments": [
+      "add a new card = add:true, newValues {}",
+      "delete a card  = delete:true, where",
+      "update card(s) = where, newValues {}"
+    ]
+  },
+  {
+    "where": "title=Pyrokinesis",
+    "newValues": {
+      "num": "143"
+    }
+  }
+]

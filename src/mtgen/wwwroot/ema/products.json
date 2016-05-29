@@ -1,0 +1,52 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "ema-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/card-image-gallery/eternal-masters", "http://www.mtgsalvation.com/spoilers/171-eternal-masters", "http://magic.wizards.com/en/articles/archive/card-preview/tokens-eternal-masters-2016-05-27" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "ema-all-cards" }
+      ]
+    },
+    {
+      "productName": "ema-boosters",
+      "productDesc": "Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "ema-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "ema-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "ema-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "ema-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/card-preview/shadows-over-innistrad-intro-packs-and-promo-cards-2016-03-14", "http://magic.wizards.com/en/articles/archive/feature/shadows-over-innistrad-packaging-2016-03-07" ],
+      "isGenerated": false,
+      "isVisible": false,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "ema-promos" }
+      ]
+    }
+
+  ]
+}

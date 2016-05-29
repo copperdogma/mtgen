@@ -1,0 +1,518 @@
+﻿[
+  {
+    "_comments": [
+      "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+    ]
+  },
+  {
+    "_comment": "add promo:false to ALL cards with the intention of deleting them later",
+    "where": "",
+    "newValues": {
+      "promo": false
+    }
+  },
+  {
+    "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+    "where": "title='Ravenous Bloodseeker",
+    "newValues": {
+      "src": "http://media.wizards.com/2016/images/daily/bREu7xUqIP.png",
+      "num": "{{num}} P Gift Box",
+      "promo": true,
+      "includedReason": "Gift Box Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "where": "title='Elusive Tormentor",
+    "newValues": {
+      "src": "http://media.wizards.com/2016/images/daily/H8Gk7UIcrM.png",
+      "num": "{{num}} P Buy-a-Box",
+      "promo": true,
+      "includedReason": "Buy-a-Box Promo",
+      "usableForDeckBuilding": false,
+      "doubleFaceCard": true,
+      "mtgenIdBack": "soi|{{num}} P Buy-a-Box:c",
+      "doulbleFaceFrontCard": true
+    }
+  },
+  {
+    "where": "title='Insidious Mist",
+    "newValues": {
+      "src": "http://media.wizards.com/2016/images/daily/Fh1hWM6QIh.png",
+      "num": "{{num}} P Buy-a-Box",
+      "promo": true,
+      "includedReason": "Buy-a-Box Promo",
+      "usableForDeckBuilding": false,
+      "doubleFaceCard": true,
+      "mtgenIdFront": "soi|{{num}} P Buy-a-Box",
+      "doulbleFaceBackCard": true
+    }
+  },
+  {
+    "where": "title='Angel of Deliverance",
+    "newValues": {
+      "src": "http://media.wizards.com/2016/images/daily/dsGYV0NlQD.png",
+      "num": "{{num}} P Launch",
+      "promo": true,
+      "includedReason": "Launch Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "where": "title='Incorrigible Youths",
+    "newValues": {
+      "src": "http://media.wizards.com/2016/images/daily/SGie3eh7cA.png",
+      "num": "{{num}} P Game Day",
+      "promo": true,
+      "includedReason": "Game Day Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "where": "title='Anguished Unmaking",
+    "newValues": {
+      "src": "http://media.wizards.com/2016/images/daily/QaE7OpMBPZ.png",
+      "num": "{{num}} P Game Day",
+      "promo": true,
+      "includedReason": "Game Day Top 8 Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "_comment": "delete all cards that still have promo=false, which leaves just our modified promo cards",
+    "delete": true,
+    "where": "promo=false"
+  },
+
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/mtg-marketing1.png",
+      "title": "Tip/Marketing Card",
+      "set": "soi",
+      "colour": "o",
+      "num": "001 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/mtg-marketing2.png",
+      "title": "Tip/Marketing Card",
+      "set": "ori",
+      "colour": "o",
+      "num": "002 Marketing",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true
+    }
+  },
+
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://media.wizards.com/2016/images/daily/eksIEJe2hF_list.png",
+      "title": "Checklist Card",
+      "set": "soi",
+      "colour": "o",
+      "rarity": "c",
+      "type": "Marketing",
+      "usableForDeckBuilding": false,
+      "marketing": true,
+      "num": "001 chk"
+    }
+  },
+
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/mtg-spindown-life-counter-white.png",
+      "set": "soi",
+      "title": "White Spindown Life Counter",
+      "colour": "o",
+      "num": "001 Counter",
+      "rarity": "c",
+      "type": "Life Counter",
+      "promo": "true",
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false,
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/mtg-spindown-life-counter-blue.png",
+      "set": "soi",
+      "title": "Blue Spindown Life Counter",
+      "colour": "o",
+      "num": "002 Counter",
+      "rarity": "c",
+      "type": "Life Counter",
+      "promo": "true",
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false,
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/mtg-spindown-life-counter-black.png",
+      "set": "soi",
+      "title": "Black Spindown Life Counter",
+      "colour": "o",
+      "num": "003 Counter",
+      "rarity": "c",
+      "type": "Life Counter",
+      "promo": "true",
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false,
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/mtg-spindown-life-counter-red.png",
+      "set": "soi",
+      "title": "Red Spindown Life Counter",
+      "colour": "o",
+      "num": "004 Counter",
+      "rarity": "c",
+      "type": "Life Counter",
+      "promo": "true",
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false,
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/mtg-spindown-life-counter-green.png",
+      "set": "soi",
+      "title": "Green Spindown Life Counter",
+      "colour": "o",
+      "num": "005 Counter",
+      "rarity": "c",
+      "type": "Life Counter",
+      "promo": "true",
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false,
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/soi-prerelease-deck-box.png",
+      "set": "soi",
+      "title": "Deck Box",
+      "colour": "o",
+      "num": "006 Deck Box",
+      "rarity": "c",
+      "type": "Insert",
+      "promo": "true",
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false,
+      "addedViaException": true
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/soi-deckbuilding-info.jpg",
+      "src_large": "http://mtgen.net/cards/soi-deckbuilding-info-lg.jpg",
+      "height": 370,
+      "width": 515,
+      "set": "soi",
+      "title": "Deckbuilding Advice Insert",
+      "colour": "o",
+      "num": "007 Insert",
+      "rarity": "c",
+      "type": "Insert",
+      "promo": "true",
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://mtgen.net/cards/soi-prerelease-card-divider.png",
+      "set": "soi",
+      "title": "Prerelease Card Divider",
+      "colour": "o",
+      "num": "008 Prerelease Card Divider",
+      "rarity": "c",
+      "type": "Insert",
+      "promo": "true",
+      "includedReason": "Prerelease Promo",
+      "usableForDeckBuilding": false,
+      "addedViaException": true
+    }
+  },
+
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://media.wizards.com/2016/aksdjciawolkcc0_soi/en_8edfPG4ppX.png",
+      "height": 370,
+      "width": 265,
+      "title": "Plains",
+      "num": 283,
+      "set": "soi",
+      "cost": "",
+      "rarity": "c",
+      "type": "Basic Land",
+      "subtype": "Plains",
+      "colour": "l",
+      "mtgenId": "soi|283"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://media.wizards.com/2016/aksdjciawolkcc0_soi/en_AeHiqQRcTF.png",
+      "height": 370,
+      "width": 265,
+      "title": "Plains",
+      "num": 284,
+      "set": "soi",
+      "cost": "",
+      "rarity": "c",
+      "type": "Basic Land",
+      "subtype": "Plains",
+      "colour": "l",
+      "mtgenId": "soi|284"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://media.wizards.com/2016/aksdjciawolkcc0_soi/en_koANkyjY1c.png",
+      "height": 370,
+      "width": 265,
+      "title": "Plains",
+      "num": 285,
+      "set": "soi",
+      "cost": "",
+      "rarity": "c",
+      "type": "Basic Land",
+      "subtype": "Plains",
+      "colour": "l",
+      "mtgenId": "soi|285"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://media.wizards.com/2016/aksdjciawolkcc0_soi/en_hG4PZSydfi.png",
+      "height": 370,
+      "width": 265,
+      "title": "Island",
+      "num": 286,
+      "set": "soi",
+      "cost": "",
+      "rarity": "c",
+      "type": "Basic Land",
+      "subtype": "Island",
+      "colour": "l",
+      "mtgenId": "soi|286"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://media.wizards.com/2016/aksdjciawolkcc0_soi/en_v2JW4ubg0E.png",
+      "height": 370,
+      "width": 265,
+      "title": "Island",
+      "num": 287,
+      "set": "soi",
+      "cost": "",
+      "rarity": "c",
+      "type": "Basic Land",
+      "subtype": "Island",
+      "colour": "l",
+      "mtgenId": "soi|287"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://media.wizards.com/2016/aksdjciawolkcc0_soi/en_7KPwikaWCK.png",
+      "height": 370,
+      "width": 265,
+      "title": "Island",
+      "num": 288,
+      "set": "soi",
+      "cost": "",
+      "rarity": "c",
+      "type": "Basic Land",
+      "subtype": "Island",
+      "colour": "l",
+      "mtgenId": "soi|288"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://media.wizards.com/2016/aksdjciawolkcc0_soi/en_bJufx78s2W.png",
+      "height": 370,
+      "width": 265,
+      "title": "Swamp",
+      "num": 289,
+      "set": "soi",
+      "cost": "",
+      "rarity": "c",
+      "type": "Basic Land",
+      "subtype": "Swamp",
+      "colour": "l",
+      "mtgenId": "soi|289"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://media.wizards.com/2016/aksdjciawolkcc0_soi/en_I7oYG1UNm0.png",
+      "height": 370,
+      "width": 265,
+      "title": "Swamp",
+      "num": 290,
+      "set": "soi",
+      "cost": "",
+      "rarity": "c",
+      "type": "Basic Land",
+      "subtype": "Swamp",
+      "colour": "l",
+      "mtgenId": "soi|290"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://media.wizards.com/2016/aksdjciawolkcc0_soi/en_h5wJu7yUdL.png",
+      "height": 370,
+      "width": 265,
+      "title": "Swamp",
+      "num": 291,
+      "set": "soi",
+      "cost": "",
+      "rarity": "c",
+      "type": "Basic Land",
+      "subtype": "Swamp",
+      "colour": "l",
+      "mtgenId": "soi|291"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://media.wizards.com/2016/aksdjciawolkcc0_soi/en_5ucAb7pCyW.png",
+      "height": 370,
+      "width": 265,
+      "title": "Mountain",
+      "num": 292,
+      "set": "soi",
+      "cost": "",
+      "rarity": "c",
+      "type": "Basic Land",
+      "subtype": "Mountain",
+      "colour": "l",
+      "mtgenId": "soi|292"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://media.wizards.com/2016/aksdjciawolkcc0_soi/en_VUJCdHs2bQ.png",
+      "height": 370,
+      "width": 265,
+      "title": "Mountain",
+      "num": 293,
+      "set": "soi",
+      "cost": "",
+      "rarity": "c",
+      "type": "Basic Land",
+      "subtype": "Mountain",
+      "colour": "l",
+      "mtgenId": "soi|293"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://media.wizards.com/2016/aksdjciawolkcc0_soi/en_PL1lFuhQg3.png",
+      "height": 370,
+      "width": 265,
+      "title": "Mountain",
+      "num": 294,
+      "set": "soi",
+      "cost": "",
+      "rarity": "c",
+      "type": "Basic Land",
+      "subtype": "Mountain",
+      "colour": "l",
+      "mtgenId": "soi|294"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://media.wizards.com/2016/aksdjciawolkcc0_soi/en_N0ksQUtevv.png",
+      "height": 370,
+      "width": 265,
+      "title": "Forest",
+      "num": 295,
+      "set": "soi",
+      "cost": "",
+      "rarity": "c",
+      "type": "Basic Land",
+      "subtype": "Forest",
+      "colour": "l",
+      "mtgenId": "soi|295"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://media.wizards.com/2016/aksdjciawolkcc0_soi/en_T903uPyDjz.png",
+      "height": 370,
+      "width": 265,
+      "title": "Forest",
+      "num": 296,
+      "set": "soi",
+      "cost": "",
+      "rarity": "c",
+      "type": "Basic Land",
+      "subtype": "Forest",
+      "colour": "l",
+      "mtgenId": "soi|296"
+    }
+  },
+  {
+    "add": true,
+    "newValues": {
+      "src": "http://media.wizards.com/2016/aksdjciawolkcc0_soi/en_kHO1ldrF4b.png",
+      "height": 370,
+      "width": 265,
+      "title": "Forest",
+      "num": 297,
+      "set": "soi",
+      "cost": "",
+      "rarity": "c",
+      "type": "Basic Land",
+      "subtype": "Forest",
+      "colour": "l",
+      "mtgenId": "soi|297"
+    }
+  }
+
+]

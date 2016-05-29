@@ -1,0 +1,139 @@
+{
+  "defs": [
+    {
+      "defName": "ema",
+      "query": "from[*]?set='ema"
+    },
+    {
+      "defName": "ema-base",
+      "query": "from[ema]-from[ema]?type=(Marketing|Basic Land)-from[ema]?token=true-from[ema]?promo=true"
+    },
+    {
+      "defName": "ema-main",
+      "query": "from[ema-base]"
+    },
+    {
+      "defName": "ema-foils",
+      "query": "from[ema-main]"
+    },
+    {
+      "defName": "ema-promo",
+      "query": "from[ema]?promo=true"
+    }
+
+  ],
+  "packs": [
+    {
+      "packName": "ema-all-cards",
+      "packDesc": "Eternal Masters: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[ema]" }
+      ]
+    },
+    {
+      "packName": "ema-standard",
+      "packDesc": "Eternal Masters: Standard Booster",
+      "packVersion": "1.0",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[ema-main]?rarity='c" },
+        { "query": "take[3]>from[ema-main]?rarity='u" },
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[ema-main]?rarity='r"
+            },
+            {
+              "percent": "1/8",
+              "query": "from[ema-main]?rarity='m"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "88/120",
+              "query": "from[ema-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "24/120",
+              "query": "from[ema-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "7/120",
+              "query": "from[ema-main]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/120",
+              "query": "from[ema-main]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[ema]?title='Tip/Marketing Card"
+            },
+            {
+              "percent": "50",
+              "query": "from[ema]?token=true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "ema-promos",
+      "packDesc": "Eternal Masters: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[ema-promo]" }
+      ]
+    },
+    {
+      "packName": "ema-prerelease-promo-packins",
+      "packDesc": "Eternal Masters: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[ema-base]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[ema-base]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[1]>from[ema-promo]?type='Life Counter" },
+        { "query": "from[ema-promo]?title='Deck Box" },
+        { "query": "from[ema-promo]?title='Prerelease Card Divider" },
+        { "query": "from[ema-promo]?title='Deckbuilding Advice Insert" }
+
+      ]
+    },
+    {
+      "packName": "ema-prerelease-promos",
+      "packDesc": "Eternal Masters: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[ema-promo]?includedReason='Prerelease Promo" }
+      ]
+    }
+
+  ]
+}
