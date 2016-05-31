@@ -123,6 +123,9 @@
             mtgGen.on('drawSaved', function (setCode) {
                 ga('send', 'event', setCode.toUpperCase(), 'SaveDraw', setCode.toUpperCase() + ": save-draw: " + $(currProduct).text());
             });
+            mtgGen.on('drawLoaded', function (setCode, drawId) {
+                ga('send', 'event', setCode.toUpperCase(), 'LoadDraw', setCode.toUpperCase() + ": load-draw: " + $(currProduct).text() + ", " + drawId);
+            });
             $('.export-download').on('click', function (setCode) {
                 ga('send', 'event', setCode.toUpperCase(), 'Export', setCode.toUpperCase() + ": export: " + $(currProduct).text() + ", " + $(currOption).text());
             });

@@ -264,9 +264,10 @@ var mtgGen = (function (my, $) {
         // If a draw was specified, try to load that
         var drawId = my.getQuerystringParamByName('draw');
         if (drawId) {
-            promises.push($.getJSON("/" + options.setCode + "/LoadDraw/" + drawId).fail(function (xjr, textStatus, error) {
-                console.error("ERROR retrieving draw '" + this.url + "'. Will continue with normal load. Error message:" + error);
-            })
+            promises.push($.getJSON("/" + options.setCode + "/LoadDraw/" + drawId)
+                .fail(function (xjr, textStatus, error) {
+                    console.error("ERROR retrieving draw '" + this.url + "'. Will continue with normal load. Error message:" + error);
+                })
 			);
         }
 
@@ -320,6 +321,8 @@ var mtgGen = (function (my, $) {
                     // A draw was specified to be loaded
                     if (value[0].drawVersion) {
                         my.draw = value[0];
+                        my.draw.code = my.getQuerystringParamByName('draw');
+                        my.trigger('drawLoaded', my.setCode, my.draw.code); // triggers google analytics tracking event
                     }
                 }
             });
