@@ -1,0 +1,163 @@
+{
+  "defs": [
+    {
+      "defName": "emn",
+      "query": "from[*]?set='emn"
+    },
+    {
+      "defName": "emn-base",
+      "query": "from[emn]-from[emn]?type=(Marketing|Basic Land)-from[emn]?token=true-from[emn]?promo=true"
+    },
+    {
+      "defName": "emn-main",
+      "query": "from[emn-base]-from[emn]?doubleFaceCard=true"
+    },
+    {
+      "defName": "emn-doubleface",
+      "query": "from[emn-base]?doubleFaceFrontCard=true"
+    },
+    {
+      "defName": "emn-foils",
+      "query": "from[emn-main]"
+    },
+    {
+      "defName": "emn-promo",
+      "query": "from[emn]?promo=true"
+    }
+
+  ],
+  "packs": [
+    {
+      "packName": "emn-all-cards",
+      "packDesc": "Eldrich Moon: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[emn]-from[emn]?doubleFaceBackCard=true" }
+      ]
+    },
+    {
+      "packName": "emn-standard",
+      "packDesc": "Eldrich Moon: Standard Booster",
+      "packVersion": "1.1",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[7]>from[emn-main]?rarity='c" },
+        {
+          "querySet": [
+            {
+              "percent": "3/4",
+              "query": "from[emn-main]?rarity='c"
+            },
+            {
+              "percent": "1/4",
+              "query": "from[emn-foils]",
+              "canBeDuplicate": true,
+              "setValues": { "foil": true },
+              "_comment": "25% chance rare is a foil of any card, including land"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "56/64",
+              "query": "from[emn-main]?rarity='c"
+            },
+            {
+              "percent": "7/64",
+              "query": "from[emn-doubleface]?rarity='r"
+            },
+            {
+              "percent": "1/64",
+              "query": "from[emn-doubleface]?rarity='m"
+            }
+          ]
+        },
+        { "query": "take[3]>from[emn-main]?rarity='u" },
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[emn-main]?rarity='r"
+            },
+            {
+              "percent": "1/8",
+              "query": "from[emn-main]?rarity='m"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "10/13",
+              "query": "from[emn-doubleface]?rarity='c"
+            },
+            {
+              "percent": "3/10",
+              "query": "from[emn-doubleface]?rarity='u"
+            }
+          ]
+        },
+        { "query": "take[1]>from[soi]?type='Basic Land" },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[emn]?title='Tip/Marketing Card"
+            },
+            {
+              "percent": "50",
+              "query": "from[emn]?token=true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "emn-promos",
+      "packDesc": "Eldrich Moon: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[emn-promo]" }
+      ]
+    },
+    {
+      "packName": "emn-prerelease-promo-packins",
+      "packDesc": "Eldrich Moon: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[emn-base]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[emn-base]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "from[emn-promo]?title='Zombie" },
+        { "query": "take[1]>from[emn-promo]?type='Life Counter" },
+        { "query": "from[emn-promo]?title='Deck Box" },
+        { "query": "from[emn-promo]?title='Deckbuilding Advice Insert" }
+
+      ]
+    },
+    {
+      "packName": "emn-prerelease-promos",
+      "packDesc": "Eldrich Moon: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[emn-promo]?includedReason='Prerelease Promo" }
+      ]
+    }
+
+  ]
+}
