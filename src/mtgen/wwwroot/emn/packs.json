@@ -2,7 +2,7 @@
   "defs": [
     {
       "defName": "emn",
-      "query": "from[*]?set='emn"
+      "query": "from[*]?set='emn'-from[*]?doubleFaceBackCard=true"
     },
     {
       "defName": "emn-base",
@@ -10,7 +10,7 @@
     },
     {
       "defName": "emn-main",
-      "query": "from[emn-base]-from[emn]?doubleFaceCard=true"
+      "query": "from[emn-base]"
     },
     {
       "defName": "emn-doubleface",
