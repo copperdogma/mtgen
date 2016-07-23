@@ -2,7 +2,7 @@
   "defs": [
     {
       "defName": "soi",
-      "query": "from[*]?set='soi"
+      "query": "from[*]?set='soi'-from[*]?doubleFaceBackCard=true"
     },
     {
       "defName": "soi-base",
@@ -32,7 +32,7 @@
       "packDesc": "Shadows Over Innistrad: All Cards",
       "isGenerated": false,
       "cards": [
-        { "query": "take[*]>from[soi]" }
+        { "query": "take[*]>from[soi]-from[soi]?doubleFaceBackCard=true" }
       ]
     },
     {
