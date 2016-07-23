@@ -10,7 +10,7 @@
     },
     {
       "defName": "emn-main",
-      "query": "from[emn-base]"
+      "query": "from[emn-base]-from[emn]?doubleFaceCard=true"
     },
     {
       "defName": "emn-doubleface",
