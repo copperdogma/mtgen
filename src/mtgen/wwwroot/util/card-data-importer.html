@@ -10,6 +10,7 @@
     <img itemprop="image" src="http://mtgen.net/images/mtg-logo.jpg" />
     <p>This page imports card data from the <a href="http://www.gatheringmagic.com/" target="_blank">Gathering Magic spoiler list</a>, <a href="https://www.google.com/search?q=card+image+gallery+wizards+of+the+coast" target="_blank">WotC card images</a>, and <a href="http://mtgjson.com" target="_blank">mtgjson.com</a> to help create the Sealed Deck Card Generator pages for each release.</p>
     <ul>
+        <li>23-Jul-2016: Combined the settings and exceptons file into one.</li>
         <li>28-Jan-2016: Updated to add/use mtgenIds and associative arrays on "cards". Added </li>
         <li>4-Jul-2015: New version created.</li>
         <li>11-Dec-2015: Paths adjusted for MVC5 layout.</li>
@@ -35,9 +36,14 @@
         <input id="url-images" size="100" />
         <br />
         <br />
-        <label for="url-exceptions">Exceptions JSON file that handles any parsing errors:</label>
+        <label for="url-exceptions"><em>(deprecated)</em> Url from which to import exceptions JSON file that handles any parsing errors (or use Exceptions below):</label>
         <br />
         <input id="url-exceptions" size="100" />
+        <br />
+        <br />
+        <label for="exceptions">Exceptions JSON that handles any parsing errors:</label>
+        <br />
+        <textarea id="exceptions" cols="100" rows="20"></textarea>
         <br />
         <br />
         <a id="save-settings" href="#">Save These Settings</a>
@@ -50,9 +56,9 @@
     </section>
     <h2>Output</h2>
     <h3>Parsing Log</h3>
-    <p>Use an exceptions JSON file (like <a href="http://copper-dog.com/mtg-generator/rtr/import-exceptions-rtr.json" target="_blank">this one</a>) to fix any errors below.</p>
+    <p>Use the exceptions JSON setting above to fix any errors below.</p>
     <section id="log"></section>
-    <h3>cardsMain.json</h3>
+    <h3>Output JSON Data</h3>
     <textarea id="out-main" cols="100" rows="20"></textarea>
     <footer>
         <p>Created by: Cam Marsollier - <a href="mailto:cam.marsollier@gmail.com">cam.marsollier@gmail.com</a></p>
@@ -74,6 +80,7 @@
                     cardDataUrl: $('#url-card-data').val()
                     , imagesUrl: $('#url-images').val()
                     , exceptionsUrl: $('#url-exceptions').val()
+                    , exceptions: $('#exceptions').val()
                     , setCode: $('input#set-code').val()
                 });
             });
@@ -93,6 +100,7 @@
                         $('input#url-card-data').val(finalSettings.cardDataUrl);
                         $('input#url-images').val(finalSettings.imagesUrl);
                         $('input#url-exceptions').val(finalSettings.exceptionsUrl);
+                        $('textarea#exceptions').val(JSON.stringify(finalSettings.exceptions, null, ' '));
 
                         // rebuild the download file and attach it to the download link
                         setSaveLinkToDownloadFile();
@@ -107,7 +115,8 @@
                                 $('input#set-code').val(),
                                 $('#url-card-data').val(),
                                 $('#url-images').val(),
-                                $('#url-exceptions').val()
+                                $('#url-exceptions').val(),
+                                $('#exceptions').val()
                                 );
                 var $linkEl = $('#save-settings');
                 $linkEl.attr('href', attrs.href);

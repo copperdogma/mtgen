@@ -105,7 +105,11 @@ var cardDataImporter = (function (my, $) {
             promises.push($.get('/proxy?u=http://copper-dog.com/'));
         }
 
-        if (my.exceptionsUrl !== undefined && my.exceptionsUrl.length > 0) {
+        if (my.exceptions !== undefined && my.exceptions.length > 0) {
+            promises.push($.get('/proxy?u=http://copper-dog.com/'));
+        }
+            // exceptions via a file is deprecated; the above assumes assumtpions in the original import-xxx.json file
+        else if (my.exceptionsUrl !== undefined && my.exceptionsUrl.length > 0) {
             promises.push($.get('/proxy?u=' + encodeURIComponent(my.exceptionsUrl)));
         }
         else {
@@ -133,12 +137,17 @@ var cardDataImporter = (function (my, $) {
                 htmlImages.data = undefined; // this is okay -- it'll just default to using all images form cards-data (GM or cardsMain.json)
             }
 
-            var jsonExceptions = {
-                data: arguments[2][0],
-                urlSource: my.exceptionsUrl
+            var jsonExceptions = { data: undefined, urlSource: undefined };
+            if (my.exceptions !== undefined && my.exceptions.length > 0) {
+                jsonExceptions.data = my.exceptions;
             }
-            if (isBadResponse(jsonExceptions.data)) {
-                jsonExceptions.data = undefined; // this is okay -- it's optional
+                // below assumed loading exceptions from an external file, which is deprecacted
+            else {
+                jsonExceptions.data = arguments[2][0];
+                jsonExceptions.urlSource = my.exceptionsUrl;
+                if (isBadResponse(jsonExceptions.data)) {
+                    jsonExceptions.data = undefined; // this is okay -- it's optional
+                }
             }
 
             var setCode = my.setCode.trim();
@@ -406,12 +415,18 @@ var cardDataImporter = (function (my, $) {
         return finalColour;
     }
 
-    my.getDownloadSettingsFileLinkAttributes = function (setCode, cardDataUrl, imagesUrl, exceptionsUrl) {
+    my.getDownloadSettingsFileLinkAttributes = function (setCode, cardDataUrl, imagesUrl, exceptionsUrl, exceptions) {
         var settings = {
             "setCode": setCode,
             "cardDataUrl": cardDataUrl,
             "imagesUrl": imagesUrl,
-            "exceptionsUrl": exceptionsUrl
+            "exceptionsUrl": exceptionsUrl,
+            "exceptions": exceptions
+        };
+
+        // Deprecated, to trash it if its not there.
+        if (settings.exceptionsUrl === null) {
+            delete settings.exceptionsUrl;
         }
 
         var settingsJson = JSON.stringify(settings, null, ' ');
@@ -419,8 +434,8 @@ var cardDataImporter = (function (my, $) {
 
         var attrs = {
             "href": 'data:text/octet-strea; m;base64,' + encodedContent,
-            "download": 'import-settings.json' // 'download' attr is Chrome/FF-only to set download filename
-        }
+            "download": 'import-main.json' // 'download' attr is Chrome/FF-only to set download filename
+        };
         return attrs;
     }
 
@@ -490,8 +505,8 @@ var cardDataImporter = (function (my, $) {
             // If it's a duplicate mtgenId AND title it's the SAME card.. ditch it
             if (originalCard !== undefined) {
                 if (originalCard.matchTitle === newCard.matchTitle) {
-                    return cards;
                     console.log("DUPLICATE CARD: " + newCard.title);
+                    return cards;
                 }
             }
 

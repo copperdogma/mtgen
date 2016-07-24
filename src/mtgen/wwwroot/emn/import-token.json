@@ -1,0 +1,132 @@
+{
+  "setCode": "emn",
+  "cardDataUrl": "",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "add": true,
+      "newValues": {
+        "title": "Eldrazi Horror",
+        "src": "http://media.wizards.com/2016/ouhtebrpjwxcnw5_EMN/en_r0E8h7Sx7s.png",
+        "colour": "c",
+        "type": "Token Creature",
+        "subtype": "Eldrazi Horror",
+        "num": "001"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Human Wizard",
+        "src": "http://media.wizards.com/2016/ouhtebrpjwxcnw5_EMN/en_E3kNrs8HWP.png",
+        "colour": "u",
+        "type": "Token Creature",
+        "subtype": "Human Wizard",
+        "num": "002"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Zombie",
+        "src": "http://media.wizards.com/2016/ouhtebrpjwxcnw5_EMN/en_agGWKXppaH.png",
+        "colour": "b",
+        "type": "Token Creature",
+        "subtype": "Zombie",
+        "num": "003"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Zombie",
+        "src": "http://media.wizards.com/2016/ouhtebrpjwxcnw5_EMN/en_vpvtSxqjtz.png",
+        "colour": "b",
+        "type": "Token Creature",
+        "subtype": "Zombie",
+        "num": "004"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Zombie",
+        "src": "http://media.wizards.com/2016/ouhtebrpjwxcnw5_EMN/en_bgb9weEZA4.png",
+        "colour": "b",
+        "type": "Token Creature",
+        "subtype": "Zombie",
+        "num": "005"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Zombie",
+        "src": "http://media.wizards.com/2016/ouhtebrpjwxcnw5_EMN/en_SwNMotyu8E.png",
+        "colour": "b",
+        "type": "Token Creature",
+        "subtype": "Zombie",
+        "num": "006"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Human",
+        "src": "http://media.wizards.com/2016/ouhtebrpjwxcnw5_EMN/en_nQw4fq2DYT.png",
+        "colour": "r",
+        "type": "Token Creature",
+        "subtype": "Human",
+        "num": "007"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Spider",
+        "src": "http://media.wizards.com/2016/ouhtebrpjwxcnw5_EMN/en_KiwJSuvSso.png",
+        "colour": "g",
+        "type": "Token Creature",
+        "subtype": "Spider",
+        "num": "008"
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "title": "Liliana Emblem",
+        "src": "http://media.wizards.com/2016/ouhtebrpjwxcnw5_EMN/en_3uiqIat9XN.png",
+        "colour": "c",
+        "type": "Liliana",
+        "subtype": "Emblem",
+        "num": "009"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Tamiyo Emblem",
+        "src": "http://media.wizards.com/2016/ouhtebrpjwxcnw5_EMN/en_c30wTaXc7C.png",
+        "colour": "c",
+        "type": "Tamiyo",
+        "subtype": "Emblem",
+        "num": "010"
+      }
+    },
+
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/010 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+
+  ]
+
+}
