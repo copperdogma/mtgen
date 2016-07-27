@@ -18,6 +18,11 @@ body {
     margin: 0;
     text-align: center;
 }
+@media (min-width: 1920px) {
+	body {
+        background-size: 100%;
+	}
+}
 header, main {
     max-width: 75em;
     margin: 0 auto;

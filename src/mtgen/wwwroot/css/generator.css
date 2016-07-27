@@ -20,6 +20,11 @@ body {
 	margin: 0 auto;
 	position: relative;
 }
+@media (min-width: 1920px) {
+	body {
+        background-size: 100%;
+	}
+}
 h1, h2 {
 	font-family: 'IM Fell DW Pica', serif; /* imported weights: 400, 700 */
 	text-shadow: 1px 1px 1px #000;
