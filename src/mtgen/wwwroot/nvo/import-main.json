@@ -1,0 +1,104 @@
+{
+  "setCode": "emn",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=172&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/card-image-gallery/eldritch-moon",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "where": "title='Strange Augmentation",
+      "newValues": {
+        "type": "Enchantment - Aura"
+      }
+    },
+
+
+    {
+      "where": "title='Gisela, the Broken Blade",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "emn|015:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Bruna, the Fading Light",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "emn|015:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Brisela, Voice of Nightmares",
+      "newValues": {
+        "src": "http://mtgen.net/cards/emn-brisela-voice-of-nightmares.png",
+        "usableForDeckBuilding": false,
+        "doubleFaceCard": true,
+        "mtgenIdFront": "emn|015:b",
+        "doubleFaceBackCard": true
+      }
+    },
+
+
+    {
+      "where": "title='Graf Rats",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "emn|096:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Midnight Scavengers",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "emn|096:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Chittering Host",
+      "newValues": {
+        "src": "http://mtgen.net/cards/emn-chittering-host.png",
+        "usableForDeckBuilding": false,
+        "doubleFaceCard": true,
+        "mtgenIdFront": "emn|096:b",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Hanweir Battlements",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "emn|130:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Hanweir Garrison",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "emn|130:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Hanweir, the Writhing Township",
+      "newValues": {
+        "src": "http://mtgen.net/cards/emn-hanweir-the-writing-township.png",
+        "usableForDeckBuilding": false,
+        "doubleFaceCard": true,
+        "mtgenIdFront": "emn|130:b",
+        "doubleFaceBackCard": true
+      }
+    }
+  ]
+}

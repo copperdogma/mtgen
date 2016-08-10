@@ -1,0 +1,91 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "emn-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/card-image-gallery/eldritch-moon", "http://www.mtgsalvation.com/spoilers/172-aldritch-moon" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "emn-all-cards" }
+      ]
+    },
+    {
+      "productName": "emn-boosters",
+      "productDesc": "Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "soi-standard" },
+        { "packName": "emn-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "emn-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "emn-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "emn-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://magic.wizards.com/en/articles/archive/feature/eldritch-moon-prerelease-kit-contents-2016-06-20" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "soi-standard" },
+        { "packName": "emn-standard" },
+        { "packName": "emn-prerelease-promo-packins" },
+        { "packName": "emn-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "emn-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "emn-prerelease-promo-packins"
+              },
+              {
+                "count": 4,
+                "defaultPackName": "emn-standard"
+              },
+              {
+                "count": 2,
+                "defaultPackName": "soi-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "emn-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/feature/eldritch-moon-tokens-and-promo-cards-2016-07-07" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "emn-promos" }
+      ]
+    }
+
+  ]
+}
