@@ -9,12 +9,12 @@
       "query": "from[cn2]-from[cn2]?type=(Marketing|Basic Land)-from[cn2]?token=true"
     },
     {
-      "defName": "cn2-main",
-      "query": "from[cn2-base]"
-    },
-    {
       "defName": "cn2-draft-affecting",
       "query": "from[cn2]?draftAffecting=true"
+    },
+    {
+      "defName": "cn2-main",
+      "query": "from[cn2-base]-from[cn2-draft-affecting]"
     },
     {
       "defName": "cn2-foils",
@@ -34,29 +34,9 @@
     {
       "packName": "cn2-standard",
       "packDesc": "Conspiracy: Take the Crown: Standard Booster",
-      "packVersion": "1.0",
+      "packVersion": "1.1",
       "isGenerated": true,
       "cards": [
-        {
-          "querySet": [
-            {
-              "percent": "88/120",
-              "query": "from[cn2-draft-affecting]?rarity='c"
-            },
-            {
-              "percent": "24/120",
-              "query": "from[cn2-draft-affecting]?rarity='u"
-            },
-            {
-              "percent": "7/120",
-              "query": "from[cn2-draft-affecting]?rarity='r"
-            },
-            {
-              "percent": "1/120",
-              "query": "from[cn2-draft-affecting]?rarity='m"
-            }
-          ]
-        },
         { "query": "take[9]>from[cn2-main]?rarity='c" },
         {
           "querySet": [
@@ -96,6 +76,26 @@
             {
               "percent": "1/8",
               "query": "from[cn2-main]?rarity='m"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "88/120",
+              "query": "from[cn2-draft-affecting]?rarity='c"
+            },
+            {
+              "percent": "24/120",
+              "query": "from[cn2-draft-affecting]?rarity='u"
+            },
+            {
+              "percent": "7/120",
+              "query": "from[cn2-draft-affecting]?rarity='r"
+            },
+            {
+              "percent": "1/120",
+              "query": "from[cn2-draft-affecting]?rarity='m"
             }
           ]
         },
