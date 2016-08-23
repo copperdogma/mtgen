@@ -1,0 +1,40 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "cn2-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/card-image-gallery/conspiracy-take-crown", "http://www.mtgsalvation.com/spoilers/175-conspiracy-take-the-crown", "http://wpn.wizards.com/en/article/what-know-about-conspiracy-take-crown", "http://magic.wizards.com/en/articles/archive/daily-magic-update/update-2016-08-22" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "cn2-all-cards" }
+      ]
+    },
+    {
+      "productName": "cn2-boosters",
+      "productDesc": "Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "cn2-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "cn2-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "cn2-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

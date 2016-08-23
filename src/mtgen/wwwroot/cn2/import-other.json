@@ -1,0 +1,43 @@
+{
+  "setCode": "cn2",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=172&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-marketing1.png",
+        "title": "Tip/Marketing Card",
+        "set": "{{setCode}}",
+        "colour": "o",
+        "num": "001 Marketing",
+        "rarity": "c",
+        "type": "Marketing",
+        "usableForDeckBuilding": false,
+        "marketing": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-marketing2.png",
+        "title": "Tip/Marketing Card",
+        "set": "{{setCode}}",
+        "colour": "o",
+        "num": "002 Marketing",
+        "rarity": "c",
+        "type": "Marketing",
+        "usableForDeckBuilding": false,
+        "marketing": true
+      }
+    }
+
+  ]
+
+}

@@ -1,0 +1,65 @@
+{
+  "setCode": "cn2",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=175&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "proxiedCardDataUrl-NOTUSED": "http://proxy2016.top/index.php?q=aHR0cDovL3d3dy5tdGdzYWx2YXRpb24uY29tL3Nwb2lsZXJzL2ZpbHRlcj9TZXRJRD0xNzUmSW5jbHVkZVVuY29uZmlybWVkPXRydWUmQ2FyZHNQZXJSZXF1ZXN0PTk5OSZjb29raWVUZXN0PTE%3D",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/card-image-gallery/conspiracy-take-crown",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "where": "title='Brush Strider'",
+      "newValues": {
+        "title": "Brushstrider"
+      }
+    },
+    {
+      "where": "title='Spitting Slime'",
+      "newValues": {
+        "title": "Splitting Slime"
+      }
+    },
+    {
+      "where": "title='Shipwreck Singer'",
+      "newValues": {
+        "num": "206"
+      }
+    },
+    {
+      "where": "title='Hexplate Golem'",
+      "newValues": {
+        "num": "210"
+      }
+    },
+    {
+      "where": "title='Recruiter of the Guard'",
+      "newValues": {
+        "colour": "w"
+      }
+    },
+    {
+      "where": "title='Shimmering Grotto'",
+      "newValues": {
+        "rarity": "u"
+      }
+    },
+    {
+      "where": "type='Conspiracy'",
+      "newValues": {
+        "draftAffecting": true
+      }
+    },
+    {
+      "where": "title=(Custodi Peacekeeper|Noble Banneret|Paliano Vanguard|Arcane Savant|Illusionary Informant|Spire Phantasm|Archdemon of Paliano|Regicide|Smuggler Captain|Garbage Fire|Pyretic Hunter|Volatile Chimera|Animus of Predation|Caller of the Untamed|Leovold's Operative)",
+      "newValues": {
+        "draftAffecting": true
+      }
+    }
+
+  ]
+}

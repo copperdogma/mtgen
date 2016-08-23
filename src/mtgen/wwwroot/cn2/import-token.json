@@ -1,0 +1,152 @@
+{
+  "setCode": "cn2",
+  "cardDataUrl": "",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "add": true,
+      "newValues": {
+        "title": "The Monarch Emblem",
+        "src": "http://media.wizards.com/2016/WPN/W33/en_OFPgMTjwcu.png",
+        "colour": "c",
+        "type": "The Monarch",
+        "subtype": "Emblem",
+        "num": "001"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Soldier",
+        "src": "http://media.wizards.com/2016/azetllnwjpxztp2b_CN2/en_3W2HGUwu5Z.png",
+        "colour": "w",
+        "type": "Token Creature",
+        "subtype": "Soldier",
+        "num": "002"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Soldier",
+        "src": "http://media.wizards.com/2016/azetllnwjpxztp2b_CN2/en_Uod6lKrGvi.png",
+        "colour": "w",
+        "type": "Token Creature",
+        "subtype": "Soldier",
+        "num": "003"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Spirit",
+        "src": "http://media.wizards.com/2016/azetllnwjpxztp2b_CN2/en_uKWYrCTL44.png",
+        "colour": "w",
+        "type": "Token Creature",
+        "subtype": "Spirit",
+        "num": "004"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Assassin",
+        "src": "http://media.wizards.com/2016/azetllnwjpxztp2b_CN2/en_6ho4wbGR0y.png",
+        "colour": "b",
+        "type": "Token Creature",
+        "subtype": "Assassin",
+        "num": "005"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Zombie",
+        "src": "http://media.wizards.com/2016/azetllnwjpxztp2b_CN2/en_jiQZPry4Js.png",
+        "colour": "b",
+        "type": "Token Creature",
+        "subtype": "Zombie",
+        "num": "006"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Dragon",
+        "src": "http://media.wizards.com/2016/azetllnwjpxztp2b_CN2/en_tUlOveGiwh.png",
+        "colour": "r",
+        "type": "Token Creature",
+        "subtype": "Dragon",
+        "num": "007"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Goblin",
+        "src": "http://media.wizards.com/2016/azetllnwjpxztp2b_CN2/en_d4N21UwrYX.png",
+        "colour": "r",
+        "type": "Token Creature",
+        "subtype": "Goblin",
+        "num": "008"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Lizard",
+        "src": "http://media.wizards.com/2016/azetllnwjpxztp2b_CN2/en_VyVhztSkQq.png",
+        "colour": "r",
+        "type": "Token Creature",
+        "subtype": "Lizard",
+        "num": "009"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Beast",
+        "src": "http://media.wizards.com/2016/azetllnwjpxztp2b_CN2/en_3ginm6gErc.png",
+        "colour": "g",
+        "type": "Token Creature",
+        "subtype": "Beast",
+        "num": "010"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Insect",
+        "src": "http://media.wizards.com/2016/azetllnwjpxztp2b_CN2/en_FFbXRwKrvA.png",
+        "colour": "g",
+        "type": "Token Creature",
+        "subtype": "Insect",
+        "num": "011"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Construct",
+        "src": "http://media.wizards.com/2016/azetllnwjpxztp2b_CN2/en_d3hA3fK2vj.png",
+        "colour": "a",
+        "type": "Token Artifact Creature",
+        "subtype": "Construct",
+        "num": "012"
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+
+  ]
+
+}
