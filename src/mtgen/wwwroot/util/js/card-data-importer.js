@@ -125,6 +125,11 @@ var cardDataImporter = (function (my, $) {
                 urlSource: my.cardDataUrl
             }
 
+            // Used for jsonp responses.
+            if (htmlCards.data.contents !== undefined) {
+                htmlCards.data = htmlCards.data.contents;
+            }
+
             // If raw HTML data was provided, use that.
             if (my.htmlCardData !== undefined && my.htmlCardData.length > 0) {
                 htmlCards.data = my.htmlCardData;
