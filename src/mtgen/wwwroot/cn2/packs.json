@@ -13,8 +13,12 @@
       "query": "from[cn2]?draftAffecting=true"
     },
     {
+      "defName": "cn2-conspiracy",
+      "query": "from[cn2]?type='Conspiracy'"
+    },
+    {
       "defName": "cn2-main",
-      "query": "from[cn2-base]-from[cn2-draft-affecting]"
+      "query": "from[cn2-base]-from[cn2-conspiracy]"
     },
     {
       "defName": "cn2-foils",
@@ -83,19 +87,19 @@
           "querySet": [
             {
               "percent": "88/120",
-              "query": "from[cn2-draft-affecting]?rarity='c"
+              "query": "from[cn2-conspiracy]?rarity='c"
             },
             {
               "percent": "24/120",
-              "query": "from[cn2-draft-affecting]?rarity='u"
+              "query": "from[cn2-conspiracy]?rarity='u"
             },
             {
               "percent": "7/120",
-              "query": "from[cn2-draft-affecting]?rarity='r"
+              "query": "from[cn2-conspiracy]?rarity='r"
             },
             {
               "percent": "1/120",
-              "query": "from[cn2-draft-affecting]?rarity='m"
+              "query": "from[cn2-conspiracy]?rarity='m"
             }
           ]
         },
