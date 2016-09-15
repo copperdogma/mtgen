@@ -1,4 +1,5 @@
 ﻿/*
+14-Sep-2016: Updated land importer to output new more compact format.
 8-Mar-2016: Now supports loading double-faced card data from wotc and mtgsalvation.
 8-Mar-2016: getCardColourFromCard() now defaults to the existing card colour if one exists.
 27-Jan-2016: Updated to add/use mtgenIds and associative arrays on "cards".
@@ -469,7 +470,7 @@ var cardDataImporter = (function (my, $) {
         if (lowercaseCardDataUrlSource.length < 1) {
             console.log("No card data source supplied: this is used when the exceptions file is used to generate cards");
         }
-        // 20160818: had to run mtgsalvation through proxy2016.top cuz it started blocking direct grabs
+            // 20160818: had to run mtgsalvation through proxy2016.top cuz it started blocking direct grabs
         else if (lowercaseCardDataUrlSource.indexOf('mtgsalvation.com') > -1 || lowercaseCardDataUrlSource.indexOf('proxy2016.top')) {
             cards = my.api.getCardsFromMtgSalvationData(cardData, setCode);
         }
@@ -1141,7 +1142,7 @@ var cardDataImporter = (function (my, $) {
                 var $imageContainer, $cardTitle;
                 var requiredImageHeightInt = parseInt(requiredImageHeight, 10);
                 var requiredImageWidthInt = parseInt(requiredImageWidth, 10);
-                $rawimages.each(function (index, img) {
+                _.each($rawimages, function (img) {
                     if (!isNaN(requiredImageHeightInt) && requiredImageHeightInt !== img.height) return true;
                     if (!isNaN(requiredImageWidthInt) && requiredImageWidthInt !== img.width) return true;
                     image = {};
@@ -1153,7 +1154,7 @@ var cardDataImporter = (function (my, $) {
             }
         }
 
-        $.each(finalImages, function (image, index) {
+        _.each(finalImages, function (image) {
             image.imageSource = "wotc-article";
         });
 
@@ -1410,10 +1411,6 @@ var cardDataImporter = (function (my, $) {
     // Land files -------------------------------------------------------------------------------------------
 
     my.loadAndProcessLandFile = function (options) {
-        // Import options into instance variables
-        //$.each(options, function (value, key) {
-        //    my[key] = value;
-        //});
         $.extend(my, options);
 
         if (my.landDataUrl === undefined || my.landDataUrl.length < 1) {
@@ -1426,7 +1423,6 @@ var cardDataImporter = (function (my, $) {
 
         $.ajaxSetup({ timeout: 5000 });
 
-        //CAMKILL:promises.push($.get('ba-simple-proxy.php?mode=native&url=' + my.landDataUrl));
         promises.push($.get('/proxy?u=' + encodeURIComponent(my.landDataUrl)));
 
         my.trigger('data-loading');
@@ -1527,13 +1523,6 @@ var cardDataImporter = (function (my, $) {
 
             if (!skipCard) {
                 card.matchTitle = mtgGen.createMatchTitle(card.title);
-                card.set = setCode;
-                card.cost = "";
-                card.rarity = "c";
-                card.type = "Basic Land";
-                card.subtype = card.title;
-                card.colour = "l";
-
                 cards = addCardToCards(cards, card);
             }
         });
@@ -1566,6 +1555,9 @@ var cardDataImporter = (function (my, $) {
             delete card.imageSourceOriginal;
             delete card.fixedViaException;
             delete card.imageSource;
+            delete card.mtgenId;
+            if (card.height === 370) { delete card.height; }
+            if (card.width === 265) { delete card.width; }
 
             // Create the card as an exception.
             var exception = {
@@ -1574,6 +1566,27 @@ var cardDataImporter = (function (my, $) {
             };
             finalOut.push(exception);
         });
+
+        // If we output anything, output the final card to apply the default values to all previous Basic Lands.
+        if (finalOut.length > 0) {
+            var postCard =
+            {
+                "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
+                "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
+                "newValues": {
+                    "set": "{{setCode}}",
+                    "height": 370,
+                    "width": 265,
+                    "type": "Basic Land",
+                    "subtype": "{{title}}",
+                    "colour": "l",
+                    "cost": "",
+                    "rarity": "c",
+                    "num": "{{num}}/264 L"
+                }
+            };
+            finalOut.push(postCard);
+        }
 
         var jsonMainStr = JSON.stringify(finalOut, null, ' ');
 
