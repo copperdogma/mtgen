@@ -2,35 +2,34 @@
   "_comment": "if there are no options the query/packNames will be auto-run",
   "products": [
     {
-      "productName": "emn-all-cards",
+      "productName": "kld-all-cards",
       "productDesc": "All Cards",
-      "sources": [ "http://magic.wizards.com/en/articles/archive/card-image-gallery/eldritch-moon", "http://www.mtgsalvation.com/spoilers/172-aldritch-moon" ],
+      "sources": [ "http://magic.wizards.com/en/articles/archive/card-image-gallery/kaladesh", "http://www.mtgsalvation.com/spoilers/173-kaladesh", "http://magic.wizards.com/en/articles/archive/feature/basic-lands-kaladesh-2016-09-12", "http://magic.wizards.com/en/articles/archive/making-magic/masterpiece-series-2016-09-12" ],
       "isGenerated": false,
       "initialSort": "colour",
       "packs": [
-        { "packName": "emn-all-cards" }
+        { "packName": "kld-all-cards" }
       ]
     },
     {
-      "productName": "emn-boosters",
+      "productName": "kld-boosters",
       "productDesc": "Boosters",
       "isGenerated": true,
       "isVisible": true,
       "initialSort": "set",
       "packs": [
-        { "packName": "soi-standard" },
-        { "packName": "emn-standard" }
+        { "packName": "kld-standard" }
       ],
       "options": {
         "presets": [
           {
-            "presetName": "emn-boosters-six",
+            "presetName": "kld-boosters-six",
             "presetDesc": "Six Boosters",
             "default": true,
             "packs": [
               {
                 "count": 6,
-                "defaultPackName": "emn-standard"
+                "defaultPackName": "kld-standard"
               }
             ]
           }
@@ -38,36 +37,31 @@
       }
     },
     {
-      "productName": "emn-prerelease",
+      "productName": "kld-prerelease",
       "productDesc": "Prerelease",
       "isVisible": true,
-      "sources": [ "http://magic.wizards.com/en/articles/archive/feature/eldritch-moon-prerelease-kit-contents-2016-06-20" ],
+      "sources": [ "http://magic.wizards.com/en/articles/archive/feature/kaladesh-packaging-promos-and-planeswalker-decks-2016-09-06" ],
       "isGenerated": true,
       "initialSort": "set",
       "packs": [
-        { "packName": "soi-standard" },
-        { "packName": "emn-standard" },
-        { "packName": "emn-prerelease-promo-packins" },
-        { "packName": "emn-prerelease-promos" }
+        { "packName": "kld-standard" },
+        { "packName": "kld-prerelease-promo-packins" },
+        { "packName": "kld-prerelease-promos" }
       ],
       "options": {
         "presets": [
           {
-            "presetName": "emn-prerelease",
+            "presetName": "kld-prerelease",
             "presetDesc": "Prerelease Pack",
             "default": true,
             "packs": [
               {
                 "count": 1,
-                "defaultPackName": "emn-prerelease-promo-packins"
+                "defaultPackName": "kld-prerelease-promo-packins"
               },
               {
-                "count": 4,
-                "defaultPackName": "emn-standard"
-              },
-              {
-                "count": 2,
-                "defaultPackName": "soi-standard"
+                "count": 6,
+                "defaultPackName": "kld-standard"
               }
             ]
           }
@@ -76,14 +70,14 @@
 
     },
     {
-      "productName": "emn-promos",
+      "productName": "kld-promos",
       "productDesc": "All Promos",
-      "sources": [ "http://magic.wizards.com/en/articles/archive/feature/eldritch-moon-tokens-and-promo-cards-2016-07-07" ],
+      "sources": [ "http://magic.wizards.com/en/articles/archive/feature/kaladesh-packaging-promos-and-planeswalker-decks-2016-09-06" ],
       "isGenerated": false,
       "isVisible": true,
       "initialSort": "name",
       "packs": [
-        { "packName": "emn-promos" }
+        { "packName": "kld-promos" }
       ]
     }
 

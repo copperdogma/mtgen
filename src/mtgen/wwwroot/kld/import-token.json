@@ -1,117 +1,139 @@
 {
-  "setCode": "emn",
+  "setCode": "kld",
   "cardDataUrl": "",
-  "imagesUrl": "",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/feature/tokens-kaladesh-2016-09-15",
   "exceptions": [
     {
       "add": true,
       "newValues": {
-        "title": "Eldrazi Horror",
-        "src": "http://media.wizards.com/2016/ouhtebrpjwxcnw5_EMN/en_r0E8h7Sx7s.png",
+        "title": "Construct",
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_t4SGoWqjbW.png",
         "colour": "c",
-        "type": "Token Creature",
-        "subtype": "Eldrazi Horror",
+        "type": "Token Artifact Creature",
+        "subtype": "Construct",
         "num": "001"
       }
     },
     {
       "add": true,
       "newValues": {
-        "title": "Human Wizard",
-        "src": "http://media.wizards.com/2016/ouhtebrpjwxcnw5_EMN/en_E3kNrs8HWP.png",
-        "colour": "u",
-        "type": "Token Creature",
-        "subtype": "Human Wizard",
+        "title": "Construct",
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_ROHZBBAJrp.png",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "subtype": "Construct",
         "num": "002"
       }
     },
     {
       "add": true,
       "newValues": {
-        "title": "Zombie",
-        "src": "http://media.wizards.com/2016/ouhtebrpjwxcnw5_EMN/en_agGWKXppaH.png",
-        "colour": "b",
-        "type": "Token Creature",
-        "subtype": "Zombie",
+        "title": "Construct",
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_fCSrpoVGcO.png",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "subtype": "Construct",
         "num": "003"
       }
     },
     {
       "add": true,
       "newValues": {
-        "title": "Zombie",
-        "src": "http://media.wizards.com/2016/ouhtebrpjwxcnw5_EMN/en_vpvtSxqjtz.png",
-        "colour": "b",
-        "type": "Token Creature",
-        "subtype": "Zombie",
+        "title": "Servo",
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_oKAeTK3DKA.png",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "subtype": "Servo",
         "num": "004"
       }
     },
     {
       "add": true,
       "newValues": {
-        "title": "Zombie",
-        "src": "http://media.wizards.com/2016/ouhtebrpjwxcnw5_EMN/en_bgb9weEZA4.png",
-        "colour": "b",
-        "type": "Token Creature",
-        "subtype": "Zombie",
+        "title": "Servo",
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_b786LD89UN.png",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "subtype": "Servo",
         "num": "005"
       }
     },
     {
       "add": true,
       "newValues": {
-        "title": "Zombie",
-        "src": "http://media.wizards.com/2016/ouhtebrpjwxcnw5_EMN/en_SwNMotyu8E.png",
-        "colour": "b",
-        "type": "Token Creature",
-        "subtype": "Zombie",
+        "title": "Servo",
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_xzZQc5a68Z.png",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "subtype": "Servo",
         "num": "006"
       }
     },
     {
       "add": true,
       "newValues": {
-        "title": "Human",
-        "src": "http://media.wizards.com/2016/ouhtebrpjwxcnw5_EMN/en_nQw4fq2DYT.png",
-        "colour": "r",
-        "type": "Token Creature",
-        "subtype": "Human",
+        "title": "Thopter",
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_V8a0HO5toy.png",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "subtype": "Thopter",
         "num": "007"
       }
     },
     {
       "add": true,
       "newValues": {
-        "title": "Spider",
-        "src": "http://media.wizards.com/2016/ouhtebrpjwxcnw5_EMN/en_KiwJSuvSso.png",
-        "colour": "g",
-        "type": "Token Creature",
-        "subtype": "Spider",
+        "title": "Thopter",
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_PQycN8PjmE.png",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "subtype": "Thopter",
         "num": "008"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Thopter",
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_ZQ77vJDpoE.png",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "subtype": "Thopter",
+        "num": "009"
       }
     },
 
     {
       "add": true,
       "newValues": {
-        "title": "Liliana Emblem",
-        "src": "http://media.wizards.com/2016/ouhtebrpjwxcnw5_EMN/en_3uiqIat9XN.png",
+        "title": "Chandra Emblem",
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_hPjChGGcMo.png",
         "colour": "c",
-        "type": "Liliana",
+        "type": "Chandra",
         "subtype": "Emblem",
-        "num": "009"
+        "num": "010"
       }
     },
     {
       "add": true,
       "newValues": {
-        "title": "Tamiyo Emblem",
-        "src": "http://media.wizards.com/2016/ouhtebrpjwxcnw5_EMN/en_c30wTaXc7C.png",
+        "title": "Nissa Emblem",
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_L3HvZKtjG2.png",
         "colour": "c",
-        "type": "Tamiyo",
+        "type": "Nissa",
         "subtype": "Emblem",
-        "num": "010"
+        "num": "011"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Dovin Emblem",
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_TndzDeN0rh.png",
+        "colour": "c",
+        "type": "Dovin",
+        "subtype": "Emblem",
+        "num": "012"
       }
     },
 
@@ -121,7 +143,7 @@
       "newValues": {
         "set": "{{setCode}}",
         "rarity": "c",
-        "num": "{{num}}/010 T",
+        "num": "{{num}}/012 T",
         "token": true,
         "usableForDeckBuilding": false
       }

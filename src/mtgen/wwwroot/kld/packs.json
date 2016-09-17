@@ -1,143 +1,127 @@
 {
   "defs": [
     {
-      "defName": "emn",
-      "query": "from[*]?set='emn'-from[*]?doubleFaceBackCard=true"
+      "defName": "kld",
+      "query": "from[*]?set='kld'"
     },
     {
-      "defName": "emn-base",
-      "query": "from[emn]-from[emn]?type=(Marketing|Basic Land)-from[emn]?token=true-from[emn]?promo=true"
+      "defName": "kld-masterpiece-series",
+      "query": "from[kld]?masterpiece=true"
     },
     {
-      "defName": "emn-main",
-      "query": "from[emn-base]-from[emn]?doubleFaceCard=true"
+      "defName": "kld-base",
+      "query": "from[kld]-from[kld]?type=(Marketing|Basic Land)-from[kld]?token=true-from[kld]?promo=true-from[kld-masterpiece-series]"
     },
     {
-      "defName": "emn-doubleface",
-      "query": "from[emn-base]?doubleFaceFrontCard=true"
+      "defName": "kld-main",
+      "query": "from[kld-base]"
     },
     {
-      "defName": "emn-foils",
-      "query": "from[emn-main]"
+      "defName": "kld-foils",
+      "query": "from[kld-main]"
     },
     {
-      "defName": "emn-promo",
-      "query": "from[emn]?promo=true"
+      "defName": "kld-promo",
+      "query": "from[kld]?promo=true"
     }
 
   ],
   "packs": [
     {
-      "packName": "emn-all-cards",
-      "packDesc": "Eldrich Moon: All Cards",
+      "packName": "kld-all-cards",
+      "packDesc": "Kaladesh: All Cards",
       "isGenerated": false,
       "cards": [
-        { "query": "take[*]>from[emn]-from[emn]?doubleFaceBackCard=true" }
+        { "query": "take[*]>from[kld]-from[kld]?doubleFaceBackCard=true" }
       ]
     },
     {
-      "packName": "emn-standard",
-      "packDesc": "Eldrich Moon: Standard Booster",
-      "packVersion": "1.1",
+      "packName": "kld-standard",
+      "packDesc": "Kaladesh: Standard Booster",
+      "packVersion": "1.0",
       "isGenerated": true,
       "cards": [
-        { "query": "take[7]>from[emn-main]?rarity='c" },
+        { "query": "take[8]>from[kld-main]?rarity='c" },
+        {
+          "querySet": [
+            {
+              "percent": "143/144",
+              "query": "from[kld-main]?rarity='c"
+            },
+            {
+              "percent": "1/144",
+              "query": "from[kld-masterpiece-series]"
+            }
+          ]
+        },
         {
           "querySet": [
             {
               "percent": "360/480",
-              "query": "from[emn-main]?rarity='c"
+              "query": "from[kld-main]?rarity='c"
             },
             {
               "percent": "88/480",
-              "query": "from[emn-main]?rarity='c",
+              "query": "from[kld-main]?rarity='c",
               "setValues": { "foil": true }
             },
             {
               "percent": "24/480",
-              "query": "from[emn-main]?rarity='u",
+              "query": "from[kld-main]?rarity='u",
               "setValues": { "foil": true }
             },
             {
               "percent": "7/480",
-              "query": "from[emn-main]?rarity='r",
+              "query": "from[kld-main]?rarity='r",
               "setValues": { "foil": true }
             },
             {
               "percent": "1/480",
-              "query": "from[emn-main]?rarity='m",
+              "query": "from[kld-main]?rarity='m",
               "setValues": { "foil": true }
             }
           ]
         },
-        {
-          "querySet": [
-            {
-              "percent": "56/64",
-              "query": "from[emn-main]?rarity='c"
-            },
-            {
-              "percent": "7/64",
-              "query": "from[emn-doubleface]?rarity='r"
-            },
-            {
-              "percent": "1/64",
-              "query": "from[emn-doubleface]?rarity='m"
-            }
-          ]
-        },
-        { "query": "take[3]>from[emn-main]?rarity='u" },
+        { "query": "take[3]>from[kld-main]?rarity='u" },
         {
           "querySet": [
             {
               "percent": "7/8",
-              "query": "from[emn-main]?rarity='r"
+              "query": "from[kld-main]?rarity='r"
             },
             {
               "percent": "1/8",
-              "query": "from[emn-main]?rarity='m"
+              "query": "from[kld-main]?rarity='m"
             }
           ]
         },
-        {
-          "querySet": [
-            {
-              "percent": "10/13",
-              "query": "from[emn-doubleface]?rarity='c"
-            },
-            {
-              "percent": "3/10",
-              "query": "from[emn-doubleface]?rarity='u"
-            }
-          ]
-        },
-        { "query": "take[1]>from[soi]?type='Basic Land" },
+        { "query": "take[1]>from[kld]?type='Basic Land" },
         {
           "querySet": [
             {
               "percent": "50",
-              "query": "from[emn]?title='Tip/Marketing Card"
+              "query": "from[kld]?title='Tip/Marketing Card"
             },
             {
               "percent": "50",
-              "query": "from[emn]?token=true"
+              "query": "from[kld]?token=true"
             }
           ]
         }
       ]
     },
     {
-      "packName": "emn-promos",
-      "packDesc": "Eldrich Moon: Promos",
+      "packName": "kld-promos",
+      "packDesc": "Kaladesh: Promos",
       "isGenerated": false,
       "includeWithUserCards": false,
       "cards": [
-        { "query": "take[*]>from[emn-promo]" }
+        { "query": "take[*]>from[kld-promo]" }
       ]
     },
     {
-      "packName": "emn-prerelease-promo-packins",
-      "packDesc": "Eldrich Moon: Prerelease Packins",
+      "packName": "kld-prerelease-promo-packins",
+      "packDesc": "Kaladesh: Prerelease Packins",
       "isGenerated": false,
       "includeWithUserCards": false,
       "cards": [
@@ -145,30 +129,31 @@
           "querySet": [
             {
               "percent": "7/8",
-              "query": "from[emn-base]?rarity='r",
+              "query": "from[kld-base]?rarity='r",
               "setValues": { "foil": true }
             },
             {
               "percent": "1/8",
-              "query": "from[emn-base]?rarity='m",
+              "query": "from[kld-base]?rarity='m",
               "setValues": { "foil": true }
             }
           ]
         },
-        { "query": "from[emn-promo]?title='Zombie" },
-        { "query": "take[1]>from[emn-promo]?type='Life Counter" },
-        { "query": "from[emn-promo]?title='Deck Box" },
-        { "query": "from[emn-promo]?title='Deckbuilding Advice Insert" }
+        { "query": "take[1]>from[kld-promo]?type='Life Counter" },
+        { "query": "from[kld-promo]?title='Deck Box" },
+        { "query": "from[kld-promo]?title='Dice Box" },
+        { "query": "from[kld-promo]?title='Thopter" },
+        { "query": "from[kld-promo]?title='Deckbuilding Advice Insert" }
 
       ]
     },
     {
-      "packName": "emn-prerelease-promos",
-      "packDesc": "Eldrich Moon: Prerelease Promos",
+      "packName": "kld-prerelease-promos",
+      "packDesc": "Kaladesh: Prerelease Promos",
       "isGenerated": false,
       "includeWithUserCards": false,
       "cards": [
-        { "query": "take[*]>from[emn-promo]?includedReason='Prerelease Promo" }
+        { "query": "take[*]>from[kld-promo]?includedReason='Prerelease Promo" }
       ]
     }
 

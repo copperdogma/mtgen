@@ -1,0 +1,276 @@
+{
+  "setCode": "kld",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=127&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/feature/masterpiece-series-kaladesh-inventions-2016-09-12",
+  "exceptions": [
+    {
+      "_comments": [
+        "masterpiece series pattern: target the full set, set ALL to masterpiece:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where masterpiece is still false"
+      ]
+    },
+
+    {
+      "_comment": "add masterpiece:false to ALL cards with the intention of deleting them later",
+      "where": "",
+      "newValues": {
+        "masterpiece": false
+      }
+    },
+    {
+      "_comment": "modify each of the Masterpiece Series cards, override their src/num/masterpiece=true",
+      "where": "title='Cataclysmic Gearhulk",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_XpGsq6rGPn.png",
+        "num": "001",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Torrential Gearhulk",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_9oifB0ggAw.png",
+        "num": "002",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Noxious Gearhulk",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_G9yRMc9Dwi.png",
+        "num": "003",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Combustible Gearhulk",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_ISFHTUEq2t.png",
+        "num": "004",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Verdurous Gearhulk",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_D0ddv8jx2q.png",
+        "num": "005",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Aether Vial",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_yLFKtfxiZ4.png",
+        "num": "006",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Champion's Helm",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_wmXKHwB0b5.png",
+        "num": "007",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Chromatic Lantern",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_Y3VJyGitY7.png",
+        "num": "008",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Chrome Mox",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_tX1ImvfBV3.png",
+        "num": "009",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Cloudstone Curio",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_LCChgkZUMv.png",
+        "num": "010",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Crucible of Worlds",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_0FemaLsFlF.png",
+        "num": "011",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Gauntlet of Power",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_oQZ2O7i1IF.png",
+        "num": "012",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Hangarback Walker",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_FdbIY0dN8x.png",
+        "num": "013",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Lightning Greaves",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_5jLYnbEUna.png",
+        "num": "014",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Lotus Petal",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_TkBPep86Gq.png",
+        "num": "015",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Mana Crypt",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_y8smQPJEaH.png",
+        "num": "016",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Mana Vault",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_ZfKXxCKtAc.png",
+        "num": "017",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Minds Eye",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_zbismRR7VJ.png",
+        "num": "018",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Mox Opal",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_3lbSoCdmIJ.png",
+        "num": "019",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Painters Servant",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_GU9is2NS2n.png",
+        "num": "020",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Rings of Brighthearth",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_AkF4KJrbXC.png",
+        "num": "021",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Scroll Rack",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_cvV8HwXVdL.png",
+        "num": "022",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Sculpting Steel",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_j46xIRvJAy.png",
+        "num": "023",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Sol Ring",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_uaxxoNzDon.png",
+        "num": "024",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Solemn Simulacrum",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_7IAcLkAenz.png",
+        "num": "025",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Static Orb",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_Te4nde8BQy.png",
+        "num": "026",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Steel Overseer",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_8lZsJoQ7s1.png",
+        "num": "027",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Sword of Feast and Famine",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_id8ZT81Q1j.png",
+        "num": "028",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Sword of Fire and Ice",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_HQv0KcxKlr.png",
+        "num": "029",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Sword of Light and Shadow",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_g2UfOun34M.png",
+        "num": "030",
+        "masterpiece": true
+      }
+    },
+
+    {
+      "_comment": "delete all cards that still have masterpiece=false, which leaves just our modified masterpiece cards",
+      "delete": true,
+      "where": "masterpiece=false"
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "rarity": "s",
+        "num": "{{num}}/054 S"
+      }
+    }
+
+  ]
+}
