@@ -16,6 +16,21 @@
       "where": "type='Basic Land"
     },
     {
+      "_comment": "ten cards are only found in the Planeswalker Decks: http://magic.wizards.com/en/articles/archive/card-preview/exclusive-cards-planeswalker-decks-2016-09-13",
+      "where": "title=(Chandra, Pyrogenius|Flame Lash|Liberating Combustion|Renegade Firebrand|Stone Quarry)",
+      "newValues": {
+        "promo": true,
+        "includedReason": "Chandra Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title=(Nissa, Nature's Artisan|Guardian of the Great Conduit|Terrain Elemental|Verdant Crescendo|Woodland Stream)",
+      "newValues": {
+        "promo": true,
+        "includedReason": "Nissa Planeswalker Deck"
+      }
+    },
+    {
       "where": "title='Prakhata Club Secruity",
       "newValues": {
         "title": "Prakhata Club Security"
