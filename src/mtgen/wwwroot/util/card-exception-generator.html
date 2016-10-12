@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <title>JSON Magic: The Gathering: Card Exception Generator</title>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+</head>
+<body class="home">
+    <h1>JSON Magic: The Gathering Card Exception Generator</h1>
+    <img itemprop="image" src="http://mtgen.net/images/mtg-logo.jpg" />
+    <p>This page uses a manually entered template and a url containing card images to generate an exception json file used to generate final json data cards.</p>
+    <ul>
+        <li>16-Sep-2016: Created based on land importer.</li>
+    </ul>
+    <br />
+    <section id="options">
+        <label for="set-code">Set code (e.g.: dgm):</label>
+        <br />
+        <input id="set-code" />
+        <br />
+        <br />
+        <label for="card-image-url">URL from which to import card images data (Wizards of the Coast article):</label>
+        <br />
+        <input id="card-image-url" size="100" />
+        <br />
+        <br />
+        <label for="required-image-width">Search for images of this width (leave empty for no width restriction):</label>
+        <br />
+        <input id="required-image-width" size="100" maxlength="3" type="number" value="265" />
+        <br />
+        <br />
+        <label for="required-image-height">Search for images of this height (leave empty for no height restriction):</label>
+        <br />
+        <input id="required-image-height" size="100" maxlength="3" type="number" value="370" />
+        <br />
+        <br />
+        <label for="starting-card-num">Starting card number:</label>
+        <br />
+        <input id="starting-card-num" size="100" maxlength="3" type="number" />
+        <br />
+        <br />
+        <label for="card-pattern">Card order patterns. Separate with commas, newlines, or both. Use x to skip an image.</label>
+        <br />
+        <p>Examples:</p>
+        <p>Land: <pre>     w250,u251,b252,r253,g254</pre></p>
+        <p>Tokens:
+<pre>
+     007|c|Token Artifact Creature|Thopter
+     008|c|Token Artifact Creature|Thopter
+     009|c|Token Artifact Creature|Thopter
+     006|c|Token Artifact Creature|Servo
+     004|c|Token Artifact Creature|Servo
+     005|c|Token Artifact Creature|Servo
+     001|c|Token Artifact Creature|Beast
+     003|c|Token Artifact Creature|Construct
+     002|c|Token Artifact Creature|Construct
+     010|c|Emblem|Chandra
+     011|c|Emblem|Nissa
+     012|c|Emblem|Dovin</pre>
+        </p>
+        <textarea id="card-pattern" cols="100" rows="20"></textarea>
+        <br />
+        <br />
+        <input id="import" type="submit" value="Import Images And Generate Exception Data" style="font-size:150%" />
+        <br />
+        <p id="status"></p>
+        <p id="msg"></p>
+    </section>
+    <h2>Output</h2>
+    <h3>Parsing Log</h3>
+    <section id="log"></section>
+    <h3>import-other.json</h3>
+    <textarea id="out-main" cols="100" rows="20"></textarea>
+    <div id="out-main-html" class="sample-cards"></div>
+    <footer>
+        <p>Created by: Cam Marsollier - <a href="mailto:cam.marsollier@gmail.com">cam.marsollier@gmail.com</a></p>
+        <p>Note that this site has no affiliation with <a href="http://www.wizards.com/Magic/">Wizards of the Coast</a>, owner of Magic: The Gathering.</p>
+    </footer>
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="/lib/jquery.base64.min.js"></script>
+    <script src="/lib/underscore/underscore-min.js"></script>
+    <script src="/lib/backbone/backbone.js"></script>
+    <script src="/lib/mtg-generator-lib.js"></script>
+    <script src="/util/js/card-data-importer.js"></script>
+    <script>
+        $(document).ready(function () {
+            if (window.location.protocol == 'file:') { $('#local-error').show(); }
+
+            $('input#import').on('click', function () {
+                cardDataImporter.loadImagesAndGenerateExceptions({
+                    cardImageUrl: $('#card-image-url').val()
+                    , startingCardNum: $('#starting-card-num').val()
+                    , requiredImageWidth: $('#required-image-width').val()
+                    , requiredImageHeight: $('#required-image-height').val()
+                    , cardPattern: $('#card-pattern').val()
+                    , setCode: $('input#set-code').val()
+                });
+            });
+
+            cardDataImporter.on('data-loading', function () { $('#status').html("<strong>Image processing started at " + (new Date()) + "</strong>"); });
+            cardDataImporter.on('data-loaded', function () {
+                $('#status').html("<strong>Have images; now processing at " + (new Date()) + "</strong>");
+                $('#output-textarea').val('');
+                $('#output').empty;
+            });
+            cardDataImporter.on('log-complete', function (logText) { $('#log').html(logText); });
+            cardDataImporter.on('data-processing-complete', function (imageDataCount, cardsJson, cardsHtmlSample) {
+                $('#msg').html(
+                    imageDataCount + " images found from " + $('#card-image-url').val() + "</br>"
+                    + "<br/><strong>Final cardsOther.json cards generated at " + (new Date()) + ".");
+                $('#status').html("<strong>Processing complete at " + (new Date()) + "</strong>");
+                $('#out-main').val(cardsJson);
+                $('#out-main-html').html(cardsHtmlSample);
+            });
+
+        });
+    </script>
+</body>
+</html>
