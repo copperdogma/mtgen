@@ -6,138 +6,135 @@
     {
       "add": true,
       "newValues": {
-        "title": "Construct",
         "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_t4SGoWqjbW.png",
+        "num": "001",
         "colour": "c",
         "type": "Token Artifact Creature",
-        "subtype": "Construct",
-        "num": "001"
+        "title": "Beast Token",
+        "subtype": "Beast Token"
       }
     },
     {
       "add": true,
       "newValues": {
-        "title": "Construct",
         "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_ROHZBBAJrp.png",
+        "num": "002",
         "colour": "c",
         "type": "Token Artifact Creature",
-        "subtype": "Construct",
-        "num": "002"
+        "title": "Construct Token",
+        "subtype": "Construct Token"
       }
     },
     {
       "add": true,
       "newValues": {
-        "title": "Construct",
         "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_fCSrpoVGcO.png",
+        "num": "003",
         "colour": "c",
         "type": "Token Artifact Creature",
-        "subtype": "Construct",
-        "num": "003"
+        "title": "Construct Token",
+        "subtype": "Construct Token"
       }
     },
     {
       "add": true,
       "newValues": {
-        "title": "Servo",
         "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_oKAeTK3DKA.png",
+        "num": "004",
         "colour": "c",
         "type": "Token Artifact Creature",
-        "subtype": "Servo",
-        "num": "004"
+        "title": "Servo Token",
+        "subtype": "Servo Token"
       }
     },
     {
       "add": true,
       "newValues": {
-        "title": "Servo",
         "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_b786LD89UN.png",
+        "num": "005",
         "colour": "c",
         "type": "Token Artifact Creature",
-        "subtype": "Servo",
-        "num": "005"
+        "title": "Servo Token",
+        "subtype": "Servo Token"
       }
     },
     {
       "add": true,
       "newValues": {
-        "title": "Servo",
         "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_xzZQc5a68Z.png",
+        "num": "006",
         "colour": "c",
         "type": "Token Artifact Creature",
-        "subtype": "Servo",
-        "num": "006"
+        "title": "Servo Token",
+        "subtype": "Servo Token"
       }
     },
     {
       "add": true,
       "newValues": {
-        "title": "Thopter",
         "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_V8a0HO5toy.png",
+        "num": "007",
         "colour": "c",
         "type": "Token Artifact Creature",
-        "subtype": "Thopter",
-        "num": "007"
+        "title": "Thopter Token",
+        "subtype": "Thopter Token"
       }
     },
     {
       "add": true,
       "newValues": {
-        "title": "Thopter",
         "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_PQycN8PjmE.png",
+        "num": "008",
         "colour": "c",
         "type": "Token Artifact Creature",
-        "subtype": "Thopter",
-        "num": "008"
+        "title": "Thopter Token",
+        "subtype": "Thopter Token"
       }
     },
     {
       "add": true,
       "newValues": {
-        "title": "Thopter",
         "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_ZQ77vJDpoE.png",
+        "num": "009",
         "colour": "c",
         "type": "Token Artifact Creature",
-        "subtype": "Thopter",
-        "num": "009"
+        "title": "Thopter Token",
+        "subtype": "Thopter Token"
       }
     },
-
     {
       "add": true,
       "newValues": {
-        "title": "Chandra Emblem",
         "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_hPjChGGcMo.png",
+        "num": "010",
         "colour": "c",
-        "type": "Chandra",
-        "subtype": "Emblem",
-        "num": "010"
+        "type": "Emblem",
+        "title": "Chandra Emblem",
+        "subtype": "Chandra"
       }
     },
     {
       "add": true,
       "newValues": {
-        "title": "Nissa Emblem",
         "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_L3HvZKtjG2.png",
+        "num": "011",
         "colour": "c",
-        "type": "Nissa",
-        "subtype": "Emblem",
-        "num": "011"
+        "type": "Emblem",
+        "title": "Nissa Emblem",
+        "subtype": "Nissa"
       }
     },
     {
       "add": true,
       "newValues": {
-        "title": "Dovin Emblem",
         "src": "http://media.wizards.com/2016/bVvMNuiu2i_KLD/en_TndzDeN0rh.png",
+        "num": "012",
         "colour": "c",
-        "type": "Dovin",
-        "subtype": "Emblem",
-        "num": "012"
+        "type": "Emblem",
+        "title": "Dovin Emblem",
+        "subtype": "Dovin"
       }
     },
-
-
     {
       "where": "",
       "newValues": {
@@ -148,7 +145,6 @@
         "usableForDeckBuilding": false
       }
     }
-
   ]
 
 }
