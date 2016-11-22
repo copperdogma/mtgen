@@ -21,10 +21,11 @@
     {
       "packName": "arn-standard",
       "packDesc": "Arabian Nights: Standard Booster",
+      "_comment": "WotC set the rarity of only basic land (Mountain) as 'b' and the extra uncommon as 'r'",
       "isGenerated": true,
       "cards": [
-        { "query": "take[2]>from[arn]?rarity='u'" },
-        { "query": "take[6]>from[arn]?rarity='c'" }
+        { "query": "take[2]>from[arn]?rarity=(b|u)" },
+        { "query": "take[6]>from[arn]?rarity=(c|r)" }
       ]
     }
   ]
