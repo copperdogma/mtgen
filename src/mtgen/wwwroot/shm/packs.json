@@ -6,7 +6,7 @@
     },
     {
       "defName": "shm-main",
-      "query": "from[shm]-from[shm]?type=(Marketing|Basic Land|Land)-from[shm]?token=true-from[shm]?promo=true"
+      "query": "from[shm]-from[shm]?type=(Marketing|Basic Land)-from[shm]?token=true-from[shm]?promo=true"
     },
     {
       "defName": "shm-promo",

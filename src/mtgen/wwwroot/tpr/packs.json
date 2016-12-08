@@ -8,7 +8,7 @@
         },
         {
             "defName": "tpr-main",
-            "query": "from[tpr]-from[tpr]?type=(Marketing|Basic Land|Land)-from[tpr]?token=true-from[tpr]?promo=true"
+            "query": "from[tpr]-from[tpr]?type=(Marketing|Basic Land)-from[tpr]?token=true-from[tpr]?promo=true"
         },
         {
             "defName": "tpr-foils",

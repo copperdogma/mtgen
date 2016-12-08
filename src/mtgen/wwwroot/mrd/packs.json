@@ -6,7 +6,7 @@
     },
     {
       "defName": "mrd-main",
-      "query": "from[mrd]-from[mrd]?type=(Marketing|Basic Land|Land)-from[mrd]?token=true-from[mrd]?promo=true"
+      "query": "from[mrd]-from[mrd]?type=(Marketing|Basic Land)-from[mrd]?token=true-from[mrd]?promo=true"
     },
     {
       "defName": "mrd-promo",

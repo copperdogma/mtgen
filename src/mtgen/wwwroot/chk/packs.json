@@ -6,7 +6,7 @@
     },
     {
       "defName": "chk-main",
-      "query": "from[chk]-from[chk]?type=(Marketing|Basic Land|Land)-from[chk]?token=true-from[chk]?promo=true"
+      "query": "from[chk]-from[chk]?type=(Marketing|Basic Land)-from[chk]?token=true-from[chk]?promo=true"
     },
     {
       "defName": "chk-promo",

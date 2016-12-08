@@ -10,7 +10,7 @@
     },
     {
       "defName": "fut-main",
-      "query": "from[fut]-from[fut]?type=(Marketing|Basic Land|Land)-from[fut]?token=true-from[fut]?promo=true-from[*]?timeshifted=true"
+      "query": "from[fut]-from[fut]?type=(Marketing|Basic Land)-from[fut]?token=true-from[fut]?promo=true-from[*]?timeshifted=true"
     },
     {
       "defName": "fut-promo",

@@ -6,7 +6,7 @@
     },
     {
       "defName": "m12-main",
-      "query": "from[m12]-from[m12]?type=(Marketing|Basic Land|Land)-from[m12]?token=true-from[m12]?promo=true"
+      "query": "from[m12]-from[m12]?type=(Marketing|Basic Land)-from[m12]?token=true-from[m12]?promo=true"
     },
     {
       "defName": "m12-promo",

@@ -6,7 +6,7 @@
     },
     {
       "defName": "dst-main",
-      "query": "from[dst]-from[dst]?type=(Marketing|Basic Land|Land)-from[dst]?token=true-from[dst]?promo=true"
+      "query": "from[dst]-from[dst]?type=(Marketing|Basic Land)-from[dst]?token=true-from[dst]?promo=true"
     },
     {
       "defName": "dst-promo",

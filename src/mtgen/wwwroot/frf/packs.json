@@ -11,7 +11,7 @@
         },
         {
             "defName": "frf-main",
-            "query": "from[frf]-from[frf]?type=(Marketing|Basic Land|Land)-from[frf]?token=true-from[frf]?promo=true"
+            "query": "from[frf]-from[frf]?type=(Marketing|Basic Land)-from[frf]?token=true-from[frf]?promo=true"
         },
         {
             "defName": "frf-intro-packs",

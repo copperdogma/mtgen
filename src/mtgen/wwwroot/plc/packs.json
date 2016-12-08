@@ -10,7 +10,7 @@
     },
     {
       "defName": "plc-main",
-      "query": "from[plc]-from[plc]?type=(Marketing|Basic Land|Land)-from[plc]?token=true-from[plc]?promo=true-from[*]?timeshifted=true"
+      "query": "from[plc]-from[plc]?type=(Marketing|Basic Land)-from[plc]?token=true-from[plc]?promo=true-from[*]?timeshifted=true"
     },
     {
       "defName": "plc-promo",
