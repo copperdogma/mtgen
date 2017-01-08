@@ -2271,17 +2271,6 @@
     "mtgenId": "aer|184"
   },
   {
-    "title": "Inspiring Roar",
-    "src": "http://media-dominaria.cursecdn.com/avatars/thumbnails/128/725/200/283/636192070998707552.png",
-    "set": "aer",
-    "cost": "3W",
-    "rarity": "c",
-    "type": "Sorcery",
-    "colour": "w",
-    "num": "186",
-    "mtgenId": "aer|186"
-  },
-  {
     "title": "Ajani, Valiant Protector",
     "src": "http://media-dominaria.cursecdn.com/avatars/thumbnails/128/373/200/283/636165297468162750.png",
     "set": "aer",
@@ -2293,6 +2282,19 @@
     "colour": "m",
     "num": "185",
     "mtgenId": "aer|185",
+    "promo": true,
+    "includedReason": "Ajani Planeswalker Deck"
+  },
+  {
+    "title": "Inspiring Roar",
+    "src": "http://media-dominaria.cursecdn.com/avatars/thumbnails/128/725/200/283/636192070998707552.png",
+    "set": "aer",
+    "cost": "3W",
+    "rarity": "c",
+    "type": "Sorcery",
+    "colour": "w",
+    "num": "186",
+    "mtgenId": "aer|186",
     "promo": true,
     "includedReason": "Ajani Planeswalker Deck"
   },
