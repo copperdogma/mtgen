@@ -475,17 +475,6 @@
     "mtgenId": "aer|038"
   },
   {
-    "title": "Metallic Rebuke",
-    "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_CZW43rDi6h.png",
-    "set": "aer",
-    "cost": "2U",
-    "rarity": "u",
-    "type": "Instant",
-    "colour": "u",
-    "num": "039",
-    "mtgenId": "aer|039"
-  },
-  {
     "title": "Negate",
     "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_sEpYcynz3N.png",
     "set": "aer",
@@ -1628,20 +1617,6 @@
     "mtgenId": "aer|131"
   },
   {
-    "title": "Outland Boar",
-    "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_3qL4SaVopU.png",
-    "set": "aer",
-    "cost": "2RG",
-    "rarity": "u",
-    "type": "Creatuer",
-    "subtype": "Boar",
-    "power": "4",
-    "toughness": "4",
-    "colour": "m",
-    "num": "132",
-    "mtgenId": "aer|132"
-  },
-  {
     "title": "Renegade Rallier",
     "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_qr5oflSmPS.png",
     "set": "aer",
@@ -2498,5 +2473,30 @@
     "mtgenId": "aer|168",
     "mtgenVariant": 1,
     "duplicateNum": true
+  },
+  {
+    "title": "Metallic Rebuke",
+    "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_CZW43rDi6h.png",
+    "set": "aer",
+    "cost": "2U",
+    "rarity": "c",
+    "type": "Instant",
+    "colour": "u",
+    "num": "039",
+    "mtgenId": "aer|039"
+  },
+  {
+    "title": "Outland Boar",
+    "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_3qL4SaVopU.png",
+    "set": "aer",
+    "cost": "2RG",
+    "rarity": "u",
+    "type": "Creature",
+    "subtype": "Boar",
+    "power": "4",
+    "toughness": "4",
+    "colour": "m",
+    "num": "132",
+    "mtgenId": "aer|132"
   }
 ]
