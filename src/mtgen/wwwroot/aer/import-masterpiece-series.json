@@ -1,0 +1,275 @@
+{
+  "setCode": "aer",
+  "cardDataUrl": "",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/feature/masterpiece-series-kaladesh-inventions-2016-09-12",
+  "exceptions": [
+    {
+      "_comments": [
+        "masterpiece series pattern: target the full set, set ALL to masterpiece:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where masterpiece is still false"
+      ]
+    },
+
+    {
+      "_comment": "these Masterpiece Series I had no data for, so I'm (painfully) adding them manually",
+      "add": true,
+      "newValues": {
+        "title": "Arcbound Ravenger",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_6BGVkZ7jal.png",
+        "cost": "2",
+        "type": "Artifact Creature",
+        "subtype": "Beast",
+        "colour": "a",
+        "num": "031"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Black Vise",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_L1UZqii5Ve.png",
+        "cost": "1",
+        "type": "Artifact",
+        "colour": "a",
+        "num": "032"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Chalice of the Void",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_rndRNz8YdZ.png",
+        "cost": "XX",
+        "type": "Artifact",
+        "colour": "a",
+        "num": "033"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Defense Grid",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_eeW00ujlCx.png",
+        "cost": "2",
+        "type": "Artifact",
+        "colour": "a",
+        "num": "034"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Duplicant",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_Ss5UCDRzFU.png",
+        "cost": "6",
+        "type": "Artifact Creature",
+        "subtype": "Shapeshifter",
+        "colour": "a",
+        "num": "035"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Engineered Explosives",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_on3FRSUGHD.png",
+        "cost": "X",
+        "type": "Artifact",
+        "colour": "a",
+        "num": "036"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Ensnaring Bridge",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_5aRyFcq0of.png",
+        "cost": "3",
+        "type": "Artifact",
+        "colour": "a",
+        "num": "037"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Extraplanar Lens",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_Orw1lhixgx.png",
+        "cost": "3",
+        "type": "Artifact",
+        "colour": "a",
+        "num": "038"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Grindstone",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_XNnWcBcXDP.png",
+        "cost": "1",
+        "type": "Artifact",
+        "colour": "a",
+        "num": "039"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Meekstone",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_pd77pcrWpo.png",
+        "cost": "1",
+        "type": "Artifact",
+        "colour": "a",
+        "num": "040"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Oblivion Stone",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_M8UHHoa5a4.png",
+        "cost": "3",
+        "type": "Artifact",
+        "colour": "a",
+        "num": "041"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Ornithopter",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_aqeLNInwpo.png",
+        "cost": "0",
+        "type": "Artifact Creature",
+        "subtype": "Thopter",
+        "colour": "a",
+        "num": "042"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Sphere of Resistance",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_vfQOr8JYLP.png",
+        "cost": "2",
+        "type": "Artifact",
+        "colour": "a",
+        "num": "047"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Staff of Domination",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_9NsNCkb7dS.png",
+        "cost": "3",
+        "type": "Artifact",
+        "colour": "a",
+        "num": "048"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Sundering Titan",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_tmmgkJboLC.png",
+        "cost": "8",
+        "type": "Artifact Creature",
+        "subtype": "Golem",
+        "colour": "a",
+        "num": "049"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Sword of Body and Mind",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_8m6TXD423m.png",
+        "cost": "3",
+        "type": "Artifact",
+        "subtype": "Equipment",
+        "colour": "a",
+        "num": "050"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Sword of War and Peace",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_f8JYt1uydd.png",
+        "cost": "3",
+        "type": "Artifact",
+        "subtype": "Equipment",
+        "colour": "a",
+        "num": "051"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Trinisphere",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_UwVn1RhVHZ.png",
+        "cost": "3",
+        "type": "Artifact",
+        "colour": "a",
+        "num": "052"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Vedalken Shackles",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_WPlDlFxNpa.png",
+        "cost": "3",
+        "type": "Artifact",
+        "colour": "a",
+        "num": "053"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Wurmcoil Engine",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_HRRfcVY8mkO.png",
+        "cost": "6",
+        "type": "Artifact Creature",
+        "subtype": "Wurm",
+        "colour": "a",
+        "num": "054"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Platinum Angel",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_gY2qcARwOt.png",
+        "cost": "7",
+        "type": "Artifact Creature",
+        "subtype": "Angel",
+        "colour": "a",
+        "num": "046"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Pithing Needle",
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_M4Z6Ub4Uiu.png",
+        "cost": "1",
+        "type": "Artifact",
+        "colour": "a",
+        "num": "044"
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "aer",
+        "rarity": "s",
+        "num": "{{num}}/054 S",
+        "masterpiece": true
+      }
+    }
+
+  ]
+}

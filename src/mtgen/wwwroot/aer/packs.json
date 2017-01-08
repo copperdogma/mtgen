@@ -1,0 +1,164 @@
+{
+  "defs": [
+    {
+      "defName": "aer",
+      "query": "from[*]?set='aer'"
+    },
+    {
+      "defName": "aer-masterpiece-series",
+      "query": "from[aer]?masterpiece=true"
+    },
+    {
+      "defName": "aer-base",
+      "query": "from[aer]-from[aer]?type=(Marketing|Basic Land)-from[aer]?token=true-from[aer]?promo=true-from[aer-masterpiece-series]"
+    },
+    {
+      "defName": "kld-basicland",
+      "query": "from[*]?type='Basic Land'"
+    },
+    {
+      "defName": "aer-main",
+      "query": "from[aer-base]"
+    },
+    {
+      "defName": "aer-foils",
+      "query": "from[aer-main]"
+    },
+    {
+      "defName": "aer-promo",
+      "query": "from[aer]?promo=true"
+    }
+
+  ],
+  "packs": [
+    {
+      "packName": "aer-all-cards",
+      "packDesc": "Aether Revolt: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[aer]-from[aer]?doubleFaceBackCard=true" }
+      ]
+    },
+    {
+      "packName": "aer-standard",
+      "packDesc": "Aether Revolt: Standard Booster",
+      "packVersion": "1.0",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[8]>from[aer-main]?rarity='c" },
+        {
+          "querySet": [
+            {
+              "percent": "143/144",
+              "query": "from[aer-main]?rarity='c"
+            },
+            {
+              "percent": "1/144",
+              "query": "from[aer-masterpiece-series]"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "360/480",
+              "query": "from[aer-main]?rarity='c"
+            },
+            {
+              "percent": "88/480",
+              "query": "from[aer-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "24/480",
+              "query": "from[aer-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "7/480",
+              "query": "from[aer-main]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/480",
+              "query": "from[aer-main]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[3]>from[aer-main]?rarity='u" },
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[aer-main]?rarity='r"
+            },
+            {
+              "percent": "1/8",
+              "query": "from[aer-main]?rarity='m"
+            }
+          ]
+        },
+        { "query": "take[1]>from[kld-basicland]" },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[aer]?title='Tip/Marketing Card"
+            },
+            {
+              "percent": "50",
+              "query": "from[aer]?token=true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "aer-promos",
+      "packDesc": "Aether Revolt: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[aer-promo]" }
+      ]
+    },
+    {
+      "packName": "aer-prerelease-promo-packins",
+      "packDesc": "Aether Revolt: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[aer-base]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[aer-base]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[1]>from[aer-promo]?type='Life Counter" },
+        { "query": "from[aer-promo]?title='Deck Box" },
+        { "query": "from[aer-promo]?title='Renegade Sticker" },
+        { "query": "from[aer-promo]?title='Deckbuilding Advice Insert" }
+
+      ]
+    },
+    {
+      "packName": "aer-prerelease-promos",
+      "packDesc": "Aether Revolt: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[aer-promo]?includedReason='Prerelease Promo" }
+      ]
+    }
+
+  ]
+}

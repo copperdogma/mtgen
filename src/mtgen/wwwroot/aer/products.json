@@ -1,0 +1,90 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "aer-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/card-image-gallery/Aether Revolt", "http://www.mtgsalvation.com/spoilers/173-Aether Revolt", "http://magic.wizards.com/en/articles/archive/feature/basic-lands-Aether Revolt-2016-09-12", "http://magic.wizards.com/en/articles/archive/making-magic/masterpiece-series-2016-09-12", "http://magic.wizards.com/en/articles/archive/card-preview/exclusive-cards-planeswalker-decks-2016-09-13" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "aer-all-cards" }
+      ]
+    },
+    {
+      "productName": "aer-boosters",
+      "productDesc": "Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "aer-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "aer-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "aer-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "aer-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://magic.wizards.com/en/articles/archive/feature/aether-revolt-packaging-promos-and-planeswalker-decks-2016-09-06" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "aer-standard" },
+        { "packName": "kld-standard" },
+        { "packName": "aer-prerelease-promo-packins" },
+        { "packName": "aer-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "aer-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "aer-prerelease-promo-packins"
+              },
+              {
+                "count": 4,
+                "defaultPackName": "aer-standard"
+              },
+              {
+                "count": 2,
+                "defaultPackName": "kld-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "aer-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/feature/Aether Revolt-packaging-promos-and-planeswalker-decks-2016-09-06" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "aer-promos" }
+      ]
+    }
+
+  ]
+}

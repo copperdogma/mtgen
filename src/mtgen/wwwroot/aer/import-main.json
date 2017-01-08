@@ -1,0 +1,64 @@
+{
+  "setCode": "aer",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=174&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/card-image-gallery/aether-revolt",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+    {
+      "_comment": "mtg salvation included the basic lands, which I need to import separately",
+      "delete": true,
+      "where": "type='Basic Land"
+    },
+    {
+      "_comment": "ten cards are only found in the Planeswalker Decks: http://magic.wizards.com/en/articles/archive/feature/exclusive-cards-aether-revolt-planeswalker-decks-2017-01-05",
+      "where": "title=(Ajani, Valiant Protector|Ajani's Aid|Ajani's Comrade|Insiring Roar|Tranquil Expanse)",
+      "newValues": {
+        "promo": true,
+        "includedReason": "Ajani Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title=(Tezzeret, Master of Metal|Tezzeret's Betrayal|Tezzeret's Simulacrum|Pendulum of Patterns|Submerged Boneyard)",
+      "newValues": {
+        "promo": true,
+        "includedReason": "Tezzeret Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Decommision",
+      "newValues": {
+        "title": "Decommission"
+      }
+    },
+    {
+      "where": "title='Peacekeeper Colossus",
+      "newValues": {
+        "title": "Peacewalker Colossus"
+      }
+    },
+    {
+      "where": "title='Alley Stranger",
+      "newValues": {
+        "title": "Alley Strangler"
+      }
+    },
+    {
+      "where": "title='Embraal Gear Smasher",
+      "newValues": {
+        "title": "Embraal Gear-Smasher"
+      }
+    },
+    {
+      "where": "title='Pacification Array",
+      "newValues": {
+        "num": "168"
+      }
+    }
+  ]
+}
