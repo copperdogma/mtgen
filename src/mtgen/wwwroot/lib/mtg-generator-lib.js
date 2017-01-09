@@ -63,11 +63,11 @@ var mtgGen = (function (my, $) {
     */
 
     my.rarities = {
-        mythic: { sorder: 1, code: 'm', name: 'Mythic Rare' },
-        rare: { sorder: 2, code: 'r', name: 'Rare' },
-        uncommon: { sorder: 3, code: 'u', name: 'Uncommon' },
-        common: { sorder: 4, code: 'c', name: 'Common' },
-        special: { sorder: 5, code: 's', name: 'Special' },
+        special: { sorder: 1, code: 's', name: 'Special' },
+        mythic: { sorder: 2, code: 'm', name: 'Mythic Rare' },
+        rare: { sorder: 3, code: 'r', name: 'Rare' },
+        uncommon: { sorder: 4, code: 'u', name: 'Uncommon' },
+        common: { sorder: 5, code: 'c', name: 'Common' },
         unknown: { sorder: 97, code: '?', name: 'Unknown' },
     };
     my.getRarityByCode = function (code) {
