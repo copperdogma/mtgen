@@ -9,16 +9,20 @@
       "query": "from[*]?set='exp"
     },
     {
+      "defName": "ogw-wastes",
+      "query": "from[ogw]?title='Wastes'-from[ogw]?promo=true"
+    },
+    {
       "defName": "ogw-main",
       "query": "from[ogw]-from[ogw]?type=(Marketing|Basic Land)-from[ogw]?token=true-from[ogw]?promo=true"
     },
     {
       "defName": "ogw-common",
-      "query": "from[ogw-main]?rarity='c'+from[ogw]?title='Wastes"
+      "query": "from[ogw-main]?rarity='c'+from[ogw-wastes]"
     },
     {
       "defName": "ogw-foils",
-      "query": "from[ogw-main]+from[ogw]?title='Wastes"
+      "query": "from[ogw-main]+from[ogw-wastes]"
     },
     {
       "defName": "ogw-foils-expeditions",
