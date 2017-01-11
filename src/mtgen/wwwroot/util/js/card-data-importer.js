@@ -471,7 +471,7 @@ var cardDataImporter = (function (my, $) {
             console.log("No card data source supplied: this is used when the exceptions file is used to generate cards");
         }
             // 20160818: had to run mtgsalvation through proxy2016.top cuz it started blocking direct grabs
-        else if (lowercaseCardDataUrlSource.indexOf('mtgsalvation.com') > -1 || lowercaseCardDataUrlSource.indexOf('proxy2016.top')) {
+        else if (lowercaseCardDataUrlSource.indexOf('mtgsalvation.com') > -1 || lowercaseCardDataUrlSource.indexOf('proxy2016.top') > -1) {
             cards = my.api.getCardsFromMtgSalvationData(cardData, setCode);
         }
         else if (lowercaseCardDataUrlSource.indexOf('gatheringmagic.com') > -1) {
