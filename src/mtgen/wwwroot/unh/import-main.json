@@ -1,0 +1,26 @@
+{
+  "setCode": "unh",
+  "cardDataUrl": "http://mtgjson.com/json/UNH.json",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+    {
+      "_comment": "mtg salvation included the basic lands, which I need to import separately",
+      "delete": true,
+      "where": "title=(What|When|Where|Why)"
+    },
+    {
+      "where": "title='Who'",
+      "newValues": {
+        "title": "Who/What/When/Where/Why",
+        "colour": "m"
+      }
+    }
+  ]
+}

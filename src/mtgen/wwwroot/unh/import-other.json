@@ -1,0 +1,82 @@
+{
+  "setCode": "unh",
+  "cardDataUrl": "http://mtgjson.com/json/UNH.json",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "_comment": "add promo:false to ALL cards with the intention of deleting them later",
+      "where": "",
+      "newValues": {
+        "promo": false
+      }
+    },
+
+    {
+      "where": "title='Ass Whuppin",
+      "newValues": {
+        "num": "{{num}} Mer",
+        "foil": true,
+        "promo": true,
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false
+      }
+    },
+    {
+      "where": "title='Booster Tutor",
+      "newValues": {
+        "src": "http://mtgen.net/cards/unh-booster-tutor-promo.png",
+        "promo": true,
+        "includedReason": "Arena League Promo",
+        "usableForDeckBuilding": false
+      }
+    },
+    {
+      "where": "title='Circle of Protection Art",
+      "newValues": {
+        "src": "http://mtgen.net/cards/unh-circle-of-protection-art-promo.png",
+        "promo": true,
+        "includedReason": "Arena League Promo",
+        "usableForDeckBuilding": false
+      }
+    },
+    {
+      "where": "title='Goblin Mime",
+      "newValues": {
+        "src": "http://mtgen.net/cards/unh-goblin-mime-promo.png",
+        "promo": true,
+        "includedReason": "Arena League Promo",
+        "usableForDeckBuilding": false
+      }
+    },
+    {
+      "where": "title='Grannys Payback",
+      "newValues": {
+        "src": "http://mtgen.net/cards/unh-grannys-payback-promo.png",
+        "promo": true,
+        "includedReason": "Arena League Promo",
+        "usableForDeckBuilding": false
+      }
+    },
+    {
+      "where": "title='Mise",
+      "newValues": {
+        "src": "http://mtgen.net/cards/unh-mise-promo.png",
+        "promo": true,
+        "includedReason": "Arena League Promo",
+        "usableForDeckBuilding": false
+      }
+    },
+
+    {
+      "_comment": "delete all cards that still have promo=false, which leaves just our modified promo cards",
+      "delete": true,
+      "where": "promo=false"
+    }
+  ]
+}

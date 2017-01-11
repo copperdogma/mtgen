@@ -1,66 +1,41 @@
 [
   {
-    "artist": "Jim “Stop the Da Vinci Beatdown” Pavelec",
-    "cmc": 2,
+    "artist": "Don Hazeltine",
+    "cmc": 3,
     "colorIdentity": [
-      "W"
+      "W",
+      "B"
     ],
     "colors": [
-      "White"
+      "White",
+      "Black"
     ],
-    "id": "4e1b99ac75c0f297037577c136a6c903097876d5",
-    "imageName": "circle of protection art",
+    "flavor": "Asses to ashes,\nDonkeys to dust.",
+    "id": "99149c969c94f8e39610bf757365869e7b9ce5e9",
+    "imageName": "ass whuppin'",
     "layout": "normal",
-    "manaCost": "{1}{W}",
-    "multiverseid": 73940,
-    "name": "Circle of Protection: Art",
-    "number": "9/8",
-    "rarity": "c",
-    "text": "As Circle of Protection: Art comes into play, choose an artist.\n{1}{W}: The next time a source of your choice by the chosen artist would deal damage to you this turn, prevent that damage.\n{1}{W}: Return Circle of Protection: Art to its owner's hand.",
-    "type": "Enchantment",
+    "manaCost": "{1}{W}{B}",
+    "mciNumber": "117",
+    "multiverseid": 74329,
+    "name": "Ass Whuppin'",
+    "number": "117",
+    "rarity": "r",
+    "text": "Destroy target silver-bordered permanent in any game you can see from your seat.",
+    "type": "Sorcery",
     "types": [
-      "Enchantment"
+      "Sorcery"
     ],
-    "title": "Circle of Protection: Art",
+    "title": "Ass Whuppin'",
     "set": "unh",
-    "cost": "{1}{W}",
-    "colour": "w",
-    "num": "9/8",
-    "promo": "true",
-    "includedReason": "Arena League Promo",
-    "src": "http://mtgen.net/cards/unh-circle-of-protection-art-promo.png"
-  },
-  {
-    "artist": "Matt Cavotta",
-    "cmc": 1,
-    "colorIdentity": [
-      "U"
-    ],
-    "colors": [
-      "Blue"
-    ],
-    "flavor": "mise 'miz v alter. of might as well (1997) 1: to win when you don't deserve to 2: to top-deck the \"tings\" you need 3: to be rewarded by an opponent's bad luck 4: to coin a phrase that spreads through the tournament scene like wildfire 5: to fling a monkey 6: to split firewood using a sharp instrument 7: To burn",
-    "id": "67489d30eb8d723e97627d8b3b90700536515e4b",
-    "imageName": "mise",
-    "layout": "normal",
-    "manaCost": "{U}",
-    "multiverseid": 74304,
-    "name": "Mise",
-    "number": "10/8",
-    "rarity": "u",
-    "text": "Name a nonland card, then reveal the top card of your library. If that card is the named card, draw three cards.",
-    "type": "Instant",
-    "types": [
-      "Instant"
-    ],
-    "title": "Mise",
-    "set": "unh",
-    "cost": "{U}",
-    "colour": "u",
-    "num": "10/8",
-    "promo": "true",
-    "includedReason": "Arena League Promo",
-    "src": "http://mtgen.net/cards/unh-mise-promo.png"
+    "cost": "{1}{W}{B}",
+    "colour": "m",
+    "num": "117 Mer",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=74329&type=card",
+    "mtgenId": "unh|117 Mer",
+    "promo": true,
+    "foil": true,
+    "includedReason": "Prerelease Promo",
+    "usableForDeckBuilding": false
   },
   {
     "artist": "Christopher Rush",
@@ -76,9 +51,10 @@
     "imageName": "booster tutor",
     "layout": "normal",
     "manaCost": "{B}",
+    "mciNumber": "51",
     "multiverseid": 73939,
     "name": "Booster Tutor",
-    "number": "11/8",
+    "number": "51",
     "rarity": "u",
     "text": "Open a sealed Magic booster pack, reveal the cards, and put one of those cards into your hand. (Remove that card from your deck before beginning a new game.)",
     "type": "Instant",
@@ -89,10 +65,46 @@
     "set": "unh",
     "cost": "{B}",
     "colour": "b",
-    "num": "11/8",
-    "promo": "true",
+    "num": "51",
+    "src": "http://mtgen.net/cards/unh-booster-tutor-promo.png",
+    "mtgenId": "unh|51",
+    "promo": true,
     "includedReason": "Arena League Promo",
-    "src": "http://mtgen.net/cards/unh-booster-tutor-promo.png"
+    "usableForDeckBuilding": false
+  },
+  {
+    "artist": "Jim “Stop the Da Vinci Beatdown” Pavelec",
+    "cmc": 2,
+    "colorIdentity": [
+      "W"
+    ],
+    "colors": [
+      "White"
+    ],
+    "id": "4e1b99ac75c0f297037577c136a6c903097876d5",
+    "imageName": "circle of protection art",
+    "layout": "normal",
+    "manaCost": "{1}{W}",
+    "mciNumber": "6",
+    "multiverseid": 73940,
+    "name": "Circle of Protection: Art",
+    "number": "6",
+    "rarity": "c",
+    "text": "As Circle of Protection: Art comes into play, choose an artist.\n{1}{W}: The next time a source of your choice by the chosen artist would deal damage to you this turn, prevent that damage.\n{1}{W}: Return Circle of Protection: Art to its owner's hand.",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "title": "Circle of Protection: Art",
+    "set": "unh",
+    "cost": "{1}{W}",
+    "colour": "w",
+    "num": "6",
+    "src": "http://mtgen.net/cards/unh-circle-of-protection-art-promo.png",
+    "mtgenId": "unh|6",
+    "promo": true,
+    "includedReason": "Arena League Promo",
+    "usableForDeckBuilding": false
   },
   {
     "artist": "Franz Vohwinkel",
@@ -108,9 +120,10 @@
     "imageName": "goblin mime",
     "layout": "normal",
     "manaCost": "{1}{R}",
+    "mciNumber": "78",
     "multiverseid": 74221,
     "name": "Goblin Mime",
-    "number": "12/8",
+    "number": "78",
     "power": "2",
     "rarity": "c",
     "subtypes": [
@@ -127,10 +140,12 @@
     "set": "unh",
     "cost": "{1}{R}",
     "colour": "r",
-    "num": "12/8",
-    "promo": "true",
+    "num": "78",
+    "src": "http://mtgen.net/cards/unh-goblin-mime-promo.png",
+    "mtgenId": "unh|78",
+    "promo": true,
     "includedReason": "Arena League Promo",
-    "src": "http://mtgen.net/cards/unh-goblin-mime-promo.png"
+    "usableForDeckBuilding": false
   },
   {
     "artist": "Joel Thomas",
@@ -146,9 +161,10 @@
     "imageName": "granny's payback",
     "layout": "normal",
     "manaCost": "{7}{G}",
+    "mciNumber": "99",
     "multiverseid": 74281,
     "name": "Granny's Payback",
-    "number": "13/8",
+    "number": "99",
     "rarity": "u",
     "text": "You gain life equal to your age.",
     "type": "Sorcery",
@@ -159,45 +175,46 @@
     "set": "unh",
     "cost": "{7}{G}",
     "colour": "g",
-    "num": "13/8",
-    "promo": "true",
+    "num": "99",
+    "src": "http://mtgen.net/cards/unh-grannys-payback-promo.png",
+    "mtgenId": "unh|99",
+    "promo": true,
     "includedReason": "Arena League Promo",
-    "src": "http://mtgen.net/cards/unh-grannys-payback-promo.png"
+    "usableForDeckBuilding": false
   },
   {
-    "artist": "Don Hazeltine",
-    "cmc": 3,
+    "artist": "Matt Cavotta",
+    "cmc": 1,
     "colorIdentity": [
-      "W",
-      "B"
+      "U"
     ],
     "colors": [
-      "White",
-      "Black"
+      "Blue"
     ],
-    "flavor": "Asses to ashes,\nDonkeys to dust.",
-    "id": "99149c969c94f8e39610bf757365869e7b9ce5e9",
-    "imageName": "ass whuppin",
+    "flavor": "mise 'miz v alter. of might as well (1997) 1: to win when you don't deserve to 2: to top-deck the \"tings\" you need 3: to be rewarded by an opponent's bad luck 4: to coin a phrase that spreads through the tournament scene like wildfire 5: to fling a monkey 6: to split firewood using a sharp instrument 7: To burn",
+    "id": "67489d30eb8d723e97627d8b3b90700536515e4b",
+    "imageName": "mise",
     "layout": "normal",
-    "manaCost": "{1}{W}{B}",
-    "multiverseid": 74329,
-    "name": "Ass Whuppin",
-    "number": "117",
-    "rarity": "r",
-    "text": "Destroy target silver-bordered permanent in any game you can see from your seat.",
-    "type": "Sorcery",
+    "manaCost": "{U}",
+    "mciNumber": "38",
+    "multiverseid": 74304,
+    "name": "Mise",
+    "number": "38",
+    "rarity": "u",
+    "text": "Name a nonland card, then reveal the top card of your library. If that card is the named card, draw three cards.",
+    "type": "Instant",
     "types": [
-      "Sorcery"
+      "Instant"
     ],
-    "title": "Ass Whuppin",
+    "title": "Mise",
     "set": "unh",
-    "cost": "{1}{W}{B}",
-    "colour": "m",
-    "num": "117",
-    "promo": "true",
-    "foil": "true",
-    "includedReason": "Prerelease Promo",
-    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=74329&type=card"
+    "cost": "{U}",
+    "colour": "u",
+    "num": "38",
+    "src": "http://mtgen.net/cards/unh-mise-promo.png",
+    "mtgenId": "unh|38",
+    "promo": true,
+    "includedReason": "Arena League Promo",
+    "usableForDeckBuilding": false
   }
-
 ]
