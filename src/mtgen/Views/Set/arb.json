@@ -1,0 +1,20 @@
+{
+  "StartProductName": "arb-boosters",
+  "PackFiles": [
+    "packs.json",
+    "../con_/packs.json",
+    "../ala/packs.json"
+  ],
+  "CardFiles": [
+    "cardsMain.json",
+    "cardsOther.json",
+    "cardsToken.json",
+    "../con_/cardsMain.json",
+    "../con_/cardsOther.json",
+    "../con_/cardsToken.json",
+    "../ala/cardsMain.json",
+    "../ala/cardsOther.json",
+    "../ala/cardsToken.json"
+  ],
+  "Updates": []
+}

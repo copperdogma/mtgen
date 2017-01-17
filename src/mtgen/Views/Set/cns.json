@@ -1,0 +1,21 @@
+{
+  "StartProductName": "cns-boosters",
+  "PackFiles": [
+    "packs.json"
+  ],
+  "CardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsOther.json"
+  ],
+  "Updates": [
+    {
+      "UpdateDate": "2014-08-23T00:00:00",
+      "HtmlString": "Upgraded to the new generator version."
+    },
+    {
+      "UpdateDate": "2014-05-29T00:00:00",
+      "HtmlString": "Morning: The land slot now replaced with a Conspiracy on Construct card (50/50 chance), and that's the only place you get get one. Thanks, boocat!"
+    }
+  ]
+}
