@@ -61,5 +61,39 @@ namespace mtgen.ViewModels
                 ReleaseDate = date;
             }
         }
+		public Set()
+		{
+		}
+		public void to_json()
+		{
+			System.IO.StringWriter sw = new System.IO.StringWriter();
+			Newtonsoft.Json.JsonTextWriter jtw = new Newtonsoft.Json.JsonTextWriter(sw);
+			Newtonsoft.Json.JsonSerializer js = new Newtonsoft.Json.JsonSerializer();
+
+			jtw.Formatting = Newtonsoft.Json.Formatting.Indented;
+
+			jtw.WriteStartObject();
+
+				jtw.WritePropertyName("StartProductName");
+				jtw.WriteValue(StartProductName);
+
+				jtw.WritePropertyName("PackFiles");
+				js.Serialize(jtw, PackFiles);
+
+				jtw.WritePropertyName("CardFiles");
+				js.Serialize(jtw, CardFiles);
+				
+				jtw.WritePropertyName("Updates");
+				js.Serialize(jtw, Updates);
+
+				if(CreatedText != null) {
+					jtw.WritePropertyName("CreatedText");
+					jtw.WriteValue(CreatedText);
+				}
+
+			jtw.WriteEndObject();
+
+			System.Console.WriteLine(sw.ToString());
+		}
     }
 }
