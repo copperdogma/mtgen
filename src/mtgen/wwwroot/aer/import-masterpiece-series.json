@@ -1,16 +1,18 @@
 {
   "setCode": "aer",
-  "cardDataUrl": "",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=174&IncludeUnconfirmed=true&CardsPerRequest=999",
   "imagesUrl": "http://magic.wizards.com/en/articles/archive/feature/masterpiece-series-kaladesh-inventions-2016-09-12",
   "exceptions": [
     {
-      "_comments": [
-        "masterpiece series pattern: target the full set, set ALL to masterpiece:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where masterpiece is still false"
-      ]
+      "_comment": "masterpiece series pattern: target the full set, set ALL to masterpiece:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where masterpiece is still false",
+      "where": "",
+      "newValues": {
+        "masterpiece": false
+      }
     },
 
     {
-      "_comment": "these Masterpiece Series I had no data for, so I'm (painfully) adding them manually",
+      "_comment": "From AER: Paradox Engine, Planar Bridge. The remaining Masterpiece Series I had no data for, so I'm (painfully) adding them manually",
       "add": true,
       "newValues": {
         "title": "Arcbound Ravager",
@@ -146,6 +148,24 @@
       }
     },
     {
+      "_comment": "This one is from this set (AER)",
+      "where": "title='Paradox Engine'",
+      "newValues": {
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=425814&type=card",
+        "num": "043",
+        "masterpiece": true
+      }
+    },
+    {
+      "_comment": "This one is from this set (AER)",
+      "where": "title='Planar Bridge'",
+      "newValues": {
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=425816&type=card",
+        "num": "045",
+        "masterpiece": true
+      }
+    },
+    {
       "add": true,
       "newValues": {
         "title": "Sphere of Resistance",
@@ -259,6 +279,12 @@
         "colour": "a",
         "num": "044"
       }
+    },
+
+    {
+      "_comment": "delete all cards that still have masterpiece=false, which leaves just our modified masterpiece cards",
+      "delete": true,
+      "where": "masterpiece=false"
     },
 
     {
