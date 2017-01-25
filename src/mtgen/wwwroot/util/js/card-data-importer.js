@@ -88,9 +88,6 @@ var cardDataImporter = (function (my, $) {
 
     my.loadAndProcessAllFiles = function (options) {
         // Import options into instance variables
-        //$.each(options, function (value, key) {
-        //    my[key] = value;
-        //});
         _.extend(my, options);
 
         // load all files and don't continue until all are loaded
@@ -555,6 +552,108 @@ var cardDataImporter = (function (my, $) {
             //cards[newCard.mtgenId] = newCard;
         }
         return cards;
+    }
+
+    function getCardFromWizardsGatherer(cardName, setCode) {
+        return new Promise((resolve, reject) => {
+            var queryStringCardName = cardName.split(" ").reduce(function (final, curr) { return `${final}+[${curr}]`; }, "");
+
+            $.get('/proxy?u=' + encodeURIComponent("http://gatherer.wizards.com/Pages/Search/Default.aspx?name=" + queryStringCardName))
+              .done(function (data) {
+                  var card = {};
+
+                  var $html = $(data);
+                  var el = $html.find(".cardDetails");
+
+                  var title = el.find("[id$=_nameRow] .value");
+                  if (title.length > 0) {
+                      card.title = title[0].textContent.trim();
+                      card.matchTitle = mtgGen.createMatchTitle(card.title); // used for matching MtG Salvation vs. WotC titles and card titles vs. exception titles
+                  }
+
+                  var img = el.find('.cardImage img');
+                  if (img.length > 0) {
+                      // Wizards' images are relative, so we need to rebuild the link.
+                      var imgQuerystring = img[0].src.split("?")[1];
+                      card.src = "http://gatherer.wizards.com/Handlers/Image.ashx?" + imgQuerystring;
+                      card.imageSource = "wizards-gatherer";
+                  }
+
+                  card.set = setCode;
+
+                  var mana = el.find('.manaRow .value img');
+                  if (mana.length > 0) {
+                      // These are stored in a set of images, one per symbol
+                      card.cost = _.reduce(mana, function (final, curr) {
+                          var manaType = curr.attributes["alt"].value.trim().toLowerCase();
+                          switch (manaType) {
+                              case "white": final += "W"; break;
+                              case "blue": final += "U"; break;
+                              case "red": final += "R"; break;
+                              case "black": final += "B"; break;
+                              case "green": final += "G"; break;
+                              case "multicolored": final += "M"; break;
+                              case "variable colorless": final += "C"; break;
+                              default:
+                                  var num = parseInt(manaType, 10);
+                                  if (isNaN(num)) {
+                                      console.log("WARNING: unknown mana type: " + manaType);
+                                  };
+                                  final += manaType;
+                                  break;
+                          }
+                          return final;
+                      }, "");
+                  }
+
+                  var rarity = el.find("[id$=_rarityRow] .value");
+                  if (rarity.length > 0) {
+                      if (rarity[0].classList.length > 1) {
+                          card.rarity = rarity[0].classList[1][0].toLowerCase();
+                      }
+                  }
+
+                  var type = el.find("[id$=_typeRow] .value");
+                  if (type.length > 0) {
+                      var types = type[0].textContent.split(' — ');
+                      card.type = types[0].trim();
+                      if (types.length > 1) {
+                          card.subtype = types[1].trim();
+                      }
+                  }
+
+                  // derived from casting cost
+                  card.colour = getCardColourFromCard(card);
+
+                  var pt = el.find("[id$=_ptRow] .value");
+                  if (pt.length > 0) {
+                      var pts = pt[0].textContent.split('/');
+                      if (pts.length > 1) {
+                          card.power = pts[0].trim();
+                          card.toughness = pts[1].trim();
+                      }
+                      else if (pts.length == 1) {
+                          card.loyalty = pts[0].trim(); // must be a planeswalker
+                      }
+                      // otherwise it's something without power/toughness|loytlty, i.e.: land, spell, etc
+                  }
+
+                  var rarity = el.find("[id$=_rarityRow] .value");
+                  if (rarity.length > 0) {
+                      if (rarity[0].classList.length > 1) {
+                          card.rarity = rarity[0].classList[1][0].toLowerCase();
+                      }
+                  }
+
+                  var cnum = el.find("[id$=_numberRow] .value");
+                  if (cnum.length > 0) {
+                      card.num = cnum[0].textContent.trim();
+                  }
+
+                  resolve(card);
+              })
+            .fail((xhr, status, err) => reject(status + err.message));
+        });
     }
 
     function getCardsFromMtgSalvationData(rawCardData, setCode) {
@@ -1194,6 +1293,42 @@ var cardDataImporter = (function (my, $) {
         return finalImages;
     }
 
+    function createCardViaException(card, exception, setCode) {
+        // add all Exception properties into the card
+        _.extend(card, exception.newValues);
+        exception.result.affectedCards = 1;
+
+        // Replace any 'reference' properties with the current card values,
+        // e.g.: "originalTitle": "{{title}}",
+        var replacementTokenRegex = /{{(.*?)}}/g;
+        var replacementReferenceValues = {};
+        for (var prop in exception.newValues) {
+            var propValue = exception.newValues[prop];
+            var newPropValue = propValue;
+            var token;
+            while ((token = replacementTokenRegex.exec(propValue)) !== null) {
+                var propName = token[1];
+                if (card[propName] !== undefined) {
+                    newPropValue = newPropValue.replace(token[0], card[propName]);
+                }
+                else if (propName === 'setCode') {
+                    newPropValue = setCode;
+                }
+            }
+            //exception.newValues[prop] = newPropValue;
+            replacementReferenceValues[prop] = newPropValue;
+        }
+
+        // Apply new values from exception.
+        _.extend(card, replacementReferenceValues);
+
+        card.matchTitle = mtgGen.createMatchTitle(card.title);
+
+        card.addedViaException = true;
+
+        return card;
+    }
+
     function applyExceptions(cards, exceptions, setCode) {
         // Example:
         //  {
@@ -1214,14 +1349,15 @@ var cardDataImporter = (function (my, $) {
         //      }
         //  },
         //  {
-        //      HMMM... what does it look like when I ADD a card? Maybe it's the one time there is no where...
-        //      add: true,
-        //      newValues: {
-        //          title: "New Card Title",
-        //          src: "src here",
-        //          etc: "etc"
-        //      }
-        //  },
+        //    "add": true,
+        //    "newValues": {
+        //        "title": "Black Vise",
+        //        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_L1UZqii5Ve.png",
+        //        "cost": "1",
+        //        "type": "Artifact",
+        //        "colour": "a",
+        //        "num": "032"
+        //    }
         //  }
         var cardNumsChanged = false;
         if (exceptions !== undefined && exceptions !== null) {
@@ -1248,39 +1384,9 @@ var cardDataImporter = (function (my, $) {
                         continue;
                     }
 
-                    // add all Exception properties into the card
-                    var card = {};
-                    _.extend(card, exception.newValues);
-                    exception.result.affectedCards = 1;
-                    console.log('Added new card: ' + exception.newValues.title);
+                    console.log('Adding new card: ' + exception.newValues.title);
 
-                    // Replace any 'reference' properties with the current card values,
-                    // e.g.: "originalTitle": "{{title}}",
-                    var replacementTokenRegex = /{{(.*?)}}/g;
-                    var replacementReferenceValues = {};
-                    for (var prop in exception.newValues) {
-                        var propValue = exception.newValues[prop];
-                        var newPropValue = propValue;
-                        var token;
-                        while ((token = replacementTokenRegex.exec(propValue)) !== null) {
-                            var propName = token[1];
-                            if (card[propName] !== undefined) {
-                                newPropValue = newPropValue.replace(token[0], card[propName]);
-                            }
-                            else if (propName === 'setCode') {
-                                newPropValue = setCode;
-                            }
-                        }
-                        //exception.newValues[prop] = newPropValue;
-                        replacementReferenceValues[prop] = newPropValue;
-                    }
-
-                    // Apply new values from exception.
-                    _.extend(card, replacementReferenceValues);
-
-                    card.matchTitle = mtgGen.createMatchTitle(card.title);
-
-                    card.addedViaException = true;
+                    var card = createCardViaException({}, exception, setCode);
 
                     cards = addCardToCards(cards, card);
 
@@ -1333,6 +1439,38 @@ var cardDataImporter = (function (my, $) {
                 _.each(matchingCards, function (matchingCard) {
                     delete cards[matchingCard.mtgenId];
                 });
+
+                // TODO: This does NOT work. getCardFromWizardsGatherer is async, completely messing up this loop.
+                //       Try again in six months when es2017 is out.
+                //// Get a list of all title queries that didn't match anything.
+                //// TODO: Refactor mtg-generator.lib.js/executeSimpleQuery() to PARSE out the query and execute separately.
+                ////       Then, here, I can use it to parse the where and easily determine if it's a title query and the matchtitle.
+                //var unmatchedTitles = [];
+                //if (exception.result.success === true && matchingCards.length === 0 && exception.where.indexOf("title=") > -1) {
+                //    var titleMatch = /title=['"](.*)/i.exec(exception.where);
+                //    if (titleMatch.length < 2 || titleMatch[1].trim().length === 0) {
+                //        console.warn("WARNING: Could not find card but where clause title is not in recognizable format: " + exception.where);
+                //    }
+                //    else {
+                //        var matchTitle = mtgGen.createMatchTitle(titleMatch[1]);
+                //        unmatchedTitles.push(matchTitle);
+                //        getCardFromWizardsGatherer(matchTitle, setCode)
+                //            .then(function (card) {
+                //                var newCard = createCardViaException(card, exception, setCode);
+                //                cards = addCardToCards(cards, newCard);
+                //                console.log("Could not find card in original data, so fetched it from Wizards' Gatherer: " + matchTitle);;
+                //            })
+                //            .catch(function (err) {
+                //                console.warn(`WARNING: could not retrieve card '${matchTitle}' from Wizards' Gatherer: ${err} `);
+                //            });
+                //        console.warn("Could not find card; going to search for title = " + matchTitle);
+                //    }
+                //}
+
+                // If there were no matching cards for this update, 
+                // try to get those cards from Gatherer.
+                // This was basically built for Masterpiece cards that may be reprints of old cards.
+                // TODO: actually do this;)
 
                 var replacementTokenRegex = /{{(.*?)}}/g;
 

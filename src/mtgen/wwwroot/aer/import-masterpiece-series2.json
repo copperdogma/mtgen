@@ -1,0 +1,204 @@
+{
+  "setCode": "aer",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=174&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/feature/masterpiece-series-kaladesh-inventions-2016-09-12",
+  "_comment": "20170124: Experimental import assuming getCardFromWizardsGatherer() works to fetch missing card data. Not working yet at this time.",
+  "exceptions": [
+    {
+      "_comment": "masterpiece series pattern: target the full set, set ALL to masterpiece:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where masterpiece is still false",
+      "where": "",
+      "newValues": {
+        "masterpiece": false
+      }
+    },
+
+    {
+      "where": "title='Arcbound Ravager'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_6BGVkZ7jal.png",
+        "num": "031"
+      }
+    },
+    {
+      "where": "title='Black Vise'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_L1UZqii5Ve.png",
+        "num": "032"
+      }
+    },
+    {
+      "where": "title='Chalice of the Void'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_rndRNz8YdZ.png",
+        "num": "033"
+      }
+    },
+    {
+      "where": "title='Defense Grid'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_eeW00ujlCx.png",
+        "num": "034"
+      }
+    },
+    {
+      "where": "title='Duplicant'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_Ss5UCDRzFU.png",
+        "num": "035"
+      }
+    },
+    {
+      "where": "title='Engineered Explosives'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_on3FRSUGHD.png",
+        "num": "036"
+      }
+    },
+    {
+      "where": "title='Ensnaring Bridge'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_5aRyFcq0of.png",
+        "num": "037"
+      }
+    },
+    {
+      "where": "title='Extraplanar Lens'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_Orw1lhixgx.png",
+        "num": "038"
+      }
+    },
+    {
+      "where": "title='Grindstone'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_XNnWcBcXDP.png",
+        "num": "039"
+      }
+    },
+    {
+      "where": "title='Meekstone'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_pd77pcrWpo.png",
+        "num": "040"
+      }
+    },
+    {
+      "where": "title='Oblivion Stone'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_M8UHHoa5a4.png",
+        "num": "041"
+      }
+    },
+    {
+      "where": "title='Ornithopter'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_aqeLNInwpo.png",
+        "num": "042"
+      }
+    },
+    {
+      "_comment": "This one is from this set (AER)",
+      "where": "title='Paradox Engine'",
+      "newValues": {
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=425814&type=card",
+        "num": "043",
+        "masterpiece": true
+      }
+    },
+    {
+      "_comment": "This one is from this set (AER)",
+      "where": "title='Planar Bridge'",
+      "newValues": {
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=425816&type=card",
+        "num": "045",
+        "masterpiece": true
+      }
+    },
+    {
+      "where": "title='Sphere of Resistance'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_vfQOr8JYLP.png",
+        "num": "047"
+      }
+    },
+    {
+      "where": "title='Staff of Domination'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_9NsNCkb7dS.png",
+        "num": "048"
+      }
+    },
+    {
+      "where": "title='Sundering Titan'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_tmmgkJboLC.png",
+        "num": "049"
+      }
+    },
+    {
+      "where": "title='Sword of Body and Mind'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_8m6TXD423m.png",
+        "num": "050"
+      }
+    },
+    {
+      "where": "title='Sword of War and Peace'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_f8JYt1uydd.png",
+        "num": "051"
+      }
+    },
+    {
+      "where": "title='Trinisphere'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_UwVn1RhVHZ.png",
+        "num": "052"
+      }
+    },
+    {
+      "where": "title='Vedalken Shackles'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_WPlDlFxNpa.png",
+        "num": "053"
+      }
+    },
+    {
+      "where": "title='Wurmcoil Engine'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_HRRfcVY8mkO.png",
+        "num": "054"
+      }
+    },
+    {
+      "where": "title='Platinum Angel'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_gY2qcARwOt.png",
+        "num": "046"
+      }
+    },
+    {
+      "where": "title='Pithing Needle'",
+      "newValues": {
+        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_M4Z6Ub4Uiu.png",
+        "num": "044"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that still have masterpiece=false, which leaves just our modified masterpiece cards",
+      "delete": true,
+      "where": "masterpiece=false"
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "s",
+        "num": "{{num}}/054 S"
+      }
+    }
+
+  ]
+}
