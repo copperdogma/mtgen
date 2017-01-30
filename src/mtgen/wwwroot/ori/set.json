@@ -1,0 +1,37 @@
+{
+  "startProductName": "ori-boosters",
+  "packFiles": [
+    "packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsOther.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2015-07-13T00:00:00",
+      "HtmlString": "Evening: Updated prerelease seeded packs to use actual pack layouts from <a href='https://docs.google.com/spreadsheet/ccc?key=0Apln2HM4aSGbdDJ6MFk5cTBjb09sXzFWdndhTkx2V1E#gid=12'>here</a>."
+    },
+    {
+      "UpdateDate": "2015-07-07T00:00:00",
+      "HtmlString": "Evening: Seeded mythic is now only a Planeswalker, and some card data fixed."
+    },
+    {
+      "UpdateDate": "2015-07-06T00:00:00",
+      "HtmlString": "Evening: Prerelease section added."
+    },
+    {
+      "UpdateDate": "2015-07-03T00:00:00",
+      "HtmlString": "Evening: All cards posted."
+    },
+    {
+      "UpdateDate": "2015-07-01T00:00:00",
+      "HtmlString": "Evening: Up to 185 cards and added Tokens."
+    },
+    {
+      "UpdateDate": "2015-06-30T00:00:00",
+      "HtmlString": "Evening: Up to 164 cards and added Boosters section."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "startProductName": "bng-prerelease",
+  "packFiles": [
+    "packs.json",
+    "../ths/packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsOther.json",
+    "../ths/cardsMain.json",
+    "../ths/cardsOther.json",
+    "../ths/cardsToken.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2014-08-25T00:00:00",
+      "HtmlString": "Evening: Upgraded to newest version, added all Prerelease pack-ins, and added Fat Pack."
+    },
+    {
+      "UpdateDate": "2014-01-27T00:00:00",
+      "HtmlString": "10am MST: Bug fixed: The seeded booster's rare slot now has a 1/8 chance of an on-colour God, not just any mythic rare. Thanks, Scipion!"
+    },
+    {
+      "UpdateDate": "2014-01-25T00:00:00",
+      "HtmlString": "7am MST: Bug fixed: The seeded booster now contains promo card, on-colour rare, on-colour uncommon, off-colour uncommon, multi-color on-colour uncommon, and 11 commons, as per Theros pattern. Thanks, Stefan!"
+    },
+    {
+      "UpdateDate": "2014-01-24T00:00:00",
+      "HtmlString": "10pm MST: Bug fixed: The seeded booster only contains multi-colour cards with the proper colours now. And the proper tokens are now in."
+    },
+    {
+      "UpdateDate": "2014-01-24T00:00:00",
+      "HtmlString": "5pm MST: Set complete. All cards added (well, the proper tokens are still coming...)"
+    }
+  ]
+}

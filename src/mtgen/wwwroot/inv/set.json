@@ -1,0 +1,15 @@
+{
+  "startProductName": "inv-boosters",
+  "packFiles": [
+    "packs.json",
+    "../pls/packs.json",
+    "../apc/packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsOther.json",
+    "../pls/cardsMain.json",
+    "../apc/cardsMain.json"
+  ],
+  "updates": []
+}

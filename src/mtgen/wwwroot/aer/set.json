@@ -1,0 +1,16 @@
+{
+  "startProductName": "aer-prerelease",
+  "packFiles": [
+    "packs.json",
+    "../kld/packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsOther.json",
+    "../kld/cardsMain.json",
+    "../kld/cardsToken.json",
+    "../kld/cardsOther.json"
+  ],
+  "updates": []
+}

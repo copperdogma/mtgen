@@ -1,0 +1,21 @@
+{
+  "startProductName": "rtr-prerelease",
+  "packFiles": [
+    "packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsOther.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2014-08-24T00:00:00",
+      "HtmlString": "Evening: Upgraded to newest version, added all Prerelease pack-ins, Fat Packs, and guild sorting."
+    },
+    {
+      "UpdateDate": "2014-02-17T00:00:00",
+      "HtmlString": "Now uses the new generator engine and include the ability to generate guild packs."
+    }
+  ]
+}

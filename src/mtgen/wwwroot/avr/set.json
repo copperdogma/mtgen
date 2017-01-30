@@ -1,0 +1,21 @@
+{
+  "startProductName": "avr-prerelease",
+  "packFiles": [
+    "packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsOther.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2014-09-19T00:00:00",
+      "HtmlString": "Upgraded to newest version, added all promos, Prerelease pack-ins, and the Fat Pack."
+    },
+    {
+      "UpdateDate": "2012-04-07T00:00:00",
+      "HtmlString": "Fixed Silverblade Paladin: Was Uncommon instead of Rare."
+    }
+  ]
+}

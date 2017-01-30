@@ -1,0 +1,20 @@
+{
+  "startProductName": "con-boosters",
+  "packFiles": [
+    "packs.json",
+    "../ala/packs.json",
+    "../arb/packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsOther.json",
+    "cardsToken.json",
+    "../ala/cardsMain.json",
+    "../ala/cardsOther.json",
+    "../ala/cardsToken.json",
+    "../arb/cardsMain.json",
+    "../arb/cardsOther.json",
+    "../arb/cardsToken.json"
+  ],
+  "updates": []
+}

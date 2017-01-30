@@ -1,0 +1,25 @@
+{
+  "startProductName": "m14-prerelease",
+  "packFiles": [
+    "packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsOther.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2014-08-26T00:00:00",
+      "HtmlString": "Upgraded to new version, fixed some card colours/types, added Prerelease pack-ins and Fat Pack."
+    },
+    {
+      "UpdateDate": "2013-07-08T00:00:00",
+      "HtmlString": "Noonish: All cards now included."
+    },
+    {
+      "UpdateDate": "2013-07-08T00:00:00",
+      "HtmlString": "Midnight: Fixed bug where non-basic lands were appearing in slot 1."
+    }
+  ]
+}
