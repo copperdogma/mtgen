@@ -74,20 +74,20 @@ namespace mtgen.ViewModels
 
 			jtw.WriteStartObject();
 
-				jtw.WritePropertyName("StartProductName");
+				jtw.WritePropertyName("startProductName");
 				jtw.WriteValue(StartProductName);
 
-				jtw.WritePropertyName("PackFiles");
+				jtw.WritePropertyName("packFiles");
 				js.Serialize(jtw, PackFiles);
 
-				jtw.WritePropertyName("CardFiles");
+				jtw.WritePropertyName("cardFiles");
 				js.Serialize(jtw, CardFiles);
 				
-				jtw.WritePropertyName("Updates");
+				jtw.WritePropertyName("updates");
 				js.Serialize(jtw, Updates);
 
 				if(CreatedText != null) {
-					jtw.WritePropertyName("CreatedText");
+					jtw.WritePropertyName("createdText");
 					jtw.WriteValue(CreatedText);
 				}
 
