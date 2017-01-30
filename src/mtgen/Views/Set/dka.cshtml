@@ -1,0 +1,36 @@
+﻿@model Set
+@{
+    Model.StartProductName = "dka-prerelease";
+
+    Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json"
+                                        ,"../isd/cardsMain.json", "../isd/cardsToken.json", "../isd/cardsOther.json" };
+    Model.PackFiles = new List<string>() { "packs.json", "../isd/packs.json" };
+
+    Model.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2014, 9, 19),
+            HtmlString = "Upgraded to newest version, added all promos, Prerelease pack-ins, and the Fat Pack."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014, 1, 25),
+            HtmlString = "Added the proper Dark Ascension checklist. Thanks Jay!"
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014, 1, 25),
+            HtmlString = "Added in the 3 new tokens: Human, Vampire, and Sorin. Are these added to the old Innistrad tokens or do they replace any? No idea. I just added them."
+        }
+    };
+
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
+}

@@ -1,0 +1,28 @@
+﻿@model Set
+@{
+    Model.StartProductName = "ths-prerelease";
+
+    Model.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2014,8,1),
+            HtmlString = "Morning: Upgraded to newest version, fixed many rarity/colour/type data errors, added Fat Pack and Event Deck."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2016,9,16),
+            HtmlString = "Evening: I've fixed the basic land slot with the proper basic land, added the proper backs to all Hero cards, and make a very fake, very wrong seeded booster that contains only the colour you chose, colourless, and multicolour. I know there probably shouldn't be multicolour that don't include the colour you chose, but it'll have to do for now."
+        }
+    };
+
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
+}

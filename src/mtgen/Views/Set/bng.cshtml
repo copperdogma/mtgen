@@ -1,0 +1,46 @@
+﻿@model Set
+@{
+    Model.StartProductName = "bng-prerelease";
+
+    Model.CardFiles.Add("../ths/cardsMain.json");
+    Model.CardFiles.Add("../ths/cardsOther.json");
+    Model.CardFiles.Add("../ths/cardsToken.json");
+
+    Model.PackFiles.Add("../ths/packs.json");
+
+    Model.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2014,8,25),
+            HtmlString = "Evening: Upgraded to newest version, added all Prerelease pack-ins, and added Fat Pack."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014,1,27),
+            HtmlString = "10am MST: Bug fixed: The seeded booster's rare slot now has a 1/8 chance of an on-colour God, not just any mythic rare. Thanks, Scipion!"
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014,1,25),
+            HtmlString = "7am MST: Bug fixed: The seeded booster now contains promo card, on-colour rare, on-colour uncommon, off-colour uncommon, multi-color on-colour uncommon, and 11 commons, as per Theros pattern. Thanks, Stefan!"
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014,1,24),
+            HtmlString = "10pm MST: Bug fixed: The seeded booster only contains multi-colour cards with the proper colours now. And the proper tokens are now in."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014,1,24),
+            HtmlString = "5pm MST: Set complete. All cards added (well, the proper tokens are still coming...)"
+        }
+    };
+
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
+}

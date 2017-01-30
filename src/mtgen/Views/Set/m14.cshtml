@@ -1,0 +1,32 @@
+﻿@model Set
+@{
+    Model.StartProductName = "m14-prerelease";
+
+    Model.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2014,8,26),
+            HtmlString = "Upgraded to new version, fixed some card colours/types, added Prerelease pack-ins and Fat Pack."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2013,7,8),
+            HtmlString = "Noonish: All cards now included."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2013,7,8),
+            HtmlString = "Midnight: Fixed bug where non-basic lands were appearing in slot 1."
+        }
+    };
+
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
+}

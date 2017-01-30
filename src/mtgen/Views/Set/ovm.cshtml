@@ -1,0 +1,32 @@
+﻿@model Set
+@{
+    Model.StartProductName = "ovm-boosters";
+
+    Model.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2016,7,16),
+            HtmlString = "Removed tip cards and fixed some card data."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014,8,23),
+            HtmlString = "Upgraded to the new generator version."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014, 5, 29),
+            HtmlString = "Morning: There is now only a one in 53 chance per pack of getting a Power Nine card. Thanks, x1a4!"
+        }
+    };
+
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
+}

@@ -1,0 +1,20 @@
+﻿@model Set
+@{
+    Model.StartProductName = "apc-boosters";
+
+    Model.CardFiles = new List<string>() { "cardsMain.json", "cardsOther.json",
+        "../inv/cardsMain.json", "../pls/cardsMain.json"};
+    Model.PackFiles = new List<string>() { "packs.json", "../inv/packs.json", "../pls/packs.json" };
+
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
+}

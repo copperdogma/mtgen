@@ -1,0 +1,26 @@
+﻿@model Set
+@{
+    Model.StartProductName = "hml-boosters";
+
+    Model.CardFiles = new List<string>() { "cardsMain.json" };
+
+    Model.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2015,12,25),
+            HtmlString = "Note: There are completely duplicated cards, but Gatherer just has the first image again for the alternate version."
+        }
+    };
+
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
+}

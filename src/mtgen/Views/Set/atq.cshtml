@@ -1,0 +1,26 @@
+﻿@model Set
+@{
+    Model.StartProductName = "atq-boosters";
+
+    Model.CardFiles = new List<string>() { "cardsMain.json" };
+
+    Model.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2015,12,24),
+            HtmlString = "Note: Officialy an 85 card set, collectors consider it 100 due to <a href='http://mtgsalvation.gamepedia.com/Antiquities#Set_details'>alternate card art</a>."
+        }
+    };
+
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
+}

@@ -1,0 +1,38 @@
+﻿@model Set
+@{
+    Model.StartProductName = "jou-prerelease";
+
+    Model.CardFiles.Add("../ths/cardsMain.json");
+    Model.CardFiles.Add("../ths/cardsOther.json");
+    Model.CardFiles.Add("../ths/cardsToken.json");
+    Model.CardFiles.Add("../bng/cardsMain.json");
+    Model.CardFiles.Add("../bng/cardsOther.json");
+    Model.CardFiles.Add("../bng/cardsToken.json");
+
+    Model.PackFiles.Add("../ths/packs.json");
+    Model.PackFiles.Add("../bng/packs.json");
+
+    Model.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2014,8,25),
+            HtmlString = "Evening: Upgraded to newest version, added all Prerelease pack-ins, and added Fat Pack."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014,5,19),
+            HtmlString = "Afternoon: All cards now added. Set complete!"
+        }
+    };
+
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
+}

@@ -1,0 +1,44 @@
+﻿@model Set
+@{
+    Model.StartProductName = "ori-boosters";
+
+    Model.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2015,7,13),
+            HtmlString = "Evening: Updated prerelease seeded packs to use actual pack layouts from <a href='https://docs.google.com/spreadsheet/ccc?key=0Apln2HM4aSGbdDJ6MFk5cTBjb09sXzFWdndhTkx2V1E#gid=12'>here</a>."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2015,7,7),
+            HtmlString = "Evening: Seeded mythic is now only a Planeswalker, and some card data fixed."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2015,7,6),
+            HtmlString = "Evening: Prerelease section added."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2015,7,3),
+            HtmlString = "Evening: All cards posted."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2015,7,1),
+            HtmlString = "Evening: Up to 185 cards and added Tokens."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2015,6,30),
+            HtmlString = "Evening: Up to 164 cards and added Boosters section."
+        }
+    };
+
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
+}

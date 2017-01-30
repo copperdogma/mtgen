@@ -1,0 +1,37 @@
+﻿@model Set
+@{
+    Model.StartProductName = "dgm-prerelease";
+
+    Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json",
+                                        "../gtc/cardsMain.json", "../gtc/cardsToken.json", "../gtc/cardsOther.json",
+                                        "../rtr/cardsMain.json", "../rtr/cardsToken.json", "../rtr/cardsOther.json" };
+    Model.PackFiles = new List<string>() { "packs.json", "../gtc/packs.json", "../rtr/packs.json" };
+
+    Model.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2014,9,2),
+            HtmlString = "Evening: Upgraded to newest version, added all Prerelease pack-ins, Fat Packs, and guild sorting."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014,4,25),
+            HtmlString = "13:00 MST: Added the ability to export your generated cards to the .dec format (used by Magic Online, Cockatrice, and Apprentice), .coll format (used by Decked Builder), and .cod format (used by Cockatrice)."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014,4,25),
+            HtmlString = "23:30 MST: Welcome Reddit! Holy crap you guys know how to send traffic. Based on feedback I've fixed: The land slot now gives a 95% chance of a Guild Gate, 4% chance of a Shockland, and a 1% chance of Maze's End. Despite the weird Europe mis-print, this generator no longer allows foil Shocklands."
+        }
+    };
+
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
+}

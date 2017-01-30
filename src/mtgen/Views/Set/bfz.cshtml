@@ -1,0 +1,47 @@
+﻿@model Set
+@{
+    Model.StartProductName = "bfz-boosters";
+
+    Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json",
+        "../exp/cardsMain.json" };
+
+    Model.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2015,10,9),
+            HtmlString = "Morning: Added prerelease pack-ins."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2015,9,20),
+            HtmlString = "Morning: Prerelease promo now properly 7/8 chance rare, 1/8 change mythic."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2015,9,19),
+            HtmlString = "Evening: Fixed Arid Mesa duplicate."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2015,9,18),
+            HtmlString = "Evening: Fixed Expedition rarity."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2015,9,18),
+            HtmlString = "Evening: All cards added."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2015,9,16),
+            HtmlString = "Evening: Added Tokens, Booster packs, and Prerelease packs."
+        }
+    };
+
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
+}

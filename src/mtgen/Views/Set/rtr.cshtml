@@ -1,0 +1,28 @@
+﻿@model Set
+@{
+    Model.StartProductName = "rtr-prerelease";
+
+    Model.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2014,8,24),
+            HtmlString = "Evening: Upgraded to newest version, added all Prerelease pack-ins, Fat Packs, and guild sorting."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2014,2,17),
+            HtmlString = "Now uses the new generator engine and include the ability to generate guild packs."
+        }
+    };
+
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
+}

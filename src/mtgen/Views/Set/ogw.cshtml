@@ -1,0 +1,36 @@
+﻿@model Set
+@{
+    Model.StartProductName = "ogw-prerelease";
+
+    Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json",
+        "../exp/cardsMain.json", "../bfz/cardsMain.json", "../bfz/cardsOther.json", "../bfz/cardsToken.json" };
+    Model.PackFiles = new List<string>() { "packs.json", "../bfz/packs.json" };
+
+    Model.Updates = new List<Update>()
+    {
+        new Update() {
+            UpdateDate = new DateTime(2017,1,12),
+            HtmlString = "Evening: Non-full-art Wastes are no longer in the boosters (full-art only)."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2016,3,1),
+            HtmlString = "Evening: Added updated spindown life counters and deck divider packins."
+        },
+        new Update() {
+            UpdateDate = new DateTime(2016,1,11),
+            HtmlString = "Evening: Lowered Expedition chance and added tokens."
+        }
+    };
+
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
+}

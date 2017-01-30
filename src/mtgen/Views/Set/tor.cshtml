@@ -1,0 +1,20 @@
+﻿@model Set
+@{
+    Model.StartProductName = "tor-boosters";
+
+    Model.PackFiles = new List<string>() { "../ody/packs.json", "packs.json" };
+
+    Model.CardFiles = Model.CardFiles.Concat(new List<string>() { "../ody/cardsMain.json", "../ody/cardsToken.json", "../ody/cardsOther.json" }).ToList();
+
+    // Defaults/Examples:
+    //Model.Incomplete = false;
+    //Model.CardFiles = new List<string>() { "cardsMain.json", "cardsToken.json", "cardsOther.json" };
+    //Model.PackFiles = new List<string>() { "packs.json" };
+    //Model.Updates = new List<Update>()
+    //{
+    //    new Update() {
+    //        UpdateDate = new DateTime(2015,11,14),
+    //        HtmlString = "Afternoon: Added Plunder the Graves deck (thanks, DoubleFried!)."
+    //    }
+    //};
+}
