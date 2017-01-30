@@ -15,6 +15,6 @@ mcs -out:"$SET" \
 		../../ViewModels/Update.cs \
 		-reference:"$NEWTONSOFT_JSON_PATH"/Newtonsoft.Json.dll
 
-./"$SET" > "$SET".json
+./"$SET" > ../../wwwroot/"$SET"/set.json
 
 rm "$SET" "$SET.cs"
