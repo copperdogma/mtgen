@@ -1,0 +1,25 @@
+{
+  "startProductName": "aer-prerelease",
+  "packFiles": [
+    "packs.json",
+    "../kld/packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsOther.json",
+    "../kld/cardsMain.json",
+    "../kld/cardsToken.json",
+    "../kld/cardsOther.json"
+  ],
+  "updates": [
+    {
+      "updateDate": "2015-12-24",
+      "htmlString": "TMP: Note: Officialy an 85 card set, collectors consider it 100 due to <a href='http://mtgsalvation.gamepedia.com/Antiquities#Set_details'>alternate card art</a>."
+    },
+    {
+      "updateDate": "2015-12-28",
+      "htmlString": "TMP: Morning: Prerelease promo now properly 7/8 chance rare, 1/8 change mythic."
+    }
+  ]
+}

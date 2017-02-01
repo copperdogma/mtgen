@@ -38,7 +38,7 @@ namespace mtgen.ViewModels
             string generatorCreatedDate, string prereleaseDate, string releaseDate, 
             bool isCoreSet, string block, bool isCurrentSet, bool isFutureSet)
         {
-            Code = code.ToLower();
+            Code = code?.ToLower();
             Name = name;
             Image = image;
             CardCount = cardCount;

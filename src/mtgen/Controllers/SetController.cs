@@ -32,12 +32,21 @@ namespace mtgen.Controllers
 
             var lowerCaseSetCode = setCode.ToLower();
 
-            if (SetViewExists(lowerCaseSetCode))
+            // TODO: now we need to read the set json, validate, and build a model with paths the UI can render from
+
+            if (SetFileExists(lowerCaseSetCode))
             {
-                return View(lowerCaseSetCode, set);
+                var setMain = _setService.GetMainFileForSet(lowerCaseSetCode);
+                set.StartProductName = setMain.StartProductName;
+                set.CardFiles = setMain.CardFiles;
+                set.PackFiles = setMain.PackFiles;
+                set.Updates = setMain.Updates;
+
+                //CAMKILL:return View(lowerCaseSetCode, set);
+                return View("SetView", set);
             }
             // Certain words are reserved (con, aux, etc) so I suffix them with _
-            else if (SetViewExists(lowerCaseSetCode + "_"))
+            else if (SetFileExists(lowerCaseSetCode + "_"))
             {
                 return View(lowerCaseSetCode + "_", set);
             }
@@ -93,16 +102,21 @@ namespace mtgen.Controllers
             return new ObjectResult(drawJson.Results);
         }
 
-        private bool SetViewExists(string setCode)
+        private bool SetFileExists(string setCode)
         {
             //20150726: Can't get this to instantiate under MVC6
             //var findResult = ViewEngines.Engines.FindView(ControllerContext, name, null);
             //var findResult = _viewEngine.FindView(ControllerContext, name);
             //return (findResult.View != null);
 
-            var viewPath = _appEnvironment.ApplicationBasePath + $"\\Views\\Set\\{setCode}.cshtml";
-            var viewPathExists = System.IO.File.Exists(viewPath);
-            return viewPathExists;
+            //CAMKILL:
+            //var viewPath = _appEnvironment.ApplicationBasePath + $"\\Views\\Set\\{setCode}.cshtml";
+            //var viewPathExists = System.IO.File.Exists(viewPath);
+            //return viewPathExists;
+
+            var filePath = _appEnvironment.ApplicationBasePath + $"\\wwwroot\\{setCode}\\set.json";
+            var filePathExists = System.IO.File.Exists(filePath);
+            return filePathExists;
         }
     }
 }

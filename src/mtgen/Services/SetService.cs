@@ -92,6 +92,17 @@ namespace mtgen.Services
             return cards;
         }
 
+        public Set GetMainFileForSet(string setCode)
+        {
+            var jsonFilePath = GetPathForSetFile(setCode, FilenameConstants.MainFile);
+            var jsonPath = _hostingEnvironment.MapPath(jsonFilePath);
+            if (!File.Exists(jsonPath)) return null;
+
+            var jsonFile = File.ReadAllText(jsonPath);
+            var setModel = JsonConvert.DeserializeObject<Set>(jsonFile);
+
+            return setModel;
+        }
         public IList<Card> GetMainCardsForSet(string setCode)
         {
             return GetCardsFromJsonFile(GetPathForSetFile(setCode, FilenameConstants.MainCards));
