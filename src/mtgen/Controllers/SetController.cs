@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNet.Mvc;
-using Microsoft.Extensions.PlatformAbstractions;
+﻿using Microsoft.AspNet.Hosting;
+using Microsoft.AspNet.Mvc;
 using mtgen.Services;
 using System;
 using System.Threading.Tasks;
@@ -11,14 +11,14 @@ namespace mtgen.Controllers
         private readonly ISetService _setService;
         private readonly IStorageContext _storageContext;
         //private readonly IViewEngine _viewEngine; 20150726: Can't get s to instantiate under MVC6
-        private readonly IApplicationEnvironment _appEnvironment;
+        private readonly IHostingEnvironment _hostingEnvironment;
 
-        public SetController(ISetService setService, IStorageContext storageContext, IApplicationEnvironment appEnvironment)
+        public SetController(ISetService setService, IStorageContext storageContext, IHostingEnvironment hostingEnvironment)
         {
             _setService = setService;
             _storageContext = storageContext;
             //_viewEngine = viewEngine;
-            _appEnvironment = appEnvironment;
+            _hostingEnvironment = hostingEnvironment;
         }
 
         public ActionContext ControllerContext { get; private set; }
@@ -42,7 +42,6 @@ namespace mtgen.Controllers
                 set.PackFiles = setMain.PackFiles;
                 set.Updates = setMain.Updates;
 
-                //CAMKILL:return View(lowerCaseSetCode, set);
                 return View("SetView", set);
             }
             // Certain words are reserved (con, aux, etc) so I suffix them with _
@@ -104,18 +103,8 @@ namespace mtgen.Controllers
 
         private bool SetFileExists(string setCode)
         {
-            //20150726: Can't get this to instantiate under MVC6
-            //var findResult = ViewEngines.Engines.FindView(ControllerContext, name, null);
-            //var findResult = _viewEngine.FindView(ControllerContext, name);
-            //return (findResult.View != null);
-
-            //CAMKILL:
-            //var viewPath = _appEnvironment.ApplicationBasePath + $"\\Views\\Set\\{setCode}.cshtml";
-            //var viewPathExists = System.IO.File.Exists(viewPath);
-            //return viewPathExists;
-
-            var filePath = _appEnvironment.ApplicationBasePath + $"\\wwwroot\\{setCode}\\set.json";
-            var filePathExists = System.IO.File.Exists(filePath);
+            var filePath = $"{setCode}\\set.json";
+            var filePathExists = System.IO.File.Exists(_hostingEnvironment.MapPath(filePath));
             return filePathExists;
         }
     }
