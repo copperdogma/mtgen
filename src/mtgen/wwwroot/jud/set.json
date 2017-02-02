@@ -1,0 +1,20 @@
+{
+  "startProductName": "jud-boosters",
+  "packFiles": [
+    "../tor/packs.json",
+    "../ody/packs.json",
+    "packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsOther.json",
+    "../ody/cardsMain.json",
+    "../ody/cardsToken.json",
+    "../ody/cardsOther.json",
+    "../tor/cardsMain.json",
+    "../tor/cardsToken.json",
+    "../tor/cardsOther.json"
+  ],
+  "updates": []
+}

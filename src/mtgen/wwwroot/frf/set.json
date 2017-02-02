@@ -1,0 +1,57 @@
+{
+  "startProductName": "frf-prerelease",
+  "packFiles": [
+    "../ktk/packs.json",
+    "packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsOther.json",
+    "../ktk/cardsMain.json",
+    "../ktk/cardsToken.json",
+    "../ktk/cardsOther.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2015-04-04T00:00:00",
+      "HtmlString": "Evening: Prerelease: Added actual Prerelease seeded pack contents."
+    },
+    {
+      "UpdateDate": "2015-01-30T00:00:00",
+      "HtmlString": "Evening: Added Fat Pack product."
+    },
+    {
+      "UpdateDate": "2015-01-21T00:00:00",
+      "HtmlString": "Evening: Added proper Prerelease Info Cards for each clan."
+    },
+    {
+      "UpdateDate": "2015-01-19T00:00:00",
+      "HtmlString": "Evening: Ugin's Fate boosters are now correct, as per <a target='_blank' href='http://magic.wizards.com/en/articles/archive/arcana/ugins-fate-booster-contents-2015-01-19'>WotC's article</a>. Also the seeded boosters should be 100%, as per <a target='_blank' href='https://docs.google.com/spreadsheet/ccc?key=0Apln2HM4aSGbdDJ6MFk5cTBjb09sXzFWdndhTkx2V1E#gid=10'>brinelol's spreadsheet</a>."
+    },
+    {
+      "UpdateDate": "2015-01-16T00:00:00",
+      "HtmlString": "Evening: Prerelease seeded boosters are now far more accurate."
+    },
+    {
+      "UpdateDate": "2015-01-14T00:00:00",
+      "HtmlString": "Evening: Oops! Added in Dragon Bell Monk and Reach of Shadows. I missed them. Thanks, Michael!"
+    },
+    {
+      "UpdateDate": "2015-01-12T00:00:00",
+      "HtmlString": "Evening: Updated Ugin's Booster contents and the Ugin Achievement Card."
+    },
+    {
+      "UpdateDate": "2015-01-10T00:00:00",
+      "HtmlString": "Evening: FRF Seeded Booster now has proper FRF Dual Lands/KTK Fetch Lands in land slot."
+    },
+    {
+      "UpdateDate": "2015-01-09T00:00:00",
+      "HtmlString": "Evening: Added Prerelease option. The Seeded Booster is a guess; the first slot is a Mythic or Rare from that clan, the second is a Runemark (my guess). And the Ugin's Fate Booster's first two cards are just random cards for now until we get more details."
+    },
+    {
+      "UpdateDate": "2015-01-05T00:00:00",
+      "HtmlString": "Evening: Added Booster option."
+    }
+  ]
+}

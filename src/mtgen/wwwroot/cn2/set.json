@@ -1,0 +1,17 @@
+{
+  "startProductName": "cn2-boosters",
+  "packFiles": [
+    "packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsOther.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2016-08-24T00:00:00",
+      "HtmlString": "Evening: Last slot is now Conspiracy-only. Main cards can now include draft-affecting cards."
+    }
+  ]
+}

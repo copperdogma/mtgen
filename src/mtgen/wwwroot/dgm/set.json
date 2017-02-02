@@ -1,0 +1,33 @@
+{
+  "startProductName": "dgm-prerelease",
+  "packFiles": [
+    "packs.json",
+    "../gtc/packs.json",
+    "../rtr/packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsOther.json",
+    "../gtc/cardsMain.json",
+    "../gtc/cardsToken.json",
+    "../gtc/cardsOther.json",
+    "../rtr/cardsMain.json",
+    "../rtr/cardsToken.json",
+    "../rtr/cardsOther.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2014-09-02T00:00:00",
+      "HtmlString": "Evening: Upgraded to newest version, added all Prerelease pack-ins, Fat Packs, and guild sorting."
+    },
+    {
+      "UpdateDate": "2014-04-25T00:00:00",
+      "HtmlString": "13:00 MST: Added the ability to export your generated cards to the .dec format (used by Magic Online, Cockatrice, and Apprentice), .coll format (used by Decked Builder), and .cod format (used by Cockatrice)."
+    },
+    {
+      "UpdateDate": "2014-04-25T00:00:00",
+      "HtmlString": "23:30 MST: Welcome Reddit! Holy crap you guys know how to send traffic. Based on feedback I've fixed: The land slot now gives a 95% chance of a Guild Gate, 4% chance of a Shockland, and a 1% chance of Maze's End. Despite the weird Europe mis-print, this generator no longer allows foil Shocklands."
+    }
+  ]
+}

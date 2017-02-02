@@ -1,0 +1,30 @@
+{
+  "startProductName": "ogw-prerelease",
+  "packFiles": [
+    "packs.json",
+    "../bfz/packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsOther.json",
+    "../exp/cardsMain.json",
+    "../bfz/cardsMain.json",
+    "../bfz/cardsOther.json",
+    "../bfz/cardsToken.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2017-01-12T00:00:00",
+      "HtmlString": "Evening: Non-full-art Wastes are no longer in the boosters (full-art only)."
+    },
+    {
+      "UpdateDate": "2016-03-01T00:00:00",
+      "HtmlString": "Evening: Added updated spindown life counters and deck divider packins."
+    },
+    {
+      "UpdateDate": "2016-01-11T00:00:00",
+      "HtmlString": "Evening: Lowered Expedition chance and added tokens."
+    }
+  ]
+}

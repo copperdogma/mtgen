@@ -1,0 +1,21 @@
+{
+  "startProductName": "ths-prerelease",
+  "packFiles": [
+    "packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsOther.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2014-08-01T00:00:00",
+      "HtmlString": "Morning: Upgraded to newest version, fixed many rarity/colour/type data errors, added Fat Pack and Event Deck."
+    },
+    {
+      "UpdateDate": "2016-09-16T00:00:00",
+      "HtmlString": "Evening: I've fixed the basic land slot with the proper basic land, added the proper backs to all Hero cards, and make a very fake, very wrong seeded booster that contains only the colour you chose, colourless, and multicolour. I know there probably shouldn't be multicolour that don't include the colour you chose, but it'll have to do for now."
+    }
+  ]
+}

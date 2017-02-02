@@ -1,0 +1,21 @@
+{
+  "startProductName": "mbs-boosters",
+  "packFiles": [
+    "../som/packs.json",
+    "packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsOther.json",
+    "../som/cardsMain.json",
+    "../som/cardsToken.json",
+    "../som/cardsOther.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2015-06-17T00:00:00",
+      "HtmlString": "Evening: You can now add Scars of Mirrodin boosters."
+    }
+  ]
+}

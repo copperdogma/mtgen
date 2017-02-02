@@ -1,0 +1,18 @@
+{
+  "startProductName": "gtc-prerelease",
+  "packFiles": [
+    "packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsOther.json",
+    "../rtr/cardsOther.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2014-08-30T00:00:00",
+      "HtmlString": "Upgraded to newest version, added all Prerelease pack-ins, Fat Packs, and guild sorting."
+    }
+  ]
+}

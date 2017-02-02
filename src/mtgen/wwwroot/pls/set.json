@@ -1,0 +1,15 @@
+{
+  "startProductName": "pls-boosters",
+  "packFiles": [
+    "packs.json",
+    "../inv/packs.json",
+    "../apc/packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsOther.json",
+    "../inv/cardsMain.json",
+    "../apc/cardsMain.json"
+  ],
+  "updates": []
+}

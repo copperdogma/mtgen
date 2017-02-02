@@ -1,0 +1,17 @@
+{
+  "startProductName": "mm2-boosters",
+  "packFiles": [
+    "packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsOther.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2015-05-11T00:00:00",
+      "HtmlString": "Fixed foil slot; now respects rarity."
+    }
+  ]
+}

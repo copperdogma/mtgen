@@ -1,0 +1,21 @@
+{
+  "startProductName": "c14-commander-decks",
+  "packFiles": [
+    "packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsOther.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2014-11-04T00:00:00",
+      "HtmlString": "Evening: Added full set of tokens, and included every token included with each deck."
+    },
+    {
+      "UpdateDate": "2014-11-02T00:00:00",
+      "HtmlString": "Afternoon: Oops! I was missing the <strong>Planeswalker</strong> from each deck. Dumb. Fixed."
+    }
+  ]
+}

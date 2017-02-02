@@ -1,0 +1,29 @@
+{
+  "startProductName": "m15-prerelease",
+  "packFiles": [
+    "packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsOther.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2014-08-23T00:00:00",
+      "HtmlString": "Now includes actual Prerelease and Fat Pack pack-ins."
+    },
+    {
+      "UpdateDate": "2014-08-13T00:00:00",
+      "HtmlString": "Now includes the actual Seeded Booster layouts as collated by brine via his <a href='https://docs.google.com/spreadsheet/ccc?key=0Apln2HM4aSGbdDJ6MFk5cTBjb09sXzFWdndhTkx2V1E' target='_blank'>Google Doc</a>. Thanks, brine!"
+    },
+    {
+      "UpdateDate": "2014-08-09T00:00:00",
+      "HtmlString": "Evening: HUGE new release, rewritten from scratch. New features: sorting and grouping by colour, rarity, cost, and type. Now includes Intro Decks and Fat Packs. Many more little features."
+    },
+    {
+      "UpdateDate": "2014-07-09T00:00:00",
+      "HtmlString": "Evening: Added Intro Packs as an option in the drop-downs. Also the seeded booster rare slot is fixed: if it's mythic it's going to be a Soul card."
+    }
+  ]
+}
