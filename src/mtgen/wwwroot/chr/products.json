@@ -1,0 +1,40 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "chr-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Chronicles" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "chr-all-cards" }
+      ]
+    },
+    {
+      "productName": "chr-boosters",
+      "productDesc": "Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "chr-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "chr-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "chr-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "setCode": "chr",
+  "cardDataUrl": "http://mtgjson.com/json/CHR.json",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    }
+  ]
+}

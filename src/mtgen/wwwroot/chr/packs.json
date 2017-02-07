@@ -1,0 +1,28 @@
+{
+  "defs": [
+    {
+      "defName": "chr",
+      "query": "from[*]?set='chr"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "chr-all-cards",
+      "packDesc": "Chronicles: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[chr]" }
+      ]
+    },
+    {
+      "packName": "chr-standard",
+      "packDesc": "Chronicles: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[1]>from[chr]?rarity='r" },
+        { "query": "take[2]>from[chr]?rarity='u" },
+        { "query": "take[9]>from[chr]?rarity='c" }
+      ]
+    }
+  ]
+}
