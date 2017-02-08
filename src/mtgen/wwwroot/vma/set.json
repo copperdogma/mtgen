@@ -1,0 +1,25 @@
+{
+  "startProductName": "vma-boosters",
+  "packFiles": [
+    "packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsOther.json"
+  ],
+  "updates": [
+    {
+      "updateDate": "2016-07-16T00:00:00",
+      "htmlString": "Removed tip cards and fixed some card data."
+    },
+    {
+      "updateDate": "2014-08-23T00:00:00",
+      "htmlString": "Upgraded to the new generator version."
+    },
+    {
+      "updateDate": "2014-05-29T00:00:00",
+      "htmlString": "Morning: There is now only a one in 53 chance per pack of getting a Power Nine card. Thanks, x1a4!"
+    }
+  ]
+}

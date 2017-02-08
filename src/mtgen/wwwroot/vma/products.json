@@ -3,30 +3,30 @@
 ,"products": 
 	[
 		{
-			"productName": "ovm-all-cards"
+			"productName": "vma-all-cards"
 			,"productDesc": "All Cards"
 			,"isGenerated": false
 			,"initialSort": "colour"
 			,"packs": [
-				{ "packName":"ovm-all-cards" }
+				{ "packName":"vma-all-cards" }
 			]
 		}
 		,{
-			"productName": "ovm-boosters"
+			"productName": "vma-boosters"
 			,"productDesc": "Online Boosters"
 			,"isGenerated": true
 			,"initialSort": "set"
 			,"packs": [
-				{ "packName":"ovm-standard-online" }
+				{ "packName":"vma-standard-online" }
 			]
 			,"options" : {
 				"presets": [
 					{
-						"presetName": "ovm-boosters-online"
+						"presetName": "vma-boosters-online"
 						,"presetDesc": "Boosters"
 						,"default": true
 						,"packs": [
-							{ "count":6, "defaultPackName":"ovm-standard" }
+							{ "count":6, "defaultPackName":"vma-standard" }
 						]
 					}
 				]

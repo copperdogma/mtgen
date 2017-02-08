@@ -1,0 +1,57 @@
+{
+"_comment": "from: http://www.wizards.com/magic/magazine/article.aspx?x=mtg_daily_other_10212013_vintagemasters",
+"_comment": "10 commons, 3 uncommons, 1 rare or mythic rare, [1 premium foil card (any rarity, including the extremely rare premium foil Power Nine card), OR 1 Power Nine card]",
+"_comment": "from: http://www.wizards.com/magic/magazine/article.aspx?x=mtg/daily/arcana/1491",
+"_comment": "You will open a Power Nine card about once in 53 packs. A specific Power Nine card is about twice as rare as a specific mythic rare.",
+
+"defs": 
+	[
+		{
+			"defName": "vma",
+			"query": "from[*]?set='vma'"
+		}
+		,{
+			"defName": "vma_power9",
+			"query": "from[vma]?title=(Timetwister|Mox Emerald|Mox Pearl|Mox Ruby|Mox Jet|Mox Sapphire|Ancestral Recall|Time Walk|Black Lotus)"
+		}
+		,{
+			"defName": "vma_set",
+			"query": "from[vma]"
+		}
+		,{
+			"defName": "vma_main",
+			"query": "from[vma_set]-from[vma_set]?type=(Tip|Token|BasicLand)-from[vma_power9]"
+		}
+		,{
+			"defName": "vma_foils",
+			"query": "from[vma_main]"
+		}
+	]
+
+,"packs": 
+	[
+ 		{
+		"packName": "vma-all-cards",
+		"packDesc": "Vintage Masters: All Cards",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[*]>from[vma]" }
+			]
+		}
+ 		,{
+		"packName": "vma-standard-online",
+		"packDesc": "Vintage Masters Set: Online Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "take[10]>from[vma_main]?rarity='c'" }
+			,{ "query": "take[3]>from[vma_main]?rarity='u'" }
+			,{ "querySet": [ { "percent": 75, "query": "from[vma_main]?rarity='r'" }
+							,{ "percent": 25, "query": "from[vma_main]?rarity='m'" }
+							] }
+			,{ "querySet": [ { "percent": 98, "query": "from[vma_foils]", "canBeDuplicate": true, "setValues": { "foil": true } }
+							,{ "percent": 2, "query": "from[vma_power9]" }
+							] }
+			]
+		}
+	]
+}
