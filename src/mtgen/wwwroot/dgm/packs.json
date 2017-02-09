@@ -1,42 +1,43 @@
 {
-"defs": 
-	[
-		{
-			"defName": "dgm",
-			"query": "from[*]?set='dgm'"
-		},
-		{
-			"defName": "dgm-promo",
-			"query": "from[dgm]?promo=true"
-		},
-		{
-			"defName": "dgm-set",
-			"query": "from[dgm]-from[dgm-promo]"
-		},
-		{
-			"defName": "dgm-shockland",
-			"query": "from[dgm-set]?title=(Hallowed Fountain|Sacred Foundry|Watery Grave|Overgrown Tomb|Stomping Ground|Steam Vents|Godless Shrine|Blood Crypt|Temple Garden|Breeding Pool)"
-		},
-		{
-			"defName": "dgm-gates",
-			"query": "from[dgm-set]?type='Land'-from[dgm-shockland]-from[dgm-set]?title=(Maze's End)"
-		},
-		{
-			"defName": "dgm-main",
-			"query": "from[dgm]-from[dgm]?type=(Marketing|Basic Land)-from[dgm]?token=true-from[dgm]?promo=true"
-		},
-		{
-			"defName": "dgm-foils",
-			"query": "from[dgm-main]+from[dgm-gates]",
-			"_comment": "Europe had misprints that included Shocklands, but I kept with the North American printing"
-		},
-		{
-			"defName": "dgm-fatpack",
-			"query": "from[dgm]?includedReason='Fat Pack Pack-In'"
-		}
-	]
-
-,"packs": 
+  "defs": [
+    {
+      "defName": "dgm",
+      "query": "from[*]?set='dgm'"
+    },
+    {
+      "defName": "rtr+gtc",
+      "query": "from[*]?set=(rtr|gtc)"
+    },
+    {
+      "defName": "dgm-promo",
+      "query": "from[dgm]?promo=true"
+    },
+    {
+      "defName": "dgm-set",
+      "query": "from[dgm]-from[dgm-promo]"
+    },
+    {
+      "defName": "shockland",
+      "query": "from[rtr+gtc]?title=(Hallowed Fountain|Sacred Foundry|Watery Grave|Overgrown Tomb|Stomping Ground|Steam Vents|Godless Shrine|Blood Crypt|Temple Garden|Breeding Pool)"
+    },
+    {
+      "defName": "dgm-gates",
+      "query": "from[dgm-set]?type='Land'-from[shockland]-from[dgm-set]?title=(Maze's End)"
+    },
+    {
+      "defName": "dgm-main",
+      "query": "from[dgm]-from[dgm]?type=(Marketing|Basic Land)-from[dgm]?token=true-from[dgm]?promo=true"
+    },
+    {
+      "defName": "dgm-foils",
+      "query": "from[dgm-main]+from[dgm-gates]",
+      "_comment": "Europe had misprints that included Shocklands, but I kept with the North American printing"
+    },
+    {
+      "defName": "dgm-fatpack",
+      "query": "from[dgm]?includedReason='Fat Pack Pack-In'"
+    }
+  ],"packs": 
 	[
  		{
 		"packName": "dgm-all-cards",
@@ -61,7 +62,7 @@
 							,{ "percent": 12.5, "query": "from[dgm-main]?rarity='m'", "-comment": "rare=7/8, mythicRare=1/8" } 
 							] }
 			,{ "querySet": [ { "percent": 95, "query": "from[dgm-gates]" }
-							,{ "percent": 4, "query": "from[dgm-shockland]" }
+							,{ "percent": 4, "query": "from[shockland]" }
 							,{ "percent": 1, "query": "from[dgm-set]?title=(Maze's End)", "_comment": "See 2013-dragons-maze.js for reasoning" }
 							] }
 			,{ "querySet": [ { "percent": 50, "query": "from[dgm]?type='Marketing'" }
