@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Mvc;
 using mtgen.Services;
+using mtgen.ViewModels;
 using System.Linq;
 
 namespace mtgen.Controllers
@@ -18,8 +19,11 @@ namespace mtgen.Controllers
             var groupedBlocksAndSets = _setService.GetGroupedBlocksAndSets();
 
             var sortedGroupedBlocksAndSets = groupedBlocksAndSets.OrderByDescending(s => s.ReleaseDate).ToList();
+            var newestCurrentSet = _setService.GetNewestCurrentSet();
 
-            return View(sortedGroupedBlocksAndSets);
+            var allSets = new AllSets(newestCurrentSet, sortedGroupedBlocksAndSets);
+
+            return View(allSets);
         }
 
         public IActionResult About()

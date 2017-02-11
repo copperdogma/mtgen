@@ -6,6 +6,7 @@ namespace mtgen.Services
     public interface ISetService
     {
         IList<Set> GetSets();
+        Set GetNewestCurrentSet();
         IList<Set> GetGroupedBlocksAndSets();
         Set GetSet(string setCode);
         string GetPathForSetFile(string setCode, string fileName);

@@ -42,6 +42,11 @@ namespace mtgen.Services
             _memoryCache.Set(SETS_KEY, sets);
         }
 
+        public Set GetNewestCurrentSet()
+        {
+            return GetSets().Where(s => s.IsCurrentSet).OrderByDescending(s => s.ReleaseDate).First();
+        }
+
         public IList<Set> GetGroupedBlocksAndSets()
         {
             var blocksAndSets = _memoryCache.Get(BLOCKS_AND_SETS_KEY) as IList<Set>;
