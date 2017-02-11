@@ -18,7 +18,8 @@
       "isVisible": true,
       "initialSort": "set",
       "packs": [
-        { "packName": "aer-standard" }
+        { "packName": "aer-standard" },
+        { "packName": "kld-standard" }
       ],
       "options": {
         "presets": [
