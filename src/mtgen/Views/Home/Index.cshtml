@@ -16,9 +16,9 @@
     <link rel="prerender" href="//mtgen.net/@allSets.NewestCurrentSet.Code/">
     <link rel="dns-prefetch" href="//media.wizards.com">
     @{await Html.RenderPartialAsync("_favicons"); }
+    @{await Html.RenderPartialAsync("_ga"); }
 </head>
 <body class="home">
-    @{await Html.RenderPartialAsync("_ga"); }
     <header>
         <img src="@Url.Content("~/images/logo-mtg.png")" alt="Magic the Gathering" />
         <h1>Sealed Deck Card Generator</h1>
