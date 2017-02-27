@@ -8,7 +8,7 @@
     Typical url: http://www.mtgsalvation.com/printable-gatecrash-spoiler.html
 
     Typical card from Gathering Magic (defunct):
-        <div class="spoiler-card w-card type-Creature subtype-Human subtype-Soldier confirmed r-common wm-orzhov num-5" "="">
+        <div class="spoiler-card w-card type-Creature subtype-Humanc subtype-Soldier confirmed r-common wm-orzhov num-5" "="">
             <a name="num-5"></a>
             <div class="cost"><nobr><img src="http://s3.mananation.com/images/mana/2.gif" class="mana" alt="{2}"><img src="http://s3.mananation.com/images/mana/w.gif" class="mana" alt="{W}"></nobr></div>
             <p><span class="title"><a href="http://s3.gatheringmagic.com.s3.amazonaws.com/images/sets/GTC/Basilica_Guards.jpg" class="thickbox"><img style="margin: 0px 5px 0px 0px;" src="http://s3.gatheringmagic.com/images/spoilers/pic.png" alt=""></a> <a href="http://www.coolstuffinc.com/main_viewCard.php?Card_Name=Basilica Guards&amp;viewtype=Magic%20the%20Gathering%20Cards">Basilica Guards</a></span></p>
@@ -80,273 +80,254 @@
         </div>
 
  */
-var cardDataImporter = (function (my, $) {
-    'use strict';
+class CardDataImporter {
 
-    // Event handling via Backbone: http://documentcloud.github.io/backbone/
-    _.extend(my, Backbone.Events);
+    // PUBLIC METHODS ------------------------------------------------------------------------------------
 
-    my.loadAndProcessAllFiles = function (options) {
-        // Import options into instance variables
-        _.extend(my, options);
+    loadAndProcessAllFiles({ cardDataUrl, htmlCardData, imagesUrl, exceptions, setCode }) {
+        setCode = setCode.trim();
 
-        // load all files and don't continue until all are loaded
-        var promises = [];
+        // We need 3 sets of data: card, image, and exceptions
 
-        promises.push($.get('/proxy?u=' + encodeURIComponent(my.cardDataUrl)));
+        // If raw HTML data was provided, use that.
+        const cardDataPromise = (htmlCardData && htmlCardData.trim().length > 1) 
+            ? Promise.resolve(htmlCardData) : this._fetchHtml(cardDataUrl);
 
-        // it's hard to parse the results unless they're all there, so we'll force something to be loaded for each even if it's missing
-        if (my.imagesUrl !== undefined && my.imagesUrl.length > 0) {
-            promises.push($.get('/proxy?u=' + encodeURIComponent(my.imagesUrl)));
-        }
-        else {
-            promises.push($.get('/proxy?u=http://copper-dog.com/'));
-        }
+        const imageDataPromise = imagesUrl ? this._fetchHtml(imagesUrl) : null;
+            
+        // Exceptions are loaded as part of the import file, so they're already in the form.
+        const exceptionsDataPromise = Promise.resolve(exceptions);
 
-        if (my.exceptions !== undefined && my.exceptions.length > 0) {
-            promises.push($.get('/proxy?u=http://copper-dog.com/'));
-        }
-            // exceptions via a file is deprecated; the above assumes assumtpions in the original import-xxx.json file
-        else if (my.exceptionsUrl !== undefined && my.exceptionsUrl.length > 0) {
-            promises.push($.get('/proxy?u=' + encodeURIComponent(my.exceptionsUrl)));
-        }
-        else {
-            promises.push($.get('/proxy?u=http://copper-dog.com/'));
-        }
+        window.dispatchEvent(new Event('data-loading'));
 
-        my.trigger('data-loading');
-
-        $.when.apply($, promises).done(function () {
-            // the first result is essential
-            var htmlCards = {
-                data: arguments[0][0],
-                urlSource: my.cardDataUrl
-            }
-
-            // Used for jsonp responses.
-            if (htmlCards.data.contents !== undefined) {
-                htmlCards.data = htmlCards.data.contents;
-            }
-
-            // If raw HTML data was provided, use that.
-            if (my.htmlCardData !== undefined && my.htmlCardData.length > 0) {
-                htmlCards.data = my.htmlCardData;
-            }
-
-            if (isBadResponse(htmlCards.data)) {
-                alert("ERROR: No data retrieved from " + my.cardDataUrl + ". Response:" + htmlCards);
-                return;
-            }
-
-            var htmlImages = {
-                data: arguments[1][0],
-                urlSource: my.imagesUrl
-            }
-            if (isBadResponse(htmlImages.data)) {
-                htmlImages.data = undefined; // this is okay -- it'll just default to using all images form cards-data (GM or cardsMain.json)
-            }
-
-            var jsonExceptions = { data: undefined, urlSource: undefined };
-            if (my.exceptions !== undefined && my.exceptions.length > 0) {
-                jsonExceptions.data = my.exceptions;
-            }
-                // below assumed loading exceptions from an external file, which is deprecacted
-            else {
-                jsonExceptions.data = arguments[2][0];
-                jsonExceptions.urlSource = my.exceptionsUrl;
-                if (isBadResponse(jsonExceptions.data)) {
-                    jsonExceptions.data = undefined; // this is okay -- it's optional
+        // Get all data, either fetched from a url or loaded directly from the form.
+        Promise.all([cardDataPromise, imageDataPromise, exceptionsDataPromise])
+            .then(([htmlData, imageData, exceptionData]) => {
+                // the first result is essential
+                const htmlCards = {
+                    data: htmlData,
+                    urlSource: cardDataUrl
                 }
-            }
+                const htmlImages = {
+                    data: imageData,
+                    urlSource: imagesUrl
+                }
+                const jsonExceptions = {
+                    data: exceptionData
+                };
 
-            var setCode = my.setCode.trim();
+                window.dispatchEvent(new Event('data-loaded'));
 
-            my.trigger('data-loaded');
-
-            setTimeout(function () { createOutputJson(setCode, htmlCards, htmlImages, jsonExceptions); }, 100); // delay to let ui render
-        });
-
+                this._createOutputJson(setCode, htmlCards, htmlImages, jsonExceptions);
+            },
+            reason => {
+                alert(`ERROR: failed to retrieve data from a source: ${reason}`);
+            });
     }
 
-    function createOutputJson(setCode, htmlCards, htmlImages, jsonExceptions) {
+    getDownloadSettingsFileLinkAttributes(setCode, cardDataUrl, imagesUrl, exceptionsUrl, exceptions) {
+        const settings = {
+            "setCode": setCode,
+            "cardDataUrl": cardDataUrl,
+            "imagesUrl": imagesUrl,
+            "exceptionsUrl": exceptionsUrl,
+            "exceptions": exceptions
+        };
+
+        const settingsJson = JSON.stringify(settings, null, ' ');
+        const encodedContent = btoa(settingsJson);
+
+        const attrs = {
+            "href": `data:text/octet-strea; m;base64,${encodedContent}`,
+            "download": 'import-main.json' // 'download' attr is Chrome/FF-only to set download filename
+        };
+        return attrs;
+    }
+
+    setSettings(settings) {
+        // support the old settings file format
+        if (settings.cardDataUrl === undefined && settings.hasOwnProperty('gatheringMagicUrl')) {
+            settings.cardDataUrl = settings.gatheringMagicUrl;
+        }
+        if (settings.hasOwnProperty('mtgJson')) {
+            settings.cardDataUrl = settings.mtgJson;
+        }
+        return settings;
+    }
+
+    // PRIVATE METHODS ------------------------------------------------------------------------------------
+
+    // Get html via a proxy, erroring if it fails or if no HTML is retrieved.
+    _fetchHtml(url) { 
+        return fetch(`/proxy?u=${encodeURIComponent(url)}`)
+        .catch(error => console.log(`${error}  url: ${url}`))
+        .then(response => {
+            if (!response.ok) { throw Error(response.statusText); }
+            return response;
+        })
+        .then(response => response.text())
+        .then(text => {
+            if (text) { return Promise.resolve(text); }
+            throw Error(`No HTML returned from: ${url}`);
+        });
+    }
+
+    _createOutputJson(setCode, htmlCards, htmlImages, jsonExceptions) {
         // Get card data -------------------------------------------------------------------------------------------------
         // All card data source come with image data that we usually want to override in the next step.
-        var mainOut = my.api.getCardData(htmlCards.data, htmlCards.urlSource, setCode);
-        var initialCardDataCount = Object.keys(mainOut).length;
+        let mainOut = this._getCardData(htmlCards.data, htmlCards.urlSource, setCode);
+        const initialCardDataCount = mainOut.size;
 
         // Get image data -------------------------------------------------------------------------------------------------
-        var imageDataCount = 0;
-        if (htmlImages.data !== undefined) {
-            var mainImages = my.api.getImageData(htmlImages.data, htmlImages.urlSource);
-            imageDataCount = Object.size(mainImages);
+        let mainImages = new Map()
+        if (htmlImages.data) {
+            mainImages = this._getImageData(htmlImages.data, htmlImages.urlSource);
         }
 
         // Apply Exceptions -------------------------------------------------------------------------------------------------
-        if (jsonExceptions.data !== undefined) {
+        if (jsonExceptions.data) {
             jsonExceptions.data = JSON.parse(jsonExceptions.data);
         }
 
         // Returns both the updated set of cards AND the modified exceptions (the latter for reporitng purposes).
-        var exceptionsResults = my.api.applyExceptions(mainOut, jsonExceptions.data, setCode);
+        const exceptionsResults = this._applyExceptions(mainOut, jsonExceptions.data, setCode);
         mainOut = exceptionsResults.cards;
 
         // Add images to cards -------------------------------------------------------------------------------------------------
-        mainOut = my.api.applyImagesToCards(mainOut, mainImages);
+        mainOut = this._applyImagesToCards(mainOut, mainImages);
 
         // Reporting -------------------------------------------------------------------------------------------------
 
-        var out = "";
-        if (imageDataCount < 1) {
-            out += "<p>WARNING: No image data supplied. Using any images found with card data: " + htmlCards.urlSource + "</p>";
+        const cardArray = [...mainOut.values()];
+        let out = "";
+        if (mainImages.size < 1) {
+            out += `<p>WARNING: No image data supplied. Using any images found with card data: ${htmlCards.urlSource}</p>`;
         }
         else {
-            var missingSecondaryImageDataEntry = $.grep(mainOut, function (card, index) { return !card.hasOwnProperty("imageSourceOriginal"); });
+            const missingSecondaryImageDataEntry = cardArray.filter(card => !card.hasOwnProperty("imageSourceOriginal"));
             if (missingSecondaryImageDataEntry.length < 1) {
                 out += "<p>No parsing errors.</p>";
             }
             else {
                 out += "<p>The following cards had no image data from your image source:</p><ul>";
-                missingSecondaryImageDataEntry = missingSecondaryImageDataEntry.sort(sortByTitle);
-                for (var i = 0; i < missingSecondaryImageDataEntry.length; i++) {
-                    var value = missingSecondaryImageDataEntry[i];
-                    var comment = "";
-                    if (value._comment) {
-                        comment = "<em> - " + value._comment + "</em>";
-                    }
-                    out += "<li style='color:red'>" + value.title + comment + "</li>";
-                }
+                missingSecondaryImageDataEntry.sort(this._sortByTitle).forEach(value => {
+                    const comment = value._comment ? `<em> - ${value._comment}</em>` : "";
+                    out += `<li style='color:red'>${value.title + comment}</li>`;
+                });
                 out += "</ul>";
             }
 
-            var unusedImages = [];
-            var key;
-            for (key in mainImages) {
-                if (mainImages.hasOwnProperty(key)) {
-                    if (!mainImages[key].wasUsed) {
-                        unusedImages.push(mainImages[key]);
-                    }
-                }
-            }
+            const unusedImages = Object.entries(mainImages).map(entry => entry[1]).filter(mainImage => !mainImage.wasUsed);
             if (unusedImages.length > 0) {
                 out += "<p>The following images from your image data source did not match any cards in your card data:</p><ul>";
-                for (var i = 0; i < unusedImages.length; i++) {
-                    out += "<li style='color:red'>" + unusedImages[i].title + "</li>";
-                }
+                unusedImages.forEach(unusedImage => out += `<li style='color:red'>${unusedImage.title}</li>`);
                 out += "</ul>";
             }
         }
 
-        var cardsWithPlaceholderImages = _.filter(mainOut, function (card) { return card.imageSource === "placeholder"; });
+        const cardsWithPlaceholderImages = cardArray.filter(card => card.imageSource === "placeholder");
         if (cardsWithPlaceholderImages.length > 0) {
             out += "<p>The following cards have no primary images or images supplied from your image source, so an image was created using <a href='http://placehold.it/' target='_blank'>placehold.it</a>:</p><ul>";
-            for (var i = 0; i < cardsWithPlaceholderImages.length; i++) {
-                out += "<li style='color:red'>" + cardsWithPlaceholderImages[i].title + "</li>";
-            }
+            cardsWithPlaceholderImages.forEach(card => out += `<li style='color:red'>${card.title}</li>`);
             out += "</ul>";
         }
 
-        var duplicateCards = _.filter(mainOut, function (card) { return card.duplicateNum !== undefined; });
+        const duplicateCards = cardArray.filter(card => card.duplicateNum !== undefined);
         if (duplicateCards.length > 0) {
-            var sortedDuplicateCards = _.sortBy(duplicateCards, "mtgenId");
+            const sortedDuplicateCards = duplicateCards.sort((a,b) => this._sortBy("mtgenId",a,b));
             out += "<p>The following cards have duplicate mtgenIds:</p><ul>";
-            for (var i = 0; i < sortedDuplicateCards.length; i++) {
-                out += "<li style='color:DarkGoldenrod'>" + sortedDuplicateCards[i].mtgenId + ": " + sortedDuplicateCards[i].title + "</li>";
-            }
+            sortedDuplicateCards.forEach(card => out += `<li style='color:DarkGoldenrod'>${card.mtgenId}: ${card.title}</li>`);
             out += "</ul>";
         }
 
-        var exceptions = exceptionsResults.exceptions;
-        var hasExceptions = (exceptions !== undefined && exceptions !== null && exceptions.length > 0);
-        if (!hasExceptions) {
+        if (!exceptionsResults.exceptions) {
             out += "<p>No exceptions provided.</p>";
         }
         else {
             out += "<p>The supplied exceptions were processed as follows:</p><ul>";
 
-            for (var i = 0; i < exceptions.length; i++) {
-                var exception = exceptions[i];
-                if (exception.result === undefined || exception.result === null) {
+            exceptionsResults.exceptions.forEach((exception, index) => {
+                if (!exception.result) {
                     exception.result = { success: false, error: "PROCESSING FAILURE: no result given at all for this exception!" };
                 }
                 if (exception.comment === true) {
-                    out += "<li style='color: gray'>#" + (i + 1) + ": Comment; ignored.</li>";
+                    out += `<li style='color: gray'>#${(index + 1)}: Comment; ignored.</li>`;
                 }
                 else if (exception.result.success === true) {
                     if (exception.result.affectedCards > 0) {
-                        out += "<li style='color: green'>#" + (i + 1) + ": ";
+                        out += `<li style='color: green'>#${(index + 1)}: `;
                     }
                     else {
-                        out += "<li style='color: DarkGoldenrod'>#" + (i + 1) + ": ";
+                        out += `<li style='color: DarkGoldenrod'>#${(index + 1)}: `;
                     }
                     if (exception.add === true) {
-                        out += 'Added new card: ' + exception.newValues.title;
+                        out += `Added new card: ${exception.newValues.title}`;
                     }
                     else if (exception.delete === true) {
-                        var deletedCards = _.sortBy(exception.result.deletedCards, "title");
-                        out += 'Deleted ' + deletedCards.length + " cards via query: " + exception.where;
+                        const deletedCards = [...exception.result.deletedCards.values()].sort(this._sortByTitle);
+                        out += `Deleted ${deletedCards.length} cards via query: ${exception.where}`;
                         if (deletedCards.length > 20) {
-                            out += "<ul>";
-                            out += _.pluck(deletedCards, "title").join(", ");
-                            out += "</ul>";
+                            out += "<ul>" + deletedCards.map(card => card.title).join(", ") + "</ul>";
                         }
                         else if (deletedCards.length > 0) {
-                            out += "<ul>";
-                            for (var j = 0; deletedCards.length < j; j++) { out += "<li>" + deletedCards[j].title + "</li>"; }
-                            out += "</ul>";
+                            out += "<ul>" + deletedCards.map(card => `<li>${card.title}</li>`) + "</ul>";
                         }
                     }
                     else {
-                        var modifiedCards = _.sortBy(exception.result.modifiedCards, "title");
-                        out += 'Modified ' + modifiedCards.length + " cards via query: " + exception.where + "<br/>";
-                        out += '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New values: ' + JSON.stringify(exception.newValues);
+                        const modifiedCards = [...exception.result.modifiedCards.values()].sort(this._sortByTitle);
+                        out += `Modified ${modifiedCards.length} cards via query: ${exception.where}<br/>`;
+                        out += `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New values: ${JSON.stringify(exception.newValues)}`;
                         if (modifiedCards.length > 20) {
-                            out += "<ul>";
-                            out += _.pluck(modifiedCards, "title").join(", ");
-                            out += "</ul>";
+                            out += "<ul>" + modifiedCards.map(card => card.title).join(", ") + "</ul>";
                         }
                         else if (modifiedCards.length > 0) {
-                            out += "<ul>";
-                            for (var j = 0; modifiedCards.length < j; j++) { out += "<li>" + modifiedCards[j].title + "</li>"; }
-                            out += "</ul>";
+                            out += "<ul>" + modifiedCards.map(card => `<li>${card.title}</li>`).join("") + "</ul>";
                         }
                     }
                 }
                 else {
-                    out += "<li style='color: red'>#" + (i + 1) + ": " + exception.result.error;
+                    out += `<li style='color: red'>#${(index + 1)}: ${exception.result.error}`;
                 }
                 out += "</li>";
-            }
+            });
             out += "</ul>";
         }
-
-        my.trigger('log-complete', out);
+            
+        window.dispatchEvent(new CustomEvent('log-complete', { 'detail': out }));
 
         // Final JSON output -------------------------------------------------------------------------------------------------
 
-        // clean our temporary data out of the final card data
-        //for (var i = 0; i < mainOut.length; i++) {
-        var finalOut = [];
-        _.each(mainOut, function (card) {
+        cardArray.forEach(card => {
             delete card.matchTitle;
             delete card.srcOriginal;
             delete card.imageSourceOriginal;
             delete card.fixedViaException;
             delete card.imageSource;
-            finalOut.push(card);
         });
 
-        var jsonMainStr = JSON.stringify(finalOut, null, ' ');
+        const jsonMainStr = JSON.stringify(cardArray, null, ' ');
 
-        my.trigger('data-processing-complete', jsonMainStr, initialCardDataCount, imageDataCount, finalOut.length);
+        const finalData = { cardsMainJson: jsonMainStr,
+            initialCardDataCount, 
+            imageDataCount: mainImages.size, 
+            finalCardCount: cardArray.length };
+        window.dispatchEvent(new CustomEvent('data-processing-complete', { 'detail': finalData }));
     }
 
-    function sortByTitle(a, b) {
-        var aName = mtgGen.createMatchTitle(a.title);
-        var bName = mtgGen.createMatchTitle(b.title);
+    _sortByTitle(a, b) {
+        const aName = mtgGen.createMatchTitle(a.title);
+        const bName = mtgGen.createMatchTitle(b.title);
         return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
     }
 
-    function isBadResponse(response) {
+    _sortBy(prop, a, b) {
+        const aProp = a[prop];
+        const bProp = b[prop]
+        return ((aProp < bProp) ? -1 : ((aProp > bProp) ? 1 : 0));
+    }
+
+    //CAMKILL: not used
+    _isBadResponse(response) {
         if (response == null) { return true; }
         if (response.hasOwnProperty('cards')) { return false; }
         //if (!response.indexOf) { return true; } // not sure what this was ever testing for
@@ -357,54 +338,44 @@ var cardDataImporter = (function (my, $) {
         return false;
     }
 
-    //from: http://stackoverflow.com/questions/10073699/pad-a-number-with-leading-zeros-in-javascript
-    // example usage
-    //	pad(10, 4);      // 0010
-    //	pad(9, 4);       // 0009
-    //	pad(123, 4);     // 0123
-    //	pad(10, 4, '-'); // --10
-    function pad(n, width, z) {
-        z = z || '0';
-        n = n + '';
-        return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
-    }
-
     // adapted from: http://guegue.net/friendlyURL_JS
-    function cardTitleUrl(str, max) {
-        if (max === undefined) max = 32;
-        var a_chars = new Array(
-          new Array("a", /[áàâãªÁÀÂÃ]/g),
-          new Array("e", /[éèêÉÈÊ]/g),
-          new Array("i", /[íìîÍÌÎ]/g),
-          new Array("o", /[òóôõºÓÒÔÕ]/g),
-          new Array("u", /[úùûÚÙÛ]/g),
-          new Array("c", /[çÇ]/g),
-          new Array("n", /[Ññ]/g)
-        );
+    _cardTitleUrl(str, max) {
+        let out = str;
+        if (max === undefined) { max = 32; }
+        const a_chars = [
+          ["a", /[áàâãªÁÀÂÃ]/g],
+          ["e", /[éèêÉÈÊ]/g],
+          ["i", /[íìîÍÌÎ]/g],
+          ["o", /[òóôõºÓÒÔÕ]/g],
+          ["u", /[úùûÚÙÛ]/g],
+          ["c", /[çÇ]/g],
+          ["n", /[Ññ]/g]
+        ];
+
         // Replace vowel with accent without them
-        for (var i = 0; i < a_chars.length; i++) {
-            str = str.replace(a_chars[i][1], a_chars[i][0]);
-        }
+        a_chars.forEach(a_char => out = out.replace(a_char[1], a_char[0]));
+
         // first replace whitespace by +, second remove repeated + by just one,
         // third delete all chars which are not between a-z or 0-9, fourth trim the string and
         // the last step truncate the string to 32 chars
-        return str.replace(/\s+/gi, '~').replace(/[^a-z0-9\~]/gi, '').replace(/\-{2,}/gi, '~').replace(/~/gi, '%20').replace(/(^\s*)|(\s*$)/gi, '').substr(0, max);
+        return out.replace(/\s+/gi, '~').replace(/[^a-z0-9\~]/gi, '').replace(/\-{2,}/gi, '~').replace(/~/gi, '%20').replace(/(^\s*)|(\s*$)/gi, '').substr(0, max);
     }
 
-    function getCardColourFromCard(card) {
-        if (card.type !== undefined) {
-            if (card.type.toLowerCase().indexOf("land") > -1) { return mtgGen.colours.land.code; }
-            if (card.type.toLowerCase().indexOf("artifact") > -1) { return mtgGen.colours.artifact.code; }
+    _getCardColourFromCard(card) {
+        if (card.type) {
+            const lowerCaseCardType = card.type.toLowerCase();
+            if (lowerCaseCardType.includes("land")) { return mtgGen.colours.land.code; }
+            if (lowerCaseCardType.includes("artifact")) { return mtgGen.colours.artifact.code; }
         }
 
         // Derived from casting cost:
         // Only keep card colours (bcgkruw), then collapse into the colour-specific counts.
         // OLDER: {} are groups around split colour {RG}
         // NEWER: () are groups around split colour (R///)
-        var cardColours = card.cost.toLowerCase().replace(/[^bcgkruw]/g, "").split("");
-        var uniqueColours = _.toArray(_.countBy(cardColours, function (colour) { return colour; }));
+        const cardColours = card.cost.toLowerCase().replace(/[^bcgkruw]/g, ""); // Remove all but the whitelisted card colour letters.
+        const uniqueColours = [...new Set(cardColours)]; // Collapse to only the unique entries.
 
-        var finalColour = '';
+        let finalColour = '';
         switch (uniqueColours.length) {
             case 0: // 0 unique colours = colourless
                 if (card.colour !== undefined && card.colour.length === 0) {
@@ -424,260 +395,206 @@ var cardDataImporter = (function (my, $) {
         return finalColour;
     }
 
-    my.getDownloadSettingsFileLinkAttributes = function (setCode, cardDataUrl, imagesUrl, exceptionsUrl, exceptions) {
-        var settings = {
-            "setCode": setCode,
-            "cardDataUrl": cardDataUrl,
-            "imagesUrl": imagesUrl,
-            "exceptionsUrl": exceptionsUrl,
-            "exceptions": exceptions
-        };
-
-        // Deprecated, to trash it if its not there.
-        if (settings.exceptionsUrl === null) {
-            delete settings.exceptionsUrl;
-        }
-
-        var settingsJson = JSON.stringify(settings, null, ' ');
-        var encodedContent = $.base64.encode(settingsJson);
-
-        var attrs = {
-            "href": 'data:text/octet-strea; m;base64,' + encodedContent,
-            "download": 'import-main.json' // 'download' attr is Chrome/FF-only to set download filename
-        };
-        return attrs;
-    }
-
-    my.setSettings = function (settings) {
-        // support the old settings file format
-        if (settings.cardDataUrl === undefined && settings.hasOwnProperty('gatheringMagicUrl')) {
-            settings.cardDataUrl = settings.gatheringMagicUrl;
-        }
-        if (settings.hasOwnProperty('mtgJson')) {
-            settings.cardDataUrl = settings.mtgJson;
-        }
-        return settings;
-    }
-
-    function getCardData(cardData, cardDataUrlSource, setCode) {
-        var cards = {};
+    _getCardData(cardData, cardDataUrlSource, setCode) {
+        let cards = new Map();
 
         // Determine from where the card data was sourced and therefore the parser needed.
-        var lowercaseCardDataUrlSource = cardDataUrlSource.trim().toLowerCase();
+        const lowercaseCardDataUrlSource = cardDataUrlSource.trim().toLowerCase();
         if (lowercaseCardDataUrlSource.length < 1) {
             console.log("No card data source supplied: this is used when the exceptions file is used to generate cards");
         }
             // 20160818: had to run mtgsalvation through proxy2016.top cuz it started blocking direct grabs
-        else if (lowercaseCardDataUrlSource.indexOf('mtgsalvation.com') > -1 || lowercaseCardDataUrlSource.indexOf('proxy2016.top') > -1) {
-            cards = my.api.getCardsFromMtgSalvationData(cardData, setCode);
+        else if (lowercaseCardDataUrlSource.includes('mtgsalvation.com') || lowercaseCardDataUrlSource.includes('proxy2016.top')) {
+            cards = this._getCardsFromMtgSalvationData(cardData, setCode);
         }
-        else if (lowercaseCardDataUrlSource.indexOf('gatheringmagic.com') > -1) {
-            cards = my.api.getCardsFromGatheringMagicData(cardData, setCode);
+        else if (lowercaseCardDataUrlSource.includes('mtgjson.com')) {
+            cards = this._getCardsFromMtgJsonData(cardData, setCode);
         }
-        else if (lowercaseCardDataUrlSource.indexOf('mtgjson.com') > -1) {
-            cards = my.api.getCardsFromMtgJsonData(cardData, setCode);
-        }
-        else if (lowercaseCardDataUrlSource.indexOf('localhost') > -1 || lowercaseCardDataUrlSource.indexOf('mtgen.net') > -1) {
+        else if (lowercaseCardDataUrlSource.includes('localhost') || lowercaseCardDataUrlSource.includes('mtgen.net')) {
             cards = JSON.parse(cardData); // native format -- used for upgrading the images or file format
         }
         else {
-            throw new Error("Card data url unknown. Only mtgen.net/localhost, mtgsalvation.com, gatheringmagic.com, and mtgjson.com supported. '" + cardDataUrlSource + "'");
+            throw new Error(`Card data url unknown. Only mtgen.net/localhost, mtgsalvation.com, gatheringmagic.com, and mtgjson.com supported. '${cardDataUrlSource}'`);
         }
 
         return cards;
     }
 
-    // Fix num (and any duplicates), add mtgenId, add into the cards object.
-    function addCardToCards(cards, newCard) {
-        var alphabet = "abcedfghijklmnopqrstuvwxyz";
+    // Fix num (and any duplicates), add mtgenId, add into the cards map.
+    _addCardToCards(cards, newCard) {
+        const alphabet = "abcedfghijklmnopqrstuvwxyz";
         newCard.num = newCard.num || newCard.multiverseid || newCard.id; // num is required, so ensure we have one
-        newCard.mtgenId = newCard.set + "|" + newCard.num;
-        var firstVariant = newCard.mtgenId + ":a";
-        if (cards[newCard.mtgenId] === undefined && cards[firstVariant] === undefined) {
-            cards[newCard.mtgenId] = newCard;
+        newCard.mtgenId = `${newCard.set}|${newCard.num}`;
+        const firstVariant = `${newCard.mtgenId}:a`;
+        if (!cards.has(newCard.mtgenId) && !cards.has(firstVariant)) {
+            cards.set(newCard.mtgenId, newCard);
         }
         else {
             // Duplicate cards found -- fix it!
 
             // Find the next available variant.
-            var nextAvailableVariantMtgenId;
-            var nextAvailableVariantNum;
-            for (var i = 0; i < alphabet.length; i++) {
-                var mtgenId = newCard.mtgenId + ":" + alphabet[i];
-                if (cards[mtgenId] === undefined) {
+            let nextAvailableVariantNum;
+            for (let i = 0; i < alphabet.length; i++) {
+                const mtgenId = `${newCard.mtgenId}:${alphabet[i]}`;
+                if (!cards.has(mtgenId)) {
                     nextAvailableVariantNum = i + 1;
                     break;
                 }
             }
 
-            var originalCard = cards[newCard.mtgenId] || cards[firstVariant];
+            const originalCard = cards.get(newCard.mtgenId) || cards.get(firstVariant);
 
             // If it's a duplicate mtgenId AND title it's the SAME card.. ditch it
-            if (originalCard !== undefined) {
+            if (originalCard) {
                 if (originalCard.matchTitle === newCard.matchTitle) {
-                    console.log("DUPLICATE CARD: " + newCard.title);
+                    console.log(`DUPLICATE CARD: ${newCard.title}`);
                     return cards;
                 }
             }
 
-            if (originalCard.mtgenVariant === undefined) {
-                delete cards[originalCard.mtgenId];
+            if (!originalCard.mtgenVariant) {
+                cards.delete(originalCard.mtgenId);
                 originalCard.mtgenVariant = nextAvailableVariantNum;
-                originalCard.mtgenId += ":" + alphabet[nextAvailableVariantNum - 1];
+                originalCard.mtgenId += `:${alphabet[nextAvailableVariantNum - 1]}`;
                 originalCard.duplicateNum = true;
-                cards[originalCard.mtgenId] = originalCard;
+                cards.set(originalCard.mtgenId, originalCard);
                 nextAvailableVariantNum++;
             }
             newCard.mtgenVariant = nextAvailableVariantNum;
-            newCard.mtgenId += ":" + alphabet[nextAvailableVariantNum - 1];
+            newCard.mtgenId += `:${alphabet[nextAvailableVariantNum - 1]}`;
             newCard.duplicateNum = true;
-            cards[newCard.mtgenId] = newCard;
-
-            //var originalCard = cards[newCard.mtgenId];
-            //var mtgenVariant = 1;
-            //if (originalCard.mtgenVariant === undefined) {
-            //    delete cards[originalCard.mtgenId];
-            //    originalCard.mtgenVariant = mtgenVariant;
-            //    originalCard.mtgenId += ":" + alphabet[mtgenVariant - 1];
-            //    originalCard.duplicateNum = true;
-            //    cards[originalCard.mtgenId] = originalCard;
-            //    mtgenVariant++
-            //}
-            //else {
-            //    mtgenVariant = originalCard.mtgenVariant + 1;
-            //}
-            //newCard.mtgenVariant = mtgenVariant;
-            //newCard.mtgenId += ":" + alphabet[mtgenVariant - 1];
-            //newCard.duplicateNum = true;
-            //cards[newCard.mtgenId] = newCard;
+            cards.set(newCard.mtgenId, newCard);
         }
         return cards;
     }
 
-    function getCardFromWizardsGatherer(cardName, setCode) {
-        return new Promise((resolve, reject) => {
-            var queryStringCardName = cardName.split(" ").reduce(function (final, curr) { return `${final}+[${curr}]`; }, "");
+    // NOT YET WORKING
+    // The plan here was to allow missing cards to be fetched directly from Wizards.
+    //const getCardFromWizardsGatherer = (cardName, setCode) => {
+    //    return new Promise((resolve, reject) => {
+    //        var queryStringCardName = cardName.split(" ").reduce((final, curr) => `${final}+[${curr}]`, "");
 
-            $.get('/proxy?u=' + encodeURIComponent("http://gatherer.wizards.com/Pages/Search/Default.aspx?name=" + queryStringCardName))
-              .done(function (data) {
-                  var card = {};
+    //        $.get('/proxy?u=' + encodeURIComponent("http://gatherer.wizards.com/Pages/Search/Default.aspx?name=" + queryStringCardName))
+    //          .done(function (data) {
+    //              var card = {};
 
-                  var $html = $(data);
-                  var el = $html.find(".cardDetails");
+    //              var $html = $(data);
+    //              var el = $html.find(".cardDetails");
 
-                  var title = el.find("[id$=_nameRow] .value");
-                  if (title.length > 0) {
-                      card.title = title[0].textContent.trim();
-                      card.matchTitle = mtgGen.createMatchTitle(card.title); // used for matching MtG Salvation vs. WotC titles and card titles vs. exception titles
-                  }
+    //              var title = el.find("[id$=_nameRow] .value");
+    //              if (title.length > 0) {
+    //                  card.title = title[0].textContent.trim();
+    //                  card.matchTitle = mtgGen.createMatchTitle(card.title); // used for matching MtG Salvation vs. WotC titles and card titles vs. exception titles
+    //              }
 
-                  var img = el.find('.cardImage img');
-                  if (img.length > 0) {
-                      // Wizards' images are relative, so we need to rebuild the link.
-                      var imgQuerystring = img[0].src.split("?")[1];
-                      card.src = "http://gatherer.wizards.com/Handlers/Image.ashx?" + imgQuerystring;
-                      card.imageSource = "wizards-gatherer";
-                  }
+    //              var img = el.find('.cardImage img');
+    //              if (img.length > 0) {
+    //                  // Wizards' images are relative, so we need to rebuild the link.
+    //                  var imgQuerystring = img[0].src.split("?")[1];
+    //                  card.src = `http://gatherer.wizards.com/Handlers/Image.ashx?${imgQuerystring}`;
+    //                  card.imageSource = "wizards-gatherer";
+    //              }
 
-                  card.set = setCode;
+    //              card.set = setCode;
 
-                  var mana = el.find('.manaRow .value img');
-                  if (mana.length > 0) {
-                      // These are stored in a set of images, one per symbol
-                      card.cost = _.reduce(mana, function (final, curr) {
-                          var manaType = curr.attributes["alt"].value.trim().toLowerCase();
-                          switch (manaType) {
-                              case "white": final += "W"; break;
-                              case "blue": final += "U"; break;
-                              case "red": final += "R"; break;
-                              case "black": final += "B"; break;
-                              case "green": final += "G"; break;
-                              case "multicolored": final += "M"; break;
-                              case "variable colorless": final += "C"; break;
-                              default:
-                                  var num = parseInt(manaType, 10);
-                                  if (isNaN(num)) {
-                                      console.log("WARNING: unknown mana type: " + manaType);
-                                  };
-                                  final += manaType;
-                                  break;
-                          }
-                          return final;
-                      }, "");
-                  }
+    //              var mana = el.find('.manaRow .value img');
+    //              if (mana.length > 0) {
+    //                  // These are stored in a set of images, one per symbol
+    //                  card.cost = _.reduce(mana, function (final, curr) {
+    //                      var manaType = curr.attributes["alt"].value.trim().toLowerCase();
+    //                      switch (manaType) {
+    //                          case "white": final += "W"; break;
+    //                          case "blue": final += "U"; break;
+    //                          case "red": final += "R"; break;
+    //                          case "black": final += "B"; break;
+    //                          case "green": final += "G"; break;
+    //                          case "multicolored": final += "M"; break;
+    //                          case "variable colorless": final += "C"; break;
+    //                          default:
+    //                              var num = parseInt(manaType, 10);
+    //                              if (isNaN(num)) {
+    //                                  console.log(`WARNING: unknown mana type: ${manaType}`);
+    //                              };
+    //                              final += manaType;
+    //                              break;
+    //                      }
+    //                      return final;
+    //                  }, "");
+    //              }
 
-                  var rarity = el.find("[id$=_rarityRow] .value");
-                  if (rarity.length > 0) {
-                      if (rarity[0].classList.length > 1) {
-                          card.rarity = rarity[0].classList[1][0].toLowerCase();
-                      }
-                  }
+    //              var rarity = el.find("[id$=_rarityRow] .value");
+    //              if (rarity.length > 0) {
+    //                  if (rarity[0].classList.length > 1) {
+    //                      card.rarity = rarity[0].classList[1][0].toLowerCase();
+    //                  }
+    //              }
 
-                  var type = el.find("[id$=_typeRow] .value");
-                  if (type.length > 0) {
-                      var types = type[0].textContent.split(' — ');
-                      card.type = types[0].trim();
-                      if (types.length > 1) {
-                          card.subtype = types[1].trim();
-                      }
-                  }
+    //              var type = el.find("[id$=_typeRow] .value");
+    //              if (type.length > 0) {
+    //                  var types = type[0].textContent.split(' — ');
+    //                  card.type = types[0].trim();
+    //                  if (types.length > 1) {
+    //                      card.subtype = types[1].trim();
+    //                  }
+    //              }
 
-                  // derived from casting cost
-                  card.colour = getCardColourFromCard(card);
+    //              // derived from casting cost
+    //              card.colour = getCardColourFromCard(card);
 
-                  var pt = el.find("[id$=_ptRow] .value");
-                  if (pt.length > 0) {
-                      var pts = pt[0].textContent.split('/');
-                      if (pts.length > 1) {
-                          card.power = pts[0].trim();
-                          card.toughness = pts[1].trim();
-                      }
-                      else if (pts.length == 1) {
-                          card.loyalty = pts[0].trim(); // must be a planeswalker
-                      }
-                      // otherwise it's something without power/toughness|loytlty, i.e.: land, spell, etc
-                  }
+    //              var pt = el.find("[id$=_ptRow] .value");
+    //              if (pt.length > 0) {
+    //                  var pts = pt[0].textContent.split('/');
+    //                  if (pts.length > 1) {
+    //                      card.power = pts[0].trim();
+    //                      card.toughness = pts[1].trim();
+    //                  }
+    //                  else if (pts.length == 1) {
+    //                      card.loyalty = pts[0].trim(); // must be a planeswalker
+    //                  }
+    //                  // otherwise it's something without power/toughness|loytlty, i.e.: land, spell, etc
+    //              }
 
-                  var rarity = el.find("[id$=_rarityRow] .value");
-                  if (rarity.length > 0) {
-                      if (rarity[0].classList.length > 1) {
-                          card.rarity = rarity[0].classList[1][0].toLowerCase();
-                      }
-                  }
+    //              var rarity = el.find("[id$=_rarityRow] .value");
+    //              if (rarity.length > 0) {
+    //                  if (rarity[0].classList.length > 1) {
+    //                      card.rarity = rarity[0].classList[1][0].toLowerCase();
+    //                  }
+    //              }
 
-                  var cnum = el.find("[id$=_numberRow] .value");
-                  if (cnum.length > 0) {
-                      card.num = cnum[0].textContent.trim();
-                  }
+    //              var cnum = el.find("[id$=_numberRow] .value");
+    //              if (cnum.length > 0) {
+    //                  card.num = cnum[0].textContent.trim();
+    //              }
 
-                  resolve(card);
-              })
-            .fail((xhr, status, err) => reject(status + err.message));
-        });
-    }
+    //              resolve(card);
+    //          })
+    //        .fail((xhr, status, err) => reject(status + err.message));
+    //    });
+    //}
 
-    function getCardsFromMtgSalvationData(rawCardData, setCode) {
-        var cards = {};
+    _getCardsFromMtgSalvationData(rawCardData, setCode) {
+        let cards = new Map();
 
-        // get all MtgS cards
-        var $html = $("<html/>").html(rawCardData);
-        var $cards = $html.find('.t-spoiler-wrapper');
-        if ($cards.length === 0) {
+        // get all MtgSalvation cards
+        const parser = new DOMParser();
+        const cardDoc = parser.parseFromString(rawCardData, "text/html");
+
+        const cardsData = cardDoc.querySelectorAll('.t-spoiler-wrapper');
+        if (cardsData.length === 0) {
             alert("No cards from MtG Salvation cards found. Note that you CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.");
         }
-        for (var i = 0; i < $cards.length; i++) {
-            var card = {};
-            var el = $($cards[i]);
+        cardsData.forEach(cardEl => {
+            const card = { set: setCode };
 
-            var title = el.find('h2');
-            if (title.length > 0) {
-                card.title = title[0].textContent.trim();
+            const title = cardEl.querySelector('h2');
+            if (title) {
+                card.title = title.textContent.trim();
                 card.matchTitle = mtgGen.createMatchTitle(card.title); // used for matching MtG Salvation vs. WotC titles and card titles vs. exception titles
             }
 
-            var img = el.find('.spoiler-card-img img');
-            if (img.length > 0) {
-                card.src = img[0].src;
+            const img = cardEl.querySelector('.spoiler-card-img img');
+            if (img) {
+                card.src = img.src;
                 card.imageSource = "mtg-salvation";
                 // from GatheringMagic version, but don't know what this looks like under this site
                 //if (el.hasClass('wm-day') || el.hasClass('wm-night')) { // Double-Faced card
@@ -685,225 +602,84 @@ var cardDataImporter = (function (my, $) {
                 //}
             }
 
-            card.set = setCode;
-
-            var mana = el.find('.t-spoiler-mana');
-            if (mana.length > 0) {
-                card.cost = mana[0].textContent.replace(/ /g, '').replace(/\n/g, '');
+            const mana = cardEl.querySelector('.t-spoiler-mana');
+            if (mana) {
+                card.cost = mana.textContent.replace(/ /g, '').replace(/\n/g, '');
             }
 
-            var rarity = el.find('.t-spoiler-header');
-            if (rarity.length > 0) {
-                if (rarity[0].classList.length > 1) {
-                    card.rarity = rarity[0].classList[1][0].toLowerCase();
+            const rarity = cardEl.querySelector('.t-spoiler-header');
+            if (rarity) {
+                if (rarity.classList.length > 1) {
+                    card.rarity = rarity.classList[1][0].toLowerCase();
                 }
             }
 
-            var type = el.find('.t-spoiler-type');
-            if (type.length > 0) {
-                var types = type[0].textContent.split(' - ');
+            const type = cardEl.querySelector('.t-spoiler-type');
+            if (type) {
+                const types = type.textContent.split(' - ');
                 card.type = types[0].trim();
                 if (types.length > 1) {
                     card.subtype = types[1].trim();
                 }
             }
 
-            var pt = el.find(".t-spoiler-stat");
-            if (pt.length > 0) {
-                var pts = pt[0].textContent.split('/');
+            const pt = cardEl.querySelector(".t-spoiler-stat");
+            if (pt) {
+                const pts = pt.textContent.split('/');
                 if (pts.length > 1) {
                     card.power = pts[0].trim();
                     card.toughness = pts[1].trim();
                 }
-                else if (pts.length == 1) {
+                else if (pts.length === 1) {
                     card.loyalty = pts[0].replace('[', '').replace(']', '').trim(); // must be a planeswalker
                 }
                 // otherwise it's something without power/toughness|loytlty, i.e.: land, spell, etc
             }
 
-            var colour = el.find('.t-spoiler');
-            if (colour.length > 0) {
-                for (var j = 0; j < colour[0].classList.length; j++) {
-                    var className = colour[0].classList[j];
-                    if (className.indexOf('card-color-') > -1) {
-                        var cardColour = className.replace('card-color-', '');
-                        if (cardColour.length > 0) {
-                            switch (cardColour.trim().toLowerCase()) {
-                                case "white": card.colour = "w"; break;
-                                case "blue": card.colour = "u"; break;
-                                case "red": card.colour = "r"; break;
-                                case "black": card.colour = "b"; break;
-                                case "green": card.colour = "g"; break;
-                                case "multicolored": card.colour = "m"; break;
-                                case "colorless": card.colour = "c"; break;
-                                default:
-                                    console.log("WARNING: unknown card colour: " + cardColour);
-                                    break;
-                            }
+            const colour = cardEl.querySelector('.t-spoiler');
+            if (colour) {
+                const className = [...colour.classList].find(className => className.includes('card-color-'));
+                if (className) {
+                    const cardColour = className.replace('card-color-', '');
+                    if (cardColour.length > 0) {
+                        switch (cardColour.trim().toLowerCase()) {
+                            case "white": card.colour = "w"; break;
+                            case "blue": card.colour = "u"; break;
+                            case "red": card.colour = "r"; break;
+                            case "black": card.colour = "b"; break;
+                            case "green": card.colour = "g"; break;
+                            case "multicolored": card.colour = "m"; break;
+                            case "colorless": card.colour = "c"; break;
+                            default:
+                                console.log(`WARNING: unknown card colour: ${cardColour}`);
+                                break;
                         }
                     }
                 }
             }
 
             // derived from casting cost
-            card.colour = getCardColourFromCard(card);
-            //console.log(card.colour + ": " + card.cost + ": " + card.type + ": " + card.subtype + ": " + card.title);
+            card.colour = this._getCardColourFromCard(card);
 
-            var cnum = el.find('.t-spoiler-artist');
-            if (cnum.length > 0) {
-                var cnums = cnum[0].textContent.split('#');
+            const cnum = cardEl.querySelector('.t-spoiler-artist');
+            if (cnum) {
+                let cnums = cnum.textContent.split('#');
                 if (cnums.length > 1) {
                     cnums = cnums[1].split('/');
-                    card.num = pad(cnums[0].trim(), 3);
+                    card.num = cnums[0].trim().padStart(4, "0");
                 }
             }
 
-            // from GatheringMagic version, but don't know what this looks like under this site
-            //// if it has a guild or clan, save that
-            //$(el[0].classList).each(function (index, value) {
-            //    if (value.indexOf('wm-') == 0) {
-            //        if (guildClanType === undefined) {
-            //            switch (setCode.toLowerCase()) {
-            //                case "rtr": // Guilds: Return to Ravniva, Gatecrash, Dragon's Maze
-            //                case "gtc":
-            //                case "dgm":
-            //                    guildClanType = "guild";
-            //                    break;
+            // NOTE: haven't imported clans from this site, so I'm not sure what the format is. Old GatheringMagic version supported it.
 
-            //                case "ktk": // Clans: Khans of Tarkir, Fate Reforged, Dragons of Tarkir
-            //                case "frf":
-            //                case "dtk":
-            //                    guildClanType = "clan";
-            //                    break;
-            //            }
-            //        }
-            //        if (guildClanType !== undefined) {
-            //            card[guildClanType] = value.replace('wm-', '').replace('//', '/');
-            //        }
-            //        else {
-            //            console.log("WARNING: found wm-* class data in GM HTML but set code doesn't belong to anything with guilds/clans.");
-            //        }
-            //    }
-            //});
-
-            cards = addCardToCards(cards, card);
-        }
-
-        return cards;
-    }
-
-    // 20160101: defunct as of Battle for Zendikar -- they now post everything to Facebook. Switching to MTG Salvation.
-    function getCardsFromGatheringMagicData(rawCardData, setCode) {
-        var cards = {};
-
-        // get all GM cards (or at least the mtgJson cards have to exist)
-        var $html = $(rawCardData);
-        var $cards = $html.find('.spoiler-card');
-        if ($cards.length === 0) {
-            alert("No cards from Gathering Magic found. Note that you CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.");
-        }
-        $.each($cards, function (index, el) {
-            var card = {};
-            el = $(el);
-
-            var title = el.find('.title');
-            if (title.length > 0) {
-                card.title = title[0].textContent.trim();
-                card.matchTitle = mtgGen.createMatchTitle(card.title); // used for matching Gathering Magic vs. WotC titles and card titles vs. exception titles
-                var img = $(title).find('.thickbox');
-                if (img.length > 0) {
-                    card.src = img[0].href;
-                    card.imageSource = "gatheringmagic";
-                    if (el.hasClass('wm-day') || el.hasClass('wm-night')) { // Double-Faced card
-                        card.width = 536;
-                    }
-                }
-            }
-
-            card.set = setCode;
-
-            card.cost = "";
-            el.find('.cost img').each(function (index, value) {
-                card.cost += $(value).attr('alt');
-            });
-
-            var rarity = el.find('.rarity');
-            if (rarity.length > 0) {
-                card.rarity = rarity[0].textContent[0].toLowerCase();
-            }
-
-            var type = el.find('.type');
-            if (type.length > 0) {
-                var types = type[0].textContent.split(' – ');
-                card.type = types[0].trim();
-                if (types.length > 1) {
-                    card.subtype = types[1].trim();
-                }
-            }
-
-            var pt = el.find('.powtou');
-            if (pt.length > 0) {
-                var pts = pt[0].textContent.split('/');
-                if (pts.length > 1) {
-                    card.power = pts[0].trim();
-                    card.toughness = pts[1].trim();
-                }
-                else if (pts.length == 1) {
-                    card.loyalty = pts[0].replace('[', '').replace(']', '').trim(); // must be a planeswalker
-                }
-                // otherwise it's something without power/toughness|loytlty, i.e.: land, spell, etc
-            }
-
-            if (el[0].classList.length > 1) {
-                card.colour = el[0].classList[1][0];
-            }
-
-            // derived from casting cost
-            card.colour = getCardColourFromCard(card);
-
-            var cnum = el.find('.cardnum');
-            if (cnum.length > 0) {
-                var cnums = cnum[0].textContent.split('/');
-                if (cnums.length > 1) {
-                    card.num = pad(cnums[0].trim(), 3);
-                }
-            }
-
-            // if it has a guild or clan, save that
-            $(el[0].classList).each(function (index, value) {
-                if (value.indexOf('wm-') == 0) {
-                    if (guildClanType === undefined) {
-                        switch (setCode.toLowerCase()) {
-                            case "rtr": // Guilds: Return to Ravniva, Gatecrash, Dragon's Maze
-                            case "gtc":
-                            case "dgm":
-                                guildClanType = "guild";
-                                break;
-
-                            case "ktk": // Clans: Khans of Tarkir, Fate Reforged, Dragons of Tarkir
-                            case "frf":
-                            case "dtk":
-                                guildClanType = "clan";
-                                break;
-                        }
-                    }
-                    if (guildClanType !== undefined) {
-                        card[guildClanType] = value.replace('wm-', '').replace('//', '/');
-                    }
-                    else {
-                        console.log("WARNING: found wm-* class data in GM HTML but set code doesn't belong to anything with guilds/clans.");
-                    }
-                }
-            });
-
-            cards = addCardToCards(cards, card);
+            cards = this._addCardToCards(cards, card);
         });
 
         return cards;
     }
 
-    function getCardsFromMtgJsonData(rawCardData, setCode) {
-        var cards = {};
+    _getCardsFromMtgJsonData(rawCardData, setCode) {
+        let cards = {};
 
         rawCardData = JSON.parse(rawCardData);
 
@@ -915,10 +691,7 @@ var cardDataImporter = (function (my, $) {
         }
 
         // add each card, converting from mtgjson.com's format to our own
-        for (var i = 0; i < rawCardData.cards.length; i++) {
-            //console.log('converting: ' + card.name);
-            var card = rawCardData.cards[i];
-
+        rawCardData.cards.forEach(card => {
             card.title = card.name;
             card.matchTitle = mtgGen.createMatchTitle(card.title); // used for matching Gathering Magic vs. WotC titles and card titles vs. exception titles
             card.set = setCode;
@@ -933,9 +706,9 @@ var cardDataImporter = (function (my, $) {
             if (card.hasOwnProperty('subTypes') && card.subTypes.length > 0) {
                 card.subtype = card.subtypes[0];
             }
-            card.colour = getCardColourFromCard(card);
+            card.colour = this._getCardColourFromCard(card);
             card.num = card.number;
-            card.src = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + card.multiverseid + "&type=card";
+            card.src = `http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=${card.multiverseid}&type=card`;
             card.imageSource = "mtgJson";
 
             // Adjust some of mtgJSON's format to our own:
@@ -978,349 +751,331 @@ var cardDataImporter = (function (my, $) {
                 }
             }
 
-            cards = addCardToCards(cards, card);
-        }
+            cards = this._addCardToCards(cards, card);
+        });
 
         return cards;
     }
 
-    function getImageData(imageData, imageDataUrlSource) {
-        var images = [];
+    _getImageData(imageData, imageDataUrlSource) {
+        let images = new Map();
 
         // Determine from where the image data was sourced and therefore the parser needed.
-        var lowercaseImageDataUrlSource = imageDataUrlSource.toLowerCase();
-        if (lowercaseImageDataUrlSource.indexOf('magic.wizards.com') > -1) {
-            images = getImagesFromWotcSpoilers(imageData);
+        const lowercaseImageDataUrlSource = imageDataUrlSource.toLowerCase();
+        if (lowercaseImageDataUrlSource.includes('magic.wizards.com')) {
+            images = this._getImagesFromWotcSpoilers(imageData);
         }
-        else if (lowercaseImageDataUrlSource.indexOf('archive.wizards.com') > -1) {
-            images = getImagesFromWotcArchive(imageData);
+        else if (lowercaseImageDataUrlSource.includes('archive.wizards.com')) {
+            images = this._getImagesFromWotcArchive(imageData);
         }
-        else if (lowercaseImageDataUrlSource.indexOf('mtgjson.com') > -1) {
-            images = getImagesFromMtgJsonData(imageData);
+        else if (lowercaseImageDataUrlSource.includes('mtgjson.com')) {
+            images = this._getImagesFromMtgJsonData(imageData);
         }
-        else if (lowercaseImageDataUrlSource.indexOf('cardsmain.json') > -1) {
-            images = getImagesFromCardsMainData(imageData);
+        else if (lowercaseImageDataUrlSource.includes('cardsmain.json')) {
+            images = this._getImagesFromCardsMainData(imageData);
         }
         else {
-            alert("Image data url unknown. Only magic.wizards.com, gatheringmagic.com, and cardsMain.json supported. '" + htmlImages.urlSource + "'");
+            alert(`Image data url unknown. Only magic.wizards.com, gatheringmagic.com, and cardsMain.json supported. '${htmlImages.urlSource}'`);
         }
 
         return images;
     }
 
-    function getImagesFromWotcSpoilers(rawHtmlImageData) {
-        var image;
-        var finalImages = [];
+    _getImagesFromWotcSpoilers(rawHtmlImageData) {
+        const finalImages = new Map();
 
-        var $images = $(rawHtmlImageData);
+        const parser = new DOMParser();
+        const imageDoc = parser.parseFromString(rawHtmlImageData, "text/html");
 
         // v6 - 20160307, soi gallery
-        if (finalImages.length < 1) {
-            var $rawimages = $images.find('#content-detail-page-of-an-article .rtecenter img');
-            if ($rawimages.length > 0) {
-                var $imageContainer;
-                for (var i = 0; i < $rawimages.length; i++) {
-                    var img = $rawimages[i];
-                    if (img.alt.length > 0) {
-                        image = {};
-                        image.title = img.alt.trim();
-                        image.matchTitle = mtgGen.createMatchTitle(image.title);
-                        image.src = img.src;
+        if (!finalImages.size) {
+            const rawimages = imageDoc.querySelectorAll('#content-detail-page-of-an-article .rtecenter img');
+            rawimages.forEach(img => {
+                if (img.alt.length) {
+                    const image = {
+                        title: img.alt.trim(),
+                        src: img.src
+                    };
+                    image.matchTitle = mtgGen.createMatchTitle(image.title);
 
-                        // Support for double-faced cards.
-                        var $parent = $($rawimages[i]).parent();
-                        if ($parent.hasClass('side')) {
-                            if ($parent.hasClass('front')) {
-                                var $backCard = $parent.parent().find(".side.back img");
-                                if ($backCard.length > 0) {
-                                    image.matchTitleBack = mtgGen.createMatchTitle($backCard[0].alt);
-                                    image.doubleFaceCard = true;
-                                }
-                            }
-                            else if ($parent.hasClass('back')) {
-                                var $frontCard = $parent.parent().find(".side.front img");
-                                if ($frontCard.length > 0) {
-                                    image.matchTitleFront = mtgGen.createMatchTitle($frontCard[0].alt);
-                                    image.doubleFaceCard = true;
-                                }
+                    // Support for double-faced cards.
+                    const parent = img.parentElement;
+                    if (parent.classList.contains('side')) {
+                        if (parent.classList.contains('front')) {
+                            const backCard = parent.parentElement.querySelector(".side.back img");
+                            if (backCard) {
+                                image.matchTitleBack = mtgGen.createMatchTitle(backCard.alt);
+                                image.doubleFaceCard = true;
                             }
                         }
-
-                        finalImages[image.matchTitle] = image;
-                    }
-                }
-            }
-        }
-
-        // v5 - 20160101, bfz gallery
-        if (finalImages.length < 1) {
-            var $rawimages = $images.find('#content img');
-            if ($rawimages.length > 0) {
-                var $imageContainer, $cardTitle;
-                for (var i = 0; i < $rawimages.length; i++) {
-                    var img = $rawimages[i];
-                    $imageContainer = $(img).parent();
-                    $cardTitle = $imageContainer.find("i");
-                    if ($cardTitle.length === 1) {
-                        image = {};
-                        image.title = $cardTitle.text().trim();
-                        image.matchTitle = mtgGen.createMatchTitle(image.title);
-                        image.src = img.src;
-                        finalImages[image.matchTitle] = image;
-                    }
-                }
-            }
-        }
-
-        // v4 - 20150305, dtk gallery -- hard to scan as anything unique is added by js
-        if (finalImages.length < 1) {
-            var $rawimages = $images.find('#content-detail-page-of-an-article img');
-            if ($rawimages.length > 0) {
-                var $imageContainer, $cardTitle;
-                $rawimages.each(function (index, img) {
-                    $imageContainer = $(img).parent();
-                    $cardTitle = $imageContainer.find("i");
-                    if ($cardTitle.length === 1) {
-                        image = {};
-                        image.title = $cardTitle.text().trim();
-                        image.matchTitle = mtgGen.createMatchTitle(image.title);
-                        image.src = img.src;
-                        finalImages[image.matchTitle] = image;
-                    }
-                });
-            }
-        }
-
-        // v3 - 20140901, ktk gallery -- hard to scan as anything unique is added by js
-        if (finalImages.length < 1) {
-            var $rawimages = $images.find('img.noborder');
-            if ($rawimages.length > 0) {
-                var $imageContainer, $cardTitle;
-                $rawimages.each(function (index, img) {
-                    $imageContainer = $(img).parent();
-                    $cardTitle = $imageContainer.find("i");
-                    if ($cardTitle.length === 1) {
-                        image = {};
-                        image.title = $cardTitle.text().trim();
-                        image.matchTitle = mtgGen.createMatchTitle(image.title);
-                        image.src = img.src;
-                        finalImages[image.matchTitle] = image;
-                    }
-                });
-            }
-        }
-
-        // v2 - 2014 site redesign, m15 gallery
-        if (finalImages.length < 1) {
-            $rawimages = $images.find('.advanced-card-gallery-container img[alt]');
-            if ($rawimages.length > 0) {
-                $rawimages.each(function (index, value) {
-                    image = {};
-                    image.title = value.alt.trim();
-                    image.matchTitle = mtgGen.createMatchTitle(image.title);
-                    image.src = value.src;
-                    finalImages[image.matchTitle] = image;
-                });
-            }
-        }
-
-        // v1 - original wotc site
-        if (finalImages.length < 1) {
-            var $rawimages = $images.find('img[alt].article-image');
-            if ($rawimages.length > 0) {
-                $rawimages.each(function (index, value) {
-                    image = {};
-                    image.title = value.alt.trim();
-                    image.matchTitle = mtgGen.createMatchTitle(image.title);
-                    image.src = value.src;
-                    finalImages[image.matchTitle] = image;
-                });
-            }
-        }
-
-        for (var i = 0; i < finalImages.length; i++) { finalImages[i].imageSource = "wotc-spoilers"; }
-
-        return finalImages;
-    }
-
-    function getImagesFromWotcArchive(rawHtmlImageData) {
-        var image;
-        var finalImages = [];
-
-        var $images = $(rawHtmlImageData);
-
-        var $rawimages = $images.find('.article-image');
-        if ($rawimages.length > 0) {
-            var $imageContainer, $cardTitle;
-            //TODO: rewrite as for loop for performance
-            $rawimages.each(function (index, img) {
-                var enLoc = img.src.indexOf('/EN/');
-                if (enLoc > -1) {
-                    var imgNum = img.src.substr(enLoc + 4, 4);
-                    var num = parseInt(imgNum);
-                    if (!isNaN(num)) {
-                        image = {};
-                        image.src = img.src;
-                        var thisHostStartIndex = image.src.indexOf("/mtg/images/");
-                        if (thisHostStartIndex > 0) {
-                            image.src = "http://archive.wizards.com" + image.src.substr(thisHostStartIndex);
+                        else if (parent.classList.contains('back')) {
+                            const frontCard = parent.parentElement.querySelector(".side.front img");
+                            if (frontCard) {
+                                image.matchTitleFront = mtgGen.createMatchTitle(frontCard.alt);
+                                image.doubleFaceCard = true;
+                            }
                         }
-                        image.num = num;
-                        finalImages[image.num] = image;
                     }
+
+                    finalImages.set(image.matchTitle, image);
                 }
             });
         }
+        
+        // Left in for now -- if we need them one day again, convert them to es6.
+        //// v5 - 20160101, bfz gallery
+        //if (finalImages.length < 1) {
+        //    var $rawimages = $images.find('#content img');
+        //    if ($rawimages.length > 0) {
+        //        var $imageContainer, $cardTitle;
+        //        for (var i = 0; i < $rawimages.length; i++) {
+        //            var img = $rawimages[i];
+        //            $imageContainer = $(img).parent();
+        //            $cardTitle = $imageContainer.find("i");
+        //            if ($cardTitle.length === 1) {
+        //                image = {};
+        //                image.title = $cardTitle.text().trim();
+        //                image.matchTitle = mtgGen.createMatchTitle(image.title);
+        //                image.src = img.src;
+        //                finalImages[image.matchTitle] = image;
+        //            }
+        //        }
+        //    }
+        //}
 
-        for (var i = 0; i < finalImages.length; i++) { finalImages[i].imageSource = "wotc-archive"; }
+        //// v4 - 20150305, dtk gallery -- hard to scan as anything unique is added by js
+        //if (finalImages.length < 1) {
+        //    var $rawimages = $images.find('#content-detail-page-of-an-article img');
+        //    if ($rawimages.length > 0) {
+        //        var $imageContainer, $cardTitle;
+        //        $rawimages.each(function (index, img) {
+        //            $imageContainer = $(img).parent();
+        //            $cardTitle = $imageContainer.find("i");
+        //            if ($cardTitle.length === 1) {
+        //                image = {};
+        //                image.title = $cardTitle.text().trim();
+        //                image.matchTitle = mtgGen.createMatchTitle(image.title);
+        //                image.src = img.src;
+        //                finalImages[image.matchTitle] = image;
+        //            }
+        //        });
+        //    }
+        //}
+
+        //// v3 - 20140901, ktk gallery -- hard to scan as anything unique is added by js
+        //if (finalImages.length < 1) {
+        //    var $rawimages = $images.find('img.noborder');
+        //    if ($rawimages.length > 0) {
+        //        var $imageContainer, $cardTitle;
+        //        $rawimages.each(function (index, img) {
+        //            $imageContainer = $(img).parent();
+        //            $cardTitle = $imageContainer.find("i");
+        //            if ($cardTitle.length === 1) {
+        //                image = {};
+        //                image.title = $cardTitle.text().trim();
+        //                image.matchTitle = mtgGen.createMatchTitle(image.title);
+        //                image.src = img.src;
+        //                finalImages[image.matchTitle] = image;
+        //            }
+        //        });
+        //    }
+        //}
+
+        //// v2 - 2014 site redesign, m15 gallery
+        //if (finalImages.length < 1) {
+        //    $rawimages = $images.find('.advanced-card-gallery-container img[alt]');
+        //    if ($rawimages.length > 0) {
+        //        $rawimages.each(function (index, value) {
+        //            image = {};
+        //            image.title = value.alt.trim();
+        //            image.matchTitle = mtgGen.createMatchTitle(image.title);
+        //            image.src = value.src;
+        //            finalImages[image.matchTitle] = image;
+        //        });
+        //    }
+        //}
+
+        //// v1 - original wotc site
+        //if (finalImages.length < 1) {
+        //    var $rawimages = $images.find('img[alt].article-image');
+        //    if ($rawimages.length > 0) {
+        //        $rawimages.each(function (index, value) {
+        //            image = {};
+        //            image.title = value.alt.trim();
+        //            image.matchTitle = mtgGen.createMatchTitle(image.title);
+        //            image.src = value.src;
+        //            finalImages[image.matchTitle] = image;
+        //        });
+        //    }
+        //}
+
+        finalImages.forEach(image => image.imageSource = "wotc-spoilers");
 
         return finalImages;
     }
 
-    function getImagesFromMtgJsonData(rawImageData) {
-        var image;
-        var finalImages = [];
+    // 20170218: I don't think any of these pages exist anymore, so this may be useless.
+    _getImagesFromWotcArchive(rawHtmlImageData) {
+        const finalImages = [];
 
-        if (rawImageData === undefined || !rawImageData.hasOwnProperty('cards')) {
-            alert("Missing image data from mtgjson.com. Note that you CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.");
+        const parser = new DOMParser();
+        const imageDoc = parser.parseFromString(rawHtmlImageData, "text/html");
+
+        const rawimages = imageDoc.querySelectorAll('.article-image');
+        rawimages.forEach(img => {
+            const enLoc = img.src.indexOf('/EN/');
+            if (enLoc > -1) {
+                const imgNum = img.src.substr(enLoc + 4, 4);
+                const num = parseInt(imgNum);
+                if (!isNaN(num)) {
+                    const image = {};
+                    image.src = img.src;
+                    const thisHostStartIndex = image.src.indexOf("/mtg/images/");
+                    if (thisHostStartIndex > 0) {
+                        image.src = `http://archive.wizards.com${image.src.substr(thisHostStartIndex)}`;
+                    }
+                    image.num = num;
+                    finalImages[image.num] = image;
+                }
+            }
+        });
+
+        finalImages.forEach(image => image.imageSource = "wotc-archive");
+
+        return finalImages;
+    }
+
+    _getImagesFromMtgJsonData(rawImageData) {
+        const finalImages = new Map()
+
+        const imageData = JSON.parse(rawImageData);
+
+        if (imageData === undefined || !imageData.hasOwnProperty('cards')) {
+            alert("Missing card data from mtgjson.com. Note that you CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.");
         }
-        if (rawImageData.cards.length < 1) {
-            alert("No images from mtgjson.com found. Note that you CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.");
+        if (imageData.cards.length < 1) {
+            alert("No cards from mtgjson.com found. Note that you CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.");
         }
 
         // add each card, converting from mtgjson.com's format to our own
-        for (var i = 0; i < rawImageData.cards.length; i++) {
-            var card = rawImageData.cards[i];
-            image = {};
+        imageData.cards.forEach(card => {
+            const image = {};
             image.title = card.name;
             image.matchTitle = mtgGen.createMatchTitle(image.title);
-            image.src = "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=" + card.multiverseid + "&type=card";
+            image.src = `http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=${card.multiverseid}&type=card`;
             image.imageSource = "mtgjson";
-            finalImages[image.matchTitle] = image;
-        }
+            finalImages.set(image.matchTitle, image);
+        });
 
         return finalImages;
     }
 
-    function getImagesFromCardsMainData(rawImageData) {
-        var image;
-        var finalImages = [];
+    _getImagesFromCardsMainData(rawImageData) {
+        const finalImages = new Map();
 
-        if (rawImageData === undefined) {
+        const imageData = JSON.parse(rawImageData);
+
+        if (imageData === undefined) {
             alert("Missing image data from cardsMain.json. Note that you CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.");
             return finalImages;
         }
-        if (rawImageData.length < 1) {
+        if (imageData.length < 1) {
             alert("No images from mtgjson.com found. Note that you CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.");
             return finalImages;
         }
 
-        for (var i = 0; i < rawImageData.cards.length; i++) {
-            var card = rawImageData.cards[i];
-            image = {};
+        imageData.forEach(card => {
+            const image = {};
             image.title = card.title;
             image.matchTitle = mtgGen.createMatchTitle(image.title);
             image.src = card.src;
             image.imageSource = "cardsMain.json";
-            finalImages[image.matchTitle] = image;
-        }
-
-        return finalImages;
-    }
-
-    //CAMKILL: replaced by getCardImagesFromWotcArticle
-    function getLandImagesFromWotcArticle(rawHtmlImageData, requiredImageWidth, requiredImageHeight) {
-        var image;
-        var finalImages = [];
-
-        var $images = $(rawHtmlImageData);
-
-        // v1 - 20150914, bfz gallery -- hard to scan as anything unique is added by js
-        if (finalImages.length < 1) {
-            var $rawimages = $images.find('#content img');
-            if ($rawimages.length > 0) {
-                var $imageContainer, $cardTitle;
-                var requiredImageHeightInt = parseInt(requiredImageHeight, 10);
-                var requiredImageWidthInt = parseInt(requiredImageWidth, 10);
-                _.each($rawimages, function (img) {
-                    if (!isNaN(requiredImageHeightInt) && requiredImageHeightInt !== img.height) return true;
-                    if (!isNaN(requiredImageWidthInt) && requiredImageWidthInt !== img.width) return true;
-                    image = {};
-                    image.src = img.src;
-                    image.height = img.height;
-                    image.width = img.width;
-                    finalImages.push(image);
-                });
-            }
-        }
-
-        _.each(finalImages, function (image) {
-            image.imageSource = "wotc-article";
+            finalImages.set(image.matchTitle, image);
         });
 
         return finalImages;
     }
 
-    function getCardImagesFromWotcArticle(rawHtmlImageData, requiredImageWidth, requiredImageHeight) {
-        var image;
-        var finalImages = [];
-
-        var $images = $(rawHtmlImageData);
-
-        // v1 - 20150914, bfz gallery -- hard to scan as anything unique is added by js
-        if (finalImages.length < 1) {
-            var $rawimages = $images.find('#content img');
-            if ($rawimages.length > 0) {
-                var $imageContainer, $cardTitle;
-                var requiredImageHeightInt = parseInt(requiredImageHeight, 10);
-                var requiredImageWidthInt = parseInt(requiredImageWidth, 10);
-                _.each($rawimages, function (img) {
-                    if (!isNaN(requiredImageHeightInt) && requiredImageHeightInt !== img.height) return true;
-                    if (!isNaN(requiredImageWidthInt) && requiredImageWidthInt !== img.width) return true;
-                    image = {};
-                    image.src = img.src;
-                    image.height = img.height;
-                    image.width = img.width;
-                    finalImages.push(image);
-                });
-            }
-        }
-
-        _.each(finalImages, function (image) {
-            image.imageSource = "wotc-article";
+    _preloadImage(path) {
+        return new Promise((resolve, reject) => {
+            // Create a new image from JavaScript
+            const image = new Image();
+            // Bind an event listener on the load to call the `resolve` function
+            image.onload  = resolve;
+            // If the image fails to be downloaded, we don't want the whole system
+            // to collapse so we `resolve` instead of `reject`, even on error
+            image.onerror = resolve;
+            // Apply the path as `src` to the image so that the browser fetches it
+            image.src = path;
         });
-
-        return finalImages;
     }
 
-    function createCardViaException(card, exception, setCode) {
+    _getCardImagesFromWotcArticle(rawHtmlImageData, requiredImageWidth, requiredImageHeight) {
+        return new Promise(resolve => {
+            let finalImages = [];
+
+            const parser = new DOMParser();
+            const imageDoc = parser.parseFromString(rawHtmlImageData, "text/html");
+
+            // v1 - 20150914, bfz gallery -- hard to scan as anything unique is added by js
+            const content = imageDoc.querySelector('#content');
+            const rawImages = imageDoc.querySelectorAll('#content img');
+            if (rawImages) {
+                // Preload the images so we get the heights and widths.
+                // This wasn't necessary under jQuery because I assume it rendered the HTML hidden in the browser.
+                const imagePromises = [...rawImages].map(rawImage => this._preloadImage(rawImage.src));
+                Promise.all(imagePromises)
+                    .then(images => {
+                        const requiredImageHeightInt = parseInt(requiredImageHeight, 10);
+                        const requiredImageWidthInt = parseInt(requiredImageWidth, 10);
+                        images.forEach(event => {
+                            const img = event.target;
+                            if (!isNaN(requiredImageHeightInt) && requiredImageHeightInt !== img.height) { return true; }
+                            if (!isNaN(requiredImageWidthInt) && requiredImageWidthInt !== img.width) { return true; }
+                            const image = {};
+                            image.src = img.src;
+                            image.height = img.height;
+                            image.width = img.width;
+                            image.imageSource = "wotc-article";
+                            finalImages.push(image);
+                        });
+
+                        resolve(finalImages);
+                    },
+                    reason => alert(`ERROR: failed to retrieve image: ${reason}`)
+                    );
+            }
+        });
+    }
+    
+    _createCardViaException(card, exception, setCode) {
         // add all Exception properties into the card
-        _.extend(card, exception.newValues);
+        Object.assign(card, exception.newValues);
         exception.result.affectedCards = 1;
 
         // Replace any 'reference' properties with the current card values,
         // e.g.: "originalTitle": "{{title}}",
-        var replacementTokenRegex = /{{(.*?)}}/g;
-        var replacementReferenceValues = {};
-        for (var prop in exception.newValues) {
-            var propValue = exception.newValues[prop];
-            var newPropValue = propValue;
-            var token;
+        const replacementTokenRegex = /{{(.*?)}}/g;
+        const replacementReferenceValues = {};
+        Object.entries(card).forEach(entry => {
+            const propName = entry[0];
+            const propValue = entry[1];
+            let token;
             while ((token = replacementTokenRegex.exec(propValue)) !== null) {
-                var propName = token[1];
-                if (card[propName] !== undefined) {
-                    newPropValue = newPropValue.replace(token[0], card[propName]);
+                const tokenPropName = token[1];
+                let newPropValue;
+                if (card[tokenPropName] !== undefined) {
+                    newPropValue = newPropValue.replace(token[0], card[tokenPropName]);
                 }
-                else if (propName === 'setCode') {
+                else if (tokenPropName === 'setCode') {
                     newPropValue = setCode;
                 }
+                card[propName] = newPropValue;
             }
-            //exception.newValues[prop] = newPropValue;
-            replacementReferenceValues[prop] = newPropValue;
-        }
+        });
 
         // Apply new values from exception.
-        _.extend(card, replacementReferenceValues);
+        Object.assign(card, replacementReferenceValues);
 
         card.matchTitle = mtgGen.createMatchTitle(card.title);
 
@@ -1329,7 +1084,25 @@ var cardDataImporter = (function (my, $) {
         return card;
     }
 
-    function applyExceptions(cards, exceptions, setCode) {
+    _mapToObject(map) {
+        let obj = Object.create(null);
+        for (let [k,v] of map) {
+            // We don’t escape the key '__proto__'
+            // which can cause problems on older engines
+            obj[k] = v;
+        }
+    return obj;
+    }
+
+_objectToMap(obj) {
+        let map = new Map();
+        for (let k of Object.keys(obj)) {
+            map.set(k, obj[k]);
+        }
+        return map;
+    }
+    
+    _applyExceptions(cards, exceptions, setCode) {
         // Example:
         //  {
         //      where: "rarity=(mr|r)",
@@ -1359,315 +1132,293 @@ var cardDataImporter = (function (my, $) {
         //        "num": "032"
         //    }
         //  }
-        var cardNumsChanged = false;
-        if (exceptions !== undefined && exceptions !== null) {
-            for (var i = 0; i < exceptions.length; i++) {
-                var exception = exceptions[i];
-
-                if (Object.keys(exception).length === 1
-                    && (exception._comments !== undefined || exception._comment !== undefined)) {
-                    exception.comment = true;
-                    continue; // just a comment node; ignore
-                }
-
-                exception.result = { index: i, success: true };
-
-                if (exception.add === true) {
-                    if (exception.newValues === undefined) {
-                        exception.result.success = false;
-                        exception.result.error = "add=true but missing required newValues {}; cannot continue processing this exception";
-                        continue;
-                    }
-                    if (exception.newValues.title === undefined || exception.newValues.title.length < 1) {
-                        exception.result.success = false;
-                        exception.result.error = "add=true but missing required newValues.title; cannot continue processing this exception";
-                        continue;
-                    }
-
-                    console.log('Adding new card: ' + exception.newValues.title);
-
-                    var card = createCardViaException({}, exception, setCode);
-
-                    cards = addCardToCards(cards, card);
-
-                    continue;
-                }
-
-                var where = exception.where;
-                if (where === undefined) {
-                    exception.result.success = false;
-                    exception.result.error = "missing required where clause; cannot continue processing this exception";
-                    continue;
-                }
-
-                // Add the from[*] the query engine expects.
-                // The card importer works on a single set at a time, so from[*] is always implied,
-                // but we don't require it in the import json for convenience.
-                var where = where.trim();
-                if (where.toLowerCase().indexOf("from[") < 0) {
-                    where = "from[*]?" + where;
-                }
-
-                var matchingCards = mtgGen.executeQuery(cards, null, where);
-
-                // If it's a Delete exception, delete any cards matching the query.
-                if (exception.delete === true) {
-                    _.each(matchingCards, function (matchingCard) {
-                        delete cards[matchingCard.mtgenId];
-                    });
-                    exception.result.deletedCards = matchingCards;
-                    exception.result.affectedCards = matchingCards.length;
-
-                    continue;
-                }
-
-                // Otherwise it's an Update exception; apply the changes.
-
-                // Record all exceptions that weren't useful so we can clean up the exceptions file.
-                // REWRITE THIS:
-                //$.each(ex.newValues, function (prop, newVal) {
-                //    if (card.hasOwnProperty(prop) && card[prop] === newVal) {
-                //        console.log('Exception property already exists on card:' + card.matchTitle);
-                //        if (!ex.hasOwnProperty("redundantValues")) {
-                //            ex.redundantValues = {};
-                //        }
-                //        ex.redundantValues[prop] = newVal;
-                //    }
-                //});
-
-                // Remove all of the matching cards -- we'll add them back after we modify them.
-                _.each(matchingCards, function (matchingCard) {
-                    delete cards[matchingCard.mtgenId];
-                });
-
-                // TODO: This does NOT work. getCardFromWizardsGatherer is async, completely messing up this loop.
-                //       Try again in six months when es2017 is out.
-                //// Get a list of all title queries that didn't match anything.
-                //// TODO: Refactor mtg-generator.lib.js/executeSimpleQuery() to PARSE out the query and execute separately.
-                ////       Then, here, I can use it to parse the where and easily determine if it's a title query and the matchtitle.
-                //var unmatchedTitles = [];
-                //if (exception.result.success === true && matchingCards.length === 0 && exception.where.indexOf("title=") > -1) {
-                //    var titleMatch = /title=['"](.*)/i.exec(exception.where);
-                //    if (titleMatch.length < 2 || titleMatch[1].trim().length === 0) {
-                //        console.warn("WARNING: Could not find card but where clause title is not in recognizable format: " + exception.where);
-                //    }
-                //    else {
-                //        var matchTitle = mtgGen.createMatchTitle(titleMatch[1]);
-                //        unmatchedTitles.push(matchTitle);
-                //        getCardFromWizardsGatherer(matchTitle, setCode)
-                //            .then(function (card) {
-                //                var newCard = createCardViaException(card, exception, setCode);
-                //                cards = addCardToCards(cards, newCard);
-                //                console.log("Could not find card in original data, so fetched it from Wizards' Gatherer: " + matchTitle);;
-                //            })
-                //            .catch(function (err) {
-                //                console.warn(`WARNING: could not retrieve card '${matchTitle}' from Wizards' Gatherer: ${err} `);
-                //            });
-                //        console.warn("Could not find card; going to search for title = " + matchTitle);
-                //    }
-                //}
-
-                // If there were no matching cards for this update, 
-                // try to get those cards from Gatherer.
-                // This was basically built for Masterpiece cards that may be reprints of old cards.
-                // TODO: actually do this;)
-
-                var replacementTokenRegex = /{{(.*?)}}/g;
-
-                // Apply the changes to all of the matching cards.
-                for (var j = 0; j < matchingCards.length; j++) {
-                    var card = matchingCards[j];
-                    // Replace any 'reference' properties with the current card values,
-                    // e.g.: "originalTitle": "{{title}}",
-                    var replacementReferenceValues = {};
-                    for (var prop in exception.newValues) {
-                        var propValue = exception.newValues[prop];
-                        var newPropValue = propValue;
-                        var token;
-                        while ((token = replacementTokenRegex.exec(propValue)) !== null) {
-                            var propName = token[1];
-                            if (card[propName] !== undefined) {
-                                newPropValue = newPropValue.replace(token[0], card[propName]);
-                            }
-                            else if (propName === 'setCode') {
-                                newPropValue = setCode;
-                            }
-                        }
-                        //exception.newValues[prop] = newPropValue;
-                        replacementReferenceValues[prop] = newPropValue;
-                    }
-
-                    // Apply new values from exception.
-                    _.extend(card, exception.newValues);
-                    _.extend(card, replacementReferenceValues);
-
-                    card.matchTitle = mtgGen.createMatchTitle(card.title);
-                };
-                exception.result.modifiedCards = matchingCards;
-                exception.result.affectedCards = matchingCards.length;
-
-                // Add the modified cards back in.
-                _.each(matchingCards, function (matchingCard) {
-                    cards = addCardToCards(cards, matchingCard);
-                });
+        exceptions.forEach((exception, index) => {
+            if (Object.keys(exception).length === 1 && (exception._comments || exception._comment)) {
+                exception.comment = true;
+                return; // just a comment node; ignore
             }
-        }
 
-        // Sort the final result so they're in the order they were originally sent in (for debugging).
-        cards = _.sortBy(cards, "index");
+            exception.result = { index: index, success: true };
+
+            if (exception.add === true) {
+                if (!exception.newValues) {
+                    exception.result.success = false;
+                    exception.result.error = "add=true but missing required newValues {}; cannot continue processing this exception";
+                    return;
+                }
+                if (!exception.newValues.title) {
+                    exception.result.success = false;
+                    exception.result.error = "add=true but missing required newValues.title; cannot continue processing this exception";
+                    return;
+                }
+
+                console.log(`Adding new card: ${exception.newValues.title}`);
+
+                const card = this._createCardViaException({}, exception, setCode);
+
+                cards = this._addCardToCards(cards, card);
+
+                return;
+            }
+
+            if (exception.where === undefined) {
+                exception.result.success = false;
+                exception.result.error = "missing required where clause; cannot continue processing this exception";
+                return;
+            }
+
+            // Add the from[*] the query engine expects.
+            // The card importer works on a single set at a time, so from[*] is always implied,
+            // but we don't require it in the import json for convenience.
+            let where = exception.where.trim();
+            if (!where.toLowerCase().includes("from[")) {
+                where = `from[*]?${where}`;
+            }
+
+            const cardsObj = this._mapToObject(cards);
+            const matchingCardsObj = mtgGen.executeQuery(cardsObj, null, where);
+            const matchingCards = this._objectToMap(matchingCardsObj);
+            const matchingCardArray = [...matchingCards.values()];
+
+            // If it's a Delete exception, delete any cards matching the query.
+            if (exception.delete === true) {
+                matchingCardArray.forEach(matchingCard => {
+                    if (matchingCard) { cards.delete(matchingCard.mtgenId); }
+                });
+                exception.result.deletedCards = matchingCards;
+                exception.result.affectedCards = matchingCards.length;
+                return;
+            }
+
+            // Otherwise it's an Update exception; apply the changes.
+
+            // Record all exceptions that weren't useful so we can clean up the exceptions file.
+            // REWRITE THIS:
+            //$.each(ex.newValues, function (prop, newVal) {
+            //    if (card.hasOwnProperty(prop) && card[prop] === newVal) {
+            //        console.log('Exception property already exists on card:' + card.matchTitle);
+            //        if (!ex.hasOwnProperty("redundantValues")) {
+            //            ex.redundantValues = {};
+            //        }
+            //        ex.redundantValues[prop] = newVal;
+            //    }
+            //});
+
+            // Remove all of the matching cards -- we'll add them back after we modify them.
+            matchingCardArray.forEach(matchingCard => {
+                if (matchingCard) { cards.delete(matchingCard.mtgenId); }
+            });
+
+            // If there were no matching cards for this update, try to get those cards from Gatherer.
+            // This was basically built for Masterpiece cards that may be reprints of old cards.
+
+            // TODO: This does NOT work. getCardFromWizardsGatherer is async, completely messing up this loop.
+            //       Try again in six months when es2017 is out.
+            //// Get a list of all title queries that didn't match anything.
+            //// TODO: Refactor mtg-generator.lib.js/executeSimpleQuery() to PARSE out the query and execute separately.
+            ////       Then, here, I can use it to parse the where and easily determine if it's a title query and the matchtitle.
+            //var unmatchedTitles = [];
+            //if (exception.result.success === true && matchingCards.length === 0 && exception.where.indexOf("title=") > -1) {
+            //    var titleMatch = /title=['"](.*)/i.exec(exception.where);
+            //    if (titleMatch.length < 2 || titleMatch[1].trim().length === 0) {
+            //        console.warn("WARNING: Could not find card but where clause title is not in recognizable format: " + exception.where);
+            //    }
+            //    else {
+            //        var matchTitle = mtgGen.createMatchTitle(titleMatch[1]);
+            //        unmatchedTitles.push(matchTitle);
+            //        getCardFromWizardsGatherer(matchTitle, setCode)
+            //            .then(function (card) {
+            //                var newCard = createCardViaException(card, exception, setCode);
+            //                cards = addCardToCards(cards, newCard);
+            //                console.log("Could not find card in original data, so fetched it from Wizards' Gatherer: " + matchTitle);;
+            //            })
+            //            .catch(function (err) {
+            //                console.warn(`WARNING: could not retrieve card '${matchTitle}' from Wizards' Gatherer: ${err} `);
+            //            });
+            //        console.warn("Could not find card; going to search for title = " + matchTitle);
+            //    }
+            //}
+
+            const replacementTokenRegex = /{{(.*?)}}/g;
+
+            // Apply the changes to all of the matching cards.
+            matchingCardArray.forEach(card => {
+                // Replace any 'reference' properties with the current card values,
+                // e.g.: "originalTitle": "{{title}}",
+                // TODO: this code is repeated twice.. make it into a function
+                const replacementReferenceValues = {};
+                for (let prop in exception.newValues) {
+                    const propValue = exception.newValues[prop];
+                    let newPropValue = propValue;
+                    let token;
+                    while ((token = replacementTokenRegex.exec(propValue)) !== null) {
+                        const propName = token[1];
+                        if (card[propName] !== undefined) {
+                            newPropValue = newPropValue.replace(token[0], card[propName]);
+                        }
+                        else if (propName === 'setCode') {
+                            newPropValue = setCode;
+                        }
+                    }
+                    //exception.newValues[prop] = newPropValue;
+                    replacementReferenceValues[prop] = newPropValue;
+                }
+
+                // Apply new values from exception.
+                Object.assign(card, exception.newValues);
+                Object.assign(card, replacementReferenceValues);
+
+                card.matchTitle = mtgGen.createMatchTitle(card.title);
+            });
+            exception.result.modifiedCards = matchingCards;
+            exception.result.affectedCards = matchingCards.length;
+
+            // Add the modified cards back in.
+            matchingCardArray.forEach(matchingCard => cards = this._addCardToCards(cards, matchingCard));
+        });
 
         // Return both the updated set of cards AND the modified exceptions (the latter for reporitng purposes).
-        var result = {};
-        result.cards = cards;
+        const result = { cards, exceptions };
 
-        result.exceptions = exceptions;
         return result;
     }
 
-    function applyImagesToCards(cards, images) {
-        if (images !== undefined) {
+    _applyImagesToCards(cards, images) {
+        const cardArray = [...cards.values()];
+
+        if (images) {
             // Indexed for double-faced cards.
-            var cardsByMatchTitle = {};
-            _.each(cards, function (card) {
-                cardsByMatchTitle[card.matchTitle] = card;
-            });
+            const cardsByMatchTitle = new Map();
+            cardArray.forEach(card => cardsByMatchTitle.set(card.matchTitle, card));
 
-            _.each(cards, function (card) {
-                var image = images[card.matchTitle];
+            cardArray.forEach(card => {
+                // images[card.num]: archive.wizards.com images have no titles; they're indexed by image
+                const image = images.get(card.matchTitle) || images.get(card.num);
 
-                // archive.wizards.com images have no titles; they're indexed by image
-                if (image === undefined) {
-                    image = images[card.num];
+                if (!image) { return; }
+
+                card.srcOriginal = card.src;
+                card.imageSourceOriginal = card.src;
+                card.src = image.src;
+                card.imageSource = image.imageSource;
+
+                // Properties for double-sided images
+                if (image.doubleFaceCard) { card.doubleFaceCard = image.doubleFaceCard; }
+                if (image.matchTitleFront) {
+                    const cardFront = cardsByMatchTitle.get(image.matchTitleFront);
+                    if (cardFront) {
+                        card.mtgenIdFront = cardFront.mtgenId;
+                        card.doubleFaceBackCard = true;
+                    }
+                }
+                if (image.matchTitleBack) {
+                    const cardBack = cardsByMatchTitle.get(image.matchTitleBack);
+                    if (cardBack) {
+                        card.mtgenIdBack = cardBack.mtgenId;
+                        card.doubleFaceFrontCard = true;
+                    }
                 }
 
-                if (image !== undefined) {
-                    card.srcOriginal = card.src;
-                    card.imageSourceOriginal = card.src;
-                    card.src = image.src;
-                    card.imageSource = image.imageSource;
-
-                    // Properties for double-sided images
-                    if (image.doubleFaceCard !== undefined) { card.doubleFaceCard = image.doubleFaceCard; }
-                    if (image.matchTitleFront !== undefined) {
-                        var cardFront = cardsByMatchTitle[image.matchTitleFront];
-                        if (cardFront !== undefined) {
-                            card.mtgenIdFront = cardFront.mtgenId;
-                            card.doubleFaceBackCard = true;
-                        }
-                    }
-                    if (image.matchTitleBack !== undefined) {
-                        var cardBack = cardsByMatchTitle[image.matchTitleBack];
-                        if (cardBack !== undefined) {
-                            card.mtgenIdBack = cardBack.mtgenId;
-                            card.doubleFaceFrontCard = true;
-                        }
-                    }
-
-                    image.wasUsed = true;
-                }
+                image.wasUsed = true;
             });
         }
 
         // if no image found at all at this point, create replacement card
-        _.each(cards, function (card) {
+        cardArray.forEach(card => {
             if (!card.src) {
                 card.imageSource = "placeholder";
-                card.src = createPlaceholderCardSrc(card);
+                card.src = this._createPlaceholderCardSrc(card);
             }
+            cards.set(card.mtgenId, card);
         });
 
         return cards;
     }
 
+
+    //CAMKILL: move this to its own file
     // Image-to-Exception importer -------------------------------------------------------------------------------------------
 
-    my.loadImagesAndGenerateExceptions = function (options) {
-        $.extend(my, options);
-
-        if (my.cardImageUrl === undefined || my.cardImageUrl.length < 1) {
+    //CAMKILL: PUBLIC
+    loadImagesAndGenerateExceptions
+        ({cardImageUrl, startingCardNum, requiredImageWidth, requiredImageHeight, cardPattern, setCode}) {
+        if (!cardImageUrl) {
             alert("ERROR: No card image url supplied. Cannot continue.");
             return;
         }
-        if (my.cardPattern === undefined || my.cardPattern.length < 1) {
+        if (!cardPattern) {
             alert("ERROR: No card pattern supplied. Cannot continue.");
             return;
         }
 
-        // load all files and don't continue until all are loaded
-        var promises = [];
+        window.dispatchEvent(new Event('data-loading'));
 
-        $.ajaxSetup({ timeout: 5000 });
+        this._fetchHtml(cardImageUrl)
+            .then(imageData => {
+                const cardImages = {
+                    data: imageData,
+                    urlSource: cardImageUrl
+                }
 
-        promises.push($.get('/proxy?u=' + encodeURIComponent(my.cardImageUrl)));
+                window.dispatchEvent(new Event('data-loaded'));
 
-        my.trigger('data-loading');
-
-        $.when.apply($, promises).done(function (data) {
-            // the first result is essential
-            var cardImages = {
-                data: data,
-                urlSource: my.cardImageUrl
-            }
-            if (isBadResponse(cardImages.data)) {
-                alert("ERROR: No data retrieved from " + my.cardImageUrl + ". Response:" + cardImages);
-                return;
-            }
-
-            var setCode = my.setCode.trim();
-
-            my.trigger('data-loaded');
-
-            setTimeout(function () {
-                createExceptionOutputJson(setCode, cardImages, my.requiredImageWidth, my.requiredImageHeight, my.startingCardNum, my.cardPattern);
-            }, 100); // delay to let ui render
-        });
-
+                this._createExceptionOutputJson(setCode.trim(), cardImages, requiredImageWidth, requiredImageHeight, startingCardNum, cardPattern);
+            },
+            reason => {
+                alert(`ERROR: failed to retrieve data from ${cardImageUrl}: ${reason}`);
+            });
     }
 
-    function getLandTypeFromCode(code) {
+    _getLandTypeFromCode(code) {
         switch (code.toLowerCase()) {
             case "w": return "Plains";
             case "u": return "Island";
             case "b": return "Swamp";
             case "r": return "Mountain";
             case "g": return "Forest";
-            default: return "Unknown type: " + code + " -- should be one of: w u r b g";
+            default: return `Unknown type: ${code} -- should be one of: w u r b g`;
         }
     }
 
-    function createExceptionOutputJson(setCode, cardImageData, requiredImageWidth, requiredImageHeight, startingCardNum, cardPattern) {
-        // Get image data -------------------------------------------------------------------------------------------------
-        var cardImages = my.api.getCardImagesFromWotcArticle(cardImageData.data, requiredImageWidth, requiredImageHeight);
-        var imageDataCount = Object.size(cardImages);
+    _createExceptionOutputJson(setCode, cardImageData, requiredImageWidth, requiredImageHeight, startingCardNum, cardPattern) {
 
+        // Get image data -------------------------------------------------------------------------------------------------
+        this._getCardImagesFromWotcArticle(cardImageData.data, requiredImageWidth, requiredImageHeight)
+        .then(cardImages => this._createExceptionOutputJsonFromImages(setCode, cardImages, startingCardNum, cardPattern)
+        ,reason => alert(`ERROR: failed to get card images: ${reason}`)
+        );
+    }
+
+    _createExceptionOutputJsonFromImages(setCode, cardImages, startingCardNum, cardPattern) {
         // Parse the card pattern into an array.
-        var overrideItems = cardPattern.replace(/(?:\r\n|\r|\n)/g, ',');
-        var cardPatterns = overrideItems.trim().split(',');
+        const overrideItems = cardPattern.replace(/(?:\r\n|\r|\n)/g, ',');
+        const cardPatterns = overrideItems.trim().split(',');
 
         // Create land cards out of each image
-        var cards = {};
-        var skippedCards = [];
-        var cardNum = startingCardNum;
-        var hasFixedCardNums = cardNum !== undefined && cardNum !== "";
-        var cardPatternIndex = 0;
-        var areLand = false;
-        var areTokens = false;
-        _.each(cardImages, function (image, index) {
-            var card = {};
+        let cards = new Map();
+        const skippedCards = [];
+        let cardNum = startingCardNum;
+        const hasFixedCardNums = cardNum !== undefined && cardNum !== "";
+        let cardPatternIndex = 0;
+        let areLand = false;
+        let areTokens = false;
+
+        cardImages.forEach((image, index) => {
+            const card = {};
 
             Object.assign(card, image); // src, height, width, imageSource
 
             // If overrides exist, use the entire pattern given, e.g.: w250,u251,b252,r253,g254 etc -- or x to skip a card
-            var skipCard = false;
+            let skipCard = false;
             if (cardPatterns.length <= cardPatternIndex) {
                 card.title = "Ran out of Card Pattern entries";
             }
             else {
                 // Determine the type of pattern.
-                var pattern = cardPatterns[cardPatternIndex].trim();
+                const pattern = cardPatterns[cardPatternIndex].trim();
 
                 // x = skip a card
-                var skip = /x/gi.test(pattern);
+                const skip = /x/gi.test(pattern);
                 if (skip) {
                     skipCard = true;
                     card.skippedCardIndex = index;
@@ -1675,17 +1426,17 @@ var cardDataImporter = (function (my, $) {
                 }
                 else {
                     // e.g.: g107, or just g (and it will then use the default starting number)
-                    var land = /^([w|u|g|b|r])([0-9]{3})?$/gi.exec(pattern);
-                    if (land !== null && land.length > 0) {
-                        card.title = getLandTypeFromCode(land[1]);
+                    const land = /^([w|u|g|b|r])([0-9]{3})?$/gi.exec(pattern);
+                    if (land) {
+                        card.title = this._getLandTypeFromCode(land[1]);
                         card.num = land[2];
                         areLand = true;
                     }
                     else {
                         // e.g.: 007|c|Token Artifact Creature|Thopter, or without the 007 and it'll use default starting number
-                        var cardPattern = /^([0-9]{3})?\|?(.)\|(.*)\|(.*)$/gi.exec(pattern);
-                        if (cardPattern === null || cardPattern.length === 0) {
-                            card.title = "Unknown pattern: " + pattern;
+                        const cardPattern = /^([0-9]{3})?\|?(.)\|(.*)\|(.*)$/gi.exec(pattern);
+                        if (!cardPattern) {
+                            card.title = `Unknown pattern: ${pattern}`;
                         }
                         else {
                             card.num = cardPattern[1];
@@ -1708,35 +1459,32 @@ var cardDataImporter = (function (my, $) {
                     card.num = cardNum++;
                 }
 
-                cards = addCardToCards(cards, card);
+                cards = this._addCardToCards(cards, card);
             }
         });
 
-        cards = _.sortBy(cards, 'num');
-
         // Reporting -------------------------------------------------------------------------------------------------
 
-        var out = "";
-        var cardsLength = Object.size(cards);
-        if (cardsLength < 1) {
+        let out = "";
+        if (cards.size < 1) {
             out += "<p>WARNING: No images found at url.</p>";
         }
 
         if (skippedCards.length > 0) {
-            out += "<p>The following " + skippedCards.length + " cards were skipped due to 'x's in your Card Patterns setting:</p><ul class='skipped-cards'>";
-            $.each(skippedCards, function (index, card) {
-                out += "<li><img src='" + card.src + "' height='" + Math.round(card.height / 2) + "' width='" + Math.round(card.width / 2) + "' />";
-                out += "<p>Card #" + (card.skippedCardIndex + 1) + "</p></li>";
+            out += `<p>The following ${skippedCards.length} cards were skipped due to 'x's in your Card Patterns setting:</p><ul class='skipped-cards'>`;
+            skippedCards.forEach(card => {
+                out += `<li><img src='${card.src}' height='${Math.round(card.height / 2)}' width='${Math.round(card.width / 2)}' />`;
+                out += `<p>Card #${(card.skippedCardIndex + 1)}</p></li>`;
             });
             out += "</ul>";
         }
 
-        my.trigger('log-complete', out);
+        window.dispatchEvent(new CustomEvent('log-complete', { 'detail': out }));
 
         // Final JSON output -------------------------------------------------------------------------------------------------
 
-        var finalOut = [];
-        _.each(cards, function (card) {
+        const finalOut = [];
+        [...cards.values()].forEach(card => {
             delete card.matchTitle;
             delete card.srcOriginal;
             delete card.imageSourceOriginal;
@@ -1747,7 +1495,7 @@ var cardDataImporter = (function (my, $) {
             if (card.width === 265) { delete card.width; }
 
             // Create the card as an exception.
-            var exception = {
+            const exception = {
                 "add": true,
                 "newValues": card
             };
@@ -1757,7 +1505,7 @@ var cardDataImporter = (function (my, $) {
         // If we output anything, output the final card to apply the default values to all previous Basic Lands.
         if (finalOut.length > 0) {
             if (areLand) {
-                var postCard =
+                const postCard =
                 {
                     "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
                     "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
@@ -1776,7 +1524,7 @@ var cardDataImporter = (function (my, $) {
                 finalOut.push(postCard);
             }
             else if (areTokens) {
-                var postCard =
+                const postCard =
                 {
                     "where": "",
                     "newValues": {
@@ -1791,216 +1539,30 @@ var cardDataImporter = (function (my, $) {
             }
         }
 
-        var jsonMainStr = JSON.stringify(finalOut, null, ' ');
-
-        var cardsHtmlSample = '';
-        _.each(cards, function (card) {
-            cardsHtmlSample += "<div class='card'><img src='" + card.src + "' height='"
-                + (card.height) + "' width='" + (card.width) + "' /><p>"
-                + card.num + ":" + card.title + "</p></div>";
+        // Sort the final output by card num.
+        finalOut.sort((a, b) => {
+            const aName = mtgGen.createMatchTitle(a.newValues.num);
+            const bName = mtgGen.createMatchTitle(b.newValues.num);
+            return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
         });
 
-        my.trigger('data-processing-complete', cardsLength, jsonMainStr, cardsHtmlSample);
+        const jsonMainStr = JSON.stringify(finalOut, null, ' ');
+
+        let cardsHtmlSample = '';
+        [...cards.values()].forEach(card =>
+            cardsHtmlSample += `<div class='card'><img src='${card.src}' height='${card.height}' width='${card.width}' /><p>${card.num}:${card.title}</p></div>`
+        );
+
+        const finalData = { 
+            imageDataCount: cards.size,
+            cardsJson: jsonMainStr,
+            cardsHtmlSample };
+        window.dispatchEvent(new CustomEvent('data-processing-complete', { 'detail': finalData }));
     }
-
-
-    //CAMKILL: get rid of all of this; now replaced with loadImagesAndGenerateExceptions
-    // Land files -------------------------------------------------------------------------------------------
-
-    my.loadAndProcessLandFile = function (options) {
-        $.extend(my, options);
-
-        if (my.landDataUrl === undefined || my.landDataUrl.length < 1) {
-            alert("ERROR: No land data url supplied. Cannot continue.");
-            return;
-        }
-
-        // load all files and don't continue until all are loaded
-        var promises = [];
-
-        $.ajaxSetup({ timeout: 5000 });
-
-        promises.push($.get('/proxy?u=' + encodeURIComponent(my.landDataUrl)));
-
-        my.trigger('data-loading');
-
-        $.when.apply($, promises).done(function (data) {
-            // the first result is essential
-            var landImages = {
-                //data: arguments[0][0],
-                data: data,
-                urlSource: my.landDataUrl
-            }
-            if (isBadResponse(landImages.data)) {
-                alert("ERROR: No data retrieved from " + my.cardDataUrl + ". Response:" + landImages);
-                return;
-            }
-
-            var setCode = my.setCode.trim();
-
-            my.trigger('data-loaded');
-
-            setTimeout(function () {
-                createLandOutputJson(setCode, landImages, my.requiredImageWidth, my.requiredImageHeight, my.startingCardNum, my.numLandPerType, my.landOrder, my.landOrderOverride);
-            }, 100); // delay to let ui render
-        });
-
-    }
-
-    function getLandTypeFromCode(code) {
-        switch (code) {
-            case "w": return "Plains";
-            case "u": return "Island";
-            case "b": return "Swamp";
-            case "r": return "Mountain";
-            case "g": return "Forest";
-            default: return "Unknown type: " + code + " -- should be one of: w u r b g";
-        }
-    }
-
-    function createLandOutputJson(setCode, landImages, requiredImageWidth, requiredImageHeight, startingCardNum, numLandPerType, landOrder, landOrderOverride) {
-        // Get image data -------------------------------------------------------------------------------------------------
-        var landImages = my.api.getLandImagesFromWotcArticle(landImages.data, requiredImageWidth, requiredImageHeight);
-        var imageDataCount = Object.size(landImages);
-
-        // NEXT: of course the FIRST one I do is weird.. cuz it has the four out-of-order ones at the top...
-        // - grab all images, make list of sizes, auto-choose most common size and call them "land"
-        // - work this back in to the main importer? maybe? it would make import/export of settings easier...
-        // - replace the save/load functionality
-
-        // If land order overide specified, parse it
-        var landOrderOverrides = [];
-        if (landOrderOverride.trim().length > 0) {
-            var overrideItems = landOrderOverride.replace(/(?:\r\n|\r|\n)/g, ',');
-            landOrderOverrides = overrideItems.trim().toLowerCase().split(',');
-        }
-
-        // Create land cards out of each image
-        var cards = {};
-        var skippedCards = [];
-        var cardNum = startingCardNum;
-        var landTypeCount = 0;
-        var landTypeIndex = 0;
-        var landOrderLower = landOrder.toLowerCase();
-        var landOrderOverrideIndex = 0;
-        $.each(landImages, function (index, image) {
-            var card = {};
-
-            Object.assign(card, image); // src, height, width, imageSource
-
-            // If overrides exist, use the entire pattern given, e.g.: w250,u251,b252,r253,g254 etc -- use x to skip a card
-            var skipCard = false;
-            if (landOrderOverrides.length) {
-                if (landOrderOverrides.length <= landOrderOverrideIndex) {
-                    card.title = "Ran out of Land Order Overrides";
-                }
-                else {
-                    if (landOrderOverrides[landOrderOverrideIndex][0] === 'x') {
-                        skipCard = true;
-                        card.skippedCardIndex = index;
-                        skippedCards.push(card);
-                    }
-                    else {
-                        card.title = getLandTypeFromCode(landOrderOverrides[landOrderOverrideIndex][0]);
-                        card.num = landOrderOverrides[landOrderOverrideIndex].substr(1);
-                    }
-                }
-                landOrderOverrideIndex++;
-            }
-            else {
-                if (landTypeCount > numLandPerType - 1) {
-                    landTypeCount = 0;
-                    landTypeIndex++;
-                }
-                card.title = getLandTypeFromCode(landOrderLower[landTypeIndex]);
-                card.num = cardNum++;
-
-                landTypeCount++;
-            }
-
-            if (!skipCard) {
-                card.matchTitle = mtgGen.createMatchTitle(card.title);
-                cards = addCardToCards(cards, card);
-            }
-        });
-
-        // Reporting -------------------------------------------------------------------------------------------------
-
-        var out = "";
-        var cardsLength = Object.size(cards);
-        if (cardsLength < 1) {
-            out += "<p>WARNING: No images found at url.</p>";
-        }
-
-        if (skippedCards.length > 0) {
-            out += "<p>The following " + skippedCards.length + " cards were skipped due to 'x's in your Land Override Patterns setting:</p><ul class='skipped-cards'>";
-            $.each(skippedCards, function (index, card) {
-                out += "<li><img src='" + card.src + "' height='" + Math.round(card.height / 2) + "' width='" + Math.round(card.width / 2) + "' />";
-                out += "<p>Card #" + (card.skippedCardIndex + 1) + "</p></li>";
-            });
-            out += "</ul>";
-        }
-
-        my.trigger('log-complete', out);
-
-        // Final JSON output -------------------------------------------------------------------------------------------------
-
-        var finalOut = [];
-        _.each(cards, function (card) {
-            delete card.matchTitle;
-            delete card.srcOriginal;
-            delete card.imageSourceOriginal;
-            delete card.fixedViaException;
-            delete card.imageSource;
-            delete card.mtgenId;
-            if (card.height === 370) { delete card.height; }
-            if (card.width === 265) { delete card.width; }
-
-            // Create the card as an exception.
-            var exception = {
-                "add": true,
-                "newValues": card
-            };
-            finalOut.push(exception);
-        });
-
-        // If we output anything, output the final card to apply the default values to all previous Basic Lands.
-        if (finalOut.length > 0) {
-            var postCard =
-            {
-                "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
-                "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
-                "newValues": {
-                    "set": "{{setCode}}",
-                    "height": 370,
-                    "width": 265,
-                    "type": "Basic Land",
-                    "subtype": "{{title}}",
-                    "colour": "l",
-                    "cost": "",
-                    "rarity": "c",
-                    "num": "{{num}}/264 L"
-                }
-            };
-            finalOut.push(postCard);
-        }
-
-        var jsonMainStr = JSON.stringify(finalOut, null, ' ');
-
-        var cardsHtmlSample = '';
-        _.each(cards, function (card) {
-            cardsHtmlSample += "<div class='card'><img src='" + card.src + "' height='"
-                + (card.height) + "' width='" + (card.width) + "' /><p>"
-                + card.num + ":" + card.title + "</p></div>";
-        });
-
-        my.trigger('data-processing-complete', cardsLength, jsonMainStr, cardsHtmlSample);
-    }
-
-
-    function createPlaceholderCardSrc(card) {
-        var cardBgColour = "cccccc";
-        var cardTextColour = "969696";
+    
+    _createPlaceholderCardSrc(card) {
+        let cardBgColour = "cccccc";
+        let cardTextColour = "969696";
         switch (card.colour) {
             case 'w': cardBgColour = 'e9e5da'; break;
             case 'u': cardBgColour = 'cddfed'; break;
@@ -2008,12 +1570,13 @@ var cardDataImporter = (function (my, $) {
             case 'r': cardBgColour = 'f6d1be'; break;
             case 'g': cardBgColour = 'c7d4ca'; break;
         }
-        return "holder.js/265x370/#" + cardBgColour + ":#" + cardTextColour + "/text:" + cardTitleUrl(card.title, 500);
+        return `holder.js/265x370/#${cardBgColour}:#${cardTextColour}/text:${this._cardTitleUrl(card.title, 500)}`;
     }
 
-    function createPlaceboxesCardSrc(card) {
-        var cardBgColour = "cccccc";
-        var cardTextColour = "969696";
+    //CAMKILL: not used
+    _createPlaceboxesCardSrc(card) {
+        let cardBgColour = "cccccc";
+        let cardTextColour = "969696";
         switch (card.colourType) {
             case 'w': cardBgColour = 'e9e5da'; break;
             case 'u': cardBgColour = 'cddfed'; break;
@@ -2021,93 +1584,6 @@ var cardDataImporter = (function (my, $) {
             case 'r': cardBgColour = 'f6d1be'; break;
             case 'g': cardBgColour = 'c7d4ca'; break;
         }
-        return "http://placebox.es/265x370/" + cardBgColour + "/" + cardTextColour + "/" + cardTitleUrl(card.title, 500) + ",20/";
+        return `http://placebox.es/265x370/${cardBgColour}/${cardTextColour}/${this._cardTitleUrl(card.title, 500)},20/`;
     }
-
-    Object.size = function (obj) {
-        var size = 0, key;
-        for (key in obj) {
-            if (obj.hasOwnProperty(key)) size++;
-        }
-        return size;
-    };
-
-    function createMrPurpleCardSrc(card) {
-        var url = "http://magic.mrpurple.de/";
-        if (card.type == 'Planeswalker') {
-            url += "Planeswalker/server-side.php?Titel=" + card.title + "&Type=" + card.type;
-            if (card.loyalty) { url += '&loyalty=' + card.loyalty; }
-        }
-        else {
-            url += "Card/modern.php?style=modern.php&Titel=" + card.title + "&Type=" + card.type;
-        }
-
-        url += '&Color=';
-        switch (card.colour) {
-            case mtgGen.colours.multicolour:
-                url += 'Multicolor';
-                break;
-            case mtgGen.colours.other:
-            case mtgGen.colours.unknown:
-                url += 'Colorless';
-                break;
-            default:
-                url += mtgGen.getColourByCode(card.colour).name;
-                break;
-        }
-
-        url += '&Rarity=' + getRarityByCode(card.rarity).name.replace("Mythic Rare", "Mythic", "gi");
-        if (card.subtype) { url += '&Subtype=- ' + card.subtype; }
-        if (card.power) { url += '&Power=' + card.power; }
-        if (card.toughness) { url += '&Toughness=' + card.toughness; }
-
-        if (card.cost) {
-            var wCount = 0;
-            var uCount = 0;
-            var bCount = 0;
-            var rCount = 0;
-            var gCount = 0;
-            var cCount = 0;
-            var colourCosts = card.cost.toLowerCase().replace(/{/g, "").replace(/}/g, " ").trim().split(" ");
-            for (var i in colourCosts) {
-                switch (colourCosts[i]) {
-                    case 'w': wCount++; break;
-                    case 'u': uCount++; break;
-                    case 'b': bCount++; break;
-                    case 'r': rCount++; break;
-                    case 'g': gCount++; break;
-                    default: cCount += parseInt(colourCosts[i]); break;
-                }
-            }
-            if (wCount > 0) { url += "&manawhite=" + wCount; }
-            if (uCount > 0) { url += "&manablue=" + uCount; }
-            if (bCount > 0) { url += "&manablack=" + bCount; }
-            if (rCount > 0) { url += "&manared=" + rCount; }
-            if (gCount > 0) { url += "&managreen=" + gCount; }
-            if (cCount > 0) { url += "&manacolless=" + cCount; }
-        }
-
-        return url;
-    }
-
-    // set of internal function calls for testing purposes
-    my.api = {
-        createOutputJson: createOutputJson,
-
-        getCardData: getCardData,
-        getCardsFromGatheringMagicData: getCardsFromGatheringMagicData,
-        getCardsFromMtgJsonData: getCardsFromMtgJsonData,
-
-        getImageData: getImageData,
-        getCardsFromMtgSalvationData: getCardsFromMtgSalvationData,
-        getImagesFromMtgJsonData: getImagesFromMtgJsonData,
-        getImagesFromCardsMainData: getImagesFromCardsMainData,
-        getLandImagesFromWotcArticle: getLandImagesFromWotcArticle,
-        getCardImagesFromWotcArticle: getCardImagesFromWotcArticle,
-
-        applyExceptions: applyExceptions,
-        applyImagesToCards: applyImagesToCards
-    };
-
-    return my;
-}(cardDataImporter || {}, jQuery));
+}

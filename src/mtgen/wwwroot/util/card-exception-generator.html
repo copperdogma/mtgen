@@ -43,7 +43,8 @@
         <br />
         <p>Examples:</p>
         <p>Land: <pre>     w250,u251,b252,r253,g254</pre></p>
-        <p>Tokens:
+        <p>
+            Tokens:
 <pre>
      007|c|Token Artifact Creature|Thopter
      008|c|Token Artifact Creature|Thopter
@@ -77,42 +78,46 @@
         <p>Note that this site has no affiliation with <a href="http://www.wizards.com/Magic/">Wizards of the Coast</a>, owner of Magic: The Gathering.</p>
     </footer>
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="/lib/jquery.base64.min.js"></script>
+    <!--<script src="/lib/jquery/dist/jquery.js"></script>-->
     <script src="/lib/underscore/underscore-min.js"></script>
     <script src="/lib/backbone/backbone.js"></script>
     <script src="/lib/mtg-generator-lib.js"></script>
     <script src="/util/js/card-data-importer.js"></script>
     <script>
-        $(document).ready(function () {
-            if (window.location.protocol == 'file:') { $('#local-error').show(); }
+        'use strict';
+        const cardDataImporter = new CardDataImporter();
 
-            $('input#import').on('click', function () {
-                cardDataImporter.loadImagesAndGenerateExceptions({
-                    cardImageUrl: $('#card-image-url').val()
-                    , startingCardNum: $('#starting-card-num').val()
-                    , requiredImageWidth: $('#required-image-width').val()
-                    , requiredImageHeight: $('#required-image-height').val()
-                    , cardPattern: $('#card-pattern').val()
-                    , setCode: $('input#set-code').val()
-                });
-            });
+        if (window.location.protocol == 'file:') { document.getElementById('local-error').getElementById; }
 
-            cardDataImporter.on('data-loading', function () { $('#status').html("<strong>Image processing started at " + (new Date()) + "</strong>"); });
-            cardDataImporter.on('data-loaded', function () {
-                $('#status').html("<strong>Have images; now processing at " + (new Date()) + "</strong>");
-                $('#output-textarea').val('');
-                $('#output').empty;
+        document.getElementById('import').addEventListener('click', () => {
+            cardDataImporter.loadImagesAndGenerateExceptions({
+                cardImageUrl: document.getElementById('card-image-url').value
+                , startingCardNum: document.getElementById('starting-card-num').value
+                , requiredImageWidth: document.getElementById('required-image-width').value
+                , requiredImageHeight: document.getElementById('required-image-height').value
+                , cardPattern: document.getElementById('card-pattern').value
+                , setCode: document.getElementById('set-code').value
             });
-            cardDataImporter.on('log-complete', function (logText) { $('#log').html(logText); });
-            cardDataImporter.on('data-processing-complete', function (imageDataCount, cardsJson, cardsHtmlSample) {
-                $('#msg').html(
-                    imageDataCount + " images found from " + $('#card-image-url').val() + "</br>"
-                    + "<br/><strong>Final cardsOther.json cards generated at " + (new Date()) + ".");
-                $('#status').html("<strong>Processing complete at " + (new Date()) + "</strong>");
-                $('#out-main').val(cardsJson);
-                $('#out-main-html').html(cardsHtmlSample);
-            });
+        });
 
+        window.addEventListener('data-loading', () => document.getElementById('status').innerHTML = `<strong>Image processing started at ${(new Date())}</strong>`, false);
+
+        window.addEventListener('data-loaded', () => {
+            document.getElementById('status').innerHTML = `<strong>Have images; now processing ${(new Date())}</strong>`;
+            document.getElementById('out-main').value = '';
+            document.getElementById('out-main-html').innerHTML = '';
+        }, false);
+
+        window.addEventListener('log-complete', e => document.getElementById('log').innerHTML = e.detail, false);
+
+        window.addEventListener('data-processing-complete', e => {
+            const data = e.detail;
+            document.getElementById('msg').innerHTML =
+                `${data.imageDataCount} images found from ${document.getElementById('card-image-url').value}</br>
+                    <br/><strong>Final cardsOther.json cards generated at ${(new Date())}.`;
+            document.getElementById('status').innerHTML = `<strong>Processing complete at ${(new Date())}</strong>`;
+            document.getElementById('out-main').value = data.cardsJson;
+            document.getElementById('out-main-html').innerHTML = data.cardsHtmlSample;
         });
     </script>
 </body>

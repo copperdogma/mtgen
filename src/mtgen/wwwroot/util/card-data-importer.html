@@ -41,11 +41,6 @@
         <input id="url-images" size="100" />
         <br />
         <br />
-        <label for="url-exceptions"><em>(deprecated)</em> Url from which to import exceptions JSON file that handles any parsing errors (or use Exceptions below):</label>
-        <br />
-        <input id="url-exceptions" size="100" />
-        <br />
-        <br />
         <label for="exceptions">Exceptions JSON that handles any parsing errors:</label>
         <br />
         <textarea id="exceptions" cols="100" rows="20"></textarea>
@@ -71,80 +66,77 @@
     </footer>
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
     <!--<script src="/lib/jquery/dist/jquery.js"></script>-->
-    <script src="/lib/jquery.base64.min.js"></script>
     <script src="/lib/underscore/underscore-min.js"></script>
     <script src="/lib/backbone/backbone.js"></script>
     <script src="/lib/mtg-generator-lib.js"></script>
     <script src="/util/js/card-data-importer.js"></script>
-   <script>
-        $(document).ready(function () {
-            if (window.location.protocol == 'file:') { $('#local-error').show(); }
+    <script>
+        'use strict';
+        const cardDataImporter = new CardDataImporter();
 
-            $('input#import').on('click', function () {
-                cardDataImporter.loadAndProcessAllFiles({
-                    cardDataUrl: $('#url-card-data').val()
-                    , htmlCardData: $('#html-card-data').val()
-                    , imagesUrl: $('#url-images').val()
-                    , exceptionsUrl: $('#url-exceptions').val()
-                    , exceptions: $('#exceptions').val()
-                    , setCode: $('input#set-code').val()
-                });
+        if (window.location.protocol == 'file:') { document.getElementById('local-error').getElementById; }
+
+        document.getElementById('import').addEventListener('click', () => {
+            cardDataImporter.loadAndProcessAllFiles({
+                cardDataUrl: document.getElementById('url-card-data').value
+                , htmlCardData: document.getElementById('html-card-data').value
+                , imagesUrl: document.getElementById('url-images').value
+                , exceptions: document.getElementById('exceptions').value
+                , setCode: document.getElementById('set-code').value
             });
+        });
 
-            $('input').on('change', function () { setSaveLinkToDownloadFile(); });
+        document.querySelectorAll('input').forEach(el => el.addEventListener('change', () => setSaveLinkToDownloadFile()));
 
-            $('#load-settings').on('change', function (e) {
-                var file = e.target.files[0];
-                var reader = new FileReader();
-                // Closure to capture the file information.
-                reader.onload = (function (theFile) {
-                    return function (e) {
-                        var jsonSettings = e.target.result;
-                        var settings = JSON.parse(jsonSettings);
-                        var finalSettings = cardDataImporter.setSettings(settings);
-                        $('input#set-code').val(finalSettings.setCode);
-                        $('input#url-card-data').val(finalSettings.cardDataUrl);
-                        $('input#url-images').val(finalSettings.imagesUrl);
-                        $('input#url-exceptions').val(finalSettings.exceptionsUrl);
-                        $('textarea#exceptions').val(JSON.stringify(finalSettings.exceptions, null, ' '));
+        document.getElementById('load-settings').addEventListener('change', e => {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.onload = e => {
+                const jsonSettings = e.target.result;
+                const settings = JSON.parse(jsonSettings);
+                const finalSettings = cardDataImporter.setSettings(settings);
+                document.getElementById('set-code').value = finalSettings.setCode;
+                document.getElementById('url-card-data').value = finalSettings.cardDataUrl;
+                document.getElementById('url-images').value = finalSettings.imagesUrl;
+                document.getElementById('exceptions').value = JSON.stringify(finalSettings.exceptions, null, ' ');
 
-                        // rebuild the download file and attach it to the download link
-                        setSaveLinkToDownloadFile();
-                    };
-                })(file);
+                // rebuild the download file and attach it to the download link
+                setSaveLinkToDownloadFile();
+            };
 
-                reader.readAsText(file);
-            });
+            reader.readAsText(file);
+        });
 
-            function setSaveLinkToDownloadFile() {
-                var attrs = cardDataImporter.getDownloadSettingsFileLinkAttributes(
-                                $('input#set-code').val(),
-                                $('#url-card-data').val(),
-                                $('#url-images').val(),
-                                $('#url-exceptions').val(),
-                                $('#exceptions').val()
-                                );
-                var $linkEl = $('#save-settings');
-                $linkEl.attr('href', attrs.href);
-                $linkEl.attr('download', attrs.download); // 'download' attr is Chrome/FF-only to set download filename
-            }
+        const setSaveLinkToDownloadFile = () => {
+            const attrs = cardDataImporter.getDownloadSettingsFileLinkAttributes(
+                            document.getElementById('set-code').value,
+                            document.getElementById('url-card-data').value,
+                            document.getElementById('url-images').value,
+                            document.getElementById('exceptions').value
+                            );
+            const linkEl = document.getElementById('save-settings');
+            linkEl.setAttribute('href', attrs.href);
+            linkEl.setAttribute('download', attrs.download); // 'download' attr is Chrome/FF-only to set download filename
+        }
 
-            cardDataImporter.on('data-loading', function () { $('#status').html("<strong>Data load started at " + (new Date()) + "</strong>"); });
-            cardDataImporter.on('data-loaded', function () {
-                $('#status').html("<strong>Have data; now processing at " + (new Date()) + "</strong>");
-                $('#output-textarea').val('');
-                $('#output').empty;
-            });
-            cardDataImporter.on('log-complete', function (logText) { $('#log').html(logText); });
-            cardDataImporter.on('data-processing-complete', function (cardsMainJson, initialCardDataCount, imageDataCount, finalCardCount) {
-                $('#msg').html(
-                    initialCardDataCount + " cards found from " + $('#url-card-data').val() + "</br>"
-                    + imageDataCount + " images found from " + $('#url-images').val() + "</br>"
-                    + "<br/><strong>" + finalCardCount + " final cardsMain.json cards generated at " + (new Date()) + ".");
-                $('#status').html("<strong>Processing complete at " + (new Date()) + "</strong>");
-                $('#out-main').val(cardsMainJson);
-            });
+        window.addEventListener('data-loading', () => document.getElementById('status').innerHTML = `<strong>Data load started at ${(new Date())}</strong>`, false);
 
+        window.addEventListener('data-loaded', () => {
+            document.getElementById('status').innerHTML = `<strong>Have data; now processing at ${(new Date())}</strong>`;
+            document.getElementById('out-main').value = '';
+            document.getElementById('log').innerHTML = '';
+        }, false);
+
+        window.addEventListener('log-complete', e => document.getElementById('log').innerHTML = e.detail, false);
+
+        window.addEventListener('data-processing-complete', e => {
+            const data = e.detail;
+            document.getElementById('msg').innerHTML =
+                `${data.initialCardDataCount} cards found from ${document.getElementById('url-card-data').value}</br>
+                    ${data.imageDataCount} images found from ${document.getElementById('url-images').value}</br><br/>
+                    <strong>${data.finalCardCount} final cardsMain.json cards generated at ${(new Date())}.</strong>`;
+            document.getElementById('status').innerHTML = `<strong>Processing complete at ${(new Date())}</strong>`;
+            document.getElementById('out-main').value = data.cardsMainJson;
         });
     </script>
 </body>
