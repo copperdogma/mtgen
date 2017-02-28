@@ -219,17 +219,4 @@ class CardExceptionGenerator extends CardDataImporter {
             resolve(finalData);
         });
     }
-
-    _createPlaceholderCardSrc(card) {
-        let cardBgColour = "cccccc";
-        let cardTextColour = "969696";
-        switch (card.colour) {
-            case 'w': cardBgColour = 'e9e5da'; break;
-            case 'u': cardBgColour = 'cddfed'; break;
-            case 'b': cardBgColour = '000000'; cardTextColour = 'ffffff'; break;
-            case 'r': cardBgColour = 'f6d1be'; break;
-            case 'g': cardBgColour = 'c7d4ca'; break;
-        }
-        return `holder.js/265x370/#${cardBgColour}:#${cardTextColour}/text:${this._cardTitleUrl(card.title, 500)}`;
-    }
 }
