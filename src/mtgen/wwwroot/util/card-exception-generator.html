@@ -10,8 +10,10 @@
     <img itemprop="image" src="http://mtgen.net/images/mtg-logo.jpg" />
     <p>This page uses a manually entered template and a url containing card images to generate an exception json file used to generate final json data cards.</p>
     <ul>
+        <li>26-Feb-2017: Rewritten to use es6 instead of es5/backbone/jQuery.</li>
         <li>16-Sep-2016: Created based on land importer.</li>
     </ul>
+    <h2 id='local-error' class='error' style="display:none">NOTE: You CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.</h2>
     <br />
     <section id="options">
         <label for="set-code">Set code (e.g.: dgm):</label>
@@ -83,42 +85,42 @@
     <script src="/lib/backbone/backbone.js"></script>
     <script src="/lib/mtg-generator-lib.js"></script>
     <script src="/util/js/card-data-importer.js"></script>
+    <script src="/util/js/card-exception-generator.js"></script>
     <script>
         'use strict';
-        const cardDataImporter = new CardDataImporter();
+        const cardDataImporter = new CardExceptionGenerator();
 
         if (window.location.protocol == 'file:') { document.getElementById('local-error').getElementById; }
 
-        document.getElementById('import').addEventListener('click', () => {
-            cardDataImporter.loadImagesAndGenerateExceptions({
-                cardImageUrl: document.getElementById('card-image-url').value
+        const startProcessing = () => cardDataImporter.loadImagesAndGenerateExceptions({
+            cardImageUrl: document.getElementById('card-image-url').value
                 , startingCardNum: document.getElementById('starting-card-num').value
                 , requiredImageWidth: document.getElementById('required-image-width').value
                 , requiredImageHeight: document.getElementById('required-image-height').value
                 , cardPattern: document.getElementById('card-pattern').value
                 , setCode: document.getElementById('set-code').value
+            })
+            .then(([logOutput, finalData]) => {
+                document.getElementById('log').innerHTML = logOutput;
+                document.getElementById('msg').innerHTML =
+                    `${finalData.imageDataCount} images found from ${document.getElementById('card-image-url').value}</br>
+                    <br/><strong>Final cardsOther.json cards generated at ${(new Date())}.`;
+                document.getElementById('status').innerHTML = `<strong>Processing complete at ${(new Date())}</strong>`;
+                document.getElementById('out-main').value = finalData.cardsJson;
+                document.getElementById('out-main-html').innerHTML = finalData.cardsHtmlSample;
             });
-        });
 
-        window.addEventListener('data-loading', () => document.getElementById('status').innerHTML = `<strong>Image processing started at ${(new Date())}</strong>`, false);
+        document.getElementById('import').addEventListener('click', startProcessing);
 
-        window.addEventListener('data-loaded', () => {
-            document.getElementById('status').innerHTML = `<strong>Have images; now processing ${(new Date())}</strong>`;
+        window.addEventListener('data-loading', () => {
+            document.getElementById('status').innerHTML = `<strong>Image processing started at ${(new Date())}</strong>`;
             document.getElementById('out-main').value = '';
             document.getElementById('out-main-html').innerHTML = '';
         }, false);
 
-        window.addEventListener('log-complete', e => document.getElementById('log').innerHTML = e.detail, false);
-
-        window.addEventListener('data-processing-complete', e => {
-            const data = e.detail;
-            document.getElementById('msg').innerHTML =
-                `${data.imageDataCount} images found from ${document.getElementById('card-image-url').value}</br>
-                    <br/><strong>Final cardsOther.json cards generated at ${(new Date())}.`;
-            document.getElementById('status').innerHTML = `<strong>Processing complete at ${(new Date())}</strong>`;
-            document.getElementById('out-main').value = data.cardsJson;
-            document.getElementById('out-main-html').innerHTML = data.cardsHtmlSample;
-        });
+        window.addEventListener('data-loaded', () => {
+            document.getElementById('status').innerHTML = `<strong>Have images; now processing ${(new Date())}</strong>`;
+        }, false);
     </script>
 </body>
 </html>

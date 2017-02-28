@@ -9,4 +9,5 @@
 /// <reference path="lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" />
 /// <reference path="lib/underscore/underscore.js" />
 /// <reference path="util/js/card-data-importer.js" />
+/// <reference path="util/js/card-exception-generator.js" />
 /// <reference path="util/js/sinon-1.15.4.js" />

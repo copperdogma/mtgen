@@ -326,18 +326,6 @@ class CardDataImporter {
         return ((aProp < bProp) ? -1 : ((aProp > bProp) ? 1 : 0));
     }
 
-    //CAMKILL: not used
-    _isBadResponse(response) {
-        if (response == null) { return true; }
-        if (response.hasOwnProperty('cards')) { return false; }
-        //if (!response.indexOf) { return true; } // not sure what this was ever testing for
-        if (response.indexOf('ERROR') == 0 || response.indexOf('HTTP/1.1 301') == 0) { return true; }
-        if (response.indexOf("The resource you are looking for has been removed, had its name changed, or is temporarily unavailable.") > -1) { return true; }
-        if (response.indexOf('CopperDog - Design::Web::Programming') > -1) { return true; } // we load copper-dog.com if there's a blank entry
-        if (response.indexOf("404 Not Found") > -1) { return true; }
-        return false;
-    }
-
     // adapted from: http://guegue.net/friendlyURL_JS
     _cardTitleUrl(str, max) {
         let out = str;
@@ -1041,9 +1029,8 @@ class CardDataImporter {
                         });
 
                         resolve(finalImages);
-                    },
-                    reason => alert(`ERROR: failed to retrieve image: ${reason}`)
-                    );
+                    })
+                    .catch(err => alert(`ERROR: failed to retrieve image: ${err.message}`));
             }
         });
     }
@@ -1340,32 +1327,23 @@ _objectToMap(obj) {
     // Image-to-Exception importer -------------------------------------------------------------------------------------------
 
     //CAMKILL: PUBLIC
-    loadImagesAndGenerateExceptions
-        ({cardImageUrl, startingCardNum, requiredImageWidth, requiredImageHeight, cardPattern, setCode}) {
-        if (!cardImageUrl) {
-            alert("ERROR: No card image url supplied. Cannot continue.");
-            return;
-        }
-        if (!cardPattern) {
-            alert("ERROR: No card pattern supplied. Cannot continue.");
-            return;
-        }
+    loadImagesAndGenerateExceptions({cardImageUrl, startingCardNum, requiredImageWidth, 
+                                     requiredImageHeight, cardPattern, setCode}) {
+        if (!cardImageUrl) { throw new Error("No card image url supplied. Cannot continue."); }
+        if (!cardPattern) { throw new Error("No card pattern supplied. Cannot continue."); }
 
         window.dispatchEvent(new Event('data-loading'));
 
-        this._fetchHtml(cardImageUrl)
+        return this._fetchHtml(cardImageUrl)
             .then(imageData => {
-                const cardImages = {
-                    data: imageData,
-                    urlSource: cardImageUrl
-                }
-
                 window.dispatchEvent(new Event('data-loaded'));
-
-                this._createExceptionOutputJson(setCode.trim(), cardImages, requiredImageWidth, requiredImageHeight, startingCardNum, cardPattern);
-            },
-            reason => {
-                alert(`ERROR: failed to retrieve data from ${cardImageUrl}: ${reason}`);
+                return this._getCardImagesFromWotcArticle(imageData, requiredImageWidth, requiredImageHeight);
+            })
+            .then(cardImages => { return this._createOutputCards(setCode, cardImages, startingCardNum, cardPattern); })
+            .then(({cards, skippedCards}) => { 
+                const outputLogPromise = this._createOutputLog(cards, skippedCards);
+                const finalDataPromise = this._createFinalJsonOutput(cards);
+                return Promise.all([outputLogPromise, finalDataPromise]);
             });
     }
 
@@ -1380,186 +1358,186 @@ _objectToMap(obj) {
         }
     }
 
-    _createExceptionOutputJson(setCode, cardImageData, requiredImageWidth, requiredImageHeight, startingCardNum, cardPattern) {
+    _createOutputCards(setCode, cardImages, startingCardNum, cardPattern) {
+        return new Promise(resolve => {
+            // Parse the card pattern into an array.
+            const overrideItems = cardPattern.replace(/(?:\r\n|\r|\n)/g, ',');
+            const cardPatterns = overrideItems.trim().split(',');
 
-        // Get image data -------------------------------------------------------------------------------------------------
-        this._getCardImagesFromWotcArticle(cardImageData.data, requiredImageWidth, requiredImageHeight)
-        .then(cardImages => this._createExceptionOutputJsonFromImages(setCode, cardImages, startingCardNum, cardPattern)
-        ,reason => alert(`ERROR: failed to get card images: ${reason}`)
-        );
-    }
+            // Create land cards out of each image
+            let cards = new Map();
+            const skippedCards = [];
+            let cardNum = startingCardNum;
+            const hasFixedCardNums = cardNum !== undefined && cardNum !== "";
+            let cardPatternIndex = 0;
+            cards.areLand = false;
+            cards.areTokens = false;
 
-    _createExceptionOutputJsonFromImages(setCode, cardImages, startingCardNum, cardPattern) {
-        // Parse the card pattern into an array.
-        const overrideItems = cardPattern.replace(/(?:\r\n|\r|\n)/g, ',');
-        const cardPatterns = overrideItems.trim().split(',');
+            cardImages.forEach((image, index) => {
+                const card = {};
 
-        // Create land cards out of each image
-        let cards = new Map();
-        const skippedCards = [];
-        let cardNum = startingCardNum;
-        const hasFixedCardNums = cardNum !== undefined && cardNum !== "";
-        let cardPatternIndex = 0;
-        let areLand = false;
-        let areTokens = false;
+                Object.assign(card, image); // src, height, width, imageSource
 
-        cardImages.forEach((image, index) => {
-            const card = {};
-
-            Object.assign(card, image); // src, height, width, imageSource
-
-            // If overrides exist, use the entire pattern given, e.g.: w250,u251,b252,r253,g254 etc -- or x to skip a card
-            let skipCard = false;
-            if (cardPatterns.length <= cardPatternIndex) {
-                card.title = "Ran out of Card Pattern entries";
-            }
-            else {
-                // Determine the type of pattern.
-                const pattern = cardPatterns[cardPatternIndex].trim();
-
-                // x = skip a card
-                const skip = /x/gi.test(pattern);
-                if (skip) {
-                    skipCard = true;
-                    card.skippedCardIndex = index;
-                    skippedCards.push(card);
+                // If overrides exist, use the entire pattern given, e.g.: w250,u251,b252,r253,g254 etc -- or x to skip a card
+                let skipCard = false;
+                if (cardPatterns.length <= cardPatternIndex) {
+                    card.title = "Ran out of Card Pattern entries";
                 }
                 else {
-                    // e.g.: g107, or just g (and it will then use the default starting number)
-                    const land = /^([w|u|g|b|r])([0-9]{3})?$/gi.exec(pattern);
-                    if (land) {
-                        card.title = this._getLandTypeFromCode(land[1]);
-                        card.num = land[2];
-                        areLand = true;
+                    // Determine the type of pattern.
+                    const pattern = cardPatterns[cardPatternIndex].trim();
+
+                    // x = skip a card
+                    const skip = /x/gi.test(pattern);
+                    if (skip) {
+                        skipCard = true;
+                        card.skippedCardIndex = index;
+                        skippedCards.push(card);
                     }
                     else {
-                        // e.g.: 007|c|Token Artifact Creature|Thopter, or without the 007 and it'll use default starting number
-                        const cardPattern = /^([0-9]{3})?\|?(.)\|(.*)\|(.*)$/gi.exec(pattern);
-                        if (!cardPattern) {
-                            card.title = `Unknown pattern: ${pattern}`;
+                        // e.g.: g107, or just g (and it will then use the default starting number)
+                        const land = /^([w|u|g|b|r])([0-9]{3})?$/gi.exec(pattern);
+                        if (land) {
+                            card.title = this._getLandTypeFromCode(land[1]);
+                            card.num = land[2];
+                            cards.areLand = true;
                         }
                         else {
-                            card.num = cardPattern[1];
-                            card.colour = cardPattern[2];
-                            card.type = cardPattern[3];
-                            card.title = cardPattern[4];
-                            card.subtype = cardPattern[4].replace(" Emblem", "");
-                            // ** make sure it all works for lands
+                            // e.g.: 007|c|Token Artifact Creature|Thopter, or without the 007 and it'll use default starting number
+                            const cardPattern = /^([0-9]{3})?\|?(.)\|(.*)\|(.*)$/gi.exec(pattern);
+                            if (!cardPattern) {
+                                card.title = `Unknown pattern: ${pattern}`;
+                            }
+                            else {
+                                card.num = cardPattern[1];
+                                card.colour = cardPattern[2];
+                                card.type = cardPattern[3];
+                                card.title = cardPattern[4];
+                                card.subtype = cardPattern[4].replace(" Emblem", "");
+                                // ** make sure it all works for lands
+                            }
+                            cards.areTokens = true;
                         }
-                        areTokens = true;
                     }
                 }
-            }
-            cardPatternIndex++;
+                cardPatternIndex++;
 
-            if (!skipCard) {
-                card.matchTitle = mtgGen.createMatchTitle(card.title);
+                if (!skipCard) {
+                    card.matchTitle = mtgGen.createMatchTitle(card.title);
 
-                if (hasFixedCardNums) {
-                    card.num = cardNum++;
+                    if (hasFixedCardNums) {
+                        card.num = cardNum++;
+                    }
+
+                    cards = this._addCardToCards(cards, card);
                 }
-
-                cards = this._addCardToCards(cards, card);
-            }
-        });
-
-        // Reporting -------------------------------------------------------------------------------------------------
-
-        let out = "";
-        if (cards.size < 1) {
-            out += "<p>WARNING: No images found at url.</p>";
-        }
-
-        if (skippedCards.length > 0) {
-            out += `<p>The following ${skippedCards.length} cards were skipped due to 'x's in your Card Patterns setting:</p><ul class='skipped-cards'>`;
-            skippedCards.forEach(card => {
-                out += `<li><img src='${card.src}' height='${Math.round(card.height / 2)}' width='${Math.round(card.width / 2)}' />`;
-                out += `<p>Card #${(card.skippedCardIndex + 1)}</p></li>`;
             });
-            out += "</ul>";
-        }
 
-        window.dispatchEvent(new CustomEvent('log-complete', { 'detail': out }));
-
-        // Final JSON output -------------------------------------------------------------------------------------------------
-
-        const finalOut = [];
-        [...cards.values()].forEach(card => {
-            delete card.matchTitle;
-            delete card.srcOriginal;
-            delete card.imageSourceOriginal;
-            delete card.fixedViaException;
-            delete card.imageSource;
-            delete card.mtgenId;
-            if (card.height === 370) { delete card.height; }
-            if (card.width === 265) { delete card.width; }
-
-            // Create the card as an exception.
-            const exception = {
-                "add": true,
-                "newValues": card
-            };
-            finalOut.push(exception);
+            resolve({cards, skippedCards});
         });
-
-        // If we output anything, output the final card to apply the default values to all previous Basic Lands.
-        if (finalOut.length > 0) {
-            if (areLand) {
-                const postCard =
-                {
-                    "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
-                    "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
-                    "newValues": {
-                        "set": "{{setCode}}",
-                        "height": 370,
-                        "width": 265,
-                        "type": "Basic Land",
-                        "subtype": "{{title}}",
-                        "colour": "l",
-                        "cost": "",
-                        "rarity": "c",
-                        "num": "{{num}}/264 L"
-                    }
-                };
-                finalOut.push(postCard);
-            }
-            else if (areTokens) {
-                const postCard =
-                {
-                    "where": "",
-                    "newValues": {
-                        "set": "{{setCode}}",
-                        "rarity": "c",
-                        "num": "{{num}}/012 T",
-                        "token": true,
-                        "usableForDeckBuilding": false
-                    }
-                };
-                finalOut.push(postCard);
-            }
-        }
-
-        // Sort the final output by card num.
-        finalOut.sort((a, b) => {
-            const aName = mtgGen.createMatchTitle(a.newValues.num);
-            const bName = mtgGen.createMatchTitle(b.newValues.num);
-            return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
-        });
-
-        const jsonMainStr = JSON.stringify(finalOut, null, ' ');
-
-        let cardsHtmlSample = '';
-        [...cards.values()].forEach(card =>
-            cardsHtmlSample += `<div class='card'><img src='${card.src}' height='${card.height}' width='${card.width}' /><p>${card.num}:${card.title}</p></div>`
-        );
-
-        const finalData = { 
-            imageDataCount: cards.size,
-            cardsJson: jsonMainStr,
-            cardsHtmlSample };
-        window.dispatchEvent(new CustomEvent('data-processing-complete', { 'detail': finalData }));
     }
-    
+
+    _createOutputLog(cards, skippedCards) {
+        return new Promise(resolve => {
+            let out = "";
+            if (cards.size < 1) {
+                out += "<p>WARNING: No images found at url.</p>";
+            }
+
+            if (skippedCards.length > 0) {
+                out += `<p>The following ${skippedCards.length} cards were skipped due to 'x's in your Card Patterns setting:</p><ul class='skipped-cards'>`;
+                skippedCards.forEach(card => {
+                    out += `<li><img src='${card.src}' height='${Math.round(card.height / 2)}' width='${Math.round(card.width / 2)}' />`;
+                    out += `<p>Card #${(card.skippedCardIndex + 1)}</p></li>`;
+                });
+                out += "</ul>";
+            }
+
+            resolve(out);
+        });
+    }
+
+    _createFinalJsonOutput(cards) {
+        return new Promise(resolve => {
+            const finalOut = [];
+            [...cards.values()].forEach(card => {
+                delete card.matchTitle;
+                delete card.srcOriginal;
+                delete card.imageSourceOriginal;
+                delete card.fixedViaException;
+                delete card.imageSource;
+                delete card.mtgenId;
+                if (card.height === 370) { delete card.height; }
+                if (card.width === 265) { delete card.width; }
+
+                // Create the card as an exception.
+                const exception = {
+                    "add": true,
+                    "newValues": card
+                };
+                finalOut.push(exception);
+            });
+
+            // If we output anything, output the final card to apply the default values to all previous Basic Lands.
+            if (finalOut.length > 0) {
+                if (cards.areLand) {
+                    const postCard =
+                    {
+                        "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
+                        "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
+                        "newValues": {
+                            "set": "{{setCode}}",
+                            "height": 370,
+                            "width": 265,
+                            "type": "Basic Land",
+                            "subtype": "{{title}}",
+                            "colour": "l",
+                            "cost": "",
+                            "rarity": "c",
+                            "num": "{{num}}/264 L"
+                        }
+                    };
+                    finalOut.push(postCard);
+                }
+                else if (cards.areTokens) {
+                    const postCard =
+                    {
+                        "where": "",
+                        "newValues": {
+                            "set": "{{setCode}}",
+                            "rarity": "c",
+                            "num": "{{num}}/012 T",
+                            "token": true,
+                            "usableForDeckBuilding": false
+                        }
+                    };
+                    finalOut.push(postCard);
+                }
+            }
+
+            // Sort the final output by card num.
+            finalOut.sort((a, b) => {
+                const aName = mtgGen.createMatchTitle(a.newValues.num);
+                const bName = mtgGen.createMatchTitle(b.newValues.num);
+                return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
+            });
+
+            const jsonMainStr = JSON.stringify(finalOut, null, ' ');
+
+            let cardsHtmlSample = '';
+            [...cards.values()].forEach(card =>
+                cardsHtmlSample += `<div class='card'><img src='${card.src}' height='${card.height}' width='${card.width}' /><p>${card.num}:${card.title}</p></div>`
+            );
+
+            const finalData = { 
+                imageDataCount: cards.size,
+                cardsJson: jsonMainStr,
+                cardsHtmlSample };
+
+            resolve(finalData);
+        });
+    }
+
     _createPlaceholderCardSrc(card) {
         let cardBgColour = "cccccc";
         let cardTextColour = "969696";
@@ -1571,19 +1549,5 @@ _objectToMap(obj) {
             case 'g': cardBgColour = 'c7d4ca'; break;
         }
         return `holder.js/265x370/#${cardBgColour}:#${cardTextColour}/text:${this._cardTitleUrl(card.title, 500)}`;
-    }
-
-    //CAMKILL: not used
-    _createPlaceboxesCardSrc(card) {
-        let cardBgColour = "cccccc";
-        let cardTextColour = "969696";
-        switch (card.colourType) {
-            case 'w': cardBgColour = 'e9e5da'; break;
-            case 'u': cardBgColour = 'cddfed'; break;
-            case 'b': cardBgColour = '000000'; cardTextColour = 'ffffff'; break;
-            case 'r': cardBgColour = 'f6d1be'; break;
-            case 'g': cardBgColour = 'c7d4ca'; break;
-        }
-        return `http://placebox.es/265x370/${cardBgColour}/${cardTextColour}/${this._cardTitleUrl(card.title, 500)},20/`;
     }
 }
