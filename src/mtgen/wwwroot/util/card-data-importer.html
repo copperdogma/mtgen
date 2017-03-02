@@ -77,15 +77,25 @@
 
         if (window.location.protocol == 'file:') { document.getElementById('local-error').getElementById; }
 
-        document.getElementById('import').addEventListener('click', () => {
-            cardDataImporter.loadAndProcessAllFiles({
-                cardDataUrl: document.getElementById('url-card-data').value
-                , htmlCardData: document.getElementById('html-card-data').value
-                , imagesUrl: document.getElementById('url-images').value
-                , exceptions: document.getElementById('exceptions').value
-                , setCode: document.getElementById('set-code').value
+        const startProcessing = () => cardDataImporter.loadAndProcessAllFiles({
+            cardDataUrl: document.getElementById('url-card-data').value
+                    , htmlCardData: document.getElementById('html-card-data').value
+                    , imagesUrl: document.getElementById('url-images').value
+                    , exceptions: document.getElementById('exceptions').value
+                    , setCode: document.getElementById('set-code').value
+            })
+            .then(([logOutput, finalData]) => {
+                document.getElementById('log').innerHTML = logOutput;
+
+                document.getElementById('msg').innerHTML =
+                    `${finalData.initialCardDataCount} cards found from ${document.getElementById('url-card-data').value}</br>
+                            ${finalData.imageDataCount} images found from ${document.getElementById('url-images').value}</br><br/>
+                            <strong>${finalData.finalCardCount} final cardsMain.json cards generated at ${(new Date())}.</strong>`;
+                document.getElementById('status').innerHTML = `<strong>Processing complete at ${(new Date())}</strong>`;
+                document.getElementById('out-main').value = finalData.cardsMainJson;
             });
-        });
+
+        document.getElementById('import').addEventListener('click', startProcessing);
 
         document.querySelectorAll('input').forEach(el => el.addEventListener('change', () => setSaveLinkToDownloadFile()));
 
@@ -127,18 +137,6 @@
             document.getElementById('out-main').value = '';
             document.getElementById('log').innerHTML = '';
         }, false);
-
-        window.addEventListener('log-complete', e => document.getElementById('log').innerHTML = e.detail, false);
-
-        window.addEventListener('data-processing-complete', e => {
-            const data = e.detail;
-            document.getElementById('msg').innerHTML =
-                `${data.initialCardDataCount} cards found from ${document.getElementById('url-card-data').value}</br>
-                    ${data.imageDataCount} images found from ${document.getElementById('url-images').value}</br><br/>
-                    <strong>${data.finalCardCount} final cardsMain.json cards generated at ${(new Date())}.</strong>`;
-            document.getElementById('status').innerHTML = `<strong>Processing complete at ${(new Date())}</strong>`;
-            document.getElementById('out-main').value = data.cardsMainJson;
-        });
     </script>
 </body>
 </html>

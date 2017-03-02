@@ -102,6 +102,7 @@
             })
             .then(([logOutput, finalData]) => {
                 document.getElementById('log').innerHTML = logOutput;
+
                 document.getElementById('msg').innerHTML =
                     `${finalData.imageDataCount} images found from ${document.getElementById('card-image-url').value}</br>
                     <br/><strong>Final cardsOther.json cards generated at ${(new Date())}.`;

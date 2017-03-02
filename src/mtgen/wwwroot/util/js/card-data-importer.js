@@ -85,7 +85,7 @@ class CardDataImporter {
 
     // PUBLIC METHODS ------------------------------------------------------------------------------------
 
-    loadAndProcessAllFiles({ cardDataUrl, htmlCardData, imagesUrl, exceptions, setCode }) {
+    loadAndProcessAllFiles({cardDataUrl, htmlCardData, imagesUrl, exceptions, setCode }) {
         setCode = setCode.trim();
 
         // We need 3 sets of data: card, image, and exceptions
@@ -102,7 +102,7 @@ class CardDataImporter {
         window.dispatchEvent(new Event('data-loading'));
 
         // Get all data, either fetched from a url or loaded directly from the form.
-        Promise.all([cardDataPromise, imageDataPromise, exceptionsDataPromise])
+        return Promise.all([cardDataPromise, imageDataPromise, exceptionsDataPromise])
             .then(([htmlData, imageData, exceptionData]) => {
                 // the first result is essential
                 const htmlCards = {
@@ -119,10 +119,45 @@ class CardDataImporter {
 
                 window.dispatchEvent(new Event('data-loaded'));
 
-                this._createOutputJson(setCode, htmlCards, htmlImages, jsonExceptions);
-            },
-            reason => {
-                alert(`ERROR: failed to retrieve data from a source: ${reason}`);
+                return {htmlCards, htmlImages, jsonExceptions};
+            })
+            .catch(err => alert(`ERROR: failed to retrieve data from a source: ${err.message}`))
+            .then(({htmlCards, htmlImages, jsonExceptions}) => {
+                // Get card data -------------------------------------------------------------------------------------------------
+                // All card data source come with image data that we usually want to override in the next step.
+                let mainOut = this._getCardData(htmlCards.data, htmlCards.urlSource, setCode);
+                mainOut.initialCardDataCount = mainOut.size;
+                return {mainOut, htmlImages, jsonExceptions};
+            })
+            .then(({mainOut, htmlImages, jsonExceptions}) => {
+                // Get image data -------------------------------------------------------------------------------------------------
+                let mainImages = new Map();
+                if (htmlImages.data) {
+                    mainImages = this._getImageData(htmlImages.data, htmlImages.urlSource);
+                }
+                return {mainOut, mainImages, jsonExceptions};
+            })
+            .then(({mainOut, mainImages, jsonExceptions}) => {
+                // Apply Exceptions -------------------------------------------------------------------------------------------------
+                if (jsonExceptions.data) {
+                    jsonExceptions.data = JSON.parse(jsonExceptions.data);
+                }
+
+                // Returns both the updated set of cards AND the modified exceptions (the latter for reporitng purposes).
+                const exceptionsResults = this._applyExceptions(mainOut, jsonExceptions.data, setCode);
+                mainOut = exceptionsResults.cards;
+                return {mainOut, mainImages, exceptionsResults};
+            })
+            .then(({mainOut, mainImages, exceptionsResults}) => {
+                // Add images to cards -------------------------------------------------------------------------------------------------
+                mainOut = this._applyImagesToCards(mainOut, mainImages);
+                return {mainOut, mainImages, exceptionsResults};
+            })
+            .then(({mainOut, mainImages, exceptionsResults}) => {
+                const cardArray = [...mainOut.values()];
+                const outputLogPromise = this._createOutputLog(cardArray, mainImages, exceptionsResults);
+                const finalDataPromise = this._createFinalJsonOutput(cardArray, mainOut.initialCardDataCount, mainImages);
+                return Promise.all([outputLogPromise, finalDataPromise]);
             });
     }
 
@@ -173,146 +208,126 @@ class CardDataImporter {
         });
     }
 
-    _createOutputJson(setCode, htmlCards, htmlImages, jsonExceptions) {
-        // Get card data -------------------------------------------------------------------------------------------------
-        // All card data source come with image data that we usually want to override in the next step.
-        let mainOut = this._getCardData(htmlCards.data, htmlCards.urlSource, setCode);
-        const initialCardDataCount = mainOut.size;
-
-        // Get image data -------------------------------------------------------------------------------------------------
-        let mainImages = new Map()
-        if (htmlImages.data) {
-            mainImages = this._getImageData(htmlImages.data, htmlImages.urlSource);
-        }
-
-        // Apply Exceptions -------------------------------------------------------------------------------------------------
-        if (jsonExceptions.data) {
-            jsonExceptions.data = JSON.parse(jsonExceptions.data);
-        }
-
-        // Returns both the updated set of cards AND the modified exceptions (the latter for reporitng purposes).
-        const exceptionsResults = this._applyExceptions(mainOut, jsonExceptions.data, setCode);
-        mainOut = exceptionsResults.cards;
-
-        // Add images to cards -------------------------------------------------------------------------------------------------
-        mainOut = this._applyImagesToCards(mainOut, mainImages);
-
-        // Reporting -------------------------------------------------------------------------------------------------
-
-        const cardArray = [...mainOut.values()];
-        let out = "";
-        if (mainImages.size < 1) {
-            out += `<p>WARNING: No image data supplied. Using any images found with card data: ${htmlCards.urlSource}</p>`;
-        }
-        else {
-            const missingSecondaryImageDataEntry = cardArray.filter(card => !card.hasOwnProperty("imageSourceOriginal"));
-            if (missingSecondaryImageDataEntry.length < 1) {
-                out += "<p>No parsing errors.</p>";
+    _createOutputLog(cardArray, mainImages, exceptionsResults) {
+        return new Promise(resolve => {
+            // Reporting -------------------------------------------------------------------------------------------------
+            let out = "";
+            if (mainImages.size < 1) {
+                out += `<p>WARNING: No image data supplied. Using any images found with card data: ${htmlCards.urlSource}</p>`;
             }
             else {
-                out += "<p>The following cards had no image data from your image source:</p><ul>";
-                missingSecondaryImageDataEntry.sort(this._sortByTitle).forEach(value => {
-                    const comment = value._comment ? `<em> - ${value._comment}</em>` : "";
-                    out += `<li style='color:red'>${value.title + comment}</li>`;
+                const missingSecondaryImageDataEntry = cardArray.filter(card => !card.hasOwnProperty("imageSourceOriginal"));
+                if (missingSecondaryImageDataEntry.length < 1) {
+                    out += "<p>No parsing errors.</p>";
+                }
+                else {
+                    out += "<p>The following cards had no image data from your image source:</p><ul>";
+                    missingSecondaryImageDataEntry.sort(this._sortByTitle).forEach(value => {
+                        const comment = value._comment ? `<em> - ${value._comment}</em>` : "";
+                        out += `<li style='color:red'>${value.title + comment}</li>`;
+                    });
+                    out += "</ul>";
+                }
+
+                const unusedImages = Object.entries(mainImages).map(entry => entry[1]).filter(mainImage => !mainImage.wasUsed);
+                if (unusedImages.length > 0) {
+                    out += "<p>The following images from your image data source did not match any cards in your card data:</p><ul>";
+                    unusedImages.forEach(unusedImage => out += `<li style='color:red'>${unusedImage.title}</li>`);
+                    out += "</ul>";
+                }
+            }
+
+            const cardsWithPlaceholderImages = cardArray.filter(card => card.imageSource === "placeholder");
+            if (cardsWithPlaceholderImages.length > 0) {
+                out += "<p>The following cards have no primary images or images supplied from your image source, so an image was created using <a href='http://placehold.it/' target='_blank'>placehold.it</a>:</p><ul>";
+                cardsWithPlaceholderImages.forEach(card => out += `<li style='color:red'>${card.title}</li>`);
+                out += "</ul>";
+            }
+
+            const duplicateCards = cardArray.filter(card => card.duplicateNum !== undefined);
+            if (duplicateCards.length > 0) {
+                const sortedDuplicateCards = duplicateCards.sort((a,b) => this._sortBy("mtgenId",a,b));
+                out += "<p>The following cards have duplicate mtgenIds:</p><ul>";
+                sortedDuplicateCards.forEach(card => out += `<li style='color:DarkGoldenrod'>${card.mtgenId}: ${card.title}</li>`);
+                out += "</ul>";
+            }
+
+            if (!exceptionsResults.exceptions) {
+                out += "<p>No exceptions provided.</p>";
+            }
+            else {
+                out += "<p>The supplied exceptions were processed as follows:</p><ul>";
+
+                exceptionsResults.exceptions.forEach((exception, index) => {
+                    if (!exception.result) {
+                        exception.result = { success: false, error: "PROCESSING FAILURE: no result given at all for this exception!" };
+                    }
+                    if (exception.comment === true) {
+                        out += `<li style='color: gray'>#${(index + 1)}: Comment; ignored.</li>`;
+                    }
+                    else if (exception.result.success === true) {
+                        if (exception.result.affectedCards > 0) {
+                            out += `<li style='color: green'>#${(index + 1)}: `;
+                        }
+                        else {
+                            out += `<li style='color: DarkGoldenrod'>#${(index + 1)}: `;
+                        }
+                        if (exception.add === true) {
+                            out += `Added new card: ${exception.newValues.title}`;
+                        }
+                        else if (exception.delete === true) {
+                            const deletedCards = [...exception.result.deletedCards.values()].sort(this._sortByTitle);
+                            out += `Deleted ${deletedCards.length} cards via query: ${exception.where}`;
+                            if (deletedCards.length > 20) {
+                                out += "<ul>" + deletedCards.map(card => card.title).join(", ") + "</ul>";
+                            }
+                            else if (deletedCards.length > 0) {
+                                out += "<ul>" + deletedCards.map(card => `<li>${card.title}</li>`) + "</ul>";
+                            }
+                        }
+                        else {
+                            const modifiedCards = [...exception.result.modifiedCards.values()].sort(this._sortByTitle);
+                            out += `Modified ${modifiedCards.length} cards via query: ${exception.where}<br/>`;
+                            out += `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New values: ${JSON.stringify(exception.newValues)}`;
+                            if (modifiedCards.length > 20) {
+                                out += "<ul>" + modifiedCards.map(card => card.title).join(", ") + "</ul>";
+                            }
+                            else if (modifiedCards.length > 0) {
+                                out += "<ul>" + modifiedCards.map(card => `<li>${card.title}</li>`).join("") + "</ul>";
+                            }
+                        }
+                    }
+                    else {
+                        out += `<li style='color: red'>#${(index + 1)}: ${exception.result.error}`;
+                    }
+                    out += "</li>";
                 });
                 out += "</ul>";
             }
-
-            const unusedImages = Object.entries(mainImages).map(entry => entry[1]).filter(mainImage => !mainImage.wasUsed);
-            if (unusedImages.length > 0) {
-                out += "<p>The following images from your image data source did not match any cards in your card data:</p><ul>";
-                unusedImages.forEach(unusedImage => out += `<li style='color:red'>${unusedImage.title}</li>`);
-                out += "</ul>";
-            }
-        }
-
-        const cardsWithPlaceholderImages = cardArray.filter(card => card.imageSource === "placeholder");
-        if (cardsWithPlaceholderImages.length > 0) {
-            out += "<p>The following cards have no primary images or images supplied from your image source, so an image was created using <a href='http://placehold.it/' target='_blank'>placehold.it</a>:</p><ul>";
-            cardsWithPlaceholderImages.forEach(card => out += `<li style='color:red'>${card.title}</li>`);
-            out += "</ul>";
-        }
-
-        const duplicateCards = cardArray.filter(card => card.duplicateNum !== undefined);
-        if (duplicateCards.length > 0) {
-            const sortedDuplicateCards = duplicateCards.sort((a,b) => this._sortBy("mtgenId",a,b));
-            out += "<p>The following cards have duplicate mtgenIds:</p><ul>";
-            sortedDuplicateCards.forEach(card => out += `<li style='color:DarkGoldenrod'>${card.mtgenId}: ${card.title}</li>`);
-            out += "</ul>";
-        }
-
-        if (!exceptionsResults.exceptions) {
-            out += "<p>No exceptions provided.</p>";
-        }
-        else {
-            out += "<p>The supplied exceptions were processed as follows:</p><ul>";
-
-            exceptionsResults.exceptions.forEach((exception, index) => {
-                if (!exception.result) {
-                    exception.result = { success: false, error: "PROCESSING FAILURE: no result given at all for this exception!" };
-                }
-                if (exception.comment === true) {
-                    out += `<li style='color: gray'>#${(index + 1)}: Comment; ignored.</li>`;
-                }
-                else if (exception.result.success === true) {
-                    if (exception.result.affectedCards > 0) {
-                        out += `<li style='color: green'>#${(index + 1)}: `;
-                    }
-                    else {
-                        out += `<li style='color: DarkGoldenrod'>#${(index + 1)}: `;
-                    }
-                    if (exception.add === true) {
-                        out += `Added new card: ${exception.newValues.title}`;
-                    }
-                    else if (exception.delete === true) {
-                        const deletedCards = [...exception.result.deletedCards.values()].sort(this._sortByTitle);
-                        out += `Deleted ${deletedCards.length} cards via query: ${exception.where}`;
-                        if (deletedCards.length > 20) {
-                            out += "<ul>" + deletedCards.map(card => card.title).join(", ") + "</ul>";
-                        }
-                        else if (deletedCards.length > 0) {
-                            out += "<ul>" + deletedCards.map(card => `<li>${card.title}</li>`) + "</ul>";
-                        }
-                    }
-                    else {
-                        const modifiedCards = [...exception.result.modifiedCards.values()].sort(this._sortByTitle);
-                        out += `Modified ${modifiedCards.length} cards via query: ${exception.where}<br/>`;
-                        out += `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New values: ${JSON.stringify(exception.newValues)}`;
-                        if (modifiedCards.length > 20) {
-                            out += "<ul>" + modifiedCards.map(card => card.title).join(", ") + "</ul>";
-                        }
-                        else if (modifiedCards.length > 0) {
-                            out += "<ul>" + modifiedCards.map(card => `<li>${card.title}</li>`).join("") + "</ul>";
-                        }
-                    }
-                }
-                else {
-                    out += `<li style='color: red'>#${(index + 1)}: ${exception.result.error}`;
-                }
-                out += "</li>";
-            });
-            out += "</ul>";
-        }
-            
-        window.dispatchEvent(new CustomEvent('log-complete', { 'detail': out }));
-
-        // Final JSON output -------------------------------------------------------------------------------------------------
-
-        cardArray.forEach(card => {
-            delete card.matchTitle;
-            delete card.srcOriginal;
-            delete card.imageSourceOriginal;
-            delete card.fixedViaException;
-            delete card.imageSource;
+            resolve(out);
         });
+    }
 
-        const jsonMainStr = JSON.stringify(cardArray, null, ' ');
+    _createFinalJsonOutput(cardArray, initialCardDataCount, mainImages) {
+        // Final JSON output -------------------------------------------------------------------------------------------------
+        return new Promise(resolve => {
+            cardArray.forEach(card => {
+                delete card.matchTitle;
+                delete card.srcOriginal;
+                delete card.imageSourceOriginal;
+                delete card.fixedViaException;
+                delete card.imageSource;
+            });
 
-        const finalData = { cardsMainJson: jsonMainStr,
-            initialCardDataCount, 
-            imageDataCount: mainImages.size, 
-            finalCardCount: cardArray.length };
-        window.dispatchEvent(new CustomEvent('data-processing-complete', { 'detail': finalData }));
+            const jsonMainStr = JSON.stringify(cardArray, null, ' ');
+
+            const finalData = { cardsMainJson: jsonMainStr,
+                initialCardDataCount, 
+                imageDataCount: mainImages.size, 
+                finalCardCount: cardArray.length };
+
+            resolve(finalData);
+        });
     }
 
     _sortByTitle(a, b) {
@@ -1082,7 +1097,7 @@ class CardDataImporter {
     return obj;
     }
 
-_objectToMap(obj) {
+    _objectToMap(obj) {
         let map = new Map();
         for (let k of Object.keys(obj)) {
             map.set(k, obj[k]);
