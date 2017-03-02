@@ -1,4 +1,5 @@
 ﻿/*
+1-Mar-2017: Refactored into flattened es6 promise chains.
 27-Feb-2017: Pulled card-exception-generator.js out of this file.
 14-Sep-2016: Updated land importer to output new more compact format.
 8-Mar-2016: Now supports loading double-faced card data from wotc and mtgsalvation.
