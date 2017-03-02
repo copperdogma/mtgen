@@ -211,10 +211,9 @@ class CardDataImporter {
 
     _createOutputLog(cardArray, mainImages, exceptionsResults) {
         return new Promise(resolve => {
-            // Reporting -------------------------------------------------------------------------------------------------
             let out = "";
             if (mainImages.size < 1) {
-                out += `<p>WARNING: No image data supplied. Using any images found with card data: ${htmlCards.urlSource}</p>`;
+                out += `<p>WARNING: No image data supplied. Using any images found with card data.</p>`;
             }
             else {
                 const missingSecondaryImageDataEntry = cardArray.filter(card => !card.hasOwnProperty("imageSourceOriginal"));
@@ -310,7 +309,6 @@ class CardDataImporter {
     }
 
     _createFinalJsonOutput(cardArray, initialCardDataCount, mainImages) {
-        // Final JSON output -------------------------------------------------------------------------------------------------
         return new Promise(resolve => {
             cardArray.forEach(card => {
                 delete card.matchTitle;
@@ -654,6 +652,7 @@ class CardDataImporter {
                             case "black": card.colour = "b"; break;
                             case "green": card.colour = "g"; break;
                             case "multicolored": card.colour = "m"; break;
+                            case "hybrid": card.colour = "m"; break; // ie: the split mana symbols, eg: Burning-Tree Emissary
                             case "colorless": card.colour = "c"; break;
                             default:
                                 console.log(`WARNING: unknown card colour: ${cardColour}`);
