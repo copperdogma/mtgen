@@ -1,0 +1,14 @@
+{
+  "setCode": "mm3",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=178&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/card-image-gallery/modern-masters-2017-edition",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    }
+  ]
+}

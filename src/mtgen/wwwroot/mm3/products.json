@@ -1,0 +1,41 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "mm3-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://www.mtgsalvation.com/spoilers/178-modern-masters-2017", "http://magic.wizards.com/en/articles/archive/card-image-gallery/modern-masters-2017-edition" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "mm3-all-cards" }
+      ]
+    },
+    {
+      "productName": "mm3-boosters",
+      "productDesc": "Boosters",
+      "sources": [ ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "mm3-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "mm3-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "mm3-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+  ]
+}
