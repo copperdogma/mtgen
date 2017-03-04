@@ -44,12 +44,7 @@
                         { "percent": 0.89, "query": "from[mm3-foils]?rarity='m'", "canBeDuplicate": true, "setValues": { "foil": true } }
                     ]
                 },
-                {
-                    "querySet": [
-                        { "percent": 50, "query": "from[mm3]?type='Marketing'" },
-                        { "percent": 50, "query": "from[mm3]?token=true" }
-                    ]
-                }
+                { "query": "take[1]>from[mm3]?type='Marketing'" }
             ]
         }
 

@@ -9,6 +9,18 @@
         "delete a card  = delete:true, where",
         "update card(s) = where, newValues {}"
       ]
+    },
+    {
+      "where": "title='Spire Monitor'",
+      "newValues": {
+        "num": "0052"
+      }
+    },
+    {
+      "where": "title='Inquizition of Kozilek'",
+      "newValues": {
+        "title": "Inquisition of Kozilek"
+      }
     }
   ]
 }
