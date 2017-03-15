@@ -13,9 +13,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\mm3\cardsOther - Copy.json">
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
     <Content Include="wwwroot\mm3\cardsTokens.json" />
     <Content Include="wwwroot\mm3\import-tokens.json">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
