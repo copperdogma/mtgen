@@ -1,5 +1,11 @@
 {
   "startProductName": "mm3-boosters",
   "packFiles": [ "packs.json" ],
-  "cardFiles": [ "cardsMain.json", "cardsOther.json" ]
+  "cardFiles": [ "cardsMain.json", "cardsOther.json", "cardsTokens.json" ],
+  "updates": [
+    {
+      "updateDate": "2017-03-14",
+      "htmlString": "Evening: Added tokens."
+    }
+  ]
 }

@@ -11,6 +11,16 @@
   <PropertyGroup>
     <UserSecretsId>aspnet-mtgen-f5898f32-e3fc-45c1-8557-593974a83131</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\mm3\cardsOther - Copy.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\mm3\cardsTokens.json" />
+    <Content Include="wwwroot\mm3\import-tokens.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
