@@ -1,75 +1,103 @@
 {
-"_comment": "from: http://www.wizards.com/magic/magazine/article.aspx?x=mtg/daily/arcana/1430",
-"_comment": "from: http://en.wikipedia.org/wiki/Magic:_The_Gathering_Conspiracy",
-"_comment": "11 commons, 3 uncommons, 1 rare or mythic rare, and 1 token or marketing card",
-"_comment": "from: http://www.wizards.com/magic/magazine/article.aspx?x=mtg/daily/feature/300b",
-"_comment": "Basic Land slot replaced by drafting cards (they have a watermark)",
-"_comment": "from: http://tappedout.net/mtg-forum/limited/conspiracy-sealed-deck-generator/?c=1415027",
+  "_comment": "from: http://www.wizards.com/magic/magazine/article.aspx?x=mtg/daily/arcana/1430",
+  "_comment": "from: http://en.wikipedia.org/wiki/Magic:_The_Gathering_Conspiracy",
+  "_comment": "11 commons, 3 uncommons, 1 rare or mythic rare, and 1 token or marketing card",
+  "_comment": "from: http://www.wizards.com/magic/magazine/article.aspx?x=mtg/daily/feature/300b",
+  "_comment": "Basic Land slot replaced by drafting cards (they have a watermark)",
+  "_comment": "from: http://tappedout.net/mtg-forum/limited/conspiracy-sealed-deck-generator/?c=1415027",
 
-"defs": 
-	[
-		{
-			"defName": "cns",
-			"query": "from[*]?set='cns'"
-		}
-		,{
-			"defName": "cns-promo",
-			"query": "from[cns]?promo=true"
-		}
-		,{
-			"defName": "cns_set",
-			"query": "from[cns]"
-		}
-		,{
-			"defName": "cns_draft",
-			"query": "from[cns]?type=(Conspiracy)+from[cns]?title=(Cogwork Grinder|Cogwork Tracker|Agent of Acquisitions|AEther Searcher|Deal Broker|Lore Seeker|Whispergear Sneak|Cogwork Spy|Lurking Automaton|Cogwork Librarian|Canal Dredger|Paliano, the High City)"
-		}
-		,{
-			"defName": "cns_main",
-			"query": "from[cns_set]-from[cns_set]?token=true-from[cns_set]?marketing=true-from[cns_set]?type=(Marketing|Basic Land|Conspiracy)-from[cns_draft]"
-		}
-		,{
-			"defName": "cns_foils",
-			"query": "from[cns_main]"
-		}
-	]
-
-,"packs": 
-	[
- 		{
-		"packName": "cns-all-cards",
-		"packDesc": "Conspiracy: All Cards",
-		"isGenerated": false,
-		"cards": [
-			{ "query": "take[*]>from[cns]" }
-			]
-		}
-		,{
-		"packName": "cns-promos",
-		"packDesc": "Conspiracy: Promos",
-		"includeWithUserCards": false,
-		"cards": [
-			{ "query": "take[*]>from[cns-promo]" }
-			]
-		}
- 		,{
-		"packName": "cns-standard",
-		"packDesc": "Conspiracy: Standard Booster",
-		"isGenerated": true,
-		"cards": [
-			{ "query": "from[cns_draft]" }
-			,{ "query": "take[9]>from[cns_main]?rarity='c'" }
-			,{ "querySet": [ { "percent": 75, "query": "from[cns_main]?rarity='c'" }
-							,{ "percent": 25, "query": "from[cns_foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% change rare is a foil of any card, including land" } ] }
-			,{ "query": "take[3]>from[cns_main]?rarity='u'" }
-			,{ "querySet": [ { "percent": 75, "query": "from[cns_main]?rarity='r'" }
-							,{ "percent": 25, "query": "from[cns_main]?rarity='m'" }
-							] }
-			,{ "querySet": [ { "percent": 50, "query": "from[cns]?marketing=true" }
-							,{ "percent": 50, "query": "from[cns]?token=true" }
-							] }
-			]
-		}
-
-	]
+  "defs": [
+    {
+      "defName": "cns",
+      "query": "from[*]?set='cns'"
+    },
+    {
+      "defName": "cns-promo",
+      "query": "from[cns]?promo=true"
+    },
+    {
+      "defName": "cns_set",
+      "query": "from[cns]"
+    },
+    {
+      "defName": "cns_draft",
+      "query": "from[cns]?type=(Conspiracy)+from[cns]?title=(Cogwork Grinder|Cogwork Tracker|Agent of Acquisitions|AEther Searcher|Deal Broker|Lore Seeker|Whispergear Sneak|Cogwork Spy|Lurking Automaton|Cogwork Librarian|Canal Dredger|Paliano, the High City)"
+    },
+    {
+      "defName": "cns_main",
+      "query": "from[cns_set]-from[cns_set]?token=true-from[cns_set]?marketing=true-from[cns_set]?type=(Marketing|Basic Land|Conspiracy)-from[cns_draft]"
+    },
+    {
+      "defName": "cns_foils",
+      "query": "from[cns_main]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "cns-all-cards",
+      "packDesc": "Conspiracy: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[cns]" }
+      ]
+    },
+    {
+      "packName": "cns-promos",
+      "packDesc": "Conspiracy: Promos",
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[cns-promo]" }
+      ]
+    },
+    {
+      "packName": "cns-standard",
+      "packDesc": "Conspiracy: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[cns_draft]" },
+        { "query": "take[9]>from[cns_main]?rarity='c'" },
+        {
+          "querySet": [
+            {
+              "percent": 75,
+              "query": "from[cns_main]?rarity='c'"
+            },
+            {
+              "percent": 25,
+              "query": "from[cns_foils]",
+              "canBeDuplicate": true,
+              "setValues": { "foil": true },
+              "_comment": "25% change rare is a foil of any card, including land"
+            }
+          ]
+        },
+        { "query": "take[3]>from[cns_main]?rarity='u'" },
+        {
+          "querySet": [
+            {
+              "percent": 87.5,
+              "query": "from[cns_main]?rarity='r'"
+            },
+            {
+              "percent": 12.5,
+              "query": "from[cns_main]?rarity='m'",
+              "_comment": "rare=7/8, mythicRare=1/8"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": 50,
+              "query": "from[cns]?marketing=true"
+            },
+            {
+              "percent": 50,
+              "query": "from[cns]?token=true"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
