@@ -89,8 +89,8 @@ namespace mtgen.Services
 
         public IList<Card> GetCardsFromJsonFile(string jsonFilePath)
         {
-            var cardsPath = $"{_hostingEnvironment.WebRootPath}\\jsonFilePath";
-            if (!File.Exists(cardsPath)) return new List<Card>();
+            var cardsPath = $"{_hostingEnvironment.WebRootPath}\\{jsonFilePath}";
+            if (!File.Exists(cardsPath)) { return new List<Card>(); }
 
             var cardsFile = File.ReadAllText(cardsPath);
             var cards = JsonConvert.DeserializeObject<IList<Card>>(cardsFile);
@@ -99,9 +99,9 @@ namespace mtgen.Services
 
         public Set GetMainFileForSet(string setCode)
         {
-            var jsonFilePath = GetPathForSetFile(setCode, FilenameConstants.MainFile);
+            var jsonFilePath = GetPathForSetFile(setCode, FilenameConstants.MAIN_FILE);
             var jsonPath = $"{_hostingEnvironment.WebRootPath}\\{jsonFilePath}";
-            if (!File.Exists(jsonPath)) return null;
+            if (!File.Exists(jsonPath)) { return null; }
 
             var jsonFile = File.ReadAllText(jsonPath);
             var setModel = JsonConvert.DeserializeObject<Set>(jsonFile);
@@ -110,15 +110,15 @@ namespace mtgen.Services
         }
         public IList<Card> GetMainCardsForSet(string setCode)
         {
-            return GetCardsFromJsonFile(GetPathForSetFile(setCode, FilenameConstants.MainCards));
+            return GetCardsFromJsonFile(GetPathForSetFile(setCode, FilenameConstants.MAIN_CARDS));
         }
         public IList<Card> GetTokenCardsForSet(string setCode)
         {
-            return GetCardsFromJsonFile(GetPathForSetFile(setCode, FilenameConstants.TokenCards));
+            return GetCardsFromJsonFile(GetPathForSetFile(setCode, FilenameConstants.TOKEN_CARDS));
         }
         public IList<Card> GetOtherCardsForSet(string setCode)
         {
-            return GetCardsFromJsonFile(GetPathForSetFile(setCode, FilenameConstants.OtherCards));
+            return GetCardsFromJsonFile(GetPathForSetFile(setCode, FilenameConstants.OTHER_CARDS));
         }
 
         public IList<Card> GetAllCardsForSet(string setCode)

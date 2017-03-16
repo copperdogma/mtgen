@@ -26,8 +26,10 @@ namespace mtgen.Controllers
             {
                 if (set.GeneratorCreatedDate.HasValue)
                 {
-                    var setSummary = new SetCardNumSummary();
-                    setSummary.SetCode = set.Code;
+                    var setSummary = new SetCardNumSummary()
+                    {
+                        SetCode = set.Code
+                    };
 
                     var allSetCards = _setService.GetAllCardsForSet(set.Code);
                     foreach (var card in allSetCards)
@@ -40,11 +42,11 @@ namespace mtgen.Controllers
                         {
                             if (allSetCards.Count(c => string.Compare(c.Num, card.Num, true) == 0) > 1)
                             {
-                                setSummary.DuplicateNumberedCards.Add(card.Num + ": " + card.Title);
+                                setSummary.DuplicateNumberedCards.Add($"{card.Num}: {card.Title}");
                             }
                             else
                             {
-                                setSummary.UniqueNumberedCards.Add(card.Num + ": " + card.Title);
+                                setSummary.UniqueNumberedCards.Add($"{card.Num}: {card.Title}");
                             }
                         }
                     }

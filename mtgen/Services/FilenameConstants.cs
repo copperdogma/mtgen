@@ -2,9 +2,9 @@
 {
     public class FilenameConstants
     {
-        public const string MainFile = "set.json";
-        public const string MainCards = "cardsMain.json";
-        public const string OtherCards = "cardsOther.json";
-        public const string TokenCards = "cardsToken.json";
+        public const string MAIN_FILE = "set.json";
+        public const string MAIN_CARDS = "cardsMain.json";
+        public const string OTHER_CARDS = "cardsOther.json";
+        public const string TOKEN_CARDS = "cardsToken.json";
     }
 }
