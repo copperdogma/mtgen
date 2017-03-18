@@ -19,7 +19,7 @@ Author: Cam Marsollier cam.marsollier@gmail.com
 var mtgGen = (function (my, $) {
     'use strict';
     // globals
-    my.version = "2.2";
+    my.version = "2.3";
     my.setData = undefined;
     my.packData = undefined;
     my.cardsData = undefined;
@@ -48,7 +48,12 @@ var mtgGen = (function (my, $) {
         unknown: { sorder: 97, code: '?', name: 'Unknown Colour', colourless: true },
     };
     my.getColourByCode = function (code) {
-        for (var colour in my.colours) {
+        //CAMKILL: convert to this after converting all categories to arrays/sets
+        //const cardColour = my.colours.find(colourKey => my.colour[colourKey].code === code);
+
+        //return cardColour || my.colours.unknown;
+
+        for (let colour in my.colours) {
             if (my.colours[colour].code == code) {
                 return my.colours[colour];
             }
@@ -186,12 +191,12 @@ var mtgGen = (function (my, $) {
     // Create a sanitized title to avoid the punctuation differences
     // Site to lookup chars: http://www.fileformat.info/info/unicode/char/search.htm
     my.createMatchTitle = function (title) {
-        var clean = title.trim().replace(/\u00C6/g, 'ae').toLowerCase(); // \u00C6 = Æ = LATIN CAPITAL LETTER AE
+        let clean = title.trim().replace(/\u00C6/g, 'ae').toLowerCase(); // \u00C6 = Æ = LATIN CAPITAL LETTER AE
         clean = clean.replace(/[^a-z0-9 ]+/g, '');
         clean = clean.replace(/ +/, ' ');
 
         if (/\uFFFD/.test(title)) {
-            console.error('ERROR: replacement character \uFFFD found in title. Change your cardsMain.json file to UTF-8 encoding: ' + title);
+            console.error(`ERROR: replacement character \uFFFD found in title. Change your cardsMain.json file to UTF-8 encoding: ${title}`);
         }
         return clean;
     }
@@ -208,7 +213,26 @@ var mtgGen = (function (my, $) {
         alert(abortMsg);
     };
 
-    // Public functions --------------------------------------------------------------------------------------------------------------------------------	
+    // Get html via a proxy, erroring if it fails or if no HTML is retrieved.
+    my.fetchJson = (url) => {
+        return fetch(url)
+            .catch(error => console.log(`${error}  url: ${url}`))
+            .then(response => {
+                if (!response.ok) { throw Error(response.statusText); }
+                const contentType = response.headers.get("content-type");
+                if (contentType && contentType.startsWith("application/json")) {
+                    return response;
+                }
+                throw Error(`ERROR file '${url}' is not valid JSON. Cannot continue.`);
+            })
+            .then(response => response.json())
+            .then(json => {
+                if (json) { return Promise.resolve(json); }
+                throw Error(`ERROR retrieving file '${url}'. Cannot continue.`);
+            });
+    };
+
+    // Public functions --------------------------------------------------------------------------------------------------------------------------------
 
     /* 
 	Init MtG Generator. Will trigger 'ready' event when all files loaded and .generateCardSets() can be called.
@@ -240,142 +264,113 @@ var mtgGen = (function (my, $) {
         my.getRequiredOption(options, 'packFiles');
         my.getRequiredOption(options, 'productFile');
 
-        // load all files
-        var promises = [];
+        // Load all files
+        const setFilePromise = this.fetchJson(my.setFile);
 
-        promises.push($.getJSON(my.setFile));
+        const cardFilePromiseSet = my.cardFiles.map(cardFile => this.fetchJson(cardFile));
+        const cardFilePromises = new Promise(resolve => resolve(Promise.all(cardFilePromiseSet)));
 
-        _.each(my.cardFiles, function (cardFile) {
-            promises.push($.getJSON(cardFile).fail(function (xjr, textStatus, error) {
-                console.error("ERROR retrieving file '" + this.url + "'. Cannot continue. Error message:" + error);
-            })
-			);
-        });
+        const packFilePromiseSet = my.packFiles.map(packFile => this.fetchJson(packFile));
+        const packFilePromises = new Promise(resolve => resolve(Promise.all(packFilePromiseSet)));
 
-        _.each(my.packFiles, function (packFile) {
-            promises.push($.getJSON(packFile).fail(function (xjr, textStatus, error) {
-                console.error("ERROR retrieving file '" + this.url + "'. Cannot continue. Error message:" + error);
-            })
-			);
-        });
+        const productFilePromise = this.fetchJson(my.productFile);
 
-        promises.push($.getJSON(my.productFile));
-
+        // TODO: draw data should be optional it fails, not required/terminal
         // If a draw was specified, try to load that
-        var drawId = my.getQuerystringParamByName('draw');
+        let drawDataPromise;
+        const drawId = my.getQuerystringParamByName('draw');
         if (drawId) {
-            promises.push($.getJSON("/" + options.setCode + "/LoadDraw/" + drawId)
-                .fail(function (xjr, textStatus, error) {
-                    console.error("ERROR retrieving draw '" + this.url + "'. Will continue with normal load. Error message:" + error);
-                })
-			);
+            drawDataPromise = this.fetchJson(`/${options.setCode}/LoadDraw/${drawId}`);
+        }
+        else {
+            drawDataPromise = Promise.resolve('');
         }
 
         // Load all of the data once it all arrives
-        $.when.apply($, promises).done(function () {
-            // first item is the set data; turn them into an associative array
-            var setData = arguments[0][0];
-            my.sets = {};
-            _.each(setData, function (set) {
-                my.sets[set.code] = set;
-            });
-            my.set = my.sets[my.setCode.toUpperCase()];
-            if (my.set !== undefined) {
-                // create the set slug, useful for url-friendly formats like the download filename
-                my.set.slug = my.friendly_url(my.set.name);
-            }
-            else {
-                console.warn("WARNING: Cannot find setCode: " + my.setCode);
-            }
-
-            // We have a variable number of defs/packs, cards files, and maybe a saved draw,
-            // so we need to detect what file type we're reading.
-            my.defs = [];
-            my.packs = [];
-            my.cards = [];
-            my.products = [];
-            my.draw = undefined;
-            my.hasDraw = function () { return my.draw !== undefined; }
-            my.hasDrawForCurrentProduct = function () {
-                var options = my.mainView.currentView.options;
-                return my.draw && my.draw.sets && my.draw.sets.length > 0
-                    && options !== undefined
-                    && options.originalProductName !== undefined
-                    && options.originalProductName === my.draw.productName;
-            }
-            _.each(arguments, function (value, index) {
-                if (index > 0) {
-                    if (value[0].defs) {
-                        my.defs = my.defs.concat(value[0].defs);
-                    }
-                    if (value[0].packs) {
-                        my.packs = my.packs.concat(value[0].packs);
-                    }
-                    if (value[0].products) {
-                        my.products = my.products.concat(value[0].products);
-                    }
-                    if (value[0].defs === undefined && value[0].packs === undefined && value[0]["_comment"] === undefined) {
-                        my.cards = my.cards.concat(value[0]);
-                    }
-
-                    // A draw was specified to be loaded
-                    if (value[0].drawVersion) {
-                        my.draw = value[0];
-                        my.draw.code = my.getQuerystringParamByName('draw');
-                        my.trigger('drawLoaded', my.setCode, my.draw.code); // triggers google analytics tracking event
-                    }
+        Promise.all([setFilePromise, cardFilePromises, packFilePromises, productFilePromise, drawDataPromise])
+            .catch(err => my.throwTerminalError(err.message))
+            .then(([setData, cardDataArray, packDataArray, productData, drawData]) => {
+                // Turn set data into an associative array
+                my.sets = {};
+                setData.forEach(set => my.sets[set.code] = set);
+                my.set = my.sets[my.setCode.toUpperCase()];
+                if (my.set) {
+                    // create the set slug, useful for url-friendly formats like the download filename
+                    my.set.slug = my.friendly_url(my.set.name);
                 }
-            });
+                else {
+                    console.warn(`WARNING: Cannot find setCode: ${my.setCode}`);
+                }
 
-            // if missing any essentials, abort
-            if (my.defs === undefined || my.defs.length < 1) {
-                my.throwTerminalError("Missing definitions, which should be in packs.json\nCannot continue.");
-            }
-            if (my.packs === undefined || my.packs.length < 1) {
-                my.throwTerminalError("Missing packs, which should be in packs.json\nCannot continue.");
-            }
-            if (my.cards === undefined || my.cards.length < 1) {
-                my.throwTerminalError(errorMsg + "Missing cards, which should be in cardsMain.json\nCannot continue.");
-            }
+                // All the actual cards - from the array of individual card sets within cardDataArray
+                my.cards = cardDataArray.reduce((cardSets, cardSet) => cardSets.concat(cardSet), []);
 
-            // add card indicies and sort orders for internal use
-            var setCardsLoadedCount = 0;
-            var goodCards = {};
-            var finalCards = {};
-            _.each(my.cards, function (card) {
-                if (card.hasOwnProperty("title")) {
+                // The products, e.g.: all cards, booster, prerelease - from productData
+                my.products = productData.products;
+
+                // The card definitions and packs - from the array of individual defs/packs within packDataArray
+                my.defs = packDataArray.reduce((cardDefs, packData) => cardDefs.concat(packData.defs), []);
+                my.packs = packDataArray.reduce((cardPacks, packData) => cardPacks.concat(packData.packs), []);
+
+                // The saved draw to be loaded (optional)
+                //TODO: why isn't the json being parsed by fetchJson()? all the others work fine -- am I not returning it properly?
+                my.draw = drawData === "" ? undefined : JSON.parse(drawData);
+                my.hasDraw = () => my.draw !== undefined;
+                my.hasDrawForCurrentProduct = () => {
+                    const options = my.mainView.currentView.options;
+                    return my.draw && my.draw.sets && my.draw.sets.length > 0
+                        && options !== undefined
+                        && options.originalProductName !== undefined
+                        && options.originalProductName === my.draw.productName;
+                };
+                if (my.hasDraw()) {
+                    my.draw.code = my.getQuerystringParamByName('draw');
+                    my.trigger('drawLoaded', my.setCode, my.draw.code); // triggers google analytics tracking event
+                }
+
+                // Add card indicies and sort orders for internal use
+                let setCardsLoadedCount = 0;
+                let goodCards = {};
+                let finalCards = {};
+                my.cards.forEach(card => {
+                    if (!card.title) { return; }
+
                     card.num = card.num || card.multiverseid || card.id; // num is required, so ensure we have one
                     if (card.mtgenId === undefined) {
-                        card.mtgenId = card.set + "|" + card.num;
+                        card.mtgenId = `${card.set}|${card.num}`;
                     }
 
-                    // create a sanitized matchTitle stripped of all punctuation, special chars, etc to be used for matching
+                    // Create a sanitized matchTitle stripped of all punctuation, special chars, etc to be used for matching
                     card.matchTitle = my.createMatchTitle(card.title);
-                    //console.log(card.title,card.matchTitle);
 
                     card.colourOrder = my.getColourByCode(card.colour).sorder;
                     card.rarityOrder = my.getRarityByCode(card.rarity).sorder;
-                    var cardType = getCardTypeByName(card.type);
+
+                    const cardType = getCardTypeByName(card.type);
                     card.typeCode = cardType.code;
                     card.typeOrder = cardType.sorder;
-                    if (card.hasOwnProperty('guild')) {
+
+                    if (card.guild) {
                         card.guild = my.createMatchTitle(card.guild);
                         card.guildOrder = getGuildByCode(card.guild).sorder;
                         my.hasGuilds = true;
                     }
-                    if (card.hasOwnProperty('clan')) {
+
+                    if (card.clan) {
                         card.clan = my.createMatchTitle(card.clan);
                         card.clanOrder = getClanByCode(card.clan).sorder;
                         my.hasClans = true;
                     }
-                    if (card.hasOwnProperty('faction')) {
+
+                    if (card.faction) {
                         card.faction = my.createMatchTitle(card.faction);
                         card.factionOrder = getFactionByCode(card.faction).sorder;
                         my.hasFactions = true;
                     }
+
                     card.ccost = calculateConvertedCost(card.cost);
 
-                    // ensure defaults on some fields are set; makes querying WAY easier
+                    // Ensure defaults on some fields are set; makes querying WAY easier
                     if (card.token === undefined) {
                         card.token = false;
                     }
@@ -387,80 +382,83 @@ var mtgGen = (function (my, $) {
                         my.trigger('playableCardLoaded', setCardsLoadedCount);
                     }
                     if (goodCards[card.mtgenId] !== undefined) {
-                        console.warn("WARNING: duplicate mtgenId: " + card.mtgenId + " : " + card.title);
+                        console.warn(`WARNING: duplicate mtgenId: ${card.mtgenId} : ${card.title}`);
                     }
                     goodCards[card.mtgenId] = card;
-                }
-            });
-            my.cards = goodCards;
+                });
+                my.cards = goodCards;
 
-            // Go through all the cards again now that they're all guaranteed to have Ids.
-            _.each(my.cards, function (card) {
-                // Load up the alternate side card on double-faced cards
-                if (card.mtgenIdBack !== undefined) {
-                    var cardBack = my.cards[card.mtgenIdBack];
-                    if (cardBack !== undefined) {
-                        card.cardBack = cardBack;
+                // Go through all the cards again now that they're all guaranteed to have Ids.
+                for (let cardKey in my.cards) {
+                    let card = my.cards[cardKey];
+
+                    // Load up the alternate side card on double-faced cards
+                    if (card.mtgenIdBack !== undefined) {
+                        const cardBack = my.cards[card.mtgenIdBack];
+                        if (cardBack !== undefined) {
+                            card.cardBack = cardBack;
+                        }
+                    }
+                    if (card.mtgenIdFront !== undefined) {
+                        const cardFront = my.cards[card.mtgenIdFront];
+                        if (cardFront !== undefined) {
+                            card.cardFront = cardFront;
+                        }
                     }
                 }
-                if (card.mtgenIdFront !== undefined) {
-                    var cardFront = my.cards[card.mtgenIdFront];
-                    if (cardFront !== undefined) {
-                        card.cardFront = cardFront;
-                    }
-                }
-            });
 
-            // make any post-load changes to the packs
-            var querySetPercentAvg;
-            _.each(my.packs, function (pack) {
-                // check the querySets and add percentages if they're missing (missing means they all have an equal chance)
-                if (pack.cards) {
-                    _.each(pack.cards, function (cardsDef) {
-                        if (cardsDef.querySet !== undefined) {
-                            if (cardsDef.querySet.length > 0 && cardsDef.querySet[0].query !== undefined) {
-                                if (cardsDef.querySet[0].percent === undefined) {
-                                    querySetPercentAvg = 100 / cardsDef.querySet.length;
-                                    _.each(cardsDef.querySet, function (querySet) {
-                                        querySet.percent = querySetPercentAvg;
-                                    });
-                                }
-                                else {
-                                    _.each(cardsDef.querySet, function (querySet) {
-                                        var percentValue = Number(querySet.percent);
-                                        // if it's not a number, assume it's a fraction and attempt to convert to percent
-                                        if (Number.isNaN(percentValue)) {
-                                            var parts = querySet.percent.split("/");
-                                            if (parts.length !== 2) {
-                                                console.log("ERROR: bad percent (only decimals or fractions allowed): " + querySet.percent);
-                                            }
-                                            else {
-                                                querySet.percent = (parts[0] / parts[1]) * 100;
-                                            }
+                // Make any post-load changes to the packs
+                let querySetPercentAvg;
+                for (let packKey in my.packs) {
+                    let pack = my.packs[packKey];
+
+                    // Check the querySets and add percentages if they're missing (missing means they all have an equal chance)
+                    if (!pack.cards) { return; }
+
+                    pack.cards.forEach(cardsDef => {
+                        if (cardsDef.querySet === undefined) { return; }
+
+                        if (cardsDef.querySet.length > 0 && cardsDef.querySet[0].query !== undefined) {
+                            if (cardsDef.querySet[0].percent === undefined) {
+                                querySetPercentAvg = 100 / cardsDef.querySet.length;
+                                cardsDef.querySet.forEach(querySet => {
+                                    querySet.percent = querySetPercentAvg;
+                                });
+                            }
+                            else {
+                                cardsDef.querySet.forEach(querySet => {
+                                    const percentValue = Number(querySet.percent);
+                                    // If it's not a number, assume it's a fraction and attempt to convert to percent
+                                    if (Number.isNaN(percentValue)) {
+                                        const parts = querySet.percent.split("/");
+                                        if (parts.length !== 2) {
+                                            console.log(`ERROR: bad percent (only decimals or fractions allowed): ${querySet.percent}`);
                                         }
-                                            // otherwise it's a number -- just keep it like that
                                         else {
-                                            querySet.percent = percentValue;
+                                            querySet.percent = (parts[0] / parts[1]) * 100;
                                         }
-                                    });
-                                }
+                                    }
+                                    // Otherwise it's a number -- just keep it like that
+                                    else {
+                                        querySet.percent = percentValue;
+                                    }
+                                });
                             }
                         }
                     });
                 }
+
+                // Process the pack defs
+                my.packDefs = createPackDefs(my.defs);
+
+                my.SetCardsLoadedCount = setCardsLoadedCount;
+
+                // render the Main view
+                my.mainView = new my.MainView({ el: my.$contentElem });
+                my.mainView.render();
+
+                my.trigger('ready');
             });
-
-            // process the pack defs
-            my.packDefs = createPackDefs(my.defs);
-
-            my.SetCardsLoadedCount = setCardsLoadedCount;
-
-            // render the Main view
-            my.mainView = new my.MainView({ el: my.$contentElem });
-            my.mainView.render();
-
-            my.trigger('ready');
-        });
     };
 
     // Private MtG Generator functions --------------------------------------------------------------------------------------------------------------------------------
@@ -548,7 +546,7 @@ var mtgGen = (function (my, $) {
         if (from == "*") {
             sourceSet = fullSet;
         }
-            // select from previously-defined set
+        // select from previously-defined set
         else {
             sourceSet = defs[from];
             if (sourceSet === undefined) {
@@ -622,7 +620,7 @@ var mtgGen = (function (my, $) {
                     if (query2[2] === undefined || query2[2] === '') {
                         matchingCards = _.filter(sourceSet, function (card) { return !card.hasOwnProperty(query2[1]) || card[query2[1]] == query2[2]; });
                     }
-                        // if it's a boolean query, convert both sides to boolean and test
+                    // if it's a boolean query, convert both sides to boolean and test
                     else if (query2[2] === true || query2[2] === 'true' || query2[2] === false || query2[2] === 'false') {
                         var boolQueryValue = JSON.parse(query2[2]);
                         matchingCards = _.filter(sourceSet, function (card) {
@@ -869,16 +867,16 @@ var mtgGen = (function (my, $) {
 
     my.sortOrders = {
         none: { sort: 'none' }
-		, name: { sort: 'name' }
-		, colour: { sort: 'colour' }
-		, rarity: { sort: 'rarity' }
-		, cost: { sort: 'cost' }
-		, type: { sort: 'type' }
-		, set: { sort: 'set' }
-		, guild: { sort: 'guild' }
-		, clan: { sort: 'clan' }
-		, faction: { sort: 'faction' }
-		, order: { sort: 'order' } // opened order within the set
+        , name: { sort: 'name' }
+        , colour: { sort: 'colour' }
+        , rarity: { sort: 'rarity' }
+        , cost: { sort: 'cost' }
+        , type: { sort: 'type' }
+        , set: { sort: 'set' }
+        , guild: { sort: 'guild' }
+        , clan: { sort: 'clan' }
+        , faction: { sort: 'faction' }
+        , order: { sort: 'order' } // opened order within the set
     };
 
     my.sortAllByNothing = function (cardList) {
@@ -1233,14 +1231,14 @@ var mtgGen = (function (my, $) {
         if (str === undefined) return str;
         if (max === undefined) max = 32;
         var a_chars = new Array(
-			new Array("a", /[áàâãªÁÀÂÃ]/g),
-			new Array("e", /[éèêÉÈÊ]/g),
-			new Array("i", /[íìîÍÌÎ]/g),
-			new Array("o", /[òóôõºÓÒÔÕ]/g),
-			new Array("u", /[úùûÚÙÛ]/g),
-			new Array("c", /[çÇ]/g),
-			new Array("n", /[Ññ]/g)
-		);
+            new Array("a", /[áàâãªÁÀÂÃ]/g),
+            new Array("e", /[éèêÉÈÊ]/g),
+            new Array("i", /[íìîÍÌÎ]/g),
+            new Array("o", /[òóôõºÓÒÔÕ]/g),
+            new Array("u", /[úùûÚÙÛ]/g),
+            new Array("c", /[çÇ]/g),
+            new Array("n", /[Ññ]/g)
+        );
         // Replace vowel with accent without them
         for (var i = 0; i < a_chars.length; i++) {
             str = str.replace(a_chars[i][1], a_chars[i][0]);

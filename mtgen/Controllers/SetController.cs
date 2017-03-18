@@ -86,6 +86,7 @@ namespace mtgen.Controllers
 
         // Used by the client if the set url looks like xxx?draw=yyyyyy
         [HttpGet]
+        //CAMKILL:public async Task<IActionResult> LoadDraw(string setCode, string drawId)
         public async Task<IActionResult> LoadDraw(string setCode, string drawId)
         {
             if (drawId == null || drawId.Trim().Length == 0) { return new NotFoundResult(); }
@@ -94,7 +95,8 @@ namespace mtgen.Controllers
 
             if (drawJson == null) { return new NotFoundResult(); }
 
-            return new ObjectResult(drawJson.Results);
+            //CAMKILL:return new ObjectResult(drawJson.Results);
+            return Json(drawJson.Results);
         }
 
         private bool SetFileExists(string setCode)

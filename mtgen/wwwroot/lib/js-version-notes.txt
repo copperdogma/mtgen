@@ -20,3 +20,5 @@ underscore-min.js
 backbone-mins.js
 - 20140713: 1.1.2: newly included (during M15) to implement MVC
 	-  LOCKED to 1.1.2 as >=1.2.0 introduces bug where it incorrectly runs ProductView.events THEN .initialize()
+
+20170301: converted /util/card data importers to native es6 (no backbone, no jquery)
