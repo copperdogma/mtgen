@@ -1,10 +1,11 @@
 /*
-MtG Generator script v2.1 - LIB
+MtG Generator script v2.3 - LIB
 
 Shared/base functions.
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
+20-May-2017: Replaced all underscore references with native es6 calls.
 26-Jan-2016: Now uses mtgenId instead of index.
 14-Jan-2016: Percents within querySets can now be expressed as fractions ("7/8") in addition to percents (87.5).
 4-Jan-2016: Renamed "colourless" (c) mana to "generic" (g) (new in OGW set)
@@ -48,11 +49,6 @@ var mtgGen = (function (my, $) {
         unknown: { sorder: 97, code: '?', name: 'Unknown Colour', colourless: true },
     };
     my.getColourByCode = function (code) {
-        //CAMKILL: convert to this after converting all categories to arrays/sets
-        //const cardColour = my.colours.find(colourKey => my.colour[colourKey].code === code);
-
-        //return cardColour || my.colours.unknown;
-
         for (let colour in my.colours) {
             if (my.colours[colour].code == code) {
                 return my.colours[colour];
@@ -76,7 +72,7 @@ var mtgGen = (function (my, $) {
         unknown: { sorder: 97, code: '?', name: 'Unknown' },
     };
     my.getRarityByCode = function (code) {
-        for (var rarity in my.rarities) {
+        for (let rarity in my.rarities) {
             if (my.rarities[rarity].code == code) {
                 return my.rarities[rarity];
             }
@@ -97,7 +93,7 @@ var mtgGen = (function (my, $) {
         unknown: { sorder: 97, code: '?', name: 'Unknown' },
     };
     function getCardTypeByCode(code) {
-        for (var cardType in my.cardTypes) {
+        for (let cardType in my.cardTypes) {
             if (my.cardTypes[cardType].code == code) {
                 return my.cardTypes[cardType];
             }
@@ -106,8 +102,8 @@ var mtgGen = (function (my, $) {
     }
     function getCardTypeByName(name) {
         // there may be multiple card types within the name, so we'll choose the first we find in sort order priority
-        var regex;
-        for (var cardType in my.cardTypes) {
+        let regex;
+        for (let cardType in my.cardTypes) {
             regex = new RegExp("\\b" + my.cardTypes[cardType].name + "\\b", "i");
             if (regex.test(name)) {
                 return my.cardTypes[cardType];
@@ -132,7 +128,7 @@ var mtgGen = (function (my, $) {
         unknown: { sorder: 97, code: '?', name: 'Unknown', fullName: 'Unknown' }
     };
     function getGuildByCode(code) {
-        for (var guild in my.guilds) {
+        for (let guild in my.guilds) {
             if (my.guilds[guild].code == code) {
                 return my.guilds[guild];
             }
@@ -156,7 +152,7 @@ var mtgGen = (function (my, $) {
         unknown: { sorder: 97, code: '?', name: 'Unknown', fullName: 'Unknown' }
     };
     function getClanByCode(code) {
-        for (var clan in my.clans) {
+        for (let clan in my.clans) {
             if (my.clans[clan].code == code) {
                 return my.clans[clan];
             }
@@ -171,7 +167,7 @@ var mtgGen = (function (my, $) {
         unknown: { sorder: 97, code: '?', name: 'Unknown', fullName: 'Unknown' }
     };
     function getFactionByCode(code) {
-        for (var faction in my.factions) {
+        for (let faction in my.factions) {
             if (my.factions[faction].code == code) {
                 return my.factions[faction];
             }
@@ -180,8 +176,8 @@ var mtgGen = (function (my, $) {
     }
 
     my.getRequiredOption = function (options, optionName, abortMsg) {
-        var option = options[optionName];
-        var errorMsg = (abortMsg === undefined) ? '' : abortMsg + '\n';
+        const option = options[optionName];
+        const errorMsg = (abortMsg === undefined) ? '' : abortMsg + '\n';
         if (option === undefined) {
             my.throwTerminalError(errorMsg + 'Missing required parameter: ' + optionName + "\nCannot continue.");
         }
@@ -203,7 +199,7 @@ var mtgGen = (function (my, $) {
 
     my.getQuerystringParamByName = function (name) {
         name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        const regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
             results = regex.exec(location.search);
         return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
     };
@@ -250,9 +246,7 @@ var mtgGen = (function (my, $) {
 	*/
     my.run = function (options) {
         // Import options into instance variables
-        _.each(options, function (value, key) {
-            my[key] = value;
-        });
+        Object.assign(my, options);
 
         my.SetCardCount = options.setCardCount;
 
@@ -464,64 +458,63 @@ var mtgGen = (function (my, $) {
     // Private MtG Generator functions --------------------------------------------------------------------------------------------------------------------------------
 
     function calculateConvertedCost(cost) {
-        var ccost = 0;
-        if (cost !== undefined && cost.length > 0) {
-            var fixedCost = cost.trim().toLowerCase();
+        if (cost === undefined || cost.length < 1) { return 0; }
 
-            var costParts = [];
-            // Three possible formats:
-            // ONE (older): {8}{G}{BG}
-            var regEx = /{([^}]+)}/g;
-            var match;
-            do {
-                match = regEx.exec(fixedCost);
-                if (match) {
-                    costParts.push(match[1]);
-                }
-            } while (match);
+        const fixedCost = cost.trim().toLowerCase();
 
-            // TWO (newer): (R///) (R///)
-            regEx = /\(([^\)]+)\)/g;
-            do {
-                match = regEx.exec(fixedCost);
-                if (match) {
-                    costParts.push(match[1]);
-                }
-            } while (match);
-
-            // THREE (newer): 8GB
-            if (costParts.length < 1) {
-                costParts = fixedCost.split("");
+        let costParts = [];
+        // Three possible formats:
+        // ONE (older): {8}{G}{BG}
+        const regEx1 = /{([^}]+)}/g;
+        let match;
+        do {
+            match = regEx1.exec(fixedCost);
+            if (match) {
+                costParts.push(match[1]);
             }
+        } while (match);
 
-            for (var i = 0; i < costParts.length; i++) {
-                var mana = costParts[i];
-                var intCost = parseInt(mana, 10);
-                if (isNaN(intCost) && mana.length > 0) {
-                    // rules for converted cost on {X}: http://www.wizards.com/magic/comprules/MagicCompRules_20121001.txt
-                    //	"202.3b When calculating the converted mana cost of an object with {X} in its mana cost, X is treated as 0 while the object is not on the stack, and X is treated as the number chosen for it while the object is on the stack."
-                    intCost = (mana == 'x') ? 0 : 1;
-                }
-                if (isNaN(intCost)) {
-                    intCost = 0;
-                }
-                ccost += intCost;
+        // TWO (newer): (R///) (R///)
+        const regEx2 = /\(([^\)]+)\)/g;
+        do {
+            match = regEx2.exec(fixedCost);
+            if (match) {
+                costParts.push(match[1]);
             }
+        } while (match);
+
+        // THREE (newer): 8GB
+        if (costParts.length < 1) {
+            costParts = fixedCost.split("");
         }
+
+        let ccost = 0;
+        costParts.forEach(mana => {
+            let intCost = parseInt(mana, 10);
+            if (isNaN(intCost) && mana.length > 0) {
+                // Rules for converted cost on {X}: http://www.wizards.com/magic/comprules/MagicCompRules_20121001.txt
+                //	"202.3b When calculating the converted mana cost of an object with {X} in its mana cost, X is treated as 0 while the object is not on the stack, and X is treated as the number chosen for it while the object is on the stack."
+                intCost = (mana == 'x') ? 0 : 1;
+            }
+            if (isNaN(intCost)) {
+                intCost = 0;
+            }
+            ccost += intCost;
+        });
         return ccost;
     }
 
     function createPackDefs(defs) {
-        var packDefs = [];
-        if (defs) {
-            _.each(defs, function (def) {
-                var defSet = my.executeQuery(my.cards, packDefs, def.query);
-                packDefs[def.defName] = defSet;
-                if (defSet.length < 1) {
-                    console.warn("WARNING: createPackDefs(): no results from pack definition '" + def.defName + "': " + def.query);
-                }
-            });
-        }
+        let packDefs = [];
+        if (defs === undefined) { return packDefs; }
+
+        defs.forEach(def => {
+            const defSet = my.executeQuery(my.cards, packDefs, def.query);
+            packDefs[def.defName] = defSet;
+            if (defSet.length < 1) {
+                console.warn(`WARNING: createPackDefs(): no results from pack definition '${def.defName}': ${def.query}`);
+            }
+        });
         return packDefs;
     }
 
@@ -529,101 +522,100 @@ var mtgGen = (function (my, $) {
     // Returns only the card indices
     function executeSimpleQuery(fullSet, defs, query, isOrderImportant) {
         //console.log('executeSimpleQuery:' + query);
-        var from = query.match(/from\[(.+)\]/i);
+        let from = query.match(/from\[(.+)\]/i);
         if (!from) {
-            console.warn("ERROR: executeSimpleQuery(): missing 'from' in query: " + query);
+            console.warn(`ERROR: executeSimpleQuery(): missing 'from' in query: ${query}`);
         }
         else {
             from = from[1];
         }
 
-        var query2 = query.match(/\?(.+)=(.+)/i);
+        let query2 = query.match(/\?(.+)=(.+)/i);
 
-        var result = [];
+        let result = [];
 
-        // determine base set to select from
-        var sourceSet = [];
+        // Determine base set to select from
+        let sourceSet = [];
         if (from == "*") {
             sourceSet = fullSet;
         }
-        // select from previously-defined set
+        // Select from previously-defined set
         else {
             sourceSet = defs[from];
             if (sourceSet === undefined) {
-                console.warn("ERROR: executeSimpleQuery(): def '" + from + "' does not exist within query: " + query);
+                console.warn(`ERROR: executeSimpleQuery(): def '${from}' does not exist within query: ${query}`);
             }
         }
 
-        // execute the query on the set
+        // Execute the query on the set
         if (!query2) {
-            result = _.pluck(sourceSet, 'mtgenId');
+            result = sourceSet.map(card => card.mtgenId);
         }
         else {
-            var matchingCards, clause, queryTitles, queryMatchTitles;
-            if (query2[2].indexOf('contains(') > -1) {
+            let matchingCards, clause, queryTitles, queryMatchTitles;
+            if (query2[2].includes('contains(')) {
                 // 'contains' clause, like colour=contains({W}|{G}), i.e.: we're basically letting the user specify a regex within the contains()
                 clause = query2[2].replace(/contains\(/g, '').replace(/\)/g, '');
-                matchingCards = _.filter(sourceSet, function (card) { return card[query2[1]] && card[query2[1]].match(clause); });
-                result = _.pluck(matchingCards, 'mtgenId');
+                matchingCards = sourceSet.filter(card => card[query2[1]] && card[query2[1]].match(clause));
+                result = matchingCards.map(matchingCard => matchingCard.mtgenId);
             }
-            else if (query2[2].indexOf('(') > -1) {
+            else if (query2[2].includes('(')) {
                 // 'in' clause
                 // WAS doing greedy matching.. |Smite| was matching "Loxodon Smiter", so ^(****)$ required (^=start of string, $=end of string)
                 clause = '^(' + query2[2].replace(/\(/g, '').replace(/\)/g, '') + ')$';
 
                 if (query2[1] == 'title') {
                     queryTitles = clause.replace('\^(', '').replace(')\$', '').split('|');
-                    queryMatchTitles = _.map(queryTitles, function (title) { return my.createMatchTitle(title); });
+                    queryMatchTitles = queryTitles.map(queryTitle => my.createMatchTitle(queryTitle));
                     clause = '^(' + queryMatchTitles.join('|') + ')$';
                     // TODO: wtf? I'm doing a creteMatchTitle() on card['matchTitle']??
-                    matchingCards = _.filter(sourceSet, function (card) { return card.hasOwnProperty('matchTitle') && my.createMatchTitle(card['matchTitle']).match(clause); });
+                    matchingCards = sourceSet.filter(card => card.hasOwnProperty('matchTitle') && my.createMatchTitle(card['matchTitle']).match(clause));
                 }
                 else {
                     clause = clause.toLowerCase();
-                    matchingCards = _.filter(sourceSet, function (card) { return card.hasOwnProperty(query2[1]) && card[query2[1]].toString().toLowerCase().match(clause); });
+                    matchingCards = sourceSet.filter(card => card.hasOwnProperty(query2[1]) && card[query2[1]].toString().toLowerCase().match(clause));
                 }
 
                 // if it's a title query and the query specified "inOrder:true" then the order of the cards is important; sort by that
                 if (query2[1] == 'title' && isOrderImportant === true) {
-                    var sortedCards = [];
-                    var foundCard;
-                    _.each(queryMatchTitles, function (queryMatchTitle) {
-                        foundCard = _.find(matchingCards, function (matchingCard) { return matchingCard.matchTitle == queryMatchTitle; });
+                    let sortedCards = [];
+                    queryMatchTitles.forEach(queryMatchTitle => {
+                        const foundCard = matchingCards.find(matchingCard => matchingCard.matchTitle == queryMatchTitle);
                         if (foundCard) {
                             sortedCards.push(foundCard);
                         }
                     });
                     matchingCards = sortedCards;
                 }
-                result = _.pluck(matchingCards, 'mtgenId');
+                result = matchingCards.map(matchingCard => matchingCard.mtgenId);
 
                 // if we're dealing with named cards, check if any items in the list are missing -- we'll call this an error and generate an error card
                 if (query2[1] == 'title' && result.length < queryMatchTitles.length) {
-                    var foundCardTitles = _.map(matchingCards, function (card) { return card.matchTitle; });
-                    var missingMatchTitles = _.difference(queryMatchTitles, foundCardTitles);
-                    _.each(missingMatchTitles, function (matchTitle) {
-                        console.warn('WARNING: missing card: "' + matchTitle + '" from query:', query);
-                    });
+                    const foundCardTitles = matchingCards.map(matchingCard => matchingCard.matchTitle);
+                    const missingMatchTitles = queryMatchTitles.filter(x => !foundCardTitles.includes(x));
+                    missingMatchTitles.forEach(matchTitle =>
+                        console.warn(`WARNING: missing card: '${matchTitle}' from query: ${query}`)
+                    );
                 }
             }
             else {
-                // regular equals
+                // Regular equals
                 query2[2] = query2[2].replace(/'/g, '');
 
-                // if we're dealing with named cards, certain characters need to be converted
+                // If we're dealing with named cards, certain characters need to be converted
                 matchingCards = [];
                 if (query2[1] == 'title') {
-                    var matchTitle = my.createMatchTitle(query2[2]);
-                    matchingCards = _.filter(sourceSet, function (card) { return card.hasOwnProperty('matchTitle') && card['matchTitle'] == matchTitle; });
+                    const matchTitle = my.createMatchTitle(query2[2]);
+                    matchingCards = sourceSet.filter(card => card.hasOwnProperty('matchTitle') && card['matchTitle'] == matchTitle);
                 }
                 else {
                     if (query2[2] === undefined || query2[2] === '') {
-                        matchingCards = _.filter(sourceSet, function (card) { return !card.hasOwnProperty(query2[1]) || card[query2[1]] == query2[2]; });
+                        matchingCards = sourceSet.filter(card => !card.hasOwnProperty(query2[1]) || card[query2[1]] == query2[2]);
                     }
-                    // if it's a boolean query, convert both sides to boolean and test
+                    // If it's a boolean query, convert both sides to boolean and test
                     else if (query2[2] === true || query2[2] === 'true' || query2[2] === false || query2[2] === 'false') {
-                        var boolQueryValue = JSON.parse(query2[2]);
-                        matchingCards = _.filter(sourceSet, function (card) {
+                        const boolQueryValue = JSON.parse(query2[2]);
+                        matchingCards = sourceSet.filter(card => {
                             if (card[query2[1]] !== undefined) {
                                 if (boolQueryValue === true) {
                                     return (card[query2[1]] === true || card[query2[1]] === 'true');
@@ -635,75 +627,71 @@ var mtgGen = (function (my, $) {
                         });
                     }
                     else {
-                        matchingCards = _.filter(sourceSet, function (card) {
-                            return card[query2[1]] !== undefined && card[query2[1]] == query2[2];
-                        });
+                        matchingCards = Object.values(sourceSet).filter(card => card[query2[1]] !== undefined && card[query2[1]] == query2[2]);
                     }
                 }
-                result = _.pluck(matchingCards, 'mtgenId');
+                result = matchingCards.map(matchingCard => matchingCard.mtgenId);
             }
         }
 
         return result;
     }
 
-    // the pattern should be something like: from[*]?rarity=(c,u,r,mr)+from[*]?type='Land'-from[*]?type=('Marketing','Token')
+    // The pattern should be something like: from[*]?rarity=(c,u,r,mr)+from[*]?type='Land'-from[*]?type=('Marketing','Token')
     // i.e.: a base query then a set of set addition and subtractions
     // fullSet = all card objects
     my.executeQuery = function (fullSet, defs, query, isOrderImportant) {
-        //OLD:var queries = query.split(/(\+|-)/); // split on + or - (set operators), but keep the operator
-        var queries = query.split(/(\+|-)(?=from|take)/); // split on + or - (set operators), but keep the operator
+        const queries = query.split(/(\+|-)(?=from|take)/); // split on + or - (set operators), but keep the operator
 
-        var operator = '';
-        var firstRun = true;
-        var resultIndices = [];
-        _.each(queries, function (query, index) {
-            // on the first run though, the initial query should just be the base
+        let operator = '';
+        let firstRun = true;
+        let resultIndices = [];
+        queries.forEach((query, index) => {
+            // On the first run though, the initial query should just be the base
             if (firstRun === true) {
                 resultIndices = executeSimpleQuery(fullSet, defs, query, isOrderImportant); // returns only indices
                 //console.log('executeSimpleQuery count/query:' + resultIndices.length + '/' + query);
                 firstRun = false;
             }
             else {
-                // now every even array element should be the operator
+                // Now every even array element should be the operator
                 if (index % 2 == 1) {
                     operator = query;
                 }
                 else {
-                    var set = executeSimpleQuery(fullSet, defs, query, isOrderImportant); // returns only indices
+                    const set = executeSimpleQuery(fullSet, defs, query, isOrderImportant); // returns only indices
                     //console.log('executeSimpleQuery count/query:' + set.length + '/' + query);
                     switch (operator) {
                         case "+": resultIndices = resultIndices.concat(set); break;
-                        case "-": resultIndices = _.difference(resultIndices, set); break;
-                        default: console.error("ERROR: expected + or - operator in query '" + query + "' but instead found '" + operator + "'");
+                        case "-": resultIndices = resultIndices.filter(x => !set.includes(x)); break;
+                        default: console.error(`ERROR: expected + or - operator in query '${query}' but instead found '${operator}'`);
                     }
                 }
             }
         });
 
-        // match these indices back up with the actual objects and return that
-        var finalResult = _.reduce(resultIndices, function (memo, index) { return memo.concat(fullSet[index]); }, []);
+        // Match these indices back up with the actual objects and return that
+        const finalResult = resultIndices.map(resultIndex => fullSet[resultIndex]);
 
         if (finalResult.length < 1) {
-            console.warn("WARNING: executeQuery(): no results from query: " + query);
+            console.warn(`WARNING: executeQuery(): no results from query: ${query}`);
         }
 
         return finalResult;
     }
 
     my.getPack = function (packName) {
-        return _.find(my.packs, function (pack) { return pack.packName == packName; });
+        return my.packs.find(pack => pack.packName == packName);
     };
 
     my.generateCardSetsFromPacks = function (packs) {
-        var generatedSets = [];
-
-        // generate the requested sets
-        var setIndex = 0;
-        _.each(packs, function (pack) {
-            for (var i = 0; i < pack.count; i++) {
-                var cardSet = my.generateCardSetFromPack(pack.packName);
-                generatedSets[setIndex++] = cardSet;
+        // Generate the requested sets
+        let generatedSets = [];
+        packs.forEach(pack => {
+            // Create X of the desired packs.
+            for (let i = 0; i < pack.count; i++) {
+                const cardSet = my.generateCardSetFromPack(pack.packName);
+                generatedSets.push(cardSet);
             }
         });
 
@@ -711,90 +699,75 @@ var mtgGen = (function (my, $) {
     };
 
     my.generateCardSetFromPack = function (packName) {
-        var pack = my.getPack(packName);
+        const pack = my.getPack(packName);
         if (pack === undefined) {
-            console.warn("ERROR: generateCardSet(): missing packName: " + packName);
+            console.warn(`ERROR: generateCardSet(): missing packName: ${packName}`);
             return false;
         }
 
-        var endCards = [];
-        var chance = 0;
-        var cardQueries = [];
+        let cardQueries = [];
 
-        // go through each card query in the pack and select it according to its query
-        _.each(pack.cards, function (cardDef) {
+        // Go through each card query in the pack and select it according to its query
+        pack.cards.forEach(cardDef => {
             if (cardDef.querySet) {
-                var totalWeight = _.reduce(cardDef.querySet, function (memo, query) { return memo + query.percent; }, 0);
+                const totalWeight = cardDef.querySet.reduce((total, query) => total + query.percent, 0);
 
-                // choose the card query percent; we want decimal numbers because the cards can be specified as such (e.g.: 1/8 chance = 12.5%)
-                var percent = Math.random() * totalWeight;
+                // Choose the card query percent; we want decimal numbers because the cards can be specified as such (e.g.: 1/8 chance = 12.5%)
+                let percent = Math.random() * totalWeight;
                 if (percent > totalWeight) { percent = totalWeight; }
 
-                // choose the card query that matches that weighted percentage
-                var currentWeight = 0;
-                // must use $.each vs _.each so we can break out when we have a card, otherwise it'll always check both
-                $.each(cardDef.querySet, function (index, cardDefItem) {
+                // Choose the card query that matches that weighted percentage
+                let currentWeight = 0;
+                const chosenCardDefItem = cardDef.querySet.find(cardDefItem => {
                     currentWeight += cardDefItem.percent;
-                    if (currentWeight >= percent) {
-                        cardQueries.push(cardDefItem);
-                        return false; // false required to break out of loop
-                    }
+                    if (currentWeight >= percent) { return true; }
                 });
+                cardQueries.push(chosenCardDefItem);
             }
             else if (cardDef.query) {
                 cardQueries.push(cardDef);
             }
             else {
-                console.error("cardDef doesn't have a queryDef or query property:", cardDef);
+                console.error(`cardDef doesn't have a queryDef or query property: ${cardDef}`);
             }
-
         });
 
-        // basically if the pack was created with usableForDeckBuilding=false then use that, otherwise default to true
-        var usableForDeckBuilding = true;
-        if (pack.usableForDeckBuilding !== undefined) {
-            usableForDeckBuilding = pack.usableForDeckBuilding;
-        }
+        // Basically if the pack was created with usableForDeckBuilding=false then use that, otherwise default to true
+        let usableForDeckBuilding = pack.usableForDeckBuilding || true;
 
-        // execute each card template's query to choose the actual card
-        var cardSet = [];
-        var cardIndices = [];
-        var isOrderImportant;
-        _.each(cardQueries, function (cardDef) {
-            isOrderImportant = cardDef.inOrder && cardDef.inOrder === true;
-            var possibleCards = my.executeQuery(my.cards, my.packDefs, cardDef.query, isOrderImportant);
+        // Execute each card template's query to choose the actual card
+        let cardSet = [];
+        let cardIndices = [];
+        cardQueries.forEach(cardDef => {
+            const isOrderImportant = cardDef.inOrder && cardDef.inOrder === true;
+            const possibleCards = my.executeQuery(my.cards, my.packDefs, cardDef.query, isOrderImportant);
 
-            var takeCount = 1;
-            var take = cardDef.query.match(/take\[(.+)\]>/i);
+            let takeCount = 1;
+            const take = cardDef.query.match(/take\[(.+)\]>/i);
             if (take) {
                 takeCount = take[1];
             }
 
-            var chosenCards;
+            // Shallow clone the cards via .slice().
+            let chosenCards;
             if (takeCount == "*") {
-                chosenCards = _.clone(possibleCards);
+                chosenCards = possibleCards.slice();
             }
             else if (cardDef.canBeDuplicate === true) {
-                chosenCards = _.clone(randomCards(cardDef.query, possibleCards, takeCount));
+                chosenCards = randomCards(cardDef.query, possibleCards, takeCount).slice();
             }
             else {
-                chosenCards = _.clone(randomCards(cardDef.query, possibleCards, takeCount, cardIndices));
+                chosenCards = randomCards(cardDef.query, possibleCards, takeCount, cardIndices).slice();
             }
 
-            // apply any setValues
+            // Apply any setValues
             if (cardDef.setValues) {
-                for (var setValue in cardDef.setValues) {
-                    // this is awkward, but anything else I tried modified the ORIGINAL card
-                    for (var i = 0; i < chosenCards.length; i++) {
-                        var modifiedCard = _.clone(chosenCards[i]);
-                        modifiedCard[setValue] = cardDef.setValues[setValue];
-                        chosenCards[i] = modifiedCard;
-                    }
-                }
+                // clone via Object.assign() so we don't modify the original cards
+                chosenCards = chosenCards.map(chosenCard => Object.assign({}, chosenCard, cardDef.setValues));
             }
 
-            _.each(chosenCards, function (card) {
-                // apply usableForDeckBuilding if not already specified
+            chosenCards.forEach(card => {
+                // Apply usableForDeckBuilding if not already specified
                 if (card.usableForDeckBuilding === undefined) {
                     card.usableForDeckBuilding = usableForDeckBuilding;
                 }
@@ -807,7 +780,7 @@ var mtgGen = (function (my, $) {
         cardSet.setDesc = pack.packDesc;
         cardSet.packVersion = pack.packVersion;
 
-        // used to ensure things like promos aren't included when you sort all cards by colour
+        // Used to ensure things like promos aren't included when you sort all cards by colour
         // NOTE: this isn't really used right now -- I'm leaving it in in case it's useful when we start actually letting the user build decks
         cardSet.includeWithUserCards = pack.includeWithUserCards;
         if (pack.includeWithUserCards !== false) {
@@ -818,49 +791,66 @@ var mtgGen = (function (my, $) {
     };
 
     my.CountCardsInSets = function (cardSets) {
-        return _.reduce(cardSets, function (memo, opt) { return memo + opt.length; }, 0);
+        return cardSets.reduce((total, cardSet) => total + cardSet.length, 0);
     };
 
     function randomCards(queryDefForDebug, cards, num, excludeIndices) {
-        var result = [];
-        if (cards.length < 1) {
-            return result;
-        }
-        /*KILL? this was to protect against choosing the same cards twice, but code below now allows that if you ask for more cards than exist.. which we want in many cases.
-                if (cards.length<=num) {
-                    if (num>cards.length) {
-                        console.warn("ERROR: Trying to choose "+num+" cards but only "+cards.length+" available. Taking all:",cards);
-                    }
-                    return cards;
-                }
-        */
-        var validCards = _.clone(cards);
-        if (excludeIndices) {
-            // reject cards whose index is in the excludeIndices
-            // TODO: the new way I'm doing this looks expensive.. the line below this is compact but WRONG, but a good starting point?
-            //validCards = _.reject(validCards, function (card) { _.find(excludeIndices, function (index) { return card.index == index; }) === undefined; });
-            var validIndices = _.reduce(validCards, function (memo, validCard) { return memo.concat(validCard.mtgenId); }, []);
-            var newValidIndices = _.difference(validIndices, excludeIndices);
-            validCards = _.filter(validCards, function (card) { return _.find(newValidIndices, function (validIndex) { return card.mtgenId == validIndex; }) });
+        if (cards.length < 1) { return []; }
+
+        let validCards = cards.slice(); // shallow clone
+        if (excludeIndices && excludeIndices.length > 0) {
+            validCards = validCards.filter(card => !excludeIndices.includes(card.mtgenId));
             if (num > validCards.length) {
                 console.warn("ERROR: Trying to choose " + num + " cards but after excluded cards, only " + validCards.length + " available. Source query: " + queryDefForDebug + " Taking all:", validCards);
             }
         }
 
-        // keep taking cards until we get the desired number, even if we're grabbing duplicates
-        var chosenCards = [];
+        // Keep taking cards until we get the desired number, even if we're grabbing duplicates
+        let chosenCards = [];
         if (validCards.length > 0) {
             while (chosenCards.length < num) {
-                var newCards = _.sample(validCards, num);
-                var numDiff = (chosenCards.length + newCards.length) - num; // 0: we're good. negative: need more cards. positive: too many now; trim newCards by this number
+                let newCards = my.sample(validCards, num);
+                const numDiff = (chosenCards.length + newCards.length) - num; // 0: we're good. negative: need more cards. positive: too many now; trim newCards by this number
                 if (numDiff > 0) {
-                    newCards = _.initial(newCards, numDiff); // trims the last numDiff elements from the array
+                    newCards = newCards.slice(numDiff); // trims the last numDiff elements from the array
                 }
                 chosenCards = chosenCards.concat(newCards);
             }
         }
 
         return chosenCards;
+    }
+
+    // Sample **n** random values from an array.
+    // If **n** is not specified, returns a single random element.
+    // The internal `guard` argument allows it to work with `map`.
+    // Taken from Underscore.
+    my.sample = function (arr, n, guard) {
+        if (n == null || guard) {
+            return arr[my.random(arr.length - 1)];
+        }
+        return my.shuffle(arr).slice(0, Math.max(0, n));
+    }
+
+    // Shuffle an array. Taken from Underscore.
+    my.shuffle = function (arr) {
+        const length = arr.length;
+        let shuffled = Array(length);
+        for (let index = 0, rand; index < length; index++) {
+            rand = my.random(0, index);
+            if (rand !== index) shuffled[index] = shuffled[rand];
+            shuffled[rand] = arr[index];
+        }
+        return shuffled;
+    }
+
+    // Return a random integer between min and max (inclusive). Taken from Underscore.
+    my.random = function (min, max) {
+        if (max == null) {
+            max = min;
+            min = 0;
+        }
+        return min + Math.floor(Math.random() * (max - min + 1));
     }
 
     /* --------- Sorting All Cards --------------------------------------------------------------------------------------------------------------------- */
@@ -879,21 +869,27 @@ var mtgGen = (function (my, $) {
         , order: { sort: 'order' } // opened order within the set
     };
 
+    my.sortBy = function (prop, a, b) {
+        const aProp = a[prop];
+        const bProp = b[prop]
+        return ((aProp < bProp) ? -1 : ((aProp > bProp) ? 1 : 0));
+    }
+
     my.sortAllByNothing = function (cardList) {
         cardList.sortOrder = my.sortOrders.none;
         return cardList;
     };
 
     my.sortAllByTitle = function (cardList) {
-        var cards = _.sortBy(cardList, 'matchTitle');
+        const cards = cardList.sort((a, b) => my.sortBy('matchTitle', a, b));
         cards.sortOrder = my.sortOrders.name;
         return cards;
     };
 
     my.getBasicLandCards = function (cardList) {
-        var cards = _.filter(cardList, function (card) { return card.type == 'Basic Land'; });
+        let cards = cardList.filter(card => card.type == 'Basic Land');
         if (cards.length > 0) {
-            cards = _.sortBy(cards, 'matchTitle');
+            cards = cards.sort((a, b) => my.sortBy('matchTitle', a, b));
             cards.setDesc = 'Basic Land';
             cards.sortOrder = my.sortOrders.name;
         }
@@ -901,9 +897,9 @@ var mtgGen = (function (my, $) {
     };
 
     my.getOtherCards = function (allCards, selectedCards) {
-        var cards = _.difference(allCards, selectedCards);
+        let cards = allCards.filter(x => !selectedCards.includes(x));
         if (cards.length > 0) {
-            cards = _.sortBy(cards, 'matchTitle');
+            cards = cards.sort((a, b) => my.sortBy('matchTitle', a, b));
             cards.setDesc = 'Other';
             cards.sortOrder = my.sortOrders.name;
         }
@@ -911,41 +907,55 @@ var mtgGen = (function (my, $) {
     };
 
     my.sortIntoArray = function (groupedCardSets, sortObj) {
-        var cardSets = [];
-        for (var sortItem in sortObj) {
-            var thisSortItem = sortObj[sortItem];
-            var set = groupedCardSets[thisSortItem.code];
+        let cardSets = [];
+        for (let sortItem in sortObj) {
+            const thisSortItem = sortObj[sortItem];
+            let set = groupedCardSets[thisSortItem.code];
             if (set) {
                 set.sorder = thisSortItem.sorder;
                 cardSets.push(set);
             }
         }
-        cardSets = _.sortBy(cardSets, "sorder");
+        cardSets = cardSets.sort((a, b) => my.sortBy('sorder', a, b));
         return cardSets;
     };
 
-    my.sortAllByColour = function (cardList) {
-        var sortedSets = [];
+    // Returns an object containing one array for each unique propName found.
+    my.groupByProperty = function (arr, propName) {
+        const out = arr.reduce((final, elem) => {
+            const propValue = elem[propName];
+            if (!final.hasOwnProperty(propValue)) {
+                final[propValue] = [];
+            }
+            final[propValue].push(elem);
+            return final;
+        }, {});
+        return out;
+    }
 
-        // for each colour, create a new card set
-        var mainCards = _.filter(cardList, function (card) { return card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token; });
-        var groupedCardSets = _.groupBy(mainCards, function (card) { return card.colour; });
-        var cardSets = this.sortIntoArray(groupedCardSets, my.colours);
-        _.each(cardSets, function (cardSet) {
-            var set = _.sortBy(cardSet, 'matchTitle');
-            var colour = my.getColourByCode(set[0].colour);
+    my.sortAllByColour = function (cardList) {
+        let sortedSets = [];
+
+        // For each colour, create a new card set
+        let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
+        let groupedCardSets = my.groupByProperty(mainCards, 'colour');
+        const cardSets = this.sortIntoArray(groupedCardSets, my.colours);
+        cardSets.forEach(cardSet => {
+            let set = cardSet.sort((a, b) => my.sortBy('matchTitle', a, b));
+            const colour = my.getColourByCode(set[0].colour);
             set.setDesc = colour.name;
             set.sortOrder = my.sortOrders.name;
             sortedSets.push(set);
         });
 
-        var basicLandCards = my.getBasicLandCards(cardList);
+        const basicLandCards = my.getBasicLandCards(cardList);
         if (basicLandCards.length > 0) {
             sortedSets.push(basicLandCards);
         }
 
-        var selectedCards = _.flatten(sortedSets);
-        var otherCards = my.getOtherCards(cardList, selectedCards);
+        // Flatten the grouped sets into a flat array of single cards.
+        const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+        const otherCards = my.getOtherCards(cardList, selectedCards);
         if (otherCards.length > 0) {
             sortedSets.push(otherCards);
         }
@@ -956,27 +966,28 @@ var mtgGen = (function (my, $) {
     };
 
     my.sortAllByRarity = function (cardList) {
-        var sortedSets = [];
+        let sortedSets = [];
 
-        // for each colour, create a new card set
-        var mainCards = _.filter(cardList, function (card) { return card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token; });
-        var groupedCardSets = _.groupBy(mainCards, function (card) { return card.rarity; });
-        var cardSets = this.sortIntoArray(groupedCardSets, my.rarities);
-        _.each(cardSets, function (cardSet) {
-            var set = _.sortBy(cardSet, 'matchTitle');
-            var colour = my.getRarityByCode(set[0].rarity);
-            set.setDesc = colour.name;
+        // For each rarity, create a new card set
+        let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
+        let groupedCardSets = my.groupByProperty(mainCards, 'rarity');
+        const cardSets = this.sortIntoArray(groupedCardSets, my.rarities);
+        cardSets.forEach(cardSet => {
+            let set = cardSet.sort((a, b) => my.sortBy('matchTitle', a, b));
+            const rarity = my.getRarityByCode(set[0].rarity);
+            set.setDesc = rarity.name;
             set.sortOrder = my.sortOrders.name;
             sortedSets.push(set);
         });
 
-        var basicLandCards = my.getBasicLandCards(cardList);
+        const basicLandCards = my.getBasicLandCards(cardList);
         if (basicLandCards.length > 0) {
             sortedSets.push(basicLandCards);
         }
 
-        var selectedCards = _.flatten(sortedSets);
-        var otherCards = my.getOtherCards(cardList, selectedCards);
+        // Flatten the grouped sets into a flat array of single cards.
+        const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+        const otherCards = my.getOtherCards(cardList, selectedCards);
         if (otherCards.length > 0) {
             sortedSets.push(otherCards);
         }
@@ -987,27 +998,27 @@ var mtgGen = (function (my, $) {
     };
 
     my.sortAllByCost = function (cardList) {
-        var sortedSets = [];
+        let sortedSets = [];
 
-        // for each converted cost, create a new card set
-        var mainCards = _.filter(cardList, function (card) { return card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token; });
-        var groupedCardSets = _.groupBy(mainCards, function (card) { return card.ccost; });
-        var cardSets = _.toArray(groupedCardSets);
-        cardSets = cardSets.reverse();
-        _.each(cardSets, function (cardSet) {
-            var set = _.sortBy(cardSet, 'matchTitle');
+        // For each converted cost, create a new card set
+        let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
+        let groupedCardSets = my.groupByProperty(mainCards, 'ccost');
+        const cardSets = Object.keys(groupedCardSets).map(key => groupedCardSets[key]);
+        cardSets.forEach(cardSet => {
+            let set = cardSet.sort((a, b) => my.sortBy('matchTitle', a, b));
             set.setDesc = 'Cost ' + set[0].ccost;
             set.sortOrder = my.sortOrders.name;
             sortedSets.push(set);
         });
 
-        var basicLandCards = my.getBasicLandCards(cardList);
+        const basicLandCards = my.getBasicLandCards(cardList);
         if (basicLandCards.length > 0) {
             sortedSets.push(basicLandCards);
         }
 
-        var selectedCards = _.flatten(sortedSets);
-        var otherCards = my.getOtherCards(cardList, selectedCards);
+        // Flatten the grouped sets into a flat array of single cards.
+        const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+        const otherCards = my.getOtherCards(cardList, selectedCards);
         if (otherCards.length > 0) {
             sortedSets.push(otherCards);
         }
@@ -1018,26 +1029,27 @@ var mtgGen = (function (my, $) {
     };
 
     my.sortAllByType = function (cardList) {
-        var sortedSets = [];
+        let sortedSets = [];
 
-        // for each card type, create a new card set
-        var mainCards = _.filter(cardList, function (card) { return card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token; });
-        var groupedCardSets = _.groupBy(mainCards, function (card) { return card.typeCode; });
-        var cardSets = this.sortIntoArray(groupedCardSets, my.cardTypes);
-        _.each(cardSets, function (cardSet) {
-            var set = _.sortBy(cardSet, 'matchTitle');
+        // For each card type, create a new card set
+        let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
+        let groupedCardSets = my.groupByProperty(mainCards, 'typeCode');
+        const cardSets = this.sortIntoArray(groupedCardSets, my.cardTypes);
+        cardSets.forEach(cardSet => {
+            let set = cardSet.sort((a, b) => my.sortBy('matchTitle', a, b));
             set.setDesc = getCardTypeByCode(set[0].typeCode).name;
             set.sortOrder = my.sortOrders.name;
             sortedSets.push(set);
         });
 
-        var basicLandCards = my.getBasicLandCards(cardList);
+        const basicLandCards = my.getBasicLandCards(cardList);
         if (basicLandCards.length > 0) {
             sortedSets.push(basicLandCards);
         }
 
-        var selectedCards = _.flatten(sortedSets);
-        var otherCards = my.getOtherCards(cardList, selectedCards);
+        // Flatten the grouped sets into a flat array of single cards.
+        const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+        const otherCards = my.getOtherCards(cardList, selectedCards);
         if (otherCards.length > 0) {
             sortedSets.push(otherCards);
         }
@@ -1048,26 +1060,28 @@ var mtgGen = (function (my, $) {
     };
 
     my.sortAllByGuild = function (cardList) {
-        var sortedSets = [];
+        let sortedSets = [];
 
-        // for each guild, create a new card set
-        var mainCards = _.filter(cardList, function (card) { return card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token; });
-        var groupedCardSets = _.groupBy(mainCards, function (card) { return card.guild; });
-        var cardSets = this.sortIntoArray(groupedCardSets, my.guilds);
-        _.each(cardSets, function (cardSet) {
-            var set = _.sortBy(cardSet, 'matchTitle');
+        // For each guild, create a new card set
+        let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
+        let groupedCardSets = my.groupByProperty(mainCards, 'guild');
+        const cardSets = this.sortIntoArray(groupedCardSets, my.guilds);
+        cardSets.forEach(cardSet => {
+            let set = cardSet.sort((a, b) => my.sortBy('matchTitle', a, b));
             set.setDesc = getGuildByCode(set[0].guild).name;
             set.sortOrder = my.sortOrders.name;
             sortedSets.push(set);
         });
 
-        var basicLandCards = my.getBasicLandCards(cardList);
+        let basicLandCards = my.getBasicLandCards(cardList);
 
-        var guildAndBasicLandCards = basicLandCards.concat(_.flatten(sortedSets));
+        // Flatten the grouped sets into a flat array of single cards.
+        const sortedSetCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+        const guildAndBasicLandCards = basicLandCards.concat(sortedSetCards);
 
-        var nonGuildCards = my.getOtherCards(mainCards, guildAndBasicLandCards);
+        let nonGuildCards = my.getOtherCards(mainCards, guildAndBasicLandCards);
         if (nonGuildCards.length > 0) {
-            nonGuildCards.setDesc = "Non-Guild";
+            nonGuildCards.setDesc = 'Non-Guild';
             sortedSets.push(nonGuildCards);
         }
 
@@ -1075,8 +1089,9 @@ var mtgGen = (function (my, $) {
             sortedSets.push(basicLandCards);
         }
 
-        var selectedCards = _.flatten(sortedSets);
-        var otherCards = my.getOtherCards(cardList, selectedCards);
+        // Flatten the grouped sets into a flat array of single cards.
+        const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+        const otherCards = my.getOtherCards(cardList, selectedCards);
         if (otherCards.length > 0) {
             sortedSets.push(otherCards);
         }
@@ -1087,26 +1102,28 @@ var mtgGen = (function (my, $) {
     };
 
     my.sortAllByClan = function (cardList) {
-        var sortedSets = [];
+        let sortedSets = [];
 
-        // for each clan, create a new card set
-        var mainCards = _.filter(cardList, function (card) { return card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token; });
-        var groupedCardSets = _.groupBy(mainCards, function (card) { return card.clan; });
-        var cardSets = this.sortIntoArray(groupedCardSets, my.clans);
-        _.each(cardSets, function (cardSet) {
-            var set = _.sortBy(cardSet, 'matchTitle');
+        // For each clan, create a new card set
+        let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
+        let groupedCardSets = my.groupByProperty(mainCards, 'clan');
+        const cardSets = this.sortIntoArray(groupedCardSets, my.clans);
+        cardSets.forEach(cardSet => {
+            let set = cardSet.sort((a, b) => my.sortBy('matchTitle', a, b));
             set.setDesc = getClanByCode(set[0].clan).name;
             set.sortOrder = my.sortOrders.name;
             sortedSets.push(set);
         });
 
-        var basicLandCards = my.getBasicLandCards(cardList);
+        let basicLandCards = my.getBasicLandCards(cardList);
 
-        var clanAndBasicLandCards = basicLandCards.concat(_.flatten(sortedSets));
+        // Flatten the grouped sets into a flat array of single cards.
+        const sortedSetCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+        const clanAndBasicLandCards = basicLandCards.concat(sortedSetCards);
 
-        var nonClanCards = my.getOtherCards(mainCards, clanAndBasicLandCards);
+        let nonClanCards = my.getOtherCards(mainCards, clanAndBasicLandCards);
         if (nonClanCards.length > 0) {
-            nonClanCards.setDesc = "Non-Clan";
+            nonClanCards.setDesc = 'Non-Clan';
             sortedSets.push(nonClanCards);
         }
 
@@ -1114,8 +1131,9 @@ var mtgGen = (function (my, $) {
             sortedSets.push(basicLandCards);
         }
 
-        var selectedCards = _.flatten(sortedSets);
-        var otherCards = my.getOtherCards(cardList, selectedCards);
+        // Flatten the grouped sets into a flat array of single cards.
+        const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+        const otherCards = my.getOtherCards(cardList, selectedCards);
         if (otherCards.length > 0) {
             sortedSets.push(otherCards);
         }
@@ -1126,26 +1144,28 @@ var mtgGen = (function (my, $) {
     };
 
     my.sortAllByFaction = function (cardList) {
-        var sortedSets = [];
+        let sortedSets = [];
 
-        // for each faction, create a new card set
-        var mainCards = _.filter(cardList, function (card) { return card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token; });
-        var groupedCardSets = _.groupBy(mainCards, function (card) { return card.faction; });
-        var cardSets = this.sortIntoArray(groupedCardSets, my.factions);
-        _.each(cardSets, function (cardSet) {
-            var set = _.sortBy(cardSet, 'matchTitle');
+        // For each faction, create a new card set
+        let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
+        let groupedCardSets = my.groupByProperty(mainCards, 'faction');
+        const cardSets = this.sortIntoArray(groupedCardSets, my.factions);
+        cardSets.forEach(cardSet => {
+            let set = cardSet.sort((a, b) => my.sortBy('matchTitle', a, b));
             set.setDesc = getFactionByCode(set[0].faction).name;
             set.sortOrder = my.sortOrders.name;
             sortedSets.push(set);
         });
 
-        var basicLandCards = my.getBasicLandCards(cardList);
+        let basicLandCards = my.getBasicLandCards(cardList);
 
-        var factionAndBasicLandCards = basicLandCards.concat(_.flatten(sortedSets));
+        // Flatten the grouped sets into a flat array of single cards.
+        const sortedSetCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+        const factionAndBasicLandCards = basicLandCards.concat(sortedSetCards);
 
-        var nonFactionCards = my.getOtherCards(mainCards, factionAndBasicLandCards);
+        let nonFactionCards = my.getOtherCards(mainCards, factionAndBasicLandCards);
         if (nonFactionCards.length > 0) {
-            nonFactionCards.setDesc = "Non-Faction";
+            nonFactionCards.setDesc = 'Non-Faction';
             sortedSets.push(nonFactionCards);
         }
 
@@ -1153,8 +1173,9 @@ var mtgGen = (function (my, $) {
             sortedSets.push(basicLandCards);
         }
 
-        var selectedCards = _.flatten(sortedSets);
-        var otherCards = my.getOtherCards(cardList, selectedCards);
+        // Flatten the grouped sets into a flat array of single cards.
+        const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+        const otherCards = my.getOtherCards(cardList, selectedCards);
         if (otherCards.length > 0) {
             sortedSets.push(otherCards);
         }
@@ -1166,49 +1187,84 @@ var mtgGen = (function (my, $) {
 
     /* --------- Sorting Sets --------------------------------------------------------------------------------------------------------------------- */
     my.sortByTitle = function (cardList) {
-        var sortedCards = _.sortBy(cardList, 'matchTitle');
+        let sortedCards = cardList.sort((a, b) => my.sortBy('matchTitle', a, b));
         sortedCards.sortOrder = my.sortOrders.name;
         return sortedCards;
     };
 
     my.sortByColour = function (cardList) {
-        var sortedCards = _.sortBy(cardList, function (card) { return '' + padNum(card.colourOrder, 3) + card.matchTitle; }); // sort by colour then title
+        // Sort by colour then title
+        let sortedCards = cardList.sort((a, b) => {
+            const aProp = padNum(a.colourOrder, 3) + a.matchTitle;
+            const bProp = padNum(b.colourOrder, 3) + b.matchTitle;
+            return ((aProp < bProp) ? -1 : ((aProp > bProp) ? 1 : 0));
+        });
         sortedCards.sortOrder = my.sortOrders.colour;
         return sortedCards;
     };
 
     my.sortByRarity = function (cardList) {
-        var sortedCards = _.sortBy(cardList, function (card) { return '' + padNum(card.rarityOrder, 3) + padNum(card.colourOrder, 3) + card.matchTitle; }); // sort by rarityOrder, colourorder, then title
+        // Sort by rarityOrder, colourorder, then title
+        let sortedCards = cardList.sort((a, b) => {
+            const aProp = padNum(a.rarityOrder, 3) + padNum(a.colourOrder, 3) + a.matchTitle;
+            const bProp = padNum(b.rarityOrder, 3) + padNum(b.colourOrder, 3) + b.matchTitle;
+            return ((aProp < bProp) ? -1 : ((aProp > bProp) ? 1 : 0));
+        });
         sortedCards.sortOrder = my.sortOrders.rarity;
         return sortedCards;
     };
 
     my.sortByCost = function (cardList) {
-        var sortedCards = _.sortBy(cardList, function (card) { return '' + padNum((100 - card.ccost), 3) + card.matchTitle; }); // sort by converted cost desc then title
+        // Sort by converted cost desc then title
+        let sortedCards = cardList.sort((a, b) => {
+            const aProp = padNum(100 - a.ccost, 3) + a.matchTitle;
+            const bProp = padNum(100 - b.ccost, 3) + b.matchTitle;
+            return ((aProp < bProp) ? -1 : ((aProp > bProp) ? 1 : 0));
+        });
         sortedCards.sortOrder = my.sortOrders.cost;
         return sortedCards;
     };
 
     my.sortByType = function (cardList) {
-        var sortedCards = _.sortBy(cardList, function (card) { return '' + padNum(card.typeOrder, 3) + card.matchTitle; }); // sort by type then title
+        // Sort by type then title
+        let sortedCards = cardList.sort((a, b) => {
+            const aProp = padNum(a.typeOrder, 3) + a.matchTitle;
+            const bProp = padNum(b.typeOrder, 3) + b.matchTitle;
+            return ((aProp < bProp) ? -1 : ((aProp > bProp) ? 1 : 0));
+        });
         sortedCards.sortOrder = my.sortOrders.type;
         return sortedCards;
     };
 
     my.sortByGuild = function (cardList) {
-        var sortedCards = _.sortBy(cardList, function (card) { return '' + padNum(card.guildOrder, 3) + card.matchTitle; }); // sort by guild then title
+        // Sort by guild then title
+        let sortedCards = cardList.sort((a, b) => {
+            const aProp = padNum(a.guildOrder, 3) + a.matchTitle;
+            const bProp = padNum(b.guildOrder, 3) + b.matchTitle;
+            return ((aProp < bProp) ? -1 : ((aProp > bProp) ? 1 : 0));
+        });
         sortedCards.sortOrder = my.sortOrders.guild;
         return sortedCards;
     };
 
     my.sortByClan = function (cardList) {
-        var sortedCards = _.sortBy(cardList, function (card) { return '' + padNum(card.clanOrder, 3) + card.matchTitle; }); // sort by clan then title
+        // Sort by clan then title
+        let sortedCards = cardList.sort((a, b) => {
+            const aProp = padNum(a.clanOrder, 3) + a.matchTitle;
+            const bProp = padNum(b.clanOrder, 3) + b.matchTitle;
+            return ((aProp < bProp) ? -1 : ((aProp > bProp) ? 1 : 0));
+        });
         sortedCards.sortOrder = my.sortOrders.clan;
         return sortedCards;
     };
 
     my.sortByFaction = function (cardList) {
-        var sortedCards = _.sortBy(cardList, function (card) { return '' + padNum(card.factionOrder, 3) + card.matchTitle; }); // sort by faction then title
+        // Sort by faction then title
+        let sortedCards = cardList.sort((a, b) => {
+            const aProp = padNum(a.factionOrder, 3) + a.matchTitle;
+            const bProp = padNum(b.factionOrder, 3) + b.matchTitle;
+            return ((aProp < bProp) ? -1 : ((aProp > bProp) ? 1 : 0));
+        });
         sortedCards.sortOrder = my.sortOrders.faction;
         return sortedCards;
     };
@@ -1219,7 +1275,7 @@ var mtgGen = (function (my, $) {
     function padNum(num, width, padChar) {
         padChar = padChar || '0';
         num = num + '';
-        return num.length >= width ? num : new Array(width - num.length + 1).join(padChar) + num;
+        return num.padStart(width, padChar);
     }
 
     function capitaliseFirstLetter(string) {
@@ -1230,7 +1286,7 @@ var mtgGen = (function (my, $) {
     my.friendly_url = function (str, max) {
         if (str === undefined) return str;
         if (max === undefined) max = 32;
-        var a_chars = new Array(
+        let a_chars = new Array(
             new Array("a", /[áàâãªÁÀÂÃ]/g),
             new Array("e", /[éèêÉÈÊ]/g),
             new Array("i", /[íìîÍÌÎ]/g),
@@ -1240,7 +1296,7 @@ var mtgGen = (function (my, $) {
             new Array("n", /[Ññ]/g)
         );
         // Replace vowel with accent without them
-        for (var i = 0; i < a_chars.length; i++) {
+        for (let i = 0; i < a_chars.length; i++) {
             str = str.replace(a_chars[i][1], a_chars[i][0]);
         }
         // first replace whitespace by -, second remove repeated - by just one, third turn in low case the chars,
