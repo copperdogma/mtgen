@@ -573,7 +573,8 @@ var mtgGen = (function (my, $) {
                 }
                 else {
                     clause = clause.toLowerCase();
-                    matchingCards = sourceSet.filter(card => card.hasOwnProperty(query2[1]) && card[query2[1]].toString().toLowerCase().match(clause));
+                    //CAMKILL:matchingCards = sourceSet.filter(card => card.hasOwnProperty(query2[1]) && card[query2[1]].toString().toLowerCase().match(clause));
+                    matchingCards = Object.values(sourceSet).filter(card => card.hasOwnProperty(query2[1]) && card[query2[1]].toString().toLowerCase().match(clause));
                 }
 
                 // if it's a title query and the query specified "inOrder:true" then the order of the cards is important; sort by that
