@@ -110,14 +110,13 @@ var mtgGen = (function (my, $) {
             this.setMenu = new my.SetMenuView({ el: this.el });
             this.setMenu.parentMenu = this.mainMenu;
 
-            var topThis = this;
             my.products.forEach(product => {
                 if (!product.hasOwnProperty('isVisible') || product.isVisible === true) {
                     let options = Object.assign({}, product); // shallow clone
-                    options.el = topThis.el;
+                    options.el = this.el;
                     options.originalProductName = options.productName;
                     options.productName = 'product-' + options.productName;
-                    topThis.ProductViews[options.originalProductName] = new my.ProductView(options);
+                    this.ProductViews[options.originalProductName] = new my.ProductView(options);
                 }
             });
         }
@@ -125,8 +124,8 @@ var mtgGen = (function (my, $) {
         , render: function () {
             my.trigger('menusInitialized');
 
-            this.$el.empty(); // Get rid of the Loading message
-            this.$el.html('<section id="products"></section><section id="product-content"></section><div class="back-to-top"><a class="button top" href="#">Back to top</a></a>');
+            this.el.innerHTML = ''; // Get rid of the Loading message
+            this.el.innerHTML = '<section id="products"></section><section id="product-content"></section><div class="back-to-top"><a class="button top" href="#">Back to top</a></a>';
 
             // Render the initial views
             my.initViews.forEach(view => view.render());
@@ -136,7 +135,7 @@ var mtgGen = (function (my, $) {
 
             // If there is only one Product view, hide it the tab button (we need to render it so it will auto-execute the main Product)
             if (Object.keys(this.ProductViews).length < 2) {
-                $("#products>a.button").hide();
+                document.querySelector('#products>a.button').style.display = 'none';
             }
 
             // If specified, auto-showTab the startup product from the Draw (if there is one),
@@ -155,17 +154,16 @@ var mtgGen = (function (my, $) {
     // All results should be rendered through this function
     my.displayResults = function (productName, html) {
         my.trigger('layoutChanging');
-        this.$contentElem.find('#product-content .' + productName + ' .result').html(html);
+        this.contentElem.querySelector('#product-content .' + productName + ' .result').innerHTML = html;
         setTimeout(function () { my.trigger('layoutChanged'); }, 500); // delay to let it render so target elements exist
     };
 
     // Replaces a set's contents
     my.renderSetUpdate = function (productName, setID, cards, parentSet) {
         my.trigger('layoutChanging');
-        var $newSet = my.renderCardSet(setID, cards, parentSet);
-        var $set = this.$contentElem.find('#product-content .' + productName + ' .result .set[data-setid=' + setID + ']');
-        $set.empty();
-        $set.append($newSet);
+        const newSet = my.renderCardSet(setID, cards, parentSet);
+        this.contentElem.querySelector('#product-content .' + productName + ' .result .set[data-setid="' + setID + '"]')
+            .innerHTML = newSet;
         setTimeout(function () { my.trigger('layoutChanged'); }, 500); // delay to let it render so target elements exist
     };
 
@@ -204,29 +202,16 @@ var mtgGen = (function (my, $) {
             });
     */
 
-    my.renderCardImage = function (card, foilClass, finalTitle) {
-        var cardImageTemplate = '<img data-usable-for-deck-building="[[UFDB]]" src="[[SRC]]" alt="[[TITLE]]" title="[[TITLE]]" width="[[WIDTH]]" height="[[HEIGHT]]" />';
+    my.renderCardImage = function (card) {
+        const foilClass = card.foil ? ' foil' : '';
+        const title = card.title + (card.foil ? ' - Foil' : '');
 
-        var foilClass = '';
-        var title = card.title;
-        if (card.foil) {
-            foilClass = ' foil';
-            title += ' - Foil';
-        }
-
-        var htmlOut = cardImageTemplate.replace('[[FOIL]]', foilClass)
-            .replace(/\[\[TITLE\]\]/g, finalTitle)
-            .replace('[[UFDB]]', card.usableForDeckBuilding)
-            .replace('[[SRC]]', card.src)
-            .replace('[[WIDTH]]', (card.width || 265))
-            .replace('[[HEIGHT]]', (card.height || 370));
+        const htmlOut = `<img data-usable-for-deck-building="${card.usableForDeckBuilding}" src="${card.src}" alt="${title}" title="${title}" width="${(card.width || 265)}" height="${(card.height || 370)}" />`;
 
         return htmlOut;
     };
 
     my.renderCards = function (cards) {
-        const cardTemplate = '<span class="card[[FOIL]][[DBLFACE]]" title="[[TITLE]]">[[A_START]][[IMGS]]<em class="title">[[TITLE]]</em>[[REASON]][[A_END]]</span>';
-
         const htmlOut = cards.map(card => {
             let foilClass = '', doubleFaceClass = '', aStart = '', aEnd = '';
             let title = card.title;
@@ -252,13 +237,8 @@ var mtgGen = (function (my, $) {
                 aEnd = "</a>";
             }
 
-            return cardTemplate.replace('[[FOIL]]', foilClass)
-                .replace('[[DBLFACE]]', doubleFaceClass)
-                .replace(/\[\[TITLE\]\]/g, title)
-                .replace('[[A_START]]', aStart)
-                .replace('[[A_END]]', aEnd)
-                .replace('[[REASON]]', (card.includedReason !== undefined) ? '<em class="reason">(' + card.includedReason + ')</em>' : '')
-                .replace('[[IMGS]]', cardImageHtml);
+            const includedReason = (card.includedReason !== undefined) ? '<em class="reason">(' + card.includedReason + ')</em>' : '';
+            return `<span class="card${foilClass}${doubleFaceClass}" title="${title}">${aStart}${cardImageHtml}<em class="title">${title}</em>${includedReason}${aEnd}</span>`;
         });
         return htmlOut;
     };
@@ -448,7 +428,6 @@ var mtgGen = (function (my, $) {
 
         , productName: undefined
         , typeButtonId: undefined
-        , $productTab: undefined
 
         , hasOptions: false
         , hasPackPresets: false
@@ -482,7 +461,7 @@ var mtgGen = (function (my, $) {
         // TODO: Incompatible with Backbone >=v1.2.0: Views now always delegate their events in setElement.
         //      You can no longer modify the events hash or your view's el property in initialize.
         , events: function () {
-            var events = {};
+            let events = {};
             events["click #products #" + this.typeButtonId] = "showTab";
             events["click #product-content ." + this.productName + " .sort-all-by-name"] = "sortAllByTitle";
             events["click #product-content ." + this.productName + " .sort-all-by-colour"] = "sortAllByColour";
@@ -519,27 +498,31 @@ var mtgGen = (function (my, $) {
             return events;
         }
 
+        , getCurrentTab: function () {
+            return document.querySelector('#product-content .active');
+        }
+
         , renderType: function () {
-            this.$el.find('#product-content').append("<section class='" + this.productName + "'><section class='options'></section><section class='result' class='stickem-container'></section></section>");
-            this.$el.find('#products').append('<a href="#" id="' + this.typeButtonId + '" class="button">' + this.productDesc + '</a>');
-            this.$productTab = $(this.$el.find('#product-content .' + this.productName));
+            this.el.querySelector('#product-content').insertAdjacentHTML('beforeend', "<section class='" + this.productName + "'><section class='options'></section><section class='result' class='stickem-container'></section></section>");
+            this.el.querySelector('#products').insertAdjacentHTML('beforeend', '<a href="#" id="' + this.typeButtonId + '" class="button">' + this.productDesc + '</a>');
             return this;
         }
 
         , showTab: function () {
             // Set active tab's css class
-            this.$el.find('#products .button').removeClass('active');
-            this.$el.find('#' + this.typeButtonId).addClass('active');
+            this.el.querySelectorAll('#products .button').forEach(n => n.classList.remove('active'));
+            this.el.querySelector('#' + this.typeButtonId).classList.add('active');
 
             my.mainView.currentView = this;
+
+            this.el.querySelectorAll('#product-content > section').forEach(n => n.classList.remove('active'));
+            this.el.querySelector('#product-content .' + this.productName).classList.add('active');
 
             // Render the options if not already done, hide old tab, show new tab
             if (!this.isInitialized) {
                 this.isInitialized = true;
                 this.renderOptions();
             }
-            $('#product-content > section').removeClass('active');
-            $('#product-content .' + this.productName).addClass('active');
 
             return false;
         }
@@ -561,7 +544,7 @@ var mtgGen = (function (my, $) {
 
                 const packsOut = "<div class='packs'>" + this.renderPackPreset(this.options.packs, defaultPreset) + "</div>";
 
-                this.$productTab.find('.options').html(presetsOut + packsOut);
+                this.getCurrentTab().querySelector('.options').innerHTML = presetsOut + packsOut;
 
                 // Render the "results" from the saved draw data
                 const savedDrawSets = my.draw.sets.map(drawSet => {
@@ -617,7 +600,7 @@ var mtgGen = (function (my, $) {
 
                 const packsOut = "<div class='packs'>" + this.renderPackPreset(this.options.packs, defaultPreset) + "</div>";
 
-                this.$productTab.find('.options').html(presetsOut + packsOut);
+                this.getCurrentTab().querySelector('.options').innerHTML = presetsOut + packsOut;
 
                 if (this.options.hasOwnProperty('autoGenerate') && this.options.autoGenerate === true) {
                     this.renderResultsFromOptions();
@@ -637,7 +620,7 @@ var mtgGen = (function (my, $) {
                     htmlOut += "<a href='#' class='button" + defaultActive + "' data-pack='" + pack.packName + "'>" + packDesc + "</a>";
                 });
 
-                this.$productTab.find('.options').html(htmlOut);
+                this.getCurrentTab().querySelector('.options').innerHTML = htmlOut;
 
                 if (this.options.hasOwnProperty('autoGenerate') && this.options.autoGenerate === true) {
                     this.renderResultsFromOptions();
@@ -672,12 +655,13 @@ var mtgGen = (function (my, $) {
 
             // If there were options rendered (but not buttons), generate the sets based on the filled-in options
             if (this.hasButtonOptions) {
-                let activeButton = this.$productTab.find('.button.active');
-                if (activeButton.length < 1) {
+                let activeButton = this.getCurrentTab().querySelector('.button.active');
+
+                if (activeButton === null) {
                     console.error('ERROR: autoGenerate specified but cannot find active button');
                 }
                 else {
-                    const packName = activeButton.attr('data-pack');
+                    const packName = activeButton.getAttribute('data-pack');
                     packs = [{ packName: packName, count: 1 }];
                 }
             }
@@ -700,11 +684,10 @@ var mtgGen = (function (my, $) {
         }
 
         , renderPack: function (event) {
-            let $button = $(event.currentTarget);
-            $button.parent().find('a.button').removeClass('active');
-            $button.addClass('active');
+            event.target.parentNode.querySelectorAll('a.button').forEach(n => n.classList.remove('active'));
+            event.target.classList.add('active');
 
-            const packName = $button.attr('data-pack');
+            const packName = event.target.getAttribute('data-pack');
 
             this.generatedSets = [];
             this.generatedSets.push(my.generateCardSetFromPack(packName));
@@ -730,17 +713,18 @@ var mtgGen = (function (my, $) {
             else {
                 sortAllAndRenderFunction.call(this, this.allCards);
             }
+            my.trigger('resultsRendered', my.getCurrentTab); // Tells the UI a set of cards was rendered. Currently used to trigger Holder.run().
 
             return this;
         }
 
         , switchPreset: function (event) {
-            const $button = $(event.currentTarget);
-            $button.parent().find('a.button').removeClass('active');
-            $button.addClass('active');
+            // Get preset
+            event.target.parentNode.querySelectorAll('a.button').forEach(n => n.classList.remove('active'));
+            event.target.classList.add('active');
 
             // Get preset
-            const presetName = $button.attr('data-preset');
+            const presetName = event.target.getAttribute('data-preset');
             const chosenPreset = this.options.options.presets.find(preset => preset.presetName == presetName);
             if (chosenPreset === undefined) {
                 console.error(`Cannot find requested presetName: ${presetName}`);
@@ -749,7 +733,7 @@ var mtgGen = (function (my, $) {
 
             const packsOut = this.renderPackPreset(this.options.packs, chosenPreset);
 
-            this.$productTab.find('.packs').html(packsOut);
+            this.getCurrentTab().querySelector('.packs').innerHTML = packsOut;
 
             return false;
         }
@@ -791,7 +775,7 @@ var mtgGen = (function (my, $) {
             if (cardSets.length == 1) {
                 title = cardSets[0].setDesc;
             }
-            var caveats = '';
+            let caveats = '';
             if (this.options.hasOwnProperty('caveats')) {
                 this.options.caveats.forEach(caveat => caveats += "<div class='caveat'>" + caveat + "</div>");
             }
@@ -896,7 +880,7 @@ var mtgGen = (function (my, $) {
 
         // Sorting individual sets  -----------------------------------------------------------------------------------------------
         , sortByTitle: function (events) {
-            const setID = $(events.currentTarget).attr('data-setid');
+            const setID = events.target.getAttribute('data-setid');
             let sortedCards = my.sortByTitle(this.sortedSets[setID]);
             sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
             sortedCards.sortOrder = my.sortOrders.name;
@@ -905,7 +889,7 @@ var mtgGen = (function (my, $) {
         }
 
         , sortByColour: function (events) {
-            const setID = $(events.currentTarget).attr('data-setid');
+            const setID = events.target.getAttribute('data-setid');
             let sortedCards = my.sortByColour(this.sortedSets[setID]);
             sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
             sortedCards.sortOrder = my.sortOrders.colour;
@@ -914,7 +898,7 @@ var mtgGen = (function (my, $) {
         }
 
         , sortByRarity: function (events) {
-            const setID = $(events.currentTarget).attr('data-setid');
+            const setID = events.target.getAttribute('data-setid');
             let sortedCards = my.sortByRarity(this.sortedSets[setID]);
             sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
             sortedCards.sortOrder = my.sortOrders.rarity;
@@ -923,7 +907,7 @@ var mtgGen = (function (my, $) {
         }
 
         , sortByCost: function (events) {
-            const setID = $(events.currentTarget).attr('data-setid');
+            const setID = events.target.getAttribute('data-setid');
             let sortedCards = my.sortByCost(this.sortedSets[setID]);
             sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
             sortedCards.sortOrder = my.sortOrders.cost;
@@ -932,7 +916,7 @@ var mtgGen = (function (my, $) {
         }
 
         , sortByType: function (events) {
-            const setID = $(events.currentTarget).attr('data-setid');
+            const setID = events.target.getAttribute('data-setid');
             let sortedCards = my.sortByType(this.sortedSets[setID]);
             sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
             sortedCards.sortOrder = my.sortOrders.type;
@@ -941,7 +925,7 @@ var mtgGen = (function (my, $) {
         }
 
         , sortByGuild: function (events) {
-            const setID = $(events.currentTarget).attr('data-setid');
+            const setID = events.target.getAttribute('data-setid');
             let sortedCards = my.sortByGuild(this.sortedSets[setID]);
             sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
             sortedCards.sortOrder = my.sortOrders.guild;
@@ -950,7 +934,7 @@ var mtgGen = (function (my, $) {
         }
 
         , sortByClan: function (events) {
-            const setID = $(events.currentTarget).attr('data-setid');
+            const setID = events.target.getAttribute('data-setid');
             let sortedCards = my.sortByClan(this.sortedSets[setID]);
             sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
             sortedCards.sortOrder = my.sortOrders.clan;
@@ -959,7 +943,7 @@ var mtgGen = (function (my, $) {
         }
 
         , sortByFaction: function (events) {
-            const setID = $(events.currentTarget).attr('data-setid');
+            const setID = events.target.getAttribute('data-setid');
             let sortedCards = my.sortByFaction(this.sortedSets[setID]);
             sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
             sortedCards.sortOrder = my.sortOrders.faction;
@@ -968,10 +952,7 @@ var mtgGen = (function (my, $) {
         }
 
         , sortSetByOpenedOrder: function (events) {
-            const setID = $(events.currentTarget).attr('data-setid');
-
-            //CAMKILL: this is now broken.. but because generatedSets are undefined here.. not sure why
-            // Just revert back to original set sort order
+            const setID = events.target.getAttribute('data-setid');
             this.sortedSets[setID] = this.generatedSets[setID].slice(); // array clone
             this.sortedSets[setID].setDesc = this.generatedSets[setID].setDesc; // add the desc back
             this.sortedSets[setID].sortOrder = my.sortOrders.order;
@@ -1007,7 +988,7 @@ var mtgGen = (function (my, $) {
 
                 // If we were passed the actual set of packs, dig one level deeper to get the pack name
                 // otherwise we've just been passed a simple packname/packdesc array from the UI
-                var packName2 = packName.packName ? packName.packName : packName;
+                const packName2 = packName.packName ? packName.packName : packName;
 
                 // Set the default pack showing in the drop-down if provided
                 if (inputSettings && packName2 == inputSettings.defaultPackName) {
@@ -1027,10 +1008,22 @@ var mtgGen = (function (my, $) {
         }
 
         , addBooster: function () {
-            let html = $('#boosters .booster-input-template').html();
+            //let html = $('#boosters .booster-input-template').html();
 
-            let boosterCount = $('#boosters .booster-input').length + 1;
-            while ($('#boosters .booster-' + boosterCount).length > 0) {
+            //let boosterCount = $('#boosters .booster-input').length + 1;
+            //while ($('#boosters .booster-' + boosterCount).length > 0) {
+            //    boosterCount++;
+            //}
+
+            //html = html.replace(/booster-count-template/g, 'booster-count-' + boosterCount)
+            //    .replace(/booster-template/g, 'booster-' + boosterCount);
+            //html = "<div class='booster-input'>" + html + "</div>";
+
+            //$(html).insertBefore(this.$productTab.find('#boosters .booster-input-template'));
+            let html = document.querySelector('#boosters .booster-input-template').innerHTML;
+
+            let boosterCount = document.querySelectorAll('#boosters .booster-input').length + 1;
+            while (document.querySelector('#boosters .booster-' + boosterCount)) {
                 boosterCount++;
             }
 
@@ -1038,29 +1031,25 @@ var mtgGen = (function (my, $) {
                 .replace(/booster-template/g, 'booster-' + boosterCount);
             html = "<div class='booster-input'>" + html + "</div>";
 
-            $(html).insertBefore(this.$productTab.find('#boosters .booster-input-template'));
+            this.getCurrentTab().querySelector('#boosters .booster-input-template').insertAdjacentHTML('beforebegin', html);
         }
 
         , removeBooster: function (event) {
-            $(event.currentTarget).parent().remove();
+            event.target.parentNode.parentNode.removeChild(event.target.parentNode);
         }
 
         , getPacksFromInput: function () {
             let packs = [];
 
             // Convert the pack option elements into an array of set names to be generated
-            //CAMKILL: restrict these to only the product tab for speed, like it originally was
-            //CAMKILL:const packEls = this.$productTab.find('.options .booster-input select');
             const packEls = document.querySelectorAll('.options .booster-input select');
             packEls.forEach(el => {
                 let boosterCount = 1;
-                //CAMKILL:const boosterCountEl = this.$productTab.find('#' + $(el).attr('data-count-el'));
                 const boosterCountEl = document.querySelector('#' + el.getAttribute('data-count-el'));
                 if (boosterCountEl.length < 1) {
                     console.warn(`Missing booster count (data-count-el) for ${el.id}`);
                 }
                 else {
-                    //CAMKILL:boosterCount = $(boosterCountEl[0]).val();
                     boosterCount = boosterCountEl.value;
                 }
                 const pack = { count: boosterCount, packName: el.value };
@@ -1087,7 +1076,7 @@ var mtgGen = (function (my, $) {
 
         , initialize: function () {
             this.$el.find('a.save-draw').fancybox();
-            this.$el.on('click', 'a.save-draw', this.saveDraw);
+            this.el.addEventListener('click', (e) => { if (e.target.classList.contains('save-draw')) { this.saveDraw(e); } });
 
             my.on('menusInitialized', function () {
                 my.mainView.mainMenu.addMenuItem("saveDraw", 99, function () {
@@ -1132,7 +1121,7 @@ var mtgGen = (function (my, $) {
                 displayDrawResults(my.mainView.currentView.saveDrawResults);
             }
             else {
-                $('#save-draw input').val('Loading...');
+                document.querySelector('#save-draw input').value = 'Loading...';
                 $.post(`/${my.setCode}/SaveDraw`, { data: JSON.stringify(drawData) })
                     .done(function (returnJson) {
                         // e.g. return: { "drawId": "m09mJw", "url": "ogw?draw=m09mJw" }
@@ -1147,7 +1136,7 @@ var mtgGen = (function (my, $) {
         }
 
         , render: function () {
-            this.$el.append("<div style='display: none'>"
+            this.el.insertAdjacentHTML('beforeend', "<div style='display: none'>"
                 + "<aside id='save-draw' class='modal'>"
                 + "<h2>Save or Share Your Draw</h2>"
                 + "<section>"
@@ -1166,7 +1155,12 @@ var mtgGen = (function (my, $) {
         history.pushState({ setCode: my.setCode, drawId: drawData.drawId },
             my.set.name + " Draw", drawData.url); // Change the url to match the saved draw
         my.mainView.currentView.saveDrawResults = drawData; // Save it so we don't regenerate it
-        $("#save-draw input").val(window.location.href).select().focus(); // Display it
+
+        // Display it
+        const saveDrawInput = document.querySelector("#save-draw input");
+        saveDrawInput.value = window.location.href
+        saveDrawInput.select();
+        saveDrawInput.focus();
     }
 
     return my; // END Save Draw module
@@ -1183,7 +1177,7 @@ var mtgGen = (function (my, $) {
 
         , initialize: function () {
             this.$el.find('a.export').fancybox();
-            this.$el.on('click', 'a.export', this.showExport);
+            this.el.addEventListener('click', (e) => { if (e.target.classList.contains('export')) { this.showExport(e); } });
 
             my.on('menusInitialized', function () {
                 my.mainView.mainMenu.addMenuItem("export", 99, () => '<a href="#exporter" class="button export" data-export="all">Export</a>');
@@ -1192,13 +1186,12 @@ var mtgGen = (function (my, $) {
         }
 
         , showExport: function (event) {
-            const $el = $(event.currentTarget);
-            const exportType = $el.attr('data-export');
+            const exportType = event.target.getAttribute('data-export');
             if (exportType == 'all') {
                 addExportableTextFormats(my.mainView.currentView.generatedSets);
             }
             else {
-                const setID = $el.parents('.set').attr('data-setid');
+                const setID = event.target.closest('.set').getAttribute('data-setid');
                 let sets = [];
                 if (my.mainView.currentView.sortedSets[setID]) {
                     sets.push(my.mainView.currentView.sortedSets[setID]);
@@ -1208,6 +1201,7 @@ var mtgGen = (function (my, $) {
                 }
                 addExportableTextFormats(sets);
             }
+            my.trigger('exporting', my.setCode); // triggers google analytics tracking event
             // No 'return false;' so fancybox can trigger afterward
         }
 
@@ -1216,7 +1210,7 @@ var mtgGen = (function (my, $) {
         }
 
         , render: function () {
-            this.$el.append("<div style='display: none'>"
+            this.el.insertAdjacentHTML('beforeend', "<div style='display: none'>"
                 + "<aside id='exporter' class='modal'>"
                 + "<h2>Export Your Boosters</h2>"
                 + "<section class='export-set'>"
@@ -1243,7 +1237,7 @@ var mtgGen = (function (my, $) {
 
         // Toggle between export formats
         , changeExportFormat: function (e) {
-            const exportType = $(e.target).attr('data-export-type').toLowerCase();
+            const exportType = e.target.getAttribute('data-export-type').toLowerCase();
             chooseExportFormat(exportType);
             return false;
         }
@@ -1262,7 +1256,7 @@ var mtgGen = (function (my, $) {
         const attrib = 'Created by MtG Generator: ' + window.location.href.replace('index.html', '').replace('#', '');
 
         // Store the exports so we can do various things with them later
-        $('#exporter .card-count').text(`${allCards.length} cards total, ${countedCards.length} unique`);
+        document.querySelector('#exporter .card-count').textContent = `${allCards.length} cards total, ${countedCards.length} unique`;
 
         exports.dec = renderDecFormat(countedCards, attrib);
         exports.txt = renderTxtFormat(countedCards, attrib);
@@ -1274,18 +1268,18 @@ var mtgGen = (function (my, $) {
     }
 
     function chooseExportFormat(exportType) {
-        $('.export-set a.button').removeClass('active');
-        $('.export-set a.export-' + exportType).addClass('active');
+        document.querySelector('.export-set a.button').classList.remove('active');
+        document.querySelector('.export-set a.export-' + exportType).classList.add('active');
 
-        $('#exporter textarea').val(exports[exportType]);
+        document.querySelector('#exporter textarea').value = exports[exportType];
         setLinkToDownloadFile('.export-detail a.export-download', exportType);
     }
 
     function setLinkToDownloadFile(linkSelector, exportType) {
         const utf8encodedContent = strToUTF8Arr(exports[exportType]);
         const encodedContent = base64EncArr(utf8encodedContent);
-        $(linkSelector).attr('href', 'data:text/octet-stream;base64,' + encodedContent);
-        $(linkSelector).attr('download', `mtg-generator-${my.set.slug}-prerelease.${exportType}`); // 'download' attr is Chrome/FF-only to set download filename
+        document.querySelector(linkSelector).setAttribute('href', 'data:text/octet-stream;base64,' + encodedContent);
+        document.querySelector(linkSelector).setAttribute('download', `mtg-generator-${my.set.slug}-prerelease.${exportType}`); // 'download' attr is Chrome/FF-only to set download filename
     }
 
     function getAllDeckBuildingGeneratedCards(cardSets) {
@@ -1298,7 +1292,7 @@ var mtgGen = (function (my, $) {
             const matchTitle = card.matchTitle;
             card.title = card.title.replace("’", "'"); // ’ messes up cockatrice
             if (countedCards.has(matchTitle)) {
-                var existingCard = countedCards.get(matchTitle);
+                let existingCard = countedCards.get(matchTitle);
                 existingCard.count++;
                 countedCards.set(matchTitle, existingCard);
             } else {
@@ -1365,7 +1359,7 @@ var mtgGen = (function (my, $) {
         let output = `// ${attrib}\r\n`;
         let prefix = '    ';
         if (cards !== null && cards.length > 0) {
-            output += cards.reduce((cardOutput, card) => 
+            output += cards.reduce((cardOutput, card) =>
                 cardOutput += prefix + card.count + ' [' + card.set.toUpperCase() + '] ' + card.title.replace(' & ', '/') + '\r\n',
                 '');
         }

@@ -1348,6 +1348,6 @@ class CardDataImporter {
             case 'r': cardBgColour = 'f6d1be'; break;
             case 'g': cardBgColour = 'c7d4ca'; break;
         }
-        return `holder.js/265x370/#${cardBgColour}:#${cardTextColour}/text:${this._cardTitleUrl(card.title, 500)}`;
+        return `holder.js/265x370?bg=${cardBgColour}&fg=${cardTextColour}&text=${this._cardTitleUrl(card.title, 500)}`;
     }
 }

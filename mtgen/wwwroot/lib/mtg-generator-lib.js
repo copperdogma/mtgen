@@ -250,7 +250,7 @@ var mtgGen = (function (my, $) {
 
         my.SetCardCount = options.setCardCount;
 
-        my.$contentElem = $(my.getRequiredOption(options, 'contentElem'));
+        my.contentElem = document.querySelector(my.getRequiredOption(options, 'contentElem'));
 
         // if missing any essentials, abort
         my.getRequiredOption(options, 'setFile');
@@ -447,8 +447,8 @@ var mtgGen = (function (my, $) {
 
                 my.SetCardsLoadedCount = setCardsLoadedCount;
 
-                // render the Main view
-                my.mainView = new my.MainView({ el: my.$contentElem });
+                // Render the Main view
+                my.mainView = new my.MainView({ el: my.contentElem });
                 my.mainView.render();
 
                 my.trigger('ready');
@@ -573,7 +573,6 @@ var mtgGen = (function (my, $) {
                 }
                 else {
                     clause = clause.toLowerCase();
-                    //CAMKILL:matchingCards = sourceSet.filter(card => card.hasOwnProperty(query2[1]) && card[query2[1]].toString().toLowerCase().match(clause));
                     matchingCards = Object.values(sourceSet).filter(card => card.hasOwnProperty(query2[1]) && card[query2[1]].toString().toLowerCase().match(clause));
                 }
 
@@ -616,7 +615,7 @@ var mtgGen = (function (my, $) {
                     // If it's a boolean query, convert both sides to boolean and test
                     else if (query2[2] === true || query2[2] === 'true' || query2[2] === false || query2[2] === 'false') {
                         const boolQueryValue = JSON.parse(query2[2]);
-                        matchingCards = sourceSet.filter(card => {
+                        matchingCards = Object.values(sourceSet).filter(card => {
                             if (card[query2[1]] !== undefined) {
                                 if (boolQueryValue === true) {
                                     return (card[query2[1]] === true || card[query2[1]] === 'true');

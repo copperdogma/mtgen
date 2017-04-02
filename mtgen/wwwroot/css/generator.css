@@ -348,7 +348,9 @@ main > em {
 	background: rgba(70,70,70,.8);
 }
 #product-content .result .set h2 {
-	z-index: 100;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 #product-content .result .set h2.is_stuck {
 	-webkit-box-shadow: 0 10px 20px 0 rgba(255, 255, 255, 1);

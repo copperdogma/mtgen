@@ -73,8 +73,7 @@
     <script src="~/lib/fancybox2/jquery.fancybox.pack.js?v=2.1.5"></script>
     <script src="~/lib/mtg-generator-lib.js?v2.3"></script>
     <script src="~/lib/mtg-generator.js?v=2.1"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.4.0/holder.js"></script>
-    <script src="~/lib/jquery.sticky-kit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js"></script>
     <script>
         $(document).ready(function () {
             mtgGen.run({
@@ -90,39 +89,31 @@
 
             $("#product-content .card a").fancybox();
 
-            // dynamic card loading counts
-            $("#card-count .total").text(mtgGen.setCardCount);
-            var $currentCardCount = $("#card-count .current");
-            mtgGen.on('playableCardLoaded',function(setCardsLoadedCount) { $currentCardCount.text(setCardsLoadedCount);	});
+            // Dynamic card loading counts
+            document.querySelector('#card-count .total').textContent = mtgGen.setCardCount;
+            const currentCardCountEl = document.querySelector('#card-count .current');
+            mtgGen.on('playableCardLoaded', setCardsLoadedCount => currentCardCountEl.textContent = setCardsLoadedCount);
 
-            mtgGen.on('ready',function(setCardsLoadedCount) { Holder.run(); });
+            mtgGen.on('resultsRendered', () => Holder.run()); // Properly render any placeholder images.
 
-            // sticky headers
-            mtgGen.on('layoutChanging',function(setCardsLoadedCount) { $(".result .set h2").trigger("sticky_kit:detach"); });
-            mtgGen.on('layoutChanged',function(setCardsLoadedCount) {
-                $(".result .set h2").stick_in_parent();
-                Holder.run();
-            });
+            // Analytics event tracking
+            const currProduct = '#products a.active';
+            const currOption = '#product-content>section.active .options a.active';
+            mtgGen.on('cardSetsGenerated', setCode =>
+                ga('send', 'event', setCode.toUpperCase(), 'Generate', `${setCode.toUpperCase()}: generate: ${currProduct.textContent}, ${currOption.textContent}`));
+            mtgGen.on('drawSaved', setCode =>
+                ga('send', 'event', setCode.toUpperCase(), 'SaveDraw', `${setCode.toUpperCase()}: save-draw: ${currProduct.textContent}`));
+            mtgGen.on('drawLoaded', (setCode, drawId) =>
+                ga('send', 'event', setCode.toUpperCase(), 'LoadDraw', `${setCode.toUpperCase()}: load-draw: ${currProduct.textContent}, drawId`));
+            mtgGen.on('exporting', (setCode, drawId) =>
+                ga('send', 'event', setCode.toUpperCase(), 'Export', `${setCode.toUpperCase()}: load-draw: ${currProduct.textContent}, ${currOption.textContent}`));
 
-            // analytics event tracking
-            var currProduct = "#products a.active";
-            var currOption = "#product-content>section.active .options a.active";
-            mtgGen.on('cardSetsGenerated', function (setCode) {
-                ga('send', 'event', setCode.toUpperCase(), 'Generate', setCode.toUpperCase() + ": generate: " + $(currProduct).text() + ", " + $(currOption).text());
-            });
-            mtgGen.on('drawSaved', function (setCode) {
-                ga('send', 'event', setCode.toUpperCase(), 'SaveDraw', setCode.toUpperCase() + ": save-draw: " + $(currProduct).text());
-            });
-            mtgGen.on('drawLoaded', function (setCode, drawId) {
-                ga('send', 'event', setCode.toUpperCase(), 'LoadDraw', setCode.toUpperCase() + ": load-draw: " + $(currProduct).text() + ", " + drawId);
-            });
-            $('.export-download').on('click', function (setCode) {
-                ga('send', 'event', setCode.toUpperCase(), 'Export', setCode.toUpperCase() + ": export: " + $(currProduct).text() + ", " + $(currOption).text());
-            });
-
-            $("aside.info a.update-more").on('click', function (event) {
-                $(event.currentTarget).hide();
-                $("aside.info p").removeClass('hidden');
+            // "Read more" support in top news section
+            document.querySelector('aside.info').addEventListener('click', event => {
+                if (event.target.classList.contains('update-more')) {
+                    event.target.style.display = 'none';
+                    document.querySelectorAll('aside.info p').forEach(n => n.classList.remove('hidden'));
+                }
             });
         });
     </script>
