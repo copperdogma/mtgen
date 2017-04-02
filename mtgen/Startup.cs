@@ -44,6 +44,7 @@ namespace mtgen
             // Add application services.
             services.AddTransient<ISetService, SetService>();
             services.AddTransient<IStorageContext, StorageContext>();
+            services.AddTransient<IEncryptionService, EncryptionService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
