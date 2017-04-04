@@ -71,10 +71,18 @@ class CardExceptionGenerator extends CardDataImporter {
 
                     // x = skip a card
                     const skip = /x/gi.test(pattern);
+                    const add = /a([0-9]{3})/gi.exec(pattern);
                     if (skip) {
                         skipCard = true;
                         card.skippedCardIndex = index;
                         skippedCards.push(card);
+                    }
+                    // a = add the card using just the image/number
+                    else if (add) {
+                        card.title = 'TitlePlaceholder';
+                        if (add[1]) {
+                            card.num = add[1];
+                        }
                     }
                     else {
                         // e.g.: g107, or just g (and it will then use the default starting number)

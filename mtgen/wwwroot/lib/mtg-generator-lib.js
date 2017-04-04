@@ -187,7 +187,7 @@ var mtgGen = (function (my, $) {
     // Create a sanitized title to avoid the punctuation differences
     // Site to lookup chars: http://www.fileformat.info/info/unicode/char/search.htm
     my.createMatchTitle = function (title) {
-        let clean = title.trim().replace(/\u00C6/g, 'ae').toLowerCase(); // \u00C6 = Æ = LATIN CAPITAL LETTER AE
+        let clean = (title + '').trim().replace(/\u00C6/g, 'ae').toLowerCase(); // \u00C6 = Æ = LATIN CAPITAL LETTER AE
         clean = clean.replace(/[^a-z0-9 ]+/g, '');
         clean = clean.replace(/ +/, ' ');
 
