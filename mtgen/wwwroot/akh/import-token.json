@@ -1,0 +1,169 @@
+{
+  "setCode": "akh",
+  "cardDataUrl": "",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/feature/tokens-kaladesh-2016-09-15",
+  "exceptions": [
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_akh/en_t4SGoWqjbW.png",
+        "num": "Punch Card",
+        "colour": "c",
+        "type": "Token Punch Card",
+        "title": "Punch Card",
+        "subtype": "Punch Card"
+      }
+    },
+
+
+
+
+
+
+
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_akh/en_t4SGoWqjbW.png",
+        "num": "001",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Beast Token",
+        "subtype": "Beast Token"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_akh/en_ROHZBBAJrp.png",
+        "num": "002",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Construct Token",
+        "subtype": "Construct Token"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_akh/en_fCSrpoVGcO.png",
+        "num": "003",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Construct Token",
+        "subtype": "Construct Token"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_akh/en_oKAeTK3DKA.png",
+        "num": "004",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Servo Token",
+        "subtype": "Servo Token"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_akh/en_b786LD89UN.png",
+        "num": "005",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Servo Token",
+        "subtype": "Servo Token"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_akh/en_xzZQc5a68Z.png",
+        "num": "006",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Servo Token",
+        "subtype": "Servo Token"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_akh/en_V8a0HO5toy.png",
+        "num": "007",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Thopter Token",
+        "subtype": "Thopter Token"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_akh/en_PQycN8PjmE.png",
+        "num": "008",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Thopter Token",
+        "subtype": "Thopter Token"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_akh/en_ZQ77vJDpoE.png",
+        "num": "009",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Thopter Token",
+        "subtype": "Thopter Token"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_akh/en_hPjChGGcMo.png",
+        "num": "010",
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Chandra Emblem",
+        "subtype": "Chandra"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_akh/en_L3HvZKtjG2.png",
+        "num": "011",
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Nissa Emblem",
+        "subtype": "Nissa"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2016/bVvMNuiu2i_akh/en_TndzDeN0rh.png",
+        "num": "012",
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Dovin Emblem",
+        "subtype": "Dovin"
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+
+}

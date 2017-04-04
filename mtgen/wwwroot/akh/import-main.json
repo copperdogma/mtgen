@@ -1,0 +1,76 @@
+{
+  "setCode": "akh",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=179&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/card-image-gallery/amonkhet",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+    {
+      "_comment": "mtg salvation included the basic lands, which I need to import separately",
+      "delete": true,
+      "where": "type='Basic Land"
+    },
+    {
+      "_comment": "ten cards are only found in the Planeswalker Decks: http://magic.wizards.com/en/articles/archive/card-preview/exclusive-cards-planeswalker-decks-2016-09-13",
+      "where": "title=(Chandra, Pyrogenius|Flame Lash|Liberating Combustion|Renegade Firebrand|Stone Quarry)",
+      "newValues": {
+        "promo": true,
+        "includedReason": "Chandra Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title=(Nissa, Nature's Artisan|Guardian of the Great Conduit|Terrain Elemental|Verdant Crescendo|Woodland Stream)",
+      "newValues": {
+        "promo": true,
+        "includedReason": "Nissa Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Prakhata Club Secruity",
+      "newValues": {
+        "title": "Prakhata Club Security"
+      }
+    },
+    {
+      "where": "title='Revoke Privilege",
+      "newValues": {
+        "title": "Revoke Privileges"
+      }
+    },
+    {
+      "where": "title='Sage of Shalia's Claim",
+      "newValues": {
+        "title": "Sage of Shaila's Claim"
+      }
+    },
+    {
+      "where": "title='Engineered Might",
+      "newValues": {
+        "num": "181"
+      }
+    },
+    {
+      "where": "title='Syndicate Trafficker",
+      "newValues": {
+        "type": "Creature"
+      }
+    },
+    {
+      "where": "title='Metalwork Colossus",
+      "newValues": {
+        "cost": "{11}"
+      }
+    },
+    {
+      "where": "title='Select for Inspection",
+      "newValues": {
+        "cost": "U"
+      }
+    }
+  ]
+}

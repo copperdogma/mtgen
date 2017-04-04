@@ -1,0 +1,503 @@
+{
+  "setCode": "akh",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=173&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "_comment": "add promo:false to ALL cards with the intention of deleting them later",
+      "where": "",
+      "newValues": {
+        "promo": false
+      }
+    },
+
+    {
+      "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+      "where": "title='Archfiend of Ifnir",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/images/daily/en_k0mok73dwN.png",
+        "num": "{{num}} P Buy-a-Box",
+        "promo": true,
+        "includedReason": "Buy-a-Box Promo",
+        "usableForDeckBuilding": false
+      }
+    },
+    {
+      "where": "title='Oracles Vault",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/images/daily/en_as8va5B9cw.png",
+        "num": "{{num}} P Launch",
+        "promo": true,
+        "includedReason": "Launch Promo",
+        "usableForDeckBuilding": false
+      }
+    },
+    {
+      "where": "title='Trueheart Duelist",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/images/daily/en_jG6CH9Lx83.png",
+        "num": "{{num}} P Game Day",
+        "promo": true,
+        "includedReason": "Game Day Promo",
+        "usableForDeckBuilding": false
+      }
+    },
+    {
+      "where": "title='Glorybringer",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_rgXqwthzn3.png",
+        "num": "{{num}} P Game Day",
+        "promo": true,
+        "includedReason": "Game Day Top 8 Promo",
+        "usableForDeckBuilding": false
+      }
+    },
+    {
+      "_comment": "delete all cards that still have promo=false, which leaves just our modified promo cards",
+      "delete": true,
+      "where": "promo=false"
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-marketing1.png",
+        "title": "Tip/Marketing Card",
+        "set": "akh",
+        "colour": "o",
+        "num": "001 Marketing",
+        "rarity": "c",
+        "type": "Marketing",
+        "usableForDeckBuilding": false,
+        "marketing": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-marketing2.png",
+        "title": "Tip/Marketing Card",
+        "set": "akh",
+        "colour": "o",
+        "num": "002 Marketing",
+        "rarity": "c",
+        "type": "Marketing",
+        "usableForDeckBuilding": false,
+        "marketing": true
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-white.png",
+        "set": "akh",
+        "title": "White Spindown Life Counter",
+        "colour": "o",
+        "num": "001 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "promo": "true",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false,
+        "addedViaException": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-blue.png",
+        "set": "akh",
+        "title": "Blue Spindown Life Counter",
+        "colour": "o",
+        "num": "002 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "promo": "true",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false,
+        "addedViaException": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-black.png",
+        "set": "akh",
+        "title": "Black Spindown Life Counter",
+        "colour": "o",
+        "num": "003 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "promo": "true",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false,
+        "addedViaException": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-red.png",
+        "set": "akh",
+        "title": "Red Spindown Life Counter",
+        "colour": "o",
+        "num": "004 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "promo": "true",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false,
+        "addedViaException": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-green.png",
+        "set": "akh",
+        "title": "Green Spindown Life Counter",
+        "colour": "o",
+        "num": "005 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "promo": "true",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false,
+        "addedViaException": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/akh-prerelease-deck-box.png",
+        "set": "akh",
+        "title": "Deck Box",
+        "colour": "o",
+        "num": "006 Deck Box",
+        "rarity": "c",
+        "type": "Insert",
+        "promo": "true",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false,
+        "addedViaException": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/akh-prerelease-dice-box.png",
+        "set": "akh",
+        "title": "Dice Box",
+        "colour": "o",
+        "num": "007 Dice Box",
+        "rarity": "c",
+        "type": "Insert",
+        "promo": "true",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false,
+        "addedViaException": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/akh-prerelease-thopter.png",
+        "set": "akh",
+        "title": "Thopter",
+        "colour": "o",
+        "num": "008 Thopter",
+        "rarity": "c",
+        "type": "Insert",
+        "promo": "true",
+        "includedReason": "Prerelease Thopter",
+        "usableForDeckBuilding": false,
+        "addedViaException": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-deckbuilding-info.jpg",
+        "src_large": "http://mtgen.net/cards/mtg-deckbuilding-info-lg.jpg",
+        "height": 370,
+        "width": 515,
+        "set": "akh",
+        "title": "Deckbuilding Advice Insert",
+        "colour": "o",
+        "num": "009 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "promo": "true",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/images/daily/vOPX0NAQaR.png",
+        "title": "Plains",
+        "num": "250"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/images/daily/yZMsrTFNGw.png",
+        "title": "Island",
+        "num": "251"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/images/daily/zIQFZRfkpk.png",
+        "title": "Swamp",
+        "num": "252"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/images/daily/y73DnfLvg1.png",
+        "title": "Mountain",
+        "num": "253"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/images/daily/yRrRHOvvuK.png",
+        "title": "Forest",
+        "num": "254"
+      }
+    },
+    {
+      "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
+      "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
+      "newValues": {
+        "set": "{{setCode}}",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "{{title}}",
+        "colour": "l",
+        "cost": "",
+        "rarity": "c",
+        "fullArt": true,
+        "num": "{{num}}/264 L"
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_A7KsyePcF9.png",
+        "title": "Plains",
+        "num": "255"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_qFjNq2SMYU.png",
+        "title": "Plains",
+        "num": "256"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_5Ti9XojqK4.png",
+        "title": "Plains",
+        "num": "257"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_kDA5zyMTwd.png",
+        "title": "Island",
+        "num": "258"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_D3mAGJQeZ6.png",
+        "title": "Island",
+        "num": "259"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_6emYjbKDA1.png",
+        "title": "Island",
+        "num": "260"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_4CEwzKoCEa.png",
+        "title": "Swamp",
+        "num": "261"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_AYNsgoMh8Q.png",
+        "title": "Swamp",
+        "num": "262"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_0kXbajsF7a.png",
+        "title": "Swamp",
+        "num": "263"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_VfvvWjU1Ev.png",
+        "title": "Mountain",
+        "num": "264"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_eLkDPvgsZE.png",
+        "title": "Mountain",
+        "num": "265"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_VTCfrm0Q4P.png",
+        "title": "Mountain",
+        "num": "266"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_b4rKpuVatu.png",
+        "title": "Forest",
+        "num": "267"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_RICR2YOHJb.png",
+        "title": "Forest",
+        "num": "268"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_5UK2UIFizt.png",
+        "title": "Forest",
+        "num": "269"
+      }
+    },
+    {
+      "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
+      "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
+      "newValues": {
+        "set": "{{setCode}}",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "{{title}}",
+        "colour": "l",
+        "cost": "",
+        "rarity": "c",
+        "num": "{{num}}/264 L"
+      }
+    },
+
+      {
+        "add": true,
+        "newValues": {
+          "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_O9Zye0bIYs.png",
+          "num": "239",
+          "colour": "l",
+          "type": "Land",
+          "title": "Canyon Slough",
+          "subtype": "Swamp Mountain"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_lRR892wXFr.png",
+          "num": "243",
+          "colour": "l",
+          "type": "Land",
+          "title": "Fetid Pools",
+          "subtype": "Island Swamp"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_nsXw6JpzGH.png",
+          "num": "245",
+          "colour": "l",
+          "type": "Land",
+          "title": "Irrigated Farmland",
+          "subtype": "Plains Island"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_cmJc89R9pt.png",
+          "num": "247",
+          "colour": "l",
+          "type": "Land",
+          "title": "Scattered Groves",
+          "subtype": "Forest Plains"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_dJCfMS8DuP.png",
+          "num": "248",
+          "colour": "l",
+          "type": "Land",
+          "title": "Sheltered Thicket",
+          "subtype": "Mountain Forest"
+        }
+      },
+      {
+        "where": "type=Land",
+        "newValues": {
+          "set": "{{setCode}}",
+          "rarity": "r",
+          "num": "{{num}}/269",
+          "token": true,
+          "usableForDeckBuilding": false
+        }
+      }
+    ]
+
+}
