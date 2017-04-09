@@ -11,9 +11,9 @@
       ]
     },
     {
-      "_comment": "mtg salvation included the basic lands, which I need to import separately",
+      "_comment": "mtg salvation included the basic lands, and special lands, which I import separately",
       "delete": true,
-      "where": "type='Basic Land"
+      "where": "type=(Basic Land|Land)"
     }
   ]
 }

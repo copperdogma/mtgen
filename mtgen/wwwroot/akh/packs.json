@@ -95,7 +95,18 @@
             }
           ]
         },
-        { "query": "take[1]>from[akh]?type='Basic Land" },
+        {
+          "querySet": [
+            {
+              "percent": "3/4",
+              "query": "from[akh]?type='Basic Land"
+            },
+            {
+              "percent": "1/4",
+              "query": "from[akh]?fullArt=true"
+            }
+          ]
+        },
         {
           "querySet": [
             {
@@ -141,10 +152,8 @@
         },
         { "query": "take[1]>from[akh-promo]?type='Life Counter" },
         { "query": "from[akh-promo]?title='Deck Box" },
-        { "query": "from[akh-promo]?title='Dice Box" },
-        { "query": "from[akh-promo]?title='Thopter" },
-        { "query": "from[akh-promo]?title='Deckbuilding Advice Insert" }
-
+        { "query": "from[akh-promo]?title='Deckbuilding Advice Insert" },
+        { "query": "from[akh-promo]?title='Five Trials Checklist" }
       ]
     },
     {

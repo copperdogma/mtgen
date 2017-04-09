@@ -163,52 +163,71 @@
     {
       "add": true,
       "newValues": {
-        "src": "http://mtgen.net/cards/akh-prerelease-dice-box.png",
-        "set": "akh",
-        "title": "Dice Box",
-        "colour": "o",
-        "num": "007 Dice Box",
-        "rarity": "c",
-        "type": "Insert",
-        "promo": "true",
-        "includedReason": "Prerelease Promo",
-        "usableForDeckBuilding": false,
-        "addedViaException": true
-      }
-    },
-    {
-      "add": true,
-      "newValues": {
-        "src": "http://mtgen.net/cards/akh-prerelease-thopter.png",
-        "set": "akh",
-        "title": "Thopter",
-        "colour": "o",
-        "num": "008 Thopter",
-        "rarity": "c",
-        "type": "Insert",
-        "promo": "true",
-        "includedReason": "Prerelease Thopter",
-        "usableForDeckBuilding": false,
-        "addedViaException": true
-      }
-    },
-    {
-      "add": true,
-      "newValues": {
-        "src": "http://mtgen.net/cards/mtg-deckbuilding-info.jpg",
-        "src_large": "http://mtgen.net/cards/mtg-deckbuilding-info-lg.jpg",
+        "src": "http://mtgen.net/cards/akh-deckbuilding-info.jpg",
+        "src_large": "http://mtgen.net/cards/akh-deckbuilding-info-lg.jpg",
         "height": 370,
         "width": 515,
         "set": "akh",
         "title": "Deckbuilding Advice Insert",
         "colour": "o",
-        "num": "009 Insert",
+        "num": "007 Insert",
         "rarity": "c",
         "type": "Insert",
         "promo": "true",
         "includedReason": "Prerelease Promo",
         "usableForDeckBuilding": false
       }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/akh-trials-checklist.jpg",
+        "src_large": "http://mtgen.net/cards/akh-trials-checklist-lg.jpg",
+        "height": 370,
+        "width": 500,
+        "set": "akh",
+        "title": "Five Trials Checklist",
+        "colour": "o",
+        "num": "008 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "promo": "true",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/akh-spindown-life-counter-strength.png",
+        "set": "akh",
+        "title": "Trial of Strength Spindown Life Counter",
+        "colour": "o",
+        "num": "009 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "promo": "true",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false,
+        "addedViaException": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/akh-minus-one-minus-one-counter.png",
+        "set": "akh",
+        "title": "-1/-1 Counter",
+        "colour": "o",
+        "num": "010 Counter",
+        "rarity": "c",
+        "type": "Counter",
+        "promo": "true",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false,
+        "addedViaException": true
+      }
+
     }
   ]
 }
