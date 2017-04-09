@@ -1,4 +1,9 @@
 ﻿/*
+Generates an output mtgen card set in json format for use in the main app, using an importer file full of settings.
+
+Typically the importer file (e.g. import-main.json) will specify the wotc card gallery as the image source and
+the mtgsalvation spoiler page as the data source.
+
 1-Mar-2017: Refactored into flattened es6 promise chains.
 27-Feb-2017: Pulled card-exception-generator.js out of this file.
 14-Sep-2016: Updated land importer to output new more compact format.

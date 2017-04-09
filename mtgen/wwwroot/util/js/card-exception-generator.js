@@ -1,4 +1,9 @@
 ﻿/*
+Generates card generation statements from input websites.
+Typically used for tokens, land, and other cards listed on the wotc site in articles where the cards are missing titles.
+
+Takes a specific text pattern as input to indicate which images we want and what they are.
+
 27-Feb-2017: Pulled out of card-data-importer.js
 
 Relies on methods within card-data-importer.js
@@ -19,7 +24,7 @@ class CardExceptionGenerator extends CardDataImporter {
                 window.dispatchEvent(new Event('data-loaded'));
                 return this._getCardImagesFromWotcArticle(imageData, requiredImageWidth, requiredImageHeight);
             })
-            .then(cardImages => { return this._createOutputCards(setCode, cardImages, startingCardNum, cardPattern); })
+            .then(cardImages => this._createOutputCards(setCode, cardImages, startingCardNum, cardPattern))
             .then(({cards, skippedCards}) => { 
                 const outputLogPromise = this._createOutputLog(cards, skippedCards);
                 const finalDataPromise = this._createFinalJsonOutput(cards);
