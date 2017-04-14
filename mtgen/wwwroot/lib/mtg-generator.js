@@ -95,7 +95,7 @@ Normally 15 cards per booster:
 // --------------------------------------------------------------------------------------------------------------------------------
 // Main View/Renderers 
 // --------------------------------------------------------------------------------------------------------------------------------
-var mtgGen = (function (my, $) {
+var mtgGen = (function (my) {
     'use strict';
 
     my.MainView = Backbone.View.extend({
@@ -122,7 +122,8 @@ var mtgGen = (function (my, $) {
         }
 
         , render: function () {
-            my.trigger('menusInitialized');
+            //CAMKILL:my.trigger('menusInitialized');
+            window.dispatchEvent(new Event('menusInitialized'));
 
             this.el.innerHTML = ''; // Get rid of the Loading message
             this.el.innerHTML = '<section id="products"></section><section id="product-content"></section><div class="back-to-top"><a class="button top" href="#">Back to top</a></a>';
@@ -153,18 +154,22 @@ var mtgGen = (function (my, $) {
 
     // All results should be rendered through this function
     my.displayResults = function (productName, html) {
-        my.trigger('layoutChanging');
+        //CAMKILL:my.trigger('menusInitialized');
+        window.dispatchEvent(new Event('menusInitialized'));
         this.contentElem.querySelector('#product-content .' + productName + ' .result').innerHTML = html;
-        setTimeout(function () { my.trigger('layoutChanged'); }, 500); // delay to let it render so target elements exist
+        //CAMKILL:setTimeout(function () { my.trigger('layoutChanged'); }, 500); // delay to let it render so target elements exist
+        setTimeout(() => window.dispatchEvent(new Event('layoutChanged')), 500);
     };
 
     // Replaces a set's contents
     my.renderSetUpdate = function (productName, setID, cards, parentSet) {
-        my.trigger('layoutChanging');
+        //CAMKILL:my.trigger('layoutChanging');
+        window.dispatchEvent(new Event('menusInitialized'));
         const newSet = my.renderCardSet(setID, cards, parentSet);
         this.contentElem.querySelector('#product-content .' + productName + ' .result .set[data-setid="' + setID + '"]')
             .innerHTML = newSet;
-        setTimeout(function () { my.trigger('layoutChanged'); }, 500); // delay to let it render so target elements exist
+        //CAMKILL:setTimeout(function () { my.trigger('layoutChanged'); }, 500); // delay to let it render so target elements exist
+        setTimeout(() => window.dispatchEvent(new Event('layoutChanged')), 500);
     };
 
     // General rendering functions
@@ -259,13 +264,13 @@ var mtgGen = (function (my, $) {
     };
 
     return my;
-}(mtgGen || {}, jQuery));
+}(mtgGen || {}));
 
 
 // --------------------------------------------------------------------------------------------------------------------------------
 // Menu module 
 // --------------------------------------------------------------------------------------------------------------------------------
-var mtgGen = (function (my, $) {
+var mtgGen = (function (my) {
     'use strict';
 
     // These get reset over and over as we render each menu
@@ -413,14 +418,14 @@ var mtgGen = (function (my, $) {
     });
 
     return my;
-}(mtgGen || {}, jQuery));
+}(mtgGen || {}));
 
 
 
 // --------------------------------------------------------------------------------------------------------------------------------
 // ProductView module - products are All Cards, Prerelease, Duel Deck, Intro Packs, etc.
 // --------------------------------------------------------------------------------------------------------------------------------
-var mtgGen = (function (my, $) {
+var mtgGen = (function (my) {
     'use strict';
 
     my.ProductView = Backbone.View.extend({
@@ -678,7 +683,9 @@ var mtgGen = (function (my, $) {
             this.generatedSets = my.generateCardSetsFromPacks(packs);
             this.renderResults(this.generatedSets);
 
-            my.trigger('cardSetsGenerated', my.setCode); // Triggers google analytics booster-generation tracking event on index.html
+            //CAMKILL:my.trigger('cardSetsGenerated', my.setCode); // Triggers google analytics booster-generation tracking event on index.html
+            // Triggers google analytics booster-generation tracking event on index.html
+            window.dispatchEvent(new CustomEvent('cardSetsGenerated', { detail: { setCode: my.setCode } }));
 
             return this;
         }
@@ -694,7 +701,9 @@ var mtgGen = (function (my, $) {
 
             this.renderResults(this.generatedSets);
 
-            my.trigger('cardSetsGenerated', my.setCode); // Triggers google analytics booster-generation tracking event on index.html
+            //CAMKILL:my.trigger('cardSetsGenerated', my.setCode); // Triggers google analytics booster-generation tracking event on index.html
+            // Triggers google analytics booster-generation tracking event on index.html
+            window.dispatchEvent(new CustomEvent('cardSetsGenerated', { detail: { setCode: my.setCode } }));
 
             return false;
         }
@@ -713,7 +722,9 @@ var mtgGen = (function (my, $) {
             else {
                 sortAllAndRenderFunction.call(this, this.allCards);
             }
-            my.trigger('resultsRendered', my.getCurrentTab); // Tells the UI a set of cards was rendered. Currently used to trigger Holder.run().
+            //CAMKILL:my.trigger('resultsRendered', my.getCurrentTab); // Tells the UI a set of cards was rendered. Currently used to trigger Holder.run().
+            // Tells the UI a set of cards was rendered. Currently used to trigger Holder.run().
+            window.dispatchEvent(new CustomEvent('resultsRendered', { detail: { getCurrentTab: my.getCurrentTab } }));
 
             return this;
         }
@@ -1062,13 +1073,13 @@ var mtgGen = (function (my, $) {
     });
 
     return my;
-}(mtgGen || {}, jQuery));
+}(mtgGen || {}));
 
 
 // --------------------------------------------------------------------------------------------------------------------------------
 // Save Draw module 
 // --------------------------------------------------------------------------------------------------------------------------------
-var mtgGen = (function (my, $) {
+var mtgGen = (function (my) {
     'use strict';
 
     var SaveDrawView = Backbone.View.extend({
@@ -1078,7 +1089,8 @@ var mtgGen = (function (my, $) {
             this.$el.find('a.save-draw').fancybox();
             this.el.addEventListener('click', (e) => { if (e.target.classList.contains('save-draw')) { this.saveDraw(e); } });
 
-            my.on('menusInitialized', function () {
+            //CAMKILL:my.on('menusInitialized', function () {
+            window.addEventListener('menusInitialized', e => {
                 my.mainView.mainMenu.addMenuItem("saveDraw", 99, function () {
                     // If it's a generated view or there's already a draw saved for the current product, 
                     // don't show the Save Draw button
@@ -1087,13 +1099,14 @@ var mtgGen = (function (my, $) {
                     }
                     return '<a href="#save-draw" class="button save-draw" data-save-draw="all" title="Save/Share your draw">Save Draw</a>'
                 });
-            });
+            }, false);
 
-            my.on('cardSetsGenerated', function (setCode) {
+            //CAMKILL:my.on('cardSetsGenerated', function (setCode) {
+            window.addEventListener('cardSetsGenerated', e => {
                 // Erase out storage of the last draw once a new one has been created.
                 // It will be re-saved when the user clicks Save Draw again.
                 my.mainView.currentView.saveDrawResults = undefined;
-            });
+            }, false);
         }
 
         , saveDraw: function (event) {
@@ -1122,15 +1135,25 @@ var mtgGen = (function (my, $) {
             }
             else {
                 document.querySelector('#save-draw input').value = 'Loading...';
-                $.post(`/${my.setCode}/SaveDraw`, { data: JSON.stringify(drawData) })
-                    .done(function (returnJson) {
-                        // e.g. return: { "drawId": "m09mJw", "url": "ogw?draw=m09mJw" }
-                        const returnData = JSON.parse(returnJson);
-                        displayDrawResults(returnData);
-                    });
+                //CAMKILL:
+                //$.post(`/${my.setCode}/SaveDraw`, { data: JSON.stringify(drawData) })
+                //    .done(function (returnJson) {
+                //        // e.g. return: { "drawId": "m09mJw", "url": "ogw?draw=m09mJw" }
+                //        const returnData = JSON.parse(returnJson);
+                //        displayDrawResults(returnData);
+                //    });
+                fetch(`/${my.setCode}/SaveDraw`, {
+                    method: "POST",
+                    body: JSON.stringify(drawData)
+                })
+                    .then(response => response.json())
+                    // e.g. return: { "drawId": "m09mJw", "url": "ogw?draw=m09mJw" }
+                    .then(json => JSON.parse(json))
+                    .then(drawResults => displayDrawResults(drawResults));
             }
 
-            my.trigger('drawSaved', my.setCode); // triggers google analytics tracking event
+            //CAMKILL:my.trigger('drawSaved', my.setCode); // triggers google analytics tracking event
+            window.dispatchEvent(new CustomEvent('drawSaved', { detail: { setCode: my.setCode } })); // triggers google analytics tracking event
 
             // no 'return false;' so fancybox can trigger afterward
         }
@@ -1164,12 +1187,12 @@ var mtgGen = (function (my, $) {
     }
 
     return my; // END Save Draw module
-}(mtgGen || {}, jQuery));
+}(mtgGen || {}));
 
 // --------------------------------------------------------------------------------------------------------------------------------
 // Card Set Export module 
 // --------------------------------------------------------------------------------------------------------------------------------
-var mtgGen = (function (my, $) {
+var mtgGen = (function (my) {
     'use strict';
 
     var ExportView = Backbone.View.extend({
@@ -1179,10 +1202,11 @@ var mtgGen = (function (my, $) {
             this.$el.find('a.export').fancybox();
             this.el.addEventListener('click', (e) => { if (e.target.classList.contains('export')) { this.showExport(e); } });
 
-            my.on('menusInitialized', function () {
+            //CAMKILL:my.on('menusInitialized', function () {
+            window.addEventListener('menusInitialized', e => {
                 my.mainView.mainMenu.addMenuItem("export", 99, () => '<a href="#exporter" class="button export" data-export="all">Export</a>');
                 my.mainView.setMenu.addMenuItem("export", 99, () => '<a href="#exporter" class="button export" data-export="set">Export</a>');
-            });
+            }, false);
         }
 
         , showExport: function (event) {
@@ -1201,7 +1225,8 @@ var mtgGen = (function (my, $) {
                 }
                 addExportableTextFormats(sets);
             }
-            my.trigger('exporting', my.setCode); // triggers google analytics tracking event
+            //CAMKILL:my.trigger('exporting', my.setCode); // triggers google analytics tracking event
+            window.dispatchEvent(new CustomEvent('exporting', { detail: { setCode: my.setCode } })); // triggers google analytics tracking event
             // No 'return false;' so fancybox can trigger afterward
         }
 
@@ -1372,4 +1397,4 @@ var mtgGen = (function (my, $) {
     }
 
     return my; // END Card Export module
-}(mtgGen || {}, jQuery));
+}(mtgGen || {}));

@@ -17,7 +17,7 @@ Author: Cam Marsollier cam.marsollier@gmail.com
 // --------------------------------------------------------------------------------------------------------------------------------
 // Main module: main structure, query parser, base renderer
 // --------------------------------------------------------------------------------------------------------------------------------
-var mtgGen = (function (my, $) {
+var mtgGen = (function (my) {
     'use strict';
     // globals
     my.version = "2.3";
@@ -30,8 +30,9 @@ var mtgGen = (function (my, $) {
 
     my.initViews = []; // for modules to add their views to be run once at the start of the app
 
+    //CAMKILL:
     // Event handling via Backbone: http://documentcloud.github.io/backbone/
-    _.extend(my, Backbone.Events);
+    //_.extend(my, Backbone.Events);
 
     /* NOTE: these colours and rarities are duplicated in importer-gm-json.js. If you change this here you must change it there. */
     my.colours = {
@@ -319,7 +320,8 @@ var mtgGen = (function (my, $) {
                 };
                 if (my.hasDraw()) {
                     my.draw.code = my.getQuerystringParamByName('draw');
-                    my.trigger('drawLoaded', my.setCode, my.draw.code); // triggers google analytics tracking event
+                    //CAMKILL:my.trigger('drawLoaded', my.setCode, my.draw.code); // triggers google analytics tracking event
+                    window.dispatchEvent(new CustomEvent('draw', { detail: { setCode: my.setCode, code: my.draw.code } }));
                 }
 
                 // Add card indicies and sort orders for internal use
@@ -373,7 +375,8 @@ var mtgGen = (function (my, $) {
                     }
                     if (card.set == my.setCode && (card.usableForDeckBuilding === undefined || card.usableForDeckBuilding === true)) {
                         setCardsLoadedCount++;
-                        my.trigger('playableCardLoaded', setCardsLoadedCount);
+                        //CAMKILL:my.trigger('playableCardLoaded', setCardsLoadedCount);
+                        window.dispatchEvent(new CustomEvent('playableCardLoaded', { detail: { setCardsLoadedCount } }));
                     }
                     if (goodCards[card.mtgenId] !== undefined) {
                         console.warn(`WARNING: duplicate mtgenId: ${card.mtgenId} : ${card.title}`);
@@ -451,7 +454,8 @@ var mtgGen = (function (my, $) {
                 my.mainView = new my.MainView({ el: my.contentElem });
                 my.mainView.render();
 
-                my.trigger('ready');
+                //CAMKILL: UNUSED: my.trigger('ready');
+                window.dispatchEvent(new Event('ready'));
             });
     };
 
@@ -1306,4 +1310,4 @@ var mtgGen = (function (my, $) {
     };
 
     return my;
-}(mtgGen || {}, jQuery));
+}(mtgGen || {}));
