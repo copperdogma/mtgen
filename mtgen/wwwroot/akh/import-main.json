@@ -16,11 +16,99 @@
       "where": "type=(Basic Land|Land)"
     },
     {
+      "where": "title='Liliana, Death Wielder",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_dZGIK04peP.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Gideon, Martial Paragon",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_D5IulOvOh1.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Liliana's Influence",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_56ySiCdtoi.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Dessicated Naga",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_fEaY9jHDFz.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Tattered Mummy",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_mbVorMDziL.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Foul Orchard",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_olEf5iXy9L.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Gideons Resolve",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_LRAdMU66VH.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Companion of the Trials",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_6oZ3HyFmjc.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Graceful Cat",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_2N7Yi2uqi1.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Stone Quarry",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_UF2RIm3huj.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+
+    {
       "where": "title='Annointer Priest",
       "newValues": {
         "title": "Anointer Priest"
       }
     },
+    {
+      "where": "title='Winged Shepherd",
+      "newValues": {
+        "num": "039"
+      }
+    },
+
     {
       "where": "title='Cut",
       "newValues": {
@@ -128,6 +216,20 @@
         "title": "Spring /// Mind",
         "cost": "2G4UU",
         "colour": "m"
+      }
+    },
+    {
+      "where": "title='Commit",
+      "newValues": {
+        "title": "Commit /// Memory",
+        "cost": "3U4UU"
+      }
+    },
+    {
+      "where": "title='Insult",
+      "newValues": {
+        "title": "Insult /// Injury",
+        "cost": "2R2R"
       }
     }
   ]
