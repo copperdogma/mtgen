@@ -56,7 +56,7 @@ class CardExceptionGenerator extends CardDataImporter {
             cards.areTokens = false;
 
             cardImages.forEach((image, index) => {
-                const card = {};
+                const card = { set: setCode };
 
                 Object.assign(card, image); // src, height, width, imageSource
 
@@ -70,7 +70,7 @@ class CardExceptionGenerator extends CardDataImporter {
                     const pattern = cardPatterns[cardPatternIndex].trim();
 
                     // x = skip a card
-                    const skip = /x/gi.test(pattern);
+                    const skip = pattern === 'x';
                     if (skip) {
                         skipCard = true;
                         card.skippedCardIndex = index;
@@ -86,16 +86,20 @@ class CardExceptionGenerator extends CardDataImporter {
                         }
                         else {
                             // e.g.: 007|c|Token Artifact Creature|Thopter, or without the 007 and it'll use default starting number
-                            const cardPattern = /^([0-9]{3})?\|?(.)\|(.*)\|(.*)$/gi.exec(pattern);
+                            const cardPattern = /^([0-9]{3})?\|?(.)\|(.*)$/gi.exec(pattern);
                             if (!cardPattern) {
                                 card.title = `Unknown pattern: ${pattern}`;
                             }
                             else {
                                 card.num = cardPattern[1];
                                 card.colour = cardPattern[2];
-                                card.type = cardPattern[3];
-                                card.title = cardPattern[4];
-                                card.subtype = cardPattern[4].replace(" Emblem", "");
+                                var cardNames = cardPattern[3].split('|');
+                                card.type = cardNames[0];
+                                card.title = cardNames[1];
+                                card.subtype = cardNames[1].replace(" Emblem", "");
+                                if (cardNames[2]) {
+                                    card.subtype = cardNames[2];
+                                }
                                 // ** make sure it all works for lands
                             }
                             cards.areTokens = true;
