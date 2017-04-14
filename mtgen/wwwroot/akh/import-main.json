@@ -14,6 +14,121 @@
       "_comment": "mtg salvation included the basic lands, and special lands, which I import separately",
       "delete": true,
       "where": "type=(Basic Land|Land)"
+    },
+    {
+      "where": "title='Annointer Priest",
+      "newValues": {
+        "title": "Anointer Priest"
+      }
+    },
+    {
+      "where": "title='Cut",
+      "newValues": {
+        "title": "Cut /// Ribbons",
+        "cost": "1RXBB",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Destined",
+      "newValues": {
+        "title": "Destined /// Lead",
+        "cost": "1B3G",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Reduce",
+      "newValues": {
+        "title": "Reduce /// Rubble",
+        "cost": "2U2R",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Onward",
+      "newValues": {
+        "title": "Onward /// Victory",
+        "cost": "2R2W",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Prepare",
+      "newValues": {
+        "title": "Prepare /// Fight",
+        "cost": "1W3G",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Failure",
+      "newValues": {
+        "title": "Failure /// Comply",
+        "cost": "1UW",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Rags",
+      "newValues": {
+        "title": "Rags /// Riches",
+        "cost": "2BB5UU",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Heaven",
+      "newValues": {
+        "title": "Heaven /// Earth",
+        "cost": "XGXRR",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Dusk",
+      "newValues": {
+        "title": "Dusk /// Dawn",
+        "cost": "2WW3WW"
+      }
+    },
+    {
+      "where": "title='Mouth",
+      "newValues": {
+        "title": "Mouth /// Feed",
+        "cost": "2G3G"
+      }
+    },
+    {
+      "where": "title='Never",
+      "newValues": {
+        "title": "Never /// Return",
+        "cost": "1BB3B"
+      }
+    },
+    {
+      "where": "title='Reduce",
+      "newValues": {
+        "title": "Reduce /// Rubble",
+        "cost": "2U2R",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Start",
+      "newValues": {
+        "title": "Start /// Finish",
+        "cost": "2W2B",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Spring",
+      "newValues": {
+        "title": "Spring /// Mind",
+        "cost": "2G4UU",
+        "colour": "m"
+      }
     }
   ]
 }
