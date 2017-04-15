@@ -24,9 +24,10 @@
       }
     },
     {
-      "where": "title='Gideon, Martial Paragon",
+      "where": "title='(Gideon, Martial Paragon|Gideon, Martial Pargon)",
       "newValues": {
         "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_D5IulOvOh1.png",
+        "title": "Gideon, Martial Paragon",
         "promo": true,
         "includedReason": "Planeswalker Deck"
       }
@@ -100,6 +101,12 @@
       "where": "title='Annointer Priest",
       "newValues": {
         "title": "Anointer Priest"
+      }
+    },
+    {
+      "where": "title='In Oketras Name",
+      "newValues": {
+        "type": "Instant"
       }
     },
     {
