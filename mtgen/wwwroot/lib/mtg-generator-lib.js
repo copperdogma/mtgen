@@ -539,17 +539,18 @@ var mtgGen = (function (my) {
         let result = [];
 
         // Determine base set to select from
-        let sourceSet = [];
+        let sourceSetCards = [];
         if (from == "*") {
-            sourceSet = fullSet;
+            sourceSetCards = fullSet;
         }
         // Select from previously-defined set
         else {
-            sourceSet = defs[from];
-            if (sourceSet === undefined) {
+            sourceSetCards = defs[from];
+            if (sourceSetCards === undefined) {
                 console.warn(`ERROR: executeSimpleQuery(): def '${from}' does not exist within query: ${query}`);
             }
         }
+        const sourceSet = Object.values(sourceSetCards)
 
         // Execute the query on the set
         if (!query2) {
@@ -577,7 +578,7 @@ var mtgGen = (function (my) {
                 }
                 else {
                     clause = clause.toLowerCase();
-                    matchingCards = Object.values(sourceSet).filter(card => card.hasOwnProperty(query2[1]) && card[query2[1]].toString().toLowerCase().match(clause));
+                    matchingCards = sourceSet.filter(card => card.hasOwnProperty(query2[1]) && card[query2[1]].toString().toLowerCase().match(clause));
                 }
 
                 // if it's a title query and the query specified "inOrder:true" then the order of the cards is important; sort by that
@@ -619,7 +620,7 @@ var mtgGen = (function (my) {
                     // If it's a boolean query, convert both sides to boolean and test
                     else if (query2[2] === true || query2[2] === 'true' || query2[2] === false || query2[2] === 'false') {
                         const boolQueryValue = JSON.parse(query2[2]);
-                        matchingCards = Object.values(sourceSet).filter(card => {
+                        matchingCards = sourceSet.filter(card => {
                             if (card[query2[1]] !== undefined) {
                                 if (boolQueryValue === true) {
                                     return (card[query2[1]] === true || card[query2[1]] === 'true');
@@ -631,7 +632,7 @@ var mtgGen = (function (my) {
                         });
                     }
                     else {
-                        matchingCards = Object.values(sourceSet).filter(card => card[query2[1]] !== undefined && card[query2[1]] == query2[2]);
+                        matchingCards = sourceSet.filter(card => card[query2[1]] !== undefined && card[query2[1]] == query2[2]);
                     }
                 }
                 result = matchingCards.map(matchingCard => matchingCard.mtgenId);
