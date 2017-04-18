@@ -1090,7 +1090,7 @@ var mtgGen = (function (my) {
             this.el.addEventListener('click', (e) => { if (e.target.classList.contains('save-draw')) { this.saveDraw(e); } });
 
             //CAMKILL:my.on('menusInitialized', function () {
-            window.addEventListener('menusInitialized', e => {
+            window.addEventListener('ready', e => {
                 my.mainView.mainMenu.addMenuItem("saveDraw", 99, function () {
                     // If it's a generated view or there's already a draw saved for the current product, 
                     // don't show the Save Draw button
@@ -1203,7 +1203,7 @@ var mtgGen = (function (my) {
             this.el.addEventListener('click', (e) => { if (e.target.classList.contains('export')) { this.showExport(e); } });
 
             //CAMKILL:my.on('menusInitialized', function () {
-            window.addEventListener('menusInitialized', e => {
+            window.addEventListener('ready', e => {
                 my.mainView.mainMenu.addMenuItem("export", 99, () => '<a href="#exporter" class="button export" data-export="all">Export</a>');
                 my.mainView.setMenu.addMenuItem("export", 99, () => '<a href="#exporter" class="button export" data-export="set">Export</a>');
             }, false);
