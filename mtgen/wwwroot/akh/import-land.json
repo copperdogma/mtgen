@@ -205,7 +205,8 @@
         "colour": "l",
         "type": "Land",
         "title": "Canyon Slough",
-        "subtype": "Swamp Mountain"
+        "subtype": "Swamp Mountain",
+        "rarity": "r"
       }
     },
     {
@@ -215,7 +216,8 @@
         "num": "240",
         "colour": "l",
         "type": "Land",
-        "title": "Cascading Cataracts"
+        "title": "Cascading Cataracts",
+        "rarity": "r"
       }
     },
     {
@@ -226,7 +228,8 @@
         "colour": "l",
         "type": "Land",
         "subtype": "Desert",
-        "title": "Cradle of the Accursed"
+        "title": "Cradle of the Accursed",
+        "rarity": "c"
       }
     },
     {
@@ -236,7 +239,8 @@
         "num": "242",
         "colour": "l",
         "type": "Land",
-        "title": "Evolving Wilds"
+        "title": "Evolving Wilds",
+        "rarity": "c"
       }
     },
     {
@@ -247,7 +251,8 @@
         "colour": "l",
         "type": "Land",
         "title": "Fetid Pools",
-        "subtype": "Island Swamp"
+        "subtype": "Island Swamp",
+        "rarity": "r"
       }
     },
     {
@@ -258,7 +263,8 @@
         "colour": "l",
         "type": "Land",
         "title": "Grasping Dunes",
-        "subtype": "Desert"
+        "subtype": "Desert",
+        "rarity": "u"
       }
     },
     {
@@ -269,7 +275,8 @@
         "colour": "l",
         "type": "Land",
         "title": "Irrigated Farmland",
-        "subtype": "Plains Island"
+        "subtype": "Plains Island",
+        "rarity": "r"
       }
     },
     {
@@ -280,7 +287,8 @@
         "colour": "l",
         "type": "Land",
         "title": "Painted Bluffs",
-        "subtype": "Desert"
+        "subtype": "Desert",
+        "rarity": "c"
       }
     },
     {
@@ -291,7 +299,8 @@
         "colour": "l",
         "type": "Land",
         "title": "Scattered Groves",
-        "subtype": "Forest Plains"
+        "subtype": "Forest Plains",
+        "rarity": "r"
       }
     },
     {
@@ -302,7 +311,8 @@
         "colour": "l",
         "type": "Land",
         "title": "Sheltered Thicket",
-        "subtype": "Mountain Forest"
+        "subtype": "Mountain Forest",
+        "rarity": "r"
       }
     },
     {
@@ -313,17 +323,16 @@
         "colour": "l",
         "type": "Land",
         "title": "Sunscorched Desert",
-        "subtype": "Desert"
+        "subtype": "Desert",
+        "rarity": "c"
       }
     },
     {
       "where": "type=Land",
       "newValues": {
         "set": "{{setCode}}",
-        "rarity": "r",
         "num": "{{num}}/269"
       }
     }
   ]
-
 }
