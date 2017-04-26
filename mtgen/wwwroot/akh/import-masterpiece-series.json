@@ -25,10 +25,17 @@
       }
     },
     {
-      "where": "title='Loyal Retainer",
+      "where": "title='Loyal Retainers",
       "newValues": {
-        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_0ODa9FJ8Lw.png",
+        "src": "https://img.scryfall.com/cards/en/mp2/4.jpg?20170330011327",
         "num": "004"
+      }
+    },
+    {
+      "where": "title='Oketra the True",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_xBObJHpu6L.png",
+        "num": "005"
       }
     },
     {
@@ -95,6 +102,13 @@
       }
     },
     {
+      "where": "title='Kefnet the Mindful",
+      "newValues": {
+        "src": "https://img.scryfall.com/cards/en/mp2/15.jpg?20170407164620",
+        "num": "015"
+      }
+    },
+    {
       "where": "title='Pact of Negation",
       "newValues": {
         "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_2KAqcBNFOb.png",
@@ -120,6 +134,13 @@
       "newValues": {
         "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_Hxd6bvfEch.png",
         "num": "019"
+      }
+    },
+    {
+      "where": "title='Bontu the Glorified",
+      "newValues": {
+        "src": "https://img.scryfall.com/cards/en/mp2/20.jpg?20170414131656",
+        "num": "020"
       }
     },
     {
@@ -151,7 +172,7 @@
       }
     },
     {
-      "where": "title='Aggravated Result",
+      "where": "title='Aggravated Assault",
       "newValues": {
         "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_qlD4eNZyfL.png",
         "num": "025"
@@ -163,6 +184,20 @@
         "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_d1uxXXa4bv.png",
         "type": "Sorcery",
         "num": "026"
+      }
+    },
+    {
+      "where": "title='Hazoret the Fervent",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_NjMBuAVB2Y.png",
+        "num": "027"
+      }
+    },
+    {
+      "where": "title='Rhonas the Indomitable",
+      "newValues": {
+        "src": "https://img.scryfall.com/cards/en/mp2/28.jpg?20170418133056",
+        "num": "028"
       }
     },
     {
@@ -184,7 +219,7 @@
       "where": "",
       "newValues": {
         "rarity": "s",
-        "masterpiece":  true,
+        "masterpiece": true,
         "num": "{{num}}/54 S"
       }
     }
