@@ -504,7 +504,7 @@ var mtgGen = (function (my) {
         }
 
         , getCurrentTab: function () {
-            return document.querySelector('#product-content .active');
+            return document.querySelector('#product-content section.active');
         }
 
         , renderType: function () {
