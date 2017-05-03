@@ -30,10 +30,6 @@ var mtgGen = (function (my) {
 
     my.initViews = []; // for modules to add their views to be run once at the start of the app
 
-    //CAMKILL:
-    // Event handling via Backbone: http://documentcloud.github.io/backbone/
-    //_.extend(my, Backbone.Events);
-
     /* NOTE: these colours and rarities are duplicated in importer-gm-json.js. If you change this here you must change it there. */
     my.colours = {
         white: { sorder: 1, code: 'w', name: 'White' },
@@ -320,7 +316,6 @@ var mtgGen = (function (my) {
                 };
                 if (my.hasDraw()) {
                     my.draw.code = my.getQuerystringParamByName('draw');
-                    //CAMKILL:my.trigger('drawLoaded', my.setCode, my.draw.code); // triggers google analytics tracking event
                     window.dispatchEvent(new CustomEvent('draw', { detail: { setCode: my.setCode, code: my.draw.code } }));
                 }
 
@@ -375,7 +370,6 @@ var mtgGen = (function (my) {
                     }
                     if (card.set == my.setCode && (card.usableForDeckBuilding === undefined || card.usableForDeckBuilding === true)) {
                         setCardsLoadedCount++;
-                        //CAMKILL:my.trigger('playableCardLoaded', setCardsLoadedCount);
                         window.dispatchEvent(new CustomEvent('playableCardLoaded', { detail: { setCardsLoadedCount } }));
                     }
                     if (goodCards[card.mtgenId] !== undefined) {
@@ -454,7 +448,6 @@ var mtgGen = (function (my) {
                 my.mainView = new my.MainView({ el: my.contentElem });
                 my.mainView.render();
 
-                //CAMKILL: UNUSED: my.trigger('ready');
                 window.dispatchEvent(new Event('ready'));
             });
     };

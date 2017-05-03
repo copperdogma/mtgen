@@ -122,7 +122,6 @@ var mtgGen = (function (my) {
         }
 
         , render: function () {
-            //CAMKILL:my.trigger('menusInitialized');
             window.dispatchEvent(new Event('menusInitialized'));
 
             this.el.innerHTML = ''; // Get rid of the Loading message
@@ -154,21 +153,17 @@ var mtgGen = (function (my) {
 
     // All results should be rendered through this function
     my.displayResults = function (productName, html) {
-        //CAMKILL:my.trigger('menusInitialized');
         window.dispatchEvent(new Event('menusInitialized'));
         this.contentElem.querySelector('#product-content .' + productName + ' .result').innerHTML = html;
-        //CAMKILL:setTimeout(function () { my.trigger('layoutChanged'); }, 500); // delay to let it render so target elements exist
         setTimeout(() => window.dispatchEvent(new Event('layoutChanged')), 500);
     };
 
     // Replaces a set's contents
     my.renderSetUpdate = function (productName, setID, cards, parentSet) {
-        //CAMKILL:my.trigger('layoutChanging');
         window.dispatchEvent(new Event('menusInitialized'));
         const newSet = my.renderCardSet(setID, cards, parentSet);
         this.contentElem.querySelector('#product-content .' + productName + ' .result .set[data-setid="' + setID + '"]')
             .innerHTML = newSet;
-        //CAMKILL:setTimeout(function () { my.trigger('layoutChanged'); }, 500); // delay to let it render so target elements exist
         setTimeout(() => window.dispatchEvent(new Event('layoutChanged')), 500);
     };
 
@@ -683,7 +678,6 @@ var mtgGen = (function (my) {
             this.generatedSets = my.generateCardSetsFromPacks(packs);
             this.renderResults(this.generatedSets);
 
-            //CAMKILL:my.trigger('cardSetsGenerated', my.setCode); // Triggers google analytics booster-generation tracking event on index.html
             // Triggers google analytics booster-generation tracking event on index.html
             window.dispatchEvent(new CustomEvent('cardSetsGenerated', { detail: { setCode: my.setCode } }));
 
@@ -701,7 +695,6 @@ var mtgGen = (function (my) {
 
             this.renderResults(this.generatedSets);
 
-            //CAMKILL:my.trigger('cardSetsGenerated', my.setCode); // Triggers google analytics booster-generation tracking event on index.html
             // Triggers google analytics booster-generation tracking event on index.html
             window.dispatchEvent(new CustomEvent('cardSetsGenerated', { detail: { setCode: my.setCode } }));
 
@@ -722,7 +715,7 @@ var mtgGen = (function (my) {
             else {
                 sortAllAndRenderFunction.call(this, this.allCards);
             }
-            //CAMKILL:my.trigger('resultsRendered', my.getCurrentTab); // Tells the UI a set of cards was rendered. Currently used to trigger Holder.run().
+
             // Tells the UI a set of cards was rendered. Currently used to trigger Holder.run().
             window.dispatchEvent(new CustomEvent('resultsRendered', { detail: { getCurrentTab: my.getCurrentTab } }));
 
@@ -1089,7 +1082,6 @@ var mtgGen = (function (my) {
             this.$el.find('a.save-draw').fancybox();
             this.el.addEventListener('click', (e) => { if (e.target.classList.contains('save-draw')) { this.saveDraw(e); } });
 
-            //CAMKILL:my.on('menusInitialized', function () {
             window.addEventListener('ready', e => {
                 my.mainView.mainMenu.addMenuItem("saveDraw", 99, function () {
                     // If it's a generated view or there's already a draw saved for the current product, 
@@ -1101,7 +1093,6 @@ var mtgGen = (function (my) {
                 });
             }, false);
 
-            //CAMKILL:my.on('cardSetsGenerated', function (setCode) {
             window.addEventListener('cardSetsGenerated', e => {
                 // Erase out storage of the last draw once a new one has been created.
                 // It will be re-saved when the user clicks Save Draw again.
@@ -1135,13 +1126,6 @@ var mtgGen = (function (my) {
             }
             else {
                 document.querySelector('#save-draw input').value = 'Loading...';
-                //CAMKILL:
-                //$.post(`/${my.setCode}/SaveDraw`, { data: JSON.stringify(drawData) })
-                //    .done(function (returnJson) {
-                //        // e.g. return: { "drawId": "m09mJw", "url": "ogw?draw=m09mJw" }
-                //        const returnData = JSON.parse(returnJson);
-                //        displayDrawResults(returnData);
-                //    });
                 fetch(`/${my.setCode}/SaveDraw`, {
                     method: "POST",
                     body: JSON.stringify(drawData)
@@ -1152,7 +1136,6 @@ var mtgGen = (function (my) {
                     .then(drawResults => displayDrawResults(drawResults));
             }
 
-            //CAMKILL:my.trigger('drawSaved', my.setCode); // triggers google analytics tracking event
             window.dispatchEvent(new CustomEvent('drawSaved', { detail: { setCode: my.setCode } })); // triggers google analytics tracking event
 
             // no 'return false;' so fancybox can trigger afterward
@@ -1202,7 +1185,6 @@ var mtgGen = (function (my) {
             this.$el.find('a.export').fancybox();
             this.el.addEventListener('click', (e) => { if (e.target.classList.contains('export')) { this.showExport(e); } });
 
-            //CAMKILL:my.on('menusInitialized', function () {
             window.addEventListener('ready', e => {
                 my.mainView.mainMenu.addMenuItem("export", 99, () => '<a href="#exporter" class="button export" data-export="all">Export</a>');
                 my.mainView.setMenu.addMenuItem("export", 99, () => '<a href="#exporter" class="button export" data-export="set">Export</a>');
@@ -1225,7 +1207,7 @@ var mtgGen = (function (my) {
                 }
                 addExportableTextFormats(sets);
             }
-            //CAMKILL:my.trigger('exporting', my.setCode); // triggers google analytics tracking event
+
             window.dispatchEvent(new CustomEvent('exporting', { detail: { setCode: my.setCode } })); // triggers google analytics tracking event
             // No 'return false;' so fancybox can trigger afterward
         }

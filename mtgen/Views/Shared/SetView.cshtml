@@ -92,24 +92,13 @@
             // Dynamic card loading counts
             document.querySelector('#card-count .total').textContent = mtgGen.setCardCount;
             const currentCardCountEl = document.querySelector('#card-count .current');
-            //CAMKILL:mtgGen.on('playableCardLoaded', setCardsLoadedCount => currentCardCountEl.textContent = setCardsLoadedCount);
             window.addEventListener('playableCardLoaded', e => currentCardCountEl.textContent = e.detail.setCardsLoadedCount, false);
 
-            //CAMKILL:mtgGen.on('resultsRendered', () => { console.log("resolts rendered"); Holder.run(); }); // Properly render any placeholder images.
             window.addEventListener('resultsRendered', e => Holder.run(), false); // Properly render any placeholder images.
 
             // Analytics event tracking
             const currProduct = '#products a.active';
             const currOption = '#product-content>section.active .options a.active';
-            //CAMKILL:
-            //mtgGen.on('cardSetsGenerated', setCode =>
-            //    ga('send', 'event', setCode.toUpperCase(), 'Generate', `${setCode.toUpperCase()}: generate: ${currProduct.textContent}, ${currOption.textContent}`));
-            //mtgGen.on('drawSaved', setCode =>
-            //    ga('send', 'event', setCode.toUpperCase(), 'SaveDraw', `${setCode.toUpperCase()}: save-draw: ${currProduct.textContent}`));
-            //mtgGen.on('drawLoaded', (setCode, drawId) =>
-            //    ga('send', 'event', setCode.toUpperCase(), 'LoadDraw', `${setCode.toUpperCase()}: load-draw: ${currProduct.textContent}, drawId`));
-            //mtgGen.on('exporting', (setCode, drawId) =>
-            //    ga('send', 'event', setCode.toUpperCase(), 'Export', `${setCode.toUpperCase()}: load-draw: ${currProduct.textContent}, ${currOption.textContent}`));
             window.addEventListener('cardSetsGenerated', e =>
                 ga('send', 'event', e.detail.setCode.toUpperCase(), 'Generate', `${e.detail.setCode.toUpperCase()}: generate: ${currProduct.textContent}, ${currOption.textContent}`), false);
             window.addEventListener('drawSaved', e =>
