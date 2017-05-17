@@ -1,3 +1,6 @@
+tingle.js
+- 20170516: replaced fancybox with this for a modal popup as it's jQuery-free
+
 jquery.base64.min.js
 - I THINK once I updated to jquery 2.10+ this broke with a INVALID_CHARACTER_ERR, so I used a new one from here:
 

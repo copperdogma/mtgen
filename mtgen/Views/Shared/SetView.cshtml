@@ -12,6 +12,7 @@
     <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="~/css/html5reset.css" type="text/css" />
     <link rel="stylesheet" href="~/css/generator.css" type="text/css" />
+    <link rel="stylesheet" href="~/lib/tingle/dist/tingle.css">
     <link rel="stylesheet" href="~/css/print.css" type="text/css" media="print" />
     <link rel="stylesheet" href="~/@Model.Code/set.css" type="text/css" />
     @{await Html.RenderPartialAsync("_favicons"); }
@@ -70,7 +71,7 @@
     <script src="~/lib/backbone/backbone.js"></script>
     <script src="~/lib/mdn.base64.min.js"></script>
     <link rel="stylesheet" href="~/lib/fancybox2/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-    <script src="~/lib/fancybox2/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script src="~/lib/tingle/dist/tingle.js?v0.10.0"></script>
     <script src="~/lib/mtg-generator-lib.js?v2.3"></script>
     <script src="~/lib/mtg-generator.js?v=2.1"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js"></script>
@@ -87,7 +88,7 @@
                 , contentElem: "main"
             });
 
-            $("#product-content .card a").fancybox();
+            window.modal = new tingle.modal({});
 
             // Dynamic card loading counts
             document.querySelector('#card-count .total').textContent = mtgGen.setCardCount;

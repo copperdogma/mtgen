@@ -1079,7 +1079,6 @@ var mtgGen = (function (my) {
         el: "body"
 
         , initialize: function () {
-            this.$el.find('a.save-draw').fancybox();
             this.el.addEventListener('click', (e) => { if (e.target.classList.contains('save-draw')) { this.saveDraw(e); } });
 
             window.addEventListener('ready', e => {
@@ -1136,6 +1135,10 @@ var mtgGen = (function (my) {
                     .then(drawResults => displayDrawResults(drawResults));
             }
 
+            window.modal.setContent(document.querySelector('.save-draw.modal').outerHTML);
+
+            window.modal.open();
+
             window.dispatchEvent(new CustomEvent('drawSaved', { detail: { setCode: my.setCode } })); // triggers google analytics tracking event
 
             // no 'return false;' so fancybox can trigger afterward
@@ -1143,7 +1146,7 @@ var mtgGen = (function (my) {
 
         , render: function () {
             this.el.insertAdjacentHTML('beforeend', "<div style='display: none'>"
-                + "<aside id='save-draw' class='modal'>"
+                + "<aside id='save-draw' class='modal save-draw'>"
                 + "<h2>Save or Share Your Draw</h2>"
                 + "<section>"
                 + "<p>Bookmark this page or copy and save/share the following link:</p>"
@@ -1182,7 +1185,6 @@ var mtgGen = (function (my) {
         el: "body"
 
         , initialize: function () {
-            this.$el.find('a.export').fancybox();
             this.el.addEventListener('click', (e) => { if (e.target.classList.contains('export')) { this.showExport(e); } });
 
             window.addEventListener('ready', e => {
@@ -1208,8 +1210,15 @@ var mtgGen = (function (my) {
                 addExportableTextFormats(sets);
             }
 
+            window.modal.setContent(document.querySelector('.exporter.modal').outerHTML);
+
+            // Display the first format (dec: Cockatrice) for initial display
+            chooseExportFormat('dec');
+
+            window.modal.open();
+
             window.dispatchEvent(new CustomEvent('exporting', { detail: { setCode: my.setCode } })); // triggers google analytics tracking event
-            // No 'return false;' so fancybox can trigger afterward
+            // No 'return false;' so model plugin can trigger afterward
         }
 
         , events: {
@@ -1218,7 +1227,7 @@ var mtgGen = (function (my) {
 
         , render: function () {
             this.el.insertAdjacentHTML('beforeend', "<div style='display: none'>"
-                + "<aside id='exporter' class='modal'>"
+                + "<aside id='exporter' class='modal exporter'>"
                 + "<h2>Export Your Boosters</h2>"
                 + "<section class='export-set'>"
                 + "<p>A variety of programs allow you to import cards in a certain format. Choose your format and copy &amp; paste the result or click Download to get a file.</p>"
@@ -1263,23 +1272,22 @@ var mtgGen = (function (my) {
         const attrib = 'Created by MtG Generator: ' + window.location.href.replace('index.html', '').replace('#', '');
 
         // Store the exports so we can do various things with them later
-        document.querySelector('#exporter .card-count').textContent = `${allCards.length} cards total, ${countedCards.length} unique`;
+        document.querySelector('.exporter.modal .card-count').textContent = `${allCards.length} cards total, ${countedCards.length} unique`;
 
         exports.dec = renderDecFormat(countedCards, attrib);
         exports.txt = renderTxtFormat(countedCards, attrib);
         exports.mwdeck = renderMwDeckFormat(null, countedCards, attrib);
         exports.cod = renderCodFormat(countedCards, attrib);
         exports.coll = renderCollFormat(countedCards, attrib);
-
-        chooseExportFormat('dec');
     }
 
     function chooseExportFormat(exportType) {
-        document.querySelector('.export-set a.button').classList.remove('active');
-        document.querySelector('.export-set a.export-' + exportType).classList.add('active');
+        var allButtons = document.querySelectorAll('.exporter.modal .export-set a.button');
+        allButtons.forEach(b => b.classList.remove('active'));
+        document.querySelector('.exporter.modal .export-set a.export-' + exportType).classList.add('active');
 
-        document.querySelector('#exporter textarea').value = exports[exportType];
-        setLinkToDownloadFile('.export-detail a.export-download', exportType);
+        document.querySelector('.exporter.modal textarea').value = exports[exportType];
+        setLinkToDownloadFile('.exporter.modal .export-detail a.export-download', exportType);
     }
 
     function setLinkToDownloadFile(linkSelector, exportType) {
