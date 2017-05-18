@@ -1127,9 +1127,14 @@ var mtgGen = (function (my) {
                 document.querySelector('#save-draw input').value = 'Loading...';
                 fetch(`/${my.setCode}/SaveDraw`, {
                     method: "POST",
-                    body: JSON.stringify(drawData)
+                    headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded'}),
+                    body: `data=${JSON.stringify(drawData)}`
                 })
-                    .then(response => response.json())
+                    .then(response => {
+                        if (response.ok) { return response.json(); }
+                        my.throwTerminalError("Save draw failed.");
+                        }
+                    )
                     // e.g. return: { "drawId": "m09mJw", "url": "ogw?draw=m09mJw" }
                     .then(json => JSON.parse(json))
                     .then(drawResults => displayDrawResults(drawResults));

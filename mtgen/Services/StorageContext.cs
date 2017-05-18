@@ -40,6 +40,8 @@ namespace mtgen.Services
 
         async public Task<string> SaveDraw(DrawEntity drawEntity)
         {
+            if (string.IsNullOrWhiteSpace(drawEntity.Results)) { throw new ArgumentException("DrawEntity.Results is null."); }
+
             if (string.IsNullOrEmpty(drawEntity.DrawId))
             {
                 var uniqueDrawId = await GetUniqueId(drawEntity.SetCode);
