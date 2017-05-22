@@ -22,3 +22,13 @@ section.set {
 .card em {
 	display: none;
 }
+.foil:before {
+    background: inherit;
+    bottom: inherit;
+    content: inherit;
+    left: inherit;
+    position: inherit;
+    right: inherit;
+    top: inherit;
+    width: inherit;
+}

@@ -1,0 +1,85 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "akh-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/card-image-gallery/kaladesh", "http://www.mtgsalvation.com/spoilers/179-kaladesh", "http://magic.wizards.com/en/articles/archive/news/modern-masters-2017-edition-and-amonkhet-packaging-2017-02-20", "http://magic.wizards.com/en/articles/archive/news/so-much-amonkhet-news-2017-03-27", "http://magic.wizards.com/en/articles/archive/daily-magic-update/update-2017-03-30", "http://magic.wizards.com/en/articles/archive/latest-developments/cycling-duels-2017-03-31", "http://magic.wizards.com/en/articles/archive/card-preview/masterpiece-series-amonkhet-invocations-2017-03-29", "http://wpn.wizards.com/en/article/amonkhet-video-guide", "http://magic.wizards.com/en/articles/archive/card-preview/exclusive-cards-amonkhet-planeswalker-decks-2017-04-06", "http://magic.wizards.com/en/articles/archive/feature/amonkhet-prerelease-primer-2017-04-17" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "akh-all-cards" }
+      ]
+    },
+    {
+      "productName": "akh-boosters",
+      "productDesc": "Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "akh-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "akh-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "akh-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "akh-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://magic.wizards.com/en/articles/archive/feature/kaladesh-packaging-promos-and-planeswalker-decks-2016-09-06" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "akh-standard" },
+        { "packName": "akh-prerelease-promo-packins" },
+        { "packName": "akh-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "akh-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "akh-prerelease-promo-packins"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "akh-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "akh-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/feature/kaladesh-packaging-promos-and-planeswalker-decks-2016-09-06" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "akh-promos" }
+      ]
+    }
+
+  ]
+}

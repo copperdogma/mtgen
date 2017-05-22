@@ -1,0 +1,170 @@
+{
+  "defs": [
+    {
+      "defName": "akh",
+      "query": "from[*]?set='akh'"
+    },
+    {
+      "defName": "akh-masterpiece-series",
+      "query": "from[akh]?masterpiece=true"
+    },
+    {
+      "defName": "akh-base",
+      "query": "from[akh]-from[akh]?type=(Marketing|Basic Land)-from[akh]?token=true-from[akh]?promo=true-from[akh-masterpiece-series]"
+    },
+    {
+      "defName": "akh-main",
+      "query": "from[akh-base]"
+    },
+    {
+      "defName": "akh-foils",
+      "query": "from[akh-main]"
+    },
+    {
+      "defName": "akh-promo",
+      "query": "from[akh]?promo=true"
+    }
+
+  ],
+  "packs": [
+    {
+      "packName": "akh-all-cards",
+      "packDesc": "Amonkhet: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[akh]-from[akh]?doubleFaceBackCard=true" }
+      ]
+    },
+    {
+      "packName": "akh-standard",
+      "packDesc": "Amonkhet: Standard Booster",
+      "packVersion": "1.0",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[8]>from[akh-main]?rarity='c" },
+        {
+          "querySet": [
+            {
+              "percent": "143/144",
+              "query": "from[akh-main]?rarity='c"
+            },
+            {
+              "percent": "1/144",
+              "query": "from[akh-masterpiece-series]"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "360/480",
+              "query": "from[akh-main]?rarity='c"
+            },
+            {
+              "percent": "88/480",
+              "query": "from[akh-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "24/480",
+              "query": "from[akh-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "7/480",
+              "query": "from[akh-main]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/480",
+              "query": "from[akh-main]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[3]>from[akh-main]?rarity='u" },
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[akh-main]?rarity='r"
+            },
+            {
+              "percent": "1/8",
+              "query": "from[akh-main]?rarity='m"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "3/4",
+              "query": "from[akh]?type='Basic Land"
+            },
+            {
+              "percent": "1/4",
+              "query": "from[akh]?fullArt=true"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[akh]?title='Tip/Marketing Card"
+            },
+            {
+              "percent": "50",
+              "query": "from[akh]?token=true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "akh-promos",
+      "packDesc": "Amonkhet: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[akh-promo]" }
+      ]
+    },
+    {
+      "packName": "akh-prerelease-promo-packins",
+      "packDesc": "Amonkhet: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[akh-base]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[akh-base]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[1]>from[akh-promo]?type='Life Counter" },
+        { "query": "from[akh-promo]?title='Deck Box" },
+        { "query": "from[akh-promo]?title='Deckbuilding Advice Insert" },
+        { "query": "from[akh-promo]?title='Five Trials Checklist" }
+      ]
+    },
+    {
+      "packName": "akh-prerelease-promos",
+      "packDesc": "Amonkhet: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[akh-promo]?includedReason='Prerelease Promo" }
+      ]
+    }
+
+  ]
+}

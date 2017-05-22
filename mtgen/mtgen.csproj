@@ -14,6 +14,51 @@
 
   <ItemGroup>
     <Content Include="wwwroot\lib\js-version-notes.txt" />
+    <Content Include="wwwroot\akh\cardsPromo.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\akh\cardsMain.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\akh\cardsMasterpiece.json" />
+    <Content Include="wwwroot\akh\cardsLand.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\akh\cardsToken.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\akh\images\bg.jpg" />
+    <Content Include="wwwroot\akh\import-main.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\akh\import-masterpiece-series.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\akh\import-land.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\akh\import-promo.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\akh\import-token.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\akh\packs.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\akh\products.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\akh\set.json">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\cards\akh-deckbuilding-info-lg.jpg" />
+    <Content Include="wwwroot\cards\akh-deckbuilding-info.jpg" />
+    <Content Include="wwwroot\cards\akh-minus-one-minus-one-counter.png" />
+    <Content Include="wwwroot\cards\akh-prerelease-deck-box.png" />
+    <Content Include="wwwroot\cards\akh-spindown-life-counter-strength.png" />
+    <Content Include="wwwroot\cards\akh-trials-checklist-lg.jpg" />
+    <Content Include="wwwroot\cards\akh-trials-checklist.jpg" />
     <Content Include="wwwroot\mm3\cardsTokens.json" />
     <Content Include="wwwroot\mm3\import-tokens.json">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
