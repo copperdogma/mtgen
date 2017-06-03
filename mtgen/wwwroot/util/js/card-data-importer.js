@@ -793,7 +793,7 @@ class CardDataImporter {
 
         // v6 - 20160307, soi gallery
         if (!finalImages.size) {
-            const rawimages = imageDoc.querySelectorAll('#content-detail-page-of-an-article .rtecenter img');
+            const rawimages = imageDoc.querySelectorAll('#content-detail-page-of-an-article .rtecenter img, #content-detail-page-of-an-article .legacy_content img');
             rawimages.forEach(img => {
                 if (img.alt.length) {
                     const image = {
@@ -825,7 +825,7 @@ class CardDataImporter {
                 }
             });
         }
-        
+
         // Left in for now -- if we need them one day again, convert them to es6.
         //// v5 - 20160101, bfz gallery
         //if (finalImages.length < 1) {
