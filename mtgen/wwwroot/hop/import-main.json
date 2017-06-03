@@ -1,0 +1,35 @@
+{
+  "setCode": "hop",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=80&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+    {
+      "_comment": "mtg salvation included the basic lands, special lands, and planes, which I import separately",
+      "delete": true,
+      "where": "type=(Basic Land|Land|Plane)"
+    },
+    {
+      "where": "title='Order // Chaos",
+      "newValues": {
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=205384&type=card&options=rotate90",
+        "height": 265,
+        "width": 370
+      }
+    },
+    {
+      "where": "title='Assault // Battery",
+      "newValues": {
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=205409&type=card&options=rotate90",
+        "height": 265,
+        "width": 370
+      }
+    }
+  ]
+}
