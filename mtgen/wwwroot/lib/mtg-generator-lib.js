@@ -79,16 +79,17 @@ var mtgGen = (function (my, $) {
         return my.rarities.unknown;
     }
 
-    // from: http://mtgjson.com/#documentation
+    // from: https://mtgjson.com/documentation.html
     my.cardTypes = {
         planeswalker: { sorder: 1, code: 'p', name: 'Planeswalker' },
-        conspiracy: { sorder: 2, code: 'y', name: 'Conspiracy' },
-        creature: { sorder: 3, code: 'c', name: 'Creature' },
-        instant: { sorder: 4, code: 'i', name: 'Instant' },
-        sorcery: { sorder: 5, code: 's', name: 'Sorcery' },
-        enchantment: { sorder: 6, code: 'e', name: 'Enchantment' },
-        artifact: { sorder: 7, code: 'a', name: 'Artifact' },
-        land: { sorder: 8, code: 'l', name: 'Land' },
+        plane: { sorder: 2, code: 'n', name: 'Plane' },
+        conspiracy: { sorder: 3, code: 'y', name: 'Conspiracy' },
+        creature: { sorder: 4, code: 'c', name: 'Creature' },
+        instant: { sorder: 5, code: 'i', name: 'Instant' },
+        sorcery: { sorder: 6, code: 's', name: 'Sorcery' },
+        enchantment: { sorder: 7, code: 'e', name: 'Enchantment' },
+        artifact: { sorder: 8, code: 'a', name: 'Artifact' },
+        land: { sorder: 9, code: 'l', name: 'Land' },
         unknown: { sorder: 97, code: '?', name: 'Unknown' },
     };
     function getCardTypeByCode(code) {
@@ -1023,7 +1024,7 @@ var mtgGen = (function (my, $) {
         var sortedSets = [];
 
         // for each card type, create a new card set
-        var mainCards = _.filter(cardList, function (card) { return card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token; });
+        var mainCards = _.filter(cardList, function (card) { return card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token || card.type === 'Plane'; });
         var groupedCardSets = _.groupBy(mainCards, function (card) { return card.typeCode; });
         var cardSets = this.sortIntoArray(groupedCardSets, my.cardTypes);
         _.each(cardSets, function (cardSet) {
