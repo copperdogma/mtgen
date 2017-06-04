@@ -1,4 +1,5 @@
 ﻿/*
+3-Jun-2017: Now accepts x15 to skip 15 cards.
 27-Feb-2017: Pulled out of card-data-importer.js
 
 Relies on methods within card-data-importer.js
@@ -44,7 +45,19 @@ class CardExceptionGenerator extends CardDataImporter {
         return new Promise(resolve => {
             // Parse the card pattern into an array.
             const overrideItems = cardPattern.replace(/(?:\r\n|\r|\n)/g, ',');
-            const cardPatterns = overrideItems.trim().split(',');
+            const initialCardPatterns = overrideItems.trim().split(',');
+
+            // Any x# pattern means "skip # cards" so we'll expand it into the correct number of entries.
+            const cardPatterns = initialCardPatterns.reduce((acc, pattern) => {
+                const skipMany = /^x([0-9]{1,3})?$/gi.exec(pattern);
+                if (skipMany) {
+                    return acc.concat(Array.from('x'.repeat(skipMany[1])));
+                }
+                else {
+                    acc.push(pattern);
+                    return acc;
+                }
+            }, []);
 
             // Create land cards out of each image
             let cards = new Map();

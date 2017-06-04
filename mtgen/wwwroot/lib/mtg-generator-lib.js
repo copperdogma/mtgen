@@ -188,14 +188,14 @@ var mtgGen = (function (my, $) {
     // Site to lookup chars: http://www.fileformat.info/info/unicode/char/search.htm
     my.createMatchTitle = function (title) {
         // the \uXXXX codes are javascript escaped codes
-        var clean = title.trim().toLowerCase();
+        var clean = (title+'').trim().toLowerCase();
         clean = clean.replace(/\u00E6/g, 'ae'); // \u00E6 = æ = LATIN LOWER CASE LETTER AE
         clean = clean.trim().replace(/\u00E3\u2020/g, 'ae'); // \u00E3\u2020 = ã† = LATIN LOWER CASE LETTER AE when wotc screws up the encoding;)
         clean = clean.replace(/[^a-z0-9 ]+/g, '');
         clean = clean.replace(/ +/, ' ');
 
         if (/\uFFFD/.test(title)) {
-            console.error('ERROR: replacement character \uFFFD found in title. Change your cardsMain.json file to UTF-8 encoding: ' + title);
+            console.error('ERROR: replacement character \uFFFD found in title. Change this json file to UTF-8 encoding: ' + title);
         }
         return clean;
     }
