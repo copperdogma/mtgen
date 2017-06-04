@@ -23,7 +23,15 @@ class CardExceptionGenerator extends CardDataImporter {
             .then(cardImages => { return this._createOutputCards(setCode, cardImages, startingCardNum, cardPattern); })
             .then(({cards, skippedCards}) => { 
                 const outputLogPromise = this._createOutputLog(cards, skippedCards);
-                const finalDataPromise = this._createFinalJsonOutput(cards);
+                const settings = {
+                    "setCode": setCode,
+                    "cardImageUrl": cardImageUrl,
+                    "requiredImageWidth": requiredImageWidth,
+                    "requiredImageHeight": requiredImageHeight,
+                    "startingCardNum": startingCardNum,
+                    "cardPattern": cardPattern
+                };
+                const finalDataPromise = this._createFinalJsonOutput(settings, cards);
                 return Promise.all([outputLogPromise, finalDataPromise]);
             });
     }
@@ -51,7 +59,7 @@ class CardExceptionGenerator extends CardDataImporter {
             const cardPatterns = initialCardPatterns.reduce((acc, pattern) => {
                 const skipMany = /^x([0-9]{1,3})?$/gi.exec(pattern);
                 if (skipMany) {
-                    return acc.concat(Array.from('x'.repeat(skipMany[1])));
+                    return acc.concat([...'x'.repeat(skipMany[1])]);
                 }
                 else {
                     acc.push(pattern);
@@ -156,9 +164,10 @@ class CardExceptionGenerator extends CardDataImporter {
         });
     }
 
-    _createFinalJsonOutput(cards) {
+    _createFinalJsonOutput(settings, cards) {
         return new Promise(resolve => {
             const finalOut = [];
+
             [...cards.values()].forEach(card => {
                 delete card.matchTitle;
                 delete card.srcOriginal;
@@ -220,6 +229,13 @@ class CardExceptionGenerator extends CardDataImporter {
                 const bName = mtgGen.createMatchTitle(b.newValues.num);
                 return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
             });
+
+            const preCard =
+                {
+                    "_comment": "Generated using card-exception-generator.html",
+                    "_settings": settings
+                };
+            finalOut.unshift(preCard);
 
             const jsonMainStr = JSON.stringify(finalOut, null, ' ');
 
