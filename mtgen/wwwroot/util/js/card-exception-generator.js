@@ -232,8 +232,10 @@ class CardExceptionGenerator extends CardDataImporter {
 
             const preCard =
                 {
-                    "_comment": "Generated using card-exception-generator.html",
-                    "_settings": settings
+                    "_comment": {
+                        "generatedUsing": "card-exception-generator.html",
+                        "settings": settings
+                    }
                 };
             finalOut.unshift(preCard);
 
