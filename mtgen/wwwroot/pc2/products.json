@@ -1,0 +1,106 @@
+﻿{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "pc2-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://www.mtgsalvation.com/spoilers/105-planechase", "http://magic.wizards.com/en/articles/archive/feature/card-image-gallery-2012-05-21" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "pc2-all-cards" }
+      ]
+    },
+    {
+      "productName": "pc2-decks",
+      "productDesc": "Planechase 2012 Decks",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/arcana/2012-edition-decklists-2012-05-28" ],
+      "isGenerated": false,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "pc2-chaos-reigns-deck" },
+        { "packName": "pc2-chaos-reigns-planes" },
+        { "packName": "pc2-night-of-the-ninja-deck" },
+        { "packName": "pc2-night-of-the-ninja-planes" },
+        { "packName": "pc2-primordial-hunger-deck" },
+        { "packName": "pc2-primordial-hunger-planes" },
+        { "packName": "pc2-savage-auras-deck" },
+        { "packName": "pc2-savage-auras-planes" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "pc2-deck-chaos-reigns",
+            "presetDesc": "Chaos Reigns",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "pc2-chaos-reigns-planes"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "pc2-chaos-reigns-deck"
+              }
+            ]
+          },
+          {
+            "presetName": "pc2-deck-night-of-the-ninja",
+            "presetDesc": "Night of the Ninja",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "pc2-night-of-the-ninja-planes"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "pc2-night-of-the-ninja-deck"
+              }
+            ]
+          },
+          {
+            "presetName": "pc2-deck-primordial-hunger",
+            "presetDesc": "Primordial Hunger",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "pc2-primordial-hunger-planes"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "pc2-primordial-hunger-deck"
+              }
+            ]
+          },
+          {
+            "presetName": "pc2-deck-savage-auras",
+            "presetDesc": "Savage Auras",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "pc2-savage-auras-planes"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "pc2-savage-auras-deck"
+              }
+            ]
+          }
+
+        ]
+      }
+    },
+    {
+      "productName": "pc2-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/arcana/2012-edition-release-promo-2012-05-22" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "pc2-promos" }
+      ]
+    }
+
+  ]
+}

@@ -1,0 +1,322 @@
+﻿{
+
+  "defs": [
+    {
+      "defName": "pc2",
+      "query": "from[*]?set='pc2'"
+    },
+    {
+      "defName": "pc2-main",
+      "query": "from[pc2]-from[pc2]?type=(Marketing|Basic Land)-from[pc2]?promo=true"
+    },
+    {
+      "defName": "pc2-plane",
+      "query": "from[pc2]?type=(Plane|Phenomenon)"
+    },
+    {
+      "defName": "pc2-promo",
+      "query": "from[pc2]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "pc2-all-cards",
+      "packDesc": "Planechase 2012: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[pc2]" }
+      ]
+    },
+    {
+      "packName": "pc2-chaos-reigns-planes",
+      "packDesc": "Chaos Reigns Planes",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[pc2-plane]?title=(Grand Ossuary|Hedron Fields of Agadeem|Mount Keralia|Nephalia|Orzhova|Trail of the Mage-Rings|Truga Jungle|Windriddle Palaces|Mutual Epiphany|Time Distortion)" }
+      ]
+    },
+    {
+      "packName": "pc2-chaos-reigns-deck",
+      "packDesc": "Chaos Reigns Deck",
+      "isGenerated": false,
+      "cards": [
+        { "query": "from[pc2]?title='Guard Gomazoa'" },
+        {
+          "query": "take[2]>from[pc2]?title='Illusory Angel'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[pc2]?title='Whirlpool Warrior'" },
+        {
+          "query": "take[2]>from[pc2]?title='Shardless Agent'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[pc2]?title='Noggle Ransacker'" },
+        { "query": "from[pc2]?title='Primal Plasma'" },
+        { "query": "from[pc2]?title='Ondu Giant'" },
+        { "query": "from[pc2]?title='Kathari Remnant'" },
+        {
+          "query": "take[2]>from[pc2]?title='Bloodbraid Elf'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[pc2]?title='Peregrine Drake'" },
+        { "query": "from[pc2]?title='Fusion Elemental'" },
+        { "query": "from[pc2]?title='Brutalizer Exarch'" },
+        { "query": "from[pc2]?title='Etherium-Horn Sorcerer'" },
+        { "query": "from[pc2]?title='Enlisted Wurm'" },
+        { "query": "from[pc2]?title='Enigma Sphinx'" },
+        { "query": "from[pc2]?title='Maelstrom Wanderer'" },
+        {
+          "query": "take[2]>from[pc2]?title='See Beyond'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[pc2]?title='Arc Trail'" },
+        { "query": "from[pc2]?title='Erratic Explosion'" },
+        { "query": "from[pc2]?title='Cultivate'" },
+        { "query": "from[pc2]?title='Rivals’ Duel'" },
+        { "query": "from[pc2]?title='Mass Mutiny'" },
+        { "query": "from[pc2]?title='Deny Reality'" },
+        { "query": "from[pc2]?title='Last Stand'" },
+        { "query": "from[pc2]?title='Beast Within'" },
+        { "query": "from[pc2]?title='Bituminous Blast'" },
+        {
+          "query": "take[2]>from[pc2]?title='Fiery Fall'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[pc2]?title='Armillary Sphere'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[pc2]?title='Fractured Powerstone'" },
+        { "query": "from[pc2]?title='Sunken Hope'" },
+        { "query": "from[pc2]?title='Exotic Orchard'" },
+        {
+          "query": "take[2]>from[pc2]?title='Rupture Spire'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[pc2]?title='Shimmering Grotto'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[pc2]?title='Terramorphic Expanse'" },
+        { "query": "from[pc2]?title='Vivid Creek'" },
+        {
+          "query": "take[2]>from[pc2]?title='Plains'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[5]>from[pc2]?title='Island'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[pc2]?title='Swamp'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[4]>from[pc2]?title='Mountain'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[4]>from[pc2]?title='Forest'",
+          "canBeDuplicate": true
+        }
+      ]
+    },
+
+    {
+      "packName": "pc2-night-of-the-ninja-planes",
+      "packDesc": "Night of the Ninja Planes",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[pc2-plane]?title=(Bloodhill Bastion|Gavony|Glen Elendra|Kharasha Foothills|Norn’s Dominion|Quicksilver Sea|Takenuma|The Zephyr Maze|Interplanar Tunnel|Morphic Tide)" }
+      ]
+    },
+		{
+		"packName": "pc2-night-of-the-ninja-deck",
+		"packDesc": "Night of the Ninja Deck",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[2]>from[pc2]?title='Tormented Soul'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[pc2]?title='Augury Owl'", "canBeDuplicate": true },
+			{ "query": "from[pc2]?title='Skullsnatcher'" },
+			{ "query": "from[pc2]?title='Inkfathom Witch'" },
+			{ "query": "take[2]>from[pc2]?title='Baleful Strix'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[pc2]?title='Dimir Infiltrator'", "canBeDuplicate": true },
+			{ "query": "from[pc2]?title='Mistblade Shinobi'" },
+			{ "query": "from[pc2]?title='Walker of Secret Ways'" },
+			{ "query": "from[pc2]?title='Wall of Frost'" },
+			{ "query": "from[pc2]?title='Cadaver Imp'" },
+			{ "query": "from[pc2]?title='Liliana’s Specter'" },
+			{ "query": "take[2]>from[pc2]?title='Ninja of the Deep Hours'", "canBeDuplicate": true },
+			{ "query": "from[pc2]?title='Sakashima’s Student'" },
+			{ "query": "from[pc2]?title='Glen Elendra Liege'" },
+			{ "query": "from[pc2]?title='Throat Slitter'" },
+			{ "query": "from[pc2]?title='Higure, the Still Wind'" },
+			{ "query": "from[pc2]?title='Okiba-Gang Shinobi'" },
+			{ "query": "from[pc2]?title='Dark Hatchling'" },
+			{ "query": "from[pc2]?title='Ink-Eyes, Servant of Oni'" },
+			{ "query": "from[pc2]?title='Vela the Night-Clad'" },
+			{ "query": "from[pc2]?title='Silent-Blade Oni'" },
+			{ "query": "take[2]>from[pc2]?title='Assassinate'", "canBeDuplicate": true },
+			{ "query": "from[pc2]?title='Concentrate'" },
+			{ "query": "from[pc2]?title='Cancel'" },
+			{ "query": "take[2]>from[pc2]?title='Sai of the Shinobi'", "canBeDuplicate": true },
+			{ "query": "from[pc2]?title='Fractured Powerstone'" },
+			{ "query": "from[pc2]?title='Quietus Spike'" },
+			{ "query": "from[pc2]?title='Whispersilk Cloak'" },
+			{ "query": "from[pc2]?title='Farsight Mask'" },
+			{ "query": "take[2]>from[pc2]?title='Dimir Aqueduct'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[pc2]?title='Jwar Isle Refuge'", "canBeDuplicate": true },
+			{ "query": "from[pc2]?title='Tainted Isle'" },
+			{ "query": "from[pc2]?title='Terramorphic Expanse'" },
+			{ "query": "take[9]>from[pc2]?title='Island'", "canBeDuplicate": true },
+			{ "query": "take[9]>from[pc2]?title='Swamp'", "canBeDuplicate": true }
+			]
+		},
+
+    {
+      "packName": "pc2-primordial-hunger-planes",
+      "packDesc": "Primordial Hunger Planes",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[pc2-plane]?title=(Furnace Layer|Jund|Kilnspire District|Lair of the Ashen Idol|Orochi Colony|Prahv|Selesnya Loft Gardens|Stensia|Reality Shaping|Spatial Merging)" }
+      ]
+    },
+		{
+		"packName": "pc2-primordial-hunger-deck",
+		"packDesc": "Primordial Hunger Deck",
+		"isGenerated": false,
+		"cards": [
+			{ "query": "take[2]>from[pc2]?title='Tukatongue Thallid'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[pc2]?title='Brindle Shoat'", "canBeDuplicate": true },
+			{ "query": "from[pc2]?title='Nest Invader'" },
+			{ "query": "take[2]>from[pc2]?title='Viridian Emissary'", "canBeDuplicate": true },
+			{ "query": "from[pc2]?title='Wall of Blossoms'" },
+			{ "query": "from[pc2]?title='Hissing Iguanar'" },
+			{ "query": "take[2]>from[pc2]?title='Mudbutton Torchrunner'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[pc2]?title='Thunder-Thrash Elder'", "canBeDuplicate": true },
+			{ "query": "from[pc2]?title='Gluttonous Slime'" },
+			{ "query": "from[pc2]?title='Nullmage Advocate'" },
+			{ "query": "from[pc2]?title='Thorn-Thrash Viashino'" },
+			{ "query": "take[2]>from[pc2]?title='Beetleback Chief'", "canBeDuplicate": true },
+			{ "query": "from[pc2]?title='Penumbra Spider'" },
+			{ "query": "from[pc2]?title='Hellkite Hatchling'" },
+			{ "query": "from[pc2]?title='Mitotic Slime'" },
+			{ "query": "from[pc2]?title='Mycoloth'" },
+			{ "query": "from[pc2]?title='Thromok the Insatiable'" },
+			{ "query": "from[pc2]?title='Preyseizer Dragon'" },
+			{ "query": "from[pc2]?title='Dragonlair Spider'" },
+			{ "query": "from[pc2]?title='Mark of Mutiny'" },
+			{ "query": "from[pc2]?title='Overrun'" },
+			{ "query": "from[pc2]?title='Hellion Eruption'" },
+			{ "query": "from[pc2]?title='Fiery Conclusion'" },
+			{ "query": "from[pc2]?title='Fling'" },
+			{ "query": "take[2]>from[pc2]?title='Flayer Husk'", "canBeDuplicate": true },
+			{ "query": "from[pc2]?title='Fractured Powerstone'" },
+			{ "query": "from[pc2]?title='Awakening Zone'" },
+			{ "query": "from[pc2]?title='Fires of Yavimaya'" },
+			{ "query": "from[pc2]?title='Warstorm Surge'" },
+			{ "query": "take[2]>from[pc2]?title='Gruul Turf'", "canBeDuplicate": true },
+			{ "query": "take[2]>from[pc2]?title='Kazandu Refuge'", "canBeDuplicate": true },
+			{ "query": "from[pc2]?title='Khalni Garden'" },
+			{ "query": "from[pc2]?title='Skarrg, the Rage Pits'" },
+			{ "query": "from[pc2]?title='Terramorphic Expanse'" },
+			{ "query": "take[11]>from[pc2]?title='Forest'", "canBeDuplicate": true },
+			{ "query": "take[6]>from[pc2]?title='Mountain'", "canBeDuplicate": true }
+			]
+		},
+
+    {
+      "packName": "pc2-savage-auras-planes",
+      "packDesc": "Savage Auras Planes",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[pc2-plane]?title=(Akoum|Aretopolis|Astral Arena|Edge of Malacol|Grove of the Dreampods|Kessig|Onakke Catacomb|Talon Gates|Chaotic Æther|Planewide Disaster)" }
+      ]
+    },
+    {
+      "packName": "pc2-savage-auras-deck",
+      "packDesc": "Savage Auras Deck",
+      "isGenerated": false,
+      "cards": [
+        {
+          "query": "take[2]>from[pc2]?title='Dreampod Druid'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[pc2]?title='Silhana Ledgewalker'" },
+        { "query": "from[pc2]?title='Kor Spiritdancer'" },
+        {
+          "query": "take[2]>from[pc2]?title='Aura Gnarlid'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[pc2]?title='Auramancer'" },
+        {
+          "query": "take[2]>from[pc2]?title='Armored Griffin'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[pc2]?title='Lumberknot'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[pc2]?title='Thran Golem'" },
+        { "query": "from[pc2]?title='Dowsing Shaman'" },
+        { "query": "from[pc2]?title='Bramble Elemental'" },
+        { "query": "from[pc2]?title='Celestial Ancient'" },
+        { "query": "from[pc2]?title='Elderwood Scion'" },
+        { "query": "from[pc2]?title='Auratouched Mage'" },
+        { "query": "from[pc2]?title='Krond the Dawn-Clad'" },
+        { "query": "from[pc2]?title='Three Dreams'" },
+        { "query": "from[pc2]?title='Fractured Powerstone'" },
+        { "query": "from[pc2]?title='Rancor'" },
+        { "query": "from[pc2]?title='Hyena Umbra'" },
+        { "query": "from[pc2]?title='Quiet Disrepair'" },
+        {
+          "query": "take[2]>from[pc2]?title='Felidar Umbra'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[pc2]?title='Spirit Mantle'" },
+        {
+          "query": "take[2]>from[pc2]?title='Boar Umbra'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[pc2]?title='Snake Umbra'" },
+        { "query": "from[pc2]?title='Cage of Hands'" },
+        { "query": "from[pc2]?title='Ghostly Prison'" },
+        { "query": "from[pc2]?title='Predatory Urge'" },
+        { "query": "from[pc2]?title='Mammoth Umbra'" },
+        { "query": "from[pc2]?title='Sigil of the Empty Throne'" },
+        { "query": "from[pc2]?title='Indrik Umbra'" },
+        { "query": "from[pc2]?title='Pollenbright Wings'" },
+        {
+          "query": "take[2]>from[pc2]?title='Graypelt Refuge'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[pc2]?title='Krosan Verge'" },
+        {
+          "query": "take[2]>from[pc2]?title='Selesnya Sanctuary'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[pc2]?title='Terramorphic Expanse'" },
+        { "query": "from[pc2]?title='Vitu-Ghazi, the City-Tree'" },
+        {
+          "query": "take[9]>from[pc2]?title='Forest'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[8]>from[pc2]?title='Plains'",
+          "canBeDuplicate": true
+        }
+      ]
+    },
+
+    {
+      "packName": "pc2-promos",
+      "packDesc": "Planechase 2012: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[pc2-promo]" }
+      ]
+    }
+
+  ]
+}
