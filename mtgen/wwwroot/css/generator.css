@@ -402,7 +402,7 @@ main > em {
 	position: relative;
 }
 .foil:before {
-	background: url(../cards/mtg-foil.png);
+	background: url(../cards/mtg-foil.png) no-repeat;
 	bottom: 0;
 	content: "";
 	left: 0;
