@@ -1,0 +1,32 @@
+﻿{
+  "setCode": "cmd",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=96&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/feature/magic-gathering-commander-card-image-gallery-2011-05-25",
+  "exceptions": [
+    {
+      "_comment": "add promo:false to ALL cards with the intention of deleting them later",
+      "where": "",
+      "newValues": {
+        "promo": false
+      }
+    },
+
+    {
+      "_comment": "Each deck has one primary and two secondary commanders. They also included oversized foil versions of the same.",
+      "where": "title=(Kaalia of the Vast|Oros, the Avenger|Tariel, Reckoner of Souls|    Riku of Two Reflections|Animar, Soul of Elements|Intet, the Dreamer|    Ghave, Guru of Spores|Teneb, the Harvester|Karador, Ghost Chieftain|    Zedruu the Greathearted|Ruhan of the Fomori|Numot, the Devastator|    The Mimeoplasm|Vorosh, the Hunter|Damia, Sage of Stone)",
+      "newValues": {
+        "promo": true,
+        "num": "{{num}} Promo",
+        "includedReason": "Oversized Foil Commander Promo",
+        "usableForDeckBuilding": false,
+        "addedViaException": true
+      }
+    },
+
+    {
+      "_comment": "delete all cards that still have promo=false, which leaves just our promo cards",
+      "delete": true,
+      "where": "promo=false"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+﻿{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "cmd-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://www.mtgsalvation.com/spoilers/80-Commander", "http://magic.wizards.com/en/articles/archive/Commander-theme-decks-2009-08-31", "http://magic.wizards.com/en/articles/archive/arcana/Commander-release-promo-2009-09-01", "http://magic.wizards.com/en/articles/archive/feature/rules-revealed-2009-08-10" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "cmd-all-cards" }
+      ]
+    },
+    {
+      "productName": "cmd-decks",
+      "productDesc": "Commander Decks",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/Commander-theme-decks-2009-08-31" ],
+      "isGenerated": false,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "cmd-heavenly-inferno-commanders" },
+        { "packName": "cmd-heavenly-inferno-deck" },
+        { "packName": "cmd-mirror-mastery-commanders" },
+        { "packName": "cmd-mirror-mastery-deck" },
+        { "packName": "cmd-counterpunch-commanders" },
+        { "packName": "cmd-counterpunch-deck" },
+        { "packName": "cmd-political-puppets-commanders" },
+        { "packName": "cmd-political-puppets-deck" },
+        { "packName": "cmd-devour-for-power-commanders" },
+        { "packName": "cmd-devour-for-power-deck" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "cmd-heavenly-inferno-deck",
+            "presetDesc": "Heavenly Inferno",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "cmd-heavenly-inferno-commanders"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "cmd-heavenly-inferno-deck"
+              }
+            ]
+          },
+          {
+            "presetName": "cmd-mirror-mastery-deck",
+            "presetDesc": "Mirror Mastery",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "cmd-mirror-mastery-commanders"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "cmd-mirror-mastery-deck"
+              }
+            ]
+          },
+          {
+            "presetName": "cmd-counterpunch-deck",
+            "presetDesc": "Counterpunch",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "cmd-counterpunch-commanders"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "cmd-counterpunch-deck"
+              }
+            ]
+          },
+          {
+            "presetName": "cmd-political-puppets-deck",
+            "presetDesc": "Political Puppets",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "cmd-political-puppets-commanders"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "cmd-political-puppets-deck"
+              }
+            ]
+          },
+          {
+            "presetName": "cmd-devour-for-power-deck",
+            "presetDesc": "Devour for Power",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "cmd-devour-for-power-commanders"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "cmd-devour-for-power-deck"
+              }
+            ]
+          }
+
+        ]
+      }
+    },
+    {
+      "productName": "cmd-promos",
+      "productDesc": "All Promos",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "cmd-promos" }
+      ]
+    }
+
+  ]
+}
