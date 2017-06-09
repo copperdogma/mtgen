@@ -683,7 +683,7 @@ class CardDataImporter {
     }
 
     _getCardsFromMtgJsonData(rawCardData, setCode) {
-        let cards = {};
+        let cards = new Map();
 
         rawCardData = JSON.parse(rawCardData);
 
