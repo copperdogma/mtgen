@@ -1,5 +1,5 @@
 ﻿/*
-3-Jun-2017: Now accepts x15 to skip 15 cards.
+3-Jun-2017: Now accepts x15 to skip 15 cards, upgraded to be more promise-centric, and showed critical errors on the web page.
 27-Feb-2017: Pulled out of card-data-importer.js
 
 Relies on methods within card-data-importer.js
@@ -8,32 +8,35 @@ class CardExceptionGenerator extends CardDataImporter {
 
     // PUBLIC METHODS ------------------------------------------------------------------------------------
 
-    loadImagesAndGenerateExceptions({cardImageUrl, startingCardNum, requiredImageWidth, 
-                                     requiredImageHeight, cardPattern, setCode}) {
-        if (!cardImageUrl) { throw new Error("No card image url supplied. Cannot continue."); }
-        if (!cardPattern) { throw new Error("No card pattern supplied. Cannot continue."); }
+    loadImagesAndGenerateExceptions({ cardImageUrl, startingCardNum, requiredImageWidth,
+        requiredImageHeight, cardPattern, setCode }) {
 
-        window.dispatchEvent(new Event('data-loading'));
+        return new Promise(resolve => {
+            if (!cardImageUrl) { throw new Error("No card image url supplied. Cannot continue."); }
+            if (!cardPattern) { throw new Error("No card pattern supplied. Cannot continue."); }
 
-        return this._fetchHtml(cardImageUrl)
-            .then(imageData => {
-                window.dispatchEvent(new Event('data-loaded'));
-                return this._getCardImagesFromWotcArticle(imageData, requiredImageWidth, requiredImageHeight);
-            })
-            .then(cardImages => { return this._createOutputCards(setCode, cardImages, startingCardNum, cardPattern); })
-            .then(({cards, skippedCards}) => { 
-                const outputLogPromise = this._createOutputLog(cards, skippedCards);
-                const settings = {
-                    "setCode": setCode,
-                    "cardImageUrl": cardImageUrl,
-                    "requiredImageWidth": requiredImageWidth,
-                    "requiredImageHeight": requiredImageHeight,
-                    "startingCardNum": startingCardNum,
-                    "cardPattern": cardPattern
-                };
-                const finalDataPromise = this._createFinalJsonOutput(settings, cards);
-                return Promise.all([outputLogPromise, finalDataPromise]);
-            });
+            window.dispatchEvent(new Event('data-loading'));
+
+            return this._fetchHtml(cardImageUrl)
+                .then(imageData => {
+                    window.dispatchEvent(new Event('data-loaded'));
+                    return this._getCardImagesFromWotcArticle(imageData, requiredImageWidth, requiredImageHeight);
+                })
+                .then(cardImages => { return this._createOutputCards(setCode, cardImages, startingCardNum, cardPattern); })
+                .then(({ cards, skippedCards }) => {
+                    const outputLogPromise = this._createOutputLog(cards, skippedCards);
+                    const settings = {
+                        "setCode": setCode,
+                        "cardImageUrl": cardImageUrl,
+                        "requiredImageWidth": requiredImageWidth,
+                        "requiredImageHeight": requiredImageHeight,
+                        "startingCardNum": startingCardNum,
+                        "cardPattern": cardPattern
+                    };
+                    const finalDataPromise = this._createFinalJsonOutput(settings, cards);
+                    resolve(Promise.all([outputLogPromise, finalDataPromise]));
+                });
+        });
     }
 
     // PRIVATE METHODS ------------------------------------------------------------------------------------
@@ -75,6 +78,7 @@ class CardExceptionGenerator extends CardDataImporter {
             let cardPatternIndex = 0;
             cards.areLand = false;
             cards.areTokens = false;
+            let noMorePatterns = false;
 
             cardImages.forEach((image, index) => {
                 const card = { set: setCode };
@@ -85,6 +89,7 @@ class CardExceptionGenerator extends CardDataImporter {
                 let skipCard = false;
                 if (cardPatterns.length <= cardPatternIndex) {
                     card.title = "Ran out of Card Pattern entries";
+                    noMorePatterns = true;
                 }
                 else {
                     // Determine the type of pattern.
@@ -129,7 +134,7 @@ class CardExceptionGenerator extends CardDataImporter {
                 }
                 cardPatternIndex++;
 
-                if (!skipCard) {
+                if (!skipCard && !noMorePatterns) {
                     card.matchTitle = mtgGen.createMatchTitle(card.title);
 
                     if (hasFixedCardNums) {
