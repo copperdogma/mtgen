@@ -1,0 +1,236 @@
+﻿{
+  "setCode": "c13",
+  "cardDataUrl": "https://mtgjson.com/json/C13.json",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/2013-edition-card-image-gallery-2013-10-07",
+  "exceptions": [
+    {
+      "_comment": "add land:false to ALL cards with the intention of deleting them later",
+      "where": "",
+      "newValues": {
+        "land": false
+      }
+    },
+    {
+      "_comment": "basic land are done separately below",
+      "where": "type=(Land|Legendary Land)",
+      "newValues": {
+        "land": true
+      }
+    },
+    {
+      "_comment": "delete all cards that still have land=false, which leaves just our land cards",
+      "delete": true,
+      "where": "land=false"
+    },
+
+      {
+        "_comment": {
+          "generatedUsing": "card-exception-generator.html",
+          "settings": {
+            "setCode": "c13",
+            "cardImageUrl": "http://magic.wizards.com/en/articles/archive/2013-edition-card-image-gallery-2013-10-07",
+            "requiredImageWidth": "265",
+            "requiredImageHeight": "370",
+            "startingCardNum": "",
+            "cardPattern": "x288,g353,g354,g355,g356,x7,u341,u342,u343,u344,x12,r349,r350,r351,r352,x5,w337,w338,w339,w340,x14,b345,b346,b347,b348"
+          }
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "set": "c13",
+          "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/tcg/products/cmd13/xSLUQGCtTE_EN.jpg",
+          "title": "Plains",
+          "num": "337"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "set": "c13",
+          "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/tcg/products/cmd13/rtREzTmGMl_EN.jpg",
+          "title": "Plains",
+          "num": "338"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "set": "c13",
+          "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/tcg/products/cmd13/ghxEEPPDMC_EN.jpg",
+          "title": "Plains",
+          "num": "339"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "set": "c13",
+          "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/tcg/products/cmd13/5mslZ9jA3D_EN.jpg",
+          "title": "Plains",
+          "num": "340"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "set": "c13",
+          "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/tcg/products/cmd13/L7sjkGqzU2_EN.jpg",
+          "title": "Island",
+          "num": "341"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "set": "c13",
+          "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/tcg/products/cmd13/ZCvGdBkCWg_EN.jpg",
+          "title": "Island",
+          "num": "342"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "set": "c13",
+          "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/tcg/products/cmd13/6TpGXlTDms_EN.jpg",
+          "title": "Island",
+          "num": "343"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "set": "c13",
+          "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/tcg/products/cmd13/tnySpq0C6j_EN.jpg",
+          "title": "Island",
+          "num": "344"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "set": "c13",
+          "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/tcg/products/cmd13/XVn1cStCx0_EN.jpg",
+          "title": "Swamp",
+          "num": "345"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "set": "c13",
+          "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/tcg/products/cmd13/MRKCiD4zSe_EN.jpg",
+          "title": "Swamp",
+          "num": "346"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "set": "c13",
+          "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/tcg/products/cmd13/C4OHAII5iu_EN.jpg",
+          "title": "Swamp",
+          "num": "347"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "set": "c13",
+          "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/tcg/products/cmd13/xhSkr5lIze_EN.jpg",
+          "title": "Swamp",
+          "num": "348"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "set": "c13",
+          "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/tcg/products/cmd13/3lffszKOVZ_EN.jpg",
+          "title": "Mountain",
+          "num": "349"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "set": "c13",
+          "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/tcg/products/cmd13/isDGrz0WrW_EN.jpg",
+          "title": "Mountain",
+          "num": "350"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "set": "c13",
+          "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/tcg/products/cmd13/8KSzF8P2dQ_EN.jpg",
+          "title": "Mountain",
+          "num": "351"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "set": "c13",
+          "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/tcg/products/cmd13/c9whHehh9z_EN.jpg",
+          "title": "Mountain",
+          "num": "352"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "set": "c13",
+          "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/tcg/products/cmd13/CAfLh23OLA_EN.jpg",
+          "title": "Forest",
+          "num": "353"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "set": "c13",
+          "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/tcg/products/cmd13/3XOvCXGlD2_EN.jpg",
+          "title": "Forest",
+          "num": "354"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "set": "c13",
+          "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/tcg/products/cmd13/A7AfVczvzE_EN.jpg",
+          "title": "Forest",
+          "num": "355"
+        }
+      },
+      {
+        "add": true,
+        "newValues": {
+          "set": "c13",
+          "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/tcg/products/cmd13/JjHw2Clr2z_EN.jpg",
+          "title": "Forest",
+          "num": "356"
+        }
+      },
+      {
+        "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
+        "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
+        "newValues": {
+          "set": "{{setCode}}",
+          "height": 370,
+          "width": 265,
+          "type": "Basic Land",
+          "subtype": "{{title}}",
+          "colour": "l",
+          "cost": "",
+          "rarity": "c",
+          "num": "{{num}}/356 L"
+        }
+      }
+
+  ]
+}

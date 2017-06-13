@@ -1,0 +1,122 @@
+﻿{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "c13-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/2013-edition-card-image-gallery-2013-10-07", "http://www.mtgsalvation.com/spoilers/filter?SetID=137&IncludeUnconfirmed=true&CardsPerRequest=999", "https://mtgjson.com/json/C13.json" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "c13-all-cards" }
+      ]
+    },
+    {
+      "productName": "c13-decks",
+      "productDesc": "Commander 2013 Decks",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/making-magic/all-five-commander-decklists-2013-10-18" ],
+      "isGenerated": false,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "c13-eternal-bargain-commanders" },
+        { "packName": "c13-eternal-bargain-deck" },
+        { "packName": "c13-nature-of-the-beast-commanders" },
+        { "packName": "c13-nature-of-the-beast-deck" },
+        { "packName": "c13-power-hungry-commanders" },
+        { "packName": "c13-power-hungry-deck" },
+        { "packName": "c13-mind-seize-commanders" },
+        { "packName": "c13-mind-seize-deck" },
+        { "packName": "c13-evasive-maneuvers-commanders" },
+        { "packName": "c13-evasive-maneuvers-deck" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "c13-eternal-bargain-deck",
+            "presetDesc": "Eternal Bargain",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "c13-eternal-bargain-commanders"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "c13-eternal-bargain-deck"
+              }
+            ]
+          },
+          {
+            "presetName": "c13-nature-of-the-beast-deck",
+            "presetDesc": "Nature of the Beast",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "c13-nature-of-the-beast-commanders"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "c13-nature-of-the-beast-deck"
+              }
+            ]
+          },
+          {
+            "presetName": "c13-power-hungry-deck",
+            "presetDesc": "Power Hungry",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "c13-power-hungry-commanders"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "c13-power-hungry-deck"
+              }
+            ]
+          },
+          {
+            "presetName": "c13-mind-seize-deck",
+            "presetDesc": "Mind Seize",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "c13-mind-seize-commanders"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "c13-mind-seize-deck"
+              }
+            ]
+          },
+          {
+            "presetName": "c13-evasive-maneuvers-deck",
+            "presetDesc": "Evasive Maneuvers",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "c13-evasive-maneuvers-commanders"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "c13-evasive-maneuvers-deck"
+              }
+            ]
+          }
+
+        ]
+      }
+    },
+    {
+      "productName": "c13-promos",
+      "productDesc": "All Promos",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "c13-promos" }
+      ]
+    }
+
+  ]
+}
