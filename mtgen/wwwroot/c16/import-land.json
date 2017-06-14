@@ -1,0 +1,191 @@
+﻿{
+  "setCode": "c16",
+  "cardDataUrl": "https://mtgjson.com/json/C16.json",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/card-image-gallery/commander-2016",
+  "exceptions": [
+    {
+      "_comment": "add land:false to ALL cards with the intention of deleting them later",
+      "where": "",
+      "newValues": {
+        "land": false
+      }
+    },
+    {
+      "_comment": "basic land are done separately below",
+      "where": "type=(Land|Legendary Land)",
+      "newValues": {
+        "land": true
+      }
+    },
+    {
+      "_comment": "delete all cards that still have land=false, which leaves just our land cards",
+      "delete": true,
+      "where": "land=false"
+    },
+
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "c16",
+          "cardImageUrl": "http://magic.wizards.com/en/articles/archive/feature/basic-lands-commander-2016-edition-2016-10-25",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "w337,u340,b343,r346,g349,w338,u341,b344,r347,g350,w339,u342,b345,r348,g351"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c16",
+        "src": "http://media.wizards.com/2016/bn8f9t2zc_C16/pIMfaPtXZX_EN.png",
+        "title": "Plains",
+        "num": "337"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c16",
+        "src": "http://media.wizards.com/2016/bn8f9t2zc_C16/Nh4MQndnKN_EN.png",
+        "title": "Plains",
+        "num": "338"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c16",
+        "src": "http://media.wizards.com/2016/bn8f9t2zc_C16/TEeHnrDun7_EN.png",
+        "title": "Plains",
+        "num": "339"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c16",
+        "src": "http://media.wizards.com/2016/bn8f9t2zc_C16/cCrVhqADcW_EN.png",
+        "title": "Island",
+        "num": "340"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c16",
+        "src": "http://media.wizards.com/2016/bn8f9t2zc_C16/J7l1SfcNXU_EN.png",
+        "title": "Island",
+        "num": "341"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c16",
+        "src": "http://media.wizards.com/2016/bn8f9t2zc_C16/AoXLYQeMQh_EN.png",
+        "title": "Island",
+        "num": "342"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c16",
+        "src": "http://media.wizards.com/2016/bn8f9t2zc_C16/PBA1eoapri_EN.png",
+        "title": "Swamp",
+        "num": "343"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c16",
+        "src": "http://media.wizards.com/2016/bn8f9t2zc_C16/Zai6XYVuhu_EN.png",
+        "title": "Swamp",
+        "num": "344"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c16",
+        "src": "http://media.wizards.com/2016/bn8f9t2zc_C16/E8JUNdbfMu_EN.png",
+        "title": "Swamp",
+        "num": "345"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c16",
+        "src": "http://media.wizards.com/2016/bn8f9t2zc_C16/4zQJKAjS8N_EN.png",
+        "title": "Mountain",
+        "num": "346"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c16",
+        "src": "http://media.wizards.com/2016/bn8f9t2zc_C16/NyzwaNWn7R_EN.png",
+        "title": "Mountain",
+        "num": "347"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c16",
+        "src": "http://media.wizards.com/2016/bn8f9t2zc_C16/Nfq2q12HDq_EN.png",
+        "title": "Mountain",
+        "num": "348"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c16",
+        "src": "http://media.wizards.com/2016/bn8f9t2zc_C16/qrp5U4f5of_EN.png",
+        "title": "Forest",
+        "num": "349"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c16",
+        "src": "http://media.wizards.com/2016/bn8f9t2zc_C16/WlhJbH0GNO_EN.png",
+        "title": "Forest",
+        "num": "350"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c16",
+        "src": "http://media.wizards.com/2016/bn8f9t2zc_C16/It6FchWepd_EN.png",
+        "title": "Forest",
+        "num": "351"
+      }
+    },
+    {
+      "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
+      "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
+      "newValues": {
+        "set": "{{setCode}}",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "{{title}}",
+        "colour": "l",
+        "cost": "",
+        "rarity": "c",
+        "num": "{{num}}/264 L"
+      }
+    }
+
+  ]
+}

@@ -1,0 +1,32 @@
+﻿{
+  "setCode": "c16",
+  "cardDataUrl": "https://mtgjson.com/json/C16.json",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/card-image-gallery/commander-2016",
+  "exceptions": [
+    {
+      "_comment": "add promo:false to ALL cards with the intention of deleting them later",
+      "where": "",
+      "newValues": {
+        "promo": false
+      }
+    },
+
+    {
+      "_comment": "Each deck has commanders. They also included oversized foil versions of the same.",
+      "where": "title=(Yidris, Maelstrom Wielder|Saskia the Unyielding|Kynaios and Tiro of Meletis|Atraxa, Praetors' Voice|Breya, Etherium Shaper)",
+      "newValues": {
+        "promo": true,
+        "num": "{{num}} Promo",
+        "includedReason": "Oversized Foil Commander Promo",
+        "usableForDeckBuilding": false,
+        "addedViaException": true
+      }
+    },
+
+    {
+      "_comment": "delete all cards that still have promo=false, which leaves just our promo cards",
+      "delete": true,
+      "where": "promo=false"
+    }
+  ]
+}
