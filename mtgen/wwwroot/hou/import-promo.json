@@ -1,0 +1,153 @@
+{
+  "setCode": "akh",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=179&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "_comment": "add promo:false to ALL cards with the intention of deleting them later",
+      "where": "",
+      "newValues": {
+        "promo": false
+      }
+    },
+
+    {
+      "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+      "where": "title='Archfiend of Ifnir",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/images/daily/en_k0mok73dwN.png",
+        "num": "{{num}} P Buy-a-Box",
+        "promo": true,
+        "includedReason": "Buy-a-Box Promo",
+        "usableForDeckBuilding": false
+      }
+    },
+    {
+      "where": "title='Oracles Vault",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/images/daily/en_as8va5B9cw.png",
+        "num": "{{num}} P Launch",
+        "promo": true,
+        "includedReason": "Launch Promo",
+        "usableForDeckBuilding": false
+      }
+    },
+    {
+      "where": "title='Trueheart Duelist",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/images/daily/en_jG6CH9Lx83.png",
+        "num": "{{num}} P Game Day",
+        "promo": true,
+        "includedReason": "Game Day Promo",
+        "usableForDeckBuilding": false
+      }
+    },
+    {
+      "where": "title='Glorybringer",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_rgXqwthzn3.png",
+        "num": "{{num}} P Game Day",
+        "promo": true,
+        "includedReason": "Game Day Top 8 Promo",
+        "usableForDeckBuilding": false
+      }
+    },
+    {
+      "_comment": "delete all cards that still have promo=false, which leaves just our modified promo cards",
+      "delete": true,
+      "where": "promo=false"
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/akh-prerelease-deck-box.png",
+        "set": "akh",
+        "title": "Deck Box",
+        "colour": "o",
+        "num": "006 Deck Box",
+        "rarity": "c",
+        "type": "Insert",
+        "promo": "true",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false,
+        "addedViaException": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/akh-deckbuilding-info.jpg",
+        "src_large": "http://mtgen.net/cards/akh-deckbuilding-info-lg.jpg",
+        "height": 370,
+        "width": 515,
+        "set": "akh",
+        "title": "Deckbuilding Advice Insert",
+        "colour": "o",
+        "num": "007 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "promo": "true",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/akh-trials-checklist.jpg",
+        "src_large": "http://mtgen.net/cards/akh-trials-checklist-lg.jpg",
+        "height": 370,
+        "width": 500,
+        "set": "akh",
+        "title": "Five Trials Checklist",
+        "colour": "o",
+        "num": "008 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "promo": "true",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/akh-spindown-life-counter-lazotep.png",
+        "set": "akh",
+        "title": "Lazotep Spindown Life Counter",
+        "colour": "o",
+        "num": "009 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "promo": "true",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false,
+        "addedViaException": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/akh-minus-one-minus-one-counter.png",
+        "set": "akh",
+        "title": "-1/-1 Counter",
+        "colour": "o",
+        "num": "010 Counter",
+        "rarity": "c",
+        "type": "Counter",
+        "promo": "true",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false,
+        "addedViaException": true
+      }
+
+    }
+  ]
+}

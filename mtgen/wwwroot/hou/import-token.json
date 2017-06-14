@@ -1,0 +1,357 @@
+{
+  "setCode": "akh",
+  "cardDataUrl": "",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/feature/tokens-kaladesh-2016-09-15",
+  "exceptions": [
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-marketing1.png",
+        "title": "Tip/Marketing Card",
+        "set": "akh",
+        "colour": "o",
+        "num": "001 Marketing",
+        "rarity": "c",
+        "type": "Marketing",
+        "usableForDeckBuilding": false,
+        "marketing": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-marketing2.png",
+        "title": "Tip/Marketing Card",
+        "set": "akh",
+        "colour": "o",
+        "num": "002 Marketing",
+        "rarity": "c",
+        "type": "Marketing",
+        "usableForDeckBuilding": false,
+        "marketing": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_4QM8Rarpb3.png",
+        "num": "001",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Angel of Sanctions",
+        "subtype": "Zombie Angel"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_37utTYc2ch.png",
+        "num": "002",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Anointer Priest",
+        "subtype": "Zombie Human Cleric"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_eRUouN79Mz.png",
+        "num": "003",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Aven Initiate",
+        "subtype": "Zombie Bird Warrior"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_XBpcUCZnIC.png",
+        "num": "004",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Aven Wind Guide",
+        "subtype": "Zombie Bird Warrior"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_CkELLJcnf2.png",
+        "num": "005",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Glyph Keeper",
+        "subtype": "Zombie Sphinx"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_f4x6nZuyNC.png",
+        "num": "006",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Heart-Piercer Manticore",
+        "subtype": "Zombie Manticore"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_atY1pxZyKC.png",
+        "num": "007",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Honored Hydra",
+        "subtype": "Zombie Snake Hydra"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_C9M5PWE9cs.png",
+        "num": "008",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Labyrinth Guardian",
+        "subtype": "Zombie Illusion Warrior"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_E2GGYGs2JC.png",
+        "num": "009",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Oketra's Attendant",
+        "subtype": "Zombie Bird Soldier"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_oaNEwsvOtd.png",
+        "num": "010",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Sacred Cat",
+        "subtype": "Zombie Cat"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_q2HzgMMHt9.png",
+        "num": "011",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Tah-Crop Skirmisher",
+        "subtype": "Zombie Naga Warrior"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_Bi0nMOU6Uo.png",
+        "num": "012",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Temmet Vizier of Naktamun",
+        "subtype": "Zombie Human Cleric"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_Npe8YOnalQ.png",
+        "num": "013",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Trueheart Duelist",
+        "subtype": "Zombie Human Warrior"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_Aj1Of7p9dg.png",
+        "num": "014",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Unwavering Initiate",
+        "subtype": "Zombie Human Warrior"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_uZz9anWPGE.png",
+        "num": "015",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Vizier of Many Faces",
+        "subtype": "Zombie Shapeshifter Cleric"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_sz4TjDakcm.png",
+        "num": "016",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Cat",
+        "subtype": "Cat"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_MGhKsBQ06g.png",
+        "num": "017",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Warrior",
+        "subtype": "Warrior"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_Ux7X4BWQ08.png",
+        "num": "018",
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Drake",
+        "subtype": "Drake"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_FL1NUV3YIx.png",
+        "num": "019",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Insect",
+        "subtype": "Insect"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_ZXm4Fy8X48.png",
+        "num": "020",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Zombie",
+        "subtype": "Zombie"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_y6a4yyYcr2.png",
+        "num": "021",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Beast",
+        "subtype": "Beast"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_WH5A9ESPOc.png",
+        "num": "022",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Hippo",
+        "subtype": "Hippo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_88tr8Qj4t3.png",
+        "num": "023",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Snake",
+        "subtype": "Snake"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_ppznEJAxKl.png",
+        "num": "024",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Wurm",
+        "subtype": "Wurm"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_xGQqUrsRXl.png",
+        "num": "025",
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Gideon",
+        "subtype": "Gideon"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "akh",
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/BsVeTQyePY.png",
+        "num": "026",
+        "colour": "c",
+        "type": "Token Punch Card",
+        "title": "Punch Card",
+        "subtype": "Punch Card"
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,249 @@
+{
+  "setCode": "akh",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=179&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/card-image-gallery/amonkhet",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+    {
+      "_comment": "mtg salvation included the basic lands, and special lands, which I import separately",
+      "delete": true,
+      "where": "type=(Basic Land|Land)"
+    },
+    {
+      "where": "title='Liliana, Death Wielder",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_dZGIK04peP.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='(Gideon, Martial Paragon|Gideon, Martial Pargon)",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_D5IulOvOh1.png",
+        "title": "Gideon, Martial Paragon",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Liliana's Influence",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_56ySiCdtoi.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Dessicated Naga",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_fEaY9jHDFz.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Tattered Mummy",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_mbVorMDziL.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Foul Orchard",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_olEf5iXy9L.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Gideons Resolve",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_LRAdMU66VH.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Companion of the Trials",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_6oZ3HyFmjc.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Graceful Cat",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_2N7Yi2uqi1.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Stone Quarry",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/dw466ytu5_akh/en_UF2RIm3huj.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+
+    {
+      "where": "title='Tresspassers Curse",
+      "newValues": {
+        "title": "Trespasser's Curse"
+      }
+    },
+    {
+      "where": "title='Annointer Priest",
+      "newValues": {
+        "title": "Anointer Priest"
+      }
+    },
+    {
+      "where": "title='In Oketras Name",
+      "newValues": {
+        "type": "Instant"
+      }
+    },
+    {
+      "where": "title='Winged Shepherd",
+      "newValues": {
+        "num": "039"
+      }
+    },
+
+    {
+      "where": "title='Cut",
+      "newValues": {
+        "title": "Cut /// Ribbons",
+        "cost": "1RXBB",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Destined",
+      "newValues": {
+        "title": "Destined /// Lead",
+        "cost": "1B3G",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Reduce",
+      "newValues": {
+        "title": "Reduce /// Rubble",
+        "cost": "2U2R",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Onward",
+      "newValues": {
+        "title": "Onward /// Victory",
+        "cost": "2R2W",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Prepare",
+      "newValues": {
+        "title": "Prepare /// Fight",
+        "cost": "1W3G",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Failure",
+      "newValues": {
+        "title": "Failure /// Comply",
+        "cost": "1UW",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Rags",
+      "newValues": {
+        "title": "Rags /// Riches",
+        "cost": "2BB5UU",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Heaven",
+      "newValues": {
+        "title": "Heaven /// Earth",
+        "cost": "XGXRR",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Dusk",
+      "newValues": {
+        "title": "Dusk /// Dawn",
+        "cost": "2WW3WW"
+      }
+    },
+    {
+      "where": "title='Mouth",
+      "newValues": {
+        "title": "Mouth /// Feed",
+        "cost": "2G3G"
+      }
+    },
+    {
+      "where": "title='Never",
+      "newValues": {
+        "title": "Never /// Return",
+        "cost": "1BB3B"
+      }
+    },
+    {
+      "where": "title='Reduce",
+      "newValues": {
+        "title": "Reduce /// Rubble",
+        "cost": "2U2R",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Start",
+      "newValues": {
+        "title": "Start /// Finish",
+        "cost": "2W2B",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Spring",
+      "newValues": {
+        "title": "Spring /// Mind",
+        "cost": "2G4UU",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Commit",
+      "newValues": {
+        "title": "Commit /// Memory",
+        "cost": "3U4UU"
+      }
+    },
+    {
+      "where": "title='Insult",
+      "newValues": {
+        "title": "Insult /// Injury",
+        "cost": "2R2R"
+      }
+    }
+  ]
+}
