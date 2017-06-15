@@ -23,6 +23,7 @@ Normally 15 cards per booster:
 
 - 1 in 4 boosters contains a foil which may be any card of any rarity (incl Basic Land), which replaces a Common
 
+14-Jun-2017: Exporter: now replaces split card " // " with "/" for txt, and strips out card not usable for deckbuilding
 26-Jan-2016: Now uses mtgenId instead of index.
 3-Jan-2016: Moved the core logic into mtg-generator-lib.js.
 22-Sep-2015: Now exports text formats with \r\n instead of just \n (for Windows/Notepad).
@@ -1320,13 +1321,9 @@ var mtgGen = (function (my, $) {
         var cards = [];
         _.each(cardSets, function (cardSet) {
             _.each(cardSet, function (card) {
-                cards.push(card);
-                /*
-                    // Not sure if I should be using this or not.. easy enough for people to clip them out, but impossible for people to get them back if they want them.
-                                if (card.usableForDeckBuilding) {
-                                    cards.push(card);
-                                }
-                */
+                if (card.usableForDeckBuilding) {
+                    cards.push(card);
+                }
             });
         });
         return cards;
