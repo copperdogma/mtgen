@@ -1377,7 +1377,8 @@ var mtgGen = (function (my, $) {
     // sample: http://archive.wizards.com/Magic/magazine/article.aspx?x=mtgcom/arcana/678
     function renderTxtFormat(cards, attrib) {
         var output = 'Sideboard\r\n' + _.reduce(cards, function (memo, card) {
-            return memo += card.count + ' ' + card.title + '\r\n';
+            var cardTitle = card.title.replace(' // ', '/'); // Apparently Magic Online doesn't import it's own magic.wizards.com // format for split cards!
+            return memo += card.count + ' ' + cardTitle + '\r\n';
         }, '');
         return output;
     }
