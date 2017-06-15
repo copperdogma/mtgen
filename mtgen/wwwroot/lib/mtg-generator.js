@@ -510,12 +510,12 @@ var mtgGen = (function (my) {
 
         , showTab: function () {
             // Set active tab's css class
-            this.el.querySelectorAll('#products .button').forEach(n => n.classList.remove('active'));
+            Array.from(this.el.querySelectorAll('#products .button')).forEach(n => n.classList.remove('active'));
             this.el.querySelector('#' + this.typeButtonId).classList.add('active');
 
             my.mainView.currentView = this;
 
-            this.el.querySelectorAll('#product-content > section').forEach(n => n.classList.remove('active'));
+            Array.from(this.el.querySelectorAll('#product-content > section')).forEach(n => n.classList.remove('active'));
             this.el.querySelector('#product-content .' + this.productName).classList.add('active');
 
             // Render the options if not already done, hide old tab, show new tab
@@ -685,7 +685,7 @@ var mtgGen = (function (my) {
         }
 
         , renderPack: function (event) {
-            event.target.parentNode.querySelectorAll('a.button').forEach(n => n.classList.remove('active'));
+            Array.from(event.target.parentNode.querySelectorAll('a.button')).forEach(n => n.classList.remove('active'));
             event.target.classList.add('active');
 
             const packName = event.target.getAttribute('data-pack');
@@ -724,7 +724,7 @@ var mtgGen = (function (my) {
 
         , switchPreset: function (event) {
             // Get preset
-            event.target.parentNode.querySelectorAll('a.button').forEach(n => n.classList.remove('active'));
+            Array.from(event.target.parentNode.querySelectorAll('a.button')).forEach(n => n.classList.remove('active'));
             event.target.classList.add('active');
 
             // Get preset
@@ -1047,7 +1047,7 @@ var mtgGen = (function (my) {
 
             // Convert the pack option elements into an array of set names to be generated
             const packEls = document.querySelectorAll('.options .booster-input select');
-            packEls.forEach(el => {
+            Array.from(packEls).forEach(el => {
                 let boosterCount = 1;
                 const boosterCountEl = document.querySelector('#' + el.getAttribute('data-count-el'));
                 if (boosterCountEl.length < 1) {
@@ -1288,7 +1288,7 @@ var mtgGen = (function (my) {
 
     function chooseExportFormat(exportType) {
         var allButtons = document.querySelectorAll('.exporter.modal .export-set a.button');
-        allButtons.forEach(b => b.classList.remove('active'));
+        Array.from(allButtons).forEach(b => b.classList.remove('active'));
         document.querySelector('.exporter.modal .export-set a.export-' + exportType).classList.add('active');
 
         document.querySelector('.exporter.modal textarea').value = exports[exportType];
