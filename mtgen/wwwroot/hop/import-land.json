@@ -1,0 +1,25 @@
+{
+  "setCode": "hop",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=80&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comment": "add land:false to ALL cards with the intention of deleting them later",
+      "where": "",
+      "newValues": {
+        "land": false
+      }
+    },
+    {
+      "where": "type=(Basic Land|Land)",
+      "newValues": {
+        "land": true
+      }
+    },
+    {
+      "_comment": "delete all cards that still have land=false, which leaves just our land cards",
+      "delete": true,
+      "where": "land=false"
+    }
+  ]
+}

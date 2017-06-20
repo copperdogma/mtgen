@@ -1,0 +1,19 @@
+﻿{
+  "setCode": "pc2",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=105&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/feature/card-image-gallery-2012-05-21",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+    {
+      "_comment": "mtg salvation included the basic lands, special lands, planes, and phenomena which I import separately",
+      "delete": true,
+      "where": "type=(Basic Land|Land|Plane|Phenomenon)"
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "setCode": "hop",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=80&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/planechase-theme-decks-2009-08-31",
+  "exceptions": [
+    {
+      "_comment": "add isPlane:false to ALL cards with the intention of deleting them later",
+      "where": "",
+      "newValues": {
+        "isPlane": false
+      }
+    },
+
+    {
+      "where": "title='Eloren Wilds",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198109&type=card" }
+    },
+    {
+      "where": "title='Feeding Grounds",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198066&type=card" }
+    },
+    {
+      "where": "title='The Great Forest",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198088&type=card" }
+    },
+    {
+      "where": "title='Immersturm",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198084&type=card" }
+    },
+    {
+      "where": "title='Isle of Vesuva",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198096&type=card" }
+    },
+    {
+      "where": "title='Llanowar",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198107&type=card" }
+    },
+    {
+      "where": "title='Murasa",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198074&type=card" }
+    },
+    {
+      "where": "title='Naya",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198103&type=card" }
+    },
+    {
+      "where": "title='Turri Island",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198085&type=card" }
+    },
+    {
+      "where": "title='Velis Vel",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198081&type=card" }
+    },
+
+    {
+      "where": "title='Bant",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198099&type=card" }
+    },
+    {
+      "where": "title='The Eon Fog",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198092&type=card" }
+    },
+    {
+      "where": "title='Goldmeadow",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198087&type=card" }
+    },
+    {
+      "where": "title='The Hippodrome",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198067&type=card" }
+    },
+    {
+      "where": "title='Krosa",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198100&type=card" }
+    },
+    {
+      "where": "title='The Maelstrom",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198062&type=card" }
+    },
+    {
+      "where": "title='Minamo",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198078&type=card" }
+    },
+    {
+      "where": "title='Panopticon",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198064&type=card" }
+    },
+    {
+      "where": "title='Sanctum of Serra",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198079&type=card" }
+    },
+    {
+      "where": "title='Undercity Reaches",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198110&type=card" }
+    },
+
+    {
+      "where": "title='Academy at Tolaria West",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198073&type=card" }
+    },
+    {
+      "where": "title='Agyrem",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198090&type=card" }
+    },
+    {
+      "where": "title='Glimmervoid Basin",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198068&type=card" }
+    },
+    {
+      "where": "title='Izzet Steam Maze",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198065&type=card" }
+    },
+    {
+      "where": "title='Naar Isle",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198070&type=card" }
+    },
+    {
+      "where": "title='Otaria",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198095&type=card" }
+    },
+    {
+      "where": "title='Shiv",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198086&type=card" }
+    },
+    {
+      "where": "title='Skybreen",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198101&type=card" }
+    },
+    {
+      "where": "title='Sokenzan",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198075&type=card" }
+    },
+    {
+      "where": "title='Stronghold Furnace",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198063&type=card" }
+    },
+
+    {
+      "where": "title='The Aether Flues",
+      "newValues": {
+        "title": "The Aether Flues",
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198098&type=card"
+      }
+    },
+    {
+      "where": "title='Cliffside Market",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198077&type=card" }
+    },
+    {
+      "where": "title='The Dark Barony",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198083&type=card" }
+    },
+    {
+      "where": "title='Fields of Summer",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198097&type=card" }
+    },
+    {
+      "where": "title='The Fourth Sphere",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198102&type=card" }
+    },
+    {
+      "where": "title='Grixis",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198071&type=card" }
+    },
+    {
+      "where": "title='Lethe Lake",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198105&type=card" }
+    },
+    {
+      "where": "title='Pools of Becoming",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198080&type=card" }
+    },
+    {
+      "where": "title='Ravens Run",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198076&type=card" }
+    },
+    {
+      "where": "title='Sea of Sand",
+      "newValues": { "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198111&type=card" }
+    },
+
+    {
+      "where": "type=Plane",
+      "newValues": {
+        "height": 311,
+        "width": 445,
+        "usableForDeckBuilding": false,
+        "num": "{{num}} Plane",
+        "isPlane": true
+      }
+    },
+
+    {
+      "_comment": "delete all cards that still have isPlane=false, which leaves just our plane cards",
+      "delete": true,
+      "where": "isPlane=false"
+    },
+    {
+      "_comment": "this card is a promo and will be included separately in the promo file",
+      "delete": true,
+      "where": "title='Tazeem"
+    }
+  ]
+}

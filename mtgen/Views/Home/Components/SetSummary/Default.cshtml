@@ -5,7 +5,7 @@
     }
 <div class="set @(Model.IsCurrentSet ? "current" : "") @(Model.IsFutureSet ? "future" : "")">
     <div class="set-logo">
-        <img src="/@Model.Code.ToLower()/images/logo-word.png" title="@Model.Name" alt="@Model.Name logo" />
+        <img src="/@Model.Code.ToLower()/images/@Model.Image" title="@Model.Name" alt="@Model.Name logo" />
     </div>
     <div class="set-name">@Model.Name</div>
     <div class="set-count">@Model.CardCount cards</div>

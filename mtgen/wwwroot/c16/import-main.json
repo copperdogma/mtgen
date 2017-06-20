@@ -1,0 +1,38 @@
+﻿{
+  "setCode": "c16",
+  "cardDataUrl": "https://mtgjson.com/json/C16.json",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/card-image-gallery/commander-2016",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+    {
+      "_comment": "source data included the basic lands and special lands, which I import separately",
+      "delete": true,
+      "where": "type=(Basic Land|Land|Legendary Land)"
+    },
+    {
+      "delete": true,
+      "where": "title=(Chaos|Error)"
+    },
+    {
+      "where": "title='Order'",
+      "newValues": {
+        "title": "Order // Chaos",
+        "cost": "3{W}2{R}",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Trial'",
+      "newValues": {
+        "title": "Trial // Error",
+        "cost": "{W}{U}{W}{B}"
+      }
+    }
+  ]
+}

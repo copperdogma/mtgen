@@ -1,0 +1,47 @@
+﻿{
+  "setCode": "pc2",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=105&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/feature/card-image-gallery-2012-05-21",
+  "exceptions": [
+    {
+      "_comment": "add isPlaneOrPhenomenon:false to ALL cards with the intention of deleting them later",
+      "where": "",
+      "newValues": {
+        "isPlaneOrPhenomenon": false
+      }
+    },
+
+    {
+      "where": "type=Plane",
+      "newValues": {
+        "height": 279,
+        "width": 400,
+        "usableForDeckBuilding": false,
+        "num": "{{num}} Plane",
+        "isPlaneOrPhenomenon": true
+      }
+    },
+
+    {
+      "where": "type=Phenomenon",
+      "newValues": {
+        "height": 279,
+        "width": 400,
+        "usableForDeckBuilding": false,
+        "num": "{{num}} Phenomenon",
+        "isPlaneOrPhenomenon": true
+      }
+    },
+
+    {
+      "_comment": "delete all cards that still have isPlane=false, which leaves just our plane cards",
+      "delete": true,
+      "where": "isPlaneOrPhenomenon=false"
+    },
+    {
+      "_comment": "this card is a promo and will be included separately in the promo file",
+      "delete": true,
+      "where": "title='Stairs to Infinity"
+    }
+  ]
+}

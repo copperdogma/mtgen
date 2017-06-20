@@ -287,7 +287,7 @@ class CardDataImporter {
                                 out += "<ul>" + deletedCards.map(card => card.title).join(", ") + "</ul>";
                             }
                             else if (deletedCards.length > 0) {
-                                out += "<ul>" + deletedCards.map(card => `<li>${card.title}</li>`) + "</ul>";
+                                out += "<ul>" + deletedCards.map(card => `<li>${card.title}</li>`).join('') + "</ul>";
                             }
                         }
                         else {
@@ -298,7 +298,7 @@ class CardDataImporter {
                                 out += "<ul>" + modifiedCards.map(card => card.title).join(", ") + "</ul>";
                             }
                             else if (modifiedCards.length > 0) {
-                                out += "<ul>" + modifiedCards.map(card => `<li>${card.title}</li>`).join("") + "</ul>";
+                                out += "<ul>" + modifiedCards.map(card => `<li>${card.title}</li>`).join('') + "</ul>";
                             }
                         }
                     }
@@ -688,7 +688,7 @@ class CardDataImporter {
     }
 
     _getCardsFromMtgJsonData(rawCardData, setCode) {
-        let cards = {};
+        let cards = new Map();
 
         rawCardData = JSON.parse(rawCardData);
 
@@ -798,7 +798,7 @@ class CardDataImporter {
 
         // v6 - 20160307, soi gallery
         if (!finalImages.size) {
-            const rawimages = imageDoc.querySelectorAll('#content-detail-page-of-an-article .rtecenter img');
+            const rawimages = imageDoc.querySelectorAll('#content-detail-page-of-an-article .rtecenter img, #content-detail-page-of-an-article .legacy_content img');
             rawimages.forEach(img => {
                 if (img.alt.length) {
                     const image = {
@@ -830,7 +830,7 @@ class CardDataImporter {
                 }
             });
         }
-        
+
         // Left in for now -- if we need them one day again, convert them to es6.
         //// v5 - 20160101, bfz gallery
         //if (finalImages.length < 1) {

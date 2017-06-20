@@ -1,0 +1,106 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "hop-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://www.mtgsalvation.com/spoilers/80-planechase", "http://magic.wizards.com/en/articles/archive/planechase-theme-decks-2009-08-31", "http://magic.wizards.com/en/articles/archive/arcana/planechase-release-promo-2009-09-01", "http://magic.wizards.com/en/articles/archive/feature/rules-revealed-2009-08-10" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "hop-all-cards" }
+      ]
+    },
+    {
+      "productName": "hop-decks",
+      "productDesc": "Planechase Decks",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/planechase-theme-decks-2009-08-31" ],
+      "isGenerated": false,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "hop-deck-elemental-thunder-deck" },
+        { "packName": "hop-deck-elemental-thunder-planes" },
+        { "packName": "hop-deck-metallic-dreams-deck" },
+        { "packName": "hop-deck-metallic-dreams-planes" },
+        { "packName": "hop-deck-strike-force-deck" },
+        { "packName": "hop-deck-strike-force-planes" },
+        { "packName": "hop-deck-zombie-empire-deck" },
+        { "packName": "hop-deck-zombie-empire-planes" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "hop-deck-elemental-thunder",
+            "presetDesc": "Elemental Thunder",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "hop-deck-elemental-thunder-planes"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "hop-deck-elemental-thunder-deck"
+              }
+            ]
+          },
+          {
+            "presetName": "hop-deck-metallic-dreams",
+            "presetDesc": "Metallic Dreams",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "hop-deck-metallic-dreams-planes"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "hop-deck-metallic-dreams-deck"
+              }
+            ]
+          },
+          {
+            "presetName": "hop-deck-strike-force",
+            "presetDesc": "Strike Force",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "hop-deck-strike-force-planes"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "hop-deck-strike-force-deck"
+              }
+            ]
+          },
+          {
+            "presetName": "hop-deck-zombie-empire",
+            "presetDesc": "Zombie Empire",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "hop-deck-zombie-empire-planes"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "hop-deck-zombie-empire-deck"
+              }
+            ]
+          }
+
+        ]
+      }
+    },
+    {
+      "productName": "hop-promos",
+      "productDesc": "All Promos",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "hop-promos" }
+      ]
+    }
+
+  ]
+}

@@ -23,6 +23,7 @@ Normally 15 cards per booster:
 
 - 1 in 4 boosters contains a foil which may be any card of any rarity (incl Basic Land), which replaces a Common
 
+14-Jun-2017: Exporter: now replaces split card " // " with "/" for txt, and strips out card not usable for deckbuilding
 26-Jan-2016: Now uses mtgenId instead of index.
 3-Jan-2016: Moved the core logic into mtg-generator-lib.js.
 22-Sep-2015: Now exports text formats with \r\n instead of just \n (for Windows/Notepad).
@@ -1127,13 +1128,13 @@ var mtgGen = (function (my) {
                 document.querySelector('#save-draw input').value = 'Loading...';
                 fetch(`/${my.setCode}/SaveDraw`, {
                     method: "POST",
-                    headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded'}),
+                    headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }),
                     body: `data=${JSON.stringify(drawData)}`
                 })
                     .then(response => {
                         if (response.ok) { return response.json(); }
                         my.throwTerminalError("Save draw failed.");
-                        }
+                    }
                     )
                     // e.g. return: { "drawId": "m09mJw", "url": "ogw?draw=m09mJw" }
                     .then(json => JSON.parse(json))
@@ -1303,7 +1304,7 @@ var mtgGen = (function (my) {
     }
 
     function getAllDeckBuildingGeneratedCards(cardSets) {
-        const cards = cardSets.reduce((cards, cardSet) => cards.concat(cardSet.map(card => card)), []);
+        const cards = cardSets.reduce((cards, cardSet) => cards.concat(cardSet.map(card => card)), []).filter(card => card.usableForDeckBuilding);
         return cards;
     }
 
@@ -1350,8 +1351,10 @@ var mtgGen = (function (my) {
     // .txt: used by used by Magic Online
     // sample: http://archive.wizards.com/Magic/magazine/article.aspx?x=mtgcom/arcana/678
     function renderTxtFormat(cards, attrib) {
-        const output = 'Sideboard\r\n' + cards.reduce((cardOutput, card) =>
-            cardOutput += card.count + ' ' + card.title + '\r\n', '');
+        const output = 'Sideboard\r\n' + _.reduce(cards, function (memo, card) {
+            const cardTitle = card.title.replace(' // ', '/'); // Apparently Magic Online doesn't import it's own magic.wizards.com // format for split cards!
+            return memo += card.count + ' ' + cardTitle + '\r\n';
+        }, '');
         return output;
     }
 

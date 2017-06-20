@@ -41,7 +41,7 @@
         <input id="starting-card-num" size="100" maxlength="3" type="number" />
         <br />
         <br />
-        <label for="card-pattern">Card order patterns. Separate with commas, newlines, or both. Use x to skip an image or a to take an image with a placeholder title.</label>
+        <label for="card-pattern">Card order patterns. Separate with commas, newlines, or both. Use x to skip an image, or x15 to skip 15.</label>
         <br />
         <p>Examples:</p>
         <p>Land: <pre>     w250,u251,b252,r253,g254</pre></p>
@@ -80,7 +80,6 @@
         <p>Note that this site has no affiliation with <a href="http://www.wizards.com/Magic/">Wizards of the Coast</a>, owner of Magic: The Gathering.</p>
     </footer>
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-    <!--<script src="/lib/jquery/dist/jquery.js"></script>-->
     <script src="/lib/underscore/underscore-min.js"></script>
     <script src="/lib/backbone/backbone.js"></script>
     <script src="/lib/mtg-generator-lib.js"></script>
@@ -94,12 +93,12 @@
 
         const startProcessing = () => cardDataImporter.loadImagesAndGenerateExceptions({
             cardImageUrl: document.getElementById('card-image-url').value
-                , startingCardNum: document.getElementById('starting-card-num').value
-                , requiredImageWidth: document.getElementById('required-image-width').value
-                , requiredImageHeight: document.getElementById('required-image-height').value
-                , cardPattern: document.getElementById('card-pattern').value
-                , setCode: document.getElementById('set-code').value
-            })
+            , startingCardNum: document.getElementById('starting-card-num').value
+            , requiredImageWidth: document.getElementById('required-image-width').value
+            , requiredImageHeight: document.getElementById('required-image-height').value
+            , cardPattern: document.getElementById('card-pattern').value
+            , setCode: document.getElementById('set-code').value
+        })
             .then(([logOutput, finalData]) => {
                 document.getElementById('log').innerHTML = logOutput;
 
@@ -109,7 +108,9 @@
                 document.getElementById('status').innerHTML = `<strong>Processing complete at ${(new Date())}</strong>`;
                 document.getElementById('out-main').value = finalData.cardsJson;
                 document.getElementById('out-main-html').innerHTML = finalData.cardsHtmlSample;
-            });
+            })
+            .catch(e =>
+            { document.getElementById('status').innerHTML = `<strong style='color:red'>ERROR: ${e}</strong>`; });
 
         document.getElementById('import').addEventListener('click', startProcessing);
 

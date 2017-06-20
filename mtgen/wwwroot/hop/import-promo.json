@@ -1,0 +1,51 @@
+{
+  "setCode": "hop",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=80&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comment": "add promo:false to ALL cards with the intention of deleting them later",
+      "where": "",
+      "newValues": {
+        "promo": false
+      }
+    },
+
+    {
+      "where": "title='Tazeem",
+      "newValues": {
+        "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=198069&type=card",
+        "height": 311,
+        "width": 445,
+        "promo": true,
+        "num": "{{num}} Promo",
+        "includedReason": "Release Promo",
+        "usableForDeckBuilding": false,
+        "addedViaException": true
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-chaos-die.png",
+        "set": "{{setCode}}",
+        "title": "Planar Die",
+        "colour": "o",
+        "num": "001 Die",
+        "rarity": "c",
+        "type": "Die",
+        "promo": "true",
+        "includedReason": "Deck Promo",
+        "usableForDeckBuilding": false,
+        "addedViaException": true
+      }
+    },
+
+    {
+      "_comment": "delete all cards that still have promo=false, which leaves just our promo cards",
+      "delete": true,
+      "where": "promo=false"
+    }
+  ]
+}

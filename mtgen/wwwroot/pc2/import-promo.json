@@ -1,0 +1,51 @@
+﻿{
+  "setCode": "pc2",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=105&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comment": "add promo:false to ALL cards with the intention of deleting them later",
+      "where": "",
+      "newValues": {
+        "promo": false
+      }
+    },
+
+    {
+      "where": "title='Stairs to Infinity",
+      "newValues": {
+        "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/images/magic/daily/arcana/977_ezzyu7g924.jpg",
+        "height": 279,
+        "width": 400,
+        "promo": true,
+        "num": "{{num}} Promo",
+        "includedReason": "Release Promo",
+        "usableForDeckBuilding": false,
+        "addedViaException": true
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-chaos-die.png",
+        "set": "{{setCode}}",
+        "title": "Planar Die",
+        "colour": "o",
+        "num": "001 Die",
+        "rarity": "c",
+        "type": "Die",
+        "promo": "true",
+        "includedReason": "Deck Promo",
+        "usableForDeckBuilding": false,
+        "addedViaException": true
+      }
+    },
+
+    {
+      "_comment": "delete all cards that still have promo=false, which leaves just our promo cards",
+      "delete": true,
+      "where": "promo=false"
+    }
+  ]
+}

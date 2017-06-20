@@ -1,0 +1,122 @@
+﻿{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "c16-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtg.gamepedia.com/Commander_2016", "https://mtgjson.com/json/C16.json", "http://magic.wizards.com/en/articles/archive/card-image-gallery/commander-2016", "http://magic.wizards.com/en/articles/archive/feature/basic-lands-commander-2016-edition-2016-10-25" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "c16-all-cards" }
+      ]
+    },
+    {
+      "productName": "c16-decks",
+      "productDesc": "Commander 2016 Decks",
+      "sources": [ "http://magic.wizards.com/en/content/commander-2016-cards" ],
+      "isGenerated": false,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "c16-entropic-uprising-commander" },
+        { "packName": "c16-entropic-uprising-deck" },
+        { "packName": "c16-open-hostility-commander" },
+        { "packName": "c16-open-hostility-deck" },
+        { "packName": "c16-stalwart-unity-commander" },
+        { "packName": "c16-stalwart-unity-deck" },
+        { "packName": "c16-breed-lethality-commander" },
+        { "packName": "c16-breed-lethality-deck" },
+        { "packName": "c16-invent-superiority-commander" },
+        { "packName": "c16-invent-superiority-deck" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "c16-entropic-uprising-deck",
+            "presetDesc": "Entropic Uprising",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "c16-entropic-uprising-commander"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "c16-entropic-uprising-deck"
+              }
+            ]
+          },
+          {
+            "presetName": "c16-open-hostility-deck",
+            "presetDesc": "Open Hostility",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "c16-open-hostility-commander"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "c16-open-hostility-deck"
+              }
+            ]
+          },
+          {
+            "presetName": "c16-stalwart-unity-deck",
+            "presetDesc": "Stalwart Unity",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "c16-stalwart-unity-commander"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "c16-stalwart-unity-deck"
+              }
+            ]
+          },
+          {
+            "presetName": "c16-breed-lethality-deck",
+            "presetDesc": "Breed Lethality",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "c16-breed-lethality-commander"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "c16-breed-lethality-deck"
+              }
+            ]
+          },
+          {
+            "presetName": "c16-invent-superiority-deck",
+            "presetDesc": "Invent Superiority",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "c16-invent-superiority-commander"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "c16-invent-superiority-deck"
+              }
+            ]
+          }
+
+        ]
+      }
+    },
+    {
+      "productName": "c16-promos",
+      "productDesc": "All Promos",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "c16-promos" }
+      ]
+    }
+
+  ]
+}

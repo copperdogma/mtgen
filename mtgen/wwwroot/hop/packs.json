@@ -1,0 +1,349 @@
+{
+
+  "defs": [
+    {
+      "defName": "hop",
+      "query": "from[*]?set='hop'"
+    },
+    {
+      "defName": "hop-main",
+      "query": "from[hop]-from[hop]?type=(Marketing|Basic Land)-from[hop]?promo=true"
+    },
+    {
+      "defName": "hop-plane",
+      "query": "from[hop]?type=Plane"
+    },
+    {
+      "defName": "hop-promo",
+      "query": "from[hop]?promo=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "hop-all-cards",
+      "packDesc": "Planechase: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[hop]" }
+      ]
+    },
+    {
+      "packName": "hop-deck-elemental-thunder-planes",
+      "packDesc": "Elemental Thunder Planes",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[hop-plane]?title=(Eloren Wilds|Feeding Grounds|The Great Forest|Immersturm|Isle of Vesuva|Llanowar|Murasa|Naya|Turri Island|Velis Vel)" }
+      ]
+    },
+    {
+      "packName": "hop-deck-elemental-thunder-deck",
+      "packDesc": "Elemental Thunder Deck",
+      "isGenerated": false,
+      "cards": [
+        {
+          "query": "take[2]>from[hop]?title='Flamekin Harbinger'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[hop]?title='Smokebraider'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[hop]?title='Bogardan Firefiend'" },
+        {
+          "query": "take[2]>from[hop]?title='Rockslide Elemental'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[hop]?title='Taurean Mauler'" },
+        { "query": "from[hop]?title='Fertilid'" },
+        { "query": "from[hop]?title='Cinder Elemental'" },
+        { "query": "from[hop]?title='Briarhorn'" },
+        { "query": "from[hop]?title='Forgotten Ancient'" },
+        { "query": "from[hop]?title='Rumbling Slum'" },
+        { "query": "from[hop]?title='Silverglade Elemental'" },
+        { "query": "from[hop]?title='Bogardan Rager'" },
+        { "query": "from[hop]?title='Tornado Elemental'" },
+        { "query": "from[hop]?title='Living Hive'" },
+        { "query": "from[hop]?title='Verdant Force'" },
+        { "query": "from[hop]?title='Ivy Elemental'" },
+        { "query": "from[hop]?title='Rampant Growth'" },
+        { "query": "from[hop]?title='Hull Breach'" },
+        { "query": "from[hop]?title='Browbeat'" },
+        { "query": "from[hop]?title='Search for Tomorrow'" },
+        { "query": "from[hop]?title='Beast Hunt'" },
+        { "query": "from[hop]?title='Explosive Vegetation'" },
+        { "query": "from[hop]?title='Relentless Assault'" },
+        { "query": "from[hop]?title='Pyrotechnics'" },
+        { "query": "from[hop]?title='Blaze'" },
+        { "query": "from[hop]?title='Savage Twister'" },
+        { "query": "from[hop]?title='Branching Bolt'" },
+        { "query": "from[hop]?title='Tribal Unity'" },
+        { "query": "from[hop]?title='Mask of Memory'" },
+        { "query": "from[hop]?title='Mage Slayer'" },
+        { "query": "from[hop]?title='Fertile Ground'" },
+        { "query": "from[hop]?title='Fires of Yavimaya'" },
+        {
+          "query": "take[9]>from[hop]?title='Mountain'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[9]>from[hop]?title='Forest'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[hop]?title='Gruul Turf'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[hop]?title='Shivan Oasis'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[hop]?title='Terramorphic Expanse'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[hop]?title='Assault // Battery'" }
+      ]
+    },
+
+    {
+      "packName": "hop-deck-metallic-dreams-planes",
+      "packDesc": "Metallic Dreams Planes",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[hop-plane]?title=(Bant|The Eon Fog|Goldmeadow|The Hippodrome|Krosa|The Maelstrom|Minamo|Panopticon|Sanctum of Serra|Undercity Reaches)" }
+      ]
+    },
+    {
+      "packName": "hop-deck-metallic-dreams-deck",
+      "packDesc": "Metallic Dreams Deck",
+      "isGenerated": false,
+      "cards": [
+        { "query": "from[hop]?title='Arcbound Slith'" },
+        { "query": "from[hop]?title='Copper Myr'" },
+        { "query": "from[hop]?title='Gold Myr'" },
+        { "query": "from[hop]?title='Iron Myr'" },
+        { "query": "from[hop]?title='Leaden Myr'" },
+        { "query": "from[hop]?title='Silver Myr'" },
+        { "query": "from[hop]?title='Vedalken Engineer'" },
+        { "query": "from[hop]?title='Suntouched Myr'" },
+        { "query": "from[hop]?title='Wizard Replica'" },
+        { "query": "from[hop]?title='Master of Etherium'" },
+        { "query": "from[hop]?title='Sarcomite Myr'" },
+        { "query": "from[hop]?title='Arcbound Crusher'" },
+        {
+          "query": "take[2]>from[hop]?title='Etched Oracle'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[hop]?title='Lodestone Myr'" },
+        { "query": "from[hop]?title='Arsenal Thresher'" },
+        { "query": "from[hop]?title='Sludge Strider'" },
+        {
+          "query": "take[2]>from[hop]?title='Myr Enforcer'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[hop]?title='Pentavus'" },
+        { "query": "from[hop]?title='Bosh, Iron Golem'" },
+        { "query": "from[hop]?title='Qumulox'" },
+        { "query": "from[hop]?title='Broodstar'" },
+        { "query": "from[hop]?title='Fabricate'" },
+        { "query": "from[hop]?title='Keep Watch'" },
+        { "query": "from[hop]?title='Thirst for Knowledge'" },
+        { "query": "from[hop]?title='Whiplash Trap'" },
+        { "query": "from[hop]?title='Cranial Plating'" },
+        {
+          "query": "take[2]>from[hop]?title='Pentad Prism'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[hop]?title='Loxodon Warhammer'" },
+        { "query": "from[hop]?title='Nuisance Engine'" },
+        { "query": "from[hop]?title='Serum Tank'" },
+        {
+          "query": "take[2]>from[hop]?title='Skeleton Shard'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[hop]?title='Door to Nothingness'" },
+        { "query": "from[hop]?title='Darksteel Forge'" },
+        { "query": "from[hop]?title='Ancient Den'" },
+        { "query": "from[hop]?title='Great Furnace'" },
+        {
+          "query": "take[2]>from[hop]?title='Seat of the Synod'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[hop]?title='Tree of Tales'" },
+        { "query": "from[hop]?title='Vault of Whispers'" },
+        {
+          "query": "take[3]>from[hop]?title='Plains'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[8]>from[hop]?title='Island'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[3]>from[hop]?title='Swamp'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[hop]?title='Mountain'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[hop]?title='Forest'" }
+      ]
+    },
+
+    {
+      "packName": "hop-deck-strike-force-planes",
+      "packDesc": "Strike Force Planes",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[hop-plane]?title=(Academy at Tolaria West|Agyrem|Glimmervoid Basin|Izzet Steam Maze|Naar Isle|Otaria|Shiv|Skybreen|Sokenzan|Stronghold Furnace)" }
+      ]
+    },
+    {
+      "packName": "hop-deck-strike-force-deck",
+      "packDesc": "Strike Force Deck",
+      "isGenerated": false,
+      "cards": [
+        { "query": "from[hop]?title='Soul Warden'" },
+        { "query": "from[hop]?title='Battlegate Mimic'" },
+        {
+          "query": "take[2]>from[hop]?title='Boros Swiftblade'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[hop]?title='Cerodon Yearling'" },
+        { "query": "from[hop]?title='Boros Guildmage'" },
+        { "query": "from[hop]?title='Kor Sanctifiers'" },
+        { "query": "from[hop]?title='Duergar Hedge-Mage'" },
+        { "query": "from[hop]?title='Hearthfire Hobgoblin'" },
+        { "query": "from[hop]?title='Flametongue Kavu'" },
+        { "query": "from[hop]?title='Keldon Champion'" },
+        { "query": "from[hop]?title='Menacing Ogre'" },
+        { "query": "from[hop]?title='Balefire Liege'" },
+        { "query": "from[hop]?title='Bull Cerodon'" },
+        { "query": "from[hop]?title='Rorix Bladewing'" },
+        { "query": "from[hop]?title='Razia, Boros Archangel'" },
+        { "query": "from[hop]?title='Reckless Charge'" },
+        { "query": "from[hop]?title='Arc Lightning'" },
+        { "query": "from[hop]?title='Cone of Flame'" },
+        { "query": "from[hop]?title='Akroma's Vengeance'" },
+        { "query": "from[hop]?title='Insurrection'" },
+        { "query": "from[hop]?title='Rolling Thunder'" },
+        { "query": "from[hop]?title='Goblin Offensive'" },
+        { "query": "from[hop]?title='Double Cleave'" },
+        {
+          "query": "take[2]>from[hop]?title='Lightning Helix'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[hop]?title='Orim's Thunder'" },
+        { "query": "from[hop]?title='Congregate'" },
+        { "query": "from[hop]?title='Captain's Maneuver'" },
+        { "query": "from[hop]?title='Relic of Progenitus'" },
+        { "query": "from[hop]?title='Boros Signet'" },
+        { "query": "from[hop]?title='Oblivion Ring'" },
+        { "query": "from[hop]?title='Prison Term'" },
+        { "query": "from[hop]?title='Glory of Warfare'" },
+        { "query": "from[hop]?title='Furnace of Rath'" },
+        {
+          "query": "take[9]>from[hop]?title='Mountain'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[9]>from[hop]?title='Plains'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[hop]?title='Boros Garrison'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[hop]?title='Sunhome, Fortress of the Legion'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[hop]?title='Terramorphic Expanse'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[hop]?title='Order // Chaos'" }
+      ]
+    },
+
+    {
+      "packName": "hop-deck-zombie-empire-planes",
+      "packDesc": "Zombie Empire Planes",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[hop-plane]?title=(The Aether Flues|Cliffside Market|The Dark Barony|Fields of Summer|The Fourth Sphere|Grixis|Lethe Lake|Pools of Becoming|Raven's Run|Sea of Sand)" }
+      ]
+    },
+    {
+      "packName": "hop-deck-zombie-empire-deck",
+      "packDesc": "Zombie Empire Deck",
+      "isGenerated": false,
+      "cards": [
+        {
+          "query": "take[2]>from[hop]?title='Festering Goblin'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[hop]?title='Dregscape Zombie'" },
+        { "query": "from[hop]?title='Rotting Rats'" },
+        { "query": "from[hop]?title='Shepherd of Rot'" },
+        { "query": "from[hop]?title='Withered Wretch'" },
+        {
+          "query": "take[2]>from[hop]?title='Cadaverous Knight'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[hop]?title='Phyrexian Ghoul'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[hop]?title='Death Baron'" },
+        { "query": "from[hop]?title='Gravedigger'" },
+        { "query": "from[hop]?title='Soulless One'" },
+        {
+          "query": "take[2]>from[hop]?title='Undead Warchief'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[hop]?title='Corpse Harvester'" },
+        { "query": "from[hop]?title='Noxious Ghoul'" },
+        { "query": "from[hop]?title='Ascendant Evincar'" },
+        { "query": "from[hop]?title='Nefashu'" },
+        { "query": "from[hop]?title='Helldozer'" },
+        { "query": "from[hop]?title='Innocent Blood'" },
+        { "query": "from[hop]?title='Syphon Soul'" },
+        { "query": "from[hop]?title='Beseech the Queen'" },
+        { "query": "from[hop]?title='Syphon Mind'" },
+        { "query": "from[hop]?title='Beacon of Unrest'" },
+        { "query": "from[hop]?title='Incremental Blight'" },
+        { "query": "from[hop]?title='Consume Spirit'" },
+        { "query": "from[hop]?title='Profane Command'" },
+        {
+          "query": "take[2]>from[hop]?title='Dark Ritual'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[hop]?title='Hideous End'" },
+        { "query": "from[hop]?title='Cruel Revival'" },
+        { "query": "from[hop]?title='Phyrexian Arena'" },
+        { "query": "from[hop]?title='Grave Pact'" },
+        {
+          "query": "take[23]>from[hop]?title='Swamp'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[hop]?title='Cabal Coffers'" },
+        {
+          "query": "take[2]>from[hop]?title='Leechridden Swamp'",
+          "canBeDuplicate": true
+        }
+      ]
+    },
+    {
+      "packName": "hop-promos",
+      "packDesc": "Planechase: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[hop-promo]" }
+      ]
+    }
+
+  ]
+}

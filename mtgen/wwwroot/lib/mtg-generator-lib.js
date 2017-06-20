@@ -77,16 +77,17 @@ var mtgGen = (function (my) {
         return my.rarities.unknown;
     }
 
-    // from: http://mtgjson.com/#documentation
+    // from: https://mtgjson.com/documentation.html
     my.cardTypes = {
         planeswalker: { sorder: 1, code: 'p', name: 'Planeswalker' },
-        conspiracy: { sorder: 2, code: 'y', name: 'Conspiracy' },
-        creature: { sorder: 3, code: 'c', name: 'Creature' },
-        instant: { sorder: 4, code: 'i', name: 'Instant' },
-        sorcery: { sorder: 5, code: 's', name: 'Sorcery' },
-        enchantment: { sorder: 6, code: 'e', name: 'Enchantment' },
-        artifact: { sorder: 7, code: 'a', name: 'Artifact' },
-        land: { sorder: 8, code: 'l', name: 'Land' },
+        plane: { sorder: 2, code: 'n', name: 'Plane' },
+        conspiracy: { sorder: 3, code: 'y', name: 'Conspiracy' },
+        creature: { sorder: 4, code: 'c', name: 'Creature' },
+        instant: { sorder: 5, code: 'i', name: 'Instant' },
+        sorcery: { sorder: 6, code: 's', name: 'Sorcery' },
+        enchantment: { sorder: 7, code: 'e', name: 'Enchantment' },
+        artifact: { sorder: 8, code: 'a', name: 'Artifact' },
+        land: { sorder: 9, code: 'l', name: 'Land' },
         unknown: { sorder: 97, code: '?', name: 'Unknown' },
     };
     function getCardTypeByCode(code) {
@@ -184,12 +185,15 @@ var mtgGen = (function (my) {
     // Create a sanitized title to avoid the punctuation differences
     // Site to lookup chars: http://www.fileformat.info/info/unicode/char/search.htm
     my.createMatchTitle = function (title) {
-        let clean = (title + '').trim().replace(/\u00C6/g, 'ae').toLowerCase(); // \u00C6 = Æ = LATIN CAPITAL LETTER AE
+        // the \uXXXX codes are javascript escaped codes
+        let clean = (title+'').trim().toLowerCase();
+        clean = clean.replace(/\u00E6/g, 'ae'); // \u00E6 = æ = LATIN LOWER CASE LETTER AE
+        clean = clean.trim().replace(/\u00E3\u2020/g, 'ae'); // \u00E3\u2020 = ã† = LATIN LOWER CASE LETTER AE when wotc screws up the encoding;)
         clean = clean.replace(/[^a-z0-9 ]+/g, '');
         clean = clean.replace(/ +/, ' ');
 
         if (/\uFFFD/.test(title)) {
-            console.error(`ERROR: replacement character \uFFFD found in title. Change your cardsMain.json file to UTF-8 encoding: ${title}`);
+            console.error('ERROR: replacement character \uFFFD found in title. Change this json file to UTF-8 encoding: ' + title);
         }
         return clean;
     }
