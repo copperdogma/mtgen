@@ -1,0 +1,101 @@
+{
+  "setCode": "hou",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=183&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/card-image-gallery/hour-devastation",
+  "_comments": "Three kinds of land for this release: full art, normal, and dual",
+  "exceptions": [
+    {
+      "_comment": "add land:false to ALL cards with the intention of deleting them later",
+      "where": "",
+      "newValues": {
+        "land": false
+      }
+    },
+    {
+      "_comment": "basic land are done separately below",
+      "where": "type=(Land|Legendary Land)",
+      "newValues": {
+        "land": true
+      }
+    },
+    {
+      "_comment": "delete all cards that still have land=false, which leaves just our land cards",
+      "delete": true,
+      "where": "land=false"
+    },
+
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "hou",
+          "cardImageUrl": "http://magic.wizards.com/en/articles/archive/making-magic/darkest-hour-part-1-2017-06-19",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "x11,w185,u186,b187,r188,g189"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "hou",
+        "src": "http://media.wizards.com/2017/hou/en_djoXNwCvAR.png",
+        "title": "Plains",
+        "num": "185"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "hou",
+        "src": "http://media.wizards.com/2017/hou/en_pWcP0zCqtw.png",
+        "title": "Island",
+        "num": "186"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "hou",
+        "src": "http://media.wizards.com/2017/hou/en_pSvsT6JaDX.png",
+        "title": "Swamp",
+        "num": "187"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "hou",
+        "src": "http://media.wizards.com/2017/hou/en_aTwRcMT7Jd.png",
+        "title": "Mountain",
+        "num": "188"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "hou",
+        "src": "http://media.wizards.com/2017/hou/en_TidwnGC5kz.png",
+        "title": "Forest",
+        "num": "189"
+      }
+    },
+    {
+      "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
+      "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
+      "newValues": {
+        "set": "{{setCode}}",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "{{title}}",
+        "colour": "l",
+        "cost": "",
+        "rarity": "c",
+        "num": "{{num}}/264 L"
+      }
+    }
+  ]
+}

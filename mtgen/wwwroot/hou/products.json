@@ -1,0 +1,85 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "hou-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://www.mtgsalvation.com/spoilers/183-hour-of-devastation", "http://magic.wizards.com/en/articles/archive/card-image-gallery/hour-devastation", "http://magic.wizards.com/en/articles/archive/card-preview/promos-and-planeswalker-decks-hour-devastation-2017-06-16", "http://magic.wizards.com/en/articles/archive/making-magic/darkest-hour-part-1-2017-06-19" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "hou-all-cards" }
+      ]
+    },
+    {
+      "productName": "hou-boosters",
+      "productDesc": "Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "hou-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "hou-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "hou-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "hou-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "hou-standard" },
+        { "packName": "hou-prerelease-promo-packins" },
+        { "packName": "hou-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "hou-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "hou-prerelease-promo-packins"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "hou-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "hou-promos",
+      "productDesc": "All Promos",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/feature/kaladesh-packaging-promos-and-planeswalker-decks-2016-09-06" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "hou-promos" }
+      ]
+    }
+
+  ]
+}

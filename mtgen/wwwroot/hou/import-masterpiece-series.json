@@ -1,0 +1,176 @@
+{
+  "setCode": "hou",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=183&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/feature/masterpiece-series-hour-devastation-invocations-2017-06-19",
+  "exceptions": [
+    {
+      "where": "title='Armageddon",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_err2fx1h4Q.png",
+        "num": "031"
+      }
+    },
+    {
+      "where": "title='Capsize",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_cyeTAtDQcM.png",
+        "num": "032"
+      }
+    },
+    {
+      "where": "title='Forbid",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_Upgm1yGd9d.png",
+        "num": "033"
+      }
+    },
+    {
+      "where": "title='Omniscience",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_tAngCduKhb.png",
+        "num": "034"
+      }
+    },
+    {
+      "where": "title='Opposition",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_O9C3zzleep.png",
+        "num": "035"
+      }
+    },
+    {
+      "where": "title='Sunder",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_jd5YjY2xWc.png",
+        "num": "036"
+      }
+    },
+    {
+      "where": "title='Threads of Disloyalty",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_q01QuOd2ch.png",
+        "num": "037"
+      }
+    },
+    {
+      "where": "title='Avatar of Woe",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_FSWx7aVcok.png",
+        "num": "038"
+      }
+    },
+    {
+      "where": "title='Damnation",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_4TxgvkmCf1.png",
+        "num": "039"
+      }
+    },
+    {
+      "where": "title='Desolation Angel",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_pzJnVmTHGr.png",
+        "num": "040"
+      }
+    },
+    {
+      "where": "title='Diabolic Edict",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_uURB3pfZc3.png",
+        "num": "041"
+      }
+    },
+    {
+      "where": "title='Doomsday",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_TZ9lBlMTOo.png",
+        "num": "042"
+      }
+    },
+    {
+      "where": "title='No Mercy",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_jSn1veba6y.png",
+        "num": "043"
+      }
+    },
+    {
+      "where": "title='Slaughter Pact",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_oQ1CDQcApM.png",
+        "num": "044"
+      }
+    },
+    {
+      "where": "title='Thoughtseize",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_aZCsIzIPRN.png",
+        "num": "045"
+      }
+    },
+    {
+      "where": "title='Blood Moon",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_DcSrcOMNaH.png",
+        "num": "046"
+      }
+    },
+    {
+      "where": "title='Boil",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_OOwhkLi5aB.png",
+        "num": "047"
+      }
+    },
+    {
+      "where": "title='Shatterstorm",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_awmqK6URMo.png",
+        "num": "048"
+      }
+    },
+    {
+      "where": "title='Through the Breach",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_3NTnktgmzD.png",
+        "num": "049"
+      }
+    },
+    {
+      "where": "title='Choke",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_TFKEn87U9f.png",
+        "num": "050"
+      }
+    },
+    {
+      "where": "title='Lord of Extinction",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_12QA5S7tJV.png",
+        "num": "051"
+      }
+    },
+    {
+      "where": "title='The Scorpion God",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_P0T4a0XtgF.png",
+        "num": "052"
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "rarity": "s",
+        "masterpiece": true,
+        "num": "{{num}}/54 S"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that still have land=false, which leaves just our land cards",
+      "delete": true,
+      "where": "land=false"
+    }
+  ]
+}

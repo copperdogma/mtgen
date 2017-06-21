@@ -1,0 +1,43 @@
+{
+  "setCode": "hou",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=183&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/card-image-gallery/hour-devastation",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+    {
+      "_comment": "mtg salvation included the basic lands, and special lands, which I import separately",
+      "delete": true,
+      "where": "type=(Basic Land|Land)"
+    },
+    {
+      "where": "title='Angel of the God-Pharoh'",
+      "newValues": {
+        "title": "Angel of the God-Pharaoh"
+      }
+    },
+    {
+      "where": "title='Maurauding Boneslasher'",
+      "newValues": {
+        "title": "Marauding Boneslasher"
+      }
+    },
+    {
+      "where": "title='Nicol Bolas, the Deceiver'",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/images/daily/en_iSHCrCgmya.png"
+      }
+    },
+    {
+      "where": "title='Nissa, Genesis Mage'",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/images/daily/en_VlI3HOtQc3.png"
+      }
+    }
+  ]
+}
