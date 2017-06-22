@@ -66,7 +66,6 @@
         <p>Note that this site has no affiliation with <a href="http://www.wizards.com/Magic/">Wizards of the Coast</a>, owner of Magic: The Gathering.</p>
     </footer>
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-    <!--<script src="/lib/jquery/dist/jquery.js"></script>-->
     <script src="/lib/underscore/underscore-min.js"></script>
     <script src="/lib/backbone/backbone.js"></script>
     <script src="/lib/mtg-generator-lib.js"></script>
@@ -77,23 +76,24 @@
 
         if (window.location.protocol == 'file:') { document.getElementById('local-error').getElementById; }
 
-        const startProcessing = () => cardDataImporter.loadAndProcessAllFiles({
-            cardDataUrl: document.getElementById('url-card-data').value
-                    , htmlCardData: document.getElementById('html-card-data').value
-                    , imagesUrl: document.getElementById('url-images').value
-                    , exceptions: document.getElementById('exceptions').value
-                    , setCode: document.getElementById('set-code').value
-            })
-            .then(([logOutput, finalData]) => {
-                document.getElementById('log').innerHTML = logOutput;
+        async function startProcessing() {
+            const [logOutput, finalData] = await cardDataImporter.loadAndProcessAllFiles({
+                cardDataUrl: document.getElementById('url-card-data').value
+                , htmlCardData: document.getElementById('html-card-data').value
+                , imagesUrl: document.getElementById('url-images').value
+                , exceptions: document.getElementById('exceptions').value
+                , setCode: document.getElementById('set-code').value
+            });
 
-                document.getElementById('msg').innerHTML =
-                    `${finalData.initialCardDataCount} cards found from ${document.getElementById('url-card-data').value}</br>
+            document.getElementById('log').innerHTML = logOutput;
+
+            document.getElementById('msg').innerHTML =
+                `${finalData.initialCardDataCount} cards found from ${document.getElementById('url-card-data').value}</br>
                             ${finalData.imageDataCount} images found from ${document.getElementById('url-images').value}</br><br/>
                             <strong>${finalData.finalCardCount} final cardsMain.json cards generated at ${(new Date())}.</strong>`;
-                document.getElementById('status').innerHTML = `<strong>Processing complete at ${(new Date())}</strong>`;
-                document.getElementById('out-main').value = finalData.cardsMainJson;
-            });
+            document.getElementById('status').innerHTML = `<strong>Processing complete at ${(new Date())}</strong>`;
+            document.getElementById('out-main').value = finalData.cardsMainJson;
+        }
 
         document.getElementById('import').addEventListener('click', startProcessing);
 

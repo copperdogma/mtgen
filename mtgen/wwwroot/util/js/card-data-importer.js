@@ -91,17 +91,17 @@ class CardDataImporter {
 
     // PUBLIC METHODS ------------------------------------------------------------------------------------
 
-    loadAndProcessAllFiles({cardDataUrl, htmlCardData, imagesUrl, exceptions, setCode }) {
+    async loadAndProcessAllFiles({ cardDataUrl, htmlCardData, imagesUrl, exceptions, setCode }) {
         setCode = setCode.trim();
 
         // We need 3 sets of data: card, image, and exceptions
 
         // If raw HTML data was provided, use that.
-        const cardDataPromise = (htmlCardData && htmlCardData.trim().length > 1) 
+        const cardDataPromise = (htmlCardData && htmlCardData.trim().length > 1)
             ? Promise.resolve(htmlCardData) : this._fetchHtml(cardDataUrl);
 
         const imageDataPromise = imagesUrl ? this._fetchHtml(imagesUrl) : null;
-            
+
         // Exceptions are loaded as part of the import file, so they're already in the form.
         const exceptionsDataPromise = Promise.resolve(exceptions);
 
@@ -125,25 +125,25 @@ class CardDataImporter {
 
                 window.dispatchEvent(new Event('data-loaded'));
 
-                return {htmlCards, htmlImages, jsonExceptions};
+                return { htmlCards, htmlImages, jsonExceptions };
             })
             .catch(err => alert(`ERROR: failed to retrieve data from a source: ${err.message}`))
-            .then(({htmlCards, htmlImages, jsonExceptions}) => {
+            .then(({ htmlCards, htmlImages, jsonExceptions }) => {
                 // Get card data -------------------------------------------------------------------------------------------------
                 // All card data source come with image data that we usually want to override in the next step.
                 let mainOut = this._getCardData(htmlCards.data, htmlCards.urlSource, setCode);
                 mainOut.initialCardDataCount = mainOut.size;
-                return {mainOut, htmlImages, jsonExceptions};
+                return { mainOut, htmlImages, jsonExceptions };
             })
-            .then(({mainOut, htmlImages, jsonExceptions}) => {
+            .then(({ mainOut, htmlImages, jsonExceptions }) => {
                 // Get image data -------------------------------------------------------------------------------------------------
                 let mainImages = new Map();
                 if (htmlImages.data) {
                     mainImages = this._getImageData(htmlImages.data, htmlImages.urlSource);
                 }
-                return {mainOut, mainImages, jsonExceptions};
+                return { mainOut, mainImages, jsonExceptions };
             })
-            .then(({mainOut, mainImages, jsonExceptions}) => {
+            .then(({ mainOut, mainImages, jsonExceptions }) => {
                 // Apply Exceptions -------------------------------------------------------------------------------------------------
                 if (jsonExceptions.data) {
                     jsonExceptions.data = JSON.parse(jsonExceptions.data);
@@ -152,14 +152,14 @@ class CardDataImporter {
                 // Returns both the updated set of cards AND the modified exceptions (the latter for reporitng purposes).
                 const exceptionsResults = this._applyExceptions(mainOut, jsonExceptions.data, setCode);
                 mainOut = exceptionsResults.cards;
-                return {mainOut, mainImages, exceptionsResults};
+                return { mainOut, mainImages, exceptionsResults };
             })
-            .then(({mainOut, mainImages, exceptionsResults}) => {
+            .then(({ mainOut, mainImages, exceptionsResults }) => {
                 // Add images to cards -------------------------------------------------------------------------------------------------
                 mainOut = this._applyImagesToCards(mainOut, mainImages);
-                return {mainOut, mainImages, exceptionsResults};
+                return { mainOut, mainImages, exceptionsResults };
             })
-            .then(({mainOut, mainImages, exceptionsResults}) => {
+            .then(({ mainOut, mainImages, exceptionsResults }) => {
                 const cardArray = [...mainOut.values()];
                 const outputLogPromise = this._createOutputLog(cardArray, mainImages, exceptionsResults);
                 const finalDataPromise = this._createFinalJsonOutput(cardArray, mainOut.initialCardDataCount, mainImages);
@@ -200,18 +200,18 @@ class CardDataImporter {
     // PRIVATE METHODS ------------------------------------------------------------------------------------
 
     // Get html via a proxy, erroring if it fails or if no HTML is retrieved.
-    _fetchHtml(url) { 
+    _fetchHtml(url) {
         return fetch(`/proxy?u=${encodeURIComponent(url)}`)
-        .catch(error => console.log(`${error}  url: ${url}`))
-        .then(response => {
-            if (!response.ok) { throw Error(response.statusText); }
-            return response;
-        })
-        .then(response => response.text())
-        .then(text => {
-            if (text) { return Promise.resolve(text); }
-            throw Error(`No HTML returned from: ${url}`);
-        });
+            .catch(error => console.log(`${error}  url: ${url}`))
+            .then(response => {
+                if (!response.ok) { throw Error(response.statusText); }
+                return response;
+            })
+            .then(response => response.text())
+            .then(text => {
+                if (text) { return Promise.resolve(text); }
+                throw Error(`No HTML returned from: ${url}`);
+            });
     }
 
     _createOutputLog(cardArray, mainImages, exceptionsResults) {
@@ -251,7 +251,7 @@ class CardDataImporter {
 
             const duplicateCards = cardArray.filter(card => card.duplicateNum !== undefined);
             if (duplicateCards.length > 0) {
-                const sortedDuplicateCards = duplicateCards.sort((a,b) => this._sortBy("mtgenId",a,b));
+                const sortedDuplicateCards = duplicateCards.sort((a, b) => this._sortBy("mtgenId", a, b));
                 out += "<p>The following cards have duplicate mtgenIds:</p><ul>";
                 sortedDuplicateCards.forEach(card => out += `<li style='color:DarkGoldenrod'>${card.mtgenId}: ${card.title}</li>`);
                 out += "</ul>";
@@ -325,10 +325,12 @@ class CardDataImporter {
 
             const jsonMainStr = JSON.stringify(cardArray, null, ' ');
 
-            const finalData = { cardsMainJson: jsonMainStr,
-                initialCardDataCount, 
-                imageDataCount: mainImages.size, 
-                finalCardCount: cardArray.length };
+            const finalData = {
+                cardsMainJson: jsonMainStr,
+                initialCardDataCount,
+                imageDataCount: mainImages.size,
+                finalCardCount: cardArray.length
+            };
 
             resolve(finalData);
         });
@@ -351,13 +353,13 @@ class CardDataImporter {
         let out = str;
         if (max === undefined) { max = 32; }
         const a_chars = [
-          ["a", /[áàâãªÁÀÂÃ]/g],
-          ["e", /[éèêÉÈÊ]/g],
-          ["i", /[íìîÍÌÎ]/g],
-          ["o", /[òóôõºÓÒÔÕ]/g],
-          ["u", /[úùûÚÙÛ]/g],
-          ["c", /[çÇ]/g],
-          ["n", /[Ññ]/g]
+            ["a", /[áàâãªÁÀÂÃ]/g],
+            ["e", /[éèêÉÈÊ]/g],
+            ["i", /[íìîÍÌÎ]/g],
+            ["o", /[òóôõºÓÒÔÕ]/g],
+            ["u", /[úùûÚÙÛ]/g],
+            ["c", /[çÇ]/g],
+            ["n", /[Ññ]/g]
         ];
 
         // Replace vowel with accent without them
@@ -411,7 +413,7 @@ class CardDataImporter {
         if (lowercaseCardDataUrlSource.length < 1) {
             console.log("No card data source supplied: this is used when the exceptions file is used to generate cards");
         }
-            // 20160818: had to run mtgsalvation through proxy2016.top cuz it started blocking direct grabs
+        // 20160818: had to run mtgsalvation through proxy2016.top cuz it started blocking direct grabs
         else if (lowercaseCardDataUrlSource.includes('mtgsalvation.com') || lowercaseCardDataUrlSource.includes('proxy2016.top')) {
             cards = this._getCardsFromMtgSalvationData(cardData, setCode);
         }
@@ -1010,7 +1012,7 @@ class CardDataImporter {
             // Create a new image from JavaScript
             const image = new Image();
             // Bind an event listener on the load to call the `resolve` function
-            image.onload  = resolve;
+            image.onload = resolve;
             // If the image fails to be downloaded, we don't want the whole system
             // to collapse so we `resolve` instead of `reject`, even on error
             image.onerror = resolve;
@@ -1055,7 +1057,7 @@ class CardDataImporter {
             }
         });
     }
-    
+
     _createCardViaException(card, exception, setCode) {
         // add all Exception properties into the card
         Object.assign(card, exception.newValues);
@@ -1094,12 +1096,12 @@ class CardDataImporter {
 
     _mapToObject(map) {
         let obj = Object.create(null);
-        for (let [k,v] of map) {
+        for (let [k, v] of map) {
             // We don’t escape the key '__proto__'
             // which can cause problems on older engines
             obj[k] = v;
         }
-    return obj;
+        return obj;
     }
 
     _objectToMap(obj) {
@@ -1109,7 +1111,7 @@ class CardDataImporter {
         }
         return map;
     }
-    
+
     _applyExceptions(cards, exceptions, setCode) {
         // Example:
         //  {
