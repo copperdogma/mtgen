@@ -77,25 +77,26 @@
 
         if (window.location.protocol == 'file:') { document.getElementById('local-error').getElementById; }
 
-        const startProcessing = () => cardDataImporter.loadAndProcessAllFiles({
-            cardDataUrl: document.getElementById('url-card-data').value
-                    , htmlCardData: document.getElementById('html-card-data').value
-                    , imagesUrl: document.getElementById('url-images').value
-                    , exceptions: document.getElementById('exceptions').value
-                    , setCode: document.getElementById('set-code').value
-            })
-            .then(([logOutput, finalData]) => {
-                document.getElementById('log').innerHTML = logOutput;
-
-                document.getElementById('msg').innerHTML =
-                    `${finalData.initialCardDataCount} cards found from ${document.getElementById('url-card-data').value}</br>
-                            ${finalData.imageDataCount} images found from ${document.getElementById('url-images').value}</br><br/>
-                            <strong>${finalData.finalCardCount} final cardsMain.json cards generated at ${(new Date())}.</strong>`;
-                document.getElementById('status').innerHTML = `<strong>Processing complete at ${(new Date())}</strong>`;
-                document.getElementById('out-main').value = finalData.cardsMainJson;
+        async function _startProcessing() {
+            const [logOutput, finalData] = await cardDataImporter.loadAndProcessAllFiles({
+                cardDataUrl: document.getElementById('url-card-data').value
+                , htmlCardData: document.getElementById('html-card-data').value
+                , imagesUrl: document.getElementById('url-images').value
+                , exceptions: document.getElementById('exceptions').value
+                , setCode: document.getElementById('set-code').value
             });
 
-        document.getElementById('import').addEventListener('click', startProcessing);
+            document.getElementById('log').innerHTML = logOutput;
+
+            document.getElementById('msg').innerHTML =
+                `${finalData.initialCardDataCount} cards found from ${document.getElementById('url-card-data').value}</br>
+                        ${finalData.imageDataCount} images found from ${document.getElementById('url-images').value}</br><br/>
+                        <strong>${finalData.finalCardCount} final cardsMain.json cards generated at ${(new Date())}.</strong>`;
+            document.getElementById('status').innerHTML = `<strong>Processing complete at ${(new Date())}</strong>`;
+            document.getElementById('out-main').value = finalData.cardsMainJson;
+        }
+
+        document.getElementById('import').addEventListener('click', _startProcessing);
 
         document.querySelectorAll('input').forEach(el => el.addEventListener('change', () => setSaveLinkToDownloadFile()));
 
@@ -120,17 +121,20 @@
 
         const setSaveLinkToDownloadFile = () => {
             const attrs = cardDataImporter.getDownloadSettingsFileLinkAttributes(
-                            document.getElementById('set-code').value,
-                            document.getElementById('url-card-data').value,
-                            document.getElementById('url-images').value,
-                            document.getElementById('exceptions').value
-                            );
+                document.getElementById('set-code').value,
+                document.getElementById('url-card-data').value,
+                document.getElementById('url-images').value,
+                document.getElementById('exceptions').value
+            );
             const linkEl = document.getElementById('save-settings');
             linkEl.setAttribute('href', attrs.href);
             linkEl.setAttribute('download', attrs.download); // 'download' attr is Chrome/FF-only to set download filename
         }
 
         window.addEventListener('data-loading', () => document.getElementById('status').innerHTML = `<strong>Data load started at ${(new Date())}</strong>`, false);
+
+        window.addEventListener('searching-gatherer-for-card',
+            (e) => document.getElementById('msg').innerHTML += `<strong>Fetching data from wizards.gatherer.com for card '${e.detail.cardName}'</strong><br/>`, false);
 
         window.addEventListener('data-loaded', () => {
             document.getElementById('status').innerHTML = `<strong>Have data; now processing at ${(new Date())}</strong>`;

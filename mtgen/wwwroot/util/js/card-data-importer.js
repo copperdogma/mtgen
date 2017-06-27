@@ -4,6 +4,7 @@ Generates an output mtgen card set in json format for use in the main app, using
 Typically the importer file (e.g. import-main.json) will specify the wotc card gallery as the image source and
 the mtgsalvation spoiler page as the data source.
 
+26-Jun-2017: Added exceptions support for where='gatherer=...' to fetch individual card data from Wizards Gatherer. Switched some code from promises to async/await.
 1-Mar-2017: Refactored into flattened es6 promise chains.
 27-Feb-2017: Pulled card-exception-generator.js out of this file.
 14-Sep-2016: Updated land importer to output new more compact format.
@@ -91,80 +92,72 @@ class CardDataImporter {
 
     // PUBLIC METHODS ------------------------------------------------------------------------------------
 
-    loadAndProcessAllFiles({cardDataUrl, htmlCardData, imagesUrl, exceptions, setCode }) {
+    async loadAndProcessAllFiles({ cardDataUrl, htmlCardData, imagesUrl, exceptions, setCode }) {
         setCode = setCode.trim();
 
         // We need 3 sets of data: card, image, and exceptions
 
         // If raw HTML data was provided, use that.
-        const cardDataPromise = (htmlCardData && htmlCardData.trim().length > 1) 
+        const cardDataPromise = (htmlCardData && htmlCardData.trim().length > 1)
             ? Promise.resolve(htmlCardData) : this._fetchHtml(cardDataUrl);
 
         const imageDataPromise = imagesUrl ? this._fetchHtml(imagesUrl) : null;
-            
+
         // Exceptions are loaded as part of the import file, so they're already in the form.
         const exceptionsDataPromise = Promise.resolve(exceptions);
 
         window.dispatchEvent(new Event('data-loading'));
 
         // Get all data, either fetched from a url or loaded directly from the form.
-        return Promise.all([cardDataPromise, imageDataPromise, exceptionsDataPromise])
-            .then(([htmlData, imageData, exceptionData]) => {
-                // the first result is essential
-                const htmlCards = {
-                    data: htmlData,
-                    urlSource: cardDataUrl
-                }
-                const htmlImages = {
-                    data: imageData,
-                    urlSource: imagesUrl
-                }
-                const jsonExceptions = {
-                    data: exceptionData
-                };
+        let htmlData, imageData, exceptionData;
+        try {
+            [htmlData, imageData, exceptionData] = await Promise.all([cardDataPromise, imageDataPromise, exceptionsDataPromise]);
+        }
+        catch (err) { alert(`ERROR: failed to retrieve data from a source: ${err.message}`) };
 
-                window.dispatchEvent(new Event('data-loaded'));
+        // the first result is essential
+        const htmlCards = {
+            data: htmlData,
+            urlSource: cardDataUrl
+        }
+        const htmlImages = {
+            data: imageData,
+            urlSource: imagesUrl
+        }
+        const jsonExceptions = {
+            data: exceptionData
+        };
 
-                return {htmlCards, htmlImages, jsonExceptions};
-            })
-            .catch(err => alert(`ERROR: failed to retrieve data from a source: ${err.message}`))
-            .then(({htmlCards, htmlImages, jsonExceptions}) => {
-                // Get card data -------------------------------------------------------------------------------------------------
-                // All card data source come with image data that we usually want to override in the next step.
-                let mainOut = this._getCardData(htmlCards.data, htmlCards.urlSource, setCode);
-                mainOut.initialCardDataCount = mainOut.size;
-                return {mainOut, htmlImages, jsonExceptions};
-            })
-            .then(({mainOut, htmlImages, jsonExceptions}) => {
-                // Get image data -------------------------------------------------------------------------------------------------
-                let mainImages = new Map();
-                if (htmlImages.data) {
-                    mainImages = this._getImageData(htmlImages.data, htmlImages.urlSource);
-                }
-                return {mainOut, mainImages, jsonExceptions};
-            })
-            .then(({mainOut, mainImages, jsonExceptions}) => {
-                // Apply Exceptions -------------------------------------------------------------------------------------------------
-                if (jsonExceptions.data) {
-                    jsonExceptions.data = JSON.parse(jsonExceptions.data);
-                }
+        window.dispatchEvent(new Event('data-loaded'));
 
-                // Returns both the updated set of cards AND the modified exceptions (the latter for reporitng purposes).
-                const exceptionsResults = this._applyExceptions(mainOut, jsonExceptions.data, setCode);
-                mainOut = exceptionsResults.cards;
-                return {mainOut, mainImages, exceptionsResults};
-            })
-            .then(({mainOut, mainImages, exceptionsResults}) => {
-                // Add images to cards -------------------------------------------------------------------------------------------------
-                mainOut = this._applyImagesToCards(mainOut, mainImages);
-                return {mainOut, mainImages, exceptionsResults};
-            })
-            .then(({mainOut, mainImages, exceptionsResults}) => {
-                const cardArray = [...mainOut.values()];
-                const outputLogPromise = this._createOutputLog(cardArray, mainImages, exceptionsResults);
-                const finalDataPromise = this._createFinalJsonOutput(cardArray, mainOut.initialCardDataCount, mainImages);
-                return Promise.all([outputLogPromise, finalDataPromise]);
-            });
+        // Get card data -------------------------------------------------------------------------------------------------
+        // All card data source come with image data that we usually want to override in the next step.
+        let mainOut = this._getCardData(htmlCards.data, htmlCards.urlSource, setCode);
+        mainOut.initialCardDataCount = mainOut.size;
+
+        // Get image data -------------------------------------------------------------------------------------------------
+        let mainImages = new Map();
+        if (htmlImages.data) {
+            mainImages = this._getImageData(htmlImages.data, htmlImages.urlSource);
+        }
+
+        // Apply Exceptions -------------------------------------------------------------------------------------------------
+        if (jsonExceptions.data) {
+            jsonExceptions.data = JSON.parse(jsonExceptions.data);
+        }
+
+        // Returns both the updated set of cards AND the modified exceptions (the latter for reporitng purposes).
+        const exceptionsResults = await this._applyExceptions(mainOut, jsonExceptions.data, setCode);
+        mainOut = exceptionsResults.cards;
+
+        // Add images to cards -------------------------------------------------------------------------------------------------
+        mainOut = this._applyImagesToCards(mainOut, mainImages);
+
+        const cardArray = [...mainOut.values()];
+        const outputLog = await this._createOutputLog(cardArray, mainImages, exceptionsResults);
+        const finalData = await this._createFinalJsonOutput(cardArray, mainOut.initialCardDataCount, mainImages);
+
+        return [outputLog, finalData];
     }
 
     getDownloadSettingsFileLinkAttributes(setCode, cardDataUrl, imagesUrl, exceptionsUrl, exceptions) {
@@ -200,18 +193,34 @@ class CardDataImporter {
     // PRIVATE METHODS ------------------------------------------------------------------------------------
 
     // Get html via a proxy, erroring if it fails or if no HTML is retrieved.
-    _fetchHtml(url) { 
+    _fetchHtml(url) {
         return fetch(`/proxy?u=${encodeURIComponent(url)}`)
-        .catch(error => console.log(`${error}  url: ${url}`))
-        .then(response => {
-            if (!response.ok) { throw Error(response.statusText); }
-            return response;
-        })
-        .then(response => response.text())
-        .then(text => {
-            if (text) { return Promise.resolve(text); }
-            throw Error(`No HTML returned from: ${url}`);
-        });
+            .catch(error => {
+                console.log(`${error}  url: ${url}`);
+            })
+            .then(response => {
+                if (!response.ok) { throw Error(response.statusText); }
+                return response;
+            })
+            .then(response => response.text())
+            .then(text => {
+                console.log(`got html from ${url}`);
+                if (text === 'An error occurred while sending the request.') { throw Error(`${text} Url: ${url}`); }
+                if (text) { return Promise.resolve(text); }
+                throw Error(`No HTML returned from: ${url}`);
+            });
+    }
+
+    // Get html via a proxy, erroring if it fails or if no HTML is retrieved.
+    async _fetchHtmlAsync(url) {
+        const response = await fetch(`/proxy?u=${encodeURIComponent(url)}`);
+
+        if (!response.ok) { throw Error(response.statusText); }
+        const text = response.text();
+        console.log(`got html from ${url}`);
+        if (text === 'An error occurred while sending the request.') { throw Error(`${text} Url: ${url}`); }
+        if (text === undefined || text.length === 0) { throw Error(`No HTML returned from: ${url}`); }
+        return text;
     }
 
     _createOutputLog(cardArray, mainImages, exceptionsResults) {
@@ -251,7 +260,7 @@ class CardDataImporter {
 
             const duplicateCards = cardArray.filter(card => card.duplicateNum !== undefined);
             if (duplicateCards.length > 0) {
-                const sortedDuplicateCards = duplicateCards.sort((a,b) => this._sortBy("mtgenId",a,b));
+                const sortedDuplicateCards = duplicateCards.sort((a, b) => this._sortBy("mtgenId", a, b));
                 out += "<p>The following cards have duplicate mtgenIds:</p><ul>";
                 sortedDuplicateCards.forEach(card => out += `<li style='color:DarkGoldenrod'>${card.mtgenId}: ${card.title}</li>`);
                 out += "</ul>";
@@ -325,10 +334,12 @@ class CardDataImporter {
 
             const jsonMainStr = JSON.stringify(cardArray, null, ' ');
 
-            const finalData = { cardsMainJson: jsonMainStr,
-                initialCardDataCount, 
-                imageDataCount: mainImages.size, 
-                finalCardCount: cardArray.length };
+            const finalData = {
+                cardsMainJson: jsonMainStr,
+                initialCardDataCount,
+                imageDataCount: mainImages.size,
+                finalCardCount: cardArray.length
+            };
 
             resolve(finalData);
         });
@@ -351,13 +362,13 @@ class CardDataImporter {
         let out = str;
         if (max === undefined) { max = 32; }
         const a_chars = [
-          ["a", /[áàâãªÁÀÂÃ]/g],
-          ["e", /[éèêÉÈÊ]/g],
-          ["i", /[íìîÍÌÎ]/g],
-          ["o", /[òóôõºÓÒÔÕ]/g],
-          ["u", /[úùûÚÙÛ]/g],
-          ["c", /[çÇ]/g],
-          ["n", /[Ññ]/g]
+            ["a", /[áàâãªÁÀÂÃ]/g],
+            ["e", /[éèêÉÈÊ]/g],
+            ["i", /[íìîÍÌÎ]/g],
+            ["o", /[òóôõºÓÒÔÕ]/g],
+            ["u", /[úùûÚÙÛ]/g],
+            ["c", /[çÇ]/g],
+            ["n", /[Ññ]/g]
         ];
 
         // Replace vowel with accent without them
@@ -411,9 +422,12 @@ class CardDataImporter {
         if (lowercaseCardDataUrlSource.length < 1) {
             console.log("No card data source supplied: this is used when the exceptions file is used to generate cards");
         }
-            // 20160818: had to run mtgsalvation through proxy2016.top cuz it started blocking direct grabs
+        // 20160818: had to run mtgsalvation through proxy2016.top cuz it started blocking direct grabs
         else if (lowercaseCardDataUrlSource.includes('mtgsalvation.com') || lowercaseCardDataUrlSource.includes('proxy2016.top')) {
             cards = this._getCardsFromMtgSalvationData(cardData, setCode);
+        }
+        else if (lowercaseCardDataUrlSource.includes('gatherer.wizards.com')) {
+            // This one looks the cards up dynamically as they're requested.
         }
         else if (lowercaseCardDataUrlSource.includes('mtgjson.com')) {
             cards = this._getCardsFromMtgJsonData(cardData, setCode);
@@ -476,110 +490,136 @@ class CardDataImporter {
         return cards;
     }
 
-    // NOT YET WORKING
-    // The plan here was to allow missing cards to be fetched directly from Wizards.
-    //const getCardFromWizardsGatherer = (cardName, setCode) => {
-    //    return new Promise((resolve, reject) => {
-    //        var queryStringCardName = cardName.split(" ").reduce((final, curr) => `${final}+[${curr}]`, "");
+    // ------------------------------------------------------------------------------------------------------------------------------------------------------
+    // Allows missing cards to be fetched directly from Wizards.
+    async _getCardFromWizardsGatherer(cardName) {
+        const lowerCaseCardName = cardName.trim().toLowerCase();
+        const queryStringCardName = lowerCaseCardName.split(' ').reduce((final, curr) => `${final}+[${curr}]`, '');
 
-    //        $.get('/proxy?u=' + encodeURIComponent("http://gatherer.wizards.com/Pages/Search/Default.aspx?name=" + queryStringCardName))
-    //          .done(function (data) {
-    //              var card = {};
+        const searchHtml = await this._fetchHtmlAsync('http://gatherer.wizards.com/Pages/Search/Default.aspx?name=' + queryStringCardName);
 
-    //              var $html = $(data);
-    //              var el = $html.find(".cardDetails");
+        const parser = new DOMParser();
+        const resultDoc = parser.parseFromString(searchHtml, "text/html");
 
-    //              var title = el.find("[id$=_nameRow] .value");
-    //              if (title.length > 0) {
-    //                  card.title = title[0].textContent.trim();
-    //                  card.matchTitle = mtgGen.createMatchTitle(card.title); // used for matching MtG Salvation vs. WotC titles and card titles vs. exception titles
-    //              }
+        // The search could return multiple results OR the final single-card page if there's only one match.
+        let cardDoc;
 
-    //              var img = el.find('.cardImage img');
-    //              if (img.length > 0) {
-    //                  // Wizards' images are relative, so we need to rebuild the link.
-    //                  var imgQuerystring = img[0].src.split("?")[1];
-    //                  card.src = `http://gatherer.wizards.com/Handlers/Image.ashx?${imgQuerystring}`;
-    //                  card.imageSource = "wizards-gatherer";
-    //              }
+        // If we got multiple results, find the best entry and fetch that multiverse page.
+        const cardTitleEls = resultDoc.querySelectorAll('.cardTitle a');
+        if (cardTitleEls.length > 0) {
+            // Find the entry with a title matching exactly our desired cardName.
+            window.dispatchEvent(new CustomEvent('searching-gatherer-for-card', { detail: { cardName: cardName } }));
 
-    //              card.set = setCode;
+            console.log(`Searching for '${cardName}' in ${cardTitleEls.length} search results`);
+            const matchingCardTitleEl = Array.from(cardTitleEls).find(el => el.textContent.trim().toLowerCase() === lowerCaseCardName);
+            if (!matchingCardTitleEl) { throw new Error(`Cannot find card '${cardName}' from Gatherer`); }
 
-    //              var mana = el.find('.manaRow .value img');
-    //              if (mana.length > 0) {
-    //                  // These are stored in a set of images, one per symbol
-    //                  card.cost = _.reduce(mana, function (final, curr) {
-    //                      var manaType = curr.attributes["alt"].value.trim().toLowerCase();
-    //                      switch (manaType) {
-    //                          case "white": final += "W"; break;
-    //                          case "blue": final += "U"; break;
-    //                          case "red": final += "R"; break;
-    //                          case "black": final += "B"; break;
-    //                          case "green": final += "G"; break;
-    //                          case "multicolored": final += "M"; break;
-    //                          case "variable colorless": final += "C"; break;
-    //                          default:
-    //                              var num = parseInt(manaType, 10);
-    //                              if (isNaN(num)) {
-    //                                  console.log(`WARNING: unknown mana type: ${manaType}`);
-    //                              };
-    //                              final += manaType;
-    //                              break;
-    //                      }
-    //                      return final;
-    //                  }, "");
-    //              }
+            // Get the multiverseId for that card.
+            if (matchingCardTitleEl.href === undefined) { throw new Error(`Cannot find href/multiverseId for card '${cardName}' from Gatherer`); }
 
-    //              var rarity = el.find("[id$=_rarityRow] .value");
-    //              if (rarity.length > 0) {
-    //                  if (rarity[0].classList.length > 1) {
-    //                      card.rarity = rarity[0].classList[1][0].toLowerCase();
-    //                  }
-    //              }
+            const multiverseIdParts = matchingCardTitleEl.href.split('=');
+            if (multiverseIdParts.length < 2) { throw new Error(`Cannot find multiverseId for card '${cardName}' from Gatherer`); }
 
-    //              var type = el.find("[id$=_typeRow] .value");
-    //              if (type.length > 0) {
-    //                  var types = type[0].textContent.split(' — ');
-    //                  card.type = types[0].trim();
-    //                  if (types.length > 1) {
-    //                      card.subtype = types[1].trim();
-    //                  }
-    //              }
+            const multiverseId = multiverseIdParts[1];
 
-    //              // derived from casting cost
-    //              card.colour = getCardColourFromCard(card);
+            // Fetch the single-card page for that multiverseId.
+            const cardHtml = await this._fetchHtmlAsync('http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=' + multiverseId);
 
-    //              var pt = el.find("[id$=_ptRow] .value");
-    //              if (pt.length > 0) {
-    //                  var pts = pt[0].textContent.split('/');
-    //                  if (pts.length > 1) {
-    //                      card.power = pts[0].trim();
-    //                      card.toughness = pts[1].trim();
-    //                  }
-    //                  else if (pts.length == 1) {
-    //                      card.loyalty = pts[0].trim(); // must be a planeswalker
-    //                  }
-    //                  // otherwise it's something without power/toughness|loytlty, i.e.: land, spell, etc
-    //              }
+            const parser = new DOMParser();
+            cardDoc = parser.parseFromString(cardHtml, "text/html");
+        }
+        else {
+            cardDoc = resultDoc;
+        }
 
-    //              var rarity = el.find("[id$=_rarityRow] .value");
-    //              if (rarity.length > 0) {
-    //                  if (rarity[0].classList.length > 1) {
-    //                      card.rarity = rarity[0].classList[1][0].toLowerCase();
-    //                  }
-    //              }
+        const card = await this._getCardFromWizardsGathererCardDoc(cardDoc, cardName);
 
-    //              var cnum = el.find("[id$=_numberRow] .value");
-    //              if (cnum.length > 0) {
-    //                  card.num = cnum[0].textContent.trim();
-    //              }
+        return card;
+    }
 
-    //              resolve(card);
-    //          })
-    //        .fail((xhr, status, err) => reject(status + err.message));
-    //    });
-    //}
+    async _getCardFromWizardsGathererCardDoc(cardDoc, cardName) {
+        let card = {};
 
+        const cardData = cardDoc.querySelector('.cardDetails');
+
+        if (!cardData) { throw new Error(`Cannot find card '${cardName}' from Gatherer`); }
+
+        const titleEl = cardData.querySelector('[id$=_nameRow] .value');
+        if (!titleEl) { throw new Error(`Cannot find title for '${cardName}' card from Gatherer`); }
+        card.title = titleEl.textContent.trim();
+        card.matchTitle = mtgGen.createMatchTitle(card.title); // used for matching MtG Salvation vs. WotC titles and card titles vs. exception titles
+
+        const imgEl = cardData.querySelector('.cardImage img');
+        if (!imgEl) { throw new Error(`Cannot find img for '${cardName}' card from Gatherer`); }
+        const imgQuerystring = imgEl.src.split('?')[1];
+        card.src = `http://gatherer.wizards.com/Handlers/Image.ashx?${imgQuerystring}`;
+        card.imageSource = "wizards-gatherer";
+
+        const manaImgs = cardDoc.querySelectorAll('.manaRow .value img');
+        if (manaImgs.length === 0) {
+            console.log(`WARNING: Cannot find mana for '${cardName}' card from Gatherer`);
+        }
+        else {
+            // These are stored in a set of images, one per symbol
+            card.cost = Array.from(manaImgs).map(manaImg => {
+                const manaType = manaImg.attributes['alt'].value.trim().toLowerCase();
+                switch (manaType) {
+                    case 'white': return 'W'; break;
+                    case 'blue': return 'U'; break;
+                    case 'red': return 'R'; break;
+                    case 'black': return 'B'; break;
+                    case 'green': return 'G'; break;
+                    case 'multicolored': return 'M'; break;
+                    case 'variable colorless': return 'C'; break;
+                    default:
+                        const num = parseInt(manaType, 10);
+                        if (isNaN(num)) { console.log(`WARNING: unknown mana type: ${manaType}`); };
+                        return manaType;
+                        break;
+                }
+            }).join('');
+        }
+
+        const rarityEl = cardDoc.querySelector('[id$=_rarityRow] .value');
+        if (!rarityEl) { throw new Error(`Cannot find rarity for '${cardName}' card from Gatherer`); }
+        card.rarity = rarityEl.textContent.trim().toLowerCase();
+
+        const typeEl = cardDoc.querySelector('[id$=_typeRow] .value');
+        if (!typeEl) { throw new Error(`Cannot find type for '${cardName}' card from Gatherer`); }
+        const types = typeEl.textContent.split(' — ');
+        card.type = types[0].trim();
+        if (types.length > 1) {
+            card.subtype = types[1].trim();
+        }
+
+        // derived from casting cost
+        card.colour = this._getCardColourFromCard(card);
+
+        const ptEl = cardDoc.querySelector('[id$=_ptRow] .value');
+        if (ptEl) {
+            const pts = ptEl.textContent.split('/');
+            if (pts.length > 1) {
+                card.power = pts[0].trim();
+                card.toughness = pts[1].trim();
+            }
+            else if (pts.length == 1) {
+                card.loyalty = pts[0].trim(); // must be a planeswalker
+            }
+            // otherwise it's something without power/toughness|loytlty, i.e.: land, spell, etc
+        }
+
+        const cardNumEl = cardDoc.querySelector("[id$=_numberRow] .value");
+        if (!cardNumEl) {
+            console.log(`WARNING: Cannot find card num for '${cardName}' card from Gatherer`);
+        }
+        else {
+            card.num = cardNumEl.textContent.trim();
+        }
+
+        return card;
+    }
+
+    // ------------------------------------------------------------------------------------------------------------------------------------------------------
     _getCardsFromMtgSalvationData(rawCardData, setCode) {
         let cards = new Map();
 
@@ -687,6 +727,7 @@ class CardDataImporter {
         return cards;
     }
 
+    // ------------------------------------------------------------------------------------------------------------------------------------------------------
     _getCardsFromMtgJsonData(rawCardData, setCode) {
         let cards = new Map();
 
@@ -766,6 +807,7 @@ class CardDataImporter {
         return cards;
     }
 
+    // ------------------------------------------------------------------------------------------------------------------------------------------------------
     _getImageData(imageData, imageDataUrlSource) {
         let images = new Map();
 
@@ -1010,7 +1052,7 @@ class CardDataImporter {
             // Create a new image from JavaScript
             const image = new Image();
             // Bind an event listener on the load to call the `resolve` function
-            image.onload  = resolve;
+            image.onload = resolve;
             // If the image fails to be downloaded, we don't want the whole system
             // to collapse so we `resolve` instead of `reject`, even on error
             image.onerror = resolve;
@@ -1055,7 +1097,7 @@ class CardDataImporter {
             }
         });
     }
-    
+
     _createCardViaException(card, exception, setCode) {
         // add all Exception properties into the card
         Object.assign(card, exception.newValues);
@@ -1094,12 +1136,12 @@ class CardDataImporter {
 
     _mapToObject(map) {
         let obj = Object.create(null);
-        for (let [k,v] of map) {
+        for (let [k, v] of map) {
             // We don’t escape the key '__proto__'
             // which can cause problems on older engines
             obj[k] = v;
         }
-    return obj;
+        return obj;
     }
 
     _objectToMap(obj) {
@@ -1109,8 +1151,8 @@ class CardDataImporter {
         }
         return map;
     }
-    
-    _applyExceptions(cards, exceptions, setCode) {
+
+    async _applyExceptions(cards, exceptions, setCode) {
         // Example:
         //  {
         //      where: "rarity=(mr|r)",
@@ -1118,6 +1160,14 @@ class CardDataImporter {
         //  },
         //  {
         //      where: "title='Serra Angel'",
+        //      newValues {
+        //          title: "Sengir Angel",
+        //          rarity: "mr"
+        //      }
+        //  },
+        //  {
+        //      _comment: "This will fetch the card data directly from Wizards Gatherer and then modify it",
+        //      where: "gatherer='Serra Angel'",
         //      newValues {
         //          title: "Sengir Angel",
         //          rarity: "mr"
@@ -1140,10 +1190,12 @@ class CardDataImporter {
         //        "num": "032"
         //    }
         //  }
-        exceptions.forEach((exception, index) => {
+
+        let index = 0;
+        for (const exception of exceptions) {
             if (Object.keys(exception).length === 1 && (exception._comments || exception._comment)) {
                 exception.comment = true;
-                return; // just a comment node; ignore
+                continue; // just a comment node; ignore
             }
 
             exception.result = { index: index, success: true };
@@ -1152,12 +1204,12 @@ class CardDataImporter {
                 if (!exception.newValues) {
                     exception.result.success = false;
                     exception.result.error = "add=true but missing required newValues {}; cannot continue processing this exception";
-                    return;
+                    continue;
                 }
                 if (!exception.newValues.title) {
                     exception.result.success = false;
                     exception.result.error = "add=true but missing required newValues.title; cannot continue processing this exception";
-                    return;
+                    continue;
                 }
 
                 console.log(`Adding new card: ${exception.newValues.title}`);
@@ -1166,25 +1218,42 @@ class CardDataImporter {
 
                 cards = this._addCardToCards(cards, card);
 
-                return;
+                continue;
             }
 
             if (exception.where === undefined) {
                 exception.result.success = false;
                 exception.result.error = "missing required where clause; cannot continue processing this exception";
-                return;
-            }
-
-            // Add the from[*] the query engine expects.
-            // The card importer works on a single set at a time, so from[*] is always implied,
-            // but we don't require it in the import json for convenience.
-            let where = exception.where.trim();
-            if (!where.toLowerCase().includes("from[")) {
-                where = `from[*]?${where}`;
+                continue;
             }
 
             const cardsObj = this._mapToObject(cards);
-            const matchingCardsObj = mtgGen.executeQuery(cardsObj, null, where);
+
+            // If it's a Wizards Gatherer search, do that.
+            let matchingCardsObj;
+            const gathererTitle = exception.where.match(/^\s*gatherer\s*=\s*'([^']*)'?\s*$/);
+            if (gathererTitle) {
+                try {
+                    matchingCardsObj = [await this._getCardFromWizardsGatherer(gathererTitle[1])];
+                }
+                catch (e) {
+                    exception.result.success = false;
+                    exception.result.error = e.message;
+                    console.log(e);
+                    continue;
+                }
+            }
+            else {
+                // Add the from[*] the query engine expects.
+                // The card importer works on a single set at a time, so from[*] is always implied,
+                // but we don't require it in the import json for convenience.
+                let where = exception.where.trim();
+                if (!where.toLowerCase().includes("from[")) {
+                    where = `from[*]?${where}`;
+                }
+
+                matchingCardsObj = mtgGen.executeQuery(cardsObj, null, where);
+            }
             const matchingCards = this._objectToMap(matchingCardsObj);
             const matchingCardArray = [...matchingCards.values()];
 
@@ -1195,7 +1264,7 @@ class CardDataImporter {
                 });
                 exception.result.deletedCards = matchingCards;
                 exception.result.affectedCards = matchingCards.length;
-                return;
+                continue;
             }
 
             // Otherwise it's an Update exception; apply the changes.
@@ -1283,7 +1352,9 @@ class CardDataImporter {
 
             // Add the modified cards back in.
             matchingCardArray.forEach(matchingCard => cards = this._addCardToCards(cards, matchingCard));
-        });
+
+            index++;
+        }
 
         // Return both the updated set of cards AND the modified exceptions (the latter for reporitng purposes).
         const result = { cards, exceptions };
