@@ -134,7 +134,7 @@
         window.addEventListener('data-loading', () => document.getElementById('status').innerHTML = `<strong>Data load started at ${(new Date())}</strong>`, false);
 
         window.addEventListener('searching-gatherer-for-card',
-            (e) => document.getElementById('msg').innerHTML += `<strong>Fetching data from wizards.gatherer.com for card '${e.detail.cardName}'</strong><br/>`, false);
+            (e) => document.getElementById('msg').innerHTML += `<br/><em>Fetching data from wizards.gatherer.com for card '${e.detail.cardName}'</em>`, false);
 
         window.addEventListener('data-loaded', () => {
             document.getElementById('status').innerHTML = `<strong>Have data; now processing at ${(new Date())}</strong>`;

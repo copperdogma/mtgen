@@ -99,8 +99,7 @@ class CardDataImporter {
         // We need 3 sets of data: card, image, and exceptions
 
         // If raw HTML data was provided, use that.
-        const cardDataPromise = (htmlCardData && htmlCardData.trim().length > 1)
-            ? Promise.resolve(htmlCardData) : this._fetchHtml(cardDataUrl);
+        const cardDataPromise = (htmlCardData && htmlCardData.trim().length > 1) ? Promise.resolve(htmlCardData) : this._fetchHtml(cardDataUrl);
 
         const imageDataPromise = imagesUrl ? this._fetchHtml(imagesUrl) : null;
 
@@ -114,7 +113,9 @@ class CardDataImporter {
         try {
             [htmlData, imageData, exceptionData] = await Promise.all([cardDataPromise, imageDataPromise, exceptionsDataPromise]);
         }
-        catch (err) { alert(`ERROR: failed to retrieve data from a source: ${err.message}`) };
+        catch (err) {
+            alert(`ERROR: failed to retrieve data from a source: ${err.message}`)
+        };
 
         // the first result is essential
         const htmlCards = {
@@ -194,26 +195,7 @@ class CardDataImporter {
     // PRIVATE METHODS ------------------------------------------------------------------------------------
 
     // Get html via a proxy, erroring if it fails or if no HTML is retrieved.
-    _fetchHtml(url) {
-        return fetch(`/proxy?u=${encodeURIComponent(url)}`)
-            .catch(error => {
-                console.log(`${error}  url: ${url}`);
-            })
-            .then(response => {
-                if (!response.ok) { throw Error(response.statusText); }
-                return response;
-            })
-            .then(response => response.text())
-            .then(text => {
-                console.log(`got html from ${url}`);
-                if (text === 'An error occurred while sending the request.') { throw Error(`${text} Url: ${url}`); }
-                if (text) { return Promise.resolve(text); }
-                throw Error(`No HTML returned from: ${url}`);
-            });
-    }
-
-    // Get html via a proxy, erroring if it fails or if no HTML is retrieved.
-    async _fetchHtmlAsync(url) {
+    async _fetchHtml(url) {
         const response = await fetch(`/proxy?u=${encodeURIComponent(url)}`);
 
         if (!response.ok) { throw Error(response.statusText); }
@@ -224,126 +206,122 @@ class CardDataImporter {
         return text;
     }
 
-    _createOutputLog(cardArray, mainImages, exceptionsResults) {
-        return new Promise(resolve => {
-            let out = "";
-            if (mainImages.size < 1) {
-                out += `<p>WARNING: No image data supplied. Using any images found with card data.</p>`;
+    async _createOutputLog(cardArray, mainImages, exceptionsResults) {
+        let out = "";
+        if (mainImages.size < 1) {
+            out += `<p>WARNING: No image data supplied. Using any images found with card data.</p>`;
+        }
+        else {
+            const missingSecondaryImageDataEntry = cardArray.filter(card => !card.hasOwnProperty("imageSourceOriginal"));
+            if (missingSecondaryImageDataEntry.length < 1) {
+                out += "<p>No parsing errors.</p>";
             }
             else {
-                const missingSecondaryImageDataEntry = cardArray.filter(card => !card.hasOwnProperty("imageSourceOriginal"));
-                if (missingSecondaryImageDataEntry.length < 1) {
-                    out += "<p>No parsing errors.</p>";
-                }
-                else {
-                    out += "<p>The following cards had no image data from your image source:</p><ul>";
-                    missingSecondaryImageDataEntry.sort(this._sortByTitle).forEach(value => {
-                        const comment = value._comment ? `<em> - ${value._comment}</em>` : "";
-                        out += `<li style='color:red'>${value.title + comment}</li>`;
-                    });
-                    out += "</ul>";
-                }
-
-                const unusedImages = Object.entries(mainImages).map(entry => entry[1]).filter(mainImage => !mainImage.wasUsed);
-                if (unusedImages.length > 0) {
-                    out += "<p>The following images from your image data source did not match any cards in your card data:</p><ul>";
-                    unusedImages.forEach(unusedImage => out += `<li style='color:red'>${unusedImage.title}</li>`);
-                    out += "</ul>";
-                }
-            }
-
-            const cardsWithPlaceholderImages = cardArray.filter(card => card.imageSource === "placeholder");
-            if (cardsWithPlaceholderImages.length > 0) {
-                out += "<p>The following cards have no primary images or images supplied from your image source, so an image was created using <a href='http://placehold.it/' target='_blank'>placehold.it</a>:</p><ul>";
-                cardsWithPlaceholderImages.forEach(card => out += `<li style='color:red'>${card.title}</li>`);
-                out += "</ul>";
-            }
-
-            const duplicateCards = cardArray.filter(card => card.duplicateNum !== undefined);
-            if (duplicateCards.length > 0) {
-                const sortedDuplicateCards = duplicateCards.sort((a, b) => this._sortBy("mtgenId", a, b));
-                out += "<p>The following cards have duplicate mtgenIds:</p><ul>";
-                sortedDuplicateCards.forEach(card => out += `<li style='color:DarkGoldenrod'>${card.mtgenId}: ${card.title}</li>`);
-                out += "</ul>";
-            }
-
-            if (!exceptionsResults.exceptions) {
-                out += "<p>No exceptions provided.</p>";
-            }
-            else {
-                out += "<p>The supplied exceptions were processed as follows:</p><ul>";
-
-                exceptionsResults.exceptions.forEach((exception, index) => {
-                    if (!exception.result) {
-                        exception.result = { success: false, error: "PROCESSING FAILURE: no result given at all for this exception!" };
-                    }
-                    if (exception.comment === true) {
-                        out += `<li style='color: gray'>#${(index + 1)}: Comment; ignored.</li>`;
-                    }
-                    else if (exception.result.success === true) {
-                        if (exception.result.affectedCards > 0) {
-                            out += `<li style='color: green'>#${(index + 1)}: `;
-                        }
-                        else {
-                            out += `<li style='color: DarkGoldenrod'>#${(index + 1)}: `;
-                        }
-                        if (exception.add === true) {
-                            out += `Added new card: ${exception.newValues.title}`;
-                        }
-                        else if (exception.delete === true) {
-                            const deletedCards = [...exception.result.deletedCards.values()].sort(this._sortByTitle);
-                            out += `Deleted ${deletedCards.length} cards via query: ${exception.where}`;
-                            if (deletedCards.length > 20) {
-                                out += "<ul>" + deletedCards.map(card => card.title).join(", ") + "</ul>";
-                            }
-                            else if (deletedCards.length > 0) {
-                                out += "<ul>" + deletedCards.map(card => `<li>${card.title}</li>`).join('') + "</ul>";
-                            }
-                        }
-                        else {
-                            const modifiedCards = [...exception.result.modifiedCards.values()].sort(this._sortByTitle);
-                            out += `Modified ${modifiedCards.length} cards via query: ${exception.where}<br/>`;
-                            out += `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New values: ${JSON.stringify(exception.newValues)}`;
-                            if (modifiedCards.length > 20) {
-                                out += "<ul>" + modifiedCards.map(card => card.title).join(", ") + "</ul>";
-                            }
-                            else if (modifiedCards.length > 0) {
-                                out += "<ul>" + modifiedCards.map(card => `<li>${card.title}</li>`).join('') + "</ul>";
-                            }
-                        }
-                    }
-                    else {
-                        out += `<li style='color: red'>#${(index + 1)}: ${exception.result.error}`;
-                    }
-                    out += "</li>";
+                out += "<p>The following cards had no image data from your image source:</p><ul>";
+                missingSecondaryImageDataEntry.sort(this._sortByTitle).forEach(value => {
+                    const comment = value._comment ? `<em> - ${value._comment}</em>` : "";
+                    out += `<li style='color:red'>${value.title + comment}</li>`;
                 });
                 out += "</ul>";
             }
-            resolve(out);
-        });
+
+            const unusedImages = Object.entries(mainImages).map(entry => entry[1]).filter(mainImage => !mainImage.wasUsed);
+            if (unusedImages.length > 0) {
+                out += "<p>The following images from your image data source did not match any cards in your card data:</p><ul>";
+                unusedImages.forEach(unusedImage => out += `<li style='color:red'>${unusedImage.title}</li>`);
+                out += "</ul>";
+            }
+        }
+
+        const cardsWithPlaceholderImages = cardArray.filter(card => card.imageSource === "placeholder");
+        if (cardsWithPlaceholderImages.length > 0) {
+            out += "<p>The following cards have no primary images or images supplied from your image source, so an image was created using <a href='http://placehold.it/' target='_blank'>placehold.it</a>:</p><ul>";
+            cardsWithPlaceholderImages.forEach(card => out += `<li style='color:red'>${card.title}</li>`);
+            out += "</ul>";
+        }
+
+        const duplicateCards = cardArray.filter(card => card.duplicateNum !== undefined);
+        if (duplicateCards.length > 0) {
+            const sortedDuplicateCards = duplicateCards.sort((a, b) => this._sortBy("mtgenId", a, b));
+            out += "<p>The following cards have duplicate mtgenIds:</p><ul>";
+            sortedDuplicateCards.forEach(card => out += `<li style='color:DarkGoldenrod'>${card.mtgenId}: ${card.title}</li>`);
+            out += "</ul>";
+        }
+
+        if (!exceptionsResults.exceptions) {
+            out += "<p>No exceptions provided.</p>";
+        }
+        else {
+            out += "<p>The supplied exceptions were processed as follows:</p><ul>";
+
+            exceptionsResults.exceptions.forEach((exception, index) => {
+                if (!exception.result) {
+                    exception.result = { success: false, error: "PROCESSING FAILURE: no result given at all for this exception!" };
+                }
+                if (exception.comment === true) {
+                    out += `<li style='color: gray'>#${(index + 1)}: Comment; ignored.</li>`;
+                }
+                else if (exception.result.success === true) {
+                    if (exception.result.affectedCards > 0) {
+                        out += `<li style='color: green'>#${(index + 1)}: `;
+                    }
+                    else {
+                        out += `<li style='color: DarkGoldenrod'>#${(index + 1)}: `;
+                    }
+                    if (exception.add === true) {
+                        out += `Added new card: ${exception.newValues.title}`;
+                    }
+                    else if (exception.delete === true) {
+                        const deletedCards = [...exception.result.deletedCards.values()].sort(this._sortByTitle);
+                        out += `Deleted ${deletedCards.length} cards via query: ${exception.where}`;
+                        if (deletedCards.length > 20) {
+                            out += "<ul>" + deletedCards.map(card => card.title).join(", ") + "</ul>";
+                        }
+                        else if (deletedCards.length > 0) {
+                            out += "<ul>" + deletedCards.map(card => `<li>${card.title}</li>`).join('') + "</ul>";
+                        }
+                    }
+                    else {
+                        const modifiedCards = [...exception.result.modifiedCards.values()].sort(this._sortByTitle);
+                        out += `Modified ${modifiedCards.length} cards via query: ${exception.where}<br/>`;
+                        out += `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New values: ${JSON.stringify(exception.newValues)}`;
+                        if (modifiedCards.length > 20) {
+                            out += "<ul>" + modifiedCards.map(card => card.title).join(", ") + "</ul>";
+                        }
+                        else if (modifiedCards.length > 0) {
+                            out += "<ul>" + modifiedCards.map(card => `<li>${card.title}</li>`).join('') + "</ul>";
+                        }
+                    }
+                }
+                else {
+                    out += `<li style='color: red'>#${(index + 1)}: ${exception.result.error}`;
+                }
+                out += "</li>";
+            });
+            out += "</ul>";
+        }
+        return out;
     }
 
-    _createFinalJsonOutput(cardArray, initialCardDataCount, mainImages) {
-        return new Promise(resolve => {
-            cardArray.forEach(card => {
-                delete card.matchTitle;
-                delete card.srcOriginal;
-                delete card.imageSourceOriginal;
-                delete card.fixedViaException;
-                delete card.imageSource;
-            });
-
-            const jsonMainStr = JSON.stringify(cardArray, null, ' ');
-
-            const finalData = {
-                cardsMainJson: jsonMainStr,
-                initialCardDataCount,
-                imageDataCount: mainImages.size,
-                finalCardCount: cardArray.length
-            };
-
-            resolve(finalData);
+    async _createFinalJsonOutput(cardArray, initialCardDataCount, mainImages) {
+        cardArray.forEach(card => {
+            delete card.matchTitle;
+            delete card.srcOriginal;
+            delete card.imageSourceOriginal;
+            delete card.fixedViaException;
+            delete card.imageSource;
         });
+
+        const jsonMainStr = JSON.stringify(cardArray, null, ' ');
+
+        const finalData = {
+            cardsMainJson: jsonMainStr,
+            initialCardDataCount,
+            imageDataCount: mainImages.size,
+            finalCardCount: cardArray.length
+        };
+
+        return finalData;
     }
 
     _sortByTitle(a, b) {
@@ -497,7 +475,7 @@ class CardDataImporter {
         const lowerCaseCardName = cardName.trim().toLowerCase();
         const queryStringCardName = lowerCaseCardName.split(' ').reduce((final, curr) => `${final}+[${curr}]`, '');
 
-        const searchHtml = await this._fetchHtmlAsync('http://gatherer.wizards.com/Pages/Search/Default.aspx?name=' + queryStringCardName);
+        const searchHtml = await this._fetchHtml('http://gatherer.wizards.com/Pages/Search/Default.aspx?name=' + queryStringCardName);
 
         const parser = new DOMParser();
         const resultDoc = parser.parseFromString(searchHtml, "text/html");
@@ -524,7 +502,7 @@ class CardDataImporter {
             const multiverseId = multiverseIdParts[1];
 
             // Fetch the single-card page for that multiverseId.
-            const cardHtml = await this._fetchHtmlAsync('http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=' + multiverseId);
+            const cardHtml = await this._fetchHtml('http://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=' + multiverseId);
 
             const parser = new DOMParser();
             cardDoc = parser.parseFromString(cardHtml, "text/html");
@@ -1062,41 +1040,78 @@ class CardDataImporter {
         });
     }
 
-    _getCardImagesFromWotcArticle(rawHtmlImageData, requiredImageWidth, requiredImageHeight) {
-        return new Promise(resolve => {
-            let finalImages = [];
+    //CAMKILL: replaced with async version below
+    //_getCardImagesFromWotcArticle(rawHtmlImageData, requiredImageWidth, requiredImageHeight) {
+    //    return new Promise(resolve => {
+    //        let finalImages = [];
 
-            const parser = new DOMParser();
-            const imageDoc = parser.parseFromString(rawHtmlImageData, "text/html");
+    //        const parser = new DOMParser();
+    //        const imageDoc = parser.parseFromString(rawHtmlImageData, "text/html");
 
-            // v1 - 20150914, bfz gallery -- hard to scan as anything unique is added by js
-            const content = imageDoc.querySelector('#content');
-            const rawImages = imageDoc.querySelectorAll('#content img');
-            if (rawImages) {
-                // Preload the images so we get the heights and widths.
-                // This wasn't necessary under jQuery because I assume it rendered the HTML hidden in the browser.
-                const imagePromises = [...rawImages].map(rawImage => this._preloadImage(rawImage.src));
-                Promise.all(imagePromises)
-                    .then(images => {
-                        const requiredImageHeightInt = parseInt(requiredImageHeight, 10);
-                        const requiredImageWidthInt = parseInt(requiredImageWidth, 10);
-                        images.forEach(event => {
-                            const img = event.target;
-                            if (!isNaN(requiredImageHeightInt) && requiredImageHeightInt !== img.height) { return true; }
-                            if (!isNaN(requiredImageWidthInt) && requiredImageWidthInt !== img.width) { return true; }
-                            const image = {};
-                            image.src = img.src;
-                            image.height = img.height;
-                            image.width = img.width;
-                            image.imageSource = "wotc-article";
-                            finalImages.push(image);
-                        });
+    //        // v1 - 20150914, bfz gallery -- hard to scan as anything unique is added by js
+    //        const content = imageDoc.querySelector('#content');
+    //        const rawImages = imageDoc.querySelectorAll('#content img');
+    //        if (rawImages) {
+    //            // Preload the images so we get the heights and widths.
+    //            // This wasn't necessary under jQuery because I assume it rendered the HTML hidden in the browser.
+    //            const imagePromises = [...rawImages].map(rawImage => this._preloadImage(rawImage.src));
+    //            Promise.all(imagePromises)
+    //                .then(images => {
+    //                    const requiredImageHeightInt = parseInt(requiredImageHeight, 10);
+    //                    const requiredImageWidthInt = parseInt(requiredImageWidth, 10);
+    //                    images.forEach(event => {
+    //                        const img = event.target;
+    //                        if (!isNaN(requiredImageHeightInt) && requiredImageHeightInt !== img.height) { return true; }
+    //                        if (!isNaN(requiredImageWidthInt) && requiredImageWidthInt !== img.width) { return true; }
+    //                        const image = {};
+    //                        image.src = img.src;
+    //                        image.height = img.height;
+    //                        image.width = img.width;
+    //                        image.imageSource = "wotc-article";
+    //                        finalImages.push(image);
+    //                    });
 
-                        resolve(finalImages);
-                    })
-                    .catch(err => alert(`ERROR: failed to retrieve image: ${err.message}`));
+    //                    resolve(finalImages);
+    //                })
+    //                .catch(err => alert(`ERROR: failed to retrieve image: ${err.message}`));
+    //        }
+    //    });
+    //}
+
+    async _getCardImagesFromWotcArticle(rawHtmlImageData, requiredImageWidth, requiredImageHeight) {
+        const parser = new DOMParser();
+        const imageDoc = parser.parseFromString(rawHtmlImageData, "text/html");
+
+        // v1 - 20150914, bfz gallery -- hard to scan as anything unique is added by js
+        const content = imageDoc.querySelector('#content');
+        const rawImages = imageDoc.querySelectorAll('#content img');
+        if (rawImages) {
+            // Preload the images so we get the heights and widths.
+            // This wasn't necessary under jQuery because I assume it rendered the HTML hidden in the browser.
+            const imagePromises = [...rawImages].map(rawImage => this._preloadImage(rawImage.src));
+            let images;
+            try {
+                images = await Promise.all(imagePromises);
             }
-        });
+            catch (err) { alert(`ERROR: failed to retrieve image: ${err.message}`); }
+
+            let finalImages = []
+            const requiredImageHeightInt = parseInt(requiredImageHeight, 10);
+            const requiredImageWidthInt = parseInt(requiredImageWidth, 10);
+            images.forEach(event => {
+                const img = event.target;
+                if (!isNaN(requiredImageHeightInt) && requiredImageHeightInt !== img.height) { return true; }
+                if (!isNaN(requiredImageWidthInt) && requiredImageWidthInt !== img.width) { return true; }
+                const image = {};
+                image.src = img.src;
+                image.height = img.height;
+                image.width = img.width;
+                image.imageSource = "wotc-article";
+                finalImages.push(image);
+            });
+
+            return finalImages;
+        }
     }
 
     _createCardViaException(card, exception, setCode) {
