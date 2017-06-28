@@ -4,6 +4,7 @@ Generates an output mtgen card set in json format for use in the main app, using
 Typically the importer file (e.g. import-main.json) will specify the wotc card gallery as the image source and
 the mtgsalvation spoiler page as the data source.
 
+27-Jun-2017: Now adds .isSelected=false to all cards and flags as .isSelected=true if they were modified in an exception. This lets exception file delete all where .isSelected=false at the end.
 26-Jun-2017: Added exceptions support for where='gatherer=...' to fetch individual card data from Wizards Gatherer. Switched some code from promises to async/await.
 1-Mar-2017: Refactored into flattened es6 promise chains.
 27-Feb-2017: Pulled card-exception-generator.js out of this file.
@@ -1191,6 +1192,13 @@ class CardDataImporter {
         //    }
         //  }
 
+        // Set all cards to have .isSelected=false (which will be removed at the end).
+        // This allows the exception file to include { delete: true, where: isSelected=false},
+        // i.e.: delete all cards I didn't touch. This is a very common use case where
+        // specialized subsets of cards from a large card data set (like the promos out of the main cards)
+        // need to be plucked out, but it's hard to say "delete everything I didn't select".
+        cards.forEach(c => c.isSelected = false);
+
         let index = 0;
         for (const exception of exceptions) {
             if (Object.keys(exception).length === 1 && (exception._comments || exception._comment)) {
@@ -1346,6 +1354,9 @@ class CardDataImporter {
                 Object.assign(card, replacementReferenceValues);
 
                 card.matchTitle = mtgGen.createMatchTitle(card.title);
+
+                // Mark it as .isSelected=true to allow the exceptions file to delete all that WEREN'T selected.
+                card.isSelected = true;
             });
             exception.result.modifiedCards = matchingCards;
             exception.result.affectedCards = matchingCards.length;
@@ -1355,6 +1366,9 @@ class CardDataImporter {
 
             index++;
         }
+
+        // Remove our temporary .isSelected property.
+        cards.forEach(c => delete c.isSelected);
 
         // Return both the updated set of cards AND the modified exceptions (the latter for reporitng purposes).
         const result = { cards, exceptions };
