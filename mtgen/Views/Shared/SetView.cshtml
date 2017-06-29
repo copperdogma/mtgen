@@ -87,6 +87,7 @@
                 , contentElem: "main"
             });
 
+            // Modal popup support.
             window.modal = new tingle.modal({});
 
             // Dynamic card loading counts
@@ -94,7 +95,16 @@
             const currentCardCountEl = document.querySelector('#card-count .current');
             window.addEventListener('playableCardLoaded', e => currentCardCountEl.textContent = e.detail.setCardsLoadedCount, false);
 
-            window.addEventListener('resultsRendered', e => Holder.run(), false); // Properly render any placeholder images.
+            // Properly render any placeholder images and modal popups.
+            const _showCardModal = event => {
+                window.modal.setContent(`<div class='modal-card'><img src='${event.currentTarget.href}'/></div>`);
+                window.modal.open();
+                event.preventDefault();
+            };
+            window.addEventListener('resultsRendered', e => {
+                Holder.run()
+                document.querySelectorAll('#product-content .card a').forEach(el => el.addEventListener('click', _showCardModal) );
+            }, false);
 
             // Analytics event tracking
             const currProduct = '#products a.active';

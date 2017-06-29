@@ -436,6 +436,10 @@ footer a {
 	font-weight: normal;
 	text-shadow: none;
 }
+.modal-card img {
+    max-height: 100%;
+    max-width: 100%;
+}
 .export-set, .export-detail {
 	display: inline-block;
 	vertical-align: top;
