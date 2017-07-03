@@ -5,23 +5,21 @@
   "_comments": "Three kinds of land for this release: full art, normal, and dual",
   "exceptions": [
     {
-      "_comment": "add land:false to ALL cards with the intention of deleting them later",
-      "where": "",
-      "newValues": {
-        "land": false
-      }
-    },
-    {
-      "_comment": "basic land are done separately below",
+      "_comment": "we'll just set a dummy value to mark these as selected (we want them)",
       "where": "type=(Land|Legendary Land)",
       "newValues": {
-        "land": true
+        "set": "{{setCode}}"
       }
     },
     {
-      "_comment": "delete all cards that still have land=false, which leaves just our land cards",
+      "_comment": "basic lands are added manually below so we don't need the ones in this data source",
       "delete": true,
-      "where": "land=false"
+      "where": "type=Basic Land"
+    },
+    {
+      "_comment": "two land cards are only found in the Planeswalker Decks: http://magic.wizards.com/en/articles/archive/feature/exclusive-cards-hour-devastation-planeswalker-decks-2017-06-21",
+      "delete": true,
+      "where": "title=(Cinder Barrens|   Woodland Stream)"
     },
 
     {
@@ -94,8 +92,15 @@
         "colour": "l",
         "cost": "",
         "rarity": "c",
+        "fullArt":  true,
         "num": "{{num}}/264 L"
       }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
     }
   ]
 }

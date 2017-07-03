@@ -16,6 +16,12 @@
       "where": "type=(Basic Land|Land)"
     },
     {
+      "_comment": "ten cards are only found in the Planeswalker Decks: http://magic.wizards.com/en/articles/archive/feature/exclusive-cards-hour-devastation-planeswalker-decks-2017-06-21",
+      "delete": true,
+      "where": "title=(Nicol Bolas, the Deceiver|Wasp of the Bitter End|Zealot of the God-Pharaoh|Visage of Bolas|Cinder Barrens|   Nissa, Genesis Mage|Avid Reclaimer|Brambleweft Behemoth|Nissa's Encouragement|Woodland Stream)"
+    },
+
+    {
       "where": "title='Angel of the God-Pharoh'",
       "newValues": {
         "title": "Angel of the God-Pharaoh"
@@ -25,6 +31,12 @@
       "where": "title='Maurauding Boneslasher'",
       "newValues": {
         "title": "Marauding Boneslasher"
+      }
+    },
+    {
+      "where": "title='Crook of Comdemnation'",
+      "newValues": {
+        "title": "Crook of Condemnation"
       }
     },
     {

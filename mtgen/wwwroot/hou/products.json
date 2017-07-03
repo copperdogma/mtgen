@@ -45,6 +45,7 @@
       "initialSort": "set",
       "packs": [
         { "packName": "hou-standard" },
+        { "packName": "akh-standard" },
         { "packName": "hou-prerelease-promo-packins" },
         { "packName": "hou-prerelease-promos" }
       ],
@@ -60,8 +61,12 @@
                 "defaultPackName": "hou-prerelease-promo-packins"
               },
               {
-                "count": 6,
+                "count": 4,
                 "defaultPackName": "hou-standard"
+              },
+              {
+                "count": 2,
+                "defaultPackName": "akh-standard"
               }
             ]
           }
@@ -72,7 +77,7 @@
     {
       "productName": "hou-promos",
       "productDesc": "All Promos",
-      "sources": [ "http://magic.wizards.com/en/articles/archive/feature/kaladesh-packaging-promos-and-planeswalker-decks-2016-09-06" ],
+      "sources": [ "http://magic.wizards.com/en/articles/archive/feature/exclusive-cards-hour-devastation-planeswalker-decks-2017-06-21" ],
       "isGenerated": false,
       "isVisible": true,
       "initialSort": "name",

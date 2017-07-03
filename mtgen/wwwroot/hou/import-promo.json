@@ -10,16 +10,8 @@
     },
 
     {
-      "_comment": "add promo:false to ALL cards with the intention of deleting them later",
-      "where": "",
-      "newValues": {
-        "promo": false
-      }
-    },
-
-    {
       "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
-      "where": "title='Ramunap Excavator",
+      "where": "title='Ramunap Excavator'",
       "newValues": {
         "src": "http://media.wizards.com/2017/images/daily/81LUIb9l6s.png",
         "num": "{{num}} P Draft Weekend",
@@ -58,10 +50,79 @@
         "usableForDeckBuilding": false
       }
     },
+
     {
-      "_comment": "delete all cards that still have promo=false, which leaves just our modified promo cards",
-      "delete": true,
-      "where": "promo=false"
+      "where": "title='Nicol Bolas, the Deceiver",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/images/daily/en_iSHCrCgmya.png",
+        "promo": true,
+        "includedReason": "Nicol Bolas Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Wasp of the Bitter End",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_pZSTujTPgd.png",
+        "promo": true,
+        "includedReason": "Nicol Bolas Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Zealot of the God-Pharaoh",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_TogZyt1Kt9.png",
+        "promo": true,
+        "includedReason": "Nicol Bolas Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Visage of Bolas",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_4uKSnFbdQL.png",
+        "promo": true,
+        "includedReason": "Nicol Bolas Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Cinder Barrens",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_mTSP0FlNoq.png",
+        "promo": true,
+        "includedReason": "Nicol Bolas Planeswalker Deck"
+      }
+    },
+
+    {
+      "where": "title='Avid Reclaimer",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_q2Tx8P1PsL.png",
+        "promo": true,
+        "includedReason": "Nissa Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Brambleweft Behemoth",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_Jxftx9lmTW.png",
+        "promo": true,
+        "includedReason": "Nissa Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Nissa's Encouragement",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_pp5zBW3i6P.png",
+        "promo": true,
+        "includedReason": "Nissa Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Woodland Stream",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/hou/en_EyPJjr8lQA.png",
+        "promo": true,
+        "includedReason": "Nissa Planeswalker Deck"
+      }
     },
 
     {
@@ -101,12 +162,12 @@
     {
       "add": true,
       "newValues": {
-        "src": "http://mtgen.net/cards/hou-trials-checklist.jpg",
-        "src_large": "http://mtgen.net/cards/hou-trials-checklist-lg.jpg",
+        "src": "http://mtgen.net/cards/hou-hours-checklist.jpg",
+        "src_large": "http://mtgen.net/cards/hou-hours-checklist-lg.jpg",
         "height": 370,
         "width": 500,
         "set": "hou",
-        "title": "Five Trials Checklist",
+        "title": "Five Hours Checklist",
         "colour": "o",
         "num": "008 Insert",
         "rarity": "c",
@@ -119,9 +180,9 @@
     {
       "add": true,
       "newValues": {
-        "src": "http://mtgen.net/cards/hou-spindown-life-counter-lazotep.png",
+        "src": "http://mtgen.net/cards/hou-spindown-life-counter.png",
         "set": "hou",
-        "title": "Lazotep Spindown Life Counter",
+        "title": "Spindown Life Counter",
         "colour": "o",
         "num": "009 Counter",
         "rarity": "c",
@@ -132,22 +193,12 @@
         "addedViaException": true
       }
     },
-    {
-      "add": true,
-      "newValues": {
-        "src": "http://mtgen.net/cards/hou-minus-one-minus-one-counter.png",
-        "set": "hou",
-        "title": "-1/-1 Counter",
-        "colour": "o",
-        "num": "010 Counter",
-        "rarity": "c",
-        "type": "Counter",
-        "promo": "true",
-        "includedReason": "Prerelease Promo",
-        "usableForDeckBuilding": false,
-        "addedViaException": true
-      }
 
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
     }
+
   ]
 }
