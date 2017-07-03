@@ -1,13 +1,13 @@
 {
   "startProductName": "hou-prerelease",
   "packFiles": [
-    "packs.json", "../akh/packs.json"
+    "packs.json?v1.1", "../akh/packs.json"
   ],
   "cardFiles": [
     "cardsMain.json",
     "cardsLand.json",
     "cardsMasterpiece.json",
-    "cardsPromo.json",
+    "cardsPromo.json?v1.1",
     "cardsToken.json",
 
     "../akh/cardsMain.json",

@@ -193,6 +193,22 @@
         "addedViaException": true
       }
     },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/hou-minus-one-minus-one-counter.png",
+        "set": "hou",
+        "title": "-1/-1 Counter",
+        "colour": "o",
+        "num": "010 Counter",
+        "rarity": "c",
+        "type": "Counter",
+        "promo": "true",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false,
+        "addedViaException": true
+      }
+    },
 
     {
       "_comment": "delete all cards that weren't selected above",
