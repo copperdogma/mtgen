@@ -13,16 +13,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot/cards\hou-deckbuilding-info-lg.jpg" />
-    <Content Remove="wwwroot/cards\hou-deckbuilding-info.jpg" />
-    <Content Remove="wwwroot/cards\hou-hours-checklist-lg.jpg" />
-    <Content Remove="wwwroot/cards\hou-hours-checklist.jpg" />
-    <Content Remove="wwwroot/cards\hou-minus-one-minus-one-counter.png" />
-    <Content Remove="wwwroot/cards\hou-prerelease-deck-box.png" />
-    <Content Remove="wwwroot/cards\hou-spindown-life-counter.png" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <Content Include="wwwroot\cards\hou-deckbuilding-info-lg.jpg" />
+    <Content Include="wwwroot\cards\hou-deckbuilding-info.jpg" />
+    <Content Include="wwwroot\cards\hou-hours-checklist-lg.jpg" />
+    <Content Include="wwwroot\cards\hou-hours-checklist.jpg" />
+    <Content Include="wwwroot\cards\hou-minus-one-minus-one-counter.png" />
+    <Content Include="wwwroot\cards\hou-prerelease-deck-box.png" />
+    <Content Include="wwwroot\cards\hou-spindown-life-counter.png" />
     <Content Include="wwwroot\hou\cardsLand.json">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
