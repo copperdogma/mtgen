@@ -1047,11 +1047,12 @@ var mtgGen = (function (my) {
             let packs = [];
 
             // Convert the pack option elements into an array of set names to be generated
-            const packEls = document.querySelectorAll('.options .booster-input select');
+            const topThis = document.querySelector('#product-content section.active');
+            const packEls = topThis.querySelectorAll('.options .booster-input select');
             Array.from(packEls).forEach(el => {
                 let boosterCount = 1;
-                const boosterCountEl = document.querySelector('#' + el.getAttribute('data-count-el'));
-                if (boosterCountEl.length < 1) {
+                const boosterCountEl = topThis.querySelector('#' + el.getAttribute('data-count-el'));
+                if (boosterCountEl === null) {
                     console.warn(`Missing booster count (data-count-el) for ${el.id}`);
                 }
                 else {
