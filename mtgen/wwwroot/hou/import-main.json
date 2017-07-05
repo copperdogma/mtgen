@@ -50,6 +50,78 @@
       "newValues": {
         "src": "http://media.wizards.com/2017/images/daily/en_VlI3HOtQc3.png"
       }
+    },
+
+    {
+      "where": "title='Farm // Market'",
+      "newValues": {
+        "cost": "2{W}2{U}",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Leave // Chance'",
+      "newValues": {
+        "cost": "1{W}3{R}",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Consign // Oblivion'",
+      "newValues": {
+        "cost": "1{U}4{B}",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Reason // Believe'",
+      "newValues": {
+        "cost": "{U}4{G}",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Claim // Fame'",
+      "newValues": {
+        "cost": "{B}1{R}",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Grind // Dust'",
+      "newValues": {
+        "cost": "1{B}3{W}",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Refuse // Cooperate'",
+      "newValues": {
+        "cost": "3{R}2{U}",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Struggle // Survive'",
+      "newValues": {
+        "cost": "2{R}1{G}",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Appeal // Authority'",
+      "newValues": {
+        "cost": "{G}1{W}",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Driven // Despair'",
+      "newValues": {
+        "cost": "1{G}1{B}",
+        "colour": "m"
+      }
     }
+
   ]
 }
