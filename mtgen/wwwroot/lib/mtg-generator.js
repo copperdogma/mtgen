@@ -228,6 +228,7 @@ var mtgGen = (function (my) {
                 title += '/' + card.cardFront.title;
                 doubleFaceClass = ' doubleface';
             }
+            const deckClass = card.inDeck === true ? ' moved-to-deck' : '';
 
             if (card.foil) {
                 foilClass = ' foil';
@@ -239,13 +240,13 @@ var mtgGen = (function (my) {
             }
 
             const includedReason = (card.includedReason !== undefined) ? '<em class="reason">(' + card.includedReason + ')</em>' : '';
-            return `<span class="card${foilClass}${doubleFaceClass}" title="${title}">${aStart}${cardImageHtml}<em class="title">${title}</em>${includedReason}${aEnd}</span>`;
+            return `<span class="card${foilClass}${doubleFaceClass}${deckClass}" data-mtgenid="${card.mtgenId}" title="${title}">${aStart}${cardImageHtml}<em class="title">${title}</em>${includedReason}${aEnd}</span>`;
         });
-        return htmlOut;
+        return htmlOut.join('');
     };
 
     my.renderCardSets = function (sets, preTitle) {
-        return sets.map((set, index) => my.renderCardSet(index, set, sets, preTitle));
+        return sets.map((set, index) => my.renderCardSet(index, set, sets, preTitle)).join('');
     };
 
     my.renderCardSet = function (setID, cards, parentSet, preTitle) {
@@ -415,7 +416,6 @@ var mtgGen = (function (my) {
 
     return my;
 }(mtgGen || {}));
-
 
 
 // --------------------------------------------------------------------------------------------------------------------------------
@@ -1013,18 +1013,6 @@ var mtgGen = (function (my) {
         }
 
         , addBooster: function () {
-            //let html = $('#boosters .booster-input-template').html();
-
-            //let boosterCount = $('#boosters .booster-input').length + 1;
-            //while ($('#boosters .booster-' + boosterCount).length > 0) {
-            //    boosterCount++;
-            //}
-
-            //html = html.replace(/booster-count-template/g, 'booster-count-' + boosterCount)
-            //    .replace(/booster-template/g, 'booster-' + boosterCount);
-            //html = "<div class='booster-input'>" + html + "</div>";
-
-            //$(html).insertBefore(this.$productTab.find('#boosters .booster-input-template'));
             let html = document.querySelector('#boosters .booster-input-template').innerHTML;
 
             let boosterCount = document.querySelectorAll('#boosters .booster-input').length + 1;
@@ -1090,7 +1078,7 @@ var mtgGen = (function (my) {
                     if (!my.mainView.currentView.isGenerated || my.hasDrawForCurrentProduct()) {
                         return "";
                     }
-                    return '<a href="#save-draw" class="button save-draw" data-save-draw="all" title="Save/Share your draw">Save Draw</a>'
+                    return '<a href="#save-draw" class="button save-draw" data-save-draw="all" title="Save/Share your draw">Save Draw</a>';
                 });
             }, false);
 
@@ -1195,8 +1183,8 @@ var mtgGen = (function (my) {
             this.el.addEventListener('click', (e) => { if (e.target.classList.contains('export')) { this.showExport(e); } });
 
             window.addEventListener('ready', e => {
-                my.mainView.mainMenu.addMenuItem("export", 99, () => '<a href="#exporter" class="button export" data-export="all">Export</a>');
-                my.mainView.setMenu.addMenuItem("export", 99, () => '<a href="#exporter" class="button export" data-export="set">Export</a>');
+                my.mainView.mainMenu.addMenuItem("export", 200, () => '<a href="#exporter" class="button export" data-export="all">Export</a>');
+                my.mainView.setMenu.addMenuItem("export", 200, () => '<a href="#exporter" class="button export" data-export="set">Export</a>');
             }, false);
         }
 
@@ -1273,7 +1261,7 @@ var mtgGen = (function (my) {
 
     function addExportableTextFormats(generatedSets) {
         // It's the same list for all formats
-        const allCards = getAllDeckBuildingGeneratedCards(generatedSets);
+        const allCards = getAllValidExportableCards(generatedSets);
         const countedCards = getUniqueCountedSortedCardSet(allCards);
 
         const attrib = 'Created by MtG Generator: ' + window.location.href.replace('index.html', '').replace('#', '');
@@ -1304,15 +1292,16 @@ var mtgGen = (function (my) {
         document.querySelector(linkSelector).setAttribute('download', `mtg-generator-${my.set.slug}-prerelease.${exportType}`); // 'download' attr is Chrome/FF-only to set download filename
     }
 
-    function getAllDeckBuildingGeneratedCards(cardSets) {
-        const cards = cardSets.reduce((cards, cardSet) => cards.concat(cardSet.map(card => card)), []).filter(card => card.usableForDeckBuilding);
+    function getAllValidExportableCards(cardSets) {
+        const cards = cardSets.reduce((cards, cardSet) => cards.concat(cardSet.map(card => card)), [])
+            .filter(card => card.usableForDeckBuilding && card.inDeck !== true);
         return cards;
     }
 
     function getUniqueCountedSortedCardSet(cards) {
         const countedCards = cards.reduce((countedCards, card) => {
             const matchTitle = card.matchTitle;
-            card.title = card.title.replace("’", "'"); // ’ messes up cockatrice
+            card.title = card.title.replace(`’`, `'`); // ’ messes up cockatrice
             if (countedCards.has(matchTitle)) {
                 let existingCard = countedCards.get(matchTitle);
                 existingCard.count++;
@@ -1396,4 +1385,180 @@ var mtgGen = (function (my) {
     }
 
     return my; // END Card Export module
+}(mtgGen || {}));
+
+// --------------------------------------------------------------------------------------------------------------------------------
+// Deckbuilder
+// --------------------------------------------------------------------------------------------------------------------------------
+var mtgGen = (function (my) {
+    'use strict';
+
+    var SaveDeckView = Backbone.View.extend({
+        el: "body"
+
+        , deckCards: []
+
+        , initialize: function () {
+            this.el.addEventListener('click', e => { if (e.target.classList.contains('save-deck')) { this.saveDeck(e); } });
+
+            this.el.addEventListener('click', e => { if (e.target.nodeName === "IMG" && e.target.parentElement.classList.contains('card')) { this.toggleCardInDeck(e); } });
+
+            window.addEventListener('ready', e => {
+                my.mainView.mainMenu.addMenuItem('saveDeck', 100, function () {
+                    //CAMKILL: probably need this for 
+                    // If it's a generated view or there's already a draw saved for the current product, 
+                    // don't show the Save Draw button
+                    //if (!my.mainView.currentView.isGenerated || my.hasDrawForCurrentProduct()) {
+                    //    return '';
+                    //}
+
+                    //CAMKILL: what is the data-save-deck=all?
+                    return `<a href='#save-deck' class='button save-deck' data-save-deck='all' title='Save/Share your deck'>Save Deck</a>`;
+                });
+            }, false);
+
+            //CAMKILL: we'll probably need this
+            //window.addEventListener('cardSetsGenerated', e => {
+            //    // Erase out storage of the last draw once a new one has been created.
+            //    // It will be re-saved when the user clicks Save Draw again.
+            //    my.mainView.currentView.saveDrawResults = undefined;
+            //}, false);
+        }
+
+        , toggleCardInDeck: event => {
+            // Get the target card
+            const cardEl = event.target.parentElement;
+            _toggleCardInDeck(cardEl);
+        }
+
+        // CAMKILL: write a new one of these for saving the deck
+        , saveDeck: function (event) {
+            //$.post("/[set]/SaveDraw", { name: "John", time: "2pm" })
+            // JSON doesn't support my odd properties-on-an-array format (oops), so let's convert to something that JSON can handle
+            // And for each card, we only need the set|cardNum as a unique composite key
+            let drawData = {
+                generatorVersion: my.version,
+                drawVersion: '1.0',
+                useCount: 1,
+                productName: my.mainView.currentView.options.originalProductName,
+                sets: []
+            }
+            my.mainView.currentView.generatedSets.forEach(generatedSet => {
+                const set = {
+                    mtgenIds: generatedSet.map(generatedSet => generatedSet.mtgenId),
+                    setName: generatedSet.setName,
+                    sortOrder: generatedSet.sortOrder.sort,
+                    packVersion: generatedSet.packVersion || '1.0'
+                };
+                drawData.sets.push(set);
+            });
+
+            if (my.mainView.currentView.saveDrawResults !== undefined) {
+                displayDrawResults(my.mainView.currentView.saveDrawResults);
+            }
+            else {
+                document.querySelector('#save-draw input').value = 'Loading...';
+                fetch(`/${my.setCode}/SaveDraw`, {
+                    method: "POST",
+                    headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }),
+                    body: `data=${JSON.stringify(drawData)}`
+                })
+                    .then(response => {
+                        if (response.ok) { return response.json(); }
+                        my.throwTerminalError("Save draw failed.");
+                    }
+                    )
+                    // e.g. return: { "drawId": "m09mJw", "url": "ogw?draw=m09mJw" }
+                    .then(json => JSON.parse(json))
+                    .then(drawResults => displayDrawResults(drawResults));
+            }
+
+            window.modal.setContent(document.querySelector('.save-draw.modal').outerHTML);
+
+            window.modal.open();
+
+            window.dispatchEvent(new CustomEvent('drawSaved', { detail: { setCode: my.setCode } })); // triggers google analytics tracking event
+
+            // no 'return false;' so fancybox can trigger afterward
+        }
+
+        , render: function () {
+            //CAMKILL:
+            //this.el.insertAdjacentHTML('beforeend', "<div style='display: none'>"
+            //    + "<aside id='save-deck' class='modal save-deck'>"
+            //    + "<h2>Save/Share Your Deck</h2>"
+            //    + "<section>"
+            //    + "<p>Bookmark this page or copy and save/share the following link:</p>"
+            //    + "<p><input type='text' /></p>"
+            //    + "</section>"
+            //    + "</aside>"
+            //    + "</div>");
+            //this.el.insertAdjacentHTML('beforeend', "<section style='display: none' class='result deck'>"
+            //    + "<h2>Your Deck</h2>"
+            //    + "<span class='card-count'>[(0)]</span>"
+            //    + "<div class='deck-cards'></div>"
+            //    + "</section>");
+
+            // How to get this to render only when needed? plus the stuff above for proper positioning
+            //my.renderCardSet("setId", this.deckCards, null, "Pre Title");
+                
+           return this;
+        }
+    });
+
+    my.initViews.push(new SaveDeckView()); // Hook this module into main rendering view
+
+    function _toggleCardInDeck(cardEl) {
+        // If the card is already in the deck, move it back. Otherwise move it into the deck.
+        if (cardEl.classList.contains('in-deck')) {
+            _removeCardFromDeck(cardEl);
+        }
+        else {
+            _addCardToDeck(cardEl);
+        }
+    }
+
+    function _addCardToDeck(cardEl) {
+        // Ensure the deck section is visible and under the active product tab.
+        const sectionDeck = document.querySelector('section.deck');
+        const currentDeckInActiveProduct = document.querySelector('section.active section.deck');
+        if (currentDeckInActiveProduct === null) {
+            document.querySelector('section.active').appendChild(sectionDeck);
+        }
+        sectionDeck.style.display = null;
+
+        // Copy the card into the deck section.
+        const cardMtgenId = cardEl.dataset.mtgenid;
+        my.cards[cardMtgenId].inDeck = true;
+        const cardElClone = cardEl.cloneNode(true);
+        this.deckCards[cardMtgenId] = my.cards[cardMtgenId];
+        cardEl.classList.add('moved-to-deck'); // This has a style that will hide the card, letting us show it in the correct position later if it's put back.
+
+        cardElClone.classList.add('in-deck');
+        sectionDeck.querySelector('.deck-cards').appendChild(cardElClone);
+    }
+
+    function _removeCardFromDeck(cardEl) {
+        const cardMtgenId = cardEl.dataset.mtgenid;
+        my.cards[cardMtgenId].inDeck = false;
+        this.deckCards.remove(cardMtgenId);
+
+        // Remove "moved to deck" class from original card, restoring it to its generated spot (basically un-hiding it).
+        const originalCardEl = document.querySelector(`section.active [data-mtgenid="${cardEl.dataset.mtgenid}"]`);
+        if (originalCardEl !== null) {
+            originalCardEl.classList.remove('moved-to-deck');
+        }
+
+        // Remove clones card from deck.
+        cardEl.remove();
+
+        // If the deck is now empty, re-hide the deck section.
+        const sectionDeck = document.querySelector('section.deck');
+        const sectionDeckCards = sectionDeck.querySelector('.card');
+        if (sectionDeckCards === null) {
+            sectionDeck.style.display = 'none';
+        }
+    }
+
+    return my; // END Save Deck module
 }(mtgGen || {}));
