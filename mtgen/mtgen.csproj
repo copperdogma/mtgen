@@ -267,6 +267,8 @@
     <Content Include="wwwroot\hou\images\symbol.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Include="wwwroot\lib\mtgen-data.js" />
+    <Content Include="wwwroot\lib\riot.min-v3.6.1.js" />
     <Content Include="wwwroot\mm3\cardsTokens.json" />
     <Content Include="wwwroot\mm3\import-tokens.json">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>

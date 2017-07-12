@@ -66,66 +66,82 @@
         <p>Wizards of the Coast, Magic: The Gathering, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. © 2009 Wizards. All Rights Reserved.</p>
         <p>MtG Generator is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC. MtG Generator may use the trademarks and other intellectual property of Wizards of the Coast LLC, which is permitted under Wizards' Fan Site Policy. For more information about Wizards of the Coast or any of Wizards' trademarks or other intellectual property, please visit their website at <a href="http://www.wizards.com">www.wizards.com</a>.</p>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/underscore/underscore-min.js"></script>
-    <script src="~/lib/backbone/backbone.js"></script>
-    <script src="~/lib/mdn.base64.min.js"></script>
+    <script src="~/lib/mtgen-data.js"></script>
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/underscore/underscore-min.js"></script>
+        <script src="~/lib/backbone/backbone.js"></script>
+        <script src="~/lib/mdn.base64.min.js"></script>*@
     <script src="~/lib/tingle/dist/tingle.js?v0.10.0"></script>
-    <script src="~/lib/mtg-generator-lib.js?v2.4"></script>
-    <script src="~/lib/mtg-generator.js?v=2.1.4"></script>
+    @*<script src="~/lib/mtg-generator-lib.js?v2.4"></script>
+        <script src="~/lib/mtg-generator.js?v=2.1.4"></script>*@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js"></script>
+
     <script>
-        $(document).ready(function () {
-            mtgGen.run({
-                setCode: "@Model.Code"
-                , setFile: "@Model.SetFile"
-                , cardFiles: [ @Html.Raw(string.Join(", ", Model.CardFiles.Select(cardFile => $"'/{Model.Code}/{cardFile}'"))) ]
-                , packFiles: [ @Html.Raw(string.Join(", ", Model.PackFiles.Select(packFile => $"'/{Model.Code}/{packFile}'"))) ]
-                , productFile: "/@Model.Code/@Model.ProductFile"
-                , startProductName: "@Model.StartProductName"
-                , setCardCount: "@Model.CardCount"
-                , contentElem: "main"
-            });
-
-            // Modal popup support.
-            window.modal = new tingle.modal({});
-
-            // Dynamic card loading counts
-            document.querySelector('#card-count .total').textContent = mtgGen.setCardCount;
-            const currentCardCountEl = document.querySelector('#card-count .current');
-            window.addEventListener('playableCardLoaded', e => currentCardCountEl.textContent = e.detail.setCardsLoadedCount, false);
-
-            // Properly render any placeholder images and modal popups.
-            const _showCardModal = event => {
-                window.modal.setContent(`<div class='modal-card'><img src='${event.currentTarget.href}'/></div>`);
-                window.modal.open();
-                event.preventDefault();
-            };
-            window.addEventListener('resultsRendered', e => {
-                Holder.run()
-                document.querySelectorAll('#product-content .card a').forEach(el => el.addEventListener('click', _showCardModal) );
-            }, false);
-
-            // Analytics event tracking
-            const currProduct = '#products a.active';
-            const currOption = '#product-content>section.active .options a.active';
-            window.addEventListener('cardSetsGenerated', e =>
-                ga('send', 'event', e.detail.setCode.toUpperCase(), 'Generate', `${e.detail.setCode.toUpperCase()}: generate: ${currProduct.textContent}, ${currOption.textContent}`), false);
-            window.addEventListener('drawSaved', e =>
-                ga('send', 'event', e.detail.setCode.toUpperCase(), 'SaveDraw', `${e.detail.setCode.toUpperCase()}: save-draw: ${currProduct.textContent}`), false);
-            window.addEventListener('drawLoaded', e =>
-                ga('send', 'event', e.detail.setCode.toUpperCase(), 'LoadDraw', `${e.detail.setCode.toUpperCase()}: load-draw: ${currProduct.textContent}`, e.detail.drawId), false);
-            window.addEventListener('exporting', e =>
-                ga('send', 'event', e.detail.setCode.toUpperCase(), 'Export', `${e.detail.setCode.toUpperCase()}: export: ${currProduct.textContent}, ${currOption.textContent}`), false);
-
-            // "Read more" support in top news section
-            document.querySelector('aside.info').addEventListener('click', event => {
-                if (event.target.classList.contains('update-more')) {
-                    event.target.style.display = 'none';
-                    document.querySelectorAll('aside.info p').forEach(n => n.classList.remove('hidden'));
-                }
-            });
-        });
+        document.onreadystatechange = () => {
+            if (document.readyState === 'complete') {
+                const mtgenData = new MtgenData();
+                mtgenData.loadAll(
+                    "@Model.SetFile", // setFile
+                    [ @Html.Raw(string.Join(", ", Model.CardFiles.Select(cardFile => $"'/{Model.Code}/{cardFile}'"))) ], // cardFiles
+                    [ @Html.Raw(string.Join(", ", Model.PackFiles.Select(packFile => $"'/{Model.Code}/{packFile}'"))) ], // packFiles
+                    "/@Model.Code/@Model.ProductFile" //productFile
+                );
+            }
+        };
     </script>
+
+    @*<script>
+            $(document).ready(function () {
+                mtgGen.run({
+                    setCode: "@Model.Code"
+                    , setFile: "@Model.SetFile"
+                    , cardFiles: [ @Html.Raw(string.Join(", ", Model.CardFiles.Select(cardFile => $"'/{Model.Code}/{cardFile}'"))) ]
+                    , packFiles: [ @Html.Raw(string.Join(", ", Model.PackFiles.Select(packFile => $"'/{Model.Code}/{packFile}'"))) ]
+                    , productFile: "/@Model.Code/@Model.ProductFile"
+                    , startProductName: "@Model.StartProductName"
+                    , setCardCount: "@Model.CardCount"
+                    , contentElem: "main"
+                });
+
+                // Modal popup support.
+                window.modal = new tingle.modal({});
+
+                // Dynamic card loading counts
+                document.querySelector('#card-count .total').textContent = mtgGen.setCardCount;
+                const currentCardCountEl = document.querySelector('#card-count .current');
+                window.addEventListener('playableCardLoaded', e => currentCardCountEl.textContent = e.detail.setCardsLoadedCount, false);
+
+                // Properly render any placeholder images and modal popups.
+                const _showCardModal = event => {
+                    window.modal.setContent(`<div class='modal-card'><img src='${event.currentTarget.href}'/></div>`);
+                    window.modal.open();
+                    event.preventDefault();
+                };
+                window.addEventListener('resultsRendered', e => {
+                    Holder.run()
+                    document.querySelectorAll('#product-content .card a').forEach(el => el.addEventListener('click', _showCardModal) );
+                }, false);
+
+                // Analytics event tracking
+                const currProduct = '#products a.active';
+                const currOption = '#product-content>section.active .options a.active';
+                window.addEventListener('cardSetsGenerated', e =>
+                    ga('send', 'event', e.detail.setCode.toUpperCase(), 'Generate', `${e.detail.setCode.toUpperCase()}: generate: ${currProduct.textContent}, ${currOption.textContent}`), false);
+                window.addEventListener('drawSaved', e =>
+                    ga('send', 'event', e.detail.setCode.toUpperCase(), 'SaveDraw', `${e.detail.setCode.toUpperCase()}: save-draw: ${currProduct.textContent}`), false);
+                window.addEventListener('drawLoaded', e =>
+                    ga('send', 'event', e.detail.setCode.toUpperCase(), 'LoadDraw', `${e.detail.setCode.toUpperCase()}: load-draw: ${currProduct.textContent}`, e.detail.drawId), false);
+                window.addEventListener('exporting', e =>
+                    ga('send', 'event', e.detail.setCode.toUpperCase(), 'Export', `${e.detail.setCode.toUpperCase()}: export: ${currProduct.textContent}, ${currOption.textContent}`), false);
+
+                // "Read more" support in top news section
+                document.querySelector('aside.info').addEventListener('click', event => {
+                    if (event.target.classList.contains('update-more')) {
+                        event.target.style.display = 'none';
+                        document.querySelectorAll('aside.info p').forEach(n => n.classList.remove('hidden'));
+                    }
+                });
+            });
+        </script>*@
 </body>
 </html>
