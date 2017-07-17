@@ -1,13 +1,34 @@
-﻿class MtgenData {
-    constructor() {
+﻿/*
+MtGenerator Data class v1.0
+
+Author: Cam Marsollier cam.marsollier@gmail.com
+
+12-Jul-2017: Created.
+*/
+
+class MtgenData {
+    constructor(setCode, setCardCount) {
+        // If missing any essentials, abort
+        if (setCode == null) { throw new Error(`Missing setCode. Cannot continue.`); }
+        if (setCardCount == null) { throw new Error(`Missing setCardCount. Cannot continue.`); }
+
+        this.version = "v1.0.0";
+
+        this.setCode = setCode;
+        this.setCardCount = setCardCount;
+        this.setCardsLoadedCount = 0;
         this.sets = new Map();
         this.cards = new Map();
         this.products = new Map();
         this.defs = new Map();
         this.packs = new Map();
+
+        this.currentProductName;
     }
 
     async loadAll(setFile, cardFiles, packFiles, productFile) {
+        window.dispatchEvent(new Event('data-loading'));
+
         // If missing any essentials, abort
         if (setFile == null) { throw new Error(`Missing setFile. Cannot continue.`); }
         if (cardFiles == null) { throw new Error(`Missing cardFiles. Cannot continue.`); }
@@ -38,24 +59,24 @@
 
         // All the actual cards - from the array of individual card sets within cardDataArray
         const cardData = cardDataArray.reduce((cardSets, cardSet) => cardSets.concat(cardSet), []);
-        const cardResults = this._processCardData(cardData);
+        const cardResults = this._processCardData(cardData, this.setCode);
         this.cards = cardResults.cards;
         const cardMetaData = cardResults.cardMetaData;
 
         // The card definitions and packs - from the array of individual defs/packs within packDataArray
-        var packDefs = packDataArray.reduce((defs, packData) => defs.concat(packData.defs), []);
-        //this.defs = packFiles.reduce((packFile, packFile) => cardDefs.concat(packData.defs), []);
-        //this.packs = packDataArray.reduce((cardPacks, packData) => cardPacks.concat(packData.packs), []);
+        var packDefArray = packDataArray.reduce((defs, packData) => defs.concat(packData.defs), []);
+        this.defs = packDefArray.reduce((packDefs, packDef) => packDefs.set(packDef.defName, packDef), new Map());
 
-        //my.defs = packDataArray.reduce((cardDefs, packData) => cardDefs.concat(packData.defs), []);
-        //my.packs = packDataArray.reduce((cardPacks, packData) => cardPacks.concat(packData.packs), []);
-
+        var packArray = packDataArray.reduce((packs, packData) => packs.concat(packData.packs), []);
+        this.packs = packArray.reduce((packs, pack) => packs.set(pack.packName, pack), new Map());
 
         // The products, e.g.: all cards, booster, prerelease - from productData
         this.products = productData.products.reduce((allProducts, product) => allProducts.set(product.productName, product), new Map());
 
-        var xxx = 1;
+        // Add the product descriptions to the product
+        this.products.forEach(product => product.packs.map(pack => pack.packDesc = this.packs.get(pack.packName).packDesc));
 
+        window.dispatchEvent(new Event('data-loaded'));
     }
 
     // Get html via a proxy, erroring if it fails or if no HTML is retrieved.
@@ -79,7 +100,7 @@
 
     _processCardData(cardData, setCode) {
         // Add card indicies and sort orders for internal use
-        let meta = { setCardsLoadedCount: 0, hasGuilds: false, hasClans: false, hasFactions: false }; // Records metadata about the cards
+        let meta = { hasGuilds: false, hasClans: false, hasFactions: false }; // Records metadata about the cards
         let goodCards = new Map();
 
         cardData.forEach(card => {
@@ -128,8 +149,8 @@
                 card.usableForDeckBuilding = true; // i.e., it IS usable unless specified
             }
             if (card.set == setCode && (card.usableForDeckBuilding === undefined || card.usableForDeckBuilding === true)) {
-                meta.setCardsLoadedCount++;
-                window.dispatchEvent(new CustomEvent('playableCardLoaded', { detail: meta.setCardsLoadedCount }));
+                this.setCardsLoadedCount++;
+                window.dispatchEvent(new CustomEvent('playableCardLoaded', { detail: { setCardsLoadedCount: this.setCardsLoadedCount } }));
             }
             if (goodCards.has(card.mtgenId)) {
                 console.warn(`WARNING: duplicate mtgenId: ${card.mtgenId} : ${card.title}`);
@@ -187,6 +208,9 @@
         }
         return clean;
     }
+
+    // ------------------------------------------------------------------------------------------------------------------------------------------------
+    // Card Constants/Accessors
 
     /*
     - all cards have a distinct colour: w,u,b,r,g,m,c,?
@@ -274,6 +298,78 @@
             }
         }
         return MtgenData.cardTypes.unknown;
+    }
+
+    static get guilds() {
+        return {
+            azorius: { sorder: 1, code: 'azorius', name: 'Azorius', fullName: 'Azorius Senate' },
+            izzet: { sorder: 2, code: 'izzet', name: 'Izzet', fullName: 'Izzet League' },
+            rakdos: { sorder: 3, code: 'rakdos', name: 'Rakdos', fullName: 'Cult of Rakdos' },
+            golgari: { sorder: 4, code: 'golgari', name: 'Golgari', fullName: 'Golgari Swarm' },
+            selesnya: { sorder: 5, code: 'selesnya', name: 'Selesnya', fullName: 'Selesnya Conclaveir' },
+
+            orzhov: { sorder: 6, code: 'orzhov', name: 'Orzhov', fullName: 'Orzhov Syndicate' },
+            dimir: { sorder: 7, code: 'dimir', name: 'Dimir', fullName: 'House Dimir' },
+            gruul: { sorder: 8, code: 'gruul', name: 'Gruul', fullName: 'Gruul Clans' },
+            boros: { sorder: 9, code: 'boros', name: 'Boros', fullName: 'Boros Legion' },
+            simic: { sorder: 10, code: 'simic', name: 'Simic', fullName: 'Simic Combine' },
+
+            unknown: { sorder: 97, code: '?', name: 'Unknown', fullName: 'Unknown' }
+        }
+    }
+
+    static getGuildByCode(code) {
+        for (let guild in MtgenData.guilds) {
+            if (MtgenData.guilds[guild].code == code) {
+                return MtgenData.guilds[guild];
+            }
+        }
+        return MtgenData.guilds.unknown;
+    }
+
+    static get clans() {
+        return {
+            abzan: { sorder: 1, code: 'abzan', name: 'Abzan', fullName: 'Abzan Houses' },
+            jeskai: { sorder: 2, code: 'jeskai', name: 'Jeskai', fullName: 'Jeskai Way' },
+            sultai: { sorder: 3, code: 'sultai', name: 'Sultai', fullName: 'Sultai Brood' },
+            mardu: { sorder: 4, code: 'mardu', name: 'Mardu', fullName: 'Mardu Horde' },
+            temur: { sorder: 5, code: 'temur', name: 'Temur', fullName: 'Temur Frontier' },
+
+            dromoka: { sorder: 6, code: 'dromoka', name: 'Dromoka', fullName: 'Dromoka' },
+            ojutai: { sorder: 7, code: 'ojutai', name: 'Ojutai', fullName: 'Ojutai' },
+            silumgar: { sorder: 8, code: 'silumgar', name: 'Silumgar', fullName: 'Silumgar' },
+            kolaghan: { sorder: 9, code: 'kolaghan', name: 'Kolaghan', fullName: 'Kolaghan' },
+            atarka: { sorder: 10, code: 'atarka', name: 'Atarka', fullName: 'Atarka' },
+
+            unknown: { sorder: 97, code: '?', name: 'Unknown', fullName: 'Unknown' }
+        }
+    }
+
+    static getClanByCode(code) {
+        for (let clan in MtgenData.clans) {
+            if (MtgenData.clans[clan].code == code) {
+                return MtgenData.clans[clan];
+            }
+        }
+        return MtgenData.clans.unknown;
+    }
+
+    static get factions() {
+        return {
+            azorius: { sorder: 1, code: 'mirran', name: 'Mirran', fullName: 'Mirran' },
+            izzet: { sorder: 2, code: 'phyrexian', name: 'Phyrexian', fullName: 'Phyrexian' },
+
+            unknown: { sorder: 97, code: '?', name: 'Unknown', fullName: 'Unknown' }
+        }
+    }
+
+    static getFactionByCode(code) {
+        for (let faction in MtgenData.factions) {
+            if (MtgenData.factions[faction].code == code) {
+                return MtgenData.factions[faction];
+            }
+        }
+        return MtgenData.factions.unknown;
     }
 
     static calculateConvertedCost(cost) {

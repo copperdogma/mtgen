@@ -59,13 +59,16 @@
         </div>
     </header>
     <main>
-        <em>Loading ...</em>
+        <products><em class='loading'>Loading ...</em></products>
     </main>
     <footer>
         <p>Created by: Cam Marsollier - <a href="mailto:cam.marsollier@gmail.com">cam.marsollier@gmail.com</a></p>
         <p>Wizards of the Coast, Magic: The Gathering, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries. © 2009 Wizards. All Rights Reserved.</p>
         <p>MtG Generator is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC. MtG Generator may use the trademarks and other intellectual property of Wizards of the Coast LLC, which is permitted under Wizards' Fan Site Policy. For more information about Wizards of the Coast or any of Wizards' trademarks or other intellectual property, please visit their website at <a href="http://www.wizards.com">www.wizards.com</a>.</p>
     </footer>
+    <script src="~/lib/riot-and-compiler.min-v3.6.1.js"></script>
+    <script src="~/lib/riot-tags/products.tag" type="riot/tag"></script>
+    <script src="~/lib/riot-tags/product.tag" type="riot/tag"></script>
     <script src="~/lib/mtgen-data.js"></script>
     @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
         <script src="~/lib/underscore/underscore-min.js"></script>
@@ -77,15 +80,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js"></script>
 
     <script>
-        document.onreadystatechange = () => {
+        document.onreadystatechange = async () => {
             if (document.readyState === 'complete') {
-                const mtgenData = new MtgenData();
-                mtgenData.loadAll(
-                    "@Model.SetFile", // setFile
+                const mtgenData = new MtgenData("@Model.Code", @Model.CardCount);
+
+                // Dynamic card loading counts
+                document.querySelector('#card-count .total').textContent = mtgenData.setCardCount;
+                const currentCardCountEl = document.querySelector('#card-count .current');
+                window.addEventListener('playableCardLoaded', e => currentCardCountEl.textContent = e.detail.setCardsLoadedCount, false);
+
+                await mtgenData.loadAll(
+                    '@Model.SetFile', // setFile
                     [ @Html.Raw(string.Join(", ", Model.CardFiles.Select(cardFile => $"'/{Model.Code}/{cardFile}'"))) ], // cardFiles
                     [ @Html.Raw(string.Join(", ", Model.PackFiles.Select(packFile => $"'/{Model.Code}/{packFile}'"))) ], // packFiles
-                    "/@Model.Code/@Model.ProductFile" //productFile
+                    '/@Model.Code/@Model.ProductFile' //productFile
                 );
+
+                //TODO: hard-coded for now.. this should probably go into a higher layer that deals with "do we have a draw" as well
+                mtgenData.currentProductName = '@Model.StartProductName';
+
+                riot.mount('products', mtgenData);
+                riot.mount('product');
+
+                //TEMP: display all the errors swallowed by the riot template engine
+                riot.util.tmpl.errorHandler = function (err) {
+                    console.error(err.message + ' in ' + err.riotData.tagName) // your error logic here
+                }
+
+                // Modal popup support.
+                window.modal = new tingle.modal({});
             }
         };
     </script>

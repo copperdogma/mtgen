@@ -207,7 +207,7 @@ main {
 	padding-bottom: 2em;
 }
 
-main > em {
+main em.loading {
 	display: block;
 	margin-left: 4%;
 	max-width: 29em;
