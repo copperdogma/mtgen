@@ -69,6 +69,7 @@
     <script src="~/lib/riot-and-compiler.min-v3.6.1.js"></script>
     <script src="~/lib/riot-tags/products.tag" type="riot/tag"></script>
     <script src="~/lib/riot-tags/product.tag" type="riot/tag"></script>
+    <script src="~/lib/riot-tags/booster-input.tag" type="riot/tag"></script>
     <script src="~/lib/mtgen-data.js"></script>
     @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
         <script src="~/lib/underscore/underscore-min.js"></script>
@@ -101,9 +102,11 @@
 
                 riot.mount('products', mtgenData);
                 riot.mount('product');
+                riot.mount('booster-input');
 
                 //TEMP: display all the errors swallowed by the riot template engine
                 riot.util.tmpl.errorHandler = function (err) {
+                    console.error(err);
                     console.error(err.message + ' in ' + err.riotData.tagName) // your error logic here
                 }
 
