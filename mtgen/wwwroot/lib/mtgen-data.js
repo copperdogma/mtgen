@@ -23,8 +23,16 @@ class MtgenData {
         this.defs = new Map();
         this.packs = new Map();
 
-        this.currentProductName;
+        this._currentProductName;
+        this.currentProduct;
     }
+
+    set currentProductName(name) {
+        this._currentProductName = name.trim().toLowerCase();
+        this.currentProduct = this.products.get(this._currentProductName);
+        if (this.currentProduct === undefined) { throw new Error('Unknown product name: ' + this._currentProductName); }
+    }
+    get currentProductName() { return this._currentProductName; }
 
     async loadAll(setFile, cardFiles, packFiles, productFile) {
         window.dispatchEvent(new Event('data-loading'));
@@ -73,8 +81,25 @@ class MtgenData {
         // The products, e.g.: all cards, booster, prerelease - from productData
         this.products = productData.products.reduce((allProducts, product) => allProducts.set(product.productName, product), new Map());
 
+        // Process each product, adding additional data elements.
         // Add the product descriptions to the product
-        this.products.forEach(product => product.packs.map(pack => pack.packDesc = this.packs.get(pack.packName).packDesc));
+        this.products.forEach(product => {
+            product.packs.map(pack => pack.packDesc = this.packs.get(pack.packName).packDesc);
+
+            // Create the currentSettings property, which is what the actual results will be rendered from.
+            product.currentSettings = {};
+            product.currentSettings.packs = [];
+
+            // If there are no options, assume there is one of each pack.
+            if (product.options === undefined) {
+                product.currentSettings.packs.push(...product.packs.map(pack => ({ 'count': 1, 'packName': pack.packName })));
+            }
+            else {
+                // Otherwise copy the default options settings.
+                // TODO: handle more than one preset, probably by choosing the default preset
+                product.currentSettings.packs.push(...product.options.presets[0].packs.map(pack => ({ 'count': pack.count, 'packName': pack.defaultPackName })));
+            }
+        });
 
         window.dispatchEvent(new Event('data-loaded'));
     }
@@ -189,6 +214,9 @@ class MtgenData {
                 }
             }
         }
+
+        //TODO: Add this section from mtg-generator-lib: Make any post-load changes to the packs
+        // probably has to be moved somewhere other than data, seeing as it's calling queries to generate the cards...
 
         return { cards: goodCards, cardMetaData: meta };
     }

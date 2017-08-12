@@ -267,13 +267,13 @@
     <Content Include="wwwroot\hou\images\symbol.png">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
-    <Content Include="wwwroot\lib\mtgen-data.js" />
-    <Content Include="wwwroot\lib\riot-and-compiler.min-v3.6.1.js" />
-    <Content Include="wwwroot\lib\riot+compiler.min-v3.6.1.js" />
-    <Content Include="wwwroot\lib\riot-tags\booster-input.tag" />
-    <Content Include="wwwroot\lib\riot-tags\product - Copy.tag">
+    <Content Include="wwwroot\lib\mtgen-query.js">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
+    <Content Include="wwwroot\lib\mtgen-data.js" />
+    <Content Include="wwwroot\lib\mtgen-ui.js" />
+    <Content Include="wwwroot\lib\riot-and-compiler.min-v3.6.1.js" />
+    <Content Include="wwwroot\lib\riot-tags\booster-input.tag" />
     <Content Include="wwwroot\lib\riot-tags\product.tag">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
