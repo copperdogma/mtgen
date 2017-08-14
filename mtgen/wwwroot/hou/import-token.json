@@ -178,6 +178,18 @@
     },
 
     {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/hou-punch-card.png",
+        "num": "013",
+        "colour": "c",
+        "type": "Token Punch Card",
+        "title": "Punch Card",
+        "subtype": "Punch Card"
+      }
+    },
+
+    {
       "where": "",
       "newValues": {
         "set": "{{setCode}}",
