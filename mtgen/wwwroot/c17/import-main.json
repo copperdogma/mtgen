@@ -1,0 +1,26 @@
+{
+  "setCode": "c17",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=184&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/card-image-gallery/commander-2017",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+    {
+      "_comment": "mtg salvation included the basic lands, and special lands, which I import separately",
+      "delete": true,
+      "where": "type=(Basic Land|Land)"
+    },
+    {
+      "_comment": "ten cards are only found in the Planeswalker Decks: http://magic.wizards.com/en/articles/archive/feature/exclusive-cards-hour-devastation-planeswalker-decks-2017-06-21",
+      "_delete": true,
+      "_where": "title=(Nicol Bolas, the Deceiver|Wasp of the Bitter End|Zealot of the God-Pharaoh|Visage of Bolas|Cinder Barrens|   Nissa, Genesis Mage|Avid Reclaimer|Brambleweft Behemoth|Nissa's Encouragement|Woodland Stream)"
+    }
+
+
+  ]
+}

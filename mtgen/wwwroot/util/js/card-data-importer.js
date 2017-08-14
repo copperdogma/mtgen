@@ -143,6 +143,22 @@ class CardDataImporter {
             mainImages = this._getImageData(htmlImages.data, htmlImages.urlSource);
         }
 
+        // If there is no data but there is image data, and the data source was given as Gatherer, 
+        // we're meant to fetch all card data for these images from Gatherer.
+        if (mainOut.size === 0 && mainImages.size > 0 && htmlCards.urlSource.trim().toLowerCase().includes('gatherer.wizards.com')) {
+            for (const image of mainImages.values()) {
+                try {
+                    const card = await this._getCardFromWizardsGatherer(image.title);
+                    card.set = setCode;
+                    this._addCardToCards(mainOut, card);
+                }
+                catch (e) {
+                    console.log(`Cannot find image '${image.title}' from Gatherer.`);
+                }
+            }
+            mainOut.initialCardDataCount = mainOut.size;
+        }
+
         // Apply Exceptions -------------------------------------------------------------------------------------------------
         if (jsonExceptions.data) {
             jsonExceptions.data = JSON.parse(jsonExceptions.data);
@@ -473,7 +489,8 @@ class CardDataImporter {
     // Allows missing cards to be fetched directly from Wizards.
     async _getCardFromWizardsGatherer(cardName) {
         const lowerCaseCardName = cardName.trim().toLowerCase();
-        const queryStringCardName = lowerCaseCardName.split(' ').reduce((final, curr) => `${final}+[${curr}]`, '');
+        // Gatherer can't handle ’ characters, but requies them to be converted to '
+        const queryStringCardName = lowerCaseCardName.replace("’","'").split(' ').reduce((final, curr) => `${final}+[${curr}]`, '');
 
         const searchHtml = await this._fetchHtml('http://gatherer.wizards.com/Pages/Search/Default.aspx?name=' + queryStringCardName);
 

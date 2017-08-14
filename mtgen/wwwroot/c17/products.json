@@ -1,0 +1,105 @@
+﻿{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "c17-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://mtg.gamepedia.com/Commander_2017", "http://magic.wizards.com/en/articles/archive/card-image-gallery/commander-2017", "http://magic.wizards.com/en/articles/archive/feature/tokens-commander-2017-edition-2017-08-11" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "c17-all-cards" }
+      ]
+    },
+    {
+      "productName": "c17-decks",
+      "productDesc": "Commander 2017 Decks",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/feature/commander-2017-edition-decklists-2017-08-11" ],
+      "isGenerated": false,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "c17-feline-ferocity-commander" },
+        { "packName": "c17-feline-ferocity-deck" },
+        { "packName": "c17-vampiric-bloodlust-commander" },
+        { "packName": "c17-vampiric-bloodlust-deck" },
+        { "packName": "c17-draconic-domination-commander" },
+        { "packName": "c17-draconic-domination-deck" },
+        { "packName": "c17-arcane-wizardry-commander" },
+        { "packName": "c17-arcane-wizardry-deck" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "c17-feline-ferocity-deck",
+            "presetDesc": "Feline Ferocity",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "c17-feline-ferocity-commander"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "c17-feline-ferocity-deck"
+              }
+            ]
+          },
+          {
+            "presetName": "c17-vampiric-bloodlust-deck",
+            "presetDesc": "Vampiric Bloodlust",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "c17-vampiric-bloodlust-commander"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "c17-vampiric-bloodlust-deck"
+              }
+            ]
+          },
+          {
+            "presetName": "c17-draconic-domination-deck",
+            "presetDesc": "Draconic Domination",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "c17-draconic-domination-commander"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "c17-draconic-domination-deck"
+              }
+            ]
+          },
+          {
+            "presetName": "c17-arcane-wizardry-deck",
+            "presetDesc": "Arcane Wizardry",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "c17-arcane-wizardry-commander"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "c17-arcane-wizardry-deck"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "c17-promos",
+      "productDesc": "All Promos",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "c17-promos" }
+      ]
+    }
+
+  ]
+}
