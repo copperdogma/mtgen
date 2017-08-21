@@ -1,6 +1,6 @@
 {
   "setCode": "c17",
-  "cardDataUrl": "http://gatherer.wizards.com/",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=184&IncludeUnconfirmed=true&CardsPerRequest=999",
   "imagesUrl": "http://magic.wizards.com/en/articles/archive/card-image-gallery/commander-2017",
   "exceptions": [
     {
@@ -10,19 +10,10 @@
         "update card(s) = where, newValues {}"
       ]
     },
-    {
-      "variables": {
-        "startingCardNum": 233
-      }
-    },
 
     {
-      "_comment": "import just the special lands",
-      "where": "type=Land",
-      "newValues": {
-        "set": "{{setCode}}",
-        "num": "{{startingCardNum++}}/309"
-      }
+      "_comment": "this is the one new non-basic land in this set and not in sequence with the others",
+      "where": "title='Path of Ancestry'"
     },
 
     {

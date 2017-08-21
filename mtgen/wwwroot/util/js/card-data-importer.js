@@ -274,8 +274,8 @@ class CardDataImporter {
                 if (!exception.result) {
                     exception.result = { success: false, error: "PROCESSING FAILURE: no result given at all for this exception!" };
                 }
-                if (exception.comment === true) {
-                    out += `<li style='color: gray'>#${(index + 1)}: Comment; ignored.</li>`;
+                if (exception.ignored === true) {
+                    out += `<li style='color: gray'>#${(index + 1)}: Ignored: ${exception.ignoredReason}.</li>`;
                 }
                 else if (exception.result.success === true) {
                     if (exception.result.affectedCards > 0) {
@@ -490,7 +490,7 @@ class CardDataImporter {
     async _getCardFromWizardsGatherer(cardName) {
         const lowerCaseCardName = cardName.trim().toLowerCase();
         // Gatherer can't handle ’ characters, but requies them to be converted to '
-        const queryStringCardName = lowerCaseCardName.replace("’","'").split(' ').reduce((final, curr) => `${final}+[${curr}]`, '');
+        const queryStringCardName = lowerCaseCardName.replace("’", "'").split(' ').reduce((final, curr) => `${final}+[${curr}]`, '');
 
         const searchHtml = await this._fetchHtml('http://gatherer.wizards.com/Pages/Search/Default.aspx?name=' + queryStringCardName);
 
@@ -1138,6 +1138,7 @@ class CardDataImporter {
 
         // Replace any 'reference' properties with the current card values,
         // e.g.: "originalTitle": "{{title}}",
+        // TODO: this code is repeated twice.. make it into a function
         const replacementTokenRegex = /{{(.*?)}}/g;
         const replacementReferenceValues = {};
         Object.entries(card).forEach(entry => {
@@ -1232,9 +1233,11 @@ class CardDataImporter {
         cards.forEach(c => c.isSelected = false);
 
         let index = 0;
+        let vars = {}; // json-defined variables
         for (const exception of exceptions) {
             if (Object.keys(exception).length === 1 && (exception._comments || exception._comment)) {
-                exception.comment = true;
+                exception.ignored = true;
+                exception.ignoredReason = 'comment';
                 continue; // just a comment node; ignore
             }
 
@@ -1258,6 +1261,14 @@ class CardDataImporter {
 
                 cards = this._addCardToCards(cards, card);
 
+                continue;
+            }
+
+            // json-defined variables that can be used later
+            if (exception.variables) {
+                Object.assign(vars, exception.variables);
+                exception.ignored = true;
+                exception.ignoredReason = 'user-defined variables: ' + JSON.stringify(exception.variables);
                 continue;
             }
 
@@ -1356,7 +1367,7 @@ class CardDataImporter {
             //    }
             //}
 
-            const replacementTokenRegex = /{{(.*?)}}/g;
+            const replacementTokenRegex = /{{(.*?)(\+\+|\-\-)?}}/g;
 
             // Apply the changes to all of the matching cards.
             matchingCardArray.forEach(card => {
@@ -1376,8 +1387,18 @@ class CardDataImporter {
                         else if (propName === 'setCode') {
                             newPropValue = setCode;
                         }
+                        else if (vars[propName] !== undefined) {
+                            newPropValue = vars[propName];
+                            if (token[2] !== undefined) {
+                                if (token[2] === '++') {
+                                    vars[propName]++;
+                                }
+                                else if (token[2] === '--') {
+                                    vars[propName]--;
+                                }
+                            }
+                        }
                     }
-                    //exception.newValues[prop] = newPropValue;
                     replacementReferenceValues[prop] = newPropValue;
                 }
 
