@@ -123,9 +123,12 @@ class MtgenQuery {
                 var fullPack = that._dataApi.packs.get(pack.packName);
                 if (fullPack === undefined) { throw new Error(`generateCardSetsFromPacks: Missing pack def '${pack.packName}'`); }
                 const cardSet = await this._generateCardSetFromPack(fullPack);
+                cardSet.forEach(set => set.setIndex = i); // So they can be sorted by the originally generated order.
                 generatedSets.push(cardSet);
             }
         }
+
+        generatedSets.totalLength = generatedSets.reduce((total, cardSet) => total + cardSet.length, 0);
 
         return generatedSets;
 
@@ -173,6 +176,7 @@ class MtgenQuery {
         // Execute each card template's query to choose the actual card
         let cardSet = [];
         let cardIndices = [];
+        let index = 0;
         for (const cardDef of cardQueries) {
             const isOrderImportant = cardDef.inOrder && cardDef.inOrder === true;
             const possibleCards = await this._executeQuery(this._dataApi.cards, this._dataApi.defs, cardDef.query, isOrderImportant);
@@ -207,6 +211,7 @@ class MtgenQuery {
                     card.usableForDeckBuilding = usableForDeckBuilding;
                 }
                 cardIndices.push(card.mtgenId);
+                card.index = index++; // So they can be sorted by the originally generated order.
                 cardSet.push(card);
             });
         }
@@ -512,4 +517,141 @@ class MtgenQuery {
 
     //    return finalResult;
     //}
+
+    // Returns an object containing one array for each unique propName found.
+    async _groupByProperty(arr, propName) {
+        const out = arr.reduce((final, elem) => {
+            const propValue = elem[propName];
+            if (!final.hasOwnProperty(propValue)) {
+                final[propValue] = [];
+            }
+            final[propValue].push(elem);
+            return final;
+        }, {});
+        return out;
+    }
+
+    //CAMKILL:
+    //async _sortAllBy(cardList, sortBy) {
+    //    let sortedSets = [];
+
+    //    // For each colour, create a new card set
+    //    let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
+    //    let groupedCardSets = this._groupByProperty(mainCards, 'colour');
+    //    const cardSets = this.sortIntoArray(groupedCardSets, my.colours);
+    //    cardSets.forEach(cardSet => {
+    //        let set = cardSet.sort((a, b) => my.sortBy('matchTitle', a, b));
+    //        const colour = my.getColourByCode(set[0].colour);
+    //        set.setDesc = colour.name;
+    //        set.sortOrder = my.sortOrders.name;
+    //        sortedSets.push(set);
+    //    });
+
+    //    const basicLandCards = my.getBasicLandCards(cardList);
+    //    if (basicLandCards.length > 0) {
+    //        sortedSets.push(basicLandCards);
+    //    }
+
+    //    // Flatten the grouped sets into a flat array of single cards.
+    //    const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+    //    const otherCards = my.getOtherCards(cardList, selectedCards);
+    //    if (otherCards.length > 0) {
+    //        sortedSets.push(otherCards);
+    //    }
+
+    //    sortedSets.sortOrder = my.sortOrders.colour;
+
+    //    return sortedSets;
+    //};
+
+    async sortAllBy(cardList, sortBy) {
+        let sortedSets = [];
+
+        // Group cards by the sortBy and create a new card set for each
+        let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
+        let groupedCardSets = await this._groupByProperty(mainCards, 'colour');
+        const cardSets = await this._sortIntoArray(groupedCardSets, MtgenData.colours);
+        cardSets.forEach(cardSet => {
+            let set = cardSet.sort((a, b) => this._sortBy('matchTitle', a, b));
+            const colour = MtgenData.getColourByCode(set[0].colour);
+            set.setDesc = colour.name;
+            set.sortOrder = MtgenQuery.sortOrders.name;
+            sortedSets.push(set);
+        });
+
+        const basicLandCards = await this._getBasicLandCards(cardList);
+        if (basicLandCards.length > 0) {
+            sortedSets.push(basicLandCards);
+        }
+
+        // Flatten the grouped sets into a flat array of single cards.
+        const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+        const otherCards = await this._getOtherCards(cardList, selectedCards);
+        if (otherCards.length > 0) {
+            sortedSets.push(otherCards);
+        }
+
+        sortedSets.sortOrder = MtgenQuery.sortOrders.colour;
+
+        return sortedSets;
+    }
+
+    async _sortIntoArray(groupedCardSets, sortObj) {
+        let cardSets = [];
+        for (const sortItem in sortObj) {
+            const thisSortItem = sortObj[sortItem];
+            let set = groupedCardSets[thisSortItem.code];
+            if (set) {
+                set.sorder = thisSortItem.sorder;
+                cardSets.push(set);
+            }
+        }
+        cardSets = cardSets.sort((a, b) => this._sortBy('sorder', a, b));
+        return cardSets;
+    }
+
+    async _getBasicLandCards(cardList) {
+        let cards = cardList.filter(card => card.type == 'Basic Land');
+        if (cards.length > 0) {
+            cards = cards.sort(async (a, b) => await this._sortBy('matchTitle', a, b));
+            cards.setDesc = 'Basic Land';
+            cards.sortOrder = MtgenQuery.sortOrders.name;
+        }
+        return cards;
+    }
+
+    async _getOtherCards(allCards, selectedCards) {
+        let cards = allCards.filter(x => !selectedCards.includes(x));
+        if (cards.length > 0) {
+            cards = cards.sort(async (a, b) => await this._sortBy('matchTitle', a, b));
+            cards.setDesc = 'Other';
+            cards.sortOrder = MtgenQuery.sortOrders.name;
+        }
+        return cards;
+    }
+
+    /* --------- Sorting All Cards --------------------------------------------------------------------------------------------------------------------- */
+
+    // TODO: not sure this should exist anymore
+    static get sortOrders() {
+        return {
+            none: { sort: 'none' }
+            , name: { sort: 'name' }
+            , colour: { sort: 'colour' }
+            , rarity: { sort: 'rarity' }
+            , cost: { sort: 'cost' }
+            , type: { sort: 'type' }
+            , set: { sort: 'set' }
+            , guild: { sort: 'guild' }
+            , clan: { sort: 'clan' }
+            , faction: { sort: 'faction' }
+            , order: { sort: 'order' } // opened order within the set
+        };
+    }
+
+    async _sortBy(prop, a, b) {
+        const aProp = a[prop];
+        const bProp = b[prop]
+        return ((aProp < bProp) ? -1 : ((aProp > bProp) ? 1 : 0));
+    }
 }
