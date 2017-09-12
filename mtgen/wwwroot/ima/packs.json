@@ -1,0 +1,80 @@
+{
+  "defs": [
+    {
+      "defName": "ima",
+      "query": "from[*]?set='ima'"
+    },
+    {
+      "defName": "ima-main",
+      "query": "from[ima]-from[ima]?type=(Marketing|Basic Land)-from[ima]?token=true"
+    },
+    {
+      "defName": "ima-foils",
+      "query": "from[ima-main]"
+    }
+
+  ],
+  "packs": [
+    {
+      "packName": "ima-all-cards",
+      "packDesc": "Iconic Masters: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[ima]" }
+      ]
+    },
+    {
+      "packName": "ima-standard",
+      "packDesc": "Iconic Masters: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[ima-main]?rarity='c'" },
+        { "query": "take[3]>from[ima-main]?rarity='u'" },
+        {
+          "querySet": [
+            {
+              "percent": 87.5,
+              "query": "from[ima-main]?rarity='r'"
+            },
+            {
+              "percent": 12.5,
+              "query": "from[ima-main]?rarity='m'",
+              "_comment": "rare=7/8, mythicRare=1/8"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": 71.43,
+              "query": "from[ima-foils]?rarity='c'",
+              "canBeDuplicate": true,
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": 21.43,
+              "query": "from[ima-foils]?rarity='u'",
+              "canBeDuplicate": true,
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": 6.25,
+              "query": "from[ima-foils]?rarity='r'",
+              "canBeDuplicate": true,
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": 0.89,
+              "query": "from[ima-foils]?rarity='m'",
+              "canBeDuplicate": true,
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+              "query": "from[ima]?title='Tip/Marketing Card"
+        }
+      ]
+    }
+  ]
+}

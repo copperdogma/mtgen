@@ -1,0 +1,14 @@
+{
+  "setCode": "ima",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=186&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/iconic-masters",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    }
+  ]
+}

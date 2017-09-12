@@ -96,6 +96,8 @@ class CardDataImporter {
     async loadAndProcessAllFiles({ cardDataUrl, htmlCardData, imagesUrl, exceptions, setCode }) {
         setCode = setCode.trim();
 
+        this._clearConsole();
+
         // We need 3 sets of data: card, image, and exceptions
 
         // If raw HTML data was provided, use that.
@@ -209,6 +211,18 @@ class CardDataImporter {
     }
 
     // PRIVATE METHODS ------------------------------------------------------------------------------------
+
+    _clearConsole() {
+        console.API;
+        if (typeof console._commandLineAPI !== 'undefined') {
+            console.API = console._commandLineAPI; //chrome
+        } else if (typeof console._inspectorCommandLineAPI !== 'undefined') {
+            console.API = console._inspectorCommandLineAPI; //Safari
+        } else if (typeof console.clear !== 'undefined') {
+            console.API = console;
+        }
+        console.API.clear();
+    }
 
     // Get html via a proxy, erroring if it fails or if no HTML is retrieved.
     async _fetchHtml(url) {
