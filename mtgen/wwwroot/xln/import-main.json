@@ -1,0 +1,242 @@
+{
+  "setCode": "xln",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=185&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/ixalan",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+    {
+      "_comment": "mtg salvation included the basic lands which I import separately",
+      "delete": true,
+      "where": "type=(Basic Land)"
+    },
+    {
+      "_comment": "need to keep only the double-sided lands and delete the rest (there is no NOT so I have to specify all to delete by name)",
+      "delete": true,
+      "where": "title=(Dragonskull Summit|Drowned Catacomb|Glacial Fortress|Rootbound Crag|Sunpetal Grove|Unclaimed Territory|Woodland Stream|Stone Quarry)"
+    },
+    {
+      "where": "title='Jace, Ingenious Mind-Mage",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/xln/en_wHqxXPqICj.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Huatli, Dinosaur Knight",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/xln/en_urn2CTQWmj.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Castaways Despair",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/xln/en_9ZVXDqDNTO.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Grasping Current",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/xln/en_UnTUyUcwQz.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Jaces Sentinel",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/xln/en_nzJMMjpp6t.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Huatlis Snubhorn",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/xln/en_EGWUX4gCOC.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Huatlis Spurring",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/xln/en_8sisHLOl48.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Sun-Blessed Mount",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/xln/en_Lkj0S4IOOK.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+
+    {
+      "where": "title='Legions Landing",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "xln|0022:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Adanto the First Fort",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdFront": "xln|00722",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Search for Azcanta",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "xln|0074:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Azcanta The Sunken Ruin",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdFront": "xln|0074",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Arguels Blood Fast",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "xln|0090:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Temple of Aclazotz",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdFront": "xln|0090",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Growing Rites of Itlimoc",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "xln|0191:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Itlimoc, Cradle of the Sun",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdFront": "xln|0191",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Conquerors Galleon",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "xln|0234:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Conquerors Foothold",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdFront": "xln|0234",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Dowsing Dagger",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "xln|0235:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Lost Vale",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdFront": "xln|0235",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Primal Amulet",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "xln|0243:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Primal Wellspring",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdFront": "xln|0243",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Thaumatic Compass",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "xln|0249:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Spires of Orazca",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdFront": "xln|0249",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Treasure Map",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "xln|0250:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Treasure Cove",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdFront": "xln|0250",
+        "doubleFaceBackCard": true
+      }
+    }
+
+  ]
+}

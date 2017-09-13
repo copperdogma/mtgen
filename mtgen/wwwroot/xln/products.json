@@ -1,0 +1,85 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "xln-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/card-image-gallery/Ixalan", "http://www.mtgsalvation.com/spoilers/185-Ixalan", "http://magic.wizards.com/en/articles/archive/card-preview/ixalan-promos-planeswalker-decks-packaging-and-fnm-tokens-2017-09-01" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "xln-all-cards" }
+      ]
+    },
+    {
+      "productName": "xln-boosters",
+      "productDesc": "Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "xln-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "xln-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "xln-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "xln-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://magic.wizards.com/en/articles/archive/feature/Ixalan-packaging-promos-and-planeswalker-decks-2016-09-06" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "xln-standard" },
+        { "packName": "xln-prerelease-promo-packins" },
+        { "packName": "xln-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "xln-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "xln-prerelease-promo-packins"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "xln-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "xln-promos",
+      "productDesc": "All Promos",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/ixalan-promos-planeswalker-decks-packaging-and-fnm-tokens-2017-09-01" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "xln-promos" }
+      ]
+    }
+
+  ]
+}

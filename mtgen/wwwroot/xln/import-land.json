@@ -1,0 +1,40 @@
+{
+  "setCode": "xln",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=185&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/ixalan",
+  "_comments": "Three kinds of land for this release: full art, normal, and dual",
+  "exceptions": [
+    {
+      "_comment": "mtg salvation included the basic lands, and special lands, which I import separately",
+      "where": "type=(Basic Land|Land)"
+    },
+    {
+      "_comment": "delete cards that are double-sided with a land on the back, which are taken care of in cardsMain",
+      "delete": true,
+      "where": "title=(Conquerors Foothold|Primal Wellspring|Spires of Orazca|Treasure Cove)"
+    },
+
+    {
+      "where": "title='Woodland Stream",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/xln/en_5gBuExV634.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Stone Quarry",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/xln/en_I7RFrHLm7s.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    }
+  ]
+}

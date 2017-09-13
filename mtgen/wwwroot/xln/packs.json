@@ -1,0 +1,146 @@
+{
+  "defs": [
+    {
+      "defName": "xln",
+      "query": "from[*]?set='xln'"
+    },
+    {
+      "defName": "xln-base",
+      "query": "from[xln]-from[xln]?type=(Marketing|Basic Land)-from[xln]?token=true-from[xln]?promo=true"
+    },
+    {
+      "defName": "xln-main",
+      "query": "from[xln-base]"
+    },
+    {
+      "defName": "xln-foils",
+      "query": "from[xln-main]"
+    },
+    {
+      "defName": "xln-promo",
+      "query": "from[xln]?promo=true"
+    },
+    {
+      "defName": "xln-token",
+      "query": "from[xln]?token=true-from[xln-promo]"
+    }
+
+  ],
+  "packs": [
+    {
+      "packName": "xln-all-cards",
+      "packDesc": "Ixalan: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[xln]-from[xln]?doubleFaceBackCard=true" }
+      ]
+    },
+    {
+      "packName": "xln-standard",
+      "packDesc": "Ixalan: Standard Booster",
+      "packVersion": "1.0",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[9]>from[xln-main]?rarity='c" },
+        {
+          "querySet": [
+            {
+              "percent": "360/480",
+              "query": "from[xln-main]?rarity='c"
+            },
+            {
+              "percent": "88/480",
+              "query": "from[xln-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "24/480",
+              "query": "from[xln-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "7/480",
+              "query": "from[xln-main]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/480",
+              "query": "from[xln-main]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[3]>from[xln-main]?rarity='u" },
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[xln-main]?rarity='r"
+            },
+            {
+              "percent": "1/8",
+              "query": "from[xln-main]?rarity='m"
+            }
+          ]
+        },
+        { "query": "from[xln]?type='Basic Land" },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[xln]?title='Tip/Marketing Card"
+            },
+            {
+              "percent": "50",
+              "query": "from[xln-token]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "xln-promos",
+      "packDesc": "Ixalan: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[xln-promo]" }
+      ]
+    },
+    {
+      "packName": "xln-prerelease-promo-packins",
+      "packDesc": "Ixalan: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[xln-base]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[xln-base]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[1]>from[xln-promo]?type='Life Counter" },
+        { "query": "from[xln-promo]?title='Deck Box" },
+        { "query": "from[xln-promo]?title='Deckbuilding Advice Insert" }
+      ]
+    },
+    {
+      "packName": "xln-prerelease-promos",
+      "packDesc": "Ixalan: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[xln-promo]?includedReason='Prerelease Promo" }
+      ]
+    }
+
+  ]
+}

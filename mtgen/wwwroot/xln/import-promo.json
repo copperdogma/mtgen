@@ -1,0 +1,181 @@
+{
+  "setCode": "xln",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=185&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+      "where": "title='Burning Suns Avatar",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/xln/en_C1oC1OiTqv_b.png",
+        "num": "{{num}} P Buy-a-Box",
+        "includedReason": "Buy-a-Box Promo"
+      }
+    },
+    {
+      "where": "title='Walk the Plank",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/xln/en_bPbcVvKEYp.png",
+        "num": "{{num}} P OpenHouse",
+        "includedReason": "Open House Promo"
+      }
+    },
+    {
+      "where": "title='Unclaimed Territory",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/xln/en_pELrMZ7YoA.png",
+        "num": "{{num}} P League",
+        "includedReason": "League Promo"
+      }
+    },
+    {
+      "where": "title='Bishop of Rebirth",
+      "newValues": {
+        "src": "http://media.wizards.com/2017/xln/en_uDtRbs8m1P_b.png",
+        "num": "{{num}} P Draft Weekend",
+        "includedReason": "Draft Weekend Promo"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/xln/en_g59A1EKi9e.png",
+        "title": "Treasure",
+        "colour": "o",
+        "num": "012/012 P FNM",
+        "type": "Token Artifact",
+        "subtype": "Treasure",
+        "token": true,
+        "rarity": "c",
+        "doubleFaceCard": true,
+        "mtgenIdBack": "xln|012/012 P FNM:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://media.wizards.com/2017/xln/en_HyTkwtrTvU.png",
+        "title": "Pirate",
+        "colour": "b",
+        "num": "012/012 P FNM",
+        "type": "Token Creature",
+        "subtype": "Pirate",
+        "token": true,
+        "rarity": "c",
+        "doubleFaceCard": true,
+        "mtgenIdFront": "xln|012/012 P FNM",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/xln-prerelease-deck-box.png",
+        "title": "Deck Box",
+        "colour": "o",
+        "num": "006 Deck Box",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-deckbuilding-info.jpg",
+        "src_large": "http://mtgen.net/cards/mtg-deckbuilding-info-lg.jpg",
+        "height": 370,
+        "width": 515,
+        "title": "Deckbuilding Advice Insert",
+        "colour": "o",
+        "num": "007 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-white.png",
+        "title": "White Spindown Life Counter",
+        "colour": "o",
+        "num": "001 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-blue.png",
+        "title": "Blue Spindown Life Counter",
+        "colour": "o",
+        "num": "002 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-black.png",
+        "title": "Black Spindown Life Counter",
+        "colour": "o",
+        "num": "003 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-red.png",
+        "title": "Red Spindown Life Counter",
+        "colour": "o",
+        "num": "004 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-green.png",
+        "title": "Green Spindown Life Counter",
+        "colour": "o",
+        "num": "005 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}
