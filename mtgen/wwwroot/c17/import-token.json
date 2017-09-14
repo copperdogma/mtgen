@@ -1,0 +1,162 @@
+{
+  "setCode": "c17",
+  "cardDataUrl": "",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/feature/tokens-commander-2017-edition-2017-08-11",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "c17",
+          "cardImageUrl": "http://magic.wizards.com/en/articles/archive/feature/tokens-commander-2017-edition-2017-08-11",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "001|w|Token Creature|Cat\n002|b|Token Creature|Bat\n003|b|Token Creature|Rat\n004|b|Token Creature|Vampire\n005|b|Token Creature|Zombie\n006|r|Token Creature|Dragon\n007|r|Token Creature|Dragon\n008|g|Token Creature|Cat Warrior\n009|m|Token Creature|Cat Dragon\n010|c|Token Artifact|Gold\n011|c|Token Creature|Eldrazi Spawn"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_HtuDJUhFfD.png",
+        "num": "001",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Cat",
+        "subtype": "Cat"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_ZFLPIGrCB6.png",
+        "num": "002",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Bat",
+        "subtype": "Bat"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_MZI1BY48ic.png",
+        "num": "003",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Rat",
+        "subtype": "Rat"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_ozQ4wGzLWP.png",
+        "num": "004",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Vampire",
+        "subtype": "Vampire"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_P0pLlthNJf.png",
+        "num": "005",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Zombie",
+        "subtype": "Zombie"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_ZFbcBMu8c4.png",
+        "num": "006",
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Dragon",
+        "subtype": "Dragon"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_4lYKRIzRuS.png",
+        "num": "007",
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Dragon",
+        "subtype": "Dragon"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_jwlAZwv0U5.png",
+        "num": "008",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Cat Warrior",
+        "subtype": "Cat Warrior"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_qqkFwzOuEh.png",
+        "num": "009",
+        "colour": "m",
+        "type": "Token Creature",
+        "title": "Cat Dragon",
+        "subtype": "Cat Dragon"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_bFYnM2Jm7i.png",
+        "num": "010",
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Gold",
+        "subtype": "Gold"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_I1FWtEHO45.png",
+        "num": "011",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Eldrazi Spawn",
+        "subtype": "Eldrazi Spawn"
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

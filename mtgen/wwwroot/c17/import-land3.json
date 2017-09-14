@@ -1,0 +1,26 @@
+{
+  "setCode": "c17",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=184&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/card-image-gallery/commander-2017",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "_comment": "this is the one new non-basic land in this set and not in sequence with the others",
+      "where": "title='Path of Ancestry'"
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    }
+
+  ]
+}

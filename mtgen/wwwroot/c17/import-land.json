@@ -1,0 +1,170 @@
+{
+  "setCode": "c17",
+  "cardDataUrl": "",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/card-image-gallery/commander-2017",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "c17",
+          "cardImageUrl": "http://magic.wizards.com/en/articles/archive/card-image-gallery/commander-2017",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "x294,w295,w296,w297,u298,u299,u300,b301,b302,b303,r304,r305,r306,g307,g308,g309"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_VfjK71I9yF.png",
+        "title": "Plains",
+        "num": "295"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_sdF3Kuh9Ne.png",
+        "title": "Plains",
+        "num": "296"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_U9mqYrrUup.png",
+        "title": "Plains",
+        "num": "297"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_evq2CJlE9w.png",
+        "title": "Island",
+        "num": "298"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_bNfGC3y0IT.png",
+        "title": "Island",
+        "num": "299"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_H6azxGXeWC.png",
+        "title": "Island",
+        "num": "300"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_4QBYdRNirN.png",
+        "title": "Swamp",
+        "num": "301"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_d1mGz4csMs.png",
+        "title": "Swamp",
+        "num": "302"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_p0Bw5xSJW3.png",
+        "title": "Swamp",
+        "num": "303"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_HfiErPXuaQ.png",
+        "title": "Mountain",
+        "num": "304"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_PM0Y5FUfPP.png",
+        "title": "Mountain",
+        "num": "305"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_4hlviDGZux.png",
+        "title": "Mountain",
+        "num": "306"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_HukrwHaPej.png",
+        "title": "Forest",
+        "num": "307"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_XR47PV24P5.png",
+        "title": "Forest",
+        "num": "308"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "c17",
+        "src": "http://media.wizards.com/2017/c17/en_cX0loZgZ2N.png",
+        "title": "Forest",
+        "num": "309"
+      }
+    },
+    {
+      "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
+      "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
+      "newValues": {
+        "set": "{{setCode}}",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "{{title}}",
+        "colour": "l",
+        "cost": "",
+        "rarity": "c",
+        "num": "{{num}}/309 L"
+      }
+    }
+  ]
+}

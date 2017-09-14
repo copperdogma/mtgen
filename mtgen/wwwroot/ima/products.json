@@ -1,0 +1,41 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "ima-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://www.mtgsalvation.com/spoilers/178-modern-masters-2017", "http://magic.wizards.com/en/articles/archive/card-image-gallery/modern-masters-2017-edition" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "ima-all-cards" }
+      ]
+    },
+    {
+      "productName": "ima-boosters",
+      "productDesc": "Boosters",
+      "sources": [ ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "ima-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "ima-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "ima-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "setCode": "c17",
+  "cardDataUrl": "http://gatherer.wizards.com/",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/card-image-gallery/commander-2017",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+    {
+      "variables": {
+        "startingCardNum": 233
+      }
+    },
+
+    {
+      "_comment": "import just the special lands",
+      "where": "type=Land",
+      "newValues": {
+        "set": "{{setCode}}",
+        "num": "{{startingCardNum++}}/309"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    }
+
+  ]
+}

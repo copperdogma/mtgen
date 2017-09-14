@@ -1,0 +1,32 @@
+﻿{
+  "setCode": "c17",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=184&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/card-image-gallery/commander-2017",
+  "exceptions": [
+    {
+      "_comment": "add promo:false to ALL cards with the intention of deleting them later",
+      "where": "",
+      "newValues": {
+        "promo": false
+      }
+    },
+
+    {
+      "_comment": "Each deck has commanders. They also included oversized foil versions of the same.",
+      "where": "title=(The Ur-Dragon|Arahbo, Roar of the World|Edgar Markov|Inalla, Archmage Ritualist)",
+      "newValues": {
+        "promo": true,
+        "num": "{{num}} Promo",
+        "includedReason": "Oversized Foil Commander Promo",
+        "usableForDeckBuilding": false,
+        "addedViaException": true
+      }
+    },
+
+    {
+      "_comment": "delete all cards that still have promo=false, which leaves just our promo cards",
+      "delete": true,
+      "where": "promo=false"
+    }
+  ]
+}

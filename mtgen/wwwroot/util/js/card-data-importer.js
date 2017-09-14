@@ -96,6 +96,8 @@ class CardDataImporter {
     async loadAndProcessAllFiles({ cardDataUrl, htmlCardData, imagesUrl, exceptions, setCode }) {
         setCode = setCode.trim();
 
+        this._clearConsole();
+
         // We need 3 sets of data: card, image, and exceptions
 
         // If raw HTML data was provided, use that.
@@ -141,6 +143,22 @@ class CardDataImporter {
         let mainImages = new Map();
         if (htmlImages.data) {
             mainImages = this._getImageData(htmlImages.data, htmlImages.urlSource);
+        }
+
+        // If there is no data but there is image data, and the data source was given as Gatherer, 
+        // we're meant to fetch all card data for these images from Gatherer.
+        if (mainOut.size === 0 && mainImages.size > 0 && htmlCards.urlSource.trim().toLowerCase().includes('gatherer.wizards.com')) {
+            for (const image of mainImages.values()) {
+                try {
+                    const card = await this._getCardFromWizardsGatherer(image.title);
+                    card.set = setCode;
+                    this._addCardToCards(mainOut, card);
+                }
+                catch (e) {
+                    console.log(`Cannot find image '${image.title}' from Gatherer.`);
+                }
+            }
+            mainOut.initialCardDataCount = mainOut.size;
         }
 
         // Apply Exceptions -------------------------------------------------------------------------------------------------
@@ -193,6 +211,18 @@ class CardDataImporter {
     }
 
     // PRIVATE METHODS ------------------------------------------------------------------------------------
+
+    _clearConsole() {
+        console.API;
+        if (typeof console._commandLineAPI !== 'undefined') {
+            console.API = console._commandLineAPI; //chrome
+        } else if (typeof console._inspectorCommandLineAPI !== 'undefined') {
+            console.API = console._inspectorCommandLineAPI; //Safari
+        } else if (typeof console.clear !== 'undefined') {
+            console.API = console;
+        }
+        console.API.clear();
+    }
 
     // Get html via a proxy, erroring if it fails or if no HTML is retrieved.
     async _fetchHtml(url) {
@@ -258,8 +288,8 @@ class CardDataImporter {
                 if (!exception.result) {
                     exception.result = { success: false, error: "PROCESSING FAILURE: no result given at all for this exception!" };
                 }
-                if (exception.comment === true) {
-                    out += `<li style='color: gray'>#${(index + 1)}: Comment; ignored.</li>`;
+                if (exception.ignored === true) {
+                    out += `<li style='color: gray'>#${(index + 1)}: Ignored: ${exception.ignoredReason}.</li>`;
                 }
                 else if (exception.result.success === true) {
                     if (exception.result.affectedCards > 0) {
@@ -473,7 +503,8 @@ class CardDataImporter {
     // Allows missing cards to be fetched directly from Wizards.
     async _getCardFromWizardsGatherer(cardName) {
         const lowerCaseCardName = cardName.trim().toLowerCase();
-        const queryStringCardName = lowerCaseCardName.split(' ').reduce((final, curr) => `${final}+[${curr}]`, '');
+        // Gatherer can't handle ’ characters, but requies them to be converted to '
+        const queryStringCardName = lowerCaseCardName.replace("’", "'").split(' ').reduce((final, curr) => `${final}+[${curr}]`, '');
 
         const searchHtml = await this._fetchHtml('http://gatherer.wizards.com/Pages/Search/Default.aspx?name=' + queryStringCardName);
 
@@ -1121,6 +1152,7 @@ class CardDataImporter {
 
         // Replace any 'reference' properties with the current card values,
         // e.g.: "originalTitle": "{{title}}",
+        // TODO: this code is repeated twice.. make it into a function
         const replacementTokenRegex = /{{(.*?)}}/g;
         const replacementReferenceValues = {};
         Object.entries(card).forEach(entry => {
@@ -1215,9 +1247,11 @@ class CardDataImporter {
         cards.forEach(c => c.isSelected = false);
 
         let index = 0;
+        let vars = {}; // json-defined variables
         for (const exception of exceptions) {
             if (Object.keys(exception).length === 1 && (exception._comments || exception._comment)) {
-                exception.comment = true;
+                exception.ignored = true;
+                exception.ignoredReason = 'comment';
                 continue; // just a comment node; ignore
             }
 
@@ -1241,6 +1275,14 @@ class CardDataImporter {
 
                 cards = this._addCardToCards(cards, card);
 
+                continue;
+            }
+
+            // json-defined variables that can be used later
+            if (exception.variables) {
+                Object.assign(vars, exception.variables);
+                exception.ignored = true;
+                exception.ignoredReason = 'user-defined variables: ' + JSON.stringify(exception.variables);
                 continue;
             }
 
@@ -1339,7 +1381,7 @@ class CardDataImporter {
             //    }
             //}
 
-            const replacementTokenRegex = /{{(.*?)}}/g;
+            const replacementTokenRegex = /{{(.*?)(\+\+|\-\-)?}}/g;
 
             // Apply the changes to all of the matching cards.
             matchingCardArray.forEach(card => {
@@ -1359,8 +1401,18 @@ class CardDataImporter {
                         else if (propName === 'setCode') {
                             newPropValue = setCode;
                         }
+                        else if (vars[propName] !== undefined) {
+                            newPropValue = vars[propName];
+                            if (token[2] !== undefined) {
+                                if (token[2] === '++') {
+                                    vars[propName]++;
+                                }
+                                else if (token[2] === '--') {
+                                    vars[propName]--;
+                                }
+                            }
+                        }
                     }
-                    //exception.newValues[prop] = newPropValue;
                     replacementReferenceValues[prop] = newPropValue;
                 }
 

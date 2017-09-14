@@ -1,0 +1,20 @@
+{
+  "setCode": "c17",
+  "cardDataUrl": "https://mtgjson.com/json/C17.json",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/card-image-gallery/commander-2017",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+    {
+      "_comment": "mtg salvation included the basic lands, and special lands, which I import separately",
+      "delete": true,
+      "where": "type=(Basic Land|Land)"
+    }
+
+  ]
+}
