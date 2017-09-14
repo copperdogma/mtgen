@@ -112,7 +112,7 @@ class MtgenUI {
         if (this._dataApi.currentProduct.options === undefined) {
             this._dataApi.currentProduct.originalResults = await this._queryApi.generateCardSetsFromPacks(this._dataApi.currentProduct.currentSettings.packs);
             // TODO: this is the simple case where there is only one pack generated; not sure how it did it with multiple packs
-            const sortedResults = await this._queryApi.sortAllBy(this._dataApi.currentProduct.originalResults[0], 'fix this');
+            const sortedResults = await this._queryApi.sortAllBy(this._dataApi.currentProduct.originalResults[0], this._dataApi.currentProduct.initialSort);
             this._dataApi.currentProduct.results = sortedResults;
             // also need meta data stats... but should that be determined by the set (are there Guilds?) or the properties of all cards (does any card have a Guild?)
             // -- original just showed those that match the card output, so if no guilds in that pack, no guild sort/group
