@@ -5,13 +5,13 @@
   "_comments": "Three kinds of land for this release: full art, normal, and dual",
   "exceptions": [
     {
-      "_comment": "mtg salvation included the basic lands, and special lands, which I import separately",
-      "where": "type=(Basic Land|Land)"
+      "_comment": "mtg salvation included the special lands, which I import separately",
+      "where": "type=(Land)"
     },
     {
       "_comment": "delete cards that are double-sided with a land on the back, which are taken care of in cardsMain",
       "delete": true,
-      "where": "title=(Conquerors Foothold|Primal Wellspring|Spires of Orazca|Treasure Cove)"
+      "where": "title=(Conquerors Foothold|Primal Wellspring|Spires of Orazca|Treasure Cove|Lost Vale)"
     },
 
     {

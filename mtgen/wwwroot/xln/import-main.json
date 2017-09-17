@@ -16,6 +16,11 @@
       "where": "type=(Basic Land)"
     },
     {
+      "_comment": "non-dual-face land I import separately",
+      "delete": true,
+      "where": "title=(Field of Ruin|Unknown Shores)"
+    },
+    {
       "_comment": "need to keep only the double-sided lands and delete the rest (there is no NOT so I have to specify all to delete by name)",
       "delete": true,
       "where": "title=(Dragonskull Summit|Drowned Catacomb|Glacial Fortress|Rootbound Crag|Sunpetal Grove|Unclaimed Territory|Woodland Stream|Stone Quarry)"
@@ -132,6 +137,23 @@
       "newValues": {
         "doubleFaceCard": true,
         "mtgenIdFront": "xln|0090",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Vances Blasting Cannons",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "xln|0173:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Spitfire Bastion",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdFront": "xln|0173",
         "doubleFaceBackCard": true
       }
     },
