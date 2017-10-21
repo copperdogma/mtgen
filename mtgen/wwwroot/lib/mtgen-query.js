@@ -535,7 +535,7 @@ class MtgenQuery {
         switch (sortType.toLowerCase()) {
             case 'nothing': return await this.sortAllByNothing(cardList);
             case 'name':
-            case 'title': return await this.sortAllByTitle(cardList);
+            case 'title': return this.sortAllByTitle(cardList);
             case 'colour': return await this.sortAllByColour(cardList);
             case 'rarity': return await this.sortAllByRarity(cardList);
             case 'cost': return await this.sortAllByCost(cardList);
@@ -545,8 +545,16 @@ class MtgenQuery {
             case 'faction': return await this.sortAllByFaction(cardList);
             default:
                 console.warn('Unknown sort type: ' + sortType);
-                return await this.sortAllByTitle(cardList);
+                return this.sortAllByTitle(cardList);
         }
+    }
+
+    async _convertSetsToArray(arrayOrSets) {
+        let sourceCards = [];
+        if (arrayOrSets.length && arrayOrSets[0].length) {
+            arrayOrSets.forEach(set => sourceCards = sourceCards.concat(set));
+        }
+        return sourceCards;
     }
 
     async sortAllByNothing(cardList) {
@@ -554,8 +562,9 @@ class MtgenQuery {
         return cardList;
     }
 
-    async sortAllByTitle(cardList) {
-        const cards = cardList.sort((a, b) => this._sortBy('matchTitle', a, b));
+    sortAllByTitle(cardList) {
+        var sourceCards = await this._convertSetsToArray(cardList);
+        const cards = sourceCards.sort((a, b) => this._sortBy('matchTitle', a, b));
         cards.sortOrder = MtgenQuery.sortOrders.name;
         return cards;
     }
@@ -563,26 +572,38 @@ class MtgenQuery {
     async sortAllByColour(cardList) {
         let sortedSets = [];
 
+        var sourceCards = await this._convertSetsToArray(cardList);
+
         // Group cards by the sortBy and create a new card set for each
-        let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
+        let mainCards = sourceCards.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
         let groupedCardSets = await this._groupByProperty(mainCards, 'colour');
         const cardSets = await this._sortIntoArray(groupedCardSets, MtgenData.colours);
-        cardSets.forEach(cardSet => {
-            let set = cardSet.sort((a, b) => this._sortBy('matchTitle', a, b));
+        //CAMKILL:
+        //cardSets.forEach(cardSet => {
+        //    //CAMKILL:let set = cardSet.sort((a, b) => this._sortBy('matchTitle', a, b));
+        //    let set = await this.sortAllByTitle(cardSet);
+        //    const colour = MtgenData.getColourByCode(set[0].colour);
+        //    set.setDesc = colour.name;
+        //    set.sortOrder = MtgenQuery.sortOrders.name;
+        //    sortedSets.push(set);
+        //});
+        for (let i = 0; i < cardSets.length; i++) {
+            let set = this.sortAllByTitle(cardSets[i]);
+            //CAMKILL:let set2 = this.sortAllByTitleX(cardSets[i]);
             const colour = MtgenData.getColourByCode(set[0].colour);
             set.setDesc = colour.name;
             set.sortOrder = MtgenQuery.sortOrders.name;
             sortedSets.push(set);
-        });
+        }
 
-        const basicLandCards = await this._getBasicLandCards(cardList);
+        const basicLandCards = await this._getBasicLandCards(sourceCards);
         if (basicLandCards.length > 0) {
             sortedSets.push(basicLandCards);
         }
 
         // Flatten the grouped sets into a flat array of single cards.
         const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
-        const otherCards = await this._getOtherCards(cardList, selectedCards);
+        const otherCards = await this._getOtherCards(sourceCards, selectedCards);
         if (otherCards.length > 0) {
             sortedSets.push(otherCards);
         }
@@ -607,14 +628,14 @@ class MtgenQuery {
             sortedSets.push(set);
         });
 
-        const basicLandCards = await this._getBasicLandCards(cardList);
+        const basicLandCards = await this._getBasicLandCards(sourceCards);
         if (basicLandCards.length > 0) {
             sortedSets.push(basicLandCards);
         }
 
         // Flatten the grouped sets into a flat array of single cards.
         const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
-        const otherCards = await this._getOtherCards(cardList, selectedCards);
+        const otherCards = await this._getOtherCards(sourceCards, selectedCards);
         if (otherCards.length > 0) {
             sortedSets.push(otherCards);
         }
@@ -638,14 +659,14 @@ class MtgenQuery {
             sortedSets.push(set);
         });
 
-        const basicLandCards = await this._getBasicLandCards(cardList);
+        const basicLandCards = await this._getBasicLandCards(sourceCards);
         if (basicLandCards.length > 0) {
             sortedSets.push(basicLandCards);
         }
 
         // Flatten the grouped sets into a flat array of single cards.
         const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
-        const otherCards = await this._getOtherCards(cardList, selectedCards);
+        const otherCards = await this._getOtherCards(sourceCards, selectedCards);
         if (otherCards.length > 0) {
             sortedSets.push(otherCards);
         }
@@ -669,14 +690,14 @@ class MtgenQuery {
             sortedSets.push(set);
         });
 
-        const basicLandCards = await this._getBasicLandCards(cardList);
+        const basicLandCards = await this._getBasicLandCards(sourceCards);
         if (basicLandCards.length > 0) {
             sortedSets.push(basicLandCards);
         }
 
         // Flatten the grouped sets into a flat array of single cards.
         const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
-        const otherCards = await this._getOtherCards(cardList, selectedCards);
+        const otherCards = await this._getOtherCards(sourceCards, selectedCards);
         if (otherCards.length > 0) {
             sortedSets.push(otherCards);
         }
@@ -700,7 +721,7 @@ class MtgenQuery {
             sortedSets.push(set);
         });
 
-        let basicLandCards = await this._getBasicLandCards(cardList);
+        let basicLandCards = await this._getBasicLandCards(sourceCards);
 
         // Flatten the grouped sets into a flat array of single cards.
         const sortedSetCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
@@ -718,7 +739,7 @@ class MtgenQuery {
 
         // Flatten the grouped sets into a flat array of single cards.
         const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
-        const otherCards = await this._getOtherCards(cardList, selectedCards);
+        const otherCards = await this._getOtherCards(sourceCards, selectedCards);
         if (otherCards.length > 0) {
             sortedSets.push(otherCards);
         }
@@ -742,7 +763,7 @@ class MtgenQuery {
             sortedSets.push(set);
         });
 
-        let basicLandCards = await this._getBasicLandCards(cardList);
+        let basicLandCards = await this._getBasicLandCards(sourceCards);
 
         // Flatten the grouped sets into a flat array of single cards.
         const sortedSetCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
@@ -760,7 +781,7 @@ class MtgenQuery {
 
         // Flatten the grouped sets into a flat array of single cards.
         const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
-        const otherCards = await this._getOtherCards(cardList, selectedCards);
+        const otherCards = await this._getOtherCards(sourceCards, selectedCards);
         if (otherCards.length > 0) {
             sortedSets.push(otherCards);
         }
@@ -784,7 +805,7 @@ class MtgenQuery {
             sortedSets.push(set);
         });
 
-        let basicLandCards = await this._getBasicLandCards(cardList);
+        let basicLandCards = await this._getBasicLandCards(sourceCards);
 
         // Flatten the grouped sets into a flat array of single cards.
         const sortedSetCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
@@ -802,7 +823,7 @@ class MtgenQuery {
 
         // Flatten the grouped sets into a flat array of single cards.
         const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
-        const otherCards = await this._getOtherCards(cardList, selectedCards);
+        const otherCards = await this._getOtherCards(sourceCards, selectedCards);
         if (otherCards.length > 0) {
             sortedSets.push(otherCards);
         }
@@ -865,7 +886,7 @@ class MtgenQuery {
         };
     }
 
-    async _sortBy(prop, a, b) {
+    _sortBy(prop, a, b) {
         const aProp = a[prop];
         const bProp = b[prop]
         return ((aProp < bProp) ? -1 : ((aProp > bProp) ? 1 : 0));

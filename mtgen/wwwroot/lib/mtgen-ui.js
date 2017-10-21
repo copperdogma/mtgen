@@ -110,9 +110,11 @@ class MtgenUI {
         // If there are no options, auto-generate the product results.
         // TODO: if the set is fixed (not generated) and it's already generated, don't do it again
         if (this._dataApi.currentProduct.options === undefined) {
+            // TODO: compare this XLN to prod; missing Basic Land and Other prod is Other (18) whereas this one is Other (1)
+            // TODO: green "Growing Rites of Itlimoc".. wrong. It's a double-faced card, but it's not rendering as one
             this._dataApi.currentProduct.originalResults = await this._queryApi.generateCardSetsFromPacks(this._dataApi.currentProduct.currentSettings.packs);
             // TODO: this is the simple case where there is only one pack generated; not sure how it did it with multiple packs
-            const sortedResults = await this._queryApi.sortAllBy(this._dataApi.currentProduct.originalResults[0], this._dataApi.currentProduct.initialSort);
+            const sortedResults = await this._queryApi.sortAllBy(this._dataApi.currentProduct.originalResults, this._dataApi.currentProduct.initialSort);
             this._dataApi.currentProduct.results = sortedResults;
             // also need meta data stats... but should that be determined by the set (are there Guilds?) or the properties of all cards (does any card have a Guild?)
             // -- original just showed those that match the card output, so if no guilds in that pack, no guild sort/group
@@ -176,18 +178,25 @@ class MtgenUI {
 
     async _renderCurrentProductResults() {
         const product = this._dataApi.currentProduct;
-        const title = product.setDesc || 'All Cards';
+        const packDesc = (product.packs.length && product.packs.length === 1) ? product.packs[0].packDesc : undefined;
+        const title = packDesc || product.setDesc || 'All Cards';
 
         let allCardsHtml = this._renderCardsTitle(title, product.originalResults.totalLength)
-            //+ my.mainView.mainMenu.render(cards)
-            + this._renderTopMenu()
+            + this._renderTopMenu(product.results, 'all')
             + this._renderTopJumpMenu(product.results)
             + '<div>';
-        product.results.forEach((result, index) => {
-            allCardsHtml += this._renderCardsTitle(result.setDesc, result.length)
-                + this._renderTopMenu()
-                + `<section id='${this._friendlyUrl(result.setDesc)}-${index}' class='set' data-setid='${index}'>${this._renderCards(result)}</section>`;
-        });
+        if (product.results.length > 1) {
+            product.results.forEach((result, index) => {
+                allCardsHtml += this._renderCardsTitle(result.setDesc, result.length)
+                    + this._renderTopMenu(result, 'set')
+                    + `<section id='${this._friendlyUrl(result.setDesc)}-${index}' class='set' data-setid='${index}'>${this._renderCards(result)}</section>`;
+            });
+        }
+        else if (product.results.length === 1) {
+            // If there's only one set, don't render as a normal group.
+            const result = product.results[0];
+            allCardsHtml += `<section id='${this._friendlyUrl(result.setDesc)}-0' class='set' data-setid='0'>${this._renderCards(result)}</section>`;
+        }
         allCardsHtml += '</div>';
         this._displayResults(product.productName, allCardsHtml);
     }
@@ -195,19 +204,30 @@ class MtgenUI {
     // General rendering functions
     _renderCardsTitle(title, cardCount) { return `<h2>${title} <span class='card-count'>(${cardCount})<a href="#" class="button top">[ Top ]</a></span></h2>`; }
 
-    _renderTopMenu() {
+    _renderTopMenu(results, allOrSet) {
         let menuItems = [];
-        menuItems.push(`<a href="#" class="button sort-all-by-name">Name</a>`);
-        menuItems.push(`<a href="#" class="button sort-all-by-colour">Colour</a>`);
-        menuItems.push(`<a href="#" class="button sort-all-by-rarity">Rarity</a>`);
-        menuItems.push(`<a href="#" class="button sort-all-by-cost">Cost</a>`);
-        menuItems.push(`<a href="#" class="button sort-all-by-type">Type</a>`);
-        menuItems.push(`<a href="#exporter" class="button export" data-export="all">Export</a>`);
 
-        return `<section class="menu"><label>Sort all by</label>${menuItems.join('')}</section>`;
+        menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.name.sort, results.sortOrder.sort, allOrSet));
+        menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.colour.sort, results.sortOrder.sort, allOrSet));
+        menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.rarity.sort, results.sortOrder.sort, allOrSet));
+        menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.cost.sort, results.sortOrder.sort, allOrSet));
+        menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.type.sort, results.sortOrder.sort, allOrSet));
+        menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.name.sort, results.sortOrder.sort, allOrSet));
+        //TODO: render other sort types if the cards include it
+        menuItems.push(`<a href='#exporter' class='button export' data-export='${allOrSet}'>Export</a>`);
+
+        return `<section class='menu'><label>Sort ${allOrSet} by</label>${menuItems.join('')}</section>`;
     }
 
+    _renderTopMenuItem(sortItemName, currentSort, allOrSet) {
+        const activeClass = (sortItemName === currentSort) ? 'active ' : '';
+        return `<a href='#' class='button ${activeClass}sort-${allOrSet}-by-${sortItemName}'>${this._uppercaseFirstLetter(sortItemName)}</a>`;
+    }
+
+    _uppercaseFirstLetter(string) { return string.charAt(0).toUpperCase() + string.slice(1); }
+
     _renderTopJumpMenu(results) {
+        if (results.length <= 1) { return ''; } // Jump menu not needed if there's only one result group
         const menuItems = results.reduce((menuItems, result, index) => {
             return menuItems.concat(`<a class='jump' href='#${this._friendlyUrl(result.setDesc)}-${index}'>${result.setDesc}<span class='card-count'> (${result.length})</span></a>`);
         }, []);
