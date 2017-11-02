@@ -1,7 +1,7 @@
 {
   "startProductName": "dgm-prerelease",
   "packFiles": [
-    "packs.json",
+    "packs.json?v2",
     "../gtc/packs.json",
     "../rtr/packs.json"
   ],
@@ -17,6 +17,10 @@
     "../rtr/cardsOther.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2017-11-02T00:00:00",
+      "HtmlString": "Evening: Fixed most of the guild packs which were all switched around."
+    },
     {
       "UpdateDate": "2017-02-08T23:00:00",
       "HtmlString": "Evening: Fixed card data to import shocklands from rtr/gtc instead of re-creating them as dgm card (which they aren't)."
