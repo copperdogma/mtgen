@@ -125,12 +125,29 @@ class CardExceptionGenerator extends CardDataImporter {
                         }
                         else {
                             // e.g.: 007|c|Token Artifact Creature|Thopter, or without the 007 and it'll use default starting number
-                            const cardPattern = /^([0-9]{3})?\|?(.)\|(.*)$/gi.exec(pattern);
+                            const cardPattern = /^([0-9]{3}|[0-9]{3}:[a-b])?\|?(.)\|(.*)$/gi.exec(pattern);
                             if (!cardPattern) {
                                 card.title = `Unknown pattern: ${pattern}`;
                             }
                             else {
-                                card.num = cardPattern[1];
+                                // Handle double-faced cards.
+                                const variant = cardPattern[1].split(':');
+                                if (variant.length > 1) {
+                                    card.num = variant[0];
+                                    card.doubleFaceCard = true;
+                                    if (variant[1] === 'a') {
+                                        card.mtgenVariant = 1;
+                                        card.doubleFaceFrontCard = true;
+                                        card.mtgenIdBack = `${card.num}:b`;
+                                    } else {
+                                        card.mtgenVariant = 2;
+                                        card.doubleFaceBackCard = true;
+                                        card.mtgenIdFront = `${card.num}:a`;
+                                    }
+                                }
+                                else {
+                                    card.num = cardPattern[1];
+                                }
                                 card.colour = cardPattern[2];
                                 var cardNames = cardPattern[3].split('|');
                                 card.type = cardNames[0];
