@@ -1,0 +1,40 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "un3-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/unstable", "http://www.mtgsalvation.com/spoilers/filter?SetID=187&IncludeUnconfirmed=true&CardsPerRequest=999", "https://mtg.gamepedia.com/Unstable" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "un3-all-cards" }
+      ]
+    },
+    {
+      "productName": "un3-boosters",
+      "productDesc": "Boosters",
+      "sources": [ ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "un3-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "un3-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "un3-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

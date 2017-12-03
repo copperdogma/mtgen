@@ -1,0 +1,85 @@
+{
+  "setCode": "un3",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=187&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/unstable",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "un3",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/unstable",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "x2,w212,u213,b214,r215,g216"
+        }
+      }
+    },
+    {
+      "_comment": "pure exceptions below",
+      "delete": true,
+      "where": ""
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_gAtbU6R905.png",
+        "title": "Plains",
+        "num": "212"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_cSF1J7Qyut.png",
+        "title": "Island",
+        "num": "213"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_zp68lneUAm.png",
+        "title": "Swamp",
+        "num": "214"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_uC6z8IcWFv.png",
+        "title": "Mountain",
+        "num": "215"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_bKCBuTMwGN.png",
+        "title": "Forest",
+        "num": "216"
+      }
+    },
+    {
+      "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
+      "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
+      "newValues": {
+        "set": "{{setCode}}",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "{{title}}",
+        "colour": "l",
+        "cost": "",
+        "rarity": "c",
+        "num": "{{num}}/264 L"
+      }
+    }
+  ]
+}
