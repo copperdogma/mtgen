@@ -118,6 +118,26 @@
 		"cards": [
 			{ "query": "from[rtr]?title='Golgari Guildgate'" }
 			,{ "querySet": [
+				{ "query": "take[*]>from[rtr-main]?title=(Jarad, Golgari Lich Lord|Seek the Horizon|Slitherhead|Slum Reaper|Trestle Troll|Stab Wound|Chorus of Might|Sewer Shambler|Daggerdrome Imp|Grisly Salvage|Aerial Predation|Centaur's Herald|Terrus Wurm|Giant Growth)", "inOrder": true },
+				{ "query": "take[*]>from[rtr-main]?title=(Lotleth Troll|Golgari Keyrune|Treasured Find|Savage Surge|Stab Wound|Towering Indrik|Sewer Shambler|Grisly Salvage|Axebane Stag|Urban Burgeoning|Golgari Longlegs|Cremate|Drudge Beetle|Drainpipe Vermin)", "inOrder": true },
+				{ "query": "take[*]>from[rtr-main]?title=(Jarad's Orders|Archweaver|Golgari Keyrune|Dreg Mangler|Sluiceway Scorpion|Catacomb Slug|Chorus of Might|Launch Party|Korozda Monitor|Trestle Troll|Drudge Beetle|Mind Rot|Gatecreeper Vine|Daggerdrome Imp)", "inOrder": true },
+				{ "query": "take[*]>from[rtr-main]?title=(Abrupt Decay|Rogue's Passage|Zanikev Locust|Korozda Guildmage|Axebane Stag|Stonefare Crocodile|Stab Wound|Golgari Longlegs|Giant Growth|Trestle Troll|Perilous Shadow|Destroy the Evidence|Korozda Monitor|Drainpipe Vermin)", "inOrder": true },
+				{ "query": "take[*]>from[rtr-main]?title=(Deathrite Shaman|Dark Revenant|Gobbling Ooze|Rites of Reaping|Perilous Shadow|Drudge Beetle|Sluiceway Scorpion|Centaur's Herald|Stonefare Crocodile|Mind Rot|Terrus Wurm|Destroy the Evidence|Giant Growth|Golgari Longlegs)", "inOrder": true },
+				{ "query": "take[*]>from[rtr-main]?title=(Grave Betrayal|Launch Party|Dreg Mangler|Oak Street Innkeeper|Axebane Stag|Mind Rot|Assassin's Strike|Cremate|Daggerdrome Imp|Urban Burgeoning|Trestle Troll|Sluiceway Scorpion|Drudge Beetle|Korozda Monitor)", "inOrder": true },
+				{ "query": "take[*]>from[rtr-main]?title=(Underworld Connections|Golgari Charm|Golgari Decoy|Tavern Swindler|Grisly Salvage|Urban Burgeoning|Transguild Promenade|Sewer Shambler|Stab Wound|Stonefare Crocodile|Towering Indrik|Drainpipe Vermin|Golgari Longlegs|Destroy the Evidence)", "inOrder": true },
+				{ "query": "take[*]>from[rtr-main]?title=(Deadbridge Goliath|Brushstrider|Slitherhead|Ultimate Price|Korozda Monitor|Cremate|Axebane Guardian|Terrus Wurm|Destroy the Evidence|Rubbleback Rhino|Trestle Troll|Daggerdrome Imp|Sluiceway Scorpion|Axebane Stag)", "inOrder": true }
+				]
+			}
+			]
+		}
+
+ 		,{
+		"packName": "dgm-guild-booster-izzet",
+		"packDesc": "Return to Ravnica: Izzet Guild Booster",
+		"isGenerated": true,
+		"cards": [
+			{ "query": "from[rtr]?title='Izzet Guildgate'" }
+			,{ "querySet": [
 				{ "query": "take[*]>from[rtr-main]?title=(Niv-Mizzet, Dracogenius|Blistercoil Weird|Aquus Steed|Guttersnipe|Lobber Crew|Downsize|Goblin Electromancer|Pursuit of Flight|Runewing|Inspiration|Annihilating Fire|Dispel|Dynacharge|Essence Backlash)", "inOrder": true },
 				{ "query": "take[*]>from[rtr-main]?title=(Counterflux|Goblin Rally|Blistercoil Weird|Izzet Keyrune|Chemister's Trick|Electrickery|Dynacharge|Stealer of Secrets|Voidwielder|Runewing|Annihilating Fire|Downsize|Essence Backlash|Tenement Crasher)", "inOrder": true },
 				{ "query": "take[*]>from[rtr-main]?title=(Firemind's Foresight|Civic Saber|Psychic Spiral|Nivix Guildmage|Cobblebrute|Electrickery|Dynacharge|Bellows Lizard|Essence Backlash|Frostburn Weird|Stealer of Secrets|Downsize|Paralyzing Grasp|Tenement Crasher)", "inOrder": true },
@@ -132,11 +152,11 @@
 		}
 
  		,{
-		"packName": "dgm-guild-booster-izzet",
-		"packDesc": "Return to Ravnica: Izzet Guild Booster",
+		"packName": "dgm-guild-booster-rakdos",
+		"packDesc": "Return to Ravnica: Rakdos Guild Booster",
 		"isGenerated": true,
 		"cards": [
-			{ "query": "from[rtr]?title='Izzet Guildgate'" }
+			{ "query": "from[rtr]?title='Rakdos Guildgate'" }
 			,{ "querySet": [
 				{ "query": "take[*]>from[rtr-main]?title=(Rakdos, Lord of Riots|Rakdos Cackler|Shrieking Affliction|Minotaur Aggressor|Skull Rend|Tenement Crasher|Auger Spree|Cremate|Survey the Wreckage|Catacomb Slug|Dead Reveler|Destroy the Evidence|Gore-House Chainwalker|Viashino Racketeer)", "inOrder": true },
 				{ "query": "take[*]>from[rtr-main]?title=(Slaughter Games|Rakdos Keyrune|Hellhole Flailer|Rakdos Shred-Freak|Launch Party|Batterhorn|Skull Rend|Deviant Glee|Drainpipe Vermin|Mind Rot|Lobber Crew|Survey the Wreckage|Annihilating Fire|Thrill-Kill Assassin)", "inOrder": true },
@@ -152,11 +172,11 @@
 		}
 
  		,{
-		"packName": "dgm-guild-booster-rakdos",
-		"packDesc": "Return to Ravnica: Rakdos Guild Booster",
+		"packName": "dgm-guild-booster-selesnya",
+		"packDesc": "Return to Ravnica: Selesnya Guild Booster",
 		"isGenerated": true,
 		"cards": [
-			{ "query": "from[rtr]?title='Rakdos Guildgate'" }
+			{ "query": "from[rtr]?title='Selesnya Guildgate'" }
 			,{ "querySet": [
 				{ "query": "take[*]>from[rtr-main]?title=(Trostani, Selesnya's Voice|Arrest|Dryad Militant|Savage Surge|Centaur Healer|Common Bond|Ethereal Armor|Knightly Valor|Rootborn Defenses|Aerial Predation|Gatecreeper Vine|Eyes in the Skies|Axebane Stag|Druid's Deliverance)", "inOrder": true },
 				{ "query": "take[*]>from[rtr-main]?title=(Loxodon Smiter|Sphere of Safety|Selesnya Keyrune|Vitu-Ghazi Guildmage|Druid's Deliverance|Rubbleback Rhino|Swift Justice|Coursers' Accord|Horncaller's Chant|Ethereal Armor|Selesnya Sentry|Gatecreeper Vine|Rootborn Defenses|Common Bond)", "inOrder": true },
@@ -166,26 +186,6 @@
 				{ "query": "take[*]>from[rtr-main]?title=(Wild Beastmaster|Selesnya Charm|Gobbling Ooze|Soul Tithe|Armory Guard|Common Bond|Eyes in the Skies|Chorus of Might|Centaur Healer|Rubbleback Rhino|Centaur's Herald|Swift Justice|Druid's Deliverance|Keening Apparition)", "inOrder": true },
 				{ "query": "take[*]>from[rtr-main]?title=(Mana Bloom|Fencing Ace|Oak Street Innkeeper|Call of the Conclave|Trostani's Judgment|Druid's Deliverance|Coursers' Accord|Chorus of Might|Centaur's Herald|Selesnya Sentry|Transguild Promenade|Seller of Songbirds|Eyes in the Skies|Sundering Growth)", "inOrder": true },
 				{ "query": "take[*]>from[rtr-main]?title=(Precinct Captain|Call of the Conclave|Security Blockade|Seek the Horizon|Concordia Pegasus|Common Bond|Avenging Arrow|Ethereal Armor|Coursers' Accord|Axebane Stag|Urban Burgeoning|Towering Indrik|Selesnya Sentry|Horncaller's Chant)", "inOrder": true }
-				]
-			}
-			]
-		}
-
- 		,{
-		"packName": "dgm-guild-booster-selesnya",
-		"packDesc": "Return to Ravnica: Selesnya Guild Booster",
-		"isGenerated": true,
-		"cards": [
-			{ "query": "from[rtr]?title='Selesnya Guildgate'" }
-			,{ "querySet": [
-				{ "query": "take[*]>from[rtr-main]?title=(Jarad, Golgari Lich Lord|Seek the Horizon|Slitherhead|Slum Reaper|Trestle Troll|Stab Wound|Chorus of Might|Sewer Shambler|Daggerdrome Imp|Grisly Salvage|Aerial Predation|Centaur's Herald|Terrus Wurm|Giant Growth)", "inOrder": true },
-				{ "query": "take[*]>from[rtr-main]?title=(Lotleth Troll|Golgari Keyrune|Treasured Find|Savage Surge|Stab Wound|Towering Indrik|Sewer Shambler|Grisly Salvage|Axebane Stag|Urban Burgeoning|Golgari Longlegs|Cremate|Drudge Beetle|Drainpipe Vermin)", "inOrder": true },
-				{ "query": "take[*]>from[rtr-main]?title=(Jarad's Orders|Archweaver|Golgari Keyrune|Dreg Mangler|Sluiceway Scorpion|Catacomb Slug|Chorus of Might|Launch Party|Korozda Monitor|Trestle Troll|Drudge Beetle|Mind Rot|Gatecreeper Vine|Daggerdrome Imp)", "inOrder": true },
-				{ "query": "take[*]>from[rtr-main]?title=(Abrupt Decay|Rogue's Passage|Zanikev Locust|Korozda Guildmage|Axebane Stag|Stonefare Crocodile|Stab Wound|Golgari Longlegs|Giant Growth|Trestle Troll|Perilous Shadow|Destroy the Evidence|Korozda Monitor|Drainpipe Vermin)", "inOrder": true },
-				{ "query": "take[*]>from[rtr-main]?title=(Deathrite Shaman|Dark Revenant|Gobbling Ooze|Rites of Reaping|Perilous Shadow|Drudge Beetle|Sluiceway Scorpion|Centaur's Herald|Stonefare Crocodile|Mind Rot|Terrus Wurm|Destroy the Evidence|Giant Growth|Golgari Longlegs)", "inOrder": true },
-				{ "query": "take[*]>from[rtr-main]?title=(Grave Betrayal|Launch Party|Dreg Mangler|Oak Street Innkeeper|Axebane Stag|Mind Rot|Assassin's Strike|Cremate|Daggerdrome Imp|Urban Burgeoning|Trestle Troll|Sluiceway Scorpion|Drudge Beetle|Korozda Monitor)", "inOrder": true },
-				{ "query": "take[*]>from[rtr-main]?title=(Underworld Connections|Golgari Charm|Golgari Decoy|Tavern Swindler|Grisly Salvage|Urban Burgeoning|Transguild Promenade|Sewer Shambler|Stab Wound|Stonefare Crocodile|Towering Indrik|Drainpipe Vermin|Golgari Longlegs|Destroy the Evidence)", "inOrder": true },
-				{ "query": "take[*]>from[rtr-main]?title=(Deadbridge Goliath|Brushstrider|Slitherhead|Ultimate Price|Korozda Monitor|Cremate|Axebane Guardian|Terrus Wurm|Destroy the Evidence|Rubbleback Rhino|Trestle Troll|Daggerdrome Imp|Sluiceway Scorpion|Axebane Stag)", "inOrder": true }
 				]
 			}
 			]

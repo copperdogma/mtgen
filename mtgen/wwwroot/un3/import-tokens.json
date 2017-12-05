@@ -1,0 +1,470 @@
+{
+  "setCode": "un3",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/news/tokens-unstable-2017-11-21",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "un3",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/news/tokens-unstable-2017-11-21",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "010|c|Token Creature|Brainiac\n019|c|Token Artifact Creature|Construct\n016|c|Token Creature|Dragon\n003|c|Token Creature|Faerie Spy\n020|c|Token Artifact Creature|Gnome\n002|c|Token Creature|Goat\n012|c|Token Creature|Goblin\n007|c|Token Creature|Rogue\n015|c|Token Creature|Squirrel\n005|c|Token Creature|Storm Crow|Bird\n001:a|c|Token Creature|Angel\n001:b|c|Token Creature|Angel\n013:a|c|Token Creature|Beast\n013:b|c|Token Creature|Beast\n018:a|c|Token Artifact|Clue\n018:b|c|Token Artifact|Clue\n011:a|c|Token Creature|Elemental\n011:b|c|Token Creature|Elemental\n017:a|c|Token Creature|Elemental\n017:b|c|Token Creature|Elemental\n014:a|c|Token Creature|Saproling\n014:b|c|Token Creature|Saproling\n003:a|c|Token Creature|Spirit\n003:b|c|Token Creature|Spirit\n006:a|c|Token Artifact Creature|Thopter\n006:b|c|Token Artifact Creature|Thopter\n008:a|c|Token Creature|Vampire\n008:b|c|Token Creature|Vampire\n009:a|c|Token Creature|Zombie\n009:b|c|Token Creature|Zombie\n\n\n"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_AfvxCkog6l.png",
+        "num": "001:a",
+        "doubleFaceCard": true,
+        "mtgenVariant": 1,
+        "doubleFaceFrontCard": true,
+        "mtgenIdBack": "001:a:b",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Angel",
+        "subtype": "Angel"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_NE0jIpGdx5.png",
+        "num": "001:b",
+        "doubleFaceCard": true,
+        "mtgenVariant": 2,
+        "doubleFaceBackCard": true,
+        "mtgenIdFront": "001:b:a",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Angel",
+        "subtype": "Angel"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_gTGLywPWE0.png",
+        "num": "002",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Goat",
+        "subtype": "Goat"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_xzT69r1rVX.png",
+        "num": "003",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Faerie Spy",
+        "subtype": "Faerie Spy"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_zm9WhdHDVz.png",
+        "num": "003:a",
+        "doubleFaceCard": true,
+        "mtgenVariant": 1,
+        "doubleFaceFrontCard": true,
+        "mtgenIdBack": "003:a:b",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Spirit",
+        "subtype": "Spirit"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_jOLUnmQ3sd.png",
+        "num": "003:b",
+        "doubleFaceCard": true,
+        "mtgenVariant": 2,
+        "doubleFaceBackCard": true,
+        "mtgenIdFront": "003:b:a",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Spirit",
+        "subtype": "Spirit"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_1axxTrgkzI.png",
+        "num": "005",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Storm Crow",
+        "subtype": "Bird"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_Ae8S1dThGD.png",
+        "num": "006:a",
+        "doubleFaceCard": true,
+        "mtgenVariant": 1,
+        "doubleFaceFrontCard": true,
+        "mtgenIdBack": "006:a:b",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Thopter",
+        "subtype": "Thopter"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_R8H1j5GjDU.png",
+        "num": "006:b",
+        "doubleFaceCard": true,
+        "mtgenVariant": 2,
+        "doubleFaceBackCard": true,
+        "mtgenIdFront": "006:b:a",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Thopter",
+        "subtype": "Thopter"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_0uN4StGTRe.png",
+        "num": "007",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Rogue",
+        "subtype": "Rogue"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_byFAekCmZa.png",
+        "num": "008:a",
+        "doubleFaceCard": true,
+        "mtgenVariant": 1,
+        "doubleFaceFrontCard": true,
+        "mtgenIdBack": "008:a:b",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Vampire",
+        "subtype": "Vampire"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_VElKRrZCMz.png",
+        "num": "008:b",
+        "doubleFaceCard": true,
+        "mtgenVariant": 2,
+        "doubleFaceBackCard": true,
+        "mtgenIdFront": "008:b:a",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Vampire",
+        "subtype": "Vampire"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_8npnTpUrDb.png",
+        "num": "009:a",
+        "doubleFaceCard": true,
+        "mtgenVariant": 1,
+        "doubleFaceFrontCard": true,
+        "mtgenIdBack": "009:a:b",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Zombie",
+        "subtype": "Zombie"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_PdePJoDtFG.png",
+        "num": "009:b",
+        "doubleFaceCard": true,
+        "mtgenVariant": 2,
+        "doubleFaceBackCard": true,
+        "mtgenIdFront": "009:b:a",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Zombie",
+        "subtype": "Zombie"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_AtTgKJoTE9.png",
+        "num": "010",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Brainiac",
+        "subtype": "Brainiac"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_ca94RbbvrK.png",
+        "num": "011:a",
+        "doubleFaceCard": true,
+        "mtgenVariant": 1,
+        "doubleFaceFrontCard": true,
+        "mtgenIdBack": "011:a:b",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Elemental",
+        "subtype": "Elemental"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_1zKJiI6bIw.png",
+        "num": "011:b",
+        "doubleFaceCard": true,
+        "mtgenVariant": 2,
+        "doubleFaceBackCard": true,
+        "mtgenIdFront": "011:b:a",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Elemental",
+        "subtype": "Elemental"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_6LwHtxiVfR.png",
+        "num": "012",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Goblin",
+        "subtype": "Goblin"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_5wS6XoNadZ.png",
+        "num": "013:a",
+        "doubleFaceCard": true,
+        "mtgenVariant": 1,
+        "doubleFaceFrontCard": true,
+        "mtgenIdBack": "013:a:b",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Beast",
+        "subtype": "Beast"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_nDIhTLwNrc.png",
+        "num": "013:b",
+        "doubleFaceCard": true,
+        "mtgenVariant": 2,
+        "doubleFaceBackCard": true,
+        "mtgenIdFront": "013:b:a",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Beast",
+        "subtype": "Beast"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_HpJy7I71bc.png",
+        "num": "014:a",
+        "doubleFaceCard": true,
+        "mtgenVariant": 1,
+        "doubleFaceFrontCard": true,
+        "mtgenIdBack": "014:a:b",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Saproling",
+        "subtype": "Saproling"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_xz62g8fvtZ.png",
+        "num": "014:b",
+        "doubleFaceCard": true,
+        "mtgenVariant": 2,
+        "doubleFaceBackCard": true,
+        "mtgenIdFront": "014:b:a",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Saproling",
+        "subtype": "Saproling"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_yl2cJIzuXK.png",
+        "num": "015",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Squirrel",
+        "subtype": "Squirrel"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_MmVCwhjGEo.png",
+        "num": "016",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Dragon",
+        "subtype": "Dragon"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_hI8p5z3Wx9.png",
+        "num": "017:a",
+        "doubleFaceCard": true,
+        "mtgenVariant": 1,
+        "doubleFaceFrontCard": true,
+        "mtgenIdBack": "017:a:b",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Elemental",
+        "subtype": "Elemental"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_hVi6aiRirc.png",
+        "num": "017:b",
+        "doubleFaceCard": true,
+        "mtgenVariant": 2,
+        "doubleFaceBackCard": true,
+        "mtgenIdFront": "017:b:a",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Elemental",
+        "subtype": "Elemental"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_C0tpRAW1JD.png",
+        "num": "018:a",
+        "doubleFaceCard": true,
+        "mtgenVariant": 1,
+        "doubleFaceFrontCard": true,
+        "mtgenIdBack": "018:a:b",
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Clue",
+        "subtype": "Clue"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_qK2MGqzQbu.png",
+        "num": "018:b",
+        "doubleFaceCard": true,
+        "mtgenVariant": 2,
+        "doubleFaceBackCard": true,
+        "mtgenIdFront": "018:b:a",
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Clue",
+        "subtype": "Clue"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_echl6O5Rp7.png",
+        "num": "019",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Construct",
+        "subtype": "Construct"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "un3",
+        "src": "https://media.wizards.com/2017/ust/en_XLviYzXhTf.png",
+        "num": "020",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Gnome",
+        "subtype": "Gnome"
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/018 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}
