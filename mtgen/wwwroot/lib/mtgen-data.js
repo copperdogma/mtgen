@@ -148,7 +148,7 @@ class MtgenData {
 
             if (card.guild) {
                 card.guild = MtgenData.createMatchTitle(card.guild);
-                card.guildOrder = getGuildByCode(card.guild).sorder;
+                card.guildOrder = MtgenData.getGuildByCode(card.guild).sorder;
                 meta.hasGuilds = true;
             }
 

@@ -562,7 +562,7 @@ class MtgenQuery {
         return cardList;
     }
 
-    sortAllByTitle(cardList) {
+    async sortAllByTitle(cardList) {
         var sourceCards = await this._convertSetsToArray(cardList);
         const cards = sourceCards.sort((a, b) => this._sortBy('matchTitle', a, b));
         cards.sortOrder = MtgenQuery.sortOrders.name;
