@@ -535,26 +535,29 @@ class MtgenQuery {
         switch (sortType.toLowerCase()) {
             case 'nothing': return await this.sortAllByNothing(cardList);
             case 'name':
-            case 'title': return this.sortAllByTitle(cardList);
-            case 'colour': return await this.sortAllByColour(cardList);
-            case 'rarity': return await this.sortAllByRarity(cardList);
-            case 'cost': return await this.sortAllByCost(cardList);
-            case 'type': return await this.sortAllByType(cardList);
-            case 'guild': return await this.sortAllByGuild(cardList);
-            case 'clan': return await this.sortAllByClan(cardList);
-            case 'faction': return await this.sortAllByFaction(cardList);
+            case 'title': return this.sortAllByName(cardList);
+            case 'colour': return await this.groupAllByColour(cardList);
+            case 'rarity': return await this.groupAllByRarity(cardList);
+            case 'cost': return await this.groupAllByCost(cardList);
+            case 'type': return await this.groupAllByType(cardList);
+            case 'guild': return await this.groupAllByGuild(cardList);
+            case 'clan': return await this.groupAllByClan(cardList);
+            case 'faction': return await this.groupAllByFaction(cardList);
             default:
                 console.warn('Unknown sort type: ' + sortType);
-                return this.sortAllByTitle(cardList);
+                return this.sortAllByName(cardList);
         }
     }
 
     async _convertSetsToArray(arrayOrSets) {
-        let sourceCards = [];
         if (arrayOrSets.length && arrayOrSets[0].length) {
+            let sourceCards = [];
             arrayOrSets.forEach(set => sourceCards = sourceCards.concat(set));
+            return sourceCards;
         }
-        return sourceCards;
+        else {
+            return arrayOrSets;
+        }
     }
 
     async sortAllByNothing(cardList) {
@@ -562,102 +565,189 @@ class MtgenQuery {
         return cardList;
     }
 
-    async sortAllByTitle(cardList) {
-        var sourceCards = await this._convertSetsToArray(cardList);
+    async sortAllByName(cardList) {
+        const sourceCards = await this._convertSetsToArray(cardList);
         const cards = sourceCards.sort((a, b) => this._sortBy('matchTitle', a, b));
         cards.sortOrder = MtgenQuery.sortOrders.name;
         return cards;
+        //CAMKILL:
+        //let sortedSets = [];
+        //const sourceCards = await this._convertSetsToArray(cardList);
+        //const set = sourceCards.sort((a, b) => this._sortBy('matchTitle', a, b));
+        //set.sortOrder = MtgenQuery.sortOrders.name;
+        //sortedSets.push(set);
+        //sortedSets.sortOrder = MtgenQuery.sortOrders.name;
+        //return sortedSets;
     }
 
-    async sortAllByColour(cardList) {
+    //CAMKILL:
+    //async groupAllByColour(cardList) {
+    //    let sortedSets = [];
+
+    //    var sourceCards = await this._convertSetsToArray(cardList);
+
+    //    // Group cards by the sortBy and create a new card set for each
+    //    let mainCards = sourceCards.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
+    //    let groupedCardSets = await this._groupByProperty(mainCards, 'colour');
+    //    const cardSets = await this._sortIntoArray(groupedCardSets, MtgenData.colours);
+    //    //CAMKILL:
+    //    //cardSets.forEach(cardSet => {
+    //    //    //CAMKILL:let set = cardSet.sort((a, b) => this._sortBy('matchTitle', a, b));
+    //    //    let set = await this.sortAllByName(cardSet);
+    //    //    const colour = MtgenData.getColourByCode(set[0].colour);
+    //    //    set.setDesc = colour.name;
+    //    //    set.sortOrder = MtgenQuery.sortOrders.name;
+    //    //    sortedSets.push(set);
+    //    //});
+    //    for (let i = 0; i < cardSets.length; i++) {
+    //        let set = await this.sortAllByName(cardSets[i]);
+    //        //CAMKILL:let set2 = this.sortAllByNameX(cardSets[i]);
+    //        const colour = MtgenData.getColourByCode(set[0].colour);
+    //        set.setDesc = colour.name;
+    //        set.sortOrder = MtgenQuery.sortOrders.name;
+    //        sortedSets.push(set);
+    //    }
+
+    //    const basicLandCards = await this._getBasicLandCards(sourceCards);
+    //    if (basicLandCards.length > 0) {
+    //        sortedSets.push(basicLandCards);
+    //    }
+
+    //    // Flatten the grouped sets into a flat array of single cards.
+    //    const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+    //    const otherCards = await this._getOtherCards(sourceCards, selectedCards);
+    //    if (otherCards.length > 0) {
+    //        sortedSets.push(otherCards);
+    //    }
+
+    //    sortedSets.sortOrder = MtgenQuery.sortOrders.colour;
+
+    //    return sortedSets;
+    //}
+
+    async groupAllByColour(cardList) {
+        return await this._groupAllByX(cardList, 'colour', MtgenData.colours, MtgenData.getColourByCode, MtgenQuery.sortOrders.colour);
+    }
+
+    //CAMKILL:
+    //async groupAllByRarity(cardList) {
+    //    let sortedSets = [];
+
+    //    // For each rarity, create a new card set
+    //    let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
+    //    let groupedCardSets = await this._groupByProperty(mainCards, 'rarity');
+    //    const cardSets = await this._sortIntoArray(groupedCardSets, MtgenData.rarities);
+    //    cardSets.forEach(cardSet => {
+    //        let set = cardSet.sort((a, b) => this._sortBy('matchTitle', a, b));
+    //        const rarity = MtgenData.getRarityByCode(set[0].rarity);
+    //        set.setDesc = rarity.name;
+    //        set.sortOrder = MtgenQuery.sortOrders.name;
+    //        sortedSets.push(set);
+    //    });
+
+    //    const basicLandCards = await this._getBasicLandCards(sourceCards);
+    //    if (basicLandCards.length > 0) {
+    //        sortedSets.push(basicLandCards);
+    //    }
+
+    //    // Flatten the grouped sets into a flat array of single cards.
+    //    const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+    //    const otherCards = await this._getOtherCards(sourceCards, selectedCards);
+    //    if (otherCards.length > 0) {
+    //        sortedSets.push(otherCards);
+    //    }
+
+    //    sortedSets.sortOrder = MtgenQuery.sortOrders.rarity;
+
+    //    return sortedSets;
+    //}
+
+    //CAMKILL:
+    //async groupAllByRarity(cardList) {
+    //    let sortedSets = [];
+
+    //    var sourceCards = await this._convertSetsToArray(cardList);
+
+    //    // Group cards by the sortBy and create a new card set for each
+    //    let mainCards = sourceCards.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
+    //    let groupedCardSets = await this._groupByProperty(mainCards, 'rarity');
+    //    const cardSets = await this._sortIntoArray(groupedCardSets, MtgenData.rarities);
+    //    for (let i = 0; i < cardSets.length; i++) {
+    //        let set = await this.sortAllByName(cardSets[i]);
+    //        const rarity = MtgenData.getRarityByCode(set[0].rarity);
+    //        set.setDesc = rarity.name;
+    //        set.sortOrder = MtgenQuery.sortOrders.name;
+    //        sortedSets.push(set);
+    //    }
+
+    //    const basicLandCards = await this._getBasicLandCards(sourceCards);
+    //    if (basicLandCards.length > 0) {
+    //        sortedSets.push(basicLandCards);
+    //    }
+
+    //    // Flatten the grouped sets into a flat array of single cards.
+    //    const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+    //    const otherCards = await this._getOtherCards(sourceCards, selectedCards);
+    //    if (otherCards.length > 0) {
+    //        sortedSets.push(otherCards);
+    //    }
+
+    //    sortedSets.sortOrder = MtgenQuery.sortOrders.rarity;
+
+    //    return sortedSets;
+    //}
+
+    async groupAllByRarity(cardList) {
+        return await this._groupAllByX(cardList, 'rarity', MtgenData.rarities, MtgenData.getRarityByCode, MtgenQuery.sortOrders.rarity);
+    }
+
+    //CAMKILL:
+    //async groupAllByCost(cardList) {
+    //    let sortedSets = [];
+
+    //    // For each converted cost, create a new card set
+    //    let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
+    //    let groupedCardSets = await this._groupByProperty(mainCards, 'ccost');
+    //    const cardSets = Object.keys(groupedCardSets).map(key => groupedCardSets[key]);
+    //    cardSets.forEach(cardSet => {
+    //        let set = cardSet.sort((a, b) => this._sortBy('matchTitle', a, b));
+    //        set.setDesc = 'Cost ' + set[0].ccost;
+    //        set.sortOrder = MtgenQuery.sortOrders.name;
+    //        sortedSets.push(set);
+    //    });
+
+    //    const basicLandCards = await this._getBasicLandCards(sourceCards);
+    //    if (basicLandCards.length > 0) {
+    //        sortedSets.push(basicLandCards);
+    //    }
+
+    //    // Flatten the grouped sets into a flat array of single cards.
+    //    const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+    //    const otherCards = await this._getOtherCards(sourceCards, selectedCards);
+    //    if (otherCards.length > 0) {
+    //        sortedSets.push(otherCards);
+    //    }
+
+    //    sortedSets.sortOrder = MtgenQuery.sortOrders.cost;
+
+    //    return sortedSets;
+    //}
+
+    async groupAllByCost(cardList) {
         let sortedSets = [];
 
         var sourceCards = await this._convertSetsToArray(cardList);
 
         // Group cards by the sortBy and create a new card set for each
         let mainCards = sourceCards.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
-        let groupedCardSets = await this._groupByProperty(mainCards, 'colour');
-        const cardSets = await this._sortIntoArray(groupedCardSets, MtgenData.colours);
-        //CAMKILL:
-        //cardSets.forEach(cardSet => {
-        //    //CAMKILL:let set = cardSet.sort((a, b) => this._sortBy('matchTitle', a, b));
-        //    let set = await this.sortAllByTitle(cardSet);
-        //    const colour = MtgenData.getColourByCode(set[0].colour);
-        //    set.setDesc = colour.name;
-        //    set.sortOrder = MtgenQuery.sortOrders.name;
-        //    sortedSets.push(set);
-        //});
-        for (let i = 0; i < cardSets.length; i++) {
-            let set = this.sortAllByTitle(cardSets[i]);
-            //CAMKILL:let set2 = this.sortAllByTitleX(cardSets[i]);
-            const colour = MtgenData.getColourByCode(set[0].colour);
-            set.setDesc = colour.name;
-            set.sortOrder = MtgenQuery.sortOrders.name;
-            sortedSets.push(set);
-        }
-
-        const basicLandCards = await this._getBasicLandCards(sourceCards);
-        if (basicLandCards.length > 0) {
-            sortedSets.push(basicLandCards);
-        }
-
-        // Flatten the grouped sets into a flat array of single cards.
-        const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
-        const otherCards = await this._getOtherCards(sourceCards, selectedCards);
-        if (otherCards.length > 0) {
-            sortedSets.push(otherCards);
-        }
-
-        sortedSets.sortOrder = MtgenQuery.sortOrders.colour;
-
-        return sortedSets;
-    }
-
-    async sortAllByRarity(cardList) {
-        let sortedSets = [];
-
-        // For each rarity, create a new card set
-        let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
-        let groupedCardSets = await this._groupByProperty(mainCards, 'rarity');
-        const cardSets = await this._sortIntoArray(groupedCardSets, my.rarities);
-        cardSets.forEach(cardSet => {
-            let set = cardSet.sort((a, b) => this._sortBy('matchTitle', a, b));
-            const rarity = MtgenData.getRarityByCode(set[0].rarity);
-            set.setDesc = rarity.name;
-            set.sortOrder = MtgenQuery.sortOrders.name;
-            sortedSets.push(set);
-        });
-
-        const basicLandCards = await this._getBasicLandCards(sourceCards);
-        if (basicLandCards.length > 0) {
-            sortedSets.push(basicLandCards);
-        }
-
-        // Flatten the grouped sets into a flat array of single cards.
-        const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
-        const otherCards = await this._getOtherCards(sourceCards, selectedCards);
-        if (otherCards.length > 0) {
-            sortedSets.push(otherCards);
-        }
-
-        sortedSets.sortOrder = MtgenQuery.sortOrders.rarity;
-
-        return sortedSets;
-    }
-
-    async sortAllByCost(cardList) {
-        let sortedSets = [];
-
-        // For each converted cost, create a new card set
-        let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
         let groupedCardSets = await this._groupByProperty(mainCards, 'ccost');
         const cardSets = Object.keys(groupedCardSets).map(key => groupedCardSets[key]);
-        cardSets.forEach(cardSet => {
-            let set = cardSet.sort((a, b) => this._sortBy('matchTitle', a, b));
+        for (let i = 0; i < cardSets.length; i++) {
+            let set = await this.sortAllByName(cardSets[i]);
             set.setDesc = 'Cost ' + set[0].ccost;
-            set.sortOrder = MtgenQuery.sortOrders.name;
+            set.sortOrder = MtgenQuery.sortOrders.cost;
             sortedSets.push(set);
-        });
+        }
 
         const basicLandCards = await this._getBasicLandCards(sourceCards);
         if (basicLandCards.length > 0) {
@@ -676,19 +766,176 @@ class MtgenQuery {
         return sortedSets;
     }
 
-    async sortAllByType(cardList) {
+    //CAMKILL:
+    //async groupAllByType(cardList) {
+    //    let sortedSets = [];
+
+    //    // For each card type, create a new card set
+    //    let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
+    //    let groupedCardSets = await this._groupByProperty(mainCards, 'typeCode');
+    //    const cardSets = await this._sortIntoArray(groupedCardSets, MtgenData.cardTypes);
+    //    cardSets.forEach(cardSet => {
+    //        let set = cardSet.sort((a, b) => this._sortBy('matchTitle', a, b));
+    //        set.setDesc = getCardTypeByCode(set[0].typeCode).name;
+    //        set.sortOrder = MtgenQuery.sortOrders.name;
+    //        sortedSets.push(set);
+    //    });
+
+    //    const basicLandCards = await this._getBasicLandCards(sourceCards);
+    //    if (basicLandCards.length > 0) {
+    //        sortedSets.push(basicLandCards);
+    //    }
+
+    //    // Flatten the grouped sets into a flat array of single cards.
+    //    const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+    //    const otherCards = await this._getOtherCards(sourceCards, selectedCards);
+    //    if (otherCards.length > 0) {
+    //        sortedSets.push(otherCards);
+    //    }
+
+    //    sortedSets.sortOrder = MtgenQuery.sortOrders.type;
+
+    //    return sortedSets;
+    //}
+
+    //CAMKILL:
+    //async groupAllByType(cardList) {
+    //    let sortedSets = [];
+
+    //    var sourceCards = await this._convertSetsToArray(cardList);
+
+    //    // Group cards by the sortBy and create a new card set for each
+    //    let mainCards = sourceCards.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
+    //    let groupedCardSets = await this._groupByProperty(mainCards, 'typeCode');
+    //    const cardSets = await this._sortIntoArray(groupedCardSets, MtgenData.cardTypes);
+    //    for (let i = 0; i < cardSets.length; i++) {
+    //        let set = await this.sortAllByName(cardSets[i]);
+    //        const rarity = MtgenData.getCardTypeByCode(set[0].typeCode);
+    //        set.setDesc = rarity.name;
+    //        set.sortOrder = MtgenQuery.sortOrders.type;
+    //        sortedSets.push(set);
+    //    }
+
+    //    const basicLandCards = await this._getBasicLandCards(sourceCards);
+    //    if (basicLandCards.length > 0) {
+    //        sortedSets.push(basicLandCards);
+    //    }
+
+    //    // Flatten the grouped sets into a flat array of single cards.
+    //    const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+    //    const otherCards = await this._getOtherCards(sourceCards, selectedCards);
+    //    if (otherCards.length > 0) {
+    //        sortedSets.push(otherCards);
+    //    }
+
+    //    sortedSets.sortOrder = MtgenQuery.sortOrders.type;
+
+    //    return sortedSets;
+    //}
+
+    async groupAllByType(cardList) {
+        return await this._groupAllByX(cardList, 'typeCode', MtgenData.cardTypes, MtgenData.getCardTypeByCode, MtgenQuery.sortOrders.type);
+    }
+
+    //CAMKILL:
+    //async groupAllByGuild(cardList) {
+    //    let sortedSets = [];
+
+    //    // For each guild, create a new card set
+    //    let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
+    //    let groupedCardSets = await this._groupByProperty(mainCards, 'guild');
+    //    const cardSets = await this._sortIntoArray(groupedCardSets, MtgenData.guilds);
+    //    cardSets.forEach(cardSet => {
+    //        let set = cardSet.sort((a, b) => this._sortBy('matchTitle', a, b));
+    //        set.setDesc = getGuildByCode(set[0].guild).name;
+    //        set.sortOrder = MtgenQuery.sortOrders.name;
+    //        sortedSets.push(set);
+    //    });
+
+    //    let basicLandCards = await this._getBasicLandCards(sourceCards);
+
+    //    // Flatten the grouped sets into a flat array of single cards.
+    //    const sortedSetCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+    //    const guildAndBasicLandCards = basicLandCards.concat(sortedSetCards);
+
+    //    let nonGuildCards = await this._getOtherCards(mainCards, guildAndBasicLandCards);
+    //    if (nonGuildCards.length > 0) {
+    //        nonGuildCards.setDesc = 'Non-Guild';
+    //        sortedSets.push(nonGuildCards);
+    //    }
+
+    //    if (basicLandCards.length > 0) {
+    //        sortedSets.push(basicLandCards);
+    //    }
+
+    //    // Flatten the grouped sets into a flat array of single cards.
+    //    const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+    //    const otherCards = await this._getOtherCards(sourceCards, selectedCards);
+    //    if (otherCards.length > 0) {
+    //        sortedSets.push(otherCards);
+    //    }
+
+    //    sortedSets.sortOrder = MtgenQuery.sortOrders.guild;
+
+    //    return sortedSets;
+    //}
+
+    //CAMKILL:
+    //async groupAllByGuild(cardList) {
+    //    let sortedSets = [];
+
+    //    var sourceCards = await this._convertSetsToArray(cardList);
+
+    //    // Group cards by the sortBy and create a new card set for each
+    //    let mainCards = sourceCards.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
+    //    let groupedCardSets = await this._groupByProperty(mainCards, 'guild');
+    //    const cardSets = await this._sortIntoArray(groupedCardSets, MtgenData.guilds);
+    //    for (let i = 0; i < cardSets.length; i++) {
+    //        let set = await this.sortAllByName(cardSets[i]);
+    //        const guild = MtgenData.getGuildByCode(set[0].guild);
+    //        set.setDesc = guild.name;
+    //        set.sortOrder = MtgenQuery.sortOrders.guild;
+    //        sortedSets.push(set);
+    //    }
+
+    //    const basicLandCards = await this._getBasicLandCards(sourceCards);
+    //    if (basicLandCards.length > 0) {
+    //        sortedSets.push(basicLandCards);
+    //    }
+
+    //    // Flatten the grouped sets into a flat array of single cards.
+    //    const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+    //    const otherCards = await this._getOtherCards(sourceCards, selectedCards);
+    //    if (otherCards.length > 0) {
+    //        sortedSets.push(otherCards);
+    //    }
+
+    //    sortedSets.sortOrder = MtgenQuery.sortOrders.guild;
+
+    //    return sortedSets;
+    //}
+
+    async groupAllByGuild(cardList) {
+        return await this._groupAllByX(cardList, 'guild', MtgenData.guilds, MtgenData.getGuildByCode, MtgenQuery.sortOrders.guild);
+    }
+
+    async _groupAllByX(cardList, cardPropertyName, sortObj, getXFromCodeFunction, sortOrderEnum) {
         let sortedSets = [];
 
-        // For each card type, create a new card set
-        let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
-        let groupedCardSets = await this._groupByProperty(mainCards, 'typeCode');
-        const cardSets = await this._sortIntoArray(groupedCardSets, my.cardTypes);
-        cardSets.forEach(cardSet => {
-            let set = cardSet.sort((a, b) => this._sortBy('matchTitle', a, b));
-            set.setDesc = getCardTypeByCode(set[0].typeCode).name;
-            set.sortOrder = MtgenQuery.sortOrders.name;
+        var sourceCards = await this._convertSetsToArray(cardList);
+
+        // Group cards by the sortBy and create a new card set for each
+        let mainCards = sourceCards.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
+        let groupedCardSets = await this._groupByProperty(mainCards, cardPropertyName);
+        const cardSets = await this._sortIntoArray(groupedCardSets, sortObj);
+        for (let i = 0; i < cardSets.length; i++) {
+            let set = await this.sortAllByName(cardSets[i]);
+            //CAMKILL:const guild = MtgenData.getGuildByCode(set[0].guild);
+            const x = getXFromCodeFunction(set[0][cardPropertyName]);
+            set.setDesc = x.name;
+            set.sortOrder = sortOrderEnum;
             sortedSets.push(set);
-        });
+        }
 
         const basicLandCards = await this._getBasicLandCards(sourceCards);
         if (basicLandCards.length > 0) {
@@ -702,60 +949,21 @@ class MtgenQuery {
             sortedSets.push(otherCards);
         }
 
-        sortedSets.sortOrder = MtgenQuery.sortOrders.type;
+        sortedSets.sortOrder = sortOrderEnum;
 
         return sortedSets;
     }
 
-    async sortAllByGuild(cardList) {
-        let sortedSets = [];
+    //TODONEXT: I created the nice groupAllByX() function but these last two can't use it due to the "non-Clan"/"non-Faction" categories.
+    // just do them by hand like the cost one above (which is also special).
 
-        // For each guild, create a new card set
-        let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
-        let groupedCardSets = await this._groupByProperty(mainCards, 'guild');
-        const cardSets = await this._sortIntoArray(groupedCardSets, my.guilds);
-        cardSets.forEach(cardSet => {
-            let set = cardSet.sort((a, b) => this._sortBy('matchTitle', a, b));
-            set.setDesc = getGuildByCode(set[0].guild).name;
-            set.sortOrder = MtgenQuery.sortOrders.name;
-            sortedSets.push(set);
-        });
-
-        let basicLandCards = await this._getBasicLandCards(sourceCards);
-
-        // Flatten the grouped sets into a flat array of single cards.
-        const sortedSetCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
-        const guildAndBasicLandCards = basicLandCards.concat(sortedSetCards);
-
-        let nonGuildCards = await this._getOtherCards(mainCards, guildAndBasicLandCards);
-        if (nonGuildCards.length > 0) {
-            nonGuildCards.setDesc = 'Non-Guild';
-            sortedSets.push(nonGuildCards);
-        }
-
-        if (basicLandCards.length > 0) {
-            sortedSets.push(basicLandCards);
-        }
-
-        // Flatten the grouped sets into a flat array of single cards.
-        const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
-        const otherCards = await this._getOtherCards(sourceCards, selectedCards);
-        if (otherCards.length > 0) {
-            sortedSets.push(otherCards);
-        }
-
-        sortedSets.sortOrder = MtgenQuery.sortOrders.guild;
-
-        return sortedSets;
-    }
-
-    async sortAllByClan(cardList) {
+    async groupAllByClan(cardList) {
         let sortedSets = [];
 
         // For each clan, create a new card set
         let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
         let groupedCardSets = await this._groupByProperty(mainCards, 'clan');
-        const cardSets = await this._sortIntoArray(groupedCardSets, my.clans);
+        const cardSets = await this._sortIntoArray(groupedCardSets, MtgenData.clans);
         cardSets.forEach(cardSet => {
             let set = cardSet.sort((a, b) => this._sortBy('matchTitle', a, b));
             set.setDesc = getClanByCode(set[0].clan).name;
@@ -791,13 +999,13 @@ class MtgenQuery {
         return sortedSets;
     }
 
-    async sortAllByFaction(cardList) {
+    async groupAllByFaction(cardList) {
         let sortedSets = [];
 
         // For each faction, create a new card set
         let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
         let groupedCardSets = await this._groupByProperty(mainCards, 'faction');
-        const cardSets = await this._sortIntoArray(groupedCardSets, my.factions);
+        const cardSets = await this._sortIntoArray(groupedCardSets, MtgenData.factions);
         cardSets.forEach(cardSet => {
             let set = cardSet.sort((a, b) => this._sortBy('matchTitle', a, b));
             set.setDesc = getFactionByCode(set[0].faction).name;

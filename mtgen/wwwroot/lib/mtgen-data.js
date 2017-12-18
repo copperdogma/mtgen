@@ -69,7 +69,7 @@ class MtgenData {
         const cardData = cardDataArray.reduce((cardSets, cardSet) => cardSets.concat(cardSet), []);
         const cardResults = this._processCardData(cardData, this.setCode);
         this.cards = cardResults.cards;
-        const cardMetaData = cardResults.cardMetaData;
+        this.cardsMetaData = cardResults.cardMetaData;
 
         // The card definitions and packs - from the array of individual defs/packs within packDataArray
         var packDefArray = packDataArray.reduce((defs, packData) => defs.concat(packData.defs), []);

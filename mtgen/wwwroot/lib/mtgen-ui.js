@@ -58,7 +58,32 @@ class MtgenUI {
         //else if (my.startProductName) {
         //    this.ProductViews[my.startProductName].showTab();
         //}
+        this._mainEl.addEventListener('click', async e => {
+            if (e.target.classList.contains('button')) {
+                await this._handleButtonClick(e.target);
+            }
+        });
     }
+
+    async _handleButtonClick(el) {
+        const sortAllClassNames = await this._getSortAllByClassNames();
+        sortAllClassNames.forEach(async sortName => {
+            if (el.classList.contains(`sort-all-by-${sortName}`)) {
+                await this._handleSortAllByButtonClick(el, sortName);
+            }
+        });
+    }
+
+    async _handleSortAllByButtonClick(el, sortName) {
+        const sortedResults = await this._queryApi.sortAllBy(this._dataApi.currentProduct.originalResults, sortName);
+        this._dataApi.currentProduct.results = sortedResults;
+        this._renderCurrentProductResults();
+
+        // CAMKILL HERE: sorting by rarity/type broken... probably copy from colour as template and fix (and extract commanality)
+        // then do it for the sort-set-by-* items the same way
+    }
+
+    async _getSortAllByClassNames() { return Object.keys(MtgenQuery.sortOrders); }
 
     async _renderProductTabs(products) {
         if (products.length === 0) { return; }
@@ -185,17 +210,22 @@ class MtgenUI {
             + this._renderTopMenu(product.results, 'all')
             + this._renderTopJumpMenu(product.results)
             + '<div>';
-        if (product.results.length > 1) {
+        // If this product is grouped, render the groups
+        if (product.results.length && product.results[0].length) {
+            //CAMKILL:if (product.results.length) {
             product.results.forEach((result, index) => {
                 allCardsHtml += this._renderCardsTitle(result.setDesc, result.length)
                     + this._renderTopMenu(result, 'set')
                     + `<section id='${this._friendlyUrl(result.setDesc)}-${index}' class='set' data-setid='${index}'>${this._renderCards(result)}</section>`;
             });
         }
-        else if (product.results.length === 1) {
-            // If there's only one set, don't render as a normal group.
-            const result = product.results[0];
-            allCardsHtml += `<section id='${this._friendlyUrl(result.setDesc)}-0' class='set' data-setid='0'>${this._renderCards(result)}</section>`;
+        //CAMKILL:else if (product.results.length === 1) {
+        // Otherwise it's just a single array of cards (probably with a top-level sort of Name)
+        else {
+            //CAMKILL:
+            //const result = product.results[0];
+            //allCardsHtml += `<section id='${this._friendlyUrl(result.setDesc)}-0' class='set' data-setid='0'>${this._renderCards(result)}</section>`;
+            allCardsHtml += `<section id='${this._friendlyUrl(product.productDesc)}-0' class='set' data-setid='0'>${this._renderCards(product.results)}</section>`;
         }
         allCardsHtml += '</div>';
         this._displayResults(product.productName, allCardsHtml);
@@ -206,13 +236,20 @@ class MtgenUI {
 
     _renderTopMenu(results, allOrSet) {
         let menuItems = [];
-
         menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.name.sort, results.sortOrder.sort, allOrSet));
         menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.colour.sort, results.sortOrder.sort, allOrSet));
         menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.rarity.sort, results.sortOrder.sort, allOrSet));
         menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.cost.sort, results.sortOrder.sort, allOrSet));
         menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.type.sort, results.sortOrder.sort, allOrSet));
-        menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.name.sort, results.sortOrder.sort, allOrSet));
+        if (this._dataApi.cardsMetaData.hasGuilds) {
+            menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.guild.sort, results.sortOrder.sort, allOrSet));
+        }
+        if (this._dataApi.cardsMetaData.hasClans) {
+            menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.clan.sort, results.sortOrder.sort, allOrSet));
+        }
+        if (this._dataApi.cardsMetaData.hasFactions) {
+            menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.faction.sort, results.sortOrder.sort, allOrSet));
+        }
         //TODO: render other sort types if the cards include it
         menuItems.push(`<a href='#exporter' class='button export' data-export='${allOrSet}'>Export</a>`);
 
@@ -227,7 +264,7 @@ class MtgenUI {
     _uppercaseFirstLetter(string) { return string.charAt(0).toUpperCase() + string.slice(1); }
 
     _renderTopJumpMenu(results) {
-        if (results.length <= 1) { return ''; } // Jump menu not needed if there's only one result group
+        if (results.length === undefined || results[0].length === undefined) { return ''; } // Jump menu not needed if there are no sub-groupings (ie sorted by name)
         const menuItems = results.reduce((menuItems, result, index) => {
             return menuItems.concat(`<a class='jump' href='#${this._friendlyUrl(result.setDesc)}-${index}'>${result.setDesc}<span class='card-count'> (${result.length})</span></a>`);
         }, []);
