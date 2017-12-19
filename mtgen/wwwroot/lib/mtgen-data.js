@@ -154,13 +154,13 @@ class MtgenData {
 
             if (card.clan) {
                 card.clan = MtgenData.createMatchTitle(card.clan);
-                card.clanOrder = getClanByCode(card.clan).sorder;
+                card.clanOrder = MtgenData.getClanByCode(card.clan).sorder;
                 meta.hasClans = true;
             }
 
             if (card.faction) {
                 card.faction = MtgenData.createMatchTitle(card.faction);
-                card.factionOrder = getFactionByCode(card.faction).sorder;
+                card.factionOrder = MtgenData.getFactionByCode(card.faction).sorder;
                 meta.hasFactions = true;
             }
 
