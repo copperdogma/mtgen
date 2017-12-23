@@ -60,27 +60,36 @@ class MtgenUI {
         //}
         this._mainEl.addEventListener('click', async e => {
             if (e.target.classList.contains('button')) {
-                await this._handleButtonClick(e.target);
+                await this._handleButtonClick(e, e.target);
             }
         });
     }
 
-    async _handleButtonClick(el) {
-        const sortAllClassNames = await this._getSortAllByClassNames();
-        sortAllClassNames.forEach(async sortName => {
-            if (el.classList.contains(`sort-all-by-${sortName}`)) {
-                await this._handleSortAllByButtonClick(el, sortName);
-            }
-        });
+    async _handleButtonClick(e,el) {
+        if (el.classList.contains(`sort-all`)) {
+            await this._handleSortAllByButtonClick(el, el.dataset.sort);
+            e.preventDefault();
+        }
+        else if (el.classList.contains(`sort-set`)) {
+            const setEl = el.closest('section[data-setid]');
+            await this._handleSortSetByButtonClick(el, el.dataset.sort, setEl.dataset.setid);
+            e.preventDefault();
+        }
     }
 
     async _handleSortAllByButtonClick(el, sortName) {
         const sortedResults = await this._queryApi.sortAllBy(this._dataApi.currentProduct.originalResults, sortName);
         this._dataApi.currentProduct.results = sortedResults;
         this._renderCurrentProductResults();
+    }
 
-        // CAMKILL HERE: sorting by rarity/type broken... probably copy from colour as template and fix (and extract commanality)
-        // then do it for the sort-set-by-* items the same way
+    async _handleSortSetByButtonClick(el, sortName, setId) {
+        const sortedSet = await this._queryApi.sortBy(this._dataApi.currentProduct.results[setId], sortName);
+        this._dataApi.currentProduct.results[setId] = sortedSet;
+
+        // Re-render and replace only this set's section.
+        var el = this._currentProductContentEl.querySelector(`section[data-setid="${setId}"]`);
+        el.innerHTML = this._renderCardSet(this._dataApi.currentProduct.results[setId], setId);
     }
 
     async _getSortAllByClassNames() { return Object.keys(MtgenQuery.sortOrders); }
@@ -210,55 +219,110 @@ class MtgenUI {
             + this._renderTopMenu(product.results, 'all')
             + this._renderTopJumpMenu(product.results)
             + '<div>';
-        // If this product is grouped, render the groups
+        // If this product is grouped, render the groups (sets)
         if (product.results.length && product.results[0].length) {
-            //CAMKILL:if (product.results.length) {
             product.results.forEach((result, index) => {
-                allCardsHtml += this._renderCardsTitle(result.setDesc, result.length)
-                    + this._renderTopMenu(result, 'set')
-                    + `<section id='${this._friendlyUrl(result.setDesc)}-${index}' class='set' data-setid='${index}'>${this._renderCards(result)}</section>`;
+                allCardsHtml += this._renderCardSet(result, index, product.results);
             });
         }
-        //CAMKILL:else if (product.results.length === 1) {
         // Otherwise it's just a single array of cards (probably with a top-level sort of Name)
         else {
-            //CAMKILL:
-            //const result = product.results[0];
-            //allCardsHtml += `<section id='${this._friendlyUrl(result.setDesc)}-0' class='set' data-setid='0'>${this._renderCards(result)}</section>`;
             allCardsHtml += `<section id='${this._friendlyUrl(product.productDesc)}-0' class='set' data-setid='0'>${this._renderCards(product.results)}</section>`;
         }
         allCardsHtml += '</div>';
         this._displayResults(product.productName, allCardsHtml);
     }
 
+    _renderCardSet(cardSet, setIndex, parentResult) {
+        return `<section id='${this._friendlyUrl(cardSet.setDesc)}-${setIndex}' class='set' data-setid='${setIndex}'>`
+            + this._renderCardsTitle(cardSet.setDesc, cardSet.length)
+            + this._renderSubMenu(cardSet, parentResult)
+            + this._renderCards(cardSet)
+            + `</section >`;
+    }
+
     // General rendering functions
     _renderCardsTitle(title, cardCount) { return `<h2>${title} <span class='card-count'>(${cardCount})<a href="#" class="button top">[ Top ]</a></span></h2>`; }
 
-    _renderTopMenu(results, allOrSet) {
+    //TODONEXT: maybe re-combine the two into one.. it's pretty redundant right now
+    //_renderTopMenu(results, allOrSet) {
+    //    let menuItems = [];
+    //    menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.name.sort, results.sortOrder.sort, allOrSet));
+    //    menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.colour.sort, results.sortOrder.sort, allOrSet));
+    //    menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.rarity.sort, results.sortOrder.sort, allOrSet));
+    //    menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.cost.sort, results.sortOrder.sort, allOrSet));
+    //    menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.type.sort, results.sortOrder.sort, allOrSet));
+    //    if (this._dataApi.cardsMetaData.hasGuilds) {
+    //        menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.guild.sort, results.sortOrder.sort, allOrSet));
+    //    }
+    //    if (this._dataApi.cardsMetaData.hasClans) {
+    //        menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.clan.sort, results.sortOrder.sort, allOrSet));
+    //    }
+    //    if (this._dataApi.cardsMetaData.hasFactions) {
+    //        menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.faction.sort, results.sortOrder.sort, allOrSet));
+    //    }
+
+    //    menuItems.push(`<a href='#exporter' class='button export' data-export='${allOrSet}'>Export</a>`);
+
+    //    return `<section class='menu'><label>Sort ${allOrSet} by</label>${menuItems.join('')}</section>`;
+    //}
+
+    _renderTopMenu(results) {
         let menuItems = [];
-        menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.name.sort, results.sortOrder.sort, allOrSet));
-        menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.colour.sort, results.sortOrder.sort, allOrSet));
-        menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.rarity.sort, results.sortOrder.sort, allOrSet));
-        menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.cost.sort, results.sortOrder.sort, allOrSet));
-        menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.type.sort, results.sortOrder.sort, allOrSet));
+        menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.name.sort, results));
+        menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.colour.sort, results));
+        menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.rarity.sort, results));
+        menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.cost.sort, results));
+        menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.type.sort, results));
         if (this._dataApi.cardsMetaData.hasGuilds) {
-            menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.guild.sort, results.sortOrder.sort, allOrSet));
+            menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.guild.sort, results));
         }
         if (this._dataApi.cardsMetaData.hasClans) {
-            menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.clan.sort, results.sortOrder.sort, allOrSet));
+            menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.clan.sort, results));
         }
         if (this._dataApi.cardsMetaData.hasFactions) {
-            menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.faction.sort, results.sortOrder.sort, allOrSet));
+            menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.faction.sort, results));
         }
-        //TODO: render other sort types if the cards include it
-        menuItems.push(`<a href='#exporter' class='button export' data-export='${allOrSet}'>Export</a>`);
 
-        return `<section class='menu'><label>Sort ${allOrSet} by</label>${menuItems.join('')}</section>`;
+        menuItems.push(`<a href='#exporter' class='button export' data-export='all'>Export</a>`);
+
+        return `<section class='menu'><label>Sort all by</label>${menuItems.join('')}</section>`;
     }
 
-    _renderTopMenuItem(sortItemName, currentSort, allOrSet) {
-        const activeClass = (sortItemName === currentSort) ? 'active ' : '';
-        return `<a href='#' class='button ${activeClass}sort-${allOrSet}-by-${sortItemName}'>${this._uppercaseFirstLetter(sortItemName)}</a>`;
+    _renderTopMenuItem(sortItemName, cardList) {
+        let activeClass = (sortItemName === cardList.sortOrder.sort) ? 'active ' : '';
+        return `<a href='#' class='button ${activeClass}sort-all' data-sort='${sortItemName}'>${this._uppercaseFirstLetter(sortItemName)}</a>`;
+    }
+
+    _renderSubMenu(results) {
+        let menuItems = [];
+        menuItems.push(this._renderSubMenuItem(MtgenQuery.sortOrders.name.sort, results));
+        menuItems.push(this._renderSubMenuItem(MtgenQuery.sortOrders.colour.sort, results));
+        menuItems.push(this._renderSubMenuItem(MtgenQuery.sortOrders.rarity.sort, results));
+        menuItems.push(this._renderSubMenuItem(MtgenQuery.sortOrders.cost.sort, results));
+        menuItems.push(this._renderSubMenuItem(MtgenQuery.sortOrders.type.sort, results));
+        if (this._dataApi.cardsMetaData.hasGuilds) {
+            menuItems.push(this._renderSubMenuItem(MtgenQuery.sortOrders.guild.sort, results));
+        }
+        if (this._dataApi.cardsMetaData.hasClans) {
+            menuItems.push(this._renderSubMenuItem(MtgenQuery.sortOrders.clan.sort, results));
+        }
+        if (this._dataApi.cardsMetaData.hasFactions) {
+            menuItems.push(this._renderSubMenuItem(MtgenQuery.sortOrders.faction.sort, results));
+        }
+
+        menuItems.push(`<a href='#exporter' class='button export' data-export='set'>Export</a>`);
+
+        return `<section class='menu'><label>Sort set by</label>${menuItems.join('')}</section>`;
+    }
+
+    _renderSubMenuItem(sortItemName, cardList) {
+        // If the parent sort is by X, don't render the sort option for X.
+        if (sortItemName === cardList.parent.sortOrder.sort) {
+            return '';
+        }
+        const activeClass = (sortItemName === cardList.sortOrder.sort) ? 'active ' : '';
+        return `<a href='#' class='button ${activeClass}sort-set' data-sort='${sortItemName}'>${this._uppercaseFirstLetter(sortItemName)}</a>`;
     }
 
     _uppercaseFirstLetter(string) { return string.charAt(0).toUpperCase() + string.slice(1); }

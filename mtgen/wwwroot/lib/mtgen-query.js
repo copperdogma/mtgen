@@ -535,7 +535,7 @@ class MtgenQuery {
         switch (sortType.toLowerCase()) {
             case 'nothing': return await this.sortAllByNothing(cardList);
             case 'name':
-            case 'title': return this.sortAllByName(cardList);
+            case 'title': return this.sortByName(cardList);
             case 'colour': return await this.groupAllByColour(cardList);
             case 'rarity': return await this.groupAllByRarity(cardList);
             case 'cost': return await this.groupAllByCost(cardList);
@@ -545,7 +545,7 @@ class MtgenQuery {
             case 'faction': return await this.groupAllByFaction(cardList);
             default:
                 console.warn('Unknown sort type: ' + sortType);
-                return this.sortAllByName(cardList);
+                return this.sortByName(cardList);
         }
     }
 
@@ -565,19 +565,62 @@ class MtgenQuery {
         return cardList;
     }
 
-    async sortAllByName(cardList) {
+    async sortBy(cardList, sortType) {
+        switch (sortType.toLowerCase()) {
+            case 'nothing': return await this.sortAllByNothing(cardList);
+            case 'name':
+            case 'title': return this.sortByName(cardList);
+            case 'colour': return await this.sortByColour(cardList);
+            case 'rarity': return await this.sortByRarity(cardList);
+            case 'cost': return await this.sortByCost(cardList);
+            case 'type': return await this.sortByType(cardList);
+            case 'guild': return await this.sortByGuild(cardList);
+            case 'clan': return await this.sortByClan(cardList);
+            case 'faction': return await this.sortByFaction(cardList);
+            default:
+                console.warn('Unknown sort type: ' + sortType);
+                return this.sortByName(cardList);
+        }
+        return results;
+    }
+
+    async sortByName(cardList) {
+        return await this._sortByX(cardList, 'matchTitle', MtgenQuery.sortOrders.name);
+    }
+
+    async sortByColour(cardList) {
+        return await this._sortByX(cardList, 'colour', MtgenQuery.sortOrders.colour);
+    }
+
+    async sortByRarity(cardList) {
+        return await this._sortByX(cardList, 'rarity', MtgenQuery.sortOrders.rarity);
+    }
+
+    async sortByCost(cardList) {
+        return await this._sortByX(cardList, 'ccost', MtgenQuery.sortOrders.cost);
+    }
+
+    async sortByType(cardList) {
+        return await this._sortByX(cardList, 'typeCode', MtgenQuery.sortOrders.type);
+    }
+
+    async sortByGuild(cardList) {
+        return await this._sortByX(cardList, 'guild', MtgenQuery.sortOrders.guild);
+    }
+
+    async sortByClan(cardList) {
+        return await this._sortByX(cardList, 'clan', MtgenQuery.sortOrders.clan);
+    }
+
+    async sortByFaction(cardList) {
+        return await this._sortByX(cardList, 'faction', MtgenQuery.sortOrders.faction);
+    }
+
+    async _sortByX(cardList, cardPropertyName, sortOrderEnum) {
         const sourceCards = await this._convertSetsToArray(cardList);
-        const cards = sourceCards.sort((a, b) => this._sortBy('matchTitle', a, b));
-        cards.sortOrder = MtgenQuery.sortOrders.name;
+        const cards = sourceCards.sort((a, b) => this._sortBy(cardPropertyName, a, b));
+        cards.sortOrder = sortOrderEnum;
         return cards;
-        //CAMKILL:
-        //let sortedSets = [];
-        //const sourceCards = await this._convertSetsToArray(cardList);
-        //const set = sourceCards.sort((a, b) => this._sortBy('matchTitle', a, b));
-        //set.sortOrder = MtgenQuery.sortOrders.name;
-        //sortedSets.push(set);
-        //sortedSets.sortOrder = MtgenQuery.sortOrders.name;
-        //return sortedSets;
     }
 
     async _groupAllByX(cardList, cardPropertyName, sortObj, getXFromCodeFunction, sortOrderEnum, otherSetOverrideName) {
@@ -590,10 +633,9 @@ class MtgenQuery {
         let groupedCardSets = await this._groupByProperty(mainCards, cardPropertyName);
         const cardSets = await this._sortIntoArray(groupedCardSets, sortObj);
         for (let i = 0; i < cardSets.length; i++) {
-            let set = await this.sortAllByName(cardSets[i]);
+            let set = await this.sortByName(cardSets[i]);
             const x = getXFromCodeFunction(set[0][cardPropertyName]);
             set.setDesc = x.name;
-            set.sortOrder = sortOrderEnum;
             sortedSets.push(set);
         }
 
@@ -611,6 +653,9 @@ class MtgenQuery {
             }
             sortedSets.push(otherCards);
         }
+
+        // Set the parent on each set.
+        sortedSets.forEach(s => s.parent = sortedSets);
 
         sortedSets.sortOrder = sortOrderEnum;
 
@@ -635,9 +680,8 @@ class MtgenQuery {
         let groupedCardSets = await this._groupByProperty(mainCards, 'ccost');
         const cardSets = Object.keys(groupedCardSets).map(key => groupedCardSets[key]);
         for (let i = 0; i < cardSets.length; i++) {
-            let set = await this.sortAllByName(cardSets[i]);
+            let set = await this.sortByName(cardSets[i]);
             set.setDesc = 'Cost ' + set[0].ccost;
-            set.sortOrder = MtgenQuery.sortOrders.cost;
             sortedSets.push(set);
         }
 
@@ -652,6 +696,9 @@ class MtgenQuery {
         if (otherCards.length > 0) {
             sortedSets.push(otherCards);
         }
+
+        // Set the parent on each set.
+        sortedSets.forEach(s => s.parent = sortedSets);
 
         sortedSets.sortOrder = MtgenQuery.sortOrders.cost;
 
@@ -710,7 +757,6 @@ class MtgenQuery {
 
     /* --------- Sorting All Cards --------------------------------------------------------------------------------------------------------------------- */
 
-    // TODO: not sure this should exist anymore
     static get sortOrders() {
         return {
             none: { sort: 'none' }
