@@ -59,13 +59,13 @@ class MtgenUI {
         //    this.ProductViews[my.startProductName].showTab();
         //}
         this._mainEl.addEventListener('click', async e => {
-            if (e.target.classList.contains('button')) {
+            if (e.target.classList.contains('button') || e.target.tagName === 'BUTTON') {
                 await this._handleButtonClick(e, e.target);
             }
         });
     }
 
-    async _handleButtonClick(e,el) {
+    async _handleButtonClick(e, el) {
         if (el.classList.contains(`sort-all`)) {
             await this._handleSortAllByButtonClick(el, el.dataset.sort);
             e.preventDefault();
@@ -73,6 +73,11 @@ class MtgenUI {
         else if (el.classList.contains(`sort-set`)) {
             const setEl = el.closest('section[data-setid]');
             await this._handleSortSetByButtonClick(el, el.dataset.sort, setEl.dataset.setid);
+            e.preventDefault();
+        }
+        else if (el.classList.contains(`remove-input`)) {
+            //TODONEXT: I feel that this should modify the actual data which should then be re-rendered.. keep the state and display separate.
+            el.parentNode.remove();
             e.preventDefault();
         }
     }
@@ -189,8 +194,14 @@ class MtgenUI {
             return htmlOut;
         }, '');
 
+        let presets = '';
+        if (this._dataApi.currentProduct.options.presets && this._dataApi.currentProduct.options.presets.length > 1) {
+            presets = this._dataApi.currentProduct.options.presets.map(p =>
+                `<a href='#' class='button' data-preset='${p.presetName}'>${p.presetDesc}</a>`).join('');
+        }
+
         const optionsHtml =
-            `<div class='presets'></div>
+            `<div class='presets'>${presets}</div>
              <div class='packs'>
                  <section id='boosters'>
                      ${boosterInputs}
