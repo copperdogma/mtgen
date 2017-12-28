@@ -58,26 +58,66 @@ class MtgenUI {
         //else if (my.startProductName) {
         //    this.ProductViews[my.startProductName].showTab();
         //}
+        // React to global events like clicking a tab or changing an option.
+        // This is done globally instead of with handlers on individual elements because
+        // the UI is generated dynamically and there could be thousands of elements with handlers.
         this._mainEl.addEventListener('click', async e => {
             if (e.target.classList.contains('button') || e.target.tagName === 'BUTTON') {
                 await this._handleButtonClick(e, e.target);
             }
         });
+        this._mainEl.addEventListener('change', async e => {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') {
+                await this._handleInputChange(e, e.target);
+            }
+        });
     }
 
     async _handleButtonClick(e, el) {
-        if (el.classList.contains(`sort-all`)) {
+        if (el.classList.contains('sort-all')) {
             await this._handleSortAllByButtonClick(el, el.dataset.sort);
             e.preventDefault();
         }
-        else if (el.classList.contains(`sort-set`)) {
+        else if (el.classList.contains('sort-set')) {
             const setEl = el.closest('section[data-setid]');
             await this._handleSortSetByButtonClick(el, el.dataset.sort, setEl.dataset.setid);
             e.preventDefault();
         }
-        else if (el.classList.contains(`remove-input`)) {
+        else if (el.classList.contains('remove-input')) {
             //TODONEXT: I feel that this should modify the actual data which should then be re-rendered.. keep the state and display separate.
+            //TODONEXT: Handle the actual click on the presets, manually changing booster counts and booster types
+            const selectedBoosterIndex = el.parentNode.dataset.index;
+            this._dataApi.currentProduct.currentSettings.packs.splice(selectedBoosterIndex, 1);
             el.parentNode.remove();
+            await this._renumberInputBoosters(this._currentProductContentEl);
+            e.preventDefault();
+        }
+        else if (el.classList.contains('add-booster')) {
+            this._dataApi.currentProduct.currentSettings.packs.push({ count: 1, packName: this._dataApi.currentProduct.packs[0].packName });
+            const boosterInputHtml = await this._renderBoosterInput({ defaultPackName: this._dataApi.currentProduct.packs[0].packName, count: 1 }, 0);
+            const boosterInputEl = document.createElement('div');
+            const endButton = this._currentProductContentEl.querySelector('section.options button.add-booster');
+            endButton.before(boosterInputEl);
+            boosterInputEl.outerHTML = boosterInputHtml;
+            await this._renumberInputBoosters(this._currentProductContentEl);
+            e.preventDefault();
+        }
+    }
+
+    async _renumberInputBoosters(productContentEl) {
+        const boosterInputs = this._currentProductContentEl.querySelectorAll('section.options .booster-input');
+        boosterInputs.forEach((el, index) => el.dataset['index'] = index);
+    }
+
+    async _handleInputChange(e, el) {
+        if (el.classList.contains(`booster-count`)) {
+            const selectedBoosterIndex = el.parentNode.dataset.index;
+            this._dataApi.currentProduct.currentSettings.packs[selectedBoosterIndex].count = el.value;
+            e.preventDefault();
+        }
+        else if (el.classList.contains(`booster-packName`)) {
+            const selectedBoosterIndex = el.parentNode.dataset.index;
+            this._dataApi.currentProduct.currentSettings.packs[selectedBoosterIndex].packName = el.value;
             e.preventDefault();
         }
     }
@@ -175,22 +215,28 @@ class MtgenUI {
         //}
     }
 
+    _renderBoosterInput(optionPack, index) {
+        const optionValues = this._dataApi.currentProduct.packs.reduce((htmlOut, pack) =>
+            htmlOut += `<option value='${pack.packName}'${pack.packName === optionPack.defaultPackName ? ' selected' : ''}>${pack.packDesc}</option>`,
+            '');
+
+        const boosterInput =
+            `<div class='booster-input' data-index='${index}'>
+                <input class='booster-count' type='number' min='0' max='99' value='${optionPack.count}'>
+                <select class='booster-packName'>
+                    ${optionValues}
+                </select>
+                <button class='remove-input' title='Remove Booster'>-</button>
+             </div>`;
+
+        return boosterInput;
+    }
+
     async _renderCurrentProductOptions() {
         if (this._dataApi.currentProduct.options === undefined) { return; }
 
         const boosterInputs = this._dataApi.currentProduct.options.presets[0].packs.reduce((htmlOut, optionPack, index) => {
-            const optionValues = this._dataApi.currentProduct.packs.reduce((htmlOut, pack) =>
-                htmlOut += `<option value='${pack.packName}' ${pack.packName === optionPack.defaultPackName ? 'selected' : ''}>${pack.packDesc}</option>`,
-                '');
-
-            htmlOut +=
-                `<div class='booster-input'>
-                <input id='booster-count-${index + 1}' type='number' min='0' max='99' value='${optionPack.count}'>
-                <select id='booster-${index + 1}' data-count-el='booster-count-${index + 1}'>
-                    ${optionValues}
-                </select>
-                <button class='remove-input' title='Remove Booster'>-</button>
-             </div>`
+            htmlOut += this._renderBoosterInput(optionPack, index);
             return htmlOut;
         }, '');
 
@@ -205,6 +251,7 @@ class MtgenUI {
              <div class='packs'>
                  <section id='boosters'>
                      ${boosterInputs}
+                    <button class='add-booster'>Add Booster</button>
                  </div>
                  <input id='generate' type='submit' value='Generate my sets!'>
              </div>`;
