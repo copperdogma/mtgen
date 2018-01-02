@@ -37,7 +37,7 @@ class MtgenUI {
 
         this._renderProductTabs(this._dataApi.products);
         this._renderProductContentPlaceholders(this._dataApi.products);
-        this._renderCurrentProduct();
+        await this._renderCurrentProduct();
 
         //// Render the initial views
         //my.initViews.forEach(view => view.render());
@@ -83,9 +83,14 @@ class MtgenUI {
             await this._handleSortSetByButtonClick(el, el.dataset.sort, setEl.dataset.setid);
             e.preventDefault();
         }
+        else if (el.classList.contains('generate')) {
+            //TODONEXT: this doesn't work yet.. all data should now be set up correctly, though.
+            this._dataApi.currentProduct.originalResults = await this._queryApi.generateCardSetsFromPacks(this._dataApi.currentProduct.currentSettings.packs);
+            await this._renderCurrentProductResults();
+            e.preventDefault();
+        }
         else if (el.classList.contains('remove-input')) {
             //TODONEXT: I feel that this should modify the actual data which should then be re-rendered.. keep the state and display separate.
-            //TODONEXT: Handle the actual click on the presets, manually changing booster counts and booster types
             const selectedBoosterIndex = el.parentNode.dataset.index;
             this._dataApi.currentProduct.currentSettings.packs.splice(selectedBoosterIndex, 1);
             el.parentNode.remove();
@@ -102,11 +107,23 @@ class MtgenUI {
             await this._renumberInputBoosters(this._currentProductContentEl);
             e.preventDefault();
         }
+        else if (el.classList.contains('option-preset')) {
+            await this._handleChooseOptionPreset(el, el.dataset.preset);
+            e.preventDefault();
+        }
     }
 
     async _renumberInputBoosters(productContentEl) {
         const boosterInputs = this._currentProductContentEl.querySelectorAll('section.options .booster-input');
         boosterInputs.forEach((el, index) => el.dataset['index'] = index);
+    }
+
+    async _handleChooseOptionPreset(el, optionPreset) {
+        this._dataApi.currentProduct.currentSettings.optionPresetName = optionPreset;
+        var activeButtons = this._currentProductContentEl.querySelectorAll('section.options .button.option-preset.active');
+        activeButtons.forEach(el => el.classList.remove('active'));
+        el.classList.add('active');
+        await this._renderCurrentProduct();
     }
 
     async _handleInputChange(e, el) {
@@ -125,7 +142,7 @@ class MtgenUI {
     async _handleSortAllByButtonClick(el, sortName) {
         const sortedResults = await this._queryApi.sortAllBy(this._dataApi.currentProduct.originalResults, sortName);
         this._dataApi.currentProduct.results = sortedResults;
-        this._renderCurrentProductResults();
+        await this._renderCurrentProductResults();
     }
 
     async _handleSortSetByButtonClick(el, sortName, setId) {
@@ -200,7 +217,7 @@ class MtgenUI {
             // how much of this meta analysis does this generateCardSetsFromPacks do?
             // how was this done before?
             // what if generating the result arrays, each card was stamped with resultIndex, order? then we could just re-group/sort them
-            this._renderCurrentProductResults();
+            await this._renderCurrentProductResults();
         }
 
         //my.mainView.currentView = this;
@@ -216,10 +233,10 @@ class MtgenUI {
     }
 
     _renderBoosterInput(optionPack, index) {
-        const optionValues = this._dataApi.currentProduct.packs.reduce((htmlOut, pack) =>
-            htmlOut += `<option value='${pack.packName}'${pack.packName === optionPack.defaultPackName ? ' selected' : ''}>${pack.packDesc}</option>`,
-            '');
-
+        const optionValues = this._dataApi.currentProduct.packs.reduce((htmlOut, pack) => {
+            return htmlOut += `<option value='${pack.packName}'${pack.packName === optionPack.packName ? ' selected' : ''}>${pack.packDesc}</option>`
+        }, '');
+        
         const boosterInput =
             `<div class='booster-input' data-index='${index}'>
                 <input class='booster-count' type='number' min='0' max='99' value='${optionPack.count}'>
@@ -235,16 +252,18 @@ class MtgenUI {
     async _renderCurrentProductOptions() {
         if (this._dataApi.currentProduct.options === undefined) { return; }
 
-        const boosterInputs = this._dataApi.currentProduct.options.presets[0].packs.reduce((htmlOut, optionPack, index) => {
-            htmlOut += this._renderBoosterInput(optionPack, index);
-            return htmlOut;
-        }, '');
-
         let presets = '';
         if (this._dataApi.currentProduct.options.presets && this._dataApi.currentProduct.options.presets.length > 1) {
-            presets = this._dataApi.currentProduct.options.presets.map(p =>
-                `<a href='#' class='button' data-preset='${p.presetName}'>${p.presetDesc}</a>`).join('');
+            presets = this._dataApi.currentProduct.options.presets.map(p => {
+                const activeClass = this._dataApi.currentProduct.currentSettings.optionPresetName === p.presetName ? ' active' : '';
+                return `<a href='#' class='button option-preset${activeClass}' data-preset='${p.presetName}'>${p.presetDesc}</a>`;
+            }).join('');
         }
+
+        const boosterInputs = this._dataApi.currentProduct.currentSettings.packs.reduce((htmlOut, pack, index) => {
+            htmlOut += this._renderBoosterInput(pack, index);
+            return htmlOut;
+        }, '');
 
         const optionsHtml =
             `<div class='presets'>${presets}</div>
@@ -253,7 +272,7 @@ class MtgenUI {
                      ${boosterInputs}
                     <button class='add-booster'>Add Booster</button>
                  </div>
-                 <input id='generate' type='submit' value='Generate my sets!'>
+                 <button type='submit' class='generate'>Generate my sets!</button>
              </div>`;
 
         this._currentProductContentEl.querySelector('section.options').innerHTML = optionsHtml;
@@ -277,6 +296,7 @@ class MtgenUI {
             + this._renderTopMenu(product.results, 'all')
             + this._renderTopJumpMenu(product.results)
             + '<div>';
+
         // If this product is grouped, render the groups (sets)
         if (product.results.length && product.results[0].length) {
             product.results.forEach((result, index) => {

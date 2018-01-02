@@ -22,7 +22,7 @@ class MtgenQuery {
 
     async _addAdditionalPackData() {
         let querySetPercentAvg;
-       //CAMKILL: for (let packKey in this._dataApi.packs) {
+        //CAMKILL: for (let packKey in this._dataApi.packs) {
         this._dataApi.packs.forEach(async (pack) => {
             // Check the querySets and add percentages if they're missing (missing means they all have an equal chance)
             if (!pack.cards) { return; }
@@ -117,7 +117,7 @@ class MtgenQuery {
         //        generatedSets.push(cardSet);
         //    }
         //});
-        for(const pack of packs) {
+        for (const pack of packs) {
             // Create X of the desired packs.
             for (let i = 0; i < pack.count; i++) {
                 var fullPack = that._dataApi.packs.get(pack.packName);
@@ -193,10 +193,10 @@ class MtgenQuery {
                 chosenCards = possibleCards.slice();
             }
             else if (cardDef.canBeDuplicate === true) {
-                chosenCards = randomCards(cardDef.query, possibleCards, takeCount).slice();
+                chosenCards = (await this._randomCards(cardDef.query, possibleCards, takeCount)).slice();
             }
             else {
-                chosenCards = randomCards(cardDef.query, possibleCards, takeCount, cardIndices).slice();
+                chosenCards = (await this._randomCards(cardDef.query, possibleCards, takeCount, cardIndices)).slice();
             }
 
             // Apply any setValues
@@ -228,6 +228,65 @@ class MtgenQuery {
         }
 
         return cardSet;
+    }
+
+    async _randomCards(queryDefForDebug, cards, num, excludeIndices) {
+        if (cards.length < 1) { return []; }
+
+        let validCards = cards.slice(); // shallow clone
+        if (excludeIndices && excludeIndices.length > 0) {
+            validCards = validCards.filter(card => !excludeIndices.includes(card.mtgenId));
+            if (num > validCards.length) {
+                console.warn("ERROR: Trying to choose " + num + " cards but after excluded cards, only " + validCards.length + " available. Source query: " + queryDefForDebug + " Taking all:", validCards);
+            }
+        }
+
+        // Keep taking cards until we get the desired number, even if we're grabbing duplicates
+        let chosenCards = [];
+        if (validCards.length > 0) {
+            while (chosenCards.length < num) {
+                let newCards = await this._sample(validCards, num);
+                const numDiff = (chosenCards.length + newCards.length) - num; // 0: we're good. negative: need more cards. positive: too many now; trim newCards by this number
+                if (numDiff > 0) {
+                    newCards = newCards.slice(numDiff); // trims the last numDiff elements from the array
+                }
+                chosenCards = chosenCards.concat(newCards);
+            }
+        }
+
+        return chosenCards;
+    }
+
+    // Sample **n** random values from an array.
+    // If **n** is not specified, returns a single random element.
+    // The internal `guard` argument allows it to work with `map`.
+    // Taken from Underscore.
+    async _sample(arr, n, guard) {
+        if (n == null || guard) {
+            return arr[my.random(arr.length - 1)];
+        }
+        return (await this._shuffle(arr)).slice(0, Math.max(0, n));
+    }
+
+    // Shuffle an array. Taken from Underscore.
+    async _shuffle(arr) {
+        const length = arr.length;
+        let shuffled = Array(length);
+        for (let index = 0, rand; index < length; index++) {
+            rand = await this._random(0, index);
+            if (rand !== index) shuffled[index] = shuffled[rand];
+            shuffled[rand] = arr[index];
+        }
+        return shuffled;
+    }
+
+    // Return a random integer between min and max (inclusive). Taken from Underscore.
+    async _random(min, max) {
+        if (max == null) {
+            max = min;
+            min = 0;
+        }
+        return min + Math.floor(Math.random() * (max - min + 1));
     }
 
     //CAMKILL:
@@ -328,7 +387,7 @@ class MtgenQuery {
         if (sourceSet === undefined) {
             var xxx = 1;
         }
-       //CAMKILL: const sourceSet = Object.values(sourceSetCards)
+        //CAMKILL: const sourceSet = Object.values(sourceSetCards)
         //try {
         //    var xxxx = [...sourceSetCards.values()];
         //}
@@ -530,7 +589,7 @@ class MtgenQuery {
         }, {});
         return out;
     }
-    
+
     async sortAllBy(cardList, sortType) {
         switch (sortType.toLowerCase()) {
             case 'nothing': return await this.sortAllByNothing(cardList);

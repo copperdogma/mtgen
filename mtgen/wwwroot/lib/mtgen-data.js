@@ -31,6 +31,14 @@ class MtgenData {
         this._currentProductName = name.trim().toLowerCase();
         this.currentProduct = this.products.get(this._currentProductName);
         if (this.currentProduct === undefined) { throw new Error('Unknown product name: ' + this._currentProductName); }
+
+        // Find and set the default option if available.
+        if (this.currentProduct.options) {
+            const defaultOptionPreset = this.currentProduct.options.presets.find(opt => opt.default === true);
+            if (defaultOptionPreset) {
+                this.currentProduct.currentOptionPresetName = defaultOptionPreset.presetName;
+            }
+        }
     }
     get currentProductName() { return this._currentProductName; }
 
@@ -86,19 +94,20 @@ class MtgenData {
         this.products.forEach(product => {
             product.packs.map(pack => pack.packDesc = this.packs.get(pack.packName).packDesc);
 
-            // Create the currentSettings property, which is what the actual results will be rendered from.
-            product.currentSettings = {};
-            product.currentSettings.packs = [];
+            // Create the currentSettings, which is what the actual results will be rendered from.
 
             // If there are no options, assume there is one of each pack.
+            let packs = [];
             if (product.options === undefined) {
-                product.currentSettings.packs.push(...product.packs.map(pack => ({ 'count': 1, 'packName': pack.packName })));
+                packs.push(...product.packs.map(pack => ({ 'count': 1, 'packName': pack.packName })));
             }
             else {
                 // Otherwise copy the default options settings.
                 // TODO: handle more than one preset, probably by choosing the default preset
-                product.currentSettings.packs.push(...product.options.presets[0].packs.map(pack => ({ 'count': pack.count, 'packName': pack.defaultPackName })));
+                packs.push(...product.options.presets[0].packs.map(pack => ({ 'count': pack.count, 'packName': pack.defaultPackName })));
             }
+
+            product.currentSettings = new ProductSettings(packs, product);
         });
 
         window.dispatchEvent(new Event('data-loaded'));
@@ -446,4 +455,74 @@ class MtgenData {
         });
         return ccost;
     }
+}
+
+// The setting options used when generating this product.
+// Basically the chosen packs and counts for each.
+class ProductSettings {
+    constructor(packs, product) {
+        this.product = product;
+        this.packs = packs;
+        this.optionPreset = {};
+
+        this._optionPresetName = '';
+        // If there are options+presets, set the first option preset to be the default.
+        if (this.product.options && this.product.options.presets) {
+            const defaultPreset = this.product.options.presets.find(o => o.default);
+            if (defaultPreset) {
+                this.optionPresetName = defaultPreset.presetName;
+            }
+            else if (this.product.options.presets.length > 0) {
+                this.optionPresetName = this.product.options.presets[0].presetName;
+            }
+        }
+    }
+
+    set optionPresetName(name) {
+        this._optionPresetName = name.trim().toLowerCase();
+
+        this.optionPreset = this.product.options.presets.find(p => p.presetName === this._optionPresetName);
+        if (this.optionPreset === undefined) { throw new Error('Unknown option preset name: ' + this._optionPresetName); }
+
+        // Set the chosen packs.
+        this.packs = this.optionPreset.packs;
+
+        // Produce the actual packs from this set of options.
+        this.packs.forEach(optionPack => {
+            let finalPackName = '';
+            if (optionPack.hasOwnProperty('defaultPackName')) {
+                const wantedPackName = optionPack.defaultPackName.trim().toLowerCase();
+                const pack = this.product.packs.find(p => p.packName === wantedPackName);
+                if (pack === undefined) {
+                    console.log(`ERROR: Unknown defaultPackName: '${optionPack.defaultPackName}'`);
+                }
+                else {
+                    finalPackName = wantedPackName;
+                }
+            }
+            // If randomDefaultPackName is specified, choose one and use that in place of defaultPackName
+            else if (optionPack.hasOwnProperty('randomDefaultPackName') && Array.isArray(optionPack.randomDefaultPackName)) {
+                const chosenPackName = optionPack.randomDefaultPackName[Math.floor(Math.random() * optionPack.randomDefaultPackName.length)];
+                const wantedPackName = chosenPackName.trim().toLowerCase();
+                const pack = this.product.packs.find(p => p.packName === wantedPackName);
+                if (pack === undefined) {
+                    console.log(`ERROR: Unknown randomDefaultPackName: '${chosenPackName}'`);
+                }
+                else {
+                    finalPackName = wantedPackName;
+                }
+            }
+            else {
+                console.log(`ERROR: option preset missing 'defaultPackName' or 'randomDefaultPackName'. One or the other is required.`);
+            }
+
+            // If the supposed pack name couldn't be found, use first pack name so we can continue.
+            if (finalPackName === '') {
+                finalPackName = this.product.packs[0].packName;
+                console.log(`  Defaulting to first product packName: '${finalPackName}'.`);
+            }
+            optionPack.packName = finalPackName;
+        });
+    }
+    get optionPresetName() { return this._optionPresetName; }
 }
