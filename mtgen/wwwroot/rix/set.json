@@ -8,7 +8,7 @@
     "cardsMain.json",
     "cardsLand.json",
     "cardsBasicLand.json",
-    "cardsPromo.json",
+    "cardsPromo.json?v1.1",
     "cardsToken.json",
 
     "../xln/cardsMain.json",
@@ -17,5 +17,10 @@
     "../xln/cardsPromo.json",
     "../xln/cardsToken.json"
   ],
-  "updates": []
+  "updates": [
+    {
+      "updateDate": "2018-01-06",
+      "htmlString": "Evening: Fixed double-faced tokens."
+    }
+  ]
 }
