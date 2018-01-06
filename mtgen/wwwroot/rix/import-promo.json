@@ -1,0 +1,247 @@
+{
+  "setCode": "rix",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=188&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+      "where": "title='Silvergill Adept",
+      "newValues": {
+        "src": "https://media.wizards.com/2017/images/daily/en_uquzWDfDBr.png",
+        "num": "{{num}} P OpenHouse",
+        "includedReason": "Open House Promo"
+      }
+    },
+    {
+      "where": "title='Evolving Wilds",
+      "newValues": {
+        "src": "https://media.wizards.com/2017/images/daily/en_OEqfAXnSNp.png",
+        "num": "{{num}} P League",
+        "includedReason": "League Promo"
+      }
+    },
+    {
+      "where": "title='Captains Hook",
+      "newValues": {
+        "src": "https://media.wizards.com/2017/images/daily/en_0Ed8hwaRD3.png",
+        "num": "{{num}} P Buy-a-Box",
+        "includedReason": "Buy-a-Box Promo"
+      }
+    },
+    {
+      "where": "title='Brasss Bounty",
+      "newValues": {
+        "src": "https://media.wizards.com/2017/images/daily/en_W7sqMEl3M9.png",
+        "num": "{{num}} P Draft Weekend",
+        "includedReason": "Draft Weekend Promo"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2017/images/daily/en_1BwDQMZJbW.png",
+        "title": "Treasure",
+        "colour": "o",
+        "num": "001/012 P FNM",
+        "type": "Token Artifact",
+        "subtype": "Treasure",
+        "token": true,
+        "rarity": "c",
+        "doubleFaceCard": true,
+        "mtgenIdBack": "rix|001/012 P FNM",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2017/images/daily/en_1BwDQMZJbW.png",
+        "title": "Merfolk",
+        "colour": "b",
+        "num": "001/012 P FNM",
+        "type": "Token Creature",
+        "subtype": "Merfolk",
+        "token": true,
+        "rarity": "c",
+        "doubleFaceCard": true,
+        "mtgenIdFront": "rix|001/012 P FNM:a",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2017/images/daily/en_kc1AO77ZhB.png",
+        "title": "City's Blessing",
+        "colour": "o",
+        "num": "002/012 P FNM",
+        "type": "Token Artifact",
+        "subtype": "Treasure",
+        "token": true,
+        "rarity": "c",
+        "doubleFaceCard": true,
+        "mtgenIdBack": "rix|002/012 P FNM",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2017/images/daily/en_kc1AO77ZhB.png",
+        "title": "Elemental",
+        "colour": "r",
+        "num": "002/012 P FNM",
+        "type": "Token Creature",
+        "subtype": "Elemental",
+        "token": true,
+        "rarity": "c",
+        "doubleFaceCard": true,
+        "mtgenIdFront": "rix|002/012 P FNM:a",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2017/images/daily/en_ocn3MLjfn2.png",
+        "title": "Illusion",
+        "colour": "u",
+        "num": "003/012 P FNM",
+        "type": "Token Artifact",
+        "subtype": "Illusion",
+        "token": true,
+        "rarity": "c",
+        "doubleFaceCard": true,
+        "mtgenIdBack": "rix|003/012 P FNM",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2017/images/daily/en_Prv4cEMsse.png",
+        "title": "Saproling",
+        "colour": "g",
+        "num": "003/012 P FNM",
+        "type": "Token Creature",
+        "subtype": "Saproling",
+        "token": true,
+        "rarity": "c",
+        "doubleFaceCard": true,
+        "mtgenIdFront": "rix|003/012 P FNM:a",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/rix-prerelease-deck-box.png",
+        "title": "Deck Box",
+        "colour": "o",
+        "num": "006 Deck Box",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-deckbuilding-info.jpg",
+        "src_large": "http://mtgen.net/cards/mtg-deckbuilding-info-lg.jpg",
+        "height": 370,
+        "width": 515,
+        "title": "Deckbuilding Advice Insert",
+        "colour": "o",
+        "num": "007 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-white.png",
+        "title": "White Spindown Life Counter",
+        "colour": "o",
+        "num": "001 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-blue.png",
+        "title": "Blue Spindown Life Counter",
+        "colour": "o",
+        "num": "002 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-black.png",
+        "title": "Black Spindown Life Counter",
+        "colour": "o",
+        "num": "003 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-red.png",
+        "title": "Red Spindown Life Counter",
+        "colour": "o",
+        "num": "004 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-green.png",
+        "title": "Green Spindown Life Counter",
+        "colour": "o",
+        "num": "005 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

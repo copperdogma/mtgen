@@ -1,0 +1,32 @@
+{
+  "setCode": "rix",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=188&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/rivals-of-ixalan",
+  "_comments": "This release has two-sided lands",
+  "exceptions": [
+    {
+      "_comment": "mtg salvation included the special lands, which I import separately",
+      "where": "type=(Land)"
+    },
+    {
+      "_comment": "delete cards that are double-sided with a land on the back, which are taken care of in cardsMain",
+      "delete": true,
+      "where": "title=(Gold-Forge Garrison)"
+    },
+
+    {
+      "where": "title='Cinder Barrens",
+      "newValues": {
+        "src": "https://media.wizards.com/2017/images/daily/en_8rP9a4JUtG.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "startProductName": "rix-prerelease",
+  "packFiles": [
+    "packs.json?v1.0",
+    "../xln/packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsLand.json",
+    "cardsBasicLand.json",
+    "cardsPromo.json",
+    "cardsToken.json",
+
+    "../xln/cardsMain.json",
+    "../xln/cardsLand.json",
+    "../xln/cardsBasicLand.json",
+    "../xln/cardsPromo.json",
+    "../xln/cardsToken.json"
+  ],
+  "updates": []
+}

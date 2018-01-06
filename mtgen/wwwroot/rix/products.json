@@ -1,0 +1,90 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "rix-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://magic.wizards.com/en/articles/archive/card-image-gallery/rivals-of-ixalan", "http://www.mtgsalvation.com/spoilers/188-Ixalan", "https://magic.wizards.com/en/articles/archive/news/tokens-rivals-ixalan-2018-01-04", "https://magic.wizards.com/en/articles/archive/news/rivals-ixalan-promos-packaging-and-more-2017-12-11", "https://wpn.wizards.com/en/products/rivals-ixalan" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "rix-all-cards" }
+      ]
+    },
+    {
+      "productName": "rix-boosters",
+      "productDesc": "Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "rix-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "rix-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "rix-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "rix-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://magic.wizards.com/en/articles/archive/feature/Ixalan-packaging-promos-and-planeswalker-decks-2016-09-06" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "rix-standard" },
+        { "packName": "xln-standard" },
+        { "packName": "rix-prerelease-promo-packins" },
+        { "packName": "rix-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "rix-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "rix-prerelease-promo-packins"
+              },
+              {
+                "count": 4,
+                "defaultPackName": "rix-standard"
+              },
+              {
+                "count": 2,
+                "defaultPackName": "xln-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "rix-promos",
+      "productDesc": "All Promos",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/ixalan-promos-planeswalker-decks-packaging-and-fnm-tokens-2017-09-01" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "rix-promos" }
+      ]
+    }
+
+  ]
+}

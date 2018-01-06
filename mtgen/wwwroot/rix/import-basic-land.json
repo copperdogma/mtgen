@@ -1,0 +1,81 @@
+{
+  "setCode": "rix",
+  "cardDataUrl": "",
+  "imagesUrl": "",
+  "_comments": "Three kinds of land for this release: full art, normal, and dual",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "rix",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/rivals-of-ixalan",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "x198,w192,u193,b194,r195,g196"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "rix",
+        "src": "https://media.wizards.com/2017/rix/en_OpjLcNkxTs.png",
+        "title": "Plains",
+        "num": "192"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "rix",
+        "src": "https://media.wizards.com/2017/rix/en_t4y7kQgFFS.png",
+        "title": "Island",
+        "num": "193"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "rix",
+        "src": "https://media.wizards.com/2017/rix/en_gu1gtHPevL.png",
+        "title": "Swamp",
+        "num": "194"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "rix",
+        "src": "https://media.wizards.com/2017/rix/en_4TuQlPmqwr.png",
+        "title": "Mountain",
+        "num": "195"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "rix",
+        "src": "https://media.wizards.com/2017/rix/en_34cZ2QmzIm.png",
+        "title": "Forest",
+        "num": "196"
+      }
+    },
+    {
+      "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
+      "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
+      "newValues": {
+        "set": "{{setCode}}",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "{{title}}",
+        "colour": "l",
+        "cost": "",
+        "rarity": "c",
+        "num": "{{num}}/264 L"
+      }
+    }
+  ]
+}

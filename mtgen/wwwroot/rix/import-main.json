@@ -1,0 +1,241 @@
+{
+  "setCode": "rix",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=188&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/rivals-of-ixalan",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+    {
+      "_comment": "mtg salvation included the basic lands which I import separately, and I do the special land separately",
+      "delete": true,
+      "where": "type=(Basic Land|Land)"
+    },
+
+    {
+      "where": "title='Luminous Bond",
+      "newValues": {
+        "title": "Luminous Bonds"
+      }
+    },
+    {
+      "where": "title='Mist-Cloacked Herald",
+      "newValues": {
+        "title": "Mist-Cloaked Herald"
+      }
+    },
+    {
+      "where": "title='Path to Discovery",
+      "newValues": {
+        "title": "Path of Discovery"
+      }
+    },
+    {
+      "where": "title='Return to the Wind",
+      "newValues": {
+        "title": "Release to the Wind"
+      }
+    },
+    {
+      "where": "title='Sworn Gaurdian",
+      "newValues": {
+        "title": "Sworn Guardian"
+      }
+    },
+    {
+      "where": "title='Tilonali's Crown",
+      "newValues": {
+        "title": "Tilonalli’s Crown"
+      }
+    },
+
+    {
+      "where": "title='Hadanas Climb",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "xln|158",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Winged Temple of Orazca",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdFront": "xln|158:a",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Journey to Eternity",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "xln|160",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Atzal, Cave of Eternity",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdFront": "xln|160:a",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Path of Mettle",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "xln|165",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Metzali, Tower of Triumph",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdFront": "xln|165:a",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Profane Procession",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "xln|166",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Tomb of the Dusk Rose",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdFront": "xln|166:a",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Storm the Vault",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "xln|173",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Vault of Catlacan",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdFront": "xln|173:a",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Azors Gateway",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "xln|176",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Sanctum of the Sun",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdFront": "xln|176:a",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Golden Guardian",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "xln|179",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Gold-Forge Garrison",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdFront": "xln|179:a",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Angrath, Minotaur Pirate",
+      "newValues": {
+        "src": "https://media.wizards.com/2017/images/daily/en_JZGdbMbeJh.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Angrath's Ambusher",
+      "newValues": {
+        "src": "https://media.wizards.com/2017/images/daily/en_mHI83N0dy9.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Angrath's Fury",
+      "newValues": {
+        "src": "https://media.wizards.com/2017/images/daily/en_fJTTSzb3Gs.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Swab Goblin",
+      "newValues": {
+        "src": "https://media.wizards.com/2017/images/daily/en_bIe2ufwDQv.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Vampire Champion",
+      "newValues": {
+        "src": "https://media.wizards.com/2017/images/daily/en_0nr12BPGAf.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Vraska, Scheming Gorgon",
+      "newValues": {
+        "src": "https://media.wizards.com/2017/images/daily/en_JlUDc3POWP.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Vraska's Conquistador",
+      "newValues": {
+        "src": "https://media.wizards.com/2017/images/daily/en_74X7HDRvr5.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Vraska's Scorn",
+      "newValues": {
+        "src": "https://media.wizards.com/2017/images/daily/en_zKiUjrxDh9.png",
+        "promo": true,
+        "includedReason": "Planeswalker Deck"
+      }
+    }
+
+  ]
+}
