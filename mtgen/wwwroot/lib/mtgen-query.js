@@ -124,11 +124,19 @@ class MtgenQuery {
                 if (fullPack === undefined) { throw new Error(`generateCardSetsFromPacks: Missing pack def '${pack.packName}'`); }
                 const cardSet = await this._generateCardSetFromPack(fullPack);
                 cardSet.forEach(set => set.setIndex = i); // So they can be sorted by the originally generated order.
+                //TODO: setting the parent and sort are also done when sorting... can these be combined?
+                //TODONEXT: don't generate the "sort by Opened Order" sub menu unless the parent is sorted by set
+                //TODONEXT: implement the "sort by Opened Order" method
+                //TODONEXT: do I use a setId anywhere when rendering the packs? if so it should come from the data, not created by the UI
+                cardSet.parent = generatedSets; // Set the parent on each set.
                 generatedSets.push(cardSet);
             }
         }
 
         generatedSets.totalLength = generatedSets.reduce((total, cardSet) => total + cardSet.length, 0);
+
+        // The natural order the sets are generated are "the initial sort".
+        generatedSets.sortOrder = MtgenQuery.sortOrders.set;
 
         return generatedSets;
 
@@ -226,6 +234,9 @@ class MtgenQuery {
         if (pack.includeWithUserCards !== false) {
             cardSet.includeWithUserCards = true;
         }
+
+        // The natural order the cards are generated are "the initial sort".
+        cardSet.sortOrder = MtgenQuery.sortOrders.order;
 
         return cardSet;
     }
@@ -602,6 +613,7 @@ class MtgenQuery {
             case 'guild': return await this.groupAllByGuild(cardList);
             case 'clan': return await this.groupAllByClan(cardList);
             case 'faction': return await this.groupAllByFaction(cardList);
+            case 'set': return await this.groupAllBySet(cardList);
             default:
                 console.warn('Unknown sort type: ' + sortType);
                 return this.sortByName(cardList);
@@ -636,6 +648,7 @@ class MtgenQuery {
             case 'guild': return await this.sortByGuild(cardList);
             case 'clan': return await this.sortByClan(cardList);
             case 'faction': return await this.sortByFaction(cardList);
+            case 'order': return await this.sortByOrder(cardList);
             default:
                 console.warn('Unknown sort type: ' + sortType);
                 return this.sortByName(cardList);
@@ -780,6 +793,11 @@ class MtgenQuery {
         return await this._groupAllByX(cardList, 'faction', MtgenData.factions, MtgenData.getFactionByCode, MtgenQuery.sortOrders.faction, "Non-Faction");
     }
 
+    async groupAllBySet(cardList) {
+        // The cardList is actually the originalResults, so it's already in the exact order we want.
+        return cardList;
+    }
+
     async _sortIntoArray(groupedCardSets, sortObj) {
         let cardSets = [];
         for (const sortItem in sortObj) {
@@ -828,7 +846,8 @@ class MtgenQuery {
             , guild: { sort: 'guild' }
             , clan: { sort: 'clan' }
             , faction: { sort: 'faction' }
-            , order: { sort: 'order' } // opened order within the set
+            , set: { sort: 'set', sortName: 'Generated Sets' }
+            , order: { sort: 'order', sortName: 'Opened Order' } // opened order within the set
         };
     }
 
