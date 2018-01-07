@@ -22,6 +22,12 @@
         "includedReason": "Planeswalker Deck"
       }
     },
+    {
+      "where": "title='Stone Quarry",
+      "newValues": {
+        "rarity": "u"
+      }
+    },
 
     {
       "_comment": "delete all cards that weren't selected above",

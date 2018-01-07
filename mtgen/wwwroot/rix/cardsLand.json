@@ -56,17 +56,6 @@
   },
   {
     "set": "rix",
-    "title": "Stone Quarry",
-    "src": "https://media.wizards.com/2017/rix/en_kLkEgryRJu.png",
-    "cost": "",
-    "rarity": "c",
-    "type": "Land",
-    "colour": "l",
-    "num": "0190",
-    "mtgenId": "rix|0190"
-  },
-  {
-    "set": "rix",
     "title": "Woodland Stream",
     "src": "https://media.wizards.com/2017/rix/en_xLNAxz65pW.png",
     "cost": "",
@@ -88,5 +77,16 @@
     "mtgenId": "rix|0205",
     "promo": true,
     "includedReason": "Planeswalker Deck"
+  },
+  {
+    "set": "rix",
+    "title": "Stone Quarry",
+    "src": "https://media.wizards.com/2017/rix/en_kLkEgryRJu.png",
+    "cost": "",
+    "rarity": "u",
+    "type": "Land",
+    "colour": "l",
+    "num": "0190",
+    "mtgenId": "rix|0190"
   }
 ]

@@ -531,20 +531,6 @@
   },
   {
     "set": "rix",
-    "title": "Nezahal, Primal Tide",
-    "src": "https://media.wizards.com/2017/rix/en_4r62STMqBX.png",
-    "cost": "5UU",
-    "rarity": "m",
-    "type": "Legendary Creature",
-    "subtype": "Elder Dinosaur",
-    "power": "7",
-    "toughness": "7",
-    "colour": "u",
-    "num": "0045",
-    "mtgenId": "rix|0045"
-  },
-  {
-    "set": "rix",
     "title": "River Darter",
     "src": "https://media.wizards.com/2017/rix/en_JEEP23FRSu.png",
     "cost": "2U",
@@ -2289,7 +2275,7 @@
   },
   {
     "set": "rix",
-    "title": "Tilonalli's Crown",
+    "title": "Tilonalli�s Crown",
     "src": "https://media.wizards.com/2017/rix/en_h20elQnNV8.png",
     "cost": "1R",
     "rarity": "c",
@@ -2298,6 +2284,20 @@
     "colour": "r",
     "num": "0120",
     "mtgenId": "rix|0120"
+  },
+  {
+    "set": "rix",
+    "title": "Nezahal, Primal Tide",
+    "src": "https://media.wizards.com/2017/rix/en_4r62STMqBX.png",
+    "cost": "5UU",
+    "rarity": "r",
+    "type": "Legendary Creature",
+    "subtype": "Elder Dinosaur",
+    "power": "7",
+    "toughness": "7",
+    "colour": "u",
+    "num": "0045",
+    "mtgenId": "rix|0045"
   },
   {
     "set": "rix",
@@ -2508,7 +2508,7 @@
     "mtgenVariant": 1,
     "duplicateNum": true,
     "doubleFaceCard": true,
-    "mtgenIdBack": "rix|179",
+    "mtgenIdBack": "xln|179",
     "doubleFaceFrontCard": true
   },
   {
