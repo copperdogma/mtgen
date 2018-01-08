@@ -123,9 +123,7 @@ class MtgenQuery {
                 var fullPack = that._dataApi.packs.get(pack.packName);
                 if (fullPack === undefined) { throw new Error(`generateCardSetsFromPacks: Missing pack def '${pack.packName}'`); }
                 const cardSet = await this._generateCardSetFromPack(fullPack);
-                cardSet.forEach(set => set.setIndex = i); // So they can be sorted by the originally generated order.
                 //TODO: setting the parent and sort are also done when sorting... can these be combined?
-                //TODONEXT: implement the "sort by Opened Order" method
                 //TODONEXT: do I use a setId anywhere when rendering the packs? if so it should come from the data, not created by the UI
                 cardSet.parent = generatedSets; // Set the parent on each set.
                 generatedSets.push(cardSet);
@@ -153,7 +151,7 @@ class MtgenQuery {
         let cardQueries = [];
 
         // Go through each card query in the pack and select it according to its query
-        pack.cards.forEach(cardDef => {
+        for (const cardDef of pack.cards) {
             if (cardDef.querySet) {
                 const totalWeight = cardDef.querySet.reduce((total, query) => total + query.percent, 0);
 
@@ -175,7 +173,7 @@ class MtgenQuery {
             else {
                 console.error(`cardDef doesn't have a queryDef or query property: ${cardDef}`);
             }
-        });
+        }
 
         // Basically if the pack was created with usableForDeckBuilding=false then use that, otherwise default to true
         let usableForDeckBuilding = pack.usableForDeckBuilding || true;
@@ -183,7 +181,6 @@ class MtgenQuery {
         // Execute each card template's query to choose the actual card
         let cardSet = [];
         let cardIndices = [];
-        let index = 0;
         for (const cardDef of cardQueries) {
             const isOrderImportant = cardDef.inOrder && cardDef.inOrder === true;
             const possibleCards = await this._executeQuery(this._dataApi.cards, this._dataApi.defs, cardDef.query, isOrderImportant);
@@ -194,17 +191,19 @@ class MtgenQuery {
                 takeCount = take[1];
             }
 
-            // Shallow clone the cards via .slice().
-            let chosenCards;
+            let queriedCards;
             if (takeCount == "*") {
-                chosenCards = possibleCards.slice();
+                queriedCards = possibleCards.slice();
             }
             else if (cardDef.canBeDuplicate === true) {
-                chosenCards = (await this._randomCards(cardDef.query, possibleCards, takeCount)).slice();
+                queriedCards = (await this._randomCards(cardDef.query, possibleCards, takeCount)).slice();
             }
             else {
-                chosenCards = (await this._randomCards(cardDef.query, possibleCards, takeCount, cardIndices)).slice();
+                queriedCards = (await this._randomCards(cardDef.query, possibleCards, takeCount, cardIndices)).slice();
             }
+
+            // Clone the cards so we're not modifying the originals.
+            let chosenCards = queriedCards.map(c => Object.assign({}, c));
 
             // Apply any setValues
             if (cardDef.setValues) {
@@ -212,15 +211,17 @@ class MtgenQuery {
                 chosenCards = chosenCards.map(chosenCard => Object.assign({}, chosenCard, cardDef.setValues));
             }
 
-            chosenCards.forEach(card => {
+            console.log('----- cardindices');
+            for (const card of chosenCards) {
                 // Apply usableForDeckBuilding if not already specified
                 if (card.usableForDeckBuilding === undefined) {
                     card.usableForDeckBuilding = usableForDeckBuilding;
                 }
                 cardIndices.push(card.mtgenId);
-                card.index = index++; // So they can be sorted by the originally generated order.
+                card.index = cardSet.length; // So they can be sorted by the originally generated order.
+                console.log(`index ${card.index}: ${card.title}`);
                 cardSet.push(card);
-            });
+            }
         }
 
         cardSet.setName = pack.packName;
@@ -685,6 +686,15 @@ class MtgenQuery {
 
     async sortByFaction(cardList) {
         return await this._sortByX(cardList, 'faction', MtgenQuery.sortOrders.faction);
+    }
+
+    // This sort option is only available if the top-level sort is "Generated Sets".
+    async sortByOrder(cardList) {
+        // Because this is the default sort for each of these groups,
+        // we can revert to this sort by just reverting to the original sort,
+        // as indicated by the 'index' property stamped on the cards as they
+        // were generated.
+        return await this._sortByX(cardList, 'index', MtgenQuery.sortOrders.order);
     }
 
     async _sortByX(cardList, cardPropertyName, sortOrderEnum) {
