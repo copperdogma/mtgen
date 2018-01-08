@@ -125,7 +125,6 @@ class MtgenQuery {
                 const cardSet = await this._generateCardSetFromPack(fullPack);
                 cardSet.forEach(set => set.setIndex = i); // So they can be sorted by the originally generated order.
                 //TODO: setting the parent and sort are also done when sorting... can these be combined?
-                //TODONEXT: don't generate the "sort by Opened Order" sub menu unless the parent is sorted by set
                 //TODONEXT: implement the "sort by Opened Order" method
                 //TODONEXT: do I use a setId anywhere when rendering the packs? if so it should come from the data, not created by the UI
                 cardSet.parent = generatedSets; // Set the parent on each set.

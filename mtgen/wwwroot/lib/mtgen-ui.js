@@ -85,7 +85,6 @@ class MtgenUI {
         }
         else if (el.classList.contains('generate')) {
             //TODONEXT: encapsulate these three lines into a data call (they exist on the first ui render, too)
-            //TODONEXT: wrong sort! sorting into All Cards, and there is no "Generated Sets" group option or "Opened Order" sort on each pack
             this._dataApi.currentProduct.originalResults = await this._queryApi.generateCardSetsFromPacks(this._dataApi.currentProduct.currentSettings.packs);
             const sortedResults = await this._queryApi.sortAllBy(this._dataApi.currentProduct.originalResults, this._dataApi.currentProduct.initialSort);
             this._dataApi.currentProduct.results = sortedResults;
@@ -296,7 +295,7 @@ class MtgenUI {
         const title = packDesc || product.setDesc || 'All Cards';
         const areResultsGrouped = product.results.length !== undefined && product.results[0].length !== undefined;
         const areSortedByGeneratedSet = areResultsGrouped && product.results.sortOrder.sort === 'set';
-        let allCardsHtml;
+        let allCardsHtml = '';
 
         if (areSortedByGeneratedSet) {
             allCardsHtml += this._renderSetsTitle(product.results.length, product.originalResults.totalLength);
@@ -360,7 +359,8 @@ class MtgenUI {
             if (allOrSet === 'all') {
                 menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.set, results, allOrSet));
             }
-            else {
+            else if (this._dataApi.currentProduct.results.sortOrder.sort === 'set') {
+                // Only render the "Opened Order" sub-menu item if the top-level sort is by Set.
                 menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.order, results, allOrSet));
             }
         }
@@ -417,8 +417,8 @@ class MtgenUI {
                 aEnd = "</a>";
             }
 
-            const includedReason = (card.includedReason !== undefined) ? '<em class="reason">(' + card.includedReason + ')</em>' : '';
-            return `<span class="card${foilClass}${doubleFaceClass}${deckClass}" data-mtgenid="${card.mtgenId}" title="${title}">${aStart}${cardImageHtml}<em class="title">${title}</em>${includedReason}${aEnd}</span>`;
+            const includedReason = (card.includedReason !== undefined) ? `<em class='reason'>(${card.includedReason})</em>` : '';
+            return `<span class='card${foilClass}${doubleFaceClass}${deckClass}' data-mtgenid='${card.mtgenId}' title='${title}'>${aStart}${cardImageHtml}<em class='title'>${title}</em>${includedReason}${aEnd}</span>`;
         });
         return htmlOut.join('');
     }
