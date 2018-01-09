@@ -3,7 +3,7 @@ MtGenerator Data class v1.0
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
-12-Jul-2017: Created.
+9-Jan-2018: Created.
 */
 
 class MtgenData {
@@ -326,7 +326,7 @@ class MtgenData {
     }
 
     static getCardTypeByName(name) {
-        // there may be multiple card types within the name, so we'll choose the first we find in sort order priority
+        // There may be multiple card types within the name, so we'll choose the first we find in sort order priority.
         let regex;
         for (let cardType in MtgenData.cardTypes) {
             regex = new RegExp("\\b" + MtgenData.cardTypes[cardType].name + "\\b", "i");

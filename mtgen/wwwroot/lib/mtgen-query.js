@@ -3,7 +3,7 @@ MtGenerator Query class v1.0
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
-30-Jul-2017: Created.
+9-Jan-2018: Created.
 */
 
 class MtgenQuery {
@@ -22,7 +22,6 @@ class MtgenQuery {
 
     async _addAdditionalPackData() {
         let querySetPercentAvg;
-        //CAMKILL: for (let packKey in this._dataApi.packs) {
         this._dataApi.packs.forEach(async (pack) => {
             // Check the querySets and add percentages if they're missing (missing means they all have an equal chance)
             if (!pack.cards) { return; }
@@ -69,14 +68,6 @@ class MtgenQuery {
     async _cachePackDefs(defs) {
         if (defs === undefined) { return defs; }
 
-        //CAMKILL:
-        //defs.forEach(async (def) => {
-        //    def.cards = await this._executeQuery(this._dataApi.cards, this._dataApi.defs, def.query);
-        //    if (def.cards.length < 1) {
-        //        console.warn(`WARNING: createPackDefs(): no results from pack definition '${def.defName}': ${def.query}`);
-        //    }
-        //});
-
         for (let def of defs.values()) {
             def.cards = await this._executeQuery(this._dataApi.cards, this._dataApi.defs, def.query);
             if (def.cards.length < 1) {
@@ -85,21 +76,6 @@ class MtgenQuery {
         }
     }
 
-    //CAMKILL:
-    //async _createPackDefs(defs) {
-    //    let packDefs = [];
-    //    if (defs === undefined) { return packDefs; }
-
-    //    defs.forEach(async (def) => {
-    //        const defSet = await this._executeQuery(this._dataApi.cards, this._dataApi.defs, def.query);
-    //        packDefs[def.defName] = defSet;
-    //        if (defSet.length < 1) {
-    //            console.warn(`WARNING: createPackDefs(): no results from pack definition '${def.defName}': ${def.query}`);
-    //        }
-    //    });
-    //    return packDefs;
-    //}
-
     async generateCardSetsFromPacks(packs) {
         // If missing any essentials, abort
         if (packs == null) { throw new Error(`Missing packs. Cannot continue.`); }
@@ -107,16 +83,6 @@ class MtgenQuery {
         // Generate the requested sets
         let generatedSets = [];
         const that = this;
-        //CAMKILL:
-        //packs.forEach(async (pack) => {
-        //    // Create X of the desired packs.
-        //    for (let i = 0; i < pack.count; i++) {
-        //        var fullPack = that._dataApi.packs.get(pack.packName);
-        //        if (fullPack === undefined) { throw new Error(`generateCardSetsFromPacks: Missing pack def '${pack.packName}'`); }
-        //        const cardSet = await this._generateCardSetFromPack(fullPack);
-        //        generatedSets.push(cardSet);
-        //    }
-        //});
         for (const pack of packs) {
             // Create X of the desired packs.
             for (let i = 0; i < pack.count; i++) {
@@ -124,7 +90,6 @@ class MtgenQuery {
                 if (fullPack === undefined) { throw new Error(`generateCardSetsFromPacks: Missing pack def '${pack.packName}'`); }
                 const cardSet = await this._generateCardSetFromPack(fullPack);
                 //TODO: setting the parent and sort are also done when sorting... can these be combined?
-                //TODONEXT: do I use a setId anywhere when rendering the packs? if so it should come from the data, not created by the UI
                 cardSet.parent = generatedSets; // Set the parent on each set.
                 generatedSets.push(cardSet);
             }
@@ -136,12 +101,6 @@ class MtgenQuery {
         generatedSets.sortOrder = MtgenQuery.sortOrders.set;
 
         return generatedSets;
-
-        // TODO: take this method code from original generateCardSetsFromPacks
-
-        // TODO: copy all query stuff from mtg-generator-lib
-
-        // TODO: redo this; make a new product.currentSettings that this reads from
     }
 
     async _generateCardSetFromPack(pack) {
@@ -207,11 +166,10 @@ class MtgenQuery {
 
             // Apply any setValues
             if (cardDef.setValues) {
-                // clone via Object.assign() so we don't modify the original cards
+                // Clone via Object.assign() so we don't modify the original cards.
                 chosenCards = chosenCards.map(chosenCard => Object.assign({}, chosenCard, cardDef.setValues));
             }
 
-            console.log('----- cardindices');
             for (const card of chosenCards) {
                 // Apply usableForDeckBuilding if not already specified
                 if (card.usableForDeckBuilding === undefined) {
@@ -219,7 +177,6 @@ class MtgenQuery {
                 }
                 cardIndices.push(card.mtgenId);
                 card.index = cardSet.length; // So they can be sorted by the originally generated order.
-                console.log(`index ${card.index}: ${card.title}`);
                 cardSet.push(card);
             }
         }
@@ -300,62 +257,6 @@ class MtgenQuery {
         return min + Math.floor(Math.random() * (max - min + 1));
     }
 
-    //CAMKILL:
-    //    // Execute each card template's query to choose the actual card
-    //    let cardSet = [];
-    //    let cardIndices = [];
-    //    cardQueries.forEach(async (cardDef) => {
-    //        const isOrderImportant = cardDef.inOrder && cardDef.inOrder === true;
-    //        const possibleCards = await this._executeQuery(this._dataApi.cards, this._dataApi.defs, cardDef.query, isOrderImportant);
-
-    //        let takeCount = 1;
-    //        const take = cardDef.query.match(/take\[(.+)\]>/i);
-    //        if (take) {
-    //            takeCount = take[1];
-    //        }
-
-    //        // Shallow clone the cards via .slice().
-    //        let chosenCards;
-    //        if (takeCount == "*") {
-    //            chosenCards = possibleCards.slice();
-    //        }
-    //        else if (cardDef.canBeDuplicate === true) {
-    //            chosenCards = randomCards(cardDef.query, possibleCards, takeCount).slice();
-    //        }
-    //        else {
-    //            chosenCards = randomCards(cardDef.query, possibleCards, takeCount, cardIndices).slice();
-    //        }
-
-    //        // Apply any setValues
-    //        if (cardDef.setValues) {
-    //            // clone via Object.assign() so we don't modify the original cards
-    //            chosenCards = chosenCards.map(chosenCard => Object.assign({}, chosenCard, cardDef.setValues));
-    //        }
-
-    //        chosenCards.forEach(card => {
-    //            // Apply usableForDeckBuilding if not already specified
-    //            if (card.usableForDeckBuilding === undefined) {
-    //                card.usableForDeckBuilding = usableForDeckBuilding;
-    //            }
-    //            cardIndices.push(card.mtgenId);
-    //            cardSet.push(card);
-    //        });
-    //    });
-
-    //    cardSet.setName = pack.packName;
-    //    cardSet.setDesc = pack.packDesc;
-    //    cardSet.packVersion = pack.packVersion;
-
-    //    // Used to ensure things like promos aren't included when you sort all cards by colour
-    //    // NOTE: this isn't really used right now -- I'm leaving it in in case it's useful when we start actually letting the user build decks
-    //    cardSet.includeWithUserCards = pack.includeWithUserCards;
-    //    if (pack.includeWithUserCards !== false) {
-    //        cardSet.includeWithUserCards = true;
-    //    }
-
-    //    return cardSet;
-    //}
-
     // SHOULD NOT BE CALLED EXCEPT BY executeQuery()
     // Returns only the card indices
     async _executeSimpleQuery(fullSet, defs, query, isOrderImportant) {
@@ -375,16 +276,10 @@ class MtgenQuery {
         // Determine base set to select from
         let sourceSet = [];
         if (from == "*") {
-            //CAMKILL:sourceSetCards = fullSet;
             sourceSet = [...fullSet.values()];
         }
         // Select from previously-defined set
         else {
-            //CAMKILL:
-            //sourceSetCards = defs.get(from);
-            //if (sourceSetCards === undefined) {
-            //    console.warn(`ERROR: executeSimpleQuery(): def '${from}' does not exist within query: ${query}`);
-            //}
             const def = defs.get(from);
             if (def === undefined) {
                 console.warn(`ERROR: executeSimpleQuery(): def '${from}' does not exist within query: ${query}`);
@@ -394,19 +289,6 @@ class MtgenQuery {
             }
             sourceSet = def.cards;
         }
-
-        if (sourceSet === undefined) {
-            var xxx = 1;
-        }
-        //CAMKILL: const sourceSet = Object.values(sourceSetCards)
-        //try {
-        //    var xxxx = [...sourceSetCards.values()];
-        //}
-        //catch (ex) {
-        //    var xxx = ex;
-        //    var xx2 = 1;
-        //}
-        //const sourceSet = [...sourceSetCards.values()];
 
         // Execute the query on the set
         if (!query2) {
@@ -505,15 +387,12 @@ class MtgenQuery {
         const queries = query.split(/(\+|-)(?=from|take)/); // split on + or - (set operators), but keep the operator
 
         let operator = '';
-        //CAMKILL:let firstRun = true;
         let resultIndices = [];
         for (let [index, query] of queries.entries()) {
             // On the first run though, the initial query should just be the base
-            //CAMKILL:if (firstRun === true) {
             if (index === 0) {
                 resultIndices = await this._executeSimpleQuery(fullSet, defs, query, isOrderImportant); // returns only indices
                 //console.log('executeSimpleQuery count/query:' + resultIndices.length + '/' + query);
-                //CAMKILL:firstRun = false;
             }
             else {
                 // Now every even array element should be the operator
@@ -542,52 +421,6 @@ class MtgenQuery {
         return finalResult;
     }
 
-    //CAMKILL:
-    //// The pattern should be something like: from[*]?rarity=(c,u,r,mr)+from[*]?type='Land'-from[*]?type=('Marketing','Token')
-    //// i.e.: a base query then a set of set addition and subtractions
-    //// fullSet = all card objects
-    //async _executeQuery(fullSet, defs, query, isOrderImportant) {
-    //    const queries = query.split(/(\+|-)(?=from|take)/); // split on + or - (set operators), but keep the operator
-
-    //    let operator = '';
-    //    //CAMKILL:let firstRun = true;
-    //    let resultIndices = [];
-    //    queries.forEach(async (query, index) => {
-    //        // On the first run though, the initial query should just be the base
-    //       //CAMKILL:if (firstRun === true) {
-    //        if (index === 0) {
-    //            resultIndices = await this._executeSimpleQuery(fullSet, defs, query, isOrderImportant); // returns only indices
-    //            //console.log('executeSimpleQuery count/query:' + resultIndices.length + '/' + query);
-    //            //CAMKILL:firstRun = false;
-    //            var xxx = 1;
-    //        }
-    //        else {
-    //            // Now every even array element should be the operator
-    //            if (index % 2 == 1) {
-    //                operator = query;
-    //            }
-    //            else {
-    //                const set = await this._executeSimpleQuery(fullSet, defs, query, isOrderImportant); // returns only indices
-    //                //console.log('executeSimpleQuery count/query:' + set.length + '/' + query);
-    //                switch (operator) {
-    //                    case "+": resultIndices = resultIndices.concat(set); break;
-    //                    case "-": resultIndices = resultIndices.filter(x => !set.includes(x)); break;
-    //                    default: console.error(`ERROR: expected + or - operator in query '${query}' but instead found '${operator}'`);
-    //                }
-    //            }
-    //        }
-    //    });
-
-    //    // Match these indices back up with the actual objects and return that
-    //    const finalResult = resultIndices.map(resultIndex => fullSet[resultIndex]);
-
-    //    if (finalResult.length < 1) {
-    //        console.warn(`WARNING: executeQuery(): no results from query: ${query}`);
-    //    }
-
-    //    return finalResult;
-    //}
-
     // Returns an object containing one array for each unique propName found.
     async _groupByProperty(arr, propName) {
         const out = arr.reduce((final, elem) => {
@@ -601,6 +434,7 @@ class MtgenQuery {
         return out;
     }
 
+    //TODO: can I sort in the browser instead of sorting the data and re-rendering the UI (which takes forever)
     async sortAllBy(cardList, sortType) {
         switch (sortType.toLowerCase()) {
             case 'nothing': return await this.sortAllByNothing(cardList);

@@ -3,7 +3,7 @@ MtGenerator UI class v1.0
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
-22-Jul-2017: Created.
+9-Jan-2018: Created.
 */
 
 class MtgenUI {
@@ -39,12 +39,6 @@ class MtgenUI {
         this._renderProductContentPlaceholders(this._dataApi.products);
         await this._renderCurrentProduct();
 
-        //// Render the initial views
-        //my.initViews.forEach(view => view.render());
-
-        //// Render the Product views
-        //Object.values(this.ProductViews).forEach(view => view.renderType());
-
         //// If there is only one Product view, hide it the tab button (we need to render it so it will auto-execute the main Product)
         //if (Object.keys(this.ProductViews).length < 2) {
         //    document.querySelector('#products>a.button').style.display = 'none';
@@ -78,17 +72,13 @@ class MtgenUI {
             await this._handleSortAllByButtonClick(el, el.dataset.sort);
             e.preventDefault();
         }
-        else if (el.classList.contains('sort-set')) {
+        else if (el.classList.contains('sort-set')) { 
             const setEl = el.closest('section[data-setid]');
             await this._handleSortSetByButtonClick(el, el.dataset.sort, setEl.dataset.setid);
             e.preventDefault();
         }
         else if (el.classList.contains('generate')) {
-            //TODONEXT: encapsulate these three lines into a data call (they exist on the first ui render, too)
-            this._dataApi.currentProduct.originalResults = await this._queryApi.generateCardSetsFromPacks(this._dataApi.currentProduct.currentSettings.packs);
-            const sortedResults = await this._queryApi.sortAllBy(this._dataApi.currentProduct.originalResults, this._dataApi.currentProduct.initialSort);
-            this._dataApi.currentProduct.results = sortedResults;
-            await this._renderCurrentProductResults();
+            await this._renderCurrentProductFromOptions();
             e.preventDefault();
         }
         else if (el.classList.contains('remove-input')) {
@@ -100,6 +90,7 @@ class MtgenUI {
             e.preventDefault();
         }
         else if (el.classList.contains('add-booster')) {
+            //TODONEXT: I feel that this should modify the actual data which should then be re-rendered.. keep the state and display separate.
             this._dataApi.currentProduct.currentSettings.packs.push({ count: 1, packName: this._dataApi.currentProduct.packs[0].packName });
             const boosterInputHtml = await this._renderBoosterInput({ defaultPackName: this._dataApi.currentProduct.packs[0].packName, count: 1 }, 0);
             const boosterInputEl = document.createElement('div');
@@ -191,6 +182,13 @@ class MtgenUI {
         this._productContentEl.innerHTML = productContentHtml;
     }
 
+    async _renderCurrentProductFromOptions() {
+        this._dataApi.currentProduct.originalResults = await this._queryApi.generateCardSetsFromPacks(this._dataApi.currentProduct.currentSettings.packs);
+        const sortedResults = await this._queryApi.sortAllBy(this._dataApi.currentProduct.originalResults, this._dataApi.currentProduct.initialSort);
+        this._dataApi.currentProduct.results = sortedResults;
+        await this._renderCurrentProductResults();
+    }
+
     async _renderCurrentProduct() {
         //TODO: change this to SetCurrentProduct which may call render.. or changing the current product will raise an event, and when the product changes this renders it
         // Highlight active tab
@@ -208,30 +206,15 @@ class MtgenUI {
         // If there are no options, auto-generate the product results.
         // TODO: if the set is fixed (not generated) and it's already generated, don't do it again
         if (this._dataApi.currentProduct.options === undefined) {
-            // TODO: compare this XLN to prod; missing Basic Land and Other prod is Other (18) whereas this one is Other (1)
-            // TODO: green "Growing Rites of Itlimoc".. wrong. It's a double-faced card, but it's not rendering as one
-            this._dataApi.currentProduct.originalResults = await this._queryApi.generateCardSetsFromPacks(this._dataApi.currentProduct.currentSettings.packs);
-            // TODO: this is the simple case where there is only one pack generated; not sure how it did it with multiple packs
-            const sortedResults = await this._queryApi.sortAllBy(this._dataApi.currentProduct.originalResults, this._dataApi.currentProduct.initialSort);
-            this._dataApi.currentProduct.results = sortedResults;
-            // also need meta data stats... but should that be determined by the set (are there Guilds?) or the properties of all cards (does any card have a Guild?)
-            // -- original just showed those that match the card output, so if no guilds in that pack, no guild sort/group
-            // how much of this meta analysis does this generateCardSetsFromPacks do?
-            // how was this done before?
-            // what if generating the result arrays, each card was stamped with resultIndex, order? then we could just re-group/sort them
-            await this._renderCurrentProductResults();
+            // TODONEXT: double-faced cards: green "Growing Rites of Itlimoc" is not rendering as double-faced
+            // TODONEXT: saved draw support (saving and rendering)
+            // TODONEXT: export support
+            // TODONEXT: card zoom support (like Building a Sealed Deck insert)
+            // TODONEXT: check all sets
+            // TODONEXT: invasion block has query errors
+            // TODO: this is the simple case where there is only one pack generated; not sure how it did it with multiple packs (what does this mean??)
+            await this._renderCurrentProductFromOptions();
         }
-
-        //my.mainView.currentView = this;
-
-        //Array.from(this.el.querySelectorAll('#product-content > section')).forEach(n => n.classList.remove('active'));
-        //this.el.querySelector('#product-content .' + this.productName).classList.add('active');
-
-        //// Render the options if not already done, hide old tab, show new tab
-        //if (!this.isInitialized) {
-        //    this.isInitialized = true;
-        //    this.renderOptions();
-        //}
     }
 
     _renderBoosterInput(optionPack, index) {
