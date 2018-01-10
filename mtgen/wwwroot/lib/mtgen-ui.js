@@ -206,12 +206,12 @@ class MtgenUI {
         // If there are no options, auto-generate the product results.
         // TODO: if the set is fixed (not generated) and it's already generated, don't do it again
         if (this._dataApi.currentProduct.options === undefined) {
-            // TODONEXT: double-faced cards: green "Growing Rites of Itlimoc" is not rendering as double-faced
             // TODONEXT: saved draw support (saving and rendering)
             // TODONEXT: export support
             // TODONEXT: card zoom support (like Building a Sealed Deck insert)
             // TODONEXT: check all sets
             // TODONEXT: invasion block has query errors
+            // TODONEXT: /pls has query errors on load, related to the other sets in the block (and current produ does not)
             // TODO: this is the simple case where there is only one pack generated; not sure how it did it with multiple packs (what does this mean??)
             await this._renderCurrentProductFromOptions();
         }

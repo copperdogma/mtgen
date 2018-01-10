@@ -190,20 +190,6 @@ class MtgenData {
                 console.warn(`WARNING: duplicate mtgenId: ${card.mtgenId} : ${card.title}`);
             }
 
-            // Load up the alternate side card on double-faced cards
-            if (card.mtgenIdBack !== undefined) {
-                const cardBack = goodCards[card.mtgenIdBack];
-                if (cardBack !== undefined) {
-                    card.cardBack = cardBack;
-                }
-            }
-            if (card.mtgenIdFront !== undefined) {
-                const cardFront = goodCards[card.mtgenIdFront];
-                if (cardFront !== undefined) {
-                    card.cardFront = cardFront;
-                }
-            }
-
             goodCards.set(card.mtgenId, card);
         });
 
@@ -211,13 +197,13 @@ class MtgenData {
         for (let card of goodCards.values()) {
             // Load up the alternate side card on double-faced cards
             if (card.mtgenIdBack !== undefined) {
-                const cardBack = goodCards[card.mtgenIdBack];
+                const cardBack = goodCards.get(card.mtgenIdBack);
                 if (cardBack !== undefined) {
                     card.cardBack = cardBack;
                 }
             }
             if (card.mtgenIdFront !== undefined) {
-                const cardFront = goodCards[card.mtgenIdFront];
+                const cardFront = goodCards.get(card.mtgenIdFront);
                 if (cardFront !== undefined) {
                     card.cardFront = cardFront;
                 }
