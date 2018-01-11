@@ -1,9 +1,9 @@
 /*!
- * tingle.js
- * @author  robin_parisi
- * @version 0.10.0
- * @url
- */
+* tingle.js
+* @author  robin_parisi
+* @version 0.12.0
+* @url
+*/
 (function(root, factory) {
     if (typeof define === 'function' && define.amd) {
         define(factory);
@@ -20,12 +20,12 @@
 
     var transitionEvent = whichTransitionEvent();
 
-
     function Modal(options) {
 
         var defaults = {
             onClose: null,
             onOpen: null,
+            beforeOpen: null,
             beforeClose: null,
             stickyFooter: false,
             footer: false,
@@ -74,6 +74,13 @@
 
     Modal.prototype.open = function() {
 
+        var self = this;
+
+        // before open callback
+        if (typeof self.opts.beforeOpen === 'function') {
+            self.opts.beforeOpen();
+        }
+
         if (this.modal.style.removeProperty) {
             this.modal.style.removeProperty('display');
         } else {
@@ -88,9 +95,6 @@
 
         // show modal
         this.modal.classList.add('tingle-modal--visible');
-
-        // onOpen event
-        var self = this;
 
         if (transitionEvent) {
             this.modal.addEventListener(transitionEvent, function handler() {
@@ -109,8 +113,7 @@
         }
 
         // check if modal is bigger than screen height
-        _checkOverflow.call(this);
-
+        this.checkOverflow();
     };
 
     Modal.prototype.isOpen = function() {
@@ -244,13 +247,7 @@
         return modalHeight >= viewportHeight;
     };
 
-
-    /* ----------------------------------------------------------- */
-    /* == private methods */
-    /* ----------------------------------------------------------- */
-
-
-    function _checkOverflow() {
+    Modal.prototype.checkOverflow = function() {
         // only if the modal is currently shown
         if (this.modal.classList.contains('tingle-modal--visible')) {
             if (this.isOverflow()) {
@@ -269,6 +266,11 @@
             }
         }
     }
+
+
+    /* ----------------------------------------------------------- */
+    /* == private methods */
+    /* ----------------------------------------------------------- */
 
     function _recalculateFooterPosition() {
         if (!this.modalBoxFooter) {
@@ -344,7 +346,7 @@
         this._events = {
             clickCloseBtn: this.close.bind(this),
             clickOverlay: _handleClickOutside.bind(this),
-            resize: _checkOverflow.bind(this),
+            resize: this.checkOverflow.bind(this),
             keyboardNav: _handleKeyboardNav.bind(this)
         };
 
@@ -367,7 +369,7 @@
     function _handleClickOutside(event) {
         // if click is outside the modal
         if (this.opts.closeMethods.indexOf('overlay') !== -1 && !_findAncestor(event.target, 'tingle-modal') &&
-            event.clientX < this.modal.clientWidth) {
+        event.clientX < this.modal.clientWidth) {
             this.close();
         }
     }

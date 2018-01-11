@@ -208,13 +208,15 @@ class MtgenUI {
         if (this._dataApi.currentProduct.options === undefined) {
             // TODONEXT: saved draw support (saving and rendering)
             // TODONEXT: export support
-            // TODONEXT: card zoom support (like Building a Sealed Deck insert)
             // TODONEXT: check all sets
             // TODONEXT: invasion block has query errors
             // TODONEXT: /pls has query errors on load, related to the other sets in the block (and current produ does not)
             // TODO: this is the simple case where there is only one pack generated; not sure how it did it with multiple packs (what does this mean??)
             await this._renderCurrentProductFromOptions();
         }
+
+        // Tells the UI a set of cards was rendered. Used to trigger modal event listeners and Holder.run().
+        window.dispatchEvent(new CustomEvent('resultsRendered'));
     }
 
     _renderBoosterInput(optionPack, index) {

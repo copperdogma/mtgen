@@ -73,7 +73,7 @@
         <script src="~/lib/underscore/underscore-min.js"></script>
         <script src="~/lib/backbone/backbone.js"></script>
         <script src="~/lib/mdn.base64.min.js"></script>*@
-    <script src="~/lib/tingle/dist/tingle.js?v0.10.0"></script>
+    <script src="~/lib/tingle/dist/tingle.js?v0.12.0"></script>
     @*<script src="~/lib/mtg-generator-lib.js?v2.4"></script>
         <script src="~/lib/mtg-generator.js?v=2.1.4"></script>*@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js"></script>
@@ -100,6 +100,17 @@
 
                 // Modal popup support.
                 window.modal = new tingle.modal({});
+
+                // Properly render any placeholder images and modal popups.
+                const _showCardModal = event => {
+                    window.modal.setContent(`<div class='modal-card'><img src='${event.currentTarget.href}'/></div>`);
+                    window.modal.open();
+                    event.preventDefault();
+                };
+                window.addEventListener('resultsRendered', e => {
+                    Holder.run()
+                    document.querySelectorAll('#product-content .card a').forEach(el => el.addEventListener('click', _showCardModal));
+                }, false);
             }
         };
     </script>
