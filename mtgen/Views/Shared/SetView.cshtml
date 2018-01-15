@@ -72,7 +72,8 @@
     @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
         <script src="~/lib/underscore/underscore-min.js"></script>
         <script src="~/lib/backbone/backbone.js"></script>
-        <script src="~/lib/mdn.base64.min.js"></script>*@
+    *@
+    <script src="~/lib/mdn.base64.min.js"></script>
     <script src="~/lib/tingle/dist/tingle.js?v0.12.0"></script>
     @*<script src="~/lib/mtg-generator-lib.js?v2.4"></script>
         <script src="~/lib/mtg-generator.js?v=2.1.4"></script>*@
@@ -114,6 +115,26 @@
             }
         };
     </script>
+    <template id="exporter-template">
+        <aside id="exporter" class="modal exporter">
+            <h2>Export Your Boosters</h2>
+            <section class="export-set">
+                <p>A variety of programs allow you to import cards in a certain format. Choose your format and copy &amp; paste the result or click Download to get a file.</p>
+                <ul>
+                    <li><a href="#" class="button change-export-type active" data-export-type="dec"><strong>.dec</strong> - Cockatrice, Apprentice</a></li>
+                    <li><a href="#" class="button change-export-type" data-export-type="txt"><strong>.txt</strong> - Magic Online</a></li>
+                    <li><a href="#" class="button change-export-type" data-export-type="mwdeck"><strong>.mwdeck</strong> - Magic Workstation</a></li>
+                    <li><a href="#" class="button change-export-type" data-export-type="cod"><strong>.cod</strong> - Cockatrice</a></li>
+                    <li><a href="#" class="button change-export-type" data-export-type="coll"><strong>.coll</strong> - Decked Builder</a></li>
+                </ul>
+            </section>
+            <section class="export-detail">
+                <p class="card-count"></p>
+                <a href="#" class="button export-download">Download this format as a file</a>
+                <textarea></textarea>
+            </section>
+        </aside>
+    </template>
 
     @*<script>
             $(document).ready(function () {

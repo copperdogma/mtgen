@@ -19,6 +19,8 @@ class MtgenUI {
 
         this.version = "v1.0.0";
 
+        this.exports = {};
+
         // Display card loading counts as they load
         document.querySelector('#card-count .total').textContent = dataApi.setCardCount;
         const currentCardCountEl = document.querySelector('#card-count .current');
@@ -55,12 +57,12 @@ class MtgenUI {
         // React to global events like clicking a tab or changing an option.
         // This is done globally instead of with handlers on individual elements because
         // the UI is generated dynamically and there could be thousands of elements with handlers.
-        this._mainEl.addEventListener('click', async e => {
+        document.addEventListener('click', async e => {
             if (e.target.classList.contains('button') || e.target.tagName === 'BUTTON') {
                 await this._handleButtonClick(e, e.target);
             }
         });
-        this._mainEl.addEventListener('change', async e => {
+        document.addEventListener('change', async e => {
             if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') {
                 await this._handleInputChange(e, e.target);
             }
@@ -72,7 +74,7 @@ class MtgenUI {
             await this._handleSortAllByButtonClick(el, el.dataset.sort);
             e.preventDefault();
         }
-        else if (el.classList.contains('sort-set')) { 
+        else if (el.classList.contains('sort-set')) {
             const setEl = el.closest('section[data-setid]');
             await this._handleSortSetByButtonClick(el, el.dataset.sort, setEl.dataset.setid);
             e.preventDefault();
@@ -102,6 +104,16 @@ class MtgenUI {
         }
         else if (el.classList.contains('option-preset')) {
             await this._handleChooseOptionPreset(el, el.dataset.preset);
+            e.preventDefault();
+        }
+        else if (el.classList.contains('export')) {
+            await this._handleShowExportCurrentProduct(e);
+            e.preventDefault();
+        }
+        // Change export formats.
+        else if (el.classList.contains('change-export-type')) {
+            const exportType = el.dataset.exportType;
+            await this._chooseExportFormat(exportType);
             e.preventDefault();
         }
     }
@@ -207,10 +219,10 @@ class MtgenUI {
         // TODO: if the set is fixed (not generated) and it's already generated, don't do it again
         if (this._dataApi.currentProduct.options === undefined) {
             // TODONEXT: saved draw support (saving and rendering)
-            // TODONEXT: export support
             // TODONEXT: check all sets
             // TODONEXT: invasion block has query errors
             // TODONEXT: /pls has query errors on load, related to the other sets in the block (and current produ does not)
+            // TODONEXT: don't re-render a fixed output product like Promos or All Cards if they've already been rendered
             // TODO: this is the simple case where there is only one pack generated; not sure how it did it with multiple packs (what does this mean??)
             await this._renderCurrentProductFromOptions();
         }
@@ -415,6 +427,132 @@ class MtgenUI {
         const htmlOut = `<img data-usable-for-deck-building="${card.usableForDeckBuilding}" src="${card.src}" alt="${title}" title="${title}" width="${(card.width || 265)}" height="${(card.height || 370)}" />`;
 
         return htmlOut;
+    }
+
+    // Export functions --------------------------------------------------------------------------------------------------------------------------------
+
+    async _handleShowExportCurrentProduct(e) {
+        window.modal.setContent(document.getElementById('exporter-template').innerHTML);
+        const exportType = e.target.getAttribute('data-export');
+        if (exportType == 'all') {
+            await this._addExportableTextFormats(this._dataApi.currentProduct.originalResults);
+        }
+        else {
+            const setId = e.target.closest('.set').getAttribute('data-setid');
+            const sets = [this._dataApi.currentProduct.results[setId]];
+            await this._addExportableTextFormats(sets);
+        }
+
+        // Display the first format (dec: Cockatrice) for initial display
+        await this._chooseExportFormat('dec');
+
+        window.modal.open();
+
+        window.dispatchEvent(new CustomEvent('exporting', { detail: { setCode: this._dataApi.set.code } })); // triggers google analytics tracking event
+        // No 'return false;' so model plugin can trigger afterward
+    }
+
+    async _addExportableTextFormats(generatedSets) {
+        // It's the same list for all formats
+        const allCards = await this._queryApi.getAllValidExportableCards(generatedSets);
+        const countedCards = await this._queryApi.getUniqueCountedSortedCardSet(allCards);
+
+        const attrib = 'Created by MtG Generator: ' + window.location.href.replace('index.html', '').replace('#', '');
+
+        // Store the exports so we can do various things with them later
+        document.querySelector('.exporter.modal .card-count').textContent = `${allCards.length} cards total, ${countedCards.length} unique`;
+
+        this.exports.dec = await this._renderDecFormat(countedCards, attrib);
+        this.exports.txt = await this._renderTxtFormat(countedCards, attrib);
+        this.exports.mwdeck = await this._renderMwDeckFormat(null, countedCards, attrib);
+        this.exports.cod = await this._renderCodFormat(countedCards, attrib);
+        this.exports.coll = await this._renderCollFormat(countedCards, attrib);
+    }
+
+    // All 'cards' arguments below should be a list of unique, counted, sorted cards
+
+    // .dec: used by Cockatrice, Apprentice
+    // sample (under ".dec File Format"): http://www.deckedbuilder.com/faq.html
+    async _renderDecFormat(cards, attrib) {
+        const output = '// ' + attrib + '\r\n' + cards.reduce((cardOutput, card) =>
+            cardOutput += card.count + ' ' + card.title + '\r\n', '');
+        return output;
+    }
+
+    // .coll: used by used by Decked Builder
+    // sample (under ".coll File Format"): http://www.deckedbuilder.com/faq.html
+    // No sideboard option as they're not decks; they're card collections.
+    async _renderCollFormat(cards, attrib) {
+        const output = '// ' + attrib + '\r\n' + cards.reduce((cardOutput, card) =>
+            cardOutput += card.count + ' ' + card.title + ' [' + this._dataApi.set.name + ']\r\n', '');
+        return output;
+    }
+
+    // .txt: used by used by Magic Online
+    // sample: http://archive.wizards.com/Magic/magazine/article.aspx?x=mtgcom/arcana/678
+    async _renderTxtFormat(cards, attrib) {
+        //CAMKILL:
+        //const output = 'Sideboard\r\n' + _.reduce(cards, function (memo, card) {
+        //    const cardTitle = card.title.replace(' // ', '/'); // Apparently Magic Online doesn't import it's own magic.wizards.com // format for split cards!
+        //    return memo += card.count + ' ' + cardTitle + '\r\n';
+        //}, '');
+        const output = 'Sideboard\r\n' + cards.reduce((memo, card) => {
+            const cardTitle = card.title.replace(' // ', '/'); // Apparently Magic Online doesn't import it's own magic.wizards.com // format for split cards!
+            return memo += card.count + ' ' + cardTitle + '\r\n';
+        }, '');
+        return output;
+    }
+
+    // .cod: used by Cockatrice
+    // sample: http://mtgstudio.uservoice.com/forums/16948-mtg-studio-suggestions/suggestions/2675891-support-cockatrice-deck-format-
+    async _renderCodFormat(cards, attrib) {
+        const output = '<?xml version="1.0" encoding="UTF-8"?>\r\n'
+            + '\t<cockatrice_deck version="1">\r\n'
+            + '\t<deckname>' + this._dataApi.set.name + ' Prerelease</deckname>\r\n'
+            + '\t<comments>' + attrib + ' Prerelease</comments>\r\n'
+            + '\t<zone name="main">\r\n'
+            + '\t</zone>\r\n'
+            + '\t<zone name="side">\r\n'
+            + cards.reduce((cardOutput, card) =>
+                cardOutput += '\t\t<card number="' + card.count + '" name="' + card.title.replace('&', '&amp;') + '"/>\r\n', '')
+            + '\t</zone>\r\n'
+            + '</cockatrice_deck>';
+        return output;
+    }
+
+    // .mwDeck: used by Magic Workstation
+    // & replaced with / in card title otherwise MWS won't import
+    // sample: https://code.google.com/p/deckprinter/source/browse/trunk/downloaded.mwdeck?spec=svn34&r=34
+    async _renderMwDeckFormat(cards, sbCards, attrib) {
+        let output = `// ${attrib}\r\n`;
+        let prefix = '    ';
+        if (cards !== null && cards.length > 0) {
+            output += cards.reduce((cardOutput, card) =>
+                cardOutput += prefix + card.count + ' [' + card.set.toUpperCase() + '] ' + card.title.replace(' & ', '/') + '\r\n',
+                '');
+        }
+        if (sbCards !== null && sbCards.length > 0) {
+            prefix = 'SB: ';
+            output += sbCards.reduce((cardOutput, card) => cardOutput += prefix + card.count + ' [' + card.set.toUpperCase() + '] ' + card.title.replace(' & ', '/') + '\r\n',
+                '// Sideboard:\r\n');
+        }
+        return output;
+    }
+
+    async _chooseExportFormat(exportType) {
+        const allButtons = document.querySelectorAll('.exporter.modal .export-set a.button');
+        Array.from(allButtons).forEach(b => b.classList.remove('active'));
+        document.querySelector(`.export-set a[data-export-type=${exportType}]`).classList.add('active');
+
+        document.querySelector('.exporter.modal textarea').value = this.exports[exportType];
+        this._setLinkToDownloadFile('.exporter.modal .export-detail a.export-download', exportType);
+    }
+
+    async _setLinkToDownloadFile(linkSelector, exportType) {
+        const utf8encodedContent = strToUTF8Arr(this.exports[exportType]);
+        const encodedContent = base64EncArr(utf8encodedContent);
+        document.querySelector(linkSelector).setAttribute('href', 'data:text/octet-stream;base64,' + encodedContent);
+        document.querySelector(linkSelector).setAttribute('download', `mtg-generator-${this._dataApi.set.slug}-prerelease.${exportType}`); // 'download' attr is Chrome/FF-only to set download filename
     }
 
     // Support functions --------------------------------------------------------------------------------------------------------------------------------

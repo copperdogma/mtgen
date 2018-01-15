@@ -14,7 +14,10 @@ class MtgenData {
 
         this.version = "v1.0.0";
 
-        this.setCode = setCode;
+        this.set = {
+            code: setCode.toUpperCase()
+            // name and slug are filled in loadAll
+        };
         this.setCardCount = setCardCount;
         this.setCardsLoadedCount = 0;
         this.sets = new Map();
@@ -72,6 +75,8 @@ class MtgenData {
 
         // Sets
         this.sets = setData.reduce((allSets, set) => allSets.set(set.code, set), new Map());
+        this.set.name = this.sets.get(this.set.code).name;
+        this.set.slug = await this._friendly_url(this.set.name);
 
         // All the actual cards - from the array of individual card sets within cardDataArray
         const cardData = cardDataArray.reduce((cardSets, cardSet) => cardSets.concat(cardSet), []);
@@ -440,6 +445,29 @@ class MtgenData {
             ccost += intCost;
         });
         return ccost;
+    }
+
+    // from: http://guegue.net/friendlyURL_JS
+    async _friendly_url(str, max) {
+        if (str === undefined) return str;
+        if (max === undefined) max = 32;
+        let a_chars = new Array(
+            new Array("a", /[áàâãªÁÀÂÃ]/g),
+            new Array("e", /[éèêÉÈÊ]/g),
+            new Array("i", /[íìîÍÌÎ]/g),
+            new Array("o", /[òóôõºÓÒÔÕ]/g),
+            new Array("u", /[úùûÚÙÛ]/g),
+            new Array("c", /[çÇ]/g),
+            new Array("n", /[Ññ]/g)
+        );
+        // Replace vowel with accent without them
+        for (let i = 0; i < a_chars.length; i++) {
+            str = str.replace(a_chars[i][1], a_chars[i][0]);
+        }
+        // first replace whitespace by -, second remove repeated - by just one, third turn in low case the chars,
+        // fourth delete all chars which are not between a-z or 0-9, fifth trim the string and
+        // the last step truncate the string to 32 chars 
+        return str.replace(/\s+/g, '-').toLowerCase().replace(/[^a-z0-9\-]/g, '').replace(/\-{2,}/g, '-').replace(/(^\s*)|(\s*$)/g, '').substr(0, max);
     }
 }
 

@@ -675,6 +675,32 @@ class MtgenQuery {
         return cards;
     }
 
+    async getAllValidExportableCards(cardSets) {
+        const cards = cardSets.reduce((cards, cardSet) => cards.concat(cardSet.map(card => card)), [])
+            .filter(card => card.usableForDeckBuilding && card.inDeck !== true);
+        return cards;
+    }
+
+    async getUniqueCountedSortedCardSet(cards) {
+        const countedCards = cards.reduce((countedCards, card) => {
+            const matchTitle = card.matchTitle;
+            card.title = card.title.replace(`’`, `'`); // ’ messes up cockatrice
+            if (countedCards.has(matchTitle)) {
+                let existingCard = countedCards.get(matchTitle);
+                existingCard.count++;
+                countedCards.set(matchTitle, existingCard);
+            } else {
+                card.count = 1;
+                countedCards.set(matchTitle, card);
+            }
+            return countedCards;
+        }, new Map());
+
+        // Convert associative array to numeric array
+        const cardList = [...countedCards.values()].sort((a, b) => this._sortBy('matchTitle', a, b));
+        return cardList;
+    }
+
     /* --------- Sorting All Cards --------------------------------------------------------------------------------------------------------------------- */
 
     static get sortOrders() {

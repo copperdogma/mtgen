@@ -430,10 +430,12 @@ footer a {
 	color: #fff;
 }
 
+.tingle-modal .tingle-modal-box {
+    width: 95%;
+}
 .modal {
-	max-width: 100%;
-	width: 70em;
-	padding: 2em;
+    max-width: 100%;
+    padding: 2em;
 }
 .modal h2 {
 	font-size: 260%;
