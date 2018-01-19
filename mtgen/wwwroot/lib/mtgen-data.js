@@ -15,7 +15,7 @@ class MtgenData {
         this.version = "v1.0.0";
 
         this.set = {
-            code: setCode.toUpperCase()
+            code: setCode.toLowerCase()
             // name and slug are filled in loadAll
         };
         this.setCardCount = setCardCount;
@@ -45,7 +45,6 @@ class MtgenData {
     }
     get currentProductName() { return this._currentProductName; }
 
-    async loadAll(setFile, cardFiles, packFiles, productFile) {
         window.dispatchEvent(new Event('data-loading'));
 
         // If missing any essentials, abort
@@ -75,12 +74,12 @@ class MtgenData {
 
         // Sets
         this.sets = setData.reduce((allSets, set) => allSets.set(set.code, set), new Map());
-        this.set.name = this.sets.get(this.set.code).name;
+        this.set.name = this.sets.get(this.set.code.toUpperCase()).name;
         this.set.slug = await this._friendly_url(this.set.name);
 
         // All the actual cards - from the array of individual card sets within cardDataArray
         const cardData = cardDataArray.reduce((cardSets, cardSet) => cardSets.concat(cardSet), []);
-        const cardResults = this._processCardData(cardData, this.setCode);
+        const cardResults = this._processCardData(cardData, this.set.code);
         this.cards = cardResults.cards;
         this.cardsMetaData = cardResults.cardMetaData;
 

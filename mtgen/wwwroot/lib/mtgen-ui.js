@@ -21,11 +21,6 @@ class MtgenUI {
 
         //TODO: these may be closer to queries
         this.exports = {};
-
-        // Display card loading counts as they load
-        document.querySelector('#card-count .total').textContent = dataApi.setCardCount;
-        const currentCardCountEl = document.querySelector('#card-count .current');
-        window.addEventListener('playableCardLoaded', e => currentCardCountEl.textContent = e.detail.setCardsLoadedCount, false);
     }
 
     async renderUI() {

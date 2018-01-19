@@ -82,15 +82,21 @@
     <script>
         document.onreadystatechange = async () => {
             if (document.readyState === 'complete') {
+                //TODO: do we need to server-supply this stuff, or can we do it all from the setcode in the url?
                 const mtgenData = new MtgenData("@Model.Code", @Model.CardCount);
                 const mtgenQuery = new MtgenQuery(mtgenData);
                 const mtgenUI = new MtgenUI(mtgenData, mtgenQuery);
+
+                // Display card loading counts as they load
+                document.querySelector('#card-count .total').textContent = mtgenData.setCardCount;
+                const currentCardCountEl = document.querySelector('#card-count .current');
+                window.addEventListener('playableCardLoaded', e => currentCardCountEl.textContent = e.detail.setCardsLoadedCount, false);
 
                 await mtgenData.loadAll(
                     '@Model.SetFile', // setFile
                     [ @Html.Raw(string.Join(", ", Model.CardFiles.Select(cardFile => $"'/{Model.Code}/{cardFile}'"))) ], // cardFiles
                     [ @Html.Raw(string.Join(", ", Model.PackFiles.Select(packFile => $"'/{Model.Code}/{packFile}'"))) ], // packFiles
-                    '/@Model.Code/@Model.ProductFile' //productFile
+                    '/@Model.Code/@Model.ProductFile', //productFile
                 );
 
                 //TODO: hard-coded for now.. this should probably go into a higher layer that deals with "do we have a draw" as well
