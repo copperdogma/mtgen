@@ -19,6 +19,7 @@ class MtgenUI {
 
         this.version = "v1.0.0";
 
+        //TODO: these may be closer to queries
         this.exports = {};
 
         // Display card loading counts as they load
@@ -167,8 +168,9 @@ class MtgenUI {
         // Render one tab per product
         const productTabsHtml = [...products.values()].reduce((htmlOut, product) => {
             if (product.isVisible == undefined || product.isVisible == true) {
-                return htmlOut += `<a data-product-name='${product.productName}' href='#' id='show-product-${product.productName}' class='button'>${product.productDesc}</a>`;
+                htmlOut += `<a data-product-name='${product.productName}' href='#' id='show-product-${product.productName}' class='button'>${product.productDesc}</a>`;
             }
+            return htmlOut;
         }, '');
 
         this._productsEl.innerHTML = productTabsHtml;
@@ -187,8 +189,9 @@ class MtgenUI {
 
         const productContentHtml = [...products.values()].reduce((htmlOut, product) => {
             if (product.isVisible == undefined || product.isVisible == true) {
-                return htmlOut += `<section class='product-${product.productName}'><section class='options'></section><section class='result'></section></section>`;
+                htmlOut += `<section class='product-${product.productName}'><section class='options'></section><section class='result'></section></section>`;
             }
+            return htmlOut;
         }, '');
 
         this._productContentEl.innerHTML = productContentHtml;
@@ -218,9 +221,7 @@ class MtgenUI {
         // If there are no options, auto-generate the product results.
         if (this._dataApi.currentProduct.options === undefined && this._dataApi.currentProduct.originalResults === undefined) {
             // TODONEXT: saved draw support (saving and rendering)
-            // TODONEXT: check all sets
-            // TODONEXT: invasion block has query errors
-            // TODONEXT: /pls has query errors on load, related to the other sets in the block (and current produ does not)
+            // TODONEXT: check all sets (done up to invasion block)
             await this._renderCurrentProductFromOptions();
         }
 
