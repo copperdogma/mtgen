@@ -92,15 +92,20 @@
                 const currentCardCountEl = document.querySelector('#card-count .current');
                 window.addEventListener('playableCardLoaded', e => currentCardCountEl.textContent = e.detail.setCardsLoadedCount, false);
 
+                const drawCode = await mtgenUI.getQuerystringParamByName('draw'); // Provided if we're loading a saved draw.
+
                 await mtgenData.loadAll(
                     '@Model.SetFile', // setFile
                     [ @Html.Raw(string.Join(", ", Model.CardFiles.Select(cardFile => $"'/{Model.Code}/{cardFile}'"))) ], // cardFiles
                     [ @Html.Raw(string.Join(", ", Model.PackFiles.Select(packFile => $"'/{Model.Code}/{packFile}'"))) ], // packFiles
                     '/@Model.Code/@Model.ProductFile', //productFile
+                    drawCode
                 );
 
-                //TODO: hard-coded for now.. this should probably go into a higher layer that deals with "do we have a draw" as well
-                mtgenData.currentProductName = '@Model.StartProductName';
+                // This will already be filled in by this point if a draw was loaded. Otherwise use the default product from set.json.
+                if (mtgenData.currentProductName === undefined) {
+                    mtgenData.currentProductName = '@Model.StartProductName';
+                }
 
                 // Start!
                 mtgenUI.renderUI();

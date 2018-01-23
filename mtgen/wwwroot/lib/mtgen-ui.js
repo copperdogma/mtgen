@@ -35,8 +35,14 @@ class MtgenUI {
 
         this._renderProductTabs(this._dataApi.products);
         this._renderProductContentPlaceholders(this._dataApi.products);
-        await this._renderCurrentProduct();
 
+        // We will already have results by this point if we loaded a draw.
+        if (this._dataApi.currentProduct.results !== undefined) {
+            await this._renderCurrentProductResults();
+        }
+        else {
+            await this._renderCurrentProduct();
+        }
         //// If there is only one Product view, hide it the tab button (we need to render it so it will auto-execute the main Product)
         //if (Object.keys(this.ProductViews).length < 2) {
         //    document.querySelector('#products>a.button').style.display = 'none';
@@ -199,6 +205,13 @@ class MtgenUI {
         await this._renderCurrentProductResults();
     }
 
+    async _renderCurrentProductFromDraw() {
+        this._dataApi.currentProduct.originalResults = await this._queryApi.generateCardSetsFromDraw(this._dataApi.currentProduct.draw);
+        this._dataApi.currentProduct.results = this._dataApi.currentProduct.originalResults;
+        this._dataApi.currentProduct.results.sortOrder = MtgenQuery.sortOrders.set;
+        await this._renderCurrentProductResults();
+    }
+
     async _renderCurrentProduct() {
         //TODO: change this to SetCurrentProduct which may call render.. or changing the current product will raise an event, and when the product changes this renders it
         // Highlight active tab
@@ -213,9 +226,12 @@ class MtgenUI {
         // TODO: combine the saved deck options and the default options...
         this._renderCurrentProductOptions();
 
+        // If there is a draw, render the saved draw results.
+        if (this._dataApi.currentProduct.draw !== undefined) {
+            await this._renderCurrentProductFromDraw();
+        }
         // If there are no options, auto-generate the product results.
-        if (this._dataApi.currentProduct.options === undefined && this._dataApi.currentProduct.originalResults === undefined) {
-            // TODONEXT: saved draw support (saving and rendering)
+        else if (this._dataApi.currentProduct.options === undefined && this._dataApi.currentProduct.originalResults === undefined) {
             // TODONEXT: check all sets (done up to invasion block)
             await this._renderCurrentProductFromOptions();
         }
@@ -288,7 +304,11 @@ class MtgenUI {
         let allCardsHtml = '';
 
         if (areSortedByGeneratedSet) {
-            allCardsHtml += this._renderSetsTitle(product.results.length, product.originalResults.totalLength);
+            if (product.draw !== undefined) {
+                allCardsHtml += this._renderDrawSetsTitle(product.draw, product.results.length, product.originalResults.totalLength);
+            } else {
+                allCardsHtml += this._renderSetsTitle(product.results.length, product.originalResults.totalLength);
+            }
         }
         else {
             allCardsHtml += this._renderCardsTitle(title, product.originalResults.totalLength)
@@ -328,6 +348,7 @@ class MtgenUI {
     // General rendering functions
     _renderCardsTitle(title, cardCount) { return `<h2>${title} <span class='card-count'>(${cardCount})<a href="#" class="button top">[ Top ]</a></span></h2>`; }
     _renderSetsTitle(setCount, cardCount) { return `<h2>${setCount} Sets Generated - <span class='card-count'>${cardCount} cards<a href="#" class="button top">[ Top ]</a></span></h2>`; }
+    _renderDrawSetsTitle(draw, setCount, cardCount) { return `<h2><strong title='Saved on ${new Date(draw.timestamp)}'>Saved Draw:</strong> ${setCount} Sets Recreated - <span class='card-count'>${cardCount} cards<a href="#" class="button top">[ Top ]</a></span></h2>`; }
 
     _renderTopMenu(results, allOrSet) {
         let menuItems = [];
@@ -484,11 +505,6 @@ class MtgenUI {
     // .txt: used by used by Magic Online
     // sample: http://archive.wizards.com/Magic/magazine/article.aspx?x=mtgcom/arcana/678
     async _renderTxtFormat(cards, attrib) {
-        //CAMKILL:
-        //const output = 'Sideboard\r\n' + _.reduce(cards, function (memo, card) {
-        //    const cardTitle = card.title.replace(' // ', '/'); // Apparently Magic Online doesn't import it's own magic.wizards.com // format for split cards!
-        //    return memo += card.count + ' ' + cardTitle + '\r\n';
-        //}, '');
         const output = 'Sideboard\r\n' + cards.reduce((memo, card) => {
             const cardTitle = card.title.replace(' // ', '/'); // Apparently Magic Online doesn't import it's own magic.wizards.com // format for split cards!
             return memo += card.count + ' ' + cardTitle + '\r\n';
@@ -571,5 +587,12 @@ class MtgenUI {
         // fourth delete all chars which are not between a-z or 0-9, fifth trim the string and
         // the last step truncate the string to 32 chars 
         return str.replace(/\s+/g, '-').toLowerCase().replace(/[^a-z0-9\-]/g, '').replace(/\-{2,}/g, '-').replace(/(^\s*)|(\s*$)/g, '').substr(0, max);
+    }
+
+    async getQuerystringParamByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        const regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
     }
 }

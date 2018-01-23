@@ -97,7 +97,7 @@ class MtgenQuery {
 
         generatedSets.totalLength = generatedSets.reduce((total, cardSet) => total + cardSet.length, 0);
 
-        // The natural order the sets are generated are "the initial sort".
+        // The natural order the generated sets are "the initial sort".
         generatedSets.sortOrder = MtgenQuery.sortOrders.set;
 
         return generatedSets;
@@ -196,6 +196,45 @@ class MtgenQuery {
         cardSet.sortOrder = MtgenQuery.sortOrders.order;
 
         return cardSet;
+    }
+
+    async generateCardSetsFromDraw(draw) {
+        // If missing any essentials, abort
+        if (draw == null) { throw new Error(`Missing draw. Cannot continue.`); }
+
+        // Build the result set from the cardIds as it originall was when saved.
+        const savedDrawSets = draw.sets.map(drawSet => {
+            const packDef = this._dataApi.packs.get(drawSet.setName);
+
+            let set = [];
+            set.setName = drawSet.setName;
+            set.setDesc = packDef.packDesc;
+            set.sortOrder = MtgenQuery.sortOrders.order;
+            if (packDef.includeWithUserCards !== undefined) {
+                set.includeWithUserCards = packDef.includeWithUserCards;
+            }
+
+            // Look up the cards.
+            drawSet.mtgenIds.forEach(mtgenId => {
+                const foundCard = this._dataApi.cards.get(mtgenId);
+                if (foundCard) {
+                    set.push(foundCard);
+                }
+                else {
+                    console.warn(`Cannot find card saved in draw: ${mtgenId}`);
+                }
+            });
+            return set;
+        });
+
+        savedDrawSets.forEach(set => set.parent = savedDrawSets);
+
+        savedDrawSets.totalLength = savedDrawSets.reduce((total, cardSet) => total + cardSet.length, 0);
+
+        // The draw order the sets is "the initial sort".
+        savedDrawSets.sortOrder = MtgenQuery.sortOrders.set;
+
+        return savedDrawSets;
     }
 
     async _randomCards(queryDefForDebug, cards, num, excludeIndices) {

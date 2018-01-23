@@ -25,11 +25,13 @@ class MtgenData {
         this.products = new Map();
         this.defs = new Map();
         this.packs = new Map();
+        this.draw = { data: undefined };
 
         this._currentProductName;
         this.currentProduct;
     }
 
+    //TODO: change this to currentProduct.name ?
     set currentProductName(name) {
         this._currentProductName = name.trim().toLowerCase();
         this.currentProduct = this.products.get(this._currentProductName);
@@ -45,6 +47,7 @@ class MtgenData {
     }
     get currentProductName() { return this._currentProductName; }
 
+    async loadAll(setFile, cardFiles, packFiles, productFile, drawCode) {
         window.dispatchEvent(new Event('data-loading'));
 
         // If missing any essentials, abort
@@ -65,7 +68,6 @@ class MtgenData {
         const productFilePromise = this._fetchJson(productFile);
 
         // Load all data.
-        // CAMKILL: load draw data here? could probably do it async
         var [setData, cardDataArray, packDataArray, productData]
             = await Promise.all([setFilePromise, cardFilePromises, packFilePromises, productFilePromise])
                 .catch(err => { throw new Error(err.message); });
@@ -113,6 +115,28 @@ class MtgenData {
 
             product.currentSettings = new ProductSettings(packs, product);
         });
+
+        // If a draw was specified, load that as well.
+        if (drawCode) {
+            const drawData = await this._fetchJson(`/${this.set.code}/LoadDraw/${drawCode}`);
+            this.draw = drawData === "" ? undefined : JSON.parse(drawData);
+            if (this.draw) {
+                this.currentProductName = this.draw.productName;
+
+                // Convert the draw's saved sets into product packs, to be rendered normally later.
+                // Determine the sets that are to be displayed and how many of each.
+                const setCounts = this.draw.sets.reduce((counts, set) => {
+                    counts[set.setName] = (counts[set.setName] || 0) + 1;
+                    return counts;
+                }, {});
+                const packs = Object.entries(setCounts).map(([setName, setCount]) => { return { 'count': setCount, 'packName': setName }; });
+                this.currentProduct.currentSettings.packs = packs;
+
+                // Set the draw on the CurrentProduct. This will be picked up when the product is rendered
+                // and will render out the draw results instead of rendering the normal product queries.
+                this.currentProduct.draw = this.draw;
+            }
+        }
 
         window.dispatchEvent(new Event('data-loaded'));
     }
