@@ -27,6 +27,8 @@ class MtgenData {
         this.packs = new Map();
         this.draw = { data: undefined };
 
+        //TODONEXT: save a new draw
+
         this._currentProductName;
         this.currentProduct;
     }
