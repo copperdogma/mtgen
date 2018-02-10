@@ -25,10 +25,9 @@ class MtgenData {
         this.products = new Map();
         this.defs = new Map();
         this.packs = new Map();
-        this.draw = { data: undefined };
+        //CAMKILL:this.draw = undefined; // no draw to start but we may load one immediately
 
-        //TODONEXT: save a new draw
-
+        // If there's a draw it will be a child of a particular product.
         this._currentProductName;
         this.currentProduct;
     }
@@ -50,7 +49,7 @@ class MtgenData {
     get currentProductName() { return this._currentProductName; }
 
     async loadAll(setFile, cardFiles, packFiles, productFile, drawCode) {
-        window.dispatchEvent(new Event('data-loading'));
+        document.dispatchEvent(new Event('data-loading'));
 
         // If missing any essentials, abort
         if (setFile == null) { throw new Error(`Missing setFile. Cannot continue.`); }
@@ -120,14 +119,18 @@ class MtgenData {
 
         // If a draw was specified, load that as well.
         if (drawCode) {
-            const drawData = await this._fetchJson(`/${this.set.code}/LoadDraw/${drawCode}`);
-            this.draw = drawData === "" ? undefined : JSON.parse(drawData);
-            if (this.draw) {
-                this.currentProductName = this.draw.productName;
+            const rawDrawData = await this._fetchJson(`/${this.set.code}/LoadDraw/${drawCode}`);
+            if (rawDrawData === '') {
+                console.error(`Draw code ${drawCode} specified but could not be loaded.`)
+            }
+            else {
+                const drawData = JSON.parse(rawDrawData);
+
+                this.currentProductName = drawData.productName;
 
                 // Convert the draw's saved sets into product packs, to be rendered normally later.
                 // Determine the sets that are to be displayed and how many of each.
-                const setCounts = this.draw.sets.reduce((counts, set) => {
+                const setCounts = drawData.sets.reduce((counts, set) => {
                     counts[set.setName] = (counts[set.setName] || 0) + 1;
                     return counts;
                 }, {});
@@ -136,11 +139,61 @@ class MtgenData {
 
                 // Set the draw on the CurrentProduct. This will be picked up when the product is rendered
                 // and will render out the draw results instead of rendering the normal product queries.
-                this.currentProduct.draw = this.draw;
+                this.currentProduct.draw = drawData;
             }
         }
 
-        window.dispatchEvent(new Event('data-loaded'));
+        document.dispatchEvent(new Event('data-loaded'));
+    }
+
+    // Save the current product results as a "draw," which is persisted to the back end.
+    // Returns a new unique draw Id/url that can be later used to retrieve this saved draw.
+    async saveDraw() {
+        //$.post("/[set]/SaveDraw", { name: "John", time: "2pm" })
+        //TODO:
+        // JSON doesn't support my odd properties-on-an-array format (oops), so let's convert to something that JSON can handle
+        // And for each card, we only need the set|cardNum as a unique composite key
+        let drawData = {
+            generatorVersion: this.version,
+            drawVersion: '1.1',
+            useCount: 1,
+            setCode: this.set.code,
+            productName: this.currentProductName,
+            sets: []
+        };
+
+        //TODO: it's not saving the fact the card is a foil (it never did because it's just saving mtgenIds)
+        this.currentProduct.originalResults.forEach(generatedSet => {
+            const set = {
+                mtgenIds: generatedSet.map(generatedSet => generatedSet.mtgenId),
+                setName: generatedSet.setName,
+                sortOrder: generatedSet.sortOrder.sort,
+                packVersion: generatedSet.packVersion || '1.0'
+            };
+            drawData.sets.push(set);
+        });
+
+        //TODONEXT: clear that draw if we re-generate the product
+        var drawResults = await fetch(`/${this.set.code}/SaveDraw`, {
+            method: "POST",
+            headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }),
+            body: `data=${JSON.stringify(drawData)}`
+        })
+            .then(response => {
+                if (response.ok) { return response.json(); }
+                console.error(response);
+                throw Error("Save draw failed");
+            })
+            // e.g. return: { "drawId": "m09mJw", "url": "ogw?draw=m09mJw" }
+            .then(json => { return JSON.parse(json); });
+
+        // Save this draw against the current product.
+        Object.assign(drawData, drawResults);
+        this.currentProduct.draw = drawData;
+
+        document.dispatchEvent(new CustomEvent('drawSaved', { detail: { drawData: drawData } })); // triggers UI display of draw and google analytics tracking event
+
+        return drawResults;
     }
 
     // Get html via a proxy, erroring if it fails or if no HTML is retrieved.
@@ -214,7 +267,7 @@ class MtgenData {
             }
             if (card.set == setCode && (card.usableForDeckBuilding === undefined || card.usableForDeckBuilding === true)) {
                 this.setCardsLoadedCount++;
-                window.dispatchEvent(new CustomEvent('playableCardLoaded', { detail: { setCardsLoadedCount: this.setCardsLoadedCount } }));
+                document.dispatchEvent(new CustomEvent('playableCardLoaded', { detail: { setCardsLoadedCount: this.setCardsLoadedCount } }));
             }
             if (goodCards.has(card.mtgenId)) {
                 console.warn(`WARNING: duplicate mtgenId: ${card.mtgenId} : ${card.title}`);

@@ -69,6 +69,7 @@ class MtgenUI {
                 await this._handleInputChange(e, e.target);
             }
         });
+        document.addEventListener('drawSaved', async e => await this._handleDrawSaved(e));
     }
 
     async _handleButtonClick(e, el) {
@@ -106,6 +107,10 @@ class MtgenUI {
         }
         else if (el.classList.contains('option-preset')) {
             await this._handleChooseOptionPreset(el, el.dataset.preset);
+            e.preventDefault();
+        }
+        else if (el.classList.contains('save-draw')) {
+            await this._saveDraw(e);
             e.preventDefault();
         }
         else if (el.classList.contains('export')) {
@@ -237,7 +242,7 @@ class MtgenUI {
         }
 
         // Tells the UI a set of cards was rendered. Used to trigger modal event listeners and Holder.run().
-        window.dispatchEvent(new CustomEvent('resultsRendered'));
+        document.dispatchEvent(new CustomEvent('resultsRendered'));
     }
 
     _renderBoosterInput(optionPack, index) {
@@ -369,6 +374,10 @@ class MtgenUI {
         if (this._dataApi.currentProduct.isGenerated) {
             if (allOrSet === 'all') {
                 menuItems.push(this._renderTopMenuItem(MtgenQuery.sortOrders.set, results, allOrSet));
+                // Only render the Saved Draw button if it's the very top menu, the current product is generated, and we aren't already displaying a draw.
+                if (this._dataApi.currentProduct.draw === undefined) {
+                    menuItems.push(`<a href='#save-draw' class='button save-draw' data-export='${allOrSet}' title='Save/Share your draw'>Save Draw</a>`);
+                }
             }
             else if (this._dataApi.currentProduct.results.sortOrder.sort === 'set') {
                 // Only render the "Opened Order" sub-menu item if the top-level sort is by Set.
@@ -443,10 +452,55 @@ class MtgenUI {
         return htmlOut;
     }
 
+    // Save Draw functions -----------------------------------------------------------------------------------------------------------------------------
+    async _saveDraw(e) {
+        document.modal.setContent(document.getElementById('save-draw-template').innerHTML);
+        const saveDrawModalInput = document.querySelector(".save-draw.modal input");
+
+        //TODONEXT: after receiving a saved draw, change the display to show the Saved Draw look (green text)
+        //TODONEXT: clear out draw for current product on cardSetsGenerated; we're no longer displaying the saved draw, so get rid of it
+        //TODONEXT: if the current product has a draw and they click Save Draw, just re-display the popup
+        // - which probably means I shoudln't be rendering the results of the saved draw, but responding to a DrawSaved event and rendering off the saved draw data
+        // - then I can just use the same function to "render off the saved draw data" when we already have a draw
+
+        //TODONEXT: ah, when we render the popup just delete the Save Draw button and then we don't need this code...
+        // If there is already a loaded draw for this product, just redisplay that info. Don't re-save.
+        if (this._dataApi.currentProduct.draw) {
+            document.modal.open();
+            this._displayDrawModalInfo();
+        }
+        else {
+            saveDrawModalInput.value = 'Loading...';
+            document.modal.open();
+            await this._dataApi.saveDraw()
+                .catch(error => {
+                    saveDrawModalInput.value = 'Save draw failed!';
+                    saveDrawModalInput.style.color = 'red';
+                });
+            // Saving the draw will raise the drawSaved event, handled below.
+        }
+    }
+
+    async _handleDrawSaved(e) {
+        const drawData = e.detail.drawData;
+        // Change the url to match the saved draw
+        history.pushState({ setCode: drawData.setCode, drawId: drawData.drawId }, this._dataApi.set.name + ' Draw', drawData.url);
+
+        this._displayDrawModalInfo();
+    }
+
+    async _displayDrawModalInfo() {
+        // Display the url for easy copying/sharing.
+        const saveDrawModalInput = document.querySelector(".save-draw.modal input");
+        saveDrawModalInput.value = window.location.href;
+        saveDrawModalInput.select();
+        saveDrawModalInput.focus();
+    }
+
     // Export functions --------------------------------------------------------------------------------------------------------------------------------
 
     async _handleShowExportCurrentProduct(e) {
-        window.modal.setContent(document.getElementById('exporter-template').innerHTML);
+        document.modal.setContent(document.getElementById('exporter-template').innerHTML);
         const exportType = e.target.getAttribute('data-export');
         if (exportType == 'all') {
             await this._addExportableTextFormats(this._dataApi.currentProduct.originalResults);
@@ -460,9 +514,9 @@ class MtgenUI {
         // Display the first format (dec: Cockatrice) for initial display
         await this._chooseExportFormat('dec');
 
-        window.modal.open();
+        document.modal.open();
 
-        window.dispatchEvent(new CustomEvent('exporting', { detail: { setCode: this._dataApi.set.code } })); // triggers google analytics tracking event
+        document.dispatchEvent(new CustomEvent('exporting', { detail: { setCode: this._dataApi.set.code } })); // triggers google analytics tracking event
         // No 'return false;' so model plugin can trigger afterward
     }
 

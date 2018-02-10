@@ -15,7 +15,7 @@ class MtgenQuery {
         this.version = "v1.0.0";
 
         // Add related data that will help querying later on.
-        window.addEventListener('data-loaded', async (e) => {
+        document.addEventListener('data-loaded', async (e) => {
             await this._addAdditionalPackData();
         }, false);
     }

@@ -90,7 +90,7 @@
                 // Display card loading counts as they load
                 document.querySelector('#card-count .total').textContent = mtgenData.setCardCount;
                 const currentCardCountEl = document.querySelector('#card-count .current');
-                window.addEventListener('playableCardLoaded', e => currentCardCountEl.textContent = e.detail.setCardsLoadedCount, false);
+                document.addEventListener('playableCardLoaded', e => currentCardCountEl.textContent = e.detail.setCardsLoadedCount, false);
 
                 const drawCode = await mtgenUI.getQuerystringParamByName('draw'); // Provided if we're loading a saved draw.
 
@@ -111,15 +111,15 @@
                 mtgenUI.renderUI();
 
                 // Modal popup support.
-                window.modal = new tingle.modal({});
+                document.modal = new tingle.modal({});
 
                 // Properly render any placeholder images and modal popups.
                 const _showCardModal = event => {
-                    window.modal.setContent(`<div class='modal-card'><img src='${event.currentTarget.href}'/></div>`);
-                    window.modal.open();
+                    document.modal.setContent(`<div class='modal-card'><img src='${event.currentTarget.href}'/></div>`);
+                    document.modal.open();
                     event.preventDefault();
                 };
-                window.addEventListener('resultsRendered', e => {
+                document.addEventListener('resultsRendered', e => {
                     Holder.run()
                     document.querySelectorAll('#product-content .card a').forEach(el => el.addEventListener('click', _showCardModal));
                 }, false);
@@ -143,6 +143,15 @@
                 <p class="card-count"></p>
                 <a href="#" class="button export-download">Download this format as a file</a>
                 <textarea></textarea>
+            </section>
+        </aside>
+    </template>
+    <template id="save-draw-template">
+        <aside id='save-draw' class='modal save-draw'>
+            <h2>Save or Share Your Draw</h2>
+            <section>
+                <p>Bookmark this page or copy and save/share the following link:</p>
+                <p><input type='text' /></p>
             </section>
         </aside>
     </template>
