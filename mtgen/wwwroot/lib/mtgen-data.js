@@ -173,7 +173,6 @@ class MtgenData {
             drawData.sets.push(set);
         });
 
-        //TODONEXT: clear that draw if we re-generate the product
         var drawResults = await fetch(`/${this.set.code}/SaveDraw`, {
             method: "POST",
             headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }),

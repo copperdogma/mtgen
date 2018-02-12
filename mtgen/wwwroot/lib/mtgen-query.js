@@ -100,6 +100,9 @@ class MtgenQuery {
         // The natural order the generated sets are "the initial sort".
         generatedSets.sortOrder = MtgenQuery.sortOrders.set;
 
+        // Clear any saved draw. This clears the way for a new saved draw and will re-render the UI without leftover Saved Draw display elements.
+        this._dataApi.currentProduct.draw = undefined;
+
         return generatedSets;
     }
 

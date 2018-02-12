@@ -293,10 +293,6 @@ class MtgenUI {
 
     // All results should be rendered through this function
     _displayResults(productName, html) {
-        //CAMKILL:
-        //window.dispatchEvent(new Event('menusInitialized'));
-        //this.contentElem.querySelector('#product-content .' + productName + ' .result').innerHTML = html;
-        //setTimeout(() => window.dispatchEvent(new Event('layoutChanged')), 500);
         this._productContentEl.querySelector(`.product-${productName} .result`).innerHTML = html;
     }
 
@@ -353,7 +349,7 @@ class MtgenUI {
     // General rendering functions
     _renderCardsTitle(title, cardCount) { return `<h2>${title} <span class='card-count'>(${cardCount})<a href="#" class="button top">[ Top ]</a></span></h2>`; }
     _renderSetsTitle(setCount, cardCount) { return `<h2>${setCount} Sets Generated - <span class='card-count'>${cardCount} cards<a href="#" class="button top">[ Top ]</a></span></h2>`; }
-    _renderDrawSetsTitle(draw, setCount, cardCount) { return `<h2><strong title='Saved on ${new Date(draw.timestamp)}'>Saved Draw:</strong> ${setCount} Sets Recreated - <span class='card-count'>${cardCount} cards<a href="#" class="button top">[ Top ]</a></span></h2>`; }
+    _renderDrawSetsTitle(draw, setCount, cardCount) { return `<h2><strong title='Saved on ${new Date(draw.timestamp)}'>Saved Draw:</strong> ${setCount} Sets - <span class='card-count'>${cardCount} cards<a href="#" class="button top">[ Top ]</a></span></h2>`; }
 
     _renderTopMenu(results, allOrSet) {
         let menuItems = [];
@@ -457,28 +453,16 @@ class MtgenUI {
         document.modal.setContent(document.getElementById('save-draw-template').innerHTML);
         const saveDrawModalInput = document.querySelector(".save-draw.modal input");
 
-        //TODONEXT: after receiving a saved draw, change the display to show the Saved Draw look (green text)
         //TODONEXT: clear out draw for current product on cardSetsGenerated; we're no longer displaying the saved draw, so get rid of it
-        //TODONEXT: if the current product has a draw and they click Save Draw, just re-display the popup
-        // - which probably means I shoudln't be rendering the results of the saved draw, but responding to a DrawSaved event and rendering off the saved draw data
-        // - then I can just use the same function to "render off the saved draw data" when we already have a draw
 
-        //TODONEXT: ah, when we render the popup just delete the Save Draw button and then we don't need this code...
-        // If there is already a loaded draw for this product, just redisplay that info. Don't re-save.
-        if (this._dataApi.currentProduct.draw) {
-            document.modal.open();
-            this._displayDrawModalInfo();
-        }
-        else {
-            saveDrawModalInput.value = 'Loading...';
-            document.modal.open();
-            await this._dataApi.saveDraw()
-                .catch(error => {
-                    saveDrawModalInput.value = 'Save draw failed!';
-                    saveDrawModalInput.style.color = 'red';
-                });
-            // Saving the draw will raise the drawSaved event, handled below.
-        }
+        saveDrawModalInput.value = 'Loading...';
+        document.modal.open();
+        await this._dataApi.saveDraw()
+            .catch(error => {
+                saveDrawModalInput.value = 'Save draw failed!';
+                saveDrawModalInput.style.color = 'red';
+            });
+        // Saving the draw will raise the drawSaved event, handled below.
     }
 
     async _handleDrawSaved(e) {
@@ -487,6 +471,17 @@ class MtgenUI {
         history.pushState({ setCode: drawData.setCode, drawId: drawData.drawId }, this._dataApi.set.name + ' Draw', drawData.url);
 
         this._displayDrawModalInfo();
+
+        //TODO: fix so the UI is rendered in reaction to the data, not directly like this
+
+        // Redisplay the top header as a saved draw header.
+        const currentProduct = this._dataApi.currentProduct;
+        const setTitleEl = this._currentProductContentEl.querySelector('h2');
+        setTitleEl.outerHTML = this._renderDrawSetsTitle(currentProduct.draw, currentProduct.results.length, currentProduct.originalResults.totalLength);
+
+        // Delete the Save Draw button.
+        const saveDrawButton = this._currentProductContentEl.querySelector('.button.save-draw');
+        saveDrawButton.parentNode.removeChild(saveDrawButton);
     }
 
     async _displayDrawModalInfo() {
