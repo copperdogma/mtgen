@@ -238,6 +238,7 @@ class MtgenUI {
         // If there are no options, auto-generate the product results.
         else if (this._dataApi.currentProduct.options === undefined && this._dataApi.currentProduct.originalResults === undefined) {
             // TODONEXT: check all sets (done up to invasion block)
+            // TODONEXT: cache resources locally instead of using CDN (or at least do a fallback)
             await this._renderCurrentProductFromOptions();
         }
 
