@@ -1,0 +1,89 @@
+{
+  "defs": [
+    {
+      "defName": "m25",
+      "query": "from[*]?set='m25'"
+    },
+    {
+      "defName": "m25-main",
+      "query": "from[m25]-from[m25]?type=(Marketing|Basic Land)-from[m25]?token=true"
+    },
+    {
+      "defName": "m25-foils",
+      "query": "from[m25-main]"
+    }
+
+  ],
+  "packs": [
+    {
+      "packName": "m25-all-cards",
+      "packDesc": "Masters 25: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[m25]" }
+      ]
+    },
+    {
+      "packName": "m25-standard",
+      "packDesc": "Masters 25: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[m25-main]?rarity='c'" },
+        { "query": "take[3]>from[m25-main]?rarity='u'" },
+        {
+          "querySet": [
+            {
+              "percent": 87.5,
+              "query": "from[m25-main]?rarity='r'"
+            },
+            {
+              "percent": 12.5,
+              "query": "from[m25-main]?rarity='m'",
+              "_comment": "rare=7/8, mythicRare=1/8"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": 71.43,
+              "query": "from[m25-foils]?rarity='c'",
+              "canBeDuplicate": true,
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": 21.43,
+              "query": "from[m25-foils]?rarity='u'",
+              "canBeDuplicate": true,
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": 6.25,
+              "query": "from[m25-foils]?rarity='r'",
+              "canBeDuplicate": true,
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": 0.89,
+              "query": "from[m25-foils]?rarity='m'",
+              "canBeDuplicate": true,
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[m25]?title='Tip/Marketing Card"
+            },
+            {
+              "percent": "50",
+              "query": "from[m25]?token=true"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

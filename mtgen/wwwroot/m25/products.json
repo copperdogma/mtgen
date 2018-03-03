@@ -1,0 +1,41 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "m25-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/masters-25", "https://www.mtgsalvation.com/spoilers/214-masters-25", "https://magic.wizards.com/en/articles/archive/feature/tokens-masters-25-2018-03-02" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "m25-all-cards" }
+      ]
+    },
+    {
+      "productName": "m25-boosters",
+      "productDesc": "Boosters",
+      "sources": [ ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "m25-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "m25-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "m25-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+  ]
+}

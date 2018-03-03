@@ -1,0 +1,211 @@
+{
+  "setCode": "m25",
+  "cardDataUrl": "",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/daily-magic-update/update-2017-03-07",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "m25",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/feature/tokens-masters-25-2018-03-02",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "002|w|Token Creature|Angel\n003|w|Token Creature|Soldier\n004|w|Token Creature|Spirit\n005|u|Token Creature|Fish\n006|u|Token Creature|Kraken\n007|u|Token Creature|Whale\n008|b|Token Creature|Skeleton\n009|r|Token Creature|Golbin\n010|r|Token Creature|Kobolds of Kher Keep\n011|g|Token Creature|Elf Warrior\n012|g|Token Creature|Insect\n013|g|Token Creature|Wolf\n014|m|Token Legendary Creature|Stanng Twin\n001|c|Token Creature|Spirit\n015|c|Overlay Card|Creature"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m25",
+        "src": "https://media.wizards.com/2018/a25/en_Zm3GZBOnwD.png",
+        "num": "001",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Spirit",
+        "subtype": "Spirit"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m25",
+        "src": "https://media.wizards.com/2018/a25/en_S2PxKHYae5.png",
+        "num": "002",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Angel",
+        "subtype": "Angel"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m25",
+        "src": "https://media.wizards.com/2018/a25/en_rjWdBD6PXM.png",
+        "num": "003",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Soldier",
+        "subtype": "Soldier"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m25",
+        "src": "https://media.wizards.com/2018/a25/en_MfLkYTjk6c.png",
+        "num": "004",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Spirit",
+        "subtype": "Spirit"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m25",
+        "src": "https://media.wizards.com/2018/a25/en_0MZScjB7tc.png",
+        "num": "005",
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Fish",
+        "subtype": "Fish"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m25",
+        "src": "https://media.wizards.com/2018/a25/en_fKO9THV3bj.png",
+        "num": "006",
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Kraken",
+        "subtype": "Kraken"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m25",
+        "src": "https://media.wizards.com/2018/a25/en_JMtRnyeKH4.png",
+        "num": "007",
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Whale",
+        "subtype": "Whale"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m25",
+        "src": "https://media.wizards.com/2018/a25/en_BglFuPhY0n.png",
+        "num": "008",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Skeleton",
+        "subtype": "Skeleton"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m25",
+        "src": "https://media.wizards.com/2018/a25/en_Sqgppqpxj0.png",
+        "num": "009",
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Golbin",
+        "subtype": "Golbin"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m25",
+        "src": "https://media.wizards.com/2018/a25/en_Cthmwau2Ha.png",
+        "num": "010",
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Kobolds of Kher Keep",
+        "subtype": "Kobolds of Kher Keep"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m25",
+        "src": "https://media.wizards.com/2018/a25/en_B4VqZzneN9.png",
+        "num": "011",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Elf Warrior",
+        "subtype": "Elf Warrior"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m25",
+        "src": "https://media.wizards.com/2018/a25/en_pIc2s1fJ7N.png",
+        "num": "012",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Insect",
+        "subtype": "Insect"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m25",
+        "src": "https://media.wizards.com/2018/a25/en_YMeT9fmnKH.png",
+        "num": "013",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Wolf",
+        "subtype": "Wolf"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m25",
+        "src": "https://media.wizards.com/2018/a25/en_6IgrqKnNQk.png",
+        "num": "014",
+        "colour": "m",
+        "type": "Token Legendary Creature",
+        "title": "Stanng Twin",
+        "subtype": "Stanng Twin"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m25",
+        "src": "https://media.wizards.com/2018/a25/en_ak0QBpuIOt.png",
+        "num": "015",
+        "colour": "c",
+        "type": "Overlay Card",
+        "title": "Creature",
+        "subtype": "Creature"
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/015 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+
+}
