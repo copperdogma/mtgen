@@ -1,5 +1,5 @@
 /*
-MtG Generator script v2.2
+MtG Generator script v2.3
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
@@ -23,6 +23,7 @@ Normally 15 cards per booster:
 
 - 1 in 4 boosters contains a foil which may be any card of any rarity (incl Basic Land), which replaces a Common
 
+3-Apr-2018: Exporter: now combined two-sided cards into FrontTitle // BackTitle, and added Frogtown export format
 14-Jun-2017: Exporter: now replaces split card " // " with "/" for txt, and strips out card not usable for deckbuilding
 26-Jan-2016: Now uses mtgenId instead of index.
 3-Jan-2016: Moved the core logic into mtg-generator-lib.js.
