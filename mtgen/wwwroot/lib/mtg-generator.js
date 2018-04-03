@@ -1244,6 +1244,7 @@ var mtgGen = (function (my) {
                 + "<li><a href='#' class='button export-mwdeck' data-export-type='mwdeck'><strong>.mwdeck</strong> - Magic Workstation</a></li>"
                 + "<li><a href='#' class='button export-cod' data-export-type='cod'><strong>.cod</strong> - Cockatrice</a></li>"
                 + "<li><a href='#' class='button export-coll' data-export-type='coll'><strong>.coll</strong> - Decked Builder</a></li>"
+                + "<li><a href='#' class='button export-frog' data-export-type='frog'><strong>.frog</strong> - Frogtown</a></li>"
                 + "</ul>"
                 + "</section>"
                 + "<section class='export-detail'>"
@@ -1286,6 +1287,7 @@ var mtgGen = (function (my) {
         exports.mwdeck = renderMwDeckFormat(null, countedCards, attrib);
         exports.cod = renderCodFormat(countedCards, attrib);
         exports.coll = renderCollFormat(countedCards, attrib);
+        exports.frog = renderFrogtownFormat(countedCards, attrib);
     }
 
     function chooseExportFormat(exportType) {
@@ -1312,7 +1314,8 @@ var mtgGen = (function (my) {
     function getUniqueCountedSortedCardSet(cards) {
         const countedCards = cards.reduce((countedCards, card) => {
             const matchTitle = card.matchTitle;
-            card.title = card.title.replace("’", "'"); // ’ messes up cockatrice
+            card.exportTitle = card.title.replace("’", "'"); // ’ messes up cockatrice
+            if (card.cardBack) { card.exportTitle += ' // ' + card.cardBack.title.replace("’", "'"); }
             if (countedCards.has(matchTitle)) {
                 let existingCard = countedCards.get(matchTitle);
                 existingCard.count++;
@@ -1336,7 +1339,7 @@ var mtgGen = (function (my) {
     // sample (under ".dec File Format"): http://www.deckedbuilder.com/faq.html
     function renderDecFormat(cards, attrib) {
         const output = '// ' + attrib + '\r\n' + cards.reduce((cardOutput, card) =>
-            cardOutput += card.count + ' ' + card.title + '\r\n', '');
+            cardOutput += card.count + ' ' + card.exportTitle + '\r\n', '');
         return output;
     }
 
@@ -1345,7 +1348,7 @@ var mtgGen = (function (my) {
     // No sideboard option as they're not decks; they're card collections.
     function renderCollFormat(cards, attrib) {
         const output = '// ' + attrib + '\r\n' + cards.reduce((cardOutput, card) =>
-            cardOutput += card.count + ' ' + card.title + ' [' + my.sets[card.set.toUpperCase()].name + ']\r\n', '');
+            cardOutput += card.count + ' ' + card.exportTitle + ' [' + my.sets[card.set.toUpperCase()].name + ']\r\n', '');
         return output;
     }
 
@@ -1353,8 +1356,8 @@ var mtgGen = (function (my) {
     // sample: http://archive.wizards.com/Magic/magazine/article.aspx?x=mtgcom/arcana/678
     function renderTxtFormat(cards, attrib) {
         const output = 'Sideboard\r\n' + _.reduce(cards, function (memo, card) {
-            const cardTitle = card.title.replace(' // ', '/'); // Apparently Magic Online doesn't import it's own magic.wizards.com // format for split cards!
-            return memo += card.count + ' ' + cardTitle + '\r\n';
+            const cardtitle = card.exportTitle.replace(' // ', '/'); // Apparently Magic Online doesn't import it's own magic.wizards.com // format for split cards!
+            return memo += card.count + ' ' + cardtitle + '\r\n';
         }, '');
         return output;
     }
@@ -1370,7 +1373,7 @@ var mtgGen = (function (my) {
             + '\t</zone>\r\n'
             + '\t<zone name="side">\r\n'
             + cards.reduce((cardOutput, card) =>
-                cardOutput += '\t\t<card number="' + card.count + '" name="' + card.title.replace('&', '&amp;') + '"/>\r\n', '')
+                cardOutput += '\t\t<card number="' + card.count + '" name="' + card.exportTitle.replace('&', '&amp;') + '"/>\r\n', '')
             + '\t</zone>\r\n'
             + '</cockatrice_deck>';
         return output;
@@ -1384,14 +1387,23 @@ var mtgGen = (function (my) {
         let prefix = '    ';
         if (cards !== null && cards.length > 0) {
             output += cards.reduce((cardOutput, card) =>
-                cardOutput += prefix + card.count + ' [' + card.set.toUpperCase() + '] ' + card.title.replace(' & ', '/') + '\r\n',
+                cardOutput += prefix + card.count + ' [' + card.set.toUpperCase() + '] ' + card.exportTitle.replace(' & ', '/') + '\r\n',
                 '');
         }
         if (sbCards !== null && sbCards.length > 0) {
             prefix = 'SB: ';
-            output += sbCards.reduce((cardOutput, card) => cardOutput += prefix + card.count + ' [' + card.set.toUpperCase() + '] ' + card.title.replace(' & ', '/') + '\r\n',
+            output += sbCards.reduce((cardOutput, card) => cardOutput += prefix + card.count + ' [' + card.set.toUpperCase() + '] ' + card.exportTitle.replace(' & ', '/') + '\r\n',
                 '// Sideboard:\r\n');
         }
+        return output;
+    }
+
+    // .frog: used by used by Frogtown
+    // Requsted by Gavin R. Frogtown site: https://www.frogtown.me/
+    // No sideboard option as they're not decks; they're card collections.
+    function renderFrogtownFormat(cards, attrib) {
+        const output = '// ' + attrib + '\r\n' + cards.reduce((cardOutput, card) =>
+            cardOutput += card.count + ' ' + card.exportTitle + ' [' + card.set.toUpperCase() + ']\r\n', '');
         return output;
     }
 
