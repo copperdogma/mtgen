@@ -564,6 +564,11 @@
     "CardCount": 422
   },
   {
+    "name": "Time Spiral 'Timeshifted'",
+    "code": "TSB",
+    "_comment":  "Special sub-set of Time Spiral (TSP)"
+  },
+  {
     "name": "Planar Chaos",
     "code": "PLC",
     "block": "Time Spiral",
@@ -1309,5 +1314,15 @@
     "releaseDate": "16-Mar-2018",
     "CardCount": 249,
     "isCurrentSet": true
+  },
+  {
+    "name": "Dominaria",
+    "code": "DOM",
+    "image": "logo-word.png",
+    "generatorCreatedDate": "",
+    "prereleaseDate": "21-Apr-2018",
+    "releaseDate": "27-Apr-2018",
+    "CardCount": 269,
+    "isFutureSet": true
   }
 ]
