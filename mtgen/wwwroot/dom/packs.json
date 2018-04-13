@@ -1,0 +1,169 @@
+{
+  "defs": [
+    {
+      "defName": "dom",
+      "query": "from[*]?set='dom'"
+    },
+    {
+      "defName": "dom-base",
+      "query": "from[dom]-from[dom]?type=(Marketing|Basic Land)-from[dom]?token=true-from[dom]?promo=true-from[dom]?doubleFaceBackCard=true"
+    },
+    {
+      "defName": "dom-main",
+      "query": "from[dom-base]"
+    },
+    {
+      "defName": "dom-foils",
+      "query": "from[dom-main]"
+    },
+    {
+      "defName": "dom-promo",
+      "query": "from[dom]?promo=true"
+    },
+    {
+      "defName": "dom-legendary",
+      "query": "from[dom]?type=(Legendary Creature|Legendary Planeswalker|Legendary Enchantment|Legendary Sorcery)"
+    },
+    {
+      "defName": "dom-token",
+      "query": "from[dom]?token=true-from[dom-promo]"
+    }
+
+  ],
+  "packs": [
+    {
+      "packName": "dom-all-cards",
+      "packDesc": "Dominaria: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[dom]-from[dom]?doubleFaceBackCard=true" }
+      ]
+    },
+    {
+      "packName": "dom-standard",
+      "packDesc": "Dominaria: Standard Booster",
+      "packVersion": "1.0",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[9]>from[dom-main]?rarity='c" },
+        {
+          "querySet": [
+            {
+              "percent": "360/480",
+              "query": "from[dom-main]?rarity='c"
+            },
+            {
+              "percent": "88/480",
+              "query": "from[dom-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "24/480",
+              "query": "from[dom-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "7/480",
+              "query": "from[dom-main]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/480",
+              "query": "from[dom-main]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[3]>from[dom-main]?rarity='u" },
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[dom-main]?rarity='r"
+            },
+            {
+              "percent": "1/8",
+              "query": "from[dom-main]?rarity='m"
+            }
+          ]
+        },
+        { "query": "from[dom]?type='Basic Land" },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[dom]?title='Tip/Marketing Card"
+            },
+            {
+              "percent": "50",
+              "query": "from[dom-token]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "dom-promos",
+      "packDesc": "Dominaria: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[dom-promo]" }
+      ]
+    },
+    {
+      "packName": "dom-prerelease-promo-packins",
+      "packDesc": "Dominaria: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[dom-base]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[dom-base]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "24/32",
+              "query": "from[dom-legendary]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "7/32",
+              "query": "from[dom-legendary]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/32",
+              "query": "from[dom-legendary]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[1]>from[dom-promo]?type='Life Counter" },
+        { "query": "from[dom-promo]?title='Deck Box" },
+        { "query": "from[dom-promo]?title='Deckbuilding Advice Insert" }
+      ]
+    },
+    {
+      "packName": "dom-prerelease-promos",
+      "packDesc": "Dominaria: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[dom-promo]?includedReason='Prerelease Promo" }
+      ]
+    }
+
+  ]
+}

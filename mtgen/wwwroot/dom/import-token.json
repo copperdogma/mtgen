@@ -1,0 +1,244 @@
+{
+  "setCode": "dom",
+  "cardDataUrl": "",
+  "imagesUrl": "http://magic.wizards.com/en/articles/archive/feature/tokens-kaladesh-2016-09-15",
+  "exceptions": [
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-marketing1.png",
+        "title": "Tip/Marketing Card",
+        "colour": "o",
+        "num": "001 Marketing",
+        "type": "Marketing",
+        "marketing": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-marketing2.png",
+        "title": "Tip/Marketing Card",
+        "colour": "o",
+        "num": "002 Marketing",
+        "type": "Marketing",
+        "marketing": true
+      }
+    },
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "dom",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-dominaria-2018-04-12",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "001|w|Token Creature|Knight\n002|w|Token Creature|Knight\n003|w|Token Creature|Soldier\n004|b|Token Creature|Cleric\n005|b|Token Creature|Zombie Knight\n006|b|Token Creature|Nightmare Horror\n007|u|Token Creature|Demon\n008|r|Token Creature|Elemental\n009|r|Token Creature|Golbin\n010|r|Legendary Token Creature|Karox Bladewing\n011|g|Token Creature|Saporling\n012|g|Token Creature|Saporling\n013|g|Token Creature|Saporling\n014|c|Token Artifact Creature|Construct\n015|c|Emblem|Jaya\n016|c|Emblem|Teferi"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dom",
+        "src": "https://media.wizards.com/2018/dom/en_jZzvwfMjcS.png",
+        "num": "001",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Knight",
+        "subtype": "Knight"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dom",
+        "src": "https://media.wizards.com/2018/dom/en_sYO9Sdh8Vs.png",
+        "num": "002",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Knight",
+        "subtype": "Knight"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dom",
+        "src": "https://media.wizards.com/2018/dom/en_IEkybS0amO.png",
+        "num": "003",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Soldier",
+        "subtype": "Soldier"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dom",
+        "src": "https://media.wizards.com/2018/dom/en_TVBrhF4uTw.png",
+        "num": "004",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Cleric",
+        "subtype": "Cleric"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dom",
+        "src": "https://media.wizards.com/2018/dom/en_nVhp5RHRhP.png",
+        "num": "005",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Zombie Knight",
+        "subtype": "Zombie Knight"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dom",
+        "src": "https://media.wizards.com/2018/dom/en_jiTGmOs7ND.png",
+        "num": "006",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Nightmare Horror",
+        "subtype": "Nightmare Horror"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dom",
+        "src": "https://media.wizards.com/2018/dom/en_ONhjW5oRug.png",
+        "num": "007",
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Demon",
+        "subtype": "Demon"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dom",
+        "src": "https://media.wizards.com/2018/dom/en_1rXJAntafJ.png",
+        "num": "008",
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Elemental",
+        "subtype": "Elemental"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dom",
+        "src": "https://media.wizards.com/2018/dom/en_EZdDBcrqwr.png",
+        "num": "009",
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Golbin",
+        "subtype": "Golbin"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dom",
+        "src": "https://media.wizards.com/2018/dom/en_e9zSIkv3b5.png",
+        "num": "010",
+        "colour": "r",
+        "type": "Legendary Token Creature",
+        "title": "Karox Bladewing",
+        "subtype": "Karox Bladewing"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dom",
+        "src": "https://media.wizards.com/2018/dom/en_LOqdfjtnAr.png",
+        "num": "011",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Saporling",
+        "subtype": "Saporling"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dom",
+        "src": "https://media.wizards.com/2018/dom/en_nX2NtdaX1u.png",
+        "num": "012",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Saporling",
+        "subtype": "Saporling"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dom",
+        "src": "https://media.wizards.com/2018/dom/en_7j8M2Q8rpE.png",
+        "num": "013",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Saporling",
+        "subtype": "Saporling"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dom",
+        "src": "https://media.wizards.com/2018/dom/en_fyrNJBF5ZM.png",
+        "num": "014",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Construct",
+        "subtype": "Construct"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dom",
+        "src": "https://media.wizards.com/2018/dom/en_oc0QKHQBLU.png",
+        "num": "015",
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Jaya",
+        "subtype": "Jaya"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dom",
+        "src": "https://media.wizards.com/2018/dom/en_X0R9KqGOxX.png",
+        "num": "016",
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Teferi",
+        "subtype": "Teferi"
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

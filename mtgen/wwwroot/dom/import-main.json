@@ -1,0 +1,45 @@
+﻿{
+  "setCode": "dom",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=220&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/dominaria",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+    {
+      "_comment": "mtg salvation included the special lands and basic lands which I import separately",
+      "delete": true,
+      "where": "type=(Land|Basic Land)"
+    },
+
+    {
+      "where": "title='Lyra Dawnbriger",
+      "newValues": {
+        "title": "Lyra Dawnbringer"
+      }
+    },
+    {
+      "where": "title='Gideons Reproach",
+      "newValues": {
+        "num": "019"
+      }
+    },
+    {
+      "where": "title='Voltaic Servant",
+      "newValues": {
+        "rarity": "c"
+      }
+    },
+    {
+      "where": "title='Orcish Vandal",
+      "newValues": {
+        "rarity": "u"
+      }
+    }
+
+  ]
+}

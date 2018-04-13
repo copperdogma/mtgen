@@ -1,0 +1,85 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "dom-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "http://www.mtgsalvation.com/spoilers/filter?SetID=220&IncludeUnconfirmed=true&CardsPerRequest=999", "https://magic.wizards.com/en/articles/archive/card-image-gallery/dominaria", "https://magic.wizards.com/en/articles/archive/news/promos-dominaria-2018-03-22", "https://magic.wizards.com/en/articles/archive/news/promos-dominaria-2018-03-22" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "dom-all-cards" }
+      ]
+    },
+    {
+      "productName": "dom-boosters",
+      "productDesc": "Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "dom-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "dom-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "dom-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "dom-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "http://magic.wizards.com/en/articles/archive/feature/Dominaria-packaging-promos-and-planeswalker-decks-2016-09-06" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "dom-standard" },
+        { "packName": "dom-prerelease-promo-packins" },
+        { "packName": "dom-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "dom-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "dom-prerelease-promo-packins"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "dom-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "dom-promos",
+      "productDesc": "All Promos",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/Dominaria-promos-planeswalker-decks-packaging-and-fnm-tokens-2017-09-01" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "dom-promos" }
+      ]
+    }
+
+  ]
+}
