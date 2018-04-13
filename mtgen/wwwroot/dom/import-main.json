@@ -17,6 +17,23 @@
     },
 
     {
+      "_comment": "this is a buy-a-box-only card",
+      "delete": true,
+      "where": "title='Firesong and Sunspeaker"
+    },
+
+    {
+      "_comment": "these are Teferi Planeswalker deck-only cards",
+      "delete": true,
+      "where": "title=(Teferi, Timebender|Temporal Machinations|Niambi, Faithful Healer|Teferis Sentinel|Meandering River)"
+    },
+    {
+      "_comment": "these are Chandra Planeswalker deck-only cards",
+      "delete": true,
+      "where": "title=(Chandra, Bold Pyromancer|Chandras Outburst|Karplusan Hound|Pyromatic Pilgrim|Timber Gorge)"
+    },
+
+    {
       "where": "title='Lyra Dawnbriger",
       "newValues": {
         "title": "Lyra Dawnbringer"

@@ -22,7 +22,7 @@
     },
     {
       "defName": "dom-legendary",
-      "query": "from[dom]?type=(Legendary Creature|Legendary Planeswalker|Legendary Enchantment|Legendary Sorcery)"
+      "query": "from[dom-base]?type=(Legendary Creature|Legendary Planeswalker|Legendary Enchantment|Legendary Sorcery)"
     },
     {
       "defName": "dom-token",
@@ -45,7 +45,7 @@
       "packVersion": "1.0",
       "isGenerated": true,
       "cards": [
-        { "query": "take[9]>from[dom-main]?rarity='c" },
+        { "query": "take[8]>from[dom-main]?rarity='c" },
         {
           "querySet": [
             {
@@ -75,6 +75,22 @@
           ]
         },
         { "query": "take[3]>from[dom-main]?rarity='u" },
+        {
+          "querySet": [
+            {
+              "percent": "24/32",
+              "query": "from[dom-legendary]?rarity='u"
+            },
+            {
+              "percent": "7/32",
+              "query": "from[dom-legendary]?rarity='r"
+            },
+            {
+              "percent": "1/32",
+              "query": "from[dom-legendary]?rarity='m"
+            }
+          ]
+        },
         {
           "querySet": [
             {

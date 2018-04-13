@@ -10,6 +10,17 @@
     },
 
     {
+      "_comment": "these are Teferi Planeswalker deck-only cards",
+      "delete": true,
+      "where": "title=(Teferi, Time Bender|Temporal Machinations|Niambi, Faithful Healer|Teferis Sentinel|Meandering River)"
+    },
+    {
+      "_comment": "these are Chandra Planeswalker deck-only cards",
+      "delete": true,
+      "where": "title=(Chandra, Bold Pyromancer|Chandras Outburst|Karplusan Hound|Pyromatic Pilgrim|Timber Gorge)"
+    },
+
+    {
       "_comment": "delete all cards that weren't selected above",
       "delete": true,
       "where": "isSelected=false"

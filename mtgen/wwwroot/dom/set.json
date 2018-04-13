@@ -1,14 +1,27 @@
 {
   "startProductName": "dom-prerelease",
   "packFiles": [
-    "packs.json"
+    "packs.json?v1.2"
   ],
   "cardFiles": [
-    "cardsMain.json",
-    "cardsLand.json",
+    "cardsMain.json?v1.3",
+    "cardsLand.json?v1.2",
     "cardsBasicLand.json",
     "cardsPromo.json",
     "cardsToken.json"
   ],
-  "updates": []
+  "updates": [
+    {
+      "updateDate": "2018-04-14",
+      "htmlString": "Morning: Removed 'Teferi, Timebender' from boosters. Removed promos from in-booster Lengendaries."
+    },
+    {
+      "updateDate": "2018-04-13",
+      "htmlString": "Evening: Removed all Planeswalker deck cards."
+    },
+    {
+      "updateDate": "2018-04-13",
+      "htmlString": "Evening: Firesong and Sunspeaker no longer available in boosters. Every boosters now contains a Legendary."
+    }
+  ]
 }
