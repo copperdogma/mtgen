@@ -21,8 +21,8 @@
       "query": "from[dom]?promo=true"
     },
     {
-      "defName": "dom-legendary",
-      "query": "from[dom-base]?type=(Legendary Creature|Legendary Planeswalker|Legendary Enchantment|Legendary Sorcery)"
+      "defName": "dom-legendary-creature",
+      "query": "from[dom-base]?type='Legendary Creature'"
     },
     {
       "defName": "dom-token",
@@ -79,15 +79,15 @@
           "querySet": [
             {
               "percent": "24/32",
-              "query": "from[dom-legendary]?rarity='u"
+              "query": "from[dom-legendary-creature]?rarity='u"
             },
             {
               "percent": "7/32",
-              "query": "from[dom-legendary]?rarity='r"
+              "query": "from[dom-legendary-creature]?rarity='r"
             },
             {
               "percent": "1/32",
-              "query": "from[dom-legendary]?rarity='m"
+              "query": "from[dom-legendary-creature]?rarity='m"
             }
           ]
         },
@@ -151,17 +151,17 @@
           "querySet": [
             {
               "percent": "24/32",
-              "query": "from[dom-legendary]?rarity='u",
+              "query": "from[dom-legendary-creature]?rarity='u",
               "setValues": { "foil": true }
             },
             {
               "percent": "7/32",
-              "query": "from[dom-legendary]?rarity='r",
+              "query": "from[dom-legendary-creature]?rarity='r",
               "setValues": { "foil": true }
             },
             {
               "percent": "1/32",
-              "query": "from[dom-legendary]?rarity='m",
+              "query": "from[dom-legendary-creature]?rarity='m",
               "setValues": { "foil": true }
             }
           ]

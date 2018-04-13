@@ -1,7 +1,7 @@
 {
   "startProductName": "dom-prerelease",
   "packFiles": [
-    "packs.json?v1.2"
+    "packs.json?v1.3"
   ],
   "cardFiles": [
     "cardsMain.json?v1.3",
@@ -11,6 +11,10 @@
     "cardsToken.json"
   ],
   "updates": [
+    {
+      "updateDate": "2018-04-14",
+      "htmlString": "Morning: Now legendary slots only produce legendary creatures instead of all legendary types."
+    },
     {
       "updateDate": "2018-04-14",
       "htmlString": "Morning: Removed 'Teferi, Timebender' from boosters. Removed promos from in-booster Lengendaries."
