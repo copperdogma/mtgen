@@ -4,13 +4,17 @@
     "packs.json?v1.3"
   ],
   "cardFiles": [
-    "cardsMain.json?v1.3",
+    "cardsMain.json?v1.4",
     "cardsLand.json?v1.2",
     "cardsBasicLand.json",
     "cardsPromo.json",
     "cardsToken.json"
   ],
   "updates": [
+    {
+      "updateDate": "2018-04-23",
+      "htmlString": "Evening: Now legendary creatures replace a single uncommon or rare slot."
+    },
     {
       "updateDate": "2018-04-14",
       "htmlString": "Morning: Now legendary slots only produce legendary creatures instead of all legendary types."
