@@ -345,9 +345,7 @@
     "toughness": "3",
     "colour": "w",
     "num": "0029",
-    "mtgenId": "dom|0029:b",
-    "mtgenVariant": 2,
-    "duplicateNum": true
+    "mtgenId": "dom|0029"
   },
   {
     "set": "dom",
@@ -1408,7 +1406,7 @@
     "type": "Creature",
     "subtype": "Cat Warrior",
     "power": "3",
-    "toughness": "3",
+    "toughness": "2",
     "colour": "b",
     "num": "0112",
     "mtgenId": "dom|0112"
@@ -1636,7 +1634,7 @@
     "src": "https://media.wizards.com/2018/dom/en_3Y8Jn1jjgs.png",
     "cost": "1RR",
     "rarity": "u",
-    "type": "Creatur",
+    "type": "Creature",
     "subtype": "Goblin Warrior",
     "power": "2",
     "toughness": "2",
@@ -1684,7 +1682,7 @@
     "title": "Keldon Overseer",
     "src": "https://media.wizards.com/2018/dom/en_AaJEzwYZJK.png",
     "cost": "2R",
-    "rarity": "u",
+    "rarity": "c",
     "type": "Creature",
     "subtype": "Human Warrior",
     "power": "3",
@@ -1930,10 +1928,10 @@
     "src": "https://media.wizards.com/2018/dom/en_s4qWGYj34n.png",
     "cost": "1G",
     "rarity": "c",
-    "type": "instant",
+    "type": "Instant",
     "colour": "g",
-    "num": "000?",
-    "mtgenId": "dom|000?"
+    "num": "0154",
+    "mtgenId": "dom|0154"
   },
   {
     "set": "dom",
@@ -2936,6 +2934,8 @@
     "rarity": "c",
     "type": "Artifact Creature",
     "subtype": "Construct",
+    "power": "1",
+    "toughness": "1",
     "colour": "a",
     "num": "0232",
     "mtgenId": "dom|0232"
@@ -2992,17 +2992,19 @@
   },
   {
     "set": "dom",
-    "title": "Pyromantic Pilgrim",
-    "src": "https://media-dominaria.cursecdn.com/avatars/thumbnails/204/246/200/283/636576867873475659.png",
-    "cost": "2R",
-    "rarity": "c",
-    "type": "Creature",
-    "subtype": "Human Wizard",
-    "power": "3",
-    "toughness": "1",
-    "colour": "r",
-    "num": "0278",
-    "mtgenId": "dom|0278"
+    "title": "Lyra Dawnbringer",
+    "src": "https://media.wizards.com/2018/dom/en_tan6TXUF1y.png",
+    "cost": "3WW",
+    "rarity": "m",
+    "type": "Legendary Creature",
+    "subtype": "Angel",
+    "power": "5",
+    "toughness": "5",
+    "colour": "w",
+    "num": "0026",
+    "mtgenId": "dom|0026:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
   },
   {
     "set": "dom",
@@ -3016,7 +3018,9 @@
     "toughness": "5",
     "colour": "w",
     "num": "0026",
-    "mtgenId": "dom|0026"
+    "mtgenId": "dom|0026",
+    "mtgenVariant": 1,
+    "duplicateNum": true
   },
   {
     "set": "dom",
@@ -3027,9 +3031,7 @@
     "type": "Instant",
     "colour": "w",
     "num": "019",
-    "mtgenId": "dom|019",
-    "mtgenVariant": 1,
-    "duplicateNum": true
+    "mtgenId": "dom|019"
   },
   {
     "set": "dom",
