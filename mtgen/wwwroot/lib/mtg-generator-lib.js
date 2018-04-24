@@ -186,7 +186,7 @@ var mtgGen = (function (my) {
     // Site to lookup chars: http://www.fileformat.info/info/unicode/char/search.htm
     my.createMatchTitle = function (title) {
         // the \uXXXX codes are javascript escaped codes
-        let clean = (title+'').trim().toLowerCase();
+        let clean = (title + '').trim().toLowerCase();
         clean = clean.replace(/\u00E6/g, 'ae'); // \u00E6 = æ = LATIN LOWER CASE LETTER AE
         clean = clean.trim().replace(/\u00E3\u2020/g, 'ae'); // \u00E3\u2020 = ã† = LATIN LOWER CASE LETTER AE when wotc screws up the encoding;)
         clean = clean.replace(/[^a-z0-9 ]+/g, '');
@@ -712,7 +712,7 @@ var mtgGen = (function (my) {
         // Go through each card query in the pack and select it according to its query
         pack.cards.forEach(cardDef => {
             if (cardDef.querySet) {
-                const totalWeight = cardDef.querySet.reduce((total, query) => total + query.percent, 0);
+                const totalWeight = cardDef.querySet[0].overrideSlot !== undefined ? 100 : cardDef.querySet.reduce((total, query) => total + query.percent, 0);
 
                 // Choose the card query percent; we want decimal numbers because the cards can be specified as such (e.g.: 1/8 chance = 12.5%)
                 let percent = Math.random() * totalWeight;
@@ -724,7 +724,12 @@ var mtgGen = (function (my) {
                     currentWeight += cardDefItem.percent;
                     if (currentWeight >= percent) { return true; }
                 });
-                cardQueries.push(chosenCardDefItem);
+
+                // Return the query result matching the random percent.
+                // IF there is one. If overrideSlot was defined it may not have triggered so we'd return nothing.
+                if (chosenCardDefItem) {
+                    cardQueries.push(chosenCardDefItem);
+                }
             }
             else if (cardDef.query) {
                 cardQueries.push(cardDef);
@@ -773,8 +778,16 @@ var mtgGen = (function (my) {
                 if (card.usableForDeckBuilding === undefined) {
                     card.usableForDeckBuilding = usableForDeckBuilding;
                 }
-                cardIndices.push(card.mtgenId);
-                cardSet.push(card);
+                // If overrideSlot is set, don't just push the cards to the end; override that particular slot.
+                // HOWEVER, you can't override a single slot entry with multiple cards, so just take the first in case there were more than one.
+                if (cardDef.overrideSlot) {
+                    cardIndices.splice(cardDef.overrideSlot-1, 1, chosenCards[0].mtgenId);
+                    cardSet.splice(cardDef.overrideSlot-1, 1, chosenCards[0]);
+                }
+                else {
+                    cardIndices.push(card.mtgenId);
+                    cardSet.push(card);
+                }
             });
         });
 
