@@ -5,6 +5,7 @@ Shared/base functions.
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
+24-Apr-2018: Added support for slot overrides in pack defs.
 20-May-2017: Replaced all underscore references with native es6 calls.
 26-Jan-2016: Now uses mtgenId instead of index.
 14-Jan-2016: Percents within querySets can now be expressed as fractions ("7/8") in addition to percents (87.5).
