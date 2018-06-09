@@ -780,10 +780,20 @@ var mtgGen = (function (my) {
                     card.usableForDeckBuilding = usableForDeckBuilding;
                 }
                 // If overrideSlot is set, don't just push the cards to the end; override that particular slot.
-                // HOWEVER, you can't override a single slot entry with multiple cards, so just take the first in case there were more than one.
+                // You can override multiple slots by supplying a comma-separated list.
                 if (cardDef.overrideSlot) {
-                    cardIndices.splice(cardDef.overrideSlot-1, 1, chosenCards[0].mtgenId);
-                    cardSet.splice(cardDef.overrideSlot-1, 1, chosenCards[0]);
+                    if (cardDef.overrideSlot === '11,12') {
+                        var xxx = 1;
+                    }
+                    const overrideSlots = cardDef.overrideSlot.split(',');
+                    const overrideCount = Math.min(chosenCards.length, overrideSlots.length);
+                    const chosenCardSet = chosenCards.slice(0, overrideCount);
+                    const chosenCardSetMtgenIds = chosenCardSet.map(c => c.mtgenId);
+                    for (let i = 0; i < overrideCount; i++) {
+                        cardIndices.splice(overrideSlots[i] - 1, 1, chosenCardSetMtgenIds[i]);
+                        cardSet.splice(overrideSlots[i] - 1, 1, chosenCardSet[i]);
+                    }
+                    var xxxx = 1;
                 }
                 else {
                     cardIndices.push(card.mtgenId);
