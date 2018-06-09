@@ -1,0 +1,207 @@
+﻿{
+  "setCode": "bbd",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=223&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/battlebond-2018-05-25",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "where": "title='Morbid Curiousity'",
+      "newValues": {
+        "title": "Morbid Curiosity"
+      }
+    },
+    {
+      "where": "title='Nimbus Champsion'",
+      "newValues": {
+        "title": "Nimbus Champion"
+      }
+    },
+
+    {
+      "where": "title='Mystic Confluence'",
+      "newValues": {
+        "num": "122"
+      }
+    },
+    {
+      "where": "title='Eyeblight Assassin'",
+      "newValues": {
+        "num": "143"
+      }
+    },
+
+    {
+      "_comment": "Paired creatures alawys appear in boosters together, and if one is foil, both will be foil",
+      "where": "title='Blaring Recruiter'",
+      "newValues": {
+        "pairId": "bbd:u1",
+        "pairRarity": "u"
+      }
+    },
+    {
+      "where": "title='Blaring Captain'",
+      "newValues": {
+        "pairId": "bbd:u1",
+        "pairRarity": "u"
+      }
+    },
+
+    {
+      "where": "title='Chakram Retriever'",
+      "newValues": {
+        "pairId": "bbd:u2",
+        "pairRarity": "u"
+      }
+    },
+    {
+      "where": "title='Chakram Slinger'",
+      "newValues": {
+        "pairId": "bbd:u2",
+        "pairRarity": "u"
+      }
+    },
+
+    {
+      "where": "title='Soulblade Corrupter'",
+      "newValues": {
+        "pairId": "bbd:u3",
+        "pairRarity": "u"
+      }
+    },
+    {
+      "where": "title='Soulblade Renewer'",
+      "newValues": {
+        "pairId": "bbd:u3",
+        "pairRarity": "u"
+      }
+    },
+
+    {
+      "where": "title='Impetuous Protege'",
+      "newValues": {
+        "pairId": "bbd:u4",
+        "pairRarity": "u"
+      }
+    },
+    {
+      "where": "title='Proud Mentor'",
+      "newValues": {
+        "pairId": "bbd:u4",
+        "pairRarity": "u"
+      }
+    },
+
+    {
+      "where": "title='Ley Weaver'",
+      "newValues": {
+        "pairId": "bbd:u5",
+        "pairRarity": "u"
+      }
+    },
+    {
+      "where": "title='Lore Weaver'",
+      "newValues": {
+        "pairId": "bbd:u5",
+        "pairRarity": "u"
+      }
+    },
+
+    {
+      "where": "title='Regna, the Redeemer'",
+      "newValues": {
+        "pairId": "bbd:r1",
+        "pairRarity": "r"
+      }
+    },
+    {
+      "where": "title='Krav, the Unredeemed'",
+      "newValues": {
+        "pairId": "bbd:r1",
+        "pairRarity": "r"
+      }
+    },
+
+    {
+      "where": "title='Zndrsplt, Eye of Wisdom'",
+      "newValues": {
+        "pairId": "bbd:r2",
+        "pairRarity": "r"
+      }
+    },
+    {
+      "where": "title='Okaun, Eye of Chaos'",
+      "newValues": {
+        "pairId": "bbd:r2",
+        "pairRarity": "r"
+      }
+    },
+
+    {
+      "where": "title='Virtus the Veiled'",
+      "newValues": {
+        "pairId": "bbd:r3",
+        "pairRarity": "r"
+      }
+    },
+    {
+      "where": "title='Gorm the Great'",
+      "newValues": {
+        "pairId": "bbd:r3",
+        "pairRarity": "r"
+      }
+    },
+
+    {
+      "where": "title='Khorvath Brightflame'",
+      "newValues": {
+        "pairId": "bbd:r4",
+        "pairRarity": "r"
+      }
+    },
+    {
+      "where": "title='Sylvia Brightspear'",
+      "newValues": {
+        "pairId": "bbd:r4",
+        "pairRarity": "r"
+      }
+    },
+
+    {
+      "where": "title='Pir, Imaginative Rascal'",
+      "newValues": {
+        "pairId": "bbd:r5",
+        "pairRarity": "r"
+      }
+    },
+    {
+      "where": "title='Toothy, Imaginary Friend'",
+      "newValues": {
+        "pairId": "bbd:r5",
+        "pairRarity": "r"
+      }
+    },
+
+
+    {
+      "where": "title='Will Kenrith'",
+      "newValues": {
+        "pairId": "bbd:m1",
+        "pairRarity": "m"
+      }
+    },
+    {
+      "where": "title='Rowan Kenrith'",
+      "newValues": {
+        "pairId": "bbd:m1",
+        "pairRarity": "m"
+      }
+    }
+  ]
+}

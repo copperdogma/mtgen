@@ -1,0 +1,84 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "bbd-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/battlebond-2018-05-25", "https://mtg.gamepedia.com/Battlebond", "https://www.mtgsalvation.com/spoilers/filter?SetID=223&IncludeUnconfirmed=true&CardsPerRequest=999" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "bbd-all-cards" }
+      ]
+    },
+    {
+      "productName": "bbd-boosters",
+      "productDesc": "Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "bbd-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "bbd-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "bbd-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "bbd-launch-party",
+      "productDesc": "Launch Party",
+      "isVisible": true,
+      "sources": [ "https://wpn.wizards.com/en/event/battlebond-launch-party" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "bbd-standard" },
+        { "packName": "bbd-launch-party-promo" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "bbd-launch-party",
+            "presetDesc": "Launch Party Set",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "bbd-launch-party-promo"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "bbd-standard"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+    {
+      "productName": "bbd-promos",
+      "productDesc": "All Promos",
+      "sources": [ "https://wpn.wizards.com/en/article/you-schedule-battlebond-events" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "bbd-promos" }
+      ]
+    }
+
+  ]
+}

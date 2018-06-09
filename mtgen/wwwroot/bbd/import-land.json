@@ -1,0 +1,29 @@
+{
+  "setCode": "dom",
+  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=220&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/dominaria",
+  "_comments": "Three kinds of land for this release: full art, normal, and dual",
+  "exceptions": [
+    {
+      "_comment": "mtg salvation included the special lands, which I import separately",
+      "where": "type=(Land)"
+    },
+
+    {
+      "_comment": "these are Teferi Planeswalker deck-only cards",
+      "delete": true,
+      "where": "title=(Teferi, Time Bender|Temporal Machinations|Niambi, Faithful Healer|Teferis Sentinel|Meandering River)"
+    },
+    {
+      "_comment": "these are Chandra Planeswalker deck-only cards",
+      "delete": true,
+      "where": "title=(Chandra, Bold Pyromancer|Chandras Outburst|Karplusan Hound|Pyromatic Pilgrim|Timber Gorge)"
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    }
+  ]
+}

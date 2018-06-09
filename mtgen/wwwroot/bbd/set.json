@@ -1,0 +1,20 @@
+{
+  "startProductName": "bbd-boosters",
+  "packFiles": [
+    "packs.json?v1.1"
+  ],
+  "cardFiles": [
+    "cardsMain.json?v1.1",
+    "cardsToken.json"
+  ],
+  "updates": [
+    {
+      "updateDate": "2018-06-08",
+      "htmlString": "Evening: Added Launch Party and All Promos sections."
+    },
+    {
+      "updateDate": "2018-05-28",
+      "htmlString": "Evening: Planeswalkers are now paired as well."
+    }
+  ]
+}
