@@ -782,9 +782,6 @@ var mtgGen = (function (my) {
                 // If overrideSlot is set, don't just push the cards to the end; override that particular slot.
                 // You can override multiple slots by supplying a comma-separated list.
                 if (cardDef.overrideSlot) {
-                    if (cardDef.overrideSlot === '11,12') {
-                        var xxx = 1;
-                    }
                     const overrideSlots = cardDef.overrideSlot.split(',');
                     const overrideCount = Math.min(chosenCards.length, overrideSlots.length);
                     const chosenCardSet = chosenCards.slice(0, overrideCount);
@@ -793,7 +790,6 @@ var mtgGen = (function (my) {
                         cardIndices.splice(overrideSlots[i] - 1, 1, chosenCardSetMtgenIds[i]);
                         cardSet.splice(overrideSlots[i] - 1, 1, chosenCardSet[i]);
                     }
-                    var xxxx = 1;
                 }
                 else {
                     cardIndices.push(card.mtgenId);
