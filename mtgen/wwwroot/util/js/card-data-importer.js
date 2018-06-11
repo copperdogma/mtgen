@@ -1145,6 +1145,41 @@ class CardDataImporter {
         }
     }
 
+    async _getCardImagesFromTwitter(rawHtmlImageData, requiredImageWidth, requiredImageHeight) {
+        const parser = new DOMParser();
+        const imageDoc = parser.parseFromString(rawHtmlImageData, "text/html");
+
+        // v1 - 20180610, bbd tokens -- hard to scan as anything unique is added by js
+        const rawImages = imageDoc.querySelectorAll('meta[property="og:image"]');
+        if (rawImages) {
+            // Preload the images so we get the heights and widths.
+            // This wasn't necessary under jQuery because I assume it rendered the HTML hidden in the browser.
+            const imagePromises = [...rawImages].map(rawImage => this._preloadImage(rawImage.content));
+            let images;
+            try {
+                images = await Promise.all(imagePromises);
+            }
+            catch (err) { alert(`ERROR: failed to retrieve image: ${err.message}`); }
+
+            let finalImages = []
+            const requiredImageHeightInt = parseInt(requiredImageHeight, 10);
+            const requiredImageWidthInt = parseInt(requiredImageWidth, 10);
+            images.forEach(event => {
+                const img = event.target;
+                if (!isNaN(requiredImageHeightInt) && requiredImageHeightInt !== img.height) { return true; }
+                if (!isNaN(requiredImageWidthInt) && requiredImageWidthInt !== img.width) { return true; }
+                const image = {};
+                image.src = img.src;
+                image.height = img.height;
+                image.width = img.width;
+                image.imageSource = "wotc-article";
+                finalImages.push(image);
+            });
+
+            return finalImages;
+        }
+    }
+
     _createCardViaException(card, exception, setCode) {
         // add all Exception properties into the card
         Object.assign(card, exception.newValues);

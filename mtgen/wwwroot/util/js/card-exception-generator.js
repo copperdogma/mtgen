@@ -22,12 +22,26 @@ class CardExceptionGenerator extends CardDataImporter {
 
             window.dispatchEvent(new Event('data-loading'));
 
+            const lowercaseImageDataUrlSource = cardImageUrl.toLowerCase();
+            if (lowercaseImageDataUrlSource.includes('magic.wizards.com')) {
+                this._getCardImages = this._getCardImagesFromWotcArticle;
+            }
+            else if (lowercaseImageDataUrlSource.includes('archive.wizards.com')) {
+                this._getCardImages = this._getImagesFromWotcArchive;
+            }
+            else if (lowercaseImageDataUrlSource.includes('twitter.com')) {
+                this._getCardImages = this._getCardImagesFromTwitter;
+            }
+            else {
+                throw new Error("Unknown data source. Cannot parse: " + cardImageUrl);
+            }
+
             return this._fetchHtml(cardImageUrl)
                 .then(imageData => {
                     window.dispatchEvent(new Event('data-loaded'));
-                    return this._getCardImagesFromWotcArticle(imageData, requiredImageWidth, requiredImageHeight);
+                    return this._getCardImages(imageData, requiredImageWidth, requiredImageHeight);
                 })
-                .then(cardImages => { return this._createOutputCards(setCode, cardImages, startingCardNum, cardPattern); })
+                .then(cardImages => this._createOutputCards(setCode, cardImages, startingCardNum, cardPattern))
                 .then(({ cards, skippedCards }) => {
                     const outputLogPromise = this._createOutputLog(cards, skippedCards);
                     const settings = {
@@ -175,7 +189,7 @@ class CardExceptionGenerator extends CardDataImporter {
                 }
             });
 
-            resolve({cards, skippedCards});
+            resolve({ cards, skippedCards });
         });
     }
 
@@ -225,35 +239,35 @@ class CardExceptionGenerator extends CardDataImporter {
             if (finalOut.length > 0) {
                 if (cards.areLand) {
                     const postCard =
-                    {
-                        "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
-                        "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
-                        "newValues": {
-                            "set": "{{setCode}}",
-                            "height": 370,
-                            "width": 265,
-                            "type": "Basic Land",
-                            "subtype": "{{title}}",
-                            "colour": "l",
-                            "cost": "",
-                            "rarity": "c",
-                            "num": "{{num}}/264 L"
-                        }
-                    };
+                        {
+                            "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
+                            "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
+                            "newValues": {
+                                "set": "{{setCode}}",
+                                "height": 370,
+                                "width": 265,
+                                "type": "Basic Land",
+                                "subtype": "{{title}}",
+                                "colour": "l",
+                                "cost": "",
+                                "rarity": "c",
+                                "num": "{{num}}/264 L"
+                            }
+                        };
                     finalOut.push(postCard);
                 }
                 else if (cards.areTokens) {
                     const postCard =
-                    {
-                        "where": "",
-                        "newValues": {
-                            "set": "{{setCode}}",
-                            "rarity": "c",
-                            "num": "{{num}}/012 T",
-                            "token": true,
-                            "usableForDeckBuilding": false
-                        }
-                    };
+                        {
+                            "where": "",
+                            "newValues": {
+                                "set": "{{setCode}}",
+                                "rarity": "c",
+                                "num": "{{num}}/012 T",
+                                "token": true,
+                                "usableForDeckBuilding": false
+                            }
+                        };
                     finalOut.push(postCard);
                 }
             }
@@ -281,10 +295,11 @@ class CardExceptionGenerator extends CardDataImporter {
                 cardsHtmlSample += `<div class='card'><img src='${card.src}' height='${card.height}' width='${card.width}' /><p>${card.num}:${card.title}</p></div>`
             );
 
-            const finalData = { 
+            const finalData = {
                 imageDataCount: cards.size,
                 cardsJson: jsonMainStr,
-                cardsHtmlSample };
+                cardsHtmlSample
+            };
 
             resolve(finalData);
         });
