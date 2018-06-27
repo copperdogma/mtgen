@@ -1,13 +1,17 @@
 {
   "startProductName": "bbd-boosters",
   "packFiles": [
-    "packs.json?v1.1"
+    "packs.json?v1.2"
   ],
   "cardFiles": [
     "cardsMain.json?v1.1",
-    "cardsToken.json"
+    "cardsToken.json?v1.1"
   ],
   "updates": [
+    {
+      "updateDate": "2018-06-10",
+      "htmlString": "Evening: Added tokens."
+    },
     {
       "updateDate": "2018-06-08",
       "htmlString": "Evening: Added Launch Party and All Promos sections."
