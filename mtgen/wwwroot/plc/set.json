@@ -1,11 +1,16 @@
 {
   "startProductName": "plc-boosters",
   "packFiles": [
-    "packs.json"
+    "packs.json?v1.1"
   ],
   "cardFiles": [
     "cardsMain.json",
     "cardsOther.json"
   ],
-  "updates": []
+  "updates": [
+    {
+      "UpdateDate": "2018-06-24T21:00:00:00",
+      "HtmlString": "Now includes booster foils."
+    }
+  ]
 }

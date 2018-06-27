@@ -13,6 +13,10 @@
       "query": "from[plc]-from[plc]?type=(Marketing|Basic Land)-from[plc]?token=true-from[plc]?promo=true-from[*]?timeshifted=true"
     },
     {
+      "defName": "plc-either",
+      "query": "from[plc-timeshifted]+plc-timeshifted"
+    },
+    {
       "defName": "plc-promo",
       "query": "from[plc]?promo=true"
     }
@@ -31,7 +35,34 @@
       "packDesc": "Planar Chaos: Standard Booster",
       "isGenerated": true,
       "cards": [
-        { "query": "take[8]>from[plc-main]?rarity='c" },
+        { "query": "take[7]>from[plc-main]?rarity='c" },
+        {
+          "querySet": [
+            {
+              "_comment": "common rate = 5/6 * 15 = 75/90",
+              "percent": "75/90",
+              "query": "from[plc-either]?rarity='c"
+            },
+            {
+              "_comment": "foil common rate = 11/15 = 11/90",
+              "percent": "11/90",
+              "query": "from[plc-either]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil uncommon rate = 3/15 = 3/90",
+              "percent": "3/90",
+              "query": "from[plc-either]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "foil rare rate = 1/15 = 1/90",
+              "percent": "1/90",
+              "query": "from[plc-either]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
         { "query": "take[3]>from[plc-timeshifted]?rarity='c" },
         { "query": "take[2]>from[plc-main]?rarity='u" },
         { "query": "take[1]>from[plc-main]?rarity='r" },
