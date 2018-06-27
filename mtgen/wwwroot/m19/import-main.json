@@ -1,0 +1,115 @@
+﻿{
+  "setCode": "m19",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=226&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/core-set-2019-2018-06-19",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "where": "title='Nicol Bolas, the Ravager",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdBack": "m19|0218:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Nicol Bolas, the Arisen",
+      "newValues": {
+        "doubleFaceCard": true,
+        "mtgenIdFront": "m19|0218",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "_comment": "data fixes",
+      "where": "title='Vampire Sovereign",
+      "newValues": {
+        "colour": "b"
+      }
+    },
+    {
+      "where": "title='Dragon Egg",
+      "newValues": {
+        "rarity": "u"
+      }
+    },
+
+    {
+      "_comment": "Delete those promos included in mtgsalvation's data",
+      "where": "title=(Nexus of Fate)",
+      "delete": true
+    },
+
+    {
+      "_comment": "Basic lands are imported separately",
+      "where": "type='Basic Land'",
+      "delete": true
+    },
+
+    {
+      "_comment": "Tag the taplands because in m19 they randomly replace the basic land slot",
+      "where": "title=(Cinder Barrens|Forsaken Sanctuary|Foul Orchard|Highland Lake|Meandering River|Stone Quarry|Submerged Boneyard|Timber Gorge|Tranquil Expanse|Woodland Stream)",
+      "newValues": {
+        "tapland": true
+      }
+    },
+
+    {
+      "_comment": "Planeswalker-specific cards; not to be included in regular boosters",
+      "where": "title=(Ajani, Wise Counselor|Ajani's Influence|Serra's Guardian|Cavalry Drillmaster|Court Cleric|Silverbeak Griffin)",
+      "newValues": {
+        "promo": true,
+        "includedReason": "Ajani Planeswalker Deck"
+      }
+    },
+    {
+      "_comment": "Planeswalker-specific cards; not to be included in regular boosters",
+      "where": "title=(Tezzeret, Cruel Machinist|Pendulum of Patterns|Riddlemaster Sphinx|Tezzeret's Gatebreaker|Tezzeret's Strider)",
+      "newValues": {
+        "promo": true,
+        "includedReason": "Tezzeret Planeswalker Deck"
+      }
+    },
+    {
+      "_comment": "Planeswalker-specific cards; not to be included in regular boosters",
+      "where": "title=(Liliana, the Necromancer|Tattered Mummy|Gravewaker|Liliana's Spoils|Arisen Gorgon)",
+      "newValues": {
+        "promo": true,
+        "includedReason": "Liliana Planeswalker Deck"
+      }
+    },
+    {
+      "_comment": "Planeswalker-specific cards; not to be included in regular boosters",
+      "where": "title=(Sarkhan, Dragonsoul|Shivan Dragon|Sarkhan's Dragonfire|Kargan Dragonrider|Sarkhan's Whelp)",
+      "newValues": {
+        "promo": true,
+        "includedReason": "Sarkhan Planeswalker Deck"
+      }
+    },
+    {
+      "_comment": "Planeswalker-specific cards; not to be included in regular boosters",
+      "where": "title=(Vivien of the Arkbow|Aggressive Mammoth|Skalla Wolf|Ursine Champion|Vivien's Jaguar)",
+      "newValues": {
+        "promo": true,
+        "includedReason": "Vivien Planeswalker Deck"
+      }
+    },
+
+    {
+      "_comment": "Welcome deck-specific cards; not to be included in regular boosters",
+      "where": "title=(Air Elemental|Befuddle|Mist-Cloaked Herald|Waterknot|Grasping Scoundrel|Radiating Lightning|Llanowar Elves|Sun Sentinel)",
+      "newValues": {
+        "promo": true,
+        "includedReason": "Welcome Deck"
+      }
+    }
+  ]
+}

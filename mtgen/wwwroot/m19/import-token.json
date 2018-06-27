@@ -1,0 +1,175 @@
+{
+  "setCode": "bbd",
+  "cardDataUrl": "",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-marketing1.png",
+        "title": "Tip/Marketing Card",
+        "colour": "o",
+        "num": "001 Marketing",
+        "type": "Marketing",
+        "marketing": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-marketing2.png",
+        "title": "Tip/Marketing Card",
+        "colour": "o",
+        "num": "002 Marketing",
+        "type": "Marketing",
+        "marketing": true
+      }
+    },
+
+
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "bbd",
+          "cardImageUrl": "https://twitter.com/wizards_magic/status/1001563348515872775",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "005|g|Token Creature|Beast\n002|w|Token Creature|Warrior\n001|w|Token Creature|Spirit\n003|b|Token Creature|Zombie\n\n"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bbd",
+        "src": "https://pbs.twimg.com/media/DeZEjYQVwBMHVut.png:large",
+        "num": "001",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Spirit",
+        "subtype": "Spirit"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bbd",
+        "src": "https://pbs.twimg.com/media/DeZEjHwUwAAZgLF.png:large",
+        "num": "002",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Warrior",
+        "subtype": "Warrior"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bbd",
+        "src": "https://pbs.twimg.com/media/DeZEjqvVQAEWp45.png:large",
+        "num": "003",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Zombie",
+        "subtype": "Zombie"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bbd",
+        "src": "https://pbs.twimg.com/media/DeZEi3UU0AIokTB.png:large",
+        "num": "005",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Beast",
+        "subtype": "Beast"
+      }
+    },
+
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "bbd",
+          "cardImageUrl": "https://twitter.com/wizards_magic/status/1001564067046264834",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "008|c|Emblem|Rowan\n007|c|Emblem|Will\n004|b|Token Creature|Zombie Giant\n006|b|Token Artifact Creature|Myr"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bbd",
+        "src": "https://pbs.twimg.com/media/DeZFNZoXkAEfOBw.png:large",
+        "num": "004",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Zombie Giant",
+        "subtype": "Zombie Giant"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bbd",
+        "src": "https://pbs.twimg.com/media/DeZFNfwXUAAXxQL.png:large",
+        "num": "006",
+        "colour": "b",
+        "type": "Token Artifact Creature",
+        "title": "Myr",
+        "subtype": "Myr"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bbd",
+        "src": "https://pbs.twimg.com/media/DeZFNTGX0AEe8SG.png:large",
+        "num": "007",
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Will",
+        "subtype": "Will"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bbd",
+        "src": "https://pbs.twimg.com/media/DeZFNKmX0AAU3dl.png:large",
+        "num": "008",
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Rowan",
+        "subtype": "Rowan"
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "setCode": "m19",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=226&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+      "where": "title='Guttersnipe",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/images/daily/en_9RJlybZeuG.png",
+        "num": "{{num}} P OpenHouse",
+        "includedReason": "Open House Promo"
+      }
+    },
+    {
+      "where": "title='Reliquary Tower",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/images/daily/en_KsriRlctpf.png",
+        "num": "{{num}} P League",
+        "includedReason": "League Promo"
+      }
+    },
+    {
+      "where": "title='Nexus of Fate",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/images/daily/en_45DClofuKca.png",
+        "num": "{{num}} P Buy-a-Box",
+        "includedReason": "Buy-a-Box Promo"
+      }
+    },
+    {
+      "where": "title='Desecrated Tomb",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/images/daily/en_Q6TglkHkR0.png",
+        "num": "{{num}} P Draft Weekend",
+        "includedReason": "Draft Weekend Promo"
+      }
+    },
+    {
+      "where": "title='Demon of Catastrophes",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/images/daily/en_IkfzIIFuCz.png",
+        "num": "{{num}} P Store Championship",
+        "includedReason": "Store Championship Promo"
+      }
+    },
+
+    {
+      "where": "title='Elvish Rejuvenator",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/images/daily/en_JazcSmjRMv.png",
+        "num": "{{num}} P FNM",
+        "includedReason": "Friday Night Magic Promo"
+      }
+    },
+    {
+      "where": "title='Militia Bugler",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/images/daily/en_Ya9NbAas6Z.png",
+        "num": "{{num}} P FNM",
+        "includedReason": "Friday Night Magic Promo"
+      }
+    },
+    {
+      "where": "title='Murder",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/images/daily/en_wISqg73dxB.png",
+        "num": "{{num}} P FNM",
+        "includedReason": "Friday Night Magic Promo"
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/images/daily/en_KrYYc914HN.png",
+        "title": "Plains",
+        "colour": "u",
+        "num": "001/005 P Standard Showdown",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Plains",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Standard Showdown Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/images/daily/en_fU3TVQGrvz.png",
+        "title": "Island",
+        "colour": "u",
+        "num": "002/005 P Standard Showdown",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Island",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Standard Showdown Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/images/daily/en_bu8avaFu1i.png",
+        "title": "Swamp",
+        "colour": "u",
+        "num": "003/005 P Standard Showdown",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Swamp",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Standard Showdown Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/images/daily/en_TqxpxvMitt.png",
+        "title": "Mountain",
+        "colour": "u",
+        "num": "004/005 P Standard Showdown",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Mountain",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Standard Showdown Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/m19/en_04iXB8LwwS.png",
+        "title": "Forest",
+        "colour": "u",
+        "num": "005/005 P Standard Showdown",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Forest",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Standard Showdown Promo"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/m19-prerelease-deck-box.png",
+        "title": "Deck Box",
+        "colour": "o",
+        "num": "006 Deck Box",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-deckbuilding-info.jpg",
+        "src_large": "http://mtgen.net/cards/mtg-deckbuilding-info-lg.jpg",
+        "height": 370,
+        "width": 515,
+        "title": "Deckbuilding Advice Insert",
+        "colour": "o",
+        "num": "007 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-white.png",
+        "title": "White Spindown Life Counter",
+        "colour": "o",
+        "num": "001 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-blue.png",
+        "title": "Blue Spindown Life Counter",
+        "colour": "o",
+        "num": "002 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-black.png",
+        "title": "Black Spindown Life Counter",
+        "colour": "o",
+        "num": "003 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-red.png",
+        "title": "Red Spindown Life Counter",
+        "colour": "o",
+        "num": "004 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-green.png",
+        "title": "Green Spindown Life Counter",
+        "colour": "o",
+        "num": "005 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "m19-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "m19-all-cards" }
+      ]
+    },
+
+    {
+      "productName": "m19-boosters",
+      "productDesc": "Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "m19-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "m19-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "m19-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "m19-prerelease",
+      "productDesc": "Prerelease",
+      "isVisible": true,
+      "sources": [ "" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "m19-standard" },
+        { "packName": "m19-prerelease-promo-packins" },
+        { "packName": "m19-prerelease-promos" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "m19-prerelease",
+            "presetDesc": "Prerelease Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "m19-prerelease-promo-packins"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "m19-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "m19-promos",
+      "productDesc": "All Promos",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/core-set-2019-packaging-promos-and-more-2018-06-11" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "m19-promos" }
+      ]
+    }
+
+  ]
+}
