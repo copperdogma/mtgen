@@ -1,7 +1,7 @@
 {
   "startProductName": "m19-prerelease",
   "packFiles": [
-    "packs.json?v1.2"
+    "packs.json?v1.3"
   ],
   "cardFiles": [
     "cardsMain.json?v1.5",
@@ -10,6 +10,10 @@
     "cardsPromo.json?v1.1"
   ],
   "updates": [
+    {
+      "UpdateDate": "2018-06-27T21:30:00:00",
+      "HtmlString": "Taplands are now replace basic lands in <a href='https://twitter.com/EliShffrn/status/1011288839443267585'>5/12 packs</a>."
+    },
     {
       "UpdateDate": "2018-06-24T21:00:00:00",
       "HtmlString": "No longer includes Nexus of Fate (promo) or promo land in boosters. Added promos."
