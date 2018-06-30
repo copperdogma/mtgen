@@ -72,6 +72,34 @@
     },
 
     {
+      "productName": "m19-standard-showdown",
+      "productDesc": "Standard Showdown",
+      "isVisible": true,
+      "sources": [ "" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "m19-standard-showdown" },
+        { "packName": "m19-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "m19-standard-showdown",
+            "presetDesc": "Standard Showdown Prize Booster",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "m19-standard-showdown"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
       "productName": "m19-promos",
       "productDesc": "All Promos",
       "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/core-set-2019-packaging-promos-and-more-2018-06-11" ],

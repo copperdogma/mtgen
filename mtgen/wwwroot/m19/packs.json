@@ -160,6 +160,72 @@
     },
 
     {
+      "packName": "m19-standard-showdown",
+      "packDesc": "Core Set 2019: Standard Showdown Prize Booster",
+      "isGenerated": true,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "_comment": "foil, scaled by rarity",
+              "percent": "88/120",
+              "query": "from[m19-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "24/120",
+              "query": "from[m19-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "7/120",
+              "query": "from[m19-main]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/120",
+              "query": "from[m19-main]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "two rare or mythic rare",
+              "percent": "7/8",
+              "query": "from[m19-main]?rarity='r"
+            },
+            {
+              "percent": "1/8",
+              "query": "from[m19-main]?rarity='m"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "two rare or mythic rare",
+              "percent": "7/8",
+              "query": "from[m19-main]?rarity='r"
+            },
+            {
+              "percent": "1/8",
+              "query": "from[m19-main]?rarity='m"
+            }
+          ]
+        },
+        {
+          "_comment": "1 foil basic land promo with art by Alayna Danner",
+          "query": "take[1]>from[m19-promo]?type='Basic Land'",
+          "setValues": { "foil": true }
+        }
+
+      ]
+    },
+
+    {
       "packName": "m19-promos",
       "packDesc": "Core Set 2019: All Promos",
       "isGenerated": false,

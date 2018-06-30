@@ -1,7 +1,7 @@
 {
   "startProductName": "m19-prerelease",
   "packFiles": [
-    "packs.json?v1.3"
+    "packs.json?v1.4"
   ],
   "cardFiles": [
     "cardsMain.json?v1.5",
@@ -10,6 +10,10 @@
     "cardsPromo.json?v1.1"
   ],
   "updates": [
+    {
+      "UpdateDate": "2018-06-29T23:30:00:00",
+      "HtmlString": "Added Standard Showdown Prize Booster."
+    },
     {
       "UpdateDate": "2018-06-27T21:30:00:00",
       "HtmlString": "Taplands are now replace basic lands in <a href='https://twitter.com/EliShffrn/status/1011288839443267585'>5/12 packs</a>."
