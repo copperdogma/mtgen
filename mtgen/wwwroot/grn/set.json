@@ -1,0 +1,19 @@
+{
+  "startProductName": "grn-prerelease",
+  "packFiles": [
+    "packs.json?v1.4"
+  ],
+  "cardFiles": [
+    "cardsMain.json?v1.1",
+    "cardsBasicLand.json",
+    "cardsLand.json",
+    "cardsToken.json",
+    "cardsPromo.json"
+  ],
+  "_updates": [
+    {
+      "UpdateDate": "2018-06-29T23:30:00:00",
+      "HtmlString": "Added Standard Showdown Prize Booster."
+    }
+  ]
+}

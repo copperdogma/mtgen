@@ -1,0 +1,81 @@
+{
+  "setCode": "grn",
+  "cardDataUrl": "",
+  "imagesUrl": "",
+  "_comments": "Three kinds of land for this release: normal, dual land, guild gates",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "grn",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/guilds-ravnica-2018-09-19",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "260",
+          "cardPattern": "x260,w,u,b,r,g"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "grn",
+        "src": "https://media.wizards.com/2018/grn/en_my5M4bLKjr.png",
+        "title": "Plains",
+        "num": 260
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "grn",
+        "src": "https://media.wizards.com/2018/grn/en_JX5lrSurNg.png",
+        "title": "Island",
+        "num": 261
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "grn",
+        "src": "https://media.wizards.com/2018/grn/en_GYTPnaQJWe.png",
+        "title": "Swamp",
+        "num": 262
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "grn",
+        "src": "https://media.wizards.com/2018/grn/en_qmKIccIO5Z.png",
+        "title": "Mountain",
+        "num": 263
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "grn",
+        "src": "https://media.wizards.com/2018/grn/en_Rjcl3IA3gM.png",
+        "title": "Forest",
+        "num": 264
+      }
+    },
+    {
+      "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
+      "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
+      "newValues": {
+        "set": "{{setCode}}",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "{{title}}",
+        "colour": "l",
+        "cost": "",
+        "rarity": "c",
+        "num": "{{num}}/264 L"
+      }
+    }
+  ]
+}

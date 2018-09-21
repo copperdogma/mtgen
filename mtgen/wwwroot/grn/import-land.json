@@ -1,0 +1,135 @@
+{
+  "setCode": "grn",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=228&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/guilds-ravnica-2018-09-19",
+  "_comments": "This set includes basic lands, multi-colour lands, and Guildgates",
+  "exceptions": [
+    {
+      "_comment": "mtg salvation included the special lands, which I import separately",
+      "where": "type=(Land)"
+    },
+
+    {
+      "_comment": "Boros Guildgate",
+      "where": "num='0243'",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_wzP42bP6WZ.png",
+        "guild": "Boros"
+      }
+    },
+    {
+      "_comment": "Boros Guildgate",
+      "where": "num='0244'",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_RIeimoy4BJ.png",
+        "guild": "Boros"
+      }
+    },
+
+    {
+      "_comment": "Dimir Guildgate",
+      "where": "num='0245'",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_4118hBxAKP.png",
+        "guild": "Dimir"
+      }
+    },
+    {
+      "_comment": "Dimir Guildgate",
+      "where": "num='0246'",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_pBElsKYy7F.png",
+        "guild": "Dimir"
+      }
+    },
+
+    {
+      "_comment": "Selesnya Guildgate",
+      "where": "num='0255'",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_wbx89RoQfv.png",
+        "guild": "Selesnya"
+      }
+    },
+    {
+      "_comment": "Selesnya Guildgate",
+      "where": "num='0256'",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_KLx1Etqyf4.png",
+        "guild": "Selesnya"
+      }
+    },
+
+    {
+      "_comment": "Izzet Guildgate",
+      "where": "num='0251'",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_eFzm2rqMWM.png",
+        "guild": "Izzet"
+      }
+    },
+    {
+      "_comment": "Izzet Guildgate",
+      "where": "num='0252'",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_o0bXOMWwcH.png",
+        "guild": "Izzet"
+      }
+    },
+
+    {
+      "_comment": "Golgari Guildgate",
+      "where": "num='0248'",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_zgxeKTvvQF.png",
+        "guild": "Golgari"
+      }
+    },
+    {
+      "_comment": "Golgari Guildgate",
+      "where": "num='0249'",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_xshkRMBqjp.png",
+        "guild": "Golgari"
+      }
+    },
+
+    {
+      "where": "title='Overgrown Tomb'",
+      "newValues": {
+        "guild": "Golgari"
+      }
+    },
+    {
+      "where": "title='Sacred Foundry'",
+      "newValues": {
+        "guild": "Boros"
+      }
+    },
+    {
+      "where": "title='Steam Vents'",
+      "newValues": {
+        "guild": "Izzet"
+      }
+    },
+    {
+      "where": "title='Temple Garden'",
+      "newValues": {
+        "guild": "Selesnya"
+      }
+    },
+    {
+      "where": "title='Watery Grave'",
+      "newValues": {
+        "guild": "Dimir"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    }
+
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "grn-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "grn-all-cards" }
+      ]
+    },
+
+    {
+      "productName": "grn-boosters",
+      "productDesc": "Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "grn-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "grn-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "grn-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "grn-prerelease",
+      "productDesc": "Prerelease",
+      "sources": [ "" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "grn-standard" },
+        { "packName": "grn-boros-prerelease-promo-packins" },
+        { "packName": "grn-selesnya-prerelease-promo-packins" },
+        { "packName": "grn-izzet-prerelease-promo-packins" },
+        { "packName": "grn-golgari-prerelease-promo-packins" },
+        { "packName": "grn-dimir-prerelease-promo-packins" },
+        { "packName": "grn-guild-booster-boros" },
+        { "packName": "grn-guild-booster-selesnya" },
+        { "packName": "grn-guild-booster-izzet" },
+        { "packName": "grn-guild-booster-golgari" },
+        { "packName": "grn-guild-booster-dimir" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "grn-prerelease-guild-boros",
+            "presetDesc": "Boros (Red/White)",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "grn-boros-prerelease-promo-packins"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "grn-guild-booster-boros"
+              },
+              {
+                "count": 5,
+                "defaultPackName": "grn-standard"
+              }
+            ]
+          },
+          {
+            "presetName": "grn-prerelease-guild-selesnya",
+            "presetDesc": "Selesnya (Green/White)",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "grn-selesnya-prerelease-promo-packins"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "grn-guild-booster-selesnya"
+              },
+              {
+                "count": 5,
+                "defaultPackName": "grn-standard"
+              }
+            ]
+          },
+          {
+            "presetName": "grn-prerelease-guild-izzet",
+            "presetDesc": "Izzet (Blue/Red)",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "grn-izzet-prerelease-promo-packins"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "grn-guild-booster-izzet"
+              },
+              {
+                "count": 5,
+                "defaultPackName": "grn-standard"
+              }
+            ]
+          },
+          {
+            "presetName": "grn-prerelease-guild-golgari",
+            "presetDesc": "Golgari (Black/Green)",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "grn-golgari-prerelease-promo-packins"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "grn-guild-booster-golgari"
+              },
+              {
+                "count": 5,
+                "defaultPackName": "grn-standard"
+              }
+            ]
+          },
+          {
+            "presetName": "grn-prerelease-guild-dimir",
+            "presetDesc": "Dimir (Blue/Black)",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "grn-dimir-prerelease-promo-packins"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "grn-guild-booster-dimir"
+              },
+              {
+                "count": 5,
+                "defaultPackName": "grn-standard"
+              }
+            ]
+          },
+          {
+            "presetName": "grn-prerelease-promos",
+            "presetDesc": "Guilds of Ravnica Prerelease Promos",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "grn-prerelease-promos"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "grn-promos",
+      "productDesc": "All Promos",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/guilds-ravnica-packaging-promos-and-more-2018-09-04" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "grn-promos" }
+      ]
+    }
+
+  ]
+}

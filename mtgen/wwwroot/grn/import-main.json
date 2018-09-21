@@ -1,0 +1,99 @@
+﻿{
+  "setCode": "grn",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=228&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/guilds-ravnica-2018-09-07",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "_comment": "This was a buy a box promo-only that wotc included in their main card list for some reason",
+      "delete": true,
+      "where": "title='Impervious Greatwurm'"
+    },
+    {
+      "where": "title='Glowspore Shaman'",
+      "newValues": {
+        "num": "173"
+      }
+    },
+    {
+      "where": "title='Equenauts of the Conclave'",
+      "newValues": {
+        "title": "Flight of Equenauts"
+      }
+    },
+    {
+      "where": "title='Integrity//Intervention",
+      "newValues": {
+        "title": "Integrity // Intervention"
+      }
+    },
+    {
+      "where": "title='Invert//Invent",
+      "newValues": {
+        "title": "Invert // Invent"
+      }
+    },
+
+    {
+      "where": "title=(Blade Instructor|Light of the Legion|Parhelion Patrol|Sunhome Stalwart|Barging Sergeant|Goblin Banneret|Legion Warboss|Wojek Bodyguard|Aurelia, Exemplar of Justice|Boros Challenger|Chance for Glory|Deafening Clarion|Garrison Sergeant|Hammer Dropper|Justice Strike|Legion Guildmage|Skyknight Legionnaire|Swathcutter Giant|Swiftblade Vindicator|Tajic, Legion's Edge|Truefire Captain|Fresh-Faced Recruit|Integrity // Intervention|Response // Resurgence|Boros Locket|Boros Guildgate|Sacred Foundry)",
+      "newValues": {
+        "guild": "Boros"
+      }
+    },
+    {
+      "where": "title=(Conclave Tribunal|Flight of Equenauts|Ledev Guardian|Venerated Loxodon|Arboretum Elemental|Pack's Favor|Siege Wurm|Sprouting Renewal|Impervious Greatwurm|Camaraderie|Centaur Peacemaker|Conclave Cavalier|Conclave Guildmage|Emmara, Soul of the Accord|Join Shields|Knight of Autumn|Ledev Champion|March of the Multitudes|Rosemane Centaur|Sumala Woodshaper|Trostani Discordant|Worldsoul Colossus|Vernadi Shieldmate|Assure // Assemble|Flower // Flourish|Selesnya Locket|Selesnya Guildgate|Temple Garden|Loxodon Restorer|Pause for Reflection)",
+      "newValues": {
+        "guild": "Selesnya"
+      }
+    },
+    {
+      "where": "title=(Chemister's Insight|Maximize Altitude|Quasiduplicate|Radical Idea|Direct Current|Gravitic Punch|Maximize Velocity|Risk Factor|Beacon Bolt|Beamsplitter Mage|Crackling Drake|Goblin Electromancer|Hypothesizzle|Ionize|League Guildmage|Niv-Mizzet, Parun|Sonic Assault|Wee Dragonauts|Piston-Fist Cyclops|Expansion // Explosion|Invert // Invent|Izzet Locket|Izzet Guildgate|Steam Vents)",
+      "newValues": {
+        "guild": "Izzet"
+      }
+    },
+    {
+      "where": "title=(Citywatch Sphinx|Dazzling Lights|Dimir Informant|Dream Eater|Enhanced Surveillance|Mission Briefing|Nightveil Sprite|Sinister Sabotage|Thoughtbound Phantasm|Unexplained Disappearance|Watcher in the Mist|Barrier of Bones|Blood Operative|Deadly Visit|Doom Whisperer|Mephitic Vapors|Price of Fame|Whispering Snitch|Artful Takedown|Darkblade Agent|Dimir Spybug|Disinformation Campaign|Etrata, the Silencer|House Guildmage|Lazav, the Multifarious|Mnemonic Betrayal|Nightveil Predator|Notion Rain|Thief of Sanity|Thought Erasure|Unmoored Ego|Whisper Agent|Connive // Concoct|Discovery // Dispersal|Dimir Locket|Dimir Guildgate|Watery Grave)",
+      "newValues": {
+        "guild": "Dimir"
+      }
+    },
+    {
+      "where": "title=(Lotleth Giant|Mausoleum Secrets|Moodmark Painter|Necrotic Wound|Golgari Raiders|Hatchery Spider|Kraul Foragers|Kraul Harpooner|Vigorspore Wurm|Charnel Troll|Erstwhile Trooper|Glowspore Shaman|Golgari Findbroker|Izoni, Thousand-Eyed|Molderhulk|Ochran Assassin|Rhizome Lurcher|Swarm Guildmage|Undercity Uprising|Underrealm Lich|Pitiless Gorgon|Find // Finality|Status // Statue|Golgari Locket|Golgari Guildgate|Overgrown Tomb)",
+      "newValues": {
+        "guild": "Golgari"
+      }
+    },
+
+    {
+      "_comment": "Ral, Caller of Storms Planeswalker Deck, added in promos",
+      "where": "title=(Ral, Caller of Storms|Ral's Dispersal|Precision Bolt|Ral's Staticaster)",
+      "delete": true
+    },
+    {
+      "_comment": "Vraska, Regal Gorgon Planeswalker Deck, added in promos",
+      "where": "title=(Vraska, Regal Gorgon|Kraul Raider|Attendant of Vraska|Vraska's Stoneglare)",
+      "delete": true
+    },
+
+
+    {
+      "_comment": "Lands and Basic lands are imported separately",
+      "where": "type=(Land|Basic Land)",
+      "delete": true
+    },
+    {
+      "_comment": "Guildgates are imported separately",
+      "where": "subtype='Gate'",
+      "delete": true
+    }
+
+  ]
+}

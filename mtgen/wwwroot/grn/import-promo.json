@@ -1,0 +1,562 @@
+{
+  "setCode": "grn",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=228&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+      "where": "title='Boros Challenger",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_GRzSpULeW0.png",
+        "num": "{{num}} P OpenHouse",
+        "includedReason": "Open House Promo"
+      }
+    },
+    {
+      "where": "title='Necrotic Wound",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_LcFeGgCsA4.png",
+        "num": "{{num}} P League",
+        "includedReason": "League Promo"
+      }
+    },
+    {
+      "where": "title='Impervious Greatwurm",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_GalP8q9Bs0.png",
+        "num": "{{num}} P Buy-a-Box",
+        "includedReason": "Buy-a-Box Promo"
+      }
+    },
+    {
+      "where": "title='Fireminds Research",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_lXFWVBJUpq.png",
+        "num": "{{num}} P Draft Weekend",
+        "includedReason": "Draft Weekend Promo"
+      }
+    },
+    {
+      "where": "title='Emmara, Soul of the Accord",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_70xPmdiy9m.png",
+        "num": "{{num}} P Store Championship",
+        "includedReason": "Store Championship Promo"
+      }
+    },
+
+    {
+      "where": "title='Conclave Tribunal",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_yImB4e3kQ7.png",
+        "num": "{{num}} P FNM",
+        "includedReason": "Friday Night Magic Promo"
+      }
+    },
+    {
+      "where": "title='Sinister Sabotage",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_vSDYeup0SD.png",
+        "num": "{{num}} P FNM",
+        "includedReason": "Friday Night Magic Promo"
+      }
+    },
+    {
+      "where": "title='Thought Erasure",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_vmQp3mkovI.png",
+        "num": "{{num}} P FNM",
+        "includedReason": "Friday Night Magic Promo"
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_g0ElcuAj4P.png",
+        "title": "Island",
+        "colour": "c",
+        "num": "001/010 P Ravnica Weekend",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Island",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Ravnica Weekend Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_VuTe7PXL9w.png",
+        "title": "Swamp",
+        "colour": "c",
+        "num": "002/010 P Ravnica Weekend",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Swamp",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Ravnica Weekend Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_dNnz9etLlj.png",
+        "title": "Island",
+        "colour": "c",
+        "num": "003/010 P Ravnica Weekend",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Island",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Ravnica Weekend Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_AqsshKPWzt.png",
+        "title": "Mountain",
+        "colour": "c",
+        "num": "004/010 P Ravnica Weekend",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Mountain",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Ravnica Weekend Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_LSFeoZXpak.png",
+        "title": "Swamp",
+        "colour": "c",
+        "num": "005/010 P Ravnica Weekend",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Swamp",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Ravnica Weekend Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_llxblAazDP.png",
+        "title": "Forest",
+        "colour": "c",
+        "num": "006/010 P Ravnica Weekend",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Forest",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Ravnica Weekend Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_883QuMlDiT.png",
+        "title": "Mountain",
+        "colour": "c",
+        "num": "007/010 P Ravnica Weekend",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Mountain",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Ravnica Weekend Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_eRC1oHtB8m.png",
+        "title": "Plains",
+        "colour": "c",
+        "num": "008/010 P Ravnica Weekend",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Plains",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Ravnica Weekend Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_qJYpgCUw3X.png",
+        "title": "Forest",
+        "colour": "c",
+        "num": "009/010 P Ravnica Weekend",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Forest",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Ravnica Weekend Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_T9UOCejPpy.png",
+        "title": "Plain",
+        "colour": "c",
+        "num": "010/010 P Ravnica Weekend",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Plain",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Ravnica Weekend Promo"
+      }
+    },
+
+
+    {
+      "_comment": "Guilds of Ravnica Mythic Edition",
+      "add": true,
+      "newValues": {
+        "title": "Elspeth, Knight-Errant",
+        "src": "https://media.wizards.com/2018/grn/en_TaVy12jVRM.png",
+        "cost": "{2}{W}{W}",
+        "rarity": "m",
+        "type": "Planeswalker",
+        "subtype": "Elspeth",
+        "planeswalker": true,
+        "loyalty": "4",
+        "colour": "w",
+        "num": "GR1 M Masterpiece",
+        "includedReason": "Guilds of Ravnica Mythic Edition"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Teferi, Hero of Dominaria",
+        "src": "https://media.wizards.com/2018/grn/en_beXNTOSIyD.png",
+        "cost": "3WU",
+        "rarity": "m",
+        "type": "Legendary Planeswalker",
+        "subtype": "Teferi",
+        "loyalty": "4",
+        "colour": "m",
+        "num": "GR6 M Masterpiece",
+        "includedReason": "Guilds of Ravnica Mythic Edition"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Tezzeret, Agent of Bolas",
+        "src": "https://media.wizards.com/2018/grn/en_5tewFOkPZ1.png",
+        "cost": "2UB",
+        "rarity": "m",
+        "type": "Legendary Planeswalker",
+        "subtype": "Tezzeret",
+        "loyalty": "3",
+        "colour": "m",
+        "num": "GR7 M Masterpiece",
+        "includedReason": "Guilds of Ravnica Mythic Edition"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Liliana, the Last Hope",
+        "src": "https://media.wizards.com/2018/grn/en_TFlIcy6Ny5.png",
+        "cost": "1BB",
+        "rarity": "m",
+        "type": "Planeswalker",
+        "subtype": "Liliana",
+        "loyalty": "3",
+        "colour": "b",
+        "num": "GR2 M Masterpiece",
+        "includedReason": "Guilds of Ravnica Mythic Edition"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Daretti, Ingenious Iconoclast",
+        "src": "https://media.wizards.com/2018/grn/en_imT00Xffl7.png",
+        "cost": "1BR",
+        "rarity": "m",
+        "type": "Planeswalker",
+        "subtype": "Daretti",
+        "loyalty": "3",
+        "colour": "m",
+        "num": "GR3 M Masterpiece",
+        "includedReason": "Guilds of Ravnica Mythic Edition"
+      }
+    },
+    {
+      "where": "title='Ral, Izzet Viceroy,",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_g3Jz7gP0Xu.png",
+        "num": "GR5 M Masterpiece",
+        "includedReason": "Guilds of Ravnica Mythic Edition"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Nicol Bolas, Planeswalker",
+        "src": "https://media.wizards.com/2018/grn/en_JYOVxYYdfd.png",
+        "cost": "{4}{U}{B}{B}{R}",
+        "rarity": "m",
+        "type": "Planeswalker",
+        "subtype": "Bolas",
+        "loyalty": "5",
+        "num": "GR4 M Masterpiece",
+        "includedReason": "Guilds of Ravnica Mythic Edition"
+      }
+    },
+
+
+    {
+      "_comment": "Planeswalker Decks",
+      "where": "title='Ral, Caller of Storms,",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_Dh7Sqf1Lxo.png",
+        "includedReason": "Ral, Caller of Storms Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Ral's Dispersal",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_Tz6QXhVesq.png",
+        "includedReason": "Ral, Caller of Storms Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Precision Bolt",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_EfLPIomABB.png",
+        "includedReason": "Ral, Caller of Storms Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Ral's Staticaster",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_Vs4pz3YM7n.png",
+        "includedReason": "Ral, Caller of Storms Planeswalker Deck"
+      }
+    },
+
+    {
+      "where": "title='Vraska, Regal Gorgon",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_55xpqDk76R.png",
+        "includedReason": "Vraska, Regal Gorgon Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Kraul Raider",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_z6G7P3j7v3.png",
+        "includedReason": "Vraska, Regal Gorgon Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Attendant of Vraska",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_3epgX76bMN.png",
+        "includedReason": "Vraska, Regal Gorgon Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Vraska's Stoneglare",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/grn/en_7bnBimikcw.png",
+        "includedReason": "Vraska, Regal Gorgon Planeswalker Deck"
+      }
+    },
+
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/grn-boros-prerelease-deck-box.png",
+        "title": "Boros Deck Box",
+        "colour": "o",
+        "num": "006a Boros Deck Box",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/grn-dimir-prerelease-deck-box.png",
+        "title": "Dimir Deck Box",
+        "colour": "o",
+        "num": "006b Dimir Deck Box",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/grn-golgari-prerelease-deck-box.png",
+        "title": "Golgari Deck Box",
+        "colour": "o",
+        "num": "006c Golgari Deck Box",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/grn-izzet-prerelease-deck-box.png",
+        "title": "Izzet Deck Box",
+        "colour": "o",
+        "num": "006d Izzet Deck Box",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/grn-selesnya-prerelease-deck-box.png",
+        "title": "Selesnya Deck Box",
+        "colour": "o",
+        "num": "006e Selesnya Deck Box",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-deckbuilding-info.jpg",
+        "src_large": "http://mtgen.net/cards/mtg-deckbuilding-info-lg.jpg",
+        "height": 370,
+        "width": 515,
+        "title": "Deckbuilding Advice Insert",
+        "colour": "o",
+        "num": "007 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-white.png",
+        "title": "White Spindown Life Counter",
+        "colour": "o",
+        "num": "001 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-blue.png",
+        "title": "Blue Spindown Life Counter",
+        "colour": "o",
+        "num": "002 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-black.png",
+        "title": "Black Spindown Life Counter",
+        "colour": "o",
+        "num": "003 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-red.png",
+        "title": "Red Spindown Life Counter",
+        "colour": "o",
+        "num": "004 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-green.png",
+        "title": "Green Spindown Life Counter",
+        "colour": "o",
+        "num": "005 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

@@ -24,66 +24,6 @@
  },
  {
   "set": "grn",
-  "title": "Overgrown Tomb",
-  "src": "https://media.wizards.com/2018/grn/en_ele5h9dqJV.png",
-  "cost": "",
-  "rarity": "r",
-  "type": "Land",
-  "subtype": "Swamp Forest",
-  "colour": "l",
-  "num": "0253",
-  "mtgenId": "grn|0253"
- },
- {
-  "set": "grn",
-  "title": "Sacred Foundry",
-  "src": "https://media.wizards.com/2018/grn/en_wtHUdEM36p.png",
-  "cost": "",
-  "rarity": "r",
-  "type": "Land",
-  "subtype": "Mountain Plains",
-  "colour": "l",
-  "num": "0254",
-  "mtgenId": "grn|0254"
- },
- {
-  "set": "grn",
-  "title": "Steam Vents",
-  "src": "https://media.wizards.com/2018/grn/en_fX1qglWknx.png",
-  "cost": "",
-  "rarity": "r",
-  "type": "Land",
-  "subtype": "Island Mountain",
-  "colour": "l",
-  "num": "0257",
-  "mtgenId": "grn|0257"
- },
- {
-  "set": "grn",
-  "title": "Temple Garden",
-  "src": "https://media.wizards.com/2018/grn/en_5gF9cjVAp8.png",
-  "cost": "",
-  "rarity": "r",
-  "type": "Land",
-  "subtype": "Forest Plains",
-  "colour": "l",
-  "num": "0258",
-  "mtgenId": "grn|0258"
- },
- {
-  "set": "grn",
-  "title": "Watery Grave",
-  "src": "https://media.wizards.com/2018/grn/en_eFa86ywKwG.png",
-  "cost": "",
-  "rarity": "r",
-  "type": "Land",
-  "subtype": "Island Swamp",
-  "colour": "l",
-  "num": "0259",
-  "mtgenId": "grn|0259"
- },
- {
-  "set": "grn",
   "title": "Boros Guildgate",
   "src": "https://media.wizards.com/2018/grn/en_wzP42bP6WZ.png",
   "cost": "",
@@ -92,7 +32,8 @@
   "subtype": "Gate",
   "colour": "l",
   "num": "0243",
-  "mtgenId": "grn|0243"
+  "mtgenId": "grn|0243",
+  "guild": "Boros"
  },
  {
   "set": "grn",
@@ -104,7 +45,8 @@
   "subtype": "Gate",
   "colour": "l",
   "num": "0244",
-  "mtgenId": "grn|0244"
+  "mtgenId": "grn|0244",
+  "guild": "Boros"
  },
  {
   "set": "grn",
@@ -116,7 +58,8 @@
   "subtype": "Gate",
   "colour": "l",
   "num": "0245",
-  "mtgenId": "grn|0245"
+  "mtgenId": "grn|0245",
+  "guild": "Dimir"
  },
  {
   "set": "grn",
@@ -128,20 +71,22 @@
   "subtype": "Gate",
   "colour": "l",
   "num": "0246",
-  "mtgenId": "grn|0246"
+  "mtgenId": "grn|0246",
+  "guild": "Dimir"
  },
-  {
-    "set": "grn",
-    "title": "Selesnya Guildgate",
-    "src": "https://media.wizards.com/2018/grn/en_wbx89RoQfv.png",
-    "cost": "",
-    "rarity": "c",
-    "type": "Land",
-    "subtype": "Gate",
-    "colour": "l",
-    "num": "0255",
-    "mtgenId": "grn|0255"
-  },
+ {
+  "set": "grn",
+  "title": "Selesnya Guildgate",
+  "src": "https://media.wizards.com/2018/grn/en_wbx89RoQfv.png",
+  "cost": "",
+  "rarity": "c",
+  "type": "Land",
+  "subtype": "Gate",
+  "colour": "l",
+  "num": "0255",
+  "mtgenId": "grn|0255",
+  "guild": "Selesnya"
+ },
  {
   "set": "grn",
   "title": "Selesnya Guildgate",
@@ -152,7 +97,8 @@
   "subtype": "Gate",
   "colour": "l",
   "num": "0256",
-  "mtgenId": "grn|0256"
+  "mtgenId": "grn|0256",
+  "guild": "Selesnya"
  },
  {
   "set": "grn",
@@ -164,7 +110,8 @@
   "subtype": "Gate",
   "colour": "l",
   "num": "0251",
-  "mtgenId": "grn|0251"
+  "mtgenId": "grn|0251",
+  "guild": "Izzet"
  },
  {
   "set": "grn",
@@ -176,7 +123,8 @@
   "subtype": "Gate",
   "colour": "l",
   "num": "0252",
-  "mtgenId": "grn|0252"
+  "mtgenId": "grn|0252",
+  "guild": "Izzet"
  },
  {
   "set": "grn",
@@ -188,7 +136,8 @@
   "subtype": "Gate",
   "colour": "l",
   "num": "0248",
-  "mtgenId": "grn|0248"
+  "mtgenId": "grn|0248",
+  "guild": "Golgari"
  },
  {
   "set": "grn",
@@ -200,6 +149,72 @@
   "subtype": "Gate",
   "colour": "l",
   "num": "0249",
-  "mtgenId": "grn|0249"
- }
+  "mtgenId": "grn|0249",
+  "guild": "Golgari"
+ },
+ {
+  "set": "grn",
+  "title": "Overgrown Tomb",
+  "src": "https://media.wizards.com/2018/grn/en_ele5h9dqJV.png",
+  "cost": "",
+  "rarity": "r",
+  "type": "Land",
+  "subtype": "Swamp Forest",
+  "colour": "l",
+  "num": "0253",
+  "mtgenId": "grn|0253",
+  "guild": "Golgari"
+ },
+ {
+  "set": "grn",
+  "title": "Sacred Foundry",
+  "src": "https://media.wizards.com/2018/grn/en_wtHUdEM36p.png",
+  "cost": "",
+  "rarity": "r",
+  "type": "Land",
+  "subtype": "Mountain Plains",
+  "colour": "l",
+  "num": "0254",
+  "mtgenId": "grn|0254",
+  "guild": "Boros"
+ },
+ {
+  "set": "grn",
+  "title": "Steam Vents",
+  "src": "https://media.wizards.com/2018/grn/en_fX1qglWknx.png",
+  "cost": "",
+  "rarity": "r",
+  "type": "Land",
+  "subtype": "Island Mountain",
+  "colour": "l",
+  "num": "0257",
+  "mtgenId": "grn|0257",
+  "guild": "Izzet"
+ },
+ {
+  "set": "grn",
+  "title": "Temple Garden",
+  "src": "https://media.wizards.com/2018/grn/en_5gF9cjVAp8.png",
+  "cost": "",
+  "rarity": "r",
+  "type": "Land",
+  "subtype": "Forest Plains",
+  "colour": "l",
+  "num": "0258",
+  "mtgenId": "grn|0258",
+  "guild": "Selesnya"
+ },
+  {
+    "set": "grn",
+    "title": "Watery Grave",
+    "src": "https://media.wizards.com/2018/grn/en_eFa86ywKwG.png",
+    "cost": "",
+    "rarity": "r",
+    "type": "Land",
+    "subtype": "Island Swamp",
+    "colour": "l",
+    "num": "0259",
+    "mtgenId": "grn|0259",
+    "guild": "Dimir"
+  }
 ]

@@ -1,0 +1,348 @@
+{
+  "defs": [
+    {
+      "defName": "grn",
+      "query": "from[*]?set='grn'"
+    },
+    {
+      "defName": "grn-main",
+      "query": "from[grn]-from[grn]?type=(Marketing|Basic Land)-from[grn]?promo=true-from[grn]?token=true"
+    },
+    {
+      "defName": "grn-basic-land",
+      "query": "from[grn]?type='Basic Land'-from[grn]?promo=true"
+    },
+    {
+      "defName": "grn-foils",
+      "query": "from[grn]"
+    },
+    {
+      "defName": "grn-promo",
+      "query": "from[grn]?promo=true"
+    },
+    {
+      "defName": "grn-token",
+      "query": "from[grn]?token=true"
+    },
+
+    {
+      "defName": "grn-boros",
+      "query": "from[grn-main]?guild=(Boros)-from[grn-main]?title=(Boros Guildgate|Boros Locket)"
+    },
+    {
+      "defName": "grn-boros-colours",
+      "query": "from[grn-boros]+from[grn-main]?colour=(r|w)-from[grn-main]?guild=(Selesnya|Izzet|Golgari|Dimir)"
+    },
+    {
+      "defName": "grn-selesnya",
+      "query": "from[grn-main]?guild=(Selesnya)-from[grn-main]?title=(Selesnya Guildgate|Selesnya Locket)"
+    },
+    {
+      "defName": "grn-selesnya-colours",
+      "query": "from[grn-selesnya]+from[grn-main]?colour=(g|w)-from[grn-main]?guild=(Boros|Izzet|Golgari|Dimir)"
+    },
+    {
+      "defName": "grn-izzet",
+      "query": "from[grn-main]?guild=(Izzet)-from[grn-main]?title=(Izzet Guildgate|Izzet Locket)"
+    },
+    {
+      "defName": "grn-izzet-colours",
+      "query": "from[grn-izzet]+from[grn-main]?colour=(u|r)-from[grn-main]?guild=(Boros|Selesnya|Golgari|Dimir)"
+    },
+    {
+      "defName": "grn-golgari",
+      "query": "from[grn-main]?guild=(Golgari)-from[grn-main]?title=(Golgari Guildgate|Golgari Locket)"
+    },
+    {
+      "defName": "grn-golgari-colours",
+      "query": "from[grn-golgari]+from[grn-main]?colour=(b|g)-from[grn-main]?guild=(Boros|Selesnya|Izzet|Dimir)"
+    },
+    {
+      "defName": "grn-dimir",
+      "query": "from[grn-main]?guild=(Dimir)-from[grn-main]?title=(Dimir Guildgate|Dimir Locket)"
+    },
+    {
+      "defName": "grn-dimir-colours",
+      "query": "from[grn-dimir]+from[grn-main]?colour=(u|b)-from[grn-main]?guild=(Boros|Selesnya|Izzet|Golgari)"
+    }
+
+  ],
+  "packs": [
+    {
+      "packName": "grn-all-cards",
+      "packDesc": "Guilds of Ravnica: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[grn]" }
+      ]
+    },
+
+    {
+      "packName": "grn-standard",
+      "packDesc": "Guilds of Ravnica: Standard Booster",
+      "packVersion": "1.1",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[grn-main]?rarity='c" },
+        { "query": "take[3]>from[grn-main]?rarity='u" },
+        { "query": "from[grn-main]?rarity='r" },
+        { "query": "from[grn-basic-land]?type='Basic Land" },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[grn]?title='Tip/Marketing Card"
+            },
+            {
+              "percent": "50",
+              "_query": "from[grn-token]",
+              "query": "from[grn]?title='Tip/Marketing Card"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "25% chance of foil, scaled by rarity, replacing the last common",
+              "overrideSlot": "10",
+              "percent": "88/480",
+              "query": "from[grn-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "24/480",
+              "query": "from[grn-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "7/480",
+              "query": "from[grn-main]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "1/480",
+              "query": "from[grn-main]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/8 chance of replacing rare with mythic",
+              "percent": "1/8",
+              "overrideSlot": "14",
+              "query": "from[grn-main]?rarity='m'"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "grn-guild-booster-boros",
+      "packDesc": "Guilds of Ravnica: Boros Booster",
+      "packVersion": "1.1",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[grn-boros]?rarity='r" },
+        { "query": "from[grn-main]?title='Boros Locket" },
+        { "query": "take[3]>from[grn-boros]?rarity='u" },
+        { "query": "take[9]>from[grn-boros-colours]?rarity='c" },
+        { "query": "from[grn-main]?title='Boros Guildgate" },
+        {
+          "querySet": [
+            {
+              "_comment": "1/8 chance of replacing rare with mythic",
+              "percent": "1/8",
+              "overrideSlot": "1",
+              "query": "from[grn-boros]?rarity='m'"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "grn-guild-booster-selesnya",
+      "packDesc": "Guilds of Ravnica: Selesnya Booster",
+      "packVersion": "1.1",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[grn-selesnya]?rarity='r" },
+        { "query": "from[grn-main]?title='Selesnya Locket" },
+        { "query": "take[3]>from[grn-selesnya]?rarity='u" },
+        { "query": "take[9]>from[grn-selesnya-colours]?rarity='c" },
+        { "query": "from[grn-main]?title='Selesnya Guildgate" },
+        {
+          "querySet": [
+            {
+              "_comment": "1/8 chance of replacing rare with mythic",
+              "percent": "1/8",
+              "overrideSlot": "1",
+              "query": "from[grn-selesnya]?rarity='m'"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "grn-guild-booster-izzet",
+      "packDesc": "Guilds of Ravnica: Izzet Booster",
+      "packVersion": "1.1",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[grn-izzet]?rarity='r" },
+        { "query": "from[grn-main]?title='Izzet Locket" },
+        { "query": "take[3]>from[grn-izzet]?rarity='u" },
+        { "query": "take[9]>from[grn-izzet-colours]?rarity='c" },
+        { "query": "from[grn-main]?title='Izzet Guildgate" },
+        {
+          "querySet": [
+            {
+              "_comment": "1/8 chance of replacing rare with mythic",
+              "percent": "1/8",
+              "overrideSlot": "1",
+              "query": "from[grn-izzet]?rarity='m'"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "grn-guild-booster-golgari",
+      "packDesc": "Guilds of Ravnica: Golgari Booster",
+      "packVersion": "1.1",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[grn-golgari]?rarity='r" },
+        { "query": "from[grn-main]?title='Golgari Locket" },
+        { "query": "take[3]>from[grn-golgari]?rarity='u" },
+        { "query": "take[9]>from[grn-golgari-colours]?rarity='c" },
+        { "query": "from[grn-main]?title='Golgari Guildgate" },
+        {
+          "querySet": [
+            {
+              "_comment": "1/8 chance of replacing rare with mythic",
+              "percent": "1/8",
+              "overrideSlot": "1",
+              "query": "from[grn-golgari]?rarity='m'"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "grn-guild-booster-dimir",
+      "packDesc": "Guilds of Ravnica: Dimir Booster",
+      "packVersion": "1.1",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[grn-dimir]?rarity='r" },
+        { "query": "from[grn-main]?title='Dimir Locket" },
+        { "query": "take[3]>from[grn-dimir]?rarity='u" },
+        { "query": "take[9]>from[grn-dimir-colours]?rarity='c" },
+        { "query": "from[grn-main]?title='Dimir Guildgate" },
+        {
+          "querySet": [
+            {
+              "_comment": "1/8 chance of replacing rare with mythic",
+              "percent": "1/8",
+              "overrideSlot": "1",
+              "query": "from[grn-dimir]?rarity='m'"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "grn-boros-prerelease-promo-packins",
+      "packDesc": "Guilds of Ravnica: Boros Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[1]>from[grn-promo]?title=(Red Spindown Life Counter|White Spindown Life Counter" },
+        { "query": "from[grn]?title='Boros Deck Box" },
+        { "query": "from[grn-promo]?title='Deckbuilding Advice Insert" }
+      ]
+    },
+
+    {
+      "packName": "grn-selesnya-prerelease-promo-packins",
+      "packDesc": "Guilds of Ravnica: Selesnya Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[1]>from[grn-promo]?title=(Green Spindown Life Counter|White Spindown Life Counter" },
+        { "query": "from[grn]?title='Selesnya Deck Box" },
+        { "query": "from[grn-promo]?title='Deckbuilding Advice Insert" }
+      ]
+    },
+
+    {
+      "packName": "grn-izzet-prerelease-promo-packins",
+      "packDesc": "Guilds of Ravnica: Izzet Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[1]>from[grn-promo]?title=(Blue Spindown Life Counter|Red Spindown Life Counter" },
+        { "query": "from[grn]?title='Izzet Deck Box" },
+        { "query": "from[grn-promo]?title='Deckbuilding Advice Insert" }
+      ]
+    },
+
+    {
+      "packName": "grn-golgari-prerelease-promo-packins",
+      "packDesc": "Guilds of Ravnica: Golgari Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[1]>from[grn-promo]?title=(Green Spindown Life Counter|Black Spindown Life Counter" },
+        { "query": "from[grn]?title='Golgari Deck Box" },
+        { "query": "from[grn-promo]?title='Deckbuilding Advice Insert" }
+      ]
+    },
+
+    {
+      "packName": "grn-dimir-prerelease-promo-packins",
+      "packDesc": "Guilds of Ravnica: Dimir Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[1]>from[grn-promo]?title=(Black Spindown Life Counter|Blue Spindown Life Counter" },
+        { "query": "from[grn]?title='Dimir Deck Box" },
+        { "query": "from[grn-promo]?title='Deckbuilding Advice Insert" }
+      ]
+    },
+
+    {
+      "packName": "grn-prerelease-promos",
+      "packDesc": "Guilds of Ravnica: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[grn-promo]?includedReason='Prerelease Promo" }
+      ]
+    },
+
+    {
+      "packName": "grn-promos",
+      "packDesc": "Guilds of Ravnica: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[grn-promo]"
+        }
+      ]
+    }
+
+  ]
+}
