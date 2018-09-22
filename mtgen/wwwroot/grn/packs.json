@@ -26,6 +26,11 @@
     },
 
     {
+      "defName": "grn-guildgates",
+      "query": "from[grn-main]?subtype='Gate"
+    },
+
+    {
       "defName": "grn-boros",
       "query": "from[grn-main]?guild=(Boros)-from[grn-main]?title=(Boros Guildgate|Boros Locket)"
     },
@@ -47,7 +52,7 @@
     },
     {
       "defName": "grn-izzet-colours",
-      "query": "from[grn-izzet]+from[grn-main]?colour=(u|r)-from[grn-main]?guild=(Boros|Selesnya|Golgari|Dimir)"
+      "query": "from[grn-izzet]+from[grn-main]?colour=(u|r)-from[grn-main]?guild=(Boros|Selesnya|Golgari|Dimir)+from[grn-main]?title=(Fireminds Research|Ral, Izzet Viceroy|Thousand-Year Storm)"
     },
     {
       "defName": "grn-golgari",
@@ -55,7 +60,7 @@
     },
     {
       "defName": "grn-golgari-colours",
-      "query": "from[grn-golgari]+from[grn-main]?colour=(b|g)-from[grn-main]?guild=(Boros|Selesnya|Izzet|Dimir)"
+      "query": "from[grn-golgari]+from[grn-main]?colour=(b|g)-from[grn-main]?guild=(Boros|Selesnya|Izzet|Dimir)+from[grn-main]?title=(Assassin's Trophy|Vraska, Golgari Queen)"
     },
     {
       "defName": "grn-dimir",
@@ -86,7 +91,7 @@
         { "query": "take[10]>from[grn-main]?rarity='c" },
         { "query": "take[3]>from[grn-main]?rarity='u" },
         { "query": "from[grn-main]?rarity='r" },
-        { "query": "from[grn-basic-land]?type='Basic Land" },
+        { "query": "from[grn-guildgates]" },
         {
           "querySet": [
             {
@@ -148,7 +153,7 @@
       "packVersion": "1.1",
       "isGenerated": true,
       "cards": [
-        { "query": "from[grn-boros]?rarity='r" },
+        { "query": "from[grn-boros-colours]?rarity='r" },
         { "query": "from[grn-main]?title='Boros Locket" },
         { "query": "take[3]>from[grn-boros]?rarity='u" },
         { "query": "take[9]>from[grn-boros-colours]?rarity='c" },
@@ -159,7 +164,7 @@
               "_comment": "1/8 chance of replacing rare with mythic",
               "percent": "1/8",
               "overrideSlot": "1",
-              "query": "from[grn-boros]?rarity='m'"
+              "query": "from[grn-boros-colours]?rarity='m'"
             }
           ]
         }
@@ -172,7 +177,7 @@
       "packVersion": "1.1",
       "isGenerated": true,
       "cards": [
-        { "query": "from[grn-selesnya]?rarity='r" },
+        { "query": "from[grn-selesnya-colours]?rarity='r" },
         { "query": "from[grn-main]?title='Selesnya Locket" },
         { "query": "take[3]>from[grn-selesnya]?rarity='u" },
         { "query": "take[9]>from[grn-selesnya-colours]?rarity='c" },
@@ -183,7 +188,7 @@
               "_comment": "1/8 chance of replacing rare with mythic",
               "percent": "1/8",
               "overrideSlot": "1",
-              "query": "from[grn-selesnya]?rarity='m'"
+              "query": "from[grn-selesnya-colours]?rarity='m'"
             }
           ]
         }
@@ -196,7 +201,7 @@
       "packVersion": "1.1",
       "isGenerated": true,
       "cards": [
-        { "query": "from[grn-izzet]?rarity='r" },
+        { "query": "from[grn-izzet-colours]?rarity='r" },
         { "query": "from[grn-main]?title='Izzet Locket" },
         { "query": "take[3]>from[grn-izzet]?rarity='u" },
         { "query": "take[9]>from[grn-izzet-colours]?rarity='c" },
@@ -207,7 +212,7 @@
               "_comment": "1/8 chance of replacing rare with mythic",
               "percent": "1/8",
               "overrideSlot": "1",
-              "query": "from[grn-izzet]?rarity='m'"
+              "query": "from[grn-izzet-colours]?rarity='m'"
             }
           ]
         }
@@ -220,7 +225,7 @@
       "packVersion": "1.1",
       "isGenerated": true,
       "cards": [
-        { "query": "from[grn-golgari]?rarity='r" },
+        { "query": "from[grn-golgari-colours]?rarity='r" },
         { "query": "from[grn-main]?title='Golgari Locket" },
         { "query": "take[3]>from[grn-golgari]?rarity='u" },
         { "query": "take[9]>from[grn-golgari-colours]?rarity='c" },
@@ -231,7 +236,7 @@
               "_comment": "1/8 chance of replacing rare with mythic",
               "percent": "1/8",
               "overrideSlot": "1",
-              "query": "from[grn-golgari]?rarity='m'"
+              "query": "from[grn-golgari-colours]?rarity='m'"
             }
           ]
         }
@@ -244,7 +249,7 @@
       "packVersion": "1.1",
       "isGenerated": true,
       "cards": [
-        { "query": "from[grn-dimir]?rarity='r" },
+        { "query": "from[grn-dimir-colours]?rarity='r" },
         { "query": "from[grn-main]?title='Dimir Locket" },
         { "query": "take[3]>from[grn-dimir]?rarity='u" },
         { "query": "take[9]>from[grn-dimir-colours]?rarity='c" },
@@ -255,7 +260,7 @@
               "_comment": "1/8 chance of replacing rare with mythic",
               "percent": "1/8",
               "overrideSlot": "1",
-              "query": "from[grn-dimir]?rarity='m'"
+              "query": "from[grn-dimir-colours]?rarity='m'"
             }
           ]
         }
