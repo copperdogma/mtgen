@@ -6,7 +6,7 @@
     },
     {
       "defName": "grn-main",
-      "query": "from[grn]-from[grn]?type=(Marketing|Basic Land)-from[grn]?promo=true-from[grn]?token=true"
+      "query": "from[grn]-from[grn]?type=(Marketing|Basic Land)-from[grn]?promo=true-from[grn]?token=true-from[grn]?subtype='Gate'+from[grn]?title='Gateway Plaza'"
     },
     {
       "defName": "grn-basic-land",
@@ -27,48 +27,48 @@
 
     {
       "defName": "grn-guildgates",
-      "query": "from[grn-main]?subtype='Gate"
+      "query": "from[grn]?subtype='Gate'-from[grn]?promo=true-from[grn]?title='Gateway Plaza'"
     },
 
     {
       "defName": "grn-boros",
-      "query": "from[grn-main]?guild=(Boros)-from[grn-main]?title=(Boros Guildgate|Boros Locket)"
+      "query": "from[grn-main]?guild=(Boros)-from[grn]?title=(Boros Guildgate|Boros Locket)"
     },
     {
       "defName": "grn-boros-colours",
-      "query": "from[grn-boros]+from[grn-main]?colour=(r|w)-from[grn-main]?guild=(Selesnya|Izzet|Golgari|Dimir)"
+      "query": "from[grn-main]?colour=(r|w)-from[grn-boros]+from[grn-boros]-from[grn-main]?guild=(Selesnya|Izzet|Golgari|Dimir)"
     },
     {
       "defName": "grn-selesnya",
-      "query": "from[grn-main]?guild=(Selesnya)-from[grn-main]?title=(Selesnya Guildgate|Selesnya Locket)"
+      "query": "from[grn-main]?guild=(Selesnya)-from[grn]?title=(Selesnya Guildgate|Selesnya Locket)"
     },
     {
       "defName": "grn-selesnya-colours",
-      "query": "from[grn-selesnya]+from[grn-main]?colour=(g|w)-from[grn-main]?guild=(Boros|Izzet|Golgari|Dimir)"
+      "query": "from[grn-main]?colour=(g|w)-from[grn-selesnya]+from[grn-selesnya]-from[grn-main]?guild=(Boros|Izzet|Golgari|Dimir)"
     },
     {
       "defName": "grn-izzet",
-      "query": "from[grn-main]?guild=(Izzet)-from[grn-main]?title=(Izzet Guildgate|Izzet Locket)"
+      "query": "from[grn-main]?guild=(Izzet)-from[grn]?title=(Izzet Guildgate|Izzet Locket)"
     },
     {
       "defName": "grn-izzet-colours",
-      "query": "from[grn-izzet]+from[grn-main]?colour=(u|r)-from[grn-main]?guild=(Boros|Selesnya|Golgari|Dimir)+from[grn-main]?title=(Fireminds Research|Ral, Izzet Viceroy|Thousand-Year Storm)"
+      "query": "from[grn-main]?colour=(u|r)-from[grn-izzet]+from[grn-izzet]-from[grn-main]?guild=(Boros|Selesnya|Golgari|Dimir)+from[grn-main]?title=(Fireminds Research|Ral, Izzet Viceroy|Thousand-Year Storm)"
     },
     {
       "defName": "grn-golgari",
-      "query": "from[grn-main]?guild=(Golgari)-from[grn-main]?title=(Golgari Guildgate|Golgari Locket)"
+      "query": "from[grn-main]?guild=(Golgari)-from[grn]?title=(Golgari Guildgate|Golgari Locket)"
     },
     {
       "defName": "grn-golgari-colours",
-      "query": "from[grn-golgari]+from[grn-main]?colour=(b|g)-from[grn-main]?guild=(Boros|Selesnya|Izzet|Dimir)+from[grn-main]?title=(Assassin's Trophy|Vraska, Golgari Queen)"
+      "query": "from[grn-main]?colour=(b|g)-from[grn-golgari]+from[grn-golgari]-from[grn-main]?guild=(Boros|Selesnya|Izzet|Dimir)+from[grn-main]?title=(Assassin's Trophy|Vraska, Golgari Queen)"
     },
     {
       "defName": "grn-dimir",
-      "query": "from[grn-main]?guild=(Dimir)-from[grn-main]?title=(Dimir Guildgate|Dimir Locket)"
+      "query": "from[grn-main]?guild=(Dimir)-from[grn]?title=(Dimir Guildgate|Dimir Locket)"
     },
     {
       "defName": "grn-dimir-colours",
-      "query": "from[grn-dimir]+from[grn-main]?colour=(u|b)-from[grn-main]?guild=(Boros|Selesnya|Izzet|Golgari)"
+      "query": "from[grn-main]?colour=(u|b)-from[grn-dimir]+from[grn-dimir]-from[grn-main]?guild=(Boros|Selesnya|Izzet|Golgari)"
     }
 
   ],
@@ -157,7 +157,7 @@
         { "query": "from[grn-main]?title='Boros Locket" },
         { "query": "take[3]>from[grn-boros]?rarity='u" },
         { "query": "take[9]>from[grn-boros-colours]?rarity='c" },
-        { "query": "from[grn-main]?title='Boros Guildgate" },
+        { "query": "from[grn-guildgates]?title='Boros Guildgate" },
         {
           "querySet": [
             {
@@ -181,7 +181,7 @@
         { "query": "from[grn-main]?title='Selesnya Locket" },
         { "query": "take[3]>from[grn-selesnya]?rarity='u" },
         { "query": "take[9]>from[grn-selesnya-colours]?rarity='c" },
-        { "query": "from[grn-main]?title='Selesnya Guildgate" },
+        { "query": "from[grn-guildgates]?title='Selesnya Guildgate" },
         {
           "querySet": [
             {
@@ -205,7 +205,7 @@
         { "query": "from[grn-main]?title='Izzet Locket" },
         { "query": "take[3]>from[grn-izzet]?rarity='u" },
         { "query": "take[9]>from[grn-izzet-colours]?rarity='c" },
-        { "query": "from[grn-main]?title='Izzet Guildgate" },
+        { "query": "from[grn-guildgates]?title='Izzet Guildgate" },
         {
           "querySet": [
             {
@@ -229,7 +229,7 @@
         { "query": "from[grn-main]?title='Golgari Locket" },
         { "query": "take[3]>from[grn-golgari]?rarity='u" },
         { "query": "take[9]>from[grn-golgari-colours]?rarity='c" },
-        { "query": "from[grn-main]?title='Golgari Guildgate" },
+        { "query": "from[grn-guildgates]?title='Golgari Guildgate" },
         {
           "querySet": [
             {
@@ -253,7 +253,7 @@
         { "query": "from[grn-main]?title='Dimir Locket" },
         { "query": "take[3]>from[grn-dimir]?rarity='u" },
         { "query": "take[9]>from[grn-dimir-colours]?rarity='c" },
-        { "query": "from[grn-main]?title='Dimir Guildgate" },
+        { "query": "from[grn-guildgates]?title='Dimir Guildgate" },
         {
           "querySet": [
             {
