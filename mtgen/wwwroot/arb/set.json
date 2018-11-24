@@ -1,7 +1,7 @@
 {
   "startProductName": "arb-boosters",
   "packFiles": [
-    "packs.json",
+    "packs.json?v1.1",
     "../con_/packs.json",
     "../ala/packs.json"
   ],
@@ -16,5 +16,10 @@
     "../ala/cardsOther.json",
     "../ala/cardsToken.json"
   ],
-  "updates": []
+  "updates": [
+    {
+      "UpdateDate": "2018-11-24T01:30:00:00",
+      "HtmlString": "Was completely broken. Fixed it!"
+    }
+  ]
 }
