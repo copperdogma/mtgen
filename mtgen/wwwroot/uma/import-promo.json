@@ -1,0 +1,318 @@
+{
+  "setCode": "uma",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=231&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "where": "title='Leovold, Emmisary of Trest'",
+      "newValues": {
+        "title": "Leovold, Emissary of Trest"
+      }
+    },
+
+    {
+      "_comment": "modify each of the promo cards, overriding their image",
+      "where": "title='Emrakul, the Aeons Torn",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_Ml5tJ36UHp.png",
+        "num": "U01/040 S"
+      }
+    },
+    {
+      "where": "title='Karn Liberated",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_lyLU3NlZMd.png",
+        "num": "U02/040 S"
+      }
+    },
+    {
+      "where": "title='Kozilek, Butcher of Truth",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_M1TfWF32H1.png",
+        "num": "U03/040 S"
+      }
+    },
+    {
+      "where": "title='Ulamog, the Infinite Gyre",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_pttvSoT5hm.png",
+        "num": "U04/040 S"
+      }
+    },
+    {
+      "where": "title='Snapcaster Mage",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_kuHMqSYMVf.png",
+        "num": "U05/040 S"
+      }
+    },
+    {
+      "where": "title='Temporal Manipulation",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_D8KL683V5l.png",
+        "num": "U06/040 S"
+      }
+    },
+    {
+      "where": "title='Bitterblossom",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_2oJ6iDwp7B.png",
+        "num": "U07/040 S"
+      }
+    },
+    {
+      "where": "title='Demonic Tutor",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_TUhiKxPYyF.png",
+        "num": "U08/040 S"
+      }
+    },
+    {
+      "where": "title='Goryo's Vengeance",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_rSLkdPYChn.png",
+        "num": "U09/040 S"
+      }
+    },
+    {
+      "where": "title='Liliana of the Veil",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_M19CU6Uoed.png",
+        "num": "U10/040 S"
+      }
+    },
+    {
+      "where": "title='Mikaeus, the Unhallowed",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_0Aii2QN5ok.png",
+        "num": "U11/040 S"
+      }
+    },
+    {
+      "where": "title='Reanimate",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_kPqqyNLmxS.png",
+        "num": "U12/040 S"
+      }
+    },
+    {
+      "where": "title='Tasigur, the Golden Fang",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_746Gx5EOhW.png",
+        "num": "U13/040 S"
+      }
+    },
+    {
+      "where": "title='Balefire Dragon",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_X619Z8tAH9.png",
+        "num": "U14/040 S"
+      }
+    },
+    {
+      "where": "title='Through the Breach",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_hoFTyfjNxS.png",
+        "num": "U15/040 S"
+      }
+    },
+    {
+      "where": "title='Eternal Witness",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_TRxgqVCLKA.png",
+        "num": "U16/040 S"
+      }
+    },
+    {
+      "where": "title='Life from the Loam",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_Wf1nkJvDxg.png",
+        "num": "U17/040 S"
+      }
+    },
+    {
+      "where": "title='Noble Hierarch",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_4zz2Vz3dyd.png",
+        "num": "U18/040 S"
+      }
+    },
+    {
+      "where": "title='Tarmogoyf",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_2G92JblwhT.png",
+        "num": "U19/040 S"
+      }
+    },
+    {
+      "where": "title='Vengevine",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_urrVm39DFD.png",
+        "num": "U20/040 S"
+      }
+    },
+    {
+      "where": "title='Gaddock Teeg",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_wPYg9h1dBb.png",
+        "num": "U21/040 S"
+      }
+    },
+    {
+      "where": "title='Leovold, Emissary of Trest",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_ea9sUqDNXK.png",
+        "num": "U22/040 S"
+      }
+    },
+    {
+      "where": "title='Lord of Extinction",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_Z0OD620aXt.png",
+        "num": "U23/040 S"
+      }
+    },
+    {
+      "where": "title='Maelstrom Pulse",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_jLbNbtoKeE.png",
+        "num": "U24/040 S"
+      }
+    },
+    {
+      "where": "title='Sigarda, Host of Herons",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_m1znQBHIVF.png",
+        "num": "U25/040 S"
+      }
+    },
+    {
+      "where": "title='Fulminator Mage",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_e3bgtmWUca.png",
+        "num": "U26/040 S"
+      }
+    },
+    {
+      "where": "title='Kitchen Finks",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_f4Ll6mlYi1.png",
+        "num": "U27/040 S"
+      }
+    },
+    {
+      "where": "title='Engineered Explosives",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_jCYqdTb5gR.png",
+        "num": "U28/040 S"
+      }
+    },
+    {
+      "where": "title='Mana Vault",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_UTkfJKZYOo.png",
+        "num": "U29/040 S"
+      }
+    },
+    {
+      "where": "title='Platinum Emperion",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_GJqIuOQE9l.png",
+        "num": "U30/040 S"
+      }
+    },
+    {
+      "where": "title='Ancient Tomb",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_836KzC3Acq.png",
+        "num": "U31/040 S"
+      }
+    },
+    {
+      "where": "title='Cavern of Souls",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_dOgHtrrtR4.png",
+        "num": "U32/040 S"
+      }
+    },
+    {
+      "where": "title='Celestial Colonnade",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_3it3lZN6vg.png",
+        "num": "U33/040 S"
+      }
+    },
+    {
+      "where": "title='Creeping Tar Pit",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_boJ0MHSuju.png",
+        "num": "U34/040 S"
+      }
+    },
+    {
+      "where": "title='Dark Depths",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_Otu5de0XRg.png",
+        "num": "U35/040 S"
+      }
+    },
+    {
+      "where": "title='Karakas",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_tcxte7vHjB.png",
+        "num": "U36/040 S"
+      }
+    },
+    {
+      "where": "title='Lavaclaw Reaches",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_kLuP2OQbvU.png",
+        "num": "U37/040 S"
+      }
+    },
+    {
+      "where": "title='Raging Ravine",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_JUMGhOHt80.png",
+        "num": "U38/040 S"
+      }
+    },
+    {
+      "where": "title='Stirring Wildwood",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_JFJ3heQ0aS.png",
+        "num": "U39/040 S"
+      }
+    },
+    {
+      "where": "title='Urborg, Tomb of Yawgmoth",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/uma/en_jAKwPgoJ65.png",
+        "num": "U40/040 S"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "includedReason": "Ultimate Box Topper Promo"
+      }
+    }
+
+
+  ]
+}

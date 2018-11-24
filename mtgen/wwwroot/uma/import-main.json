@@ -1,0 +1,65 @@
+﻿{
+  "setCode": "uma",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=231&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/ultimate-masters-2018-11-19",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "where": "title='Cathodian'",
+      "newValues": {
+        "title": "Cathodion"
+      }
+    },
+    {
+      "where": "title='Fire//Ice'",
+      "newValues": {
+        "title": "Fire // Ice"
+      }
+    },
+    {
+      "where": "title='Firewing Pheonix'",
+      "newValues": {
+        "title": "Firewing Phoenix"
+      }
+    },
+    {
+      "where": "title='Hero of Ioras'",
+      "newValues": {
+        "title": "Hero of Iroas"
+      }
+    },
+    {
+      "where": "title='Leovold, Emmisary of Trest'",
+      "newValues": {
+        "title": "Leovold, Emissary of Trest"
+      }
+    },
+
+    {
+      "where": "title='Reya Dawnbringer'",
+      "newValues": {
+        "num": "032"
+      }
+    },
+    {
+      "where": "title='Entomb'",
+      "newValues": {
+        "num": "094"
+      }
+    },
+    {
+      "where": "title='Fiery Temper'",
+      "newValues": {
+        "num": "129"
+      }
+    }
+
+  ]
+}

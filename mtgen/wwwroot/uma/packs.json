@@ -1,0 +1,107 @@
+{
+  "defs": [
+    {
+      "defName": "uma",
+      "query": "from[*]?set='uma'"
+    },
+    {
+      "defName": "uma-main",
+      "query": "from[uma]-from[uma]?type=(Marketing|Basic Land)-from[uma]?promo=true"
+    },
+    {
+      "defName": "uma-foils",
+      "query": "from[uma]"
+    },
+    {
+      "defName": "uma-promo",
+      "query": "from[uma]?promo=true"
+    }
+
+  ],
+  "packs": [
+    {
+      "packName": "uma-all-cards",
+      "packDesc": "Ultimate Masters: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[uma]" }
+      ]
+    },
+
+    {
+      "packName": "uma-standard",
+      "packDesc": "Ultimate Masters: Standard Booster",
+      "packVersion": "1.0",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[uma-main]?rarity='c" },
+        { "query": "take[3]>from[uma-main]?rarity='u" },
+        { "query": "from[uma-main]?rarity='r" },
+        {
+          "querySet": [
+            {
+              "percent": 71.43,
+              "query": "from[uma-foils]?rarity='c'",
+              "canBeDuplicate": true,
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": 21.43,
+              "query": "from[uma-foils]?rarity='u'",
+              "canBeDuplicate": true,
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": 6.25,
+              "query": "from[uma-foils]?rarity='r'",
+              "canBeDuplicate": true,
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": 0.89,
+              "query": "from[uma-foils]?rarity='m'",
+              "canBeDuplicate": true,
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[uma]?title='Tip/Marketing Card"
+            },
+            {
+              "percent": "50",
+              "_query": "from[uma-token]",
+              "query": "from[uma]?title='Tip/Marketing Card"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/8 chance of replacing rare with mythic",
+              "percent": "1/8",
+              "overrideSlot": "14",
+              "query": "from[uma-main]?rarity='m'"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "uma-promos",
+      "packDesc": "Ultimate Masters: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[uma-promo]"
+        }
+      ]
+    }
+
+  ]
+}

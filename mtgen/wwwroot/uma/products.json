@@ -1,0 +1,54 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "uma-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "uma-all-cards" }
+      ]
+    },
+
+    {
+      "productName": "uma-boosters",
+      "productDesc": "Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "uma-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "uma-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "uma-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "uma-promos",
+      "productDesc": "All Promos",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/ultimate-masters-2018-11-19" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "uma-promos" }
+      ]
+    }
+
+  ]
+}
