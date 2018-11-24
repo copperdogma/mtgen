@@ -116,18 +116,18 @@ class CardDataImporter {
             [htmlData, imageData, exceptionData] = await Promise.all([cardDataPromise, imageDataPromise, exceptionsDataPromise]);
         }
         catch (err) {
-            alert(`ERROR: failed to retrieve data from a source: ${err.message}`)
-        };
+            alert(`ERROR: failed to retrieve data from a source: ${err.message}`);
+        }
 
         // the first result is essential
         const htmlCards = {
             data: htmlData,
             urlSource: cardDataUrl
-        }
+        };
         const htmlImages = {
             data: imageData,
             urlSource: imagesUrl
-        }
+        };
         const jsonExceptions = {
             data: exceptionData
         };
@@ -878,7 +878,11 @@ class CardDataImporter {
                         }
                     }
 
-                    finalImages.set(image.matchTitle, image);
+                    // Only use the image if it doesn't already exist.
+                    // Duplicates can happen if the image gallery has normal card images followed by special card images.
+                    if (!finalImages.has(image.matchTitle)) {
+                        finalImages.set(image.matchTitle, image);
+                    }
                 }
             });
         }
