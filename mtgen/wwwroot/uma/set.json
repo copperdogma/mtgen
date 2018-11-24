@@ -1,14 +1,18 @@
 {
   "startProductName": "uma-boosters",
   "packFiles": [
-    "packs.json"
+    "packs.json?v1.1"
   ],
   "cardFiles": [
-    "cardsMain.json?v1.2",
+    "cardsMain.json?v1.3",
     "cardsToken.json",
     "cardsPromo.json?v1.2"
   ],
   "updates": [
+    {
+      "UpdateDate": "2018-11-24T01:00:00:00",
+      "HtmlString": "Fixed Bloodflow Connoisseur type, fixed promos/rules cards showing up as booster foils."
+    },
     {
       "UpdateDate": "2018-11-24T01:00:00:00",
       "HtmlString": "Added box topper promos."

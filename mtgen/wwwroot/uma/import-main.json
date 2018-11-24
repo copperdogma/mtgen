@@ -66,6 +66,13 @@
       "newValues": {
         "rarity": "m"
       }
+    },
+
+    {
+      "where": "title='Bloodflow Connoisseur'",
+      "newValues": {
+        "type": "Creature"
+      }
     }
 
   ]
