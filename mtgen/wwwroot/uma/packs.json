@@ -65,19 +65,7 @@
             }
           ]
         },
-        {
-          "querySet": [
-            {
-              "percent": "50",
-              "query": "from[uma]?title='Tip/Marketing Card"
-            },
-            {
-              "percent": "50",
-              "_query": "from[uma-token]",
-              "query": "from[uma]?title='Tip/Marketing Card"
-            }
-          ]
-        },
+        { "query": "from[uma-main]?token=true" },
         {
           "querySet": [
             {

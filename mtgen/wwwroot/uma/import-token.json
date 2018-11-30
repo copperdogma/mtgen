@@ -4,34 +4,216 @@
   "imagesUrl": "",
   "exceptions": [
     {
-      "add": true,
-      "newValues": {
-        "src": "http://mtgen.net/cards/mtg-marketing1.png",
-        "title": "Tip/Marketing Card",
-        "colour": "o",
-        "num": "001 Marketing",
-        "type": "Marketing",
-        "marketing": true
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "uma",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-ultimate-masters-2018-11-29",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "001|w|Token Creature|Citizen\n002|w|Token Creature|Spirit\n003|u|Token Creature|Drake\n004|w|Token Creature|Homunculus\n005|b|Token Creature|Faerie Rogue\n006|b|Token Legendary Creature|Marit Lage\n007|b|Token Creature|Wurm\n008|b|Token Creature|Zombie\n009|r|Token Creature|Elemental\n010|r|Token Creature|Elemental\n011|r|Token Creature|Soldier\n012|r|Token Creature|Spark Elemental\n013|g|Token Creature|Elemental\n014|g|Token Creature|Ooze\n015|g|Token Creature|Spider\n016|m|Token Creature|Spirit\n\n\n\n\n\n\n\n\n"
+        }
       }
     },
     {
       "add": true,
       "newValues": {
-        "src": "http://mtgen.net/cards/mtg-marketing2.png",
-        "title": "Tip/Marketing Card",
-        "colour": "o",
-        "num": "002 Marketing",
-        "type": "Marketing",
-        "marketing": true
+        "set": "uma",
+        "src": "https://media.wizards.com/2018/uma/en_aQYO8ABYXp.png",
+        "num": "001",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Citizen",
+        "subtype": "Citizen"
       }
     },
-
+    {
+      "add": true,
+      "newValues": {
+        "set": "uma",
+        "src": "https://media.wizards.com/2018/uma/en_A9ssMHhU17.png",
+        "num": "002",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Spirit",
+        "subtype": "Spirit"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "uma",
+        "src": "https://media.wizards.com/2018/uma/en_4Tltk9pQ7n.png",
+        "num": "003",
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Drake",
+        "subtype": "Drake"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "uma",
+        "src": "https://media.wizards.com/2018/uma/en_D27nJCFu0r.png",
+        "num": "004",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Homunculus",
+        "subtype": "Homunculus"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "uma",
+        "src": "https://media.wizards.com/2018/uma/en_xZspDc00AT.png",
+        "num": "005",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Faerie Rogue",
+        "subtype": "Faerie Rogue"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "uma",
+        "src": "https://media.wizards.com/2018/uma/en_CFzj6t9eCh.png",
+        "num": "006",
+        "colour": "b",
+        "type": "Token Legendary Creature",
+        "title": "Marit Lage",
+        "subtype": "Marit Lage"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "uma",
+        "src": "https://media.wizards.com/2018/uma/en_Epxs02y9fe.png",
+        "num": "007",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Wurm",
+        "subtype": "Wurm"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "uma",
+        "src": "https://media.wizards.com/2018/uma/en_wYK7Np5fEF.png",
+        "num": "008",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Zombie",
+        "subtype": "Zombie"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "uma",
+        "src": "https://media.wizards.com/2018/uma/en_FMrBPnsUEh.png",
+        "num": "009",
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Elemental",
+        "subtype": "Elemental"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "uma",
+        "src": "https://media.wizards.com/2018/uma/en_09XFHLU3dB.png",
+        "num": "010",
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Elemental",
+        "subtype": "Elemental"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "uma",
+        "src": "https://media.wizards.com/2018/uma/en_Tg7k7NMp4B.png",
+        "num": "011",
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Soldier",
+        "subtype": "Soldier"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "uma",
+        "src": "https://media.wizards.com/2018/uma/en_zAWyu86ehu.png",
+        "num": "012",
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Spark Elemental",
+        "subtype": "Spark Elemental"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "uma",
+        "src": "https://media.wizards.com/2018/uma/en_HN6KgIP7Xg.png",
+        "num": "013",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Elemental",
+        "subtype": "Elemental"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "uma",
+        "src": "https://media.wizards.com/2018/uma/en_iKZaGm23qs.png",
+        "num": "014",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Ooze",
+        "subtype": "Ooze"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "uma",
+        "src": "https://media.wizards.com/2018/uma/en_UGIvgNTAW1.png",
+        "num": "015",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Spider",
+        "subtype": "Spider"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "uma",
+        "src": "https://media.wizards.com/2018/uma/en_nHiWcTnTFT.png",
+        "num": "016",
+        "colour": "m",
+        "type": "Token Creature",
+        "title": "Spirit",
+        "subtype": "Spirit"
+      }
+    },
     {
       "where": "",
       "newValues": {
         "set": "{{setCode}}",
         "rarity": "c",
-        "num": "{{num}}/008 T",
+        "num": "{{num}}/012 T",
         "token": true,
         "usableForDeckBuilding": false
       }
