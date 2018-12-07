@@ -6,7 +6,7 @@
     },
     {
       "defName": "uma-main",
-      "query": "from[uma]-from[uma]?type=(Marketing|Basic Land)-from[uma]?promo=true"
+      "query": "from[uma]-from[uma]?type=(Marketing|Basic Land)-from[uma]?promo=true-from[uma]?token=true"
     },
     {
       "defName": "uma-foils",
@@ -65,7 +65,7 @@
             }
           ]
         },
-        { "query": "from[uma-main]?token=true" },
+        { "query": "from[uma]?token=true" },
         {
           "querySet": [
             {

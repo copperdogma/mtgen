@@ -1,7 +1,7 @@
 {
   "startProductName": "uma-boosters",
   "packFiles": [
-    "packs.json?v1.2"
+    "packs.json?v1.3"
   ],
   "cardFiles": [
     "cardsMain.json?v1.3",
@@ -9,6 +9,10 @@
     "cardsPromo.json?v1.2"
   ],
   "updates": [
+    {
+      "UpdateDate": "2018-12-07T00:00:00:00",
+      "HtmlString": "Token no longer show up in common slot (oops)."
+    },
     {
       "UpdateDate": "2018-11-30T01:00:00:00",
       "HtmlString": "Added tokens."
