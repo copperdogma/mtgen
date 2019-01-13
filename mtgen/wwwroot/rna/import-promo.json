@@ -1,0 +1,460 @@
+{
+  "setCode": "rna",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=229&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+      "where": "title='The Haunt of Hightower",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_IloI2Nu8nL.png",
+        "num": "{{num}} P Buy-a-Box",
+        "includedReason": "Buy-a-Box Promo"
+      }
+    },
+    {
+      "where": "title='Rakdos Firewheeler",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_P0oJZTfbk0.png",
+        "num": "{{num}} P OpenHouse",
+        "includedReason": "Open House Promo"
+      }
+    },
+    {
+      "where": "title='Simic Ascendancy",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_taLrXVc7Y5.png",
+        "num": "{{num}} P Draft Weekend",
+        "includedReason": "Draft Weekend Promo"
+      }
+    },
+    {
+      "where": "title='Gate Colossus",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_nG9wKprkgk.png",
+        "num": "{{num}} P League",
+        "includedReason": "League Promo"
+      }
+    },
+    {
+      "where": "title='Lavinia, Azorius Renegade",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_iAClRqFGby.png",
+        "num": "{{num}} P Store Championship",
+        "includedReason": "Store Championship Promo"
+      }
+    },
+
+    {
+      "where": "title='Growth Spiral",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_fbtHd4Aw0K.png",
+        "num": "{{num}} P FNM",
+        "includedReason": "Friday Night Magic Promo"
+      }
+    },
+    {
+      "where": "title='Light Up the Stage",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_A0Kmcb96FY.png",
+        "num": "{{num}} P FNM",
+        "includedReason": "Friday Night Magic Promo"
+      }
+    },
+    {
+      "where": "title='Mortify",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_2WXysdKcTB.png",
+        "num": "{{num}} P FNM",
+        "includedReason": "Friday Night Magic Promo"
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_H5QdCGHGSo.png",
+        "title": "Plains",
+        "colour": "c",
+        "num": "B01/010 P Ravnica Weekend",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Plains",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Ravnica Weekend Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_vLetkzX3qA.png",
+        "title": "Island",
+        "colour": "c",
+        "num": "B02/010 P Ravnica Weekend",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Island",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Ravnica Weekend Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_kxiGUIvxM2.png",
+        "title": "Plains",
+        "colour": "c",
+        "num": "B03/010 P Ravnica Weekend",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Plains",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Ravnica Weekend Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_AUQeY2HDh5.png",
+        "title": "Swamp",
+        "colour": "c",
+        "num": "B04/010 P Ravnica Weekend",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Swamp",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Ravnica Weekend Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_E6Mz38cYoI.png",
+        "title": "Swamp",
+        "colour": "c",
+        "num": "B05/010 P Ravnica Weekend",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Swamp",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Ravnica Weekend Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_cQhRwFXckP.png",
+        "title": "Mountain",
+        "colour": "c",
+        "num": "B06/010 P Ravnica Weekend",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Mountain",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Ravnica Weekend Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_dffrb16EQC.png",
+        "title": "Mountain",
+        "colour": "c",
+        "num": "B07/010 P Ravnica Weekend",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Mountain",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Ravnica Weekend Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_NzNhigC9EE.png",
+        "title": "Forest",
+        "colour": "c",
+        "num": "B08/010 P Ravnica Weekend",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Forest",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Ravnica Weekend Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_pAmFsr54nY.png",
+        "title": "Island",
+        "colour": "c",
+        "num": "B09/010 P Ravnica Weekend",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Island",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Ravnica Weekend Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_f9zitweUih.png",
+        "title": "Forest",
+        "colour": "c",
+        "num": "B10/010 P Ravnica Weekend",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "Forest",
+        "color": "l",
+        "cost": "",
+        "rarity": "c",
+        "includedReason": "Ravnica Weekend Promo"
+      }
+    },
+
+
+    {
+      "_comment": "Planeswalker Decks",
+      "where": "title='Dovin, Architect of Law",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_YgKE4YGOiS.png",
+        "includedReason": "Dovin, Architect of Law Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Dovin's Dismissal",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_efdiBMusCy.png",
+        "includedReason": "Dovin, Architect of Law Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Elite Arrester",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_wxfZOtQ6rb.png",
+        "includedReason": "Dovin, Architect of Law Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Dovin's Automaton",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_GqJJyU4aJ4.png",
+        "includedReason": "Dovin, Architect of Law Planeswalker Deck"
+      }
+    },
+
+    {
+      "where": "title='Domri, City Smasher",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_oP0lY3nKkC.png",
+        "includedReason": "Domri, City Smasher Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Domri's Nodorog",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_3voNDB5van.png",
+        "includedReason": "Domri, City Smasher Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Charging War Boar",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_tupuxPm2Bv.png",
+        "includedReason": "Domri, City Smasher Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title='Ragefire",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_WioItCuhud.png",
+        "includedReason": "Domri, City Smasher Planeswalker Deck"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/rna-azorius-prerelease-deck-box.png",
+        "title": "Azorius Deck Box",
+        "colour": "o",
+        "num": "006a Azorius Deck Box",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/rna-rakdos-prerelease-deck-box.png",
+        "title": "Rakdos Deck Box",
+        "colour": "o",
+        "num": "006b Rakdos Deck Box",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/rna-gruul-prerelease-deck-box.png",
+        "title": "Gruul Deck Box",
+        "colour": "o",
+        "num": "006c Gruul Deck Box",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/rna-simic-prerelease-deck-box.png",
+        "title": "Simic Deck Box",
+        "colour": "o",
+        "num": "006d Simic Deck Box",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/rna-orzhov-prerelease-deck-box.png",
+        "title": "Orzhov Deck Box",
+        "colour": "o",
+        "num": "006e Orzhov Deck Box",
+        "rarity": "c",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-deckbuilding-info.jpg",
+        "src_large": "http://mtgen.net/cards/mtg-deckbuilding-info-lg.jpg",
+        "height": 370,
+        "width": 515,
+        "title": "Deckbuilding Advice Insert",
+        "colour": "o",
+        "num": "007 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-white.png",
+        "title": "White Spindown Life Counter",
+        "colour": "o",
+        "num": "001 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-blue.png",
+        "title": "Blue Spindown Life Counter",
+        "colour": "o",
+        "num": "002 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-black.png",
+        "title": "Black Spindown Life Counter",
+        "colour": "o",
+        "num": "003 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-red.png",
+        "title": "Red Spindown Life Counter",
+        "colour": "o",
+        "num": "004 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-green.png",
+        "title": "Green Spindown Life Counter",
+        "colour": "o",
+        "num": "005 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

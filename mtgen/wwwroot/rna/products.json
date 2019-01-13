@@ -1,0 +1,170 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "rna-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "rna-all-cards" }
+      ]
+    },
+
+    {
+      "productName": "rna-boosters",
+      "productDesc": "Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "rna-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "rna-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "rna-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "rna-prerelease",
+      "productDesc": "Prerelease",
+      "sources": [ "" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "rna-standard" },
+        { "packName": "rna-azorius-prerelease-promo-packins" },
+        { "packName": "rna-rakdos-prerelease-promo-packins" },
+        { "packName": "rna-orzhov-prerelease-promo-packins" },
+        { "packName": "rna-gruul-prerelease-promo-packins" },
+        { "packName": "rna-simic-prerelease-promo-packins" },
+        { "packName": "rna-guild-booster-azorius" },
+        { "packName": "rna-guild-booster-rakdos" },
+        { "packName": "rna-guild-booster-orzhov" },
+        { "packName": "rna-guild-booster-gruul" },
+        { "packName": "rna-guild-booster-simic" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "rna-prerelease-guild-azorius",
+            "presetDesc": "Azorius (White/Blue)",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "rna-azorius-prerelease-promo-packins"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "rna-guild-booster-azorius"
+              },
+              {
+                "count": 5,
+                "defaultPackName": "rna-standard"
+              }
+            ]
+          },
+          {
+            "presetName": "rna-prerelease-guild-rakdos",
+            "presetDesc": "Rakdos (Black/Red)",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "rna-rakdos-prerelease-promo-packins"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "rna-guild-booster-rakdos"
+              },
+              {
+                "count": 5,
+                "defaultPackName": "rna-standard"
+              }
+            ]
+          },
+          {
+            "presetName": "rna-prerelease-guild-orzhov",
+            "presetDesc": "Orzhov (White/Black)",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "rna-orzhov-prerelease-promo-packins"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "rna-guild-booster-orzhov"
+              },
+              {
+                "count": 5,
+                "defaultPackName": "rna-standard"
+              }
+            ]
+          },
+          {
+            "presetName": "rna-prerelease-guild-gruul",
+            "presetDesc": "Gruul (Red/Green)",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "rna-gruul-prerelease-promo-packins"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "rna-guild-booster-gruul"
+              },
+              {
+                "count": 5,
+                "defaultPackName": "rna-standard"
+              }
+            ]
+          },
+          {
+            "presetName": "rna-prerelease-guild-simic",
+            "presetDesc": "Simic (Green/Blue)",
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "rna-simic-prerelease-promo-packins"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "rna-guild-booster-simic"
+              },
+              {
+                "count": 5,
+                "defaultPackName": "rna-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "rna-promos",
+      "productDesc": "All Promos",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/ravnica-allegiance-planeswalker-deck-lists-2019-01-10" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "rna-promos" }
+      ]
+    }
+
+  ]
+}

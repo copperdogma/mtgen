@@ -1,0 +1,209 @@
+{
+  "setCode": "rna",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-ravnica-allegiance-2019-01-09",
+  "exceptions": [
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-marketing1.png",
+        "title": "Tip/Marketing Card",
+        "colour": "o",
+        "num": "001 Marketing",
+        "type": "Marketing",
+        "marketing": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-marketing2.png",
+        "title": "Tip/Marketing Card",
+        "colour": "o",
+        "num": "002 Marketing",
+        "type": "Marketing",
+        "marketing": true
+      }
+    },
+
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "rna",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-ravnica-allegiance-2019-01-09",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "001|w|Token Creature|Human\n002|u|Token Creature|Illusion\n003|b|Token Creature|Zombie\n004|r|Token Creature|Goblin\n005|g|Token Creature|Centaur\n006|g|Token Creature|Frog Lizard\n007|g|Token Creature|Ooze\n008|m|Token Creature|Beast\n009|m|Token Creature|Sphinx\n010|m|Token Creature|Spirit\n011|c|Token Creature|Thopter\n012|c|Token Creature|Treasure\n013|c|Emblem|Domri\n"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "rna",
+        "src": "https://media.wizards.com/2018/rna/en_IeLQUTgkMy.png",
+        "num": "001",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Human",
+        "subtype": "Human"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "rna",
+        "src": "https://media.wizards.com/2018/rna/en_ufNtrZErSM.png",
+        "num": "002",
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Illusion",
+        "subtype": "Illusion"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "rna",
+        "src": "https://media.wizards.com/2018/rna/en_FV4qTNvNWC.png",
+        "num": "003",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Zombie",
+        "subtype": "Zombie"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "rna",
+        "src": "https://media.wizards.com/2018/rna/en_NaVWfo0f7A.png",
+        "num": "004",
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Goblin",
+        "subtype": "Goblin"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "rna",
+        "src": "https://media.wizards.com/2018/rna/en_puSB7xDOQj.png",
+        "num": "005",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Centaur",
+        "subtype": "Centaur"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "rna",
+        "src": "https://media.wizards.com/2018/rna/en_qYavMoWVko.png",
+        "num": "006",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Frog Lizard",
+        "subtype": "Frog Lizard"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "rna",
+        "src": "https://media.wizards.com/2018/rna/en_muk9bcLe4j.png",
+        "num": "007",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Ooze",
+        "subtype": "Ooze"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "rna",
+        "src": "https://media.wizards.com/2018/rna/en_gcngyJXapg.png",
+        "num": "008",
+        "colour": "m",
+        "type": "Token Creature",
+        "title": "Beast",
+        "subtype": "Beast"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "rna",
+        "src": "https://media.wizards.com/2018/rna/en_tgCJ9tXkbe.png",
+        "num": "009",
+        "colour": "m",
+        "type": "Token Creature",
+        "title": "Sphinx",
+        "subtype": "Sphinx"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "rna",
+        "src": "https://media.wizards.com/2018/rna/en_ABtRyfECoT.png",
+        "num": "010",
+        "colour": "m",
+        "type": "Token Creature",
+        "title": "Spirit",
+        "subtype": "Spirit"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "rna",
+        "src": "https://media.wizards.com/2018/rna/en_VL2JcQP37W.png",
+        "num": "011",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Thopter",
+        "subtype": "Thopter"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "rna",
+        "src": "https://media.wizards.com/2018/rna/en_tgR7GbIWg8.png",
+        "num": "012",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Treasure",
+        "subtype": "Treasure"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "rna",
+        "src": "https://media.wizards.com/2018/rna/en_FdzLIC4pdx.png",
+        "num": "013",
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Domri",
+        "subtype": "Domri"
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

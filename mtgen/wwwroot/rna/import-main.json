@@ -1,0 +1,137 @@
+﻿{
+  "setCode": "rna",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=229&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/ravnica-allegiance-2018-12-17",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "where": "title='Immolation Shaman'",
+      "newValues": {
+        "num": "106"
+      }
+    },
+    {
+      "where": "title='Senate Guildmage'",
+      "newValues": {
+        "num": "204"
+      }
+    },
+    {
+      "where": "title='Get to the Point",
+      "newValues": {
+        "title": "Get the Point"
+      }
+    },
+    {
+      "where": "title='Rampaging Redhorn",
+      "newValues": {
+        "title": "Rampaging Rendhorn"
+      }
+    },
+    {
+      "where": "title='Footlight Fiend",
+      "newValues": {
+        "cost": "{B/R}",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title=(Arrester's Admonition|Azorius Locket|Gruul Locket|Orzhov Locket|Rakdos Locket|Simic Locket)",
+      "newValues": {
+        "rarity": "c"
+      }
+    },
+    {
+      "where": "title='Titanic Brawl",
+      "newValues": {
+        "cost": "1G"
+      }
+    },
+    {
+      "where": "title='Orzhov Racketeers",
+      "newValues": {
+        "cost": "4B"
+      }
+    },
+    {
+      "where": "title='Scuttlegator",
+      "newValues": {
+        "cost": "4{G/U}{G/U}"
+      }
+    },
+    {
+      "where": "title=(Expose to Daylight|Regenesis)",
+      "newValues": {
+        "type": "Instant"
+      }
+    },
+    {
+      "where": "title=(Growth-Chamber Guardian|Imperious Oligarch)",
+      "newValues": {
+        "type": "Creature"
+      }
+    },
+
+    {
+      "where": "title=(Arrester's Zeal|Sentinel's Mark|Unbreakable Formation|Arrester's Admonition|Code of Constraint|Precognitive Perception|Senate Courier|Absorb|Azorius Knight-Arbiter|Azorius Skyguard|Deputy of Detention|Dovin's Acuity|High Alert|Lavinia, Azorius Renegade|Lawmage's Binding|Senate Guildmage|Sphinx of New Prahv|Sphinx's Insight|Senate Griffin|Depose // Deploy|Warrant // Warden|Azorius Locket|Azorius Guildgate|Hallowed Fountain|Elite Arrester|Dovin's Dismissal)",
+      "newValues": {
+        "guild": "Azorius"
+      }
+    },
+    {
+      "where": "title=(Blade Juggler|Dead Revels|Drill Bit|Rakdos Trumpeter|Spawn of Mayhem|Light Up the Stage|Rix Maadi Reveler|Skewer the Critics|Spikewheel Acrobat|Bedevil|Captive Audience|Cult Guildmage|Fireblade Artist|Get the Point|Hackrobat|Judith, the Scourge Diva|Macabre Mockery|Rafter Demon|Rakdos Firewheeler|Rakdos Roustabout|Rakdos, the Showstopper|Theater of Horrors|Footlight Fiend|Bedeck // Bedazzle|Carnival // Carnage|Rakdos Locket|Blood Crypt|Rakdos Guildgate)",
+      "newValues": {
+        "guild": "Rakdos"
+      }
+    },
+    {
+      "where": "title=(Burning-Tree Vandal|Clamor Shaman|Ghor-Clan Wrecker|Gravel-Hide Goblin|Skarrgan Hellkite|Gruul Beastmaster|Rampaging Rendhorn|Wrecking Beast|Cindervines|Clan Guildmage|Frenzied Arynx|Gruul Spellbreaker|Nikya of the Old Ways|Ravager Wurm|Rhythm of the Wild|Rubblebelt Runner|Savage Smash|Sunder Shaman|Zhur-Taa Goblin|Rubble Slinger|Collision // Colossus|Thrash // Threat|Gruul Locket|Gruul Guildgate|Stomping Ground|Bolrac-Clan Crusher|Charging War Bear|Domri's Nodorog)",
+      "newValues": {
+        "guild": "Gruul"
+      }
+    },
+    {
+      "where": "title=(Benthic Biomancer|Pteramander|Skatewing Spy|Skitter Eel|Growth-Chamber Guardian|Incubation Druid|Sauroform Hybrid|Steeple Creeper|Trollbred Guardian|Aeromunculus|Applied Biomancy|Biomancer's Familiar|Combine Guildmage|Frilled Mystic|Galloping Lizrog|Growth Spiral|Gyre Engineer|Hydroid Krasis|Prime Speaker Vannifar|Sharktocrab|Simic Ascendancy|Zegana, Utopian Speaker|Scuttlegator|Incubation // Incongruity|Repudiate // Replicate|Breeding Pool|Simic Guildgate|Simic Locket)",
+      "newValues": {
+        "guild": "Simic"
+      }
+    },
+    {
+      "where": "title=(Knight of Sorrows|Ministrant of Obligation|Syndicate Messenger|Tithe Taker|Twilight Panther|Debtors' Transport|Orzhov Enforcer|Orzhov Racketeers|Basilica Bell-Haunt|Final Payment|Grasping Thrull|Imperious Oligarch|Knight of the Last Breath|Mortify|Pitiless Pontiff|Seraph of the Scales|Syndicate Guildmage|Teysa Karlov|Vizkopa Vampire|Consecrate // Consume|Revival // Revenge|Orzhov Locket|Godless Shrine|Orzhov Guildgate)",
+      "newValues": {
+        "guild": "Orzhov"
+      }
+    },
+
+    {
+      "_comment": "Dovin, Architect of Law Planeswalker Deck, added in promos",
+      "where": "title=(Dovin, Architect of Law|Dovin's Dismissal|Elite Arrester|Dovin's Automaton)",
+      "delete": true
+    },
+    {
+      "_comment": "Domri, City Smasher Planeswalker Deck, added in promos",
+      "where": "title=(Domri, City Smasher|Domri's Nodorog|Charging War Boar|Ragefire)",
+      "delete": true
+    },
+
+
+    {
+      "_comment": "Lands and Basic lands are imported separately",
+      "where": "type=(Land|Basic Land)",
+      "delete": true
+    },
+    {
+      "_comment": "Guildgates are imported separately",
+      "where": "subtype='Gate'",
+      "delete": true
+    }
+
+  ]
+}

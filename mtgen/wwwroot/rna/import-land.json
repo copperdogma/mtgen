@@ -1,0 +1,135 @@
+{
+  "setCode": "rna",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=229&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/ravnica-allegiance-2018-12-17",
+  "_comments": "This set includes basic lands, multi-colour lands, and Guildgates",
+  "exceptions": [
+    {
+      "_comment": "mtg salvation included the special lands, which I import separately",
+      "where": "type=(Land)"
+    },
+
+    {
+      "_comment": "Azorius Guildgate",
+      "where": "num='0243'",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_FcK0i6kUh2.png",
+        "guild": "Azorius"
+      }
+    },
+    {
+      "_comment": "Azorius Guildgate",
+      "where": "num='0244'",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_SfYGMvKgcj.png",
+        "guild": "Azorius"
+      }
+    },
+
+    {
+      "_comment": "Rakdos Guildgate",
+      "where": "num='0255'",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_oYc5hVj4B9.png",
+        "guild": "Rakdos"
+      }
+    },
+    {
+      "_comment": "Rakdos Guildgate",
+      "where": "num='0256'",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_IZKhBfWXTq.png",
+        "guild": "Rakdos"
+      }
+    },
+
+    {
+      "_comment": "Orzhov Guildgate",
+      "where": "num='0252'",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_Xjcc3NqOR2.png",
+        "guild": "Orzhov"
+      }
+    },
+    {
+      "_comment": "Orzhov Guildgate",
+      "where": "num='0253'",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_zyHA3l2CAC.png",
+        "guild": "Orzhov"
+      }
+    },
+
+    {
+      "_comment": "Gruul Guildgate",
+      "where": "num='0249'",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_1bSdOAXadY.png",
+        "guild": "Gruul"
+      }
+    },
+    {
+      "_comment": "Gruul Guildgate",
+      "where": "num='0250'",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_36YbsV654V.png",
+        "guild": "Gruul"
+      }
+    },
+
+    {
+      "_comment": "Simic Guildgate",
+      "where": "num='0257'",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_G5sXkLV3MH.png",
+        "guild": "Simic"
+      }
+    },
+    {
+      "_comment": "Simic Guildgate",
+      "where": "num='0258'",
+      "newValues": {
+        "src": "https://media.wizards.com/2018/rna/en_njOtTfLYRe.png",
+        "guild": "Simic"
+      }
+    },
+
+    {
+      "where": "title='Breeding Pool",
+      "newValues": {
+        "guild": "Simic"
+      }
+    },
+    {
+      "where": "title='Godless Shrine'",
+      "newValues": {
+        "guild": "Orzhov"
+      }
+    },
+    {
+      "where": "title='Blood Crypt'",
+      "newValues": {
+        "guild": "Rakdos"
+      }
+    },
+    {
+      "where": "title='Hallowed Fountain'",
+      "newValues": {
+        "guild": "Azorius"
+      }
+    },
+    {
+      "where": "title='Stomping Ground'",
+      "newValues": {
+        "guild": "Gruul"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    }
+
+  ]
+}
