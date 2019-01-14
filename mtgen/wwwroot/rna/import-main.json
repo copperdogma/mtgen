@@ -49,6 +49,13 @@
       }
     },
     {
+      "where": "title='Rubble Slinger",
+      "newValues": {
+        "cost": "2{R/G}",
+        "colour": "m"
+      }
+    },
+    {
       "where": "title='Senate Griffin",
       "newValues": {
         "cost": "2{W/B}{W/B}",
@@ -76,7 +83,8 @@
     {
       "where": "title='Scuttlegator",
       "newValues": {
-        "cost": "4{G/U}{G/U}"
+        "cost": "4{G/U}{G/U}",
+        "colour": "m"
       }
     },
     {

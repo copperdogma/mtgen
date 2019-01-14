@@ -2454,21 +2454,6 @@
   },
   {
     "set": "rna",
-    "title": "Rubble Slinger",
-    "src": "https://media.wizards.com/2018/rna/en_wvNoIcfZ7n.png",
-    "cost": "{R//}",
-    "rarity": "c",
-    "type": "Creature",
-    "subtype": "Human Warrior",
-    "power": "2",
-    "toughness": "3",
-    "colour": "r",
-    "num": "0217",
-    "mtgenId": "rna|0217",
-    "guild": "Gruul"
-  },
-  {
-    "set": "rna",
     "title": "Collision // Colossus",
     "src": "https://media.wizards.com/2018/rna/en_nZGbpOf4zO.png",
     "cost": "1(R/G)//RG",
@@ -2504,6 +2489,21 @@
     "colour": "g",
     "num": "0135",
     "mtgenId": "rna|0135",
+    "guild": "Gruul"
+  },
+  {
+    "set": "rna",
+    "title": "Rubble Slinger",
+    "src": "https://media.wizards.com/2018/rna/en_wvNoIcfZ7n.png",
+    "cost": "2{R/G}",
+    "rarity": "c",
+    "type": "Creature",
+    "subtype": "Human Warrior",
+    "power": "2",
+    "toughness": "3",
+    "colour": "m",
+    "num": "0217",
+    "mtgenId": "rna|0217",
     "guild": "Gruul"
   },
   {
@@ -2872,7 +2872,7 @@
     "subtype": "Crab Turtle Crocodile",
     "power": "6",
     "toughness": "6",
-    "colour": "g",
+    "colour": "m",
     "num": "0218",
     "mtgenId": "rna|0218",
     "guild": "Simic"
