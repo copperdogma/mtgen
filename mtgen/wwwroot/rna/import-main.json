@@ -30,6 +30,12 @@
       }
     },
     {
+      "where": "title='Charging War Bear",
+      "newValues": {
+        "title": "Charging War Boar"
+      }
+    },
+    {
       "where": "title='Rampaging Redhorn",
       "newValues": {
         "title": "Rampaging Rendhorn"
@@ -39,6 +45,13 @@
       "where": "title='Footlight Fiend",
       "newValues": {
         "cost": "{B/R}",
+        "colour": "m"
+      }
+    },
+    {
+      "where": "title='Senate Griffin",
+      "newValues": {
+        "cost": "2{W/B}{W/B}",
         "colour": "m"
       }
     },
@@ -92,7 +105,7 @@
       }
     },
     {
-      "where": "title=(Burning-Tree Vandal|Clamor Shaman|Ghor-Clan Wrecker|Gravel-Hide Goblin|Skarrgan Hellkite|Gruul Beastmaster|Rampaging Rendhorn|Wrecking Beast|Cindervines|Clan Guildmage|Frenzied Arynx|Gruul Spellbreaker|Nikya of the Old Ways|Ravager Wurm|Rhythm of the Wild|Rubblebelt Runner|Savage Smash|Sunder Shaman|Zhur-Taa Goblin|Rubble Slinger|Collision // Colossus|Thrash // Threat|Gruul Locket|Gruul Guildgate|Stomping Ground|Bolrac-Clan Crusher|Charging War Bear|Domri's Nodorog)",
+      "where": "title=(Burning-Tree Vandal|Clamor Shaman|Ghor-Clan Wrecker|Gravel-Hide Goblin|Skarrgan Hellkite|Gruul Beastmaster|Rampaging Rendhorn|Wrecking Beast|Cindervines|Clan Guildmage|Frenzied Arynx|Gruul Spellbreaker|Nikya of the Old Ways|Ravager Wurm|Rhythm of the Wild|Rubblebelt Runner|Savage Smash|Sunder Shaman|Zhur-Taa Goblin|Rubble Slinger|Collision // Colossus|Thrash // Threat|Gruul Locket|Gruul Guildgate|Stomping Ground|Bolrac-Clan Crusher|Charging War Boar|Domri's Nodorog)",
       "newValues": {
         "guild": "Gruul"
       }
@@ -130,6 +143,12 @@
     {
       "_comment": "Guildgates are imported separately",
       "where": "subtype='Gate'",
+      "delete": true
+    },
+
+    {
+      "_comment": "Promo only cards",
+      "where": "title=(The Haunt of Hightower)",
       "delete": true
     }
 

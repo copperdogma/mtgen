@@ -412,6 +412,23 @@
  },
  {
   "set": "rna",
+  "title": "Charging War Boar",
+  "src": "https://media.wizards.com/2018/rna/en_tupuxPm2Bv.png",
+  "cost": "1RG",
+  "rarity": "u",
+  "type": "Creature",
+  "subtype": "Boar",
+  "power": "3",
+  "toughness": "1",
+  "colour": "m",
+  "num": "0271",
+  "mtgenId": "rna|0271",
+  "includedReason": "Domri, City Smasher Planeswalker Deck",
+  "promo": true,
+  "usableForDeckBuilding": false
+ },
+ {
+  "set": "rna",
   "title": "Ragefire",
   "src": "https://media.wizards.com/2018/rna/en_WioItCuhud.png",
   "cost": "1R",
@@ -466,20 +483,20 @@
   "promo": true,
   "usableForDeckBuilding": false
  },
-  {
-    "src": "http://mtgen.net/cards/rna-simic-prerelease-deck-box.png",
-    "title": "Simic Deck Box",
-    "colour": "o",
-    "num": "006d Simic Deck Box",
-    "rarity": "c",
-    "type": "Insert",
-    "includedReason": "Prerelease Promo",
-    "addedViaException": true,
-    "mtgenId": "rna|006d Simic Deck Box",
-    "set": "rna",
-    "promo": true,
-    "usableForDeckBuilding": false
-  },
+ {
+  "src": "http://mtgen.net/cards/rna-simic-prerelease-deck-box.png",
+  "title": "Simic Deck Box",
+  "colour": "o",
+  "num": "006d Simic Deck Box",
+  "rarity": "c",
+  "type": "Insert",
+  "includedReason": "Prerelease Promo",
+  "addedViaException": true,
+  "mtgenId": "rna|006d Simic Deck Box",
+  "set": "rna",
+  "promo": true,
+  "usableForDeckBuilding": false
+ },
  {
   "src": "http://mtgen.net/cards/rna-orzhov-prerelease-deck-box.png",
   "title": "Orzhov Deck Box",
@@ -552,20 +569,20 @@
   "promo": true,
   "usableForDeckBuilding": false
  },
- {
-  "src": "http://mtgen.net/cards/mtg-spindown-life-counter-red.png",
-  "title": "Red Spindown Life Counter",
-  "colour": "o",
-  "num": "004 Counter",
-  "rarity": "c",
-  "type": "Life Counter",
-  "includedReason": "Prerelease Promo",
-  "addedViaException": true,
-  "mtgenId": "rna|004 Counter",
-  "set": "rna",
-  "promo": true,
-  "usableForDeckBuilding": false
- },
+  {
+    "src": "http://mtgen.net/cards/mtg-spindown-life-counter-red.png",
+    "title": "Red Spindown Life Counter",
+    "colour": "o",
+    "num": "004 Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "mtgenId": "rna|004 Counter",
+    "set": "rna",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
  {
   "src": "http://mtgen.net/cards/mtg-spindown-life-counter-green.png",
   "title": "Green Spindown Life Counter",

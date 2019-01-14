@@ -1483,20 +1483,6 @@
   },
   {
     "set": "rna",
-    "title": "The Haunt of Hightower",
-    "src": "https://media.wizards.com/2018/rna/en_IloI2Nu8nL.png",
-    "cost": "4BB",
-    "rarity": "m",
-    "type": "Legendary Creature",
-    "subtype": "Vampire",
-    "power": "3",
-    "toughness": "3",
-    "colour": "b",
-    "num": "0273",
-    "mtgenId": "rna|0273"
-  },
-  {
-    "set": "rna",
     "title": "Immolation Shaman",
     "src": "https://media.wizards.com/2018/rna/en_UbhGuiO4SC.png",
     "cost": "1R",
@@ -1758,21 +1744,6 @@
   },
   {
     "set": "rna",
-    "title": "Senate Griffin",
-    "src": "https://media.wizards.com/2018/rna/en_z8AEuPDcah.png",
-    "cost": "{W//}{W//}",
-    "rarity": "c",
-    "type": "Creature",
-    "subtype": "Griffin",
-    "power": "3",
-    "toughness": "2",
-    "colour": "w",
-    "num": "0219",
-    "mtgenId": "rna|0219",
-    "guild": "Azorius"
-  },
-  {
-    "set": "rna",
     "title": "Depose // Deploy",
     "src": "https://media.wizards.com/2018/rna/en_Azr63X0sP8.png",
     "cost": "1(W/U)//2WU",
@@ -1810,6 +1781,21 @@
     "mtgenId": "rna|204",
     "mtgenVariant": 1,
     "duplicateNum": true,
+    "guild": "Azorius"
+  },
+  {
+    "set": "rna",
+    "title": "Senate Griffin",
+    "src": "https://media.wizards.com/2018/rna/en_z8AEuPDcah.png",
+    "cost": "2{W/B}{W/B}",
+    "rarity": "c",
+    "type": "Creature",
+    "subtype": "Griffin",
+    "power": "3",
+    "toughness": "2",
+    "colour": "m",
+    "num": "0219",
+    "mtgenId": "rna|0219",
     "guild": "Azorius"
   },
   {
@@ -2503,21 +2489,6 @@
     "colour": "m",
     "num": "0229",
     "mtgenId": "rna|0229",
-    "guild": "Gruul"
-  },
-  {
-    "set": "rna",
-    "title": "Charging War Bear",
-    "src": "https://media-dominaria.cursecdn.com/avatars/thumbnails/272/244/200/283/636827337461573848.png",
-    "cost": "1RG",
-    "rarity": "u",
-    "type": "Creature",
-    "subtype": "Boar",
-    "power": "3",
-    "toughness": "1",
-    "colour": "m",
-    "num": "0271",
-    "mtgenId": "rna|0271",
     "guild": "Gruul"
   },
   {

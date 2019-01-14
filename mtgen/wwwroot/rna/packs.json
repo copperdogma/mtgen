@@ -5,16 +5,16 @@
       "query": "from[*]?set='rna'"
     },
     {
+      "defName": "rna-promo",
+      "query": "from[rna]?promo=true"
+    },
+    {
       "defName": "rna-main",
       "query": "from[rna]-from[rna]?type=(Marketing|Basic Land)-from[rna]?promo=true-from[rna]?token=true-from[rna]?subtype='Gate'+from[rna]?title='Gateway Plaza'"
     },
     {
       "defName": "rna-foils",
       "query": "from[rna]"
-    },
-    {
-      "defName": "rna-promo",
-      "query": "from[rna]?promo=true"
     },
     {
       "defName": "rna-token",
