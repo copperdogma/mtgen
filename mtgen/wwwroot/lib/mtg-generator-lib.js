@@ -5,6 +5,7 @@ Shared/base functions.
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
+14-Jan-2019: Card cost calculator rewritten to simplify and handle a missing case.
 24-Apr-2018: Added support for slot overrides in pack defs.
 20-May-2017: Replaced all underscore references with native es6 calls.
 26-Jan-2016: Now uses mtgenId instead of index.
@@ -464,34 +465,18 @@ var mtgGen = (function (my) {
 
         const fixedCost = cost.trim().toLowerCase();
 
-        let costParts = [];
-        // Three possible formats:
-        // ONE (older): {8}{G}{BG}
-        const regEx1 = /{([^}]+)}/g;
-        let match;
-        do {
-            match = regEx1.exec(fixedCost);
-            if (match) {
-                costParts.push(match[1]);
-            }
-        } while (match);
+        // Trim // and everything right of it -- that's a split card and we calculate card cost off the first card.
+        const firstCardCost = fixedCost.split('//')[0];
 
-        // TWO (newer): (R///) (R///)
-        const regEx2 = /\(([^\)]+)\)/g;
-        do {
-            match = regEx2.exec(fixedCost);
-            if (match) {
-                costParts.push(match[1]);
-            }
-        } while (match);
+        // Replace anything of format X/Y or {XY} with a single placeholder (M) -- they're split mana costs as only count as one mana
+        const fixedCost2 = firstCardCost.replace(/{[^}]+}/g, 'm');
+        const fixedCost3 = fixedCost2.replace(/.\/./g, 'm');
 
-        // THREE (newer): 8GB
-        if (costParts.length < 1) {
-            costParts = fixedCost.split("");
-        }
+        // Get rid of all extraneous characters
+        const fixedCost4 = fixedCost3.replace(/[ (){}]/g, '');
 
         let ccost = 0;
-        costParts.forEach(mana => {
+        [...fixedCost4].forEach(mana => {
             let intCost = parseInt(mana, 10);
             if (isNaN(intCost) && mana.length > 0) {
                 // Rules for converted cost on {X}: http://www.wizards.com/magic/comprules/MagicCompRules_20121001.txt
