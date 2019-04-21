@@ -1,0 +1,85 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "war-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "war-all-cards" }
+      ]
+    },
+
+    {
+      "productName": "war-boosters",
+      "productDesc": "Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "war-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "war-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "war-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "war-prerelease",
+      "productDesc": "Prerelease",
+      "sources": [ "" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "war-standard" },
+        { "packName": "war-prerelease-promo-packins" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "war-prerelease-promo-packins",
+            "presetDesc": "Prerelease Packins",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "war-prerelease-promo-packins"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "war-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "war-promos",
+      "productDesc": "All Promos",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/ravnica-allegiance-planeswalker-deck-lists-2019-01-10" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "war-promos" }
+      ]
+    }
+
+  ]
+}

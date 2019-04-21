@@ -1,0 +1,25 @@
+{
+  "setCode": "war",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=233&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/products/warofthespark/cards",
+  "_comments": "This set includes basic lands, multi-colour lands, and Guildgates",
+  "exceptions": [
+    {
+      "_comment": "mtg salvation included the special lands, which I import separately",
+      "where": "type=(Land)"
+    },
+
+    {
+      "_comment": "Planeswalker decks only",
+      "where": "title=(Orzhov Guildgate|Simic Guildgate)",
+      "delete": true
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    }
+
+  ]
+}

@@ -1,0 +1,60 @@
+﻿{
+  "setCode": "war",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=233&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/products/warofthespark/cards",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "where": "title=(Tenth District Legionnaire)",
+      "newValues": {
+        "rarity": "u"
+      }
+    },
+    {
+      "where": "title=(Callous Dismissal)",
+      "newValues": {
+        "type": "Sorcery"
+      }
+    },
+    {
+      "where": "title=(Liliana, Dreadhorde General)",
+      "newValues": {
+        "type": "Legendary Planeswalker"
+      }
+    },
+
+    {
+      "_comment": "Promos",
+      "where": "title=(Tezzeret, Master of the Bridge)",
+      "delete": true
+    },
+    {
+      "_comment": "Gideon, the Oathsworn Planeswalker Deck, added in promos",
+      "where": "title=(Gideon, the Oathsworn|Desperate Lunge|Gideons Battle Cry|Gideons Company)",
+      "delete": true
+    },
+    {
+      "_comment": "Jace, Arcane Strategist Planeswalker Deck, added in promos",
+      "where": "title=(Jace, Arcane Strategist|Guildpact Informant|Jaces Projection|Jaces Ruse)",
+      "delete": true
+    },
+
+    {
+      "_comment": "Lands and Basic lands are imported separately",
+      "where": "type=(Land|Basic Land)",
+      "delete": true
+    },
+    {
+      "_comment": "Guildgates are imported separately",
+      "where": "subtype='Gate'",
+      "delete": true
+    }
+  ]
+}

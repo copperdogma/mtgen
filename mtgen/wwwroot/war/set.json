@@ -1,0 +1,23 @@
+{
+  "startProductName": "war-prerelease",
+  "packFiles": [
+    "packs.json?v1.2"
+  ],
+  "cardFiles": [
+    "cardsMain.json?v1.2",
+    "cardsBasicLand.json",
+    "cardsLand.json?v1.1",
+    "cardsToken.json",
+    "cardsPromo.json?v1.1"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2019-04-20T22:14:05:00",
+      "HtmlString": "No longer includes the Planeswalker Deck-only guildgates in boosters."
+    },
+    {
+      "UpdateDate": "2019-04-20T22:14:00:00",
+      "HtmlString": "Now includes only one planeswalker per booster (or two if you get a foil one)."
+    }
+  ]
+}

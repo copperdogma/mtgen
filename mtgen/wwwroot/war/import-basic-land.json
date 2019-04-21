@@ -1,0 +1,171 @@
+{
+  "setCode": "war",
+  "cardDataUrl": "",
+  "imagesUrl": "",
+  "_comments": "Three kinds of land for this release: normal, dual land, guild gates",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "war",
+          "cardImageUrl": "https://magic.wizards.com/en/products/warofthespark/cards",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "x250,w250,w251,w252,u253,u254,u255,b256,b257,b258,r259,r260,r261,g262,g263,g264"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "war",
+        "src": "https://media.wizards.com/2019/war/en_HxrwlX0Rs9.png",
+        "title": "Plains",
+        "num": "250"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "war",
+        "src": "https://media.wizards.com/2019/war/en_IDgwI2BRkE.png",
+        "title": "Plains",
+        "num": "251"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "war",
+        "src": "https://media.wizards.com/2019/war/en_c15NsqJN4Q.png",
+        "title": "Plains",
+        "num": "252"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "war",
+        "src": "https://media.wizards.com/2019/war/en_E0wZEEFRn2.png",
+        "title": "Island",
+        "num": "253"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "war",
+        "src": "https://media.wizards.com/2019/war/en_HzAWTSE6NI.png",
+        "title": "Island",
+        "num": "254"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "war",
+        "src": "https://media.wizards.com/2019/war/en_rdh8kRI4Ny.png",
+        "title": "Island",
+        "num": "255"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "war",
+        "src": "https://media.wizards.com/2019/war/en_24Ec8MewXq.png",
+        "title": "Swamp",
+        "num": "256"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "war",
+        "src": "https://media.wizards.com/2019/war/en_RBKHZECMGy.png",
+        "title": "Swamp",
+        "num": "257"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "war",
+        "src": "https://media.wizards.com/2019/war/en_C35SRXEXhz.png",
+        "title": "Swamp",
+        "num": "258"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "war",
+        "src": "https://media.wizards.com/2019/war/en_60ZsZN7n1V.png",
+        "title": "Mountain",
+        "num": "259"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "war",
+        "src": "https://media.wizards.com/2019/war/en_uDfSAQrnCI.png",
+        "title": "Mountain",
+        "num": "260"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "war",
+        "src": "https://media.wizards.com/2019/war/en_lwQILFV0q1.png",
+        "title": "Mountain",
+        "num": "261"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "war",
+        "src": "https://media.wizards.com/2019/war/en_6swS9X0Ts7.png",
+        "title": "Forest",
+        "num": "262"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "war",
+        "src": "https://media.wizards.com/2019/war/en_kXPTcsGWH5.png",
+        "title": "Forest",
+        "num": "263"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "war",
+        "src": "https://media.wizards.com/2019/war/en_q58rRASQXr.png",
+        "title": "Forest",
+        "num": "264"
+      }
+    },
+    {
+      "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
+      "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
+      "newValues": {
+        "set": "{{setCode}}",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "{{title}}",
+        "colour": "l",
+        "cost": "",
+        "rarity": "c",
+        "num": "{{num}}/264 L"
+      }
+    }
+  ]
+}
