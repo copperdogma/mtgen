@@ -4,13 +4,17 @@
     "packs.json?v1.2"
   ],
   "cardFiles": [
-    "cardsMain.json?v1.2",
+    "cardsMain.json?v1.3",
     "cardsBasicLand.json",
     "cardsLand.json?v1.1",
     "cardsToken.json",
     "cardsPromo.json?v1.1"
   ],
   "updates": [
+    {
+      "UpdateDate": "2019-04-26T21:00:00:00",
+      "HtmlString": "Now includes planeswalkers as possible second prerelease prono cards."
+    },
     {
       "UpdateDate": "2019-04-20T22:14:05:00",
       "HtmlString": "No longer includes the Planeswalker Deck-only guildgates in boosters."

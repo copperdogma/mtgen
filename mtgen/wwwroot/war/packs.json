@@ -24,8 +24,11 @@
     {
       "defName": "war-planeswalker",
       "query": "from[war]?type='Legendary Planeswalker'-from[war-promo]"
+    },
+    {
+      "defName": "war-prerelease-promo",
+      "query": "from[war-main]+from[war-planeswalker]?rarity=(r|m)"
     }
-
   ],
   "packs": [
     {
@@ -150,12 +153,12 @@
           "querySet": [
             {
               "percent": "7/8",
-              "query": "from[war-main]?rarity='r",
+              "query": "from[war-prerelease-promo]?rarity='r",
               "setValues": { "foil": true }
             },
             {
               "percent": "1/8",
-              "query": "from[war-main]?rarity='m",
+              "query": "from[war-prerelease-promo]?rarity='m",
               "setValues": { "foil": true }
             }
           ]
