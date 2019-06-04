@@ -1,0 +1,138 @@
+{
+  "defs": [
+    {
+      "defName": "mh1",
+      "query": "from[*]?set='mh1'"
+    },
+    {
+      "defName": "mh1-promo",
+      "query": "from[mh1]?promo=true"
+    },
+    {
+      "defName": "mh1-art-series",
+      "query": "from[mh1]?type='Art Series'"
+    },
+    {
+      "defName": "mh1-main",
+      "query": "from[mh1]-from[mh1]?type=(Marketing|Basic Snow Land)-from[mh1]?promo=true-from[mh1]?token=true"
+    },
+    {
+      "defName": "mh1-foils",
+      "query": "from[mh1]-from[mh1-promo]"
+    },
+    {
+      "defName": "mh1-token",
+      "query": "from[mh1]?token=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "mh1-all-cards",
+      "packDesc": "Modern Horizons: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[mh1]" }
+      ]
+    },
+
+    {
+      "packName": "mh1-standard",
+      "packDesc": "Modern Horizons: Standard Booster",
+      "packVersion": "1.0",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[mh1-main]?rarity='c" },
+        { "query": "take[3]>from[mh1-main]?rarity='u" },
+        { "query": "from[mh1-main]?rarity='r" },
+        { "query": "from[mh1]?type='Basic Snow Land'-from[mh1]?promo=true" },
+        { "query": "from[mh1-art-series]" },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[mh1]?title='Tip/Marketing Card"
+            },
+            {
+              "percent": "50",
+              "query": "from[mh1-token]"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "25% chance of foil, scaled by rarity, replacing the last common",
+              "overrideSlot": "10",
+              "percent": "88/480",
+              "query": "from[mh1-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "24/480",
+              "query": "from[mh1-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "7/480",
+              "query": "from[mh1-main]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "1/480",
+              "query": "from[mh1-main]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/8 chance of replacing rare with mythic",
+              "percent": "1/8",
+              "overrideSlot": "14",
+              "query": "from[mh1-main]?rarity='m'"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "mh1-prerelease-promo-packins",
+      "packDesc": "Modern Horizons: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "from[mh1-promo]?title='Astral Drift'" },
+        { "query": "take[1]>from[mh1-promo]?type='Life Counter'" },
+        { "query": "from[mh1-promo]?title='Prerelease Deck Box" },
+        { "query": "from[mh1-promo]?title='Deckbuilding Advice Insert" }
+      ]
+    },
+    {
+      "packName": "mh1-prerelease-promos",
+      "packDesc": "Modern Horizons: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[mh1-promo]?includedReason='Prerelease Promo" }
+      ]
+    },
+
+    {
+      "packName": "mh1-promos",
+      "packDesc": "Modern Horizons: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[mh1-promo]"
+        }
+      ]
+    }
+
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "mh1-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "mh1-all-cards" }
+      ]
+    },
+
+    {
+      "productName": "mh1-boosters",
+      "productDesc": "Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "mh1-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "mh1-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "mh1-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "mh1-prerelease",
+      "productDesc": "Prerelease",
+      "sources": [ "" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "mh1-standard" },
+        { "packName": "mh1-prerelease-promo-packins" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "mh1-prerelease-promo-packins",
+            "presetDesc": "Prerelease Packins",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "mh1-prerelease-promo-packins"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "mh1-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "mh1-promos",
+      "productDesc": "All Promos",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/ravnica-allegiance-planeswalker-deck-lists-2019-01-10" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "mh1-promos" }
+      ]
+    }
+
+  ]
+}

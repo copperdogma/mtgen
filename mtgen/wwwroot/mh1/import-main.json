@@ -1,0 +1,71 @@
+﻿{
+  "setCode": "mh1",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=232&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/products/modernhorizons/cards",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "where": "title=(Shatter Assumpions)",
+      "newValues": {
+        "title": "Shatter Assumptions"
+      }
+    },
+    {
+      "where": "title=(Nuturing Peatland)",
+      "newValues": {
+        "title": "Nurturing Peatland"
+      }
+    },
+    {
+      "where": "title=(Oneirophage)",
+      "newValues": {
+        "num": "060"
+      }
+    },
+    {
+      "where": "title=(Yawgmoth, Thran Physician)",
+      "newValues": {
+        "num": "116"
+      }
+    },
+    {
+      "where": "title=(Bladeback Sliver)",
+      "newValues": {
+        "num": "119"
+      }
+    },
+    {
+      "where": "title=(Goblin War Party)",
+      "newValues": {
+        "num": "131"
+      }
+    },
+    {
+      "where": "title=(Talisman of Resilience)",
+      "newValues": {
+        "num": "234"
+      }
+    },
+
+    {
+      "where": "title=(Rotwidow Pack)",
+      "newValues": {
+        "rarity": "u"
+      }
+    },
+
+    {
+      "_comment": "Promos",
+      "where": "title=(Flusterstorm)",
+      "delete": true
+    }
+
+  ]
+}

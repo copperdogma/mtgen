@@ -574,18 +574,17 @@ class CardDataImporter {
             card.cost = Array.from(manaImgs).map(manaImg => {
                 const manaType = manaImg.attributes['alt'].value.trim().toLowerCase();
                 switch (manaType) {
-                    case 'white': return 'W'; break;
-                    case 'blue': return 'U'; break;
-                    case 'red': return 'R'; break;
-                    case 'black': return 'B'; break;
-                    case 'green': return 'G'; break;
-                    case 'multicolored': return 'M'; break;
-                    case 'variable colorless': return 'C'; break;
+                    case 'white': return 'W';
+                    case 'blue': return 'U';
+                    case 'red': return 'R';
+                    case 'black': return 'B';
+                    case 'green': return 'G';
+                    case 'multicolored': return 'M';
+                    case 'variable colorless': return 'C';
                     default:
                         const num = parseInt(manaType, 10);
                         if (isNaN(num)) { console.log(`WARNING: unknown mana type: ${manaType}`); };
                         return manaType;
-                        break;
                 }
             }).join('');
         }
@@ -848,44 +847,88 @@ class CardDataImporter {
         const parser = new DOMParser();
         const imageDoc = parser.parseFromString(rawHtmlImageData, "text/html");
 
-        // v6 - 20160307, soi gallery
-        if (!finalImages.size) {
-            const rawimages = imageDoc.querySelectorAll('#content-detail-page-of-an-article .rtecenter img, #content-detail-page-of-an-article .legacy_content img');
-            rawimages.forEach(img => {
-                if (img.alt.length) {
-                    const image = {
-                        title: img.alt.trim(),
-                        src: img.src
-                    };
-                    image.matchTitle = mtgGen.createMatchTitle(image.title);
+        const rawimages = imageDoc.querySelectorAll('#card-image-gallery img');
+        rawimages.forEach(img => {
+            if (img.alt.length) {
+                const image = {
+                    title: img.alt.trim(),
+                    src: img.src
+                };
+                image.matchTitle = mtgGen.createMatchTitle(image.title);
 
-                    // Support for double-faced cards.
-                    const parent = img.parentElement;
-                    if (parent.classList.contains('side')) {
-                        if (parent.classList.contains('front')) {
-                            const backCard = parent.parentElement.querySelector(".side.back img");
-                            if (backCard) {
-                                image.matchTitleBack = mtgGen.createMatchTitle(backCard.alt);
-                                image.doubleFaceCard = true;
-                            }
-                        }
-                        else if (parent.classList.contains('back')) {
-                            const frontCard = parent.parentElement.querySelector(".side.front img");
-                            if (frontCard) {
-                                image.matchTitleFront = mtgGen.createMatchTitle(frontCard.alt);
-                                image.doubleFaceCard = true;
-                            }
+                // Support for double-faced cards.
+                const parent = img.parentElement;
+                if (parent.classList.contains('side')) {
+                    if (parent.classList.contains('front')) {
+                        const backCard = parent.parentElement.querySelector(".side.back img");
+                        if (backCard) {
+                            image.matchTitleBack = mtgGen.createMatchTitle(backCard.alt);
+                            image.doubleFaceCard = true;
                         }
                     }
-
-                    // Only use the image if it doesn't already exist.
-                    // Duplicates can happen if the image gallery has normal card images followed by special card images.
-                    if (!finalImages.has(image.matchTitle)) {
-                        finalImages.set(image.matchTitle, image);
+                    else if (parent.classList.contains('back')) {
+                        const frontCard = parent.parentElement.querySelector(".side.front img");
+                        if (frontCard) {
+                            image.matchTitleFront = mtgGen.createMatchTitle(frontCard.alt);
+                            image.doubleFaceCard = true;
+                        }
                     }
                 }
-            });
-        }
+
+                // Only use the image if it doesn't already exist.
+                // Duplicates can happen if the image gallery has normal card images followed by special card images.
+                if (!finalImages.has(image.matchTitle)) {
+                    finalImages.set(image.matchTitle, image);
+                }
+            }
+        });
+
+        finalImages.forEach(image => image.imageSource = "wotc-spoilers");
+
+        return finalImages;
+
+        //const finalImages = new Map();
+
+        //const parser = new DOMParser();
+        //const imageDoc = parser.parseFromString(rawHtmlImageData, "text/html");
+
+        //// v6 - 20160307, soi gallery
+        //if (!finalImages.size) {
+        //    rawimages.forEach(img => {
+        //        if (img.alt.length) {
+        //            const image = {
+        //                title: img.alt.trim(),
+        //                src: img.src
+        //            };
+        //            image.matchTitle = mtgGen.createMatchTitle(image.title);
+
+        //            // Support for double-faced cards.
+        //            const parent = img.parentElement;
+        //            if (parent.classList.contains('side')) {
+        //                if (parent.classList.contains('front')) {
+        //                    const backCard = parent.parentElement.querySelector(".side.back img");
+        //                    if (backCard) {
+        //                        image.matchTitleBack = mtgGen.createMatchTitle(backCard.alt);
+        //                        image.doubleFaceCard = true;
+        //                    }
+        //                }
+        //                else if (parent.classList.contains('back')) {
+        //                    const frontCard = parent.parentElement.querySelector(".side.front img");
+        //                    if (frontCard) {
+        //                        image.matchTitleFront = mtgGen.createMatchTitle(frontCard.alt);
+        //                        image.doubleFaceCard = true;
+        //                    }
+        //                }
+        //            }
+
+        //            // Only use the image if it doesn't already exist.
+        //            // Duplicates can happen if the image gallery has normal card images followed by special card images.
+        //            if (!finalImages.has(image.matchTitle)) {
+        //                finalImages.set(image.matchTitle, image);
+        //            }
+        //        }
+        //    });
+        //}
 
         // Left in for now -- if we need them one day again, convert them to es6.
         //// v5 - 20160101, bfz gallery
@@ -974,9 +1017,9 @@ class CardDataImporter {
         //    }
         //}
 
-        finalImages.forEach(image => image.imageSource = "wotc-spoilers");
+        //finalImages.forEach(image => image.imageSource = "wotc-spoilers");
 
-        return finalImages;
+        //return finalImages;
     }
 
     // 20170218: I don't think any of these pages exist anymore, so this may be useless.
@@ -1011,7 +1054,7 @@ class CardDataImporter {
     }
 
     _getImagesFromMtgJsonData(rawImageData) {
-        const finalImages = new Map()
+        const finalImages = new Map();
 
         const imageData = JSON.parse(rawImageData);
 
@@ -1165,7 +1208,7 @@ class CardDataImporter {
             }
             catch (err) { alert(`ERROR: failed to retrieve image: ${err.message}`); }
 
-            let finalImages = []
+            let finalImages = [];
             const requiredImageHeightInt = parseInt(requiredImageHeight, 10);
             const requiredImageWidthInt = parseInt(requiredImageWidth, 10);
             images.forEach(event => {

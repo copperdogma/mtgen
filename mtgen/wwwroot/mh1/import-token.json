@@ -1,0 +1,282 @@
+{
+  "setCode": "mh1",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-preview/modern-horizons-tokens-and-art-series-2019-05-30",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "mh1",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-preview/modern-horizons-tokens-and-art-series-2019-05-30",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "x5\n001|c|Token Creature|Shapeshifter\n002|w|Token Creature|Angel\n003|w|Token Creature|Bird\n004|w|Token Creature|Soldier\n005|u|Token Creature|Illusion\n006|b|Token Legendary Creature|Marit Lage\n007|b|Token Creature|Zombie\n008|r|Token Creature|Elemental\n009|r|Token Creature|Elemental\n010|r|Token Creature|Goblin\n011|g|Token Creature|Bear\n012|g|Token Creature|Elephant\n013|g|Token Creature|Rhino\n014|g|Token Creature|Spider\n015|g|Token Creature|Squirrel\n016|m|Token Creature|Spirit\n017|c|Token Artifact Creature|Construct\n018|c|Token Artifact Creature|Golem\n019|c|Token Artifact Creature|Myr\n020|c|Emblem|Serra\n021|c|Emblem|Wrenn\n\n\n"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh1",
+        "src": "https://media.wizards.com/2019/mh1/en_tM8ljjBCro.png",
+        "num": "001",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Shapeshifter",
+        "subtype": "Shapeshifter"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh1",
+        "src": "https://media.wizards.com/2019/mh1/en_rx0beSrdYU.png",
+        "num": "002",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Angel",
+        "subtype": "Angel"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh1",
+        "src": "https://media.wizards.com/2019/mh1/en_QJTb0Exxb5.png",
+        "num": "003",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Bird",
+        "subtype": "Bird"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh1",
+        "src": "https://media.wizards.com/2019/mh1/en_9kqwet6XiZ.png",
+        "num": "004",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Soldier",
+        "subtype": "Soldier"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh1",
+        "src": "https://media.wizards.com/2019/mh1/en_nhgQzVX6Ow.png",
+        "num": "005",
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Illusion",
+        "subtype": "Illusion"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh1",
+        "src": "https://media.wizards.com/2019/mh1/en_sHmt9uKnHu.png",
+        "num": "006",
+        "colour": "b",
+        "type": "Token Legendary Creature",
+        "title": "Marit Lage",
+        "subtype": "Marit Lage"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh1",
+        "src": "https://media.wizards.com/2019/mh1/en_QGq3XFvF38.png",
+        "num": "007",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Zombie",
+        "subtype": "Zombie"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh1",
+        "src": "https://media.wizards.com/2019/mh1/en_uecu91gJps.png",
+        "num": "008",
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Elemental",
+        "subtype": "Elemental"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh1",
+        "src": "https://media.wizards.com/2019/mh1/en_2rhWOlO1LA.png",
+        "num": "009",
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Elemental",
+        "subtype": "Elemental"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh1",
+        "src": "https://media.wizards.com/2019/mh1/en_ZN8J4ERaoN.png",
+        "num": "010",
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Goblin",
+        "subtype": "Goblin"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh1",
+        "src": "https://media.wizards.com/2019/mh1/en_jtlCPiMdPo.png",
+        "num": "011",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Bear",
+        "subtype": "Bear"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh1",
+        "src": "https://media.wizards.com/2019/mh1/en_bSdEUZ4hMv.png",
+        "num": "012",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Elephant",
+        "subtype": "Elephant"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh1",
+        "src": "https://media.wizards.com/2019/mh1/en_i0EAXzpVzO.png",
+        "num": "013",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Rhino",
+        "subtype": "Rhino"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh1",
+        "src": "https://media.wizards.com/2019/mh1/en_HFnAMI1lTc.png",
+        "num": "014",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Spider",
+        "subtype": "Spider"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh1",
+        "src": "https://media.wizards.com/2019/mh1/en_ekxScmW9bT.png",
+        "num": "015",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Squirrel",
+        "subtype": "Squirrel"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh1",
+        "src": "https://media.wizards.com/2019/mh1/en_STsizkmF7m.png",
+        "num": "016",
+        "colour": "m",
+        "type": "Token Creature",
+        "title": "Spirit",
+        "subtype": "Spirit"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh1",
+        "src": "https://media.wizards.com/2019/mh1/en_XpfrQhOv2b.png",
+        "num": "017",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Construct",
+        "subtype": "Construct"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh1",
+        "src": "https://media.wizards.com/2019/mh1/en_skGeUMCHa2.png",
+        "num": "018",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Golem",
+        "subtype": "Golem"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh1",
+        "src": "https://media.wizards.com/2019/mh1/en_xKv8DrRlty.png",
+        "num": "019",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Myr",
+        "subtype": "Myr"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh1",
+        "src": "https://media.wizards.com/2019/mh1/en_tZJMic1WRU.png",
+        "num": "020",
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Serra",
+        "subtype": "Serra"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh1",
+        "src": "https://media.wizards.com/2019/mh1/en_WOLuLrR6W5.png",
+        "num": "021",
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Wrenn",
+        "subtype": "Wrenn"
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/021 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}
