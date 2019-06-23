@@ -1,0 +1,248 @@
+{
+  "setCode": "war",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=233&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/news/japanese-alternate-art-planeswalkers-2019-04-22",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "_comment": "modify each of the Japanese Planeswalker cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+      "where": "title='Karn, the Great Creator",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_Irom8bPp1K.png"
+      }
+    },
+    {
+      "where": "title='Ugin, the Ineffable",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_hDyrrnVNxI.png"
+      }
+    },
+
+    {
+      "where": "title='Gideon Blackblade",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_YsRVeIbRBd.png"
+      }
+    },
+    {
+      "where": "title='Teyo, the Shieldmage",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_LWoH68fih7.png"
+      }
+    },
+    {
+      "where": "title='The Wanderer",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_XqAt5ksdG8.png"
+      }
+    },
+    {
+      "where": "title='Jace, Wielder of Mysteries",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_v4EmpUYiRw.png"
+      }
+    },
+    {
+      "where": "title='Kasmina, Enigmatic Mentor",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_PJAVy4yXgk.png"
+      }
+    },
+    {
+      "where": "title='Narset, Parter of Veils",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_uejHvUjcxj.png"
+      }
+    },
+    {
+      "where": "title='Davriel, Rogue Shadowmage",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_jqTykZ7iAA.png"
+      }
+    },
+    {
+      "where": "title='Liliana, Dreadhorde General",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_QzSPB9Vshs.png"
+      }
+    },
+    {
+      "where": "title='Ob Nixilis, the Hate-Twisted",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_I7w6QMpCU5.png"
+      }
+    },
+    {
+      "where": "title='Chandra, Fire Artisan",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_YoHPzuZsTs.png"
+      }
+    },
+    {
+      "where": "title='Jaya, Venerated Firemage",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_DNV5MgwCDM.png"
+      }
+    },
+    {
+      "where": "title='Sarkhan the Masterless",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_iyRWErNTNX.png"
+      }
+    },
+    {
+      "where": "title='Tibalt, Rakish instigator",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_V0tYhpGNI1.png"
+      }
+    },
+    {
+      "where": "title='Arlinn, Voice of the Pack",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_slHn2aUB2m.png"
+      }
+    },
+    {
+      "where": "title='Jiang Yanggu, Wildcrafter",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_xe6PSwfRiu.png"
+      }
+    },
+    {
+      "where": "title='Nissa, Who Shakes the World",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_Ni14xDsmRJ.png"
+      }
+    },
+    {
+      "where": "title='Vivien, Champion of the Wilds",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_mTktikwfsk.png"
+      }
+    },
+    {
+      "where": "title='Ajani, the Greathearted",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_Vc30yElMY5.png"
+      }
+    },
+    {
+      "where": "title='Domri, Anarch of Bolas",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_tNLr1WZoMn.png"
+      }
+    },
+    {
+      "where": "title='Nicol Bolas, Dragon-God",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_lAHh3wCAxS.png"
+      }
+    },
+    {
+      "where": "title='Ral, Storm Conduit",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_Lt5MaOVOth.png"
+      }
+    },
+    {
+      "where": "title='Sorin, Vengeful Bloodlord",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_QXD0ezU1cf.png"
+      }
+    },
+    {
+      "where": "title='Tamiyo, Collector of Tales",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_qpSjP9HwOn.png"
+      }
+    },
+    {
+      "where": "title='Teferi, Time Raveler",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_gxU4V8yxVU.png"
+      }
+    },
+    {
+      "where": "title='Angrath, Captain of Chaos",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_y8LP7Gbma9.png"
+      }
+    },
+    {
+      "where": "title='Ashiok, Dream Render",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_Zc9q4iwRSh.png"
+      }
+    },
+    {
+      "where": "title='Dovin, Hand of Control",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_ubfT6yH0Kz.png"
+      }
+    },
+    {
+      "where": "title='Huatli, the Sun's Heart",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_QtcPPAJUi9.png"
+      }
+    },
+    {
+      "where": "title='Kaya, Bane of the Dead",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_G6M1RkpNUA.png"
+      }
+    },
+    {
+      "where": "title='Kiora, Behemoth Beckoner",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_O0ZAdOJfsU.png"
+      }
+    },
+    {
+      "where": "title='Nahiri, Storm of Stone",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_yWnluB2daj.png"
+      }
+    },
+    {
+      "where": "title='Saheeli, Sublime Artificer",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_bSwbFZm1sv.png"
+      }
+    },
+    {
+      "where": "title='Samut, Tyrant Smasher",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_7AQApI2TU1.png"
+      }
+    },
+    {
+      "where": "title='Vraska, Swarm's Eminence",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/war/jp_GoScMvmMov.png"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "usableForDeckBuilding": false,
+        "num": "{{num}}/264",
+        "includedReason": "Japanese Planeswalker"
+      }
+    }
+  ]
+}
