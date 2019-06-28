@@ -1,0 +1,174 @@
+{
+  "setCode": "m20",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-core-set-2020-2019-06-20",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "m20",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-core-set-2020-2019-06-20",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "001|w|Token Creature|Ajani's Pridemate\n002|w|Token Creature|Soldier\n003|w|Token Creature|Spirit\n004|u|Token Creature|Bird\n005|b|Token Creature|Demon\n006|b|Token Creature|Zombie\n007|r|Token Creature|Elemental\n008|g|Token Creature|Wolf\n009|c|Token Artifact Creature|Golem\n010|c|Token Artifact|Treasure\n011|c|Emblem|Chandra Awakened Inferno\n012|c|Emblem|Mu Yanling Sky Dancer\n\n\n"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m20",
+        "src": "https://media.wizards.com/2019/m20/en_CG2GSQIUiW.png",
+        "num": "001",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Ajani's Pridemate",
+        "subtype": "Ajani's Pridemate"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m20",
+        "src": "https://media.wizards.com/2019/m20/en_8w9LAwzvXk.png",
+        "num": "002",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Soldier",
+        "subtype": "Soldier"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m20",
+        "src": "https://media.wizards.com/2019/m20/en_a5z4djZ5ky.png",
+        "num": "003",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Spirit",
+        "subtype": "Spirit"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m20",
+        "src": "https://media.wizards.com/2019/m20/en_cokR4rnrAl.png",
+        "num": "004",
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Bird",
+        "subtype": "Bird"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m20",
+        "src": "https://media.wizards.com/2019/m20/en_150qEXnWWt.png",
+        "num": "005",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Demon",
+        "subtype": "Demon"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m20",
+        "src": "https://media.wizards.com/2019/m20/en_lb4QSh11Zp.png",
+        "num": "006",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Zombie",
+        "subtype": "Zombie"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m20",
+        "src": "https://media.wizards.com/2019/m20/en_WiBAwccjqG.png",
+        "num": "007",
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Elemental",
+        "subtype": "Elemental"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m20",
+        "src": "https://media.wizards.com/2019/m20/en_yGHIfVnYBa.png",
+        "num": "008",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Wolf",
+        "subtype": "Wolf"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m20",
+        "src": "https://media.wizards.com/2019/m20/en_EfeEwTXnO0.png",
+        "num": "009",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Golem",
+        "subtype": "Golem"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m20",
+        "src": "https://media.wizards.com/2019/m20/en_kZwk2VjcE9.png",
+        "num": "010",
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Treasure",
+        "subtype": "Treasure"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m20",
+        "src": "https://media.wizards.com/2019/m20/en_aGRMLZsIL8.png",
+        "num": "011",
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Chandra Awakened Inferno",
+        "subtype": "Chandra Awakened Inferno"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "m20",
+        "src": "https://media.wizards.com/2019/m20/en_5gj5ITJyFE.png",
+        "num": "012",
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Mu Yanling Sky Dancer",
+        "subtype": "Mu Yanling Sky Dancer"
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

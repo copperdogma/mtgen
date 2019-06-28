@@ -1,0 +1,20 @@
+{
+  "startProductName": "m20-prerelease",
+  "packFiles": [
+    "packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsBasicLand.json",
+    "cardsToken.json",
+    "cardsPromo.json",
+    "cardsStandardPromo.json",
+    "../war/cardsJpPlaneswalkers.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2019-06-28T17:00:00:00",
+      "HtmlString": "Prerelease promos are now proper instead of using promo pack which now has its own tab."
+    }
+  ]
+}

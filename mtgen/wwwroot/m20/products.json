@@ -1,0 +1,122 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "m20-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "m20-all-cards" }
+      ]
+    },
+
+    {
+      "productName": "m20-boosters",
+      "productDesc": "Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "m20-standard" },
+        { "packName": "m20-promo-pack" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "m20-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "m20-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "m20-prerelease",
+      "productDesc": "Prerelease",
+      "sources": [ "" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "m20-standard" },
+        { "packName": "m20-prerelease-promo-packins" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "m20-prerelease-promo-packins",
+            "presetDesc": "Prerelease Packins",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "m20-prerelease-promo-packins"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "m20-standard"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "m20-promo-pack",
+      "productDesc": "Promo Pack",
+      "sources": [ "https://magic.wizards.com/en/events/promotions" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "m20-promo-pack" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "m20-promo-pack",
+            "presetDesc": "Promo Pack",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "m20-promo-pack"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "m20-standard-legal-promos",
+      "productDesc": "Standard-Legal Promos",
+      "sources": [ "https://magic.wizards.com/en/events/promotions" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "m20-standard-legal-promos" }
+      ]
+    },
+    {
+      "productName": "m20-promos",
+      "productDesc": "Set Promos",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/ravnica-allegiance-planeswalker-deck-lists-2019-01-10" ],
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "m20-promos" }
+      ]
+    }
+  ]
+}

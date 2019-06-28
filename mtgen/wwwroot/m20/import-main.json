@@ -1,0 +1,92 @@
+﻿{
+  "setCode": "m20",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=239&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/products/core2020/cards",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "where": "title='Brineborn Cuttthroat'",
+      "newValues": {
+        "title": "Brineborn Cutthroat"
+      }
+    },
+    {
+      "where": "title='Drakuseth, Maw of Flame'",
+      "newValues": {
+        "title": "Drakuseth, Maw of Flames"
+      }
+    },
+
+    {
+      "where": "title='Cavalier of Gales'",
+      "newValues": {
+        "num": "052"
+      }
+    },
+    {
+      "where": "title='Mind Rot'",
+      "newValues": {
+        "num": "108"
+      }
+    },
+
+    {
+      "where": "title=(Ajani, Inspiring Leader|Goldmane Griffin|Savannah Sage|Twinblade Paladin)",
+      "newValues": {
+        "promo": true,
+        "includedReason": "White Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title=(Mu Yanling, Celestial Wind|Yanling's Harbinger|Celestial Messenger|Waterkin Shaman)",
+      "newValues": {
+        "promo": true,
+        "includedReason": "Blue Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title=(Sorin, Vampire Lord|Dark Remedy|Thirsting Bloodlord|Savage Gorger|Sorin's Guide)",
+      "newValues": {
+        "promo": true,
+        "includedReason": "Black Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title=(Chandra, Flame's Fury|Chandra's Flame Wave|Pyroclastic Elemental|Wildfire Elemental)",
+      "newValues": {
+        "promo": true,
+        "includedReason": "Red Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title=(Vivien, Nature's Avenger|Ethereal Elk|Gnarlback Rhino|Vivien's Crocodile)",
+      "newValues": {
+        "promo": true,
+        "includedReason": "Green Planeswalker Deck"
+      }
+    },
+    {
+      "where": "title=(Imperial Outrider)",
+      "newValues": {
+        "promo": true,
+        "includedReason": "White Spellslinger Starter Deck"
+      }
+    },
+    {
+      "where": "title=(Engulfing Eruption|Nimble Birdsticker)",
+      "newValues": {
+        "promo": true,
+        "includedReason": "Red Spellslinger Starter Deck"
+      }
+    }
+
+
+  ]
+}

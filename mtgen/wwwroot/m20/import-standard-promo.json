@@ -1,0 +1,24 @@
+{
+  "setCode": "m20",
+  "cardDataUrl": "https://gatherer.wizards.com",
+  "imagesUrl": "https://gatherer.wizards.com",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "_comment": "m20+ promo packs include a curated list of standard legal cards as possible promos which we'll import from mtgjson/gatherer",
+      "where": "title='Nicol Bolas, Dragon-God"
+    },
+    {
+      "where": "title='Fblthp, the Lost"
+    },
+    {
+      "where": "title='Mobilized District"
+    }
+
+  ]
+}

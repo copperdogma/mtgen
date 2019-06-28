@@ -1,0 +1,214 @@
+{
+  "defs": [
+    {
+      "defName": "m20",
+      "query": "from[*]?set='m20'"
+    },
+    {
+      "defName": "m20-promo",
+      "query": "from[m20]?promo=true"
+    },
+    {
+      "defName": "m20-main",
+      "query": "from[m20]-from[m20]?type=(Marketing|Basic Land)-from[m20]?promo=true-from[m20]?token=true"
+    },
+    {
+      "defName": "m20-foils",
+      "query": "from[m20]-from[m20-promo]"
+    },
+    {
+      "defName": "m20-token",
+      "query": "from[m20]?token=true"
+    },
+    {
+      "defName": "war-jp-planeswalkers",
+      "query": "from[*]?includedReason='Japanese Planeswalker'"
+    },
+    {
+      "defName": "m20-standard-legal-promos",
+      "query": "from[*]?includedReason='Standard-Legal Promo'"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "m20-all-cards",
+      "packDesc": "Core Set 2020: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[m20]" }
+      ]
+    },
+
+    {
+      "packName": "m20-standard",
+      "packDesc": "Core Set 2020: Standard Booster",
+      "packVersion": "1.0",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[m20-main]?rarity='c" },
+        { "query": "take[3]>from[m20-main]?rarity='u" },
+        { "query": "from[m20-main]?rarity='r" },
+        { "query": "from[m20]?type='Basic Land'-from[m20]?promo=true" },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[m20]?title='Tip/Marketing Card"
+            },
+            {
+              "percent": "50",
+              "query": "from[m20-token]"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "33% chance of foil, scaled by rarity, replacing the last common, as of M20: Jun-2019",
+              "overrideSlot": "10",
+              "percent": "88/360",
+              "query": "from[m20-main]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "24/360",
+              "query": "from[m20-main]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "7/360",
+              "query": "from[m20-main]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "1/360",
+              "query": "from[m20-main]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/8 chance of replacing rare with mythic",
+              "percent": "1/8",
+              "overrideSlot": "14",
+              "query": "from[m20-main]?rarity='m'"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "m20-promo-pack",
+      "packDesc": "Core Set 2020: Promo Pack",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "from[m20-main]?rarity='r'" },
+        {
+          "querySet": [
+            {
+              "_comment": "one rarity-scaled standard-legal promo (they only have rare and mythic)",
+              "percent": "7/8",
+              "query": "from[m20-standard-legal-promos]?rarity='r"
+            },
+            {
+              "percent": "1/8",
+              "query": "from[m20-standard-legal-promos]?rarity='m"
+            }
+          ]
+        },
+        {
+          "query": "from[m20-promo]?type='Basic Land",
+          "setValues": { "foil": true }
+        },
+        { "query": "from[m20-promo]?includedReason='Promo Pack Promo'-from[m20-promo]?type='Basic Land'" },
+        {
+          "querySet": [
+            {
+              "_comment": "1/8 chance of replacing rare with mythic",
+              "percent": "1/8",
+              "overrideSlot": "1",
+              "query": "from[m20-main]?rarity='m'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/4 chance of replacing with Alternative Art Japanese Planeswalker",
+              "percent": "1/4",
+              "overrideSlot": "2",
+              "query": "from[war-jp-planeswalkers]"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "m20-prerelease-promo-packins",
+      "packDesc": "Core Set 2020: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[m20-main]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[m20-main]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        { "query": "take[1]>from[m20-promo]?type='Life Counter'" },
+        { "query": "from[m20-promo]?title='Prerelease Deck Box" },
+        { "query": "from[m20-promo]?title='Deckbuilding Advice Insert" }
+      ]
+    },
+    {
+      "packName": "m20-prerelease-promos",
+      "packDesc": "Core Set 2020: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[m20-promo]?includedReason='Prerelease Promo" }
+      ]
+    },
+
+    {
+      "packName": "m20-standard-legal-promos",
+      "packDesc": "Core Set 2020: Standard-Legal Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[m20-standard-legal-promos]"
+        }
+      ]
+    },
+
+    {
+      "packName": "m20-promos",
+      "packDesc": "Core Set 2020: Set Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[m20-promo]"
+        }
+      ]
+    }
+
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "setCode": "m20",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=239&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+      "where": "title='Rienne, Angel of Rebirth",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/m20/en_S1yxh3FLq8.png",
+        "num": "281/280 P Buy-a-Box",
+        "includedReason": "Buy-a-Box Promo"
+      }
+    },
+    {
+      "where": "title='Chandras Regulator",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/m20/en_PmGgzGxiQ2.png",
+        "num": "{{num}} P Bundle",
+        "includedReason": "Bundle Promo"
+      }
+    },
+    {
+      "where": "title='Corpse Knight",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/m20/en_pk4JsLslit.png",
+        "num": "{{num}} P Promo Pack",
+        "includedReason": "Promo Pack Promo"
+      }
+    },
+    {
+      "where": "title='Negate",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/m20/en_baOlPiPu1p.png",
+        "num": "{{num}} P Promo Pack",
+        "includedReason": "Promo Pack Promo"
+      }
+    },
+    {
+      "where": "title='Disfigure",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/m20/en_fitCCR3MYV.png",
+        "num": "{{num}} P Promo Pack",
+        "includedReason": "Promo Pack Promo"
+      }
+    },
+    {
+      "where": "title='Flame Sweep",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/m20/en_RY1VT7Iytc.png",
+        "num": "{{num}} P Promo Pack",
+        "includedReason": "Promo Pack Promo"
+      }
+    },
+    {
+      "where": "title='Thrashing Brontodon",
+      "newValues": {
+        "src": "https://media.wizards.com/2019/m20/en_6uZN2LU8ee.png",
+        "num": "{{num}} P Promo Pack",
+        "includedReason": "Promo Pack Promo"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "title": "Plains",
+        "src": "https://media.wizards.com/2019/m20/en_t7i7V3MGiS.png",
+        "cost": "",
+        "rarity": "b",
+        "type": "Basic Land",
+        "subtype": "Plains",
+        "colour": "l",
+        "num": "001/005 P Promo Pack"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Island",
+        "src": "https://media.wizards.com/2019/m20/en_hq0kWc9yqj.png",
+        "cost": "",
+        "rarity": "b",
+        "type": "Basic Land",
+        "subtype": "Island",
+        "colour": "l",
+        "num": "002/005 P Promo Pack"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Swamp",
+        "src": "https://media.wizards.com/2019/m20/en_S0VrGItj4v.png",
+        "cost": "",
+        "rarity": "b",
+        "type": "Basic Land",
+        "subtype": "Swamp",
+        "colour": "l",
+        "num": "003/005 P Promo Pack"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Mountain",
+        "src": "https://media.wizards.com/2019/m20/en_12fCSC5mr4.png",
+        "cost": "",
+        "rarity": "b",
+        "type": "Basic Land",
+        "subtype": "Mountain",
+        "colour": "l",
+        "num": "004/005 P Promo Pack"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Forest",
+        "src": "https://media.wizards.com/2019/m20/en_18gE5WYlFc.png",
+        "cost": "",
+        "rarity": "b",
+        "type": "Basic Land",
+        "subtype": "Forest",
+        "colour": "l",
+        "num": "005/005 P Promo Pack"
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-deckbuilding-info.jpg",
+        "src_large": "http://mtgen.net/cards/mtg-deckbuilding-info-lg.jpg",
+        "height": 370,
+        "width": 515,
+        "title": "Deckbuilding Advice Insert",
+        "colour": "o",
+        "num": "007 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-white.png",
+        "title": "White Spindown Life Counter",
+        "colour": "o",
+        "num": "001 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-blue.png",
+        "title": "Blue Spindown Life Counter",
+        "colour": "o",
+        "num": "002 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-black.png",
+        "title": "Black Spindown Life Counter",
+        "colour": "o",
+        "num": "003 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-red.png",
+        "title": "Red Spindown Life Counter",
+        "colour": "o",
+        "num": "004 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-green.png",
+        "title": "Green Spindown Life Counter",
+        "colour": "o",
+        "num": "005 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-prerelease-deck-box.png",
+        "title": "Prerelease Deck Box",
+        "colour": "o",
+        "num": "006 Prerelease Deck Box",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}
