@@ -38,6 +38,14 @@
     },
 
     {
+      "_comment": "Tag the taplands because in m20 they randomly replace the basic land slot",
+      "where": "title=(Tranquil Cove|Dismal Backwater|Bloodfell Caves|Rugged Highlands|Blossoming Sands|Scoured Barrens|Swiftwater Cliffs|Jungle Hollow|Wind-Scarred Crag|Thornwood Falls)",
+      "newValues": {
+        "tapland": true
+      }
+    },
+
+    {
       "where": "title=(Ajani, Inspiring Leader|Goldmane Griffin|Savannah Sage|Twinblade Paladin)",
       "newValues": {
         "promo": true,

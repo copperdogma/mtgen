@@ -4,7 +4,7 @@
     "packs.json"
   ],
   "cardFiles": [
-    "cardsMain.json",
+    "cardsMain.json?v1.2",
     "cardsBasicLand.json",
     "cardsToken.json",
     "cardsPromo.json",
@@ -12,6 +12,14 @@
     "../war/cardsJpPlaneswalkers.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2019-06-29T21:00:00:00",
+      "HtmlString": "Taplands no longer appear in common slots."
+    },
+    {
+      "UpdateDate": "2019-06-28T23:30:00:00",
+      "HtmlString": "Booster's basic land slot now has a chance of being replaced by a tapland."
+    },
     {
       "UpdateDate": "2019-06-28T17:00:00:00",
       "HtmlString": "Prerelease promos are now proper instead of using promo pack which now has its own tab."

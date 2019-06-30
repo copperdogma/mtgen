@@ -581,6 +581,22 @@
   },
   {
     "set": "m20",
+    "title": "Atemsis, All-Seeing",
+    "src": "https://media.wizards.com/2019/m20/en_Z119ZEEuYW.png",
+    "cost": "3UUU",
+    "rarity": "r",
+    "type": "Legendary Creature",
+    "subtype": "Sphinx",
+    "power": "4",
+    "toughness": "5",
+    "colour": "u",
+    "num": "0045",
+    "mtgenId": "m20|0045:b",
+    "mtgenVariant": 2,
+    "duplicateNum": true
+  },
+  {
+    "set": "m20",
     "title": "Befuddle",
     "src": "https://media.wizards.com/2019/m20/en_zXEFO1uyMs.png",
     "cost": "2U",
@@ -614,20 +630,6 @@
     "colour": "u",
     "num": "0049",
     "mtgenId": "m20|0049"
-  },
-  {
-    "set": "m20",
-    "title": "Brineborn Cuttthroat",
-    "src": "https://media.mtgsalvation.com/avatars/thumbnails/274/193/200/283/636969897074097352.jpeg",
-    "cost": "1U",
-    "rarity": "u",
-    "type": "Creature",
-    "subtype": "Merfolk Pirate",
-    "power": "2",
-    "toughness": "1",
-    "colour": "u",
-    "num": "0050",
-    "mtgenId": "m20|0050"
   },
   {
     "set": "m20",
@@ -1660,20 +1662,6 @@
     "colour": "r",
     "num": "0135",
     "mtgenId": "m20|0135"
-  },
-  {
-    "set": "m20",
-    "title": "Drakuseth, Maw of Flame",
-    "src": "https://media.mtgsalvation.com/avatars/thumbnails/274/211/200/283/636970163597688091.png",
-    "cost": "4RRR",
-    "rarity": "r",
-    "type": "Legendary Creature",
-    "subtype": "Dragon",
-    "power": "7",
-    "toughness": "7",
-    "colour": "r",
-    "num": "0136",
-    "mtgenId": "m20|0136"
   },
   {
     "set": "m20",
@@ -3026,28 +3014,6 @@
   },
   {
     "set": "m20",
-    "title": "Bloodfell Caves",
-    "src": "https://media.wizards.com/2019/m20/en_ON6c6Hn3nE.png",
-    "cost": "",
-    "rarity": "c",
-    "type": "Land",
-    "colour": "l",
-    "num": "0242",
-    "mtgenId": "m20|0242"
-  },
-  {
-    "set": "m20",
-    "title": "Blossoming Sands",
-    "src": "https://media.wizards.com/2019/m20/en_2zyIr8XsNb.png",
-    "cost": "",
-    "rarity": "c",
-    "type": "Land",
-    "colour": "l",
-    "num": "0243",
-    "mtgenId": "m20|0243"
-  },
-  {
-    "set": "m20",
     "title": "Cryptic Caves",
     "src": "https://media.wizards.com/2019/m20/en_xRYYQSzDWe.png",
     "cost": "",
@@ -3056,17 +3022,6 @@
     "colour": "l",
     "num": "0244",
     "mtgenId": "m20|0244"
-  },
-  {
-    "set": "m20",
-    "title": "Dismal Backwater",
-    "src": "https://media.wizards.com/2019/m20/en_H63aF4if9Y.png",
-    "cost": "",
-    "rarity": "c",
-    "type": "Land",
-    "colour": "l",
-    "num": "0245",
-    "mtgenId": "m20|0245"
   },
   {
     "set": "m20",
@@ -3092,17 +3047,6 @@
   },
   {
     "set": "m20",
-    "title": "Jungle Hollow",
-    "src": "https://media.wizards.com/2019/m20/en_ormjL2HVaT.png",
-    "cost": "",
-    "rarity": "c",
-    "type": "Land",
-    "colour": "l",
-    "num": "0248",
-    "mtgenId": "m20|0248"
-  },
-  {
-    "set": "m20",
     "title": "Lotus Field",
     "src": "https://media.wizards.com/2019/m20/en_mLt8FEhO42.png",
     "cost": "",
@@ -3111,39 +3055,6 @@
     "colour": "l",
     "num": "0249",
     "mtgenId": "m20|0249"
-  },
-  {
-    "set": "m20",
-    "title": "Rugged Highlands",
-    "src": "https://media.wizards.com/2019/m20/en_GQ8kIf20Jm.png",
-    "cost": "",
-    "rarity": "c",
-    "type": "Land",
-    "colour": "l",
-    "num": "0250",
-    "mtgenId": "m20|0250"
-  },
-  {
-    "set": "m20",
-    "title": "Scoured Barrens",
-    "src": "https://media.wizards.com/2019/m20/en_OfFPeqJpdo.png",
-    "cost": "",
-    "rarity": "c",
-    "type": "Land",
-    "colour": "l",
-    "num": "0251",
-    "mtgenId": "m20|0251"
-  },
-  {
-    "set": "m20",
-    "title": "Swiftwater Cliffs",
-    "src": "https://media.wizards.com/2019/m20/en_9uIEEU4GaH.png",
-    "cost": "",
-    "rarity": "c",
-    "type": "Land",
-    "colour": "l",
-    "num": "0252",
-    "mtgenId": "m20|0252"
   },
   {
     "set": "m20",
@@ -3202,39 +3113,6 @@
   },
   {
     "set": "m20",
-    "title": "Thornwood Falls",
-    "src": "https://media.wizards.com/2019/m20/en_U45k6fEsRe.png",
-    "cost": "",
-    "rarity": "c",
-    "type": "Land",
-    "colour": "l",
-    "num": "0258",
-    "mtgenId": "m20|0258"
-  },
-  {
-    "set": "m20",
-    "title": "Tranquil Cove",
-    "src": "https://media.wizards.com/2019/m20/en_IFtU0WpXHC.png",
-    "cost": "",
-    "rarity": "c",
-    "type": "Land",
-    "colour": "l",
-    "num": "0259",
-    "mtgenId": "m20|0259"
-  },
-  {
-    "set": "m20",
-    "title": "Wind-Scarred Crag",
-    "src": "https://media.wizards.com/2019/m20/en_dd2OJGuee8.png",
-    "cost": "",
-    "rarity": "c",
-    "type": "Land",
-    "colour": "l",
-    "num": "0260",
-    "mtgenId": "m20|0260"
-  },
-  {
-    "set": "m20",
     "title": "Rienne, Angel of Rebirth",
     "src": "https://media.wizards.com/2019/m20/en_S1yxh3FLq8.png",
     "cost": "2RGW",
@@ -3249,19 +3127,31 @@
   },
   {
     "set": "m20",
-    "title": "Atemsis, All-Seeing",
-    "src": "https://media.wizards.com/2019/m20/en_Z119ZEEuYW.png",
-    "cost": "3UUU",
+    "title": "Brineborn Cutthroat",
+    "src": "https://media.wizards.com/2019/m20/en_Dw6DKZVe5D.png",
+    "cost": "1U",
+    "rarity": "u",
+    "type": "Creature",
+    "subtype": "Merfolk Pirate",
+    "power": "2",
+    "toughness": "1",
+    "colour": "u",
+    "num": "0050",
+    "mtgenId": "m20|0050"
+  },
+  {
+    "set": "m20",
+    "title": "Drakuseth, Maw of Flames",
+    "src": "https://media.wizards.com/2019/m20/en_dcRlclaHMX.png",
+    "cost": "4RRR",
     "rarity": "r",
     "type": "Legendary Creature",
-    "subtype": "Sphinx",
-    "power": "4",
-    "toughness": "5",
-    "colour": "u",
-    "num": "046",
-    "mtgenId": "m20|046",
-    "mtgenVariant": 2,
-    "duplicateNum": true
+    "subtype": "Dragon",
+    "power": "7",
+    "toughness": "7",
+    "colour": "r",
+    "num": "0136",
+    "mtgenId": "m20|0136"
   },
   {
     "set": "m20",
@@ -3291,6 +3181,126 @@
     "mtgenId": "m20|108",
     "mtgenVariant": 1,
     "duplicateNum": true
+  },
+  {
+    "set": "m20",
+    "title": "Bloodfell Caves",
+    "src": "https://media.wizards.com/2019/m20/en_ON6c6Hn3nE.png",
+    "cost": "",
+    "rarity": "c",
+    "type": "Land",
+    "colour": "l",
+    "num": "0242",
+    "mtgenId": "m20|0242",
+    "tapland": true
+  },
+  {
+    "set": "m20",
+    "title": "Blossoming Sands",
+    "src": "https://media.wizards.com/2019/m20/en_2zyIr8XsNb.png",
+    "cost": "",
+    "rarity": "c",
+    "type": "Land",
+    "colour": "l",
+    "num": "0243",
+    "mtgenId": "m20|0243",
+    "tapland": true
+  },
+  {
+    "set": "m20",
+    "title": "Dismal Backwater",
+    "src": "https://media.wizards.com/2019/m20/en_H63aF4if9Y.png",
+    "cost": "",
+    "rarity": "c",
+    "type": "Land",
+    "colour": "l",
+    "num": "0245",
+    "mtgenId": "m20|0245",
+    "tapland": true
+  },
+  {
+    "set": "m20",
+    "title": "Jungle Hollow",
+    "src": "https://media.wizards.com/2019/m20/en_ormjL2HVaT.png",
+    "cost": "",
+    "rarity": "c",
+    "type": "Land",
+    "colour": "l",
+    "num": "0248",
+    "mtgenId": "m20|0248",
+    "tapland": true
+  },
+  {
+    "set": "m20",
+    "title": "Rugged Highlands",
+    "src": "https://media.wizards.com/2019/m20/en_GQ8kIf20Jm.png",
+    "cost": "",
+    "rarity": "c",
+    "type": "Land",
+    "colour": "l",
+    "num": "0250",
+    "mtgenId": "m20|0250",
+    "tapland": true
+  },
+  {
+    "set": "m20",
+    "title": "Scoured Barrens",
+    "src": "https://media.wizards.com/2019/m20/en_OfFPeqJpdo.png",
+    "cost": "",
+    "rarity": "c",
+    "type": "Land",
+    "colour": "l",
+    "num": "0251",
+    "mtgenId": "m20|0251",
+    "tapland": true
+  },
+  {
+    "set": "m20",
+    "title": "Swiftwater Cliffs",
+    "src": "https://media.wizards.com/2019/m20/en_9uIEEU4GaH.png",
+    "cost": "",
+    "rarity": "c",
+    "type": "Land",
+    "colour": "l",
+    "num": "0252",
+    "mtgenId": "m20|0252",
+    "tapland": true
+  },
+  {
+    "set": "m20",
+    "title": "Thornwood Falls",
+    "src": "https://media.wizards.com/2019/m20/en_U45k6fEsRe.png",
+    "cost": "",
+    "rarity": "c",
+    "type": "Land",
+    "colour": "l",
+    "num": "0258",
+    "mtgenId": "m20|0258",
+    "tapland": true
+  },
+  {
+    "set": "m20",
+    "title": "Tranquil Cove",
+    "src": "https://media.wizards.com/2019/m20/en_IFtU0WpXHC.png",
+    "cost": "",
+    "rarity": "c",
+    "type": "Land",
+    "colour": "l",
+    "num": "0259",
+    "mtgenId": "m20|0259",
+    "tapland": true
+  },
+  {
+    "set": "m20",
+    "title": "Wind-Scarred Crag",
+    "src": "https://media.wizards.com/2019/m20/en_dd2OJGuee8.png",
+    "cost": "",
+    "rarity": "c",
+    "type": "Land",
+    "colour": "l",
+    "num": "0260",
+    "mtgenId": "m20|0260",
+    "tapland": true
   },
   {
     "set": "m20",
