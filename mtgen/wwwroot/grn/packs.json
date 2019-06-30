@@ -273,6 +273,20 @@
       "isGenerated": false,
       "includeWithUserCards": false,
       "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[grn-boros]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[grn-boros]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
         { "query": "take[1]>from[grn-promo]?title=(Red Spindown Life Counter|White Spindown Life Counter" },
         { "query": "from[grn]?title='Boros Deck Box" },
         { "query": "from[grn-promo]?title='Deckbuilding Advice Insert" }
@@ -285,6 +299,20 @@
       "isGenerated": false,
       "includeWithUserCards": false,
       "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[grn-selesnya]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[grn-selesnya]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
         { "query": "take[1]>from[grn-promo]?title=(Green Spindown Life Counter|White Spindown Life Counter" },
         { "query": "from[grn]?title='Selesnya Deck Box" },
         { "query": "from[grn-promo]?title='Deckbuilding Advice Insert" }
@@ -297,6 +325,10 @@
       "isGenerated": false,
       "includeWithUserCards": false,
       "cards": [
+        {
+          "query": "from[grn-izzet]?rarity='r",
+          "setValues": { "foil": true }
+        },
         { "query": "take[1]>from[grn-promo]?title=(Blue Spindown Life Counter|Red Spindown Life Counter" },
         { "query": "from[grn]?title='Izzet Deck Box" },
         { "query": "from[grn-promo]?title='Deckbuilding Advice Insert" }
@@ -309,6 +341,20 @@
       "isGenerated": false,
       "includeWithUserCards": false,
       "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[grn-golgari]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[grn-golgari]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
         { "query": "take[1]>from[grn-promo]?title=(Green Spindown Life Counter|Black Spindown Life Counter" },
         { "query": "from[grn]?title='Golgari Deck Box" },
         { "query": "from[grn-promo]?title='Deckbuilding Advice Insert" }
@@ -321,6 +367,20 @@
       "isGenerated": false,
       "includeWithUserCards": false,
       "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[grn-dimir]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[grn-dimir]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
         { "query": "take[1]>from[grn-promo]?title=(Black Spindown Life Counter|Blue Spindown Life Counter" },
         { "query": "from[grn]?title='Dimir Deck Box" },
         { "query": "from[grn-promo]?title='Deckbuilding Advice Insert" }

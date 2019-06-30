@@ -1,7 +1,7 @@
 {
   "startProductName": "grn-prerelease",
   "packFiles": [
-    "packs.json?v1.11"
+    "packs.json?v1.12"
   ],
   "cardFiles": [
     "cardsMain.json?v1.2",
@@ -11,6 +11,10 @@
     "cardsPromo.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2019-06-29T22:00:00",
+      "HtmlString": "Now includes prelrease promos. Thanks Madigan!"
+    },
     {
       "UpdateDate": "2018-09-25T22:21:00:00",
       "HtmlString": "Will no longer include duplicates in seeded booster."
