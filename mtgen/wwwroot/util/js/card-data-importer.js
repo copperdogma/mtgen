@@ -167,7 +167,7 @@ class CardDataImporter {
         }
 
         // Returns both the updated set of cards AND the modified exceptions (the latter for reporitng purposes).
-        const exceptionsResults = await this._applyExceptions(mainOut, jsonExceptions.data, setCode);
+        const exceptionsResults = await this.applyExceptions(mainOut, jsonExceptions.data, setCode);
         mainOut = exceptionsResults.cards;
 
         // Add images to cards -------------------------------------------------------------------------------------------------
@@ -199,6 +199,17 @@ class CardDataImporter {
         return attrs;
     }
 
+    getCustomDownloadSettingsFileLinkAttributes(settings, filename) {
+        const settingsJson = JSON.stringify(settings, null, ' ');
+        const encodedContent = btoa(settingsJson);
+
+        const attrs = {
+            "href": `data:text/octet-strea; m;base64,${encodedContent}`,
+            "download": filename // 'download' attr is Chrome/FF-only to set download filename
+        };
+        return attrs;
+    }
+
     setSettings(settings) {
         // support the old settings file format
         if (settings.cardDataUrl === undefined && settings.hasOwnProperty('gatheringMagicUrl')) {
@@ -208,6 +219,249 @@ class CardDataImporter {
             settings.cardDataUrl = settings.mtgJson;
         }
         return settings;
+    }
+
+    async applyExceptions(cards, exceptions, setCode) {
+        // Example:
+        //  {
+        //      where: "rarity=(mr|r)",
+        //      delete: true
+        //  },
+        //  {
+        //      where: "title='Serra Angel'",
+        //      newValues {
+        //          title: "Sengir Angel",
+        //          rarity: "mr"
+        //      }
+        //  },
+        //  {
+        //      _comment: "This will fetch the card data directly from Wizards Gatherer and then modify it",
+        //      where: "gatherer='Serra Angel'",
+        //      newValues {
+        //          title: "Sengir Angel",
+        //          rarity: "mr"
+        //      }
+        //  },
+        //  {
+        //      where: "rarity='r'",
+        //      newValues {
+        //          rarity: "u"
+        //      }
+        //  },
+        //  {
+        //    "add": true,
+        //    "newValues": {
+        //        "title": "Black Vise",
+        //        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_L1UZqii5Ve.png",
+        //        "cost": "1",
+        //        "type": "Artifact",
+        //        "colour": "a",
+        //        "num": "032"
+        //    }
+        //  }
+
+        // Set all cards to have .isSelected=false (which will be removed at the end).
+        // This allows the exception file to include { delete: true, where: isSelected=false},
+        // i.e.: delete all cards I didn't touch. This is a very common use case where
+        // specialized subsets of cards from a large card data set (like the promos out of the main cards)
+        // need to be plucked out, but it's hard to say "delete everything I didn't select".
+        cards.forEach(c => c.isSelected = false);
+
+        let index = 0;
+        let vars = {}; // json-defined variables
+        for (const exception of exceptions) {
+            if (Object.keys(exception).length === 1 && (exception._comments || exception._comment)) {
+                exception.ignored = true;
+                exception.ignoredReason = 'comment';
+                continue; // just a comment node; ignore
+            }
+
+            exception.result = { index: index, success: true };
+
+            if (exception.add === true) {
+                if (!exception.newValues) {
+                    exception.result.success = false;
+                    exception.result.error = "add=true but missing required newValues {}; cannot continue processing this exception";
+                    continue;
+                }
+                if (!exception.newValues.title) {
+                    exception.result.success = false;
+                    exception.result.error = "add=true but missing required newValues.title; cannot continue processing this exception";
+                    continue;
+                }
+
+                console.log(`Adding new card: ${exception.newValues.title}`);
+
+                const card = this._createCardViaException({}, exception, setCode);
+
+                cards = this._addCardToCards(cards, card);
+
+                continue;
+            }
+
+            // json-defined variables that can be used later
+            if (exception.variables) {
+                Object.assign(vars, exception.variables);
+                exception.ignored = true;
+                exception.ignoredReason = 'user-defined variables: ' + JSON.stringify(exception.variables);
+                continue;
+            }
+
+            if (exception.where === undefined) {
+                exception.result.success = false;
+                exception.result.error = "missing required where clause; cannot continue processing this exception";
+                continue;
+            }
+
+            const cardsObj = this._mapToObject(cards);
+
+            // If it's a Wizards Gatherer search, do that.
+            let matchingCardsObj;
+            const gathererTitle = exception.where.match(/^\s*gatherer\s*=\s*'([^']*)'?\s*$/);
+            if (gathererTitle) {
+                try {
+                    matchingCardsObj = [await this._getCardFromWizardsGatherer(gathererTitle[1])];
+                }
+                catch (e) {
+                    exception.result.success = false;
+                    exception.result.error = e.message;
+                    console.log(e);
+                    continue;
+                }
+            }
+            else {
+                // Add the from[*] the query engine expects.
+                // The card importer works on a single set at a time, so from[*] is always implied,
+                // but we don't require it in the import json for convenience.
+                let where = exception.where.trim();
+                if (!where.toLowerCase().includes("from[")) {
+                    where = `from[*]?${where}`;
+                }
+
+                matchingCardsObj = mtgGen.executeQuery(cardsObj, null, where);
+            }
+            const matchingCards = this._objectToMap(matchingCardsObj);
+            const matchingCardArray = [...matchingCards.values()];
+
+            // If it's a Delete exception, delete any cards matching the query.
+            if (exception.delete === true) {
+                matchingCardArray.forEach(matchingCard => {
+                    if (matchingCard) { cards.delete(matchingCard.mtgenId); }
+                });
+                exception.result.deletedCards = matchingCards;
+                exception.result.affectedCards = matchingCards.length;
+                continue;
+            }
+
+            // Otherwise it's an Update exception; apply the changes.
+
+            // Record all exceptions that weren't useful so we can clean up the exceptions file.
+            // REWRITE THIS:
+            //$.each(ex.newValues, function (prop, newVal) {
+            //    if (card.hasOwnProperty(prop) && card[prop] === newVal) {
+            //        console.log('Exception property already exists on card:' + card.matchTitle);
+            //        if (!ex.hasOwnProperty("redundantValues")) {
+            //            ex.redundantValues = {};
+            //        }
+            //        ex.redundantValues[prop] = newVal;
+            //    }
+            //});
+
+            // Remove all of the matching cards -- we'll add them back after we modify them.
+            matchingCardArray.forEach(matchingCard => {
+                if (matchingCard) { cards.delete(matchingCard.mtgenId); }
+            });
+
+            // If there were no matching cards for this update, try to get those cards from Gatherer.
+            // This was basically built for Masterpiece cards that may be reprints of old cards.
+
+            // TODO: This does NOT work. getCardFromWizardsGatherer is async, completely messing up this loop.
+            //       Try again in six months when es2017 is out.
+            //// Get a list of all title queries that didn't match anything.
+            //// TODO: Refactor mtg-generator.lib.js/executeSimpleQuery() to PARSE out the query and execute separately.
+            ////       Then, here, I can use it to parse the where and easily determine if it's a title query and the matchtitle.
+            //var unmatchedTitles = [];
+            //if (exception.result.success === true && matchingCards.length === 0 && exception.where.indexOf("title=") > -1) {
+            //    var titleMatch = /title=['"](.*)/i.exec(exception.where);
+            //    if (titleMatch.length < 2 || titleMatch[1].trim().length === 0) {
+            //        console.warn("WARNING: Could not find card but where clause title is not in recognizable format: " + exception.where);
+            //    }
+            //    else {
+            //        var matchTitle = mtgGen.createMatchTitle(titleMatch[1]);
+            //        unmatchedTitles.push(matchTitle);
+            //        getCardFromWizardsGatherer(matchTitle, setCode)
+            //            .then(function (card) {
+            //                var newCard = createCardViaException(card, exception, setCode);
+            //                cards = addCardToCards(cards, newCard);
+            //                console.log("Could not find card in original data, so fetched it from Wizards' Gatherer: " + matchTitle);;
+            //            })
+            //            .catch(function (err) {
+            //                console.warn(`WARNING: could not retrieve card '${matchTitle}' from Wizards' Gatherer: ${err} `);
+            //            });
+            //        console.warn("Could not find card; going to search for title = " + matchTitle);
+            //    }
+            //}
+
+            const replacementTokenRegex = /{{(.*?)(\+\+|\-\-)?}}/g;
+
+            // Apply the changes to all of the matching cards.
+            matchingCardArray.forEach(card => {
+                // Replace any 'reference' properties with the current card values,
+                // e.g.: "originalTitle": "{{title}}",
+                // TODO: this code is repeated twice.. make it into a function
+                const replacementReferenceValues = {};
+                for (let prop in exception.newValues) {
+                    const propValue = exception.newValues[prop];
+                    let newPropValue = propValue;
+                    let token;
+                    while ((token = replacementTokenRegex.exec(propValue)) !== null) {
+                        const propName = token[1];
+                        if (card[propName] !== undefined) {
+                            newPropValue = newPropValue.replace(token[0], card[propName]);
+                        }
+                        else if (propName === 'setCode') {
+                            newPropValue = setCode;
+                        }
+                        else if (vars[propName] !== undefined) {
+                            newPropValue = vars[propName];
+                            if (token[2] !== undefined) {
+                                if (token[2] === '++') {
+                                    vars[propName]++;
+                                }
+                                else if (token[2] === '--') {
+                                    vars[propName]--;
+                                }
+                            }
+                        }
+                    }
+                    replacementReferenceValues[prop] = newPropValue;
+                }
+
+                // Apply new values from exception.
+                Object.assign(card, exception.newValues);
+                Object.assign(card, replacementReferenceValues);
+
+                card.matchTitle = mtgGen.createMatchTitle(card.title);
+
+                // Mark it as .isSelected=true to allow the exceptions file to delete all that WEREN'T selected.
+                card.isSelected = true;
+            });
+            exception.result.modifiedCards = matchingCards;
+            exception.result.affectedCards = matchingCards.length;
+
+            // Add the modified cards back in.
+            matchingCardArray.forEach(matchingCard => cards = this._addCardToCards(cards, matchingCard));
+
+            index++;
+        }
+
+        // Remove our temporary .isSelected property.
+        cards.forEach(c => delete c.isSelected);
+
+        // Return both the updated set of cards AND the modified exceptions (the latter for reporitng purposes).
+        const result = { cards, exceptions };
+
+        return result;
     }
 
     // PRIVATE METHODS ------------------------------------------------------------------------------------
@@ -611,7 +865,7 @@ class CardDataImporter {
                 card.power = pts[0].trim();
                 card.toughness = pts[1].trim();
             }
-            else if (pts.length == 1) {
+            else if (pts.length === 1) {
                 card.loyalty = pts[0].trim(); // must be a planeswalker
             }
             // otherwise it's something without power/toughness|loytlty, i.e.: land, spell, etc
@@ -1280,249 +1534,6 @@ class CardDataImporter {
             map.set(k, obj[k]);
         }
         return map;
-    }
-
-    async _applyExceptions(cards, exceptions, setCode) {
-        // Example:
-        //  {
-        //      where: "rarity=(mr|r)",
-        //      delete: true
-        //  },
-        //  {
-        //      where: "title='Serra Angel'",
-        //      newValues {
-        //          title: "Sengir Angel",
-        //          rarity: "mr"
-        //      }
-        //  },
-        //  {
-        //      _comment: "This will fetch the card data directly from Wizards Gatherer and then modify it",
-        //      where: "gatherer='Serra Angel'",
-        //      newValues {
-        //          title: "Sengir Angel",
-        //          rarity: "mr"
-        //      }
-        //  },
-        //  {
-        //      where: "rarity='r'",
-        //      newValues {
-        //          rarity: "u"
-        //      }
-        //  },
-        //  {
-        //    "add": true,
-        //    "newValues": {
-        //        "title": "Black Vise",
-        //        "src": "http://media.wizards.com/2016/c1lRLirbrl_AER/en_L1UZqii5Ve.png",
-        //        "cost": "1",
-        //        "type": "Artifact",
-        //        "colour": "a",
-        //        "num": "032"
-        //    }
-        //  }
-
-        // Set all cards to have .isSelected=false (which will be removed at the end).
-        // This allows the exception file to include { delete: true, where: isSelected=false},
-        // i.e.: delete all cards I didn't touch. This is a very common use case where
-        // specialized subsets of cards from a large card data set (like the promos out of the main cards)
-        // need to be plucked out, but it's hard to say "delete everything I didn't select".
-        cards.forEach(c => c.isSelected = false);
-
-        let index = 0;
-        let vars = {}; // json-defined variables
-        for (const exception of exceptions) {
-            if (Object.keys(exception).length === 1 && (exception._comments || exception._comment)) {
-                exception.ignored = true;
-                exception.ignoredReason = 'comment';
-                continue; // just a comment node; ignore
-            }
-
-            exception.result = { index: index, success: true };
-
-            if (exception.add === true) {
-                if (!exception.newValues) {
-                    exception.result.success = false;
-                    exception.result.error = "add=true but missing required newValues {}; cannot continue processing this exception";
-                    continue;
-                }
-                if (!exception.newValues.title) {
-                    exception.result.success = false;
-                    exception.result.error = "add=true but missing required newValues.title; cannot continue processing this exception";
-                    continue;
-                }
-
-                console.log(`Adding new card: ${exception.newValues.title}`);
-
-                const card = this._createCardViaException({}, exception, setCode);
-
-                cards = this._addCardToCards(cards, card);
-
-                continue;
-            }
-
-            // json-defined variables that can be used later
-            if (exception.variables) {
-                Object.assign(vars, exception.variables);
-                exception.ignored = true;
-                exception.ignoredReason = 'user-defined variables: ' + JSON.stringify(exception.variables);
-                continue;
-            }
-
-            if (exception.where === undefined) {
-                exception.result.success = false;
-                exception.result.error = "missing required where clause; cannot continue processing this exception";
-                continue;
-            }
-
-            const cardsObj = this._mapToObject(cards);
-
-            // If it's a Wizards Gatherer search, do that.
-            let matchingCardsObj;
-            const gathererTitle = exception.where.match(/^\s*gatherer\s*=\s*'([^']*)'?\s*$/);
-            if (gathererTitle) {
-                try {
-                    matchingCardsObj = [await this._getCardFromWizardsGatherer(gathererTitle[1])];
-                }
-                catch (e) {
-                    exception.result.success = false;
-                    exception.result.error = e.message;
-                    console.log(e);
-                    continue;
-                }
-            }
-            else {
-                // Add the from[*] the query engine expects.
-                // The card importer works on a single set at a time, so from[*] is always implied,
-                // but we don't require it in the import json for convenience.
-                let where = exception.where.trim();
-                if (!where.toLowerCase().includes("from[")) {
-                    where = `from[*]?${where}`;
-                }
-
-                matchingCardsObj = mtgGen.executeQuery(cardsObj, null, where);
-            }
-            const matchingCards = this._objectToMap(matchingCardsObj);
-            const matchingCardArray = [...matchingCards.values()];
-
-            // If it's a Delete exception, delete any cards matching the query.
-            if (exception.delete === true) {
-                matchingCardArray.forEach(matchingCard => {
-                    if (matchingCard) { cards.delete(matchingCard.mtgenId); }
-                });
-                exception.result.deletedCards = matchingCards;
-                exception.result.affectedCards = matchingCards.length;
-                continue;
-            }
-
-            // Otherwise it's an Update exception; apply the changes.
-
-            // Record all exceptions that weren't useful so we can clean up the exceptions file.
-            // REWRITE THIS:
-            //$.each(ex.newValues, function (prop, newVal) {
-            //    if (card.hasOwnProperty(prop) && card[prop] === newVal) {
-            //        console.log('Exception property already exists on card:' + card.matchTitle);
-            //        if (!ex.hasOwnProperty("redundantValues")) {
-            //            ex.redundantValues = {};
-            //        }
-            //        ex.redundantValues[prop] = newVal;
-            //    }
-            //});
-
-            // Remove all of the matching cards -- we'll add them back after we modify them.
-            matchingCardArray.forEach(matchingCard => {
-                if (matchingCard) { cards.delete(matchingCard.mtgenId); }
-            });
-
-            // If there were no matching cards for this update, try to get those cards from Gatherer.
-            // This was basically built for Masterpiece cards that may be reprints of old cards.
-
-            // TODO: This does NOT work. getCardFromWizardsGatherer is async, completely messing up this loop.
-            //       Try again in six months when es2017 is out.
-            //// Get a list of all title queries that didn't match anything.
-            //// TODO: Refactor mtg-generator.lib.js/executeSimpleQuery() to PARSE out the query and execute separately.
-            ////       Then, here, I can use it to parse the where and easily determine if it's a title query and the matchtitle.
-            //var unmatchedTitles = [];
-            //if (exception.result.success === true && matchingCards.length === 0 && exception.where.indexOf("title=") > -1) {
-            //    var titleMatch = /title=['"](.*)/i.exec(exception.where);
-            //    if (titleMatch.length < 2 || titleMatch[1].trim().length === 0) {
-            //        console.warn("WARNING: Could not find card but where clause title is not in recognizable format: " + exception.where);
-            //    }
-            //    else {
-            //        var matchTitle = mtgGen.createMatchTitle(titleMatch[1]);
-            //        unmatchedTitles.push(matchTitle);
-            //        getCardFromWizardsGatherer(matchTitle, setCode)
-            //            .then(function (card) {
-            //                var newCard = createCardViaException(card, exception, setCode);
-            //                cards = addCardToCards(cards, newCard);
-            //                console.log("Could not find card in original data, so fetched it from Wizards' Gatherer: " + matchTitle);;
-            //            })
-            //            .catch(function (err) {
-            //                console.warn(`WARNING: could not retrieve card '${matchTitle}' from Wizards' Gatherer: ${err} `);
-            //            });
-            //        console.warn("Could not find card; going to search for title = " + matchTitle);
-            //    }
-            //}
-
-            const replacementTokenRegex = /{{(.*?)(\+\+|\-\-)?}}/g;
-
-            // Apply the changes to all of the matching cards.
-            matchingCardArray.forEach(card => {
-                // Replace any 'reference' properties with the current card values,
-                // e.g.: "originalTitle": "{{title}}",
-                // TODO: this code is repeated twice.. make it into a function
-                const replacementReferenceValues = {};
-                for (let prop in exception.newValues) {
-                    const propValue = exception.newValues[prop];
-                    let newPropValue = propValue;
-                    let token;
-                    while ((token = replacementTokenRegex.exec(propValue)) !== null) {
-                        const propName = token[1];
-                        if (card[propName] !== undefined) {
-                            newPropValue = newPropValue.replace(token[0], card[propName]);
-                        }
-                        else if (propName === 'setCode') {
-                            newPropValue = setCode;
-                        }
-                        else if (vars[propName] !== undefined) {
-                            newPropValue = vars[propName];
-                            if (token[2] !== undefined) {
-                                if (token[2] === '++') {
-                                    vars[propName]++;
-                                }
-                                else if (token[2] === '--') {
-                                    vars[propName]--;
-                                }
-                            }
-                        }
-                    }
-                    replacementReferenceValues[prop] = newPropValue;
-                }
-
-                // Apply new values from exception.
-                Object.assign(card, exception.newValues);
-                Object.assign(card, replacementReferenceValues);
-
-                card.matchTitle = mtgGen.createMatchTitle(card.title);
-
-                // Mark it as .isSelected=true to allow the exceptions file to delete all that WEREN'T selected.
-                card.isSelected = true;
-            });
-            exception.result.modifiedCards = matchingCards;
-            exception.result.affectedCards = matchingCards.length;
-
-            // Add the modified cards back in.
-            matchingCardArray.forEach(matchingCard => cards = this._addCardToCards(cards, matchingCard));
-
-            index++;
-        }
-
-        // Remove our temporary .isSelected property.
-        cards.forEach(c => delete c.isSelected);
-
-        // Return both the updated set of cards AND the modified exceptions (the latter for reporitng purposes).
-        const result = { cards, exceptions };
-
-        return result;
     }
 
     _applyImagesToCards(cards, images) {

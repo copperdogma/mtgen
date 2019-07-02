@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <title>JSON Magic: The Gathering: Card Generator Gathering Magic LOCAL Importer</title>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+</head>
+<body class="home">
+    <h1>JSON Magic: The Gathering Sealed Deck Card Generator Gathering Magic LOCAL Importer</h1>
+    <img itemprop="image" src="http://mtgen.net/images/mtg-logo.jpg" />
+    <p>This page imports card data from the local mtgen data files to help create the Sealed Deck Card Generator pages for each release.</p>
+    <p>To be used when a set uses cards across many previous sets. When multiple matches are found, the most recent will be used.</p>
+    <ul>
+        <li>24-Jun-2019: Created for use with M20's new standard promos which pull from a variety of past sets.</li>
+    </ul>
+    <br />
+    <h2 id='local-error' class='error' style="display:none">NOTE: You CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.</h2>
+    <section id="options">
+        <label for="load-settings">Load Existing Settings:</label> <input id="load-settings" type="file" accept="application/json" />
+        <br />
+        <br />
+        <label for="override-set-code">Override set code (e.g.: dgm) (leave blank if original set should be retained):</label>
+        <br />
+        <input id="override-set-code" />
+        <br />
+        <br />
+        <label for="card-list">List of card titles to import, one per line:</label>
+        <br />
+        <textarea id="card-list" cols="100" rows="20"></textarea>
+        <br />
+        <br />
+        <label for="exceptions">Exceptions JSON that handles any parsing errors or post-import data modifications:</label>
+        <br />
+        <textarea id="exceptions" cols="100" rows="20"></textarea>
+        <br />
+        <br />
+        <a id="save-settings" href="#">Save These Settings</a>
+        <br />
+        <br />
+        <input id="import" type="submit" value="Import Card Data" disabled style="font-size:150%" />
+        <br />
+        <p id="status"></p>
+        <p id="msg"></p>
+    </section>
+    <h2>Output</h2>
+    <h3>Parsing Log</h3>
+    <p>Use the exceptions JSON setting above to fix any errors below.</p>
+    <section id="log"></section>
+    <h3>Output JSON Data</h3>
+    <textarea id="out-main" cols="100" rows="20"></textarea>
+    <footer>
+        <p>Created by: Cam Marsollier - <a href="mailto:cam.marsollier@gmail.com">cam.marsollier@gmail.com</a></p>
+        <p>Note that this site has no affiliation with <a href="http://www.wizards.com/Magic/">Wizards of the Coast</a>, owner of Magic: The Gathering.</p>
+    </footer>
+    <script src="/lib/mtg-generator-lib.js"></script>
+    <script src="/util/js/card-data-importer.js"></script>
+    <script>
+        'use strict';
+        const cardDataImporter = new CardDataImporter();
+
+        if (window.location.protocol == 'file:') { document.getElementById('local-error').getElementById; }
+
+        // Load all local files
+        let cards = [];
+        async function _loadAllMtgenSetData() {
+            const setsResponse = await fetch('/sets.json');
+
+            if (!setsResponse.ok) { throw Error(`Error retrieving sets.json: ${setsResponse.statusText}`); }
+            const sets = await setsResponse.json();
+
+            let cards = [];
+            for (let i = 0; i < sets.length; i++) {
+                let setCardMain = await _loadMtgSetJson(sets[i].code, 'cardsMain.json');
+                if (setCardMain === undefined) continue;
+                cards = cards.concat(setCardMain);
+
+                let setCardsLand = await _loadMtgSetJson(sets[i].code, 'cardsLand.json');
+                if (setCardsLand === undefined) continue;
+                cards = cards.concat(setCardsLand);
+
+                // Apply the set dates to all cards so we can fetch the most recent one upon multiple matches found.
+                cards.forEach(card => card.setDate = sets[i].releaseDate);
+            }
+
+            return cards;
+        }
+
+        async function _loadMtgSetJson(setName, jsonFile) {
+            if (setName === undefined) return;
+
+            const setUrl = `/${setName}/${jsonFile}`;
+            const setResponse = await fetch(setUrl);
+            if (!setResponse.ok) {
+                window.dispatchEvent(new CustomEvent('card-set-load-failed', { detail: { setName: setName, jsonFile: jsonFile } }));
+                console.log(`Error retrieving ${setUrl}: ${setResponse.statusText}`);
+                return;
+            }
+            window.dispatchEvent(new CustomEvent('card-set-loaded', { detail: { setName: setName, jsonFile: jsonFile } }));
+
+            return await setResponse.json();
+        }
+
+        async function loadMtgenData() {
+            window.dispatchEvent(new CustomEvent('all-card-data-loading'));
+            cards = await _loadAllMtgenSetData();
+            window.dispatchEvent(new CustomEvent('all-card-data-loaded'));
+        }
+
+        function _findMostRecentCard(cards, title) {
+            const matchingCards = cards.filter(card => card.title === title);
+            if (matchingCards.length === 1) return matchingCards[0];
+            if (matchingCards.length > 1) {
+                console.log(`Found multiple cards (${matchingCards.length}) for: ${title}`);
+                return matchingCards.sort((a, b) => new Date(a.setDate) - new Date(b.setDate))[0];
+            }
+            return undefined;
+        }
+
+        loadMtgenData();
+
+        async function _startProcessing() {
+            const summary = { 'exceptionCount': 0, 'cardsModifiedByExceptionsCount': 0 };
+            const wantedCardTitlesRaw = document.getElementById('card-list').value;
+            const wantedCardTitles = wantedCardTitlesRaw.split('\n').map(card => card.trim()).filter(card => card.length > 0);
+            summary.wantedCardsCount = wantedCardTitles.length;
+
+            let foundCards = wantedCardTitles.map(wantedCardTitle => {
+                const foundCard = _findMostRecentCard(cards, wantedCardTitle);
+                if (foundCard == undefined) {
+                    console.log(`Could not find card: ${wantedCardTitle}`);
+                }
+                else {
+                    return foundCard;
+                }
+            });
+
+            // Apply Exceptions -------------------------------------------------------------------------------------------------
+            let jsonExceptions = document.getElementById('exceptions').value;
+            if (jsonExceptions) {
+                jsonExceptions = JSON.parse(jsonExceptions);
+                summary.exceptionCount = jsonExceptions.length;
+
+                let cards = new Map();
+                foundCards.map(card => cardDataImporter._addCardToCards(cards, card));
+
+                // Returns both the updated set of cards AND the modified exceptions (the latter for reporitng purposes).
+                const overrideSetCode = document.getElementById('override-set-code').value
+                const exceptionsResults = await cardDataImporter.applyExceptions(cards, jsonExceptions, overrideSetCode);
+                foundCards = [...exceptionsResults.cards.values()];
+                summary.cardsModifiedByExceptionsCount = foundCards.length;
+
+                // Exception processing adds a superflous matchTitle property. Remove.
+                foundCards.forEach(card => delete card.matchTitle);
+            }
+
+            summary.foundCardsCount = foundCards.length;
+            const foundCardsJson = JSON.stringify(foundCards, null, ' ');
+
+            document.getElementById('msg').innerHTML =
+                `${summary.wantedCardsCount} wanted cards</br>
+                ${summary.exceptionCount} exceptions<br/>
+                <strong>${summary.cardsModifiedByExceptionsCount} cards modified by exceptions</strong><br/>
+                <strong>${summary.foundCardsCount} final json-output card data generated at ${(new Date())}</strong><br/>`;
+            document.getElementById('status').innerHTML = `<strong>Processing complete at ${(new Date())}</strong>`;
+            document.getElementById('out-main').value = foundCardsJson;
+        }
+
+        window.addEventListener('all-card-data-loading', () => {
+            document.getElementById('import').disabled = true;
+            document.getElementById('status').innerHTML = `<strong>Mtgen data load started at ${(new Date())}</strong>`;
+            document.getElementById('log').innerHTML = `Loading sets: `;
+        }, false);
+
+        window.addEventListener('card-set-loaded', e => {
+            document.getElementById('log').innerHTML += e.detail.setName+',';
+        }, false);
+
+        window.addEventListener('all-card-data-loaded', () => {
+            document.getElementById('status').innerHTML = `<strong>All mtgen card data loaded at ${(new Date())}</strong>`;
+            document.getElementById('out-main').value = '';
+            document.getElementById('import').disabled = false;
+        }, false);
+
+        document.getElementById('import').addEventListener('click', _startProcessing);
+
+        //TODO: put in optional "max date" field so running the import in the future won't change the imported cards
+        document.querySelectorAll('input, textarea').forEach(el => el.addEventListener('change', () => setSaveLinkToDownloadFile()));
+
+        document.getElementById('load-settings').addEventListener('change', e => {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.onload = e => {
+                const jsonSettings = e.target.result;
+                const settings = JSON.parse(jsonSettings);
+                const finalSettings = cardDataImporter.setSettings(settings);
+                document.getElementById('override-set-code').value = finalSettings.overrideSetCode;
+                document.getElementById('card-list').value = finalSettings.cardList;
+                document.getElementById('exceptions').value = JSON.stringify(finalSettings.exceptions, null, ' ');
+
+                // rebuild the download file and attach it to the download link
+                setSaveLinkToDownloadFile();
+            };
+
+            reader.readAsText(file);
+        });
+
+        const setSaveLinkToDownloadFile = () => {
+            const settings = {
+                "overrideSetCode": document.getElementById('override-set-code').value,
+                "cardList": document.getElementById('card-list').value,
+                "exceptions": document.getElementById('exceptions').value
+            };
+
+            const attrs = cardDataImporter.getCustomDownloadSettingsFileLinkAttributes(settings, "import-local.json");
+            const linkEl = document.getElementById('save-settings');
+            linkEl.setAttribute('href', attrs.href);
+            linkEl.setAttribute('download', attrs.download); // 'download' attr is Chrome/FF-only to set download filename
+        }
+    </script>
+</body>
+</html>
