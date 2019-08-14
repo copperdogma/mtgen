@@ -1,14 +1,22 @@
 {
   "startProductName": "isd-prerelease",
   "packFiles": [
-    "packs.json"
+    "packs.json?v1.3"
   ],
   "cardFiles": [
-    "cardsMain.json",
+    "cardsMain.json?v1.2",
     "cardsToken.json",
     "cardsOther.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2019-08-14T00:30:00",
+      "HtmlString": "Fixed double-faced card rarities and they can now be foil."
+    },
+    {
+      "UpdateDate": "2019-08-13T00:30:00",
+      "HtmlString": "Redid boosters according to actual layout. Double-faced cards only appear in a single slot."
+    },
     {
       "UpdateDate": "2011-09-29T00:00:00",
       "HtmlString": "Double-Faced now replaced common. No duplicates allowed. Works in Firefox. (Thanks, Mike!)"
