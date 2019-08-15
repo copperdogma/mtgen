@@ -1,10 +1,11 @@
 /*
-MtG Generator script v2.3 - LIB
+MtG Generator script v2.4 - LIB
 
 Shared/base functions.
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
+14-Aug-2019: Added duplicate sets with fixed set codes, e.g.: con_ and con
 14-Jan-2019: Card cost calculator rewritten to simplify and handle a missing case.
 24-Apr-2018: Added support for slot overrides in pack defs.
 20-May-2017: Replaced all underscore references with native es6 calls.
@@ -22,7 +23,7 @@ Author: Cam Marsollier cam.marsollier@gmail.com
 var mtgGen = (function (my) {
     'use strict';
     // globals
-    my.version = "2.3";
+    my.version = "2.4";
     my.setData = undefined;
     my.packData = undefined;
     my.cardsData = undefined;
@@ -289,7 +290,14 @@ var mtgGen = (function (my) {
             .then(([setData, cardDataArray, packDataArray, productData, drawData]) => {
                 // Turn set data into an associative array
                 my.sets = {};
-                setData.forEach(set => my.sets[set.code] = set);
+                setData.forEach(set => {
+                    my.sets[set.code] = set;
+                    // Add the set again so we can find it by the proper code if it has a _ suffix, e.g.: con_
+                    if (set.code[set.code.length - 1] === '_') {
+                        my.sets[set.code.substr(0, set.code.length - 1)] = set;
+                    }
+                });
+                // Add set aliases for any sets we had to suffix with _, like con_.
                 my.set = my.sets[my.setCode.toUpperCase()];
                 if (my.set) {
                     // create the set slug, useful for url-friendly formats like the download filename
