@@ -4,7 +4,7 @@
     "packs.json"
   ],
   "cardFiles": [
-    "cardsMain.json?v1.2",
+    "cardsMain.json?v1.3",
     "cardsBasicLand.json",
     "cardsToken.json",
     "cardsPromo.json?v1.1",
@@ -14,6 +14,10 @@
   "updates": [
     {
       "UpdateDate": "2019-06-29T21:00:00:00",
+      "HtmlString": "<em>Rienne, Angel of Rebirth</em> (Buy-a-Box promo) is no longer available in boosters."
+    },
+    {
+      "UpdateDate": "2019-09-10T21:00:00:00",
       "HtmlString": "Taplands no longer appear in common slots."
     },
     {
