@@ -616,7 +616,7 @@ class CardDataImporter {
 
     _sortBy(prop, a, b) {
         const aProp = a[prop];
-        const bProp = b[prop]
+        const bProp = b[prop];
         return ((aProp < bProp) ? -1 : ((aProp > bProp) ? 1 : 0));
     }
 
@@ -709,6 +709,7 @@ class CardDataImporter {
     _addCardToCards(cards, newCard) {
         const alphabet = "abcedfghijklmnopqrstuvwxyz";
         newCard.num = newCard.num || newCard.multiverseid || newCard.id; // num is required, so ensure we have one
+        newCard.numInt = Number.parseInt(newCard.num);
         newCard.mtgenId = `${newCard.set}|${newCard.num}`;
         const firstVariant = `${newCard.mtgenId}:a`;
         if (!cards.has(newCard.mtgenId) && !cards.has(firstVariant)) {
@@ -1101,7 +1102,11 @@ class CardDataImporter {
         const parser = new DOMParser();
         const imageDoc = parser.parseFromString(rawHtmlImageData, "text/html");
 
-        const rawimages = imageDoc.querySelectorAll('#card-image-gallery img');
+        let rawimages = imageDoc.querySelectorAll('#card-image-gallery img');
+        if (rawimages.length === 0) {
+            rawimages = imageDoc.querySelectorAll('#content-detail-page-of-an-article img');
+        }
+            
         rawimages.forEach(img => {
             if (img.alt.length) {
                 const image = {

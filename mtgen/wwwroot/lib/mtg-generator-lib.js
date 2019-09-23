@@ -336,7 +336,6 @@ var mtgGen = (function (my) {
                 // Add card indicies and sort orders for internal use
                 let setCardsLoadedCount = 0;
                 let goodCards = {};
-                let finalCards = {};
                 my.cards.forEach(card => {
                     if (!card.title) { return; }
 
@@ -557,6 +556,16 @@ var mtgGen = (function (my) {
             }
             else if (query2[2].includes('(')) {
                 // 'in' clause
+                // Special case: ### - ### will translate to a numeric range
+                const numericRangeMatch = query2[2].match(/\(\s*([0-9]*?)\s*-\s*([0-9]*?)\s*\)/);
+                if (numericRangeMatch) {
+                    const startNum = Math.min(numericRangeMatch[1], numericRangeMatch[2]);
+                    const endNum = Math.max(numericRangeMatch[1], numericRangeMatch[2]);
+                    const expandedNumberArray = Array.from({ length: (endNum - startNum) }, (v, k) => k + startNum);
+                    const generatedInClause = '(' + expandedNumberArray.join('|') + ')';
+                    query2[2] = generatedInClause;
+                }
+
                 // WAS doing greedy matching.. |Smite| was matching "Loxodon Smiter", so ^(****)$ required (^=start of string, $=end of string)
                 clause = '^(' + query2[2].replace(/\(/g, '').replace(/\)/g, '') + ')$';
 
