@@ -1,0 +1,201 @@
+{
+  "setCode": "eld",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=238&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/products/throne-of-eldraine/cards",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+      "where": "title='Kenrith, the Returned King",
+      "newValues": {
+        "num": "0303 P Buy-a-Box",
+        "src": "https://media.wizards.com/2019/eld/en_9sk4qNBCgb.png",
+        "includedReason": "Buy-a-Box Promo"
+      }
+    },
+    {
+      "where": "num='0100",
+      "_where": "title='Piper of the Swarm",
+      "newValues": {
+        "num": "0392 P Bundle",
+        "src": "https://media.wizards.com/2019/eld/en_WSiLROED52.png",
+        "includedReason": "Bundle Promo"
+      }
+    },
+    {
+      "where": "num='0015",
+      "_where": "title='Glass Casket",
+      "newValues": {
+        "num": "0393 P Promo Pack",
+        "src": "https://media.wizards.com/2019/images/daily/KT5xKWLVF5.png",
+        "includedReason": "Promo Pack"
+      }
+    },
+    {
+      "where": "num='0193",
+      "where": "title='Improbable Alliance",
+      "newValues": {
+        "num": "0396 P Promo Pack",
+        "src": "https://media.wizards.com/2019/images/daily/vAGIV0FYw4.png",
+        "includedReason": "Promo Pack"
+      }
+    },
+    {
+      "where": "num='0194",
+      "where": "title='Inspiring Veteran",
+      "newValues": {
+        "num": "0397 P Promo Pack",
+        "src": "https://media.wizards.com/2019/images/daily/aRIqDXPAE4.png",
+        "includedReason": "Promo Pack"
+      }
+    },
+    {
+      "where": "num='0164",
+      "where": "title='Kenriths Transformation",
+      "newValues": {
+        "num": "0395 P Promo Pack",
+        "src": "https://media.wizards.com/2019/images/daily/gKNwM363CT.png",
+        "includedReason": "Promo Pack"
+      }
+    },
+    {
+      "where": "num='0143",
+      "where": "title='Slaying Fire",
+      "newValues": {
+        "num": "0394 P Promo Pack",
+        "src": "https://media.wizards.com/2019/images/daily/LUg3Z4shxO.png",
+        "includedReason": "Promo Pack"
+      }
+    },
+
+    {
+      "_comment": "Planeswalker Deck cards",
+      "where": "title=(Rowan, Fearless Sparkmage|Garrison Griffin|Rowan's Battleguard|Rowan's Stalwarts|Wind-Scarred Crag|Oko, the Trickster|Oko's Accomplices|Bramblefort Fink|Oko's Hospitality|Thornwood Falls)",
+      "newValues": {
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "_comment": "Brawl Deck cards",
+      "where": "title=(Mace of the Valiant|Silverwing Squadron|Faerie Formation|Shimmer Dragon|Workshop Elders|Chittering Witch|Taste of Death|Embereth Skyblazer|Steelbane Hydra|Thorn Mammoth|Alela, Artful Provocateur|Banish into Fable|Chulane, Teller of Tales|Gluttonous Troll|Knights' Charge|Korvold, Fae-Cursed King|Syr Gwyn, Hero of Ashvale|Arcane Signet|Tome of Legends|Command Tower)",
+      "newValues": {
+        "includedReason": "Brawl Deck"
+      }
+    },
+
+    {
+      "where": "title='Rowan’s Stalwarts",
+      "newValues": {
+        "title": "Rowan's Stalwarts"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-prerelease-deck-box.png",
+        "title": "Prerelease Deck Box",
+        "colour": "o",
+        "num": "006 Prerelease Deck Box",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-deckbuilding-info.jpg",
+        "src_large": "http://mtgen.net/cards/mtg-deckbuilding-info-lg.jpg",
+        "height": 370,
+        "width": 515,
+        "title": "Deckbuilding Advice Insert",
+        "colour": "o",
+        "num": "007 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-white.png",
+        "title": "White Spindown Life Counter",
+        "colour": "o",
+        "num": "001 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-blue.png",
+        "title": "Blue Spindown Life Counter",
+        "colour": "o",
+        "num": "002 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-black.png",
+        "title": "Black Spindown Life Counter",
+        "colour": "o",
+        "num": "003 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-red.png",
+        "title": "Red Spindown Life Counter",
+        "colour": "o",
+        "num": "004 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-green.png",
+        "title": "Green Spindown Life Counter",
+        "colour": "o",
+        "num": "005 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "defs": [
+    {
+      "defName": "eld",
+      "query": "from[*]?set='eld'"
+    },
+    {
+      "defName": "eld-promo",
+      "query": "from[eld]?promo=true"
+    },
+    {
+      "defName": "eld-variants",
+      "query": "from[eld]?variant=true"
+    },
+    {
+      "defName": "eld-main",
+      "query": "from[eld]-from[eld]?type=(Marketing)-from[eld]?promo=true-from[eld]?variant=true-from[eld]?token=true-from[eld]?type='Basic Land"
+    },
+    {
+      "defName": "eld-booster-showcase",
+      "query": "from[eld-variants]?showcaseCard=true-from[eld-variants]?rarity='c'"
+    },
+    {
+      "defName": "eld-booster",
+      "query": "from[eld-main]+from[eld-variants]?borderlessPlaneswalker=true+from[eld-booster-showcase]"
+    },
+    {
+      "defName": "eld-collector",
+      "query": "from[eld-main]+from[eld-variants]?showcaseCard=true"
+    },
+    {
+      "defName": "eld-extended-art",
+      "query": "from[eld-variants]?extendedArtwork=true"
+    },
+    {
+      "defName": "eld-special-frame",
+      "query": "from[eld-variants]?showcaseCard=true+from[eld-variants]?borderlessPlaneswalker=true"
+    },
+    {
+      "defName": "eld-ancillary-slot",
+      "query": "from[eld]?title='Kenrith, the Returned King'+from[eld]?includedReason=(Planeswalker Deck|Brawl Deck)"
+    },
+    {
+      "defName": "eld-foils",
+      "query": "from[eld]-from[eld-promo]-from[eld]?token=true"
+    },
+    {
+      "defName": "eld-token",
+      "query": "from[eld]?token=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "eld-all-cards",
+      "packDesc": "Throne of Eldraine: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[eld]" }
+      ]
+    },
+
+    {
+      "_comment": "Standard Boosters were renamed to Draft Boosters as of this set",
+      "packName": "eld-draft",
+      "packDesc": "Throne of Eldraine: Draft Booster",
+      "packVersion": "1.0",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[eld-booster]?rarity='c" },
+        { "query": "take[3]>from[eld-booster]?rarity='u" },
+        { "query": "from[eld-booster]?rarity='r" },
+        { "query": "from[eld]?type='Basic Land'-from[eld]?promo=true" },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[eld]?title='Tip/Marketing Card"
+            },
+            {
+              "percent": "50",
+              "query": "from[eld-token]"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "33% (1:45) chance of foil, scaled by rarity, replacing the last common, as of m20: Jun-2019",
+              "overrideSlot": "10",
+              "percent": "88/360",
+              "query": "from[eld-foils]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "24/360",
+              "query": "from[eld-foils]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "7/360",
+              "query": "from[eld-foils]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "1/360",
+              "query": "from[eld-foils]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/8 chance of replacing rare with mythic",
+              "percent": "1/8",
+              "overrideSlot": "14",
+              "query": "from[eld-booster]?rarity='m'"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_comment": "Collector Boosters were introduces as standard features as of this set",
+      "packName": "eld-collector",
+      "packDesc": "Throne of Eldraine: Collector Booster",
+      "packVersion": "1.0",
+      "isGenerated": true,
+      "cards": [
+        {
+          "query": "take[6]>from[eld-collector]?rarity='c",
+          "setValues": { "foil": true }
+        },
+        {
+          "query": "take[3]>from[eld-collector]?rarity='u",
+          "setValues": { "foil": true }
+        },
+        { "query": "from[eld-extended-art]?rarity='r" },
+        { "query": "from[eld-special-frame]?rarity='c" },
+        { "query": "from[eld-special-frame]?rarity='u" },
+        { "query": "from[eld-special-frame]?rarity='r" },
+        {
+          "query": "from[eld-foils]?rarity='r",
+          "setValues": { "foil": true }
+        },
+        { "query": "from[eld-ancillary-slot]?rarity='c'" },
+        {
+          "query": "from[eld-token]",
+          "setValues": { "foil": true }
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/8 chance of replacing slot 10 rare with mythic",
+              "percent": "1/8",
+              "overrideSlot": "10",
+              "query": "from[eld-extended-art]?rarity='m'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/8 chance of replacing slot 13 rare with mythic",
+              "percent": "1/8",
+              "overrideSlot": "13",
+              "query": "from[eld-special-frame]?rarity='m'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "ancillary slot rarity possibilities",
+              "percent": "3/14",
+              "overrideSlot": "15",
+              "query": "from[eld-ancillary-slot]?rarity='u'"
+            },
+            {
+              "percent": "1/14",
+              "overrideSlot": "15",
+              "query": "from[eld-ancillary-slot]?rarity='r'"
+            },
+            {
+              "percent": "1/112",
+              "overrideSlot": "15",
+              "query": "from[eld-ancillary-slot]?rarity='m'"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "eld-prerelease-promo-packins",
+      "packDesc": "Throne of Eldraine: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[eld-main]?rarity='r",
+              "setValues": {
+                "foil": true
+              }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[eld-main]?rarity='m",
+              "setValues": {
+                "foil": true
+              }
+            }
+          ]
+        },
+        { "query": "take[1]>from[eld-promo]?type='Life Counter'" },
+        { "query": "from[eld-promo]?title='Prerelease Deck Box" },
+        { "query": "from[eld-promo]?title='Deckbuilding Advice Insert" }
+      ]
+    },
+    {
+      "packName": "eld-prerelease-promos",
+      "packDesc": "Throne of Eldraine: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[eld-promo]?includedReason='Prerelease Promo" }
+      ]
+    },
+
+    {
+      "packName": "eld-variants",
+      "packDesc": "Throne of Eldraine: All Variants",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[eld-variants]"
+        }
+      ]
+    },
+
+    {
+      "packName": "eld-promos",
+      "packDesc": "Throne of Eldraine: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[eld-promo]"
+        }
+      ]
+    }
+
+  ]
+}

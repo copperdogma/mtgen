@@ -1,0 +1,123 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "eld-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "eld-all-cards" }
+      ]
+    },
+
+    {
+      "productName": "eld-boosters",
+      "productDesc": "Draft Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "eld-draft" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "eld-draft-boosters-six",
+            "presetDesc": "Six Draft Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "eld-draft"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "eld-collector",
+      "productDesc": "Collector Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "eld-collector" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "eld-collector-boosters-six",
+            "presetDesc": "Six Collector Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "eld-collector"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "eld-prerelease",
+      "productDesc": "Prerelease",
+      "sources": [ "" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "eld-draft" },
+        { "packName": "eld-prerelease-promo-packins" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "eld-prerelease-promo-packins",
+            "presetDesc": "Prerelease Packins",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "eld-prerelease-promo-packins"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "eld-draft"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "eld-variants",
+      "productDesc": "Variants",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/throne-eldraine-variants" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "eld-variants" }
+      ]
+    },
+
+    {
+      "productName": "eld-promos",
+      "productDesc": "All Promos",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/ravnica-allegiance-planeswalker-deck-lists-2019-01-10" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "eld-promos" }
+      ]
+    }
+
+  ]
+}

@@ -1,0 +1,67 @@
+﻿{
+  "setCode": "eld",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=238&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/products/throne-of-eldraine/cards",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "where": "title='Tall as a Beanstalk'",
+      "newValues": {
+        "num": "0178"
+      }
+    },
+    {
+      "where": "title='Danse of the Manse'",
+      "newValues": {
+        "title": "Dance of the Manse"
+      }
+    },
+    {
+      "where": "title='Syr Faren, the Hedgehammer'",
+      "newValues": {
+        "title": "Syr Faren, the Hengehammer"
+      }
+    },
+
+    {
+      "where": "title=(Keeper of Fables|Overwhelmed Apprentice)",
+      "newValues": {
+        "rarity": "u"
+      }
+    },
+    {
+      "where": "title='Curious Pair'",
+      "newValues": {
+        "rarity": "c"
+      }
+    },
+
+    {
+      "_comment": "Delete Promos; will be done in separate import file",
+      "where": "title=(Kenrith, the Returned King)",
+      "delete": true
+    },
+    {
+      "_comment": "Delete Variants; will be done in separate import file",
+      "where": "numInt=(270-384)",
+      "delete": true
+    },
+    {
+      "_comment": "Delete Planeswalker Deck cards; will imported in Promos",
+      "where": "title=(Rowan, Fearless Sparkmage|Garrison Griffin|Rowan's Battleguard|Rowan's Stalwarts|Wind-Scarred Crag|Oko, the Trickster|Oko's Accomplices|Bramblefort Fink|Oko's Hospitality|Thornwood Falls)",
+      "delete": true
+    },
+    {
+      "_comment": "Delete Brawl Deck cards; will imported in Promos",
+      "where": "title=(Mace of the Valiant|Silverwing Squadron|Faerie Formation|Shimmer Dragon|Workshop Elders|Chittering Witch|Taste of Death|Embereth Skyblazer|Steelbane Hydra|Thorn Mammoth|Alela, Artful Provocateur|Banish into Fable|Chulane, Teller of Tales|Gluttonous Troll|Knights' Charge|Korvold, Fae-Cursed King|Syr Gwyn, Hero of Ashvale|Arcane Signet|Tome of Legends|Command Tower)",
+      "delete": true
+    }
+  ]
+}

@@ -1,0 +1,290 @@
+{
+  "setCode": "eld",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-throne-eldraine-2019-09-19",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "eld",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-throne-eldraine-2019-09-19",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "001|w|Token Creature|Goat\n002|w|Token Creature|Human\n003|w|Token Creature|Knight\n004|w|Token Creature|Mouse\n005|u|Token Creature|Faerie\n006|b|Token Creature|Rat\n007|r|Token Creature|Dwarf\n008|g|Token Creature|Bear\n009|g|Token Creature|Boar\n010|g|Token Creature|Giant\n011|m|Token Creature|Human Cleric\n012|m|Token Creature|Human Rogue\n013|m|Token Creature|Human Warrior\n014|m|Token Creature|Wolf\n015|c|Token Artifact|Food\n016|c|Token Artifact|Food\n017|c|Token Artifact|Food\n018|c|Token Artifact|Food\n019|c|Emblem|Garruk Cursed Huntsman\n020|c|Marker|On an Adventure\n\n"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "eld",
+        "src": "https://media.wizards.com/2019/eld/en_RXskaZkva9.png",
+        "num": "001",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Goat",
+        "subtype": "Goat",
+        "numInt": 1
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "eld",
+        "src": "https://media.wizards.com/2019/eld/en_OnoAHjNCtA.png",
+        "num": "002",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Human",
+        "subtype": "Human",
+        "numInt": 2
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "eld",
+        "src": "https://media.wizards.com/2019/eld/en_9Imcz8rwoV.png",
+        "num": "003",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Knight",
+        "subtype": "Knight",
+        "numInt": 3
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "eld",
+        "src": "https://media.wizards.com/2019/eld/en_184efSzNtO.png",
+        "num": "004",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Mouse",
+        "subtype": "Mouse",
+        "numInt": 4
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "eld",
+        "src": "https://media.wizards.com/2019/eld/en_AVBcx5FLom.png",
+        "num": "005",
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Faerie",
+        "subtype": "Faerie",
+        "numInt": 5
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "eld",
+        "src": "https://media.wizards.com/2019/eld/en_tDPQM7Tbuv.png",
+        "num": "006",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Rat",
+        "subtype": "Rat",
+        "numInt": 6
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "eld",
+        "src": "https://media.wizards.com/2019/eld/en_MTBE2eZjU3.png",
+        "num": "007",
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Dwarf",
+        "subtype": "Dwarf",
+        "numInt": 7
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "eld",
+        "src": "https://media.wizards.com/2019/eld/en_c9I616MaCv.png",
+        "num": "008",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Bear",
+        "subtype": "Bear",
+        "numInt": 8
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "eld",
+        "src": "https://media.wizards.com/2019/eld/en_Q6649AYZtV.png",
+        "num": "009",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Boar",
+        "subtype": "Boar",
+        "numInt": 9
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "eld",
+        "src": "https://media.wizards.com/2019/eld/en_NlxwADf25B.png",
+        "num": "010",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Giant",
+        "subtype": "Giant",
+        "numInt": 10
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "eld",
+        "src": "https://media.wizards.com/2019/eld/en_VnC5zkyexJ.png",
+        "num": "011",
+        "colour": "m",
+        "type": "Token Creature",
+        "title": "Human Cleric",
+        "subtype": "Human Cleric",
+        "numInt": 11
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "eld",
+        "src": "https://media.wizards.com/2019/eld/en_d2nMcuoD13.png",
+        "num": "012",
+        "colour": "m",
+        "type": "Token Creature",
+        "title": "Human Rogue",
+        "subtype": "Human Rogue",
+        "numInt": 12
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "eld",
+        "src": "https://media.wizards.com/2019/eld/en_rUJrVey9SW.png",
+        "num": "013",
+        "colour": "m",
+        "type": "Token Creature",
+        "title": "Human Warrior",
+        "subtype": "Human Warrior",
+        "numInt": 13
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "eld",
+        "src": "https://media.wizards.com/2019/eld/en_3Tje2bVC1M.png",
+        "num": "014",
+        "colour": "m",
+        "type": "Token Creature",
+        "title": "Wolf",
+        "subtype": "Wolf",
+        "numInt": 14
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "eld",
+        "src": "https://media.wizards.com/2019/eld/en_Il49X0ZN05.png",
+        "num": "015",
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Food",
+        "subtype": "Food",
+        "numInt": 15
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "eld",
+        "src": "https://media.wizards.com/2019/eld/en_8MSslzedLY.png",
+        "num": "016",
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Food",
+        "subtype": "Food",
+        "numInt": 16
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "eld",
+        "src": "https://media.wizards.com/2019/eld/en_zSLS0TURcJ.png",
+        "num": "017",
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Food",
+        "subtype": "Food",
+        "numInt": 17
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "eld",
+        "src": "https://media.wizards.com/2019/eld/en_4OwNtoBgbf.png",
+        "num": "018",
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Food",
+        "subtype": "Food",
+        "numInt": 18
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "eld",
+        "src": "https://media.wizards.com/2019/eld/en_NnhZRCN1FS.png",
+        "num": "019",
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Garruk Cursed Huntsman",
+        "subtype": "Garruk Cursed Huntsman",
+        "numInt": 19
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "eld",
+        "src": "https://media.wizards.com/2019/eld/en_crQ9MSOI2z.png",
+        "num": "020",
+        "colour": "c",
+        "type": "Marker",
+        "title": "On an Adventure",
+        "subtype": "On an Adventure",
+        "numInt": 20
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}
