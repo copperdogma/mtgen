@@ -1,0 +1,102 @@
+﻿{
+  "setCode": "thb",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=235&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/products/TherosBeyondDeath/cards",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+
+    {
+      "_comment": "Delete Promos; will be done in separate import file",
+      "where": "title=(Kenrith, the Returned King)",
+      "delete": true
+    },
+    {
+      "_comment": "Delete Variants; will be done in separate import file",
+      "where": "numInt=(255-999)",
+      "delete": true
+    },
+
+    {
+      "where": "title='Icthyomorphosis'",
+      "newValues": {
+        "title": "Ichthyomorphosis"
+      }
+    },
+    {
+      "where": "title='Ilhysian Caryatid'",
+      "newValues": {
+        "title": "Ilysian Caryatid"
+      }
+    },
+    {
+      "where": "title='Iroas Blessing'",
+      "newValues": {
+        "title": "Iroas's Blessing"
+      }
+    },
+    {
+      "where": "title='Nylea, Sharp-Eyed'",
+      "newValues": {
+        "title": "Nylea, Keen-Eyed"
+      }
+    },
+    {
+      "where": "title='Purphuros, Bronze-Blooded'",
+      "newValues": {
+        "title": "Purphoros, Bronze-Blooded"
+      }
+    },
+    {
+      "where": "title='Purphuross Intervention'",
+      "newValues": {
+        "title": "Purphoros's Intervention"
+      }
+    },
+    {
+      "where": "title='Skola Gravedancer'",
+      "newValues": {
+        "title": "Skola Grovedancer"
+      }
+    },
+    {
+      "where": "title='Temple of Enlightment'",
+      "newValues": {
+        "title": "Temple of Enlightenment"
+      }
+    },
+
+    {
+      "where": "title='Favored of Iroas'",
+      "newValues": {
+        "rarity": "u"
+      }
+    },
+
+    {
+      "_comment": "Delete Basic Land, imported elsewhere",
+      "where": "type='Basic Land'",
+      "delete": true
+    },
+
+    {
+      "_comment": "Delete all cards outside of the main set -- Planeswalker decks, promos, varaints, etc. Imported elsewhere.",
+      "where": "numInt=(255-999)",
+      "delete": true
+    },
+
+    {
+      "_comment": "Consider everything left the main set.",
+      "where": "",
+      "newValues": {
+        "mainSet": true
+      }
+    }
+  ]
+}

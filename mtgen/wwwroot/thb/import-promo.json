@@ -1,0 +1,195 @@
+{
+  "setCode": "thb",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=235&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-preview/theros-beyond-death-promos-2020-01-09",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+      "where": "title='Athreos, Shroud-Veiled",
+      "newValues": {
+        "num": "269 P Buy-a-Box",
+        "src": "https://media.wizards.com/2019/thb/en_90Zm5PqVbg.png",
+        "includedReason": "Buy-a-Box Promo"
+      }
+    },
+    {
+      "where": "title='Arasta of the Endless Web'",
+      "newValues": {
+        "num": "352 P Bundle",
+        "src": "https://media.wizards.com/2019/thb/en_AVrejInHcv.png",
+        "includedReason": "Bundle Promo"
+      }
+    },
+    {
+      "where": "title='Alseid of Lifes Bounty",
+      "newValues": {
+        "num": "353 P Promo Pack",
+        "src": "https://media.wizards.com/2019/thb/en_a8a35hkMa6.png",
+        "includedReason": "Promo Pack"
+      }
+    },
+    {
+      "where": "title='Thirst for Meaning",
+      "newValues": {
+        "num": "354 P Promo Pack",
+        "src": "https://media.wizards.com/2019/thb/en_MgpIVZ3KfA.png",
+        "includedReason": "Promo Pack"
+      }
+    },
+    {
+      "where": "title='Gray Merchant of Asphodel",
+      "newValues": {
+        "num": "355 P Promo Pack",
+        "src": "https://media.wizards.com/2019/thb/en_gmug9FJM5h.png",
+        "includedReason": "Promo Pack"
+      }
+    },
+    {
+      "where": "title='Thrill of Possibility",
+      "newValues": {
+        "num": "356 P Promo Pack",
+        "src": "https://media.wizards.com/2019/thb/en_BNgciRnYHH.png",
+        "includedReason": "Promo Pack"
+      }
+    },
+    {
+      "where": "title='Wolfwillow Haven",
+      "newValues": {
+        "num": "357 P Promo Pack",
+        "src": "https://media.wizards.com/2019/thb/en_XkKzxm8mAE.png",
+        "includedReason": "Promo Pack"
+      }
+    },
+
+    {
+      "_comment": "Planeswalker Deck cards",
+      "where": "title=(Taranika, Akroan Veteran|Elspeth's Devotee|Daxos, Blessed by the Sun|Archon of Falling Stars|Daybreak Chimera|Hero of the Winds|Leonin of the Lost Pride|Eidolon of Inspiration|Sunlit Hoplite|Dreadful Apathy|Karametra's Blessing|Phalanx Tactics|Elspeth, Undaunted Hero|Gravebreaker Lamia|Sleep of the Dead|Tymaret, Chosen from Death|Towering-Wave Mystic|Devourer of Memory|Mire's Grasp|Glimpse of Freedom|Swimmer in Nightmares|Elite Instructor|Underworld Charger|Funeral Rites|Mindwrack Harpy|Pharika's Spawn|Ashiok's Forerunner|Final Death|Ashiok, Sculptor of Fears)",
+      "newValues": {
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+    {
+      "_comment": "Brawl Deck cards",
+      "where": "title=(Mace of the Valiant|Silverwing Squadron|Faerie Formation|Shimmer Dragon|Workshop Elders|Chittering Witch|Taste of Death|Embereth Skyblazer|Steelbane Hydra|Thorn Mammoth|Alela, Artful Provocateur|Banish into Fable|Chulane, Teller of Tales|Gluttonous Troll|Knights' Charge|Korvold, Fae-Cursed King|Syr Gwyn, Hero of Ashvale|Arcane Signet|Tome of Legends|Command Tower)",
+      "newValues": {
+        "includedReason": "Brawl Deck"
+      }
+    },
+
+    {
+      "where": "title='Rowan’s Stalwarts",
+      "newValues": {
+        "title": "Rowan's Stalwarts"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/thb-prerelease-deck-box.png",
+        "title": "Prerelease Deck Box",
+        "colour": "o",
+        "num": "006 Prerelease Deck Box",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-deckbuilding-info.jpg",
+        "src_large": "http://mtgen.net/cards/mtg-deckbuilding-info-lg.jpg",
+        "height": 370,
+        "width": 515,
+        "title": "Deckbuilding Advice Insert",
+        "colour": "o",
+        "num": "007 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-white.png",
+        "title": "White Spindown Life Counter (Placeholder)",
+        "colour": "o",
+        "num": "001 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-blue.png",
+        "title": "Blue Spindown Life Counter (Placeholder)",
+        "colour": "o",
+        "num": "002 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-black.png",
+        "title": "Black Spindown Life Counter (Placeholder)",
+        "colour": "o",
+        "num": "003 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-red.png",
+        "title": "Red Spindown Life Counter (Placeholder)",
+        "colour": "o",
+        "num": "004 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-green.png",
+        "title": "Green Spindown Life Counter (Placeholder)",
+        "colour": "o",
+        "num": "005 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

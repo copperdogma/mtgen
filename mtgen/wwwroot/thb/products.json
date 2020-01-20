@@ -1,0 +1,123 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "thb-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "thb-all-cards" }
+      ]
+    },
+
+    {
+      "productName": "thb-boosters",
+      "productDesc": "Draft Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "thb-draft" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "thb-draft-boosters-six",
+            "presetDesc": "Six Draft Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "thb-draft"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "thb-collector",
+      "productDesc": "Collector Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "thb-collector" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "thb-collector-boosters-six",
+            "presetDesc": "Six Collector Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "thb-collector"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "thb-prerelease",
+      "productDesc": "Prerelease",
+      "sources": [ "" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "thb-draft" },
+        { "packName": "thb-prerelease-promo-packins" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "thb-prerelease-promo-packins",
+            "presetDesc": "Prerelease Packins",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "thb-prerelease-promo-packins"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "thb-draft"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "thb-variants",
+      "productDesc": "Variants",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/throne-thbraine-variants" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "thb-variants" }
+      ]
+    },
+
+    {
+      "productName": "thb-promos",
+      "productDesc": "All Promos",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/ravnica-allegiance-planeswalker-deck-lists-2019-01-10" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "thb-promos" }
+      ]
+    }
+
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "defs": [
+    {
+      "defName": "thb",
+      "query": "from[*]?set='thb'"
+    },
+    {
+      "defName": "thb-promo",
+      "query": "from[thb]?promo=true"
+    },
+    {
+      "defName": "thb-variants",
+      "query": "from[thb]?variant=true"
+    },
+    {
+      "defName": "thb-basic-land",
+      "query": "from[thb]?type='Basic Land'"
+    },
+    {
+      "defName": "thb-main",
+      "query": "from[thb]-from[thb]?type=(Marketing)-from[thb]?promo=true-from[thb]?variant=true-from[thb]?token=true-from[thb]?type='Basic Land"
+    },
+    {
+      "defName": "thb-booster-showcase",
+      "query": "from[thb-variants]?showcaseCard=true-from[thb-variants]?rarity='c'"
+    },
+    {
+      "defName": "thb-booster",
+      "query": "from[thb]?mainSet=true"
+    },
+    {
+      "defName": "thb-collector",
+      "query": "from[thb-main]+from[thb-variants]?showcaseCard=true"
+    },
+    {
+      "defName": "thb-extended-art",
+      "query": "from[thb-variants]?extendedArtwork=true"
+    },
+    {
+      "defName": "thb-ancillary-slot",
+      "query": "from[thb]?includedReason=(Buy-a-Box Promo|Planeswalker Deck)+from[thb]?themeBooster=true"
+    },
+    {
+      "defName": "thb-foils",
+      "query": "from[thb]-from[thb-promo]-from[thb]?token=true"
+    },
+    {
+      "defName": "thb-collector-foil",
+      "query": "from[thb-foils]+from[thb-extended-art]"
+    },
+    {
+      "defName": "thb-constellation-showcase",
+      "query": "from[thb]?subtype=(God|Demigod)"
+    },
+    {
+      "defName": "thb-booster-saga-or-gods",
+      "query": "from[thb-constellation-showcase]+from[thb]?subtype='Saga'+from[thb]?borderlessPlaneswalker=true"
+    },
+    {
+      "defName": "thb-showcase",
+      "query": "from[thb]?showcaseCard=true"
+    },
+    {
+      "defName": "thb-booster-foil-constellation-showcase",
+      "query": "from[thb]?subtype='Demigod'+from[thb-showcase]?rarity='r'+from[thb]?borderlessPlaneswalker=true"
+    },
+    {
+      "defName": "thb-token",
+      "query": "from[thb]?token=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "thb-all-cards",
+      "packDesc": "Theros: Beyond Death: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[thb]" }
+      ]
+    },
+
+    {
+      "_comment": "Standard Boosters were renamed to Draft Boosters as of this set",
+      "packName": "thb-draft",
+      "packDesc": "Theros: Beyond Death: Draft Booster",
+      "packVersion": "1.0",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[thb-booster]?rarity='c" },
+        { "query": "take[3]>from[thb-booster]?rarity='u" },
+        { "query": "from[thb-booster]?rarity='r" },
+        { "query": "from[thb-basic-land]?fullArt=true" },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[thb]?title='Tip/Marketing Card"
+            },
+            {
+              "percent": "50",
+              "query": "from[thb-token]"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "33% (1:45) chance of foil, scaled by rarity, replacing the last common, as of m20: Jun-2019",
+              "overrideSlot": "10",
+              "percent": "88/360",
+              "query": "from[thb-foils]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "24/360",
+              "query": "from[thb-foils]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "7/360",
+              "query": "from[thb-foils]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "1/360",
+              "query": "from[thb-foils]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/8 chance of replacing rare with mythic",
+              "percent": "1/8",
+              "overrideSlot": "14",
+              "query": "from[thb-booster]?rarity='m'"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_comment": "Collector Boosters were introduced as standard feature as of ELD",
+      "packName": "thb-collector",
+      "packDesc": "Theros: Beyond Death: Collector Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/theros-beyond-death-collector-booster-contents-2019-12-13" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "query": "take[2]>from[thb-basic-land]?fullArt=true",
+          "setValues": { "foil": true }
+        },
+        {
+          "query": "take[1]>from[thb-basic-land]?variant=true",
+          "setValues": { "foil": true }
+        },
+        {
+          "query": "take[5]>from[thb-collector]?rarity='c",
+          "setValues": { "foil": true }
+        },
+        {
+          "query": "take[2]>from[thb-collector]?rarity='u",
+          "setValues": { "foil": true }
+        },
+        { "query": "from[thb-ancillary-slot]?rarity='c'" },
+        { "query": "from[thb-extended-art]?rarity='r" },
+        {
+          "query": "from[thb-collector-foil]?rarity='r",
+          "setValues": { "foil": true }
+        },
+        { "query": "from[thb-booster-saga-or-gods]?rarity='u" },
+        {
+          "query": "from[thb-booster-foil-constellation-showcase]?rarity='u",
+          "setValues": { "foil": true }
+        },
+        {
+          "query": "from[thb-token]",
+          "setValues": { "foil": true }
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "ancillary slot rarity possibilities",
+              "percent": "3/14",
+              "overrideSlot": "11",
+              "query": "from[thb-ancillary-slot]?rarity='u'"
+            },
+            {
+              "percent": "1/14",
+              "overrideSlot": "11",
+              "query": "from[thb-ancillary-slot]?rarity='r'"
+            },
+            {
+              "percent": "1/112",
+              "overrideSlot": "11",
+              "query": "from[thb-ancillary-slot]?rarity='m'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/8 chance of extended art slot rare with mythic",
+              "percent": "1/8",
+              "overrideSlot": "12",
+              "query": "from[thb-extended-art]?rarity='m'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/8 chance of collector foil slot rare with mythic",
+              "percent": "1/8",
+              "overrideSlot": "13",
+              "query": "from[thb-collector-foil]?rarity='m'",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "saga-or-god slot rarity possibilities",
+              "percent": "1/4",
+              "overrideSlot": "14",
+              "query": "from[thb-booster-saga-or-gods]?rarity='r'"
+            },
+            {
+              "percent": "1/32",
+              "overrideSlot": "14",
+              "query": "from[thb-booster-saga-or-gods]?rarity='m'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "constellation foil slot rarity possibilities",
+              "percent": "1/4",
+              "overrideSlot": "15",
+              "query": "from[thb-booster-foil-constellation-showcase]?rarity='r'",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/32",
+              "overrideSlot": "15",
+              "query": "from[thb-booster-foil-constellation-showcase]?rarity='m'",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "thb-prerelease-promo-packins",
+      "packDesc": "Theros: Beyond Death: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[thb-main]?rarity='r",
+              "setValues": {
+                "foil": true
+              }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[thb-main]?rarity='m",
+              "setValues": {
+                "foil": true
+              }
+            }
+          ]
+        },
+        { "query": "take[1]>from[thb-promo]?type='Life Counter'" },
+        { "query": "from[thb-promo]?title='Prerelease Deck Box" },
+        { "query": "from[thb-promo]?title='Deckbuilding Advice Insert" }
+      ]
+    },
+    {
+      "packName": "thb-prerelease-promos",
+      "packDesc": "Theros: Beyond Death: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[thb-promo]?includedReason='Prerelease Promo" }
+      ]
+    },
+
+    {
+      "packName": "thb-variants",
+      "packDesc": "Theros: Beyond Death: All Variants",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[thb-variants]"
+        }
+      ]
+    },
+
+    {
+      "packName": "thb-promos",
+      "packDesc": "Theros: Beyond Death: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[thb-promo]"
+        }
+      ]
+    }
+
+  ]
+}

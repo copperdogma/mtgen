@@ -1,0 +1,23 @@
+{
+  "startProductName": "thb-prerelease",
+  "packFiles": [
+    "packs.json?v1.2"
+  ],
+  "cardFiles": [
+    "cardsMain.json?v1.1",
+    "cardsToken.json",
+    "cardsPromo.json?v1.2",
+    "cardsVariant.json",
+    "cardsBasicLand.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2020-01-13T13:00:00:00",
+      "HtmlString": "Draft boosters now include only cards from the main set."
+    },
+    {
+      "UpdateDate": "2020-01-13T11:00:00:00",
+      "HtmlString": "Draft boosters now include only full-art land."
+    }
+  ]
+}

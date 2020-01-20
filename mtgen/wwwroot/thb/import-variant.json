@@ -1,0 +1,112 @@
+﻿{
+  "setCode": "thb",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=235&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/theros-beyond-death-variants",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "_comment": "Choose only Variants (delete all non-variants)",
+      "where": "numInt=(1-255)",
+      "delete": true
+    },
+
+    {
+      "_comment": "Kill promo cards",
+      "where": "title=(Athreos, Shroud-Veiled|Arasta of the Endless Web)",
+      "delete": true
+    },
+    {
+      "_comment": "Kill promo pack cards",
+      "where": "numInt=(353-358)",
+      "delete": true
+    },
+
+    {
+      "where": "title='Bronzhide Lion'",
+      "newValues": {
+        "title": "Bronzehide Lion"
+      }
+    },
+    {
+      "where": "title='Purphuross Intervention'",
+      "newValues": {
+        "title": "Purphoros's Intervention"
+      }
+    },
+
+    {
+      "_comment": "Planeswalker Deck cards",
+      "where": "title=(Taranika, Akroan Veteran|Elspeth's Devotee|Daxos, Blessed by the Sun|Archon of Falling Stars|Daybreak Chimera|Hero of the Winds|Leonin of the Lost Pride|Eidolon of Inspiration|Sunlit Hoplite|Dreadful Apathy|Karametra's Blessing|Phalanx Tactics|Elspeth, Undaunted Hero|Gravebreaker Lamia|Sleep of the Dead|Tymaret, Chosen from Death|Towering-Wave Mystic|Devourer of Memory|Mire's Grasp|Glimpse of Freedom|Swimmer in Nightmares|Elite Instructor|Underworld Charger|Funeral Rites|Mindwrack Harpy|Pharika's Spawn|Ashiok's Forerunner|Final Death|Ashiok, Sculptor of Fears)",
+      "newValues": {
+        "includedReason": "Planeswalker Deck"
+      }
+    },
+
+    {
+      "_comment": "Theme booster cards",
+      "where": "numInt=(288-297)",
+      "newValues": {
+        "themeBooster": true
+      }
+    },
+
+    {
+      "_comment": "Borderless planeswalker cards",
+      "where": "numInt=(255-257)",
+      "newValues": {
+        "borderlessPlaneswalker": true
+      }
+    },
+    {
+      "_comment": "Showcase cards",
+      "where": "numInt=(258-268)",
+      "newValues": {
+        "showcaseCard": true
+      }
+    },
+    {
+      "_comment": "Extended artwork cards",
+      "where": "numInt=(298-351)",
+      "newValues": {
+        "extendedArtwork": true
+      }
+    },
+
+    {
+      "_comment": "Delete Promos; will be done in separate import file",
+      "xwhere": "title=(Kenrith, the Returned King)",
+      "delete": true
+    },
+    {
+      "_comment": "Delete Planeswalker Deck cards; will imported in Promos",
+      "xwhere": "title=(Rowan, Fearless Sparkmage|Garrison Griffin|Rowan's Battleguard|Rowan's Stalwarts|Wind-Scarred Crag|Oko, the Trickster|Oko's Accomplices|Bramblefort Fink|Oko's Hospitality|Thornwood Falls)",
+      "delete": true
+    },
+    {
+      "_comment": "Delete Brawl Deck cards; will imported in Promos",
+      "xwhere": "title=(Mace of the Valiant|Silverwing Squadron|Faerie Formation|Shimmer Dragon|Workshop Elders|Chittering Witch|Taste of Death|Embereth Skyblazer|Steelbane Hydra|Thorn Mammoth|Alela, Artful Provocateur|Banish into Fable|Chulane, Teller of Tales|Gluttonous Troll|Knights' Charge|Korvold, Fae-Cursed King|Syr Gwyn, Hero of Ashvale|Arcane Signet|Tome of Legends|Command Tower)",
+      "delete": true
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "_comment": "Flag them all as variants",
+      "where": "",
+      "newValues": {
+        "variant": true
+      }
+    }
+  ]
+}

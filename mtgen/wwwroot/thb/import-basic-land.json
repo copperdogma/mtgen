@@ -1,0 +1,216 @@
+﻿{
+  "setCode": "thb",
+  "cardDataUrl": "",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "thb",
+          "cardImageUrl": "https://magic.wizards.com/en/products/TherosBeyondDeath/cards",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "250",
+          "cardPattern": "x18,w,u,b,r,g"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "thb",
+        "src": "https://media.wizards.com/2019/thb/en_kIAWgTnszR.png",
+        "title": "Plains",
+        "num": 250,
+        "numInt": 250
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "thb",
+        "src": "https://media.wizards.com/2019/thb/en_8JGbpYFSRv.png",
+        "title": "Island",
+        "num": 251,
+        "numInt": 251
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "thb",
+        "src": "https://media.wizards.com/2019/thb/en_VMO9A13e9w.png",
+        "title": "Swamp",
+        "num": 252,
+        "numInt": 252
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "thb",
+        "src": "https://media.wizards.com/2019/thb/en_cSPRwlH3aP.png",
+        "title": "Mountain",
+        "num": 253,
+        "numInt": 253
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "thb",
+        "src": "https://media.wizards.com/2019/thb/en_GLv74YbErj.png",
+        "title": "Forest",
+        "num": 254,
+        "numInt": 254
+      }
+    },
+    {
+      "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
+      "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
+      "newValues": {
+        "set": "{{setCode}}",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "fullArt": true,
+        "subtype": "{{title}}",
+        "colour": "l",
+        "cost": "",
+        "rarity": "c",
+        "num": "{{num}}/264 L"
+      }
+    },
+
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "thb",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/theros-beyond-death-variants",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "278",
+          "cardPattern": "x92,w,w,u,u,b,b,r,r,g,g"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "thb",
+        "src": "https://media.wizards.com/2019/thb/en_PEHOQ806UQ.png",
+        "title": "Plains",
+        "num": 278,
+        "numInt": 278
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "thb",
+        "src": "https://media.wizards.com/2019/thb/en_TZeUd9v8Lp.png",
+        "title": "Plains",
+        "num": 279,
+        "numInt": 279
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "thb",
+        "src": "https://media.wizards.com/2019/thb/en_RHTtpFg521.png",
+        "title": "Island",
+        "num": 280,
+        "numInt": 280
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "thb",
+        "src": "https://media.wizards.com/2019/thb/en_cFZGo5Gnr0.png",
+        "title": "Island",
+        "num": 281,
+        "numInt": 281
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "thb",
+        "src": "https://media.wizards.com/2019/thb/en_c9JcLG3e2k.png",
+        "title": "Swamp",
+        "num": 282,
+        "numInt": 282
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "thb",
+        "src": "https://media.wizards.com/2019/thb/en_9mGsKoWOKJ.png",
+        "title": "Swamp",
+        "num": 283,
+        "numInt": 283
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "thb",
+        "src": "https://media.wizards.com/2019/thb/en_3MNVqaI3Kp.png",
+        "title": "Mountain",
+        "num": 284,
+        "numInt": 284
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "thb",
+        "src": "https://media.wizards.com/2019/thb/en_dvl0FtFWcs.png",
+        "title": "Mountain",
+        "num": 285,
+        "numInt": 285
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "thb",
+        "src": "https://media.wizards.com/2019/thb/en_XXd77VheCU.png",
+        "title": "Forest",
+        "num": 286,
+        "numInt": 286
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "thb",
+        "src": "https://media.wizards.com/2019/thb/en_W5NgA4GXpm.png",
+        "title": "Forest",
+        "num": 287,
+        "numInt": 287
+      }
+    },
+    {
+      "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
+      "where": "numInt=(278-999)",
+      "newValues": {
+        "set": "{{setCode}}",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "{{title}}",
+        "colour": "l",
+        "cost": "",
+        "rarity": "c",
+        "num": "{{num}}",
+        "variant": true
+      }
+    }
+  ]
+}
