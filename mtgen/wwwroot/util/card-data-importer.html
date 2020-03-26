@@ -37,7 +37,10 @@
         <textarea id="html-card-data" cols="100" rows="20"></textarea>
         <br />
         <br />
-        <label for="url-images">URL from which to retrieve card images (Wizards of the Coast or mtgjson.com) <em>(If none supplied or no image match found, it'll use the card data image above. If no image at all, it'll generate a placeholder card.)</em>:</label>
+        <label for="url-images">
+            URL from which to retrieve card images (Wizards of the Coast or mtgjson.com) <em>(If none supplied or no image match found, it'll use the card data image above. If no image at all, it'll generate a placeholder card.)</em>:<br/>
+            Use <em>"http://url.com/etc/{{num:000}}/etc"</em> to import raw images from the target url with a particular digit format (e.g.: 000)
+        </label>
         <br />
         <input id="url-images" size="100" />
         <br />

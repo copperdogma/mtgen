@@ -4,6 +4,7 @@ Generates an output mtgen card set in json format for use in the main app, using
 Typically the importer file (e.g. import-main.json) will specify the wotc card gallery as the image source and
 the mtgsalvation spoiler page as the data source.
 
+26-Mar-2020: Added image import by url pattern option.
 27-Jun-2017: Now adds .isSelected=false to all cards and flags as .isSelected=true if they were modified in an exception. This lets exception file delete all where .isSelected=false at the end.
 26-Jun-2017: Added exceptions support for where='gatherer=...' to fetch individual card data from Wizards Gatherer. Switched some code from promises to async/await.
 1-Mar-2017: Refactored into flattened es6 promise chains.
@@ -142,7 +143,7 @@ class CardDataImporter {
         // Get image data -------------------------------------------------------------------------------------------------
         let mainImages = new Map();
         if (htmlImages.data) {
-            mainImages = this._getImageData(htmlImages.data, htmlImages.urlSource);
+            mainImages = await this._getImageData(htmlImages.data, htmlImages.urlSource);
         }
 
         // If there is no data but there is image data, and the data source was given as Gatherer, 
@@ -488,6 +489,23 @@ class CardDataImporter {
         if (text === 'An error occurred while sending the request.') { throw Error(`${text} Url: ${url}`); }
         if (text === undefined || text.length === 0) { throw Error(`No HTML returned from: ${url}`); }
         return text;
+    }
+
+    // Returns true if remote file exists via an html proxy, otherwise false.
+    async _htmlFileExists(url) {
+        const response = await fetch(`/proxy?u=${encodeURIComponent(url)}`);
+
+        if (!response.ok) {
+            console.log(`HTML file does not exist; response = ${response} for url: ${url}`);
+            return false;
+        }
+        const text = await response.text();
+        if (text.includes('error')) {
+            console.log(`HTML file does not exist; response text: ${text} for url: ${url}`);
+            return false;
+        }
+
+        return true;
     }
 
     async _createOutputLog(cardArray, mainImages, exceptionsResults) {
@@ -1072,12 +1090,17 @@ class CardDataImporter {
     }
 
     // ------------------------------------------------------------------------------------------------------------------------------------------------------
-    _getImageData(imageData, imageDataUrlSource) {
+    async _getImageData(imageData, imageDataUrlSource) {
         let images = new Map();
 
         // Determine from where the image data was sourced and therefore the parser needed.
         const lowercaseImageDataUrlSource = imageDataUrlSource.toLowerCase();
-        if (lowercaseImageDataUrlSource.includes('magic.wizards.com')) {
+
+        const imageNumReplacementMatch = this._getImageNumReplacementMatch(imageDataUrlSource);
+        if (imageNumReplacementMatch) {
+            images = await this._getImagesFromUrlPattern(imageDataUrlSource, imageNumReplacementMatch);
+        }
+        else if (lowercaseImageDataUrlSource.includes('magic.wizards.com')) {
             images = this._getImagesFromWotcSpoilers(imageData);
         }
         else if (lowercaseImageDataUrlSource.includes('archive.wizards.com')) {
@@ -1096,6 +1119,36 @@ class CardDataImporter {
         return images;
     }
 
+    _getImageNumReplacementMatch = (url) => /\{{([^}]+)\}}/g.exec(url);
+
+    async _getImagesFromUrlPattern(urlWithNumPattern, patternMatch) {
+        const finalImages = new Map();
+
+        const numLength = patternMatch[1].split(':')[1].length;
+        const templateArray = [urlWithNumPattern.substr(0, patternMatch.index), urlWithNumPattern.substr(patternMatch.index + patternMatch[0].length, 999)];
+
+        let i = 0;
+        let fileExists = false;
+        do {
+            i++;
+            const imageUrl = templateArray[0] + (i+'').padStart(numLength, '0') + templateArray[1];
+            fileExists = await this._htmlFileExists(imageUrl);
+            if (fileExists) {
+                console.log(`Found image via pattern: ${imageUrl}`);
+                const image = {
+                    num: i,
+                    src: imageUrl
+                };
+                finalImages.set(image.num, image);
+            }
+
+        } while (fileExists);
+
+        finalImages.forEach(image => image.imageSource = 'url-num-pattern');
+
+        return finalImages;
+    }
+
     _getImagesFromWotcSpoilers(rawHtmlImageData) {
         const finalImages = new Map();
 
@@ -1106,7 +1159,7 @@ class CardDataImporter {
         if (rawimages.length === 0) {
             rawimages = imageDoc.querySelectorAll('#content-detail-page-of-an-article img');
         }
-            
+
         rawimages.forEach(img => {
             if (img.alt.length) {
                 const image = {
@@ -1329,7 +1382,7 @@ class CardDataImporter {
             const image = {};
             image.title = card.name;
             image.matchTitle = mtgGen.createMatchTitle(image.title);
-            image.src = `http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=${card.multiverseid}&type=card`;
+            image.src = `http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=${card.multiverseId}&type=card`;
             image.imageSource = "mtgjson";
             finalImages.set(image.matchTitle, image);
         });
@@ -1376,44 +1429,6 @@ class CardDataImporter {
             image.src = path;
         });
     }
-
-    //CAMKILL: replaced with async version below
-    //_getCardImagesFromWotcArticle(rawHtmlImageData, requiredImageWidth, requiredImageHeight) {
-    //    return new Promise(resolve => {
-    //        let finalImages = [];
-
-    //        const parser = new DOMParser();
-    //        const imageDoc = parser.parseFromString(rawHtmlImageData, "text/html");
-
-    //        // v1 - 20150914, bfz gallery -- hard to scan as anything unique is added by js
-    //        const content = imageDoc.querySelector('#content');
-    //        const rawImages = imageDoc.querySelectorAll('#content img');
-    //        if (rawImages) {
-    //            // Preload the images so we get the heights and widths.
-    //            // This wasn't necessary under jQuery because I assume it rendered the HTML hidden in the browser.
-    //            const imagePromises = [...rawImages].map(rawImage => this._preloadImage(rawImage.src));
-    //            Promise.all(imagePromises)
-    //                .then(images => {
-    //                    const requiredImageHeightInt = parseInt(requiredImageHeight, 10);
-    //                    const requiredImageWidthInt = parseInt(requiredImageWidth, 10);
-    //                    images.forEach(event => {
-    //                        const img = event.target;
-    //                        if (!isNaN(requiredImageHeightInt) && requiredImageHeightInt !== img.height) { return true; }
-    //                        if (!isNaN(requiredImageWidthInt) && requiredImageWidthInt !== img.width) { return true; }
-    //                        const image = {};
-    //                        image.src = img.src;
-    //                        image.height = img.height;
-    //                        image.width = img.width;
-    //                        image.imageSource = "wotc-article";
-    //                        finalImages.push(image);
-    //                    });
-
-    //                    resolve(finalImages);
-    //                })
-    //                .catch(err => alert(`ERROR: failed to retrieve image: ${err.message}`));
-    //        }
-    //    });
-    //}
 
     async _getCardImagesFromWotcArticle(rawHtmlImageData, requiredImageWidth, requiredImageHeight) {
         const parser = new DOMParser();
@@ -1550,8 +1565,8 @@ class CardDataImporter {
             cardArray.forEach(card => cardsByMatchTitle.set(card.matchTitle, card));
 
             cardArray.forEach(card => {
-                // images[card.num]: archive.wizards.com images have no titles; they're indexed by image
-                const image = images.get(card.matchTitle) || images.get(card.num);
+                // images[card.num]: archive.wizards.com images/url pattern images have no titles; they're indexed by image num
+                const image = images.get(card.matchTitle) || images.get(card.numInt);
 
                 if (!image) { return; }
 
