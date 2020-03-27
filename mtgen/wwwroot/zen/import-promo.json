@@ -1,0 +1,84 @@
+{
+  "setCode": "zen",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=81&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+      "where": "title='Day of Judgment",
+      "newValues": {
+        "num": "*9/249",
+        "src": "http://s3.gatheringmagic.com/uploads/2009/08/Day_of_judgement.JPG",
+        "includedReason": "Buy-a-Box Promo"
+      }
+    },
+    {
+      "where": "title='Emeria Angel'",
+      "newValues": {
+        "num": "35 DCI",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/306_EmeriaAngel_ezvzls0kxb.jpg",
+        "includedReason": "Game Day Promo"
+      }
+    },
+    {
+      "where": "title='Nissa's Chosen",
+      "newValues": {
+        "num": "34 DCI",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/306_NissasChosen_qr7p7vj2rt.jpg",
+        "includedReason": "Game Day Promo"
+      }
+    },
+    {
+      "where": "title='Rampaging Baloths",
+      "newValues": {
+        "num": "*178/219",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/ld/ld57_foilPreCard.jpg",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "where": "title='Valakut, the Molten Pinnacle",
+      "newValues": {
+        "num": "*228/249",
+        "src": "https://img.scryfall.com/cards/large/front/6/1/61859afa-9578-4179-8c2b-9c54e880f339.jpg?1581038070",
+        "includedReason": "Release Party Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "title": "Celestine Reef",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/278_0l7m0zrjsu.jpg",
+        "colour": "o",
+        "num": "42 DCI",
+        "rarity": "c",
+        "type": "Plane",
+        "subtype": "Luvion",
+        "height": 265,
+        "width": 370,
+        "includedReason": "Prerelease Promo"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

@@ -1,8 +1,37 @@
 [
   {
+    "src": "http://mtgen.net/cards/mtg-marketing1.png",
+    "title": "Tip/Marketing Card",
+    "colour": "o",
+    "num": "001 Marketing/008 T",
+    "type": "Marketing",
+    "marketing": true,
+    "addedViaException": true,
+    "mtgenId": "zen|001 Marketing/008 T",
+    "set": "zen",
+    "rarity": "c",
+    "token": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-marketing2.png",
+    "title": "Tip/Marketing Card",
+    "colour": "o",
+    "num": "002 Marketing/008 T",
+    "type": "Marketing",
+    "marketing": true,
+    "addedViaException": true,
+    "mtgenId": "zen|002 Marketing/008 T",
+    "set": "zen",
+    "rarity": "c",
+    "token": true,
+    "usableForDeckBuilding": false
+  },
+
+  {
     "title": "Angel",
     "set": "zen",
-    "src": "http://archive.wizards.com/mtg/images/daily/arcana/283_ZEN_Token1.jpg",
+    "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/283_ZEN_Token1.jpg",
     "colour": "w",
     "rarity": "c",
     "type": "Creature",
@@ -16,7 +45,7 @@
   {
     "title": "Bird",
     "set": "zen",
-    "src": "http://archive.wizards.com/mtg/images/daily/arcana/283_ZEN_Token2.jpg",
+    "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/283_ZEN_Token2.jpg",
     "colour": "w",
     "rarity": "c",
     "type": "Creature",
@@ -30,7 +59,7 @@
   {
     "title": "Kor Soldier",
     "set": "zen",
-    "src": "http://archive.wizards.com/mtg/images/daily/stf/stf57_KorSoldierToken.jpg",
+    "src": "https://img.scryfall.com/cards/large/front/d/9/d9623e74-3b94-4842-903f-ed52931bdf6a.jpg?1562636919",
     "colour": "w",
     "rarity": "c",
     "type": "Creature",
@@ -44,7 +73,7 @@
   {
     "title": "Illusion",
     "set": "zen",
-    "src": "http://archive.wizards.com/mtg/images/daily/arcana/283_ZEN_Token3.jpg",
+    "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/283_ZEN_Token3.jpg",
     "colour": "u",
     "rarity": "c",
     "type": "Creature",
@@ -58,7 +87,7 @@
   {
     "title": "Merfolk",
     "set": "zen",
-    "src": "http://archive.wizards.com/mtg/images/daily/arcana/283_ZEN_Token4.jpg",
+    "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/283_ZEN_Token4.jpg",
     "colour": "u",
     "rarity": "c",
     "type": "Creature",
@@ -72,7 +101,7 @@
   {
     "title": "Vampire",
     "set": "zen",
-    "src": "http://archive.wizards.com/mtg/images/daily/arcana/283_ZEN_Token5.jpg",
+    "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/283_ZEN_Token5.jpg",
     "colour": "b",
     "rarity": "c",
     "type": "Creature",
@@ -86,7 +115,7 @@
   {
     "title": "Zombie Giant",
     "set": "zen",
-    "src": "http://archive.wizards.com/mtg/images/daily/arcana/283_ZEN_Token6.jpg",
+    "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/283_ZEN_Token6.jpg",
     "colour": "b",
     "rarity": "c",
     "type": "Creature",
@@ -100,7 +129,7 @@
   {
     "title": "Elemental",
     "set": "zen",
-    "src": "http://archive.wizards.com/mtg/images/daily/arcana/283_ZEN_Token7.jpg",
+    "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/283_ZEN_Token7.jpg",
     "colour": "r",
     "rarity": "c",
     "type": "Creature",
@@ -114,7 +143,7 @@
   {
     "title": "Beast",
     "set": "zen",
-    "src": "http://archive.wizards.com/mtg/images/daily/arcana/283_ZEN_Token8.jpg",
+    "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/283_ZEN_Token8.jpg",
     "colour": "g",
     "rarity": "c",
     "type": "Creature",
@@ -128,7 +157,7 @@
   {
     "title": "Snake",
     "set": "zen",
-    "src": "http://archive.wizards.com/mtg/images/daily/arcana/283_ZEN_Token9.jpg",
+    "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/283_ZEN_Token9.jpg",
     "colour": "g",
     "rarity": "c",
     "type": "Creature",
@@ -141,7 +170,7 @@
   {
     "title": "Wolf",
     "set": "zen",
-    "src": "http://archive.wizards.com/mtg/images/daily/arcana/283_ZEN_Token10.jpg",
+    "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/283_ZEN_Token10.jpg",
     "colour": "g",
     "rarity": "c",
     "type": "Wolf",

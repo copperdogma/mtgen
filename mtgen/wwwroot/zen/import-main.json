@@ -1,0 +1,14 @@
+﻿{
+  "setCode": "zen",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=81&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/tcg/products/zendikar/h1bs2y5wfz/EN/{{num:0000}}_MTGZEN_EN_LR.jpg",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    }
+  ]
+}
