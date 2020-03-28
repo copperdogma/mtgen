@@ -1,0 +1,108 @@
+{
+  "setCode": "wwk",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/feature/worldwake-tokens-2010-01-25",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "wwk",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/feature/worldwake-tokens-2010-01-25",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "001|w|Creature|Soldier Ally\nx\n002|r|Creature|Dragon\nx\n003|r|Creature|Ogre\n004|g|Creature|Elephant\nx\n005|g|Creature|Plant\nx\n006|c|Artifact Creature|Construct"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "wwk",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/371_tk1.jpg",
+        "num": "001",
+        "colour": "w",
+        "type": "Creature",
+        "title": "Soldier Ally",
+        "subtype": "Soldier Ally",
+        "numInt": 1
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "wwk",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/371_tk2.jpg",
+        "num": "002",
+        "colour": "r",
+        "type": "Creature",
+        "title": "Dragon",
+        "subtype": "Dragon",
+        "numInt": 2
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "wwk",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/371_tk3.jpg",
+        "num": "003",
+        "colour": "r",
+        "type": "Creature",
+        "title": "Ogre",
+        "subtype": "Ogre",
+        "numInt": 3
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "wwk",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/371_tk4.jpg",
+        "num": "004",
+        "colour": "g",
+        "type": "Creature",
+        "title": "Elephant",
+        "subtype": "Elephant",
+        "numInt": 4
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "wwk",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/371_tk5.jpg",
+        "num": "005",
+        "colour": "g",
+        "type": "Creature",
+        "title": "Plant",
+        "subtype": "Plant",
+        "numInt": 5
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "wwk",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/371_tk6.jpg",
+        "num": "006",
+        "colour": "c",
+        "type": "Artifact Creature",
+        "title": "Construct",
+        "subtype": "Construct",
+        "numInt": 6
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/006 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

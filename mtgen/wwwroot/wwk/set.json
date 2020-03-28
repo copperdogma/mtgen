@@ -4,10 +4,15 @@
     "packs.json"
   ],
   "cardFiles": [
-    "cardsMain.json",
-    "cardsToken.json",
-    "cardsOther.json",
-    "../zen/cardsMain.json"
+    "cardsMain.json?v1.1",
+    "cardsToken.json?v1.1",
+    "cardsPromo.json?v1.1",
+    "../zen/cardsMain.json?v1.1"
   ],
-  "updates": []
+  "updates": [
+    {
+      "UpdateDate": "2020-03-28T01:00:00:00",
+      "HtmlString": "Reimported all card images after Wizards change."
+    }
+  ]
 }

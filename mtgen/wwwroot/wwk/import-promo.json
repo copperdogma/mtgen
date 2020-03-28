@@ -1,0 +1,69 @@
+{
+  "setCode": "wwk",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=84&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+      "where": "title='Hada Freeblade",
+      "newValues": {
+        "num": "38 DCI",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/399_freeblade.jpg",
+        "includedReason": "Game Day Promo"
+      }
+    },
+    {
+      "where": "title='Kalastria Highborn",
+      "newValues": {
+        "num": "59 DCI",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/399_highborn.jpg",
+        "includedReason": "Game Day Top 8 Promo"
+      }
+    },
+    {
+      "where": "title='Comet Storm",
+      "newValues": {
+        "num": "*76/145",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/361_3vov15ew8m.jpg",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "where": "title='Celestial Colonnade",
+      "newValues": {
+        "num": "*133/249",
+        "src": "https://img.scryfall.com/cards/large/front/e/2/e2915763-2b63-4408-b014-49d52e3d65f6.jpg?1561758302",
+        "includedReason": "Buy-a-Box Promo"
+      }
+    },
+    {
+      "where": "title='Joraga Warcaller",
+      "newValues": {
+        "num": "*106/145",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/361_bn4cd6ayoh.jpg",
+        "includedReason": "Launch Party Promo"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}
