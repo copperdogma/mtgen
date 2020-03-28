@@ -4,6 +4,8 @@ Typically used for tokens, land, and other cards listed on the wotc site in arti
 
 Takes a specific text pattern as input to indicate which images we want and what they are.
 
+28-Mar-2020: Fixed bug where num total was hard-coded to 012 instead of the actual number of tokens.
+28-Mar-2020: Fixed bug where 'x' in token list was ignored.
 3-Jun-2017: Now accepts x15 to skip 15 cards, upgraded to be more promise-centric, and showed critical errors on the web page.
 27-Feb-2017: Pulled out of card-data-importer.js
 
@@ -81,7 +83,7 @@ class CardExceptionGenerator extends CardDataImporter {
             const cardPatterns = initialCardPatterns.reduce((acc, pattern) => {
                 const skipMany = /^x([0-9]{1,3})?$/gi.exec(pattern);
                 if (skipMany) {
-                    return acc.concat([...'x'.repeat(skipMany[1])]);
+                    return acc.concat([...'x'.repeat(skipMany[1] ?? 1)]);
                 }
                 else {
                     acc.push(pattern);
@@ -263,7 +265,7 @@ class CardExceptionGenerator extends CardDataImporter {
                             "newValues": {
                                 "set": "{{setCode}}",
                                 "rarity": "c",
-                                "num": "{{num}}/012 T",
+                                "num": `{{num}}/${(cards.size+'').padStart(3,'0')} T`,
                                 "token": true,
                                 "usableForDeckBuilding": false
                             }
