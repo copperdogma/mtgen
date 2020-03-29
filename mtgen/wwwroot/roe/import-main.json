@@ -1,0 +1,14 @@
+﻿{
+  "setCode": "roe",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=86&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/tcg/products/riseoftheeldrazi/rdfgh8rvhs/EN/{{num:0000}}_MTGROE_EN_LR.jpg",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    }
+  ]
+}

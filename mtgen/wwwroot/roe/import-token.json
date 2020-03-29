@@ -1,0 +1,121 @@
+{
+  "setCode": "roe",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/arcana/rise-eldrazi-tokens-2010-04-05",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "roe",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/arcana/rise-eldrazi-tokens-2010-04-05",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "001|r|Creature|Elemental\n002|c|Creature|Eldrazi Spawn\n003|r|Creature|Hellion\n004|c|Creature|Eldrazi Spawn\n005|g|Creature|Ooze\n006|c|Creature|Eldrazi Spawn"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "roe",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/421_elemental.jpg",
+        "num": "001",
+        "colour": "r",
+        "type": "Creature",
+        "title": "Elemental",
+        "subtype": "Elemental",
+        "numInt": 1
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "roe",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/421_spawn1.jpg",
+        "num": "002",
+        "colour": "c",
+        "type": "Creature",
+        "title": "Eldrazi Spawn",
+        "subtype": "Eldrazi Spawn",
+        "numInt": 2
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "roe",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/421_hellion.jpg",
+        "num": "003",
+        "colour": "r",
+        "type": "Creature",
+        "title": "Hellion",
+        "subtype": "Hellion",
+        "numInt": 3
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "roe",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/421_spawn2.jpg",
+        "num": "004",
+        "colour": "c",
+        "type": "Creature",
+        "title": "Eldrazi Spawn",
+        "subtype": "Eldrazi Spawn",
+        "numInt": 4
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "roe",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/421_ooze.jpg",
+        "num": "005",
+        "colour": "g",
+        "type": "Creature",
+        "title": "Ooze",
+        "subtype": "Ooze",
+        "numInt": 5
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "roe",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/421_spawn3.jpg",
+        "num": "006",
+        "colour": "c",
+        "type": "Creature",
+        "title": "Eldrazi Spawn",
+        "subtype": "Eldrazi Spawn",
+        "numInt": 6
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "roe",
+        "src": "https://img.scryfall.com/cards/large/front/0/b/0b1686c8-5ce1-49bd-aae3-dce89578094a.jpg?1562701891",
+        "num": "015/019",
+        "colour": "c",
+        "type": "Token Artifct Creature",
+        "title": "TukTuk the Returned",
+        "subtype": "Goblin Golem",
+        "numInt": 15
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/006 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

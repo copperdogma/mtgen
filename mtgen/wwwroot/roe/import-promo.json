@@ -1,0 +1,69 @@
+{
+  "setCode": "roe",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=86&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+      "where": "title='Staggershock",
+      "newValues": {
+        "num": "48 DCI",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/442_staggershock.jpg",
+        "includedReason": "Game Day Promo"
+      }
+    },
+    {
+      "where": "title='Deathless Angel",
+      "newValues": {
+        "num": "49 DCI",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/442_deathlessangel.jpg",
+        "includedReason": "Game Day Top 8 Promo"
+      }
+    },
+    {
+      "where": "title='Emrakul, the Aeons Torn",
+      "newValues": {
+        "num": "*4/248",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/417_vcjx0r83p1.jpg",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "where": "title='Guul Draz Assassin",
+      "newValues": {
+        "num": "*112/248",
+        "src": "https://img.scryfall.com/cards/large/front/d/d/ddcd7db0-11fc-4a92-b705-8cb70d7734df.jpg?1561758225",
+        "includedReason": "Buy-a-Box Promo"
+      }
+    },
+    {
+      "where": "title='Lord of Shatterskull Pass",
+      "newValues": {
+        "num": "*156/248",
+        "src": "https://media.magic.wizards.com/image_legacy_migration/mtg/images/daily/arcana/431_LordofShatterskullPass.jpg",
+        "includedReason": "Launch Party Promo"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}
