@@ -23,6 +23,7 @@ Normally 15 cards per booster:
 
 - 1 in 4 boosters contains a foil which may be any card of any rarity (incl Basic Land), which replaces a Common
 
+3-Apr-2020: Exporter: Added Deckstats format.
 3-Apr-2018: Exporter: now combined two-sided cards into FrontTitle // BackTitle, and added Frogtown export format
 14-Jun-2017: Exporter: now replaces split card " // " with "/" for txt, and strips out card not usable for deckbuilding
 26-Jan-2016: Now uses mtgenId instead of index.
@@ -1246,6 +1247,7 @@ var mtgGen = (function (my) {
                 + "<li><a href='#' class='button export-cod' data-export-type='cod'><strong>.cod</strong> - Cockatrice</a></li>"
                 + "<li><a href='#' class='button export-coll' data-export-type='coll'><strong>.coll</strong> - Decked Builder</a></li>"
                 + "<li><a href='#' class='button export-frog' data-export-type='frog'><strong>.frog</strong> - Frogtown</a></li>"
+                + "<li><a href='#' class='button export-deckstats' data-export-type='deckstats'><strong>.deckstats</strong> - deckstats</a></li>"
                 + "</ul>"
                 + "</section>"
                 + "<section class='export-detail'>"
@@ -1289,6 +1291,7 @@ var mtgGen = (function (my) {
         exports.cod = renderCodFormat(countedCards, attrib);
         exports.coll = renderCollFormat(countedCards, attrib);
         exports.frog = renderFrogtownFormat(countedCards, attrib);
+        exports.deckstats = renderDeckstatsDeckFormat(null, countedCards, attrib);
     }
 
     function chooseExportFormat(exportType) {
@@ -1405,6 +1408,30 @@ var mtgGen = (function (my) {
     function renderFrogtownFormat(cards, attrib) {
         const output = '// ' + attrib + '\r\n' + cards.reduce((cardOutput, card) =>
             cardOutput += card.count + ' ' + card.exportTitle + ' [' + card.set.toUpperCase() + ']\r\n', '');
+        return output;
+    }
+
+    // .ds: used by deckstats.net
+    // & replaced with / in card title otherwise MWS won't import
+    // format help: https://deckstats.net/deckbuilder/en/ - Paste/upload a deck list - Formatting Help
+    function renderDeckstatsDeckFormat(cards, sbCards, attrib) {
+        let output = `// ${attrib}\r\n`;
+        let prefix = '    ';
+        if (cards !== null && cards.length > 0) {
+            output += cards.reduce((cardOutput, card) => {
+                const exportTitle = card.exportTitle.replace(' (', ' // ').replace(') ', ' // ').replace('(', '').replace(')', '').replace(' & ', '/');
+                return cardOutput += prefix + card.count + ' [' + card.set.toUpperCase() + '] ' + exportTitle + '\r\n';
+            },
+                '');
+        }
+        if (sbCards !== null && sbCards.length > 0) {
+            prefix = '';
+            output += sbCards.reduce((cardOutput, card) => {
+                const exportTitle = card.exportTitle.replace(' (', ' // ').replace(') ', ' // ').replace('(', '').replace(')', '').replace(' & ', '/');
+                return cardOutput += prefix + card.count + ' [' + card.set.toUpperCase() + '] ' + exportTitle + '\r\n';
+            },
+                '// Sideboard:\r\n');
+        }
         return output;
     }
 
