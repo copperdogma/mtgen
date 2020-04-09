@@ -4,6 +4,7 @@ Generates an output mtgen card set in json format for use in the main app, using
 Typically the importer file (e.g. import-main.json) will specify the wotc card gallery as the image source and
 the mtgsalvation spoiler page as the data source.
 
+8-Apr-2020: Added card data property .useCardDataImg that if true, importer will ignore any imported images and just use the original card data image.
 26-Mar-2020: Added image import by url pattern option.
 27-Jun-2017: Now adds .isSelected=false to all cards and flags as .isSelected=true if they were modified in an exception. This lets exception file delete all where .isSelected=false at the end.
 26-Jun-2017: Added exceptions support for where='gatherer=...' to fetch individual card data from Wizards Gatherer. Switched some code from promises to async/await.
