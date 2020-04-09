@@ -1565,10 +1565,15 @@ class CardDataImporter {
             cardArray.forEach(card => cardsByMatchTitle.set(card.matchTitle, card));
 
             cardArray.forEach(card => {
+                // ADD support for new .useCardDataImg=true to not try to match an image at all; just use original that came with card data
+                // If the card was imported and stamped with .userCardDataImg, we should use the original card data image
+                // instead of the one from the imported images. Useful for older wotc galleries with bad merged images of double-faced cards.
+                if (card.useCardDataImg == true) return;
+
                 // images[card.num]: archive.wizards.com images/url pattern images have no titles; they're indexed by image num
                 const image = images.get(card.matchTitle) || images.get(card.numInt);
 
-                if (!image) { return; }
+                if (!image) return;
 
                 card.srcOriginal = card.src;
                 card.imageSourceOriginal = card.src;
