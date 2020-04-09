@@ -10,15 +10,15 @@
     },
     {
       "defName": "isd-set",
-      "query": "from[isd]-from[isd-promo]-from[*]?doubleFaceCard=true"
+      "query": "from[isd]-from[isd-promo]"
     },
     {
       "defName": "isd-main",
       "query": "from[isd]-from[isd]?type=(Marketing|Basic Land)-from[isd]?token=true-from[isd]?promo=true-from[*]?doubleFaceCard=true"
     },
     {
-      "defName": "isd-doubleface",
-      "query": "from[isd]?doubleFaceCard=true"
+      "defName": "isd-double-faced",
+      "query": "from[isd-set]?doubleFaceCard=true"
     },
     {
       "defName": "isd-foils",
@@ -38,84 +38,30 @@
         { "query": "take[*]>from[isd]" }
       ]
     },
+
     {
       "packName": "isd-standard",
       "packDesc": "Innistrad: Standard Booster",
+      "packVersion": "1.1",
       "isGenerated": true,
       "cards": [
-        { "query": "take[9]>from[isd-main]?rarity='c'" },
-        { "query": "take[3]>from[isd-main]?rarity='u'" },
-        { "query": "from[isd-main]?rarity='r'" },
-        {
-          "querySet": [
-            {
-              "percent": "66/121",
-              "query": "from[isd-doubleface]?rarity='c'"
-            },
-            {
-              "percent": "42/121",
-              "query": "from[isd-doubleface]?rarity='u'"
-            },
-            {
-              "percent": "12/121",
-              "query": "from[isd-doubleface]?rarity='r'"
-            },
-            {
-              "percent": "1/121",
-              "query": "from[isd-doubleface]?rarity='m'"
-            }
-          ]
-        },
-        {
-          "querySet": [
-            {
-              "percent": "1/4",
-              "query": "from[isd]?type='Basic Land'"
-            },
-            {
-              "percent": "3/4",
-              "query": "from[isd]?title='Checklist Card'"
-            }
-          ]
-        },
+        { "query": "take[10]>from[isd-main]?rarity='c" },
+        { "query": "take[3]>from[isd-main]?rarity='u" },
+        { "query": "from[isd-main]?rarity='r" },
+        { "query": "from[isd]?type='Basic Land'" },
         {
           "querySet": [
             {
               "percent": 50,
+              "query": "from[isd]?title='Checklist Card'"
+            },
+            {
+              "percent": 25,
               "query": "from[isd]?type='Marketing'"
             },
             {
-              "percent": 50,
+              "percent": 25,
               "query": "from[isd]?token=true-from[isd]?promo=true"
-            }
-          ]
-        },
-        {
-          "querySet": [
-            {
-              "_comment": "25% chance of foil, scaled by rarity, replacing the last common",
-              "overrideSlot": "9",
-              "percent": "88/480",
-              "query": "from[isd-foils]?rarity='c",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "9",
-              "percent": "24/480",
-              "query": "from[isd-foils]?rarity='u",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "9",
-              "percent": "7/480",
-              "query": "from[isd-foils]?rarity='r",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "9",
-              "percent": "1/480",
-              "query": "from[isd-foils]?rarity='m",
-              "setValues": { "foil": true }
             }
           ]
         },
@@ -124,7 +70,7 @@
             {
               "_comment": "1/8 chance of replacing rare with mythic",
               "percent": "1/8",
-              "overrideSlot": "13",
+              "overrideSlot": "14",
               "query": "from[isd-main]?rarity='m'"
             }
           ]
@@ -132,34 +78,60 @@
         {
           "querySet": [
             {
-              "_comment": "1/45 chance of foil double-faced card, scaled by rarity",
-              "overrideSlot": "14",
-              "percent": "88/5400",
-              "query": "from[isd-doubleface]?rarity='c",
+              "_comment": "33% (1:45) chance of foil, scaled by rarity, replacing the last common, as of m20: Jun-2019",
+              "overrideSlot": "10",
+              "percent": "88/360",
+              "query": "from[isd-foils]?rarity='c",
               "setValues": { "foil": true }
             },
             {
-              "overrideSlot": "14",
-              "percent": "24/5400",
-              "query": "from[isd-doubleface]?rarity='u",
+              "overrideSlot": "10",
+              "percent": "24/360",
+              "query": "from[isd-foils]?rarity='u",
               "setValues": { "foil": true }
             },
             {
-              "overrideSlot": "14",
-              "percent": "7/5400",
-              "query": "from[isd-doubleface]?rarity='r",
+              "overrideSlot": "10",
+              "percent": "7/360",
+              "query": "from[isd-foils]?rarity='r",
               "setValues": { "foil": true }
             },
             {
-              "overrideSlot": "14",
-              "percent": "1/5400",
-              "query": "from[isd-doubleface]?rarity='m",
+              "overrideSlot": "10",
+              "percent": "1/360",
+              "query": "from[isd-foils]?rarity='m",
               "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "one double-faced card per pack, scaled by raritys",
+              "overrideSlot": "9",
+              "percent": "6/12",
+              "query": "from[isd-double-faced]?rarity='c"
+            },
+            {
+              "overrideSlot": "11",
+              "percent": "3/12",
+              "query": "from[isd-double-faced]?rarity='u"
+            },
+            {
+              "overrideSlot": "14",
+              "percent": "2/12",
+              "query": "from[isd-double-faced]?rarity='r"
+            },
+            {
+              "overrideSlot": "14",
+              "percent": "1/12",
+              "query": "from[isd-double-faced]?rarity='m"
             }
           ]
         }
       ]
     },
+
     {
       "packName": "isd-promos",
       "packDesc": "Innistrad: Promos",

@@ -1,0 +1,252 @@
+﻿{
+  "setCode": "dka",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=102&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/feature/card-image-gallery-2012-01-09",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "where": "title='Loyal Cathar",
+      "newValues": {
+        "title": "Loyal Cathar (Unhallowed Cathar)",
+        "mtgenIdBack": "dka|0013:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Unhallowed Cathar",
+      "newValues": {
+        "title": "Unhallowed Cathar (Loyal Cathar)",
+        "mtgenIdFront": "dka|0013",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Ghastly Haunting",
+      "newValues": {
+        "title": "Ghastly Haunting (Soul Seizer)",
+        "mtgenIdBack": "dka|0050:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Soul Seizer",
+      "newValues": {
+        "title": "Soul Seizer (Ghastly Haunting)",
+        "mtgenIdFront": "dka|0050",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Chosen of Markov",
+      "newValues": {
+        "title": "Chosen of Markov (Markov's Servant)",
+        "mtgenIdBack": "dka|0055:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Markov's Servant",
+      "newValues": {
+        "title": "Markov's Servant (Chosen of Markov)",
+        "mtgenIdFront": "dka|0055",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Archdemon of Greed",
+      "newValues": {
+        "title": "Archdemon of Greed (Ravenous Demon)",
+        "mtgenIdBack": "dka|0071:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Ravenous Demon",
+      "newValues": {
+        "title": "Ravenous Demon (Archdemon of Greed)",
+        "mtgenIdFront": "dka|0071",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Afflicted Deserter",
+      "newValues": {
+        "title": "Afflicted Deserter (Werewolf Ransacker)",
+        "mtgenIdBack": "dka|0081:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Werewolf Ransacker",
+      "newValues": {
+        "title": "Werewolf Ransacker (Afflicted Deserter)",
+        "mtgenIdFront": "dka|0081",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Hinterland Hermit",
+      "newValues": {
+        "title": "Hinterland Hermit (Hinterland Scourge)",
+        "mtgenIdBack": "dka|0094:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Hinterland Scourge",
+      "newValues": {
+        "title": "Hinterland Scourge (Hinterland Hermit)",
+        "mtgenIdFront": "dka|0094",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Mondronen Shaman",
+      "newValues": {
+        "title": "Mondronen Shaman (Tovolar's Magehunter)",
+        "mtgenIdBack": "dka|0098:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Tovolar's Magehunter",
+      "newValues": {
+        "title": "Tovolar's Magehunter (Mondronen Shaman)",
+        "mtgenIdFront": "dka|0098",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Lambholt Elder",
+      "newValues": {
+        "title": "Lambholt Elder (Silverpelt Werewolf)",
+        "mtgenIdBack": "dka|0122:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Silverpelt Werewolf",
+      "newValues": {
+        "title": "Silverpelt Werewolf (Lambholt Elder)",
+        "mtgenIdFront": "dka|0122",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Moonscarred Werewolf",
+      "newValues": {
+        "title": "Moonscarred Werewolf (Scorned Villager)",
+        "mtgenIdBack": "dka|0125:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Scorned Villager",
+      "newValues": {
+        "title": "Scorned Villager (Moonscarred Werewolf)",
+        "mtgenIdFront": "dka|0125",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Krallenhorde Killer",
+      "newValues": {
+        "title": "Krallenhorde Killer (Wolfbitten Captive)",
+        "mtgenIdBack": "dka|0133:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Wolfbitten Captive",
+      "newValues": {
+        "title": "Wolfbitten Captive (Krallenhorde Killer)",
+        "mtgenIdFront": "dka|0133",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Huntmaster of the Fells",
+      "newValues": {
+        "title": "Huntmaster of the Fells (Ravager of the Fells)",
+        "mtgenIdBack": "dka|0140:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Ravager of the Fells",
+      "newValues": {
+        "title": "Ravager of the Fells (Huntmaster of the Fells)",
+        "mtgenIdFront": "dka|0140",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Chalice of Death",
+      "newValues": {
+        "title": "Chalice of Death (Chalice of Life)",
+        "mtgenIdBack": "dka|0146:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Chalice of Life",
+      "newValues": {
+        "title": "Chalice of Life (Chalice of Death)",
+        "mtgenIdFront": "dka|0146",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "where": "title='Withengar Unbound",
+      "newValues": {
+        "title": "Withengar Unbound (Elbrus, the Binding Blade)",
+        "mtgenIdBack": "dka|0147:a",
+        "doubleFaceFrontCard": true
+      }
+    },
+    {
+      "where": "title='Elbrus, the Binding Blade",
+      "newValues": {
+        "title": "Elbrus, the Binding Blade (Withengar Unbound)",
+        "mtgenIdFront": "dka|0147",
+        "doubleFaceBackCard": true
+      }
+    },
+
+    {
+      "_comment": "select all above-selected double-faced cards",
+      "where": "isSelected=true",
+      "newValues": {
+        "useCardDataImg": true,
+        "doubleFaceCard": true
+      }
+    },
+
+    {
+      "_comment": "Consider everything left the main set.",
+      "where": "",
+      "newValues": {
+        "mainSet": true
+      }
+    }
+  ]
+}
