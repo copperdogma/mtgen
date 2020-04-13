@@ -1,7 +1,7 @@
 {
   "startProductName": "isd-prerelease",
   "packFiles": [
-    "packs.json?v1.4"
+    "packs.json?v1.5"
   ],
   "cardFiles": [
     "cardsMain.json?v1.3",
@@ -9,6 +9,10 @@
     "cardsOther.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2020-04-13T00:00:00",
+      "HtmlString": "Fixed booster layout."
+    },
     {
       "UpdateDate": "2020-04-09T00:00:00",
       "HtmlString": "Reimported all cards. Now only one double-faced card (plus maybe foil) per booster."

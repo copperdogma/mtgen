@@ -22,7 +22,7 @@
 		},
 		{
 			"defName": "dka-foils",
-			"query": "from[dka-main]"
+			"query": "from[dka-main]+from[dka-double-faced]"
 		},
 		{
 			"defName": "dka-fatpack",
@@ -47,26 +47,55 @@
 		{
 			"packName": "dka-standard",
 			"packDesc": "Dark Ascension: Standard Booster",
-			"packVersion": "1.1",
+			"packVersion": "1.2",
+			"sources": [ "https://www.youtube.com/watch?v=19l-cmaZHUE" ],
 			"isGenerated": true,
 			"cards": [
-				{ "query": "take[10]>from[dka-main]?rarity='c" },
+				{ "query": "take[9]>from[dka-main]?rarity='c" },
 				{ "query": "take[3]>from[dka-main]?rarity='u" },
 				{ "query": "from[dka-main]?rarity='r" },
-				{ "query": "from[isd]?type='Basic Land'" },
 				{
 					"querySet": [
 						{
 							"percent": 50,
+							"query": "from[dka]?type='Marketing'"
+						},
+						{
+							"percent": 50,
+							"query": "from[dka]?token=true"
+						}
+					]
+				},
+				{
+					"querySet": [
+						{
+							"percent": 75,
 							"query": "from[dka]?title='Checklist Card'"
 						},
 						{
 							"percent": 25,
-							"query": "from[dka]?type='Marketing'"
+							"query": "from[isd]?type='Basic Land'"
+						}
+					]
+				},
+				{
+					"querySet": [
+						{
+							"_comment": "one double-faced card per pack, scaled by raritys",
+							"percent": "11/20",
+							"query": "from[dka-double-faced]?rarity='c"
 						},
 						{
-							"percent": 25,
-							"query": "from[dka]?token=true-from[dka]?promo=true"
+							"percent": "6/20",
+							"query": "from[dka-double-faced]?rarity='u"
+						},
+						{
+							"percent": "2/20",
+							"query": "from[dka-double-faced]?rarity='r"
+						},
+						{
+							"percent": "1/20",
+							"query": "from[dka-double-faced]?rarity='m"
 						}
 					]
 				},
@@ -75,7 +104,7 @@
 						{
 							"_comment": "1/8 chance of replacing rare with mythic",
 							"percent": "1/8",
-							"overrideSlot": "14",
+							"overrideSlot": "13",
 							"query": "from[dka-main]?rarity='m'"
 						}
 					]
@@ -84,53 +113,28 @@
 					"querySet": [
 						{
 							"_comment": "33% (1:45) chance of foil, scaled by rarity, replacing the last common, as of m20: Jun-2019",
-							"overrideSlot": "10",
+							"overrideSlot": "9",
 							"percent": "88/360",
 							"query": "from[dka-foils]?rarity='c",
 							"setValues": { "foil": true }
 						},
 						{
-							"overrideSlot": "10",
+							"overrideSlot": "9",
 							"percent": "24/360",
 							"query": "from[dka-foils]?rarity='u",
 							"setValues": { "foil": true }
 						},
 						{
-							"overrideSlot": "10",
+							"overrideSlot": "9",
 							"percent": "7/360",
 							"query": "from[dka-foils]?rarity='r",
 							"setValues": { "foil": true }
 						},
 						{
-							"overrideSlot": "10",
+							"overrideSlot": "9",
 							"percent": "1/360",
 							"query": "from[dka-foils]?rarity='m",
 							"setValues": { "foil": true }
-						}
-					]
-				},
-				{
-					"querySet": [
-						{
-							"_comment": "one double-faced card per pack, scaled by raritys",
-							"overrideSlot": "9",
-							"percent": "6/12",
-							"query": "from[dka-double-faced]?rarity='c"
-						},
-						{
-							"overrideSlot": "11",
-							"percent": "3/12",
-							"query": "from[dka-double-faced]?rarity='u"
-						},
-						{
-							"overrideSlot": "14",
-							"percent": "2/12",
-							"query": "from[dka-double-faced]?rarity='r"
-						},
-						{
-							"overrideSlot": "14",
-							"percent": "1/12",
-							"query": "from[dka-double-faced]?rarity='m"
 						}
 					]
 				}
