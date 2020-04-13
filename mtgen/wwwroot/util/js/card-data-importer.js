@@ -4,6 +4,7 @@ Generates an output mtgen card set in json format for use in the main app, using
 Typically the importer file (e.g. import-main.json) will specify the wotc card gallery as the image source and
 the mtgsalvation spoiler page as the data source.
 
+12-Apr-2020: Added warning when imported set of cards is missing some card nums in the sequence.
 8-Apr-2020: Added card data property .useCardDataImg that if true, importer will ignore any imported images and just use the original card data image.
 26-Mar-2020: Added image import by url pattern option.
 27-Jun-2017: Now adds .isSelected=false to all cards and flags as .isSelected=true if they were modified in an exception. This lets exception file delete all where .isSelected=false at the end.
@@ -511,6 +512,24 @@ class CardDataImporter {
 
     async _createOutputLog(cardArray, mainImages, exceptionsResults) {
         let out = "";
+
+        // Check if any numbers were skipped on the card data.
+        const cardNums = cardArray.map(card => card.numInt).sort((a, b) => a - b);
+        var missingCardNums = cardNums.reduce(function (acc, cur, ind, arr) {
+            var diff = cur - arr[ind - 1];
+            if (diff > 1) {
+                var i = 1;
+                while (i < diff) {
+                    acc.push(arr[ind - 1] + i);
+                    i++;
+                }
+            }
+            return acc;
+        }, []);
+        if (missingCardNums.length > 0) {
+            out += `<p style='color: DarkGoldenrod'>Missing card numbers: ${missingCardNums.join()}</p>`;
+        }
+
         if (mainImages.size < 1) {
             out += `<p>WARNING: No image data supplied. Using any images found with card data.</p>`;
         }
