@@ -4,6 +4,7 @@ Generates an output mtgen card set in json format for use in the main app, using
 Typically the importer file (e.g. import-main.json) will specify the wotc card gallery as the image source and
 the mtgsalvation spoiler page as the data source.
 
+13-Apr-2020: Now suggested closest matching card images titles if no card data match found; they're usually typos.
 12-Apr-2020: Added warning when imported set of cards is missing some card nums in the sequence.
 8-Apr-2020: Added card data property .useCardDataImg that if true, importer will ignore any imported images and just use the original card data image.
 26-Mar-2020: Added image import by url pattern option.
@@ -539,10 +540,16 @@ class CardDataImporter {
                 out += "<p>No parsing errors.</p>";
             }
             else {
+                // For the unmatched titles, find the best matches; it's often just a typo.
+                const unmatchedTitles = missingSecondaryImageDataEntry.sort(this._sortByTitle).map(e => e.title);
+                const allImageTitles = Array.from(mainImages.entries()).map(entry => entry[1].title);
+                const unmatchedWithBestMatch = unmatchedTitles.map(unmatchedTitle => {
+                    return { UnmatchedTitle: unmatchedTitle, BestMatch: stringSimilarity.findBestMatch(unmatchedTitle, allImageTitles).bestMatch.target };
+                });
                 out += "<p>The following cards had no image data from your image source:</p><ul>";
-                missingSecondaryImageDataEntry.sort(this._sortByTitle).forEach(value => {
-                    const comment = value._comment ? `<em> - ${value._comment}</em>` : "";
-                    out += `<li style='color:red'>${value.title + comment}</li>`;
+                unmatchedWithBestMatch.forEach(value => {
+                    //CAMKILL why was this ever here? const comment = value._comment ? `<em> - ${value._comment}</em>` : "";
+                    out += `<li><strong style='color:red'>${value.UnmatchedTitle}</strong> - <em><span style='color: gray'>suggested:</span> ${value.BestMatch}</em></li>`;
                 });
                 out += "</ul>";
             }
