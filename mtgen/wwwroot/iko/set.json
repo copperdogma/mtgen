@@ -1,0 +1,20 @@
+{
+  "startProductName": "iko-prerelease",
+  "packFiles": [
+    "packs.json?v1.1"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsPromo.json",
+    "cardsVariant.json?v1.1",
+    "cardsBasicLand.json",
+    "cardsCommander.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2020-04-19T00:14:00:00",
+      "HtmlString": "Three Japanese Godzilla cards no longer included in Collector Booster, as per wotc's error."
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+﻿{
+  "setCode": "iko",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=237&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/ikoria-lair-behemoths",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "_comment": "Delete all cards outside of the main set -- Planeswalker decks, promos, varaints, etc. Imported elsewhere.",
+      "where": "numInt=(275-999)",
+      "delete": true
+    },
+
+    {
+      "where": "title='Essence Symbiont'",
+      "newValues": {
+        "title": "Essence Symbiote"
+      }
+    },
+    {
+      "where": "title='Lukka, Coppercoat'",
+      "newValues": {
+        "title": "Lukka, Coppercoat Outcast"
+      }
+    },
+    {
+      "where": "title='Lurrus of the Dream-Den'",
+      "newValues": {
+        "title": "Lurrus of the Dream Den"
+      }
+    },
+    {
+      "where": "title='Quartzwood Crusher'",
+      "newValues": {
+        "title": "Quartzwood Crasher"
+      }
+    },
+    {
+      "where": "title='Yoriok, Sky Nomad'",
+      "newValues": {
+        "title": "Yorion, Sky Nomad"
+      }
+    },
+
+    {
+      "where": "title='Illuna, Apex of Wishes'",
+      "newValues": {
+        "num": "0190"
+      }
+    },
+    {
+      "where": "title='Monstrous Step'",
+      "newValues": {
+        "num": "0166"
+      }
+    },
+
+    {
+      "where": "title=(Tranquil Cove|Dismal Backwater|Bloodfell Caves|Rugged Highlands|Blossoming Sands|Scoured Barrens|Swiftwater Cliffs|Jungle Hollow|Wind-Scarred Crag|Thornwood Falls)",
+      "newValues": {
+        "gainland": true
+      }
+    },
+
+    {
+      "_comment": "Delete Basic Land, imported elsewhere",
+      "where": "type='Basic Land'",
+      "delete": true
+    },
+
+    {
+      "_comment": "Consider everything left the main set.",
+      "where": "",
+      "newValues": {
+        "mainSet": true
+      }
+    }
+  ]
+}

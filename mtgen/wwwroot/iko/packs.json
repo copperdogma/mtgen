@@ -1,0 +1,417 @@
+{
+  "defs": [
+    {
+      "defName": "iko",
+      "query": "from[*]?set='iko'"
+    },
+    {
+      "defName": "iko-promo",
+      "query": "from[iko]?promo=true"
+    },
+    {
+      "defName": "iko-variants",
+      "query": "from[iko]?variant=true"
+    },
+    {
+      "defName": "iko-basic-land",
+      "query": "from[iko]?type='Basic Land'"
+    },
+    {
+      "defName": "iko-main",
+      "query": "from[iko]-from[iko]?type=(Marketing)-from[iko]?promo=true-from[iko]?variant=true-from[iko]?token=true-from[iko]?type='Basic Land"
+    },
+    {
+      "defName": "iko-showcase",
+      "query": "from[iko]?showcaseCard=true"
+    },
+    {
+      "defName": "iko-booster",
+      "query": "from[iko]?mainSet=true+from[iko-showcase]-"
+    },
+    {
+      "_comment": "Wotc messed up and didn't include the 3 Japanese-language cards in the English Collector boosters as originally planned",
+      "defName": "iko-collector",
+      "query": "from[iko-main]+from[iko-variants]?showcaseCard=true-from[iko-showcase]?languageCode='jp'"
+    },
+    {
+      "_comment": "Wotc messed up and didn't include the 3 Japanese-language cards in the English Collector boosters as originally planned",
+      "defName": "iko-collector-showcase",
+      "query": "from[iko]?showcaseCard=true-from[iko-showcase]?languageCode='jp'"
+    },
+    {
+      "defName": "iko-extended-art",
+      "query": "from[iko-variants]?extendedArtwork=true"
+    },
+    {
+      "defName": "iko-foils",
+      "query": "from[iko]-from[iko-promo]-from[iko]?token=true-from[iko]?includedReason='Planeswalker Deck'"
+    },
+    {
+      "defName": "iko-collector-foil",
+      "query": "from[iko-foils]+from[iko-extended-art]"
+    },
+    {
+      "defName": "iko-showcase",
+      "query": "from[iko-variants]?showcaseCard=true"
+    },
+    {
+      "_comment": "Wotc messed up and didn't include the 3 Japanese-language cards in the English Collector boosters as originally planned",
+      "defName": "iko-godzilla",
+      "query": "from[iko-variants]?godzillaSeriesMonster=true-from[iko-variants]?languageCode='jp'"
+    },
+    {
+      "defName": "iko-godzilla-without-buy-a-box",
+      "query": "from[iko-godzilla]-from[iko-godzilla]?includedReason='Buy-a-Box Promo'"
+    },
+    {
+      "defName": "iko-commander",
+      "query": "from[*]?set='c20'"
+    },
+    {
+      "defName": "iko-token",
+      "query": "from[iko]?token=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "iko-all-cards",
+      "packDesc": "Ikoria: Lair of Behemoths: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[iko]" }
+      ]
+    },
+
+    {
+      "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
+      "packName": "iko-draft",
+      "packDesc": "Ikoria: Lair of Behemoths: Draft Booster",
+      "packVersion": "1.0",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[iko-booster]?rarity='c" },
+        { "query": "take[3]>from[iko-booster]?rarity='u" },
+        { "query": "from[iko-booster]?rarity='r" },
+        { "query": "from[iko-basic-land]" },
+        { "query": "from[iko-token]" },
+        {
+          "querySet": [
+            {
+              "_comment": "33% (1:45) chance of foil, scaled by rarity, replacing the last common, as of m20: Jun-2019",
+              "overrideSlot": "10",
+              "percent": "88/360",
+              "query": "from[iko-foils]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "24/360",
+              "query": "from[iko-foils]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "7/360",
+              "query": "from[iko-foils]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "1/360",
+              "query": "from[iko-foils]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/8 chance of replacing rare with mythic",
+              "percent": "1/8",
+              "overrideSlot": "14",
+              "query": "from[iko-booster]?rarity='m'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "50% chance of gainland in basic land slot: https://twitter.com/GavinVerhey/status/1248731315412717568",
+              "percent": "50",
+              "overrideSlot": "15",
+              "query": "from[iko-booster]?gainland=true"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_comment": "Collector Boosters were introduced as standard feature as of ELD",
+      "packName": "iko-collector",
+      "packDesc": "Ikoria: Lair of Behemoths: Collector Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/collecting-ikoria-2020-04-02" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1-4: 4x Foil commons or common dual lands",
+          "query": "take[4]>from[iko-booster]?rarity='c",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 5-6: 2x Foil uncommons",
+          "query": "take[2]>from[iko-booster]?rarity='u",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 7: 1x Foil basic land",
+          "query": "from[iko-basic-land]",
+          "setValues": { "foil": true }
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 8: 1x Ikoria Commander card",
+              "percent": "80/112",
+              "query": "from[iko-commander]?rarity='c'"
+            },
+            {
+              "percent": "24/112",
+              "query": "from[iko-commander]?rarity='u'"
+            },
+            {
+              "percent": "7/112",
+              "query": "from[iko-commander]?rarity='r'"
+            },
+            {
+              "percent": "1/112",
+              "query": "from[iko-commander]?rarity='m'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 9: 1x Extended-art rare or mythic rare",
+              "percent": "7/8",
+              "query": "from[iko-extended-art]?rarity='r'"
+            },
+            {
+              "percent": "1/8",
+              "query": "from[iko-extended-art]?rarity='m'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 10: 1x Foil rare or mythic rare, or (overridden below) foil extended-art rare or mythic rare",
+              "percent": "7/8",
+              "query": "from[iko-booster]?rarity='r'",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[iko-booster]?rarity='m'",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 11: 1x Showcase mutate commons or uncommons",
+              "percent": "8/11",
+              "query": "from[iko-collector-showcase]?rarity='c'"
+            },
+            {
+              "percent": "3/11",
+              "query": "from[iko-collector-showcase]?rarity='u'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 12: 1x Showcase mutate commons or uncommons",
+              "percent": "8/11",
+              "query": "from[iko-collector-showcase]?rarity='c'"
+            },
+            {
+              "percent": "3/11",
+              "query": "from[iko-collector-showcase]?rarity='u'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 13: 1x Showcase rare of mythic rare",
+              "percent": "7/8",
+              "query": "from[iko-collector-showcase]?rarity='r'"
+            },
+            {
+              "percent": "1/8",
+              "query": "from[iko-collector-showcase]?rarity='m'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 14: 1x Foil showcase card (any rarity)",
+              "percent": "80/112",
+              "query": "from[iko-collector-showcase]?rarity='c'",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "24/112",
+              "query": "from[iko-collector-showcase]?rarity='u'",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "7/112",
+              "query": "from[iko-collector-showcase]?rarity='r'",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/112",
+              "query": "from[iko-collector-showcase]?rarity='m'",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 15: 1x Godzilla Series Monster card (could be foil or non-foil; the Buy-a-Box mythic rare is only available in non-foil)",
+              "_comment2": "Wotc messed up and didn't include the 3 Japanese-language cards in the English Collector boosters as originally planned, and the only common Gozdilla card was Japanese, so we'll skip commons",
+              "percent": "24/32",
+              "query": "from[iko-godzilla]?rarity='u'"
+            },
+            {
+              "percent": "7/32",
+              "query": "from[iko-godzilla]?rarity='r'"
+            },
+            {
+              "percent": "1/32",
+              "query": "from[iko-godzilla]?rarity='m'"
+            }
+          ]
+        },
+        {
+          "_comment": "Slot 16: 1x Foil token",
+          "query": "from[iko-token]",
+          "setValues": { "foil": true }
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "1/4? chance of m/r slot being extended art",
+              "overrideSlot": "10",
+              "percent": "7/24",
+              "query": "from[iko-extended-art]?rarity='r'",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/24",
+              "overrideSlot": "10",
+              "query": "from[iko-extended-art]?rarity='m'",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/4? chance of godzilla slot being foil",
+              "_comment2": "Wotc messed up and didn't include the 3 Japanese-language cards in the English Collector boosters as originally planned, and the only common Gozdilla card was Japanese, so we'll skip commons",
+              "overrideSlot": "15",
+              "percent": "24/448",
+              "query": "from[iko-godzilla]?rarity='u'",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "15",
+              "percent": "7/448",
+              "query": "from[iko-godzilla]?rarity='r'",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "15",
+              "percent": "1/448",
+              "query": "from[iko-godzilla-without-buy-a-box]?rarity='m'",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "iko-prerelease-promo-packins",
+      "packDesc": "Ikoria: Lair of Behemoths: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[iko-main]?rarity='r",
+              "setValues": {
+                "foil": true
+              }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[iko-main]?rarity='m",
+              "setValues": {
+                "foil": true
+              }
+            }
+          ]
+        },
+        { "query": "take[1]>from[iko-promo]?type='Life Counter'" },
+        { "query": "from[iko-promo]?title='Prerelease Deck Box" },
+        { "query": "from[iko-promo]?title='Deckbuilding Advice Insert" }
+      ]
+    },
+    {
+      "packName": "iko-prerelease-promos",
+      "packDesc": "Ikoria: Lair of Behemoths: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[iko-promo]?includedReason='Prerelease Promo" }
+      ]
+    },
+
+    {
+      "packName": "iko-variants",
+      "packDesc": "Ikoria: Lair of Behemoths: All Variants",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[iko-variants]"
+        }
+      ]
+    },
+
+    {
+      "packName": "iko-promos",
+      "packDesc": "Ikoria: Lair of Behemoths: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[iko-promo]"
+        }
+      ]
+    }
+
+  ]
+}

@@ -1,0 +1,34 @@
+﻿{
+  "setCode": "c20",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=236&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/commander-2020-edition",
+  "_comment": "The Collector Booster slot 6 contains a Commander Ikoria card. So I need to import them ALL. Thanks, wotc.",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "where": "title='Souvernir Snatcher'",
+      "newValues": {
+        "title": "Souvenir Snatcher"
+      }
+    },
+    {
+      "where": "title='Dismantling Wave'",
+      "newValues": {
+        "num": "0025"
+      }
+    },
+    {
+      "where": "title='Deflecting Swat'",
+      "newValues": {
+        "num": "0050"
+      }
+    }
+  ]
+}

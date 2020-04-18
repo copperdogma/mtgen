@@ -1,0 +1,316 @@
+﻿{
+  "setCode": "iko",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=237&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/ikoria-lair-behemoths-variants-2020-04-06",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "_comment": "Choose only Variants (delete all non-variants)",
+      "where": "numInt=(1-278)",
+      "delete": true
+    },
+
+    {
+      "where": "title='Hunter Nightmare'",
+      "newValues": {
+        "title": "Hunted Nightmare"
+      }
+    },
+    {
+      "where": "title='Lurrus of the Dream-Den'",
+      "newValues": {
+        "title": "Lurrus of the Dream Den"
+      }
+    },
+    {
+      "where": "title='Quartzwood Crusher'",
+      "newValues": {
+        "title": "Quartzwood Crasher"
+      }
+    },
+
+    {
+      "_comment": "IKO gallery includes multiple variants with the same name",
+      "where": "numInt=299",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_NmEtAysKkS.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=378",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_tbOJvSoTHC.png",
+        "useCardDataImg": true
+      }
+    },
+
+    {
+      "where": "numInt=327",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_H5w8323FqT.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=364",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_v6yG6aWCaw.png",
+        "useCardDataImg": true
+      }
+    },
+
+    {
+      "where": "numInt=361",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_e8VVpTU3Mv.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=387",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/jp_XYsbhZqPXV.png",
+        "useCardDataImg": true
+      }
+    },
+
+    {
+      "where": "numInt=289",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_DBsZuPxatU.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=386",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/jp_XfWZHNOIjx.png",
+        "useCardDataImg": true
+      }
+    },
+
+    {
+      "where": "numInt=292",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_vduGoFpc8e.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=374",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_pN1TMQxwYS.png",
+        "useCardDataImg": true
+      }
+    },
+
+    {
+      "where": "numInt=295",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_bkyFEXbeJI.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=376",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_XxAZLmPLVY.png",
+        "useCardDataImg": true
+      }
+    },
+
+    {
+      "where": "numInt=351",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_ayK8eBgWOp.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=384",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_LddGxT44hc.png",
+        "useCardDataImg": true
+      }
+    },
+
+    {
+      "where": "numInt=280",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_V5balFtWFg.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=370",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_BJK0H0uiok.png",
+        "useCardDataImg": true
+      }
+    },
+
+    {
+      "where": "numInt=316",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_nKeOZ9vjFR.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=371",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_PjLvkLzdSQ.png",
+        "useCardDataImg": true
+      }
+    },
+
+    {
+      "where": "numInt=303",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_2OlU4bPViG.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=380",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_mQeph7JMjy.png",
+        "useCardDataImg": true
+      }
+    },
+
+    {
+      "where": "numInt=306",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_6n2qoB93fz.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=381",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_Hmp9FMvvir.png",
+        "useCardDataImg": true
+      }
+    },
+
+    {
+      "where": "numInt=369",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_XDolPkZQa2.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=382",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_KkMpFYdtZb.png",
+        "useCardDataImg": true
+      }
+    },
+
+    {
+      "where": "numInt=308",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_dodthTrSNO.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=383",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_ggzUFE3DV0.png",
+        "useCardDataImg": true
+      }
+    },
+
+    {
+      "where": "numInt=326",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_ePMUHiATcR.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=375",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/iko/en_GuAe03jQtV.png",
+        "useCardDataImg": true
+      }
+    },
+
+    {
+      "where": "numInt=(385-387)",
+      "newValues": {
+        "languageCode": "jp"
+      }
+    },
+
+    {
+      "_comment": "Borderless planeswalker cards",
+      "where": "numInt=(276-278)",
+      "newValues": {
+        "borderlessPlaneswalker": true
+      }
+    },
+    {
+      "_comment": "Showcase cards",
+      "where": "numInt=(279-313)",
+      "newValues": {
+        "showcaseCard": true
+      }
+    },
+    {
+      "_comment": "Extended artwork cards",
+      "where": "numInt=(314-363)",
+      "newValues": {
+        "extendedArtwork": true
+      }
+    },
+    {
+      "_comment": "Godzilla series monster cards",
+      "where": "numInt=(370-387)",
+      "newValues": {
+        "godzillaSeriesMonster": true
+      }
+    },
+
+    {
+      "_comment": "Delete Promos; will be done in separate import file",
+      "xwhere": "title=(Kenrith, the Returned King)",
+      "_delete": true
+    },
+    {
+      "_comment": "Delete Planeswalker Deck cards; will imported in Promos",
+      "xwhere": "title=(Rowan, Fearless Sparkmage|Garrison Griffin|Rowan's Battleguard|Rowan's Stalwarts|Wind-Scarred Crag|Oko, the Trickster|Oko's Accomplices|Bramblefort Fink|Oko's Hospitality|Thornwood Falls)",
+      "_delete": true
+    },
+    {
+      "_comment": "Delete Brawl Deck cards; will imported in Promos",
+      "xwhere": "title=(Mace of the Valiant|Silverwing Squadron|Faerie Formation|Shimmer Dragon|Workshop Elders|Chittering Witch|Taste of Death|Embereth Skyblazer|Steelbane Hydra|Thorn Mammoth|Alela, Artful Provocateur|Banish into Fable|Chulane, Teller of Tales|Gluttonous Troll|Knights' Charge|Korvold, Fae-Cursed King|Syr Gwyn, Hero of Ashvale|Arcane Signet|Tome of Legends|Command Tower)",
+      "_delete": true
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "_delete": true,
+      "_where": "isSelected=false"
+    },
+
+    {
+      "_comment": "Flag them all as variants",
+      "where": "",
+      "newValues": {
+        "variant": true
+      }
+    }
+  ]
+}

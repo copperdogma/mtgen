@@ -1,0 +1,123 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "iko-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "iko-all-cards" }
+      ]
+    },
+
+    {
+      "productName": "iko-boosters",
+      "productDesc": "Draft Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "iko-draft" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "iko-draft-boosters-six",
+            "presetDesc": "Six Draft Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "iko-draft"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "iko-collector",
+      "productDesc": "Collector Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "iko-collector" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "iko-collector-boosters-six",
+            "presetDesc": "Six Collector Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "iko-collector"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "iko-prerelease",
+      "productDesc": "Prerelease",
+      "sources": [ "" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "iko-draft" },
+        { "packName": "iko-prerelease-promo-packins" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "iko-prerelease-promo-packins",
+            "presetDesc": "Prerelease Packins",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "iko-prerelease-promo-packins"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "iko-draft"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "iko-variants",
+      "productDesc": "Variants",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/throne-ikoraine-variants" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "iko-variants" }
+      ]
+    },
+
+    {
+      "productName": "iko-promos",
+      "productDesc": "All Promos",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/ravnica-allegiance-planeswalker-deck-lists-2019-01-10" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "iko-promos" }
+      ]
+    }
+
+  ]
+}
