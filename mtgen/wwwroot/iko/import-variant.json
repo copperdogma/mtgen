@@ -37,6 +37,13 @@
     },
 
     {
+      "where": "title='Winota, Joiner of Forces'",
+      "newValues": {
+        "rarity": "m"
+      }
+    },
+
+    {
       "_comment": "IKO gallery includes multiple variants with the same name",
       "where": "numInt=299",
       "newValues": {
