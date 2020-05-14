@@ -1129,18 +1129,17 @@ var mtgGen = (function (my) {
             }
             else {
                 document.querySelector('#save-draw input').value = 'Loading...';
-                fetch(`/${my.setCode}/SaveDraw`, {
+                fetch(`/api/${my.setCode}/draws`, {
                     method: "POST",
-                    headers: new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' }),
-                    body: `data=${JSON.stringify(drawData)}`
+                    headers: new Headers({ 'Content-Type': 'application/json' }),
+                    body: JSON.stringify(drawData)
                 })
                     .then(response => {
                         if (response.ok) { return response.json(); }
-                        my.throwTerminalError("Save draw failed.");
+                        my.throwTerminalError('Save draw failed.');
                     }
                     )
                     // e.g. return: { "drawId": "m09mJw", "url": "ogw?draw=m09mJw" }
-                    .then(json => JSON.parse(json))
                     .then(drawResults => displayDrawResults(drawResults));
             }
 

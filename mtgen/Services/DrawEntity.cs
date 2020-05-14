@@ -7,8 +7,8 @@ namespace mtgen.Services
     {
         public DrawEntity(string setCode, string drawId)
         {
-            this.PartitionKey = setCode;
-            this.RowKey = drawId;
+            PartitionKey = setCode;
+            RowKey = drawId;
         }
 
         public DrawEntity() { }
@@ -16,15 +16,15 @@ namespace mtgen.Services
         [IgnoreProperty]
         public string DrawId
         {
-            get { return this.RowKey; }
-            set { this.RowKey = value; }
+            get { return RowKey; }
+            set { RowKey = value; }
         }
 
         [IgnoreProperty]
         public string SetCode
         {
-            get { return this.PartitionKey; }
-            set { this.PartitionKey = value; }
+            get { return PartitionKey; }
+            set { PartitionKey = value; }
         }
 
         public string Results { get; set; }
