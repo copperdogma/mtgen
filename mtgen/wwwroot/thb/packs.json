@@ -42,7 +42,7 @@
     },
     {
       "defName": "thb-foils",
-      "query": "from[thb]-from[thb-promo]-from[thb]?token=true"
+      "query": "from[thb]-from[thb-promo]-from[thb]?token=true-from[thb]?includedReason='Planeswalker Deck'"
     },
     {
       "defName": "thb-collector-foil",

@@ -1,4 +1,4 @@
-﻿using mtgen.ViewModels;
+﻿using mtgen.Models;
 using System.Collections.Generic;
 
 namespace mtgen.Services
@@ -9,9 +9,8 @@ namespace mtgen.Services
         Set GetNewestCurrentSet();
         IList<Set> GetGroupedBlocksAndSets();
         Set GetSet(string setCode);
-        string GetPathForSetFile(string setCode, string fileName);
         Set GetMainFileForSet(string setCode);
-        IList<Card> GetCardsFromJsonFile(string jsonFilePath);
+        IList<Card> GetCardsFromJsonFile(string setCode, string filename);
         IList<Card> GetMainCardsForSet(string setCode);
         IList<Card> GetTokenCardsForSet(string setCode);
         IList<Card> GetOtherCardsForSet(string setCode);

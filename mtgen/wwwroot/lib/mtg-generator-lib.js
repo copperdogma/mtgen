@@ -278,7 +278,8 @@ var mtgGen = (function (my) {
         let drawDataPromise;
         const drawId = my.getQuerystringParamByName('draw');
         if (drawId) {
-            drawDataPromise = this.fetchJson(`/${options.setCode}/LoadDraw/${drawId}`);
+            //CANKILL:drawDataPromise = this.fetchJson(`/${options.setCode}/LoadDraw/${drawId}`);
+            drawDataPromise = this.fetchJson(`/api/${options.setCode}/draws/${drawId}`);
         }
         else {
             drawDataPromise = Promise.resolve('');
@@ -318,9 +319,8 @@ var mtgGen = (function (my) {
                 my.packs = packDataArray.reduce((cardPacks, packData) => cardPacks.concat(packData.packs), []);
 
                 // The saved draw to be loaded (optional)
-                //TODO: why isn't the json being parsed by fetchJson()? all the others work fine -- am I not returning it properly?
-                my.draw = drawData === "" ? undefined : JSON.parse(drawData);
-                my.hasDraw = () => my.draw !== undefined;
+                my.draw = drawData;
+                my.hasDraw = () => my.draw ? true : false;
                 my.hasDrawForCurrentProduct = () => {
                     const options = my.mainView.currentView.options;
                     return my.draw && my.draw.sets && my.draw.sets.length > 0
