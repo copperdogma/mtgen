@@ -59,7 +59,7 @@ namespace mtgen
             {
                 endpoints.MapRazorPages();
 
-                endpoints.MapControllers(); // For API (draws)
+                endpoints.MapControllers(); // For API (draws) and proxy
             });
         }
     }
