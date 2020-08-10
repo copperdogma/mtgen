@@ -10,7 +10,7 @@
     },
     {
       "defName": "x2m-variants",
-      "query": "from[x2m]?variant=true"
+      "query": "from[x2m]?variant=true-from[x2m-promo]"
     },
     {
       "defName": "x2m-basic-land",
@@ -18,15 +18,11 @@
     },
     {
       "defName": "x2m-main",
-      "query": "from[x2m]-from[x2m]?type=(Marketing)-from[x2m]?promo=true-from[x2m]?variant=true-from[x2m]?token=true-from[x2m]?type='Basic Land"
+      "query": "from[x2m]-from[x2m]?promo=true-from[x2m]?variant=true-from[x2m]?token=true-from[x2m]?type='Basic Land"
     },
     {
       "defName": "x2m-booster",
-      "query": "from[x2m]?mainSet=true"
-    },
-    {
-      "defName": "x2m-foils",
-      "query": "from[x2m]-from[x2m-promo]-from[x2m]?token=true"
+      "query": "from[x2m]?mainSet=true-from[x2m-promo]"
     },
     {
       "defName": "x2m-token",
@@ -85,19 +81,19 @@
             {
               "overrideSlot": "14",
               "percent": "24/360",
-              "query": "from[x2m-foils]?rarity='u",
+              "query": "from[x2m-main]?rarity='u",
               "setValues": { "foil": true }
             },
             {
               "overrideSlot": "14",
               "percent": "7/360",
-              "query": "from[x2m-foils]?rarity='r",
+              "query": "from[x2m-main]?rarity='r",
               "setValues": { "foil": true }
             },
             {
               "overrideSlot": "14",
               "percent": "1/360",
-              "query": "from[x2m-foils]?rarity='m",
+              "query": "from[x2m-main]?rarity='m",
               "setValues": { "foil": true }
             }
           ]
@@ -107,19 +103,19 @@
             {
               "overrideSlot": "15",
               "percent": "24/360",
-              "query": "from[x2m-foils]?rarity='u",
+              "query": "from[x2m-main]?rarity='u",
               "setValues": { "foil": true }
             },
             {
               "overrideSlot": "15",
               "percent": "7/360",
-              "query": "from[x2m-foils]?rarity='r",
+              "query": "from[x2m-main]?rarity='r",
               "setValues": { "foil": true }
             },
             {
               "overrideSlot": "15",
               "percent": "1/360",
-              "query": "from[x2m-foils]?rarity='m",
+              "query": "from[x2m-main]?rarity='m",
               "setValues": { "foil": true }
             }
           ]
@@ -137,17 +133,14 @@
         {
           "query": "take[9]>from[x2m-booster]?rarity='c",
           "setValues": { "foil": true }
-
         },
         {
           "query": "take[8]>from[x2m-booster]?rarity='u",
           "setValues": { "foil": true }
-
         },
         {
           "query": "take[2]>from[x2m-booster]?rarity='r",
           "setValues": { "foil": true }
-
         },
         {
           "_comment": "These borderless cards will be two from a selection of 40, 32 of which are rare/mythic rare and 8 of which are uncommon/common.",
@@ -158,19 +151,16 @@
 
         },
         {
-          "_comment": "This is ALL lands",
-          "query": "take[10]>from[x2m-basic-land]"
-
+          "query": "take[*]>from[x2m-basic-land]"
         },
         {
           "query": "take[2]>from[x2m-basic-land]",
+          "canBeDuplicate": true,
           "setValues": { "foil": true }
-
         },
         {
           "query": "take[2]>from[x2m-token]",
           "setValues": { "foil": true }
-
         },
 
         {
@@ -187,7 +177,7 @@
           "querySet": [
             {
               "overrideSlot": "21",
-              "percent": "1/3",
+              "percent": "1/2",
               "query": "from[x2m-variants]?rarity='m",
               "setValues": { "foil": true }
             }

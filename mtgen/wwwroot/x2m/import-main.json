@@ -55,6 +55,19 @@
     },
 
     {
+      "where": "title='Selesnya Guildmage'",
+      "newValues": {
+        "rarity": "u"
+      }
+    },
+    {
+      "where": "title='Unlicensed Disintegration'",
+      "newValues": {
+        "rarity": "u"
+      }
+    },
+
+    {
       "_comment": "Delete Basic Land, imported elsewhere -- there actually aren't any in this set; they're all promos",
       "where": "type='Basic Land'",
       "delete": true

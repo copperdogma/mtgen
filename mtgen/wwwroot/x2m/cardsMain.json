@@ -3151,22 +3151,6 @@
   },
   {
     "set": "x2m",
-    "title": "Selesnya Guildmage",
-    "src": "https://media.wizards.com/2020/2xm/en_SKY14hpe8z.png",
-    "cost": "(G/W)(G/W)",
-    "rarity": "r",
-    "type": "Creature",
-    "subtype": "Elf Wizard",
-    "power": "2",
-    "toughness": "2",
-    "colour": "m",
-    "num": "0217",
-    "numInt": 217,
-    "mtgenId": "x2m|0217",
-    "mainSet": true
-  },
-  {
-    "set": "x2m",
     "title": "Sen Triplets",
     "src": "https://media.wizards.com/2020/2xm/en_fAJ8vPSeyb.png",
     "cost": "2WUB",
@@ -3253,19 +3237,6 @@
     "num": "0223",
     "numInt": 223,
     "mtgenId": "x2m|0223",
-    "mainSet": true
-  },
-  {
-    "set": "x2m",
-    "title": "Unlicensed Disintegration",
-    "src": "https://media.wizards.com/2020/2xm/en_h26H1HBtWo.png",
-    "cost": "1BR",
-    "rarity": "c",
-    "type": "Instant",
-    "colour": "m",
-    "num": "0224",
-    "numInt": 224,
-    "mtgenId": "x2m|0224",
     "mainSet": true
   },
   {
@@ -4822,6 +4793,35 @@
     "num": "0305",
     "numInt": 305,
     "mtgenId": "x2m|0305",
+    "mainSet": true
+  },
+  {
+    "set": "x2m",
+    "title": "Selesnya Guildmage",
+    "src": "https://media.wizards.com/2020/2xm/en_SKY14hpe8z.png",
+    "cost": "(G/W)(G/W)",
+    "rarity": "u",
+    "type": "Creature",
+    "subtype": "Elf Wizard",
+    "power": "2",
+    "toughness": "2",
+    "colour": "m",
+    "num": "0217",
+    "numInt": 217,
+    "mtgenId": "x2m|0217",
+    "mainSet": true
+  },
+  {
+    "set": "x2m",
+    "title": "Unlicensed Disintegration",
+    "src": "https://media.wizards.com/2020/2xm/en_h26H1HBtWo.png",
+    "cost": "1BR",
+    "rarity": "u",
+    "type": "Instant",
+    "colour": "m",
+    "num": "0224",
+    "numInt": 224,
+    "mtgenId": "x2m|0224",
     "mainSet": true
   }
 ]
