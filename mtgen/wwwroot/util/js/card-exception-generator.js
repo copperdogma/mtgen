@@ -276,9 +276,7 @@ class CardExceptionGenerator extends CardDataImporter {
 
             // Sort the final output by card num.
             finalOut.sort((a, b) => {
-                const aName = mtgGen.createMatchTitle(a.newValues.num);
-                const bName = mtgGen.createMatchTitle(b.newValues.num);
-                return ((aName < bName) ? -1 : ((aName > bName) ? 1 : 0));
+                return ((a.newValues.numInt < b.newValues.numInt) ? -1 : ((a.newValues.numInt > b.newValues.numInt) ? 1 : 0));
             });
 
             const preCard =
