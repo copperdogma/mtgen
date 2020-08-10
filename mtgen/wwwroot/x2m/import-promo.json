@@ -1,0 +1,135 @@
+{
+  "setCode": "x2m",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=241&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/double-masters?src=2xm_product",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+      "_comment2": "Rin and Seri, Inseparable",
+      "where": "numInt=278",
+      "newValues": {
+        "num": "278 P Buy-a-Box",
+        "src": "https://media.wizards.com/2020/m21/en_5DpJceE68L.png",
+        "includedReason": "Buy-a-Box Promo"
+      }
+    },
+    {
+      "_comment": "Pack Leader",
+      "where": "numInt=392",
+      "newValues": {
+        "num": "392 P Bundle",
+        "src": "https://media.wizards.com/2020/m21/en_heHPCj9vgX.png",
+        "includedReason": "Bundle Promo"
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/m21-prerelease-deck-box.png",
+        "title": "Prerelease Deck Box",
+        "colour": "o",
+        "num": "006 Prerelease Deck Box",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-deckbuilding-info.jpg",
+        "src_large": "http://mtgen.net/cards/mtg-deckbuilding-info-lg.jpg",
+        "height": 370,
+        "width": 515,
+        "title": "Deckbuilding Advice Insert",
+        "colour": "o",
+        "num": "007 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-white.png",
+        "title": "White Spindown Life Counter (Placeholder)",
+        "colour": "o",
+        "num": "001 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-blue.png",
+        "title": "Blue Spindown Life Counter (Placeholder)",
+        "colour": "o",
+        "num": "002 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-black.png",
+        "title": "Black Spindown Life Counter (Placeholder)",
+        "colour": "o",
+        "num": "003 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-red.png",
+        "title": "Red Spindown Life Counter (Placeholder)",
+        "colour": "o",
+        "num": "004 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-green.png",
+        "title": "Green Spindown Life Counter (Placeholder)",
+        "colour": "o",
+        "num": "005 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "usableForDeckBuilding": false
+      }
+    } 
+  ]
+}
