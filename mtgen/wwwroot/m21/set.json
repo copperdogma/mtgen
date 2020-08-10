@@ -1,0 +1,19 @@
+{
+  "startProductName": "m21-prerelease",
+  "packFiles": [
+    "packs.json?v1.1"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsPromo.json",
+    "cardsVariant.json",
+    "cardsBasicLand.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2020-06-29T00:21:00:00",
+      "HtmlString": "Collector booster slots 12-15 no longer include showcase cards."
+    }
+  ]
+}

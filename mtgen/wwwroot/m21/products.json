@@ -1,0 +1,123 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "m21-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "m21-all-cards" }
+      ]
+    },
+
+    {
+      "productName": "m21-boosters",
+      "productDesc": "Draft Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "m21-draft" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "m21-draft-boosters-six",
+            "presetDesc": "Six Draft Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "m21-draft"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "m21-collector",
+      "productDesc": "Collector Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "m21-collector" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "m21-collector-boosters-six",
+            "presetDesc": "Six Collector Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "m21-collector"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "m21-prerelease",
+      "productDesc": "Prerelease",
+      "sources": [ "" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "m21-draft" },
+        { "packName": "m21-prerelease-promo-packins" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "m21-prerelease-promo-packins",
+            "presetDesc": "Prerelease Packins",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "m21-prerelease-promo-packins"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "m21-draft"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "m21-variants",
+      "productDesc": "Variants",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/throne-m21raine-variants" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "m21-variants" }
+      ]
+    },
+
+    {
+      "productName": "m21-promos",
+      "productDesc": "All Promos",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/ravnica-allegiance-planeswalker-deck-lists-2019-01-10" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "m21-promos" }
+      ]
+    }
+
+  ]
+}

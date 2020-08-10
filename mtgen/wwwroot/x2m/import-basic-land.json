@@ -1,0 +1,136 @@
+﻿{
+  "setCode": "x2m",
+  "cardDataUrl": "",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "x2m",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/double-masters-variants",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "373",
+          "cardPattern": "x42,w,w,u,u,b,b,r,r,g,g"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_G5aWjIUT1K.png",
+        "title": "Plains",
+        "num": 373,
+        "numInt": 373
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_WL2eZLZLWq.png",
+        "title": "Plains",
+        "num": 374,
+        "numInt": 374
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_bt0MHatEgw.png",
+        "title": "Island",
+        "num": 375,
+        "numInt": 375
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_tvDeRdBG4J.png",
+        "title": "Island",
+        "num": 376,
+        "numInt": 376
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_IsioJydn3f.png",
+        "title": "Swamp",
+        "num": 377,
+        "numInt": 377
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_UmhmFcWcJu.png",
+        "title": "Swamp",
+        "num": 378,
+        "numInt": 378
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_BSdveEFJuL.png",
+        "title": "Mountain",
+        "num": 379,
+        "numInt": 379
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_cBJS4qFTT2.png",
+        "title": "Mountain",
+        "num": 380,
+        "numInt": 380
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_Hgud0IS497.png",
+        "title": "Forest",
+        "num": 381,
+        "numInt": 381
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_ZkKsxT5VA6.png",
+        "title": "Forest",
+        "num": 382,
+        "numInt": 382
+      }
+    },
+    {
+      "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
+      "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
+      "newValues": {
+        "set": "{{setCode}}",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "{{title}}",
+        "colour": "l",
+        "cost": "",
+        "rarity": "c",
+        "num": "{{num}} L",
+        "vipFullArtBasicLand": true
+        }
+      }
+  ]
+}

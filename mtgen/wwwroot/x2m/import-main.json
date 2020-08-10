@@ -1,0 +1,71 @@
+﻿{
+  "setCode": "x2m",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=241&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/double-masters?src=2xm_product",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "_comment": "Delete all cards outside of the main set -- Box toppers are numbered #333-372, VIP Edition full-art basic lands are #373-382, and the prerelease promos Wrath of God and Chord of Calling are #383 and #384",
+      "where": "numInt=(333-999)",
+      "delete": true
+    },
+
+    {
+      "where": "title='Dsiciple of Bolas'",
+      "newValues": {
+        "title": "Disciple of Bolas"
+      }
+    },
+    {
+      "where": "title='Flooded Strand'",
+      "newValues": {
+        "title": "Flooded Grove"
+      }
+    },
+    {
+      "where": "title='Golem-Skin Guantlets'",
+      "newValues": {
+        "title": "Golem-Skin Gauntlets"
+      }
+    },
+    {
+      "where": "title='Traben Inspector'",
+      "newValues": {
+        "title": "Thraben Inspector"
+      }
+    },
+    {
+      "where": "title='Twilight More'",
+      "newValues": {
+        "title": "Twilight Mire"
+      }
+    },
+    {
+      "where": "title='Vulshok Guantlets'",
+      "newValues": {
+        "title": "Vulshok Gauntlets"
+      }
+    },
+
+    {
+      "_comment": "Delete Basic Land, imported elsewhere -- there actually aren't any in this set; they're all promos",
+      "where": "type='Basic Land'",
+      "delete": true
+    },
+
+    {
+      "_comment": "Consider everything left the main set.",
+      "where": "",
+      "newValues": {
+        "mainSet": true
+      }
+    }
+  ]
+}

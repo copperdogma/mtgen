@@ -1,0 +1,433 @@
+{
+  "setCode": "x2m",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-double-masters-2020-07-29",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "x2m",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-double-masters-2020-07-29",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "1",
+          "cardPattern": "000|c|Token Creature|Eldrazi Spawn\n000|c|Token Creature|Shapeshifter\n000|w|Token Creature|Angel\n000|w|Token Creature|Cat\n000|w|Token Creature|Human Soldier\n000|w|Token Creature|Soldier\n000|u|Token Artifact Creature|Myr\n000|u|Token Creature|Thopter\n000|b|Token Creature|Demon\n000|b|Token Creature|Germ\n000|b|Token Legendary Creature|Marit Lage\n000|g|Token Creature|Ape\n000|g|Token Creature|Beast\n000|g|Token Creature|Elephant\n000|g|Token Creature|Ooze\n000|g|Token Creature|Plant\n000|g|Token Creature|Saporling\n000|g|Token Creature|Squirrel\n000|g|Token Creature|Wolf\n000|m|Token Creature|Elemental\n000|m|Token Creature|Elf Warrior\n000|a|Token Creature|Clue\n000|a|Token Artifact Creature|Golem\n000|a|Token Artifact Creature|Myr\n000|a|Token Artifact Creature|Servo\n000|a|Token Artifact Creature|Thopter\n000|a|Token Artifact|Treasure\n000|a|Token Artifact Creature|Tuktuk the Returned\n000|a|Token Artifact Creature|Wurm\n000|a|Token Artifact Creature|Wurm\n000|a|Token|Copy\n"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_9JF4p74iRD.png",
+        "num": 1,
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Eldrazi Spawn",
+        "subtype": "Eldrazi Spawn",
+        "numInt": 1
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_N4wZMdI4EK.png",
+        "num": 2,
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Shapeshifter",
+        "subtype": "Shapeshifter",
+        "numInt": 2
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_bwNR5QG9OL.png",
+        "num": 3,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Angel",
+        "subtype": "Angel",
+        "numInt": 3
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_lxpMG2sXNL.png",
+        "num": 4,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Cat",
+        "subtype": "Cat",
+        "numInt": 4
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_5SH2Q6VQQs.png",
+        "num": 5,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Human Soldier",
+        "subtype": "Human Soldier",
+        "numInt": 5
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_o6IQOYzKQz.png",
+        "num": 6,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Soldier",
+        "subtype": "Soldier",
+        "numInt": 6
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_uuVXV4ix9e.png",
+        "num": 7,
+        "colour": "u",
+        "type": "Token Artifact Creature",
+        "title": "Myr",
+        "subtype": "Myr",
+        "numInt": 7
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_OuAEDAzu53.png",
+        "num": 8,
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Thopter",
+        "subtype": "Thopter",
+        "numInt": 8
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_N4MwmLfDEB.png",
+        "num": 9,
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Demon",
+        "subtype": "Demon",
+        "numInt": 9
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_XbLXIG0896.png",
+        "num": 10,
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Germ",
+        "subtype": "Germ",
+        "numInt": 10
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_3rk45TcoPX.png",
+        "num": 11,
+        "colour": "b",
+        "type": "Token Legendary Creature",
+        "title": "Marit Lage",
+        "subtype": "Marit Lage",
+        "numInt": 11
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_AWN5Acy1m0.png",
+        "num": 12,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Ape",
+        "subtype": "Ape",
+        "numInt": 12
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_tckrIctlrW.png",
+        "num": 13,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Beast",
+        "subtype": "Beast",
+        "numInt": 13
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_NdkKezF1yA.png",
+        "num": 14,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Elephant",
+        "subtype": "Elephant",
+        "numInt": 14
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_cSiZjUx5rU.png",
+        "num": 15,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Ooze",
+        "subtype": "Ooze",
+        "numInt": 15
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_OCjIAJaJO2.png",
+        "num": 16,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Plant",
+        "subtype": "Plant",
+        "numInt": 16
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_l1CRCiAQ4v.png",
+        "num": 17,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Saporling",
+        "subtype": "Saporling",
+        "numInt": 17
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_0Cih0roszy.png",
+        "num": 18,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Squirrel",
+        "subtype": "Squirrel",
+        "numInt": 18
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_eevhHaOASk.png",
+        "num": 19,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Wolf",
+        "subtype": "Wolf",
+        "numInt": 19
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_iSgyGNisMo.png",
+        "num": 20,
+        "colour": "m",
+        "type": "Token Creature",
+        "title": "Elemental",
+        "subtype": "Elemental",
+        "numInt": 20
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_5rGadvpK67.png",
+        "num": 21,
+        "colour": "m",
+        "type": "Token Creature",
+        "title": "Elf Warrior",
+        "subtype": "Elf Warrior",
+        "numInt": 21
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_RTwvNOebur.png",
+        "num": 22,
+        "colour": "a",
+        "type": "Token Creature",
+        "title": "Clue",
+        "subtype": "Clue",
+        "numInt": 22
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_KjxI26KzLw.png",
+        "num": 23,
+        "colour": "a",
+        "type": "Token Artifact Creature",
+        "title": "Golem",
+        "subtype": "Golem",
+        "numInt": 23
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_D2qQRBsdcT.png",
+        "num": 24,
+        "colour": "a",
+        "type": "Token Artifact Creature",
+        "title": "Myr",
+        "subtype": "Myr",
+        "numInt": 24
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_J5bZ8HFzvR.png",
+        "num": 25,
+        "colour": "a",
+        "type": "Token Artifact Creature",
+        "title": "Servo",
+        "subtype": "Servo",
+        "numInt": 25
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_P7Ua75t2Cv.png",
+        "num": 26,
+        "colour": "a",
+        "type": "Token Artifact Creature",
+        "title": "Thopter",
+        "subtype": "Thopter",
+        "numInt": 26
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_afafADUczM.png",
+        "num": 27,
+        "colour": "a",
+        "type": "Token Artifact",
+        "title": "Treasure",
+        "subtype": "Treasure",
+        "numInt": 27
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_6nWQeyTjOn.png",
+        "num": 28,
+        "colour": "a",
+        "type": "Token Artifact Creature",
+        "title": "Tuktuk the Returned",
+        "subtype": "Tuktuk the Returned",
+        "numInt": 28
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_VOExBta6Z8.png",
+        "num": 29,
+        "colour": "a",
+        "type": "Token Artifact Creature",
+        "title": "Wurm",
+        "subtype": "Wurm",
+        "numInt": 29
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_vj2z2umJ9C.png",
+        "num": 30,
+        "colour": "a",
+        "type": "Token Artifact Creature",
+        "title": "Wurm",
+        "subtype": "Wurm",
+        "numInt": 30
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "x2m",
+        "src": "https://media.wizards.com/2020/2xm/en_9oRA18c9kd.png",
+        "num": 31,
+        "colour": "a",
+        "type": "Token",
+        "title": "Copy",
+        "subtype": "Copy",
+        "numInt": 31
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/031 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

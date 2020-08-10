@@ -1,0 +1,92 @@
+﻿{
+  "setCode": "m21",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=221&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/core-set-2021?src=M21_Product",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "_comment": "Delete all cards outside of the main set -- Planeswalker decks, promos, varaints, etc. Imported elsewhere.",
+      "where": "numInt=(275-999)",
+      "delete": true
+    },
+
+
+    {
+      "where": "title='Elder Garganoth",
+      "newValues": {
+        "title": "Elder Gargaroth"
+      }
+    },
+    {
+      "where": "title='Feline Sovreign",
+      "newValues": {
+        "title": "Feline Sovereign"
+      }
+    },
+    {
+      "where": "title='Subira, Tulzidi Caravaneer",
+      "newValues": {
+        "title": "Subira, Tulzidi Caravanner"
+      }
+    },
+    {
+      "where": "title='Shrine of Calm Waters",
+      "newValues": {
+        "title": "Sanctum of Calm Waters"
+      }
+    },
+    {
+      "where": "title='Shrine of Tranquil Light",
+      "newValues": {
+        "title": "Sanctum of Tranquil Light"
+      }
+    },
+    {
+      "where": "title='Speaker to the Heavens",
+      "newValues": {
+        "title": "Speaker of the Heavens"
+      }
+    },
+    {
+      "where": "title='Basri's Lieutenant",
+      "newValues": {
+        "num": "009"
+      }
+    },
+    {
+      "where": "title='Track Down",
+      "newValues": {
+        "num": "211"
+      }
+    },
+
+
+    {
+      "where": "title=(Tranquil Cove|Dismal Backwater|Bloodfell Caves|Rugged Highlands|Blossoming Sands|Scoured Barrens|Swiftwater Cliffs|Jungle Hollow|Wind-Scarred Crag|Thornwood Falls)",
+      "newValues": {
+        "gainland": true
+      }
+    },
+
+    {
+      "_comment": "Delete Basic Land, imported elsewhere",
+      "where": "type='Basic Land'",
+      "delete": true
+    },
+
+    {
+      "_comment": "Consider everything left the main set.",
+      "where": "",
+      "newValues": {
+        "mainSet": true
+      }
+    }
+  ]
+}

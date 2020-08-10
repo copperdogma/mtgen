@@ -1,0 +1,251 @@
+﻿{
+  "setCode": "m21",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=221&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/core-set-2021-variants",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "_comment": "Choose only Variants (delete all non-variants)",
+      "where": "numInt=(1-275)",
+      "delete": true
+    },
+
+    {
+      "where": "title='Swamp'",
+      "newValues": {
+        "type": "Basic Land"
+      }
+    },
+
+    {
+      "_comment": "M21: gallery includes multiple variants with the same name",
+      "where": "numInt=280",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/m21/en_Oxz5atPXEv.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=286",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/m21/en_yJkXBZIAlr.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=345",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/m21/en_G4pSp3R1bE.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=392",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/m21/en_heHPCj9vgX.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=275",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/m21/en_gv5aAxuSfW.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=276",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/m21/en_wbKbEf6mlD.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=277",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/m21/en_p2GbRIR4VB.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=281",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/m21/en_2llKjkHiQl.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=290",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/m21/en_oUXkK8xzpJ.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=291",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/m21/en_mzFc50Sa0z.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=292",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/m21/en_4H5eT21zkv.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=293",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/m21/en_UbjjRL5BYx.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=282",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/m21/en_FsI7i1XfCX.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=297",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/m21/en_JS2jcFAQSV.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=283",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/m21/en_NSAbRDMHTi.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=301",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/m21/en_RPUqy8rUIB.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=284",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/m21/en_22PErnFK1m.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=305",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/m21/en_IzSkySE54A.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=279",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/m21/en_v8HvBdTA1S.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=285",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/m21/en_A9g6OVXFFv.png",
+        "useCardDataImg": true
+      }
+    },
+
+    {
+      "_comment": "Alternate art cards",
+      "where": "numInt=(275-277)",
+      "newValues": {
+        "alternateArt": true
+      }
+    },
+    {
+      "_comment": "Borderless non-planeswalker cards",
+      "where": "numInt=(314-319)",
+      "newValues": {
+        "borderless": true
+      }
+    },
+    {
+      "_comment": "Borderless planeswalker cards",
+      "where": "numInt=(279-284)",
+      "newValues": {
+        "borderlessPlaneswalker": true
+      }
+    },
+    {
+      "_comment": "Showcase cards",
+      "where": "numInt=(285-313)",
+      "newValues": {
+        "showcaseCard": true
+      }
+    },
+    {
+      "_comment": "Alternate art borderless cards",
+      "where": "numInt=(314-319)",
+      "newValues": {
+        "alternateArtBorderless": true
+      }
+    },
+    {
+      "_comment": "Planeswalker deck cards",
+      "where": "numInt=(320-339)",
+      "newValues": {
+        "planeswalkerDeck": true
+      }
+    },
+    {
+      "_comment": "Extended artwork cards",
+      "where": "numInt=(340-391)",
+      "newValues": {
+        "extendedArtwork": true
+      }
+    },
+    {
+      "_comment": "Dark-frame cards from the universal promo pack",
+      "where": "numInt=(393-397)",
+      "newValues": {
+        "darkFrameUniversalPromo": true
+      }
+    },
+
+    {
+      "_comment": "Delete Promos (Buy-a-Box); will be done in separate import file",
+      "where": "numInt=278",
+      "delete": true
+    },
+    {
+      "_comment": "Delete Promos (Bundle Promo); will be done in separate import file",
+      "where": "numInt=392",
+      "delete": true
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "_delete": true,
+      "_where": "isSelected=false"
+    },
+
+    {
+      "_comment": "Flag them all as variants",
+      "where": "",
+      "newValues": {
+        "variant": true
+      }
+    }
+  ]
+}

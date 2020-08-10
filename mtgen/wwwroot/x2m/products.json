@@ -1,0 +1,92 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "x2m-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "x2m-all-cards" }
+      ]
+    },
+
+    {
+      "productName": "x2m-boosters",
+      "productDesc": "Draft Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "x2m-draft" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "x2m-draft-boosters-six",
+            "presetDesc": "Six Draft Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "x2m-draft"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "x2m-vip-edition",
+      "productDesc": "VIP Edition",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "x2m-vip-edition" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "x2m-vip-edition-six",
+            "presetDesc": "Six VIP Edition",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "x2m-vip-edition"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "x2m-variants",
+      "productDesc": "Variants",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/throne-x2mraine-variants" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "x2m-variants" }
+      ]
+    },
+
+    {
+      "productName": "x2m-promos",
+      "productDesc": "All Promos",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/ravnica-allegiance-planeswalker-deck-lists-2019-01-10" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "x2m-promos" }
+      ]
+    }
+
+  ]
+}

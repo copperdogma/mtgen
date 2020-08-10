@@ -1,0 +1,224 @@
+{
+  "defs": [
+    {
+      "defName": "x2m",
+      "query": "from[*]?set='x2m'"
+    },
+    {
+      "defName": "x2m-promo",
+      "query": "from[x2m]?promo=true"
+    },
+    {
+      "defName": "x2m-variants",
+      "query": "from[x2m]?variant=true"
+    },
+    {
+      "defName": "x2m-basic-land",
+      "query": "from[x2m]?type='Basic Land'"
+    },
+    {
+      "defName": "x2m-main",
+      "query": "from[x2m]-from[x2m]?type=(Marketing)-from[x2m]?promo=true-from[x2m]?variant=true-from[x2m]?token=true-from[x2m]?type='Basic Land"
+    },
+    {
+      "defName": "x2m-booster",
+      "query": "from[x2m]?mainSet=true"
+    },
+    {
+      "defName": "x2m-foils",
+      "query": "from[x2m]-from[x2m-promo]-from[x2m]?token=true"
+    },
+    {
+      "defName": "x2m-token",
+      "query": "from[x2m]?token=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "x2m-all-cards",
+      "packDesc": "Double Masters: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[x2m]" }
+      ]
+    },
+
+    {
+      "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
+      "_comment2": "These were unique: 2 rare/mythic, 2 foils, no basic land",
+      "packName": "x2m-draft",
+      "packDesc": "Double Masters: Draft Booster",
+      "packVersion": "1.0",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[8]>from[x2m-booster]?rarity='c" },
+        { "query": "take[3]>from[x2m-booster]?rarity='u" },
+        { "query": "take[2]>from[x2m-booster]?rarity='r" },
+        {
+          "query": "take[2]>from[x2m-booster]?rarity='c",
+          "setValues": { "foil": true }
+
+        },
+        { "query": "from[x2m-token]" },
+        {
+          "querySet": [
+            {
+              "_comment": "1/8 chance of replacing rare with mythic",
+              "percent": "1/8",
+              "overrideSlot": "12",
+              "query": "from[x2m-booster]?rarity='m'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/8 chance of replacing rare with mythic",
+              "percent": "1/8",
+              "overrideSlot": "13",
+              "query": "from[x2m-booster]?rarity='m'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "overrideSlot": "14",
+              "percent": "24/360",
+              "query": "from[x2m-foils]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "14",
+              "percent": "7/360",
+              "query": "from[x2m-foils]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "14",
+              "percent": "1/360",
+              "query": "from[x2m-foils]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "overrideSlot": "15",
+              "percent": "24/360",
+              "query": "from[x2m-foils]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "15",
+              "percent": "7/360",
+              "query": "from[x2m-foils]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "15",
+              "percent": "1/360",
+              "query": "from[x2m-foils]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_comment": "VIP Edition replaces Collector Booster for this set",
+      "packName": "x2m-vip-edition",
+      "packDesc": "Double Masters: VIP Edition",
+      "packVersion": "1.0",
+      "isGenerated": true,
+      "cards": [
+        {
+          "query": "take[9]>from[x2m-booster]?rarity='c",
+          "setValues": { "foil": true }
+
+        },
+        {
+          "query": "take[8]>from[x2m-booster]?rarity='u",
+          "setValues": { "foil": true }
+
+        },
+        {
+          "query": "take[2]>from[x2m-booster]?rarity='r",
+          "setValues": { "foil": true }
+
+        },
+        {
+          "_comment": "These borderless cards will be two from a selection of 40, 32 of which are rare/mythic rare and 8 of which are uncommon/common.",
+          "_comment2": "Cards with a rare expansion symbol appear twice as frequently as those with a mythic rare expansion symbol.",
+          "_comment3": "Wizards clarified that this slot may contain 2 foil borderless showcase cards with rare expansion symbols or 1 showcase rare and 1 showcase mythic, but never 2 mythic rare showcase cards.",
+          "query": "take[2]>from[x2m-variants]?rarity='r",
+          "setValues": { "foil": true }
+
+        },
+        {
+          "_comment": "This is ALL lands",
+          "query": "take[10]>from[x2m-basic-land]"
+
+        },
+        {
+          "query": "take[2]>from[x2m-basic-land]",
+          "setValues": { "foil": true }
+
+        },
+        {
+          "query": "take[2]>from[x2m-token]",
+          "setValues": { "foil": true }
+
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "1/8 chance of replacing rare with mythic",
+              "percent": "1/8",
+              "overrideSlot": "19",
+              "query": "from[x2m-booster]?rarity='m'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "overrideSlot": "21",
+              "percent": "1/3",
+              "query": "from[x2m-variants]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "x2m-variants",
+      "packDesc": "Double Masters: All Variants",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[x2m-variants]"
+        }
+      ]
+    },
+
+    {
+      "packName": "x2m-promos",
+      "packDesc": "Double Masters: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[x2m-promo]"
+        }
+      ]
+    }
+
+  ]
+}
