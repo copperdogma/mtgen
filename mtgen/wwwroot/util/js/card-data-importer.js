@@ -552,6 +552,12 @@ class CardDataImporter {
                     out += `<li><strong style='color:red'>${value.UnmatchedTitle}</strong> - <em><span style='color: gray'>suggested:</span> ${value.BestMatch}</em></li>`;
                 });
                 out += "</ul>";
+                if (unmatchedWithBestMatch.length > 0) {
+                    const mismtchImportExceptions = unmatchedWithBestMatch.map(value => ({ where: `title='${value.UnmatchedTitle}'`, newValues: { title: `${value.BestMatch}` } }));
+                    const mismtchImportExceptionsJson = JSON.stringify(mismtchImportExceptions,null,1);
+                    out += '<p>Above list as import exceptions:</p>';
+                    out += `<textarea id="mismatch-import-exceptions" cols="100" rows="3">${mismtchImportExceptionsJson}</textarea>`;
+                }
             }
 
             const unusedImages = Object.entries(mainImages).map(entry => entry[1]).filter(mainImage => !mainImage.wasUsed);
