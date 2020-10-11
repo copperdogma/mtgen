@@ -32,7 +32,16 @@ namespace mtgen.Pages
 
             var lowerCaseSetCode = setCode.ToLower();
 
-            if (SetFileExists(lowerCaseSetCode))
+            var setFileExists = SetFileExists(lowerCaseSetCode);
+
+            // Certain words are reserved (con, aux, etc) so I suffix them with _
+            // I'm hosting on Azure which is Windows-based so certain folder names are forbidden, like "con"
+            if (!setFileExists && SetFileExists(lowerCaseSetCode + "_")) {
+                setFileExists = true;
+                lowerCaseSetCode += "_";
+            }
+
+            if (setFileExists)
             {
                 var setMain = _setService.GetMainFileForSet(lowerCaseSetCode);
                 Set.StartProductName = setMain.StartProductName;

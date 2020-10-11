@@ -19,6 +19,7 @@ namespace mtgen
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // The _? at the end is to take care of reserved words like "con" which I needed to make "con_"
             services.AddRazorPages()
                 .AddRazorPagesOptions(options =>
                 {
@@ -48,7 +49,8 @@ namespace mtgen
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            // DISABLED FOR NOW (it wasn't enabled on the pre-Core version and I need to do some work)
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
