@@ -1,0 +1,92 @@
+﻿{
+  "setCode": "znr",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=248&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/zendikar-rising?src=znr_highlights",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "_comment": "Delete all cards outside of the main set -- full-art basic lands (#266-280).[7] Borderless planeswalkers are numbered #281-283, borderless pathways are #284-289, showcase cards are numbered #290-313, and extended artwork cards are numbered #314-379. The (non-exclusive) Buy-a-Box is #385, and the Bundle promo is numbered #386. Finally there are the FNM-treatment cards from the Universal promo pack numbered #387-391. Both regular and foil versions of the cards above #280 may be found in the Collector Boosters.",
+      "where": "numInt=(266-999)",
+      "delete": true
+    },
+
+    {
+      "where": "title='Dsiciple of Bolas'",
+      "newValues": {
+        "title": "Disciple of Bolas"
+      }
+    },
+
+    {
+      "where": "title='Jwar Isle Ruins'",
+      "newValues": {
+        "title": "Jwari Ruins"
+      }
+    },
+    {
+      "where": "title='Rockslide Sorceror'",
+      "newValues": {
+        "title": "Rockslide Sorcerer"
+      }
+    },
+    {
+      "where": "title='Silundi Island'",
+      "newValues": {
+        "title": "Silundi Isle"
+      }
+    },
+    {
+      "where": "title='Skyclave Loot'",
+      "newValues": {
+        "title": "Skyclave Squid"
+      }
+    },
+    {
+      "where": "title='Strength in Solidarity'",
+      "newValues": {
+        "title": "Strength of Solidarity"
+      }
+    },
+
+    {
+      "where": "title='Bloodchief's Thirst'",
+      "newValues": {
+        "rarity": "u"
+      }
+    },
+    {
+      "where": "title='Skyclave Squid'",
+      "newValues": {
+        "rarity": "c"
+      }
+    },
+    {
+      "where": "title='Scion of the Swarm'",
+      "newValues": {
+        "rarity": "u"
+      }
+    },
+
+
+    {
+      "_comment": "Delete Basic Land, imported elsewhere -- there actually aren't any in this set; they're all promos",
+      "where": "type='Basic Land'",
+      "delete": true
+    },
+
+    {
+      "_comment": "Consider everything left the main set.",
+      "where": "",
+      "newValues": {
+        "mainSet": true
+      }
+    }
+  ]
+}

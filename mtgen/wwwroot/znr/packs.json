@@ -1,0 +1,340 @@
+{
+  "defs": [
+    {
+      "defName": "znr",
+      "query": "from[*]?set='znr'"
+    },
+    {
+      "defName": "znr-promo",
+      "query": "from[znr]?promo=true"
+    },
+    {
+      "defName": "znr-variants",
+      "query": "from[znr]?variant=true-from[znr-promo]"
+    },
+    {
+      "defName": "znr-basic-land",
+      "query": "from[znr]?type='Basic Land'"
+    },
+    {
+      "defName": "znr-main",
+      "query": "from[znr]-from[znr]?promo=true-from[znr]?variant=true-from[znr]?token=true-from[znr]?type='Basic Land"
+    },
+    {
+      "defName": "znr-foils",
+      "query": "from[znr]-from[znr-promo]-from[znr]?token=true"
+    },
+    {
+      "defName": "znr-booster",
+      "query": "from[znr]?mainSet=true-from[znr-promo]-from[znr]?doubleFaceCard=true"
+    },
+    {
+      "defName": "znr-doubleface",
+      "query": "from[znr-main]?doubleFaceCard=true-from[znr-promo]"
+    },
+    {
+      "defName": "znr-token",
+      "query": "from[znr]?token=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "znr-all-cards",
+      "packDesc": "Zendikar Rising: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[znr]" }
+      ]
+    },
+
+    {
+      "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
+      "packName": "znr-draft",
+      "packDesc": "Zendikar Rising: Draft Booster",
+      "packVersion": "1.0",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[znr-booster]?rarity='c" },
+        { "query": "take[3]>from[znr-booster]?rarity='u" },
+        { "query": "from[znr-booster]?rarity='r" },
+        { "query": "from[znr-basic-land]" },
+        { "query": "from[znr-token]" },
+        {
+          "querySet": [
+            {
+              "_comment": "33% (1:45) chance of foil, scaled by rarity, replacing the last common, as of m20: Jun-2019",
+              "_comment2": "TODO: fix mythic rarity to be 1:7.4 instead of 1:8",
+              "overrideSlot": "9",
+              "percent": "88/360",
+              "query": "from[znr-foils]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "9",
+              "percent": "24/360",
+              "query": "from[znr-foils]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "9",
+              "percent": "7/360",
+              "query": "from[znr-foils]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "9",
+              "percent": "1/360",
+              "query": "from[znr-foils]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/7.4 chance of replacing rare with mythic (7.4 instead of 8 as of znr Sep-2020",
+              "percent": "10/74",
+              "overrideSlot": "14",
+              "query": "from[znr-booster]?rarity='m'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "overrideSlot": "10",
+              "percent": "215/296",
+              "query": "from[znr-doubleface]?rarity='u"
+            },
+            {
+              "overrideSlot": "13",
+              "percent": "71/296",
+              "query": "from[znr-doubleface]?rarity='r"
+            },
+            {
+              "overrideSlot": "14",
+              "percent": "10/296",
+              "query": "from[znr-doubleface]?rarity='m"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "znr-prerelease-promo-packins",
+      "packDesc": "Zendikar Rising: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[znr-main]?rarity='r",
+              "setValues": {
+                "foil": true
+              }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[znr-main]?rarity='m",
+              "setValues": {
+                "foil": true
+              }
+            }
+          ]
+        },
+        { "query": "take[1]>from[znr-promo]?type='Life Counter'" },
+        { "query": "from[znr-promo]?title='Prerelease Deck Box" },
+        { "query": "from[znr-promo]?title='Deckbuilding Advice Insert" }
+      ]
+    },
+    {
+      "packName": "znr-prerelease-promos",
+      "packDesc": "Zendikar Rising: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[znr-promo]?includedReason='Prerelease Promo" }
+      ]
+    },
+
+    {
+      "_comment": "Collector Boosters were introduced as standard feature as of ELD",
+      "packName": "znr-collector",
+      "packDesc": "Zendikar Rising: Collector Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/collecting-zendikar-rising-2020-09-01" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1: Foil: Expedition, showcase, borderless, or extended art R/M",
+          "query": "from[znr-showcase-and-borderless]?rarity='c",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 2: Foil: R/M",
+          "query": "from[znr-showcase-and-borderless]?rarity='c",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 3: Nonfoil: Showcase or borderless R/M",
+          "query": "from[znr-showcase-and-borderless]?rarity='r"
+        },
+        {
+          "_comment": "Slot 4: Nonfoil: Extended art R/M",
+          "query": "take[2]>from[znr-showcase-and-borderless]?rarity='c"
+        },
+        {
+          "_comment": "Slot 5: Foil: showcase C/U",
+          "query": "take[2]>from[znr-regular-and-extended-art]?rarity='r",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 6-7: Nonfoil: showcase C/U",
+          "query": "from[znr-extended-art]?rarity='r"
+        },
+        {
+          "_comment": "Slot 8-9: Foil: uncommons",
+          "query": "from[znr-basic-land]?showcaseCard=true",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 10-14: Foil: uncommons",
+          "query": "take[2]>from[znr-main]?rarity='u",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 1: Foil: full-art basic land",
+          "query": "take[4]>from[znr-main-without-showcase]?rarity='c",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 15: Foil: token",
+          "query": "from[znr-token]-from[znr-token]?marketing=true",
+          "setValues": { "foil": true }
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 1: override Foil: showcase CURM or borderless URM",
+              "overrideSlot": "1",
+              "percent": "24/112",
+              "query": "from[znr-showcase-and-borderless]?rarity='u'",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "1",
+              "percent": "7/112",
+              "query": "from[znr-showcase-and-borderless]?rarity='r'",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "1",
+              "percent": "1/112",
+              "query": "from[znr-showcase-and-borderless]?rarity='m'",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 2: override Foil: showcase CU or borderless U",
+              "overrideSlot": "2",
+              "percent": "3/11",
+              "query": "from[znr-showcase-and-borderless]?rarity='u'",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 3: override Nonfoil: showcase RM or borderless RM",
+              "overrideSlot": "3",
+              "percent": "1/8",
+              "query": "from[znr-showcase-and-borderless]?rarity='m'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 4: override Nonfoil: showcase CU or borderless U",
+              "overrideSlot": "4",
+              "percent": "3/11",
+              "query": "from[znr-showcase-and-borderless]?rarity='u'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 5: override Nonfoil: showcase CU or borderless U",
+              "overrideSlot": "5",
+              "percent": "3/11",
+              "query": "from[znr-showcase-and-borderless]?rarity='u'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 6: override Foil: standard frame or extended art frame RM",
+              "overrideSlot": "6",
+              "percent": "1/8",
+              "query": "from[znr-regular-and-extended-art]?rarity='m"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 7: override Foil: standard frame or extended art frame RM",
+              "overrideSlot": "7",
+              "percent": "1/8",
+              "query": "from[znr-regular-and-extended-art]?rarity='m"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 8: override Nonfoil: extended art RM",
+              "overrideSlot": "8",
+              "percent": "1/8",
+              "query": "from[znr-extended-art]?rarity='m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "znr-variants",
+      "packDesc": "Zendikar Rising: All Variants",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[znr-variants]"
+        }
+      ]
+    },
+
+    {
+      "packName": "znr-promos",
+      "packDesc": "Zendikar Rising: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[znr-promo]"
+        }
+      ]
+    }
+
+  ]
+}

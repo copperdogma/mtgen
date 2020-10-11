@@ -1,0 +1,185 @@
+﻿{
+  "setCode": "znr",
+  "cardDataUrl": "",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "znr",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/zendikar-rising?src=znr_highlights",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "266",
+          "cardPattern": "x229,w,w,w,u,u,u,b,b,b,r,r,r,g,g,g"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_LPnEFgg9Jr.png",
+        "title": "Plains",
+        "num": 266,
+        "numInt": 266
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_4Z4vz4QdTx.png",
+        "title": "Plains",
+        "num": 267,
+        "numInt": 267
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_0HNOKrCQBf.png",
+        "title": "Plains",
+        "num": 268,
+        "numInt": 268
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_HAISMW7XZW.png",
+        "title": "Island",
+        "num": 269,
+        "numInt": 269
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_Z8OyM6peyT.png",
+        "title": "Island",
+        "num": 270,
+        "numInt": 270
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_S4XcFaEGHq.png",
+        "title": "Island",
+        "num": 271,
+        "numInt": 271
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_xqzWMecjka.png",
+        "title": "Swamp",
+        "num": 272,
+        "numInt": 272
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_WqckhTvdsC.png",
+        "title": "Swamp",
+        "num": 273,
+        "numInt": 273
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_QOF1UyywT7.png",
+        "title": "Swamp",
+        "num": 274,
+        "numInt": 274
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_LWktTRFvht.png",
+        "title": "Mountain",
+        "num": 275,
+        "numInt": 275
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_apIn3znJoo.png",
+        "title": "Mountain",
+        "num": 276,
+        "numInt": 276
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_3TpNkfbIyN.png",
+        "title": "Mountain",
+        "num": 277,
+        "numInt": 277
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_zqJHJicUYu.png",
+        "title": "Forest",
+        "num": 278,
+        "numInt": 278
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_ByWYkC0CPv.png",
+        "title": "Forest",
+        "num": 279,
+        "numInt": 279
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_Lf9kGzAKrm.png",
+        "title": "Forest",
+        "num": 280,
+        "numInt": 280
+      }
+    },
+    {
+      "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
+      "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
+      "newValues": {
+        "set": "{{setCode}}",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "{{title}}",
+        "colour": "l",
+        "cost": "",
+        "rarity": "c",
+        "num": "{{num}}/264 L"
+      }
+    }
+  ]
+}

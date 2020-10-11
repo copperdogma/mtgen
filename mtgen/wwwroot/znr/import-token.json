@@ -1,0 +1,198 @@
+{
+  "setCode": "znr",
+  "cardDataUrl": "",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "znr",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-zendikar-rising-2020-09-08",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "000",
+          "cardPattern": "000|w|Token Creature|Angel Warrior\n000|w|Token Creature|Cat\n000|w|Token Creature|Cat Beast\n000|w|Token Creature|Kor Warrior\n000|u|Token Creature|Drake\n000|u|Token Creature|Illusion\n000|g|Token Creature|Insect\n000|g|Token Creature|Plant\n000|g|Token Creature|Hydra\n000|c|Token Artifact Creature|Construct\n000|c|Token Artifact Creature|Goblin Construct\n000|c|Token|Copy\n"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/images/daily/8UQfg3y0G9.png",
+        "num": "1/9 F",
+        "colour": "c",
+        "type": "Token",
+        "title": "Modal Double-Faced Helper",
+        "subtype": "Helper",
+        "numInt": 1
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_pHDFb2PfVq.png",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Angel Warrior",
+        "subtype": "Angel Warrior",
+        "numInt": null
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_964LQSigxS.png",
+        "num": 1,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Cat",
+        "subtype": "Cat",
+        "numInt": 1
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_3ZWEb7WWJ0.png",
+        "num": 2,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Cat Beast",
+        "subtype": "Cat Beast",
+        "numInt": 2
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_f6MMyXxee3.png",
+        "num": 3,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Kor Warrior",
+        "subtype": "Kor Warrior",
+        "numInt": 3
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_M7rV93Flf6.png",
+        "num": 4,
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Drake",
+        "subtype": "Drake",
+        "numInt": 4
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_fihLA7XMUj.png",
+        "num": 5,
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Illusion",
+        "subtype": "Illusion",
+        "numInt": 5
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_PyB4KKK05P.png",
+        "num": 6,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Insect",
+        "subtype": "Insect",
+        "numInt": 6
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_CdHQEdc7Zh.png",
+        "num": 7,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Plant",
+        "subtype": "Plant",
+        "numInt": 7
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_E5ldoirBEI.png",
+        "num": 8,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Hydra",
+        "subtype": "Hydra",
+        "numInt": 8
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_R3g8yVJA0m.png",
+        "num": 9,
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Construct",
+        "subtype": "Construct",
+        "numInt": 9
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_raFbiSd31p.png",
+        "num": 10,
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Goblin Construct",
+        "subtype": "Goblin Construct",
+        "numInt": 10
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "znr",
+        "src": "https://media.wizards.com/2020/znr/en_6X7SyYWItg.png",
+        "num": 11,
+        "colour": "c",
+        "type": "Token",
+        "title": "Copy",
+        "subtype": "Copy",
+        "numInt": 11
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/011 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

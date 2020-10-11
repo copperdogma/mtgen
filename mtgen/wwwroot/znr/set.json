@@ -1,0 +1,19 @@
+{
+  "startProductName": "znr-boosters",
+  "packFiles": [
+    "packs.json?v1.1"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsVariant.json",
+    "cardsPromo.json",
+    "cardsBasicLand.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2020-09-16T00:00:00:00",
+      "HtmlString": "Double-faced cards now replace card of same rarity."
+    }
+  ]
+}

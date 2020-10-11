@@ -1,0 +1,85 @@
+﻿{
+  "setCode": "znr",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=248&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/zendikar-rising-variants",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "_comment": "Choose only Variants (delete all non-variants)",
+      "where": "numInt=(1-265)",
+      "delete": true
+    },
+
+    {
+      "where": "title='Nahiri, Heir to the Ancients'",
+      "newValues": {
+        "title": "Nahiri, Heir of the Ancients"
+      }
+    },
+
+    {
+      "where": "title='Bloodchief's Thirst'",
+      "newValues": {
+        "rarity": "u"
+      }
+    },
+
+    {
+      "where": "numInt=(281-283)",
+      "newValues": {
+        "borderlessPlaneswalker": true
+      }
+    },
+    {
+      "where": "numInt=(284-289)",
+      "newValues": {
+        "borderlessPathway": true
+      }
+    },
+    {
+      "where": "numInt=(290-313)",
+      "newValues": {
+        "showcaseCard": true
+      }
+    },
+    {
+      "where": "numInt=(314-379)",
+      "newValues": {
+        "extendedArtwork": true
+      }
+    },
+    {
+      "where": "numInt=(387-391)",
+      "newValues": {
+        "fridayNightMagicTreatment": true
+      }
+    },
+
+    {
+      "_comment": "Delete Basic Land, imported elsewhere",
+      "where": "type='Basic Land'",
+      "delete": true
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "_comment": "Flag them all as variants",
+      "where": "",
+      "newValues": {
+        "variant": true
+      }
+    }
+  ]
+}

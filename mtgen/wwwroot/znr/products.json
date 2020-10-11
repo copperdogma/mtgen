@@ -1,0 +1,123 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "znr-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "znr-all-cards" }
+      ]
+    },
+
+    {
+      "productName": "znr-boosters",
+      "productDesc": "Draft Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "znr-draft" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "znr-draft-boosters-six",
+            "presetDesc": "Six Draft Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "znr-draft"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "znr-prerelease",
+      "productDesc": "Prerelease",
+      "sources": [ "" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "znr-draft" },
+        { "packName": "znr-prerelease-promo-packins" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "znr-prerelease-promo-packins",
+            "presetDesc": "Prerelease Packins",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "znr-prerelease-promo-packins"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "znr-draft"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "znr-collector",
+      "productDesc": "Collector Boosters",
+      "isGenerated": true,
+      "isVisible": false,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "znr-collector" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "znr-collector-boosters-six",
+            "presetDesc": "Six Collector Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "znr-collector"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "znr-variants",
+      "productDesc": "Variants",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/throne-znrraine-variants" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "znr-variants" }
+      ]
+    },
+
+    {
+      "productName": "znr-promos",
+      "productDesc": "All Promos",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/ravnica-allegiance-planeswalker-deck-lists-2019-01-10" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "znr-promos" }
+      ]
+    }
+
+  ]
+}
