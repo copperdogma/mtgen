@@ -603,6 +603,41 @@ var mtgGen = (function (my) {
                     );
                 }
             }
+            else if (query2[0].includes('~=')) {
+                // Value contains
+                query2[1] = query2[1].replace(/~/g, '');
+                query2[2] = query2[2].replace(/'/g, '');
+
+                // If we're dealing with named cards, certain characters need to be converted
+                matchingCards = [];
+                if (query2[1] == 'title') {
+                    const matchTitle = my.createMatchTitle(query2[2]);
+                    matchingCards = sourceSet.filter(card => card.hasOwnProperty('matchTitle') && card['matchTitle'].includes(matchTitle));
+                }
+                else {
+                    if (query2[2] === undefined || query2[2] === '') {
+                        matchingCards = sourceSet.filter(card => !card.hasOwnProperty(query2[1]) || card[query2[1]].includes(query2[2]));
+                    }
+                    // If it's a boolean query, convert both sides to boolean and test
+                    else if (query2[2] === true || query2[2] === 'true' || query2[2] === false || query2[2] === 'false') {
+                        const boolQueryValue = JSON.parse(query2[2]);
+                        matchingCards = sourceSet.filter(card => {
+                            if (card[query2[1]] !== undefined) {
+                                if (boolQueryValue === true) {
+                                    return (card[query2[1]] === true || card[query2[1]] === 'true');
+                                }
+                                else {
+                                    return (card[query2[1]] === false || card[query2[1]] === 'false');
+                                }
+                            }
+                        });
+                    }
+                    else {
+                        matchingCards = sourceSet.filter(card => card[query2[1]] !== undefined && card[query2[1]].includes(query2[2]));
+                    }
+                }
+                result = matchingCards.map(matchingCard => matchingCard.mtgenId);
+            }
             else {
                 // Regular equals
                 query2[2] = query2[2].replace(/'/g, '');
