@@ -554,11 +554,14 @@ class CardDataImporter {
                 out += "</ul>";
                 if (unmatchedWithBestMatch.length > 0) {
                     const mismtchImportExceptions = unmatchedWithBestMatch.map(value => ({ where: `title='${value.UnmatchedTitle}'`, newValues: { title: `${value.BestMatch}` } }));
-                    const mismtchImportExceptionsJson = JSON.stringify(mismtchImportExceptions,null,1);
+                    const mismtchImportExceptionsJson = JSON.stringify(mismtchImportExceptions, null, 1);
                     out += '<p>Above list as import exceptions:</p>';
                     out += `<textarea id="mismatch-import-exceptions" cols="100" rows="3">${mismtchImportExceptionsJson}</textarea>`;
                 }
             }
+
+            // NOTE: Duplicate image titles can't happen. Because the title and image are usually all we have from, say, a wotc image spoiler page,
+            //       the image importer code just ignore secondary images (but logs a warning in the console).
 
             const unusedImages = Object.entries(mainImages).map(entry => entry[1]).filter(mainImage => !mainImage.wasUsed);
             if (unusedImages.length > 0) {
@@ -1164,7 +1167,7 @@ class CardDataImporter {
         let fileExists = false;
         do {
             i++;
-            const imageUrl = templateArray[0] + (i+'').padStart(numLength, '0') + templateArray[1];
+            const imageUrl = templateArray[0] + (i + '').padStart(numLength, '0') + templateArray[1];
             fileExists = await this._htmlFileExists(imageUrl);
             if (fileExists) {
                 console.log(`Found image via pattern: ${imageUrl}`);
@@ -1224,6 +1227,9 @@ class CardDataImporter {
                 // Duplicates can happen if the image gallery has normal card images followed by special card images.
                 if (!finalImages.has(image.matchTitle)) {
                     finalImages.set(image.matchTitle, image);
+                }
+                else {
+                    console.log(`Warning: Duplicate image name: ${image.title}`);
                 }
             }
         });
