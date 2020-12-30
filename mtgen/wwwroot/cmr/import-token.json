@@ -1,0 +1,212 @@
+{
+  "setCode": "cmr",
+  "cardDataUrl": "",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "cmr",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-commander-legends-2020-11-04",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "1",
+          "cardPattern": "000|w|Token Creature|Angel\n000|w|Token Creature|Soldier\n000|w|Token Creature|Spirit\n000|u|Token Creature|Salamander Warrior\n000|b|Token Creature|Thrull\n000|b|Token Creature|Zombie\n000|r|Token Creature|Dragon\n000|g|Token Creature|Elf Warrior\n000|c|Token Artifact Creature|Golem\n000|c|Token Artifact|Horror\n000|c|Token Artifact|Rock|Equipment\n000|c|Token Artifact|Treasure\n000|c|Token|Copy\n000|c|Marker|The Monarch"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "cmr",
+        "src": "https://media.wizards.com/2020/cmr/en_sTFCwBr6fG.png",
+        "num": 1,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Angel",
+        "subtype": "Angel",
+        "numInt": 1
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "cmr",
+        "src": "https://media.wizards.com/2020/cmr/en_osnA6sXQAQ.png",
+        "num": 2,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Soldier",
+        "subtype": "Soldier",
+        "numInt": 2
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "cmr",
+        "src": "https://media.wizards.com/2020/cmr/en_ydD5zzVFJy.png",
+        "num": 3,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Spirit",
+        "subtype": "Spirit",
+        "numInt": 3
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "cmr",
+        "src": "https://media.wizards.com/2020/cmr/en_hBhTCjX7kI.png",
+        "num": 4,
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Salamander Warrior",
+        "subtype": "Salamander Warrior",
+        "numInt": 4
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "cmr",
+        "src": "https://media.wizards.com/2020/cmr/en_BIWrPsAvAR.png",
+        "num": 5,
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Thrull",
+        "subtype": "Thrull",
+        "numInt": 5
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "cmr",
+        "src": "https://media.wizards.com/2020/cmr/en_awAuwqn3O7.png",
+        "num": 6,
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Zombie",
+        "subtype": "Zombie",
+        "numInt": 6
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "cmr",
+        "src": "https://media.wizards.com/2020/cmr/en_2oDelQhkFu.png",
+        "num": 7,
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Dragon",
+        "subtype": "Dragon",
+        "numInt": 7
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "cmr",
+        "src": "https://media.wizards.com/2020/cmr/en_oBmDoonE15.png",
+        "num": 8,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Elf Warrior",
+        "subtype": "Elf Warrior",
+        "numInt": 8
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "cmr",
+        "src": "https://media.wizards.com/2020/cmr/en_qgtC0N8hOe.png",
+        "num": 9,
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Golem",
+        "subtype": "Golem",
+        "numInt": 9
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "cmr",
+        "src": "https://media.wizards.com/2020/cmr/en_VQiXAzkmaT.png",
+        "num": 10,
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Horror",
+        "subtype": "Horror",
+        "numInt": 10
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "cmr",
+        "src": "https://media.wizards.com/2020/cmr/en_Xnq2HkqmKK.png",
+        "num": 11,
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Rock",
+        "subtype": "Equipment",
+        "numInt": 11
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "cmr",
+        "src": "https://media.wizards.com/2020/cmr/en_8W0qnpCjl9.png",
+        "num": 12,
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Treasure",
+        "subtype": "Treasure",
+        "numInt": 12
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "cmr",
+        "src": "https://media.wizards.com/2020/cmr/en_8snBP6BZb7.png",
+        "num": 13,
+        "colour": "c",
+        "type": "Token",
+        "title": "Copy",
+        "subtype": "Copy",
+        "numInt": 13
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "cmr",
+        "src": "https://media.wizards.com/2020/cmr/en_LcDCcRmD0M.png",
+        "num": 14,
+        "colour": "c",
+        "type": "Marker",
+        "title": "The Monarch",
+        "subtype": "The Monarch",
+        "numInt": 14
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/014 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

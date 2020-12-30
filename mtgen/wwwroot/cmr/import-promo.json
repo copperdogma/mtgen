@@ -1,0 +1,47 @@
+{
+  "setCode": "cmr",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=245&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/commander-legends?utm_source=magicweb&utm_medium=referral&utm_campaign=CMR&utm_content=productpage_cig",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+      "where": "numInt=721",
+      "newValues": {
+        "num": "721 P Buy-a-Box",
+        "src": "https://media.wizards.com/2020/cmr/en_qjI8lxgA1f.png",
+        "useCardDataImg": true,
+        "includedReason": "Buy-a-Box Promo"
+      }
+    },
+    {
+      "where": "numInt=722",
+      "newValues": {
+        "num": "722 Preview",
+        "src": "https://media.wizards.com/2020/cmr/en_PlZRY4EdSi.png",
+        "useCardDataImg": true,
+        "includedReason": "Prerelease"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

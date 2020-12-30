@@ -1,0 +1,22 @@
+{
+  "startProductName": "cmr-boosters",
+  "packFiles": [
+    "packs.json?v1.2"
+  ],
+  "cardFiles": [
+    "cardsMain.json?v1.1",
+    "cardsToken.json",
+    "cardsVariant.json?v1.1",
+    "cardsPromo.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2020-12-29T22:30:00:00",
+      "HtmlString": "Draft booster: Legends no longer appear in C/U slots, Commander deck-specific cards removed, Extended art cards removed, foil slot now always foil. Thanks, Kowaleyer!"
+    },
+    {
+      "UpdateDate": "2020-12-30T01:00:00",
+      "HtmlString": "Draft booster: Prismatic Piper etched foil will no longer appear."
+    }
+  ]
+}

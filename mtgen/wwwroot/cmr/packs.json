@@ -1,0 +1,438 @@
+{
+  "defs": [
+    {
+      "defName": "cmr",
+      "query": "from[*]?set='cmr'"
+    },
+    {
+      "defName": "cmr-promo",
+      "query": "from[cmr]?promo=true"
+    },
+    {
+      "defName": "cmr-variants",
+      "query": "from[cmr]?variant=true"
+    },
+    {
+      "defName": "cmr-main",
+      "query": "from[cmr]-from[cmr]?type=(Marketing)-from[cmr]?promo=true-from[cmr]?variant=true-from[cmr]?token=true"
+    },
+    {
+      "defName": "cmr-extended-art",
+      "query": "from[cmr]?extendedArtwork=true"
+    },
+    {
+      "defName": "cmr-non-draft-booster-cards",
+      "query": "from[cmr]?title=(Wyleth, Soul of Steel|Aesi, Tyrant of Gyre Strait)-from[cmr-extended-art]"
+    },
+    {
+      "defName": "cmr-legendary",
+      "query": "from[cmr]?legendary=true"
+    },
+    {
+      "defName": "cmr-draft-booster-legendary",
+      "query": "from[cmr]?legendary=true-from[cmr-non-draft-booster-cards]"
+    },
+    {
+      "defName": "cmr-foils",
+      "query": "from[cmr]-from[cmr-promo]-from[cmr]?token=true"
+    },
+    {
+      "defName": "cmr-draft-booster-foils",
+      "query": "from[cmr]-from[cmr-promo]-from[cmr]?token=true-from[cmr-non-draft-booster-cards]"
+    },
+    {
+      "defName": "cmr-booster",
+      "query": "from[cmr]?mainSet=true"
+    },
+    {
+      "defName": "cmr-draft-booster",
+      "query": "from[cmr]?mainSet=true-from[cmr-non-draft-booster-cards]"
+    },
+    {
+      "defName": "cmr-booster-nonlegendary",
+      "query": "from[cmr]?mainSet=true-from[cmr-legendary]"
+    },
+    {
+      "defName": "cmr-draft-booster-nonlegendary",
+      "query": "from[cmr]?mainSet=true-from[cmr-legendary]-from[cmr-non-draft-booster-cards]"
+    },
+    {
+      "defName": "cmr-prismatic-piper",
+      "query": "from[cmr]?title='The Prismatic Piper'"
+    },
+    {
+      "defName": "cmr-foil-etched",
+      "query": "from[cmr]?foilEtched=true"
+    },
+    {
+      "defName": "cmr-collector-common-with-prismatic",
+      "query": "from[cmr-main]?rarity='c'+from[cmr-prismatic-piper]"
+    },
+    {
+      "defName": "cmr-extended-art-nonlegendary",
+      "query": "from[cmr-extended-art]-from[cmr-legendary]"
+    },
+    {
+      "defName": "cmr-foil-etched-legendary-creature",
+      "query": "from[cmr-foil-etched]?type='Legendary Creature'"
+    },
+    {
+      "defName": "cmr-collector",
+      "query": "from[cmr-main]"
+    },
+    {
+      "defName": "cmr-token",
+      "query": "from[cmr]?token=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "cmr-all-cards",
+      "packDesc": "Commander Legends: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[cmr]" }
+      ]
+    },
+
+    {
+      "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
+      "packName": "cmr-draft",
+      "packDesc": "Commander Legends: Draft Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://www.reddit.com/r/magicTCG/comments/jko5xm/contents_of_commander_legends_draft_booster/" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[13]>from[cmr-draft-booster-nonlegendary]?rarity='c" },
+        { "query": "take[3]>from[cmr-draft-booster-nonlegendary]?rarity='u" },
+        {
+          "query": "take[2]>from[cmr-draft-booster-legendary]?rarity='u'",
+          "_comment": "2 legends: either 2 uncommons, an uncommon and a rare, two rares, a mythic and an uncommon, or a mythic and a rare.",
+          "_commentMath": "u=24/32, r=7/32, m=1/32",
+          "_commentMath2": "possibilties: uu,ur,um,rr,rm, so slot1=u/r, slot2=u/r/m",
+          "_commentMath3": "slot1=u/r chances: u=24,r=7 so total = 31",
+          "_commentMath4": "slot2=u/r/m chances: u=24, r=7, m=1 so total=32"
+        },
+        {
+          "query": "from[cmr-booster-nonlegendary]?rarity='r",
+          "_comment": "1 Nonlegendary* rare/mythic: By nonlegendary I mean not something that can be your commander. A legendary land could still appear here"
+        },
+        {
+          "query": "from[cmr-draft-booster]?rarity='c",
+          "_comment": "1 random foil of any rarity, can even be legendary.",
+          "setValues": { "foil": true }
+        },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[cmr]?title='Tip/Marketing Card"
+            },
+            {
+              "percent": "50",
+              "query": "from[cmr-token]"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "And about 1 in every 6 packs, the Prismatic Piper appears in place of a common.",
+              "percent": "1/6",
+              "overrideSlot": "13",
+              "query": "from[cmr-prismatic-piper]?mainSet=true"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "2 legends: either 2 uncommons, an uncommon and a rare, two rares, a mythic and an uncommon, or a mythic and a rare.",
+              "_commentMath": "u=24/32, r=7/32, m=1/32",
+              "_commentMath2": "possibilties: uu,ur,um,rr,rm, so slot1=u/r, slot2=u/r/m",
+              "_commentMath3": "slot1=u/r chances: u=24,r=7 so total = 31",
+              "overrideSlot": "17",
+              "percent": "24/31",
+              "query": "from[cmr-draft-booster-legendary]?rarity='u'"
+            },
+            {
+              "overrideSlot": "17",
+              "percent": "7/31",
+              "query": "from[cmr-draft-booster-legendary]?rarity='r'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "2 legends: either 2 uncommons, an uncommon and a rare, two rares, a mythic and an uncommon, or a mythic and a rare.",
+              "_commentMath": "u=24/32, r=7/32, m=1/32",
+              "_commentMath2": "possibilties: uu,ur,um,rr,rm, so slot1=u/r, slot2=u/r/m",
+              "_commentMath4": "slot2=u/r/m chances: u=24, r=7, m=1 so total=32",
+              "overrideSlot": "18",
+              "percent": "24/32",
+              "query": "from[cmr-draft-booster-legendary]?rarity='u'"
+            },
+            {
+              "overrideSlot": "18",
+              "percent": "7/32",
+              "query": "from[cmr-draft-booster-legendary]?rarity='r'"
+            },
+            {
+              "overrideSlot": "18",
+              "percent": "1/32",
+              "query": "from[cmr-draft-booster-legendary]?rarity='m'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "33% (1:45) chance of foil, scaled by rarity, replacing the last common, as of m20: Jun-2019",
+              "overrideSlot": "20",
+              "percent": "88/360",
+              "query": "from[cmr-draft-booster-foils]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "20",
+              "percent": "24/360",
+              "query": "from[cmr-draft-booster-foils]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "20",
+              "percent": "7/360",
+              "query": "from[cmr-draft-booster-foils]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "20",
+              "percent": "1/360",
+              "query": "from[cmr-draft-booster-foils]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_comment": "Collector Boosters were introduced as standard feature as of ELD",
+      "packName": "cmr-collector",
+      "packDesc": "Commander Legends: Collector Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/collecting-commander-legends-2020-10-26" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1-5: Foil: commmons incl Prismatic Piper",
+          "query": "take[5]>from[cmr-collector-common-with-prismatic]",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 6-7: Foil: U/R/M legendary cards, same possibilities as booster: uu,ur,um,rr,rm",
+          "query": "take[2]>from[cmr-legendary]?rarity='u",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 8: Foil: RM nonlegendary, sometimes (30%) with extended art",
+          "query": "from[cmr-booster-nonlegendary]?rarity='r",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 9: Nonfoil: CU (at equal rate) extended art nonlegendary",
+          "query": "from[cmr-extended-art-nonlegendary]?rarity='c"
+        },
+        {
+          "_comment": "Slot 10: Nonfoil: RM extended art nonlegendary",
+          "query": "from[cmr-extended-art-nonlegendary]?rarity='r"
+        },
+        {
+          "_comment": "Slot 11-12: Foil: U nonlegendary, sometimes (20%) CU extended art",
+          "query": "take[2]>from[cmr-booster-nonlegendary]?rarity='u",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 13: Foil-etched: U legendary creature or Prismatic Piper",
+          "query": "from[cmr-foil-etched-legendary-creature]?rarity='u'+from[cmr-prismatic-piper]",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 14: Foil-etched: reprint legendary creature",
+          "query": "from[cmr-foil-etched-legendary-creature]?rarity='m'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 15: Foil-etched: RM legendary creature or borderless planeswalker",
+          "query": "from[cmr-foil-etched-legendary-creature]?rarity='r",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 16: Foil: double-sided token",
+          "query": "from[cmr-token]-from[cmr-token]?marketing=true",
+          "setValues": { "foil": true }
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 6-7: Foil: U/R/M legendary cards, same possibilities as booster: uu,ur,um,rr,rm",
+              "_commentMath": "u=24/32, r=7/32, m=1/32",
+              "_commentMath2": "possibilties: uu,ur,um,rr,rm, so slot1=u/r, slot2=u/r/m",
+              "_commentMath3": "slot1=u/r chances: u=24,r=7 so total = 31",
+              "overrideSlot": "6",
+              "percent": "24/31",
+              "query": "from[cmr-legendary]?rarity='u'",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "6",
+              "percent": "7/31",
+              "query": "from[cmr-legendary]?rarity='r'",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 6-7: Foil: U/R/M legendary cards, same possibilities as booster: uu,ur,um,rr,rm",
+              "_commentMath": "u=24/32, r=7/32, m=1/32",
+              "_commentMath2": "possibilties: uu,ur,um,rr,rm, so slot1=u/r, slot2=u/r/m",
+              "_commentMath4": "slot2=u/r/m chances: u=24, r=7, m=1 so total=32",
+              "overrideSlot": "7",
+              "percent": "24/32",
+              "query": "from[cmr-legendary]?rarity='u'",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "7",
+              "percent": "7/32",
+              "query": "from[cmr-legendary]?rarity='r'",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "7",
+              "percent": "1/32",
+              "query": "from[cmr-legendary]?rarity='m'",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 8: Foil: RM nonlegendary, sometimes (30%) with extended art",
+              "_commentMath": "70% chance: 1/8 chance of mythic = .7*1/8=8.75%",
+              "overrideSlot": "8",
+              "percent": "8.75",
+              "query": "from[cmr-booster-nonlegendary]?rarity='m'",
+              "setValues": { "foil": true }
+            },
+            {
+              "_commentMath": "30% chance: 7/8 chance of rare = .3*(7/8)=26.25%",
+              "overrideSlot": "8",
+              "percent": "26.25",
+              "query": "from[cmr-extended-art]?rarity='r'",
+              "setValues": { "foil": true }
+            },
+            {
+              "_commentMath": "30% chance: 1/8 chance of mythic = .3*(1/8)=3.75%",
+              "overrideSlot": "8",
+              "percent": "3.75",
+              "query": "from[cmr-extended-art]?rarity='m'",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 9: Nonfoil: CU (at equal rate) extended art nonlegendary",
+              "overrideSlot": "9",
+              "percent": "50",
+              "query": "from[cmr-extended-art-nonlegendary]?rarity='u"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 10: Nonfoil: RM extended art nonlegendary",
+              "overrideSlot": "10",
+              "percent": "1/8",
+              "query": "from[cmr-extended-art-nonlegendary]?rarity='m"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 11-12: Foil: U nonlegendary, sometimes (20%) CU extended art",
+              "_commentMath": "c/u = 10/13 and 3/13, so 100/130 and 30/130, * .2 = 20/130 and 6/130",
+              "overrideSlot": "11",
+              "percent": "20/130",
+              "query": "from[cmr-extended-art]?rarity='c",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 11-12: Foil: U nonlegendary, sometimes (20%) CU extended art",
+              "_commentMath": "c/u = 10/13 and 3/13, so 100/130 and 30/130, * .2 = 20/130 and 6/130",
+              "overrideSlot": "12",
+              "percent": "6/130",
+              "query": "from[cmr-extended-art]?rarity='u",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 15: Foil-etched: RM legendary creature or borderless planeswalker",
+              "overrideSlot": "15",
+              "percent": "1/8",
+              "query": "from[cmr-foil-etched]?rarity='m'+from[cmr]?borderlessPlaneswalker=true",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+
+      ]
+    },
+
+    {
+      "packName": "cmr-variants",
+      "packDesc": "Commander Legends: All Variants",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[cmr-variants]"
+        }
+      ]
+    },
+
+    {
+      "packName": "cmr-promos",
+      "packDesc": "Commander Legends: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[cmr-promo]"
+        }
+      ]
+    }
+
+  ]
+}

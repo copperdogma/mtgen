@@ -1,0 +1,264 @@
+﻿{
+  "setCode": "cmr",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=245&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/commander-legends-variants",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}"
+      ]
+    },
+
+    {
+      "where": "title='Viscera Seer'",
+      "newValues": {
+        "numInt": 658
+      }
+    },
+
+    {
+      "where": "title='Anara, Wolf Familiar'",
+      "newValues": {
+        "title": "Anara, Wolvid Familiar"
+      }
+    },
+    {
+      "where": "title='Belbe, Corrupted Observe'",
+      "newValues": {
+        "title": "Belbe, Corrupted Observer"
+      }
+    },
+    {
+      "where": "title='Gilanra, Caller of WIldwood'",
+      "newValues": {
+        "title": "Gilanra, Caller of Wirewood"
+      }
+    },
+    {
+      "where": "title='Keskit, Flesh Sculptor'",
+      "newValues": {
+        "title": "Keskit, the Flesh Sculptor"
+      }
+    },
+    {
+      "where": "title='Nveinyrral, Urborg Tyrant'",
+      "newValues": {
+        "title": "Nevinyrral, Urborg Tyrant"
+      }
+    },
+    {
+      "where": "title='Rings of Brighhearth'",
+      "newValues": {
+        "title": "Rings of Brighthearth"
+      }
+    },
+    {
+      "where": "title='Vicitmize'",
+      "newValues": {
+        "title": "Victimize"
+      }
+    },
+
+    {
+      "where": "title='Numa, Joraga Chieftain'",
+      "newValues": {
+        "rarity": "u"
+      }
+    },
+    {
+      "where": "title='Brago, King Eternal'",
+      "newValues": {
+        "rarity": "m"
+      }
+    },
+
+    {
+      "_comment": "Bloody extended art cards.. wotc has two images with the exact same name and it will only keep the first (regular variant), so we need to select the extended art variant here by number and manually add the image",
+      "where": "numInt=620",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/cmr/en_BykgkgwHYs.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=623",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/cmr/en_rOVeL29beR.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=627",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/cmr/en_x87fYe2BBs.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=630",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/cmr/en_obeiAllBcC.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=632",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/cmr/en_GlW4JCkXTd.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=634",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/cmr/en_P0mX284EPg.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=639",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/cmr/en_HrnW9IzpQP.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=568",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/cmr/en_9dUIr1vGCw.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=659",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/cmr/en_Pl3qsOjFWU.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=671",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/cmr/en_pWkBa2UMqQ.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=673",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/cmr/en_NgIkzFSfxW.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=681",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/cmr/en_WQ1JekYtMn.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=687",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/cmr/en_vTOXAhWeCW.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=688",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/cmr/en_qvGNf4bZIb.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=700",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/cmr/en_rf9NDexBAH.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=702",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/cmr/en_I6loRYrUTZ.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=705",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/cmr/en_YEDaQ7UL7X.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=706",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/cmr/en_VZRjehozEM.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=710",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/cmr/en_aacSzFwYSR.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=712",
+      "newValues": {
+        "src": "https://media.wizards.com/2020/cmr/en_tOvps0xEJ1.png",
+        "useCardDataImg": true
+      }
+    },
+
+    {
+      "_comment": "Choose only Variants (delete all non-variants)",
+      "where": "numInt=(1-503)",
+      "delete": true
+    },
+
+    {
+      "where": "numInt=(512-513)",
+      "newValues": {
+        "borderlessPlaneswalker": true
+      }
+    },
+    {
+      "where": "numInt=(514-614)",
+      "newValues": {
+        "foilEtched": true
+      }
+    },
+    {
+      "where": "numInt=(615-716)",
+      "newValues": {
+        "extendedArtwork": true
+      }
+    },
+
+    {
+      "_comment": "Delete Basic Land, imported elsewhere",
+      "where": "type='Basic Land'",
+      "delete": true
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "_comment": "Flag them all as variants",
+      "where": "",
+      "newValues": {
+        "variant": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "cmr-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "cmr-all-cards" }
+      ]
+    },
+
+    {
+      "productName": "cmr-boosters",
+      "productDesc": "Draft Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "cmr-draft" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "cmr-draft-boosters-six",
+            "presetDesc": "Six Draft Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "cmr-draft"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "cmr-collector",
+      "productDesc": "Collector Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "cmr-collector" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "cmr-collector-boosters-six",
+            "presetDesc": "Six Collector Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "cmr-collector"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "cmr-variants",
+      "productDesc": "Variants",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/throne-cmrraine-variants" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "cmr-variants" }
+      ]
+    },
+
+    {
+      "productName": "cmr-promos",
+      "productDesc": "All Promos",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/ravnica-allegiance-planeswalker-deck-lists-2019-01-10" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "cmr-promos" }
+      ]
+    }
+
+  ]
+}
