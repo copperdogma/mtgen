@@ -27,7 +27,7 @@
   "packs": [
     {
       "packName": "3ed-all-cards",
-      "packDesc": "Unlimited Edition: All Cards",
+      "packDesc": "Revised Edition: All Cards",
       "isGenerated": false,
       "cards": [
         { "query": "take[*]>from[3ed]" }
@@ -35,7 +35,7 @@
     },
     {
       "packName": "3ed-standard",
-      "packDesc": "Unlimited Edition: Standard Booster",
+      "packDesc": "Revised Edition: Standard Booster",
       "isGenerated": true,
       "cards": [
         { "query": "take[11]>from[3ed-common]" },
@@ -45,7 +45,7 @@
     },
     {
       "packName": "3ed-starter-deck",
-      "packDesc": "Unlimited Edition: Starter Deck",
+      "packDesc": "Revised Edition: Starter Deck",
       "isGenerated": false,
       "includeWithUserCards": false,
       "cards": [
