@@ -1,7 +1,7 @@
 {
   "startProductName": "znr-boosters",
   "packFiles": [
-    "packs.json?v1.2"
+    "packs.json?v1.3"
   ],
   "cardFiles": [
     "cardsMain.json",
@@ -11,6 +11,10 @@
     "cardsBasicLand.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-01-22T14:30:00:00",
+      "HtmlString": "Returned the guaranteed double-faced card to the Draft Boosters, this time overriding the correct slots."
+    },
     {
       "UpdateDate": "2021-01-18T20:30:00:00",
       "HtmlString": "No longer overrides slot 10 with extra U/R/M. Thanks, Josh!"
