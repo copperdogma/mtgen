@@ -1,0 +1,85 @@
+﻿{
+  "setCode": "khm",
+  "cardDataUrl": "",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "khm",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/kaldheim-variants",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "394",
+          "cardPattern": "x98,w,u,b,r,g"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "khm",
+        "src": "https://media.wizards.com/2020/khm/en_oYPcaBAuTF.png",
+        "title": "Plains",
+        "num": 394,
+        "numInt": 394
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "khm",
+        "src": "https://media.wizards.com/2020/khm/en_j2ClJ9Mntf.png",
+        "title": "Island",
+        "num": 395,
+        "numInt": 395
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "khm",
+        "src": "https://media.wizards.com/2020/khm/en_MPt556Wqrl.png",
+        "title": "Swamp",
+        "num": 396,
+        "numInt": 396
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "khm",
+        "src": "https://media.wizards.com/2020/khm/en_Kd9rDFRqlN.png",
+        "title": "Mountain",
+        "num": 397,
+        "numInt": 397
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "khm",
+        "src": "https://media.wizards.com/2020/khm/en_P2D61KWOhd.png",
+        "title": "Forest",
+        "num": 398,
+        "numInt": 398
+      }
+    },
+    {
+      "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
+      "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
+      "newValues": {
+        "set": "{{setCode}}",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "{{title}}",
+        "colour": "l",
+        "cost": "",
+        "rarity": "c",
+        "num": "{{num}} L"
+      }
+    }
+  ]
+}

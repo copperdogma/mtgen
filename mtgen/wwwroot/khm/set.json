@@ -1,0 +1,24 @@
+{
+  "startProductName": "khm-prerelease",
+  "packFiles": [
+    "packs.json?v1.2"
+  ],
+  "cardFiles": [
+    "cardsMain.json?v1.1",
+    "cardsBasicLand.json",
+    "cardsSnowLand.json",
+    "cardsToken.json",
+    "cardsVariant.json?v1.1",
+    "cardsPromo.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2021-01-22T11:30:00:00",
+      "HtmlString": "Rare snow land Faceless Haven will no longer appear in Snow Land slot, only Rare slot."
+    },
+    {
+      "UpdateDate": "2021-01-21T15:30:00:00",
+      "HtmlString": "Fixed some card rarities and land issues."
+    }
+  ]
+}

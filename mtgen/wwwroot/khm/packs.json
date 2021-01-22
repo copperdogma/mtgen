@@ -1,0 +1,332 @@
+{
+  "defs": [
+    {
+      "defName": "khm",
+      "query": "from[*]?set='khm'"
+    },
+    {
+      "defName": "khm-promo",
+      "query": "from[khm]?promo=true"
+    },
+    {
+      "defName": "khm-variants",
+      "query": "from[khm]?variant=true"
+    },
+    {
+      "defName": "khm-main",
+      "query": "from[khm]-from[khm]?type=(Marketing)-from[khm]?promo=true-from[khm]?variant=true-from[khm]?token=true"
+    },
+    {
+      "defName": "khm-showcase",
+      "query": "from[khm]?showcase=true"
+    },
+    {
+      "defName": "khm-borderless",
+      "query": "from[khm]?borderless=true"
+    },
+    {
+      "defName": "khm-extended-art",
+      "query": "from[khm]?extendedArtwork=true"
+    },
+    {
+      "defName": "khm-theme-booster",
+      "query": "from[khm]?themeBoosterCard=true"
+    },
+    {
+      "defName": "khm-saga",
+      "query": "from[khm]?subtype='Saga'"
+    },
+    {
+      "defName": "khm-alternate-frame",
+      "query": "from[khm-showcase]+from[khm-borderless]+from[khm-extended-art]"
+    },
+    {
+      "defName": "khm-showcase-and-borderless",
+      "query": "from[khm-showcase]+from[khm-borderless]"
+    },
+    {
+      "defName": "khm-saga-theme-commander",
+      "query": "from[khm-saga]+from[khm-borderless]+from[khm-theme-booster]"
+    },
+    {
+      "defName": "khm-common-and-dual-snow-land",
+      "query": "from[khm-main]?rarity='c'+from[khm-main]?type='Snow Land'"
+    },
+    {
+      "defName": "khm-foils",
+      "query": "from[khm]-from[khm-promo]-from[khm]?token=true"
+    },
+    {
+      "defName": "khm-booster",
+      "query": "from[khm]?mainSet=true"
+    },
+    {
+      "defName": "khm-snow-land",
+      "query": "from[khm-booster]?snowLand=true"
+    },
+    {
+      "defName": "khm-token",
+      "query": "from[khm]?token=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "khm-all-cards",
+      "packDesc": "Kaldheim: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[khm]" }
+      ]
+    },
+
+    {
+      "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
+      "packName": "khm-draft",
+      "packDesc": "Kaldheim: Draft Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://wpn.wizards.com/en/article/inside-each-kaldheim-product" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[khm-snow-land]" },
+        { "query": "take[10]>from[khm-booster]?rarity='c" },
+        { "query": "take[3]>from[khm-booster]?rarity='u" },
+        { "query": "from[khm-booster]?rarity='r" },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[khm]?title='Tip/Marketing Card"
+            },
+            {
+              "percent": "50",
+              "query": "from[khm-token]"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/7.4 chance of replacing rare with mythic (7.4 instead of 8 as of znr Sep-2020",
+              "percent": "10/74",
+              "overrideSlot": "15",
+              "query": "from[khm-booster]?rarity='m'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "33% (1:45) chance of foil, scaled by rarity, replacing the last common, as of m20: Jun-2019",
+              "overrideSlot": "11",
+              "percent": "88/360",
+              "query": "from[khm-foils]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "11",
+              "percent": "24/360",
+              "query": "from[khm-foils]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "11",
+              "percent": "7/360",
+              "query": "from[khm-foils]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "11",
+              "percent": "1/360",
+              "query": "from[khm-foils]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_comment": "Collector Boosters were introduced as standard feature as of ELD",
+      "packName": "khm-collector",
+      "packDesc": "Kaldheim: Collector Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://wpn.wizards.com/en/article/inside-each-kaldheim-product", "https://magic.wizards.com/en/articles/archive/feature/collecting-kaldheim-2021-01-07" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1: Foil: Alternate-frame R/M",
+          "query": "from[khm-alternate-frame]?rarity='r",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 2: Non-Foil: Showcase or Borderless R/M",
+          "query": "from[khm-showcase-and-borderless]?rarity='r"
+        },
+        {
+          "_comment": "Slot 3: Non-Foil: Extended-Art R/M",
+          "query": "from[khm-extended-art]?rarity='r"
+        },
+        {
+          "_comment": "Slot 4: Non-Foil: Saga R, Theme Booster R, or Commander Deck R/M",
+          "query": "from[khm-saga-theme-commander]?rarity='r"
+        },
+        {
+          "_comment": "Slot 5: Foil R/M",
+          "query": "from[khm-booster]?rarity='r"
+        },
+        {
+          "_comment": "Slot 6: Foil U Showcase",
+          "query": "from[khm-showcase]?rarity='u",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 7: Non-Foil U Showcase",
+          "query": "from[khm-showcase]?rarity='u"
+        },
+        {
+          "_comment": "Slot 8-9: 2x Foil U",
+          "query": "take[2]>from[khm-booster]?rarity='u'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 10-15: 5x Foil C or Snow Dual Lands",
+          "query": "take[5]>from[khm-common-and-dual-snow-land]",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 16: Foil Basic Snow Land",
+          "query": "from[khm-main]?type='Basic Snow Land'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 17: Foil: token",
+          "query": "from[khm-token]-from[khm-token]?marketing=true",
+          "setValues": { "foil": true }
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 1: Foil: Alternate-frame R/M",
+              "overrideSlot": "1",
+              "percent": "8.75",
+              "query": "from[khm-alternate-frame]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 2: Non-Foil: Showcase or Borderless R/M",
+              "overrideSlot": "2",
+              "percent": "8.75",
+              "query": "from[khm-showcase-and-borderless]?rarity='m"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 3: Non-Foil: Extended-Art R/M",
+              "overrideSlot": "3",
+              "percent": "8.75",
+              "query": "from[khm-extended-art]?rarity='m"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 5: Foil R/M",
+              "overrideSlot": "5",
+              "percent": "8.75",
+              "query": "from[khm-booster]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 5: Foil R/M",
+              "overrideSlot": "5",
+              "percent": "8.75",
+              "query": "from[khm-booster]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "khm-prerelease-promo-packins",
+      "packDesc": "Kaldheim: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[khm-main]?rarity='r",
+              "setValues": {
+                "foil": true
+              }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[khm-main]?rarity='m",
+              "setValues": {
+                "foil": true
+              }
+            }
+          ]
+        },
+        { "query": "take[1]>from[khm-promo]?type='Life Counter'" },
+        { "query": "from[khm-promo]?title='Prerelease Deck Box" },
+        { "query": "from[khm-promo]?title='Deckbuilding Advice Insert" },
+        { "query": "from[khm-promo]?title='Arena Code Card" }
+      ]
+    },
+    {
+      "packName": "khm-prerelease-promos",
+      "packDesc": "Kaldheim: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[khm-promo]?includedReason='Prerelease Promo" }
+      ]
+    },
+
+    {
+      "packName": "khm-variants",
+      "packDesc": "Kaldheim: All Variants",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[khm-variants]"
+        }
+      ]
+    },
+
+    {
+      "packName": "khm-promos",
+      "packDesc": "Kaldheim: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[khm-promo]"
+        }
+      ]
+    }
+
+  ]
+}

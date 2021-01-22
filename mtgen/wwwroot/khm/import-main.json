@@ -1,0 +1,78 @@
+﻿{
+  "setCode": "khm",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=250&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/kaldheim",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "select cards starting with a value = where: type~='Snow'",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'"
+      ]
+    },
+
+    {
+      "where": "title='Death Knell Berserker'",
+      "newValues": {
+        "title": "Deathknell Berserker"
+      }
+    },
+    {
+      "where": "title='Morrite of the Frost'",
+      "newValues": {
+        "title": "Moritte of the Frost"
+      }
+    },
+    {
+      "where": "title='Mystical Reflection'",
+      "newValues": {
+        "title": "Mystic Reflection"
+      }
+    },
+    {
+      "where": "title='Firja's Judgment'",
+      "newValues": {
+        "title": "Firja, Judge of Valor",
+        "rarity": "u"
+      }
+    },
+
+    {
+      "where": "type='Snow Land'",
+      "newValues": {
+        "snowLand": true,
+        "rarity": "c"
+      }
+    },
+
+    {
+      "_comment": "The above line turns this one rare Snow Land into common so this switches it back",
+      "where": "title='Faceless Haven'",
+      "newValues": {
+        "rarity": "r"
+      }
+    },
+
+    {
+      "_comment": "Delete all cards outside of the main set -- Basic lands are #504-511. Cards with alternate card frames have another collector number than the original version.[9] The two borderless planeswalkers are #512 and #513, foil-etched cards are numbered #514-614 and extended artwork cards are numbered #615-716. Both regular and foil versions of the borderless and extended art cards may be found in the Collector Boosters (there are no variants for the foil-etched cards). The cards with numbers #717-720 do not exist; these were going to be extended-art versions of the new Commander deck cards, but they were cut from the set (at too late a point for renumbering to occur).[10] The Buy-a-Box is #721 and the prerelease promo is #722",
+      "where": "numInt=(286-999)",
+      "delete": true
+    },
+
+    {
+      "_comment": "Delete Basic Snow Land, imported elsewhere",
+      "where": "type='Basic Snow Land'",
+      "delete": true
+    },
+
+    {
+      "_comment": "Consider everything left the main set.",
+      "where": "",
+      "newValues": {
+        "mainSet": true
+      }
+    }
+  ]
+}

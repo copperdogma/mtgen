@@ -1,0 +1,100 @@
+{
+  "setCode": "khm",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=250&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/kaldheim-variants",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+
+    {
+      "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+      "where": "numInt=399",
+      "newValues": {
+        "num": "399 P Buy-a-Box",
+        "src": "https://media.wizards.com/2020/wpn/marketing_materials/khm/khm_sma_bbc_en.png",
+        "useCardDataImg": true,
+        "includedReason": "Buy-a-Box Promo"
+      }
+    },
+    {
+      "where": "numInt=400",
+      "newValues": {
+        "num": "400 P Bundle",
+        "src": "http://mtgen.net/cards/khm-Reflections-of-Littjara-bundle-KHM-672.jpg",
+        "useCardDataImg": true,
+        "includedReason": "Bundle Promo"
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/khm-prerelease-deck-box.png",
+        "title": "Prerelease Deck Box",
+        "colour": "o",
+        "num": "006 Prerelease Deck Box",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-deckbuilding-info.jpg",
+        "src_large": "http://mtgen.net/cards/mtg-deckbuilding-info-lg.jpg",
+        "height": 370,
+        "width": 515,
+        "title": "Deckbuilding Advice Insert",
+        "colour": "o",
+        "num": "007 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-arena-code-card.png",
+        "title": "Arena Code Card",
+        "colour": "o",
+        "num": "008 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/khm-spindown-life-counter.png",
+        "title": "Spindown Life Counter",
+        "colour": "o",
+        "num": "001 Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

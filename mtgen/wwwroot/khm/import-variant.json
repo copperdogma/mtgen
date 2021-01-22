@@ -1,0 +1,93 @@
+﻿{
+  "setCode": "khm",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=250&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/kaldheim-variants",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'"
+      ]
+    },
+
+    {
+      "_comment": "Choose only Variants (delete all non-variants)",
+      "where": "numInt=(1-285)",
+      "delete": true
+    },
+
+    {
+      "where": "title='Elderfang Ritrualist'",
+      "newValues": {
+        "title": "Elderfang Ritualist"
+      }
+    },
+
+    {
+      "where": "title='Firja's Judgment'",
+      "newValues": {
+        "title": "Firja, Judge of Valor",
+        "rarity": "u"
+      }
+    },
+
+    {
+      "_comment": "mtgsalvation put a snow land in the variant data, but they don't exist in here",
+      "where": "type~='Snow Land'",
+      "delete": true
+    },
+
+    {
+      "where": "numInt=(286-298)",
+      "newValues": {
+        "borderless": true
+      }
+    },
+    {
+      "where": "numInt=(286-289)",
+      "newValues": {
+        "borderlessPlaneswalker": true
+      }
+    },
+    {
+      "where": "numInt=(290-323)",
+      "newValues": {
+        "showcase": true
+      }
+    },
+    {
+      "where": "numInt=(324-373)",
+      "newValues": {
+        "extendedArtwork": true
+      }
+    },
+    {
+      "where": "numInt=(374-393)",
+      "newValues": {
+        "themeBoosterCard": true
+      }
+    },
+
+    {
+      "_comment": "Delete Basic Land, imported elsewhere",
+      "where": "type='Basic Land'",
+      "delete": true
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "_comment": "Flag them all as variants",
+      "where": "",
+      "newValues": {
+        "variant": true
+      }
+    }
+  ]
+}
