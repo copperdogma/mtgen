@@ -1051,15 +1051,16 @@ class CardDataImporter {
 
         rawCardData = JSON.parse(rawCardData);
 
-        if (rawCardData === undefined || !rawCardData.hasOwnProperty('cards')) {
+        const rawCards = rawCardData.cards ?? rawCardData.data.cards; // Earlier card format / v5+ card format
+        if (rawCardData === undefined || !rawCards) {
             alert("Missing card data from mtgjson.com. Note that you CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.");
         }
-        if (rawCardData.cards.length < 1) {
+        if (rawCards.length < 1) {
             alert("No cards from mtgjson.com found. Note that you CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.");
         }
 
         // add each card, converting from mtgjson.com's format to our own
-        rawCardData.cards.forEach(card => {
+        rawCards.forEach(card => {
             card.title = card.name;
             card.matchTitle = mtgGen.createMatchTitle(card.title); // used for matching Gathering Magic vs. WotC titles and card titles vs. exception titles
             card.set = setCode;
