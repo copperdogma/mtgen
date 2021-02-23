@@ -1076,7 +1076,7 @@ class CardDataImporter {
             }
             card.colour = this._getCardColourFromCard(card);
             card.num = card.number;
-            card.src = `http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=${card.multiverseid}&type=card`;
+            card.src = `http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=${card.multiverseId}&type=card`;
             card.imageSource = "mtgJson";
 
             // Adjust some of mtgJSON's format to our own:
