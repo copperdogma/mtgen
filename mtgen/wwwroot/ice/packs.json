@@ -5,8 +5,12 @@
       "query": "from[*]?set='ice"
     },
     {
+      "defName": "ice-snow-lands",
+      "query": "from[ice]?snowLand=true"
+    },
+    {
       "defName": "ice-main",
-      "query": "from[ice]"
+      "query": "from[ice]-from[ice-snow-lands]"
     }
   ],
   "packs": [
@@ -21,6 +25,7 @@
     {
       "packName": "ice-standard",
       "packDesc": "Ice Age: Standard Booster",
+      "sources": [ "https://mtg.fandom.com/wiki/Ice_Age" ],
       "isGenerated": true,
       "cards": [
         { "query": "take[3]>from[ice-main]?rarity='u'" },
@@ -31,13 +36,46 @@
     {
       "packName": "ice-starter-deck",
       "packDesc": "Ice Age: Starter Deck",
+      "sources": [ "https://mtg.fandom.com/wiki/Ice_Age", "https://www.youtube.com/watch?v=SAn-j3qA91o", "https://www.mtgsalvation.com/forums/magic-fundamentals/magic-general/329694-where-did-the-ice-age-snow-covered-lands-come-from" ],
       "isGenerated": false,
       "includeWithUserCards": false,
       "cards": [
         { "query": "take[9]>from[ice-main]?rarity='u" },
         { "query": "take[3]>from[ice-main]?rarity='r" },
         { "query": "take[26]>from[ice-main]?rarity='c" },
-        { "query": "take[22]>from[ice-main]?type='Basic Land'" }
+        { "query": "take[22]>from[ice-main]?type='Basic Land'", "canBeDuplicate": true },
+        {
+          "querySet": [
+            {
+              "_comment": "About 1/4 chance of a snow-covered land",
+              "percent": "1/4",
+              "overrideSlot": "39",
+              "query": "from[ice-snow-lands]"
+            }
+          ]
+        },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "39", "query": "from[ice-snow-lands]" } ] },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "40", "query": "from[ice-snow-lands]" } ] },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "41", "query": "from[ice-snow-lands]" } ] },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "42", "query": "from[ice-snow-lands]" } ] },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "43", "query": "from[ice-snow-lands]" } ] },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "44", "query": "from[ice-snow-lands]" } ] },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "45", "query": "from[ice-snow-lands]" } ] },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "46", "query": "from[ice-snow-lands]" } ] },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "47", "query": "from[ice-snow-lands]" } ] },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "48", "query": "from[ice-snow-lands]" } ] },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "49", "query": "from[ice-snow-lands]" } ] },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "51", "query": "from[ice-snow-lands]" } ] },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "52", "query": "from[ice-snow-lands]" } ] },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "53", "query": "from[ice-snow-lands]" } ] },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "54", "query": "from[ice-snow-lands]" } ] },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "55", "query": "from[ice-snow-lands]" } ] },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "56", "query": "from[ice-snow-lands]" } ] },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "57", "query": "from[ice-snow-lands]" } ] },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "58", "query": "from[ice-snow-lands]" } ] },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "59", "query": "from[ice-snow-lands]" } ] },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "60", "query": "from[ice-snow-lands]" } ] },
+        { "querySet": [ { "percent": "1/4", "overrideSlot": "61", "query": "from[ice-snow-lands]" } ] }
       ]
     }
   ]

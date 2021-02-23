@@ -1,10 +1,15 @@
 {
   "startProductName": "ice-boosters",
   "packFiles": [
-    "packs.json"
+    "packs.json?v1.1"
   ],
   "cardFiles": [
-    "cardsMain.json"
+    "cardsMain.json?v1.1"
   ],
-  "updates": []
+  "updates": [
+    {
+      "UpdateDate": "2021-02-23T13:30:00",
+      "HtmlString": "Starter decks now contain snow-covered lands."
+    }
+  ]
 }
