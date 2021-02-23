@@ -1,10 +1,15 @@
 {
   "startProductName": "all-boosters",
   "packFiles": [
-    "packs.json"
+    "packs.json?v1.1"
   ],
   "cardFiles": [
     "cardsMain.json"
   ],
-  "updates": []
+  "updates": [
+    {
+      "UpdateDate": "2021-02-23T11:00:00",
+      "HtmlString": "Boosters now properly contain 12 cards instead of 15 (there were too many commons)."
+    }
+  ]
 }

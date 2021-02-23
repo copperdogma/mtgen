@@ -22,10 +22,11 @@
       "packName": "all-standard",
       "packDesc": "Alliances: Standard Booster",
       "isGenerated": true,
+      "sources": [ "https://mtg.fandom.com/wiki/Alliances" ],
       "cards": [
         { "query": "take[3]>from[all-main]?rarity='u" },
         { "query": "take[1]>from[all-main]?rarity='r" },
-        { "query": "take[11]>from[all-main]?rarity='c" }
+        { "query": "take[8]>from[all-main]?rarity='c" }
       ]
     }
   ]
