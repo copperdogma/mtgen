@@ -1077,7 +1077,12 @@ class CardDataImporter {
             }
             card.colour = this._getCardColourFromCard(card);
             card.num = card.number;
-            card.src = `http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=${card.multiverseId}&type=card`;
+            const multiverseId = card.multiverseId ?? card.identifiers.multiverseId;
+            if (!multiverseId) {
+                console.log(`Missing multiverseId for card: ${card.title}`);
+                card.missingImage = true;
+            }
+            card.src = `http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=${multiverseId}&type=card`;
             card.imageSource = "mtgJson";
 
             // Adjust some of mtgJSON's format to our own:
