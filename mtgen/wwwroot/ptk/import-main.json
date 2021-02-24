@@ -1,0 +1,16 @@
+﻿{
+  "setCode": "ptk",
+  "cardDataUrl": "https://mtgjson.com/api/v5/PTK.json",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "select cards starting with a value = where: type~='Snow'",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'"
+      ]
+    }
+  ]
+}

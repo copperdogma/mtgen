@@ -1,0 +1,39 @@
+{
+  "defs": [
+    {
+      "defName": "ptk",
+      "query": "from[*]?set='ptk"
+    },
+    {
+      "defName": "ptk-basic-land",
+      "query": "from[ptk]?type='Basic Land'"
+    },
+    {
+      "defName": "ptk-main",
+      "query": "from[ptk]-from[ptk-basic-land]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "ptk-all-cards",
+      "packDesc": "Portal Three Kingdoms: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[ptk]" }
+      ]
+    },
+    {
+      "_comment": "Pack contents from video: 13 cards, 2 land",
+      "packName": "ptk-standard",
+      "packDesc": "Portal Three Kingdoms: Standard Booster",
+      "sources": [ "https://mtg.fandom.com/wiki/Portal_Three_Kingdoms", "https://www.youtube.com/watch?v=yo9wdINSGGk" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[5]>from[ptk-main]?rarity='c" },
+        { "query": "take[2]>from[ptk-main]?rarity='u" },
+        { "query": "take[1]>from[ptk-main]?rarity='r" },
+        { "query": "take[2]>from[ptk-basic-land]" }
+      ]
+    }
+  ]
+}

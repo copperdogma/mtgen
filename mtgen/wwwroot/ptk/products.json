@@ -1,0 +1,41 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "ptk-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "https://mtg.fandom.com/wiki/Portal_Three_Kingdoms" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "ptk-all-cards" }
+      ]
+    },
+    {
+      "productName": "ptk-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "https://mtg.fandom.com/wiki/Portal_Three_Kingdoms" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "ptk-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "ptk-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "ptk-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+  ]
+}
