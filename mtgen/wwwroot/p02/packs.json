@@ -1,0 +1,39 @@
+{
+  "defs": [
+    {
+      "defName": "p02",
+      "query": "from[*]?set='p02"
+    },
+    {
+      "defName": "p02-basic-land",
+      "query": "from[p02]?type='Basic Land'"
+    },
+    {
+      "defName": "p02-main",
+      "query": "from[p02]-from[p02-basic-land]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "p02-all-cards",
+      "packDesc": "Portal Second Age: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[p02]" }
+      ]
+    },
+    {
+      "_comment": "Pack contents from video: 13 cards, 2 land",
+      "packName": "p02-standard",
+      "packDesc": "Portal Second Age: Standard Booster",
+      "sources": [ "https://mtg.fandom.com/wiki/Portal_Second_Age", "https://www.youtube.com/watch?v=AQoj8iFIgys" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[9]>from[p02-main]?rarity='c" },
+        { "query": "take[3]>from[p02-main]?rarity='u" },
+        { "query": "take[1]>from[p02-main]?rarity='r" },
+        { "query": "take[2]>from[p02-basic-land]" }
+      ]
+    }
+  ]
+}

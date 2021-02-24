@@ -1,0 +1,41 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "p02-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "https://mtg.fandom.com/wiki/Portal_Second_Age" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "p02-all-cards" }
+      ]
+    },
+    {
+      "productName": "p02-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "https://mtg.fandom.com/wiki/Portal_Second_Age" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "p02-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "p02-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "p02-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+  ]
+}
