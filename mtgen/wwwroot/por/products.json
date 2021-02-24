@@ -1,0 +1,41 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "por-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "https://mtg.fandom.com/wiki/Portal" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "por-all-cards" }
+      ]
+    },
+    {
+      "productName": "por-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "https://mtg.fandom.com/wiki/Portal" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "por-standard" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "por-boosters-six",
+            "presetDesc": "Six Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "por-standard"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+  ]
+}

@@ -1,0 +1,28 @@
+﻿{
+  "setCode": "por",
+  "cardDataUrl": "https://mtgjson.com/api/v5/POR.json",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "select cards starting with a value = where: type~='Snow'",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'"
+      ]
+    },
+
+    {
+      "_comment": "For some reason mtgjson's data has a bunch of duplicated in it, usually without a multiverseId which means it has no image",
+      "where": "missingImage=true",
+      "delete": true
+    },
+
+    {
+      "_comment": "There are a few other dupes WITH images. Kill them.",
+      "where": "uuid=(c8b7c22f-1a06-5b51-8e4c-37a97fa8f47f|744f9c1e-8bad-5501-97cb-57cb8c3ce808|189dd8e1-7412-53b5-b8a0-56443c5e8349|a97e1cae-adf2-539e-95c5-3ac5957ff208|7fb39bce-19e7-5def-91cd-265fe6be19f4|d49220e5-4eee-5825-85b3-e6f68fdbb03f|40f6a94d-3a35-5f1f-ad92-aa12138f73d8)",
+      "delete": true
+    }
+  ]
+}

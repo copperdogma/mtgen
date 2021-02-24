@@ -1,0 +1,39 @@
+{
+  "defs": [
+    {
+      "defName": "por",
+      "query": "from[*]?set='por"
+    },
+    {
+      "defName": "por-basic-land",
+      "query": "from[por]?type='Basic Land'"
+    },
+    {
+      "defName": "por-main",
+      "query": "from[por]-from[por-basic-land]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "por-all-cards",
+      "packDesc": "Portal: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[por]" }
+      ]
+    },
+    {
+      "_comment": "The pack layout is pretty random. From that youtube video it went: CCCUXLLCRUUCCCCC",
+      "packName": "por-standard",
+      "packDesc": "Portal: Standard Booster",
+      "sources": [ "https://mtg.fandom.com/wiki/Portal", "https://www.youtube.com/watch?v=Dgg1CLp9D-U" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[9]>from[por-main]?rarity='c" },
+        { "query": "take[3]>from[por-main]?rarity='u" },
+        { "query": "take[1]>from[por-main]?rarity='r" },
+        { "query": "take[2]>from[por-basic-land]" }
+      ]
+    }
+  ]
+}
