@@ -1,0 +1,43 @@
+﻿{
+  "setCode": "tsr",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=252&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/time-spiral-remastered",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "select cards starting with a value = where: type~='Snow'",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'"
+      ]
+    },
+
+    {
+      "_comment": "Delete all cards outside of the main set -- Timeshifted cards",
+      "where": "numInt=(290-999)",
+      "delete": true
+    },
+
+    {
+      "where": "title='Careful Considerarion'",
+      "newValues": {
+        "title": "Careful Consideration"
+      }
+    },
+    {
+      "where": "title='Stormfront Raiders'",
+      "newValues": {
+        "title": "Stormfront Riders"
+      }
+    },
+
+    {
+      "_comment": "Consider everything left the main set.",
+      "where": "",
+      "newValues": {
+        "mainSet": true
+      }
+    }
+  ]
+}

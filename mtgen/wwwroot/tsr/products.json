@@ -1,0 +1,54 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "tsr-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "tsr-all-cards" }
+      ]
+    },
+
+    {
+      "productName": "tsr-boosters",
+      "productDesc": "Draft Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "tsr-draft" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "tsr-draft-boosters-six",
+            "presetDesc": "Six Draft Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "tsr-draft"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "tsr-promos",
+      "productDesc": "All Timeshifted Cards",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/ravnica-allegiance-planeswalker-deck-lists-2019-01-10" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "tsr-promos" }
+      ]
+    }
+
+  ]
+}

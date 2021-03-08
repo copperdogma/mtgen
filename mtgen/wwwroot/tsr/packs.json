@@ -1,0 +1,120 @@
+{
+  "defs": [
+    {
+      "defName": "tsr",
+      "query": "from[*]?set='tsr'"
+    },
+    {
+      "defName": "tsr-timeshifted",
+      "query": "from[tsr]?timeshifted=true"
+    },
+    {
+      "defName": "tsr-main",
+      "query": "from[tsr]-from[tsr]?type=(Marketing)-from[tsr]?timeshifted=true-from[tsr]?token=true"
+    },
+    {
+      "defName": "tsr-foils",
+      "query": "from[tsr]-from[tsr-timeshifted]-from[tsr]?token=true"
+    },
+    {
+      "defName": "tsr-token",
+      "query": "from[tsr]?token=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "tsr-all-cards",
+      "packDesc": "Time Spiral Remastered: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[tsr]" }
+      ]
+    },
+
+    {
+      "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
+      "packName": "tsr-draft",
+      "packDesc": "Time Spiral Remastered: Draft Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://mtg.fandom.com/wiki/Time_Spiral_Remastered" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[tsr-main]?rarity='c" },
+        { "query": "take[3]>from[tsr-main]?rarity='u" },
+        { "query": "from[tsr-main]?rarity='r" },
+        { "query": "from[tsr-timeshifted]" },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[tsr]?title='Tip/Marketing Card"
+            },
+            {
+              "percent": "50",
+              "query": "from[tsr-token]"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/7.4 chance of replacing rare with mythic (7.4 instead of 8 as of znr Sep-2020",
+              "percent": "10/74",
+              "overrideSlot": "14",
+              "query": "from[tsr-main]?rarity='m'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "33% (1:45) chance of foil, scaled by rarity, replacing the last common, as of m20: Jun-2019",
+              "overrideSlot": "10",
+              "percent": "88/360",
+              "query": "from[tsr-foils]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "24/360",
+              "query": "from[tsr-foils]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "7/360",
+              "query": "from[tsr-foils]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "1/360",
+              "query": "from[tsr-foils]?rarity='m",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "Timeshifted foil = 1/27 packs: https://twitter.com/StarCityBen/status/1366763116856508422",
+              "overrideSlot": "15",
+              "percent": "1/27",
+              "query": "from[tsr-timeshifted]",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "tsr-promos",
+      "packDesc": "Time Spiral Remastered: All Timeshifted Cards",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[tsr-timeshifted]"
+        }
+      ]
+    }
+
+  ]
+}
