@@ -20,6 +20,24 @@
     },
 
     {
+      "_comment": "Lotus Bloom is the release promo and will be imported in import-promo",
+      "where": "numInt=411",
+      "delete": true
+    },
+
+    {
+      "_comment": "For some reason mtgsalvation is including this card in the timeshifted as well, but it should only be in the main cards.",
+      "where": "title='Vesuva'",
+      "delete": true
+    },
+
+    {
+      "_comment": "For some reason mtgsalvation is including this card in the timeshifted as well, but it should only be in the main cards.",
+      "where": "title='Vesuva'",
+      "delete": true
+    },
+
+    {
       "_comment": "Flag them all as timeshifted and switch their rarity to 's' (special) as mtgsalvation listed them as 'b' (whatever that is)",
       "where": "",
       "newValues": {

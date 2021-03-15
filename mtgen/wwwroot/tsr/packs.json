@@ -105,13 +105,25 @@
     },
 
     {
-      "packName": "tsr-promos",
+      "packName": "tsr-timeshifted",
       "packDesc": "Time Spiral Remastered: All Timeshifted Cards",
       "isGenerated": false,
       "includeWithUserCards": false,
       "cards": [
         {
           "query": "take[*]>from[tsr-timeshifted]"
+        }
+      ]
+    },
+
+    {
+      "packName": "tsr-promos",
+      "packDesc": "Time Spiral Remastered: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[tsr]?promo=true"
         }
       ]
     }

@@ -1,12 +1,18 @@
 {
   "startProductName": "tsr-boosters",
   "packFiles": [
-    "packs.json"
+    "packs.json?v1.1"
   ],
   "cardFiles": [
-    "cardsMain.json",
+    "cardsMain.json?v1.1",
     "cardsToken.json",
-    "cardsTimeshifted.json"
+    "cardsTimeshifted.json?v1.1",
+    "cardsPromo.json"
   ],
-  "updates": []
+  "updates": [
+    {
+      "UpdateDate": "2021-03-08T13:30:00:00",
+      "HtmlString": "Lotus Bloom foil now only a promo card, removed erroneous Vesuvus timeshifted placeholder, added promo card section."
+    }
+  ]
 }

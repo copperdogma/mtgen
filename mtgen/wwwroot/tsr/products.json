@@ -39,16 +39,27 @@
     },
 
     {
-      "productName": "tsr-promos",
+      "productName": "tsr-timeshifted",
       "productDesc": "All Timeshifted Cards",
       "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/ravnica-allegiance-planeswalker-deck-lists-2019-01-10" ],
       "isGenerated": false,
       "isVisible": true,
       "initialSort": "colour",
       "packs": [
+        { "packName": "tsr-timeshifted" }
+      ]
+    },
+
+    {
+      "productName": "tsr-promos",
+      "productDesc": "All Promos",
+      "sources": [ "https://mtg.fandom.com/wiki/Time_Spiral_Remastered" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
         { "packName": "tsr-promos" }
       ]
     }
-
   ]
 }
