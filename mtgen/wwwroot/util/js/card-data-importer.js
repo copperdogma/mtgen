@@ -4,6 +4,8 @@ Generates an output mtgen card set in json format for use in the main app, using
 Typically the importer file (e.g. import-main.json) will specify the wotc card gallery as the image source and
 the mtgsalvation spoiler page as the data source.
 
+10-Apr-2021: Added support for "cloneCard": true alongside where statement so you can duplicate a card and then change it. Useful when there is only one data card but multiple image variants.
+10-Apr-2021: Added option to include importOptions at top level of json import file. Only options supported now is importByImage:true, useful when there are multiple images with same title. NOT SURE THIS WORKS.
 13-Apr-2020: Now suggested closest matching card images titles if no card data match found; they're usually typos.
 12-Apr-2020: Added warning when imported set of cards is missing some card nums in the sequence.
 8-Apr-2020: Added card data property .useCardDataImg that if true, importer will ignore any imported images and just use the original card data image.
@@ -97,7 +99,7 @@ class CardDataImporter {
 
     // PUBLIC METHODS ------------------------------------------------------------------------------------
 
-    async loadAndProcessAllFiles({ cardDataUrl, htmlCardData, imagesUrl, exceptions, setCode }) {
+    async loadAndProcessAllFiles({ cardDataUrl, htmlCardData, imagesUrl, importOptions, exceptions, setCode }) {
         setCode = setCode.trim();
 
         this._clearConsole();
@@ -109,15 +111,17 @@ class CardDataImporter {
 
         const imageDataPromise = imagesUrl ? this._fetchHtml(imagesUrl) : null;
 
+        const importOptionsPromise = Promise.resolve(importOptions);
+
         // Exceptions are loaded as part of the import file, so they're already in the form.
         const exceptionsDataPromise = Promise.resolve(exceptions);
 
         window.dispatchEvent(new Event('data-loading'));
 
         // Get all data, either fetched from a url or loaded directly from the form.
-        let htmlData, imageData, exceptionData;
+        let htmlData, imageData, importOptionsData, exceptionData;
         try {
-            [htmlData, imageData, exceptionData] = await Promise.all([cardDataPromise, imageDataPromise, exceptionsDataPromise]);
+            [htmlData, imageData, importOptionsData, exceptionData] = await Promise.all([cardDataPromise, imageDataPromise, importOptionsPromise, exceptionsDataPromise]);
         }
         catch (err) {
             alert(`ERROR: failed to retrieve data from a source: ${err.message}`);
@@ -128,13 +132,17 @@ class CardDataImporter {
             data: htmlData,
             urlSource: cardDataUrl
         };
+
         const htmlImages = {
             data: imageData,
             urlSource: imagesUrl
         };
-        const jsonExceptions = {
-            data: exceptionData
-        };
+
+        const jsonImportOptions = { data: importOptionsData };
+        if (jsonImportOptions.data) { jsonImportOptions.data = JSON.parse(jsonImportOptions.data); }
+
+        const jsonExceptions = { data: exceptionData };
+        if (jsonExceptions.data) { jsonExceptions.data = JSON.parse(jsonExceptions.data); }
 
         window.dispatchEvent(new Event('data-loaded'));
 
@@ -166,16 +174,12 @@ class CardDataImporter {
         }
 
         // Apply Exceptions -------------------------------------------------------------------------------------------------
-        if (jsonExceptions.data) {
-            jsonExceptions.data = JSON.parse(jsonExceptions.data);
-        }
-
-        // Returns both the updated set of cards AND the modified exceptions (the latter for reporitng purposes).
+        // Returns both the updated set of cards AND the modified exceptions (the latter for reporitng purposes)
         const exceptionsResults = await this.applyExceptions(mainOut, jsonExceptions.data, setCode);
         mainOut = exceptionsResults.cards;
 
-        // Add images to cards -------------------------------------------------------------------------------------------------
-        mainOut = this._applyImagesToCards(mainOut, mainImages);
+        // Add images to cards ------------------------------------------------------------------------------------------------
+        mainOut = this._applyImagesToCards(mainOut, mainImages, jsonImportOptions.data);
 
         const cardArray = [...mainOut.values()];
         const outputLog = await this._createOutputLog(cardArray, mainImages, exceptionsResults);
@@ -184,12 +188,12 @@ class CardDataImporter {
         return [outputLog, finalData];
     }
 
-    getDownloadSettingsFileLinkAttributes(setCode, cardDataUrl, imagesUrl, exceptionsUrl, exceptions) {
+    getDownloadSettingsFileLinkAttributes(setCode, cardDataUrl, imagesUrl, importOptions, exceptions) {
         const settings = {
             "setCode": setCode,
             "cardDataUrl": cardDataUrl,
             "imagesUrl": imagesUrl,
-            "exceptionsUrl": exceptionsUrl,
+            "importOptions": importOptions,
             "exceptions": exceptions
         };
 
@@ -345,7 +349,7 @@ class CardDataImporter {
                 matchingCardsObj = mtgGen.executeQuery(cardsObj, null, where);
             }
             const matchingCards = this._objectToMap(matchingCardsObj);
-            const matchingCardArray = [...matchingCards.values()];
+            let matchingCardArray = [...matchingCards.values()];
 
             // If it's a Delete exception, delete any cards matching the query.
             if (exception.delete === true) {
@@ -355,6 +359,18 @@ class CardDataImporter {
                 exception.result.deletedCards = matchingCards;
                 exception.result.affectedCards = matchingCards.length;
                 continue;
+            }
+
+            // If CloneCard is set, we want to create a cloned card before applying the changes.
+            // This is useful if the data only had one card but we have two images for it.
+            if (exception.cloneCard == true) {
+                const clonedCardArray = [];
+                matchingCardArray.forEach(card => {
+                    const clonedCard = { ...card };
+                    clonedCard.mtgenId += '-dupe'; // Modify the ID so it won't remove the originals in the next step.
+                    clonedCardArray.push(clonedCard);
+                });
+                matchingCardArray = clonedCardArray;
             }
 
             // Otherwise it's an Update exception; apply the changes.
@@ -621,7 +637,12 @@ class CardDataImporter {
                     }
                     else {
                         const modifiedCards = [...exception.result.modifiedCards.values()].sort(this._sortByTitle);
-                        out += `Modified ${modifiedCards.length} cards via query: ${exception.where}<br/>`;
+                        if (exception.cloneCard) {
+                            out += `Cloned ${modifiedCards.length} cards via query: ${exception.where}<br/>`;
+                        }
+                        else {
+                            out += `Modified ${modifiedCards.length} cards via query: ${exception.where}<br/>`;
+                        }
                         out += `&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New values: ${JSON.stringify(exception.newValues)}`;
                         if (modifiedCards.length > 20) {
                             out += "<ul>" + modifiedCards.map(card => card.title).join(", ") + "</ul>";
@@ -764,6 +785,9 @@ class CardDataImporter {
         const alphabet = "abcedfghijklmnopqrstuvwxyz";
         newCard.num = newCard.num || newCard.multiverseid || newCard.id; // num is required, so ensure we have one
         newCard.numInt = Number.parseInt(newCard.num);
+        if (newCard.numInt == 157) {
+            var xxx = 1;
+        }
         newCard.mtgenId = `${newCard.set}|${newCard.num}`;
         const firstVariant = `${newCard.mtgenId}:a`;
         if (!cards.has(newCard.mtgenId) && !cards.has(firstVariant)) {
@@ -781,6 +805,13 @@ class CardDataImporter {
                     break;
                 }
             }
+
+            //// In VERY rare cases one of the double-faced cards may have been duplicate in the data. Detect, warn, and discard.
+            // Disabled this because if we trash it how can we fix the data?
+            //if (nextAvailableVariantNum >= 3) {
+            //    console.log(`DUPLICATE VARIANT CARD: ${newCard.title}`);
+            //    return cards;
+            //}
 
             const originalCard = cards.get(newCard.mtgenId) || cards.get(firstVariant);
 
@@ -803,6 +834,7 @@ class CardDataImporter {
             newCard.mtgenVariant = nextAvailableVariantNum;
             newCard.mtgenId += `:${alphabet[nextAvailableVariantNum - 1]}`;
             newCard.duplicateNum = true;
+
             cards.set(newCard.mtgenId, newCard);
         }
         return cards;
@@ -1240,6 +1272,45 @@ class CardDataImporter {
             }
         });
 
+        //CAMKILL: TEMP
+        //rawimages.forEach(img => {
+        //    if (img.alt.length) {
+        //        const image = {
+        //            title: img.alt.trim(),
+        //            src: img.src
+        //        };
+        //        image.matchTitle = mtgGen.createMatchTitle(image.title);
+
+        //        // Support for double-faced cards.
+        //        const parent = img.parentElement;
+        //        if (parent.classList.contains('side')) {
+        //            if (parent.classList.contains('front')) {
+        //                const backCard = parent.parentElement.querySelector(".side.back img");
+        //                if (backCard) {
+        //                    image.matchTitleBack = mtgGen.createMatchTitle(backCard.alt);
+        //                    image.doubleFaceCard = true;
+        //                }
+        //            }
+        //            else if (parent.classList.contains('back')) {
+        //                const frontCard = parent.parentElement.querySelector(".side.front img");
+        //                if (frontCard) {
+        //                    image.matchTitleFront = mtgGen.createMatchTitle(frontCard.alt);
+        //                    image.doubleFaceCard = true;
+        //                }
+        //            }
+        //        }
+
+        //        // Only use the image if it doesn't already exist.
+        //        // Duplicates can happen if the image gallery has normal card images followed by special card images.
+        //        if (!finalImages.has(image.matchTitle)) {
+        //            finalImages.set(image.matchTitle, image);
+        //        }
+        //        else {
+        //            console.log(`Warning: Duplicate image name: ${image.title}`);
+        //        }
+        //    }
+        //});
+
         finalImages.forEach(image => image.imageSource = "wotc-spoilers");
 
         return finalImages;
@@ -1601,8 +1672,40 @@ class CardDataImporter {
         return map;
     }
 
-    _applyImagesToCards(cards, images) {
+    _applyImagesToCards(cards, images, importOptions) {
         const cardArray = [...cards.values()];
+        const imgArray = [...images.values()];
+
+        // Special import mode: Import by Image
+        // Used when there are multiple images with the same title (i.e.: card variants) and you want to match them with a single card data item.
+        // Note that this will create multiple cards with the exact same card ID, so you'll need to modify the secondary versions to have different IDs.
+        // NOTE: Not sure if this will ever really work properly because of the duplicate ID thing. The exceptions are applied BEFORE the images are added,
+        //       so how would you fix the dupe IDs? I left this in because I may find a way plus it allowed for the importOptions.
+        if (importOptions.importByImage) {
+            const cardOutArray = [];
+            if (cards) {
+                imgArray.forEach(img => {
+                    const card = cardArray.find(card => card.matchTitle == img.matchTitle);
+
+                    if (!card) return;
+
+                    const newCard = { ...card }; // Clone card so we can have more than one of the same card.
+
+                    newCard.srcOriginal = img.src;
+                    newCard.imageSourceOriginal = img.src;
+                    newCard.src = img.src;
+                    newCard.imageSource = img.imageSource;
+
+                    // NOTE: I didn't add double-sides card support, but you could adapt the normal version here.
+
+                    newCard.wasUsed = true;
+                    cardOutArray.push(newCard);
+                });
+            }
+            return cardOutArray;
+        }
+
+        // Regular card-first import.
 
         if (images) {
             // Indexed for double-faced cards.
@@ -1615,7 +1718,7 @@ class CardDataImporter {
                 // instead of the one from the imported images. Useful for older wotc galleries with bad merged images of double-faced cards.
                 if (card.useCardDataImg == true) return;
 
-                // images[card.num]: archive.wizards.com images/url pattern images have no titles; they're indexed by image num
+                // images[card.num]: archive.wizards.com images/url pattern images have no titles; they're indexed by image num.
                 const image = images.get(card.matchTitle) || images.get(card.numInt);
 
                 if (!image) return;
@@ -1625,7 +1728,7 @@ class CardDataImporter {
                 card.src = image.src;
                 card.imageSource = image.imageSource;
 
-                // Properties for double-sided images
+                // Properties for double-sided images.
                 if (image.doubleFaceCard) { card.doubleFaceCard = image.doubleFaceCard; }
                 if (image.matchTitleFront) {
                     const cardFront = cardsByMatchTitle.get(image.matchTitleFront);
@@ -1646,7 +1749,7 @@ class CardDataImporter {
             });
         }
 
-        // if no image found at all at this point, create replacement card
+        // if no image found at all at this point, create replacement card.
         cardArray.forEach(card => {
             if (!card.src) {
                 card.imageSource = "placeholder";
