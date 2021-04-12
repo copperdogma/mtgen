@@ -23,6 +23,7 @@ Normally 15 cards per booster:
 
 - 1 in 4 boosters contains a foil which may be any card of any rarity (incl Basic Land), which replaces a Common
 
+11-Apr-2021: Now includes college support for stx.
 3-Apr-2020: Exporter: Added Deckstats format.
 3-Apr-2018: Exporter: now combined two-sided cards into FrontTitle // BackTitle, and added Frogtown export format
 14-Jun-2017: Exporter: now replaces split card " // " with "/" for txt, and strips out card not usable for deckbuilding
@@ -90,8 +91,8 @@ Normally 15 cards per booster:
 - No longer allows duplicates.
 - Now works in Firefox (oops).
 
-	TODO: 
-		- hacky semi-global variables: my.mainView.currentView, my.menuSortOrder
+    TODO: 
+        - hacky semi-global variables: my.mainView.currentView, my.menuSortOrder
 */
 /* jshint laxcomma: true */
 
@@ -352,7 +353,12 @@ var mtgGen = (function (my) {
                     return (my.hasFactions) ? my.replaceActiveToken('faction', '<a href="#" class="button[[ACTIVE]] sort-all-by-faction">Faction</a>') : '';
                 }
             );
-            this.addMenuItem("set", 20,
+            this.addMenuItem("college", 20,
+                function () {
+                    return (my.hasColleges) ? my.replaceActiveToken('college', '<a href="#" class="button[[ACTIVE]] sort-all-by-college">College</a>') : '';
+                }
+            );
+            this.addMenuItem("set", 22,
                 function () {
                     return (my.mainView.currentView.isGenerated) ? my.replaceActiveToken('set', '<a href="#" class="button[[ACTIVE]] sort-all-by-sets">Generated sets</a>')
                         : '';
@@ -389,7 +395,12 @@ var mtgGen = (function (my) {
                     return (my.hasFactions) ? my.replaceActiveToken('faction', '<a href="#" class="button[[ACTIVE]] sort-by-faction" data-setid="[[SETID]]">Faction</a>') : '';
                 }
             );
-            this.addMenuItem("order", 16,
+            this.addMenuItem("college", 16,
+                function () {
+                    return (my.hasColleges) ? my.replaceActiveToken('college', '<a href="#" class="button[[ACTIVE]] sort-by-college" data-setid="[[SETID]]">College</a>') : '';
+                }
+            );
+            this.addMenuItem("order", 18,
                 function () {
                     return (my.mainView.currentView.isGenerated) ? my.replaceActiveToken('order', '<a href="#" class="button[[ACTIVE]] sort-by-opened" data-setid="[[SETID]]">Opened order</a>')
                         : '';
@@ -474,6 +485,7 @@ var mtgGen = (function (my) {
             events["click #product-content ." + this.productName + " .sort-all-by-guild"] = "sortAllByGuild";
             events["click #product-content ." + this.productName + " .sort-all-by-clan"] = "sortAllByClan";
             events["click #product-content ." + this.productName + " .sort-all-by-faction"] = "sortAllByFaction";
+            events["click #product-content ." + this.productName + " .sort-all-by-college"] = "sortAllByCollege";
             events["click #product-content ." + this.productName + " .sort-all-by-sets"] = "sortAllBySets";
 
             events["click #product-content ." + this.productName + " .set .sort-by-name"] = "sortByTitle";
@@ -484,6 +496,7 @@ var mtgGen = (function (my) {
             events["click #product-content ." + this.productName + " .set .sort-by-guild"] = "sortByGuild";
             events["click #product-content ." + this.productName + " .set .sort-by-clan"] = "sortByClan";
             events["click #product-content ." + this.productName + " .set .sort-by-faction"] = "sortByFaction";
+            events["click #product-content ." + this.productName + " .set .sort-by-college"] = "sortByCollege";
             events["click #product-content ." + this.productName + " .set .sort-by-opened"] = "sortSetByOpenedOrder";
 
             if (this.hasPackPresets) {
@@ -637,8 +650,7 @@ var mtgGen = (function (my) {
         }
 
         , renderPackPreset: function (allPacks, preset) {
-            let packsOut = preset.packs.reduce((packString, pack, packIndex) =>
-            { return packString += this.renderInput(allPacks, pack, packIndex); }, '');
+            let packsOut = preset.packs.reduce((packString, pack, packIndex) => { return packString += this.renderInput(allPacks, pack, packIndex); }, '');
 
             packsOut += this.renderInput(allPacks); // Will render a booster template for dynamic js addition
             packsOut += "<button id='add-booster'>Add Booster</button>";
@@ -810,6 +822,7 @@ var mtgGen = (function (my) {
                     case my.sortOrders.guild.sort: return this.sortAllByGuild;
                     case my.sortOrders.clan.sort: return this.sortAllByClan;
                     case my.sortOrders.faction.sort: return this.sortAllByFaction;
+                    case my.sortOrders.college.sort: return this.sortAllByCollege;
                     case my.sortOrders.set.sort: return this.sortAllBySets;
                 }
             }
@@ -867,6 +880,12 @@ var mtgGen = (function (my) {
 
         , sortAllByFaction: function () {
             this.sortedSets = my.sortAllByFaction(this.allCards);
+            this.renderAllCardSets(this.sortedSets);
+            return false;
+        }
+
+        , sortAllByCollege: function () {
+            this.sortedSets = my.sortAllByCollege(this.allCards);
             this.renderAllCardSets(this.sortedSets);
             return false;
         }
@@ -954,6 +973,15 @@ var mtgGen = (function (my) {
             let sortedCards = my.sortByFaction(this.sortedSets[setID]);
             sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
             sortedCards.sortOrder = my.sortOrders.faction;
+            my.renderSetUpdate(this.productName, setID, sortedCards, this.sortedSets);
+            return false;
+        }
+
+        , sortByFaction: function (events) {
+            const setID = events.target.getAttribute('data-setid');
+            let sortedCards = my.sortByCollege(this.sortedSets[setID]);
+            sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
+            sortedCards.sortOrder = my.sortOrders.college;
             my.renderSetUpdate(this.productName, setID, sortedCards, this.sortedSets);
             return false;
         }
@@ -1137,8 +1165,7 @@ var mtgGen = (function (my) {
                     .then(response => {
                         if (response.ok) { return response.json(); }
                         my.throwTerminalError('Save draw failed.');
-                    }
-                    )
+                    })
                     // e.g. return: { "drawId": "m09mJw", "url": "ogw?draw=m09mJw" }
                     .then(drawResults => displayDrawResults(drawResults));
             }

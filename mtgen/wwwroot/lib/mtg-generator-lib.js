@@ -5,6 +5,7 @@ Shared/base functions.
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
+11-Apr-2021: Now includes college support for stx.
 14-Aug-2019: Added duplicate sets with fixed set codes, e.g.: con_ and con
 14-Jan-2019: Card cost calculator rewritten to simplify and handle a missing case.
 24-Apr-2018: Added support for slot overrides in pack defs.
@@ -30,6 +31,7 @@ var mtgGen = (function (my) {
     my.hasGuilds = false;
     my.hasClans = false;
     my.hasFactions = false;
+    my.hasColleges = false;
 
     my.initViews = []; // for modules to add their views to be run once at the start of the app
 
@@ -174,6 +176,24 @@ var mtgGen = (function (my) {
             }
         }
         return my.factions.unknown;
+    }
+
+    my.colleges = {
+        lorehold: { sorder: 1, code: 'lorehold', name: 'Lorehold', fullName: 'Lorehold' },
+        prismari: { sorder: 2, code: 'prismari', name: 'Prismari', fullName: 'Prismari' },
+        quandrix: { sorder: 3, code: 'quandrix', name: 'Quandrix', fullName: 'Quandrix' },
+        silverquill: { sorder: 4, code: 'silverquill', name: 'Silverquill', fullName: 'Silverquill' },
+        witherbloom: { sorder: 5, code: 'witherbloom', name: 'Witherbloom', fullName: 'Witherbloom' },
+
+        unknown: { sorder: 97, code: '?', name: 'Unknown', fullName: 'Unknown' }
+    };
+    function getCollegeByCode(code) {
+        for (let college in my.colleges) {
+            if (my.colleges[college].code == code) {
+                return my.colleges[college];
+            }
+        }
+        return my.colleges.unknown;
     }
 
     my.getRequiredOption = function (options, optionName, abortMsg) {
@@ -370,6 +390,12 @@ var mtgGen = (function (my) {
                         card.faction = my.createMatchTitle(card.faction);
                         card.factionOrder = getFactionByCode(card.faction).sorder;
                         my.hasFactions = true;
+                    }
+
+                    if (card.college) {
+                        card.college = my.createMatchTitle(card.college);
+                        card.collegeOrder = getCollegeByCode(card.college).sorder;
+                        my.hasColleges = true;
                     }
 
                     card.ccost = calculateConvertedCost(card.cost);
@@ -639,6 +665,8 @@ var mtgGen = (function (my) {
                 result = matchingCards.map(matchingCard => matchingCard.mtgenId);
             }
             else {
+                //TODO: actuall parse the symbol and throw an error if it's wrong
+                //TODO: implement not equals (!=)
                 // Regular equals
                 query2[2] = query2[2].replace(/'/g, '');
 
@@ -925,6 +953,7 @@ var mtgGen = (function (my) {
         , guild: { sort: 'guild' }
         , clan: { sort: 'clan' }
         , faction: { sort: 'faction' }
+        , college: { sort: 'college' }
         , order: { sort: 'order' } // opened order within the set
     };
 
@@ -1244,6 +1273,48 @@ var mtgGen = (function (my) {
         return sortedSets;
     };
 
+    my.sortAllByCollege = function (cardList) {
+        let sortedSets = [];
+
+        // For each college, create a new card set
+        let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
+        let groupedCardSets = my.groupByProperty(mainCards, 'college');
+        const cardSets = this.sortIntoArray(groupedCardSets, my.colleges);
+        cardSets.forEach(cardSet => {
+            let set = cardSet.sort((a, b) => my.sortBy('matchTitle', a, b));
+            set.setDesc = getCollegeByCode(set[0].college).name;
+            set.sortOrder = my.sortOrders.name;
+            sortedSets.push(set);
+        });
+
+        let basicLandCards = my.getBasicLandCards(cardList);
+
+        // Flatten the grouped sets into a flat array of single cards.
+        const sortedSetCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+        const collegeAndBasicLandCards = basicLandCards.concat(sortedSetCards);
+
+        let nonCollegeCards = my.getOtherCards(mainCards, collegeAndBasicLandCards);
+        if (nonCollegeCards.length > 0) {
+            nonCollegeCards.setDesc = 'Non-College';
+            sortedSets.push(nonCollegeCards);
+        }
+
+        if (basicLandCards.length > 0) {
+            sortedSets.push(basicLandCards);
+        }
+
+        // Flatten the grouped sets into a flat array of single cards.
+        const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+        const otherCards = my.getOtherCards(cardList, selectedCards);
+        if (otherCards.length > 0) {
+            sortedSets.push(otherCards);
+        }
+
+        sortedSets.sortOrder = my.sortOrders.college;
+
+        return sortedSets;
+    };
+
     /* --------- Sorting Sets --------------------------------------------------------------------------------------------------------------------- */
     my.sortByTitle = function (cardList) {
         let sortedCards = cardList.sort((a, b) => my.sortBy('matchTitle', a, b));
@@ -1325,6 +1396,17 @@ var mtgGen = (function (my) {
             return ((aProp < bProp) ? -1 : ((aProp > bProp) ? 1 : 0));
         });
         sortedCards.sortOrder = my.sortOrders.faction;
+        return sortedCards;
+    };
+
+    my.sortByCollege = function (cardList) {
+        // Sort by college then title
+        let sortedCards = cardList.sort((a, b) => {
+            const aProp = padNum(a.collegeOrder, 3) + a.matchTitle;
+            const bProp = padNum(b.collegeOrder, 3) + b.matchTitle;
+            return ((aProp < bProp) ? -1 : ((aProp > bProp) ? 1 : 0));
+        });
+        sortedCards.sortOrder = my.sortOrders.college;
         return sortedCards;
     };
 
