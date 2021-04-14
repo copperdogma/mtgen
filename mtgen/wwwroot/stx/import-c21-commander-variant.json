@@ -1,0 +1,36 @@
+{
+  "setCode": "c21",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=255&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/strixhaven-variants",
+  "importOptions": { "importByImage": true },
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "_comment": "For STX, we only use the Rare and Mythics",
+      "where": "rarity=(r|m)",
+      "newValues": {
+        "variant": true,
+        "commanderExtendedArt": true
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

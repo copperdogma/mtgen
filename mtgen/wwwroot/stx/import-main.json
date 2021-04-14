@@ -1,0 +1,105 @@
+﻿{
+  "setCode": "stx",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=253&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/strixhaven",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "select cards starting with a value = where: type~='Snow'",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'"
+      ]
+    },
+
+    {
+      "where": "title='Enthusiatic Study'",
+      "newValues": {
+        "title": "Enthusiastic Study"
+      }
+    },
+    {
+      "where": "title='Stonebinders Familair'",
+      "newValues": {
+        "title": "Stonebinder's Familiar"
+      }
+    },
+    {
+      "where": "title='Symmetry Master'",
+      "newValues": {
+        "title": "Master Symmetrist"
+      }
+    },
+    {
+      "where": "title='Bayou Barker'",
+      "newValues": {
+        "title": "Bayou Groff"
+      }
+    },
+    {
+      "where": "title='Devouring Tentacles'",
+      "newValues": {
+        "title": "Devouring Tendrils"
+      }
+    },
+    {
+      "where": "title='Springmane Cervid'",
+      "newValues": {
+        "title": "Springmane Cervin"
+      }
+    },
+
+    {
+      "where": "title=(Augusta, Dean of Order|Plargg, Dean of Chaos|Reduce to Memory|Revel in Silence|Flamescroll Celebrant|Illuminate History|Illustrious Historian|Blade Historian|Hofri Ghostforge|Lorehold Apprentice|Lorehold Command|Lorehold Excavation|Lorehold Pledgemage|Make Your Mark|Quintorius, Field Historian|Radiant Scrollwielder|Reconstruct History|Relic Sloth|Returned Pastcaller|Rip Apart|Spirit Summoning|Stonebound Mentor|Thrilling Discovery|Velomachus Lorehold|Venerable Warsinger|Furycalm Snarl|Lorehold Campus)",
+      "newValues": {
+        "college": "Lorehold"
+      }
+    },
+    {
+      "where": "title=(Multiple Choice|Resculpt|Torrent Sculptor|Flamethrower Sonata|Uvilda, Dean of Perfection|Nassari, Dean of Expression|Storm-Kiln Artist|Sudden Breakthrough|Creative Outburst|Culmination of Studies|Elemental Expressionist|Elemental Masterpiece|Elemental Summoning|Expressive Iteration|Galazeth Prismari|Maelstrom Muse|Magma Opus|Oggyar Battle-Seer|Practical Research|Prismari Apprentice|Prismari Command|Prismari Pledgemage|Rootha, Mercurial Artist|Spectacle Mage|Teach by Example|Frostboil Snarl|Prismari Campus)",
+      "newValues": {
+        "college": "Prismari"
+      }
+    },
+    {
+      "where": "title=(Echoing Equation|Augmenter Pugilist|Imbraham, Dean of Theory|Kianne, Dean of Substance|Serpentine Curve|Leyline Invocation|Biomathematician|Body of Research|Decisive Denial|Double Major|Eureka Moment|Fractal Summoning|Golden Ratio|Manifestation Sage|Needlethorn Drake|Quandrix Apprentice|Quandrix Command|Quandrix Cultivator|Quandrix Pledgemage|Square Up|Tanazir Quandrix|Zimone, Quandrix Prodigy|Quandrix Campus|Vineglimmer Snarl|Aether Helix)",
+      "newValues": {
+        "college": "Quandrix"
+      }
+    },
+    {
+      "where": "title=(Selfless Glyphweaver|Deadly Vanity|Shaile, Dean of Radiance|Embrose, Dean of Shadow|Umbral Juke|Blot Out the Sky|Closing Statement|Dramatic Finale|Exhilarating Elocution|Fracture|Humiliate|Inkling Summoning|Killian, Ink Duelist|Owlin Shieldmage|Shadewing Laureate|Shadrix Silverquill|Silverquill Apprentice|Silverquill Command|Silverquill Pledgemage|Silverquill Silencer|Spiteful Squad|Vanishing Verse|Shineshadow Snarl|Silverquill Campus)",
+      "newValues": {
+        "college": "Silverquill"
+      }
+    },
+    {
+      "where": "title=(Callous Bloodmage|Search for Blex|Blex, Vexing Pest|Sedgemoor Witch|Valentin, Dean of the Vein|Lisette, Dean of the Root|Containment Breach|Emergent Sequence|Professor of Zoomancy|Restorative Burst|Pestilent Cauldron|Beledros Witherbloom|Blood Researcher|Cram Session|Culling Ritual|Daemogoth Titan|Daemogoth Woe-Eater|Deadly Brew|Dina, Soul Steeper|Harness Infinity|Infuse with Vitality|Moldering Karok|Mortality Spear|Pest Summoning|Rushed Rebirth|Tend the Pests|Witherbloom Apprentice|Witherbloom Command|Witherbloom Pledgemage|Necroblossom Snarl|Witherbloom Campus)",
+      "newValues": {
+        "college": "Witherbloom"
+      }
+    },
+
+    {
+      "where": "title=(Specter of the Fens|Infuse with Vitality)",
+      "newValues": {
+        "rarity": "c"
+      }
+    },
+
+    {
+      "_comment": "Delete all cards outside of the main set",
+      "where": "numInt=(276-999)",
+      "delete": true
+    },
+
+    {
+      "_comment": "Consider everything left the main set.",
+      "where": "",
+      "newValues": {
+        "mainSet": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,772 @@
+{
+  "defs": [
+    {
+      "defName": "stx",
+      "query": "from[*]?set='stx'"
+    },
+    {
+      "defName": "stx-variants",
+      "query": "from[stx]?variant=true"
+    },
+    {
+      "_comment": "These all happen to be mythic",
+      "defName": "stx-borderless-mythic-variants",
+      "query": "from[stx-variants]?borderless=true"
+    },
+    {
+      "defName": "stx-promo",
+      "query": "from[stx]?promo=true"
+    },
+    {
+      "defName": "stx-booster",
+      "query": "from[stx]?mainSet=true"
+    },
+    {
+      "defName": "stx-booster-has-red",
+      "query": "from[stx-booster]?cost~='R'"
+    },
+    {
+      "defName": "stx-booster-has-blue",
+      "query": "from[stx-booster]?cost~='U'"
+    },
+    {
+      "defName": "stx-booster-has-black",
+      "query": "from[stx-booster]?cost~='B'"
+    },
+    {
+      "defName": "stx-booster-has-white",
+      "query": "from[stx-booster]?cost~='W'"
+    },
+    {
+      "defName": "stx-booster-has-green",
+      "query": "from[stx-booster]?cost~='G'"
+    },
+    {
+      "defName": "stx-booster-lorehold-colours",
+      "query": "from[stx-booster-has-red]+from[stx-booster-has-white]-from[stx-booster-has-blue]-from[stx-booster-has-black]-from[stx-booster-has-green]"
+    },
+    {
+      "defName": "stx-booster-prismari-colours",
+      "query": "from[stx-booster-has-blue]+from[stx-booster-has-red]-from[stx-booster-has-black]-from[stx-booster-has-white]-from[stx-booster-has-green]"
+    },
+    {
+      "defName": "stx-booster-quandrix-colours",
+      "query": "from[stx-booster-has-green]+from[stx-booster-has-blue]-from[stx-booster-has-white]-from[stx-booster-has-black]-from[stx-booster-has-red]"
+    },
+    {
+      "defName": "stx-booster-silverquill-colours",
+      "query": "from[stx-booster-has-white]+from[stx-booster-has-black]-from[stx-booster-has-blue]-from[stx-booster-has-red]-from[stx-booster-has-green]"
+    },
+    {
+      "defName": "stx-booster-witherbloom-colours",
+      "query": "from[stx-booster-has-black]+from[stx-booster-has-green]-from[stx-booster-has-blue]-from[stx-booster-has-white]-from[stx-booster-has-red]"
+    },
+    {
+      "defName": "stx-college-lorehold",
+      "query": "from[stx-booster]?college='lorehold'"
+    },
+    {
+      "defName": "stx-college-prismari",
+      "query": "from[stx-booster]?college='prismari'"
+    },
+    {
+      "defName": "stx-college-quandrix",
+      "query": "from[stx-booster]?college='quandrix'"
+    },
+    {
+      "defName": "stx-college-silverquill",
+      "query": "from[stx-booster]?college='silverquill'"
+    },
+    {
+      "defName": "stx-college-witherbloom",
+      "query": "from[stx-booster]?college='witherbloom'"
+    },
+    {
+      "defName": "stx-lorehold-colour-booster",
+      "query": "from[stx-booster-lorehold-colours]-from[stx-booster]?college=(prismari|quandrix|silverquill|witherbloom)"
+    },
+    {
+      "defName": "stx-prismari-colour-booster",
+      "query": "from[stx-booster-prismari-colours]-from[stx-booster]?college=(lorehold|quandrix|silverquill|witherbloom)"
+    },
+    {
+      "defName": "stx-quandrix-colour-booster",
+      "query": "from[stx-booster-quandrix-colours]-from[stx-booster]?college=(lorehold|prismari|silverquill|witherbloom)"
+    },
+    {
+      "defName": "stx-silverquill-colour-booster",
+      "query": "from[stx-booster-silverquill-colours]-from[stx-booster]?college=(lorehold|prismari|quandrix|witherbloom)"
+    },
+    {
+      "defName": "stx-witherbloom-colour-booster",
+      "query": "from[stx-booster-witherbloom-colours]-from[stx-booster]?college=(lorehold|prismari|quandrix|silverquill)"
+    },
+    {
+      "_comment": "Mystical Archive cards in Strixhaven are code STA and are similar to Masterpiece Series cards",
+      "defName": "stx-mystical-archive",
+      "query": "from[*]?mysticalArchive=true"
+    },
+    {
+      "defName": "stx-mystical-archive-jp",
+      "query": "from[stx-mystical-archive]?language='Japanese'"
+    },
+    {
+      "defName": "stx-mystical-archive-en",
+      "query": "from[stx-mystical-archive]-from[stx-mystical-archive-jp]"
+    },
+    {
+      "defName": "stx-lesson",
+      "query": "from[stx]?subtype='Lesson'"
+    },
+    {
+      "_comment": "Used in the collector boosters.. just the extended art ones",
+      "defName": "c21-commander-extended-art",
+      "query": "from[*]?commanderExtendedArt=true"
+    },
+    {
+      "defName": "stx-main",
+      "query": "from[stx]-from[stx]?type=(Marketing)-from[stx]?promo=true-from[stx-mystical-archive]-from[stx]?token=true-from[stx-lesson]"
+    },
+    {
+      "defName": "stx-borderless",
+      "query": "from[stx]?borderless=true"
+    },
+    {
+      "defName": "stx-extended-art",
+      "query": "from[stx]?extendedArtwork=true"
+    },
+    {
+      "defName": "stx-borderless-extended-art",
+      "query": "from[stx-borderless]+from[stx-extended-art]"
+    },
+    {
+      "defName": "stx-archive-borderless-extended-art",
+      "query": "from[stx-mystical-archive]+from[stx-borderless-extended-art]"
+    },
+    {
+      "defName": "stx-foils",
+      "query": "from[stx-booster]+from[stx-mystical-archive-en]"
+    },
+    {
+      "defName": "stx-token",
+      "query": "from[stx]?token=true"
+    },
+    {
+      "defName": "stx-true-token",
+      "query": "from[stx-token]-from[stx-token]?marketing=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "stx-all-cards",
+      "packDesc": "Strixhaven: School of Mages: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[stx]" }
+      ]
+    },
+
+    {
+      "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
+      "packName": "stx-draft",
+      "packDesc": "Strixhaven: School of Mages: Draft Booster",
+      "packVersion": "1.2",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/strixhaven-school-mages-product-overview-2021-03-25" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[9]>from[stx-booster]?rarity='c" },
+        { "query": "take[3]>from[stx-booster]?rarity='u" },
+        { "query": "from[stx-lesson]?rarity='c" },
+        { "query": "from[stx-mystical-archive-en]?rarity='u" },
+        { "query": "from[stx-booster]?rarity='r" },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[stx]?title='Tip/Marketing Card"
+            },
+            {
+              "percent": "50",
+              "query": "from[stx-token]"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Lesson slot: standard C/U/R/M chance",
+              "overrideSlot": "13",
+              "percent": "3/15",
+              "query": "from[stx-lesson]?rarity='u"
+            },
+            {
+              "overrideSlot": "13",
+              "percent": "1/15",
+              "query": "from[stx-lesson]?rarity='r"
+            },
+            {
+              "overrideSlot": "13",
+              "percent": "10/74",
+              "query": "from[stx-lesson]?rarity='m"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Mystcal Archive (ie Variant) slot: standard U/R/M chance (only has U/R/M)",
+              "overrideSlot": "14",
+              "percent": "1/4",
+              "query": "from[stx-mystical-archive-en]?rarity='r"
+            },
+            {
+              "overrideSlot": "14",
+              "percent": "10/74",
+              "query": "from[stx-mystical-archive-en]?rarity='m"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/7.4 chance of replacing rare with mythic (7.4 instead of 8 as of znr Sep-2020",
+              "percent": "10/74",
+              "overrideSlot": "15",
+              "query": "from[stx-booster]?rarity='m'"
+            },
+            {
+              "_comment": "1/3 chance the mythic will be replaced by a borderless version",
+              "overrideSlot": "15",
+              "percent": "10/222",
+              "query": "from[stx-borderless-mythic-variants]"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "33% (1:45) chance of foil, scaled by rarity, replacing the last common, as of m20: Jun-2019",
+              "overrideSlot": "9",
+              "percent": "88/360",
+              "query": "from[stx-foils]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "9",
+              "percent": "24/360",
+              "query": "from[stx-foils]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "9",
+              "percent": "7/360",
+              "query": "from[stx-foils]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "9",
+              "percent": "1/360",
+              "query": "from[stx-foils]?rarity='m",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "1/3 chance the mythic will be replaced by a borderless version",
+              "overrideSlot": "9",
+              "percent": "1/1080",
+              "query": "from[stx-borderless-mythic-variants]",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_comment": "Collector Boosters were introduced as standard feature as of ELD",
+      "packName": "stx-collector",
+      "packDesc": "Strixhaven: School of Mages: Collector Booster",
+      "packVersion": "1.1",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/strixhaven-school-mages-product-overview-2021-03-25", "https://magic.wizards.com/en/articles/archive/feature/collecting-strixhaven-school-mages-2021-03-25" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1: Foil Etched: Mystical Archive R/M",
+          "_comment2": "Foil-etched is just a fancy foil treatment and I just treat them as regular foil",
+          "query": "from[stx-mystical-archive-en]?rarity='r",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 2: Foil Etched: Mystical Archive U",
+          "query": "from[stx-mystical-archive-en]?rarity='u",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 3: Foil: Mystical Archive, Borderless, or Extended Art R/M",
+          "query": "from[stx-archive-borderless-extended-art]?rarity='r",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 4: Foil: Mystical Archive U",
+          "query": "from[stx-mystical-archive]?rarity='u",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 5: Extended-Art or Borderless R/M",
+          "query": "from[stx-borderless-extended-art]?rarity='r"
+        },
+        {
+          "_comment": "Slot 6: Extended-Art Commander R/M",
+          "query": "from[c21-commander-extended-art]?rarity='r"
+        },
+        {
+          "_comment": "Slot 7: Foil: Lesson card C/U/R/M",
+          "query": "from[stx-lesson]?rarity='c",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 8: Foil: Single or Double-Faced R/M",
+          "query": "from[stx-booster]?rarity='r",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 9-10: 2x Foil U",
+          "query": "take[2]>from[stx-booster]?rarity='u'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 11-16: 5x Foil C",
+          "query": "take[5]>from[stx-booster]?rarity='c'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 17: Foil: token",
+          "query": "from[stx-token]-from[stx-token]?marketing=true",
+          "setValues": { "foil": true }
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 1: Foil Etched: Mystical Archive R/M",
+              "_comment2": "Guaranteed to have one Japanese and one English card among Slot 1 & 2. So we'll do the standard en-m chance, then have a fractional chance of changing the first or second cards to jp instead.",
+              "overrideSlot": "1",
+              "percent": "10/74",
+              "query": "from[stx-mystical-archive-en]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 1: Foil Etched: Japanese Mystical Archive R/M",
+              "overrideSlot": "1",
+              "percent": "45",
+              "query": "from[stx-mystical-archive-jp]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "Slot 1: Foil Etched: Japanese Mystical Archive R/M",
+              "overrideSlot": "1",
+              "percent": "5",
+              "query": "from[stx-mystical-archive-jp]?rarity='m",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "Slot 2: Foil Etched: Japanese Mystical Archive U",
+              "overrideSlot": "2",
+              "percent": "50",
+              "query": "from[stx-mystical-archive-jp]?rarity='u",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 3: Foil: Mystical Archive, Borderless, or Extended Art R/M",
+              "overrideSlot": "3",
+              "percent": "10/74",
+              "query": "from[stx-archive-borderless-extended-art]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 5: Extended-Art or Borderless R/M",
+              "overrideSlot": "5",
+              "percent": "10/74",
+              "query": "from[stx-borderless-extended-art]?rarity='r"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 6: Extended-Art Commander R/M",
+              "overrideSlot": "6",
+              "percent": "10/74",
+              "query": "from[c21-commander-extended-art]?rarity='m"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 7: Foil: Lesson card C/U/R/M",
+              "overrideSlot": "7",
+              "percent": "3/14",
+              "query": "from[stx-lesson]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "7",
+              "percent": "1/14",
+              "query": "from[stx-lesson]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "7",
+              "percent": "10/74",
+              "query": "from[stx-lesson]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 8: Foil: Single or Double-Faced R/M",
+              "overrideSlot": "8",
+              "percent": "10/74",
+              "query": "from[stx-booster]?rarity='m",
+              "setValues": { "foil": true }
+            },
+            {
+              "_comment": "1/3 chance the mythic will be replaced by a borderless version",
+              "overrideSlot": "8",
+              "percent": "10/222",
+              "query": "from[stx-borderless-mythic-variants]",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+
+      ]
+    },
+
+    {
+      "_comment": "Prerelease College Booster: Lorehold",
+      "packName": "stx-prerelease-lorehold-booster",
+      "packDesc": "Strixhaven: School of Mages: Lorehold College Booster",
+      "packVersion": "1.2",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/strixhaven-school-mages-product-overview-2021-03-25", "https://www.youtube.com/watch?v=_-gIxZYk68Y" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[9]>from[stx-lorehold-colour-booster]?rarity='c" },
+        { "query": "take[3]>from[stx-lorehold-colour-booster]?rarity='u" },
+        { "query": "from[stx-college-lorehold]?rarity='r" },
+        { "query": "take[2]>from[stx-true-token]" },
+        {
+          "querySet": [
+            {
+              "_comment": "1/7.4 chance of replacing rare with mythic (7.4 instead of 8 as of znr Sep-2020",
+              "percent": "10/74",
+              "overrideSlot": "13",
+              "query": "from[stx-college-lorehold]?rarity='m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_comment": "Prerelease College Booster: Prismari",
+      "packName": "stx-prerelease-prismari-booster",
+      "packDesc": "Strixhaven: School of Mages: Prismari College Booster",
+      "packVersion": "1.2",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/strixhaven-school-mages-product-overview-2021-03-25", "https://www.youtube.com/watch?v=_-gIxZYk68Y" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[9]>from[stx-prismari-colour-booster]?rarity='c" },
+        { "query": "take[3]>from[stx-prismari-colour-booster]?rarity='u" },
+        { "query": "from[stx-college-prismari]?rarity='r" },
+        { "query": "take[2]>from[stx-true-token]" },
+        {
+          "querySet": [
+            {
+              "_comment": "1/7.4 chance of replacing rare with mythic (7.4 instead of 8 as of znr Sep-2020",
+              "percent": "10/74",
+              "overrideSlot": "13",
+              "query": "from[stx-college-prismari]?rarity='m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_comment": "Prerelease College Booster: Quandrix",
+      "packName": "stx-prerelease-quandrix-booster",
+      "packDesc": "Strixhaven: School of Mages: Quandrix College Booster",
+      "packVersion": "1.2",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/strixhaven-school-mages-product-overview-2021-03-25", "https://www.youtube.com/watch?v=_-gIxZYk68Y" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[9]>from[stx-quandrix-colour-booster]?rarity='c" },
+        { "query": "take[3]>from[stx-quandrix-colour-booster]?rarity='u" },
+        { "query": "from[stx-college-quandrix]?rarity='r" },
+        { "query": "take[2]>from[stx-true-token]" },
+        {
+          "querySet": [
+            {
+              "_comment": "1/7.4 chance of replacing rare with mythic (7.4 instead of 8 as of znr Sep-2020",
+              "percent": "10/74",
+              "overrideSlot": "13",
+              "query": "from[stx-college-quandrix]?rarity='m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_comment": "Prerelease College Booster: Silverquill",
+      "packName": "stx-prerelease-silverquill-booster",
+      "packDesc": "Strixhaven: School of Mages: Silverquill College Booster",
+      "packVersion": "1.2",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/strixhaven-school-mages-product-overview-2021-03-25", "https://www.youtube.com/watch?v=_-gIxZYk68Y" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[9]>from[stx-silverquill-colour-booster]?rarity='c" },
+        { "query": "take[3]>from[stx-silverquill-colour-booster]?rarity='u" },
+        { "query": "from[stx-college-silverquill]?rarity='r" },
+        { "query": "take[2]>from[stx-true-token]" },
+        {
+          "querySet": [
+            {
+              "_comment": "1/7.4 chance of replacing rare with mythic (7.4 instead of 8 as of znr Sep-2020",
+              "percent": "10/74",
+              "overrideSlot": "13",
+              "query": "from[stx-college-silverquill]?rarity='m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_comment": "Prerelease College Booster: Witherbloom",
+      "packName": "stx-prerelease-witherbloom-booster",
+      "packDesc": "Strixhaven: School of Mages: Witherbloom College Booster",
+      "packVersion": "1.2",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/strixhaven-school-mages-product-overview-2021-03-25", "https://www.youtube.com/watch?v=_-gIxZYk68Y" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[9]>from[stx-witherbloom-colour-booster]?rarity='c" },
+        { "query": "take[3]>from[stx-witherbloom-colour-booster]?rarity='u" },
+        { "query": "from[stx-college-witherbloom]?rarity='r" },
+        { "query": "take[2]>from[stx-true-token]" },
+        {
+          "querySet": [
+            {
+              "_comment": "1/7.4 chance of replacing rare with mythic (7.4 instead of 8 as of znr Sep-2020",
+              "percent": "10/74",
+              "overrideSlot": "13",
+              "query": "from[stx-college-witherbloom]?rarity='m"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "stx-prerelease-promo-packins-lorehold",
+      "packDesc": "Strixhaven: School of Mages: Lorehold Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[stx-main]?rarity='r",
+              "setValues": {
+                "foil": true
+              }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[stx-main]?rarity='m",
+              "setValues": {
+                "foil": true
+              }
+            }
+          ]
+        },
+        { "query": "take[1]>from[stx-promo]?title=(Red Spindown Life Counter|White Spindown Life Counter" },
+        { "query": "from[stx-promo]?title='Prerelease Lorehold Deck Box" },
+        { "query": "from[stx-promo]?title='Deckbuilding Advice Insert" },
+        { "query": "from[stx-promo]?title='Arena Code Card" }
+      ]
+    },
+    {
+      "packName": "stx-prerelease-promo-packins-prismari",
+      "packDesc": "Strixhaven: School of Mages: Prismari Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[stx-main]?rarity='r",
+              "setValues": {
+                "foil": true
+              }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[stx-main]?rarity='m",
+              "setValues": {
+                "foil": true
+              }
+            }
+          ]
+        },
+        { "query": "take[1]>from[stx-promo]?title=(Red Spindown Life Counter|Blue Spindown Life Counter" },
+        { "query": "from[stx-promo]?title='Prerelease Prismari Deck Box" },
+        { "query": "from[stx-promo]?title='Deckbuilding Advice Insert" },
+        { "query": "from[stx-promo]?title='Arena Code Card" }
+      ]
+    },
+    {
+      "packName": "stx-prerelease-promo-packins-quandrix",
+      "packDesc": "Strixhaven: School of Mages: Quandrix Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[stx-main]?rarity='r",
+              "setValues": {
+                "foil": true
+              }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[stx-main]?rarity='m",
+              "setValues": {
+                "foil": true
+              }
+            }
+          ]
+        },
+        { "query": "take[1]>from[stx-promo]?title=(Blue Spindown Life Counter|Green Spindown Life Counter" },
+        { "query": "from[stx-promo]?title='Prerelease Quandrix Deck Box" },
+        { "query": "from[stx-promo]?title='Deckbuilding Advice Insert" },
+        { "query": "from[stx-promo]?title='Arena Code Card" }
+      ]
+    },
+    {
+      "packName": "stx-prerelease-promo-packins-silverquill",
+      "packDesc": "Strixhaven: School of Mages: Silverquill Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[stx-main]?rarity='r",
+              "setValues": {
+                "foil": true
+              }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[stx-main]?rarity='m",
+              "setValues": {
+                "foil": true
+              }
+            }
+          ]
+        },
+        { "query": "take[1]>from[stx-promo]?title=(Black Spindown Life Counter|White Spindown Life Counter" },
+        { "query": "from[stx-promo]?title='Prerelease Silverquill Deck Box" },
+        { "query": "from[stx-promo]?title='Deckbuilding Advice Insert" },
+        { "query": "from[stx-promo]?title='Arena Code Card" }
+      ]
+    },
+    {
+      "packName": "stx-prerelease-promo-packins-witherbloom",
+      "packDesc": "Strixhaven: School of Mages: Witherbloom Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[stx-main]?rarity='r",
+              "setValues": {
+                "foil": true
+              }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[stx-main]?rarity='m",
+              "setValues": {
+                "foil": true
+              }
+            }
+          ]
+        },
+        { "query": "take[1]>from[stx-promo]?title=(Green Spindown Life Counter|Black Spindown Life Counter" },
+        { "query": "from[stx-promo]?title='Prerelease Witherbloom Deck Box" },
+        { "query": "from[stx-promo]?title='Deckbuilding Advice Insert" },
+        { "query": "from[stx-promo]?title='Arena Code Card" }
+      ]
+    },
+
+    {
+      "packName": "stx-prerelease-promos",
+      "packDesc": "Strixhaven: School of Mages: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[stx-promo]?includedReason='Prerelease Promo" }
+      ]
+    },
+
+    {
+      "packName": "stx-variants",
+      "packDesc": "Strixhaven: School of Mages: All Variants",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[stx-variants]"
+        }
+      ]
+    },
+
+    {
+      "packName": "stx-promos",
+      "packDesc": "Strixhaven: School of Mages: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[stx-promo]"
+        }
+      ]
+    }
+
+  ]
+}

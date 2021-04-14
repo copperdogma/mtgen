@@ -1,0 +1,212 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "products": [
+    {
+      "productName": "stx-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "stx-all-cards" }
+      ]
+    },
+
+    {
+      "productName": "stx-boosters",
+      "productDesc": "Draft Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "stx-draft" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "stx-draft-boosters-six",
+            "presetDesc": "Six Draft Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "stx-draft"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "stx-collector",
+      "productDesc": "Collector Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "stx-collector" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "stx-collector-boosters-six",
+            "presetDesc": "Six Collector Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "stx-collector"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "stx-prerelease",
+      "productDesc": "Prerelease",
+      "sources": [ "" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "stx-draft" },
+        { "packName": "stx-prerelease-promo-packins-lorehold" },
+        { "packName": "stx-prerelease-promo-packins-prismari" },
+        { "packName": "stx-prerelease-promo-packins-quandrix" },
+        { "packName": "stx-prerelease-promo-packins-silverquill" },
+        { "packName": "stx-prerelease-promo-packins-witherbloom" },
+        { "packName": "stx-prerelease-lorehold-booster" },
+        { "packName": "stx-prerelease-prismari-booster" },
+        { "packName": "stx-prerelease-quandrix-booster" },
+        { "packName": "stx-prerelease-silverquill-booster" },
+        { "packName": "stx-prerelease-witherbloom-booster" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "stx-prerelease-lorehold-booster",
+            "presetDesc": "Lorehold College (Red/White)",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "stx-prerelease-promo-packins-lorehold"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "stx-prerelease-lorehold-booster"
+              },
+              {
+                "count": 5,
+                "defaultPackName": "stx-draft"
+              }
+            ]
+          },
+          {
+            "presetName": "stx-prerelease-prismari-booster",
+            "presetDesc": "Prismari College (Blue/Red)",
+            "default": false,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "stx-prerelease-promo-packins-prismari"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "stx-prerelease-prismari-booster"
+              },
+              {
+                "count": 5,
+                "defaultPackName": "stx-draft"
+              }
+            ]
+          },
+          {
+            "presetName": "stx-prerelease-quandrix-booster",
+            "presetDesc": "Quandrix College (Green/Blue)",
+            "default": false,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "stx-prerelease-promo-packins-quandrix"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "stx-prerelease-quandrix-booster"
+              },
+              {
+                "count": 5,
+                "defaultPackName": "stx-draft"
+              }
+            ]
+          },
+          {
+            "presetName": "stx-prerelease-silverquill-booster",
+            "presetDesc": "Silverquill College (Black/White)",
+            "default": false,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "stx-prerelease-promo-packins-silverquill"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "stx-prerelease-silverquill-booster"
+              },
+              {
+                "count": 5,
+                "defaultPackName": "stx-draft"
+              }
+            ]
+          },
+          {
+            "presetName": "stx-prerelease-witherbloom-booster",
+            "presetDesc": "Witherbloom College (Green/Black)",
+            "default": false,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "stx-prerelease-promo-packins-witherbloom"
+              },
+              {
+                "count": 1,
+                "defaultPackName": "stx-prerelease-witherbloom-booster"
+              },
+              {
+                "count": 5,
+                "defaultPackName": "stx-draft"
+              }
+            ]
+          }
+        ]
+      }
+
+    },
+
+    {
+      "productName": "stx-variants",
+      "productDesc": "Variants",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/throne-stxraine-variants" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "stx-variants" }
+      ]
+    },
+
+    {
+      "productName": "stx-promos",
+      "productDesc": "All Promos",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/ravnica-allegiance-planeswalker-deck-lists-2019-01-10" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "stx-promos" }
+      ]
+    }
+  ]
+}

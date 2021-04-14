@@ -1,0 +1,37 @@
+{
+  "startProductName": "stx-prerelease",
+  "packFiles": [
+    "packs.json?v1.6"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsBasicLand.json",
+    "cardsToken.json",
+    "cardsVariant.json",
+    "cardsPromo.json",
+    "cardsMysticalArchive.json",
+    "cardsC21CommanderVariant.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2021-04-13T17:30:00:00",
+      "HtmlString": "Prerelease college boosters now contain multi-colour cards for that college's colours."
+    },
+    {
+      "UpdateDate": "2021-04-12T23:00:00:00",
+      "HtmlString": "Collector Booster slot 5 no longer overridden by slot 7's U/R/M lessons."
+    },
+    {
+      "UpdateDate": "2021-04-12T21:45:00:00",
+      "HtmlString": "Prerelease college booster now adhere to each college's colours."
+    },
+    {
+      "UpdateDate": "2021-04-12T20:45:00:00",
+      "HtmlString": "Draft booster now has proper Mystical Archives and foils."
+    },
+    {
+      "UpdateDate": "2021-04-12T15:00:00:00",
+      "HtmlString": "Japanese Mystical Archive cards no longer appear in Draft Booster MA slot."
+    }
+  ]
+}

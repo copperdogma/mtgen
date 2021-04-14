@@ -1,0 +1,135 @@
+﻿{
+  "setCode": "stx",
+  "cardDataUrl": "",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "tsx",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/strixhaven-variants",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "366",
+          "cardPattern": "x65,w,w,u,u,b,b,r,r,g,g"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "tsx",
+        "src": "https://media.wizards.com/2021/stx/en_JE2M9ycI3P.png",
+        "title": "Plains",
+        "num": 366,
+        "numInt": 366
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "tsx",
+        "src": "https://media.wizards.com/2021/stx/en_2qVS9ywQIL.png",
+        "title": "Plains",
+        "num": 367,
+        "numInt": 367
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "tsx",
+        "src": "https://media.wizards.com/2021/stx/en_XDfT66Hm39.png",
+        "title": "Island",
+        "num": 368,
+        "numInt": 368
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "tsx",
+        "src": "https://media.wizards.com/2021/stx/en_1ptInZOjr6.png",
+        "title": "Island",
+        "num": 369,
+        "numInt": 369
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "tsx",
+        "src": "https://media.wizards.com/2021/stx/en_uoEijxKqW9.png",
+        "title": "Swamp",
+        "num": 370,
+        "numInt": 370
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "tsx",
+        "src": "https://media.wizards.com/2021/stx/en_888Uo7d7lr.png",
+        "title": "Swamp",
+        "num": 371,
+        "numInt": 371
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "tsx",
+        "src": "https://media.wizards.com/2021/stx/en_xmVHCt9PDS.png",
+        "title": "Mountain",
+        "num": 372,
+        "numInt": 372
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "tsx",
+        "src": "https://media.wizards.com/2021/stx/en_Fduqd4VX3W.png",
+        "title": "Mountain",
+        "num": 373,
+        "numInt": 373
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "tsx",
+        "src": "https://media.wizards.com/2021/stx/en_Wz1419zb0S.png",
+        "title": "Forest",
+        "num": 374,
+        "numInt": 374
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "tsx",
+        "src": "https://media.wizards.com/2021/stx/en_6q88S4SCOb.png",
+        "title": "Forest",
+        "num": 375,
+        "numInt": 375
+      }
+    },
+    {
+      "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
+      "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
+      "newValues": {
+        "set": "{{setCode}}",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "{{title}}",
+        "colour": "l",
+        "cost": "",
+        "rarity": "c",
+        "num": "{{num}}/264 L"
+      }
+    }
+  ]
+}

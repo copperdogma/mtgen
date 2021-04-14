@@ -1,0 +1,558 @@
+﻿{
+  "setCode": "sta",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=254&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/strixhaven-variants",
+  "importOptions": { },
+  "exceptions": [
+    {
+      "_comments": [
+        "import all images, matching their titles with the same card data over and over = (above) importOptions/importByImage: true",
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'"
+      ]
+    },
+
+    {
+      "_comment": "Delete all cards with ID num > 63 as mtgsalvation included just a few of them in data which messes me up. I'll just clone them all and remake them myself.",
+      "where": "numInt=(64-999)",
+      "delete": true
+    },
+
+    {
+      "_comment": "There are Japanese variant images for each card in this set.",
+      "where": "title='Approach of the Second Sun'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_BwdprzMEh4.png",
+        "num": "064"
+      }
+    },
+    {
+      "where": "title='Day of Judgment'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_KBtuFNWh3o.png",
+        "num": "065"
+      }
+    },
+    {
+      "where": "title='Defiant Strike'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_fgFqcGUDKI.png",
+        "num": "066"
+      }
+    },
+    {
+      "where": "title='Divine Gambit'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_vz1cdl2TWV.png",
+        "num": "067"
+      }
+    },
+    {
+      "where": "title='Ephemerate'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_b9QkxfwF4V.png",
+        "num": "068"
+      }
+    },
+    {
+      "where": "title='Gift of Estates'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_N0MEGXhXkb.png",
+        "num": "069"
+      }
+    },
+    {
+      "where": "title='Gods Willing'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_uCyQxbcvsd.png",
+        "num": "070"
+      }
+    },
+    {
+      "where": "title='Mana Tithe'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_HyZjHw0l6Q.png",
+        "num": "071"
+      }
+    },
+    {
+      "where": "title='Revitalize'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_JrUywlhbSO.png",
+        "num": "072"
+      }
+    },
+    {
+      "where": "title='Swords to Plowshares'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_wrxgPxYWTm.png",
+        "num": "073"
+      }
+    },
+    {
+      "where": "title='Teferis Protection'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_hYBab0xxX6.png",
+        "num": "074"
+      }
+    },
+    {
+      "where": "title='Blue Sun's Zenith'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_uoaxXBoHPP.png",
+        "num": "075"
+      }
+    },
+    {
+      "where": "title='Brainstorm'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_iufCXdbcwz.png",
+        "num": "076"
+      }
+    },
+    {
+      "where": "title='Compulsive Research'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_BsKU2Yt8Ot.png",
+        "num": "077"
+      }
+    },
+    {
+      "where": "title='Counterspell'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_qoNyXbNZSc.png",
+        "num": "078"
+      }
+    },
+    {
+      "where": "title='Memory Lapse'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_axRpGMPO8O.png",
+        "num": "079"
+      }
+    },
+    {
+      "where": "title='Minds Desire'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_lsFMHGFA9I.png",
+        "num": "080"
+      }
+    },
+    {
+      "where": "title='Negate'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_BIww0Lrq4E.png",
+        "num": "081"
+      }
+    },
+    {
+      "where": "title='Opt'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_VOJACTjC0m.png",
+        "num": "082"
+      }
+    },
+    {
+      "where": "title='Strategic Planning'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_7GLkWd8Mmo.png",
+        "num": "083"
+      }
+    },
+    {
+      "where": "title='Tezzerets Gambit'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_dQRR10wrVZ.png",
+        "num": "084"
+      }
+    },
+    {
+      "where": "title='Time Warp'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_stWrcBcAFF.png",
+        "num": "085"
+      }
+    },
+    {
+      "where": "title='Whirlwind Denial'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_GIDiVmtD6m.png",
+        "num": "086"
+      }
+    },
+    {
+      "where": "title='Agonizing Remorse'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_EfPDKbbRUj.png",
+        "num": "087"
+      }
+    },
+    {
+      "where": "title='Crux of Fate'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_cm5WuuEt4r.png",
+        "num": "088"
+      }
+    },
+    {
+      "where": "title='Dark Ritual'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_OSmeWJ09uf.png",
+        "num": "089"
+      }
+    },
+    {
+      "where": "title='Demonic Tutor'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_aS3PkVdhjK.png",
+        "num": "090"
+      }
+    },
+    {
+      "where": "title='Doom Blade'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_4BFGTDhygM.png",
+        "num": "091"
+      }
+    },
+    {
+      "where": "title='Duress'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_6i8MHVMyub.png",
+        "num": "092"
+      }
+    },
+    {
+      "where": "title='Eliminate'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_lnLD3suLSx.png",
+        "num": "093"
+      }
+    },
+    {
+      "where": "title='Inquisition of Kozilek'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_9B2RSulTsw.png",
+        "num": "094"
+      }
+    },
+    {
+      "where": "title='Sign in Blood'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_R9VOR4bGi7.png",
+        "num": "095"
+      }
+    },
+    {
+      "where": "title='Tainted Pact'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_fEt9drCJFO.png",
+        "num": "096"
+      }
+    },
+    {
+      "where": "title='Tendrils of Agony'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_YyEqhCxGQb.png",
+        "num": "097"
+      }
+    },
+    {
+      "where": "title='Village Rites'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_euOBCBcuIl.png",
+        "num": "098"
+      }
+    },
+    {
+      "where": "title='Chaos Warp'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_Un2JxadQgY.png",
+        "num": "099"
+      }
+    },
+    {
+      "where": "title='Claim the Firstborn'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_K32bCmrpGp.png",
+        "num": "100"
+      }
+    },
+    {
+      "where": "title='Faithless Looting'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_d2i6WGGObU.png",
+        "num": "101"
+      }
+    },
+    {
+      "where": "title='Grapeshot'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_YuX2pS3w1S.png",
+        "num": "102"
+      }
+    },
+    {
+      "where": "title='Increasing Vengeance'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_B3G4QsyoOH.png",
+        "num": "103"
+      }
+    },
+    {
+      "where": "title='Infuriate'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_s08R4CDmDa.png",
+        "num": "104"
+      }
+    },
+    {
+      "where": "title='Lightning Bolt'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_fUwdwwigvs.png",
+        "num": "105"
+      }
+    },
+    {
+      "where": "title='Mizzixs Mastery'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_k8bGmab3vm.png",
+        "num": "106"
+      }
+    },
+    {
+      "where": "title='Shock'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_XLSPXKJ6q7.png",
+        "num": "107"
+      }
+    },
+    {
+      "where": "title='Stone Rain'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_nQcy2mJ46H.png",
+        "num": "108"
+      }
+    },
+    {
+      "where": "title='Thrill of Possibility'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_QdceEpe3Pi.png",
+        "num": "109"
+      }
+    },
+    {
+      "where": "title='Urzas Rage'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_KYza2uOQ5r.png",
+        "num": "110"
+      }
+    },
+    {
+      "where": "title='Abundant Harvest'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_OMEdK8NSZ3.png",
+        "num": "111"
+      }
+    },
+    {
+      "where": "title='Adventurous Impulse'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_QiTQlBTsiD.png",
+        "num": "112"
+      }
+    },
+    {
+      "where": "title='Channel'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_AnvZmdJP3R.png",
+        "num": "113"
+      }
+    },
+    {
+      "where": "title='Cultivate'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_SQdUZOkJnQ.png",
+        "num": "114"
+      }
+    },
+    {
+      "where": "title='Harmonize'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_3cHULWFUPp.png",
+        "num": "115"
+      }
+    },
+    {
+      "where": "title='Krosan Grip'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_dKdrvge3xx.png",
+        "num": "116"
+      }
+    },
+    {
+      "where": "title='Natural Order'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_M8KTTXlnFS.png",
+        "num": "117"
+      }
+    },
+    {
+      "where": "title='Primal Command'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_qA89gz2QfY.png",
+        "num": "118"
+      }
+    },
+    {
+      "where": "title='Regrowth'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_YxWTfJVUBd.png",
+        "num": "119"
+      }
+    },
+    {
+      "where": "title='Snakeskin Veil'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_bxjTgdLMdD.png",
+        "num": "120"
+      }
+    },
+    {
+      "where": "title='Weather the Storm'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_thffeySGyg.png",
+        "num": "121"
+      }
+    },
+    {
+      "where": "title='Despark'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_37VR7JBAQu.png",
+        "num": "122"
+      }
+    },
+    {
+      "where": "title='Electrolyze'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_9Wn4YvTYOg.png",
+        "num": "123"
+      }
+    },
+    {
+      "where": "title='Growth Spiral'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_TZBroFLyim.png",
+        "num": "124"
+      }
+    },
+    {
+      "where": "title='Lightning Helix'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_IhFspM9JTM.png",
+        "num": "125"
+      }
+    },
+    {
+      "where": "title='Putrefy'",
+      "cloneCard": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2021/stx/jp_W4AJ3f7JxX.png",
+        "num": "126"
+      }
+    },
+
+    {
+      "_comment": "Choose only Variants (delete all non-variants): Borderless planeswalkers are numbered #276-279, borderless elder dragons are #280-284, and extended artwork cards are numbered #285-366. The Buy-a-Box card is #376 and the Bundle promo is #377. The FNM-treatment cards from the Universal promo pack are numbered #TBA-TBA. There are no showcase cards in this set, as the Mystical Archive fills that position.",
+      "_comment2": "Had to rename title or the last step of matching images by title would have overridden our Japanese image with the standard image",
+      "where": "numInt=(64-126)",
+      "newValues": {
+        "title": "{{title}} (jp)",
+        "language": "Japanese"
+      }
+    },
+
+    {
+      "_comment": "Delete Basic Land, imported elsewhere",
+      "where": "type='Basic Land'",
+      "delete": true
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "xxdelete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "mysticalArchive": true
+      }
+    }
+  ]
+}
