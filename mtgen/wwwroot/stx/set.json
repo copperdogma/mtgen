@@ -1,7 +1,7 @@
 {
   "startProductName": "stx-prerelease",
   "packFiles": [
-    "packs.json?v1.6"
+    "packs.json?v1.7"
   ],
   "cardFiles": [
     "cardsMain.json",
@@ -13,6 +13,10 @@
     "cardsC21CommanderVariant.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-04-14T11:00:00:00",
+      "HtmlString": "Collector boosters regular C/U/R/M slots no longer include Lessons."
+    },
     {
       "UpdateDate": "2021-04-13T17:30:00:00",
       "HtmlString": "Prerelease college boosters now contain multi-colour cards for that college's colours."

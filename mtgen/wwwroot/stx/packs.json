@@ -119,6 +119,10 @@
       "query": "from[stx]?subtype='Lesson'"
     },
     {
+      "defName": "stx-booster-no-lessons",
+      "query": "from[stx-booster]-from[stx-lesson]"
+    },
+    {
       "_comment": "Used in the collector boosters.. just the extended art ones",
       "defName": "c21-commander-extended-art",
       "query": "from[*]?commanderExtendedArt=true"
@@ -285,7 +289,7 @@
       "_comment": "Collector Boosters were introduced as standard feature as of ELD",
       "packName": "stx-collector",
       "packDesc": "Strixhaven: School of Mages: Collector Booster",
-      "packVersion": "1.1",
+      "packVersion": "1.2",
       "sources": [ "https://magic.wizards.com/en/articles/archive/feature/strixhaven-school-mages-product-overview-2021-03-25", "https://magic.wizards.com/en/articles/archive/feature/collecting-strixhaven-school-mages-2021-03-25" ],
       "isGenerated": true,
       "cards": [
@@ -325,17 +329,17 @@
         },
         {
           "_comment": "Slot 8: Foil: Single or Double-Faced R/M",
-          "query": "from[stx-booster]?rarity='r",
+          "query": "from[stx-booster-no-lessons]?rarity='r",
           "setValues": { "foil": true }
         },
         {
           "_comment": "Slot 9-10: 2x Foil U",
-          "query": "take[2]>from[stx-booster]?rarity='u'",
+          "query": "take[2]>from[stx-booster-no-lessons]?rarity='u'",
           "setValues": { "foil": true }
         },
         {
           "_comment": "Slot 11-16: 5x Foil C",
-          "query": "take[5]>from[stx-booster]?rarity='c'",
+          "query": "take[5]>from[stx-booster-no-lessons]?rarity='c'",
           "setValues": { "foil": true }
         },
         {
@@ -446,7 +450,7 @@
               "_comment": "Slot 8: Foil: Single or Double-Faced R/M",
               "overrideSlot": "8",
               "percent": "10/74",
-              "query": "from[stx-booster]?rarity='m",
+              "query": "from[stx-booster-no-lessons]?rarity='m",
               "setValues": { "foil": true }
             },
             {
