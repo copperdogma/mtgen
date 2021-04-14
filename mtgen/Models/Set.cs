@@ -37,10 +37,11 @@ namespace mtgen.Models
 
         public bool IsFutureSet { get; set; }
         public bool IsCurrentSet { get; set; }
+        public bool IsHidden { get; set; } = false;
 
         public Set(string code, string name, string image, int cardCount,
             string generatorCreatedDate, string prereleaseDate, string releaseDate, 
-            bool isCoreSet, string block, bool isCurrentSet, bool isFutureSet)
+            bool isCoreSet, string block, bool isCurrentSet, bool isFutureSet, bool isHidden = false)
         {
             Code = code?.ToLower();
             Name = name;
@@ -50,6 +51,7 @@ namespace mtgen.Models
             Block = block;
             IsCurrentSet = isCurrentSet;
             IsFutureSet = isFutureSet;
+            IsHidden = isHidden;
 
             DateTime date;
             if (DateTime.TryParse(generatorCreatedDate, out date))

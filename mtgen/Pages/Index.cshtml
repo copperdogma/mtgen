@@ -32,6 +32,7 @@
     <main>
         @foreach (var set in @Model.AllSets.SortedGroupedBlocksAndSets)
         {
+            @if (set.IsHidden) continue;
             @if (set.IsBlockSet)
             {
                 <div class="block">
