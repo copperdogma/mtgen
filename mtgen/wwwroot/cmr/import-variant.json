@@ -218,7 +218,7 @@
 
     {
       "_comment": "Choose only Variants (delete all non-variants)",
-      "where": "numInt=(1-503)",
+      "where": "numInt=(1-363)",
       "delete": true
     },
 
@@ -245,12 +245,6 @@
       "_comment": "Delete Basic Land, imported elsewhere",
       "where": "type='Basic Land'",
       "delete": true
-    },
-
-    {
-      "_comment": "delete all cards that weren't selected above",
-      "delete": true,
-      "where": "isSelected=false"
     },
 
     {

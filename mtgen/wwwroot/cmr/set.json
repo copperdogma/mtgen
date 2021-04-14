@@ -4,12 +4,16 @@
     "packs.json?v1.2"
   ],
   "cardFiles": [
-    "cardsMain.json?v1.1",
+    "cardsMain.json?v1.2",
     "cardsToken.json",
-    "cardsVariant.json?v1.1",
+    "cardsVariant.json?v1.2",
     "cardsPromo.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-04-13T21:40:00:00",
+      "HtmlString": "Rebuilt main and variant cards with the cutoff at card 362/363, fixing an issue with Sol Ring showing up where it shouldn't."
+    },
     {
       "UpdateDate": "2020-12-29T22:30:00:00",
       "HtmlString": "Draft booster: Legends no longer appear in C/U slots, Commander deck-specific cards removed, Extended art cards removed, foil slot now always foil. Thanks, Kowaleyer!"
