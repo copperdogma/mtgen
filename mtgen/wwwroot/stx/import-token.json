@@ -8,12 +8,25 @@
         "generatedUsing": "card-exception-generator.html",
         "settings": {
           "setCode": "stx",
-          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/making-magic/strixhaven-part-2-2021-04-05",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-stx-and-c21-2021-04-15",
           "requiredImageWidth": "265",
           "requiredImageHeight": "370",
           "startingCardNum": "",
-          "cardPattern": "004|m|Token Creature|Inkling\n002|m|Token Creature|Elemental\n005|m|Token Creature|Pest\n006|m|Token Creature|Spirit\n003|m|Token Creature|Fractal"
+          "cardPattern": "001|m|Token Creature|Avatar\n002|m|Token Creature|Elemental\n003|m|Token Creature|Fractal\n004|m|Token Creature|Inkling\n005|m|Token Creature|Pest\n006|m|Token Creature|Spirit\n007|m|Token Artifact|Treasure\n008|m|Emblem|Lukka Wayward Bonder\n009|m|Emblem|Rowan Scholar of Sparks"
         }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "stx",
+        "src": "https://media.wizards.com/2021/stx/en_86i4Ook51O.png",
+        "num": "001",
+        "colour": "m",
+        "type": "Token Creature",
+        "title": "Avatar",
+        "subtype": "Avatar",
+        "numInt": 1
       }
     },
     {
@@ -79,6 +92,45 @@
         "title": "Spirit",
         "subtype": "Spirit",
         "numInt": 6
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "stx",
+        "src": "https://media.wizards.com/2021/stx/en_rNuFANCh1U.png",
+        "num": "007",
+        "colour": "m",
+        "type": "Token Artifact",
+        "title": "Treasure",
+        "subtype": "Treasure",
+        "numInt": 7
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "stx",
+        "src": "https://media.wizards.com/2021/stx/en_nNQvnRWmEh.png",
+        "num": "008",
+        "colour": "m",
+        "type": "Emblem",
+        "title": "Lukka Wayward Bonder",
+        "subtype": "Lukka Wayward Bonder",
+        "numInt": 8
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "stx",
+        "src": "https://media.wizards.com/2021/stx/en_lM263eh0WZ.png",
+        "num": "009",
+        "colour": "m",
+        "type": "Emblem",
+        "title": "Rowan Scholar of Sparks",
+        "subtype": "Rowan Scholar of Sparks",
+        "numInt": 9
       }
     },
     {

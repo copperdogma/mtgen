@@ -6,13 +6,17 @@
   "cardFiles": [
     "cardsMain.json",
     "cardsBasicLand.json",
-    "cardsToken.json",
+    "cardsToken.json?v1.1",
     "cardsVariant.json",
     "cardsPromo.json",
     "cardsMysticalArchive.json",
     "cardsC21CommanderVariant.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-04-15T10:00:00:00",
+      "HtmlString": "Added rest of tokens."
+    },
     {
       "UpdateDate": "2021-04-14T11:00:00:00",
       "HtmlString": "Collector boosters regular C/U/R/M slots no longer include Lessons."
