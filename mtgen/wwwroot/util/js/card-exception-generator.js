@@ -4,6 +4,7 @@ Typically used for tokens, land, and other cards listed on the wotc site in arti
 
 Takes a specific text pattern as input to indicate which images we want and what they are.
 
+20210415: Now filters out empty pattern elements instead of trying and failing to use them.
 28-Mar-2020: Fixed bug where num total was hard-coded to 012 instead of the actual number of tokens.
 28-Mar-2020: Fixed bug where 'x' in token list was ignored.
 3-Jun-2017: Now accepts x15 to skip 15 cards, upgraded to be more promise-centric, and showed critical errors on the web page.
@@ -77,7 +78,7 @@ class CardExceptionGenerator extends CardDataImporter {
         return new Promise(resolve => {
             // Parse the card pattern into an array.
             const overrideItems = cardPattern.replace(/(?:\r\n|\r|\n)/g, ',');
-            const initialCardPatterns = overrideItems.trim().split(',');
+            const initialCardPatterns = overrideItems.trim().split(',').filter(Boolean); // Filter removes any empty-like elements.
 
             // Any x# pattern means "skip # cards" so we'll expand it into the correct number of entries.
             const cardPatterns = initialCardPatterns.reduce((acc, pattern) => {
