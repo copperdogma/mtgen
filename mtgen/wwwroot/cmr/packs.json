@@ -33,14 +33,6 @@
       "query": "from[cmr]?legendary=true-from[cmr-non-draft-booster-cards]"
     },
     {
-      "defName": "cmr-foils",
-      "query": "from[cmr]-from[cmr-promo]-from[cmr]?token=true"
-    },
-    {
-      "defName": "cmr-draft-booster-foils",
-      "query": "from[cmr]-from[cmr-promo]-from[cmr]?token=true-from[cmr-non-draft-booster-cards]"
-    },
-    {
       "defName": "cmr-booster",
       "query": "from[cmr]?mainSet=true"
     },
@@ -99,7 +91,7 @@
       "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
       "packName": "cmr-draft",
       "packDesc": "Commander Legends: Draft Booster",
-      "packVersion": "1.0",
+      "packVersion": "1.1",
       "sources": [ "https://www.reddit.com/r/magicTCG/comments/jko5xm/contents_of_commander_legends_draft_booster/" ],
       "isGenerated": true,
       "cards": [
@@ -191,25 +183,25 @@
               "_comment": "33% (1:45) chance of foil, scaled by rarity, replacing the last common, as of m20: Jun-2019",
               "overrideSlot": "20",
               "percent": "88/360",
-              "query": "from[cmr-draft-booster-foils]?rarity='c",
+              "query": "from[cmr-draft-booster]?rarity='c",
               "setValues": { "foil": true }
             },
             {
               "overrideSlot": "20",
               "percent": "24/360",
-              "query": "from[cmr-draft-booster-foils]?rarity='u",
+              "query": "from[cmr-draft-booster]?rarity='u",
               "setValues": { "foil": true }
             },
             {
               "overrideSlot": "20",
               "percent": "7/360",
-              "query": "from[cmr-draft-booster-foils]?rarity='r",
+              "query": "from[cmr-draft-booster]?rarity='r",
               "setValues": { "foil": true }
             },
             {
               "overrideSlot": "20",
               "percent": "1/360",
-              "query": "from[cmr-draft-booster-foils]?rarity='m",
+              "query": "from[cmr-draft-booster]?rarity='m",
               "setValues": { "foil": true }
             }
           ]

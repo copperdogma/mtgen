@@ -1,7 +1,7 @@
 {
   "startProductName": "cmr-boosters",
   "packFiles": [
-    "packs.json?v1.2"
+    "packs.json?v1.3"
   ],
   "cardFiles": [
     "cardsMain.json?v1.2",
@@ -10,6 +10,10 @@
     "cardsPromo.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-04-17T15:00:00:00",
+      "HtmlString": "Changes foils so they'll no longer output cards outside the main set."
+    },
     {
       "UpdateDate": "2021-04-13T21:40:00:00",
       "HtmlString": "Rebuilt main and variant cards with the cutoff at card 362/363, fixing an issue with Sol Ring showing up where it shouldn't."
