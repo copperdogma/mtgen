@@ -560,16 +560,19 @@ class CardDataImporter {
                 const unmatchedTitles = missingSecondaryImageDataEntry.sort(this._sortByTitle).map(e => e.title);
                 const allImageTitles = Array.from(mainImages.entries()).map(entry => entry[1].title);
                 const unmatchedWithBestMatch = unmatchedTitles.map(unmatchedTitle => {
-                    return { UnmatchedTitle: unmatchedTitle, BestMatch: stringSimilarity.findBestMatch(unmatchedTitle, allImageTitles).bestMatch.target };
+                    const bestMatch = stringSimilarity.findBestMatch(unmatchedTitle, allImageTitles).bestMatch;
+                    return { unmatchedTitle, bestMatch: bestMatch.target, matchRating: bestMatch.rating };
                 });
+
                 out += "<p>The following cards had no image data from your image source:</p><ul>";
-                unmatchedWithBestMatch.forEach(value => {
-                    //CAMKILL why was this ever here? const comment = value._comment ? `<em> - ${value._comment}</em>` : "";
-                    out += `<li><strong style='color:red'>${value.UnmatchedTitle}</strong> - <em><span style='color: gray'>suggested:</span> ${value.BestMatch}</em></li>`;
+                const sortedMatches = unmatchedWithBestMatch.sort((a, b) => a.matchRating < b.matchRating); // Sort by match closeness.
+                sortedMatches.forEach(value => {
+                    const colour = this._getRedToGreenColour(value.matchRating); // Colour according to match closeness.
+                    out += `<li><strong style='color:${colour}'>${value.unmatchedTitle}</strong> - <em><span style='color: gray'>suggested:</span> ${value.bestMatch}</em></li>`;
                 });
                 out += "</ul>";
                 if (unmatchedWithBestMatch.length > 0) {
-                    const mismtchImportExceptions = unmatchedWithBestMatch.map(value => ({ where: `title='${value.UnmatchedTitle}'`, newValues: { title: `${value.BestMatch}` } }));
+                    const mismtchImportExceptions = unmatchedWithBestMatch.map(value => ({ where: `title='${value.unmatchedTitle}'`, newValues: { title: `${value.bestMatch}` } }));
                     const mismtchImportExceptionsJson = JSON.stringify(mismtchImportExceptions, null, 1);
                     out += '<p>Above list as import exceptions:</p>';
                     out += `<textarea id="mismatch-import-exceptions" cols="100" rows="3">${mismtchImportExceptionsJson}</textarea>`;
@@ -660,6 +663,12 @@ class CardDataImporter {
             out += "</ul>";
         }
         return out;
+    }
+
+    _getRedToGreenColour(value) {
+        //value from 0 to 1
+        var hue = (value * 120).toString(10);
+        return ["hsl(", hue, ",80%,50%)"].join("");
     }
 
     async _createFinalJsonOutput(cardArray, initialCardDataCount, mainImages) {
