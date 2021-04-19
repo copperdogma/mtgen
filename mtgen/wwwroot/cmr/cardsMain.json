@@ -2414,22 +2414,6 @@
   },
   {
     "set": "cmr",
-    "title": "Skyraker Goblin",
-    "src": "https://media.mtgsalvation.com/avatars/thumbnails/279/137/200/283/637420714599849325.png",
-    "cost": "2RR",
-    "rarity": "c",
-    "type": "Creature",
-    "subtype": "Giant",
-    "power": "4",
-    "toughness": "3",
-    "colour": "r",
-    "num": "0199",
-    "numInt": 199,
-    "mtgenId": "cmr|0199",
-    "mainSet": true
-  },
-  {
-    "set": "cmr",
     "title": "Soul's Fire",
     "src": "https://media.wizards.com/2020/cmr/en_Tot5wBdBKf.png",
     "cost": "2R",
@@ -5302,6 +5286,22 @@
     "numInt": 362,
     "mtgenId": "cmr|0362",
     "legendary": true,
+    "mainSet": true
+  },
+  {
+    "set": "cmr",
+    "title": "Skyraker Giant",
+    "src": "https://media.wizards.com/2020/cmr/en_UZ5Jg9AXoR.png",
+    "cost": "2RR",
+    "rarity": "c",
+    "type": "Creature",
+    "subtype": "Giant",
+    "power": "4",
+    "toughness": "3",
+    "colour": "r",
+    "num": "0199",
+    "numInt": 199,
+    "mtgenId": "cmr|0199",
     "mainSet": true
   },
   {
