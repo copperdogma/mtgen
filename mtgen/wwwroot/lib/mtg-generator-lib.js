@@ -1,10 +1,20 @@
 /*
-MtG Generator script v2.5 - LIB
+MtG Generator script v2.6 - LIB
 
 Shared/base functions.
 
+Query examples:
+    from[stx]?promo=true  = Take all from pre-defined query def 'stx' where the 'promo' property of cards is 'true'
+    from[stx-token]?marketing!=true  = Take all from stx-token except where marketing = true. Will also include those that don't have a 'marketing' property.
+    take[3]>from[stx-booster]?rarity='u'  = Take 3 random cards from stx-booster where rarity='u'
+    from[stx-borderless]+from[stx-extended-art]"  = Take all cards from both stx-borderless and stx-extended-art query defs
+    from[stx-token]-from[stx-token]?marketing=true  = Take all tokens, then remove all tokens where marketing=true (set math!)
+    from[stx-booster]?cost~='R'  = Take all cards where cost includes R
+    from[stx-booster]?cost~=(R|W)  = Take all cards where cost includes R or W. Note you can also use from[stx-booster]?cost=contains(R|W)
+
 Author: Cam Marsollier cam.marsollier@gmail.com
 
+4-May-2021: Added support for ~=(X|Y|Z) (contains) operator and != operator.
 4-May-2021: Added debug mode that shows a Debug Product and Live Debug Product tabs. To enable, add this to top level of products.json: "debug": true
 11-Apr-2021: Now includes college support for stx.
 14-Aug-2019: Added duplicate sets with fixed set codes, e.g.: con_ and con
@@ -25,7 +35,7 @@ Author: Cam Marsollier cam.marsollier@gmail.com
 var mtgGen = (function (my) {
     'use strict';
     // globals
-    my.version = "2.4";
+    my.version = "2.6";
     my.setData = undefined;
     my.packData = undefined;
     my.cardsData = undefined;
@@ -634,10 +644,11 @@ var mtgGen = (function (my) {
         }
         else {
             let matchingCards, clause, queryTitles, queryMatchTitles;
-            if (query2[2].includes('contains(')) {
-                // 'contains' clause, like colour=contains({W}|{G}), i.e.: we're basically letting the user specify a regex within the contains()
-                clause = query2[2].replace(/contains\(/g, '').replace(/\)/g, '');
-                matchingCards = sourceSet.filter(card => card[query2[1]] && card[query2[1]].match(clause));
+            if (query2[2].includes('contains(') || query2[0].includes('~=(')) {
+                // 'contains(X)' or '~=(X)' clause, like colour=contains({W}|{G}), i.e.: we're basically letting the user specify a regex within the contains().
+                const prop = query2[1].replace(/~/g, '');
+                clause = query2[2].replace(/contains\(/g, '').replace(/\(/g, '').replace(/\)/g, '');
+                matchingCards = sourceSet.filter(card => card[prop] && card[prop].match(clause));
                 result = matchingCards.map(matchingCard => matchingCard.mtgenId);
             }
             else if (query2[2].includes('(')) {
@@ -724,8 +735,42 @@ var mtgGen = (function (my) {
                 }
                 result = matchingCards.map(matchingCard => matchingCard.mtgenId);
             }
+            else if (query2[0].includes('!=')) {
+                // NOT equals
+                query2[2] = query2[2].replace(/'/g, '');
+                query2[1] = query2[1].replace(/!/g, '');
+
+                // If we're dealing with named cards, certain characters need to be converted
+                matchingCards = [];
+                if (query2[1] == 'title') {
+                    const matchTitle = my.createMatchTitle(query2[2]);
+                    matchingCards = sourceSet.filter(card => !card.hasOwnProperty('matchTitle') || card['matchTitle'] != matchTitle);
+                }
+                else {
+                    if (query2[2] === undefined || query2[2] === '') {
+                        matchingCards = sourceSet.filter(card => !card.hasOwnProperty(query2[1]) || card[query2[1]] != query2[2]);
+                    }
+                    // If it's a boolean query, convert both sides to boolean and test
+                    else if (query2[2] === true || query2[2] === 'true' || query2[2] === false || query2[2] === 'false') {
+                        const boolQueryValue = JSON.parse(query2[2]);
+                        matchingCards = sourceSet.filter(card => {
+                            if (card[query2[1]] === undefined) return true; // If it doesn't have the property we'll say it passes the test.
+                            if (boolQueryValue === true) {
+                                return (card[query2[1]] === false || card[query2[1]] === 'false');
+                            }
+                            else {
+                                return (card[query2[1]] === true || card[query2[1]] === 'true');
+                            }
+                        });
+                    }
+                    else {
+                        matchingCards = sourceSet.filter(card => card[query2[1]] === undefined || card[query2[1]] != query2[2]);
+                    }
+                }
+                result = matchingCards.map(matchingCard => matchingCard.mtgenId);
+            }
             else {
-                //TODO: actuall parse the symbol and throw an error if it's wrong
+                //TODO: actually parse the symbol and throw an error if it's wrong
                 //TODO: implement not equals (!=)
                 // Regular equals
                 query2[2] = query2[2].replace(/'/g, '');
