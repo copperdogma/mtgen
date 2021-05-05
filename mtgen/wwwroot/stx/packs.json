@@ -22,44 +22,24 @@
       "query": "from[stx]?mainSet=true"
     },
     {
-      "defName": "stx-booster-has-red",
-      "query": "from[stx-booster]?cost~='R'"
-    },
-    {
-      "defName": "stx-booster-has-blue",
-      "query": "from[stx-booster]?cost~='U'"
-    },
-    {
-      "defName": "stx-booster-has-black",
-      "query": "from[stx-booster]?cost~='B'"
-    },
-    {
-      "defName": "stx-booster-has-white",
-      "query": "from[stx-booster]?cost~='W'"
-    },
-    {
-      "defName": "stx-booster-has-green",
-      "query": "from[stx-booster]?cost~='G'"
-    },
-    {
       "defName": "stx-booster-lorehold-colours",
-      "query": "from[stx-booster-has-red]+from[stx-booster-has-white]-from[stx-booster-has-blue]-from[stx-booster-has-black]-from[stx-booster-has-green]"
+      "query": "from[stx-booster]?cost~=(R|W)-from[stx-booster]?cost~=(U|B|G)"
     },
     {
       "defName": "stx-booster-prismari-colours",
-      "query": "from[stx-booster-has-blue]+from[stx-booster-has-red]-from[stx-booster-has-black]-from[stx-booster-has-white]-from[stx-booster-has-green]"
+      "query": "from[stx-booster]?cost~=(U|R)-from[stx-booster]?cost~=(B|W|G)"
     },
     {
       "defName": "stx-booster-quandrix-colours",
-      "query": "from[stx-booster-has-green]+from[stx-booster-has-blue]-from[stx-booster-has-white]-from[stx-booster-has-black]-from[stx-booster-has-red]"
+      "query": "from[stx-booster]?cost~=(G|U)-from[stx-booster]?cost~=(W|B|R)"
     },
     {
       "defName": "stx-booster-silverquill-colours",
-      "query": "from[stx-booster-has-white]+from[stx-booster-has-black]-from[stx-booster-has-blue]-from[stx-booster-has-red]-from[stx-booster-has-green]"
+      "query": "from[stx-booster]?cost~=(W|B)-from[stx-booster]?cost~=(U|R|G)"
     },
     {
       "defName": "stx-booster-witherbloom-colours",
-      "query": "from[stx-booster-has-black]+from[stx-booster-has-green]-from[stx-booster-has-blue]-from[stx-booster-has-white]-from[stx-booster-has-red]"
+      "query": "from[stx-booster]?cost~=(B|G)-from[stx-booster]?cost~=(U|W|R)"
     },
     {
       "defName": "stx-college-lorehold",
@@ -157,7 +137,7 @@
     },
     {
       "defName": "stx-true-token",
-      "query": "from[stx-token]-from[stx-token]?marketing=true"
+      "query": "from[stx-token]?marketing!=true"
     }
   ],
   "packs": [
