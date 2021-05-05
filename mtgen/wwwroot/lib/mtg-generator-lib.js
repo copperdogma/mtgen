@@ -1,10 +1,11 @@
 /*
-MtG Generator script v2.4 - LIB
+MtG Generator script v2.5 - LIB
 
 Shared/base functions.
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
+4-May-2021: Added debug mode that shows a Debug Product and Live Debug Product tabs. To enable, add this to top level of products.json: "debug": true
 11-Apr-2021: Now includes college support for stx.
 14-Aug-2019: Added duplicate sets with fixed set codes, e.g.: con_ and con
 14-Jan-2019: Card cost calculator rewritten to simplify and handle a missing case.
@@ -14,7 +15,7 @@ Author: Cam Marsollier cam.marsollier@gmail.com
 14-Jan-2016: Percents within querySets can now be expressed as fractions ("7/8") in addition to percents (87.5).
 4-Jan-2016: Renamed "colourless" (c) mana to "generic" (g) (new in OGW set)
 27-Dec-2015: Broke out this file from mtg-generator.js.
-
+    
 */
 /* jshint laxcomma: true */
 
@@ -255,19 +256,19 @@ var mtgGen = (function (my) {
     // Public functions --------------------------------------------------------------------------------------------------------------------------------
 
     /* 
-	Init MtG Generator. Will trigger 'ready' event when all files loaded and .generateCardSets() can be called.
-	Will trigger 'playableCardLoaded' every every time a new playable card is loaded.
-	Options:
-		setCode				: WotC code for set, e.g.: dgm
-		setFile				: Contains set codes and names for all sets
-		cardFiles			: Array of JSON files containing main cards, token cards, other cards (like marketing cards), and you can load card sets from other releases if need be.
-		packFiles			: JSON file containg pack definitions.
-		productFile			: JSON file controlling the product tabs and what's inside them
-		startProductName	: if specified, auto-showTab this product
-		setCardCount		: Number of cards that should be in the total set. Used to say "X/Y cards available" for when all cards aren't yet released.
+    Init MtG Generator. Will trigger 'ready' event when all files loaded and .generateCardSets() can be called.
+    Will trigger 'playableCardLoaded' every every time a new playable card is loaded.
+    Options:
+        setCode				: WotC code for set, e.g.: dgm
+        setFile				: Contains set codes and names for all sets
+        cardFiles			: Array of JSON files containing main cards, token cards, other cards (like marketing cards), and you can load card sets from other releases if need be.
+        packFiles			: JSON file containg pack definitions.
+        productFile			: JSON file controlling the product tabs and what's inside them
+        startProductName	: if specified, auto-showTab this product
+        setCardCount		: Number of cards that should be in the total set. Used to say "X/Y cards available" for when all cards aren't yet released.
 
-		contentElem			: Selector for the spot the products, options, results, etc will be shown, e.g.: All Cards, Prerelease, Duel Decks, etc.
-	*/
+        contentElem			: Selector for the spot the products, options, results, etc will be shown, e.g.: All Cards, Prerelease, Duel Decks, etc.
+    */
     my.run = function (options) {
         // Import options into instance variables
         Object.assign(my, options);
@@ -480,6 +481,65 @@ var mtgGen = (function (my) {
 
                 // Process the pack defs
                 my.packDefs = createPackDefs(my.defs);
+
+                // Add in the debug product if requested. This will show all pack defs for debugging.
+                if (productData.debug) {
+
+                    // TODO: make this a higher-level debug and put spacers/outputs for each statement in a pack?
+                    //      This is partially done! See "NOT USED YET" in mtg-generator.js
+
+                    // Add "Debug Product" product that lists every pack so you can run them and see if they're outputting what you expect.
+
+                    // Create a pack out of every pack def.
+                    const debugPacks = Object.keys(my.packDefs).map(packDefName => ({
+                        "packName": `debug-${packDefName}`,
+                        "packDesc": `Debug: ${packDefName}`,
+                        "isGenerated": true,
+                        "cards": [{ "query": `take[*]>from[${packDefName}]` }]
+                    }));
+                    my.packs = my.packs.concat(debugPacks);
+
+                    const debugProduct = {
+                        "productName": "debug",
+                        "productDesc": "Debug Product",
+                        "isGenerated": true,
+                        "initialSort": "set"
+                    };
+                    const debugProductOptions = {
+                        "presets": [
+                            {
+                                "presetName": "debug-product",
+                                "presetDesc": "All Debug Packs",
+                                "default": true,
+                                "packs": debugPacks.map(debugPack => ({ "count": 1, "defaultPackName": debugPack.packName }))
+                            }
+                        ]
+                    };
+                    debugProduct.packs = debugPacks.map(debugPack => ({ "packName": debugPack.packName }));
+                    debugProduct.options = debugProductOptions;
+                    my.products.push(debugProduct);
+
+                    // Add "Live Debug" product where you can type any query, run it, and see the live results.
+                    const liveDebugProduct = {
+                        "productName": "live-debug",
+                        "productDesc": "Live Debug Product",
+                        "isGenerated": false,
+                        "initialSort": "set"
+                    };
+                    const liveDebugProductOptions = {
+                        "presets": [
+                            {
+                                "presetName": "live-debug-product",
+                                "presetDesc": "Live Debug Dummy Pack",
+                                "default": true,
+                                "packs": [{ "count": 1, "defaultPackName": "live-debug-dummy-pack" }]
+                            }
+                        ]
+                    };
+                    liveDebugProduct.packs = [{ "packName": "live-debug-dummy-pack" }];
+                    liveDebugProduct.options = liveDebugProductOptions;
+                    my.products.push(liveDebugProduct);
+                }
 
                 my.SetCardsLoadedCount = setCardsLoadedCount;
 

@@ -1,5 +1,5 @@
 /*
-MtG Generator script v2.3
+MtG Generator script v2.4
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
@@ -23,6 +23,7 @@ Normally 15 cards per booster:
 
 - 1 in 4 boosters contains a foil which may be any card of any rarity (incl Basic Land), which replaces a Common
 
+4-May-2021: Added debug mode that shows a Debug Product and Live Debug Product tabs. To enable, add this to top level of products.json: "debug": true
 11-Apr-2021: Now includes college support for stx.
 3-Apr-2020: Exporter: Added Deckstats format.
 3-Apr-2018: Exporter: now combined two-sided cards into FrontTitle // BackTitle, and added Frogtown export format
@@ -179,6 +180,10 @@ var mtgGen = (function (my) {
     /*
         NOT USED YET.. but this would be great. Something that translates queries into English so people can both understand what they're getting and 
                     debug my logic if it's wrong
+
+        NOTE: This would be difficult to do. When it renders cards it basically discards the pack queries they were generated from
+              and you just end up with an array of cards. The whole generator would have to be re-done to keep the generated cards
+              associated with their packs. It would also be useful to see what it was supposed to be and what it was overriden by.
     
         function renderPackDef(packDef) {
             var $result = $('<section class="packdef" data-packName="'+packDef.packName+'">');
@@ -650,14 +655,23 @@ var mtgGen = (function (my) {
         }
 
         , renderPackPreset: function (allPacks, preset) {
-            let packsOut = preset.packs.reduce((packString, pack, packIndex) => { return packString += this.renderInput(allPacks, pack, packIndex); }, '');
+            // "Live Debug" product where user can type in any query and run it.
+            if (allPacks.length == 1 && allPacks[0].packName == 'live-debug-dummy-pack') {
+                let packsOut = "<p>Enter your query:</p>";
+                packsOut += "<textarea id='product-query' cols='60' rows='5'></textarea><br/>";
+                packsOut += "<input id='generate' type='submit' value='Run my query!' />";
+                return packsOut;
+            }
+            else {
+                // Regular product packs.
+                let packsOut = preset.packs.reduce((packString, pack, packIndex) => { return packString += this.renderInput(allPacks, pack, packIndex); }, '');
 
-            packsOut += this.renderInput(allPacks); // Will render a booster template for dynamic js addition
-            packsOut += "<button id='add-booster'>Add Booster</button>";
-            packsOut = "<section id='boosters'>" + packsOut + "</section>";
-            packsOut += "<input id='generate' type='submit' value='Generate my sets!' />";
-
-            return packsOut;
+                packsOut += this.renderInput(allPacks); // Will render a booster template for dynamic js addition
+                packsOut += "<button id='add-booster'>Add Booster</button>";
+                packsOut = "<section id='boosters'>" + packsOut + "</section>";
+                packsOut += "<input id='generate' type='submit' value='Generate my sets!' />";
+                return packsOut;
+            }
         }
 
         , renderResultsFromOptions: function () {
@@ -679,6 +693,21 @@ var mtgGen = (function (my) {
                     const packName = activeButton.getAttribute('data-pack');
                     packs = [{ packName: packName, count: 1 }];
                 }
+            }
+            // Live Debug tab with a text box that lets the user enter a query to run live
+            else if (this.options.productName == 'product-live-debug') {
+                const debugQuery = this.getCurrentTab().querySelector('#product-query').value;
+                // Create a dummy pack from this query to let it run through the standard generateCardSetFromPack(packName) function
+                const tempPackName = 'product-live-debug-pack';
+                const tempPack = {
+                    packName: tempPackName,
+                    count: 1,
+                    isGenerated: true,
+                    cards: [{ query: debugQuery } ]
+                };
+                packs.push(tempPack);
+                my.packs = my.packs.filter(pack => pack.packName !== tempPackName); // Remove existing pack from previous runs if there is one.
+                my.packs.push(tempPack);
             }
             // Normal tab, like Prerelease, that shows a few drop downs and a Generate button.
             else if (this.hasOptions) {
