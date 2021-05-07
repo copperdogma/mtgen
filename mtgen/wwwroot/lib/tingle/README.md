@@ -17,16 +17,25 @@ Tingle is a minimalist and easy-to-use modal plugin written in pure JavaScript:
 * No extra files to download
 * Created with UX in mind
 
-![Demo Page screenshot](tingle.gif)
-
 ## Roadmap
 
 * ~~Flexbox support~~
-* Better responsive
+* ~~Better responsive~~
 * alert/dialog
 * Accessibility (any help is welcome)
 
+## Contribute
+
+Run the demo and listen for changes:
+
+```bash
+$ git clone git@github.com:robinparisi/tingle.git
+$ cd tingle
+$ npm install
+$ gulp serve
+```
+
 ## License
 
-© 2016 [Robin Parisi](https://github.com/robinparisi)  
+© 2018 [Robin Parisi](https://github.com/robinparisi)  
 Released under the [MIT LICENSE](http://opensource.org/licenses/MIT)
