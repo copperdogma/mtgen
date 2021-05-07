@@ -1,6 +1,7 @@
 CURRENT:
 tingle.js
 - 20170516: replaced fancybox with this for a modal popup as it's jQuery-free
+- 20210507: updated to v0.16.0
 
 mdn.base64.min.js
 - first used 20140606 on Core 2015 Set, replaced jquery.base64.min.js I think due to jQuery 2.10+ issue
@@ -21,8 +22,9 @@ string-similarity.min.js
 
 DEPRECATED
 
-20210507: Removed bootstrap. I hadn't updated it in forever, github was throwing security violations because of it, and it was for the old admin draw backend that I haven't rebuilt so I'll reinstall it if I need it later.
+20210507: Removed jquery.base64.min.js which was replaced with mdn.base64.min.js. The jquery version is still used by card-data-importer-tests but I haven't updated that in forever and switching should be trivial;)
 20210507: Removed jquery-validation-*, also used by defunct admin draw backend.
+20210507: Removed bootstrap. I hadn't updated it in forever, github was throwing security violations because of it, and it was for the old admin draw backend that I haven't rebuilt so I'll reinstall it if I need it later.
 
 jquery.base64.min.js
 - I THINK once I updated to jquery 2.10+ this broke with a INVALID_CHARACTER_ERR, so I used mdn.base64.min.js from here.
