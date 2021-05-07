@@ -1,11 +1,31 @@
+CURRENT:
 tingle.js
 - 20170516: replaced fancybox with this for a modal popup as it's jQuery-free
 
-jquery.base64.min.js
-- I THINK once I updated to jquery 2.10+ this broke with a INVALID_CHARACTER_ERR, so I used a new one from here:
-
 mdn.base64.min.js
 - first used 20140606 on Core 2015 Set, replaced jquery.base64.min.js I think due to jQuery 2.10+ issue
+
+underscore-min.js - needed by backbone
+- 20140713: upgraded to 1.6.0
+
+jquery.js - needed by backbone
+
+backbone-mins.js
+- 20140713: 1.1.2: newly included (during M15) to implement MVC in js UI
+	-  LOCKED to 1.1.2 as >=1.2.0 introduces bug where it incorrectly runs ProductView.events THEN .initialize()
+
+20170301: converted /util/card data importers to native es6 (no backbone, no jquery)
+
+string-similarity.min.js
+- Used in card-data-importer.html to suggest the actual cards in case the data source was misspelled.
+
+DEPRECATED
+
+20210507: Removed bootstrap. I hadn't updated it in forever, github was throwing security violations because of it, and it was for the old admin draw backend that I haven't rebuilt so I'll reinstall it if I need it later.
+20210507: Removed jquery-validation-*, also used by defunct admin draw backend.
+
+jquery.base64.min.js
+- I THINK once I updated to jquery 2.10+ this broke with a INVALID_CHARACTER_ERR, so I used mdn.base64.min.js from here.
 
 jlinq.js
 - used until 20140711 (during M15) when I replaced it with linq.js
@@ -16,12 +36,3 @@ linq.js
 
 jquery.eventable.js
 - used until 20140713 (during M15) when I replaced it with backbone.js events
-
-underscore-min.js
-- 20140713: upgraded to 1.6.0
-
-backbone-mins.js
-- 20140713: 1.1.2: newly included (during M15) to implement MVC
-	-  LOCKED to 1.1.2 as >=1.2.0 introduces bug where it incorrectly runs ProductView.events THEN .initialize()
-
-20170301: converted /util/card data importers to native es6 (no backbone, no jquery)
