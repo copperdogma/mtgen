@@ -1359,8 +1359,7 @@ var mtgGen = (function (my) {
     }
 
     function setLinkToDownloadFile(linkSelector, exportType) {
-        const utf8encodedContent = strToUTF8Arr(exports[exportType]);
-        const encodedContent = base64EncArr(utf8encodedContent);
+        const encodedContent = btoa(exports[exportType]);
         document.querySelector(linkSelector).setAttribute('href', 'data:text/octet-stream;base64,' + encodedContent);
         document.querySelector(linkSelector).setAttribute('download', `mtg-generator-${my.set.slug}-prerelease.${exportType}`); // 'download' attr is Chrome/FF-only to set download filename
     }

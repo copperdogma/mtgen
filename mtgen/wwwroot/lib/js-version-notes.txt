@@ -1,10 +1,13 @@
-CURRENT:
+UPDATING --------
+
+I don't like the stupid subfolders npm/bower create so I usually just download the new version from the website, pick the stuff I want, and manually update the libraries.
+Why? I hate devops/steps/complexity. If I had dozens of dependencies this way would be an issue but it's not and this keeps it simple.
+
+CURRENT --------
+
 tingle.js
 - 20170516: replaced fancybox with this for a modal popup as it's jQuery-free
 - 20210507: updated to v0.16.0
-
-mdn.base64.min.js
-- first used 20140606 on Core 2015 Set, replaced jquery.base64.min.js I think due to jQuery 2.10+ issue
 
 underscore-min.js - needed by backbone
 - 20140713: upgraded to 1.6.0
@@ -20,11 +23,15 @@ backbone-mins.js
 string-similarity.min.js
 - Used in card-data-importer.html to suggest the actual cards in case the data source was misspelled.
 
-DEPRECATED
+DEPRECATED --------
 
+20210507: ALSO removed mdn.base64.min.js. I think when I first started converting to base64 strings for the deck export, Mozilla didn't yet support it natively so I used this polyfill.
 20210507: Removed jquery.base64.min.js which was replaced with mdn.base64.min.js. The jquery version is still used by card-data-importer-tests but I haven't updated that in forever and switching should be trivial;)
 20210507: Removed jquery-validation-*, also used by defunct admin draw backend.
 20210507: Removed bootstrap. I hadn't updated it in forever, github was throwing security violations because of it, and it was for the old admin draw backend that I haven't rebuilt so I'll reinstall it if I need it later.
+
+mdn.base64.min.js
+- first used 20140606 on Core 2015 Set, replaced jquery.base64.min.js I think due to jQuery 2.10+ issue
 
 jquery.base64.min.js
 - I THINK once I updated to jquery 2.10+ this broke with a INVALID_CHARACTER_ERR, so I used mdn.base64.min.js from here.
