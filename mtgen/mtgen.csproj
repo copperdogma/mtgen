@@ -23,7 +23,6 @@
     <Content Remove="Pages\_ViewStart.cshtml" />
     <Content Remove="Pages\Shared\_Layout.cshtml" />
     <Content Remove="Pages\Shared\_ValidationScriptsPartial.cshtml" />
-    <Content Remove="wwwroot\stx\products.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pages\" />

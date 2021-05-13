@@ -57,12 +57,16 @@
       "query": "from[khm]-from[khm-promo]-from[khm]?token=true"
     },
     {
-      "defName": "khm-booster",
-      "query": "from[khm]?mainSet=true"
+      "defName": "khm-snow-land",
+      "query": "from[khm]?snowLand=true"
     },
     {
-      "defName": "khm-snow-land",
-      "query": "from[khm-booster]?snowLand=true"
+      "defName": "khm-booster",
+      "query": "from[khm]?mainSet=true-from[khm-snow-land]"
+    },
+    {
+      "defName": "khm-booster-with-snow-land",
+      "query": "from[khm]?mainSet=true+from[khm-snow-land]"
     },
     {
       "defName": "khm-token",
@@ -84,13 +88,16 @@
       "packName": "khm-draft",
       "packDesc": "Kaldheim: Draft Booster",
       "packVersion": "1.0",
-      "sources": [ "https://wpn.wizards.com/en/article/inside-each-kaldheim-product" ],
+      "sources": [ "https://wpn.wizards.com/en/article/inside-each-kaldheim-product", "https://www.youtube.com/watch?v=9IVwm2F90pY&t=1113s" ],
       "isGenerated": true,
       "cards": [
-        { "query": "from[khm-snow-land]" },
+        {
+          "_comment": "1/14 chance of replacing common snow land with rare. All snow lands are common except for one rare, 'Faceless Haven' which only appears in the rare slot.",
+          "query": "from[khm-snow-land]?rarity='c'"
+        },
         { "query": "take[10]>from[khm-booster]?rarity='c" },
         { "query": "take[3]>from[khm-booster]?rarity='u" },
-        { "query": "from[khm-booster]?rarity='r" },
+        { "query": "from[khm-booster-with-snow-land]?rarity='r" },
         {
           "querySet": [
             {
@@ -100,16 +107,6 @@
             {
               "percent": "50",
               "query": "from[khm-token]"
-            }
-          ]
-        },
-        {
-          "querySet": [
-            {
-              "_comment": "1/7.4 chance of replacing rare with mythic (7.4 instead of 8 as of znr Sep-2020",
-              "percent": "10/74",
-              "overrideSlot": "15",
-              "query": "from[khm-booster]?rarity='m'"
             }
           ]
         },
@@ -172,7 +169,7 @@
         },
         {
           "_comment": "Slot 5: Foil R/M",
-          "query": "from[khm-booster]?rarity='r"
+          "query": "from[khm-booster-with-snow-land]?rarity='r"
         },
         {
           "_comment": "Slot 6: Foil U Showcase",

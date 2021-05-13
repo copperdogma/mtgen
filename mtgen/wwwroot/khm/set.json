@@ -1,7 +1,7 @@
 {
   "startProductName": "khm-prerelease",
   "packFiles": [
-    "packs.json?v1.2"
+    "packs.json?v1.3"
   ],
   "cardFiles": [
     "cardsMain.json?v1.1",
@@ -12,6 +12,10 @@
     "cardsPromo.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-05-13T14:30:00:00",
+      "HtmlString": "Snow lands no longer appear in common slots, just in the land slot (thanks Léonard!)."
+    },
     {
       "UpdateDate": "2021-01-22T11:30:00:00",
       "HtmlString": "Rare snow land Faceless Haven will no longer appear in Snow Land slot, only Rare slot."
