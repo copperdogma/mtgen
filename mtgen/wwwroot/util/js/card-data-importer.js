@@ -551,7 +551,7 @@ class CardDataImporter {
             out += `<p>WARNING: No image data supplied. Using any images found with card data.</p>`;
         }
         else {
-            const missingSecondaryImageDataEntry = cardArray.filter(card => !card.hasOwnProperty("imageSourceOriginal"));
+            const missingSecondaryImageDataEntry = cardArray.filter(card => !card.hasOwnProperty("imageSourceOriginal") && card.useCardDataImg != true);
             if (missingSecondaryImageDataEntry.length < 1) {
                 out += "<p>No parsing errors.</p>";
             }
