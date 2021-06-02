@@ -357,7 +357,7 @@ class CardDataImporter {
                     if (matchingCard) { cards.delete(matchingCard.mtgenId); }
                 });
                 exception.result.deletedCards = matchingCards;
-                exception.result.affectedCards = matchingCards.length;
+                exception.result.affectedCards = matchingCards.size;
                 continue;
             }
 
@@ -467,7 +467,7 @@ class CardDataImporter {
                 card.isSelected = true;
             });
             exception.result.modifiedCards = matchingCards;
-            exception.result.affectedCards = matchingCards.length;
+            exception.result.affectedCards = matchingCards.size;
 
             // Add the modified cards back in.
             matchingCardArray.forEach(matchingCard => cards = this._addCardToCards(cards, matchingCard));
