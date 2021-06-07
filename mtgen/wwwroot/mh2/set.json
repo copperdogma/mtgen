@@ -1,0 +1,28 @@
+{
+  "startProductName": "mh2-prerelease",
+  "packFiles": [
+    "packs.json?v1.4"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsBasicLand.json",
+    "cardsToken.json",
+    "cardsVariant.json",
+    "cardsPromo.json",
+    "cardsMh1Reprint.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2021-06-05T11:30:00:00",
+      "HtmlString": "Collector Booster now has proper amount of common (4) and 'foil sketch or retro frame c/u' (2) card sections."
+    },
+    {
+      "UpdateDate": "2021-06-05T11:00:00:00",
+      "HtmlString": "Draft Booster's default cards now restricted to the base card set (num 1-261)."
+    },
+    {
+      "UpdateDate": "2021-06-05T10:00:00:00",
+      "HtmlString": "Draft Booster now includes chance of regular mythics."
+    }
+  ]
+}

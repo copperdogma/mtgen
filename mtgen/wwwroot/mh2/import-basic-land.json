@@ -1,0 +1,135 @@
+﻿{
+  "setCode": "mh2",
+  "cardDataUrl": "",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "mh2",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/feature/modern-horizons-2-product-overview-2021-05-21",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "481",
+          "cardPattern": "x4,w,w,u,u,b,b,r,r,g,g"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh2",
+        "src": "https://media.wizards.com/2021/mh2/en_hwtrOFnNDg.png",
+        "title": "Plains",
+        "num": 481,
+        "numInt": 481
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh2",
+        "src": "https://media.wizards.com/2021/mh2/en_5B3afkRgMk.png",
+        "title": "Plains",
+        "num": 482,
+        "numInt": 482
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh2",
+        "src": "https://media.wizards.com/2021/mh2/en_V7qJCud3bw.png",
+        "title": "Island",
+        "num": 483,
+        "numInt": 483
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh2",
+        "src": "https://media.wizards.com/2021/mh2/en_vGAmQ0hCxA.png",
+        "title": "Island",
+        "num": 484,
+        "numInt": 484
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh2",
+        "src": "https://media.wizards.com/2021/mh2/en_uaFYHwFsHS.png",
+        "title": "Swamp",
+        "num": 485,
+        "numInt": 485
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh2",
+        "src": "https://media.wizards.com/2021/mh2/en_oZQONSZCtk.png",
+        "title": "Swamp",
+        "num": 486,
+        "numInt": 486
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh2",
+        "src": "https://media.wizards.com/2021/mh2/en_Y2Pp6YBxiY.png",
+        "title": "Mountain",
+        "num": 487,
+        "numInt": 487
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh2",
+        "src": "https://media.wizards.com/2021/mh2/en_fLpVxZcMqJ.png",
+        "title": "Mountain",
+        "num": 488,
+        "numInt": 488
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh2",
+        "src": "https://media.wizards.com/2021/mh2/en_OM0OwCRJD4.png",
+        "title": "Forest",
+        "num": 489,
+        "numInt": 489
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mh2",
+        "src": "https://media.wizards.com/2021/mh2/en_gTIe8eSOxP.png",
+        "title": "Forest",
+        "num": 490,
+        "numInt": 490
+      }
+    },
+    {
+      "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
+      "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
+      "newValues": {
+        "set": "{{setCode}}",
+        "height": 370,
+        "width": 265,
+        "type": "Basic Land",
+        "subtype": "{{title}}",
+        "colour": "l",
+        "cost": "",
+        "rarity": "c",
+        "num": "{{num}}/264 L"
+      }
+    }
+  ]
+}

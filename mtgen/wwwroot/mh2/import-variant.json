@@ -1,0 +1,376 @@
+﻿{
+  "setCode": "mh2",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=256&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/modern-horizons-2-variants",
+  "importOptions": {},
+  "exceptions": [
+    {
+      "_comments": [
+        "import all images, matching their titles with the same card data over and over = (above) importOptions/importByImage: true",
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'",
+        "ignore later image match and use the one from data (or override below) = useCardDataImg = true"
+      ]
+    },
+
+    {
+      "where": "title='Bloodbraid Mrauder'",
+      "newValues": {
+        "title": "Bloodbraid Marauder"
+      }
+    },
+    {
+      "where": "title='Acolyte of the Arcus'",
+      "newValues": {
+        "title": "Arcus Acolyte"
+      }
+    },
+    {
+      "where": "title='Radkos Headliner'",
+      "newValues": {
+        "title": "Rakdos Headliner"
+      }
+    },
+    {
+      "where": "title='Nykthos Exemplar'",
+      "newValues": {
+        "title": "Nykthos Paragon"
+      }
+    },
+
+    {
+      "where": "title='Brainstone'",
+      "newValues": {
+        "rarity": "u"
+      }
+    },
+
+    {
+      "_comment": "These 40 retro cards are mh1 reprints and imported via import-mh1-reprints.json",
+      "where": "title=(Archmage's Charm|Ayula, Queen Among Bears|Changeling Outcast|Deep Forest Hermit|Defile|Ephemerate|Etchings of the Chosen|Faerie Seer|Force of Negation|Force of Vigor|Generous Gift|Giver of Runes|Goblin Engineer|Hall of Heliod's Generosity|Ice-Fang Coatl|Ingenious Infiltrator|King of the Pride|Lavabelly Sliver|Llanowar Tribe|Magmatic Sinkhole|Plague Engineer|Prismatic Vista|Ranger-Captain of Eos|Scale Up|Shenanigans|Sisay, Weatherlight Captain|Soulherder|Sword of Sinew and Steel|Sword of Truth and Justice|Talisman of Conviction|Talisman of Creativity|Talisman of Curiosity|Talisman of Hierarchy|Talisman of Resilience|The First Sliver|Tribute Mage|Undead Augur|Universal Automaton|Urza, Lord High Artificer|Weather the Storm)'",
+      "delete": true
+    },
+
+    {
+      "where": "numInt=(304-326)",
+      "newValues": {
+        "borderless": true
+      }
+    },
+
+    {
+      "where": "numInt=(304-306)",
+      "newValues": {
+        "borderlessPlaneswalker": true
+      }
+    },
+    {
+      "where": "numInt=(327-380)",
+      "newValues": {
+        "showcaseSketchCard": true
+      }
+    },
+    {
+      "where": "numInt=(381-441)",
+      "newValues": {
+        "retroFrame": true
+      }
+    },
+    {
+      "where": "numInt=(442-480)",
+      "newValues": {
+        "extendedArtwork": true
+      }
+    },
+
+    {
+      "_comment": "Many cards appear twice with the same name on the wotc site which messes up the importer. These are manual fixes.",
+      "where": "numInt=445",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_bMKz8VwTAC.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=459",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_7ghmOwp6sP.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=475",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_yQ5His77Vo.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=463",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_CHN0f6tgkM.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=456",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_5hFB7bmdL7.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=464",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_RSlC1iqgfB.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=410",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_79LleiSfKg.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=470",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_x4NbXAG063.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=461",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_TWPMiH7T3R.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=420",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_i1xTkh68vZ.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=458",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_wCWEzPAHh0.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=368",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_559JfhxLmZ.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=414",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_TIK5EdQ8NN.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=476",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_DXXUIgJBDf.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=477",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_Kuf0U5Xu1f.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=442",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_ChhaIQl1qf.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=400",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_aJeKCTONPf.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=466",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_tL11A2FzCT.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=452",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_FEVIIqxikS.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=447",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_udbavF9Fsm.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=478",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_uU9xDJFBUO.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=431",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_X2NOen7bx6.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=393",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_oj4CFSiIMy.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=433",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_a03Nawg8ia.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=467",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_YMjtPMTXJ1.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=402",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_709ETJkJTS.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=479",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_WVuLfZBHqy.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=473",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_r34yy8O3Or.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=363",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_B4X4fnyEqs.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=449",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_BFwfcj1B8r.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=450",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_3VKxoOWeJy.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=451",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_eJNokuXSM1.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=423",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_Ln4jgaWWZr.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=472",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_SntvRtlmPF.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=443",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_uuJoPrMDoG.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=444",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_t9nscp4o1X.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=446",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_ckHdt9hX1i.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=416",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_8rSH9mTu7V.png",
+        "useCardDataImg": true
+      }
+    },
+    {
+      "where": "numInt=367",
+      "newValues": {
+        "src": "https://media.wizards.com/2021/mh2/en_A542RRGZ4A.png",
+        "useCardDataImg": true
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "variant": true
+      }
+    }
+  ]
+}

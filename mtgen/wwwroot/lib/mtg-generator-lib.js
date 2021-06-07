@@ -12,6 +12,8 @@ Query examples:
     from[stx-booster]?cost~='R'  = Take all cards where cost includes R
     from[stx-booster]?cost~=(R|W)  = Take all cards where cost includes R or W. Note you can also use from[stx-booster]?cost=contains(R|W)
 
+    overrideSlot can override more than one slot via a comma-separated list
+
 Author: Cam Marsollier cam.marsollier@gmail.com
 
 4-May-2021: Added support for ~=(X|Y|Z) (contains) operator and != operator.

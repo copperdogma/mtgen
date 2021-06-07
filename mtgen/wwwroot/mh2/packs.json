@@ -1,0 +1,400 @@
+{
+  "defs": [
+    {
+      "defName": "mh2",
+      "query": "from[*]?set='mh2'"
+    },
+    {
+      "_comment": "This set includes 40 retro-framed cards reprinted from mh1 that aren't part of mh2 proper",
+      "defName": "mh1",
+      "query": "from[*]?set='mh1'"
+    },
+    {
+      "defName": "mh2-main-set",
+      "query": "from[mh2]?mainSet=true"
+    },
+    {
+      "defName": "mh2-variants",
+      "query": "from[mh2]?variant=true"
+    },
+    {
+      "defName": "mh2-promo",
+      "query": "from[mh2]?promo=true"
+    },
+    {
+      "defName": "mh2-booster",
+      "query": "from[mh2-main-set]?numInt=(1-261)"
+    },
+    {
+      "defName": "mh2-borderless",
+      "query": "from[mh2]?borderless=true"
+    },
+    {
+      "defName": "mh2-extended-art",
+      "query": "from[mh2]?extendedArtwork=true"
+    },
+    {
+      "defName": "mh2-showcase-sketch",
+      "query": "from[mh2]?showcaseSketchCard=true"
+    },
+    {
+      "defName": "mh2-retro-frame",
+      "query": "from[mh2]?retroFrame=true"
+    },
+    {
+      "defName": "mh2-sketch-and-retro",
+      "query": "from[mh2-showcase-sketch]+from[mh2-retro-frame]"
+    },
+    {
+      "defName": "mh2-new-to-modern",
+      "query": "from[mh2]?newToModern=true"
+    },
+    {
+      "defName": "mh2-new-to-modern-sketch-and-borderless",
+      "query": "from[mh2]?newToModern=true+from[mh2-showcase-sketch]?newToModern=true+from[mh2-borderless]?newToModern=true"
+    },
+    {
+      "defName": "mh2-borderless-extended-art",
+      "query": "from[mh2-borderless]+from[mh2-extended-art]"
+    },
+    {
+      "defName": "mh2-sketch-and-retro-and-borderless",
+      "query": "from[mh2-sketch-and-retro]+from[mh2-borderless]"
+    },
+    {
+      "defName": "mh1-retro",
+      "query": "from[mh1]?retroFrame=true"
+    },
+    {
+      "defName": "mh2-collector-sketch-and-retro-and-borderless-and-extended-art",
+      "query": "from[mh2-sketch-and-retro]+from[mh1-retro]+from[mh2-borderless]+from[mh2-extended-art]"
+    },
+    {
+      "defName": "mh2-collector-sketch-and-retro",
+      "query": "from[mh2-showcase-sketch]+from[mh1-retro]+from[mh2-retro-frame]"
+    },
+    {
+      "defName": "mh2-sketch-and-borderless",
+      "query": "from[mh2-showcase-sketch]+from[mh2-borderless]"
+    },
+    {
+      "defName": "mh2-foils",
+      "query": "from[mh2-booster]+from[mh2-new-to-modern]+from[mh2-new-to-modern]?showcase=true+from[mh2-borderless]"
+    },
+    {
+      "defName": "mh2-token",
+      "query": "from[mh2]?token=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "mh2-all-cards",
+      "packDesc": "Modern Horizons 2: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[mh2]" }
+      ]
+    },
+
+    {
+      "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
+      "_comment2": "Common slots: There are 101 different commons in main set Modern Horizons 2 that will show up in these ten slots. In addition, there are ten commons that have a showcase sketch treatment and thirteen commons that have a showcase retro frame treatment. Of these 23 cards, for every two times you get a regular version, odds are you will get one of the showcase treatments. This means that even though there are some cards with showcase treatments, they show up as often in the pack as the cards that don't have a special treatment.",
+      "_comment3": "Uncommon slots: There are 80 different uncommons in the main Modern Horizons 2 set that will show up in these three slots. Uncommons have fifteen cards with the showcase sketch treatment and nine with showcase retro frame treatments. The 2-to-1 ratio for regular to showcase cards works just the same as it does for commons and for the same reasons.",
+      "_comment4": "Rare slot: There are 60 rares and 20 mythic rares in the main set of Modern Horizons 2 that come in this slot. Additionally, 9% of the time, a regular rare or mythic rare here will be replaced by a showcase sketch rare or mythic rare, retro frame rare or mythic rare, or borderless mythic rare. For those players looking for the enemy fetch lands, this is the slot where you will find either regular enemy fetch lands or the showcase retro frame version.",
+      "packName": "mh2-draft",
+      "packDesc": "Modern Horizons 2: Draft Booster",
+      "packVersion": "1.2",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/collecting-modern-horizons-2-2021-05-21" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[7]>from[mh2-booster]?rarity='c" },
+        { "query": "from[mh2-sketch-and-retro]?rarity='c" },
+        { "query": "from[mh2-sketch-and-retro]?rarity='c" },
+        { "query": "from[mh2-sketch-and-retro]?rarity='c" },
+        { "query": "take[2]>from[mh2-booster]?rarity='u" },
+        { "query": "from[mh2-sketch-and-retro]?rarity='u" },
+        { "query": "from[mh2-new-to-modern-sketch-and-borderless]?rarity='u" },
+        { "query": "from[mh2-booster]?rarity='r" },
+        {
+          "querySet": [
+            {
+              "percent": "50",
+              "query": "from[mh2]?title='Tip/Marketing Card"
+            },
+            {
+              "percent": "50",
+              "query": "from[mh2-token]"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "New-to-Modern Slot: There are 42 cards in Modern Horizons 2 that are being introduced to Modern. This slot guarantees you get one of these new-to-Modern reprints in each booster. There are four of these new-to-Modern reprints with the showcase retro frame treatment (1 U, 2 R, 1 M) and eight cards with a borderless alternate-art treatment (4 R, 4 M). All of these are possible to get in this slot of the Draft Booster.",
+              "overrideSlot": "14",
+              "percent": "1/4",
+              "query": "from[mh2-new-to-modern-sketch-and-borderless]?rarity='r"
+            },
+            {
+              "overrideSlot": "14",
+              "percent": "10/74",
+              "query": "from[mh2-new-to-modern-sketch-and-borderless]?rarity='m"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Rare slot: 9% of the time, a regular rare or mythic rare here will be replaced by a showcase sketch rare or mythic rare, retro frame rare or mythic rare, or borderless mythic rare. For those players looking for the enemy fetch lands, this is the slot where you will find either regular enemy fetch lands or the showcase retro frame version.",
+              "percent": "9",
+              "overrideSlot": "15",
+              "query": "from[mh2-sketch-and-retro-and-borderless]?rarity='r'"
+            },
+            {
+              "_comment": "Rare slot: Change of a mythic",
+              "percent": "10/74",
+              "overrideSlot": "15",
+              "query": "from[mh2-booster]?rarity='m'"
+            },
+            {
+              "_comment": "Rare slot: mythic override from comment above.. ROUGHLY 1% overall chance",
+              "overrideSlot": "15",
+              "percent": "1",
+              "query": "from[mh2-sketch-and-retro-and-borderless]?rarity='m'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "33% (1:45) chance of foil, scaled by rarity, replacing the last common, as of m20: Jun-2019",
+              "overrideSlot": "10",
+              "percent": "88/360",
+              "query": "from[mh2-foils]?rarity='c",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "24/360",
+              "query": "from[mh2-foils]?rarity='u",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "7/360",
+              "query": "from[mh2-foils]?rarity='r",
+              "setValues": { "foil": true }
+            },
+            {
+              "overrideSlot": "10",
+              "percent": "1/360",
+              "query": "from[mh2-foils]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_comment": "Collector Boosters were introduced as standard feature as of ELD",
+      "packName": "mh2-collector",
+      "packDesc": "Modern Horizons 2: Collector Booster",
+      "packVersion": "1.1",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/collecting-modern-horizons-2-2021-05-21" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1: Foil Etched: R/M",
+          "_comment2": "Foil-etched is just a fancy foil treatment and I just treat them as regular foil",
+          "query": "from[mh2-booster]?rarity='r",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 2: Foil Etched: C/U",
+          "query": "from[mh2-booster]?rarity='c",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 3: Foil Etched: Basic Land",
+          "query": "from[mh2]?type='Basic Land",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 4: Foil: Retro/Sketch/Borderless/Extended Art-frame R/M",
+          "query": "from[mh2-collector-sketch-and-retro-and-borderless-and-extended-art]?rarity='r",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 5: Sketch/Borderless R/M",
+          "query": "from[mh2-sketch-and-borderless]?rarity='r"
+        },
+        {
+          "_comment": "Slot 6-7: 2x Foil: Sketch/Retro-Frame C/U",
+          "query": "take[2]>from[mh2-collector-sketch-and-retro]?rarity='c",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 8: Extended-art R",
+          "query": "from[mh2-extended-art]?rarity='r"
+        },
+        {
+          "_comment": "Slot 9: Sketch C/U",
+          "query": "from[mh2-showcase-sketch]?rarity='c"
+        },
+        {
+          "_comment": "Slot 10-11: 2x Foil U",
+          "query": "take[2]>from[mh2-booster]?rarity='u'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 12-15: 4x Foil C",
+          "query": "take[4]>from[mh2-booster]?rarity='c'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 16: Foil: token",
+          "query": "from[mh2-token]-from[mh2-token]?marketing=true",
+          "setValues": { "foil": true }
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 1: Foil Etched: R/M",
+              "overrideSlot": "1",
+              "percent": "10/74",
+              "query": "from[mh2-booster]?rarity='m",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 2: Foil Etched: C/U",
+              "overrideSlot": "2",
+              "percent": "3/13",
+              "query": "from[mh2-booster]?rarity='u",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 4: Foil: Retro/Sketch/Borderless/Extended Art-frame R/M",
+              "overrideSlot": "4",
+              "percent": "10/74",
+              "query": "from[mh2-collector-sketch-and-retro-and-borderless-and-extended-art]?rarity='r",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 5: Sketch/Borderless R/M",
+              "overrideSlot": "5",
+              "percent": "10/74",
+              "query": "from[mh2-sketch-and-borderless]?rarity='m"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 6-7: 2x Foil: Sketch/Retro-Frame C/U",
+              "overrideSlot": "6,7",
+              "percent": "3/13",
+              "query": "from[mh2-collector-sketch-and-retro]?rarity='u",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 9: Sketch C/U",
+              "overrideSlot": "9",
+              "percent": "3/13",
+              "query": "from[mh2-showcase-sketch]?rarity='u"
+            }
+          ]
+        }
+
+      ]
+    },
+
+    {
+      "packName": "mh2-prerelease-promo-packins",
+      "packDesc": "Modern Horizons 2: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "querySet": [
+            {
+              "percent": "7/8",
+              "query": "from[mh2-booster]?rarity='r",
+              "setValues": {
+                "foil": true
+              }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[mh2-booster]?rarity='m",
+              "setValues": {
+                "foil": true
+              }
+            }
+          ]
+        },
+        { "query": "take[1]>from[mh2-promo]?type='Life Counter'" },
+        { "query": "from[mh2-promo]?title='Prerelease Deck Box" },
+        { "query": "from[mh2-promo]?title='Deckbuilding Advice Insert" },
+        { "query": "from[mh2-promo]?title='Arena Code Card" }
+      ]
+    },
+
+    {
+      "packName": "mh2-prerelease-promos",
+      "packDesc": "Modern Horizons 2: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[mh2-promo]?includedReason='Prerelease Promo" }
+      ]
+    },
+
+    {
+      "packName": "mh2-variants",
+      "packDesc": "Modern Horizons 2: All Variants",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[mh2-variants]"
+        }
+      ]
+    },
+
+    {
+      "packName": "mh2-promos",
+      "packDesc": "Modern Horizons 2: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[mh2-promo]"
+        }
+      ]
+    }
+
+  ]
+}

@@ -1,36 +1,37 @@
 {
+  "debug": false,
   "_comment": "if there are no options the query/packNames will be auto-run",
   "products": [
     {
-      "productName": "khm-all-cards",
+      "productName": "mh2-all-cards",
       "productDesc": "All Cards",
       "sources": [ "" ],
       "isGenerated": false,
       "initialSort": "colour",
       "packs": [
-        { "packName": "khm-all-cards" }
+        { "packName": "mh2-all-cards" }
       ]
     },
 
     {
-      "productName": "khm-boosters",
+      "productName": "mh2-boosters",
       "productDesc": "Draft Boosters",
       "isGenerated": true,
       "isVisible": true,
       "initialSort": "set",
       "packs": [
-        { "packName": "khm-draft" }
+        { "packName": "mh2-draft" }
       ],
       "options": {
         "presets": [
           {
-            "presetName": "khm-draft-boosters-six",
+            "presetName": "mh2-draft-boosters-six",
             "presetDesc": "Six Draft Boosters",
             "default": true,
             "packs": [
               {
                 "count": 6,
-                "defaultPackName": "khm-draft"
+                "defaultPackName": "mh2-draft"
               }
             ]
           }
@@ -39,24 +40,24 @@
     },
 
     {
-      "productName": "khm-collector",
+      "productName": "mh2-collector",
       "productDesc": "Collector Boosters",
       "isGenerated": true,
       "isVisible": true,
       "initialSort": "set",
       "packs": [
-        { "packName": "khm-collector" }
+        { "packName": "mh2-collector" }
       ],
       "options": {
         "presets": [
           {
-            "presetName": "khm-collector-boosters-six",
+            "presetName": "mh2-collector-boosters-six",
             "presetDesc": "Six Collector Boosters",
             "default": true,
             "packs": [
               {
                 "count": 6,
-                "defaultPackName": "khm-collector"
+                "defaultPackName": "mh2-collector"
               }
             ]
           }
@@ -65,29 +66,29 @@
     },
 
     {
-      "productName": "khm-prerelease",
+      "productName": "mh2-prerelease",
       "productDesc": "Prerelease",
       "sources": [ "" ],
       "isGenerated": true,
       "initialSort": "set",
       "packs": [
-        { "packName": "khm-draft" },
-        { "packName": "khm-prerelease-promo-packins" }
+        { "packName": "mh2-draft" },
+        { "packName": "mh2-prerelease-promo-packins" }
       ],
       "options": {
         "presets": [
           {
-            "presetName": "khm-prerelease-promo-packins",
+            "presetName": "mh2-prerelease-promo-packins",
             "presetDesc": "Prerelease Packins",
             "default": true,
             "packs": [
               {
                 "count": 1,
-                "defaultPackName": "khm-prerelease-promo-packins"
+                "defaultPackName": "mh2-prerelease-promo-packins"
               },
               {
                 "count": 6,
-                "defaultPackName": "khm-draft"
+                "defaultPackName": "mh2-draft"
               }
             ]
           }
@@ -96,28 +97,27 @@
     },
 
     {
-      "productName": "khm-variants",
+      "productName": "mh2-variants",
       "productDesc": "Variants",
-      "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/throne-khmraine-variants" ],
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/modern-horizons-2-variants" ],
       "isGenerated": false,
       "isVisible": true,
       "initialSort": "colour",
       "packs": [
-        { "packName": "khm-variants" }
+        { "packName": "mh2-variants" }
       ]
     },
 
     {
-      "productName": "khm-promos",
+      "productName": "mh2-promos",
       "productDesc": "All Promos",
       "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/ravnica-allegiance-planeswalker-deck-lists-2019-01-10" ],
       "isGenerated": false,
       "isVisible": true,
       "initialSort": "name",
       "packs": [
-        { "packName": "khm-promos" }
+        { "packName": "mh2-promos" }
       ]
     }
-
   ]
 }

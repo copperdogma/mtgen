@@ -1,0 +1,40 @@
+﻿{
+  "setCode": "mh1",
+  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=256&IncludeUnconfirmed=true&CardsPerRequest=999",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/modern-horizons-2-variants",
+  "importOptions": {},
+  "exceptions": [
+    {
+      "_comments": [
+        "import all images, matching their titles with the same card data over and over = (above) importOptions/importByImage: true",
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'",
+        "ignore later image match and use the one from data (or override below) = useCardDataImg = true"
+      ]
+    },
+
+    {
+      "_comment": "These 40 retro cards are mh1 reprints, aren't part of mh2 proper, and all mh1 commons have been upshifted to uncommon",
+      "where": "title=(Archmage's Charm|Ayula, Queen Among Bears|Changeling Outcast|Deep Forest Hermit|Defile|Ephemerate|Etchings of the Chosen|Faerie Seer|Force of Negation|Force of Vigor|Generous Gift|Giver of Runes|Goblin Engineer|Hall of Heliod's Generosity|Ice-Fang Coatl|Ingenious Infiltrator|King of the Pride|Lavabelly Sliver|Llanowar Tribe|Magmatic Sinkhole|Plague Engineer|Prismatic Vista|Ranger-Captain of Eos|Scale Up|Shenanigans|Sisay, Weatherlight Captain|Soulherder|Sword of Sinew and Steel|Sword of Truth and Justice|Talisman of Conviction|Talisman of Creativity|Talisman of Curiosity|Talisman of Hierarchy|Talisman of Resilience|The First Sliver|Tribute Mage|Undead Augur|Universal Automaton|Urza, Lord High Artificer|Weather the Storm)'",
+      "newValues": {
+        "mh1Reprint": true,
+        "retroFrame": true
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "variant": true
+      }
+    }
+  ]
+}
