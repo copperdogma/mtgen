@@ -1,5 +1,5 @@
 /*
-MtG Generator script v2.6 - LIB
+MtG Generator script v2.7 - LIB
 
 Shared/base functions.
 
@@ -16,6 +16,7 @@ Query examples:
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
+7-Jun-2021: Removed product debug support, replacing with superior ?debug=true querystring support.
 4-May-2021: Added support for ~=(X|Y|Z) (contains) operator and != operator.
 4-May-2021: Added debug mode that shows a Debug Product and Live Debug Product tabs. To enable, add this to top level of products.json: "debug": true
 11-Apr-2021: Now includes college support for stx.
@@ -37,7 +38,7 @@ Author: Cam Marsollier cam.marsollier@gmail.com
 var mtgGen = (function (my) {
     'use strict';
     // globals
-    my.version = "2.6";
+    my.version = "2.7";
     my.setData = undefined;
     my.packData = undefined;
     my.cardsData = undefined;
@@ -278,8 +279,8 @@ var mtgGen = (function (my) {
         productFile			: JSON file controlling the product tabs and what's inside them
         startProductName	: if specified, auto-showTab this product
         setCardCount		: Number of cards that should be in the total set. Used to say "X/Y cards available" for when all cards aren't yet released.
-
         contentElem			: Selector for the spot the products, options, results, etc will be shown, e.g.: All Cards, Prerelease, Duel Decks, etc.
+        flags			    : Flags that change execution. Currently supports only 'debug'
     */
     my.run = function (options) {
         // Import options into instance variables
@@ -494,8 +495,8 @@ var mtgGen = (function (my) {
                 // Process the pack defs
                 my.packDefs = createPackDefs(my.defs);
 
-                // Add in the debug product if requested. This will show all pack defs for debugging.
-                if (productData.debug) {
+                // Add ?debug=true to the querystring. This will show all pack defs for debugging.
+                if (options.flags.debug) {
 
                     // TODO: make this a higher-level debug and put spacers/outputs for each statement in a pack?
                     //      This is partially done! See "NOT USED YET" in mtg-generator.js

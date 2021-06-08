@@ -71,11 +71,12 @@
     <script src="~/lib/underscore/underscore-min.js"></script>
     <script src="~/lib/backbone/backbone.js"></script>
     <script src="~/lib/tingle/dist/tingle.js?v0.16.0"></script>
-    <script src="~/lib/mtg-generator-lib.js?v2.6"></script>
+    <script src="~/lib/mtg-generator-lib.js?v2.7"></script>
     <script src="~/lib/mtg-generator.js?v=2.5"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js"></script>
     <script>
         $(document).ready(function () {
+            const querystring = Object.fromEntries(new URLSearchParams(location.search));
             mtgGen.run({
                 setCode: "@Model.Set.Code"
                 , setFile: "@Model.Set.SetFile"
@@ -85,6 +86,7 @@
                 , startProductName: "@Model.Set.StartProductName"
                 , setCardCount: "@Model.Set.CardCount"
                 , contentElem: "main"
+                , flags: { debug: querystring.debug }
             });
 
             // Modal popup support.
