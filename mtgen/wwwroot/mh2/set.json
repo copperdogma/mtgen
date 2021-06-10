@@ -1,17 +1,30 @@
 {
   "startProductName": "mh2-prerelease",
   "packFiles": [
-    "packs.json?v1.4"
+    "packs.json?v1.6"
   ],
   "cardFiles": [
-    "cardsMain.json",
+    "cardsMain.json?v1.1",
     "cardsBasicLand.json",
     "cardsToken.json",
     "cardsVariant.json",
     "cardsPromo.json",
-    "cardsMh1Reprint.json"
+    "cardsMh1Reprint.json",
+    "cardsTheList.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-06-08T09:00:00:00",
+      "HtmlString": "Collector Booster slot 1/2 now pull M/U AS WELL from only retro frame, New-to-Modern, and MH1 reprints. Oops;)"
+    },
+    {
+      "UpdateDate": "2021-06-07T22:30:00:00",
+      "HtmlString": "'Yavimaya, Cradle of Growth' no longer considered New-to-Modern."
+    },
+    {
+      "UpdateDate": "2021-06-07T16:30:00:00",
+      "HtmlString": "Collector Booster slot 1/2 now pull from only retro frame, New-to-Modern, and MH1 reprints."
+    },
     {
       "UpdateDate": "2021-06-05T11:30:00:00",
       "HtmlString": "Collector Booster now has proper amount of common (4) and 'foil sketch or retro frame c/u' (2) card sections."

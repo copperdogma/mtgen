@@ -5,6 +5,10 @@
       "query": "from[*]?set='mh2'"
     },
     {
+      "defName": "the-list",
+      "query": "from[*]?theList=true"
+    },
+    {
       "_comment": "This set includes 40 retro-framed cards reprinted from mh1 that aren't part of mh2 proper",
       "defName": "mh1",
       "query": "from[*]?set='mh1'"
@@ -64,6 +68,10 @@
     {
       "defName": "mh1-retro",
       "query": "from[mh1]?retroFrame=true"
+    },
+    {
+      "defName": "mh2-collector-retro-frame-and-new-to-modern-and-retro",
+      "query": "from[mh2-retro-frame]+from[mh2-new-to-modern]+from[mh1-retro]"
     },
     {
       "defName": "mh2-collector-sketch-and-retro-and-borderless-and-extended-art",
@@ -200,19 +208,19 @@
       "_comment": "Collector Boosters were introduced as standard feature as of ELD",
       "packName": "mh2-collector",
       "packDesc": "Modern Horizons 2: Collector Booster",
-      "packVersion": "1.1",
+      "packVersion": "1.2",
       "sources": [ "https://magic.wizards.com/en/articles/archive/feature/collecting-modern-horizons-2-2021-05-21" ],
       "isGenerated": true,
       "cards": [
         {
           "_comment": "Slot 1: Foil Etched: R/M",
           "_comment2": "Foil-etched is just a fancy foil treatment and I just treat them as regular foil",
-          "query": "from[mh2-booster]?rarity='r",
+          "query": "from[mh2-collector-retro-frame-and-new-to-modern-and-retro]?rarity='r",
           "setValues": { "foil": true }
         },
         {
           "_comment": "Slot 2: Foil Etched: C/U",
-          "query": "from[mh2-booster]?rarity='c",
+          "query": "from[mh2-collector-retro-frame-and-new-to-modern-and-retro]?rarity='c",
           "setValues": { "foil": true }
         },
         {
@@ -264,7 +272,7 @@
               "_comment": "Slot 1: Foil Etched: R/M",
               "overrideSlot": "1",
               "percent": "10/74",
-              "query": "from[mh2-booster]?rarity='m",
+              "query": "from[mh2-collector-retro-frame-and-new-to-modern-and-retro]?rarity='m",
               "setValues": { "foil": true }
             }
           ]
@@ -276,7 +284,7 @@
               "_comment": "Slot 2: Foil Etched: C/U",
               "overrideSlot": "2",
               "percent": "3/13",
-              "query": "from[mh2-booster]?rarity='u",
+              "query": "from[mh2-collector-retro-frame-and-new-to-modern-and-retro]?rarity='u",
               "setValues": { "foil": true }
             }
           ]
