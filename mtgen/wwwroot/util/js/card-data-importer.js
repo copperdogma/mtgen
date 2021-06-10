@@ -4,6 +4,7 @@ Generates an output mtgen card set in json format for use in the main app, using
 Typically the importer file (e.g. import-main.json) will specify the wotc card gallery as the image source and
 the mtgsalvation spoiler page as the data source.
 
+7-Jun-2021: Added support for importing data from wotc The List articles and getting the images from Scryfall.
 10-Apr-2021: Added support for "cloneCard": true alongside where statement so you can duplicate a card and then change it. Useful when there is only one data card but multiple image variants.
 10-Apr-2021: Added option to include importOptions at top level of json import file. Only options supported now is importByImage:true, useful when there are multiple images with same title. NOT SURE THIS WORKS.
 13-Apr-2020: Now suggested closest matching card images titles if no card data match found; they're usually typos.
@@ -184,6 +185,64 @@ class CardDataImporter {
         const cardArray = [...mainOut.values()];
         const outputLog = await this._createOutputLog(cardArray, mainImages, exceptionsResults);
         const finalData = await this._createFinalJsonOutput(cardArray, mainOut.initialCardDataCount, mainImages);
+
+        return [outputLog, finalData];
+    }
+
+
+    // Loads cards from The List
+    async loadAndProcessTheListFiles({ wotcTheListDataUrl, tableNum, scryfallTheListDataUrl }) {
+        this._clearConsole();
+
+        // Overview:
+        // - Load the card names + set codes from the wotc article
+        // - Get the GathererIDs from the same data so we can use those images if Scryfall doesn't have them yet
+        // - Try to get all images from Scryfall's The List, falling back to the Gatherer images if they don't yet exist
+
+        // Get initial data from the wotc article
+        const wotcTheListDataPromise = wotcTheListDataUrl ? this._fetchHtml(wotcTheListDataUrl) : null;
+
+        // Get detailed data and high-rez image (that's properly stamped with the magic symbol in lower left) from Scryfall
+        const scryfallTheListCardsPromise = scryfallTheListDataUrl ? this._getScryfallCardsFromAllPages(scryfallTheListDataUrl) : null;
+
+        window.dispatchEvent(new Event('data-loading'));
+
+        // Get all data, either fetched from a url or loaded directly from the form.
+        let wotcTheListData, scryfallTheListCards;
+        try {
+            [wotcTheListData, scryfallTheListCards] = await Promise.all([wotcTheListDataPromise, scryfallTheListCardsPromise]);
+        }
+        catch (err) {
+            alert(`ERROR: failed to retrieve data from a source: ${err.message}`);
+        }
+
+        const wotcCards = {
+            data: wotcTheListData,
+            urlSource: wotcTheListDataUrl
+        };
+
+        const scryfallCards = {
+            data: scryfallTheListCards,
+            urlSource: scryfallTheListDataUrl
+        };
+
+        window.dispatchEvent(new Event('data-loaded'));
+
+        // Process wotc data
+        const wotcOut = this._getTheListData(wotcCards.data, wotcCards.urlSource, tableNum);
+        wotcOut.initialCardDataCount = wotcOut.length;
+
+        console.log(wotcOut.initialCardDataCount + " cards retrieved from wotc");
+        console.log(scryfallTheListCards.length + " cards retrieved from Scryfall");
+
+        // The wotc data is the actual current "The List," so that will form the base, with the bulk of the data and image (if found) from the Scryfall data.
+        let mainOut = await this._combineScryfallData(wotcOut, scryfallCards);
+
+        const cardArray = [...mainOut.values()];
+        // TODO: do log:
+        //const outputLog = await this._createOutputLog(cardArray, mainImages, exceptionsResults);
+        const outputLog = "";
+        const finalData = await this._createFinalJsonOutput(cardArray, mainOut.initialCardDataCount, new Map()); // Final arg = img Map which we don't really use here
 
         return [outputLog, finalData];
     }
@@ -789,14 +848,128 @@ class CardDataImporter {
         return cards;
     }
 
+    // Get raw card data from Scryfall API. Fetches all pages if there are multiple pages of results. The List set's Scryfall code = plist
+    // e.g.: https://api.scryfall.com/cards/search?order=set&q=e%3Aplist&unique=prints
+    async _getScryfallCardsFromAllPages(scryfallApiCardsUrl) {
+        let allCardData = [];
+        let nextUrl = scryfallApiCardsUrl;
+        do {
+            const rawCardData = await this._fetchHtml(nextUrl);
+
+            const cardData = JSON.parse(rawCardData);
+
+            allCardData = allCardData.concat(cardData.data);
+
+            nextUrl = cardData.next_page;
+        } while (nextUrl);
+
+        allCardData = allCardData.map(card => {
+            let newCard = this._processScryfallCard(card, scryfallApiCardsUrl);
+            newCard.theList = true;
+            return newCard;
+        });
+
+        return allCardData;
+    }
+
+    _processScryfallCard(card, urlSource) {
+        card.title = card.name;
+        // Scryfall includes DFC cards like "A // B" whereas wotc would only use "A", so strip the rest off.
+        card.title = card.title.split(' // ')[0];
+        card.matchTitle = mtgGen.createMatchTitle(card.title); // used for matching across different card data sources
+
+        card.num = card.collector_number;
+
+        card.src = card.image_uris.normal;
+        card.imageSource = "scryfall";
+
+        delete card.foil; // Scryfall sets foil=true if the card CAN be foil. I use it to indicate is IS foil, so we'll clear this.
+
+        card = mtgGen.addUrlSource(card, urlSource);
+            
+        card.cost = card.mana_cost;
+
+        card.ccost = card.cmc;
+
+        card.rarity = card.rarity.substr(0, 1).toLowerCase();
+
+        const types = card.type_line.split(' — ');
+        card.type = types[0].trim();
+        if (types.length > 1) {
+            card.subtype = types[1].trim();
+        }
+
+        card.colour = this._getCardColourFromCard(card);
+
+        return card;
+    }
+
+    // Retrieve a set of card name/set pairs from a wotc The List article.
+    _getTheListData(cardData, cardDataUrlSource, tableNum) {
+        let cards = new Map();
+
+        // Determine from where the card data was sourced and therefore the parser needed.
+        const lowercaseCardDataUrlSource = cardDataUrlSource.trim().toLowerCase();
+        if (lowercaseCardDataUrlSource.includes('magic.wizards.com')) {
+            cards = this._getTheListCardsFromWotc(cardData, tableNum);
+        }
+        else {
+            throw new Error(`Card data url unknown. Only magic.wizards.com supported. '${cardDataUrlSource}'`);
+        }
+
+        cards = cards.map(card => mtgGen.addUrlSource(card, cardDataUrlSource));
+
+        return cards;
+    }
+
+    // The wotc data is the actual current "The List," so that will form the base, with the bulk of the data and image
+    // (if found) from the Scryfall data.
+    async _combineScryfallData(wotcCards, scryfallCards) {
+        // Convert Scryfall cards to be indexed on their matchtitles so we have a common property to match them on and they can be looked up quickly.
+        let scryfallCardMap = new Map();
+        scryfallCards.data.forEach(card => scryfallCardMap.set(card.matchTitle, card));
+
+        // Wotc is inconsistent with their use of // to include the other face face for DFC, so we'll just strip them all so they can match.
+        wotcCards.forEach(card => {
+            card.title = card.title.split(' // ')[0];
+            card.matchTitle = mtgGen.createMatchTitle(card.title);
+        });
+
+        // Find any wotc cards we don't have Scryfall data for.
+        const unmatchedWotcCards = wotcCards.filter(wotcCard => !scryfallCardMap.has(wotcCard.matchTitle));
+
+        // Get all missing cards from Scryfall.
+        for (const unmatchedCard of unmatchedWotcCards) {
+            const scryfallApiCardUrl = `https://api.scryfall.com/cards/search?q=${unmatchedCard.title}+set=${unmatchedCard.set}`;
+            const cardDataRaw = await this._fetchHtml(scryfallApiCardUrl);
+            const cardData = JSON.parse(cardDataRaw);
+            const card = cardData.data[0];
+            card.set = 'plist'; // This is Scryfall's set name for The List which I've adopted.
+            const fixedCard = this._processScryfallCard(card, scryfallApiCardUrl);
+            scryfallCardMap.set(fixedCard.matchTitle, fixedCard)
+        }
+
+        // The wotc cards are now a subset of the Scryfall cards, but are the actual "The List" cards,
+        // so we'll only output the cards that exist in the wotc set.
+        const finalCards = wotcCards.map(wotcCard => {
+            if (!scryfallCardMap.has(wotcCard.matchTitle)) {
+                console.log('missing: ' + wotcCard.matchTitle);
+            }
+            else {
+                return scryfallCardMap.get(wotcCard.matchTitle);
+            }
+        });
+        let finalCardMap = new Map();
+        finalCards.forEach(finalCard => { finalCardMap = this._addCardToCards(finalCardMap, finalCard); });
+
+        return finalCards;
+    }
+
     // Fix num (and any duplicates), add mtgenId, add into the cards map.
     _addCardToCards(cards, newCard) {
         const alphabet = "abcedfghijklmnopqrstuvwxyz";
         newCard.num = newCard.num || newCard.multiverseid || newCard.id; // num is required, so ensure we have one
         newCard.numInt = Number.parseInt(newCard.num);
-        if (newCard.numInt == 157) {
-            var xxx = 1;
-        }
         newCard.mtgenId = `${newCard.set}|${newCard.num}`;
         const firstVariant = `${newCard.mtgenId}:a`;
         if (!cards.has(newCard.mtgenId) && !cards.has(firstVariant)) {
@@ -1081,6 +1254,47 @@ class CardDataImporter {
             // NOTE: haven't imported clans from this site, so I'm not sure what the format is. Old GatheringMagic version supported it.
 
             cards = this._addCardToCards(cards, card);
+        });
+
+        return cards;
+    }
+
+    // ------------------------------------------------------------------------------------------------------------------------------------------------------
+    // This "card" data is really just a named pair of card name/sets retrieve from a wotc article.
+    _getTheListCardsFromWotc(rawCardData, tableNum) {
+        let cards = [];
+        const intTableNum = tableNum == 0 ? 1 : tableNum;
+
+        // get all wotc article cards
+        const parser = new DOMParser();
+        const cardDoc = parser.parseFromString(rawCardData, "text/html");
+
+        const cardsTables = cardDoc.querySelectorAll('table.sortable-table');
+        if (cardsTables.length === 0) {
+            alert("No cards from the wotc article found.");
+        }
+        if (cardsTables.length < tableNum) {
+            alert(`Only ${cardsData.length} tables found, but table ${tableNum} requested. Cannot continue.`);
+        }
+        const cardsTable = cardsTables[intTableNum - 1];
+        const cardsData = cardsTable.querySelectorAll('tbody tr');
+
+        cardsData.forEach(cardEl => {
+            const card = { theList: true };
+
+            const aEl = cardEl.querySelector('a');
+            if (aEl) {
+                card.title = aEl.textContent.trim();
+                card.matchTitle = mtgGen.createMatchTitle(card.title); // used for matching MtG Salvation vs. WotC titles and card titles vs. exception titles
+                card.src = aEl.dataset["imageUrl"];
+            }
+
+            const setEls = cardEl.querySelectorAll('td');
+            if (setEls) {
+                card.set = setEls[1].textContent.trim();
+            }
+
+            cards.push(card);
         });
 
         return cards;

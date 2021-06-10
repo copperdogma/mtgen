@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <title>JSON Magic: The Gathering - The List IMPORTER</title>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+</head>
+<body class="home">
+    <h1>JSON Magic: The Gathering - The List IMPORTER</h1>
+    <p>This page imports The List card data from card data from <a href="https://www.google.com/search?q=magic+the+gathering+the+list&oq=magic+the+gathering+the+list&aqs=chrome.0.0l4j0i22i30j69i60j69i61l2.2874j0j7&sourceid=chrome&ie=UTF-8">Wizards of the Coast articles</a> and <a href="https://scryfall.com/">Scryfall</a> for images.</p>
+    <ul>
+        <li>6-Jun-2021: Created.</li>
+    </ul>
+    <br />
+    <h2 id='local-error' class='error' style="display:none">NOTE: You CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.</h2>
+    <section id="options">
+        <label for="url-wotc-the-list-data">Wizards of the Coast "The List" article URL from which to import card data:</label>
+        <br />
+        <input id="url-wotc-the-list-data" size="100" />
+        <br />
+        <br />
+        <label for="table-num">Table number within the article (defaults to the first one):</label>
+        <br />
+        <input id="table-num" value="0" />
+        <br />
+        <br />
+        <label for="url-scryfall-the-list-data">Scryfall "The List" API URL from which to import card images:</label>
+        <br />
+        <input id="url-scryfall-the-list-data" size="100" value="https://api.scryfall.com/cards/search?order=set&q=e%3Aplist&unique=prints" />
+        <br />
+        <br />
+        <input id="import" type="submit" value="Import Card Data" style="font-size:150%" />
+        <br />
+        <p id="status"></p>
+        <p id="msg"></p>
+    </section>
+    <h2>Output</h2>
+    <h3>Parsing Log</h3>
+    <p>Use the exceptions JSON setting above to fix any errors below.</p>
+    <section id="log"></section>
+    <h3>Output JSON Data</h3>
+    <textarea id="out-main" cols="100" rows="20"></textarea>
+    <footer>
+        <p>Created by: Cam Marsollier - <a href="mailto:cam.marsollier@gmail.com">cam.marsollier@gmail.com</a></p>
+        <p>Note that this site has no affiliation with <a href="http://www.wizards.com/Magic/">Wizards of the Coast</a>, owner of Magic: The Gathering.</p>
+    </footer>
+    <script src="/lib/mtg-generator-lib.js"></script>
+    <script src="/util/js/card-data-importer.js"></script>
+    <script>'use strict';
+        const cardDataImporter = new CardDataImporter();
+
+        if (window.location.protocol == 'file:') { document.getElementById('local-error').getElementById; }
+
+        async function _startProcessing() {
+            const [logOutput, finalData] = await cardDataImporter.loadAndProcessTheListFiles({
+                wotcTheListDataUrl: document.getElementById('url-wotc-the-list-data').value
+                , tableNum: document.getElementById('table-num').value
+                , scryfallTheListDataUrl: document.getElementById('url-scryfall-the-list-data').value
+            });
+
+            document.getElementById('log').innerHTML = logOutput;
+
+            document.getElementById('msg').innerHTML =
+                `${finalData.initialCardDataCount} cards found from ${document.getElementById('url-wotc-the-list-data').value}</br>
+                            ${finalData.imageDataCount} images found from ${document.getElementById('url-scryfall-the-list-data').value}</br><br/>
+                            <strong>${finalData.finalCardCount} final cardsTheList.json cards generated at ${(new Date())}.</strong>`;
+            document.getElementById('status').innerHTML = `<strong>Processing complete at ${(new Date())}</strong>`;
+            document.getElementById('out-main').value = finalData.cardsMainJson;
+        }
+
+        document.getElementById('import').addEventListener('click', _startProcessing);
+
+        window.addEventListener('data-loading', () => document.getElementById('status').innerHTML = `<strong>Data load started at ${(new Date())}</strong>`, false);
+
+        window.addEventListener('searching-gatherer-for-card',
+            (e) => document.getElementById('msg').innerHTML += `<br/><em>Fetching data from wizards.gatherer.com for card '${e.detail.cardName}'</em>`, false);
+
+        window.addEventListener('data-loaded', () => {
+            document.getElementById('status').innerHTML = `<strong>Have data; now processing at ${(new Date())}</strong>`;
+            document.getElementById('out-main').value = '';
+            document.getElementById('log').innerHTML = '';
+        }, false);</script>
+</body>
+</html>

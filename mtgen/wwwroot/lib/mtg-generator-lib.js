@@ -235,11 +235,20 @@ var mtgGen = (function (my) {
         return clean;
     }
 
+    my.addUrlSource = function (card, urlSource) {
+        if (card.urlSources) {
+            card.urlSources.push(urlSource);
+        }
+        else {
+            card.urlSources = [urlSource];
+        }
+        return card;
+    }
+
+    // Gets a decoded parameter value from the querystring.
     my.getQuerystringParamByName = function (name) {
-        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-        const regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-            results = regex.exec(location.search);
-        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        const value = Object.fromEntries(new URLSearchParams(location.search))[name];
+        return value ? value.replace(/\+/g, ' ') : '';
     };
 
     my.throwTerminalError = function (abortMsg) {
@@ -412,7 +421,7 @@ var mtgGen = (function (my) {
                         my.hasColleges = true;
                     }
 
-                    card.ccost = calculateConvertedCost(card.cost);
+                    card.ccost = card.ccost ?? calculateConvertedCost(card.cost);
 
                     // Ensure defaults on some fields are set; makes querying WAY easier
                     if (card.token === undefined) {

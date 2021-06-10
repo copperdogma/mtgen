@@ -76,7 +76,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js"></script>
     <script>
         $(document).ready(function () {
-            const querystring = Object.fromEntries(new URLSearchParams(location.search));
             mtgGen.run({
                 setCode: "@Model.Set.Code"
                 , setFile: "@Model.Set.SetFile"
@@ -86,7 +85,7 @@
                 , startProductName: "@Model.Set.StartProductName"
                 , setCardCount: "@Model.Set.CardCount"
                 , contentElem: "main"
-                , flags: { debug: querystring.debug }
+                , flags: { debug: mtgGen.getQuerystringParamByName('debug') }
             });
 
             // Modal popup support.
