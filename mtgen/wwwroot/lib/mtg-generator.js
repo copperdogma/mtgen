@@ -23,6 +23,7 @@ Normally 15 cards per booster:
 
 - 1 in 4 boosters contains a foil which may be any card of any rarity (incl Basic Land), which replaces a Common
 
+11-Jun-2021: Added ability to render an array of card modifiers which appear after the card title in brackets.
 4-May-2021: Added debug mode that shows a Debug Product and Live Debug Product tabs. To enable, add this to top level of products.json: "debug": true
 11-Apr-2021: Now includes college support for stx.
 3-Apr-2020: Exporter: Added Deckstats format.
@@ -240,6 +241,9 @@ var mtgGen = (function (my) {
             if (card.foil) {
                 foilClass = ' foil';
                 title += ' - Foil';
+            }
+            if (card.modifiers) {
+                title += ' (' + card.modifiers.join('; ') + ')';
             }
             if (card.hasOwnProperty("src_large")) {
                 aStart = "<a href='" + card.src_large + "' title='" + title + "'>";
