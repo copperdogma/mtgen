@@ -1,5 +1,5 @@
 /*
-MtG Generator script v2.4
+MtG Generator script v2.6
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
