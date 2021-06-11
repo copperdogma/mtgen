@@ -1,7 +1,7 @@
 {
   "startProductName": "mh2-prerelease",
   "packFiles": [
-    "packs.json?v1.6"
+    "packs.json?v1.8"
   ],
   "cardFiles": [
     "cardsMain.json?v1.1",
@@ -10,9 +10,18 @@
     "cardsVariant.json",
     "cardsPromo.json",
     "cardsMh1Reprint.json",
-    "cardsTheList.json"
+    "cardsTheList.json",
+    "cardsArtCards.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-06-11T15:30:00:00",
+      "HtmlString": "Set Boosters Slot 8 overrides + all Slot 9 cards now include regular cards, not just showcase cards."
+    },
+    {
+      "UpdateDate": "2021-06-11T10:30:00:00",
+      "HtmlString": "Added Set Boosters for the first time ever."
+    },
     {
       "UpdateDate": "2021-06-08T09:00:00:00",
       "HtmlString": "Collector Booster slot 1/2 now pull M/U AS WELL from only retro frame, New-to-Modern, and MH1 reprints. Oops;)"
