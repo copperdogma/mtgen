@@ -1,7 +1,7 @@
 {
   "startProductName": "mh2-prerelease",
   "packFiles": [
-    "packs.json?v1.8"
+    "packs.json?v1.9"
   ],
   "cardFiles": [
     "cardsMain.json?v1.1",
@@ -14,6 +14,10 @@
     "cardsArtCards.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-06-11T15:45:00:00",
+      "HtmlString": "Set Boosters Art Cards: Now indicates whether you got a Normal or Foil Stamped card as the images are all Foil Stamped (unfortunately)."
+    },
     {
       "UpdateDate": "2021-06-11T15:30:00:00",
       "HtmlString": "Set Boosters Slot 8 overrides + all Slot 9 cards now include regular cards, not just showcase cards."
