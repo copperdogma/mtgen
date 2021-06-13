@@ -8,12 +8,16 @@
     "cardsBasicLand.json",
     "cardsToken.json",
     "cardsVariant.json",
-    "cardsPromo.json",
+    "cardsPromo.json?v1.1",
     "cardsMh1Reprint.json",
     "cardsTheList.json",
     "cardsArtCards.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-06-12T14:30:00:00",
+      "HtmlString": "Updated prerelease pack-ins."
+    },
     {
       "UpdateDate": "2021-06-11T15:45:00:00",
       "HtmlString": "Set Boosters Art Cards: Now indicates whether you got a Normal or Foil Stamped card as the images are all Foil Stamped (unfortunately)."
