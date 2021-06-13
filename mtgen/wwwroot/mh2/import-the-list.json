@@ -1,0 +1,25 @@
+{
+  "setCode": "lmh2",
+  "cardDataUrl": "https://magic.wizards.com/en/articles/archive/feature/updating-list-modern-horizons-2-2021-06-04",
+  "imagesUrl": "",
+  "importOptions": {
+    "theList": true,
+    "theListTableNum": 3
+  },
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "theList": true,
+        "usableForDeckBuilding": true
+      }
+    }
+  ]
+}

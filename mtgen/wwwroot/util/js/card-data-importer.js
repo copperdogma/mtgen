@@ -112,17 +112,15 @@ class CardDataImporter {
 
         const imageDataPromise = imagesUrl ? this._fetchHtml(imagesUrl) : null;
 
-        const importOptionsPromise = Promise.resolve(importOptions);
-
         // Exceptions are loaded as part of the import file, so they're already in the form.
         const exceptionsDataPromise = Promise.resolve(exceptions);
 
         window.dispatchEvent(new Event('data-loading'));
 
         // Get all data, either fetched from a url or loaded directly from the form.
-        let htmlData, imageData, importOptionsData, exceptionData;
+        let htmlData, imageData, exceptionData;
         try {
-            [htmlData, imageData, importOptionsData, exceptionData] = await Promise.all([cardDataPromise, imageDataPromise, importOptionsPromise, exceptionsDataPromise]);
+            [htmlData, imageData, exceptionData] = await Promise.all([cardDataPromise, imageDataPromise, exceptionsDataPromise]);
         }
         catch (err) {
             alert(`ERROR: failed to retrieve data from a source: ${err.message}`);
@@ -139,39 +137,82 @@ class CardDataImporter {
             urlSource: imagesUrl
         };
 
-        const jsonImportOptions = { data: importOptionsData };
-        if (jsonImportOptions.data) { jsonImportOptions.data = JSON.parse(jsonImportOptions.data); }
+        const options = JSON.parse(importOptions);
 
         const jsonExceptions = { data: exceptionData };
         if (jsonExceptions.data) { jsonExceptions.data = JSON.parse(jsonExceptions.data); }
 
         window.dispatchEvent(new Event('data-loaded'));
 
-        // Get card data -------------------------------------------------------------------------------------------------
-        // All card data source come with image data that we usually want to override in the next step.
-        let mainOut = this._getCardData(htmlCards.data, htmlCards.urlSource, setCode);
-        mainOut.initialCardDataCount = mainOut.size;
-
-        // Get image data -------------------------------------------------------------------------------------------------
+        let mainOut = new Map();
         let mainImages = new Map();
-        if (htmlImages.data) {
-            mainImages = await this._getImageData(htmlImages.data, htmlImages.urlSource);
-        }
 
-        // If there is no data but there is image data, and the data source was given as Gatherer, 
-        // we're meant to fetch all card data for these images from Gatherer.
-        if (mainOut.size === 0 && mainImages.size > 0 && htmlCards.urlSource.trim().toLowerCase().includes('gatherer.wizards.com')) {
-            for (const image of mainImages.values()) {
-                try {
-                    const card = await this._getCardFromWizardsGatherer(image.title);
-                    card.set = setCode;
-                    this._addCardToCards(mainOut, card);
+        if (options.theList == true) {
+            mainOut = await this._loadAndProcessTheListFiles(htmlCards, setCode, options);
+        }
+        else {
+            // TODO: make most of this crap either getting standard data/image or more like TheList above where it's specified in options.
+
+            // Get card data -------------------------------------------------------------------------------------------------
+            // All card data source come with image data that we usually want to override in the next step.
+            mainOut = await this._getCardData(htmlCards.data, htmlCards.urlSource, setCode, options);
+            mainOut.initialCardDataCount = mainOut.size;
+
+            // Get image data -------------------------------------------------------------------------------------------------
+            if (htmlImages.data) {
+                mainImages = await this._getImageData(htmlImages.data, htmlImages.urlSource, options);
+            }
+
+            // If there is no data but there is image data...
+            if (mainOut.size === 0 && mainImages.size > 0) {
+                // If the data source was given as Gatherer, we're meant to fetch all card data for these images from Gatherer
+                // TODO: redo this as an option instead of pasting in a gatherer address we're not actually going to use
+                if (htmlCards.urlSource.trim().toLowerCase().includes('gatherer.wizards.com')) {
+                    for (const image of mainImages.values()) {
+                        try {
+                            const card = await this._getCardFromWizardsGatherer(image.title);
+                            card.set = setCode;
+                            this._addCardToCards(mainOut, card);
+                        }
+                        catch (e) {
+                            console.log(`Cannot find image '${image.title}' from Gatherer.`);
+                        }
+                    }
+                    mainOut.initialCardDataCount = mainOut.size;
                 }
-                catch (e) {
-                    console.log(`Cannot find image '${image.title}' from Gatherer.`);
+
+                // If the options specify these are art cards, generate the full card directly from the image data (there's almost no data for these; they're not real cards).
+                else if (options.artCards == true) {
+                    mainImages.forEach(image => {
+                        // Extract the proper title and card number out of the current title.
+                        const titleParts = image.title.split(' Art Card ');
+                        image.title = titleParts[0];
+                        image.matchTitle = mtgGen.createMatchTitle(image.title);
+                        if (titleParts.length === 2) {
+                            image.num = titleParts[1].split('/')[0].padStart(4, '0');
+                        }
+
+                        const card = { ...image, set: setCode };
+
+                        this._addCardToCards(mainOut, card);
+                    });
+                    mainOut.initialCardDataCount = mainOut.size;
                 }
             }
-            mainOut.initialCardDataCount = mainOut.size;
+
+            if (mainOut.size === 0 && mainImages.size > 0 && htmlCards.urlSource.trim().toLowerCase().includes('gatherer.wizards.com')) {
+                for (const image of mainImages.values()) {
+                    try {
+                        const card = await this._getCardFromWizardsGatherer(image.title);
+                        card.set = setCode;
+                        this._addCardToCards(mainOut, card);
+                    }
+                    catch (e) {
+                        console.log(`Cannot find image '${image.title}' from Gatherer.`);
+                    }
+                }
+                mainOut.initialCardDataCount = mainOut.size;
+            }
         }
 
         // Apply Exceptions -------------------------------------------------------------------------------------------------
@@ -180,69 +221,13 @@ class CardDataImporter {
         mainOut = exceptionsResults.cards;
 
         // Add images to cards ------------------------------------------------------------------------------------------------
-        mainOut = this._applyImagesToCards(mainOut, mainImages, jsonImportOptions.data);
+        if (mainImages.size > 0) {
+            mainOut = this._applyImagesToCards(mainOut, mainImages, options);
+        }
 
         const cardArray = [...mainOut.values()];
         const outputLog = await this._createOutputLog(cardArray, mainImages, exceptionsResults);
         const finalData = await this._createFinalJsonOutput(cardArray, mainOut.initialCardDataCount, mainImages);
-
-        return [outputLog, finalData];
-    }
-
-
-    // Loads cards from The List
-    async loadAndProcessTheListFiles({ wotcTheListDataUrl, tableNum, scryfallTheListDataUrl }) {
-        this._clearConsole();
-
-        // Overview:
-        // - Load the card names + set codes from the wotc article
-        // - Get the GathererIDs from the same data so we can use those images if Scryfall doesn't have them yet
-        // - Try to get all images from Scryfall's The List, falling back to the Gatherer images if they don't yet exist
-
-        // Get initial data from the wotc article
-        const wotcTheListDataPromise = wotcTheListDataUrl ? this._fetchHtml(wotcTheListDataUrl) : null;
-
-        // Get detailed data and high-rez image (that's properly stamped with the magic symbol in lower left) from Scryfall
-        const scryfallTheListCardsPromise = scryfallTheListDataUrl ? this._getScryfallCardsFromAllPages(scryfallTheListDataUrl) : null;
-
-        window.dispatchEvent(new Event('data-loading'));
-
-        // Get all data, either fetched from a url or loaded directly from the form.
-        let wotcTheListData, scryfallTheListCards;
-        try {
-            [wotcTheListData, scryfallTheListCards] = await Promise.all([wotcTheListDataPromise, scryfallTheListCardsPromise]);
-        }
-        catch (err) {
-            alert(`ERROR: failed to retrieve data from a source: ${err.message}`);
-        }
-
-        const wotcCards = {
-            data: wotcTheListData,
-            urlSource: wotcTheListDataUrl
-        };
-
-        const scryfallCards = {
-            data: scryfallTheListCards,
-            urlSource: scryfallTheListDataUrl
-        };
-
-        window.dispatchEvent(new Event('data-loaded'));
-
-        // Process wotc data
-        const wotcOut = this._getTheListData(wotcCards.data, wotcCards.urlSource, tableNum);
-        wotcOut.initialCardDataCount = wotcOut.length;
-
-        console.log(wotcOut.initialCardDataCount + " cards retrieved from wotc");
-        console.log(scryfallTheListCards.length + " cards retrieved from Scryfall");
-
-        // The wotc data is the actual current "The List," so that will form the base, with the bulk of the data and image (if found) from the Scryfall data.
-        let mainOut = await this._combineScryfallData(wotcOut, scryfallCards);
-
-        const cardArray = [...mainOut.values()];
-        // TODO: do log:
-        //const outputLog = await this._createOutputLog(cardArray, mainImages, exceptionsResults);
-        const outputLog = "";
-        const finalData = await this._createFinalJsonOutput(cardArray, mainOut.initialCardDataCount, new Map()); // Final arg = img Map which we don't really use here
 
         return [outputLog, finalData];
     }
@@ -433,18 +418,6 @@ class CardDataImporter {
             }
 
             // Otherwise it's an Update exception; apply the changes.
-
-            // Record all exceptions that weren't useful so we can clean up the exceptions file.
-            // REWRITE THIS:
-            //$.each(ex.newValues, function (prop, newVal) {
-            //    if (card.hasOwnProperty(prop) && card[prop] === newVal) {
-            //        console.log('Exception property already exists on card:' + card.matchTitle);
-            //        if (!ex.hasOwnProperty("redundantValues")) {
-            //            ex.redundantValues = {};
-            //        }
-            //        ex.redundantValues[prop] = newVal;
-            //    }
-            //});
 
             // Remove all of the matching cards -- we'll add them back after we modify them.
             matchingCardArray.forEach(matchingCard => {
@@ -820,11 +793,12 @@ class CardDataImporter {
         return finalColour;
     }
 
-    _getCardData(cardData, cardDataUrlSource, setCode) {
+    async _getCardData(cardData, cardDataUrlSource, setCode, options) {
         let cards = new Map();
 
-        // Determine from where the card data was sourced and therefore the parser needed.
         const lowercaseCardDataUrlSource = cardDataUrlSource.trim().toLowerCase();
+
+        // Determine from where the card data was sourced and therefore the parser needed.
         if (lowercaseCardDataUrlSource.length < 1) {
             console.log("No card data source supplied: this is used when the exceptions file is used to generate cards");
         }
@@ -846,6 +820,40 @@ class CardDataImporter {
         }
 
         return cards;
+    }
+
+    // Loads cards from The List.
+    // Requires "importOptions": { "theList": true, "theListTableNum": 3 }
+    //  Where theListTableNum is the table number in the article where The List cards actually reside. They often put tables with What We Removed/Added beforehand.
+    async _loadAndProcessTheListFiles(rawCardData, setCode, options) {
+        // Overview:
+        // - Load the card names + set codes from the wotc article
+        // - Get the GathererIDs from the same data so we can use those images if Scryfall doesn't have them yet
+        // - Try to get all images from Scryfall's The List, falling back to the Gatherer images if they don't yet exist
+
+        // The initial data from wotc was already loaded and passed in as rawCardData.
+
+        // Get detailed data and high-rez image (that's properly stamped with the magic symbol in lower left) from Scryfall
+        const scryfallTheListDataUrl = 'https://api.scryfall.com/cards/search?order=set&q=e%3Aplist&unique=prints';
+        const scryfallTheListCards = await this._getScryfallCardsFromAllPages(scryfallTheListDataUrl);
+
+        const scryfallCards = {
+            data: scryfallTheListCards,
+            urlSource: scryfallTheListDataUrl
+        };
+
+        // Retrieve a set of card name/set pairs from a wotc The List article.
+        let wotcOut = this._getTheListCardsFromWotc(rawCardData.data, options.theListTableNum);
+        wotcOut = wotcOut.map(card => mtgGen.addUrlSource(card, rawCardData.urlSource));
+        wotcOut.initialCardDataCount = wotcOut.length;
+
+        console.log(wotcOut.initialCardDataCount + " cards retrieved from wotc");
+        console.log(scryfallTheListCards.length + " cards retrieved from Scryfall");
+
+        // The wotc data is the actual current "The List," so that will form the base, with the bulk of the data and image (if found) from the Scryfall data.
+        const finalCards = await this._combineScryfallData(wotcOut, scryfallCards);
+
+        return finalCards;
     }
 
     // Get raw card data from Scryfall API. Fetches all pages if there are multiple pages of results. The List set's Scryfall code = plist
@@ -886,7 +894,7 @@ class CardDataImporter {
         delete card.foil; // Scryfall sets foil=true if the card CAN be foil. I use it to indicate is IS foil, so we'll clear this.
 
         card = mtgGen.addUrlSource(card, urlSource);
-            
+
         card.cost = card.mana_cost;
 
         card.ccost = card.cmc;
@@ -902,24 +910,6 @@ class CardDataImporter {
         card.colour = this._getCardColourFromCard(card);
 
         return card;
-    }
-
-    // Retrieve a set of card name/set pairs from a wotc The List article.
-    _getTheListData(cardData, cardDataUrlSource, tableNum) {
-        let cards = new Map();
-
-        // Determine from where the card data was sourced and therefore the parser needed.
-        const lowercaseCardDataUrlSource = cardDataUrlSource.trim().toLowerCase();
-        if (lowercaseCardDataUrlSource.includes('magic.wizards.com')) {
-            cards = this._getTheListCardsFromWotc(cardData, tableNum);
-        }
-        else {
-            throw new Error(`Card data url unknown. Only magic.wizards.com supported. '${cardDataUrlSource}'`);
-        }
-
-        cards = cards.map(card => mtgGen.addUrlSource(card, cardDataUrlSource));
-
-        return cards;
     }
 
     // The wotc data is the actual current "The List," so that will form the base, with the bulk of the data and image
@@ -962,7 +952,7 @@ class CardDataImporter {
         let finalCardMap = new Map();
         finalCards.forEach(finalCard => { finalCardMap = this._addCardToCards(finalCardMap, finalCard); });
 
-        return finalCards;
+        return finalCardMap;
     }
 
     // Fix num (and any duplicates), add mtgenId, add into the cards map.
@@ -1387,7 +1377,7 @@ class CardDataImporter {
     }
 
     // ------------------------------------------------------------------------------------------------------------------------------------------------------
-    async _getImageData(imageData, imageDataUrlSource) {
+    async _getImageData(imageData, imageDataUrlSource, options) {
         let images = new Map();
 
         // Determine from where the image data was sourced and therefore the parser needed.
@@ -1398,7 +1388,7 @@ class CardDataImporter {
             images = await this._getImagesFromUrlPattern(imageDataUrlSource, imageNumReplacementMatch);
         }
         else if (lowercaseImageDataUrlSource.includes('magic.wizards.com')) {
-            images = this._getImagesFromWotcSpoilers(imageData);
+            images = this._getImagesFromWotcSpoilers(imageData, options);
         }
         else if (lowercaseImageDataUrlSource.includes('archive.wizards.com')) {
             images = this._getImagesFromWotcArchive(imageData);
@@ -1446,7 +1436,7 @@ class CardDataImporter {
         return finalImages;
     }
 
-    _getImagesFromWotcSpoilers(rawHtmlImageData) {
+    _getImagesFromWotcSpoilers(rawHtmlImageData, options) {
         const finalImages = new Map();
 
         const parser = new DOMParser();
@@ -1495,182 +1485,10 @@ class CardDataImporter {
             }
         });
 
-        //CAMKILL: TEMP
-        //rawimages.forEach(img => {
-        //    if (img.alt.length) {
-        //        const image = {
-        //            title: img.alt.trim(),
-        //            src: img.src
-        //        };
-        //        image.matchTitle = mtgGen.createMatchTitle(image.title);
-
-        //        // Support for double-faced cards.
-        //        const parent = img.parentElement;
-        //        if (parent.classList.contains('side')) {
-        //            if (parent.classList.contains('front')) {
-        //                const backCard = parent.parentElement.querySelector(".side.back img");
-        //                if (backCard) {
-        //                    image.matchTitleBack = mtgGen.createMatchTitle(backCard.alt);
-        //                    image.doubleFaceCard = true;
-        //                }
-        //            }
-        //            else if (parent.classList.contains('back')) {
-        //                const frontCard = parent.parentElement.querySelector(".side.front img");
-        //                if (frontCard) {
-        //                    image.matchTitleFront = mtgGen.createMatchTitle(frontCard.alt);
-        //                    image.doubleFaceCard = true;
-        //                }
-        //            }
-        //        }
-
-        //        // Only use the image if it doesn't already exist.
-        //        // Duplicates can happen if the image gallery has normal card images followed by special card images.
-        //        if (!finalImages.has(image.matchTitle)) {
-        //            finalImages.set(image.matchTitle, image);
-        //        }
-        //        else {
-        //            console.log(`Warning: Duplicate image name: ${image.title}`);
-        //        }
-        //    }
-        //});
 
         finalImages.forEach(image => image.imageSource = "wotc-spoilers");
 
         return finalImages;
-
-        //const finalImages = new Map();
-
-        //const parser = new DOMParser();
-        //const imageDoc = parser.parseFromString(rawHtmlImageData, "text/html");
-
-        //// v6 - 20160307, soi gallery
-        //if (!finalImages.size) {
-        //    rawimages.forEach(img => {
-        //        if (img.alt.length) {
-        //            const image = {
-        //                title: img.alt.trim(),
-        //                src: img.src
-        //            };
-        //            image.matchTitle = mtgGen.createMatchTitle(image.title);
-
-        //            // Support for double-faced cards.
-        //            const parent = img.parentElement;
-        //            if (parent.classList.contains('side')) {
-        //                if (parent.classList.contains('front')) {
-        //                    const backCard = parent.parentElement.querySelector(".side.back img");
-        //                    if (backCard) {
-        //                        image.matchTitleBack = mtgGen.createMatchTitle(backCard.alt);
-        //                        image.doubleFaceCard = true;
-        //                    }
-        //                }
-        //                else if (parent.classList.contains('back')) {
-        //                    const frontCard = parent.parentElement.querySelector(".side.front img");
-        //                    if (frontCard) {
-        //                        image.matchTitleFront = mtgGen.createMatchTitle(frontCard.alt);
-        //                        image.doubleFaceCard = true;
-        //                    }
-        //                }
-        //            }
-
-        //            // Only use the image if it doesn't already exist.
-        //            // Duplicates can happen if the image gallery has normal card images followed by special card images.
-        //            if (!finalImages.has(image.matchTitle)) {
-        //                finalImages.set(image.matchTitle, image);
-        //            }
-        //        }
-        //    });
-        //}
-
-        // Left in for now -- if we need them one day again, convert them to es6.
-        //// v5 - 20160101, bfz gallery
-        //if (finalImages.length < 1) {
-        //    var $rawimages = $images.find('#content img');
-        //    if ($rawimages.length > 0) {
-        //        var $imageContainer, $cardTitle;
-        //        for (var i = 0; i < $rawimages.length; i++) {
-        //            var img = $rawimages[i];
-        //            $imageContainer = $(img).parent();
-        //            $cardTitle = $imageContainer.find("i");
-        //            if ($cardTitle.length === 1) {
-        //                image = {};
-        //                image.title = $cardTitle.text().trim();
-        //                image.matchTitle = mtgGen.createMatchTitle(image.title);
-        //                image.src = img.src;
-        //                finalImages[image.matchTitle] = image;
-        //            }
-        //        }
-        //    }
-        //}
-
-        //// v4 - 20150305, dtk gallery -- hard to scan as anything unique is added by js
-        //if (finalImages.length < 1) {
-        //    var $rawimages = $images.find('#content-detail-page-of-an-article img');
-        //    if ($rawimages.length > 0) {
-        //        var $imageContainer, $cardTitle;
-        //        $rawimages.each(function (index, img) {
-        //            $imageContainer = $(img).parent();
-        //            $cardTitle = $imageContainer.find("i");
-        //            if ($cardTitle.length === 1) {
-        //                image = {};
-        //                image.title = $cardTitle.text().trim();
-        //                image.matchTitle = mtgGen.createMatchTitle(image.title);
-        //                image.src = img.src;
-        //                finalImages[image.matchTitle] = image;
-        //            }
-        //        });
-        //    }
-        //}
-
-        //// v3 - 20140901, ktk gallery -- hard to scan as anything unique is added by js
-        //if (finalImages.length < 1) {
-        //    var $rawimages = $images.find('img.noborder');
-        //    if ($rawimages.length > 0) {
-        //        var $imageContainer, $cardTitle;
-        //        $rawimages.each(function (index, img) {
-        //            $imageContainer = $(img).parent();
-        //            $cardTitle = $imageContainer.find("i");
-        //            if ($cardTitle.length === 1) {
-        //                image = {};
-        //                image.title = $cardTitle.text().trim();
-        //                image.matchTitle = mtgGen.createMatchTitle(image.title);
-        //                image.src = img.src;
-        //                finalImages[image.matchTitle] = image;
-        //            }
-        //        });
-        //    }
-        //}
-
-        //// v2 - 2014 site redesign, m15 gallery
-        //if (finalImages.length < 1) {
-        //    $rawimages = $images.find('.advanced-card-gallery-container img[alt]');
-        //    if ($rawimages.length > 0) {
-        //        $rawimages.each(function (index, value) {
-        //            image = {};
-        //            image.title = value.alt.trim();
-        //            image.matchTitle = mtgGen.createMatchTitle(image.title);
-        //            image.src = value.src;
-        //            finalImages[image.matchTitle] = image;
-        //        });
-        //    }
-        //}
-
-        //// v1 - original wotc site
-        //if (finalImages.length < 1) {
-        //    var $rawimages = $images.find('img[alt].article-image');
-        //    if ($rawimages.length > 0) {
-        //        $rawimages.each(function (index, value) {
-        //            image = {};
-        //            image.title = value.alt.trim();
-        //            image.matchTitle = mtgGen.createMatchTitle(image.title);
-        //            image.src = value.src;
-        //            finalImages[image.matchTitle] = image;
-        //        });
-        //    }
-        //}
-
-        //finalImages.forEach(image => image.imageSource = "wotc-spoilers");
-
-        //return finalImages;
     }
 
     // 20170218: I don't think any of these pages exist anymore, so this may be useless.
