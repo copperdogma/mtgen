@@ -11,6 +11,7 @@ Query examples:
     from[stx-token]-from[stx-token]?marketing=true  = Take all tokens, then remove all tokens where marketing=true (set math!)
     from[stx-booster]?cost~='R'  = Take all cards where cost includes R
     from[stx-booster]?cost~=(R|W)  = Take all cards where cost includes R or W. Note you can also use from[stx-booster]?cost=contains(R|W)
+    from[stx-booster]?rarity=rarityByWeight(curm) = Select the rarity by weight (c:80/u:24/r:8/m:1)
 
     overrideSlot can override more than one slot via a comma-separated list
 
@@ -623,7 +624,6 @@ var mtgGen = (function (my) {
     // SHOULD NOT BE CALLED EXCEPT BY executeQuery()
     // Returns only the card indices
     function executeSimpleQuery(fullSet, defs, query, isOrderImportant) {
-        //console.log('executeSimpleQuery:' + query);
         let from = query.match(/from\[(.+)\]/i);
         if (!from) {
             console.warn(`ERROR: executeSimpleQuery(): missing 'from' in query: ${query}`);
@@ -661,6 +661,39 @@ var mtgGen = (function (my) {
                 const prop = query2[1].replace(/~/g, '');
                 clause = query2[2].replace(/contains\(/g, '').replace(/\(/g, '').replace(/\)/g, '');
                 matchingCards = sourceSet.filter(card => card[prop] && card[prop].match(clause));
+                result = matchingCards.map(matchingCard => matchingCard.mtgenId);
+            }
+            else if (query2[2].includes('rarityByWeight(')) {
+                // 'rarityByWeight(curm)' is valid when the property is 'rarity'
+                // This will choose cards from the source according to rarity chances.
+                // As of 20200614 this assumes a card set of 14, with 10c, 3u, 1r, and 1/8 chance of m instead of r.
+                // Note that if, for instance, mythic is chosen it will return ALL mythic cards, so
+                //   if you had done a take[5] on this you'll end up with 5 mythic cards. This is really intended
+                //   for choosing a single card with a proper chance per rarity.
+                const prop = query2[1].replace(/~/g, '');
+                if (prop != 'rarity') {
+                    console.warn(`WARNING: executeSimpleQuery(): 'rarityByWeight() can only be used with property 'rarity' so that's what will happen: ${query}`);
+                }
+
+                const chosenRarities = new Set(query2[2].replace(/rarityByWeight\(/g, '').replace(/\)/g, '').replace(/ /g, '').replace(/,/g, '').trim().toLowerCase().split(''));
+
+                // 20200614: assumes a card set of 14, with 10c, 3u, 1r, and 1/8 chance of m instead of r. Whole integers = 80c, 24u, 8r, 1m
+                const weightedRaritySet = Array.from(chosenRarities).reduce((output, rarity) => {
+                    switch (rarity) {
+                        case 'c': return output += 'c'.repeat(80);
+                        case 'u': return output += 'u'.repeat(24);
+                        case 'r': return output += 'r'.repeat(8);
+                        case 'm': return output += 'm';
+                        default:
+                            console.warn(`WARNING: executeSimpleQuery(): 'rarityByWeight() contains unknown rarity '${rarity}' which will be ignored: ${query}`);
+                            return output;
+                    }
+                }, '');
+
+                // Randomly choose a char from our array
+                const chosenRarity = my.sample(weightedRaritySet, 1);
+
+                matchingCards = sourceSet.filter(card => card['rarity'] && card['rarity'] == chosenRarity);
                 result = matchingCards.map(matchingCard => matchingCard.mtgenId);
             }
             else if (query2[2].includes('(')) {
@@ -782,8 +815,7 @@ var mtgGen = (function (my) {
                 result = matchingCards.map(matchingCard => matchingCard.mtgenId);
             }
             else {
-                //TODO: actually parse the symbol and throw an error if it's wrong
-                //TODO: implement not equals (!=)
+                //TODO: we should actually PARSE the symbol and throw an error if it's wrong
                 // Regular equals
                 query2[2] = query2[2].replace(/'/g, '');
 
