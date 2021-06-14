@@ -156,8 +156,6 @@ class CardDataImporter {
             mainOut = this._processArtCards(mainImages, setCode);
         }
         else {
-            // TODO: make most of this crap either getting standard data/image or more like TheList above where it's specified in options.
-
             // Get card data -------------------------------------------------------------------------------------------------
             // All card data source come with image data that we usually want to override in the next step.
             mainOut = await this._getCardData(htmlCards.data, htmlCards.urlSource, setCode, options);
@@ -168,10 +166,13 @@ class CardDataImporter {
                 mainImages = await this._getImageData(htmlImages.data, htmlImages.urlSource, options);
             }
 
+            // TODO: redo this as an option instead of pasting in a gatherer address we're not actually going to use.
+            //       Honestly I'm not sure this is even used anywhere. And if refactored, include ability to get data from Scryfall.
+            //       The image data is higher quality, especially for older sets.
+
             // If there is no data but there is image data...
             if (mainOut.size === 0 && mainImages.size > 0) {
                 // If the data source was given as Gatherer, we're meant to fetch all card data for these images from Gatherer
-                // TODO: redo this as an option instead of pasting in a gatherer address we're not actually going to use
                 if (htmlCards.urlSource.trim().toLowerCase().includes('gatherer.wizards.com')) {
                     for (const image of mainImages.values()) {
                         try {
@@ -185,20 +186,6 @@ class CardDataImporter {
                     }
                     mainOut.initialCardDataCount = mainOut.size;
                 }
-            }
-
-            if (mainOut.size === 0 && mainImages.size > 0 && htmlCards.urlSource.trim().toLowerCase().includes('gatherer.wizards.com')) {
-                for (const image of mainImages.values()) {
-                    try {
-                        const card = await this._getCardFromWizardsGatherer(image.title);
-                        card.set = setCode;
-                        this._addCardToCards(mainOut, card);
-                    }
-                    catch (e) {
-                        console.log(`Cannot find image '${image.title}' from Gatherer.`);
-                    }
-                }
-                mainOut.initialCardDataCount = mainOut.size;
             }
         }
 
