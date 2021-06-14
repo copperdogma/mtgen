@@ -4,6 +4,7 @@ Generates an output mtgen card set in json format for use in the main app, using
 Typically the importer file (e.g. import-main.json) will specify the wotc card gallery as the image source and
 the mtgsalvation spoiler page as the data source.
 
+12-Jun-2021: Refactored so import options drive more of the import decisions as opposed to guessing based on data/image urls.
 7-Jun-2021: Added support for importing data from wotc The List articles and getting the images from Scryfall.
 10-Apr-2021: Added support for "cloneCard": true alongside where statement so you can duplicate a card and then change it. Useful when there is only one data card but multiple image variants.
 10-Apr-2021: Added option to include importOptions at top level of json import file. Only options supported now is importByImage:true, useful when there are multiple images with same title. NOT SURE THIS WORKS.
@@ -150,6 +151,10 @@ class CardDataImporter {
         if (options.theList == true) {
             mainOut = await this._loadAndProcessTheListFiles(htmlCards, setCode, options);
         }
+        else if (options.artCards == true) {
+            mainImages = await this._getImageData(htmlImages.data, htmlImages.urlSource, options);
+            mainOut = this._processArtCards(mainImages, setCode);
+        }
         else {
             // TODO: make most of this crap either getting standard data/image or more like TheList above where it's specified in options.
 
@@ -178,24 +183,6 @@ class CardDataImporter {
                             console.log(`Cannot find image '${image.title}' from Gatherer.`);
                         }
                     }
-                    mainOut.initialCardDataCount = mainOut.size;
-                }
-
-                // If the options specify these are art cards, generate the full card directly from the image data (there's almost no data for these; they're not real cards).
-                else if (options.artCards == true) {
-                    mainImages.forEach(image => {
-                        // Extract the proper title and card number out of the current title.
-                        const titleParts = image.title.split(' Art Card ');
-                        image.title = titleParts[0];
-                        image.matchTitle = mtgGen.createMatchTitle(image.title);
-                        if (titleParts.length === 2) {
-                            image.num = titleParts[1].split('/')[0].padStart(4, '0');
-                        }
-
-                        const card = { ...image, set: setCode };
-
-                        this._addCardToCards(mainOut, card);
-                    });
                     mainOut.initialCardDataCount = mainOut.size;
                 }
             }
@@ -820,6 +807,32 @@ class CardDataImporter {
         }
 
         return cards;
+    }
+
+    // Generate the full card directly from the image data (there's almost no data for these; they're not real cards).
+    // Requires only the Images URL to be specified, pointing to a wotc article.
+    // Requires "importOptions": { "artCards": true }
+    _processArtCards(mainImages, setCode) {
+        let finalCards = new Map();
+
+        mainImages.forEach(image => {
+            // Extract the proper title and card number out of the current title.
+            const titleParts = image.title.split(' Art Card ');
+            image.title = titleParts[0];
+            image.matchTitle = mtgGen.createMatchTitle(image.title);
+            if (titleParts.length === 2) {
+                image.num = titleParts[1].split('/')[0].padStart(4, '0');
+            }
+            image.imageSourceOriginal = image.src;
+
+            const card = { ...image, set: setCode };
+
+            finalCards = this._addCardToCards(finalCards, card);
+        });
+
+        finalCards.initialCardDataCount = finalCards.size;
+
+        return finalCards;
     }
 
     // Loads cards from The List.
