@@ -11,12 +11,13 @@ Query examples:
     from[stx-token]-from[stx-token]?marketing=true  = Take all tokens, then remove all tokens where marketing=true (set math!)
     from[stx-booster]?cost~='R'  = Take all cards where cost includes R
     from[stx-booster]?cost~=(R|W)  = Take all cards where cost includes R or W. Note you can also use from[stx-booster]?cost=contains(R|W)
-    from[stx-booster]?rarity=rarityByWeight(curm) = Select the rarity by weight (c:80/u:24/r:8/m:1)
+    from[stx-booster]?rarity=rarityByWeight(curm) = Select the rarity by weight (c:80/u:24/r:8/m:1/7.4)
 
     overrideSlot can override more than one slot via a comma-separated list
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
+14-Jun-2021: Added support for rarity=rarityByWeight(curm).
 7-Jun-2021: Removed product debug support, replacing with superior ?debug=true querystring support.
 4-May-2021: Added support for ~=(X|Y|Z) (contains) operator and != operator.
 4-May-2021: Added debug mode that shows a Debug Product and Live Debug Product tabs. To enable, add this to top level of products.json: "debug": true
@@ -666,7 +667,7 @@ var mtgGen = (function (my) {
             else if (query2[2].includes('rarityByWeight(')) {
                 // 'rarityByWeight(curm)' is valid when the property is 'rarity'
                 // This will choose cards from the source according to rarity chances.
-                // As of 20200614 this assumes a card set of 14, with 10c, 3u, 1r, and 1/8 chance of m instead of r.
+                // As of ZNR (2020) this assumes a card set of 14, with 10c, 3u, 1r, and 1/7.4 chance of m instead of r.
                 // Note that if, for instance, mythic is chosen it will return ALL mythic cards, so
                 //   if you had done a take[5] on this you'll end up with 5 mythic cards. This is really intended
                 //   for choosing a single card with a proper chance per rarity.
@@ -677,23 +678,35 @@ var mtgGen = (function (my) {
 
                 const chosenRarities = new Set(query2[2].replace(/rarityByWeight\(/g, '').replace(/\)/g, '').replace(/ /g, '').replace(/,/g, '').trim().toLowerCase().split(''));
 
-                // 20200614: assumes a card set of 14, with 10c, 3u, 1r, and 1/8 chance of m instead of r. Whole integers = 80c, 24u, 8r, 1m
-                const weightedRaritySet = Array.from(chosenRarities).reduce((output, rarity) => {
+                // As of ZNR (2020): assumes a card set of 14, with 10c, 3u, 1r, and 1/7.4 chance of m instead of r. Whole integers = 800c, 240u, 80r, 1m
+                let weightedRaritySet = [];
+                chosenRarities.forEach(rarity => {
                     switch (rarity) {
-                        case 'c': return output += 'c'.repeat(80);
-                        case 'u': return output += 'u'.repeat(24);
-                        case 'r': return output += 'r'.repeat(8);
-                        case 'm': return output += 'm';
+                        case 'c': weightedRaritySet.push({ 'rarity': rarity, 'percent': 10 / 14 }); break;
+                        case 'u': weightedRaritySet.push({ 'rarity': rarity, 'percent': 3 / 14 }); break;
+                        case 'r': weightedRaritySet.push({ 'rarity': rarity, 'percent': 1 / 14 }); break;
+                        case 'm': weightedRaritySet.push({ 'rarity': rarity, 'percent': (1/7.4) / 14 }); break;
                         default:
                             console.warn(`WARNING: executeSimpleQuery(): 'rarityByWeight() contains unknown rarity '${rarity}' which will be ignored: ${query}`);
                             return output;
                     }
-                }, '');
+                });
 
-                // Randomly choose a char from our array
-                const chosenRarity = my.sample(weightedRaritySet, 1);
+                //TODO: this logic is taken directly from generateCardSetFromPack() in this file. Abstract them?
 
-                matchingCards = sourceSet.filter(card => card['rarity'] && card['rarity'] == chosenRarity);
+                // Randomly pick a percentage within our whole.
+                const totalWeight = weightedRaritySet.reduce((total, rarity) => total + rarity.percent, 0);
+                let percent = Math.random() * totalWeight;
+                if (percent > totalWeight) { percent = totalWeight; }
+
+                // Find the rarity associated with that percentage.
+                let currentWeight = 0;
+                const chosenRarity = weightedRaritySet.find(rarity => {
+                    currentWeight += rarity.percent;
+                    if (currentWeight >= percent) { return true; }
+                });
+
+                matchingCards = sourceSet.filter(card => card['rarity'] && card['rarity'] == chosenRarity.rarity);
                 result = matchingCards.map(matchingCard => matchingCard.mtgenId);
             }
             else if (query2[2].includes('(')) {
