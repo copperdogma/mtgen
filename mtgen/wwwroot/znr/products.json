@@ -39,6 +39,36 @@
     },
 
     {
+      "productName": "znr-set-booster",
+      "productDesc": "Set Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "caveats": [
+        "Note: The only Art Card images available are all foil-stamped. The wording underneath will say if you've actually pulled a foil stamped card.",
+        "Note: Slots 3-8 are meant to be 'tell a story and be thematically connected' but I can't do that."
+      ],
+      "packs": [
+        { "packName": "znr-set-booster" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "znr-set-booster-six",
+            "presetDesc": "Six Set Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "znr-set-booster"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
       "productName": "znr-prerelease",
       "productDesc": "Prerelease",
       "sources": [ "" ],
@@ -117,7 +147,30 @@
       "packs": [
         { "packName": "znr-promos" }
       ]
-    }
+    },
 
+    {
+      "productName": "mh2-art-cards",
+      "productDesc": "Art Cards",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/zendikar-rising-art-cards-2020-09-18" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "amh2-art-cards" }
+      ]
+    },
+
+    {
+      "productName": "the-list",
+      "productDesc": "The List",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/cards-list-2020-09-10" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "the-list" }
+      ]
+    }
   ]
 }

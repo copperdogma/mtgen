@@ -5,6 +5,14 @@
       "query": "from[*]?set='znr'"
     },
     {
+      "defName": "the-list",
+      "query": "from[*]?theList=true"
+    },
+    {
+      "defName": "aznr-art-cards",
+      "query": "from[*]?artCard=true"
+    },
+    {
       "defName": "znr-promo",
       "query": "from[znr]?promo=true"
     },
@@ -13,12 +21,20 @@
       "query": "from[znr]?variant=true-from[znr-promo]"
     },
     {
+      "defName": "znr-showcase",
+      "query": "from[znr]?numInt=(290-313)"
+    },
+    {
       "defName": "znr-basic-land",
       "query": "from[znr]?type='Basic Land'"
     },
     {
       "defName": "znr-main",
       "query": "from[znr]-from[znr]?promo=true-from[znr]?variant=true-from[znr]?token=true-from[znr]?type='Basic Land"
+    },
+    {
+      "defName": "znr-main-and-showcase",
+      "query": "from[znr-main]+from[znr-showcase]"
     },
     {
       "defName": "znr-foils",
@@ -119,6 +135,119 @@
             }
           ]
         }
+      ]
+    },
+
+    {
+      "_comment": "Set Boosters were introduced as standard feature as of ZNR",
+      "packName": "znr-set-booster",
+      "packDesc": "Zendikar Rising: Set Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/making-magic/set-boosters-2020-07-25" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1: Art Card",
+          "_comment2": "There are 81 total possible borderless art cards. 95% of those opened will be regular and 5% will be foil stamped with an artist signature or Planeswalker symbol.",
+          "query": "from[aznr-art-cards]",
+          "setValues": { "modifiers": [ "Normal" ] }
+        },
+        {
+          "_comment": "Slot 2: Basic Land",
+          "_comment2": "There are 10 total possible basic lands. 85% of those opened will be regular and 15% will be traditional foil",
+          "query": "from[znr]?type='Basic Land'"
+        },
+        {
+          "_comment": "Slot 3-8: 6x Connected C/U",
+          "_comment2": "6 Common or uncommon cards, of which at least one is uncommon (in any combination of regular cards) – Common cards will tell a story and be thematically connected to other commons. Uncommon cards will be connected to other uncommons",
+          "query": "from[znr-booster]?rarity=rarityByWeight(cu)"
+        },
+        {
+          "query": "from[znr-booster]?rarity=rarityByWeight(cu)"
+        },
+        {
+          "query": "from[znr-booster]?rarity=rarityByWeight(cu)"
+        },
+        {
+          "query": "from[znr-booster]?rarity=rarityByWeight(cu)"
+        },
+        {
+          "query": "from[znr-booster]?rarity=rarityByWeight(cu)"
+        },
+        {
+          "_comment": "Slot 8: U (the 'guaranteed' uncommon from above)",
+          "query": "from[znr-booster]?rarity='u'"
+        },
+        {
+          "_comment": "Slot 9: Head-Turning Slot: C/U showcase or normal?",
+          "_comment2": "You will get a common or uncommon that is either a showcase card or a card that's a cool element of the set that we haven't talked about yet",
+          "query": "from[znr-main-and-showcase]?rarity=rarityByWeight(cu)"
+        },
+        {
+          "_comment": "Slot 10-11: C/U/R/M showcase or normal?",
+          "_comment2": "These two slots can basically be anything from common to mythic rare. It is possible to get showcase versions of rares and mythic rares in these slots. (The common and uncommon showcase cards appear in the previous slot.) Note that neither of these is your rare slot, so any rares or mythic rares you get in these two slots are extra ones in the booster. The rarity of each slot is independent, so you have the potential to get two mythic rares here.",
+          "query": "from[znr-main-and-showcase]?rarity=rarityByWeight(curm)"
+        },
+        {
+          "_comment": "Slot 10-11: C/U/R/M showcase or normal?",
+          "_comment2": "These two slots can basically be anything from common to mythic rare. It is possible to get showcase versions of rares and mythic rares in these slots. (The common and uncommon showcase cards appear in the previous slot.) Note that neither of these is your rare slot, so any rares or mythic rares you get in these two slots are extra ones in the booster. The rarity of each slot is independent, so you have the potential to get two mythic rares here.",
+          "query": "from[znr-main-and-showcase]?rarity=rarityByWeight(curm)"
+        },
+        {
+          "_comment": "Slot 12: R/M",
+          "_comment2": "The first slot here is your rare/mythic rare slot. This was the most exciting thing in the Draft Boosters, so we couldn't get rid of that. This acts just like the rare/mythic rare slot that you've grown to know and love in Draft Boosters.",
+          "query": "from[znr-booster]?rarity=rarityByWeight(rm)"
+        },
+        {
+          "_comment": "Slot 13: Foil: C/U/R/M",
+          "_comment2": "A lot of players enjoy foils, so we decided to just make a slot where you get a foil in every pack. This slot can be any rarity, so yes, this is another place where you can get a rare or mythic rare.",
+          "query": "from[znr-foils]?rarity=rarityByWeight(curm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 14: Token/Ad or The List",
+          "_comment2": "1 Token/ad card (75%), or a card from The List (25%) – The List is a collection of 300 cards from Magic's history that we have brought together for this special slot. We have rotated in 50 new reprints that we feel help capture the feel of Modern Horizons 2. Inclusion of cards from The List doesn't impact what formats the card is legal in",
+          "query": "from[znr-token]"
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 1: Art Card",
+              "_comment2": "There are 81 total possible borderless art cards. 95% of those opened will be regular and 5% will be foil stamped with an artist signature or Planeswalker symbol.",
+              "overrideSlot": "1",
+              "percent": "5",
+              "query": "from[aznr-art-cards]",
+              "setValues": { "modifiers": [ "Foil Stamped" ] }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 2: Basic Land",
+              "_comment2": "There are 10 total possible basic lands. 85% of those opened will be regular and 15% will be traditional foil",
+              "query": "from[znr]?type='Basic Land'",
+              "overrideSlot": "2",
+              "percent": "15",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 14: Token/Ad or The List",
+              "_comment2": "1 Token/ad card (75%), or a card from The List (25%) – The List is a collection of 300 cards from Magic's history that we have brought together for this special slot. We have rotated in 50 new reprints that we feel help capture the feel of Modern Horizons 2. Inclusion of cards from The List doesn't impact what formats the card is legal in",
+              "query": "from[the-list]?rarity=rarityByWeight(curm)",
+              "overrideSlot": "14",
+              "percent": "25"
+            }
+          ]
+        }
+
       ]
     },
 
@@ -333,6 +462,30 @@
       "cards": [
         {
           "query": "take[*]>from[znr-promo]"
+        }
+      ]
+    },
+
+    {
+      "packName": "amh2-art-cards",
+      "packDesc": "Zendikar Rising: Art Cards",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[amh2-art-cards]"
+        }
+      ]
+    },
+
+    {
+      "packName": "the-list",
+      "packDesc": "Zendikar Rising: The List",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[the-list]"
         }
       ]
     }
