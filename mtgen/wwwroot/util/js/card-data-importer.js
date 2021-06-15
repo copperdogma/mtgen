@@ -802,13 +802,16 @@ class CardDataImporter {
     _processArtCards(mainImages, setCode) {
         let finalCards = new Map();
 
+        let imageNum = 1; // This will be used if the card title doesn't have image numbers in it.
         mainImages.forEach(image => {
             // Extract the proper title and card number out of the current title.
-            const titleParts = image.title.split(' Art Card ');
+            const titleParts = image.title.split(' Art Card');
             image.title = titleParts[0];
             image.matchTitle = mtgGen.createMatchTitle(image.title);
-            if (titleParts.length === 2) {
-                image.num = titleParts[1].split('/')[0].padStart(4, '0');
+            if (titleParts.length === 2 && titleParts[1].length > 0) {
+                image.num = titleParts[1].trim().split('/')[0].padStart(4, '0');
+            } else {
+                image.num = (imageNum++).toString().padStart(4, '0');
             }
             image.imageSourceOriginal = image.src;
 
