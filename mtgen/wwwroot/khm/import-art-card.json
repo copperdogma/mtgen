@@ -1,0 +1,22 @@
+{
+  "setCode": "akhm",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/kaldheim-art-cards-2021-02-03",
+  "importOptions": { "artCards": true },
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "artCard": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

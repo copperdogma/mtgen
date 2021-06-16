@@ -65,6 +65,35 @@
     },
 
     {
+      "productName": "khm-set-booster",
+      "productDesc": "Set Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "caveats": [
+        "Note: The only Art Card images available are all foil-stamped. The wording underneath will say if you've actually pulled a foil stamped card."
+      ],
+      "packs": [
+        { "packName": "khm-set-booster" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "khm-set-booster-six",
+            "presetDesc": "Six Set Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "khm-set-booster"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
       "productName": "khm-prerelease",
       "productDesc": "Prerelease",
       "sources": [ "" ],
@@ -117,7 +146,30 @@
       "packs": [
         { "packName": "khm-promos" }
       ]
-    }
+    },
 
+    {
+      "productName": "khm-art-cards",
+      "productDesc": "Art Cards",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/kaldheim-art-cards-2021-02-03" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "akhm-art-cards" }
+      ]
+    },
+
+    {
+      "productName": "the-list",
+      "productDesc": "The List",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/updating-list-kaldheim-2020-12-16" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "the-list" }
+      ]
+    }
   ]
 }
