@@ -357,11 +357,13 @@ var mtgGen = (function (my) {
                 my.cards = cardDataArray.reduce((cardSets, cardSet) => cardSets.concat(cardSet), []);
 
                 // The products, e.g.: all cards, booster, prerelease - from productData
-                my.products = productData.products;
+                const replacedProductData = replaceSetCodeAndNameTokens(productData, my.set);
+                my.products = replacedProductData.products;
 
                 // The card definitions and packs - from the array of individual defs/packs within packDataArray
-                my.defs = packDataArray.reduce((cardDefs, packData) => cardDefs.concat(packData.defs), []);
-                my.packs = packDataArray.reduce((cardPacks, packData) => cardPacks.concat(packData.packs), []);
+                const replacedpackDataArray = replaceSetCodeAndNameTokens(packDataArray, my.set);
+                my.defs = replacedpackDataArray.reduce((cardDefs, packData) => cardDefs.concat(packData.defs), []);
+                my.packs = replacedpackDataArray.reduce((cardPacks, packData) => cardPacks.concat(packData.packs), []);
 
                 // The saved draw to be loaded (optional)
                 my.draw = drawData;
@@ -576,6 +578,11 @@ var mtgGen = (function (my) {
     };
 
     // Private MtG Generator functions --------------------------------------------------------------------------------------------------------------------------------
+
+    function replaceSetCodeAndNameTokens(jsonData, set) {
+        const replacedJsonString = JSON.stringify(jsonData).replace(/\{\{setCode\}\}/gi, set.code.toLowerCase()).replace(/\{\{setName\}\}/gi, set.name);
+        return JSON.parse(replacedJsonString);
+    }
 
     function calculateConvertedCost(cost) {
         if (cost === undefined || cost.length < 1) { return 0; }

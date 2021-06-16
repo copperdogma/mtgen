@@ -1,38 +1,39 @@
 {
   "_comment": "if there are no options the query/packNames will be auto-run",
   "_comment2": "You can add an array of caveats to a product to add notes shown to the user",
+  "_comment3": "{{setCode}} and {{setName}} can be used anywhere and get replaced in preprocessing to the actual code/name as found in the global sets.json file",
 
   "products": [
     {
-      "productName": "mh2-all-cards",
+      "productName": "{{setCode}}-all-cards",
       "productDesc": "All Cards",
       "sources": [ "" ],
       "isGenerated": false,
       "initialSort": "colour",
       "packs": [
-        { "packName": "mh2-all-cards" }
+        { "packName": "{{setCode}}-all-cards" }
       ]
     },
 
     {
-      "productName": "mh2-boosters",
+      "productName": "{{setCode}}-boosters",
       "productDesc": "Draft Boosters",
       "isGenerated": true,
       "isVisible": true,
       "initialSort": "set",
       "packs": [
-        { "packName": "mh2-draft" }
+        { "packName": "{{setCode}}-draft" }
       ],
       "options": {
         "presets": [
           {
-            "presetName": "mh2-draft-boosters-six",
+            "presetName": "{{setCode}}-draft-boosters-six",
             "presetDesc": "Six Draft Boosters",
             "default": true,
             "packs": [
               {
                 "count": 6,
-                "defaultPackName": "mh2-draft"
+                "defaultPackName": "{{setCode}}-draft"
               }
             ]
           }
@@ -41,24 +42,24 @@
     },
 
     {
-      "productName": "mh2-collector",
+      "productName": "{{setCode}}-collector",
       "productDesc": "Collector Boosters",
       "isGenerated": true,
       "isVisible": true,
       "initialSort": "set",
       "packs": [
-        { "packName": "mh2-collector" }
+        { "packName": "{{setCode}}-collector" }
       ],
       "options": {
         "presets": [
           {
-            "presetName": "mh2-collector-boosters-six",
+            "presetName": "{{setCode}}-collector-boosters-six",
             "presetDesc": "Six Collector Boosters",
             "default": true,
             "packs": [
               {
                 "count": 6,
-                "defaultPackName": "mh2-collector"
+                "defaultPackName": "{{setCode}}-collector"
               }
             ]
           }
@@ -66,7 +67,7 @@
       }
     },
     {
-      "productName": "mh2-set-booster",
+      "productName": "{{setCode}}-set-booster",
       "productDesc": "Set Boosters",
       "isGenerated": true,
       "isVisible": true,
@@ -76,18 +77,18 @@
         "Note: Slots 3-8 are meant to be 'tell a story and be thematically connected' but I can't do that."
       ],
       "packs": [
-        { "packName": "mh2-set-booster" }
+        { "packName": "{{setCode}}-set-booster" }
       ],
       "options": {
         "presets": [
           {
-            "presetName": "mh2-set-booster-six",
+            "presetName": "{{setCode}}-set-booster-six",
             "presetDesc": "Six Set Boosters",
             "default": true,
             "packs": [
               {
                 "count": 6,
-                "defaultPackName": "mh2-set-booster"
+                "defaultPackName": "{{setCode}}-set-booster"
               }
             ]
           }
@@ -96,29 +97,29 @@
     },
 
     {
-      "productName": "mh2-prerelease",
+      "productName": "{{setCode}}-prerelease",
       "productDesc": "Prerelease",
       "sources": [ "" ],
       "isGenerated": true,
       "initialSort": "set",
       "packs": [
-        { "packName": "mh2-draft" },
-        { "packName": "mh2-prerelease-promo-packins" }
+        { "packName": "{{setCode}}-draft" },
+        { "packName": "{{setCode}}-prerelease-promo-packins" }
       ],
       "options": {
         "presets": [
           {
-            "presetName": "mh2-prerelease-promo-packins",
+            "presetName": "{{setCode}}-prerelease-promo-packins",
             "presetDesc": "Prerelease Packins",
             "default": true,
             "packs": [
               {
                 "count": 1,
-                "defaultPackName": "mh2-prerelease-promo-packins"
+                "defaultPackName": "{{setCode}}-prerelease-promo-packins"
               },
               {
                 "count": 6,
-                "defaultPackName": "mh2-draft"
+                "defaultPackName": "{{setCode}}-draft"
               }
             ]
           }
@@ -127,38 +128,38 @@
     },
 
     {
-      "productName": "mh2-variants",
+      "productName": "{{setCode}}-variants",
       "productDesc": "Variants",
       "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/modern-horizons-2-variants" ],
       "isGenerated": false,
       "isVisible": true,
       "initialSort": "colour",
       "packs": [
-        { "packName": "mh2-variants" }
+        { "packName": "{{setCode}}-variants" }
       ]
     },
 
     {
-      "productName": "mh2-promos",
+      "productName": "{{setCode}}-promos",
       "productDesc": "All Promos",
       "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/ravnica-allegiance-planeswalker-deck-lists-2019-01-10" ],
       "isGenerated": false,
       "isVisible": true,
       "initialSort": "name",
       "packs": [
-        { "packName": "mh2-promos" }
+        { "packName": "{{setCode}}-promos" }
       ]
     },
 
     {
-      "productName": "mh2-art-cards",
+      "productName": "{{setCode}}-art-cards",
       "productDesc": "Art Cards",
       "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/modern-horizons-2-art-cards-2021-06-03" ],
       "isGenerated": false,
       "isVisible": true,
       "initialSort": "name",
       "packs": [
-        { "packName": "amh2-art-cards" }
+        { "packName": "a{{setCode}}-art-cards" }
       ]
     },
 
