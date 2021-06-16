@@ -467,13 +467,13 @@
     },
 
     {
-      "packName": "amh2-art-cards",
+      "packName": "aznr-art-cards",
       "packDesc": "Zendikar Rising: Art Cards",
       "isGenerated": false,
       "includeWithUserCards": false,
       "cards": [
         {
-          "query": "take[*]>from[amh2-art-cards]"
+          "query": "take[*]>from[aznr-art-cards]"
         }
       ]
     },
