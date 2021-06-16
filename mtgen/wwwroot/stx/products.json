@@ -66,6 +66,36 @@
     },
 
     {
+      "productName": "stx-set-booster",
+      "productDesc": "Set Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "caveats": [
+        "Note: The only Art Card images available are all foil-stamped. The wording underneath will say if you've actually pulled a foil stamped card.",
+        "Note: Slots 6-11 are meant to be 'thematically connected' but I can't do that."
+      ],
+      "packs": [
+        { "packName": "stx-set-booster" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "stx-set-booster-six",
+            "presetDesc": "Six Set Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "stx-set-booster"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
       "productName": "stx-prerelease",
       "productDesc": "Prerelease",
       "sources": [ "" ],
@@ -207,6 +237,30 @@
       "initialSort": "name",
       "packs": [
         { "packName": "stx-promos" }
+      ]
+    },
+
+    {
+      "productName": "stx-art-cards",
+      "productDesc": "Art Cards",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/strixhaven-school-mages-art-cards-2021-04-15" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "astx-art-cards" }
+      ]
+    },
+
+    {
+      "productName": "the-list",
+      "productDesc": "The List",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/updating-list-strixhaven-school-mages-2021-03-25" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "the-list" }
       ]
     }
   ]

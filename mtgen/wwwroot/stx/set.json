@@ -1,7 +1,7 @@
 {
   "startProductName": "stx-prerelease",
   "packFiles": [
-    "packs.json?v1.8"
+    "packs.json?v1.9"
   ],
   "cardFiles": [
     "cardsMain.json",
@@ -10,9 +10,19 @@
     "cardsVariant.json",
     "cardsPromo.json",
     "cardsMysticalArchive.json",
-    "cardsC21CommanderVariant.json"
+    "cardsC21CommanderVariant.json",
+    "cardsTheList.json",
+    "cardsArtCards.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-06-15T23:00:00:00",
+      "HtmlString": "Added Set Boosters, with The List and Art Cards."
+    },
+    {
+      "UpdateDate": "2021-06-15T14:30:00:00",
+      "HtmlString": "Updated prerelease pack-ins."
+    },
     {
       "UpdateDate": "2021-04-15T10:00:00:00",
       "HtmlString": "Added rest of tokens."
