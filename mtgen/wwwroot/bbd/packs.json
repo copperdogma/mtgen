@@ -27,7 +27,7 @@
     },
     {
       "defName": "bbd-foils",
-      "query": "from[bbd-main]"
+      "query": "from[bbd-main]+from[bbd]?type='Basic Land"
     },
     {
       "defName": "bbd-token",
@@ -37,8 +37,8 @@
       "defName": "bbd-promos",
       "query": "from[bbd-uncommon-pairs]+from[bbd-rare-pairs]+from[bbd-mythic-pairs]"
     }
-
   ],
+
   "packs": [
     {
       "packName": "bbd-all-cards",
@@ -56,7 +56,7 @@
       "cards": [
         { "query": "take[10]>from[bbd-main]?rarity='c" },
         { "query": "take[3]>from[bbd-main]?rarity='u" },
-        { "query": "from[bbd-main]?rarity='r" },
+        { "query": "from[bbd-main]?rarity=rarityByWeight2008(rm)" },
         { "query": "from[bbd]?type='Basic Land" },
         {
           "querySet": [
@@ -71,45 +71,19 @@
             }
           ]
         },
+
         {
           "querySet": [
             {
-              "_comment": "25% chance of foil, scaled by rarity, replacing the last common",
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
+              "percent": "15/67",
               "overrideSlot": "10",
-              "percent": "88/480",
-              "query": "from[bbd-main]?rarity='c",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "10",
-              "percent": "24/480",
-              "query": "from[bbd-main]?rarity='u",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "10",
-              "percent": "7/480",
-              "query": "from[bbd-main]?rarity='r",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "10",
-              "percent": "1/480",
-              "query": "from[bbd-main]?rarity='m",
+              "query": "from[bbd-foils]?rarity=rarityByWeight2008(curm)",
               "setValues": { "foil": true }
             }
           ]
         },
-        {
-          "querySet": [
-            {
-              "_comment": "1/8 chance of replacing rare with mythic",
-              "percent": "1/8",
-              "overrideSlot": "14",
-              "query": "from[bbd-main]?rarity='m'"
-            }
-          ]
-        },
+
         {
           "querySet": [
             {

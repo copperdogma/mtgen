@@ -1,20 +1,17 @@
-{
+﻿{
   "startProductName": "ala-boosters",
   "packFiles": [
-    "packs.json",
-    "../con_/packs.json",
-    "../arb/packs.json"
+    "packs.json?v1.1"
   ],
   "cardFiles": [
     "cardsMain.json",
     "cardsOther.json",
-    "cardsToken.json",
-    "../con_/cardsMain.json",
-    "../con_/cardsOther.json",
-    "../con_/cardsToken.json",
-    "../arb/cardsMain.json",
-    "../arb/cardsOther.json",
-    "../arb/cardsToken.json"
+    "cardsToken.json"
   ],
-  "updates": []
+  "updates": [
+    {
+      "UpdateDate": "2021-06-25T23:30:00:00",
+      "HtmlString": "Updated foil chances. Now 15/67 chance a booster has a foil, includes basic lands, and it always replaces a common."
+    }
+  ]
 }

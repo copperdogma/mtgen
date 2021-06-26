@@ -14,7 +14,7 @@
     },
     {
       "defName": "rna-foils",
-      "query": "from[rna]"
+      "query": "from[rna]+from[rna]?type='Basic Land'"
     },
     {
       "defName": "rna-token",
@@ -66,8 +66,8 @@
       "defName": "rna-simic-colours",
       "query": "from[rna-main]?colour=(g|u)-from[rna-simic]+from[rna-simic]-from[rna-main]?guild=(Azorius|Rakdos|Orzhov|Gruul)"
     }
-
   ],
+
   "packs": [
     {
       "packName": "rna-all-cards",
@@ -86,7 +86,7 @@
       "cards": [
         { "query": "take[10]>from[rna-main]?rarity='c" },
         { "query": "take[3]>from[rna-main]?rarity='u" },
-        { "query": "from[rna-main]?rarity='r" },
+        { "query": "from[rna-main]?rarity=rarityByWeight2008(rm)" },
         { "query": "from[rna-guildgates]" },
         {
           "querySet": [
@@ -100,42 +100,15 @@
             }
           ]
         },
+
         {
           "querySet": [
             {
-              "_comment": "25% chance of foil, scaled by rarity, replacing the last common",
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
+              "percent": "15/67",
               "overrideSlot": "10",
-              "percent": "88/480",
-              "query": "from[rna-main]?rarity='c",
+              "query": "from[rna-foils]?rarity=rarityByWeight2008(curm)",
               "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "10",
-              "percent": "24/480",
-              "query": "from[rna-main]?rarity='u",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "10",
-              "percent": "7/480",
-              "query": "from[rna-main]?rarity='r",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "10",
-              "percent": "1/480",
-              "query": "from[rna-main]?rarity='m",
-              "setValues": { "foil": true }
-            }
-          ]
-        },
-        {
-          "querySet": [
-            {
-              "_comment": "1/8 chance of replacing rare with mythic",
-              "percent": "1/8",
-              "overrideSlot": "14",
-              "query": "from[rna-main]?rarity='m'"
             }
           ]
         }

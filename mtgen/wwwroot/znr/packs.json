@@ -38,7 +38,7 @@
     },
     {
       "defName": "znr-foils",
-      "query": "from[znr]-from[znr-promo]-from[znr]?token=true"
+      "query": "from[znr]-from[znr-promo]-from[znr]?token=true+from[znr-basic-land]"
     },
     {
       "defName": "znr-booster",
@@ -53,6 +53,7 @@
       "query": "from[znr]?token=true"
     }
   ],
+
   "packs": [
     {
       "packName": "znr-all-cards",
@@ -68,54 +69,28 @@
       "packName": "znr-draft",
       "packDesc": "Zendikar Rising: Draft Booster",
       "sources": [ "https://magic.wizards.com/en/articles/archive/feature/zendikar-rising-product-overview-2020-09-02", "https://www.youtube.com/watch?v=IZOAf2C_qnk&t=720s" ],
-      "packVersion": "1.0",
+      "packVersion": "1.1",
       "isGenerated": true,
       "cards": [
         { "query": "take[10]>from[znr-booster]?rarity='c" },
         { "query": "take[3]>from[znr-booster]?rarity='u" },
-        { "query": "from[znr-booster]?rarity='r" },
+        { "query": "from[znr-booster]?rarity=rarityByWeight2020(rm)" },
         { "query": "from[znr-basic-land]" },
         { "query": "from[znr-token]" },
+
         {
           "querySet": [
             {
-              "_comment": "33% (1:45) chance of foil, scaled by rarity, replacing the last common, as of m20: Jun-2019",
-              "_comment2": "TODO: fix mythic rarity to be 1:7.4 instead of 1:8",
+              "_comment": "33% chance of foil, scaled by rarity, replacing the last common, as of M20: Jun-2019",
+              "_comment2": "This set was the first where mythic odds changed from 1 in 8 to 1 in 7.4 (encoded in rarityByWeight2020)",
+              "percent": "33",
               "overrideSlot": "9",
-              "percent": "88/360",
-              "query": "from[znr-foils]?rarity='c",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "9",
-              "percent": "24/360",
-              "query": "from[znr-foils]?rarity='u",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "9",
-              "percent": "7/360",
-              "query": "from[znr-foils]?rarity='r",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "9",
-              "percent": "1/360",
-              "query": "from[znr-foils]?rarity='m",
+              "query": "from[znr-foils]?rarity=rarityByWeight2020(curm)",
               "setValues": { "foil": true }
             }
           ]
         },
-        {
-          "querySet": [
-            {
-              "_comment": "1/7.4 chance of replacing rare with mythic (7.4 instead of 8 as of znr Sep-2020",
-              "percent": "10/74",
-              "overrideSlot": "14",
-              "query": "from[znr-booster]?rarity='m'"
-            }
-          ]
-        },
+
         {
           "querySet": [
             {

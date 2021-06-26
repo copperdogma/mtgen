@@ -1,47 +1,64 @@
 {
-    "_comment": "from: http://mtgsalvation.gamepedia.com/Urza%27s_Destiny",
+  "_comment": "from: http://mtgsalvation.gamepedia.com/Urza%27s_Destiny",
 
-    "defs": [
+  "defs": [
+    {
+      "defName": "uds",
+      "query": "from[*]?set='uds'"
+    },
+    {
+      "defName": "uds-main",
+      "query": "from[uds]-from[uds]?type=(Marketing|Basic Land)-from[uds]?token=true-from[uds]?promo=true"
+    },
+    {
+      "defName": "uds-foils",
+      "query": "from[*]?set='uds'"
+    }
+
+  ],
+  "packs": [
+    {
+      "packName": "uds-all-cards",
+      "packDesc": "Urza's Destiny: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[uds]" }
+      ]
+    },
+    {
+      "packName": "uds-standard",
+      "packDesc": "Urza's Destiny: Standard Booster",
+      "_comment": "first booster to contain random foil cards",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[uds-main]?rarity='r'" },
+        { "query": "take[3]>from[uds-main]?rarity='u'" },
+        { "query": "take[11]>from[uds-main]?rarity='c'" },
+
         {
-            "defName": "uds",
-            "query": "from[*]?set='uds'"
-        },
-        {
-            "defName": "uds-main",
-            "query": "from[uds]-from[uds]?type=(Marketing|Basic Land)-from[uds]?token=true-from[uds]?promo=true"
-        },
-        {
-            "defName": "uds-foils",
-            "query": "from[*]?set='uds'"
+          "querySet": [
+            {
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and it replaced a card of it's rarity.",
+              "percent": "1/67",
+              "overrideSlot": "1",
+              "query": "from[uds-main]?rarity='r'",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "3/67",
+              "overrideSlot": "2",
+              "query": "from[uds-main]?rarity='u'",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "11/67",
+              "overrideSlot": "5",
+              "query": "from[uds-main]?rarity='c'",
+              "setValues": { "foil": true }
+            }
+          ]
         }
-
-    ],
-    "packs": [
-        {
-            "packName": "uds-all-cards",
-            "packDesc": "Urza's Destiny: All Cards",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[uds]" }
-            ]
-        },
-        {
-            "packName": "uds-standard",
-            "packDesc": "Urza's Destiny: Standard Booster",
-            "_comment": "first booster to contain random foil cards",
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[uds-main]?rarity='r'" },
-                { "query": "take[3]>from[uds-main]?rarity='u'" },
-                { "query": "take[10]>from[uds-main]?rarity='c'" },
-                {
-                    "querySet": [
-                        { "percent": 75, "query": "from[uds-main]?rarity='c'" },
-                        { "percent": 25, "query": "from[uds-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
-                    ]
-                }
-            ]
-        }
-
-    ]
+      ]
+    }
+  ]
 }

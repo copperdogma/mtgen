@@ -1,93 +1,118 @@
 {
-    "defs": [
-        {
-            "defName": "som",
-            "query": "from[*]?set='som'"
-        },
-        {
-            "defName": "som-main",
-            "query": "from[som]-from[som]?type=(Marketing|Basic Land)-from[som]?token=true-from[som]?promo=true"
-        },
-        {
-            "defName": "som-foils",
-            "query": "from[som-main]"
-        },
-        {
-            "defName": "som-promo",
-            "query": "from[som]?promo=true"
-        },
-        {
-            "defName": "som-fatpack",
-            "query": "from[som]?includedReason='Fat Pack Pack-In'"
-        }
+  "defs": [
+    {
+      "defName": "som",
+      "query": "from[*]?set='som'"
+    },
+    {
+      "defName": "som-main",
+      "query": "from[som]-from[som]?type=(Marketing|Basic Land)-from[som]?token=true-from[som]?promo=true"
+    },
+    {
+      "defName": "som-foil",
+      "query": "from[som-main]+from[som]?type='Basic Land"
+    },
+    {
+      "defName": "som-promo",
+      "query": "from[som]?promo=true"
+    },
+    {
+      "defName": "som-fatpack",
+      "query": "from[som]?includedReason='Fat Pack Pack-In'"
+    }
 
-    ],
-    "packs": [
+  ],
+  "packs": [
+    {
+      "packName": "som-all-cards",
+      "packDesc": "Scars of Mirrodin: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[som]" }
+      ]
+    },
+    {
+      "packName": "som-standard",
+      "packDesc": "Scars of Mirrodin: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[som-main]?rarity='c'" },
+        { "query": "take[3]>from[som-main]?rarity='u'" },
+        { "query": "from[som-main]?rarity=rarityByWeight2008(rm)" },
+        { "query": "from[som]?type='Basic Land'" },
         {
-            "packName": "som-all-cards",
-            "packDesc": "Scars of Mirrodin: All Cards",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[som]" }
-            ]
+          "querySet": [
+            {
+              "percent": 50,
+              "query": "from[som]?type='Marketing'"
+            },
+            {
+              "percent": 50,
+              "query": "from[som]?token=true-from[som]?promo=true"
+            }
+          ]
         },
+
         {
-            "packName": "som-standard",
-            "packDesc": "Scars of Mirrodin: Standard Booster",
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[som]?type='Basic Land'" },
-                { "query": "take[9]>from[som-main]?rarity='c'" },
-                {
-                    "querySet": [
-                        { "percent": 75, "query": "from[som-main]?rarity='c'" },
-                        { "percent": 25, "query": "from[som-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
-                    ]
-                },
-                { "query": "take[3]>from[som-main]?rarity='u'" },
-                {
-                    "querySet": [
-                        { "percent": 87.5, "query": "from[som-main]?rarity='r'" },
-                        { "percent": 12.5, "query": "from[som-main]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" }
-                    ]
-                },
-                {
-                    "querySet": [
-                        { "percent": 50, "query": "from[som]?type='Marketing'" },
-                        { "percent": 50, "query": "from[som]?token=true-from[som]?promo=true" }
-                    ]
-                }
-            ]
-        },
-        {
-            "packName": "som-promos",
-            "packDesc": "Scars of Mirrodin: Promos",
-            "isGenerated": false,
-            "includeWithUserCards": false,
-            "cards": [
-                { "query": "take[*]>from[som-promo]" }
-            ]
-        },
-        {
-            "packName": "som-fat-pack-pack-ins",
-            "packDesc": "Scars of Mirrodin Fat Pack: Pack-Ins",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[som]?title=(Scars of Mirrodin Player’s Guide|Scars of Mirrodin Test of Metal Sample Book Chapter|Scars of Mirrodin Mural|Scars of Mirrodin Rules Reference Card)" },
-                { "query": "from[som-fatpack]?type='Life Counter'", "canBeDuplicate": true }
-            ]
-        },
-        {
-            "packName": "som-fat-pack-land",
-            "packDesc": "Scars of Mirrodin Fat Pack: Land",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[16]>from[som]?title='Plains'", "canBeDuplicate": true },
-                { "query": "take[16]>from[som]?title='Island'", "canBeDuplicate": true },
-                { "query": "take[16]>from[som]?title='Swamp'", "canBeDuplicate": true },
-                { "query": "take[16]>from[som]?title='Forest'", "canBeDuplicate": true },
-                { "query": "take[16]>from[som]?title='Mountain'", "canBeDuplicate": true }
-            ]
+          "querySet": [
+            {
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
+              "percent": "15/67",
+              "overrideSlot": "10",
+              "query": "from[som-foil]?rarity=rarityByWeight2008(curm)",
+              "setValues": { "foil": true }
+            }
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "packName": "som-promos",
+      "packDesc": "Scars of Mirrodin: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[som-promo]" }
+      ]
+    },
+    {
+      "packName": "som-fat-pack-pack-ins",
+      "packDesc": "Scars of Mirrodin Fat Pack: Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[som]?title=(Scars of Mirrodin Player?s Guide|Scars of Mirrodin Test of Metal Sample Book Chapter|Scars of Mirrodin Mural|Scars of Mirrodin Rules Reference Card)" },
+        {
+          "query": "from[som-fatpack]?type='Life Counter'",
+          "canBeDuplicate": true
+        }
+      ]
+    },
+    {
+      "packName": "som-fat-pack-land",
+      "packDesc": "Scars of Mirrodin Fat Pack: Land",
+      "isGenerated": false,
+      "cards": [
+        {
+          "query": "take[16]>from[som]?title='Plains'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[16]>from[som]?title='Island'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[16]>from[som]?title='Swamp'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[16]>from[som]?title='Forest'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[16]>from[som]?title='Mountain'",
+          "canBeDuplicate": true
+        }
+      ]
+    }
+  ]
 }

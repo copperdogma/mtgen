@@ -13,8 +13,12 @@
       "query": "from[war]-from[war]?type=(Marketing|Basic Land)-from[war]?promo=true-from[war]?token=true-from[war]?type='Legendary Planeswalker'"
     },
     {
+      "defName": "war-basic-land",
+      "query": "from[war]?type='Basic Land'-from[war]?promo=true"
+    },
+    {
       "defName": "war-foils",
-      "query": "from[war]-from[war-promo]"
+      "query": "from[war-main]+from[war-basic-land]"
     },
     {
       "defName": "war-token",
@@ -30,6 +34,7 @@
       "query": "from[war-main]+from[war-planeswalker]?rarity=(r|m)"
     }
   ],
+
   "packs": [
     {
       "packName": "war-all-cards",
@@ -48,7 +53,7 @@
       "cards": [
         { "query": "take[10]>from[war-main]?rarity='c" },
         { "query": "take[3]>from[war-main]?rarity='u" },
-        { "query": "from[war-main]?rarity='r" },
+        { "query": "from[war-main]?rarity=rarityByWeight2008(rm)" },
         { "query": "from[war]?type='Basic Land'-from[war]?promo=true" },
         {
           "querySet": [
@@ -62,45 +67,19 @@
             }
           ]
         },
+
         {
           "querySet": [
             {
-              "_comment": "25% chance of foil, scaled by rarity, replacing the last common",
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
+              "percent": "15/67",
               "overrideSlot": "10",
-              "percent": "88/480",
-              "query": "from[war-main]?rarity='c",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "10",
-              "percent": "24/480",
-              "query": "from[war-main]?rarity='u",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "10",
-              "percent": "7/480",
-              "query": "from[war-main]?rarity='r",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "10",
-              "percent": "1/480",
-              "query": "from[war-main]?rarity='m",
+              "query": "from[war-foils]?rarity=rarityByWeight2008(curm)",
               "setValues": { "foil": true }
             }
           ]
         },
-        {
-          "querySet": [
-            {
-              "_comment": "1/8 chance of replacing rare with mythic",
-              "percent": "1/8",
-              "overrideSlot": "14",
-              "query": "from[war-main]?rarity='m'"
-            }
-          ]
-        },
+
         {
           "querySet": [
             {

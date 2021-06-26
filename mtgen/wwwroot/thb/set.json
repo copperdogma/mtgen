@@ -1,7 +1,7 @@
 {
   "startProductName": "thb-prerelease",
   "packFiles": [
-    "packs.json?v1.3"
+    "packs.json?v1.4"
   ],
   "cardFiles": [
     "cardsMain.json?v1.1",
@@ -11,6 +11,10 @@
     "cardsBasicLand.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-06-25T23:30:00:00",
+      "HtmlString": "Foils now include basic lands."
+    },
     {
       "UpdateDate": "2020-04-05T00:01:00:00",
       "HtmlString": "Foils will no longer include cards from Planeswalker decks."

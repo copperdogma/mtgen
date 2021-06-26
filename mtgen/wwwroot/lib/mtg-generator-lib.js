@@ -671,10 +671,11 @@ var mtgGen = (function (my) {
                 matchingCards = sourceSet.filter(card => card[prop] && card[prop].match(clause));
                 result = matchingCards.map(matchingCard => matchingCard.mtgenId);
             }
-            else if (query2[2].includes('rarityByWeight(')) {
+            else if (query2[2].includes('rarityByWeight2020(') || query2[2].includes('rarityByWeight2008(')) {
                 // 'rarityByWeight(curm)' is valid when the property is 'rarity'
                 // This will choose cards from the source according to rarity chances.
-                // As of ZNR (2020) this assumes a card set of 14, with 10c, 3u, 1r, and 1/7.4 chance of m instead of r.
+                // The first mythic rares appeared in Shards of Alara (ALA, 2008), assuming a card set of 14, with 10c, 3u, 1r, and 1/8 chance of m instead of r.
+                // As of ZNR (2020) mythic rare odds changed, assuming a card set of 14, with 10c, 3u, 1r, and 1/7.4 chance of m instead of r.
                 // Note that if, for instance, mythic is chosen it will return ALL mythic cards, so
                 //   if you had done a take[5] on this you'll end up with 5 mythic cards. This is really intended
                 //   for choosing a single card with a proper chance per rarity.
@@ -683,16 +684,17 @@ var mtgGen = (function (my) {
                     console.warn(`WARNING: executeSimpleQuery(): 'rarityByWeight() can only be used with property 'rarity' so that's what will happen: ${query}`);
                 }
 
-                const chosenRarities = new Set(query2[2].replace(/rarityByWeight\(/g, '').replace(/\)/g, '').replace(/ /g, '').replace(/,/g, '').trim().toLowerCase().split(''));
+                const chosenRarities = new Set(query2[2].replace(/rarityByWeight2008\(/g, '').replace(/rarityByWeight2020\(/g, '').replace(/\)/g, '').replace(/ /g, '').replace(/,/g, '').trim().toLowerCase().split(''));
 
-                // As of ZNR (2020): assumes a card set of 14, with 10c, 3u, 1r, and 1/7.4 chance of m instead of r. Whole integers = 800c, 240u, 80r, 1m
                 let weightedRaritySet = [];
+                // Mythic odds = 1/8 starting with Shards of Alara (ALA 2008). Changed to 1/7.4 for Zendiar Rising (ZNR 2020).
+                const mythicOdds = query2[2].includes('rarityByWeight2008(') ? 8 : 7.4;
                 chosenRarities.forEach(rarity => {
                     switch (rarity) {
                         case 'c': weightedRaritySet.push({ 'rarity': rarity, 'percent': 10 / 14 }); break;
                         case 'u': weightedRaritySet.push({ 'rarity': rarity, 'percent': 3 / 14 }); break;
                         case 'r': weightedRaritySet.push({ 'rarity': rarity, 'percent': 1 / 14 }); break;
-                        case 'm': weightedRaritySet.push({ 'rarity': rarity, 'percent': (1/7.4) / 14 }); break;
+                        case 'm': weightedRaritySet.push({ 'rarity': rarity, 'percent': (1 / mythicOdds) / 14 }); break;
                         default:
                             console.warn(`WARNING: executeSimpleQuery(): 'rarityByWeight() contains unknown rarity '${rarity}' which will be ignored: ${query}`);
                             return output;
@@ -713,7 +715,13 @@ var mtgGen = (function (my) {
                     if (currentWeight >= percent) { return true; }
                 });
 
-                matchingCards = sourceSet.filter(card => card['rarity'] && card['rarity'] == chosenRarity.rarity);
+                // 'Common' includes basic lands.
+                if (chosenRarity.rarity == 'c') {
+                    matchingCards = sourceSet.filter(card => card['rarity'] && (card['rarity'] == chosenRarity.rarity || card['rarity'] == 'b'));
+                }
+                else {
+                    matchingCards = sourceSet.filter(card => card['rarity'] && card['rarity'] == chosenRarity.rarity);
+                }
                 result = matchingCards.map(matchingCard => matchingCard.mtgenId);
             }
             else if (query2[2].includes('(')) {

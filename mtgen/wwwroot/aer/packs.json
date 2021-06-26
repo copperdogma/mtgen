@@ -28,8 +28,8 @@
       "defName": "aer-promo",
       "query": "from[aer]?promo=true"
     }
-
   ],
+
   "packs": [
     {
       "packName": "aer-all-cards",
@@ -42,63 +42,12 @@
     {
       "packName": "aer-standard",
       "packDesc": "Aether Revolt: Standard Booster",
-      "packVersion": "1.0",
+      "packVersion": "1.1",
       "isGenerated": true,
       "cards": [
-        { "query": "take[8]>from[aer-main]?rarity='c" },
-        {
-          "querySet": [
-            {
-              "percent": "143/144",
-              "query": "from[aer-main]?rarity='c"
-            },
-            {
-              "percent": "1/144",
-              "query": "from[aer-masterpiece-series]"
-            }
-          ]
-        },
-        {
-          "querySet": [
-            {
-              "percent": "360/480",
-              "query": "from[aer-main]?rarity='c"
-            },
-            {
-              "percent": "88/480",
-              "query": "from[aer-main]?rarity='c",
-              "setValues": { "foil": true }
-            },
-            {
-              "percent": "24/480",
-              "query": "from[aer-main]?rarity='u",
-              "setValues": { "foil": true }
-            },
-            {
-              "percent": "7/480",
-              "query": "from[aer-main]?rarity='r",
-              "setValues": { "foil": true }
-            },
-            {
-              "percent": "1/480",
-              "query": "from[aer-main]?rarity='m",
-              "setValues": { "foil": true }
-            }
-          ]
-        },
+        { "query": "take[10]>from[aer-main]?rarity='c" },
         { "query": "take[3]>from[aer-main]?rarity='u" },
-        {
-          "querySet": [
-            {
-              "percent": "7/8",
-              "query": "from[aer-main]?rarity='r"
-            },
-            {
-              "percent": "1/8",
-              "query": "from[aer-main]?rarity='m"
-            }
-          ]
-        },
+        { "query": "from[aer-main]?rarity=rarityByWeight2008(rm)" },
         { "query": "take[1]>from[kld-basicland]" },
         {
           "querySet": [
@@ -109,6 +58,28 @@
             {
               "percent": "50",
               "query": "from[aer]?token=true"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "percent": "1/144",
+              "overrideSlot": "9",
+              "query": "from[aer-masterpiece-series]"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
+              "percent": "15/67",
+              "overrideSlot": "10",
+              "query": "from[aer-foils]?rarity=rarityByWeight2008(curm)",
+              "setValues": { "foil": true }
             }
           ]
         }

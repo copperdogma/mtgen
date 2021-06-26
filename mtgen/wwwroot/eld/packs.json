@@ -21,6 +21,10 @@
       "query": "from[eld-variants]?showcaseCard=true-from[eld-variants]?rarity='c'"
     },
     {
+      "defName": "eld-basic-land",
+      "query": "from[eld]?type='Basic Land'-from[eld]?promo=true"
+    },
+    {
       "defName": "eld-booster",
       "query": "from[eld-main]+from[eld-variants]?borderlessPlaneswalker=true+from[eld-booster-showcase]"
     },
@@ -42,13 +46,14 @@
     },
     {
       "defName": "eld-foils",
-      "query": "from[eld]-from[eld-promo]-from[eld]?token=true"
+      "query": "from[eld-main]+from[eld-basic-land]"
     },
     {
       "defName": "eld-token",
       "query": "from[eld]?token=true"
     }
   ],
+
   "packs": [
     {
       "packName": "eld-all-cards",
@@ -68,8 +73,8 @@
       "cards": [
         { "query": "take[10]>from[eld-booster]?rarity='c" },
         { "query": "take[3]>from[eld-booster]?rarity='u" },
-        { "query": "from[eld-booster]?rarity='r" },
-        { "query": "from[eld]?type='Basic Land'-from[eld]?promo=true" },
+        { "query": "from[eld-booster]?rarity=rarityByWeight2008(rm)" },
+        { "query": "from[eld-basic-land]" },
         {
           "querySet": [
             {
@@ -82,42 +87,15 @@
             }
           ]
         },
+
         {
           "querySet": [
             {
-              "_comment": "33% (1:45) chance of foil, scaled by rarity, replacing the last common, as of m20: Jun-2019",
+              "_comment": "33% chance of foil, scaled by rarity, replacing the last common, as of M20: Jun-2019",
+              "percent": "33",
               "overrideSlot": "10",
-              "percent": "88/360",
-              "query": "from[eld-foils]?rarity='c",
+              "query": "from[eld-foils]?rarity=rarityByWeight2008(curm)",
               "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "10",
-              "percent": "24/360",
-              "query": "from[eld-foils]?rarity='u",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "10",
-              "percent": "7/360",
-              "query": "from[eld-foils]?rarity='r",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "10",
-              "percent": "1/360",
-              "query": "from[eld-foils]?rarity='m",
-              "setValues": { "foil": true }
-            }
-          ]
-        },
-        {
-          "querySet": [
-            {
-              "_comment": "1/8 chance of replacing rare with mythic",
-              "percent": "1/8",
-              "overrideSlot": "14",
-              "query": "from[eld-booster]?rarity='m'"
             }
           ]
         }

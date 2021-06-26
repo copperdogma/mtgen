@@ -8,10 +8,10 @@
             "defName": "nph-main",
             "query": "from[nph]-from[nph]?type=(Marketing|Basic Land)-from[nph]?token=true-from[nph]?promo=true"
         },
-        {
-            "defName": "nph-foils",
-            "query": "from[nph-main]"
-        },
+      {
+        "defName": "nph-foil",
+        "query": "from[nph-main]+from[nph]?type='Basic Land"
+      },
         {
             "defName": "nph-promo",
             "query": "from[nph]?promo=true"
@@ -31,29 +31,36 @@
             "packName": "nph-standard",
             "packDesc": "New Phyrexia: Standard Booster",
             "isGenerated": true,
-            "cards": [
-                { "query": "from[nph]?type='Basic Land'" },
-                { "query": "take[9]>from[nph-main]?rarity='c'" },
+          "cards": [
+            { "query": "take[10]>from[nph-main]?rarity='c'" },
+            { "query": "take[3]>from[nph-main]?rarity='u'" },
+            { "query": "from[nph-main]?rarity=rarityByWeight2008(rm)" },
+            { "query": "from[nph]?type='Basic Land'" },
+            {
+              "querySet": [
                 {
-                    "querySet": [
-                        { "percent": 75, "query": "from[nph-main]?rarity='c'" },
-                        { "percent": 25, "query": "from[nph-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
-                    ]
-                },
-                { "query": "take[3]>from[nph-main]?rarity='u'" },
-                {
-                    "querySet": [
-                        { "percent": 87.5, "query": "from[nph-main]?rarity='r'" },
-                        { "percent": 12.5, "query": "from[nph-main]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" }
-                    ]
+                  "percent": 50,
+                  "query": "from[nph]?type='Marketing'"
                 },
                 {
-                    "querySet": [
-                        { "percent": 50, "query": "from[nph]?type='Marketing'" },
-                        { "percent": 50, "query": "from[nph]?token=true-from[nph]?promo=true" }
-                    ]
+                  "percent": 50,
+                  "query": "from[nph]?token=true-from[nph]?promo=true"
                 }
-            ]
+              ]
+            },
+
+            {
+              "querySet": [
+                {
+                  "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
+                  "percent": "15/67",
+                  "overrideSlot": "10",
+                  "query": "from[nph-foil]?rarity=rarityByWeight2008(curm)",
+                  "setValues": { "foil": true }
+                }
+              ]
+            }
+          ]
         },
         {
             "packName": "nph-promos",

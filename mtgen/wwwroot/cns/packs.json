@@ -1,10 +1,10 @@
 {
   "_comment": "from: http://www.wizards.com/magic/magazine/article.aspx?x=mtg/daily/arcana/1430",
-  "_comment": "from: http://en.wikipedia.org/wiki/Magic:_The_Gathering_Conspiracy",
-  "_comment": "11 commons, 3 uncommons, 1 rare or mythic rare, and 1 token or marketing card",
-  "_comment": "from: http://www.wizards.com/magic/magazine/article.aspx?x=mtg/daily/feature/300b",
-  "_comment": "Basic Land slot replaced by drafting cards (they have a watermark)",
-  "_comment": "from: http://tappedout.net/mtg-forum/limited/conspiracy-sealed-deck-generator/?c=1415027",
+  "_comment2": "from: http://en.wikipedia.org/wiki/Magic:_The_Gathering_Conspiracy",
+  "_comment3": "11 commons, 3 uncommons, 1 rare or mythic rare, and 1 token or marketing card",
+  "_comment4": "from: http://www.wizards.com/magic/magazine/article.aspx?x=mtg/daily/feature/300b",
+  "_comment5": "Basic Land slot replaced by drafting cards (they have a watermark)",
+  "_comment6": "from: http://tappedout.net/mtg-forum/limited/conspiracy-sealed-deck-generator/?c=1415027",
 
   "defs": [
     {
@@ -49,42 +49,16 @@
         { "query": "take[*]>from[cns-promo]" }
       ]
     },
+
     {
       "packName": "cns-standard",
       "packDesc": "Conspiracy: Standard Booster",
       "isGenerated": true,
       "cards": [
-        { "query": "from[cns_draft]" },
-        { "query": "take[9]>from[cns_main]?rarity='c'" },
-        {
-          "querySet": [
-            {
-              "percent": 75,
-              "query": "from[cns_main]?rarity='c'"
-            },
-            {
-              "percent": 25,
-              "query": "from[cns_foils]",
-              "canBeDuplicate": true,
-              "setValues": { "foil": true },
-              "_comment": "25% change rare is a foil of any card, including land"
-            }
-          ]
-        },
+        { "query": "take[10]>from[cns_main]?rarity='c'" },
         { "query": "take[3]>from[cns_main]?rarity='u'" },
-        {
-          "querySet": [
-            {
-              "percent": 87.5,
-              "query": "from[cns_main]?rarity='r'"
-            },
-            {
-              "percent": 12.5,
-              "query": "from[cns_main]?rarity='m'",
-              "_comment": "rare=7/8, mythicRare=1/8"
-            }
-          ]
-        },
+        { "query": "from[cns_main]?rarity=rarityByWeight2008(rm)" },
+        { "query": "from[cns_draft]" },
         {
           "querySet": [
             {
@@ -94,6 +68,18 @@
             {
               "percent": 50,
               "query": "from[cns]?token=true"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
+              "percent": "15/67",
+              "overrideSlot": "10",
+              "query": "from[cns_foils]?rarity=rarityByWeight2008(curm)",
+              "setValues": { "foil": true }
             }
           ]
         }

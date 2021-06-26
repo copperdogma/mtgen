@@ -18,7 +18,7 @@
     },
     {
       "defName": "soi-foils",
-      "query": "from[soi-main]"
+      "query": "from[soi-main]+from[soi]?type='Basic Land'"
     },
     {
       "defName": "soi-promo",
@@ -38,66 +38,13 @@
     {
       "packName": "soi-standard",
       "packDesc": "Shadows Over Innistrad: Standard Booster",
-      "packVersion": "1.1",
+      "packVersion": "1.2",
       "isGenerated": true,
       "cards": [
-        { "query": "take[7]>from[soi-main]?rarity='c" },
-        {
-          "querySet": [
-            {
-              "percent": "3/4",
-              "query": "from[soi-main]?rarity='c"
-            },
-            {
-              "percent": "1/4",
-              "query": "from[soi-foils]",
-              "canBeDuplicate": true,
-              "setValues": { "foil": true },
-              "_comment": "25% chance rare is a foil of any card, including land"
-            }
-          ]
-        },
-        {
-          "querySet": [
-            {
-              "percent": "56/64",
-              "query": "from[soi-main]?rarity='c"
-            },
-            {
-              "percent": "7/64",
-              "query": "from[soi-doubleface]?rarity='r"
-            },
-            {
-              "percent": "1/64",
-              "query": "from[soi-doubleface]?rarity='m"
-            }
-          ]
-        },
+        { "query": "take[9]>from[soi-main]?rarity='c" },
         { "query": "take[3]>from[soi-main]?rarity='u" },
-        {
-          "querySet": [
-            {
-              "percent": "7/8",
-              "query": "from[soi-main]?rarity='r"
-            },
-            {
-              "percent": "1/8",
-              "query": "from[soi-main]?rarity='m"
-            }
-          ]
-        },
-        {
-          "querySet": [
-            {
-              "percent": "10/13",
-              "query": "from[soi-doubleface]?rarity='c"
-            },
-            {
-              "percent": "3/13",
-              "query": "from[soi-doubleface]?rarity='u"
-            }
-          ]
-        },
+        { "query": "from[soi-main]?rarity=rarityByWeight2008(rm)" },
+        { "query": "from[soi-doubleface]?rarity=rarityByWeight2008(cu)" },
         {
           "querySet": [
             {
@@ -119,6 +66,29 @@
             {
               "percent": "50",
               "query": "from[soi]?token=true"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
+              "percent": "15/67",
+              "overrideSlot": "7",
+              "query": "from[soi-foils]?rarity=rarityByWeight2008(curm)",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Double-face card",
+              "percent": "1/8",
+              "overrideSlot": "8",
+              "query": "from[soi-doubleface]?rarity=rarityByWeight2008(rm)"
             }
           ]
         }

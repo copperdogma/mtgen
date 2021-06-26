@@ -1,7 +1,7 @@
 {
   "startProductName": "stx-prerelease",
   "packFiles": [
-    "packs.json?v1.9"
+    "packs.json?v1.10"
   ],
   "cardFiles": [
     "cardsMain.json",
@@ -15,6 +15,10 @@
     "cardsArtCards.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-06-25T23:30:00:00",
+      "HtmlString": "Foils now include basic lands."
+    },
     {
       "UpdateDate": "2021-06-15T23:00:00:00",
       "HtmlString": "Added Set Boosters, with The List and Art Cards."

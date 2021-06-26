@@ -1,452 +1,613 @@
 {
-    "_comment": "from: http://mtgsalvation.gamepedia.com/Khans_of_Tarkir#Prerelease",
-    "_comment": "You choose your clan for the prerelease. Each clan prerelease pack comes with a clan pin and a clan sticker. The prerelease pack further contains 5 regular booster packs, 1 seeded booster pack, 1 premium promo card, 1 activity insert and 1 Spindown life counter. Khans of Tarkir will feature 40 prerelease cards — one dated and stamped prerelease card random from a pool of eight for each Clan pack. One of which will be the Khan.",
-    "_comment": "if seeded are similar to other seeded (BNG): Your seeded booster pack contains lots of cards of the color that corresponds to the destiny you choose, but—and this is important!—not every card in the pack is in that color. So if you choose to be Destined to Dominate (because black is the best color—oops, bias!) your seeded booster pack will contain mostly black cards, but it will also have cards from the other colors.",
+  "_comment": "from: http://mtgsalvation.gamepedia.com/Khans_of_Tarkir#Prerelease",
+  "_comment2": "You choose your clan for the prerelease. Each clan prerelease pack comes with a clan pin and a clan sticker. The prerelease pack further contains 5 regular booster packs, 1 seeded booster pack, 1 premium promo card, 1 activity insert and 1 Spindown life counter. Khans of Tarkir will feature 40 prerelease cards — one dated and stamped prerelease card random from a pool of eight for each Clan pack. One of which will be the Khan.",
+  "_comment3": "if seeded are similar to other seeded (BNG): Your seeded booster pack contains lots of cards of the color that corresponds to the destiny you choose, but—and this is important!—not every card in the pack is in that color. So if you choose to be Destined to Dominate (because black is the best color—oops, bias!) your seeded booster pack will contain mostly black cards, but it will also have cards from the other colors.",
 
-    "defs": [
+  "defs": [
+    {
+      "defName": "ktk",
+      "query": "from[*]?set='ktk'"
+    },
+    {
+      "defName": "ktk-main",
+      "query": "from[ktk]-from[ktk]?type=(Marketing|Basic Land)-from[ktk]?token=true-from[ktk]?promo=true"
+    },
+    {
+      "defName": "ktk-intro-packs",
+      "query": "from[ktk]-from[ktk]?promo=true"
+    },
+    {
+      "defName": "ktk-foils",
+      "query": "from[ktk-main]+from[ktk]?type='Basic Land'"
+    },
+    {
+      "defName": "ktk-promo",
+      "query": "from[ktk]?promo=true"
+    },
+    {
+      "defName": "ktk-no-clan",
+      "query": "from[ktk-main]?clan=''"
+    },
+    {
+      "defName": "ktk-abzan-seeded",
+      "query": "from[ktk-main]?clan='abzan'+from[ktk-no-clan]?cost=contains({W}|{B}|{G})"
+    },
+    {
+      "defName": "ktk-jeskai-seeded",
+      "query": "from[ktk-main]?clan='jeskai'+from[ktk-no-clan]?cost=contains({U}|{R}|{W})"
+    },
+    {
+      "defName": "ktk-sultai-seeded",
+      "query": "from[ktk-main]?clan='sultai'+from[ktk-no-clan]?cost=contains({B}|{G}|{U})"
+    },
+    {
+      "defName": "ktk-mardu-seeded",
+      "query": "from[ktk-main]?clan='mardu'+from[ktk-no-clan]?cost=contains({R}|{W}|{B})"
+    },
+    {
+      "defName": "ktk-temur-seeded",
+      "query": "from[ktk-main]?clan='temur'+from[ktk-no-clan]?cost=contains({G}|{U}|{R})"
+    },
+    {
+      "defName": "ktk-fatpack",
+      "query": "from[ktk]?includedReason='Fat Pack Pack-In'"
+    }
+
+  ],
+  "packs": [
+    {
+      "packName": "ktk-all-cards",
+      "packDesc": "Khans of Tarkir: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[ktk]" }
+      ]
+    },
+
+    {
+      "packName": "ktk-standard",
+      "packDesc": "Khans of Tarkir: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[ktk-main]?rarity='c'" },
+        { "query": "take[3]>from[ktk-main]?rarity='u'" },
+        { "query": "from[ktk-main]?rarity=rarityByWeight2008(rm)" },
+        { "query": "from[ktk]?type='Basic Land'" },
         {
-            "defName": "ktk",
-            "query": "from[*]?set='ktk'"
+          "querySet": [
+            {
+              "percent": 50,
+              "query": "from[ktk]?type='Marketing'"
+            },
+            {
+              "percent": 50,
+              "query": "from[ktk]?token=true-from[ktk]?promo=true"
+            }
+          ]
         },
+
         {
-            "defName": "ktk-main",
-            "query": "from[ktk]-from[ktk]?type=(Marketing|Basic Land)-from[ktk]?token=true-from[ktk]?promo=true"
-        },
-        {
-            "defName": "ktk-intro-packs",
-            "query": "from[ktk]-from[ktk]?promo=true"
-        },
-        {
-            "defName": "ktk-foils",
-            "query": "from[ktk-main]"
-        },
-        {
-            "defName": "ktk-promo",
-            "query": "from[ktk]?promo=true"
-        },
-        {
-            "defName": "ktk-no-clan",
-            "query": "from[ktk-main]?clan=''"
-        },
-        {
-            "defName": "ktk-abzan-seeded",
-            "query": "from[ktk-main]?clan='abzan'+from[ktk-no-clan]?cost=contains({W}|{B}|{G})"
-        },
-        {
-            "defName": "ktk-jeskai-seeded",
-            "query": "from[ktk-main]?clan='jeskai'+from[ktk-no-clan]?cost=contains({U}|{R}|{W})"
-        },
-        {
-            "defName": "ktk-sultai-seeded",
-            "query": "from[ktk-main]?clan='sultai'+from[ktk-no-clan]?cost=contains({B}|{G}|{U})"
-        },
-        {
-            "defName": "ktk-mardu-seeded",
-            "query": "from[ktk-main]?clan='mardu'+from[ktk-no-clan]?cost=contains({R}|{W}|{B})"
-        },
-        {
-            "defName": "ktk-temur-seeded",
-            "query": "from[ktk-main]?clan='temur'+from[ktk-no-clan]?cost=contains({G}|{U}|{R})"
-        },
-        {
-            "defName": "ktk-fatpack",
-            "query": "from[ktk]?includedReason='Fat Pack Pack-In'"
+          "querySet": [
+            {
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
+              "percent": "15/67",
+              "overrideSlot": "10",
+              "query": "from[ktk-foils]?rarity=rarityByWeight2008(curm)",
+              "setValues": { "foil": true }
+            }
+          ]
         }
-
-    ],
-    "packs": [
+      ]
+    },
+    {
+      "packName": "ktk-promos",
+      "packDesc": "Khans of Tarkir: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[ktk-promo]" }
+      ]
+    },
+    {
+      "packName": "ktk-prerelease-promos",
+      "packDesc": "Khans of Tarkir: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[ktk-promo]?includedReason='Prerelease Promo'" }
+      ]
+    },
+    {
+      "packName": "ktk-seeded-booster-abzan",
+      "packDesc": "Khans of Tarkir: Abzan Seeded Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[ktk-main]?title=(Anafenza, the Foremost|Abzan Ascendancy|Duneblast|Hardened Scales|Herald of Anafenza|High Sentinels of Arashin|Ivorytusk Fortress|Retribution of the Ancients|Siege Rhino)" },
+        { "query": "from[ktk]?title='Abzan Banner'" },
         {
-            "packName": "ktk-all-cards",
-            "packDesc": "Khans of Tarkir: All Cards",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[ktk]" }
-            ]
-        },
-        {
-            "packName": "ktk-standard",
-            "packDesc": "Khans of Tarkir: Standard Booster",
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[ktk]?type='Basic Land'" },
-                { "query": "take[9]>from[ktk-main]?rarity='c'" },
-                {
-                    "querySet": [
-                        { "percent": 75, "query": "from[ktk-main]?rarity='c'" },
-                        { "percent": 25, "query": "from[ktk-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
-                    ]
-                },
-                { "query": "take[3]>from[ktk-main]?rarity='u'" },
-                {
-                    "querySet": [
-                        { "percent": 87.5, "query": "from[ktk-main]?rarity='r'" },
-                        { "percent": 12.5, "query": "from[ktk-main]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" }
-                    ]
-                },
-                {
-                    "querySet": [
-                        { "percent": 50, "query": "from[ktk]?type='Marketing'" },
-                        { "percent": 50, "query": "from[ktk]?token=true-from[ktk]?promo=true" }
-                    ]
-                }
-            ]
-        },
-        {
-            "packName": "ktk-promos",
-            "packDesc": "Khans of Tarkir: Promos",
-            "isGenerated": false,
-            "includeWithUserCards": false,
-            "cards": [
-                { "query": "take[*]>from[ktk-promo]" }
-            ]
-        },
-        {
-            "packName": "ktk-prerelease-promos",
-            "packDesc": "Khans of Tarkir: Prerelease Promos",
-            "isGenerated": false,
-            "includeWithUserCards": false,
-            "cards": [
-                { "query": "take[*]>from[ktk-promo]?includedReason='Prerelease Promo'" }
-            ]
-        },
-        {
-            "packName": "ktk-seeded-booster-abzan",
-            "packDesc": "Khans of Tarkir: Abzan Seeded Booster",
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[ktk-main]?title=(Anafenza, the Foremost|Abzan Ascendancy|Duneblast|Hardened Scales|Herald of Anafenza|High Sentinels of Arashin|Ivorytusk Fortress|Retribution of the Ancients|Siege Rhino)" },
-                { "query": "from[ktk]?title='Abzan Banner'" },
-                {
-                    "querySet": [
-                        { "query": "take[*]>from[ktk-main]?title=(Brave the Sands|Incremental Growth|Abzan Battle Priest|Sandsteppe Citadel|War Behemoth|Debilitating Injury|Ainok Bond-Kin|Abzan Guide|Longshot Squad|Salt Road Patrol|Krumar Bond-Kin|Jungle Hollow|Archers' Parapet|Smite the Monstrous)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Chief of the Scale|Abzan Charm|Venerable Lammasu|Sandsteppe Citadel|Salt Road Patrol|Debilitating Injury|Kin-Tree Warden|Abzan Guide|Ainok Bond-Kin|Unyielding Krumar|Smite the Monstrous|Longshot Squad|Feat of Resistance|Blossoming Sands)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Venerable Lammasu|Abzan Charm|Abzan Battle Priest|Sandsteppe Citadel|Archers' Parapet|Debilitating Injury|Naturalize|Ainok Bond-Kin|Abzan Guide|Dragonscale Boon|War Behemoth|Scoured Barrens|Salt Road Patrol|Longshot Squad)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Chief of the Scale|Abzan Falconer|Windstorm|Sandsteppe Citadel|Unyielding Krumar|War Behemoth|Abzan Guide|Disowned Ancestor|Alabaster Kirin|Dragonscale Boon|Siegecraft|Debilitating Injury|Salt Road Patrol|Jungle Hollow)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Abzan Falconer|Mer-Ek Nightblade|Dazzling Ramparts|Sandsteppe Citadel|Alabaster Kirin|Abzan Guide|Siegecraft|Disowned Ancestor|Kin-Tree Warden|Throttle|War Behemoth|Blossoming Sands|Debilitating Injury|Feat of Resistance)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Watcher of the Roost|Tuskguard Captain|Brave the Sands|Sandsteppe Citadel|Longshot squad|Erase|Abzan Guide|Defiant Strike|Throttle|Ainok Bond-Kin|Scoured Barrens|Alabaster Kirin|Dragonscale Boon|War Behemoth)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Mer-Ek Nightblade|Suspension Field|Raiders' Spoils|Sandsteppe Citadel|Throttle|War Behemoth|Disowned Ancestor|Abzan Guide|Dragonscale Boon|Ainok Bond-Kin|Krumar Bond-Kin|Salt Road Patrol|Jungle Hollow|Unyielding Krumar)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Armament Corps|Take Up Arms|Windstorm|Sandsteppe Citadel|Ainok Bond-Kin|Abzan Guide|Dragonscale Boon|Disowned Ancestor|Salt Road Patrol|Throttle|Alabaster Kirin|War Behemoth|Debilitating Injury|Jungle Hollow)" }
-                    ]
-                }
-            ]
-        },
-        {
-            "packName": "ktk-seeded-booster-packins-abzan",
-            "packDesc": "Khans of Tarkir: Abzan Pack-Ins",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[ktk]?title=(Abzan Clan Info Card|Abzan Activity Card|Abzan Spindown Life Counter|Abzan Clan Button|Abzan Clan Sticker)" }
-            ]
-        },
-        {
-            "packName": "ktk-seeded-booster-jeskai",
-            "packDesc": "Khans of Tarkir: Jeskai Seeded Booster",
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[ktk]?title=contains(Narset, Enlightened Master|Dragon-Style Twins|Flying Crane Technique|Jeskai Ascendancy|Mantis Rider|Master of Pearls|Sage of the Inward Eye|Thousand Winds)" },
-                { "query": "from[ktk]?title='Jeskai Banner'" },
-                {
-                    "querySet": [
-                        { "query": "take[*]>from[ktk-main]?title=(Burn Away|Warden of the Eye|Monastery Swiftspear|Mystic Monastery|Jeskai Windscout|Singing Bell Strike|Sage-Eye Harrier|Bloodfire Mentor|Crippling Chill|Smite the Monstrous|Disdainful Stroke|Efreet Weaponmaster|Tranquil Cove|Leaping Master)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Riverwheel Aerialists|Suspension Field|Jeskai Elder|Mystic Monastery|Cancel|Bloodfire Expert|Smite the Monstrous|Whirlwind Adept|Efreet Weaponmaster|Monastery Flock|Swift Kick|Tranquil Cove|Mystic of the Hidden Way|Leaping Master)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Master the Way|Quiet Contemplation|Mistfire Weaver|Mystic Monastery|Leaping Master|Sage-Eye Harrier|Whirlwind Adept|Bloodfire Mentor|Jeskai Windscout|Smite the Monstrous|Efreet Weaponmaster|Tranquil Cove|Bloodfire Expert|Singing Bell Strike)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Highspire Mantis|Blinding Spray|Suspension Field|Mystic Monastery|Bloodfire Expert|Jeskai Windscout|Leaping Master|Sage-Eye Harrier|Mystic of the Hidden Way|Bloodfire Mentor|Disdainful Stroke|Efreet Weaponmaster|Wind-Scarred Crag|Swift Kick)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Arc Lightning|Dragon's Eye Savants|Take Up Arms|Mystic Monastery|Jeskai Student|Jeskai Windscout|Bloodfire Mentor|Alabaster Kirin|Mystic of the Hidden Way|Defiant Strike|Crippling Chill|Smite the Monstrous|Efreet Weaponmaster|Swiftwater Cliffs)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Jeskai Charm|Jeskai Elder|Goblinslide|Mystic Monastery|Smite the Monstrous|Bloodfire Mentor|Sage-Eye Harrier|Efreet Weaponmaster|Wind-Scarred Crag|Jeskai Windscout|Jeskai Student|Lens of Clarity|Cancel|Alabaster Kirin)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Seeker of the Way|Mistfire Weaver|Venerable Lammasu|Mystic Monastery|Smite the Monstrous|Jeskai Windscout|Efreet Weaponmaster|Erase|Crippling Chill|Swift Kick|Whirlwind Adept|Jeskai Student|Swiftwater Cliffs|Alabaster Kirin)" }
-                    ]
-                }
-            ]
-        },
-        {
-            "packName": "ktk-seeded-booster-packins-jeskai",
-            "packDesc": "Khans of Tarkir: Jeskai Pack-Ins",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[ktk]?title=(Jeskai Clan Info Card|Jeskai Activity Card|Jeskai Spindown Life Counter|Jeskai Clan Button|Jeskai Clan Sticker)" }
-            ]
-        },
-        {
-            "packName": "ktk-seeded-booster-sultai",
-            "packDesc": "Khans of Tarkir: Sultai Seeded Booster",
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[ktk]?title=contains(Sidisi, Brood Tyrant|Dig Through Time|Grim Haruspex|Kheru Lich Lord|Kheru Spellsnatcher|Meandering Towershell|Necropolis Fiend|Rakshasa Deathdealer|Rakshasa Vizier|Sultai Ascendancy|Villainous Wealth)" },
-                { "query": "from[ktk]?title='Sultai Banner'" },
-                {
-                    "querySet": [
-                        { "query": "take[*]>from[ktk-main]?title=(Sultai Soothsayer|Windstorm|Kheru Bloodsucker|Opulent Palace|Smoke Teller|Shambling Attendants|Hooting Mandrills|Rite of the Serpent|Sagu Archer|Treasure Cruise|Scout the Borders|Abomination of Gudul|Thornwood Falls|Debilitating Injury)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Sultai Charm|Kheru Bloodsucker|Sultai Flayer|Opulent Palace|Smoke Teller|Sidisi's Pet|Scout the Borders|Bitter Revelation|Treasure Cruise|Debilitating Injury|Abomination of Gudul|Thornwood Falls|Hooting Mandrills|Rotting Mastodon)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Become Immense|Swarm of Bloodflies|Sultai Charm|Opulent Palace|Hooting Mandrills|Treasure Cruise|Scout the Borders|Sidisi's Pet|Throttle|Sagu Archer|Rotting Mastodon|Abomination of Gudul|Dismal Backwater|Smoke Teller)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Swarm of Bloodflies|Sultai Charm|Ruthless Ripper|Opulent Palace|Rotting Mastodon|Sagu Archer|Kheru Dreadmaw|Taigam's Scheming|Sultai Scavenger|Abomination of Gudul|Rakshasa's Secret|Thornwood Falls|Molting Snakeskin|Debilitating Injury)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Murderous Cut|Sultai Soothsayer|Gurmag Swiftwing|Opulent Palace|Taigam's Scheming|Debilitating Injury|Sagu Archer|Sidisi's Pet|Treasure Cruise|Rotting Mastodon|Abomination of Gudul|Shambling Attendants|Thornwood Falls|Dutiful Return)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Gurmag Swiftwing|Set Adrift|Ruthless Ripper|Opulent Palace|Debilitating Injury|Wetland Sambar|Sagu Archer|Sultai Scavenger|Abomination of Gudul|Dutiful Return|Taigam's Scheming|Rotting Mastodon|Jungle Hollow|Sidisi's Pet)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Dead Drop|Windstorm|Swarm of Bloodflies|Opulent Palace|Scout the Borders|Treasure Cruise|Bitter Revelation|Sagu Archer|Shambling Attendants|Hooting Mandrills|Abomination of Gudul|Debilitating Injury|Smoke Teller|Dismal Backwater)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Death Frenzy|Ruthless Ripper|Cranial Archive|Opulent Palace|Treasure Cruise|Scout the Borders|Rite of the Serpent|Hooting Mandrills|Rotting Mastodon|Dismal Backwater|Sidisi's Pet|Abomination of Gudul|Smoke Teller|Kheru Dreadmaw)" }
-                    ]
-                }
-            ]
-        },
-        {
-            "packName": "ktk-seeded-booster-packins-sultai",
-            "packDesc": "Khans of Tarkir: Sultai Pack-Ins",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[ktk]?title=(Sultai Clan Info Card|Sultai Activity Card|Sultai Spindown Life Counter|Sultai Clan Button|Sultai Clan Sticker)" }
-            ]
-        },
-        {
-            "packName": "ktk-seeded-booster-mardu",
-            "packDesc": "Khans of Tarkir: Mardu Seeded Booster",
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[ktk]?title=contains(Zurgo Helmsmasher|Ankle Shanker|Bloodsoaked Champion|Butcher of the Horde|Crackling Doom|Howl of the Horde|Jeering Instigator|Mardu Ascendancy)" },
-                { "query": "from[ktk]?title='Mardu Banner'" },
-                {
-                    "querySet": [
-                        { "query": "take[*]>from[ktk-main]?title=(Horde Ambusher|Timely Hordemate|Burn Away|Nomad Outpost|Mardu Warshrieker|Kill Shot|Ponyback Brigade|Valley Dasher|Debilitating Injury|Rush of Battle|Scoured Barrens|Mardu Hordechief|Canyon Lurkers|Mardu Hateblade)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Burn Away|Despise|War-Name Aspirant|Nomad Outpost|Debilitating Injury|Mardu Hateblade|Wind-Scarred Crag|Valley Dasher|Mardu Warshrieker|Ponyback Brigade|Alabaster Kirin|Canyon Lurkers|Mardu Skullhunter|Act of Treason)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Timely Hordemate|Mardu Charm|Horde Ambusher|Nomad Outpost|Kill Shot|Ponyback Brigade|Throttle|Shatter|Firehoof Cavalry|Valley Dasher|Mardu Hordechief|Mardu Warshrieker|Molting Snakeskin|Bloodfell Caves)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Arc Lightning|Bellowing Saddlebrute|Horde Ambusher|Nomad Outpost|Canyon Lurkers|Mardu Hateblade|Shatter|Ponyback Brigade|Trumpet Blast|Mardu Skullhunter|Kill Shot|Valley Dasher|Wind-Scarred Crag|Mardu Warshrieker)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Hordeling Outburst|Chief of the Edge|Timely Hordemate|Nomad Outpost|Firehoof Cavalry|Act of Treason|Mardu Hordechief|Debilitating Injury|Arrow Storm|Ponyback Brigade|Canyon Lurkers|Rush of Battle|Mardu Warshrieker|Bloodfell Caves)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Bellowing Saddlebrute|Mardu Roughrider|Despise|Nomad Outpost|Throttle|Mardu Warshrieker|Kill Shot|Valley Dasher|Ponyback Brigade|Mardu Skullhunter|Canyon Lurkers|Mardu Hateblade|Tormenting Voice|Scoured Barrens)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Horde Ambusher|Mardu Charm|Mardu Heart-Piercer|Nomad Outpost|Valley Dasher|Throttle|Tormenting Voice|Ponyback Brigade|Mardu Skullhunter|Canyon Lurkers|Act of Treason|Kill Shot|Mardu Warshrieker|Wind-Scarred Crag)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Mardu Blazebringer|Ride Down|Burn Away|Nomad Outpost|Ponyback Brigade|Mardu Skullhunter|Mardu Hordechief|Debilitating Injury|Mardu Warshrieker|Firehoof Cavalry|Trumpet Blast|Valley Dasher|Scoured Barrens|Canyon Lurkers)" }
-                    ]
-                }
-            ]
-        },
-        {
-            "packName": "ktk-seeded-booster-packins-mardu",
-            "packDesc": "Khans of Tarkir: Mardu Pack-Ins",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[ktk]?title=(Mardu Clan Info Card|Mardu Activity Card|Mardu Spindown Life Counter|Mardu Clan Button|Mardu Clan Sticker)" }
-            ]
-        },
-        {
-            "packName": "ktk-seeded-booster-temur",
-            "packDesc": "Khans of Tarkir: Temur Seeded Booster",
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[ktk]?title=contains(Surrak Dragonclaw|Avalanche Tusker|Crater's Claws|Icy Blast|Rattleclaw Mystic|Savage Knuckleblade|Temur Ascendancy|Trap Essence)" },
-                { "query": "from[ktk]?title='Temur Banner'" },
-                {
-                    "querySet": [
-                        { "query": "take[*]>from[ktk-main]?title=(Waterwhirl|Temur Charger|Bear's Companion|Frontier Bivouac|Force Away|Ainok Tracker|Tusked Colossodon|Lens of Clarity|Wetland Sambar|Alpine Grizzly|Snowhorn Rider|Thornwood Falls|Bring Low|Embodiment of Spring)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Temur Charm|Pine Walker|Secret Plans|Frontier Bivouac|Weave Fate|Woolly Loxodon|Ainok Tracker|Naturalize|Scaldkin|Alpine Grizzly|Snowhorn Rider|Rugged Highlands|Savage Punch|Embodiment of Spring)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Icefeather Aven|Stubborn Denial|Burn Away|Frontier Bivouac|Barrage of Boulders|Glacial Stalker|Tusked Colossodon|Wetland Sambar|Alpine Grizzly|Snowhorn Rider|Woolly Loxodon|Thornwood Falls|Embodiment of Spring|Savage Punch)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Bear's Companion|Heir of the Wilds|Dragon Grip|Frontier Bivouac|Summit Prowler|Glacial Stalker|Awaken the Bear|Force Away|Feed the Clan|Snowhorn Rider|Thornwood Falls|Ainok Tracker|Woolly Loxodon|Highland Game)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Heir of the Wilds|Winterflame|Windstorm|Frontier Bivouac|Alpine Grizzly|Ainok Tracker|Tusked Colossodon|Barrage of Boulders|Glacial Stalker|Summit Prowler|Snowhorn Rider|Thornwood Falls|Scaldkin|Savage Punch)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Icefeather Aven|Pine Walker|Burn Away|Frontier Bivouac|Highland Game|Scaldkin|Savage Punch|Ainok Tracker|Glacial Stalker|Feed the Clan|Force Away|Alpine Grizzly|Snowhorn Rider|Rugged Highlands)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Temur Charger|Dragon Grip|Seek the Horizon|Frontier Bivouac|Ainok Tracker|Alpine Grizzly|Force Away|Bring Low|Glacial Stalker|Tusked Colossodon|Summit Prowler|Highland Game|Snowhorn Rider|Swiftwater Cliffs)" },
-                        { "query": "take[*]>from[ktk-main]?title=(Arc Lightning|Scion of Glaciers|Roar of Challenge|Frontier Bivouac|Glacial Stalker|Ainok Tracker|Embodiment of Spring|Highland Game|Scaldkin|Alpine Grizzly|Snowhorn Rider|Swiftwater Cliffs|Awaken the Bear|Force Away)" }
-                    ]
-                }
-            ]
-        },
-        {
-            "packName": "ktk-seeded-booster-packins-temur",
-            "packDesc": "Khans of Tarkir: Temur Pack-Ins",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[ktk]?title=(Temur Clan Info Card|Temur Activity Card|Temur Spindown Life Counter|Temur Clan Button|Temur Clan Sticker)" }
-            ]
-        },
-        {
-            "packName": "2015-intro-deck-price-of-glory",
-            "packDesc": "2015 Intro Deck: Price of Glory (White/Black)",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[3]>from[ktk-intro-packs]?title='Soulmender'", "canBeDuplicate": true },
-                { "query": "from[ktk-intro-packs]?title='Kinsbaile Skirmisher'" },
-                { "query": "from[ktk-intro-packs]?title='Wall of Essence'" },
-                { "query": "take[2]>from[ktk-intro-packs]?title='Child of Night'", "canBeDuplicate": true },
-                { "query": "from[ktk-intro-packs]?title='Accursed Spirit'" },
-                { "query": "from[ktk-intro-packs]?title='Tireless Missionaries'" },
-                { "query": "take[3]>from[ktk-intro-packs]?title='Sign in Blood'", "canBeDuplicate": true },
-                { "query": "from[ktk-intro-packs]?title='Solemn Offering'" },
-                { "query": "from[ktk-intro-packs]?title='Mass Calcify'" },
-                { "query": "from[ktk-intro-packs]?title='Staff of the Death Magus'" },
-                { "query": "from[ktk-intro-packs]?title='Staff of the Sun Magus'" },
-                { "query": "from[ktk-intro-packs]?title='Crippling Blight'" },
-                { "query": "from[ktk-intro-packs]?title='Divine Favor'" },
-                { "query": "take[12]>from[ktk-intro-packs]?title='Plains'", "canBeDuplicate": true },
-                { "query": "take[13]>from[ktk-intro-packs]?title='Swamp'", "canBeDuplicate": true }
-            ]
-        },
-        {
-            "packName": "2015-intro-deck-price-of-glory-foil",
-            "packDesc": "2015 Intro Deck: Price of Glory Premium Foil",
-            "isGenerated": false,
-            "cards": [
-                { "query": "from[ktk-intro-packs]?title='Resolute Archangel'", "setValues": { "foil": true } }
-            ]
-        },
-        {
-            "packName": "2015-intro-deck-hit-the-ground-running",
-            "packDesc": "2015 Intro Deck: Hit the Ground Running (Blue/Green)",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[2]>from[ktk-intro-packs]?title='Runeclaw Bear'", "canBeDuplicate": true },
-                { "query": "from[ktk-intro-packs]?title='Illusory Angel'" },
-                { "query": "take[2]>from[ktk-intro-packs]?title='Roaring Primadox'", "canBeDuplicate": true },
-                { "query": "from[ktk-intro-packs]?title='Stormtide Leviathan'" },
-                { "query": "take[2]>from[ktk-intro-packs]?title='Into the Void'", "canBeDuplicate": true },
-                { "query": "from[ktk-intro-packs]?title='Restock'" },
-                { "query": "from[ktk-intro-packs]?title='Negate'" },
-                { "query": "take[2]>from[ktk-intro-packs]?title='Peel from Reality'", "canBeDuplicate": true },
-                { "query": "from[ktk-intro-packs]?title='Turn to Frog'" },
-                { "query": "from[ktk-intro-packs]?title='Plummet'" },
-                { "query": "from[ktk-intro-packs]?title='Encrust'" },
-                { "query": "take[13]>from[ktk-intro-packs]?title='Island'", "canBeDuplicate": true },
-                { "query": "take[12]>from[ktk-intro-packs]?title='Forest'", "canBeDuplicate": true }
-            ]
-        },
-        {
-            "packName": "2015-intro-deck-hit-the-ground-running-foil",
-            "packDesc": "2015 Intro Deck: Hit the Ground Running Premium Foil",
-            "isGenerated": false,
-            "cards": [
-                { "query": "from[ktk-intro-packs]?title='Mercurial Pretender'", "setValues": { "foil": true } }
-            ]
-        },
-        {
-            "packName": "2015-intro-deck-infernal-intervention",
-            "packDesc": "2015 Intro Deck: Infernal Intervention (Black/Red)",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[3]>from[ktk-intro-packs]?title='Typhoid Rats'", "canBeDuplicate": true },
-                { "query": "take[2]>from[ktk-intro-packs]?title='Torch Fiend'", "canBeDuplicate": true },
-                { "query": "take[2]>from[ktk-intro-packs]?title='Gargoyle Sentinel'", "canBeDuplicate": true },
-                { "query": "take[2]>from[ktk-intro-packs]?title='Goblin Roughrider'", "canBeDuplicate": true },
-                { "query": "from[ktk-intro-packs]?title='Wall of Fire'" },
-                { "query": "from[ktk-intro-packs]?title='Gravedigger'" },
-                { "query": "from[ktk-intro-packs]?title='Zof Shade'" },
-                { "query": "from[ktk-intro-packs]?title='Thundering Giant'" },
-                { "query": "from[ktk-intro-packs]?title='Clear a Path'" },
-                { "query": "from[ktk-intro-packs]?title='Cone of Flame'" },
-                { "query": "take[2]>from[ktk-intro-packs]?title='Lightning Strike'", "canBeDuplicate": true },
-                { "query": "take[2]>from[ktk-intro-packs]?title='Heat Ray'", "canBeDuplicate": true },
-                { "query": "from[ktk-intro-packs]?title='Stab Wound'" },
-                { "query": "from[ktk-intro-packs]?title='Caustic Tar'" },
-                { "query": "take[13]>from[ktk-intro-packs]?title='Swamp'", "canBeDuplicate": true },
-                { "query": "take[13]>from[ktk-intro-packs]?title='Mountain'", "canBeDuplicate": true }
-            ]
-        },
-        {
-            "packName": "2015-intro-deck-infernal-intervention-foil",
-            "packDesc": "2015 Intro Deck: Infernal Intervention Premium Foil",
-            "isGenerated": false,
-            "cards": [
-                { "query": "from[ktk-intro-packs]?title='Indulgent Tormentor'", "setValues": { "foil": true } }
-            ]
-        },
-        {
-            "packName": "2015-intro-deck-flames-of-the-dragon",
-            "packDesc": "2015 Intro Deck: Flames of the Dragon (Red/Blue)",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[2]>from[ktk-intro-packs]?title='Ornithopter'", "canBeDuplicate": true },
-                { "query": "take[3]>from[ktk-intro-packs]?title='Bronze Sable'", "canBeDuplicate": true },
-                { "query": "take[2]>from[ktk-intro-packs]?title='Welkin Tern'", "canBeDuplicate": true },
-                { "query": "from[ktk-intro-packs]?title='Rummaging Goblin'" },
-                { "query": "take[3]>from[ktk-intro-packs]?title='Aeronaut Tinkerer'", "canBeDuplicate": true },
-                { "query": "take[2]>from[ktk-intro-packs]?title='Krenko’s Enforcer'", "canBeDuplicate": true },
-                { "query": "take[2]>from[ktk-intro-packs]?title='Wall of Frost'", "canBeDuplicate": true },
-                { "query": "take[2]>from[ktk-intro-packs]?title='Juggernaut'", "canBeDuplicate": true },
-                { "query": "take[3]>from[ktk-intro-packs]?title='Scrapyard Mongrel'", "canBeDuplicate": true },
-                { "query": "from[ktk-intro-packs]?title='Hoarding Dragon'" },
-                { "query": "take[2]>from[ktk-intro-packs]?title='Glacial Crasher'", "canBeDuplicate": true },
-                { "query": "from[ktk-intro-packs]?title='Siege Dragon'" },
-                { "query": "take[2]>from[ktk-intro-packs]?title='Lava Axe'", "canBeDuplicate": true },
-                { "query": "from[ktk-intro-packs]?title='Shrapnel Blast'" },
-                { "query": "from[ktk-intro-packs]?title='Rogue’s Gloves'" },
-                { "query": "from[ktk-intro-packs]?title='Sacred Armory'" },
-                { "query": "from[ktk-intro-packs]?title='Tyrant’s Machine'" },
-                { "query": "from[ktk-intro-packs]?title='Brawler’s Plate'" },
-                { "query": "from[ktk-intro-packs]?title='Staff of the Flame Magus'" },
-                { "query": "from[ktk-intro-packs]?title='Staff of the Mind Magus'" },
-                { "query": "from[ktk-intro-packs]?title='Darksteel Citadel'" },
-                { "query": "take[2]>from[ktk-intro-packs]?title='Ensoul Artifact'", "canBeDuplicate": true },
-                { "query": "take[12]>from[ktk-intro-packs]?title='Mountain'", "canBeDuplicate": true },
-                { "query": "take[12]>from[ktk-intro-packs]?title='Island'", "canBeDuplicate": true }
-            ]
-        },
-        {
-            "packName": "2015-intro-deck-flames-of-the-dragon-foil",
-            "packDesc": "2015 Intro Deck: Flames of the Dragon Premium Foil",
-            "isGenerated": false,
-            "cards": [
-                { "query": "from[ktk-intro-packs]?title='Siege Dragon'", "setValues": { "foil": true } }
-            ]
-        },
-        {
-            "packName": "2015-intro-deck-will-of-the-masses",
-            "packDesc": "2015 Intro Deck: Will of the Masses (Green/White)",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[2]>from[ktk-intro-packs]?title='Selfless Cathar'", "canBeDuplicate": true },
-                { "query": "from[ktk-intro-packs]?title='Wall of Mulch'" },
-                { "query": "take[2]>from[ktk-intro-packs]?title='Midnight Guard'", "canBeDuplicate": true },
-                { "query": "take[2]>from[ktk-intro-packs]?title='Siege Wurm'", "canBeDuplicate": true },
-                { "query": "from[ktk-intro-packs]?title='Hornet Queen'" },
-                { "query": "from[ktk-intro-packs]?title='Overwhelm'" },
-                { "query": "from[ktk-intro-packs]?title='Gather Courage'" },
-                { "query": "from[ktk-intro-packs]?title='Naturalize'" },
-                { "query": "from[ktk-intro-packs]?title='Titanic Growth'" },
-                { "query": "take[3]>from[ktk-intro-packs]?title='Raise the Alarm'", "canBeDuplicate": true },
-                { "query": "take[2]>from[ktk-intro-packs]?title='Devouring Light'", "canBeDuplicate": true },
-                { "query": "take[13]>from[ktk-intro-packs]?title='Forest'", "canBeDuplicate": true },
-                { "query": "take[12]>from[ktk-intro-packs]?title='Plains'", "canBeDuplicate": true }
-            ]
-        },
-        {
-            "packName": "2015-intro-deck-will-of-the-masses-foil",
-            "packDesc": "2015 Intro Deck: Will of the Masses Premium Foil",
-            "isGenerated": false,
-            "cards": [
-                { "query": "from[ktk-intro-packs]?title='Phytotitan'", "setValues": { "foil": true } }
-            ]
-        },
-        {
-            "packName": "ktk-fat-pack-pack-ins",
-            "packDesc": "Khans of Tarkir Fat Pack: Pack-Ins",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[ktk]?title=(Khans of Tarkir Player’s Guide|Khans of Tarkir Card Box|Khans of Tarkir Mural|Khans of Tarkir Rules Reference Card)" },
-                { "query": "from[ktk-fatpack]?type='Life Counter'", "canBeDuplicate": true },
-                { "query": "take[2]>from[ktk]?title='Khans of Tarkir Deck Box'", "canBeDuplicate": true }
-            ]
-        },
-        {
-            "packName": "ktk-fat-pack-land",
-            "packDesc": "Khans of Tarkir Fat Pack: Land",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[16]>from[ktk]?title='Plains'", "canBeDuplicate": true },
-                { "query": "take[16]>from[ktk]?title='Island'", "canBeDuplicate": true },
-                { "query": "take[16]>from[ktk]?title='Swamp'", "canBeDuplicate": true },
-                { "query": "take[16]>from[ktk]?title='Forest'", "canBeDuplicate": true },
-                { "query": "take[16]>from[ktk]?title='Mountain'", "canBeDuplicate": true }
-            ]
-        },
-        {
-            "packName": "ktk-gift-box-pack-ins",
-            "packDesc": "Khans of Tarkir Gift Box: Pack-Ins",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[ktk]?title=(Khans of Tarkir Storage Box|Khans of Tarkir Illustrated Plastic Dividers|Khans of Tarkir Plastic Divider Sticker Sheet)" }
-            ]
-        },
-        {
-            "packName": "ktk-gift-box-land",
-            "packDesc": "Khans of Tarkir Gift Box: Land",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[ktk]?type='Basic Land'" }
-            ]
+          "querySet": [
+            { "query": "take[*]>from[ktk-main]?title=(Brave the Sands|Incremental Growth|Abzan Battle Priest|Sandsteppe Citadel|War Behemoth|Debilitating Injury|Ainok Bond-Kin|Abzan Guide|Longshot Squad|Salt Road Patrol|Krumar Bond-Kin|Jungle Hollow|Archers' Parapet|Smite the Monstrous)" },
+            { "query": "take[*]>from[ktk-main]?title=(Chief of the Scale|Abzan Charm|Venerable Lammasu|Sandsteppe Citadel|Salt Road Patrol|Debilitating Injury|Kin-Tree Warden|Abzan Guide|Ainok Bond-Kin|Unyielding Krumar|Smite the Monstrous|Longshot Squad|Feat of Resistance|Blossoming Sands)" },
+            { "query": "take[*]>from[ktk-main]?title=(Venerable Lammasu|Abzan Charm|Abzan Battle Priest|Sandsteppe Citadel|Archers' Parapet|Debilitating Injury|Naturalize|Ainok Bond-Kin|Abzan Guide|Dragonscale Boon|War Behemoth|Scoured Barrens|Salt Road Patrol|Longshot Squad)" },
+            { "query": "take[*]>from[ktk-main]?title=(Chief of the Scale|Abzan Falconer|Windstorm|Sandsteppe Citadel|Unyielding Krumar|War Behemoth|Abzan Guide|Disowned Ancestor|Alabaster Kirin|Dragonscale Boon|Siegecraft|Debilitating Injury|Salt Road Patrol|Jungle Hollow)" },
+            { "query": "take[*]>from[ktk-main]?title=(Abzan Falconer|Mer-Ek Nightblade|Dazzling Ramparts|Sandsteppe Citadel|Alabaster Kirin|Abzan Guide|Siegecraft|Disowned Ancestor|Kin-Tree Warden|Throttle|War Behemoth|Blossoming Sands|Debilitating Injury|Feat of Resistance)" },
+            { "query": "take[*]>from[ktk-main]?title=(Watcher of the Roost|Tuskguard Captain|Brave the Sands|Sandsteppe Citadel|Longshot squad|Erase|Abzan Guide|Defiant Strike|Throttle|Ainok Bond-Kin|Scoured Barrens|Alabaster Kirin|Dragonscale Boon|War Behemoth)" },
+            { "query": "take[*]>from[ktk-main]?title=(Mer-Ek Nightblade|Suspension Field|Raiders' Spoils|Sandsteppe Citadel|Throttle|War Behemoth|Disowned Ancestor|Abzan Guide|Dragonscale Boon|Ainok Bond-Kin|Krumar Bond-Kin|Salt Road Patrol|Jungle Hollow|Unyielding Krumar)" },
+            { "query": "take[*]>from[ktk-main]?title=(Armament Corps|Take Up Arms|Windstorm|Sandsteppe Citadel|Ainok Bond-Kin|Abzan Guide|Dragonscale Boon|Disowned Ancestor|Salt Road Patrol|Throttle|Alabaster Kirin|War Behemoth|Debilitating Injury|Jungle Hollow)" }
+          ]
         }
+      ]
+    },
+    {
+      "packName": "ktk-seeded-booster-packins-abzan",
+      "packDesc": "Khans of Tarkir: Abzan Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[ktk]?title=(Abzan Clan Info Card|Abzan Activity Card|Abzan Spindown Life Counter|Abzan Clan Button|Abzan Clan Sticker)" }
+      ]
+    },
+    {
+      "packName": "ktk-seeded-booster-jeskai",
+      "packDesc": "Khans of Tarkir: Jeskai Seeded Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[ktk]?title=contains(Narset, Enlightened Master|Dragon-Style Twins|Flying Crane Technique|Jeskai Ascendancy|Mantis Rider|Master of Pearls|Sage of the Inward Eye|Thousand Winds)" },
+        { "query": "from[ktk]?title='Jeskai Banner'" },
+        {
+          "querySet": [
+            { "query": "take[*]>from[ktk-main]?title=(Burn Away|Warden of the Eye|Monastery Swiftspear|Mystic Monastery|Jeskai Windscout|Singing Bell Strike|Sage-Eye Harrier|Bloodfire Mentor|Crippling Chill|Smite the Monstrous|Disdainful Stroke|Efreet Weaponmaster|Tranquil Cove|Leaping Master)" },
+            { "query": "take[*]>from[ktk-main]?title=(Riverwheel Aerialists|Suspension Field|Jeskai Elder|Mystic Monastery|Cancel|Bloodfire Expert|Smite the Monstrous|Whirlwind Adept|Efreet Weaponmaster|Monastery Flock|Swift Kick|Tranquil Cove|Mystic of the Hidden Way|Leaping Master)" },
+            { "query": "take[*]>from[ktk-main]?title=(Master the Way|Quiet Contemplation|Mistfire Weaver|Mystic Monastery|Leaping Master|Sage-Eye Harrier|Whirlwind Adept|Bloodfire Mentor|Jeskai Windscout|Smite the Monstrous|Efreet Weaponmaster|Tranquil Cove|Bloodfire Expert|Singing Bell Strike)" },
+            { "query": "take[*]>from[ktk-main]?title=(Highspire Mantis|Blinding Spray|Suspension Field|Mystic Monastery|Bloodfire Expert|Jeskai Windscout|Leaping Master|Sage-Eye Harrier|Mystic of the Hidden Way|Bloodfire Mentor|Disdainful Stroke|Efreet Weaponmaster|Wind-Scarred Crag|Swift Kick)" },
+            { "query": "take[*]>from[ktk-main]?title=(Arc Lightning|Dragon's Eye Savants|Take Up Arms|Mystic Monastery|Jeskai Student|Jeskai Windscout|Bloodfire Mentor|Alabaster Kirin|Mystic of the Hidden Way|Defiant Strike|Crippling Chill|Smite the Monstrous|Efreet Weaponmaster|Swiftwater Cliffs)" },
+            { "query": "take[*]>from[ktk-main]?title=(Jeskai Charm|Jeskai Elder|Goblinslide|Mystic Monastery|Smite the Monstrous|Bloodfire Mentor|Sage-Eye Harrier|Efreet Weaponmaster|Wind-Scarred Crag|Jeskai Windscout|Jeskai Student|Lens of Clarity|Cancel|Alabaster Kirin)" },
+            { "query": "take[*]>from[ktk-main]?title=(Seeker of the Way|Mistfire Weaver|Venerable Lammasu|Mystic Monastery|Smite the Monstrous|Jeskai Windscout|Efreet Weaponmaster|Erase|Crippling Chill|Swift Kick|Whirlwind Adept|Jeskai Student|Swiftwater Cliffs|Alabaster Kirin)" }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "ktk-seeded-booster-packins-jeskai",
+      "packDesc": "Khans of Tarkir: Jeskai Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[ktk]?title=(Jeskai Clan Info Card|Jeskai Activity Card|Jeskai Spindown Life Counter|Jeskai Clan Button|Jeskai Clan Sticker)" }
+      ]
+    },
+    {
+      "packName": "ktk-seeded-booster-sultai",
+      "packDesc": "Khans of Tarkir: Sultai Seeded Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[ktk]?title=contains(Sidisi, Brood Tyrant|Dig Through Time|Grim Haruspex|Kheru Lich Lord|Kheru Spellsnatcher|Meandering Towershell|Necropolis Fiend|Rakshasa Deathdealer|Rakshasa Vizier|Sultai Ascendancy|Villainous Wealth)" },
+        { "query": "from[ktk]?title='Sultai Banner'" },
+        {
+          "querySet": [
+            { "query": "take[*]>from[ktk-main]?title=(Sultai Soothsayer|Windstorm|Kheru Bloodsucker|Opulent Palace|Smoke Teller|Shambling Attendants|Hooting Mandrills|Rite of the Serpent|Sagu Archer|Treasure Cruise|Scout the Borders|Abomination of Gudul|Thornwood Falls|Debilitating Injury)" },
+            { "query": "take[*]>from[ktk-main]?title=(Sultai Charm|Kheru Bloodsucker|Sultai Flayer|Opulent Palace|Smoke Teller|Sidisi's Pet|Scout the Borders|Bitter Revelation|Treasure Cruise|Debilitating Injury|Abomination of Gudul|Thornwood Falls|Hooting Mandrills|Rotting Mastodon)" },
+            { "query": "take[*]>from[ktk-main]?title=(Become Immense|Swarm of Bloodflies|Sultai Charm|Opulent Palace|Hooting Mandrills|Treasure Cruise|Scout the Borders|Sidisi's Pet|Throttle|Sagu Archer|Rotting Mastodon|Abomination of Gudul|Dismal Backwater|Smoke Teller)" },
+            { "query": "take[*]>from[ktk-main]?title=(Swarm of Bloodflies|Sultai Charm|Ruthless Ripper|Opulent Palace|Rotting Mastodon|Sagu Archer|Kheru Dreadmaw|Taigam's Scheming|Sultai Scavenger|Abomination of Gudul|Rakshasa's Secret|Thornwood Falls|Molting Snakeskin|Debilitating Injury)" },
+            { "query": "take[*]>from[ktk-main]?title=(Murderous Cut|Sultai Soothsayer|Gurmag Swiftwing|Opulent Palace|Taigam's Scheming|Debilitating Injury|Sagu Archer|Sidisi's Pet|Treasure Cruise|Rotting Mastodon|Abomination of Gudul|Shambling Attendants|Thornwood Falls|Dutiful Return)" },
+            { "query": "take[*]>from[ktk-main]?title=(Gurmag Swiftwing|Set Adrift|Ruthless Ripper|Opulent Palace|Debilitating Injury|Wetland Sambar|Sagu Archer|Sultai Scavenger|Abomination of Gudul|Dutiful Return|Taigam's Scheming|Rotting Mastodon|Jungle Hollow|Sidisi's Pet)" },
+            { "query": "take[*]>from[ktk-main]?title=(Dead Drop|Windstorm|Swarm of Bloodflies|Opulent Palace|Scout the Borders|Treasure Cruise|Bitter Revelation|Sagu Archer|Shambling Attendants|Hooting Mandrills|Abomination of Gudul|Debilitating Injury|Smoke Teller|Dismal Backwater)" },
+            { "query": "take[*]>from[ktk-main]?title=(Death Frenzy|Ruthless Ripper|Cranial Archive|Opulent Palace|Treasure Cruise|Scout the Borders|Rite of the Serpent|Hooting Mandrills|Rotting Mastodon|Dismal Backwater|Sidisi's Pet|Abomination of Gudul|Smoke Teller|Kheru Dreadmaw)" }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "ktk-seeded-booster-packins-sultai",
+      "packDesc": "Khans of Tarkir: Sultai Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[ktk]?title=(Sultai Clan Info Card|Sultai Activity Card|Sultai Spindown Life Counter|Sultai Clan Button|Sultai Clan Sticker)" }
+      ]
+    },
+    {
+      "packName": "ktk-seeded-booster-mardu",
+      "packDesc": "Khans of Tarkir: Mardu Seeded Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[ktk]?title=contains(Zurgo Helmsmasher|Ankle Shanker|Bloodsoaked Champion|Butcher of the Horde|Crackling Doom|Howl of the Horde|Jeering Instigator|Mardu Ascendancy)" },
+        { "query": "from[ktk]?title='Mardu Banner'" },
+        {
+          "querySet": [
+            { "query": "take[*]>from[ktk-main]?title=(Horde Ambusher|Timely Hordemate|Burn Away|Nomad Outpost|Mardu Warshrieker|Kill Shot|Ponyback Brigade|Valley Dasher|Debilitating Injury|Rush of Battle|Scoured Barrens|Mardu Hordechief|Canyon Lurkers|Mardu Hateblade)" },
+            { "query": "take[*]>from[ktk-main]?title=(Burn Away|Despise|War-Name Aspirant|Nomad Outpost|Debilitating Injury|Mardu Hateblade|Wind-Scarred Crag|Valley Dasher|Mardu Warshrieker|Ponyback Brigade|Alabaster Kirin|Canyon Lurkers|Mardu Skullhunter|Act of Treason)" },
+            { "query": "take[*]>from[ktk-main]?title=(Timely Hordemate|Mardu Charm|Horde Ambusher|Nomad Outpost|Kill Shot|Ponyback Brigade|Throttle|Shatter|Firehoof Cavalry|Valley Dasher|Mardu Hordechief|Mardu Warshrieker|Molting Snakeskin|Bloodfell Caves)" },
+            { "query": "take[*]>from[ktk-main]?title=(Arc Lightning|Bellowing Saddlebrute|Horde Ambusher|Nomad Outpost|Canyon Lurkers|Mardu Hateblade|Shatter|Ponyback Brigade|Trumpet Blast|Mardu Skullhunter|Kill Shot|Valley Dasher|Wind-Scarred Crag|Mardu Warshrieker)" },
+            { "query": "take[*]>from[ktk-main]?title=(Hordeling Outburst|Chief of the Edge|Timely Hordemate|Nomad Outpost|Firehoof Cavalry|Act of Treason|Mardu Hordechief|Debilitating Injury|Arrow Storm|Ponyback Brigade|Canyon Lurkers|Rush of Battle|Mardu Warshrieker|Bloodfell Caves)" },
+            { "query": "take[*]>from[ktk-main]?title=(Bellowing Saddlebrute|Mardu Roughrider|Despise|Nomad Outpost|Throttle|Mardu Warshrieker|Kill Shot|Valley Dasher|Ponyback Brigade|Mardu Skullhunter|Canyon Lurkers|Mardu Hateblade|Tormenting Voice|Scoured Barrens)" },
+            { "query": "take[*]>from[ktk-main]?title=(Horde Ambusher|Mardu Charm|Mardu Heart-Piercer|Nomad Outpost|Valley Dasher|Throttle|Tormenting Voice|Ponyback Brigade|Mardu Skullhunter|Canyon Lurkers|Act of Treason|Kill Shot|Mardu Warshrieker|Wind-Scarred Crag)" },
+            { "query": "take[*]>from[ktk-main]?title=(Mardu Blazebringer|Ride Down|Burn Away|Nomad Outpost|Ponyback Brigade|Mardu Skullhunter|Mardu Hordechief|Debilitating Injury|Mardu Warshrieker|Firehoof Cavalry|Trumpet Blast|Valley Dasher|Scoured Barrens|Canyon Lurkers)" }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "ktk-seeded-booster-packins-mardu",
+      "packDesc": "Khans of Tarkir: Mardu Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[ktk]?title=(Mardu Clan Info Card|Mardu Activity Card|Mardu Spindown Life Counter|Mardu Clan Button|Mardu Clan Sticker)" }
+      ]
+    },
+    {
+      "packName": "ktk-seeded-booster-temur",
+      "packDesc": "Khans of Tarkir: Temur Seeded Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[ktk]?title=contains(Surrak Dragonclaw|Avalanche Tusker|Crater's Claws|Icy Blast|Rattleclaw Mystic|Savage Knuckleblade|Temur Ascendancy|Trap Essence)" },
+        { "query": "from[ktk]?title='Temur Banner'" },
+        {
+          "querySet": [
+            { "query": "take[*]>from[ktk-main]?title=(Waterwhirl|Temur Charger|Bear's Companion|Frontier Bivouac|Force Away|Ainok Tracker|Tusked Colossodon|Lens of Clarity|Wetland Sambar|Alpine Grizzly|Snowhorn Rider|Thornwood Falls|Bring Low|Embodiment of Spring)" },
+            { "query": "take[*]>from[ktk-main]?title=(Temur Charm|Pine Walker|Secret Plans|Frontier Bivouac|Weave Fate|Woolly Loxodon|Ainok Tracker|Naturalize|Scaldkin|Alpine Grizzly|Snowhorn Rider|Rugged Highlands|Savage Punch|Embodiment of Spring)" },
+            { "query": "take[*]>from[ktk-main]?title=(Icefeather Aven|Stubborn Denial|Burn Away|Frontier Bivouac|Barrage of Boulders|Glacial Stalker|Tusked Colossodon|Wetland Sambar|Alpine Grizzly|Snowhorn Rider|Woolly Loxodon|Thornwood Falls|Embodiment of Spring|Savage Punch)" },
+            { "query": "take[*]>from[ktk-main]?title=(Bear's Companion|Heir of the Wilds|Dragon Grip|Frontier Bivouac|Summit Prowler|Glacial Stalker|Awaken the Bear|Force Away|Feed the Clan|Snowhorn Rider|Thornwood Falls|Ainok Tracker|Woolly Loxodon|Highland Game)" },
+            { "query": "take[*]>from[ktk-main]?title=(Heir of the Wilds|Winterflame|Windstorm|Frontier Bivouac|Alpine Grizzly|Ainok Tracker|Tusked Colossodon|Barrage of Boulders|Glacial Stalker|Summit Prowler|Snowhorn Rider|Thornwood Falls|Scaldkin|Savage Punch)" },
+            { "query": "take[*]>from[ktk-main]?title=(Icefeather Aven|Pine Walker|Burn Away|Frontier Bivouac|Highland Game|Scaldkin|Savage Punch|Ainok Tracker|Glacial Stalker|Feed the Clan|Force Away|Alpine Grizzly|Snowhorn Rider|Rugged Highlands)" },
+            { "query": "take[*]>from[ktk-main]?title=(Temur Charger|Dragon Grip|Seek the Horizon|Frontier Bivouac|Ainok Tracker|Alpine Grizzly|Force Away|Bring Low|Glacial Stalker|Tusked Colossodon|Summit Prowler|Highland Game|Snowhorn Rider|Swiftwater Cliffs)" },
+            { "query": "take[*]>from[ktk-main]?title=(Arc Lightning|Scion of Glaciers|Roar of Challenge|Frontier Bivouac|Glacial Stalker|Ainok Tracker|Embodiment of Spring|Highland Game|Scaldkin|Alpine Grizzly|Snowhorn Rider|Swiftwater Cliffs|Awaken the Bear|Force Away)" }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "ktk-seeded-booster-packins-temur",
+      "packDesc": "Khans of Tarkir: Temur Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[ktk]?title=(Temur Clan Info Card|Temur Activity Card|Temur Spindown Life Counter|Temur Clan Button|Temur Clan Sticker)" }
+      ]
+    },
+    {
+      "packName": "2015-intro-deck-price-of-glory",
+      "packDesc": "2015 Intro Deck: Price of Glory (White/Black)",
+      "isGenerated": false,
+      "cards": [
+        {
+          "query": "take[3]>from[ktk-intro-packs]?title='Soulmender'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[ktk-intro-packs]?title='Kinsbaile Skirmisher'" },
+        { "query": "from[ktk-intro-packs]?title='Wall of Essence'" },
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Child of Night'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[ktk-intro-packs]?title='Accursed Spirit'" },
+        { "query": "from[ktk-intro-packs]?title='Tireless Missionaries'" },
+        {
+          "query": "take[3]>from[ktk-intro-packs]?title='Sign in Blood'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[ktk-intro-packs]?title='Solemn Offering'" },
+        { "query": "from[ktk-intro-packs]?title='Mass Calcify'" },
+        { "query": "from[ktk-intro-packs]?title='Staff of the Death Magus'" },
+        { "query": "from[ktk-intro-packs]?title='Staff of the Sun Magus'" },
+        { "query": "from[ktk-intro-packs]?title='Crippling Blight'" },
+        { "query": "from[ktk-intro-packs]?title='Divine Favor'" },
+        {
+          "query": "take[12]>from[ktk-intro-packs]?title='Plains'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[13]>from[ktk-intro-packs]?title='Swamp'",
+          "canBeDuplicate": true
+        }
+      ]
+    },
+    {
+      "packName": "2015-intro-deck-price-of-glory-foil",
+      "packDesc": "2015 Intro Deck: Price of Glory Premium Foil",
+      "isGenerated": false,
+      "cards": [
+        {
+          "query": "from[ktk-intro-packs]?title='Resolute Archangel'",
+          "setValues": { "foil": true }
+        }
+      ]
+    },
+    {
+      "packName": "2015-intro-deck-hit-the-ground-running",
+      "packDesc": "2015 Intro Deck: Hit the Ground Running (Blue/Green)",
+      "isGenerated": false,
+      "cards": [
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Runeclaw Bear'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[ktk-intro-packs]?title='Illusory Angel'" },
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Roaring Primadox'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[ktk-intro-packs]?title='Stormtide Leviathan'" },
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Into the Void'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[ktk-intro-packs]?title='Restock'" },
+        { "query": "from[ktk-intro-packs]?title='Negate'" },
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Peel from Reality'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[ktk-intro-packs]?title='Turn to Frog'" },
+        { "query": "from[ktk-intro-packs]?title='Plummet'" },
+        { "query": "from[ktk-intro-packs]?title='Encrust'" },
+        {
+          "query": "take[13]>from[ktk-intro-packs]?title='Island'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[12]>from[ktk-intro-packs]?title='Forest'",
+          "canBeDuplicate": true
+        }
+      ]
+    },
+    {
+      "packName": "2015-intro-deck-hit-the-ground-running-foil",
+      "packDesc": "2015 Intro Deck: Hit the Ground Running Premium Foil",
+      "isGenerated": false,
+      "cards": [
+        {
+          "query": "from[ktk-intro-packs]?title='Mercurial Pretender'",
+          "setValues": { "foil": true }
+        }
+      ]
+    },
+    {
+      "packName": "2015-intro-deck-infernal-intervention",
+      "packDesc": "2015 Intro Deck: Infernal Intervention (Black/Red)",
+      "isGenerated": false,
+      "cards": [
+        {
+          "query": "take[3]>from[ktk-intro-packs]?title='Typhoid Rats'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Torch Fiend'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Gargoyle Sentinel'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Goblin Roughrider'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[ktk-intro-packs]?title='Wall of Fire'" },
+        { "query": "from[ktk-intro-packs]?title='Gravedigger'" },
+        { "query": "from[ktk-intro-packs]?title='Zof Shade'" },
+        { "query": "from[ktk-intro-packs]?title='Thundering Giant'" },
+        { "query": "from[ktk-intro-packs]?title='Clear a Path'" },
+        { "query": "from[ktk-intro-packs]?title='Cone of Flame'" },
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Lightning Strike'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Heat Ray'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[ktk-intro-packs]?title='Stab Wound'" },
+        { "query": "from[ktk-intro-packs]?title='Caustic Tar'" },
+        {
+          "query": "take[13]>from[ktk-intro-packs]?title='Swamp'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[13]>from[ktk-intro-packs]?title='Mountain'",
+          "canBeDuplicate": true
+        }
+      ]
+    },
+    {
+      "packName": "2015-intro-deck-infernal-intervention-foil",
+      "packDesc": "2015 Intro Deck: Infernal Intervention Premium Foil",
+      "isGenerated": false,
+      "cards": [
+        {
+          "query": "from[ktk-intro-packs]?title='Indulgent Tormentor'",
+          "setValues": { "foil": true }
+        }
+      ]
+    },
+    {
+      "packName": "2015-intro-deck-flames-of-the-dragon",
+      "packDesc": "2015 Intro Deck: Flames of the Dragon (Red/Blue)",
+      "isGenerated": false,
+      "cards": [
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Ornithopter'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[3]>from[ktk-intro-packs]?title='Bronze Sable'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Welkin Tern'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[ktk-intro-packs]?title='Rummaging Goblin'" },
+        {
+          "query": "take[3]>from[ktk-intro-packs]?title='Aeronaut Tinkerer'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Krenko’s Enforcer'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Wall of Frost'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Juggernaut'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[3]>from[ktk-intro-packs]?title='Scrapyard Mongrel'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[ktk-intro-packs]?title='Hoarding Dragon'" },
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Glacial Crasher'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[ktk-intro-packs]?title='Siege Dragon'" },
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Lava Axe'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[ktk-intro-packs]?title='Shrapnel Blast'" },
+        { "query": "from[ktk-intro-packs]?title='Rogue’s Gloves'" },
+        { "query": "from[ktk-intro-packs]?title='Sacred Armory'" },
+        { "query": "from[ktk-intro-packs]?title='Tyrant’s Machine'" },
+        { "query": "from[ktk-intro-packs]?title='Brawler’s Plate'" },
+        { "query": "from[ktk-intro-packs]?title='Staff of the Flame Magus'" },
+        { "query": "from[ktk-intro-packs]?title='Staff of the Mind Magus'" },
+        { "query": "from[ktk-intro-packs]?title='Darksteel Citadel'" },
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Ensoul Artifact'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[12]>from[ktk-intro-packs]?title='Mountain'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[12]>from[ktk-intro-packs]?title='Island'",
+          "canBeDuplicate": true
+        }
+      ]
+    },
+    {
+      "packName": "2015-intro-deck-flames-of-the-dragon-foil",
+      "packDesc": "2015 Intro Deck: Flames of the Dragon Premium Foil",
+      "isGenerated": false,
+      "cards": [
+        {
+          "query": "from[ktk-intro-packs]?title='Siege Dragon'",
+          "setValues": { "foil": true }
+        }
+      ]
+    },
+    {
+      "packName": "2015-intro-deck-will-of-the-masses",
+      "packDesc": "2015 Intro Deck: Will of the Masses (Green/White)",
+      "isGenerated": false,
+      "cards": [
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Selfless Cathar'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[ktk-intro-packs]?title='Wall of Mulch'" },
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Midnight Guard'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Siege Wurm'",
+          "canBeDuplicate": true
+        },
+        { "query": "from[ktk-intro-packs]?title='Hornet Queen'" },
+        { "query": "from[ktk-intro-packs]?title='Overwhelm'" },
+        { "query": "from[ktk-intro-packs]?title='Gather Courage'" },
+        { "query": "from[ktk-intro-packs]?title='Naturalize'" },
+        { "query": "from[ktk-intro-packs]?title='Titanic Growth'" },
+        {
+          "query": "take[3]>from[ktk-intro-packs]?title='Raise the Alarm'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[ktk-intro-packs]?title='Devouring Light'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[13]>from[ktk-intro-packs]?title='Forest'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[12]>from[ktk-intro-packs]?title='Plains'",
+          "canBeDuplicate": true
+        }
+      ]
+    },
+    {
+      "packName": "2015-intro-deck-will-of-the-masses-foil",
+      "packDesc": "2015 Intro Deck: Will of the Masses Premium Foil",
+      "isGenerated": false,
+      "cards": [
+        {
+          "query": "from[ktk-intro-packs]?title='Phytotitan'",
+          "setValues": { "foil": true }
+        }
+      ]
+    },
+    {
+      "packName": "ktk-fat-pack-pack-ins",
+      "packDesc": "Khans of Tarkir Fat Pack: Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[ktk]?title=(Khans of Tarkir Player’s Guide|Khans of Tarkir Card Box|Khans of Tarkir Mural|Khans of Tarkir Rules Reference Card)" },
+        {
+          "query": "from[ktk-fatpack]?type='Life Counter'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[ktk]?title='Khans of Tarkir Deck Box'",
+          "canBeDuplicate": true
+        }
+      ]
+    },
+    {
+      "packName": "ktk-fat-pack-land",
+      "packDesc": "Khans of Tarkir Fat Pack: Land",
+      "isGenerated": false,
+      "cards": [
+        {
+          "query": "take[16]>from[ktk]?title='Plains'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[16]>from[ktk]?title='Island'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[16]>from[ktk]?title='Swamp'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[16]>from[ktk]?title='Forest'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[16]>from[ktk]?title='Mountain'",
+          "canBeDuplicate": true
+        }
+      ]
+    },
+    {
+      "packName": "ktk-gift-box-pack-ins",
+      "packDesc": "Khans of Tarkir Gift Box: Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[ktk]?title=(Khans of Tarkir Storage Box|Khans of Tarkir Illustrated Plastic Dividers|Khans of Tarkir Plastic Divider Sticker Sheet)" }
+      ]
+    },
+    {
+      "packName": "ktk-gift-box-land",
+      "packDesc": "Khans of Tarkir Gift Box: Land",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[ktk]?type='Basic Land'" }
+      ]
+    }
 
-    ]
+  ]
 }

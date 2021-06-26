@@ -7,6 +7,14 @@
     {
       "defName": "10e-main",
       "query": "from[10e]-from[10e]?type=(Marketing|Basic Land)-from[10e]?token=true-from[10e]?promo=true"
+    },
+    {
+      "defName": "10e-basic-land",
+      "query": "from[*]?rarity='b"
+    },
+    {
+      "defName": "10e-foil",
+      "query": "from[10e-main]+from[10e-basic-land]"
     }
   ],
   "packs": [
@@ -25,34 +33,8 @@
       "cards": [
         { "query": "take[10]>from[10e-main]?rarity='c" },
         { "query": "take[3]>from[10e-main]?rarity='u" },
-        { "query": "take[1]>from[10e-main]?rarity='r" },
-        {
-          "querySet": [
-            {
-              "_comment": "common rate = 5/6 * 15 = 75/90",
-              "percent": "75/90",
-              "query": "from[10e]?type='Basic Land"
-            },
-            {
-              "_comment": "foil common rate = 11/15 = 11/90",
-              "percent": "11/90",
-              "query": "from[10e-main]?rarity='c",
-              "setValues": { "foil": true }
-            },
-            {
-              "_comment": "foil uncommon rate = 3/15 = 3/90",
-              "percent": "3/90",
-              "query": "from[10e-main]?rarity='u",
-              "setValues": { "foil": true }
-            },
-            {
-              "_comment": "foil rare rate = 1/15 = 1/90",
-              "percent": "1/90",
-              "query": "from[10e-main]?rarity='r",
-              "setValues": { "foil": true }
-            }
-          ]
-        },
+        { "query": "from[10e-main]?rarity='r" },
+        { "query": "from[10e-basic-land]" },
         {
           "querySet": [
             {
@@ -64,8 +46,19 @@
               "query": "from[10e]?type='Marketing"
             }
           ]
-        }
+        },
 
+        {
+          "querySet": [
+            {
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
+              "percent": "15/67",
+              "overrideSlot": "10",
+              "query": "from[10e-foil]?rarity=rarityByWeight(cur)",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
       ]
     }
   ]

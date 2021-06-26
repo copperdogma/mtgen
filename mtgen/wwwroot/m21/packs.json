@@ -46,7 +46,7 @@
     },
     {
       "defName": "m21-foils",
-      "query": "from[m21]-from[m21-promo]-from[m21]?token=true-from[m21]?includedReason='Planeswalker Deck'"
+      "query": "from[m21]-from[m21-promo]-from[m21]?token=true-from[m21]?includedReason='Planeswalker Deck'+from[m21-basic-land]"
     },
     {
       "defName": "m21-collector-foil",
@@ -65,6 +65,7 @@
       "query": "from[m21]?token=true"
     }
   ],
+
   "packs": [
     {
       "packName": "m21-all-cards",
@@ -79,12 +80,12 @@
       "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
       "packName": "m21-draft",
       "packDesc": "Core Set 2021: Draft Booster",
-      "packVersion": "1.0",
+      "packVersion": "1.1",
       "isGenerated": true,
       "cards": [
         { "query": "take[10]>from[m21-booster]?rarity='c" },
         { "query": "take[3]>from[m21-booster]?rarity='u" },
-        { "query": "from[m21-booster]?rarity='r" },
+        { "query": "from[m21-booster]?rarity=rarityByWeight2008(rm)" },
         { "query": "from[m21-basic-land]" },
         {
           "querySet": [
@@ -98,42 +99,15 @@
             }
           ]
         },
+
         {
           "querySet": [
             {
-              "_comment": "33% (1:45) chance of foil, scaled by rarity, replacing the last common, as of m20: Jun-2019",
+              "_comment": "33% chance of foil, scaled by rarity, replacing the last common, as of M20: Jun-2019",
+              "percent": "33",
               "overrideSlot": "10",
-              "percent": "88/360",
-              "query": "from[m21-foils]?rarity='c",
+              "query": "from[m21-foils]?rarity=rarityByWeight2008(curm)",
               "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "10",
-              "percent": "24/360",
-              "query": "from[m21-foils]?rarity='u",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "10",
-              "percent": "7/360",
-              "query": "from[m21-foils]?rarity='r",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "10",
-              "percent": "1/360",
-              "query": "from[m21-foils]?rarity='m",
-              "setValues": { "foil": true }
-            }
-          ]
-        },
-        {
-          "querySet": [
-            {
-              "_comment": "1/8 chance of replacing rare with mythic",
-              "percent": "1/8",
-              "overrideSlot": "14",
-              "query": "from[m21-booster]?rarity='m'"
             }
           ]
         }

@@ -27,36 +27,9 @@
       "packDesc": "Eventide: Standard Booster",
       "isGenerated": true,
       "cards": [
-        { "query": "take[10]>from[eve-main]?rarity='c" },
-        {
-          "querySet": [
-            {
-              "_comment": "common rate = 5/6 * 15 = 75/90",
-              "percent": "75/90",
-              "query": "from[eve-main]?rarity='c"
-            },
-            {
-              "_comment": "foil common rate = 11/15 = 11/90",
-              "percent": "11/90",
-              "query": "from[eve-main]?rarity='c",
-              "setValues": { "foil": true }
-            },
-            {
-              "_comment": "foil uncommon rate = 3/15 = 3/90",
-              "percent": "3/90",
-              "query": "from[eve-main]?rarity='u",
-              "setValues": { "foil": true }
-            },
-            {
-              "_comment": "foil rare rate = 1/15 = 1/90",
-              "percent": "1/90",
-              "query": "from[eve-main]?rarity='r",
-              "setValues": { "foil": true }
-            }
-          ]
-        },
+        { "query": "take[11]>from[eve-main]?rarity='c" },
         { "query": "take[3]>from[eve-main]?rarity='u" },
-        { "query": "take[1]>from[eve-main]?rarity='r" },
+        { "query": "from[eve-main]?rarity='r" },
         {
           "querySet": [
             {
@@ -66,6 +39,18 @@
             {
               "percent": "50",
               "query": "from[eve]?type='Marketing"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
+              "percent": "15/67",
+              "overrideSlot": "11",
+              "query": "from[eve-main]?rarity=rarityByWeight(cur)",
+              "setValues": { "foil": true }
             }
           ]
         }

@@ -1,7 +1,7 @@
 {
   "startProductName": "m21-prerelease",
   "packFiles": [
-    "packs.json?v1.1"
+    "packs.json?v1.2"
   ],
   "cardFiles": [
     "cardsMain.json",
@@ -11,6 +11,10 @@
     "cardsBasicLand.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-06-25T23:30:00:00",
+      "HtmlString": "Foils now include basic lands."
+    },
     {
       "UpdateDate": "2020-06-29T00:21:00:00",
       "HtmlString": "Collector booster slots 12-15 no longer include showcase cards."

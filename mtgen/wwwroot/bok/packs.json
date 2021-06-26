@@ -27,36 +27,33 @@
       "packDesc": "Betrayers of Kamigawa: Standard Booster",
       "isGenerated": true,
       "cards": [
-        { "query": "take[10]>from[bok-main]?rarity='c" },
+        { "query": "take[11]>from[bok-main]?rarity='c" },
+        { "query": "take[3]>from[bok-main]?rarity='u" },
+        { "query": "take[1]>from[bok-main]?rarity='r" },
+
         {
           "querySet": [
             {
-              "_comment": "common rate = 5/6 * 15 = 75/90",
-              "percent": "75/90",
-              "query": "take[1]>from[bok-main]?rarity='c"
-            },
-            {
-              "_comment": "foil common rate = 11/15 = 11/90",
-              "percent": "11/90",
-              "query": "from[bok-main]?rarity='c",
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and it replaced a card of it's rarity.",
+              "percent": "11/67",
+              "overrideSlot": "11",
+              "query": "from[bok-main]?rarity='c'",
               "setValues": { "foil": true }
             },
             {
-              "_comment": "foil uncommon rate = 3/15 = 3/90",
-              "percent": "3/90",
-              "query": "from[bok-main]?rarity='u",
+              "percent": "3/67",
+              "overrideSlot": "14",
+              "query": "from[bok-main]?rarity='u'",
               "setValues": { "foil": true }
             },
             {
-              "_comment": "foil rare rate = 1/15 = 1/90",
-              "percent": "1/90",
-              "query": "from[bok-main]?rarity='r",
+              "percent": "1/67",
+              "overrideSlot": "15",
+              "query": "from[bok-main]?rarity='r'",
               "setValues": { "foil": true }
             }
           ]
-        },
-        { "query": "take[3]>from[bok-main]?rarity='u" },
-        { "query": "take[1]>from[bok-main]?rarity='r" }
+        }
       ]
     },
     {

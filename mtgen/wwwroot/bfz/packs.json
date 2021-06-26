@@ -18,7 +18,7 @@
     },
     {
       "defName": "bfz-foils",
-      "query": "from[bfz-main]"
+      "query": "from[bfz-main]+from[bfz-basic-land-full-art]"
     },
     {
       "defName": "bfz-foils-expeditions",
@@ -28,8 +28,8 @@
       "defName": "bfz-promo",
       "query": "from[bfz]?promo=true"
     }
-
   ],
+
   "packs": [
     {
       "packName": "bfz-all-cards",
@@ -44,52 +44,35 @@
       "packDesc": "Battle for Zendikar: Standard Booster",
       "isGenerated": true,
       "cards": [
-        { "query": "take[8]>from[bfz-main]?rarity='c" },
+        { "query": "take[10]>from[bfz-main]?rarity='c" },
+        { "query": "take[3]>from[bfz-main]?rarity='u" },
+        { "query": "from[bfz-main]?rarity=rarityByWeight2008(rm)" },
+        { "query": "from[bfz-basic-land-full-art]" },
+        { "query": "from[bfz]?token=true-from[bfz]?promo=true" },
+
         {
           "querySet": [
             {
-              "percent": "199/200",
-              "query": "from[bfz-main]?rarity='c"
-            },
-            {
-              "_comment": "Should be generated at a rate slighly larger than a premium (foil) mythic (which is 1/216 packs)",
+              "_comment": "Expedition foils (all mythic) should be generated at a rate slighly larger than a premium (foil) mythic (which is 1/216 packs)",
               "percent": "1/200",
+              "overrideSlot": "9",
               "query": "from[bfz-foils-expeditions]",
               "setValues": { "foil": true }
             }
           ]
         },
+
         {
           "querySet": [
             {
-              "percent": "3/4",
-              "query": "from[bfz-main]?rarity='c"
-            },
-            {
-              "percent": "1/4",
-              "query": "from[bfz-foils]",
-              "canBeDuplicate": true,
-              "setValues": { "foil": true },
-              "_comment": "25% chance rare is a foil of any card, including land"
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
+              "percent": "15/67",
+              "overrideSlot": "10",
+              "query": "from[bfz-foils]?rarity=rarityByWeight2008(curm)",
+              "setValues": { "foil": true }
             }
           ]
-        },
-        { "query": "take[3]>from[bfz-main]?rarity='u" },
-        {
-          "querySet": [
-            {
-              "percent": 87.5,
-              "query": "from[bfz-main]?rarity='r"
-            },
-            {
-              "percent": 12.5,
-              "query": "from[bfz-main]?rarity='m",
-              "_comment": "rare=7/8, mythicRare=1/8"
-            }
-          ]
-        },
-        { "query": "from[bfz-basic-land-full-art]" },
-        { "query": "from[bfz]?token=true-from[bfz]?promo=true" }
+        }
       ]
     },
     {

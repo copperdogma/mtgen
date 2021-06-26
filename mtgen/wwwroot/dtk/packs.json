@@ -1,307 +1,336 @@
 {
-    "_comment": "from: http://mtgsalvation.gamepedia.com/Dragons_of_Tarkir#Prerelease",
-    "_comment": "You choose your clan for the prerelease. Each clan prerelease pack comes with a clan pin and a clan sticker. The prerelease pack further contains 5 regular booster packs, 1 seeded booster pack, 1 premium promo card, 1 activity insert and 1 Spindown life counter. Dragons of Tarkir will feature 40 prerelease cards — one dated and stamped prerelease card random from a pool of eight for each Clan pack. One of which will be the Khan.",
-    "_comment": "from: http://magic.wizards.com/en/articles/archive/arcana/dragon-clan-symbols-vs-khans-clan-symbols-2015-03-05",
-    "_comment": "new clans: Dromoka, Ojutai, Silumgar, Kolaghan, Atarka",
-    "_comment": "from: http://www.mtgsalvation.com/forums/magic-fundamentals/the-rumor-mill/597347-dragons-of-tarkir-pre-release-game-tarkir",
-    "_comment": "which spindown life counter was for which clan?",
-    "_comment": "from: http://magic.wizards.com/en/articles/archive/arcana/dragons-tarkir-basically-2015-03-12",
+  "_comment": "from: http://mtgsalvation.gamepedia.com/Dragons_of_Tarkir#Prerelease",
+  "_comment2": "You choose your clan for the prerelease. Each clan prerelease pack comes with a clan pin and a clan sticker. The prerelease pack further contains 5 regular booster packs, 1 seeded booster pack, 1 premium promo card, 1 activity insert and 1 Spindown life counter. Dragons of Tarkir will feature 40 prerelease cards — one dated and stamped prerelease card random from a pool of eight for each Clan pack. One of which will be the Khan.",
+  "_comment3": "from: http://magic.wizards.com/en/articles/archive/arcana/dragon-clan-symbols-vs-khans-clan-symbols-2015-03-05",
+  "_comment4": "new clans: Dromoka, Ojutai, Silumgar, Kolaghan, Atarka",
+  "_comment5": "from: http://www.mtgsalvation.com/forums/magic-fundamentals/the-rumor-mill/597347-dragons-of-tarkir-pre-release-game-tarkir",
+  "_comment6": "which spindown life counter was for which clan?",
+  "_comment7": "from: http://magic.wizards.com/en/articles/archive/arcana/dragons-tarkir-basically-2015-03-12",
 
-    "defs": [
+  "defs": [
+    {
+      "defName": "dtk",
+      "query": "from[*]?set='dtk'"
+    },
+    {
+      "defName": "dtk-main",
+      "query": "from[dtk]-from[dtk]?type=(Marketing|Basic Land)-from[dtk]?token=true-from[dtk]?promo=true"
+    },
+    {
+      "defName": "dtk-intro-packs",
+      "query": "from[dtk]-from[dtk]?promo=true"
+    },
+    {
+      "defName": "dtk-foils",
+      "query": "from[dtk-main]+from[dtk]?type='Basic Land'"
+    },
+    {
+      "defName": "dtk-promo",
+      "query": "from[dtk]?promo=true"
+    },
+    {
+      "defName": "dtk-main",
+      "query": "from[dtk-main]"
+    },
+    {
+      "defName": "dtk-no-clan",
+      "query": "from[dtk-main]?clan=''"
+    },
+    {
+      "defName": "dtk-dromoka",
+      "query": "from[dtk-main]?clan='dromoka'"
+    },
+    {
+      "defName": "dtk-dromoka-seeded",
+      "query": "from[dtk-dromoka]+from[dtk-no-clan]?cost=contains({G}|{W})-from[dtk-main]?cost=contains({B}|{R}|{U})"
+    },
+    {
+      "defName": "dtk-ojutai",
+      "query": "from[dtk-main]?clan='ojutai'"
+    },
+    {
+      "defName": "dtk-ojutai-seeded",
+      "query": "from[dtk-ojutai]+from[dtk-no-clan]?cost=contains({W}|{U})-from[dtk-main]?cost=contains({B}|{G}|{R})"
+    },
+    {
+      "defName": "dtk-silumgar",
+      "query": "from[dtk-main]?clan='silumgar'"
+    },
+    {
+      "defName": "dtk-silumgar-seeded",
+      "query": "from[dtk-silumgar]+from[dtk-no-clan]?cost=contains({B}|{U})-from[dtk-main]?cost=contains({W}|{R}|{G})"
+    },
+    {
+      "defName": "dtk-kolaghan",
+      "query": "from[dtk-main]?clan='kolaghan'"
+    },
+    {
+      "defName": "dtk-kolaghan-seeded",
+      "query": "from[dtk-kolaghan]+from[dtk-no-clan]?cost=contains({B}|{R})-from[dtk-main]?cost=contains({W}|{U}|{G})"
+    },
+    {
+      "defName": "dtk-atarka",
+      "query": "from[dtk-main]?clan='atarka'"
+    },
+    {
+      "defName": "dtk-atarka-seeded",
+      "query": "from[dtk-atarka]+from[dtk-no-clan]?cost=contains({G}|{R})-from[dtk-main]?cost=contains({W}|{B}|{U})"
+    },
+    {
+      "defName": "dtk-fatpack",
+      "query": "from[dtk]?includedReason='Fat Pack Pack-In'"
+    }
+
+  ],
+  "packs": [
+    {
+      "packName": "dtk-all-cards",
+      "packDesc": "Dragons of Tarkir: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[dtk]" }
+      ]
+    },
+
+    {
+      "packName": "dtk-standard",
+      "packDesc": "Dragons of Tarkir: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[dtk-main]?rarity='c'" },
+        { "query": "take[3]>from[dtk-main]?rarity='u'" },
+        { "query": "from[dtk-main]?rarity=rarityByWeight2008(rm)" },
+        { "query": "from[dtk]?type='Basic Land'" },
         {
-            "defName": "dtk",
-            "query": "from[*]?set='dtk'"
+          "querySet": [
+            {
+              "percent": 50,
+              "query": "from[dtk]?type='Marketing'"
+            },
+            {
+              "percent": 50,
+              "query": "from[dtk]?token=true-from[dtk]?promo=true"
+            }
+          ]
         },
+
         {
-            "defName": "dtk-main",
-            "query": "from[dtk]-from[dtk]?type=(Marketing|Basic Land)-from[dtk]?token=true-from[dtk]?promo=true"
-        },
-        {
-            "defName": "dtk-intro-packs",
-            "query": "from[dtk]-from[dtk]?promo=true"
-        },
-        {
-            "defName": "dtk-foils",
-            "query": "from[dtk-main]"
-        },
-        {
-            "defName": "dtk-promo",
-            "query": "from[dtk]?promo=true"
-        },
-        {
-            "defName": "dtk-main",
-            "query": "from[dtk-main]"
-        },
-        {
-            "defName": "dtk-no-clan",
-            "query": "from[dtk-main]?clan=''"
-        },
-        {
-            "defName": "dtk-dromoka",
-            "query": "from[dtk-main]?clan='dromoka'"
-        },
-        {
-            "defName": "dtk-dromoka-seeded",
-            "query": "from[dtk-dromoka]+from[dtk-no-clan]?cost=contains({G}|{W})-from[dtk-main]?cost=contains({B}|{R}|{U})"
-        },
-        {
-            "defName": "dtk-ojutai",
-            "query": "from[dtk-main]?clan='ojutai'"
-        },
-        {
-            "defName": "dtk-ojutai-seeded",
-            "query": "from[dtk-ojutai]+from[dtk-no-clan]?cost=contains({W}|{U})-from[dtk-main]?cost=contains({B}|{G}|{R})"
-        },
-        {
-            "defName": "dtk-silumgar",
-            "query": "from[dtk-main]?clan='silumgar'"
-        },
-        {
-            "defName": "dtk-silumgar-seeded",
-            "query": "from[dtk-silumgar]+from[dtk-no-clan]?cost=contains({B}|{U})-from[dtk-main]?cost=contains({W}|{R}|{G})"
-        },
-        {
-            "defName": "dtk-kolaghan",
-            "query": "from[dtk-main]?clan='kolaghan'"
-        },
-        {
-            "defName": "dtk-kolaghan-seeded",
-            "query": "from[dtk-kolaghan]+from[dtk-no-clan]?cost=contains({B}|{R})-from[dtk-main]?cost=contains({W}|{U}|{G})"
-        },
-        {
-            "defName": "dtk-atarka",
-            "query": "from[dtk-main]?clan='atarka'"
-        },
-        {
-            "defName": "dtk-atarka-seeded",
-            "query": "from[dtk-atarka]+from[dtk-no-clan]?cost=contains({G}|{R})-from[dtk-main]?cost=contains({W}|{B}|{U})"
-        },
-        {
-            "defName": "dtk-fatpack",
-            "query": "from[dtk]?includedReason='Fat Pack Pack-In'"
+          "querySet": [
+            {
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
+              "percent": "15/67",
+              "overrideSlot": "10",
+              "query": "from[dtk-foils]?rarity=rarityByWeight2008(curm)",
+              "setValues": { "foil": true }
+            }
+          ]
         }
-
-    ],
-    "packs": [
+      ]
+    },
+    {
+      "packName": "dtk-promos",
+      "packDesc": "Dragons of Tarkir: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[dtk-promo]" }
+      ]
+    },
+    {
+      "packName": "dtk-prerelease-promos",
+      "packDesc": "Dragons of Tarkir: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[dtk-promo]?includedReason='Prerelease Promo'" }
+      ]
+    },
+    {
+      "packName": "dtk-seeded-booster-dromoka",
+      "packDesc": "Dragons of Tarkir: Dromoka Seeded Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[dtk]?title=(Dragonlord Dromoka|Arashin Sovereign|Sunscorch Regent|Hidden Dragonslayer|Dromoka's Command|Anafenza, Kin-Tree Spirit|Arashin Foremost|Avatar of the Resolute)" },
+        { "query": "from[dtk]?title='Shape the Sands'" },
         {
-            "packName": "dtk-all-cards",
-            "packDesc": "Dragons of Tarkir: All Cards",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[dtk]" }
-            ]
-        },
-        {
-            "packName": "dtk-standard",
-            "packDesc": "Dragons of Tarkir: Standard Booster",
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[dtk]?type='Basic Land'" },
-                { "query": "take[9]>from[dtk-main]?rarity='c'" },
-                {
-                    "querySet": [
-                        { "percent": 75, "query": "from[dtk-main]?rarity='c'" },
-                        { "percent": 25, "query": "from[dtk-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
-                    ]
-                },
-                { "query": "take[3]>from[dtk-main]?rarity='u'" },
-                {
-                    "querySet": [
-                        { "percent": 87.5, "query": "from[dtk-main]?rarity='r'" },
-                        { "percent": 12.5, "query": "from[dtk-main]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" }
-                    ]
-                },
-                {
-                    "querySet": [
-                        { "percent": 50, "query": "from[dtk]?type='Marketing'" },
-                        { "percent": 50, "query": "from[dtk]?token=true-from[dtk]?promo=true" }
-                    ]
-                }
-            ]
-        },
-        {
-            "packName": "dtk-promos",
-            "packDesc": "Dragons of Tarkir: Promos",
-            "isGenerated": false,
-            "includeWithUserCards": false,
-            "cards": [
-                { "query": "take[*]>from[dtk-promo]" }
-            ]
-        },
-        {
-            "packName": "dtk-prerelease-promos",
-            "packDesc": "Dragons of Tarkir: Prerelease Promos",
-            "isGenerated": false,
-            "includeWithUserCards": false,
-            "cards": [
-                { "query": "take[*]>from[dtk-promo]?includedReason='Prerelease Promo'" }
-            ]
-        },
-        {
-            "packName": "dtk-seeded-booster-dromoka",
-            "packDesc": "Dragons of Tarkir: Dromoka Seeded Booster",
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[dtk]?title=(Dragonlord Dromoka|Arashin Sovereign|Sunscorch Regent|Hidden Dragonslayer|Dromoka's Command|Anafenza, Kin-Tree Spirit|Arashin Foremost|Avatar of the Resolute)" },
-                { "query": "from[dtk]?title='Shape the Sands'" },
-                {
-                    "querySet": [
-                        { "query": "take[*]>from[dtk-main]?title=(Shieldhide Dragon|Inspiring Call|Surge of Righteousness|Dromoka's Gift|Guardian Shield-Bearer|Sandsteppe Scavenger|Dromoka Dunecaster|Sheltered Aerie|Misthoof Kirin|Pinion Feast|Lightwalker|Tread Upon|Conifer Strider|Glaring Aegis)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Echoes of the Kin Tree|Inspiring Call|Scale Blessing|Dromoka's Gift|Lightwalker|Sandcrafter Mage|Ainok Artillerist|Enduring Victory|Aven Tactician|Herald of Dromoka|Servant of the Scale|Glaring Aegis|Champion of Arashin|Aerie Bowmasters)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Press the Advantage|Dragon Hunter|Battle Mastery|Explosive Vegetation|Aven Tactician|Pacifism|Sandsteppe Scavenger|Sandstorm Charger|Aerie Bowmasters|Resupply|Enduring Victory|Ainok Artillerist|Lightwalker|Servant of the Scale)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Salt Road Ambushers|Scaleguard Sentinels|Shieldhide Dragon|Sight of the Scalelords|Sandstorm Charger|Guardian Shield-Bearer|Conifer Strider|Epic Confrontation|Enduring Victory|Segmented Krotiq|Naturalize|Misthoof Kirin|Sandsteppe Scavenger|Glaring Aegis)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Scale Blessing|Sight of the Scalelords|Echoes of the Kin Tree|Explosive Vegetation|Herald of Dromoka|Colossodon Yearling|Sheltered Aerie|Epic Confrontation|Champion of Arashin|Glaring Aegis|Aerie Bowmasters|Territorial Roc|Segmented Krotiq|Sandcrafter Mage)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Shieldhide Dragon|Press the Advantage|Inspiring Call|Dromoka Captain|Misthoof Kirin|Pinion Feast|Tread Upon|Territorial Roc|Ainok Artillerist|Guardian Shield-Bearer|Epic Confrontation|Sandstorm Charger|Revealing Wind|Herald of Dromoka)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Scaleguard Sentinels|Dromoka's Gift|Silkwrap|Surge of Righteousness|Aerie Bowmasters|Aven Tactician|Resupply|Guardian Shield-Bearer|Lightwalker|Sheltered Aerie|Sandcrafter Mage|Colossodon Yearling|Fate Forgotten|Glaring Aegis)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Scaleguard Sentinels|Press the Advantage|Dragon Hunter|Salt Road Quartermasters|Epic Confrontation|Herald of Dromoka|Tread Upon|Lightwalker|Pinion Feast|Champion of Arashin|Dromoka Warrior|Naturalize|Enduring Victory|Sandsteppe Scavenger)" }
-                    ]
-                }
-            ]
-        },
-        {
-            "packName": "dtk-seeded-booster-packins-dromoka",
-            "packDesc": "Dragons of Tarkir: Dromoka Pack-Ins",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[dtk]?title=(Dromoka Clan Info Card|Dragons of Tarkir Activity Card|Dromoka Spindown Life Counter)" }
-            ]
-        },
-        {
-            "packName": "dtk-seeded-booster-ojutai",
-            "packDesc": "Dragons of Tarkir: Ojutai Seeded Booster",
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[dtk]?title=(Dragonlord Ojutai|Pristine Skywise|Icefall Regent|Stratus Dancer|Ojutai's Command|Blessed Reincarnation|Myth Realized|Living Lore)" },
-                { "query": "from[dtk]?title='Fate Forgotten'" },
-                {
-                    "querySet": [
-                        { "query": "take[*]>from[dtk-main]?title=(Strongarm Monk|Void Squall|Great Teacher's Decree|Sight Beyond Sight|Artful Maneuver|Mystic Meditation|Misthoof Kirin|Elusive Spellfist|Resupply|Territorial Roc|Contradict|Zephyr Scribe|Center Soul|Monastery Loremaster)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Belltoll Dragon|Strongarm Monk|Skywise Teachings|Encase in Ice|Misthoof Kirin|Territorial Roc|Dirgur Nemesis|Ojutai Interceptor|Resupply|Zephyr Scribe|Glaring Aegis|Glint|Elusive Spellfist|Pacifism)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Belltoll Dragon|Graceblade Artisan|Silkwrap|Dance of the Skywise|Zephyr Scribe|Ancient Carp|Student of Ojutai|Ojutai's Breath|Territorial Roc|Monastery Loremaster|Mystic Meditation|Misthoof Kirin|Negate|Updraft Elemental)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Gudul Lurker|Great Teacher's Decree|Skywise Teachings|Battle Mastery|Ojutai's Breath|Misthoof Kirin|Negate|Dirgur Nemesis|Pacifism|Center Soul|Ancient Carp|Mystic Meditation|Taigam's Strike|Monastery Loremaster)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Graceblade Artisan|Aven Sunstriker|Gudul Lurker|Battle Mastery|Glaring Aegis|Updraft Elemental|Ojutai's Breath|Pacifism|Reduce in Stature|Ojutai's Summons|Resupply|Monastery Loremaster|Dragon's Eye Sentry|Mystic Meditation)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Great Teacher's Decree|Void Squall|Surge of Righteousness|Aven Sunstriker|Anticipate|Center Soul|Glaring Aegis|Ojutai Interceptor|Dragon's Eye Sentry|Glint|Misthoof Kirin|Territorial Roc|Pacifism|Updraft Elemental)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Sight Beyond Sight|Orator of Ojutai|Encase in Ice|Graceblade Artisan|Updraft Elemental|Dragon's Eye Sentry|Elusive Spellfist|Artful Maneuver|Reduce in Stature|Student of Ojutai|Ojutai's Summons|Dirgur Nemesis|Glaring Aegis|Contradict)" }
-                    ]
-                }
-            ]
-        },
-        {
-            "packName": "dtk-seeded-booster-packins-ojutai",
-            "packDesc": "Dragons of Tarkir: Ojutai Pack-Ins",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[dtk]?title=(Ojutai Clan Info Card|Dragons of Tarkir Activity Card|Ojutai Spindown Life Counter)" }
-            ]
-        },
-        {
-            "packName": "dtk-seeded-booster-silumgar",
-            "packDesc": "Dragons of Tarkir: Silumgar Seeded Booster",
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[dtk]?title=(Dragonlord Silumgar|Necromaster Dragon|Deathbringer Regent|Silumgar Assassin|Silumgar's Command|Sidisi, Undead Vizier|Profaner of the Dead|Damnable Pact)" },
-                { "query": "from[dtk]?title='Glint'" },
-                {
-                    "querySet": [
-                        { "query": "take[*]>from[dtk-main]?title=(Ukud Cobra|Silumgar Sorcerer|Qarsi Deceiver|Virulent Plague|Mind Rot|Reduce in Stature|Defeat|Palace Familiar|Butcher's Glee|Vulturous Aven|Gravepurge|Mystic Meditation|Sibsig Icebreakers|Gurmag Drowner)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Silumgar Sorcerer|Rakshasa Gravecaller|Youthful Scholar|Minister of Pain|Anticipate|Qarsi Sadist|Palace Familiar|Silumgar Butcher|Shambling Goblin|Sidisi's Faithful|Duress|Gurmag Drowner|Dutiful Attendant|Gravepurge)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Acid-Spewer Dragon|Ultimate Price|Silumgar Sorcerer|Deadly Wanderings|Flatten|Qarsi Sadist|Contradict|Foul-Tongue Shriek|Sibsig Icebreakers|Sidisi's Faithful|Palace Familiar|Defeat|Anticipate|Marsh Hulk)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Silumgar Spell-Eater|Marang River Skeleton|Death Wind|Silumgar's Scorn|Sidisi's Faithful|Dutiful Attendant|Flatten|Negate|Wandering Tombshell|Butcher's Glee|Mystic Meditation|Silumgar Butcher|Reduce in Stature|Gravepurge)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Rakshasa Gravecaller|Silumgar's Scorn|Qarsi Deceiver|Learn from the Past|Vulturous Aven|Gurmag Drowner|Silumgar Butcher|Reduce in Stature|Marsh Hulk|Defeat|Contradict|Ancient Carp|Dutiful Attendant|Palace Familiar)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Gudul Lurker|Minister of Pain|Dance of the Skywise|Encase in Ice|Defeat|Silumgar Butcher|Anticipate|Vulturous Aven|Sidisi's Faithful|Sibsig Icebreakers|Reduce in Stature|Foul-Tongue Shriek|Shambling Goblin|Dirgur Nemesis)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Youthful Scholar|Self-inflicted Wound|Deadly Wanderings|Gudul Lurker|Defeat|Hand of Silumgar|Mystic Meditation|Qarsi Sadist|Vulturous Aven|Contradict|Marsh Hulk|Negate|Palace Familiar|Dutiful Attendant)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Minister of Pain|Ukud Cobra|Dance of the Skywise|Acid-Spewer Dragon|Coat with Venom|Silumgar Butcher|Anticipate|Wandering Tombshell|Gurmag Drowner|Flatten|Gravepurge|Sidisi's Faithful|Butcher's Glee|Hand of Silumgar)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Ukud Cobra|Silumgar Sorcerer|Qarsi Deceiver|Virulent Plague|Mind Rot|Reduce in Stature|Defeat|Palace Familiar|Butcher's Glee|Vulturous Aven|Gravepurge|Mystic Meditation|Sibsig Icebreakers|Marsh Hulk)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Acid-Spewer Dragon|Ultimate Price|Silumgar Sorcerer|Deadly Wanderings|Flatten|Qarsi Sadist|Contradict|Foul-Tongue Shriek|Sibsig Icebreakers|Sidisi's Faithful|Palace Familiar|Defeat|Anticipate|Gravepurge)" }
-                    ]
-                }
-            ]
-        },
-        {
-            "packName": "dtk-seeded-booster-packins-silumgar",
-            "packDesc": "Dragons of Tarkir: Silumgar Pack-Ins",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[dtk]?title=(Silumgar Clan Info Card|Dragons of Tarkir Activity Card|Silumgar Spindown Life Counter)" }
-            ]
-        },
-        {
-            "packName": "dtk-seeded-booster-kolaghan",
-            "packDesc": "Dragons of Tarkir: Kolaghan Seeded Booster",
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[dtk]?title=(Dragonlord Kolaghan|Boltwing Marauder|Thunderbreak Regent|Ire Shaman|Kolaghan's Command|Zurgo Bellstriker|Blood-Chin Fanatic|Pitiless Horde)" },
-                { "query": "from[dtk]?title='Foul-Tongue Shriek'" },
-                {
-                    "querySet": [
-                        { "query": "take[*]>from[dtk-main]?title=(Ukud Cobra|Foul-Tongue Invocation|Ambuscade Shaman|Seismic Rupture|Defeat|Screamreach Brawler|Dragon Fodder|Mind Rot|Marsh Hulk|Sarkhan's Rage|Kolaghan Aspirant|Gravepurge|Kolaghan Stormsinger|Vandalize)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Coat with Venom|Screamreach Brawler|Flatten|Magmatic Chasm|Warbringer|Reckless Imp|Sarkhan's Triumph|Self-Inflicted Wound|Death Wind|Volcanic Rush|Summit Prowler|Marsh Hulk|Lose Calm|Kolaghan Stormsinger)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Warbringer|Self-Inflicted Wound|Sarkhan's Triumph|Death Wind|Reckless Imp|Volcanic Rush|Coat with Venom|Screamreach Brawler|Flatten|Magmatic Chasm|Summit Prowler|Marsh Hulk|Lose Calm|Kolaghan Stormsinger)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Warbringer|Kolaghan Forerunners|Ambuscade Shaman|Lightning Berserker|Sprinting Warbrute|Duress|Coat with Venom|Screamreach Brawler|Mind Rot|Kolaghan Skirmisher|Impact Tremors|Butcher's Glee|Reckless Imp|Lose Calm)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Butcher's Glee|Lightning Berserker|Kolaghan Skirmisher|Lose Calm|Rending Volley|Sprinting Warbrute|Reckless Imp|Flatten|Kindled Fury|Screamreach Brawler|Blood-Chin Rager|Sarkhan's Triumph|Kolaghan Aspirant|Dragon Fodder)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Blood-Chin Rager|Roast|Sarkhan's Triumph|Death Wind|Tail Slash|Kolaghan Skirmisher|Kolaghan Stormsinger|Defeat|Dragon Fodder|Gravepurge|Mind Rot|Screamreach Brawler|Reckless Imp|Magmatic Chasm)" }
-                    ]
-                }
-            ]
-        },
-        {
-            "packName": "dtk-seeded-booster-packins-kolaghan",
-            "packDesc": "Dragons of Tarkir: Kolaghan Pack-Ins",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[dtk]?title=(Kolaghan Clan Info Card|Dragons of Tarkir Activity Card|Kolaghan Spindown Life Counter)" }
-            ]
-        },
-        {
-            "packName": "dtk-seeded-booster-atarka",
-            "packDesc": "Dragons of Tarkir: Atarka Seeded Booster",
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[dtk]?title=(Dragonlord Atarka|Harbinger of the Hunt|Foe-Razer Regent|Den Protector|Atarka's Command|Surrak, the Hunt Caller|Crater Elemental|Volcanic Vision)" },
-                { "query": "from[dtk]?title='Revealing Wind'" },
-                {
-                    "querySet": [
-                        { "query": "take[*]>from[dtk-main]?title=(Seismic Rupture|Press the Advantage|Qal Sisma Behemoth|Explosive Vegetation|Summit Prowler|Impact Tremors|Epic Confrontation|Tread Upon|Tormenting Voice|Stampeding Elk Herd|Atarka Efreet|Vandalize|Glade Watcher|Sheltered Aerie)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Roast|Ainok Survivalist|Qal Sisma Behemoth|Sarkhan's Triumph|Segmented Krotiq|Twin Bolt|Atarka Efreet|Sheltered Aerie|Tail Slash|Glade Watcher|Summit Prowler|Tormenting Voice|Dragon-Scarred Bear|Dragon Fodder)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Stormcrag Elemental|Press the Advantage|Herdchaser Dragon|Display of Dominance|Tail Slash|Stampeding Elk Herd|Kindled Fury|Tread Upon|Dragon Fodder|Hardened Berserker|Magmatic Chasm|Atarka Beastbreaker|Sarkhan's Rage|Conifer Strider)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Circle of Elders|Lurking Arynx|Stormcrag Elemental|Sight of the Scalelords|Atarka Beastbreaker|Sabertooth Outrider|Naturalize|Kindled Fury|Colossodon Yearling|Epic Confrontation|Stampeding Elk Herd|Hardened Berserker|Shape the Sands|Sarkhan's Rage)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Atarka Pummeler|Explosive Vegetation|Draconic Roar|Lurking Arynx|Vandalize|Stampeding Elk Herd|Sabertooth Outrider|Epic Confrontation|Lose Calm|Conifer Strider|Volcanic Rush|Tormenting Voice|Segmented Krotiq|Atarka Efreet)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Ainok Survivalist|Atarka Pummeler|Rending Volley|Press the Advantage|Summit Prowler|Tormenting Voice|Dragon-Scarred Bear|Conifer Strider|Twin Bolt|Sabertooth Outrider|Shape the Sands|Kindled Fury|Segmented Krotiq|Lose Calm)" },
-                        { "query": "take[*]>from[dtk-main]?title=(Press the Advantage|Herdchaser Dragon|Dragonlord's Servant|Atarka Beastbreaker|Hardened Berserker|Tread Upon|Tail Slash|Summit Prowler|Sabertooth Outrider|Rending Volley|Conifer Strider|Impact Tremors|Glade Watcher|Tormenting Voice)" }
-                    ]
-                }
-            ]
-        },
-        {
-            "packName": "dtk-seeded-booster-packins-atarka",
-            "packDesc": "Dragons of Tarkir: Atarka Pack-Ins",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[dtk]?title=(Atarka Clan Info Card|Dragons of Tarkir Activity Card|Atarka Spindown Life Counter)" }
-            ]
-        },
-        {
-            "packName": "dtk-fat-pack-pack-ins",
-            "packDesc": "Dragons of Tarkir Fat Pack: Pack-Ins",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[dtk]?title=(Dragons of Tarkir Player’s Guide|Dragons of Tarkir Card Box|Dragons of Tarkir Mural|Dragons of Tarkir Rules Reference Card)" },
-                { "query": "from[dtk-fatpack]?type='Life Counter'", "canBeDuplicate": true },
-                { "query": "take[2]>from[dtk]?title='Dragons of Tarkir Deck Box'", "canBeDuplicate": true }
-            ]
-        },
-        {
-            "packName": "dtk-fat-pack-land",
-            "packDesc": "Dragons of Tarkir Fat Pack: Land",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[16]>from[dtk]?title='Plains'", "canBeDuplicate": true },
-                { "query": "take[16]>from[dtk]?title='Island'", "canBeDuplicate": true },
-                { "query": "take[16]>from[dtk]?title='Swamp'", "canBeDuplicate": true },
-                { "query": "take[16]>from[dtk]?title='Forest'", "canBeDuplicate": true },
-                { "query": "take[16]>from[dtk]?title='Mountain'", "canBeDuplicate": true }
-            ]
+          "querySet": [
+            { "query": "take[*]>from[dtk-main]?title=(Shieldhide Dragon|Inspiring Call|Surge of Righteousness|Dromoka's Gift|Guardian Shield-Bearer|Sandsteppe Scavenger|Dromoka Dunecaster|Sheltered Aerie|Misthoof Kirin|Pinion Feast|Lightwalker|Tread Upon|Conifer Strider|Glaring Aegis)" },
+            { "query": "take[*]>from[dtk-main]?title=(Echoes of the Kin Tree|Inspiring Call|Scale Blessing|Dromoka's Gift|Lightwalker|Sandcrafter Mage|Ainok Artillerist|Enduring Victory|Aven Tactician|Herald of Dromoka|Servant of the Scale|Glaring Aegis|Champion of Arashin|Aerie Bowmasters)" },
+            { "query": "take[*]>from[dtk-main]?title=(Press the Advantage|Dragon Hunter|Battle Mastery|Explosive Vegetation|Aven Tactician|Pacifism|Sandsteppe Scavenger|Sandstorm Charger|Aerie Bowmasters|Resupply|Enduring Victory|Ainok Artillerist|Lightwalker|Servant of the Scale)" },
+            { "query": "take[*]>from[dtk-main]?title=(Salt Road Ambushers|Scaleguard Sentinels|Shieldhide Dragon|Sight of the Scalelords|Sandstorm Charger|Guardian Shield-Bearer|Conifer Strider|Epic Confrontation|Enduring Victory|Segmented Krotiq|Naturalize|Misthoof Kirin|Sandsteppe Scavenger|Glaring Aegis)" },
+            { "query": "take[*]>from[dtk-main]?title=(Scale Blessing|Sight of the Scalelords|Echoes of the Kin Tree|Explosive Vegetation|Herald of Dromoka|Colossodon Yearling|Sheltered Aerie|Epic Confrontation|Champion of Arashin|Glaring Aegis|Aerie Bowmasters|Territorial Roc|Segmented Krotiq|Sandcrafter Mage)" },
+            { "query": "take[*]>from[dtk-main]?title=(Shieldhide Dragon|Press the Advantage|Inspiring Call|Dromoka Captain|Misthoof Kirin|Pinion Feast|Tread Upon|Territorial Roc|Ainok Artillerist|Guardian Shield-Bearer|Epic Confrontation|Sandstorm Charger|Revealing Wind|Herald of Dromoka)" },
+            { "query": "take[*]>from[dtk-main]?title=(Scaleguard Sentinels|Dromoka's Gift|Silkwrap|Surge of Righteousness|Aerie Bowmasters|Aven Tactician|Resupply|Guardian Shield-Bearer|Lightwalker|Sheltered Aerie|Sandcrafter Mage|Colossodon Yearling|Fate Forgotten|Glaring Aegis)" },
+            { "query": "take[*]>from[dtk-main]?title=(Scaleguard Sentinels|Press the Advantage|Dragon Hunter|Salt Road Quartermasters|Epic Confrontation|Herald of Dromoka|Tread Upon|Lightwalker|Pinion Feast|Champion of Arashin|Dromoka Warrior|Naturalize|Enduring Victory|Sandsteppe Scavenger)" }
+          ]
         }
+      ]
+    },
+    {
+      "packName": "dtk-seeded-booster-packins-dromoka",
+      "packDesc": "Dragons of Tarkir: Dromoka Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[dtk]?title=(Dromoka Clan Info Card|Dragons of Tarkir Activity Card|Dromoka Spindown Life Counter)" }
+      ]
+    },
+    {
+      "packName": "dtk-seeded-booster-ojutai",
+      "packDesc": "Dragons of Tarkir: Ojutai Seeded Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[dtk]?title=(Dragonlord Ojutai|Pristine Skywise|Icefall Regent|Stratus Dancer|Ojutai's Command|Blessed Reincarnation|Myth Realized|Living Lore)" },
+        { "query": "from[dtk]?title='Fate Forgotten'" },
+        {
+          "querySet": [
+            { "query": "take[*]>from[dtk-main]?title=(Strongarm Monk|Void Squall|Great Teacher's Decree|Sight Beyond Sight|Artful Maneuver|Mystic Meditation|Misthoof Kirin|Elusive Spellfist|Resupply|Territorial Roc|Contradict|Zephyr Scribe|Center Soul|Monastery Loremaster)" },
+            { "query": "take[*]>from[dtk-main]?title=(Belltoll Dragon|Strongarm Monk|Skywise Teachings|Encase in Ice|Misthoof Kirin|Territorial Roc|Dirgur Nemesis|Ojutai Interceptor|Resupply|Zephyr Scribe|Glaring Aegis|Glint|Elusive Spellfist|Pacifism)" },
+            { "query": "take[*]>from[dtk-main]?title=(Belltoll Dragon|Graceblade Artisan|Silkwrap|Dance of the Skywise|Zephyr Scribe|Ancient Carp|Student of Ojutai|Ojutai's Breath|Territorial Roc|Monastery Loremaster|Mystic Meditation|Misthoof Kirin|Negate|Updraft Elemental)" },
+            { "query": "take[*]>from[dtk-main]?title=(Gudul Lurker|Great Teacher's Decree|Skywise Teachings|Battle Mastery|Ojutai's Breath|Misthoof Kirin|Negate|Dirgur Nemesis|Pacifism|Center Soul|Ancient Carp|Mystic Meditation|Taigam's Strike|Monastery Loremaster)" },
+            { "query": "take[*]>from[dtk-main]?title=(Graceblade Artisan|Aven Sunstriker|Gudul Lurker|Battle Mastery|Glaring Aegis|Updraft Elemental|Ojutai's Breath|Pacifism|Reduce in Stature|Ojutai's Summons|Resupply|Monastery Loremaster|Dragon's Eye Sentry|Mystic Meditation)" },
+            { "query": "take[*]>from[dtk-main]?title=(Great Teacher's Decree|Void Squall|Surge of Righteousness|Aven Sunstriker|Anticipate|Center Soul|Glaring Aegis|Ojutai Interceptor|Dragon's Eye Sentry|Glint|Misthoof Kirin|Territorial Roc|Pacifism|Updraft Elemental)" },
+            { "query": "take[*]>from[dtk-main]?title=(Sight Beyond Sight|Orator of Ojutai|Encase in Ice|Graceblade Artisan|Updraft Elemental|Dragon's Eye Sentry|Elusive Spellfist|Artful Maneuver|Reduce in Stature|Student of Ojutai|Ojutai's Summons|Dirgur Nemesis|Glaring Aegis|Contradict)" }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "dtk-seeded-booster-packins-ojutai",
+      "packDesc": "Dragons of Tarkir: Ojutai Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[dtk]?title=(Ojutai Clan Info Card|Dragons of Tarkir Activity Card|Ojutai Spindown Life Counter)" }
+      ]
+    },
+    {
+      "packName": "dtk-seeded-booster-silumgar",
+      "packDesc": "Dragons of Tarkir: Silumgar Seeded Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[dtk]?title=(Dragonlord Silumgar|Necromaster Dragon|Deathbringer Regent|Silumgar Assassin|Silumgar's Command|Sidisi, Undead Vizier|Profaner of the Dead|Damnable Pact)" },
+        { "query": "from[dtk]?title='Glint'" },
+        {
+          "querySet": [
+            { "query": "take[*]>from[dtk-main]?title=(Ukud Cobra|Silumgar Sorcerer|Qarsi Deceiver|Virulent Plague|Mind Rot|Reduce in Stature|Defeat|Palace Familiar|Butcher's Glee|Vulturous Aven|Gravepurge|Mystic Meditation|Sibsig Icebreakers|Gurmag Drowner)" },
+            { "query": "take[*]>from[dtk-main]?title=(Silumgar Sorcerer|Rakshasa Gravecaller|Youthful Scholar|Minister of Pain|Anticipate|Qarsi Sadist|Palace Familiar|Silumgar Butcher|Shambling Goblin|Sidisi's Faithful|Duress|Gurmag Drowner|Dutiful Attendant|Gravepurge)" },
+            { "query": "take[*]>from[dtk-main]?title=(Acid-Spewer Dragon|Ultimate Price|Silumgar Sorcerer|Deadly Wanderings|Flatten|Qarsi Sadist|Contradict|Foul-Tongue Shriek|Sibsig Icebreakers|Sidisi's Faithful|Palace Familiar|Defeat|Anticipate|Marsh Hulk)" },
+            { "query": "take[*]>from[dtk-main]?title=(Silumgar Spell-Eater|Marang River Skeleton|Death Wind|Silumgar's Scorn|Sidisi's Faithful|Dutiful Attendant|Flatten|Negate|Wandering Tombshell|Butcher's Glee|Mystic Meditation|Silumgar Butcher|Reduce in Stature|Gravepurge)" },
+            { "query": "take[*]>from[dtk-main]?title=(Rakshasa Gravecaller|Silumgar's Scorn|Qarsi Deceiver|Learn from the Past|Vulturous Aven|Gurmag Drowner|Silumgar Butcher|Reduce in Stature|Marsh Hulk|Defeat|Contradict|Ancient Carp|Dutiful Attendant|Palace Familiar)" },
+            { "query": "take[*]>from[dtk-main]?title=(Gudul Lurker|Minister of Pain|Dance of the Skywise|Encase in Ice|Defeat|Silumgar Butcher|Anticipate|Vulturous Aven|Sidisi's Faithful|Sibsig Icebreakers|Reduce in Stature|Foul-Tongue Shriek|Shambling Goblin|Dirgur Nemesis)" },
+            { "query": "take[*]>from[dtk-main]?title=(Youthful Scholar|Self-inflicted Wound|Deadly Wanderings|Gudul Lurker|Defeat|Hand of Silumgar|Mystic Meditation|Qarsi Sadist|Vulturous Aven|Contradict|Marsh Hulk|Negate|Palace Familiar|Dutiful Attendant)" },
+            { "query": "take[*]>from[dtk-main]?title=(Minister of Pain|Ukud Cobra|Dance of the Skywise|Acid-Spewer Dragon|Coat with Venom|Silumgar Butcher|Anticipate|Wandering Tombshell|Gurmag Drowner|Flatten|Gravepurge|Sidisi's Faithful|Butcher's Glee|Hand of Silumgar)" },
+            { "query": "take[*]>from[dtk-main]?title=(Ukud Cobra|Silumgar Sorcerer|Qarsi Deceiver|Virulent Plague|Mind Rot|Reduce in Stature|Defeat|Palace Familiar|Butcher's Glee|Vulturous Aven|Gravepurge|Mystic Meditation|Sibsig Icebreakers|Marsh Hulk)" },
+            { "query": "take[*]>from[dtk-main]?title=(Acid-Spewer Dragon|Ultimate Price|Silumgar Sorcerer|Deadly Wanderings|Flatten|Qarsi Sadist|Contradict|Foul-Tongue Shriek|Sibsig Icebreakers|Sidisi's Faithful|Palace Familiar|Defeat|Anticipate|Gravepurge)" }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "dtk-seeded-booster-packins-silumgar",
+      "packDesc": "Dragons of Tarkir: Silumgar Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[dtk]?title=(Silumgar Clan Info Card|Dragons of Tarkir Activity Card|Silumgar Spindown Life Counter)" }
+      ]
+    },
+    {
+      "packName": "dtk-seeded-booster-kolaghan",
+      "packDesc": "Dragons of Tarkir: Kolaghan Seeded Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[dtk]?title=(Dragonlord Kolaghan|Boltwing Marauder|Thunderbreak Regent|Ire Shaman|Kolaghan's Command|Zurgo Bellstriker|Blood-Chin Fanatic|Pitiless Horde)" },
+        { "query": "from[dtk]?title='Foul-Tongue Shriek'" },
+        {
+          "querySet": [
+            { "query": "take[*]>from[dtk-main]?title=(Ukud Cobra|Foul-Tongue Invocation|Ambuscade Shaman|Seismic Rupture|Defeat|Screamreach Brawler|Dragon Fodder|Mind Rot|Marsh Hulk|Sarkhan's Rage|Kolaghan Aspirant|Gravepurge|Kolaghan Stormsinger|Vandalize)" },
+            { "query": "take[*]>from[dtk-main]?title=(Coat with Venom|Screamreach Brawler|Flatten|Magmatic Chasm|Warbringer|Reckless Imp|Sarkhan's Triumph|Self-Inflicted Wound|Death Wind|Volcanic Rush|Summit Prowler|Marsh Hulk|Lose Calm|Kolaghan Stormsinger)" },
+            { "query": "take[*]>from[dtk-main]?title=(Warbringer|Self-Inflicted Wound|Sarkhan's Triumph|Death Wind|Reckless Imp|Volcanic Rush|Coat with Venom|Screamreach Brawler|Flatten|Magmatic Chasm|Summit Prowler|Marsh Hulk|Lose Calm|Kolaghan Stormsinger)" },
+            { "query": "take[*]>from[dtk-main]?title=(Warbringer|Kolaghan Forerunners|Ambuscade Shaman|Lightning Berserker|Sprinting Warbrute|Duress|Coat with Venom|Screamreach Brawler|Mind Rot|Kolaghan Skirmisher|Impact Tremors|Butcher's Glee|Reckless Imp|Lose Calm)" },
+            { "query": "take[*]>from[dtk-main]?title=(Butcher's Glee|Lightning Berserker|Kolaghan Skirmisher|Lose Calm|Rending Volley|Sprinting Warbrute|Reckless Imp|Flatten|Kindled Fury|Screamreach Brawler|Blood-Chin Rager|Sarkhan's Triumph|Kolaghan Aspirant|Dragon Fodder)" },
+            { "query": "take[*]>from[dtk-main]?title=(Blood-Chin Rager|Roast|Sarkhan's Triumph|Death Wind|Tail Slash|Kolaghan Skirmisher|Kolaghan Stormsinger|Defeat|Dragon Fodder|Gravepurge|Mind Rot|Screamreach Brawler|Reckless Imp|Magmatic Chasm)" }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "dtk-seeded-booster-packins-kolaghan",
+      "packDesc": "Dragons of Tarkir: Kolaghan Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[dtk]?title=(Kolaghan Clan Info Card|Dragons of Tarkir Activity Card|Kolaghan Spindown Life Counter)" }
+      ]
+    },
+    {
+      "packName": "dtk-seeded-booster-atarka",
+      "packDesc": "Dragons of Tarkir: Atarka Seeded Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[dtk]?title=(Dragonlord Atarka|Harbinger of the Hunt|Foe-Razer Regent|Den Protector|Atarka's Command|Surrak, the Hunt Caller|Crater Elemental|Volcanic Vision)" },
+        { "query": "from[dtk]?title='Revealing Wind'" },
+        {
+          "querySet": [
+            { "query": "take[*]>from[dtk-main]?title=(Seismic Rupture|Press the Advantage|Qal Sisma Behemoth|Explosive Vegetation|Summit Prowler|Impact Tremors|Epic Confrontation|Tread Upon|Tormenting Voice|Stampeding Elk Herd|Atarka Efreet|Vandalize|Glade Watcher|Sheltered Aerie)" },
+            { "query": "take[*]>from[dtk-main]?title=(Roast|Ainok Survivalist|Qal Sisma Behemoth|Sarkhan's Triumph|Segmented Krotiq|Twin Bolt|Atarka Efreet|Sheltered Aerie|Tail Slash|Glade Watcher|Summit Prowler|Tormenting Voice|Dragon-Scarred Bear|Dragon Fodder)" },
+            { "query": "take[*]>from[dtk-main]?title=(Stormcrag Elemental|Press the Advantage|Herdchaser Dragon|Display of Dominance|Tail Slash|Stampeding Elk Herd|Kindled Fury|Tread Upon|Dragon Fodder|Hardened Berserker|Magmatic Chasm|Atarka Beastbreaker|Sarkhan's Rage|Conifer Strider)" },
+            { "query": "take[*]>from[dtk-main]?title=(Circle of Elders|Lurking Arynx|Stormcrag Elemental|Sight of the Scalelords|Atarka Beastbreaker|Sabertooth Outrider|Naturalize|Kindled Fury|Colossodon Yearling|Epic Confrontation|Stampeding Elk Herd|Hardened Berserker|Shape the Sands|Sarkhan's Rage)" },
+            { "query": "take[*]>from[dtk-main]?title=(Atarka Pummeler|Explosive Vegetation|Draconic Roar|Lurking Arynx|Vandalize|Stampeding Elk Herd|Sabertooth Outrider|Epic Confrontation|Lose Calm|Conifer Strider|Volcanic Rush|Tormenting Voice|Segmented Krotiq|Atarka Efreet)" },
+            { "query": "take[*]>from[dtk-main]?title=(Ainok Survivalist|Atarka Pummeler|Rending Volley|Press the Advantage|Summit Prowler|Tormenting Voice|Dragon-Scarred Bear|Conifer Strider|Twin Bolt|Sabertooth Outrider|Shape the Sands|Kindled Fury|Segmented Krotiq|Lose Calm)" },
+            { "query": "take[*]>from[dtk-main]?title=(Press the Advantage|Herdchaser Dragon|Dragonlord's Servant|Atarka Beastbreaker|Hardened Berserker|Tread Upon|Tail Slash|Summit Prowler|Sabertooth Outrider|Rending Volley|Conifer Strider|Impact Tremors|Glade Watcher|Tormenting Voice)" }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "dtk-seeded-booster-packins-atarka",
+      "packDesc": "Dragons of Tarkir: Atarka Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[dtk]?title=(Atarka Clan Info Card|Dragons of Tarkir Activity Card|Atarka Spindown Life Counter)" }
+      ]
+    },
+    {
+      "packName": "dtk-fat-pack-pack-ins",
+      "packDesc": "Dragons of Tarkir Fat Pack: Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[dtk]?title=(Dragons of Tarkir Player’s Guide|Dragons of Tarkir Card Box|Dragons of Tarkir Mural|Dragons of Tarkir Rules Reference Card)" },
+        {
+          "query": "from[dtk-fatpack]?type='Life Counter'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[dtk]?title='Dragons of Tarkir Deck Box'",
+          "canBeDuplicate": true
+        }
+      ]
+    },
+    {
+      "packName": "dtk-fat-pack-land",
+      "packDesc": "Dragons of Tarkir Fat Pack: Land",
+      "isGenerated": false,
+      "cards": [
+        {
+          "query": "take[16]>from[dtk]?title='Plains'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[16]>from[dtk]?title='Island'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[16]>from[dtk]?title='Swamp'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[16]>from[dtk]?title='Forest'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[16]>from[dtk]?title='Mountain'",
+          "canBeDuplicate": true
+        }
+      ]
+    }
 
-    ]
+  ]
 }

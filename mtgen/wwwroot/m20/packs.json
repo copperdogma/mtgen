@@ -13,6 +13,10 @@
       "query": "from[m20]-from[m20]?type=(Marketing|Basic Land)-from[m20]?promo=true-from[m20]?token=true"
     },
     {
+      "defName": "m20-basic-land",
+      "query": "from[m20]?type='Basic Land'-from[m20]?promo=true"
+    },
+    {
       "defName": "m20-tapland",
       "query": "from[m20-main]?tapland=true"
     },
@@ -23,7 +27,7 @@
     },
     {
       "defName": "m20-foils",
-      "query": "from[m20]-from[m20-promo]"
+      "query": "from[m20-main]+from[m20-basic-land]"
     },
     {
       "defName": "m20-token",
@@ -38,6 +42,7 @@
       "query": "from[*]?includedReason='Standard-Legal Promo'"
     }
   ],
+
   "packs": [
     {
       "packName": "m20-all-cards",
@@ -51,13 +56,13 @@
     {
       "packName": "m20-standard",
       "packDesc": "Core Set 2020: Standard Booster",
-      "packVersion": "1.0",
+      "packVersion": "1.1",
       "isGenerated": true,
       "cards": [
         { "query": "take[10]>from[m20-common]?rarity='c" },
         { "query": "take[3]>from[m20-main]?rarity='u" },
-        { "query": "from[m20-main]?rarity='r" },
-        { "query": "from[m20]?type='Basic Land'-from[m20]?promo=true" },
+        { "query": "from[m20-main]?rarity=rarityByWeight2008(rm)" },
+        { "query": "from[m20-basic-land]" },
         {
           "querySet": [
             {
@@ -70,45 +75,19 @@
             }
           ]
         },
+
         {
           "querySet": [
             {
               "_comment": "33% chance of foil, scaled by rarity, replacing the last common, as of M20: Jun-2019",
+              "percent": "33",
               "overrideSlot": "10",
-              "percent": "88/360",
-              "query": "from[m20-main]?rarity='c",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "10",
-              "percent": "24/360",
-              "query": "from[m20-main]?rarity='u",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "10",
-              "percent": "7/360",
-              "query": "from[m20-main]?rarity='r",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "10",
-              "percent": "1/360",
-              "query": "from[m20-main]?rarity='m",
+              "query": "from[m20-foils]?rarity=rarityByWeight2008(curm)",
               "setValues": { "foil": true }
             }
           ]
         },
-        {
-          "querySet": [
-            {
-              "_comment": "1/8 chance of replacing rare with mythic",
-              "percent": "1/8",
-              "overrideSlot": "14",
-              "query": "from[m20-main]?rarity='m'"
-            }
-          ]
-        },
+
         {
           "querySet": [
             {

@@ -1,346 +1,386 @@
 {
-    "_comment": "from: http://mtgsalvation.gamepedia.com/Fate_Reforged#Prerelease",
-    "_comment": "You choose your clan for the prerelease. Each clan prerelease pack comes with a clan pin and a clan sticker. The prerelease pack further contains 5 regular booster packs, 1 seeded booster pack, 1 premium promo card, 1 activity insert and 1 Spindown life counter. Fate Reforged will feature 40 prerelease cards — one dated and stamped prerelease card random from a pool of eight for each Clan pack. One of which will be the Khan.",
-    "_comment": "from: https://plus.google.com/events/cvi340m1q951bg6sphjihdmpg94",
-    "_comment": "seeded boosters are the same as KTK: promo is one of 40 cards, 8 cards per clan",
+  "_comment": "from: http://mtgsalvation.gamepedia.com/Fate_Reforged#Prerelease",
+  "_comment2": "You choose your clan for the prerelease. Each clan prerelease pack comes with a clan pin and a clan sticker. The prerelease pack further contains 5 regular booster packs, 1 seeded booster pack, 1 premium promo card, 1 activity insert and 1 Spindown life counter. Fate Reforged will feature 40 prerelease cards — one dated and stamped prerelease card random from a pool of eight for each Clan pack. One of which will be the Khan.",
+  "_comment3": "from: https://plus.google.com/events/cvi340m1q951bg6sphjihdmpg94",
+  "_comment4": "seeded boosters are the same as KTK: promo is one of 40 cards, 8 cards per clan",
 
-    "defs": [
+  "defs": [
+    {
+      "defName": "frf",
+      "query": "from[*]?set='frf'"
+    },
+    {
+      "defName": "frf-main",
+      "query": "from[frf]-from[frf]?type=(Marketing|Basic Land)-from[frf]?token=true-from[frf]?promo=true"
+    },
+    {
+      "defName": "frf-intro-packs",
+      "query": "from[frf]-from[frf]?promo=true"
+    },
+    {
+      "defName": "frf-promo",
+      "query": "from[frf]?promo=true"
+    },
+    {
+      "defName": "frf-dual-land",
+      "query": "from[frf]?type='Land'-from[frf]?rarity='r'-from[frf-promo]"
+    },
+    {
+      "defName": "ktk-fetch-land",
+      "query": "from[ktk]?type='Land'-from[ktk]?rarity=contains(m|u|c|s)-from[ktk-promo]"
+    },
+    {
+      "defName": "frf-foils",
+      "query": "from[frf-main]+from[frf-dual-land]+from[ktk-fetch-land]"
+    },
+    {
+      "defName": "frf-ktk-main",
+      "query": "from[frf-main]+from[ktk-main]"
+    },
+    {
+      "defName": "frf-ktk-no-clan",
+      "query": "from[frf-ktk-main]?clan=''"
+    },
+    {
+      "defName": "frf-ugins-fate",
+      "query": "from[*]?includedReasonMatchTitle='Ugins Fate Promo'"
+    },
+    {
+      "defName": "frf-abzan-seeded",
+      "query": "from[frf-ktk-main]?clan='abzan'+from[frf-ktk-no-clan]?cost=contains({W}|{B}|{G})-from[frf-ktk-main]?cost=contains({U}|{R})"
+    },
+    {
+      "defName": "frf-jeskai-seeded",
+      "query": "from[frf-ktk-main]?clan='jeskai'+from[frf-ktk-no-clan]?cost=contains({U}|{R}|{W})-from[frf-ktk-main]?cost=contains({B}|{G})"
+    },
+    {
+      "defName": "frf-sultai-seeded",
+      "query": "from[frf-ktk-main]?clan='sultai'+from[frf-ktk-no-clan]?cost=contains({B}|{G}|{U})-from[frf-ktk-main]?cost=contains({W}|{R})"
+    },
+    {
+      "defName": "frf-mardu-seeded",
+      "query": "from[frf-ktk-main]?clan='mardu'+from[frf-ktk-no-clan]?cost=contains({R}|{W}|{B})-from[frf-ktk-main]?cost=contains({U}|{G})"
+    },
+    {
+      "defName": "frf-temur-seeded",
+      "query": "from[frf-ktk-main]?clan='temur'+from[frf-ktk-no-clan]?cost=contains({G}|{U}|{R})-from[frf-ktk-main]?cost=contains({W}|{B})"
+    },
+    {
+      "defName": "frf-fatpack",
+      "query": "from[frf]?includedReason='Fat Pack Pack-In'"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "frf-all-cards",
+      "packDesc": "Fate Reforged: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[frf]" }
+      ]
+    },
+    {
+      "packName": "frf-standard",
+      "packDesc": "Fate Reforged: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[frf-main]?rarity='c'" },
+        { "query": "take[3]>from[frf-main]?rarity='u'" },
+        { "query": "from[frf-main]?rarity=rarityByWeight2008(rm)" },
         {
-            "defName": "frf",
-            "query": "from[*]?set='frf'"
+          "querySet": [
+            {
+              "percent": 50,
+              "query": "from[frf]?type='Marketing'"
+            },
+            {
+              "percent": 50,
+              "query": "from[frf]?token=true-from[frf]?promo=true"
+            }
+          ]
         },
         {
-            "defName": "frf-main",
-            "query": "from[frf]-from[frf]?type=(Marketing|Basic Land)-from[frf]?token=true-from[frf]?promo=true"
+          "querySet": [
+            {
+              "percent": 87.5,
+              "query": "from[frf-dual-land]"
+            },
+            {
+              "percent": 12.5,
+              "query": "from[ktk-fetch-land]"
+            }
+          ]
         },
+
         {
-            "defName": "frf-intro-packs",
-            "query": "from[frf]-from[frf]?promo=true"
-        },
-        {
-            "defName": "frf-foils",
-            "query": "from[frf-main]"
-        },
-        {
-            "defName": "frf-promo",
-            "query": "from[frf]?promo=true"
-        },
-        {
-            "defName": "frf-ktk-main",
-            "query": "from[frf-main]+from[ktk-main]"
-        },
-        {
-            "defName": "frf-dual-land",
-            "query": "from[frf]?type='Land'-from[frf]?rarity='r'-from[frf-promo]"
-        },
-        {
-            "defName": "ktk-fetch-land",
-            "query": "from[ktk]?type='Land'-from[ktk]?rarity=contains(m|u|c|s)-from[ktk-promo]"
-        },
-        {
-            "defName": "frf-ktk-no-clan",
-            "query": "from[frf-ktk-main]?clan=''"
-        },
-        {
-            "defName": "frf-ugins-fate",
-            "query": "from[*]?includedReasonMatchTitle='Ugins Fate Promo'"
-        },
-        {
-            "defName": "frf-abzan-seeded",
-            "query": "from[frf-ktk-main]?clan='abzan'+from[frf-ktk-no-clan]?cost=contains({W}|{B}|{G})-from[frf-ktk-main]?cost=contains({U}|{R})"
-        },
-        {
-            "defName": "frf-jeskai-seeded",
-            "query": "from[frf-ktk-main]?clan='jeskai'+from[frf-ktk-no-clan]?cost=contains({U}|{R}|{W})-from[frf-ktk-main]?cost=contains({B}|{G})"
-        },
-        {
-            "defName": "frf-sultai-seeded",
-            "query": "from[frf-ktk-main]?clan='sultai'+from[frf-ktk-no-clan]?cost=contains({B}|{G}|{U})-from[frf-ktk-main]?cost=contains({W}|{R})"
-        },
-        {
-            "defName": "frf-mardu-seeded",
-            "query": "from[frf-ktk-main]?clan='mardu'+from[frf-ktk-no-clan]?cost=contains({R}|{W}|{B})-from[frf-ktk-main]?cost=contains({U}|{G})"
-        },
-        {
-            "defName": "frf-temur-seeded",
-            "query": "from[frf-ktk-main]?clan='temur'+from[frf-ktk-no-clan]?cost=contains({G}|{U}|{R})-from[frf-ktk-main]?cost=contains({W}|{B})"
-        },
-        {
-            "defName": "frf-fatpack",
-            "query": "from[frf]?includedReason='Fat Pack Pack-In'"
+          "querySet": [
+            {
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
+              "percent": "15/67",
+              "overrideSlot": "10",
+              "query": "from[frf-foils]?rarity=rarityByWeight2008(curm)",
+              "setValues": { "foil": true }
+            }
+          ]
         }
-
-    ],
-    "packs": [
+      ]
+    },
+    {
+      "packName": "frf-promos",
+      "packDesc": "Fate Reforged: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[frf-promo]-from[frf-ugins-fate]" },
+        { "query": "take[*]>from[frf-ugins-fate]" }
+      ]
+    },
+    {
+      "packName": "frf-prerelease-promos",
+      "packDesc": "Fate Reforged: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[frf-promo]?includedReason='Prerelease Promo'" },
+        { "query": "take[*]>from[frf-ugins-fate]" }
+      ]
+    },
+    {
+      "packName": "frf-ugins-fate-booster",
+      "packDesc": "Fate Reforged: Ugin's Fate Booster",
+      "sources": [ "http://mtgsalvation.gamepedia.com/Fate_Reforged#Prerelease", "http://magic.wizards.com/en/articles/archive/feature/fate-reforged-prerelease-primer-2015-01-12" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[frf]?type='Basic Land'" },
         {
-            "packName": "frf-all-cards",
-            "packDesc": "Fate Reforged: All Cards",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[frf]" }
-            ]
+          "querySet": [
+            {
+              "percent": 87.5,
+              "query": "from[frf-ugins-fate]?rarity='r'"
+            },
+            {
+              "percent": 12.5,
+              "query": "from[frf-ugins-fate]?rarity='m'",
+              "_comment": "rare=7/8, mythicRare=1/8"
+            }
+          ]
         },
+        { "query": "from[frf-ugins-fate]?rarity=contains(u|c)" },
+        { "query": "from[frf]?type='Marketing" }
+      ]
+    },
+    {
+      "packName": "frf-seeded-booster-abzan",
+      "packDesc": "Fate Reforged: Abzan Seeded Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[frf-main]?title=(Warden of the First Tree|Dromoka, the Eternal|Daghatar, the Adamant|Dragonscale General|Sandsteppe Mastodon|Rally the Ancestors)" },
+        { "query": "from[frf-ktk-main]?title='Abzan Banner'" },
+        { "query": "from[frf-ktk-main]?title='Sandsteppe Citadel'" },
         {
-            "packName": "frf-standard",
-            "packDesc": "Fate Reforged: Standard Booster",
-            "isGenerated": true,
-            "cards": [
-                {
-                    "querySet": [
-                        { "percent": 87.5, "query": "from[frf-dual-land]" },
-                        { "percent": 12.5, "query": "from[ktk-fetch-land]" }
-                    ]
-                },
-                { "query": "take[9]>from[frf-main]?rarity='c'" },
-                {
-                    "querySet": [
-                        { "percent": 75, "query": "from[frf-main]?rarity='c'" },
-                        { "percent": 25, "query": "from[frf-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
-                    ]
-                },
-                { "query": "take[3]>from[frf-main]?rarity='u'" },
-                {
-                    "querySet": [
-                        { "percent": 87.5, "query": "from[frf-main]?rarity='r'" },
-                        { "percent": 12.5, "query": "from[frf-main]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" }
-                    ]
-                },
-                {
-                    "querySet": [
-                        { "percent": 50, "query": "from[frf]?type='Marketing'" },
-                        { "percent": 50, "query": "from[frf]?token=true-from[frf]?promo=true" }
-                    ]
-                }
-            ]
-        },
-        {
-            "packName": "frf-promos",
-            "packDesc": "Fate Reforged: Promos",
-            "isGenerated": false,
-            "includeWithUserCards": false,
-            "cards": [
-                { "query": "take[*]>from[frf-promo]-from[frf-ugins-fate]" },
-                { "query": "take[*]>from[frf-ugins-fate]" }
-            ]
-        },
-        {
-            "packName": "frf-prerelease-promos",
-            "packDesc": "Fate Reforged: Prerelease Promos",
-            "isGenerated": false,
-            "includeWithUserCards": false,
-            "cards": [
-                { "query": "take[*]>from[frf-promo]?includedReason='Prerelease Promo'" },
-                { "query": "take[*]>from[frf-ugins-fate]" }
-            ]
-        },
-        {
-            "packName": "frf-ugins-fate-booster",
-            "packDesc": "Fate Reforged: Ugin's Fate Booster",
-            "sources": [ "http://mtgsalvation.gamepedia.com/Fate_Reforged#Prerelease", "http://magic.wizards.com/en/articles/archive/feature/fate-reforged-prerelease-primer-2015-01-12" ],
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[frf]?type='Basic Land'" },
-                {
-                    "querySet": [
-                        { "percent": 87.5, "query": "from[frf-ugins-fate]?rarity='r'" },
-                        { "percent": 12.5, "query": "from[frf-ugins-fate]?rarity='m'", "_comment": "rare=7/8, mythicRare=1/8" }
-                    ]
-                },
-                { "query": "from[frf-ugins-fate]?rarity=contains(u|c)" },
-                { "query": "from[frf]?type='Marketing" }
-            ]
-        },
-        {
-            "packName": "frf-seeded-booster-abzan",
-            "packDesc": "Fate Reforged: Abzan Seeded Booster",
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[frf-main]?title=(Warden of the First Tree|Dromoka, the Eternal|Daghatar, the Adamant|Dragonscale General|Sandsteppe Mastodon|Rally the Ancestors)" },
-                { "query": "from[frf-ktk-main]?title='Abzan Banner'" },
-                { "query": "from[frf-ktk-main]?title='Sandsteppe Citadel'" },
-                {
-                    "querySet": [
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Death Frenzy|Seek the Horizon|Armament Corps|Return to the Earth|Harsh Sustenance|Hooded Assassin|Abzan Guide|Archers' Parapet|Disowned Ancestor|Feat of Resistance|Scoured Barrens|Salt Road Patrol|Krumar Bond-Kin)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Abzan Falconer|Abzan Charm|Suspension Field|Map the Wastes|Abzan Runemark|Naturalize|Abzan Guide|Ainok Bond-Kin|Highland Game|Jungle Hollow|Great-Horn Krushok|Harsh Sustenance|Salt Road Patrol)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Abzan Kin-Guard|Abzan Charm|Cached Defenses|Erase|Rotting Mastodon|Sandsteppe Outcast|Abzan Guide|Abzan Runemark|Ainok Bond-Kin|Abzan Advantage|Harsh Sustenance|Jungle Hollow|Salt Road Patrol)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Chief of the Scale|Mer-ek Nightblade|Abzan Charm|Soul Summons|Disowned Ancestor|Erase|Abzan Guide|Arashin Cleric|Scoured Barrens|Abzan Runemark|Formless Nurturing|Molting Snakeskin|Defiant Strike)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Armament Corps|Watcher of the Roost|Chief of the Edge|Dragonscale Boon|Abzan Runemark|Disowned Ancestor|Abzan Guide|Alabaster Kirin|Scoured Barrens|Molting Snakeskin|Grim Contest|Naturalize|Dutiful Return)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Abzan Charm|Windstorm|Kin-Tree Invocation|Kill Shot|Naturalize|Sandblast|Abzan Guide|Map the Wastes|Abzan Runemark|Bitter Revelation|Blossoming Sands|Tusked Colossodon|Pressure Point)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Fruit of the First Tree|Armament Corps|Lightform|Feral Krushok|Blossoming Sands|Erase|Abzan Guide|Hooded Assassin|Kin-Tree Warden|Abzan Runemark|Molting Snakeskin|Grim Contest|Awaken the Bear)" }
-                    ]
-                }
-            ]
-        },
-        {
-            "packName": "frf-seeded-booster-packins-abzan",
-            "packDesc": "Fate Reforged: Abzan Pack-Ins",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[frf]?title=(Abzan Clan Info Card|Ugin Achievement Card|Abzan Spindown Life Counter)" },
-                { "query": "take[*]>from[ktk]?title=(Abzan Clan Button)" }
-            ]
-        },
-        {
-            "packName": "frf-seeded-booster-jeskai",
-            "packDesc": "Fate Reforged: Jeskai Seeded Booster",
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[frf-main]?title=(Soulfire Grand Master|Ojutai, Soul of Winter|Shu Yun, the Silent Tempest|Sage-Eye Avengers|Mastery of the Unseen|Jeskai Infiltrator)" },
-                { "query": "from[frf-ktk-main]?title='Jeskai Banner'" },
-                { "query": "from[frf-ktk-main]?title='Mystic Monastery'" },
-                {
-                    "querySet": [
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Warden of the Eye|Waterwhirl|Ride Down|Dragon Bell Monk|Shatter|Kill Shot|Efreet Weaponmaster|Defiant Ogre|Swiftwater Cliffs|Tormenting Voice|Siegecraft|Gore Swine|Sage-Eye Harrier)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Take Up Arms|Jeskai Charm|Burn Away|Jeskai Student|Fierce Invocation|Sage-Eye Harrier|Efreet Weaponmaster|Sandsteppe Outcast|Disdainful Stroke|Wind-Scarred Crag|Rush of Battle|Wetland Sambar|Defiant Strike)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Highspire Mantis|Renowned Weaponsmith|Warden of the Eye|Monastery Flock|Leaping Master|Crippling Chill|Efreet Weaponmaster|Erase|Cunning Strike|Sandsteppe Outcast|Defiant Ogre|Tranquil Cove|Rush of Battle)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Winterflame|Brave the Sands|Warden of the Eye|Swiftwater Cliffs|Swift Kick|Dragon Bell Monk|Efreet Weaponmaster|Act of Treason|Jeskai Sage|Trumpet Blast|War Flare|Singing Bell Strike|Leaping Master)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Jeskai Charm|Cloudform|Brave the Sands|Act of Treason|Aven Skirmisher|Cancel|Efreet Weaponmaster|Monastery Flock|Cunning Strike|Erase|Refocus|Wind-Scarred Crag|Aven Surveyor)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Blinding Spray|Seeker of the Way|Jeskai Charm|Pressure Point|Wind-Scarred Crag|Act of Treason|Efreet Weaponmaster|Summit Prowler|Aven Skirmisher|Monastery Flock|Dragon Bell Monk|Cunning Strike|Smoldering Efreet)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Warden of the Eye|Monastery Swiftspear|Master the Way|Sandsteppe Outcast|Trumpet Blast|Rakshasa's Disdain|Efreet Weaponmaster|Aven Skirmisher|Jeskai Runemark|Swift Kick|Tranquil Cove|War Flare|Enhanced Awareness)" }
-                    ]
-                }
-            ]
-        },
-        {
-            "packName": "frf-seeded-booster-packins-jeskai",
-            "packDesc": "Fate Reforged: Jeskai Pack-Ins",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[frf]?title=(Jeskai Clan Info Card|Ugin Achievement Card|Jeskai Spindown Life Counter)" },
-                { "query": "take[*]>from[ktk]?title=(Jeskai Clan Button)" }
-            ]
-        },
-        {
-            "packName": "frf-seeded-booster-sultai",
-            "packDesc": "Fate Reforged: Sultai Seeded Booster",
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[frf-main]?title=(Torrent Elemental|Silumgar, the Drifting Death|Tasigur, the Golden Fang|Archfiend of Depravity|Soulflayer|Wildcall|Soulflayer)" },
-                { "query": "from[frf-ktk-main]?title='Sultai Banner'" },
-                { "query": "from[frf-ktk-main]?title='Opulent Palace'" },
-                {
-                    "querySet": [
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Icefeather Aven|Despise|Sultai Soothsayer|Awaken the Bear|Thornwood Falls|Kheru Dreadmaw|Abomination of Gudul|Archers of Qarsi|Ethereal Ambush|Monastery Flock|Sagu Archer|Rotting Mastodon|Formless Nurturing)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Qarsi High Priest|Sultai Charm|Marang River Prowler|Gurmag Angler|Sagu Archer|Bitter Revelation|Abomination of Gudul|Molting Snakeskin|Formless Nurturing|Tasigur's Cruelty|Jungle Hollow|Weave Fate|Sibsig Host)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Sultai Charm|Renowned Weaponsmith|Secret Plans|Disdainful Stroke|Return to the Earth|Will of the Naga|Abomination of Gudul|Feral Krushok|Thornwood Falls|Treasure Cruise|Smoke Teller|Ethereal Ambush|Rakshasa's Disdain)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Dead Drop|Marang River Prowler|Sultai Charm|Throttle|Enhanced Awareness|Typhoid Rats|Abomination of Gudul|Ancestral Vengeance|Monastery Flock|Dismal Backwater|Rakshasa's disdain|Sultai Runemark|Naturalize)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Sultai Soothsayer|Swarm of Bloodflies|Kin-Tree Invocation|Dismal Backwater|Return to the Earth|Treasure Cruise|Abomination of Gudul|Sagu Archer|Wetland Sambar|Sultai Emissary|Whisk Away|Sidisi's Pet|Cancel)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Sultai Charm|Fascination|Death Frenzy|Sultai Skullkeeper|Grim Contest|Archers of Qarsi|Abomination of Gudul|Sultai Emissary|Formless Nurturing|Dutiful Return|Jungle Hollow|Rite of the Serpent|Return to the Earth)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Sudden Reclamation|Sultai Soothsayer|Ruthless Ripper|Write into Being|Naturalize|Will of the Naga|Abomination of Gudul|Sultai Skullkeeper|Dismal Backwater|Douse in Gloom|Ethereal Ambush|Molting Snakeskin|Monastery Flock)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Sultai Flayer|Sultai Soothsayer|Ruthless Instincts|Kheru Dreadmaw|Dragonscale Boon|Treasure Cruise|Abomination of Gudul|Tasigur's Cruelty|Wetland Sambar|Grim Contest|Taigam's Scheming|Thornwood Falls|Dutiful Return)" }
-                    ]
-                }
-            ]
-        },
-        {
-            "packName": "frf-seeded-booster-packins-sultai",
-            "packDesc": "Fate Reforged: Sultai Pack-Ins",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[frf]?title=(Sultai Clan Info Card|Ugin Achievement Card|Sultai Spindown Life Counter)" },
-                { "query": "take[*]>from[ktk]?title=(Sultai Clan Button)" }
-            ]
-        },
-        {
-            "packName": "frf-seeded-booster-mardu",
-            "packDesc": "Fate Reforged: Mardu Seeded Booster",
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[frf-main]?title=(Brutal Hordechief|Kolaghan, the Storm's Fury|Alesha, Who Smiles at Death|Flamerush Rider|Mardu Strike Leader|Arcbond)" },
-                { "query": "from[frf-ktk-main]?title='Mardu Banner'" },
-                { "query": "from[frf-ktk-main]?title='Nomad Outpost'" },
-                {
-                    "querySet": [
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Highspire Mantis|War-Name Aspirant|Mardu Roughrider|Great-Horn Krushok|Summit Prowler|Siegecraft|Ponyback Brigade|Trumpet Blast|Wind-Scarred Crag|Alabaster Kirin|Canyon Lurkers|Alesha's Vanguard|Smite the Monstrous)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Mardu Charm|Brave the Sands|Chief of the Edge|Mardu Skullhunter|Kill Shot|Rakshasa's Secret|Ponyback Brigade|Pressure Point|Harsh Sustenance|Siegecraft|Molting Snakeskin|Scoured Barrens|Defiant Strike)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Swarm of Bloodflies|Mardu Charm|Murderous Cut|Mardu Runemark|Dutiful Return|Shatter|Ponyback Brigade|Mardu Skullhunter|Defiant Ogre|Scoured Barrens|Alesha's Vanguard|Harsh Sustenance|Ancestral Vengeance)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Rageform|Raiders' Spoils|Mardu Roughrider|Ancestral Vengeance|Bloodfell Caves|Rite of the Serpent|Ponyback Brigade|Molting Snakeskin|War Flare|Great-Horn Krushok|Rotting Mastodon|Mardu Warshrieker|Mardu Skullhunter)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Chief of the Scale|Timely Hordemate|Mardu Charm|Firehoof Cavalry|Scoured Barrens|Mardu Skullhunter|Ponyback Brigade|Rite of the Serpent|Great-Horn Krushok|Tormenting Voice|Rotting Mastodon|Siegecraft|Throttle)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Mardu Roughrider|Goblinslide|Ride Down|Mardu Scout|Alesha's Vanguard|Mardu Runemark|Ponyback Brigade|Firehoof Cavalry|Gore Swine|Molting Snakeskin|Canyon Lurkers|Wind-Scarred Crag|Siegecraft)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Grave Strength|Mardu Roughrider|Arc Lightning|Alesha's Vanguard|Sandsteppe Outcast|Arrow Storm|Ponyback Brigade|Defiant Ogre|War Flare|Mardu Runemark|Erase|Bloodfell Caves|Tormenting Voice)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Siegecraft|Great-Horn Krushok|Ponyback Brigade|Mardu Charm|Burn Away|Act of Treason|Gore Swine|Mardu Blazebringer|Bloodfell Caves|Rakshasa's Secret|Hooded Assassin|Douse in Gloom|Harsh Sustenance)" }
-                    ]
-                }
-            ]
-        },
-        {
-            "packName": "frf-seeded-booster-packins-mardu",
-            "packDesc": "Fate Reforged: Mardu Pack-Ins",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[frf]?title=(Mardu Clan Info Card|Ugin Achievement Card|Mardu Spindown Life Counter)" },
-                { "query": "take[*]>from[ktk]?title=(Mardu Clan Button)" }
-            ]
-        },
-        {
-            "packName": "frf-seeded-booster-temur",
-            "packDesc": "Fate Reforged: Temur Seeded Booster",
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[frf-main]?title=(Shaman of the Great Hunt|Atarka, World Render|Yasova Dragonclaw|Flamewake Phoenix|Supplant Form|Shamanic Revelation)" },
-                { "query": "from[frf-ktk-main]?title='Temur Banner'" },
-                { "query": "from[frf-ktk-main]?title='Frontier Bivouac'" },
-                {
-                    "querySet": [
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Temur Charm|Dragon Grip|Frost Walker|Alpine Grizzly|Cunning Strike|Feed the Clan|Snowhorn Rider|Enhanced Awareness|Swift Kick|Crippling Chill|Rugged Highlands|Monastery Flock|Ambush Krotiq)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Highland Game|Rakshasa's Disdain|Bear's Companion|Wild Slash|Icefeather Aven|Thornwood Falls|Snowhorn Rider|Enhanced Awareness|Tusked Colossodon|Whisk Away|Feral Krushok|Fierce Invocation|Cancel)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Winterflame|Pine Walker|Bear's Companion|Swift Kick|Temur Runemark|Refocus|Snowhorn Rider|Disdainful Stroke|Alpine Grizzly|Defiant Ogre|Glacial Stalker|Swiftwater Cliffs|Aven Surveyor)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Arc Lightning|Temur Charm|Hungering Yeti|Ainok Guide|Defiant Ogre|Force Away|Snowhorn Rider|Temur Battle Rage|Swiftwater Cliffs|Shatter|Embodiment of Spring|Collateral Damage|Scaldkin)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Bear's Companion|Wild Slash|Icefeather Aven|Wetland Sambar|Thornwood Falls|Rakshasa's Disdain|Snowhorn Rider|Enhanced Awareness|Tusked Colossodon|Whisk Away|Feral Krushok|Fierce Invocation|Cancel)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Bear's Companion|Friendly Fire|Secret Plans|Bathe in Dragonfire|Write into Being|Swift Kick|Snowhorn Rider|Rugged Highlands|Trumpet Blast|Alpine Grizzly|Gore Swine|Formless Nurturing|Shatter)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Reality Shift|Temur Charm|Temur Charger|Scaldkin|Temur Runemark|Act of Treason|Snowhorn Rider|Force Away|Tormenting Voice|Rugged Highlands|Feral Krushok|Ethereal Ambush|Highland Game)" },
-                        { "query": "take[*]>from[frf-ktk-main]?title=(Incremental Growth|Burn Away|Temur Charm|Monastery Flock|Return to the Earth|Rakshasa's Disdain|Snowhorn Rider|Feed the Clan|Trumpet Blast|Alpine Grizzly|Shatter|Swiftwater Cliffs|Gore Swine)" }
-                    ]
-                }
-            ]
-        },
-        {
-            "packName": "frf-seeded-booster-packins-temur",
-            "packDesc": "Fate Reforged: Temur Pack-Ins",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[frf]?title=(Temur Clan Info Card|Ugin Achievement Card|Temur Spindown Life Counter)" },
-                { "query": "take[*]>from[ktk]?title=(Temur Clan Button)" }
-            ]
-        },
-        {
-            "packName": "frf-fat-pack-pack-ins",
-            "packDesc": "Fate Reforged Fat Pack: Pack-Ins",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[frf]?title=(Fate Reforged Player’s Guide|Fate Reforged Card Box|Fate Reforged Mural|Fate Reforged Rules Reference Card)" },
-                { "query": "from[frf-fatpack]?type='Life Counter'", "canBeDuplicate": true },
-                { "query": "take[2]>from[frf]?title='Fate Reforged Deck Box'", "canBeDuplicate": true }
-            ]
-        },
-        {
-            "packName": "frf-fat-pack-land",
-            "packDesc": "Fate Reforged Fat Pack: Land",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[16]>from[frf]?title='Plains'", "canBeDuplicate": true },
-                { "query": "take[16]>from[frf]?title='Island'", "canBeDuplicate": true },
-                { "query": "take[16]>from[frf]?title='Swamp'", "canBeDuplicate": true },
-                { "query": "take[16]>from[frf]?title='Forest'", "canBeDuplicate": true },
-                { "query": "take[16]>from[frf]?title='Mountain'", "canBeDuplicate": true }
-            ]
-        },
-        {
-            "packName": "frf-gift-box-pack-ins",
-            "packDesc": "Fate Reforged Gift Box: Pack-Ins",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[frf]?title=(Fate Reforged Storage Box|Fate Reforged Illustrated Plastic Dividers|Fate Reforged Plastic Divider Sticker Sheet)" }
-            ]
-        },
-        {
-            "packName": "frf-gift-box-land",
-            "packDesc": "Fate Reforged Gift Box: Land",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[frf]?type='Basic Land'" }
-            ]
+          "querySet": [
+            { "query": "take[*]>from[frf-ktk-main]?title=(Death Frenzy|Seek the Horizon|Armament Corps|Return to the Earth|Harsh Sustenance|Hooded Assassin|Abzan Guide|Archers' Parapet|Disowned Ancestor|Feat of Resistance|Scoured Barrens|Salt Road Patrol|Krumar Bond-Kin)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Abzan Falconer|Abzan Charm|Suspension Field|Map the Wastes|Abzan Runemark|Naturalize|Abzan Guide|Ainok Bond-Kin|Highland Game|Jungle Hollow|Great-Horn Krushok|Harsh Sustenance|Salt Road Patrol)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Abzan Kin-Guard|Abzan Charm|Cached Defenses|Erase|Rotting Mastodon|Sandsteppe Outcast|Abzan Guide|Abzan Runemark|Ainok Bond-Kin|Abzan Advantage|Harsh Sustenance|Jungle Hollow|Salt Road Patrol)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Chief of the Scale|Mer-ek Nightblade|Abzan Charm|Soul Summons|Disowned Ancestor|Erase|Abzan Guide|Arashin Cleric|Scoured Barrens|Abzan Runemark|Formless Nurturing|Molting Snakeskin|Defiant Strike)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Armament Corps|Watcher of the Roost|Chief of the Edge|Dragonscale Boon|Abzan Runemark|Disowned Ancestor|Abzan Guide|Alabaster Kirin|Scoured Barrens|Molting Snakeskin|Grim Contest|Naturalize|Dutiful Return)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Abzan Charm|Windstorm|Kin-Tree Invocation|Kill Shot|Naturalize|Sandblast|Abzan Guide|Map the Wastes|Abzan Runemark|Bitter Revelation|Blossoming Sands|Tusked Colossodon|Pressure Point)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Fruit of the First Tree|Armament Corps|Lightform|Feral Krushok|Blossoming Sands|Erase|Abzan Guide|Hooded Assassin|Kin-Tree Warden|Abzan Runemark|Molting Snakeskin|Grim Contest|Awaken the Bear)" }
+          ]
         }
+      ]
+    },
+    {
+      "packName": "frf-seeded-booster-packins-abzan",
+      "packDesc": "Fate Reforged: Abzan Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[frf]?title=(Abzan Clan Info Card|Ugin Achievement Card|Abzan Spindown Life Counter)" },
+        { "query": "take[*]>from[ktk]?title=(Abzan Clan Button)" }
+      ]
+    },
+    {
+      "packName": "frf-seeded-booster-jeskai",
+      "packDesc": "Fate Reforged: Jeskai Seeded Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[frf-main]?title=(Soulfire Grand Master|Ojutai, Soul of Winter|Shu Yun, the Silent Tempest|Sage-Eye Avengers|Mastery of the Unseen|Jeskai Infiltrator)" },
+        { "query": "from[frf-ktk-main]?title='Jeskai Banner'" },
+        { "query": "from[frf-ktk-main]?title='Mystic Monastery'" },
+        {
+          "querySet": [
+            { "query": "take[*]>from[frf-ktk-main]?title=(Warden of the Eye|Waterwhirl|Ride Down|Dragon Bell Monk|Shatter|Kill Shot|Efreet Weaponmaster|Defiant Ogre|Swiftwater Cliffs|Tormenting Voice|Siegecraft|Gore Swine|Sage-Eye Harrier)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Take Up Arms|Jeskai Charm|Burn Away|Jeskai Student|Fierce Invocation|Sage-Eye Harrier|Efreet Weaponmaster|Sandsteppe Outcast|Disdainful Stroke|Wind-Scarred Crag|Rush of Battle|Wetland Sambar|Defiant Strike)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Highspire Mantis|Renowned Weaponsmith|Warden of the Eye|Monastery Flock|Leaping Master|Crippling Chill|Efreet Weaponmaster|Erase|Cunning Strike|Sandsteppe Outcast|Defiant Ogre|Tranquil Cove|Rush of Battle)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Winterflame|Brave the Sands|Warden of the Eye|Swiftwater Cliffs|Swift Kick|Dragon Bell Monk|Efreet Weaponmaster|Act of Treason|Jeskai Sage|Trumpet Blast|War Flare|Singing Bell Strike|Leaping Master)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Jeskai Charm|Cloudform|Brave the Sands|Act of Treason|Aven Skirmisher|Cancel|Efreet Weaponmaster|Monastery Flock|Cunning Strike|Erase|Refocus|Wind-Scarred Crag|Aven Surveyor)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Blinding Spray|Seeker of the Way|Jeskai Charm|Pressure Point|Wind-Scarred Crag|Act of Treason|Efreet Weaponmaster|Summit Prowler|Aven Skirmisher|Monastery Flock|Dragon Bell Monk|Cunning Strike|Smoldering Efreet)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Warden of the Eye|Monastery Swiftspear|Master the Way|Sandsteppe Outcast|Trumpet Blast|Rakshasa's Disdain|Efreet Weaponmaster|Aven Skirmisher|Jeskai Runemark|Swift Kick|Tranquil Cove|War Flare|Enhanced Awareness)" }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "frf-seeded-booster-packins-jeskai",
+      "packDesc": "Fate Reforged: Jeskai Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[frf]?title=(Jeskai Clan Info Card|Ugin Achievement Card|Jeskai Spindown Life Counter)" },
+        { "query": "take[*]>from[ktk]?title=(Jeskai Clan Button)" }
+      ]
+    },
+    {
+      "packName": "frf-seeded-booster-sultai",
+      "packDesc": "Fate Reforged: Sultai Seeded Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[frf-main]?title=(Torrent Elemental|Silumgar, the Drifting Death|Tasigur, the Golden Fang|Archfiend of Depravity|Soulflayer|Wildcall|Soulflayer)" },
+        { "query": "from[frf-ktk-main]?title='Sultai Banner'" },
+        { "query": "from[frf-ktk-main]?title='Opulent Palace'" },
+        {
+          "querySet": [
+            { "query": "take[*]>from[frf-ktk-main]?title=(Icefeather Aven|Despise|Sultai Soothsayer|Awaken the Bear|Thornwood Falls|Kheru Dreadmaw|Abomination of Gudul|Archers of Qarsi|Ethereal Ambush|Monastery Flock|Sagu Archer|Rotting Mastodon|Formless Nurturing)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Qarsi High Priest|Sultai Charm|Marang River Prowler|Gurmag Angler|Sagu Archer|Bitter Revelation|Abomination of Gudul|Molting Snakeskin|Formless Nurturing|Tasigur's Cruelty|Jungle Hollow|Weave Fate|Sibsig Host)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Sultai Charm|Renowned Weaponsmith|Secret Plans|Disdainful Stroke|Return to the Earth|Will of the Naga|Abomination of Gudul|Feral Krushok|Thornwood Falls|Treasure Cruise|Smoke Teller|Ethereal Ambush|Rakshasa's Disdain)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Dead Drop|Marang River Prowler|Sultai Charm|Throttle|Enhanced Awareness|Typhoid Rats|Abomination of Gudul|Ancestral Vengeance|Monastery Flock|Dismal Backwater|Rakshasa's disdain|Sultai Runemark|Naturalize)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Sultai Soothsayer|Swarm of Bloodflies|Kin-Tree Invocation|Dismal Backwater|Return to the Earth|Treasure Cruise|Abomination of Gudul|Sagu Archer|Wetland Sambar|Sultai Emissary|Whisk Away|Sidisi's Pet|Cancel)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Sultai Charm|Fascination|Death Frenzy|Sultai Skullkeeper|Grim Contest|Archers of Qarsi|Abomination of Gudul|Sultai Emissary|Formless Nurturing|Dutiful Return|Jungle Hollow|Rite of the Serpent|Return to the Earth)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Sudden Reclamation|Sultai Soothsayer|Ruthless Ripper|Write into Being|Naturalize|Will of the Naga|Abomination of Gudul|Sultai Skullkeeper|Dismal Backwater|Douse in Gloom|Ethereal Ambush|Molting Snakeskin|Monastery Flock)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Sultai Flayer|Sultai Soothsayer|Ruthless Instincts|Kheru Dreadmaw|Dragonscale Boon|Treasure Cruise|Abomination of Gudul|Tasigur's Cruelty|Wetland Sambar|Grim Contest|Taigam's Scheming|Thornwood Falls|Dutiful Return)" }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "frf-seeded-booster-packins-sultai",
+      "packDesc": "Fate Reforged: Sultai Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[frf]?title=(Sultai Clan Info Card|Ugin Achievement Card|Sultai Spindown Life Counter)" },
+        { "query": "take[*]>from[ktk]?title=(Sultai Clan Button)" }
+      ]
+    },
+    {
+      "packName": "frf-seeded-booster-mardu",
+      "packDesc": "Fate Reforged: Mardu Seeded Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[frf-main]?title=(Brutal Hordechief|Kolaghan, the Storm's Fury|Alesha, Who Smiles at Death|Flamerush Rider|Mardu Strike Leader|Arcbond)" },
+        { "query": "from[frf-ktk-main]?title='Mardu Banner'" },
+        { "query": "from[frf-ktk-main]?title='Nomad Outpost'" },
+        {
+          "querySet": [
+            { "query": "take[*]>from[frf-ktk-main]?title=(Highspire Mantis|War-Name Aspirant|Mardu Roughrider|Great-Horn Krushok|Summit Prowler|Siegecraft|Ponyback Brigade|Trumpet Blast|Wind-Scarred Crag|Alabaster Kirin|Canyon Lurkers|Alesha's Vanguard|Smite the Monstrous)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Mardu Charm|Brave the Sands|Chief of the Edge|Mardu Skullhunter|Kill Shot|Rakshasa's Secret|Ponyback Brigade|Pressure Point|Harsh Sustenance|Siegecraft|Molting Snakeskin|Scoured Barrens|Defiant Strike)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Swarm of Bloodflies|Mardu Charm|Murderous Cut|Mardu Runemark|Dutiful Return|Shatter|Ponyback Brigade|Mardu Skullhunter|Defiant Ogre|Scoured Barrens|Alesha's Vanguard|Harsh Sustenance|Ancestral Vengeance)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Rageform|Raiders' Spoils|Mardu Roughrider|Ancestral Vengeance|Bloodfell Caves|Rite of the Serpent|Ponyback Brigade|Molting Snakeskin|War Flare|Great-Horn Krushok|Rotting Mastodon|Mardu Warshrieker|Mardu Skullhunter)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Chief of the Scale|Timely Hordemate|Mardu Charm|Firehoof Cavalry|Scoured Barrens|Mardu Skullhunter|Ponyback Brigade|Rite of the Serpent|Great-Horn Krushok|Tormenting Voice|Rotting Mastodon|Siegecraft|Throttle)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Mardu Roughrider|Goblinslide|Ride Down|Mardu Scout|Alesha's Vanguard|Mardu Runemark|Ponyback Brigade|Firehoof Cavalry|Gore Swine|Molting Snakeskin|Canyon Lurkers|Wind-Scarred Crag|Siegecraft)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Grave Strength|Mardu Roughrider|Arc Lightning|Alesha's Vanguard|Sandsteppe Outcast|Arrow Storm|Ponyback Brigade|Defiant Ogre|War Flare|Mardu Runemark|Erase|Bloodfell Caves|Tormenting Voice)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Siegecraft|Great-Horn Krushok|Ponyback Brigade|Mardu Charm|Burn Away|Act of Treason|Gore Swine|Mardu Blazebringer|Bloodfell Caves|Rakshasa's Secret|Hooded Assassin|Douse in Gloom|Harsh Sustenance)" }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "frf-seeded-booster-packins-mardu",
+      "packDesc": "Fate Reforged: Mardu Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[frf]?title=(Mardu Clan Info Card|Ugin Achievement Card|Mardu Spindown Life Counter)" },
+        { "query": "take[*]>from[ktk]?title=(Mardu Clan Button)" }
+      ]
+    },
+    {
+      "packName": "frf-seeded-booster-temur",
+      "packDesc": "Fate Reforged: Temur Seeded Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[frf-main]?title=(Shaman of the Great Hunt|Atarka, World Render|Yasova Dragonclaw|Flamewake Phoenix|Supplant Form|Shamanic Revelation)" },
+        { "query": "from[frf-ktk-main]?title='Temur Banner'" },
+        { "query": "from[frf-ktk-main]?title='Frontier Bivouac'" },
+        {
+          "querySet": [
+            { "query": "take[*]>from[frf-ktk-main]?title=(Temur Charm|Dragon Grip|Frost Walker|Alpine Grizzly|Cunning Strike|Feed the Clan|Snowhorn Rider|Enhanced Awareness|Swift Kick|Crippling Chill|Rugged Highlands|Monastery Flock|Ambush Krotiq)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Highland Game|Rakshasa's Disdain|Bear's Companion|Wild Slash|Icefeather Aven|Thornwood Falls|Snowhorn Rider|Enhanced Awareness|Tusked Colossodon|Whisk Away|Feral Krushok|Fierce Invocation|Cancel)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Winterflame|Pine Walker|Bear's Companion|Swift Kick|Temur Runemark|Refocus|Snowhorn Rider|Disdainful Stroke|Alpine Grizzly|Defiant Ogre|Glacial Stalker|Swiftwater Cliffs|Aven Surveyor)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Arc Lightning|Temur Charm|Hungering Yeti|Ainok Guide|Defiant Ogre|Force Away|Snowhorn Rider|Temur Battle Rage|Swiftwater Cliffs|Shatter|Embodiment of Spring|Collateral Damage|Scaldkin)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Bear's Companion|Wild Slash|Icefeather Aven|Wetland Sambar|Thornwood Falls|Rakshasa's Disdain|Snowhorn Rider|Enhanced Awareness|Tusked Colossodon|Whisk Away|Feral Krushok|Fierce Invocation|Cancel)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Bear's Companion|Friendly Fire|Secret Plans|Bathe in Dragonfire|Write into Being|Swift Kick|Snowhorn Rider|Rugged Highlands|Trumpet Blast|Alpine Grizzly|Gore Swine|Formless Nurturing|Shatter)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Reality Shift|Temur Charm|Temur Charger|Scaldkin|Temur Runemark|Act of Treason|Snowhorn Rider|Force Away|Tormenting Voice|Rugged Highlands|Feral Krushok|Ethereal Ambush|Highland Game)" },
+            { "query": "take[*]>from[frf-ktk-main]?title=(Incremental Growth|Burn Away|Temur Charm|Monastery Flock|Return to the Earth|Rakshasa's Disdain|Snowhorn Rider|Feed the Clan|Trumpet Blast|Alpine Grizzly|Shatter|Swiftwater Cliffs|Gore Swine)" }
+          ]
+        }
+      ]
+    },
+    {
+      "packName": "frf-seeded-booster-packins-temur",
+      "packDesc": "Fate Reforged: Temur Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[frf]?title=(Temur Clan Info Card|Ugin Achievement Card|Temur Spindown Life Counter)" },
+        { "query": "take[*]>from[ktk]?title=(Temur Clan Button)" }
+      ]
+    },
+    {
+      "packName": "frf-fat-pack-pack-ins",
+      "packDesc": "Fate Reforged Fat Pack: Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[frf]?title=(Fate Reforged Player’s Guide|Fate Reforged Card Box|Fate Reforged Mural|Fate Reforged Rules Reference Card)" },
+        {
+          "query": "from[frf-fatpack]?type='Life Counter'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[frf]?title='Fate Reforged Deck Box'",
+          "canBeDuplicate": true
+        }
+      ]
+    },
+    {
+      "packName": "frf-fat-pack-land",
+      "packDesc": "Fate Reforged Fat Pack: Land",
+      "isGenerated": false,
+      "cards": [
+        {
+          "query": "take[16]>from[frf]?title='Plains'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[16]>from[frf]?title='Island'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[16]>from[frf]?title='Swamp'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[16]>from[frf]?title='Forest'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[16]>from[frf]?title='Mountain'",
+          "canBeDuplicate": true
+        }
+      ]
+    },
+    {
+      "packName": "frf-gift-box-pack-ins",
+      "packDesc": "Fate Reforged Gift Box: Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[frf]?title=(Fate Reforged Storage Box|Fate Reforged Illustrated Plastic Dividers|Fate Reforged Plastic Divider Sticker Sheet)" }
+      ]
+    },
+    {
+      "packName": "frf-gift-box-land",
+      "packDesc": "Fate Reforged Gift Box: Land",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[frf]?type='Basic Land'" }
+      ]
+    }
 
-    ]
+  ]
 }

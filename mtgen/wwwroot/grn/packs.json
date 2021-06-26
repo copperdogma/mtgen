@@ -14,7 +14,7 @@
     },
     {
       "defName": "grn-foils",
-      "query": "from[grn]"
+      "query": "from[grn-main]+from[grn-basic-land]"
     },
     {
       "defName": "grn-promo",
@@ -70,8 +70,8 @@
       "defName": "grn-dimir-colours",
       "query": "from[grn-main]?colour=(u|b)-from[grn-dimir]+from[grn-dimir]-from[grn-main]?guild=(Boros|Selesnya|Izzet|Golgari)"
     }
-
   ],
+
   "packs": [
     {
       "packName": "grn-all-cards",
@@ -90,7 +90,7 @@
       "cards": [
         { "query": "take[10]>from[grn-main]?rarity='c" },
         { "query": "take[3]>from[grn-main]?rarity='u" },
-        { "query": "from[grn-main]?rarity='r" },
+        { "query": "from[grn-main]?rarity=rarityByWeight2008(rm)" },
         { "query": "from[grn-guildgates]" },
         {
           "querySet": [
@@ -105,42 +105,15 @@
             }
           ]
         },
+
         {
           "querySet": [
             {
-              "_comment": "25% chance of foil, scaled by rarity, replacing the last common",
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
+              "percent": "15/67",
               "overrideSlot": "10",
-              "percent": "88/480",
-              "query": "from[grn-main]?rarity='c",
+              "query": "from[grn-foils]?rarity=rarityByWeight2008(curm)",
               "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "10",
-              "percent": "24/480",
-              "query": "from[grn-main]?rarity='u",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "10",
-              "percent": "7/480",
-              "query": "from[grn-main]?rarity='r",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "10",
-              "percent": "1/480",
-              "query": "from[grn-main]?rarity='m",
-              "setValues": { "foil": true }
-            }
-          ]
-        },
-        {
-          "querySet": [
-            {
-              "_comment": "1/8 chance of replacing rare with mythic",
-              "percent": "1/8",
-              "overrideSlot": "14",
-              "query": "from[grn-main]?rarity='m'"
             }
           ]
         }

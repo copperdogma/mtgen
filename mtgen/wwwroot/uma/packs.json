@@ -16,8 +16,8 @@
       "defName": "uma-promo",
       "query": "from[uma]?promo=true"
     }
-
   ],
+
   "packs": [
     {
       "packName": "uma-all-cards",
@@ -31,51 +31,18 @@
     {
       "packName": "uma-standard",
       "packDesc": "Ultimate Masters: Standard Booster",
-      "packVersion": "1.0",
+      "packVersion": "1.1",
       "isGenerated": true,
       "cards": [
         { "query": "take[10]>from[uma-main]?rarity='c" },
         { "query": "take[3]>from[uma-main]?rarity='u" },
-        { "query": "from[uma-main]?rarity='r" },
+        { "query": "from[uma-main]?rarity=rarityByWeight2008(rm)" },
         {
-          "querySet": [
-            {
-              "percent": 71.43,
-              "query": "from[uma-foils]?rarity='c'",
-              "canBeDuplicate": true,
-              "setValues": { "foil": true }
-            },
-            {
-              "percent": 21.43,
-              "query": "from[uma-foils]?rarity='u'",
-              "canBeDuplicate": true,
-              "setValues": { "foil": true }
-            },
-            {
-              "percent": 6.25,
-              "query": "from[uma-foils]?rarity='r'",
-              "canBeDuplicate": true,
-              "setValues": { "foil": true }
-            },
-            {
-              "percent": 0.89,
-              "query": "from[uma-foils]?rarity='m'",
-              "canBeDuplicate": true,
-              "setValues": { "foil": true }
-            }
-          ]
+          "query": "from[uma-foils]?rarity=rarityByWeight2008(curm)",
+          "canBeDuplicate": true,
+          "setValues": { "foil": true }
         },
-        { "query": "from[uma]?token=true" },
-        {
-          "querySet": [
-            {
-              "_comment": "1/8 chance of replacing rare with mythic",
-              "percent": "1/8",
-              "overrideSlot": "14",
-              "query": "from[uma-main]?rarity='m'"
-            }
-          ]
-        }
+        { "query": "from[uma]?token=true" }
       ]
     },
 

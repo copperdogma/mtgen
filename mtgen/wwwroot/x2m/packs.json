@@ -21,6 +21,10 @@
       "query": "from[x2m]-from[x2m]?promo=true-from[x2m]?variant=true-from[x2m]?token=true-from[x2m]?type='Basic Land"
     },
     {
+      "defName": "x2m-foils",
+      "query": "from[x2m-main]+from[x2m-basic-land]"
+    },
+    {
       "defName": "x2m-booster",
       "query": "from[x2m]?mainSet=true-from[x2m-promo]"
     },
@@ -29,6 +33,7 @@
       "query": "from[x2m]?token=true"
     }
   ],
+
   "packs": [
     {
       "packName": "x2m-all-cards",
@@ -49,77 +54,17 @@
       "cards": [
         { "query": "take[8]>from[x2m-booster]?rarity='c" },
         { "query": "take[3]>from[x2m-booster]?rarity='u" },
-        { "query": "take[2]>from[x2m-booster]?rarity='r" },
+        { "query": "from[x2m-booster]?rarity=rarityByWeight2008(rm)" },
+        { "query": "from[x2m-booster]?rarity=rarityByWeight2008(rm)" },
         {
-          "query": "take[2]>from[x2m-booster]?rarity='c",
+          "query": "from[x2m-foils]?rarity=rarityByWeight2008(curm)",
           "setValues": { "foil": true }
-
-        },
-        { "query": "from[x2m-token]" },
-        {
-          "querySet": [
-            {
-              "_comment": "1/8 chance of replacing rare with mythic",
-              "percent": "1/8",
-              "overrideSlot": "12",
-              "query": "from[x2m-booster]?rarity='m'"
-            }
-          ]
         },
         {
-          "querySet": [
-            {
-              "_comment": "1/8 chance of replacing rare with mythic",
-              "percent": "1/8",
-              "overrideSlot": "13",
-              "query": "from[x2m-booster]?rarity='m'"
-            }
-          ]
+          "query": "from[x2m-foils]?rarity=rarityByWeight2008(curm)",
+          "setValues": { "foil": true }
         },
-        {
-          "querySet": [
-            {
-              "overrideSlot": "14",
-              "percent": "24/360",
-              "query": "from[x2m-main]?rarity='u",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "14",
-              "percent": "7/360",
-              "query": "from[x2m-main]?rarity='r",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "14",
-              "percent": "1/360",
-              "query": "from[x2m-main]?rarity='m",
-              "setValues": { "foil": true }
-            }
-          ]
-        },
-        {
-          "querySet": [
-            {
-              "overrideSlot": "15",
-              "percent": "24/360",
-              "query": "from[x2m-main]?rarity='u",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "15",
-              "percent": "7/360",
-              "query": "from[x2m-main]?rarity='r",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "15",
-              "percent": "1/360",
-              "query": "from[x2m-main]?rarity='m",
-              "setValues": { "foil": true }
-            }
-          ]
-        }
+        { "query": "from[x2m-token]" }
       ]
     },
 

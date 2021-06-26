@@ -32,8 +32,8 @@
       "defName": "ogw-promo",
       "query": "from[ogw]?promo=true"
     }
-
   ],
+
   "packs": [
     {
       "packName": "ogw-all-cards",
@@ -49,51 +49,35 @@
       "packVersion": "1.1",
       "isGenerated": true,
       "cards": [
-        { "query": "take[8]>from[ogw-common]" },
+        { "query": "take[10]>from[ogw-main]?rarity='c" },
+        { "query": "take[3]>from[ogw-main]?rarity='u" },
+        { "query": "from[ogw-main]?rarity=rarityByWeight2008(rm)" },
+        { "query": "from[bfz-basic-land-full-art]" },
+        { "query": "from[ogw]?token=true-from[ogw]?promo=true" },
+
         {
           "querySet": [
             {
-              "percent": "199/200",
-              "query": "from[ogw-common]"
-            },
-            {
-              "_comment": "Should be generated at a rate slighly larger than a premium (foil) mythic (which is 1/216 packs)",
+              "_comment": "Expedition foils (all mythic) should be generated at a rate slighly larger than a premium (foil) mythic (which is 1/216 packs)",
               "percent": "1/200",
+              "overrideSlot": "9",
               "query": "from[ogw-foils-expeditions]",
               "setValues": { "foil": true }
             }
           ]
         },
+
         {
           "querySet": [
             {
-              "percent": "3/4",
-              "query": "from[ogw-common]"
-            },
-            {
-              "percent": "1/4",
-              "query": "from[ogw-foils]",
-              "canBeDuplicate": true,
-              "setValues": { "foil": true },
-              "_comment": "25% chance rare is a foil of any card, including land"
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
+              "percent": "15/67",
+              "overrideSlot": "10",
+              "query": "from[ogw-foils]?rarity=rarityByWeight2008(curm)",
+              "setValues": { "foil": true }
             }
           ]
-        },
-        { "query": "take[3]>from[ogw-main]?rarity='u" },
-        {
-          "querySet": [
-            {
-              "percent": "7/8",
-              "query": "from[ogw-main]?rarity='r"
-            },
-            {
-              "percent": "1/8",
-              "query": "from[ogw-main]?rarity='m"
-            }
-          ]
-        },
-        { "query": "from[bfz-basic-land-full-art]" },
-        { "query": "from[ogw]?token=true-from[ogw]?promo=true" }
+        }
       ]
     },
     {

@@ -1,7 +1,7 @@
-{
+﻿{
   "startProductName": "zen-boosters",
   "packFiles": [
-    "packs.json"
+    "packs.json?v1.1"
   ],
   "cardFiles": [
     "cardsMain.json?v1.1",
@@ -9,6 +9,10 @@
     "cardsPromo.json?v1.1"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-06-25T23:30:00:00",
+      "HtmlString": "Updated foil chances. Now 15/67 chance a booster has a foil, includes basic lands, and staring with this set, it always replaces a common."
+    },
     {
       "UpdateDate": "2020-03-27T01:00:00:00",
       "HtmlString": "Reimported all card images after Wizards change."

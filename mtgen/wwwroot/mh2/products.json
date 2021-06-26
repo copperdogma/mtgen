@@ -1,7 +1,7 @@
 {
   "_comment": "if there are no options the query/packNames will be auto-run",
   "_comment2": "You can add an array of caveats to a product to add notes shown to the user",
-  "_comment3": "{{setCode}} and {{setName}} can be used anywhere and get replaced in preprocessing to the actual code/name as found in the global sets.json file",
+  "_comment3": "{{setCode}} and {{setName}} can be used in products.json/packs.json and get replaced in preprocessing to the actual code/name as found in the global sets.json file",
 
   "products": [
     {

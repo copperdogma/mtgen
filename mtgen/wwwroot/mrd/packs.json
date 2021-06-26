@@ -27,37 +27,39 @@
       "packDesc": "Mirrodin: Standard Booster",
       "isGenerated": true,
       "cards": [
-        { "query": "take[10]>from[mrd-main]?rarity='c" },
+        { "query": "take[11]>from[mrd-main]?rarity='c" },
         { "query": "take[3]>from[mrd-main]?rarity='u" },
         { "query": "take[1]>from[mrd-main]?rarity='r" },
+
         {
           "querySet": [
             {
-              "_comment": "common rate = 5/6 * 15 = 75/90",
-              "percent": "75/90",
-              "query": "from[mrd]?type='Basic Land"
-            },
-            {
-              "_comment": "foil common rate = 11/15 = 11/90",
-              "percent": "11/90",
-              "query": "from[mrd-main]?rarity='c",
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and it replaced a card of it's rarity.",
+              "percent": "6/67",
+              "overrideSlot": "11",
+              "query": "from[mrd-main]?rarity='c'",
               "setValues": { "foil": true }
             },
             {
-              "_comment": "foil uncommon rate = 3/15 = 3/90",
-              "percent": "3/90",
-              "query": "from[mrd-main]?rarity='u",
+              "percent": "5/67",
+              "overrideSlot": "11",
+              "query": "from[mrd]?rarity='b'",
               "setValues": { "foil": true }
             },
             {
-              "_comment": "foil rare rate = 1/15 = 1/90",
-              "percent": "1/90",
-              "query": "from[mrd-main]?rarity='r",
+              "percent": "3/67",
+              "overrideSlot": "14",
+              "query": "from[mrd-main]?rarity='u'",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "1/67",
+              "overrideSlot": "15",
+              "query": "from[mrd-main]?rarity='r'",
               "setValues": { "foil": true }
             }
           ]
         }
-
       ]
     },
     {

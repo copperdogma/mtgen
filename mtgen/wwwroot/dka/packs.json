@@ -5,6 +5,10 @@
 			"query": "from[*]?set='dka'"
 		},
 		{
+			"defName": "isd",
+			"query": "from[*]?set='isd'"
+		},
+		{
 			"defName": "dka-promo",
 			"query": "from[dka]?promo=true"
 		},
@@ -22,18 +26,14 @@
 		},
 		{
 			"defName": "dka-foils",
-			"query": "from[dka-main]+from[dka-double-faced]"
+			"query": "from[dka-main]+from[dka-double-faced]+from[isd]?type='Basic Land"
 		},
 		{
 			"defName": "dka-fatpack",
 			"query": "from[dka]?includedReason='Fat Pack Pack-In'"
-		},
-
-		{
-			"defName": "isd",
-			"query": "from[*]?set='isd'"
 		}
 	],
+
 	"packs": [
 		{
 			"packName": "dka-all-cards",
@@ -53,7 +53,7 @@
 			"cards": [
 				{ "query": "take[9]>from[dka-main]?rarity='c" },
 				{ "query": "take[3]>from[dka-main]?rarity='u" },
-				{ "query": "from[dka-main]?rarity='r" },
+				{ "query": "from[dka-main]?rarity=rarityByWeight2008(rm)" },
 				{
 					"querySet": [
 						{
@@ -79,65 +79,22 @@
 					]
 				},
 				{
-					"querySet": [
-						{
-							"_comment": "one double-faced card per pack, scaled by raritys",
-							"percent": "11/20",
-							"query": "from[dka-double-faced]?rarity='c"
-						},
-						{
-							"percent": "6/20",
-							"query": "from[dka-double-faced]?rarity='u"
-						},
-						{
-							"percent": "2/20",
-							"query": "from[dka-double-faced]?rarity='r"
-						},
-						{
-							"percent": "1/20",
-							"query": "from[dka-double-faced]?rarity='m"
-						}
-					]
+					"_comment": "one double-faced card per pack, scaled by rarity",
+					"query": "from[dka-double-faced]?rarity=rarityByWeight2008(curm)"
 				},
+
 				{
 					"querySet": [
 						{
-							"_comment": "1/8 chance of replacing rare with mythic",
-							"percent": "1/8",
-							"overrideSlot": "13",
-							"query": "from[dka-main]?rarity='m'"
-						}
-					]
-				},
-				{
-					"querySet": [
-						{
-							"_comment": "33% (1:45) chance of foil, scaled by rarity, replacing the last common, as of m20: Jun-2019",
+							"_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
+							"percent": "15/67",
 							"overrideSlot": "9",
-							"percent": "88/360",
-							"query": "from[dka-foils]?rarity='c",
-							"setValues": { "foil": true }
-						},
-						{
-							"overrideSlot": "9",
-							"percent": "24/360",
-							"query": "from[dka-foils]?rarity='u",
-							"setValues": { "foil": true }
-						},
-						{
-							"overrideSlot": "9",
-							"percent": "7/360",
-							"query": "from[dka-foils]?rarity='r",
-							"setValues": { "foil": true }
-						},
-						{
-							"overrideSlot": "9",
-							"percent": "1/360",
-							"query": "from[dka-foils]?rarity='m",
+							"query": "from[dka-foils]?rarity=rarityByWeight2008(curm)",
 							"setValues": { "foil": true }
 						}
 					]
 				}
+
 			]
 		},
 

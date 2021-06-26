@@ -1,46 +1,64 @@
 {
-    "_comment": "from: http://en.wikipedia.org/wiki/Masques_block",
+  "_comment": "from: http://en.wikipedia.org/wiki/Masques_block",
 
-    "defs": [
+  "defs": [
+    {
+      "defName": "pcy",
+      "query": "from[*]?set='pcy'"
+    },
+    {
+      "defName": "pcy-main",
+      "query": "from[pcy]-from[pcy]?type=(Marketing|Basic Land)-from[pcy]?token=true-from[pcy]?promo=true"
+    },
+    {
+      "defName": "pcy-foils",
+      "query": "from[*]?set='pcy'"
+    }
+
+  ],
+  "packs": [
+    {
+      "packName": "pcy-all-cards",
+      "packDesc": "Prophecy: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[pcy]" }
+      ]
+    },
+    {
+      "packName": "pcy-standard",
+      "packDesc": "Prophecy: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[pcy-main]?rarity='r'" },
+        { "query": "take[3]>from[pcy-main]?rarity='u'" },
+        { "query": "take[10]>from[pcy-main]?rarity='c'" },
+
         {
-            "defName": "pcy",
-            "query": "from[*]?set='pcy'"
-        },
-        {
-            "defName": "pcy-main",
-            "query": "from[pcy]-from[pcy]?type=(Marketing|Basic Land)-from[pcy]?token=true-from[pcy]?promo=true"
-        },
-        {
-            "defName": "pcy-foils",
-            "query": "from[*]?set='pcy'"
+          "querySet": [
+            {
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and it replaced a card of it's rarity.",
+              "percent": "1/67",
+              "overrideSlot": "1",
+              "query": "from[pcy-main]?rarity='r'",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "3/67",
+              "overrideSlot": "2",
+              "query": "from[pcy-main]?rarity='u'",
+              "setValues": { "foil": true }
+            },
+            {
+              "percent": "11/67",
+              "overrideSlot": "5",
+              "query": "from[pcy-main]?rarity='c'",
+              "setValues": { "foil": true }
+            }
+          ]
         }
+      ]
+    }
 
-    ],
-    "packs": [
-        {
-            "packName": "pcy-all-cards",
-            "packDesc": "Prophecy: All Cards",
-            "isGenerated": false,
-            "cards": [
-                { "query": "take[*]>from[pcy]" }
-            ]
-        },
-        {
-            "packName": "pcy-standard",
-            "packDesc": "Prophecy: Standard Booster",
-            "isGenerated": true,
-            "cards": [
-                { "query": "from[pcy-main]?rarity='r'" },
-                { "query": "take[3]>from[pcy-main]?rarity='u'" },
-                { "query": "take[10]>from[pcy-main]?rarity='c'" },
-                {
-                    "querySet": [
-                        { "percent": 75, "query": "from[pcy-main]?rarity='c'" },
-                        { "percent": 25, "query": "from[pcy-foils]", "canBeDuplicate": true, "setValues": { "foil": true }, "_comment": "25% chance rare is a foil of any card, including land" }
-                    ]
-                }
-            ]
-        }
-
-    ]
+  ]
 }

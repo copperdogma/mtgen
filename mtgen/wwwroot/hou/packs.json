@@ -18,14 +18,14 @@
     },
     {
       "defName": "hou-foils",
-      "query": "from[hou-main]"
+      "query": "from[hou-main]+from[hou]?type='Basic Land'+from[hou]?fullArt=true"
     },
     {
       "defName": "hou-promo",
       "query": "from[hou]?promo=true"
     }
-
   ],
+
   "packs": [
     {
       "packName": "hou-all-cards",
@@ -38,63 +38,12 @@
     {
       "packName": "hou-standard",
       "packDesc": "Hour of Devastation: Standard Booster",
-      "packVersion": "1.0",
+      "packVersion": "1.1",
       "isGenerated": true,
       "cards": [
-        { "query": "take[8]>from[hou-main]?rarity='c" },
-        {
-          "querySet": [
-            {
-              "percent": "143/144",
-              "query": "from[hou-main]?rarity='c"
-            },
-            {
-              "percent": "1/144",
-              "query": "from[hou-masterpiece-series]"
-            }
-          ]
-        },
-        {
-          "querySet": [
-            {
-              "percent": "360/480",
-              "query": "from[hou-main]?rarity='c"
-            },
-            {
-              "percent": "88/480",
-              "query": "from[hou-main]?rarity='c",
-              "setValues": { "foil": true }
-            },
-            {
-              "percent": "24/480",
-              "query": "from[hou-main]?rarity='u",
-              "setValues": { "foil": true }
-            },
-            {
-              "percent": "7/480",
-              "query": "from[hou-main]?rarity='r",
-              "setValues": { "foil": true }
-            },
-            {
-              "percent": "1/480",
-              "query": "from[hou-main]?rarity='m",
-              "setValues": { "foil": true }
-            }
-          ]
-        },
+        { "query": "take[10]>from[hou-main]?rarity='c" },
         { "query": "take[3]>from[hou-main]?rarity='u" },
-        {
-          "querySet": [
-            {
-              "percent": "7/8",
-              "query": "from[hou-main]?rarity='r"
-            },
-            {
-              "percent": "1/8",
-              "query": "from[hou-main]?rarity='m"
-            }
-          ]
-        },
+        { "query": "from[hou-main]?rarity=rarityByWeight2008(rm)" },
         {
           "querySet": [
             {
@@ -116,6 +65,28 @@
             {
               "percent": "50",
               "query": "from[hou]?token=true"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "percent": "1/144",
+              "overrideSlot": "9",
+              "query": "from[hou-masterpiece-series]"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
+              "percent": "15/67",
+              "overrideSlot": "10",
+              "query": "from[hou-foils]?rarity=rarityByWeight2008(curm)",
+              "setValues": { "foil": true }
             }
           ]
         }

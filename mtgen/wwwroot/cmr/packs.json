@@ -77,6 +77,7 @@
       "query": "from[cmr]?token=true"
     }
   ],
+
   "packs": [
     {
       "packName": "cmr-all-cards",
@@ -91,7 +92,7 @@
       "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
       "packName": "cmr-draft",
       "packDesc": "Commander Legends: Draft Booster",
-      "packVersion": "1.1",
+      "packVersion": "1.2",
       "sources": [ "https://www.reddit.com/r/magicTCG/comments/jko5xm/contents_of_commander_legends_draft_booster/" ],
       "isGenerated": true,
       "cards": [
@@ -177,31 +178,14 @@
             }
           ]
         },
+
         {
           "querySet": [
             {
-              "_comment": "33% (1:45) chance of foil, scaled by rarity, replacing the last common, as of m20: Jun-2019",
+              "_comment": "33% chance of foil, scaled by rarity, replacing the last common, as of M20: Jun-2019",
+              "percent": "33",
               "overrideSlot": "20",
-              "percent": "88/360",
-              "query": "from[cmr-draft-booster]?rarity='c",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "20",
-              "percent": "24/360",
-              "query": "from[cmr-draft-booster]?rarity='u",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "20",
-              "percent": "7/360",
-              "query": "from[cmr-draft-booster]?rarity='r",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "20",
-              "percent": "1/360",
-              "query": "from[cmr-draft-booster]?rarity='m",
+              "query": "from[cmr-draft-booster]?rarity=rarityByWeight2020(curm)",
               "setValues": { "foil": true }
             }
           ]

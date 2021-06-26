@@ -1,7 +1,7 @@
 {
   "startProductName": "x2m-boosters",
   "packFiles": [
-    "packs.json?v1.1"
+    "packs.json?v1.2"
   ],
   "cardFiles": [
     "cardsMain.json?v1.1",
@@ -10,6 +10,10 @@
     "cardsBasicLand.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-06-25T23:30:00:00",
+      "HtmlString": "Foils now include basic lands."
+    },
     {
       "UpdateDate": "2020-08-10T00:15:00:00",
       "HtmlString": "Fixed two card rarities. VIP fixes: now includes 2 foil land + box topper mythic should appear more often."

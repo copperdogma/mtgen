@@ -1,7 +1,7 @@
 {
   "startProductName": "hou-prerelease",
   "packFiles": [
-    "packs.json?v1.1", "../akh/packs.json"
+    "packs.json?v1.2", "../akh/packs.json"
   ],
   "cardFiles": [
     "cardsMain.json?v1.1",
@@ -16,5 +16,10 @@
     "../akh/cardsPromo.json",
     "../akh/cardsToken.json"
   ],
-  "updates": []
+  "updates": [
+    {
+      "UpdateDate": "2021-06-25T23:30:00:00",
+      "HtmlString": "Updated foil chances. Now 15/67 chance a booster has a foil and they can include basic and full-art lands."
+    }
+  ]
 }

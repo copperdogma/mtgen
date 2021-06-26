@@ -1,7 +1,7 @@
 {
   "startProductName": "mh1-prerelease",
   "packFiles": [
-    "packs.json?v1.1"
+    "packs.json?v1.2"
   ],
   "cardFiles": [
     "cardsMain.json",
@@ -10,6 +10,10 @@
     "cardsArtSeries.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-06-25T23:30:00:00",
+      "HtmlString": "Updated foil chances. Now 15/67 chance a booster has a foil and includes basic lands."
+    },
     {
       "UpdateDate": "2019-05-03T21:00:00:00",
       "HtmlString": "Now includes proper prerelease card. Fixed Rotwidow Pack rarity."

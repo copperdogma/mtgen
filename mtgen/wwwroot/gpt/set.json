@@ -1,13 +1,17 @@
-{
+﻿{
   "startProductName": "gpt-boosters",
   "packFiles": [
-    "packs.json"
+    "packs.json?v1.1"
   ],
   "cardFiles": [
     "cardsMain.json",
     "cardsOther.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-06-25T23:30:00:00",
+      "HtmlString": "Updated foil chances. Now 15/67 chance a booster has a foil, and it replaces a card of it's rarity."
+    },
     {
       "UpdateDate": "2016-11-21T00:00:00",
       "HtmlString": "Dual lands will now show up in boosters. Thanks, Alexander!"

@@ -1,8 +1,8 @@
-{
+﻿{
   "startProductName": "frf-prerelease",
   "packFiles": [
     "../ktk/packs.json",
-    "packs.json"
+    "packs.json?v1.1"
   ],
   "cardFiles": [
     "cardsMain.json",
@@ -13,6 +13,10 @@
     "../ktk/cardsOther.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-06-25T23:30:00:00",
+      "HtmlString": "Updated foil chances. Now 15/67 chance a booster has a foil, includes basic lands, and it always replaces a common."
+    },
     {
       "UpdateDate": "2015-04-04T00:00:00",
       "HtmlString": "Evening: Prerelease: Added actual Prerelease seeded pack contents."

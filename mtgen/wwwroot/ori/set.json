@@ -1,7 +1,7 @@
-{
+﻿{
   "startProductName": "ori-boosters",
   "packFiles": [
-    "packs.json"
+    "packs.json?v1.1"
   ],
   "cardFiles": [
     "cardsMain.json",
@@ -9,6 +9,10 @@
     "cardsOther.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-06-25T23:30:00:00",
+      "HtmlString": "Updated foil chances. Now 15/67 chance a booster has a foil, includes basic lands, and it always replaces a common."
+    },
     {
       "UpdateDate": "2015-07-13T00:00:00",
       "HtmlString": "Evening: Updated prerelease seeded packs to use actual pack layouts from <a href='https://docs.google.com/spreadsheet/ccc?key=0Apln2HM4aSGbdDJ6MFk5cTBjb09sXzFWdndhTkx2V1E#gid=12'>here</a>."

@@ -11,6 +11,10 @@
     {
       "defName": "lrw-promo",
       "query": "from[lrw]?promo=true"
+    },
+    {
+      "defName": "lrw-foil",
+      "query": "from[lrw-main]+from[lrw]?rarity='b'"
     }
   ],
   "packs": [
@@ -25,38 +29,11 @@
     {
       "packName": "lrw-standard",
       "packDesc": "Lorwyn: Standard Booster",
+      "_comment": "This booster was oddly laid out: 11C 3U Tip/Token R.. Usually the Tip/Token is at the end. Very odd. https://www.youtube.com/watch?v=DFVr9-OBF1w",
       "isGenerated": true,
       "cards": [
-        { "query": "take[10]>from[lrw-main]?rarity='c" },
-        {
-          "querySet": [
-            {
-              "_comment": "common rate = 5/6 * 15 = 75/90",
-              "percent": "75/90",
-              "query": "from[lrw-main]?rarity='c"
-            },
-            {
-              "_comment": "foil common rate = 11/15 = 11/90",
-              "percent": "11/90",
-              "query": "from[lrw-main]?rarity='c",
-              "setValues": { "foil": true }
-            },
-            {
-              "_comment": "foil uncommon rate = 3/15 = 3/90",
-              "percent": "3/90",
-              "query": "from[lrw-main]?rarity='u",
-              "setValues": { "foil": true }
-            },
-            {
-              "_comment": "foil rare rate = 1/15 = 1/90",
-              "percent": "1/90",
-              "query": "from[lrw-main]?rarity='r",
-              "setValues": { "foil": true }
-            }
-          ]
-        },
+        { "query": "take[11]>from[lrw-main]?rarity='c" },
         { "query": "take[3]>from[lrw-main]?rarity='u" },
-        { "query": "take[1]>from[lrw-main]?rarity='r" },
         {
           "querySet": [
             {
@@ -68,7 +45,21 @@
               "query": "from[lrw]?type='Marketing"
             }
           ]
+        },
+        { "query": "take[1]>from[lrw-main]?rarity='r" },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
+              "percent": "15/67",
+              "overrideSlot": "11",
+              "query": "from[lrw-foil]?rarity=rarityByWeight(cur)",
+              "setValues": { "foil": true }
+            }
+          ]
         }
+
       ]
     },
     {

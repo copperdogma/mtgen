@@ -1,7 +1,7 @@
 {
   "startProductName": "znr-boosters",
   "packFiles": [
-    "packs.json?v1.4"
+    "packs.json?v1.5"
   ],
   "cardFiles": [
     "cardsMain.json",
@@ -13,6 +13,10 @@
     "cardsArtCards.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-06-25T23:30:00:00",
+      "HtmlString": "Foil rarity changed from 1:8 to 1:7.4 and now include basic lands."
+    },
     {
       "UpdateDate": "2021-06-14T23:00:00:00",
       "HtmlString": "Added Set Boosters, with The List and Art Cards."
