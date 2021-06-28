@@ -135,17 +135,10 @@
         },
         { "query": "from[{{setCode}}-booster]?rarity=rarityByWeight2020(rm)" },
         {
-          "querySet": [
-            {
-              "percent": "50",
-              "query": "from[{{setCode}}]?title='Tip/Marketing Card"
-            },
-            {
-              "percent": "50",
-              "query": "from[{{setCode}}-token]"
-            }
-          ]
+          "_comment": "Whole boxe opened in this video with NO ads. 100% tokens. https://www.youtube.com/watch?v=hD-TEJpokcg",
+          "query": "from[{{setCode}}-token]"
         },
+
         {
           "querySet": [
             {
