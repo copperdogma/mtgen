@@ -446,51 +446,51 @@
       "_comment": "Set Boosters were introduced as standard feature as of ZNR",
       "packName": "stx-set-booster",
       "packDesc": "Strixhaven: School of Mages: Set Booster",
-      "packVersion": "1.0",
+      "packVersion": "1.1",
       "sources": [ "https://magic.wizards.com/en/articles/archive/feature/strixhaven-school-mages-product-overview-2021-03-25", "https://wpn.wizards.com/en/article/whats-inside-each-strixhaven-product" ],
       "isGenerated": true,
       "cards": [
         {
           "_comment": "Slot 1: Mystical Archive card URM",
-          "query": "from[stx-mystical-archive-en]?rarity=rarityByWeight(urm)"
+          "query": "from[stx-mystical-archive-en]?rarity=rarityByWeight2020(urm)"
         },
         {
           "_comment": "Slot 2: Lesson card CURM",
-          "query": "from[stx-lesson]?rarity=rarityByWeight(curm)"
+          "query": "from[stx-lesson]?rarity=rarityByWeight2020(curm)"
         },
         {
           "_comment": "Slot 3: RM",
-          "query": "from[stx-booster]?rarity=rarityByWeight(rm)"
+          "query": "from[stx-booster]?rarity=rarityByWeight2020(rm)"
         },
         {
           "_comment": "Slot 4: Foil: CURM",
-          "query": "from[stx-foils]?rarity=rarityByWeight(curm)",
+          "query": "from[stx-foils]?rarity=rarityByWeight2020(curm)",
           "setValues": { "foil": true }
         },
         {
           "_comment": "Slot 5: Wildcard CURM",
           "_comment2": "I can't find a definition of what 'Wildcard' is anywhere but other sets include special treatment cards, so I will too!",
-          "query": "from[stx-main-and-borderless-extended-art]?rarity=rarityByWeight(curm)"
+          "query": "from[stx-main-and-borderless-extended-art]?rarity=rarityByWeight2020(curm)"
         },
         {
           "_comment": "Slot 6-11: 6x CU",
           "_comment2": "6 Thematically connected CU",
-          "query": "from[stx-booster]?rarity=rarityByWeight(cu)"
+          "query": "from[stx-booster]?rarity=rarityByWeight2020(cu)"
         },
         {
-          "query": "from[stx-booster]?rarity=rarityByWeight(cu)"
+          "query": "from[stx-booster]?rarity=rarityByWeight2020(cu)"
         },
         {
-          "query": "from[stx-booster]?rarity=rarityByWeight(cu)"
+          "query": "from[stx-booster]?rarity=rarityByWeight2020(cu)"
         },
         {
-          "query": "from[stx-booster]?rarity=rarityByWeight(cu)"
+          "query": "from[stx-booster]?rarity=rarityByWeight2020(cu)"
         },
         {
-          "query": "from[stx-booster]?rarity=rarityByWeight(cu)"
+          "query": "from[stx-booster]?rarity=rarityByWeight2020(cu)"
         },
         {
-          "query": "from[stx-booster]?rarity=rarityByWeight(cu)"
+          "query": "from[stx-booster]?rarity=rarityByWeight2020(cu)"
         },
         {
           "_comment": "Slot 12: Land",
@@ -526,7 +526,7 @@
             {
               "_comment": "Slot 14: Token/Ad or The List",
               "_comment2": "1 Token/ad card (75%), or a card from The List (25%) – The List is a collection of 300 cards from Magic's history that we have brought together for this special slot. We have rotated in 50 new reprints that we feel help capture the feel of Modern Horizons 2. Inclusion of cards from The List doesn't impact what formats the card is legal in",
-              "query": "from[the-list]?rarity=rarityByWeight(curm)",
+              "query": "from[the-list]?rarity=rarityByWeight2020(curm)",
               "overrideSlot": "14",
               "percent": "25"
             }
