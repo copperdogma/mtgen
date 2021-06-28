@@ -1,0 +1,17 @@
+{
+  "setCode": "mh2",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Atmh2&unique=prints",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/021 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}
