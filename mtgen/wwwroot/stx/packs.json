@@ -179,11 +179,11 @@
         {
           "querySet": [
             {
-              "percent": "50",
+              "percent": "10",
               "query": "from[stx]?title='Tip/Marketing Card"
             },
             {
-              "percent": "50",
+              "percent": "90",
               "query": "from[stx-token]"
             }
           ]
@@ -320,7 +320,7 @@
         },
         {
           "_comment": "Slot 17: Foil: token",
-          "query": "from[stx-token]-from[stx-token]?marketing=true",
+          "query": "from[stx-true-token]",
           "setValues": { "foil": true }
         },
 

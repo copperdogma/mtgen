@@ -1,4 +1,4 @@
-{
+﻿{
   "defs": [
     {
       "defName": "tsp",
@@ -52,7 +52,7 @@
               "_comment2": "As of this set, foils now always replace a common instead of a card of that rarity, allowing for two rares",
               "percent": "15/67",
               "overrideSlot": "10",
-              "query": "from[tsp-foil]?rarity=rarityByWeight(cur)",
+              "query": "from[tsp-foil]?rarity=rarityByWeight2008(cur)",
               "setValues": { "foil": true }
             }
           ]

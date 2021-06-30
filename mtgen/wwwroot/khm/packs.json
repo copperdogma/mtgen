@@ -1,4 +1,4 @@
-{
+﻿{
   "defs": [
     {
       "defName": "khm",
@@ -285,46 +285,46 @@
         {
           "_comment": "Slot 2: R/M normal/showcase/borderless",
           "_comment2": "1 Rare or mythic rare (can be showcase or borderless)",
-          "query": "from[khm-booster-and-showcase-and-borderless]?rarity=rarityByWeight(rm)"
+          "query": "from[khm-booster-and-showcase-and-borderless]?rarity=rarityByWeight2008(rm)"
         },
         {
           "_comment": "Slot 3: Snow C/U, Showcase U, Theme Booster R",
           "_comment2": "1 Snow common or uncommon, showcase uncommon, or exclusive rare (see below)",
-          "query": "from[khm-snow-cards-and-showcase-and-set-only]?rarity=rarityByWeight(cur)"
+          "query": "from[khm-snow-cards-and-showcase-and-set-only]?rarity=rarityByWeight2008(cur)"
         },
         {
           "_comment": "Slot 4: Foil: normal/showcase/borderless",
           "_comment2": "1 Foil card of any rarity (can be showcase or borderless)",
-          "query": "from[khm-booster-and-showcase-and-borderless]?rarity=rarityByWeight(curm)",
+          "query": "from[khm-booster-and-showcase-and-borderless]?rarity=rarityByWeight2008(curm)",
           "setValues": { "foil": true }
         },
         {
           "_comment": "Slot 5: normal/showcase/borderless",
           "_comment2": "1 Non-foil card of any rarity (can be showcase or borderless)",
-          "query": "from[khm-booster-and-showcase-and-borderless]?rarity=rarityByWeight(curm)"
+          "query": "from[khm-booster-and-showcase-and-borderless]?rarity=rarityByWeight2008(curm)"
         },
         {
           "_comment": "Slot 6-12: 6x C/U",
           "_comment2": "7 Commons and uncommons",
-          "query": "from[khm-booster]?rarity=rarityByWeight(cu)"
+          "query": "from[khm-booster]?rarity=rarityByWeight2008(cu)"
         },
         {
-          "query": "from[khm-booster]?rarity=rarityByWeight(cu)"
+          "query": "from[khm-booster]?rarity=rarityByWeight2008(cu)"
         },
         {
-          "query": "from[khm-booster]?rarity=rarityByWeight(cu)"
+          "query": "from[khm-booster]?rarity=rarityByWeight2008(cu)"
         },
         {
-          "query": "from[khm-booster]?rarity=rarityByWeight(cu)"
+          "query": "from[khm-booster]?rarity=rarityByWeight2008(cu)"
         },
         {
-          "query": "from[khm-booster]?rarity=rarityByWeight(cu)"
+          "query": "from[khm-booster]?rarity=rarityByWeight2008(cu)"
         },
         {
-          "query": "from[khm-booster]?rarity=rarityByWeight(cu)"
+          "query": "from[khm-booster]?rarity=rarityByWeight2008(cu)"
         },
         {
-          "query": "from[khm-booster]?rarity=rarityByWeight(cu)"
+          "query": "from[khm-booster]?rarity=rarityByWeight2008(cu)"
         },
         {
           "_comment": "Slot 13 Art Card",
@@ -370,7 +370,7 @@
             {
               "_comment": "Slot 14: Token/Ad or The List",
               "_comment2": "1 Token/ad card (75%), or a card from The List (25%) – The List is a collection of 300 cards from Magic's history that we have brought together for this special slot. We have rotated in 50 new reprints that we feel help capture the feel of Modern Horizons 2. Inclusion of cards from The List doesn't impact what formats the card is legal in",
-              "query": "from[the-list]?rarity=rarityByWeight(curm)",
+              "query": "from[the-list]?rarity=rarityByWeight2008(curm)",
               "overrideSlot": "14",
               "percent": "25"
             }

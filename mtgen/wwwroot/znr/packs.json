@@ -1,4 +1,4 @@
-{
+﻿{
   "defs": [
     {
       "defName": "znr",
@@ -135,19 +135,19 @@
         {
           "_comment": "Slot 3-8: 6x Connected C/U",
           "_comment2": "6 Common or uncommon cards, of which at least one is uncommon (in any combination of regular cards) – Common cards will tell a story and be thematically connected to other commons. Uncommon cards will be connected to other uncommons",
-          "query": "from[znr-booster]?rarity=rarityByWeight(cu)"
+          "query": "from[znr-booster]?rarity=rarityByWeight2008(cu)"
         },
         {
-          "query": "from[znr-booster]?rarity=rarityByWeight(cu)"
+          "query": "from[znr-booster]?rarity=rarityByWeight2008(cu)"
         },
         {
-          "query": "from[znr-booster]?rarity=rarityByWeight(cu)"
+          "query": "from[znr-booster]?rarity=rarityByWeight2008(cu)"
         },
         {
-          "query": "from[znr-booster]?rarity=rarityByWeight(cu)"
+          "query": "from[znr-booster]?rarity=rarityByWeight2008(cu)"
         },
         {
-          "query": "from[znr-booster]?rarity=rarityByWeight(cu)"
+          "query": "from[znr-booster]?rarity=rarityByWeight2008(cu)"
         },
         {
           "_comment": "Slot 8: U (the 'guaranteed' uncommon from above)",
@@ -156,27 +156,27 @@
         {
           "_comment": "Slot 9: Head-Turning Slot: C/U showcase or normal?",
           "_comment2": "You will get a common or uncommon that is either a showcase card or a card that's a cool element of the set that we haven't talked about yet",
-          "query": "from[znr-main-and-showcase]?rarity=rarityByWeight(cu)"
+          "query": "from[znr-main-and-showcase]?rarity=rarityByWeight2008(cu)"
         },
         {
           "_comment": "Slot 10-11: C/U/R/M showcase or normal?",
           "_comment2": "These two slots can basically be anything from common to mythic rare. It is possible to get showcase versions of rares and mythic rares in these slots. (The common and uncommon showcase cards appear in the previous slot.) Note that neither of these is your rare slot, so any rares or mythic rares you get in these two slots are extra ones in the booster. The rarity of each slot is independent, so you have the potential to get two mythic rares here.",
-          "query": "from[znr-main-and-showcase]?rarity=rarityByWeight(curm)"
+          "query": "from[znr-main-and-showcase]?rarity=rarityByWeight2008(curm)"
         },
         {
           "_comment": "Slot 10-11: C/U/R/M showcase or normal?",
           "_comment2": "These two slots can basically be anything from common to mythic rare. It is possible to get showcase versions of rares and mythic rares in these slots. (The common and uncommon showcase cards appear in the previous slot.) Note that neither of these is your rare slot, so any rares or mythic rares you get in these two slots are extra ones in the booster. The rarity of each slot is independent, so you have the potential to get two mythic rares here.",
-          "query": "from[znr-main-and-showcase]?rarity=rarityByWeight(curm)"
+          "query": "from[znr-main-and-showcase]?rarity=rarityByWeight2008(curm)"
         },
         {
           "_comment": "Slot 12: R/M",
           "_comment2": "The first slot here is your rare/mythic rare slot. This was the most exciting thing in the Draft Boosters, so we couldn't get rid of that. This acts just like the rare/mythic rare slot that you've grown to know and love in Draft Boosters.",
-          "query": "from[znr-booster]?rarity=rarityByWeight(rm)"
+          "query": "from[znr-booster]?rarity=rarityByWeight2008(rm)"
         },
         {
           "_comment": "Slot 13: Foil: C/U/R/M",
           "_comment2": "A lot of players enjoy foils, so we decided to just make a slot where you get a foil in every pack. This slot can be any rarity, so yes, this is another place where you can get a rare or mythic rare.",
-          "query": "from[znr-foils]?rarity=rarityByWeight(curm)",
+          "query": "from[znr-foils]?rarity=rarityByWeight2008(curm)",
           "setValues": { "foil": true }
         },
         {
@@ -216,7 +216,7 @@
             {
               "_comment": "Slot 14: Token/Ad or The List",
               "_comment2": "1 Token/ad card (75%), or a card from The List (25%) – The List is a collection of 300 cards from Magic's history that we have brought together for this special slot. We have rotated in 50 new reprints that we feel help capture the feel of Modern Horizons 2. Inclusion of cards from The List doesn't impact what formats the card is legal in",
-              "query": "from[the-list]?rarity=rarityByWeight(curm)",
+              "query": "from[the-list]?rarity=rarityByWeight2008(curm)",
               "overrideSlot": "14",
               "percent": "25"
             }

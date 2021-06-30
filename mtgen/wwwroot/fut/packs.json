@@ -1,4 +1,4 @@
-{
+﻿{
   "defs": [
     {
       "defName": "fut",
@@ -107,7 +107,7 @@
               "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
               "percent": "15/67",
               "overrideSlot": "11",
-              "query": "from[fut-foil]?rarity=rarityByWeight(cur)",
+              "query": "from[fut-foil]?rarity=rarityByWeight2008(cur)",
               "setValues": { "foil": true }
             }
           ]

@@ -37,12 +37,12 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[m12]?token=true"
+              "percent": "1/3",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "50",
-              "query": "from[m12]?type='Marketing"
+              "percent": "2/3",
+              "query": "from[{{setCode}}]?marketing=true"
             }
           ]
         },
