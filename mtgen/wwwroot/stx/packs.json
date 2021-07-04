@@ -117,7 +117,7 @@
     },
     {
       "defName": "stx-main",
-      "query": "from[stx]-from[stx]?type=(Marketing)-from[stx]?promo=true-from[stx-mystical-archive]-from[stx]?token=true-from[stx-lesson]"
+      "query": "from[stx]-from[stx]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[stx]?promo=true-from[stx-mystical-archive]-from[stx-lesson]"
     },
     {
       "defName": "stx-borderless",
@@ -142,14 +142,6 @@
     {
       "defName": "stx-foils",
       "query": "from[stx-booster]+from[stx-mystical-archive-en]+from[stx]?type='Basic Land'"
-    },
-    {
-      "defName": "stx-token",
-      "query": "from[stx]?token=true"
-    },
-    {
-      "defName": "stx-true-token",
-      "query": "from[stx-token]?marketing!=true"
     }
   ],
 
@@ -179,12 +171,13 @@
         {
           "querySet": [
             {
-              "percent": "10",
-              "query": "from[stx]?title='Tip/Marketing Card"
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "90",
-              "query": "from[stx-token]"
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },
@@ -320,7 +313,7 @@
         },
         {
           "_comment": "Slot 17: Foil: token",
-          "query": "from[stx-true-token]",
+          "query": "from[{{setCode}}]?token=true",
           "setValues": { "foil": true }
         },
 
@@ -505,7 +498,7 @@
         {
           "_comment": "Slot 14: Token/Ad or The List",
           "_comment2": "1 Token/ad card (75%), or a card from The List (25%) – The List is a collection of 300 cards from Magic's history that we have brought together for this special slot. We have rotated in 50 new reprints that we feel help capture the feel of Modern Horizons 2. Inclusion of cards from The List doesn't impact what formats the card is legal in",
-          "query": "from[stx-token]"
+          "query": "from[{{setCode}}]?token=true"
         },
 
         {
@@ -547,7 +540,7 @@
         { "query": "take[9]>from[stx-lorehold-colour-booster]?rarity='c" },
         { "query": "take[3]>from[stx-lorehold-colour-booster]?rarity='u" },
         { "query": "from[stx-college-lorehold]?rarity='r" },
-        { "query": "take[2]>from[stx-true-token]" },
+        { "query": "take[2]>from[{{setCode}}]?token=true" },
         {
           "querySet": [
             {
@@ -571,7 +564,7 @@
         { "query": "take[9]>from[stx-prismari-colour-booster]?rarity='c" },
         { "query": "take[3]>from[stx-prismari-colour-booster]?rarity='u" },
         { "query": "from[stx-college-prismari]?rarity='r" },
-        { "query": "take[2]>from[stx-true-token]" },
+        { "query": "take[2]>from[{{setCode}}]?token=true" },
         {
           "querySet": [
             {
@@ -595,7 +588,7 @@
         { "query": "take[9]>from[stx-quandrix-colour-booster]?rarity='c" },
         { "query": "take[3]>from[stx-quandrix-colour-booster]?rarity='u" },
         { "query": "from[stx-college-quandrix]?rarity='r" },
-        { "query": "take[2]>from[stx-true-token]" },
+        { "query": "take[2]>from[{{setCode}}]?token=true" },
         {
           "querySet": [
             {
@@ -619,7 +612,7 @@
         { "query": "take[9]>from[stx-silverquill-colour-booster]?rarity='c" },
         { "query": "take[3]>from[stx-silverquill-colour-booster]?rarity='u" },
         { "query": "from[stx-college-silverquill]?rarity='r" },
-        { "query": "take[2]>from[stx-true-token]" },
+        { "query": "take[2]>from[{{setCode}}]?token=true" },
         {
           "querySet": [
             {
@@ -643,7 +636,7 @@
         { "query": "take[9]>from[stx-witherbloom-colour-booster]?rarity='c" },
         { "query": "take[3]>from[stx-witherbloom-colour-booster]?rarity='u" },
         { "query": "from[stx-college-witherbloom]?rarity='r" },
-        { "query": "take[2]>from[stx-true-token]" },
+        { "query": "take[2]>from[{{setCode}}]?token=true" },
         {
           "querySet": [
             {

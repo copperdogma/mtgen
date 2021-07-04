@@ -10,7 +10,7 @@
     },
     {
       "defName": "aer-base",
-      "query": "from[aer]-from[aer]?type=(Marketing|Basic Land)-from[aer]?token=true-from[aer]?promo=true-from[aer-masterpiece-series]"
+      "query": "from[aer]-from[aer]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[aer]?promo=true-from[aer-masterpiece-series]"
     },
     {
       "defName": "kld-basicland",
@@ -52,12 +52,13 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[aer]?title='Tip/Marketing Card"
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "50",
-              "query": "from[aer]?token=true"
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },

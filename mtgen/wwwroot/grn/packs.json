@@ -6,7 +6,7 @@
     },
     {
       "defName": "grn-main",
-      "query": "from[grn]-from[grn]?type=(Marketing|Basic Land)-from[grn]?promo=true-from[grn]?token=true-from[grn]?subtype='Gate'+from[grn]?title='Gateway Plaza'"
+      "query": "from[grn]-from[grn]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[grn]?promo=true-from[grn]?subtype='Gate'+from[grn]?title='Gateway Plaza'"
     },
     {
       "defName": "grn-basic-land",
@@ -95,13 +95,13 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[grn]?title='Tip/Marketing Card"
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "50",
-              "_query": "from[grn-token]",
-              "query": "from[grn]?title='Tip/Marketing Card"
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },

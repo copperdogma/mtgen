@@ -6,7 +6,7 @@
     },
     {
       "defName": "ori-main",
-      "query": "from[ori]-from[ori]?type=(Marketing|Basic Land)-from[ori]?token=true-from[ori]?promo=true"
+      "query": "from[ori]-from[ori]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[ori]?promo=true"
     },
     {
       "defName": "ori-foils",
@@ -35,6 +35,10 @@
     {
       "defName": "ori-seeded-green",
       "query": "from[ori-main]?cost=contains({G})"
+    },
+    {
+      "defName": "{{setCode}}-tokens-and-checklist",
+      "query": "from[{{setCode}}]?token=true+from[{{setCode}}]?title='Checklist Card'"
     }
 
   ],
@@ -60,12 +64,12 @@
         {
           "querySet": [
             {
-              "percent": 50,
-              "query": "from[ori]?type='Marketing'"
+              "percent": "2/3",
+              "query": "from[{{setCode}}-tokens-and-checklist]"
             },
             {
-              "percent": 50,
-              "query": "from[ori]?token=true-from[ori]?promo=true"
+              "percent": "1/3",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },

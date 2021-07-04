@@ -1,18 +1,19 @@
 {
   "startProductName": "m19-prerelease",
   "packFiles": [
-    "packs.json?v1.5"
+    "packs.json?v1.6"
   ],
   "cardFiles": [
     "cardsMain.json?v1.5",
     "cardsBasicLand.json",
     "cardsToken.json",
-    "cardsPromo.json?v1.1"
+    "cardsPromo.json?v1.1",
+    "../cards/ads/cardsAds.json"
   ],
   "updates": [
     {
-      "UpdateDate": "2021-06-25T23:30:00:00",
-      "HtmlString": "Updated foil chances. Now 15/67 chance a booster has a foil and includes basic lands."
+      "UpdateDate": "2021-07-03T23:30:00:00",
+      "HtmlString": "Added tokens which were missing. Updated marketing cards to be more accurate for set, plus set chances as 1:3 token:marketing for core sets, 2:3 for expansions, and 9:1 as of Battle for Zendikar."
     },
     {
       "UpdateDate": "2018-06-29T23:30:00:00",

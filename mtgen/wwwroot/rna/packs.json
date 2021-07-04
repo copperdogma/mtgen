@@ -10,15 +10,11 @@
     },
     {
       "defName": "rna-main",
-      "query": "from[rna]-from[rna]?type=(Marketing|Basic Land)-from[rna]?promo=true-from[rna]?token=true-from[rna]?subtype='Gate'+from[rna]?title='Gateway Plaza'"
+      "query": "from[rna]-from[rna]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[rna]?promo=true-from[rna]?subtype='Gate'+from[rna]?title='Gateway Plaza'"
     },
     {
       "defName": "rna-foils",
       "query": "from[rna]+from[rna]?type='Basic Land'"
-    },
-    {
-      "defName": "rna-token",
-      "query": "from[rna]?token=true"
     },
 
     {
@@ -91,12 +87,13 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[rna]?title='Tip/Marketing Card"
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "50",
-              "query": "from[rna-token]"
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },

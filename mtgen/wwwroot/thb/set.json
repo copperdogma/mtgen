@@ -1,16 +1,21 @@
 {
   "startProductName": "thb-prerelease",
   "packFiles": [
-    "packs.json?v1.4"
+    "packs.json?v1.5"
   ],
   "cardFiles": [
     "cardsMain.json?v1.1",
     "cardsToken.json",
     "cardsPromo.json?v1.2",
     "cardsVariant.json",
-    "cardsBasicLand.json"
+    "cardsBasicLand.json",
+    "../cards/ads/cardsAds.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-07-03T23:30:00:00",
+      "HtmlString": "Updated marketing cards to be more accurate for set, plus set chances as 1:3 token:marketing for core sets, 2:3 for expansions, and 9:1 as of Battle for Zendikar."
+    },
     {
       "UpdateDate": "2021-06-25T23:30:00:00",
       "HtmlString": "Foils now include basic lands."

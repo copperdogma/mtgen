@@ -10,7 +10,7 @@
     },
     {
       "defName": "arb-main",
-      "query": "from[arb]-from[arb]?type=(Marketing|Basic Land)-from[arb]?token=true-from[arb]?promo=true"
+      "query": "from[arb]-from[arb]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[arb]?promo=true"
     },
     {
       "defName": "arb-promo",
@@ -44,12 +44,13 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[arb]?token=true"
+              "_comment": "Expansions are 2/3 ratio of tokens/tips",
+              "percent": "2/3",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "50",
-              "query": "from[arb]?type='Marketing"
+              "percent": "1/3",
+              "query": "from[{{setCode}}]?tip=true"
             }
           ]
         },

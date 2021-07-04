@@ -1,7 +1,7 @@
 {
   "startProductName": "stx-prerelease",
   "packFiles": [
-    "packs.json?v1.11"
+    "packs.json?v1.12"
   ],
   "cardFiles": [
     "cardsMain.json",
@@ -12,9 +12,14 @@
     "cardsMysticalArchive.json",
     "cardsC21CommanderVariant.json",
     "cardsTheList.json",
-    "cardsArtCards.json"
+    "cardsArtCards.json",
+    "../cards/ads/cardsAds.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-07-03T23:30:00:00",
+      "HtmlString": "Updated marketing cards to be more accurate for set, plus set chances as 1:3 token:marketing for core sets, 2:3 for expansions, and 9:1 as of Battle for Zendikar."
+    },
     {
       "UpdateDate": "2021-06-27T23:30:00:00",
       "HtmlString": "Emergent Sequence is now in the Quandrix college instead of Witherbloom (thanks @wreimers). Also un-broke Set Boosters."

@@ -1,5 +1,5 @@
 /*
-MtG Generator script v2.7 - LIB
+MtG Generator script v2.7.1 - LIB
 
 Shared/base functions.
 
@@ -17,6 +17,7 @@ Query examples:
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
+2-Jul-2021: Added support for ?getMarketingCardsForSet(set) to include new /ads/cardsAds.json cards in the boosters.
 14-Jun-2021: Added support for rarity=rarityByWeight(curm).
 7-Jun-2021: Removed product debug support, replacing with superior ?debug=true querystring support.
 4-May-2021: Added support for ~=(X|Y|Z) (contains) operator and != operator.
@@ -40,7 +41,7 @@ Author: Cam Marsollier cam.marsollier@gmail.com
 var mtgGen = (function (my) {
     'use strict';
     // globals
-    my.version = "2.7";
+    my.version = "2.7.1";
     my.setData = undefined;
     my.packData = undefined;
     my.cardsData = undefined;
@@ -658,8 +659,19 @@ var mtgGen = (function (my) {
         }
         const sourceSet = Object.values(sourceSetCards)
 
-        // Execute the query on the set
-        if (!query2) {
+        // Get the marketing cards that would be appropriate for the given set.
+        // This is the equivalent to from[*]?marketing=true&set=(set1|set2|set3|...)
+        // 20210702: For now, just gets ALL marketing cards. In the future this will only get appropriate ones.
+        // Usage: from[*]?getMarketingCardsForSet({{setCode}})
+        // NOTE: This is currently hacky enough that because it doesn't match the "?prop=val" pattern it's not even detected so we'll cut out early and process it.
+        // TODO: Refactor to detect single-operator expressions as we may want to use more in the future. Also this would ignore any "and" statements when we implement those.
+        if (query.includes('getMarketingCardsForSet(')) {
+            const matchingCards = sourceSet.filter(card => card['ad'] && (card['ad'] == true || card['ad'] == 'true'));
+            result = matchingCards.map(matchingCard => matchingCard.mtgenId);
+        }
+
+        // Execute the query on the whole set
+        else if (!query2) {
             result = sourceSet.map(card => card.mtgenId);
         }
         else {
@@ -670,8 +682,7 @@ var mtgGen = (function (my) {
                 clause = query2[2].replace(/contains\(/g, '').replace(/\(/g, '').replace(/\)/g, '');
                 matchingCards = sourceSet.filter(card => card[prop] && card[prop].match(clause));
                 result = matchingCards.map(matchingCard => matchingCard.mtgenId);
-            }
-            else if (query2[2].includes('rarityByWeight2020(') || query2[2].includes('rarityByWeight2008(')) {
+            } else if (query2[2].includes('rarityByWeight2020(') || query2[2].includes('rarityByWeight2008(')) {
                 // 'rarityByWeight(curm)' is valid when the property is 'rarity'
                 // This will choose cards from the source according to rarity chances.
                 // The first mythic rares appeared in Shards of Alara (ALA, 2008), assuming a card set of 14, with 10c, 3u, 1r, and 1/8 chance of m instead of r.

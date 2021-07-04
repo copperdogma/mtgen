@@ -26,7 +26,7 @@
     },
     {
       "defName": "dgm-main",
-      "query": "from[dgm]-from[dgm]?type=(Marketing|Basic Land)-from[dgm]?token=true-from[dgm]?promo=true"
+      "query": "from[dgm]-from[dgm]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[dgm]?promo=true"
     },
     {
       "defName": "dgm-foils",
@@ -75,12 +75,12 @@
         {
           "querySet": [
             {
-              "percent": 50,
-              "query": "from[dgm]?type='Marketing'"
+              "percent": "2/3",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": 50,
-              "query": "from[dgm]?token=true-from[dgm]?promo=true"
+              "percent": "1/3",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },

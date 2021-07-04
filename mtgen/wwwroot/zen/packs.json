@@ -6,7 +6,7 @@
     },
     {
       "defName": "zen-main",
-      "query": "from[zen]-from[zen]?type=(Marketing|Basic Land)-from[zen]?token=true-from[zen]?promo=true"
+      "query": "from[zen]-from[zen]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[zen]?promo=true"
     },
     {
       "defName": "zen-foil",
@@ -38,12 +38,13 @@
         {
           "querySet": [
             {
-              "percent": 50,
-              "query": "from[zen]?type='Marketing'"
+              "_comment": "Expansions are 2/3 ratio of tokens/tips",
+              "percent": "2/3",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": 50,
-              "query": "from[zen]?token=true-from[zen]?promo=true"
+              "percent": "1/3",
+              "query": "from[{{setCode}}]?tip=true"
             }
           ]
         },

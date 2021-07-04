@@ -6,7 +6,7 @@
     },
     {
       "defName": "mbs-main",
-      "query": "from[mbs]-from[mbs]?type=(Marketing|Basic Land)-from[mbs]?token=true-from[mbs]?promo=true"
+      "query": "from[mbs]-from[mbs]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[mbs]?promo=true"
     },
     {
       "defName": "mbs-foil",
@@ -39,12 +39,13 @@
         {
           "querySet": [
             {
-              "percent": 50,
-              "query": "from[mbs]?type='Marketing'"
+              "_comment": "Expansions are 2/3 ratio of tokens/tips",
+              "percent": "2/3",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": 50,
-              "query": "from[mbs]?token=true-from[mbs]?promo=true"
+              "percent": "1/3",
+              "query": "from[{{setCode}}]?tip=true"
             }
           ]
         },

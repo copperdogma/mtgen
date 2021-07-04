@@ -14,7 +14,7 @@
     },
     {
       "defName": "rtr-main",
-      "query": "from[rtr]-from[rtr]?type=(Marketing|Basic Land)-from[rtr]?token=true-from[rtr]?promo=true"
+      "query": "from[rtr]-from[rtr]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[rtr]?promo=true"
     },
     {
       "defName": "rtr-foils",
@@ -45,12 +45,12 @@
         {
           "querySet": [
             {
-              "percent": 50,
-              "query": "from[rtr]?type='Marketing'"
+              "percent": "2/3",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": 50,
-              "query": "from[rtr]?token=true-from[rtr]?promo=true"
+              "percent": "1/3",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },

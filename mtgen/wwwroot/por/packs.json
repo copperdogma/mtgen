@@ -10,7 +10,7 @@
     },
     {
       "defName": "por-main",
-      "query": "from[por]-from[por-basic-land]"
+      "query": "from[por]-from[por-basic-land]-from[*]?usableForDeckBuilding=false"
     }
   ],
   "packs": [
@@ -29,10 +29,14 @@
       "sources": [ "https://mtg.fandom.com/wiki/Portal", "https://www.youtube.com/watch?v=Dgg1CLp9D-U" ],
       "isGenerated": true,
       "cards": [
-        { "query": "take[9]>from[por-main]?rarity='c" },
-        { "query": "take[3]>from[por-main]?rarity='u" },
-        { "query": "take[1]>from[por-main]?rarity='r" },
-        { "query": "take[2]>from[por-basic-land]" }
+        { "query": "take[3]>from[por-main]?rarity='c" },
+        { "query": "from[por-main]?rarity='u" },
+        { "query": "from[por]?tip=true" },
+        { "query": "take[2]>from[por-basic-land]" },
+        { "query": "from[por-main]?rarity='c" },
+        { "query": "from[por-main]?rarity='r" },
+        { "query": "take[2]>from[por-main]?rarity='u" },
+        { "query": "take[5]>from[por-main]?rarity='c" }
       ]
     }
   ]

@@ -18,7 +18,7 @@
     },
     {
       "defName": "iko-main",
-      "query": "from[iko]-from[iko]?type=(Marketing)-from[iko]?promo=true-from[iko]?variant=true-from[iko]?token=true-from[iko]?type='Basic Land"
+      "query": "from[iko]-from[iko]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[iko]?promo=true-from[iko]?variant=true"
     },
     {
       "defName": "iko-showcase",
@@ -66,10 +66,6 @@
     {
       "defName": "iko-commander",
       "query": "from[*]?set='c20'"
-    },
-    {
-      "defName": "iko-token",
-      "query": "from[iko]?token=true"
     }
   ],
 
@@ -87,15 +83,26 @@
       "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
       "packName": "iko-draft",
       "packDesc": "Ikoria: Lair of Behemoths: Draft Booster",
-      "packVersion": "1.1",
+      "packVersion": "1.2",
       "isGenerated": true,
       "cards": [
         { "query": "take[10]>from[iko-booster]?rarity='c" },
         { "query": "take[3]>from[iko-booster]?rarity='u" },
         { "query": "from[iko-booster]?rarity=rarityByWeight2008(rm)" },
         { "query": "from[iko-basic-land]" },
-        { "query": "from[iko-token]" },
-
+        {
+          "querySet": [
+            {
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
+            },
+            {
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
+            }
+          ]
+        },
         {
           "querySet": [
             {
@@ -277,7 +284,7 @@
         },
         {
           "_comment": "Slot 16: 1x Foil token",
-          "query": "from[iko-token]",
+          "query": "from[{{setCode}}]?token=true",
           "setValues": { "foil": true }
         },
 

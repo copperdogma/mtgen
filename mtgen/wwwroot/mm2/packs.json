@@ -6,7 +6,7 @@
     },
     {
       "defName": "mm2-main",
-      "query": "from[mm2]-from[mm2]?type=(Marketing|Basic Land)-from[mm2]?token=true"
+      "query": "from[mm2]-from[mm2]?type='Basic Land'-from[*]?usableForDeckBuilding=false"
     },
     {
       "defName": "mm2-foils",
@@ -39,12 +39,12 @@
         {
           "querySet": [
             {
-              "percent": 50,
-              "query": "from[mm2]?type='Marketing'"
+              "percent": "2/3",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": 50,
-              "query": "from[mm2]?token=true"
+              "percent": "1/3",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         }

@@ -6,7 +6,7 @@
     },
     {
       "defName": "rix-base",
-      "query": "from[rix]-from[rix]?type=(Marketing|Basic Land)-from[rix]?token=true-from[rix]?promo=true-from[rix]?doubleFaceBackCard=true"
+      "query": "from[rix]-from[rix]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[rix]?promo=true-from[rix]?doubleFaceBackCard=true"
     },
     {
       "defName": "rix-main",
@@ -48,16 +48,16 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[rix]?title='Tip/Marketing Card"
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}-token]"
             },
             {
-              "percent": "50",
-              "query": "from[rix-token]"
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },
-
         {
           "querySet": [
             {

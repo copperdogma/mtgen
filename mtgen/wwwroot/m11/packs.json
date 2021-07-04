@@ -6,7 +6,7 @@
     },
     {
       "defName": "m11-main",
-      "query": "from[m11]-from[m11]?type=(Marketing|Basic Land)-from[m11]?token=true-from[m11]?promo=true"
+      "query": "from[m11]-from[m11]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[m11]?promo=true"
     },
     {
       "defName": "m11-promo",
@@ -43,7 +43,7 @@
             },
             {
               "percent": "2/3",
-              "query": "from[{{setCode}}]?marketing=true"
+              "query": "from[{{setCode}}]?tip=true"
             }
           ]
         },

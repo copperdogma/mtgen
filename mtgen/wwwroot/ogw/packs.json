@@ -14,7 +14,7 @@
     },
     {
       "defName": "ogw-main",
-      "query": "from[ogw]-from[ogw]?type=(Marketing|Basic Land)-from[ogw]?token=true-from[ogw]?promo=true"
+      "query": "from[ogw]-from[ogw]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[ogw]?promo=true"
     },
     {
       "defName": "ogw-common",
@@ -53,7 +53,19 @@
         { "query": "take[3]>from[ogw-main]?rarity='u" },
         { "query": "from[ogw-main]?rarity=rarityByWeight2008(rm)" },
         { "query": "from[bfz-basic-land-full-art]" },
-        { "query": "from[ogw]?token=true-from[ogw]?promo=true" },
+        {
+          "querySet": [
+            {
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
+            },
+            {
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
+            }
+          ]
+        },
 
         {
           "querySet": [

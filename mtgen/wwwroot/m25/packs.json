@@ -6,7 +6,7 @@
     },
     {
       "defName": "m25-main",
-      "query": "from[m25]-from[m25]?type=(Marketing|Basic Land)-from[m25]?token=true"
+      "query": "from[m25]-from[m25]?type='Basic Land'-from[*]?usableForDeckBuilding=false"
     },
     {
       "defName": "m25-foils",
@@ -39,12 +39,13 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[m25]?title='Tip/Marketing Card"
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "50",
-              "query": "from[m25]?token=true"
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         }

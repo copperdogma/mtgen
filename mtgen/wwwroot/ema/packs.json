@@ -6,7 +6,7 @@
     },
     {
       "defName": "ema-base",
-      "query": "from[ema]-from[ema]?type=(Marketing|Basic Land)-from[ema]?token=true-from[ema]?promo=true"
+      "query": "from[ema]-from[ema]?type='Basic Land'-from[*]?usableForDeckBuilding=false"
     },
     {
       "defName": "ema-main",
@@ -15,10 +15,6 @@
     {
       "defName": "ema-foils",
       "query": "from[ema-main]"
-    },
-    {
-      "defName": "ema-promo",
-      "query": "from[ema]?promo=true"
     }
   ],
 
@@ -47,62 +43,17 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[ema]?title='Tip/Marketing Card"
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "50",
-              "query": "from[ema]?token=true"
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         }
       ]
-    },
-    {
-      "packName": "ema-promos",
-      "packDesc": "Eternal Masters: Promos",
-      "isGenerated": false,
-      "includeWithUserCards": false,
-      "cards": [
-        { "query": "take[*]>from[ema-promo]" }
-      ]
-    },
-    {
-      "packName": "ema-prerelease-promo-packins",
-      "packDesc": "Eternal Masters: Prerelease Packins",
-      "isGenerated": false,
-      "includeWithUserCards": false,
-      "cards": [
-        {
-          "querySet": [
-            {
-              "percent": "7/8",
-              "query": "from[ema-base]?rarity='r",
-              "setValues": { "foil": true }
-            },
-            {
-              "percent": "1/8",
-              "query": "from[ema-base]?rarity='m",
-              "setValues": { "foil": true }
-            }
-          ]
-        },
-        { "query": "take[1]>from[ema-promo]?type='Life Counter" },
-        { "query": "from[ema-promo]?title='Deck Box" },
-        { "query": "from[ema-promo]?title='Prerelease Card Divider" },
-        { "query": "from[ema-promo]?title='Deckbuilding Advice Insert" }
-
-      ]
-    },
-    {
-      "packName": "ema-prerelease-promos",
-      "packDesc": "Eternal Masters: Prerelease Promos",
-      "isGenerated": false,
-      "includeWithUserCards": false,
-      "cards": [
-        { "query": "take[*]>from[ema-promo]?includedReason='Prerelease Promo" }
-      ]
     }
-
   ]
 }

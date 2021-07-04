@@ -10,7 +10,7 @@
     },
     {
       "defName": "hou-base",
-      "query": "from[hou]-from[hou]?type=(Marketing|Basic Land)-from[hou]?token=true-from[hou]?promo=true-from[hou-masterpiece-series]"
+      "query": "from[hou]-from[hou]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[hou]?promo=true-from[hou-masterpiece-series]"
     },
     {
       "defName": "hou-main",
@@ -59,12 +59,13 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[hou]?title='Tip/Marketing Card"
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "50",
-              "query": "from[hou]?token=true"
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },

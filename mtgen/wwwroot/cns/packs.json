@@ -25,7 +25,7 @@
     },
     {
       "defName": "cns_main",
-      "query": "from[cns_set]-from[cns_set]?token=true-from[cns_set]?marketing=true-from[cns_set]?type=(Marketing|Basic Land|Conspiracy)-from[cns_draft]"
+      "query": "from[cns_set]--from[*]?usableForDeckBuilding=false-from[cns_set]?type=(Basic Land|Conspiracy)-from[cns_draft]"
     },
     {
       "defName": "cns_foils",
@@ -62,12 +62,12 @@
         {
           "querySet": [
             {
-              "percent": 50,
-              "query": "from[cns]?marketing=true"
+              "percent": "2/3",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": 50,
-              "query": "from[cns]?token=true"
+              "percent": "1/3",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },

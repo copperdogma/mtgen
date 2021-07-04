@@ -18,7 +18,7 @@
     },
     {
       "defName": "x2m-main",
-      "query": "from[x2m]-from[x2m]?promo=true-from[x2m]?variant=true-from[x2m]?token=true-from[x2m]?type='Basic Land"
+      "query": "from[x2m]-from[x2m]?promo=true-from[x2m]?variant=true-from[x2m]?type='Basic Land'-from[*]?usableForDeckBuilding=false"
     },
     {
       "defName": "x2m-foils",
@@ -27,10 +27,6 @@
     {
       "defName": "x2m-booster",
       "query": "from[x2m]?mainSet=true-from[x2m-promo]"
-    },
-    {
-      "defName": "x2m-token",
-      "query": "from[x2m]?token=true"
     }
   ],
 
@@ -49,7 +45,7 @@
       "_comment2": "These were unique: 2 rare/mythic, 2 foils, no basic land",
       "packName": "x2m-draft",
       "packDesc": "Double Masters: Draft Booster",
-      "packVersion": "1.0",
+      "packVersion": "1.1",
       "isGenerated": true,
       "cards": [
         { "query": "take[8]>from[x2m-booster]?rarity='c" },
@@ -64,7 +60,19 @@
           "query": "from[x2m-foils]?rarity=rarityByWeight2008(curm)",
           "setValues": { "foil": true }
         },
-        { "query": "from[x2m-token]" }
+        {
+          "querySet": [
+            {
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
+            },
+            {
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
+            }
+          ]
+        }
       ]
     },
 
@@ -104,7 +112,7 @@
           "setValues": { "foil": true }
         },
         {
-          "query": "take[2]>from[x2m-token]",
+          "query": "take[2]>from[{{setCode}}]?token=true",
           "setValues": { "foil": true }
         },
 

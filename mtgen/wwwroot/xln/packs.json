@@ -6,7 +6,7 @@
     },
     {
       "defName": "xln-base",
-      "query": "from[xln]-from[xln]?type=(Marketing|Basic Land)-from[xln]?token=true-from[xln]?promo=true-from[xln]?doubleFaceBackCard=true"
+      "query": "from[xln]-from[xln]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[xln]?promo=true-from[xln]?doubleFaceBackCard=true"
     },
     {
       "defName": "xln-main",
@@ -48,12 +48,13 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[xln]?title='Tip/Marketing Card"
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "50",
-              "query": "from[xln-token]"
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },

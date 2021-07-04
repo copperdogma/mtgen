@@ -6,7 +6,7 @@
     },
     {
       "defName": "lrw-main",
-      "query": "from[lrw]-from[lrw]?type=(Marketing|Basic Land)-from[lrw]?token=true-from[lrw]?promo=true"
+      "query": "from[lrw]-from[lrw]?type=(Marketing|Basic Land)-from[*]?usableForDeckBuilding=false-from[lrw]?promo=true"
     },
     {
       "defName": "lrw-promo",
@@ -37,12 +37,13 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[lrw]?token=true"
+              "_comment": "Expansions are 2/3 ratio of tokens/tips",
+              "percent": "2/3",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "50",
-              "query": "from[lrw]?type='Marketing"
+              "percent": "1/3",
+              "query": "from[{{setCode}}]?tip=true"
             }
           ]
         },

@@ -1,17 +1,17 @@
 ﻿{
   "startProductName": "m10-boosters",
   "packFiles": [
-    "packs.json?v1.2"
+    "packs.json?v1.3"
   ],
   "cardFiles": [
     "cardsMain.json",
     "cardsOther.json",
     "cardsToken.json",
-    "../marketing-cards/cardsMarketing.json"
+    "../cards/tips/cardsTips.json"
   ],
   "updates": [
     {
-      "UpdateDate": "2021-06-30T12:00:00:00",
+      "UpdateDate": "2021-07-03T23:30:00:00",
       "HtmlString": "Updated marketing cards to be more accurate for set, plus set chances as 1:3 token:marketing for core sets, 2:3 for expansions, and 9:1 as of Battle for Zendikar."
     },
     {

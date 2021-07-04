@@ -4,161 +4,138 @@
   "imagesUrl": "http://magic.wizards.com/en/articles/archive/feature/tokens-kaladesh-2016-09-15",
   "exceptions": [
     {
-      "add": true,
-      "newValues": {
-        "src": "http://mtgen.net/cards/mtg-marketing1.png",
-        "title": "Tip/Marketing Card",
-        "colour": "o",
-        "num": "001 Marketing",
-        "type": "Marketing",
-        "marketing": true
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "xln",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/feature/tokens-ixalan-2017-09-13",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "002|b|Token Creature|Illusion\n006|g|Token Creature|Plant\n003|u|Token Creature|Merfolk\n009|c|Token Artifact|Treasure\n001|w|Token Creature|Vampire\n008|c|Token Artifact|Treasure\n005|g|Token Creature|Dinosaur\n007|c|Token Artifact|Treasure\n004|b|Token Creature|Pirate\n010|c|Token Artifact|Treasure\n"
+        }
       }
     },
     {
       "add": true,
       "newValues": {
-        "src": "http://mtgen.net/cards/mtg-marketing2.png",
-        "title": "Tip/Marketing Card",
-        "colour": "o",
-        "num": "002 Marketing",
-        "type": "Marketing",
-        "marketing": true
+        "set": "xln",
+        "src": "https://media.wizards.com/2017/xln/en_yZ9fZMu6x5_b.png",
+        "num": "001",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Vampire",
+        "subtype": "Vampire"
       }
     },
-
-      {
-        "_comment": {
-          "generatedUsing": "card-exception-generator.html",
-          "settings": {
-            "setCode": "xln",
-            "cardImageUrl": "https://magic.wizards.com/en/articles/archive/feature/tokens-ixalan-2017-09-13",
-            "requiredImageWidth": "265",
-            "requiredImageHeight": "370",
-            "startingCardNum": "",
-            "cardPattern": "002|b|Token Creature|Illusion\n006|g|Token Creature|Plant\n003|u|Token Creature|Merfolk\n009|c|Token Artifact|Treasure\n001|w|Token Creature|Vampire\n008|c|Token Artifact|Treasure\n005|g|Token Creature|Dinosaur\n007|c|Token Artifact|Treasure\n004|b|Token Creature|Pirate\n010|c|Token Artifact|Treasure\n"
-          }
-        }
-      },
-      {
-        "add": true,
-        "newValues": {
-          "set": "xln",
-          "src": "https://media.wizards.com/2017/xln/en_yZ9fZMu6x5_b.png",
-          "num": "001",
-          "colour": "w",
-          "type": "Token Creature",
-          "title": "Vampire",
-          "subtype": "Vampire"
-        }
-      },
-      {
-        "add": true,
-        "newValues": {
-          "set": "xln",
-          "src": "https://media.wizards.com/2017/xln/en_Z0h3DggMsI_b.png",
-          "num": "002",
-          "colour": "b",
-          "type": "Token Creature",
-          "title": "Illusion",
-          "subtype": "Illusion"
-        }
-      },
-      {
-        "add": true,
-        "newValues": {
-          "set": "xln",
-          "src": "https://media.wizards.com/2017/xln/en_xN71JjP3tz_b.png",
-          "num": "003",
-          "colour": "u",
-          "type": "Token Creature",
-          "title": "Merfolk",
-          "subtype": "Merfolk"
-        }
-      },
-      {
-        "add": true,
-        "newValues": {
-          "set": "xln",
-          "src": "https://media.wizards.com/2017/xln/en_HyTkwtrTvU_b.png",
-          "num": "004",
-          "colour": "b",
-          "type": "Token Creature",
-          "title": "Pirate",
-          "subtype": "Pirate"
-        }
-      },
-      {
-        "add": true,
-        "newValues": {
-          "set": "xln",
-          "src": "https://media.wizards.com/2017/xln/en_TStEIHIslY_b.png",
-          "num": "005",
-          "colour": "g",
-          "type": "Token Creature",
-          "title": "Dinosaur",
-          "subtype": "Dinosaur"
-        }
-      },
-      {
-        "add": true,
-        "newValues": {
-          "set": "xln",
-          "src": "https://media.wizards.com/2017/xln/en_FKPcZjbGTI_b.png",
-          "num": "006",
-          "colour": "g",
-          "type": "Token Creature",
-          "title": "Plant",
-          "subtype": "Plant"
-        }
-      },
-      {
-        "add": true,
-        "newValues": {
-          "set": "xln",
-          "src": "https://media.wizards.com/2017/xln/en_N4n6GAhvNw_b.png",
-          "num": "007",
-          "colour": "c",
-          "type": "Token Artifact",
-          "title": "Treasure",
-          "subtype": "Treasure"
-        }
-      },
-      {
-        "add": true,
-        "newValues": {
-          "set": "xln",
-          "src": "https://media.wizards.com/2017/xln/en_yQpDYPpsn4_b.png",
-          "num": "008",
-          "colour": "c",
-          "type": "Token Artifact",
-          "title": "Treasure",
-          "subtype": "Treasure"
-        }
-      },
-      {
-        "add": true,
-        "newValues": {
-          "set": "xln",
-          "src": "https://media.wizards.com/2017/xln/en_1x8JYIHKSF_b.png",
-          "num": "009",
-          "colour": "c",
-          "type": "Token Artifact",
-          "title": "Treasure",
-          "subtype": "Treasure"
-        }
-      },
-      {
-        "add": true,
-        "newValues": {
-          "set": "xln",
-          "src": "https://media.wizards.com/2017/xln/en_g59A1EKi9e_b.png",
-          "num": "010",
-          "colour": "c",
-          "type": "Token Artifact",
-          "title": "Treasure",
-          "subtype": "Treasure"
-        }
-      },
+    {
+      "add": true,
+      "newValues": {
+        "set": "xln",
+        "src": "https://media.wizards.com/2017/xln/en_Z0h3DggMsI_b.png",
+        "num": "002",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Illusion",
+        "subtype": "Illusion"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "xln",
+        "src": "https://media.wizards.com/2017/xln/en_xN71JjP3tz_b.png",
+        "num": "003",
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Merfolk",
+        "subtype": "Merfolk"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "xln",
+        "src": "https://media.wizards.com/2017/xln/en_HyTkwtrTvU_b.png",
+        "num": "004",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Pirate",
+        "subtype": "Pirate"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "xln",
+        "src": "https://media.wizards.com/2017/xln/en_TStEIHIslY_b.png",
+        "num": "005",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Dinosaur",
+        "subtype": "Dinosaur"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "xln",
+        "src": "https://media.wizards.com/2017/xln/en_FKPcZjbGTI_b.png",
+        "num": "006",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Plant",
+        "subtype": "Plant"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "xln",
+        "src": "https://media.wizards.com/2017/xln/en_N4n6GAhvNw_b.png",
+        "num": "007",
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Treasure",
+        "subtype": "Treasure"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "xln",
+        "src": "https://media.wizards.com/2017/xln/en_yQpDYPpsn4_b.png",
+        "num": "008",
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Treasure",
+        "subtype": "Treasure"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "xln",
+        "src": "https://media.wizards.com/2017/xln/en_1x8JYIHKSF_b.png",
+        "num": "009",
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Treasure",
+        "subtype": "Treasure"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "xln",
+        "src": "https://media.wizards.com/2017/xln/en_g59A1EKi9e_b.png",
+        "num": "010",
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Treasure",
+        "subtype": "Treasure"
+      }
+    },
 
     {
       "where": "",

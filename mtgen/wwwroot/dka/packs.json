@@ -1,167 +1,167 @@
 {
-	"defs": [
-		{
-			"defName": "dka",
-			"query": "from[*]?set='dka'"
-		},
-		{
-			"defName": "isd",
-			"query": "from[*]?set='isd'"
-		},
-		{
-			"defName": "dka-promo",
-			"query": "from[dka]?promo=true"
-		},
-		{
-			"defName": "dka-set",
-			"query": "from[dka]-from[dka-promo]"
-		},
-		{
-			"defName": "dka-main",
-			"query": "from[dka]-from[dka]?type=(Marketing|Basic Land)-from[dka]?token=true-from[dka]?promo=true-from[*]?doubleFaceCard=true"
-		},
-		{
-			"defName": "dka-double-faced",
-			"query": "from[dka-set]?doubleFaceCard=true"
-		},
-		{
-			"defName": "dka-foils",
-			"query": "from[dka-main]+from[dka-double-faced]+from[isd]?type='Basic Land"
-		},
-		{
-			"defName": "dka-fatpack",
-			"query": "from[dka]?includedReason='Fat Pack Pack-In'"
-		}
-	],
+  "defs": [
+    {
+      "defName": "dka",
+      "query": "from[*]?set='dka'"
+    },
+    {
+      "defName": "isd",
+      "query": "from[*]?set='isd'"
+    },
+    {
+      "defName": "dka-promo",
+      "query": "from[dka]?promo=true"
+    },
+    {
+      "defName": "dka-set",
+      "query": "from[dka]-from[dka-promo]"
+    },
+    {
+      "defName": "dka-main",
+      "query": "from[dka]-from[dka]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[dka]?promo=true-from[*]?doubleFaceCard=true"
+    },
+    {
+      "defName": "dka-double-faced",
+      "query": "from[dka-set]?doubleFaceCard=true"
+    },
+    {
+      "defName": "dka-foils",
+      "query": "from[dka-main]+from[dka-double-faced]+from[isd]?type='Basic Land"
+    },
+    {
+      "defName": "dka-fatpack",
+      "query": "from[dka]?includedReason='Fat Pack Pack-In'"
+    }
+  ],
 
-	"packs": [
-		{
-			"packName": "dka-all-cards",
-			"packDesc": "Dark Ascension: All Cards",
-			"isGenerated": false,
-			"cards": [
-				{ "query": "take[*]>from[dka]" }
-			]
-		},
+  "packs": [
+    {
+      "packName": "dka-all-cards",
+      "packDesc": "Dark Ascension: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[dka]" }
+      ]
+    },
 
-		{
-			"packName": "dka-standard",
-			"packDesc": "Dark Ascension: Standard Booster",
-			"packVersion": "1.2",
-			"sources": [ "https://www.youtube.com/watch?v=19l-cmaZHUE" ],
-			"isGenerated": true,
-			"cards": [
-				{ "query": "take[9]>from[dka-main]?rarity='c" },
-				{ "query": "take[3]>from[dka-main]?rarity='u" },
-				{ "query": "from[dka-main]?rarity=rarityByWeight2008(rm)" },
-				{
-					"querySet": [
-						{
-							"percent": 50,
-							"query": "from[dka]?type='Marketing'"
-						},
-						{
-							"percent": 50,
-							"query": "from[dka]?token=true"
-						}
-					]
-				},
-				{
-					"querySet": [
-						{
-							"percent": 75,
-							"query": "from[dka]?title='Checklist Card'"
-						},
-						{
-							"percent": 25,
-							"query": "from[isd]?type='Basic Land'"
-						}
-					]
-				},
-				{
-					"_comment": "one double-faced card per pack, scaled by rarity",
-					"query": "from[dka-double-faced]?rarity=rarityByWeight2008(curm)"
-				},
+    {
+      "packName": "dka-standard",
+      "packDesc": "Dark Ascension: Standard Booster",
+      "packVersion": "1.3",
+      "sources": [ "https://www.youtube.com/watch?v=19l-cmaZHUE" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[9]>from[dka-main]?rarity='c" },
+        { "query": "take[3]>from[dka-main]?rarity='u" },
+        { "query": "from[dka-main]?rarity=rarityByWeight2008(rm)" },
+        {
+          "querySet": [
+            {
+              "percent": "2/3",
+              "query": "from[{{setCode}}]?token=true"
+            },
+            {
+              "percent": "1/3",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": 75,
+              "query": "from[dka]?title='Checklist Card'"
+            },
+            {
+              "percent": 25,
+              "query": "from[isd]?type='Basic Land'"
+            }
+          ]
+        },
+        {
+          "_comment": "one double-faced card per pack, scaled by rarity",
+          "query": "from[dka-double-faced]?rarity=rarityByWeight2008(curm)"
+        },
 
-				{
-					"querySet": [
-						{
-							"_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
-							"percent": "15/67",
-							"overrideSlot": "9",
-							"query": "from[dka-foils]?rarity=rarityByWeight2008(curm)",
-							"setValues": { "foil": true }
-						}
-					]
-				}
+        {
+          "querySet": [
+            {
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
+              "percent": "15/67",
+              "overrideSlot": "9",
+              "query": "from[dka-foils]?rarity=rarityByWeight2008(curm)",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
 
-			]
-		},
+      ]
+    },
 
-		{
-			"packName": "dka-promos",
-			"packDesc": "Dark Ascension: Promos",
-			"isGenerated": false,
-			"includeWithUserCards": false,
-			"cards": [
-				{ "query": "take[*]>from[dka-promo]" }
-			]
-		},
-		{
-			"packName": "dka-prerelease-promos",
-			"packDesc": "Dark Ascension: Prerelease Promos",
-			"isGenerated": false,
-			"includeWithUserCards": false,
-			"cards": [
-				{ "query": "take[*]>from[dka-promo]?includedReason='Prerelease Promo'" }
-			]
-		},
-		{
-			"packName": "dka-fat-pack-land",
-			"packDesc": "Dark Ascension Fat Pack: Land",
-			"isGenerated": false,
-			"cards": [
-				{
-					"query": "take[14]>from[isd]?title='Plains'",
-					"canBeDuplicate": true
-				},
-				{
-					"query": "take[14]>from[isd]?title='Island'",
-					"canBeDuplicate": true
-				},
-				{
-					"query": "take[14]>from[isd]?title='Swamp'",
-					"canBeDuplicate": true
-				},
-				{
-					"query": "take[14]>from[isd]?title='Forest'",
-					"canBeDuplicate": true
-				},
-				{
-					"query": "take[14]>from[isd]?title='Mountain'",
-					"canBeDuplicate": true
-				}
-			]
-		},
-		{
-			"packName": "dka-fat-pack-pack-ins",
-			"packDesc": "Dark Ascension Fat Pack: Pack-Ins",
-			"isGenerated": false,
-			"cards": [
-				{
-					"query": "take[*]>from[dka]?title=(Dark Ascension Player’s Guide|Dark Ascension Card Box|Dark Ascension Mural|Dark Ascension Rules Reference Card)",
-					"inOrder": true
-				},
-				{
-					"query": "from[dka-fatpack]?type='Life Counter'",
-					"canBeDuplicate": true
-				},
-				{
-					"query": "take[2]>from[dka]?title='Dark Ascension Deck Box'",
-					"canBeDuplicate": true
-				}
-			]
-		}
+    {
+      "packName": "dka-promos",
+      "packDesc": "Dark Ascension: Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[dka-promo]" }
+      ]
+    },
+    {
+      "packName": "dka-prerelease-promos",
+      "packDesc": "Dark Ascension: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[dka-promo]?includedReason='Prerelease Promo'" }
+      ]
+    },
+    {
+      "packName": "dka-fat-pack-land",
+      "packDesc": "Dark Ascension Fat Pack: Land",
+      "isGenerated": false,
+      "cards": [
+        {
+          "query": "take[14]>from[isd]?title='Plains'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[14]>from[isd]?title='Island'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[14]>from[isd]?title='Swamp'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[14]>from[isd]?title='Forest'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[14]>from[isd]?title='Mountain'",
+          "canBeDuplicate": true
+        }
+      ]
+    },
+    {
+      "packName": "dka-fat-pack-pack-ins",
+      "packDesc": "Dark Ascension Fat Pack: Pack-Ins",
+      "isGenerated": false,
+      "cards": [
+        {
+          "query": "take[*]>from[dka]?title=(Dark Ascension Player’s Guide|Dark Ascension Card Box|Dark Ascension Mural|Dark Ascension Rules Reference Card)",
+          "inOrder": true
+        },
+        {
+          "query": "from[dka-fatpack]?type='Life Counter'",
+          "canBeDuplicate": true
+        },
+        {
+          "query": "take[2]>from[dka]?title='Dark Ascension Deck Box'",
+          "canBeDuplicate": true
+        }
+      ]
+    }
 
-	]
+  ]
 }

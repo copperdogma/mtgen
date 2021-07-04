@@ -12,7 +12,7 @@
     },
     {
       "defName": "m15_main",
-      "query": "from[m15]-from[m15]?type=(Marketing|Basic Land)-from[m15]?token=true-from[m15]?promo=true"
+      "query": "from[m15]-from[m15]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[m15]?promo=true"
     },
     {
       "defName": "m15_intro_packs",
@@ -77,12 +77,12 @@
         {
           "querySet": [
             {
-              "percent": 50,
-              "query": "from[m15]?type='Marketing'"
+              "percent": "1/3",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": 50,
-              "query": "from[m15]?token=true-from[m15]?promo=true"
+              "percent": "2/3",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },

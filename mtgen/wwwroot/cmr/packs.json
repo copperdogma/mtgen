@@ -14,7 +14,7 @@
     },
     {
       "defName": "cmr-main",
-      "query": "from[cmr]-from[cmr]?type=(Marketing)-from[cmr]?promo=true-from[cmr]?variant=true-from[cmr]?token=true"
+      "query": "from[cmr]-from[cmr]?promo=true-from[cmr]?variant=true-from[cmr]?type='Basic Land'-from[*]?usableForDeckBuilding=false"
     },
     {
       "defName": "cmr-extended-art",
@@ -71,10 +71,6 @@
     {
       "defName": "cmr-collector",
       "query": "from[cmr-main]"
-    },
-    {
-      "defName": "cmr-token",
-      "query": "from[cmr]?token=true"
     }
   ],
 
@@ -118,12 +114,13 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[cmr]?title='Tip/Marketing Card"
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "50",
-              "query": "from[cmr-token]"
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },
@@ -246,7 +243,7 @@
         },
         {
           "_comment": "Slot 16: Foil: double-sided token",
-          "query": "from[cmr-token]-from[cmr-token]?marketing=true",
+          "query": "from[{{setCode}}]?token=true",
           "setValues": { "foil": true }
         },
 

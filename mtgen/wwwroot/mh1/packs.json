@@ -18,15 +18,11 @@
     },
     {
       "defName": "mh1-main",
-      "query": "from[mh1]-from[mh1]?type=(Marketing|Basic Snow Land)-from[mh1]?promo=true-from[mh1]?token=true"
+      "query": "from[mh1]-from[mh1]?type='Basic Snow Land'-from[*]?usableForDeckBuilding=false-from[mh1]?promo=true"
     },
     {
       "defName": "mh1-foils",
       "query": "from[mh1-main]+from[mh1-basic-snow-land]"
-    },
-    {
-      "defName": "mh1-token",
-      "query": "from[mh1]?token=true"
     }
   ],
 
@@ -54,12 +50,13 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[mh1]?title='Tip/Marketing Card"
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "50",
-              "query": "from[mh1-token]"
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },

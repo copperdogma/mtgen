@@ -6,7 +6,7 @@
     },
     {
       "defName": "10e-main",
-      "query": "from[10e]-from[10e]?type=(Marketing|Basic Land)-from[10e]?token=true-from[10e]?promo=true"
+      "query": "from[10e]-from[10e]?type=(Marketing|Basic Land)-from[*]?usableForDeckBuilding=false-from[10e]?promo=true"
     },
     {
       "defName": "10e-basic-land",
@@ -43,9 +43,9 @@
               "query": "from[{{setCode}}]?token=true"
             },
             {
-              "_comment": "First ever appearance of marketing cards! ... yaye. token:other cards = 1:3 for core sets, 2:3 for expansions until Battle for Zendikar: https://mtg.fandom.com/wiki/Marketing_card",
+              "_comment": "First ever appearance of tip cards! ... yaye. token:other cards = 1:3 for core sets, 2:3 for expansions until Battle for Zendikar: https://mtg.fandom.com/wiki/Marketing_card",
               "percent": "2/3",
-              "query": "from[{{setCode}}]?marketing=true"
+              "query": "from[{{setCode}}]?tip=true"
             }
           ]
         },

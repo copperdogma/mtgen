@@ -18,7 +18,7 @@
     },
     {
       "defName": "m21-main",
-      "query": "from[m21]-from[m21]?type=(Marketing)-from[m21]?promo=true-from[m21]?variant=true-from[m21]?token=true-from[m21]?type='Basic Land"
+      "query": "from[m21]-from[m21]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[m21]?promo=true-from[m21]?variant=true"
     },
     {
       "defName": "m21-showcase",
@@ -59,10 +59,6 @@
     {
       "defName": "m21-main-without-showcase",
       "query": "from[m21-main]-from[m21-showcase]"
-    },
-    {
-      "defName": "m21-token",
-      "query": "from[m21]?token=true"
     }
   ],
 
@@ -90,12 +86,13 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[m21]?title='Tip/Marketing Card"
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "50",
-              "query": "from[m21-token]"
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },
@@ -166,7 +163,7 @@
         },
         {
           "_comment": "Slot 16: Foil: token",
-          "query": "from[m21-token]-from[m21-token]?marketing=true",
+          "query": "from[{{setCode}}]?token=true",
           "setValues": { "foil": true }
         },
 
@@ -261,210 +258,6 @@
               "overrideSlot": "8",
               "percent": "1/8",
               "query": "from[m21-extended-art]?rarity='m"
-            }
-          ]
-        }
-      ]
-    },
-
-    {
-      "_comment": "Collector Boosters were introduced as standard feature as of ELD",
-      "packName": "xxxm21-collector",
-      "packDesc": "Core Set 2021: Collector Booster",
-      "packVersion": "1.0",
-      "sources": [ "https://magic.wizards.com/en/articles/archive/news/core-set-2021-product-overview-2020-06-05" ],
-      "isGenerated": true,
-      "cards": [
-        {
-          "_comment": "Slot 1-4: 4x Foil commons or common dual lands",
-          "query": "take[4]>from[m21-booster]?rarity='c",
-          "setValues": { "foil": true }
-        },
-        {
-          "_comment": "Slot 5-6: 2x Foil uncommons",
-          "query": "take[2]>from[m21-booster]?rarity='u",
-          "setValues": { "foil": true }
-        },
-        {
-          "_comment": "Slot 7: 1x Foil basic land",
-          "query": "from[m21-basic-land]",
-          "setValues": { "foil": true }
-        },
-        {
-          "querySet": [
-            {
-              "_comment": "Slot 8: 1x m21ria Commander card",
-              "percent": "80/112",
-              "query": "from[m21-commander]?rarity='c'"
-            },
-            {
-              "percent": "24/112",
-              "query": "from[m21-commander]?rarity='u'"
-            },
-            {
-              "percent": "7/112",
-              "query": "from[m21-commander]?rarity='r'"
-            },
-            {
-              "percent": "1/112",
-              "query": "from[m21-commander]?rarity='m'"
-            }
-          ]
-        },
-        {
-          "querySet": [
-            {
-              "_comment": "Slot 9: 1x Extended-art rare or mythic rare",
-              "percent": "7/8",
-              "query": "from[m21-extended-art]?rarity='r'"
-            },
-            {
-              "percent": "1/8",
-              "query": "from[m21-extended-art]?rarity='m'"
-            }
-          ]
-        },
-        {
-          "querySet": [
-            {
-              "_comment": "Slot 10: 1x Foil rare or mythic rare, or (overridden below) foil extended-art rare or mythic rare",
-              "percent": "7/8",
-              "query": "from[m21-booster]?rarity='r'",
-              "setValues": { "foil": true }
-            },
-            {
-              "percent": "1/8",
-              "query": "from[m21-booster]?rarity='m'",
-              "setValues": { "foil": true }
-            }
-          ]
-        },
-        {
-          "querySet": [
-            {
-              "_comment": "Slot 11: 1x Showcase mutate commons or uncommons",
-              "percent": "8/11",
-              "query": "from[m21-collector-showcase]?rarity='c'"
-            },
-            {
-              "percent": "3/11",
-              "query": "from[m21-collector-showcase]?rarity='u'"
-            }
-          ]
-        },
-        {
-          "querySet": [
-            {
-              "_comment": "Slot 12: 1x Showcase mutate commons or uncommons",
-              "percent": "8/11",
-              "query": "from[m21-collector-showcase]?rarity='c'"
-            },
-            {
-              "percent": "3/11",
-              "query": "from[m21-collector-showcase]?rarity='u'"
-            }
-          ]
-        },
-        {
-          "querySet": [
-            {
-              "_comment": "Slot 13: 1x Showcase rare of mythic rare",
-              "percent": "7/8",
-              "query": "from[m21-collector-showcase]?rarity='r'"
-            },
-            {
-              "percent": "1/8",
-              "query": "from[m21-collector-showcase]?rarity='m'"
-            }
-          ]
-        },
-        {
-          "querySet": [
-            {
-              "_comment": "Slot 14: 1x Foil showcase card (any rarity)",
-              "percent": "80/112",
-              "query": "from[m21-collector-showcase]?rarity='c'",
-              "setValues": { "foil": true }
-            },
-            {
-              "percent": "24/112",
-              "query": "from[m21-collector-showcase]?rarity='u'",
-              "setValues": { "foil": true }
-            },
-            {
-              "percent": "7/112",
-              "query": "from[m21-collector-showcase]?rarity='r'",
-              "setValues": { "foil": true }
-            },
-            {
-              "percent": "1/112",
-              "query": "from[m21-collector-showcase]?rarity='m'",
-              "setValues": { "foil": true }
-            }
-          ]
-        },
-        {
-          "querySet": [
-            {
-              "_comment": "Slot 15: 1x Godzilla Series Monster card (could be foil or non-foil; the Buy-a-Box mythic rare is only available in non-foil)",
-              "_comment2": "Wotc messed up and didn't include the 3 Japanese-language cards in the English Collector boosters as originally planned, and the only common Gozdilla card was Japanese, so we'll skip commons",
-              "percent": "24/32",
-              "query": "from[m21-godzilla]?rarity='u'"
-            },
-            {
-              "percent": "7/32",
-              "query": "from[m21-godzilla]?rarity='r'"
-            },
-            {
-              "percent": "1/32",
-              "query": "from[m21-godzilla]?rarity='m'"
-            }
-          ]
-        },
-        {
-          "_comment": "Slot 16: 1x Foil token",
-          "query": "from[m21-token]",
-          "setValues": { "foil": true }
-        },
-
-        {
-          "querySet": [
-            {
-              "_comment": "1/4? chance of m/r slot being extended art",
-              "overrideSlot": "10",
-              "percent": "7/24",
-              "query": "from[m21-extended-art]?rarity='r'",
-              "setValues": { "foil": true }
-            },
-            {
-              "percent": "1/24",
-              "overrideSlot": "10",
-              "query": "from[m21-extended-art]?rarity='m'",
-              "setValues": { "foil": true }
-            }
-          ]
-        },
-        {
-          "querySet": [
-            {
-              "_comment": "1/4? chance of godzilla slot being foil",
-              "_comment2": "Wotc messed up and didn't include the 3 Japanese-language cards in the English Collector boosters as originally planned, and the only common Gozdilla card was Japanese, so we'll skip commons",
-              "overrideSlot": "15",
-              "percent": "24/448",
-              "query": "from[m21-godzilla]?rarity='u'",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "15",
-              "percent": "7/448",
-              "query": "from[m21-godzilla]?rarity='r'",
-              "setValues": { "foil": true }
-            },
-            {
-              "overrideSlot": "15",
-              "percent": "1/448",
-              "query": "from[m21-godzilla-without-buy-a-box]?rarity='m'",
-              "setValues": { "foil": true }
             }
           ]
         }

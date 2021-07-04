@@ -5,5 +5,6 @@ header .set-name {
 	background-image: url(images/logo-word.png);
 }
 #card-count {
-	color: rgba(0,0,0,.7);
+	color: rgba(255,255,2555,1);
+	text-shadow: 1px 1px 1px #000;
 }

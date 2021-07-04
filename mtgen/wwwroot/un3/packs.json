@@ -6,7 +6,7 @@
     },
     {
       "defName": "un3-main",
-      "query": "from[un3]-from[un3]?type=(Marketing|Basic Land)-from[un3]?token=true-from[un3]?title='Steamflogger Boss'"
+      "query": "from[un3]-from[un3]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[un3]?title='Steamflogger Boss'"
     },
     {
       "defName": "un3-main-no-contraptions",
@@ -54,10 +54,8 @@
           ]
         },
         {
-          "query": "from[un3]?token=true"
-        },
-        {
-          "query": "from[un3]?title='Tip/Marketing Card"
+          "query": "from[un3]?token=true",
+          "setValues": { "foil": true }
         },
 
         {

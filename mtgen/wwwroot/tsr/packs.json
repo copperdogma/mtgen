@@ -10,15 +10,11 @@
     },
     {
       "defName": "tsr-main",
-      "query": "from[tsr]-from[tsr]?type=(Marketing)-from[tsr]?timeshifted=true-from[tsr]?token=true"
+      "query": "from[tsr]-from[tsr]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[tsr]?timeshifted=true"
     },
     {
       "defName": "tsr-foils",
       "query": "from[tsr]-from[tsr-timeshifted]-from[tsr]?token=true"
-    },
-    {
-      "defName": "tsr-token",
-      "query": "from[tsr]?token=true"
     }
   ],
 
@@ -36,7 +32,7 @@
       "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
       "packName": "tsr-draft",
       "packDesc": "Time Spiral Remastered: Draft Booster",
-      "packVersion": "1.1",
+      "packVersion": "1.2",
       "sources": [ "https://mtg.fandom.com/wiki/Time_Spiral_Remastered" ],
       "isGenerated": true,
       "cards": [
@@ -47,12 +43,13 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[tsr]?title='Tip/Marketing Card"
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "50",
-              "query": "from[tsr-token]"
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },

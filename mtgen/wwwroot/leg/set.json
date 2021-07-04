@@ -1,11 +1,16 @@
 {
   "startProductName": "leg-boosters",
   "packFiles": [
-    "packs.json"
+    "packs.json?v1.1"
   ],
   "cardFiles": [
     "cardsMain.json",
-    "cardsOther.json"
+    "../cards/tips/cardsTips.json"
   ],
-  "updates": []
+  "updates": [
+    {
+      "UpdateDate": "2021-07-02T12:00:00:00",
+      "HtmlString": "Updated tip card images."
+    }
+  ]
 }

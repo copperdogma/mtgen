@@ -23,7 +23,7 @@
       "packDesc": "Legends: Standard Booster",
       "isGenerated": true,
       "cards": [
-        { "query": "from[leg]?title='Rules Card'" },
+        { "query": "from[leg]?tip=true" },
         { "query": "take[1]>from[leg]?rarity='r" },
         { "query": "take[3]>from[leg]?rarity='u" },
         { "query": "take[11]>from[leg]?rarity='c" }

@@ -18,7 +18,7 @@
     },
     {
       "defName": "isd-main",
-      "query": "from[isd]-from[isd]?type=(Marketing|Basic Land)-from[isd]?token=true-from[isd]?promo=true-from[isd-double-faced]"
+      "query": "from[isd]-from[isd]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[isd]?promo=true-from[isd-double-faced]"
     },
     {
       "defName": "isd-foils",
@@ -42,7 +42,7 @@
     {
       "packName": "isd-standard",
       "packDesc": "Innistrad: Standard Booster",
-      "packVersion": "1.2",
+      "packVersion": "1.3",
       "sources": [ "https://mtg.gamepedia.com/Innistrad", "https://www.youtube.com/watch?v=MBogmLjbTwU&t=240s" ],
       "isGenerated": true,
       "cards": [
@@ -52,12 +52,12 @@
         {
           "querySet": [
             {
-              "percent": 50,
-              "query": "from[isd]?type='Marketing'"
+              "percent": "2/3",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": 50,
-              "query": "from[isd]?token=true"
+              "percent": "1/3",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },

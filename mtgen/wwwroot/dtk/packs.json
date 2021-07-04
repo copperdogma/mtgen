@@ -14,7 +14,7 @@
     },
     {
       "defName": "dtk-main",
-      "query": "from[dtk]-from[dtk]?type=(Marketing|Basic Land)-from[dtk]?token=true-from[dtk]?promo=true"
+      "query": "from[dtk]-from[dtk]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[dtk]?promo=true"
     },
     {
       "defName": "dtk-intro-packs",
@@ -104,12 +104,12 @@
         {
           "querySet": [
             {
-              "percent": 50,
-              "query": "from[dtk]?type='Marketing'"
+              "percent": "2/3",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": 50,
-              "query": "from[dtk]?token=true-from[dtk]?promo=true"
+              "percent": "1/3",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },

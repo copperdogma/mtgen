@@ -1,14 +1,18 @@
 ﻿{
   "startProductName": "mm2-boosters",
   "packFiles": [
-    "packs.json?v1.1"
+    "packs.json?v1.2"
   ],
   "cardFiles": [
     "cardsMain.json",
     "cardsToken.json",
-    "cardsOther.json"
+    "../cards/ads/cardsAds.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2021-07-03T23:30:00:00",
+      "HtmlString": "Updated marketing cards to be more accurate for set, plus set chances as 1:3 token:marketing for core sets, 2:3 for expansions, and 9:1 as of Battle for Zendikar."
+    },
     {
       "UpdateDate": "2021-06-25T23:30:00:00",
       "HtmlString": "Updated foil chances. Now 15/67 chance a booster has a foil."

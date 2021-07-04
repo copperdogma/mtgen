@@ -6,7 +6,7 @@
     },
     {
       "defName": "dom-base",
-      "query": "from[dom]-from[dom]?type=(Marketing|Basic Land)-from[dom]?token=true-from[dom]?promo=true-from[dom]?doubleFaceBackCard=true"
+      "query": "from[dom]-from[dom]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[dom]?promo=true-from[dom]?doubleFaceBackCard=true"
     },
     {
       "defName": "dom-legendary-creature",
@@ -24,10 +24,6 @@
     {
       "defName": "dom-promo",
       "query": "from[dom]?promo=true"
-    },
-    {
-      "defName": "dom-token",
-      "query": "from[dom]?token=true-from[dom-promo]"
     }
   ],
 
@@ -43,7 +39,7 @@
     {
       "packName": "dom-standard",
       "packDesc": "Dominaria: Standard Booster",
-      "packVersion": "1.2",
+      "packVersion": "1.3",
       "isGenerated": true,
       "cards": [
         { "query": "take[10]>from[dom-main]?rarity='c" },
@@ -53,12 +49,13 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[dom]?title='Tip/Marketing Card"
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "50",
-              "query": "from[dom-token]"
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },

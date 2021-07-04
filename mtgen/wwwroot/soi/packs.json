@@ -6,7 +6,7 @@
     },
     {
       "defName": "soi-base",
-      "query": "from[soi]-from[soi]?type=(Marketing|Basic Land)-from[soi]?token=true-from[soi]?promo=true"
+      "query": "from[soi]-from[soi]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[soi]?promo=true"
     },
     {
       "defName": "soi-main",
@@ -60,12 +60,13 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[soi]?title='Tip/Marketing Card"
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "50",
-              "query": "from[soi]?token=true"
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },

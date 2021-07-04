@@ -10,7 +10,7 @@
     },
     {
       "defName": "ktk-main",
-      "query": "from[ktk]-from[ktk]?type=(Marketing|Basic Land)-from[ktk]?token=true-from[ktk]?promo=true"
+      "query": "from[ktk]-from[ktk]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[ktk]?promo=true"
     },
     {
       "defName": "ktk-intro-packs",
@@ -76,12 +76,12 @@
         {
           "querySet": [
             {
-              "percent": 50,
-              "query": "from[ktk]?type='Marketing'"
+              "percent": "2/3",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": 50,
-              "query": "from[ktk]?token=true-from[ktk]?promo=true"
+              "percent": "1/3",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },

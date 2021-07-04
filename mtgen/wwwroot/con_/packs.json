@@ -14,7 +14,7 @@
     },
     {
       "defName": "con-main",
-      "query": "from[con]-from[con]?type=(Marketing|Basic Land)-from[con]?token=true-from[con]?promo=true"
+      "query": "from[con]-from[con]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[con]?promo=true"
     },
     {
       "defName": "con-promo",
@@ -50,14 +50,16 @@
         { "query": "take[10]>from[con-main]?rarity='c" },
         { "query": "take[3]>from[con-main]?rarity='u" },
         {
+          "_comment": "Strangely the tip/token slot has two regular cards AFTER it: https://www.youtube.com/watch?v=nUU3wVjxHV4",
           "querySet": [
             {
-              "percent": "50",
+              "_comment": "Expansions are 2/3 ratio of tokens/tips",
+              "percent": "2/3",
               "query": "from[con-tokens]"
             },
             {
-              "percent": "50",
-              "query": "from[con]?type='Marketing"
+              "percent": "1/3",
+              "query": "from[con]?tip=true"
             }
           ]
         },

@@ -10,7 +10,7 @@
     },
     {
       "defName": "mor-main",
-      "query": "from[mor]-from[mor]?type=(Marketing|Basic Land)-from[mor]?token=true-from[mor]?promo=true"
+      "query": "from[mor]-from[mor]?type=(Marketing|Basic Land)-from[*]?usableForDeckBuilding=false-from[mor]?promo=true"
     },
     {
       "defName": "mor-promo",
@@ -41,12 +41,13 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[mor-tokens]"
+              "_comment": "Expansions are 2/3 ratio of tokens/tips",
+              "percent": "2/3",
+              "query": "from[{{setCode}}-tokens]"
             },
             {
-              "percent": "50",
-              "query": "from[mor]?type='Marketing"
+              "percent": "1/3",
+              "query": "from[{{setCode}}]?tip=true"
             }
           ]
         },

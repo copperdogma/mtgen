@@ -10,7 +10,7 @@
     },
     {
       "defName": "mma_main",
-      "query": "from[mma_set]-from[mma_set]?type='Marketing'-from[mma]?token=true",
+      "query": "from[mma_set]-from[*]?usableForDeckBuilding=false",
       "_comment": "Not normal: put land back IN the main because there is no land slot in MMA"
     },
     {
@@ -31,7 +31,6 @@
       "packName": "mma-standard",
       "packDesc": "Modern Masters Set: Standard Booster",
       "_comment": "Modern Masters is strange and doesn't have land but has a foil instead: http://wiki.mtgsalvation.com/article/Modern_Masters",
-      "_comment-foil": "The big foil percentage calculation below is based on a booster spread: 10 common, 3 uncommon, 1 x (7/8 rare, 1/8 mythic rare)",
       "cards": [
         { "query": "take[10]>from[mma_main]?rarity='c'" },
         { "query": "take[3]>from[mma_main]?rarity='u'" },
@@ -44,12 +43,12 @@
         {
           "querySet": [
             {
-              "percent": 50,
-              "query": "from[mma]?type='Marketing'"
+              "percent": "2/3",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": 50,
-              "query": "from[mma]?token=true"
+              "percent": "1/3",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         }

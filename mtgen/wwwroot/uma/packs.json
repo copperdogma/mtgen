@@ -6,7 +6,7 @@
     },
     {
       "defName": "uma-main",
-      "query": "from[uma]-from[uma]?type=(Marketing|Basic Land)-from[uma]?promo=true-from[uma]?token=true"
+      "query": "from[uma]-from[uma]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[uma]?promo=true"
     },
     {
       "defName": "uma-foils",
@@ -31,7 +31,7 @@
     {
       "packName": "uma-standard",
       "packDesc": "Ultimate Masters: Standard Booster",
-      "packVersion": "1.1",
+      "packVersion": "1.2",
       "isGenerated": true,
       "cards": [
         { "query": "take[10]>from[uma-main]?rarity='c" },
@@ -42,7 +42,19 @@
           "canBeDuplicate": true,
           "setValues": { "foil": true }
         },
-        { "query": "from[uma]?token=true" }
+        {
+          "querySet": [
+            {
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
+            },
+            {
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
+            }
+          ]
+        }
       ]
     },
 

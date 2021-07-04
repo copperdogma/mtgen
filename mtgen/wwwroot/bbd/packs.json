@@ -6,7 +6,7 @@
     },
     {
       "defName": "bbd-base",
-      "query": "from[bbd]-from[bbd]?type=(Marketing|Basic Land)-from[bbd]?token=true"
+      "query": "from[bbd]-from[bbd]?type='Basic Land'-from[*]?usableForDeckBuilding=false"
     },
     {
       "defName": "bbd-uncommon-pairs",
@@ -51,7 +51,7 @@
     {
       "packName": "bbd-standard",
       "packDesc": "Battlebond: Standard Booster",
-      "packVersion": "1.0",
+      "packVersion": "1.1",
       "isGenerated": true,
       "cards": [
         { "query": "take[10]>from[bbd-main]?rarity='c" },
@@ -61,13 +61,13 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[bbd]?title='Tip/Marketing Card"
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "50",
-              "_query": "from[bbd-token]",
-              "query": "from[bbd]?title='Tip/Marketing Card"
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },

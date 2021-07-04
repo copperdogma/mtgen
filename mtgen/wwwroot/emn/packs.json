@@ -6,7 +6,7 @@
     },
     {
       "defName": "emn-base",
-      "query": "from[emn]-from[emn]?type=(Marketing|Basic Land)-from[emn]?token=true-from[emn]?promo=true"
+      "query": "from[emn]-from[emn]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[emn]?promo=true"
     },
     {
       "defName": "emn-main",
@@ -49,16 +49,16 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[emn]?title='Tip/Marketing Card"
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "50",
-              "query": "from[emn]?token=true"
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },
-
         {
           "querySet": [
             {

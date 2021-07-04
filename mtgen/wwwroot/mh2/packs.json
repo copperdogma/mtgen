@@ -96,10 +96,6 @@
     {
       "defName": "{{setCode}}-foils",
       "query": "from[{{setCode}}-booster]+from[{{setCode}}-new-to-modern]+from[{{setCode}}]?showcase=true+from[{{setCode}}-borderless]+from[{{setCode}}]?type='Basic Land'"
-    },
-    {
-      "defName": "{{setCode}}-token",
-      "query": "from[{{setCode}}]?token=true"
     }
   ],
   "packs": [
@@ -135,8 +131,8 @@
         },
         { "query": "from[{{setCode}}-booster]?rarity=rarityByWeight2020(rm)" },
         {
-          "_comment": "Whole boxe opened in this video with NO ads. 100% tokens. https://www.youtube.com/watch?v=hD-TEJpokcg",
-          "query": "from[{{setCode}}-token]"
+          "_comment": "2 whole boxes opened in these videos with NO ads. 100% tokens. https://www.youtube.com/watch?v=hD-TEJpokcg  https://www.youtube.com/watch?v=FLaMjQKOmHk",
+          "query": "from[{{setCode}}]?token=true"
         },
 
         {
@@ -226,7 +222,7 @@
         },
         {
           "_comment": "Slot 16: Foil: token",
-          "query": "from[{{setCode}}-token]-from[{{setCode}}-token]?marketing=true",
+          "query": "from[{{setCode}}]?token=true",
           "setValues": { "foil": true }
         }
       ]
@@ -300,7 +296,7 @@
         {
           "_comment": "Slot 14: Token/Ad or The List",
           "_comment2": "1 Token/ad card (75%), or a card from The List (25%) – The List is a collection of 300 cards from Magic's history that we have brought together for this special slot. We have rotated in 50 new reprints that we feel help capture the feel of {{setName}}. Inclusion of cards from The List doesn't impact what formats the card is legal in",
-          "query": "from[{{setCode}}-token]"
+          "query": "from[{{setCode}}]?token=true"
         },
 
         {

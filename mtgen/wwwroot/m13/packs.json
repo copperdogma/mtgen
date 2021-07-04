@@ -6,7 +6,7 @@
     },
     {
       "defName": "m13-main",
-      "query": "from[m13]-from[m13]?type=(Marketing|Basic Land)-from[m13]?token=true-from[m13]?promo=true"
+      "query": "from[m13]-from[m13]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[m13]?promo=true"
     },
     {
       "defName": "m13-intro-packs",
@@ -76,7 +76,7 @@
             },
             {
               "percent": "2/3",
-              "query": "from[{{setCode}}]?marketing=true"
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },

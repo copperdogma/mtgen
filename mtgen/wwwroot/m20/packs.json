@@ -10,7 +10,7 @@
     },
     {
       "defName": "m20-main",
-      "query": "from[m20]-from[m20]?type=(Marketing|Basic Land)-from[m20]?promo=true-from[m20]?token=true"
+      "query": "from[m20]-from[m20]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[m20]?promo=true"
     },
     {
       "defName": "m20-basic-land",
@@ -28,10 +28,6 @@
     {
       "defName": "m20-foils",
       "query": "from[m20-main]+from[m20-basic-land]"
-    },
-    {
-      "defName": "m20-token",
-      "query": "from[m20]?token=true"
     },
     {
       "defName": "war-jp-planeswalkers",
@@ -66,12 +62,13 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[m20]?title='Tip/Marketing Card"
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "50",
-              "query": "from[m20-token]"
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },

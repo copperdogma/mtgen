@@ -14,7 +14,7 @@
     },
     {
       "defName": "eld-main",
-      "query": "from[eld]-from[eld]?type=(Marketing)-from[eld]?promo=true-from[eld]?variant=true-from[eld]?token=true-from[eld]?type='Basic Land"
+      "query": "from[eld]-from[eld]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[eld]?promo=true"
     },
     {
       "defName": "eld-booster-showcase",
@@ -47,10 +47,6 @@
     {
       "defName": "eld-foils",
       "query": "from[eld-main]+from[eld-basic-land]"
-    },
-    {
-      "defName": "eld-token",
-      "query": "from[eld]?token=true"
     }
   ],
 
@@ -78,12 +74,13 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[eld]?title='Tip/Marketing Card"
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "50",
-              "query": "from[eld-token]"
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },
@@ -127,7 +124,7 @@
         },
         { "query": "from[eld-ancillary-slot]?rarity='c'" },
         {
-          "query": "from[eld-token]",
+          "query": "from[{{setCode}}]?token=true",
           "setValues": { "foil": true }
         },
         {

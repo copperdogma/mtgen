@@ -22,7 +22,7 @@
     },
     {
       "defName": "khm-main",
-      "query": "from[khm]-from[khm]?type=(Marketing)-from[khm]?promo=true-from[khm]?variant=true-from[khm]?token=true"
+      "query": "from[khm]-from[khm]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[khm]?promo=true-from[khm]?variant=true"
     },
     {
       "defName": "khm-showcase",
@@ -91,10 +91,6 @@
     {
       "defName": "khm-booster-with-snow-land",
       "query": "from[khm]?mainSet=true+from[khm-snow-land]"
-    },
-    {
-      "defName": "khm-token",
-      "query": "from[khm]?token=true"
     }
   ],
 
@@ -126,12 +122,13 @@
         {
           "querySet": [
             {
-              "percent": "50",
-              "query": "from[khm]?title='Tip/Marketing Card"
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
             },
             {
-              "percent": "50",
-              "query": "from[khm-token]"
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
             }
           ]
         },
@@ -205,7 +202,7 @@
         },
         {
           "_comment": "Slot 17: Foil: token",
-          "query": "from[khm-token]-from[khm-token]?marketing=true",
+          "query": "from[{{setCode}}]?token=true",
           "setValues": { "foil": true }
         },
 
@@ -335,7 +332,7 @@
         {
           "_comment": "Slot 14: Token/Ad or The List",
           "_comment2": "1 Token/ad card (75%), or a card from The List (25%) – The List is a collection of 300 cards from Magic's history that we have brought together for this special slot. We have rotated in 50 new reprints that we feel help capture the feel of Modern Horizons 2. Inclusion of cards from The List doesn't impact what formats the card is legal in",
-          "query": "from[khm-token]"
+          "query": "from[{{setCode}}]?token=true"
         },
 
 
