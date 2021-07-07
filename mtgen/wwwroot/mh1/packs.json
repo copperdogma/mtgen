@@ -9,8 +9,8 @@
       "query": "from[mh1]?promo=true"
     },
     {
-      "defName": "mh1-art-series",
-      "query": "from[mh1]?type='Art Series'"
+      "defName": "a{{setCode}}-art-cards",
+      "query": "from[*]?artCard=true"
     },
     {
       "defName": "mh1-basic-snow-land",
@@ -46,7 +46,7 @@
         { "query": "take[3]>from[mh1-main]?rarity='u" },
         { "query": "from[mh1-main]?rarity=rarityByWeight2008(rm)" },
         { "query": "from[mh1-basic-snow-land]" },
-        { "query": "from[mh1-art-series]" },
+        { "query": "from[a{{setCode}}-art-cards]" },
         {
           "querySet": [
             {
@@ -94,6 +94,18 @@
       "includeWithUserCards": false,
       "cards": [
         { "query": "take[*]>from[mh1-promo]?includedReason='Prerelease Promo" }
+      ]
+    },
+
+    {
+      "packName": "a{{setCode}}-art-cards",
+      "packDesc": "{{setName}}: Art Cards",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[a{{setCode}}-art-cards]"
+        }
       ]
     },
 

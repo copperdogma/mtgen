@@ -79,6 +79,18 @@
       "packs": [
         { "packName": "mh1-promos" }
       ]
+    },
+
+    {
+      "productName": "{{setCode}}-art-cards",
+      "productDesc": "Art Cards",
+      "sources": [ "https://scryfall.com/sets/amh1" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "a{{setCode}}-art-cards" }
+      ]
     }
 
   ]

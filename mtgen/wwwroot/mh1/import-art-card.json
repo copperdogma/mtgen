@@ -1,0 +1,16 @@
+{
+  "setCode": "mh1",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Aamh1&unique=prints",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "num": "{{num}} Art",
+        "artCard": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}
