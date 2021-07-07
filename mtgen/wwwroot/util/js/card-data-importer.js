@@ -995,7 +995,7 @@ class CardDataImporter {
             // If that card can't be found, wotc may have put the wrong set code on it (happaned in AFR for Nightmare. It wasn't AKH).
             // Retry without the set; scryfall will get the most recent printing which is probably correct.
             if (cardDataRaw == 'Server error (HTTP NotFound)') {
-                console.log(`Cannot find card '${unmatchedCard.title}' in set= '${unmatchedCard.set}'. Retrying without set to get latest printing.`)
+                console.log(`Cannot find card '${unmatchedCard.title}' in set '${unmatchedCard.set}'. Retrying without set to get latest printing.`)
                 scryfallApiCardUrl = `https://api.scryfall.com/cards/search?q=!"${unmatchedCard.title}"`;
                 cardDataRaw = await this._fetchHtml(scryfallApiCardUrl);
             }
