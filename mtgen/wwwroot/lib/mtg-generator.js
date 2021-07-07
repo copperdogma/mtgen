@@ -227,6 +227,8 @@ var mtgGen = (function (my) {
             let title = card.title;
 
             let cardImageHtml = my.renderCardImage(card);
+
+            // Older DFC
             if (card.cardBack !== undefined) {
                 cardImageHtml += my.renderCardImage(card.cardBack);
                 title += '/' + card.cardBack.title;
@@ -236,6 +238,17 @@ var mtgGen = (function (my) {
                 cardImageHtml += my.renderCardImage(card.cardFront);
                 title += '/' + card.cardFront.title;
                 doubleFaceClass = ' doubleface';
+            }
+
+            // Newest DFC
+            let cardFlipHtml = ''
+            const isDoubleFaceCard = card.doubleFaceCard == true && card.cardFaces && card.cardFaces.length == 2;
+            if (isDoubleFaceCard) {
+                const cardImageFrontHtml = my.renderCardImage(card.cardFaces[0]);
+                const cardImageBackHtml = my.renderCardImage(card.cardFaces[1]);
+                cardImageHtml = `<span class='card-front'>${cardImageFrontHtml}</span><span class='card-back'>${cardImageBackHtml}</span>`;
+
+                cardFlipHtml = '<button type="button" title="Transform" tabindex="-1" class="transform-button"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path d="M884.3,357.6c116.8,117.7,151.7,277-362.2,320V496.4L243.2,763.8L522,1031.3V860.8C828.8,839.4,1244.9,604.5,884.3,357.6z"></path><path d="M557.8,288.2v138.4l230.8-213.4L557.8,0v142.8c-309.2,15.6-792.1,253.6-426.5,503.8C13.6,527.9,30,330.1,557.8,288.2z"></path></svg></button>';
             }
 
             if (card.foil) {
@@ -251,7 +264,7 @@ var mtgGen = (function (my) {
             }
 
             const includedReason = (card.includedReason !== undefined) ? '<em class="reason">(' + card.includedReason + ')</em>' : '';
-            return `<span class="card${foilClass}${doubleFaceClass}" title="${title}">${aStart}${cardImageHtml}<em class="title">${title}</em>${includedReason}${aEnd}</span>`;
+            return `<span class="card${foilClass}${doubleFaceClass}" title="${title}">${aStart}${cardImageHtml}${cardFlipHtml}<em class="title">${title}</em>${includedReason}${aEnd}</span>`;
         });
         return htmlOut;
     };
@@ -519,6 +532,8 @@ var mtgGen = (function (my) {
             if (this.hasButtonOptions) {
                 events["click #product-content ." + this.productName + " .options a.button"] = "renderPack";
             }
+
+            events["click #product-content ." + this.productName + " .card .transform-button"] = "transformCard";
 
             return events;
         }
@@ -1128,6 +1143,10 @@ var mtgGen = (function (my) {
             return packs;
         }
 
+        , transformCard: function (event) {
+            event.target.parentNode.classList.toggle('flipped');
+            return false;
+        }
     });
 
     return my;

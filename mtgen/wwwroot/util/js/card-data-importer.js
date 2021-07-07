@@ -157,7 +157,7 @@ class CardDataImporter {
         }
         else {
             // Get card data -------------------------------------------------------------------------------------------------
-            // All card data source come with image data that we usually want to override in the next step.
+            // All card data sources come with image data that we usually want to override in the next step.
             mainOut = await this._getCardData(htmlCards.data, htmlCards.urlSource, setCode, options);
             mainOut.initialCardDataCount = mainOut.size;
 
@@ -734,8 +734,11 @@ class CardDataImporter {
     }
 
     _getCardColourFromCard(card) {
-        if (card.type) {
-            const lowerCaseCardType = card.type.toLowerCase();
+        const hasCardFaces = card.cardFaces && card.cardFaces.length > 0;
+        const testableCard = hasCardFaces ? card.cardFaces[0] : card;
+
+        if (testableCard.type) {
+            const lowerCaseCardType = testableCard.type.toLowerCase();
             if (lowerCaseCardType.includes("land")) { return mtgGen.colours.land.code; }
             if (lowerCaseCardType.includes("artifact")) { return mtgGen.colours.artifact.code; }
         }
@@ -744,7 +747,13 @@ class CardDataImporter {
         // Only keep card colours (bcgkruw), then collapse into the colour-specific counts.
         // OLDER: {} are groups around split colour {RG}
         // NEWER: () are groups around split colour (R///)
-        const cardColours = card.cost.toLowerCase().replace(/[^bcgkruw]/g, ""); // Remove all but the whitelisted card colour letters.
+        let cardColours = '';
+        if (hasCardFaces) {
+            cardColours = card.cardFaces.reduce((colourString, cardFace) => colourString + cardFace.colors.join(''), '').toLowerCase(); // Get all colours from all faces
+        }
+        else {
+            cardColours = card.cost.toLowerCase().replace(/[^bcgkruw]/g, ""); // Remove all but the whitelisted card colour letters.
+        }
         const uniqueColours = [...new Set(cardColours)]; // Collapse to only the unique entries.
 
         let finalColour = '';
@@ -785,6 +794,9 @@ class CardDataImporter {
         }
         else if (lowercaseCardDataUrlSource.includes('mtgjson.com')) {
             cards = this._getCardsFromMtgJsonData(cardData, setCode);
+        }
+        else if (lowercaseCardDataUrlSource.includes('scryfall.com')) {
+            cards = await this._getCardsFromScryfallData(cardDataUrlSource);
         }
         else if (lowercaseCardDataUrlSource.includes('localhost') || lowercaseCardDataUrlSource.includes('mtgen.net')) {
             cards = JSON.parse(cardData); // native format -- used for upgrading the images or file format
@@ -856,6 +868,8 @@ class CardDataImporter {
         // The wotc data is the actual current "The List," so that will form the base, with the bulk of the data and image (if found) from the Scryfall data.
         const finalCards = await this._combineScryfallData(wotcOut, scryfallCards);
 
+        finalCards.forEach(card => { card.theList = true; });
+
         return finalCards;
     }
 
@@ -876,7 +890,6 @@ class CardDataImporter {
 
         allCardData = allCardData.map(card => {
             let newCard = this._processScryfallCard(card, scryfallApiCardsUrl);
-            newCard.theList = true;
             return newCard;
         });
 
@@ -884,25 +897,67 @@ class CardDataImporter {
     }
 
     _processScryfallCard(card, urlSource) {
-        card.title = card.name;
-        // Scryfall includes DFC cards like "A // B" whereas wotc would only use "A", so strip the rest off.
-        card.title = card.title.split(' // ')[0];
-        card.matchTitle = mtgGen.createMatchTitle(card.title); // used for matching across different card data sources
+        card = this._processScryfallCardCore(card);
 
-        card.num = card.collector_number;
+        if (card.layout == 'art_series') {
+            card.title = card.title.split(' // ')[0]; // Art Series card titles are just the same name repeated twice.
+            card.artCard = true;
+            card.usableForDeckbuilding = false;
+        }
 
-        card.src = card.image_uris.normal;
-        card.imageSource = "scryfall";
+        // Handle DFCs
+        if (card.card_faces && card.card_faces.length === 2) {
+            card.cardFaces = new Array();
+            card.cardFaces[0] = this._processScryfallCardCore(card.card_faces[0]);
+            card.cardFaces[1] = this._processScryfallCardCore(card.card_faces[1]);
+            card.doubleFaceCard = true;
 
-        delete card.foil; // Scryfall sets foil=true if the card CAN be foil. I use it to indicate is IS foil, so we'll clear this.
+            // Use the first face as the main card's image to start.
+            card.src = card.cardFaces[0].src;
+            delete card.card_faces;
+        }
 
         card = mtgGen.addUrlSource(card, urlSource);
 
-        card.cost = card.mana_cost;
+        card.num = card.collector_number;
 
-        card.ccost = card.cmc;
+        delete card.foil; // Scryfall sets foil=true if the card CAN be foil. I use it to indicate is IS foil, so we'll clear this.
 
         card.rarity = card.rarity.substr(0, 1).toLowerCase();
+
+        const types = card.type_line.split(' — ');
+        card.type = types[0].trim();
+        if (types.length > 1) {
+            card.subtype = types[1].trim();
+        }
+
+        card.colour = this._getCardColourFromCard(card);
+
+        return card;
+    }
+
+    // Processes the core of a card: title, mana cost, colours, power/toughness, image
+    // Broken out so that logic can be applied to each face of a DFC.
+    _processScryfallCardCore(card) {
+        card.title = card.name;
+        card.matchTitle = mtgGen.createMatchTitle(card.name); // used for matching across different card data sources
+
+        if (card.image_uris !== undefined) {
+            card.src = card.image_uris.normal;
+        }
+        else {
+            console.log(`Scryfall card '${card.title}' has no image.`);
+        }
+
+        if (card.mana_cost !== undefined) {
+            card.cost = card.mana_cost;
+        }
+        else {
+            card.cost = '';
+            console.log(`Scryfall card '${card.title}' has no mana_cost.`);
+        }
+
+        card.ccost = card.cmc;
 
         const types = card.type_line.split(' — ');
         card.type = types[0].trim();
@@ -1375,6 +1430,18 @@ class CardDataImporter {
 
             cards = this._addCardToCards(cards, card);
         });
+
+        return cards;
+    }
+    
+    // ------------------------------------------------------------------------------------------------------------------------------------------------------
+    async _getCardsFromScryfallData(cardDataUrlSource) {
+        let cards = new Map();
+
+        // get all Scryfall cards
+        var rawCards = await this._getScryfallCardsFromAllPages(cardDataUrlSource);
+
+        rawCards.forEach(rawCard => { cards = this._addCardToCards(cards, rawCard); });
 
         return cards;
     }
