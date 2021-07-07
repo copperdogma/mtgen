@@ -32,18 +32,12 @@
             "default": true,
             "packs": [
               {
-                "count": 6,
-                "defaultPackName": "isd-standard"
-              }
-            ]
-          },
-          {
-            "presetName": "isd-prerelease-promos",
-            "presetDesc": "Innistrad Prerelease Promos",
-            "packs": [
-              {
                 "count": 1,
                 "defaultPackName": "isd-prerelease-promos"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "isd-standard"
               }
             ]
           }
