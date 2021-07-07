@@ -240,9 +240,9 @@ var mtgGen = (function (my) {
                 doubleFaceClass = ' doubleface';
             }
 
-            // Newest DFC
+            // Newest DFC. Although some are DFCs, some of those only have a single face and aren't flippable. We'll just treat those like regular cards.
             let cardFlipHtml = ''
-            const isDoubleFaceCard = card.doubleFaceCard == true && card.cardFaces && card.cardFaces.length == 2;
+            const isDoubleFaceCard = (card.src == undefined && card.src == '') && card.doubleFaceCard == true && card.cardFaces && card.cardFaces.length == 2;
             if (isDoubleFaceCard) {
                 const cardImageFrontHtml = my.renderCardImage(card.cardFaces[0]);
                 const cardImageBackHtml = my.renderCardImage(card.cardFaces[1]);

@@ -749,7 +749,7 @@ class CardDataImporter {
         // NEWER: () are groups around split colour (R///)
         let cardColours = '';
         if (hasCardFaces) {
-            cardColours = card.cardFaces.reduce((colourString, cardFace) => colourString + cardFace.colors.join(''), '').toLowerCase(); // Get all colours from all faces
+            cardColours = card.cardFaces.reduce((colourString, cardFace) => colourString + (cardFace.colors ?? []).join(''), '').toLowerCase(); // Get all colours from all faces
         }
         else {
             cardColours = card.cost.toLowerCase().replace(/[^bcgkruw]/g, ""); // Remove all but the whitelisted card colour letters.
@@ -912,8 +912,14 @@ class CardDataImporter {
             card.cardFaces[1] = this._processScryfallCardCore(card.card_faces[1]);
             card.doubleFaceCard = true;
 
-            // Use the first face as the main card's image to start.
-            card.src = card.cardFaces[0].src;
+            // If the main card didn't already have an image (for the single cards with two "faces" like "Brazen Borrower // Petty Theft"),
+            // use the first face as the main card's image to start.
+            if (card.src == undefined || card.src == '') {
+                card.src = card.cardFaces[0].src;
+            }
+            if (card.src == undefined || card.src == '') {
+                console.log(`Scryfall card '${card.title}' has no image.`);
+            }
             delete card.card_faces;
         }
 
@@ -943,10 +949,9 @@ class CardDataImporter {
         card.matchTitle = mtgGen.createMatchTitle(card.name); // used for matching across different card data sources
 
         if (card.image_uris !== undefined) {
+            // NOTE: There may be no image if this is a "face" of a card printed all on one side like "Brazen Borrower // Petty Theft"
+            //       In that case it's fine as the parent "card" object would have had the full image.
             card.src = card.image_uris.normal;
-        }
-        else {
-            console.log(`Scryfall card '${card.title}' has no image.`);
         }
 
         if (card.mana_cost !== undefined) {
@@ -977,19 +982,23 @@ class CardDataImporter {
         let scryfallCardMap = new Map();
         scryfallCards.data.forEach(card => scryfallCardMap.set(card.matchTitle, card));
 
-        // Wotc is inconsistent with their use of // to include the other face face for DFC, so we'll just strip them all so they can match.
-        wotcCards.forEach(card => {
-            card.title = card.title.split(' // ')[0];
-            card.matchTitle = mtgGen.createMatchTitle(card.title);
-        });
-
         // Find any wotc cards we don't have Scryfall data for.
         const unmatchedWotcCards = wotcCards.filter(wotcCard => !scryfallCardMap.has(wotcCard.matchTitle));
 
         // Get all missing cards from Scryfall.
         for (const unmatchedCard of unmatchedWotcCards) {
-            const scryfallApiCardUrl = `https://api.scryfall.com/cards/search?q=${unmatchedCard.title}+set=${unmatchedCard.set}`;
-            const cardDataRaw = await this._fetchHtml(scryfallApiCardUrl);
+            // Full Scryfall api/search docs: https://scryfall.com/docs/api/cards/search
+            // !"xxx" ensures we're searching for an exact title match
+            let scryfallApiCardUrl = `https://api.scryfall.com/cards/search?q=!"${unmatchedCard.title}"+set=${unmatchedCard.set}`;
+            let cardDataRaw = await this._fetchHtml(scryfallApiCardUrl);
+
+            // If that card can't be found, wotc may have put the wrong set code on it (happaned in AFR for Nightmare. It wasn't AKH).
+            // Retry without the set; scryfall will get the most recent printing which is probably correct.
+            if (cardDataRaw == 'Server error (HTTP NotFound)') {
+                console.log(`Cannot find card '${unmatchedCard.title}' in set= '${unmatchedCard.set}'. Retrying without set to get latest printing.`)
+                scryfallApiCardUrl = `https://api.scryfall.com/cards/search?q=!"${unmatchedCard.title}"`;
+                cardDataRaw = await this._fetchHtml(scryfallApiCardUrl);
+            }
             const cardData = JSON.parse(cardDataRaw);
             const card = cardData.data[0];
             card.set = 'plist'; // This is Scryfall's set name for The List which I've adopted.
@@ -1001,7 +1010,18 @@ class CardDataImporter {
         // so we'll only output the cards that exist in the wotc set.
         const finalCards = wotcCards.map(wotcCard => {
             if (!scryfallCardMap.has(wotcCard.matchTitle)) {
-                console.log('missing: ' + wotcCard.matchTitle);
+                console.log(`Missing '${wotcCard.matchTitle}'. Exists in wotc List but cannot find in Scryfall data.`);
+
+                // Wotc doesn't always list both halves of DFCs, so try again to match on the start of the string.
+                const scryfallCards = [...scryfallCardMap.values()].filter(scryCard => scryCard.matchTitle.indexOf(wotcCard.matchTitle) == 0);
+                if (scryfallCards.length > 1) {
+                    console.warn(`Bad wotc data. Matched with multiple Scryfall cards (taking first): ${scryfallCards.map(card => card.title).join(',')}`);
+                    return scryfallCards[0];
+                }
+                else if (scryfallCards.length == 1) {
+                    console.log(`Bad wotc data. Ended up matching wotc '${wotcCard.title}' to Scryfall '${scryfallCards[0].title}'`);
+                    return scryfallCards[0];
+                }
             }
             else {
                 return scryfallCardMap.get(wotcCard.matchTitle);
@@ -1035,13 +1055,6 @@ class CardDataImporter {
                     break;
                 }
             }
-
-            //// In VERY rare cases one of the double-faced cards may have been duplicate in the data. Detect, warn, and discard.
-            // Disabled this because if we trash it how can we fix the data?
-            //if (nextAvailableVariantNum >= 3) {
-            //    console.log(`DUPLICATE VARIANT CARD: ${newCard.title}`);
-            //    return cards;
-            //}
 
             const originalCard = cards.get(newCard.mtgenId) || cards.get(firstVariant);
 
@@ -1322,7 +1335,7 @@ class CardDataImporter {
             alert("No cards from the wotc article found.");
         }
         if (cardsTables.length < tableNum) {
-            alert(`Only ${cardsData.length} tables found, but table ${tableNum} requested. Cannot continue.`);
+            alert(`Only ${cardsTables.length} tables found, but table ${tableNum} requested. Cannot continue.`);
         }
         const cardsTable = cardsTables[intTableNum - 1];
         const cardsData = cardsTable.querySelectorAll('tbody tr');
