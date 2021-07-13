@@ -4,6 +4,7 @@ Generates an output mtgen card set in json format for use in the main app, using
 Typically the importer file (e.g. import-main.json) will specify the wotc card gallery as the image source and
 the mtgsalvation spoiler page as the data source.
 
+20210713: Rewrote DFC import to output in new scryfall format (card.cardFaces[])
 12-Jun-2021: Refactored so import options drive more of the import decisions as opposed to guessing based on data/image urls.
 7-Jun-2021: Added support for importing data from wotc The List articles and getting the images from Scryfall.
 10-Apr-2021: Added support for "cloneCard": true alongside where statement so you can duplicate a card and then change it. Useful when there is only one data card but multiple image variants.
@@ -679,11 +680,10 @@ class CardDataImporter {
 
     async _createFinalJsonOutput(cardArray, initialCardDataCount, mainImages) {
         cardArray.forEach(card => {
-            delete card.matchTitle;
-            delete card.srcOriginal;
-            delete card.imageSourceOriginal;
-            delete card.fixedViaException;
-            delete card.imageSource;
+            this._deleteTempCardFields(card);
+            if (card.cardFaces) {
+                card.cardFaces.forEach(cardFace => this._deleteTempCardFields(cardFace));
+            }
         });
 
         const jsonMainStr = JSON.stringify(cardArray, null, ' ');
@@ -696,6 +696,14 @@ class CardDataImporter {
         };
 
         return finalData;
+    }
+
+    _deleteTempCardFields(card) {
+        delete card.matchTitle;
+        delete card.srcOriginal;
+        delete card.imageSourceOriginal;
+        delete card.fixedViaException;
+        delete card.imageSource;
     }
 
     _sortByTitle(a, b) {
@@ -1446,7 +1454,7 @@ class CardDataImporter {
 
         return cards;
     }
-    
+
     // ------------------------------------------------------------------------------------------------------------------------------------------------------
     async _getCardsFromScryfallData(cardDataUrlSource) {
         let cards = new Map();
@@ -1525,53 +1533,75 @@ class CardDataImporter {
         const parser = new DOMParser();
         const imageDoc = parser.parseFromString(rawHtmlImageData, "text/html");
 
-        let rawimages = imageDoc.querySelectorAll('#card-image-gallery img');
-        if (rawimages.length === 0) {
-            rawimages = imageDoc.querySelectorAll('#content-detail-page-of-an-article img');
+        let cardEls = imageDoc.querySelectorAll('#card-image-gallery .resizing-cig');
+        if (cardEls.length === 0) {
+            cardEls = imageDoc.querySelectorAll('#content-detail-page-of-an-article .resizing-cig');
         }
 
-        rawimages.forEach(img => {
-            if (img.alt.length) {
-                const image = {
-                    title: img.alt.trim(),
-                    src: img.src
-                };
-                image.matchTitle = mtgGen.createMatchTitle(image.title);
+        cardEls.forEach(cardEl => {
+            let finalImage = null;
 
-                // Support for double-faced cards.
-                const parent = img.parentElement;
-                if (parent.classList.contains('side')) {
-                    if (parent.classList.contains('front')) {
-                        const backCard = parent.parentElement.querySelector(".side.back img");
-                        if (backCard) {
-                            image.matchTitleBack = mtgGen.createMatchTitle(backCard.alt);
-                            image.doubleFaceCard = true;
-                        }
-                    }
-                    else if (parent.classList.contains('back')) {
-                        const frontCard = parent.parentElement.querySelector(".side.front img");
-                        if (frontCard) {
-                            image.matchTitleFront = mtgGen.createMatchTitle(frontCard.alt);
-                            image.doubleFaceCard = true;
-                        }
-                    }
+            // Find card within the el. It's either a single or a DFC.
+            const imgElFront = cardEl.querySelector('.side.front img');
+
+            //TODO abstract this processing; combine with scryfall DFC processing (although that one has card data, too....)
+            // DFC
+            if (imgElFront) {
+                finalImage = {
+                    cardFaces: [{}, {}],
+                    doubleFaceCard: true
+                }
+                const imgFront = this._processImageFromWotcSpoiler(imgElFront);
+                if (imgFront) {
+                    finalImage.cardFaces[0] = imgFront;
+                    finalImage.src = imgFront.src;
                 }
 
-                // Only use the image if it doesn't already exist.
-                // Duplicates can happen if the image gallery has normal card images followed by special card images.
-                if (!finalImages.has(image.matchTitle)) {
-                    finalImages.set(image.matchTitle, image);
+                const imgElBack = cardEl.querySelector('.side.back img');
+                const imgBack = this._processImageFromWotcSpoiler(imgElBack);
+                if (imgBack) {
+                    finalImage.cardFaces[1] = imgBack;
+                }
+
+                finalImage.title = imgFront?.title ?? imgBack?.title ?? "MISSING IMAGE TITLE";
+                finalImage.matchTitle = imgFront?.matchTitle ?? imgBack?.matchTitle ?? "MISSING IMAGE MATCH TITLE";
+            }
+            // Single-sided card
+            else {
+                const imgEl = cardEl.querySelector('img');
+                if (imgEl) {
+                    finalImage = this._processImageFromWotcSpoiler(imgEl);
+                }
+            }
+
+            // Only use the image if it doesn't already exist.
+            // Duplicates can happen if the image gallery has normal card images followed by special card images.
+            if (finalImage) {
+                if (!finalImages.has(finalImage.matchTitle)) {
+                    finalImages.set(finalImage.matchTitle, finalImage);
                 }
                 else {
-                    console.log(`Warning: Duplicate image name: ${image.title}`);
+                    console.log(`Warning: Duplicate image name: ${finalImage.title}`);
                 }
             }
         });
 
-
-        finalImages.forEach(image => image.imageSource = "wotc-spoilers");
-
         return finalImages;
+    }
+
+    _processImageFromWotcSpoiler(imageEl) {
+        if (!imageEl.alt.length) {
+            return null; // Not a real card; ignored
+        }
+
+        const image = {
+            title: imageEl.alt.trim(),
+            src: imageEl.src,
+            imageSource: "wotc-spoilers"
+        };
+        image.matchTitle = mtgGen.createMatchTitle(image.title);
+
+        return image;
     }
 
     // 20170218: I don't think any of these pages exist anymore, so this may be useless.
