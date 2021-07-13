@@ -1,0 +1,22 @@
+{
+  "startProductName": "afr-prerelease",
+  "packFiles": [
+    "packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsVariant.json",
+    "cardsPromo.json",
+    "cardsTheList.json",
+    "cardsArtCards.json",
+    "cardsCommander.json",
+    "../cards/ads/cardsAds.json"
+  ],
+  "xxx_updates": [
+    {
+      "UpdateDate": "2021-06-25T23:30:00:00",
+      "HtmlString": "Foil slot now includes basic lands."
+    }
+ ]
+}

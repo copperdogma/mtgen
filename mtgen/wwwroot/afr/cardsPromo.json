@@ -1,0 +1,884 @@
+﻿[
+  {
+    "object": "card",
+    "id": "88527eb2-7264-4128-8bdf-df80b4053a48",
+    "oracle_id": "61bfab3f-d8f0-4ff5-9ddf-3fd605070c8f",
+    "multiverse_ids": [],
+    "name": "Vorpal Sword",
+    "lang": "en",
+    "released_at": "2021-07-23",
+    "uri": "https://api.scryfall.com/cards/88527eb2-7264-4128-8bdf-df80b4053a48",
+    "scryfall_uri": "https://scryfall.com/card/afr/396/vorpal-sword?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/8/8/88527eb2-7264-4128-8bdf-df80b4053a48.jpg?1620345949",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/8/8/88527eb2-7264-4128-8bdf-df80b4053a48.jpg?1620345949",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/8/8/88527eb2-7264-4128-8bdf-df80b4053a48.jpg?1620345949",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/8/8/88527eb2-7264-4128-8bdf-df80b4053a48.png?1620345949",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/8/8/88527eb2-7264-4128-8bdf-df80b4053a48.jpg?1620345949",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/8/8/88527eb2-7264-4128-8bdf-df80b4053a48.jpg?1620345949"
+    },
+    "mana_cost": "{B}",
+    "cmc": 1,
+    "type_line": "Artifact — Equipment",
+    "oracle_text": "Equipped creature gets +2/+0 and has deathtouch.\n{5}{B}{B}{B}: Until end of turn, Vorpal Sword gains \"Whenever equipped creature deals combat damage to a player, that player loses the game.\"\nEquip {B}{B}",
+    "colors": [
+      "B"
+    ],
+    "color_identity": [
+      "B"
+    ],
+    "keywords": [
+      "Equip"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "arena",
+      "paper",
+      "mtgo"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "e1ef87ba-ba92-4573-817f-543b996d2851",
+    "set": "afr",
+    "set_name": "Adventures in the Forgotten Realms",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/e1ef87ba-ba92-4573-817f-543b996d2851",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aafr&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/afr?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/88527eb2-7264-4128-8bdf-df80b4053a48/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A61bfab3f-d8f0-4ff5-9ddf-3fd605070c8f&unique=prints",
+    "collector_number": "396",
+    "digital": false,
+    "rarity": "r",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Alessandra Pisano",
+    "artist_ids": [
+      "15869690-bf3c-4498-a577-409a6bde5c83"
+    ],
+    "illustration_id": "271c6baa-c805-4269-b2b3-d8f9fa613d0e",
+    "border_color": "black",
+    "frame": "2015",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "buyabox"
+    ],
+    "edhrec_rank": 15331,
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Vorpal+Sword&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Vorpal+Sword&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Vorpal+Sword",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Vorpal+Sword"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Vorpal+Sword&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Vorpal+Sword&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Vorpal+Sword&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Vorpal Sword",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/8/8/88527eb2-7264-4128-8bdf-df80b4053a48.jpg?1620345949",
+    "cost": "{B}",
+    "ccost": 1,
+    "type": "Artifact",
+    "subtype": "Equipment",
+    "colour": "a",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Aafr&unique=prints"
+    ],
+    "num": "396 P Buy-a-Box",
+    "numInt": 396,
+    "mtgenId": "afr|396 P Buy-a-Box",
+    "includedReason": "Buy-a-Box Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "41ae20c0-b056-4c4f-a6d0-bbd72c37d0fc",
+    "oracle_id": "3df26058-c58d-4869-ae32-922d28c3aca2",
+    "multiverse_ids": [],
+    "name": "Treasure Chest",
+    "lang": "en",
+    "released_at": "2021-07-23",
+    "uri": "https://api.scryfall.com/cards/41ae20c0-b056-4c4f-a6d0-bbd72c37d0fc",
+    "scryfall_uri": "https://scryfall.com/card/afr/397/treasure-chest?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/4/1/41ae20c0-b056-4c4f-a6d0-bbd72c37d0fc.jpg?1624989342",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/4/1/41ae20c0-b056-4c4f-a6d0-bbd72c37d0fc.jpg?1624989342",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/4/1/41ae20c0-b056-4c4f-a6d0-bbd72c37d0fc.jpg?1624989342",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/4/1/41ae20c0-b056-4c4f-a6d0-bbd72c37d0fc.png?1624989342",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/4/1/41ae20c0-b056-4c4f-a6d0-bbd72c37d0fc.jpg?1624989342",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/4/1/41ae20c0-b056-4c4f-a6d0-bbd72c37d0fc.jpg?1624989342"
+    },
+    "mana_cost": "{3}",
+    "cmc": 3,
+    "type_line": "Artifact",
+    "oracle_text": "{4}, Sacrifice Treasure Chest: Roll a d20.\n1 | Trapped! — You lose 3 life.\n2-9 | Create five Treasure tokens.\n10-19 | You gain 3 life and draw three cards.\n20 | Search your library for a card. If it's an artifact card, you may put it onto the battlefield. Otherwise, put that card into your hand. Then shuffle.",
+    "colors": [],
+    "color_identity": [],
+    "keywords": [],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "arena",
+      "paper",
+      "mtgo"
+    ],
+    "reserved": false,
+    "nonfoil": false,
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "e1ef87ba-ba92-4573-817f-543b996d2851",
+    "set": "afr",
+    "set_name": "Adventures in the Forgotten Realms",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/e1ef87ba-ba92-4573-817f-543b996d2851",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aafr&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/afr?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/41ae20c0-b056-4c4f-a6d0-bbd72c37d0fc/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A3df26058-c58d-4869-ae32-922d28c3aca2&unique=prints",
+    "collector_number": "397",
+    "digital": false,
+    "rarity": "r",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Scott Murphy",
+    "artist_ids": [
+      "07c7ac65-dfa6-4273-9c66-ec9d8f3e2226"
+    ],
+    "illustration_id": "80dc886f-6dcb-4bcf-930d-a17b445af542",
+    "border_color": "black",
+    "frame": "2015",
+    "full_art": false,
+    "textless": false,
+    "booster": true,
+    "story_spotlight": false,
+    "promo_types": [
+      "bundle"
+    ],
+    "edhrec_rank": 18387,
+    "preview": {
+      "source": "Wizards of the Coast",
+      "source_uri": "https://magic.wizards.com/en/articles/archive/feature/adventures-forgotten-realms-product-overview-2021-06-29",
+      "previewed_at": "2021-06-29"
+    },
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Treasure+Chest&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Treasure+Chest&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Treasure+Chest",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Treasure+Chest"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Treasure+Chest&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Treasure+Chest&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Treasure+Chest&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Treasure Chest",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/4/1/41ae20c0-b056-4c4f-a6d0-bbd72c37d0fc.jpg?1624989342",
+    "cost": "{3}",
+    "ccost": 3,
+    "type": "Artifact",
+    "colour": "a",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Aafr&unique=prints"
+    ],
+    "num": "397 P Bundle",
+    "numInt": 397,
+    "mtgenId": "afr|397 P Bundle",
+    "includedReason": "Bundle Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "8898d1fe-f4fe-4978-bcbc-f514ac2e73b9",
+    "oracle_id": "5e57a8cd-f4f0-40b2-84a0-e002751c0d40",
+    "multiverse_ids": [],
+    "name": "Portable Hole",
+    "lang": "en",
+    "released_at": "2021-07-23",
+    "uri": "https://api.scryfall.com/cards/8898d1fe-f4fe-4978-bcbc-f514ac2e73b9",
+    "scryfall_uri": "https://scryfall.com/card/afr/398/portable-hole?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/8/8/8898d1fe-f4fe-4978-bcbc-f514ac2e73b9.jpg?1624734600",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/8/8/8898d1fe-f4fe-4978-bcbc-f514ac2e73b9.jpg?1624734600",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/8/8/8898d1fe-f4fe-4978-bcbc-f514ac2e73b9.jpg?1624734600",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/8/8/8898d1fe-f4fe-4978-bcbc-f514ac2e73b9.png?1624734600",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/8/8/8898d1fe-f4fe-4978-bcbc-f514ac2e73b9.jpg?1624734600",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/8/8/8898d1fe-f4fe-4978-bcbc-f514ac2e73b9.jpg?1624734600"
+    },
+    "mana_cost": "{W}",
+    "cmc": 1,
+    "type_line": "Artifact",
+    "oracle_text": "When Portable Hole enters the battlefield, exile target nonland permanent an opponent controls with mana value 2 or less until Portable Hole leaves the battlefield.",
+    "colors": [
+      "W"
+    ],
+    "color_identity": [
+      "W"
+    ],
+    "keywords": [],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "arena",
+      "paper",
+      "mtgo"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "e1ef87ba-ba92-4573-817f-543b996d2851",
+    "set": "afr",
+    "set_name": "Adventures in the Forgotten Realms",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/e1ef87ba-ba92-4573-817f-543b996d2851",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aafr&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/afr?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/8898d1fe-f4fe-4978-bcbc-f514ac2e73b9/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A5e57a8cd-f4f0-40b2-84a0-e002751c0d40&unique=prints",
+    "collector_number": "398",
+    "digital": false,
+    "rarity": "u",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "John Stanko",
+    "artist_ids": [
+      "b0f038a0-73b5-4806-918e-9cd11b5f92e1"
+    ],
+    "illustration_id": "3a8155c2-8842-4e93-87cf-2641db7f17a4",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "inverted"
+    ],
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "promopack"
+    ],
+    "edhrec_rank": 16897,
+    "preview": {
+      "source": "Wizards of the Coast",
+      "source_uri": "https://magic.wizards.com/en/articles/archive/card-image-gallery/adventures-in-the-forgotten-realms-variants",
+      "previewed_at": "2021-06-26"
+    },
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Portable+Hole&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Portable+Hole&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Portable+Hole",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Portable+Hole"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Portable+Hole&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Portable+Hole&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Portable+Hole&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Portable Hole",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/8/8/8898d1fe-f4fe-4978-bcbc-f514ac2e73b9.jpg?1624734600",
+    "cost": "{W}",
+    "ccost": 1,
+    "type": "Artifact",
+    "colour": "a",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Aafr&unique=prints"
+    ],
+    "num": "398 P Promo Pack",
+    "numInt": 398,
+    "mtgenId": "afr|398 P Promo Pack",
+    "includedReason": "Promo Pack",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "1accce8c-7ca4-4cc5-bd8a-26b19622984b",
+    "oracle_id": "41cdeb52-e90f-44f8-94d2-23aa032c4870",
+    "multiverse_ids": [],
+    "name": "You Find the Villains' Lair",
+    "lang": "en",
+    "released_at": "2021-07-23",
+    "uri": "https://api.scryfall.com/cards/1accce8c-7ca4-4cc5-bd8a-26b19622984b",
+    "scryfall_uri": "https://scryfall.com/card/afr/399/you-find-the-villains-lair?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/1/a/1accce8c-7ca4-4cc5-bd8a-26b19622984b.jpg?1625105122",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/1/a/1accce8c-7ca4-4cc5-bd8a-26b19622984b.jpg?1625105122",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/1/a/1accce8c-7ca4-4cc5-bd8a-26b19622984b.jpg?1625105122",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/1/a/1accce8c-7ca4-4cc5-bd8a-26b19622984b.png?1625105122",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/1/a/1accce8c-7ca4-4cc5-bd8a-26b19622984b.jpg?1625105122",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/1/a/1accce8c-7ca4-4cc5-bd8a-26b19622984b.jpg?1625105122"
+    },
+    "mana_cost": "{1}{U}{U}",
+    "cmc": 3,
+    "type_line": "Instant",
+    "oracle_text": "Choose one —\n• Foil Their Scheme — Counter target spell.\n• Learn Their Secrets — Draw two cards, then discard two cards.",
+    "colors": [
+      "U"
+    ],
+    "color_identity": [
+      "U"
+    ],
+    "keywords": [],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "arena",
+      "paper",
+      "mtgo"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "e1ef87ba-ba92-4573-817f-543b996d2851",
+    "set": "afr",
+    "set_name": "Adventures in the Forgotten Realms",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/e1ef87ba-ba92-4573-817f-543b996d2851",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aafr&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/afr?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/1accce8c-7ca4-4cc5-bd8a-26b19622984b/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A41cdeb52-e90f-44f8-94d2-23aa032c4870&unique=prints",
+    "collector_number": "399",
+    "digital": false,
+    "rarity": "c",
+    "watermark": "planeswalker",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Gabor Szikszai",
+    "artist_ids": [
+      "44c3877f-8771-43dc-9e40-f4c765f59d2e"
+    ],
+    "illustration_id": "a82db12e-a9ac-4d14-a1d2-821d387acf4e",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "inverted"
+    ],
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "promopack"
+    ],
+    "edhrec_rank": 21097,
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=You+Find+the+Villains%27+Lair&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=You+Find+the+Villains%27+Lair&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=You+Find+the+Villains%27+Lair",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=You+Find+the+Villains%27+Lair"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=You+Find+the+Villains%27+Lair&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=You+Find+the+Villains%27+Lair&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=You+Find+the+Villains%27+Lair&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "You Find the Villains' Lair",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/1/a/1accce8c-7ca4-4cc5-bd8a-26b19622984b.jpg?1625105122",
+    "cost": "{1}{U}{U}",
+    "ccost": 3,
+    "type": "Instant",
+    "colour": "u",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Aafr&unique=prints"
+    ],
+    "num": "399 P Promo Pack",
+    "numInt": 399,
+    "mtgenId": "afr|399 P Promo Pack",
+    "includedReason": "Promo Pack",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "f3febf51-6f40-478c-8b71-c529be420ff7",
+    "oracle_id": "ea935885-acbc-450d-a3ad-f80c09e12ce7",
+    "multiverse_ids": [],
+    "name": "Power Word Kill",
+    "lang": "en",
+    "released_at": "2021-07-23",
+    "uri": "https://api.scryfall.com/cards/f3febf51-6f40-478c-8b71-c529be420ff7",
+    "scryfall_uri": "https://scryfall.com/card/afr/400/power-word-kill?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/f/3/f3febf51-6f40-478c-8b71-c529be420ff7.jpg?1624734665",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/f/3/f3febf51-6f40-478c-8b71-c529be420ff7.jpg?1624734665",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/f/3/f3febf51-6f40-478c-8b71-c529be420ff7.jpg?1624734665",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/f/3/f3febf51-6f40-478c-8b71-c529be420ff7.png?1624734665",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/f/3/f3febf51-6f40-478c-8b71-c529be420ff7.jpg?1624734665",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/f/3/f3febf51-6f40-478c-8b71-c529be420ff7.jpg?1624734665"
+    },
+    "mana_cost": "{1}{B}",
+    "cmc": 2,
+    "type_line": "Instant",
+    "oracle_text": "Destroy target non-Angel, non-Demon, non-Devil, non-Dragon creature.",
+    "colors": [
+      "B"
+    ],
+    "color_identity": [
+      "B"
+    ],
+    "keywords": [],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "arena",
+      "paper",
+      "mtgo"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "e1ef87ba-ba92-4573-817f-543b996d2851",
+    "set": "afr",
+    "set_name": "Adventures in the Forgotten Realms",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/e1ef87ba-ba92-4573-817f-543b996d2851",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aafr&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/afr?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/f3febf51-6f40-478c-8b71-c529be420ff7/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Aea935885-acbc-450d-a3ad-f80c09e12ce7&unique=prints",
+    "collector_number": "400",
+    "digital": false,
+    "rarity": "u",
+    "flavor_text": "Aramil issued a long, heroic challenge, then the Lich felled him with a single word.",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Izzy",
+    "artist_ids": [
+      "2c3d2473-ff5d-4309-8194-e0b2def2ab65"
+    ],
+    "illustration_id": "28e94822-1f58-460b-9e39-b7596b7d13c6",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "inverted"
+    ],
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "promopack"
+    ],
+    "edhrec_rank": 20861,
+    "preview": {
+      "source": "Wizards of the Coast",
+      "source_uri": "https://magic.wizards.com/en/articles/archive/card-image-gallery/adventures-in-the-forgotten-realms-variants",
+      "previewed_at": "2021-06-26"
+    },
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Power+Word+Kill&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Power+Word+Kill&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Power+Word+Kill",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Power+Word+Kill"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Power+Word+Kill&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Power+Word+Kill&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Power+Word+Kill&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Power Word Kill",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/f/3/f3febf51-6f40-478c-8b71-c529be420ff7.jpg?1624734665",
+    "cost": "{1}{B}",
+    "ccost": 2,
+    "type": "Instant",
+    "colour": "b",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Aafr&unique=prints"
+    ],
+    "num": "400 P Promo Pack",
+    "numInt": 400,
+    "mtgenId": "afr|400 P Promo Pack",
+    "includedReason": "Promo Pack",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "c13045ec-27e4-497a-bbc4-134cf46b7b89",
+    "oracle_id": "e48b8d78-3f8b-4bf8-853a-76c435bc31f0",
+    "multiverse_ids": [],
+    "name": "Magic Missile",
+    "lang": "en",
+    "released_at": "2021-07-23",
+    "uri": "https://api.scryfall.com/cards/c13045ec-27e4-497a-bbc4-134cf46b7b89",
+    "scryfall_uri": "https://scryfall.com/card/afr/401/magic-missile?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/c/1/c13045ec-27e4-497a-bbc4-134cf46b7b89.jpg?1625602248",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/1/c13045ec-27e4-497a-bbc4-134cf46b7b89.jpg?1625602248",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/c/1/c13045ec-27e4-497a-bbc4-134cf46b7b89.jpg?1625602248",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/c/1/c13045ec-27e4-497a-bbc4-134cf46b7b89.png?1625602248",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/c/1/c13045ec-27e4-497a-bbc4-134cf46b7b89.jpg?1625602248",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/c/1/c13045ec-27e4-497a-bbc4-134cf46b7b89.jpg?1625602248"
+    },
+    "mana_cost": "{1}{R}{R}",
+    "cmc": 3,
+    "type_line": "Sorcery",
+    "oracle_text": "This spell can't be countered.\nMagic Missile deals 3 damage divided as you choose among one, two, or three targets.",
+    "colors": [
+      "R"
+    ],
+    "color_identity": [
+      "R"
+    ],
+    "keywords": [],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "arena",
+      "paper",
+      "mtgo"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "e1ef87ba-ba92-4573-817f-543b996d2851",
+    "set": "afr",
+    "set_name": "Adventures in the Forgotten Realms",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/e1ef87ba-ba92-4573-817f-543b996d2851",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aafr&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/afr?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/c13045ec-27e4-497a-bbc4-134cf46b7b89/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Ae48b8d78-3f8b-4bf8-853a-76c435bc31f0&unique=prints",
+    "collector_number": "401",
+    "digital": false,
+    "rarity": "u",
+    "watermark": "planeswalker",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "PINDURSKI",
+    "artist_ids": [
+      "f333a7f0-7330-40e9-8c58-667eea2f0f60"
+    ],
+    "illustration_id": "bd9f7dae-cbf7-4500-a75f-b41eaab5c318",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "inverted"
+    ],
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "promopack"
+    ],
+    "preview": {
+      "source": "Wizards of the Coast",
+      "source_uri": "https://magic.wizards.com/en/articles/archive/card-image-gallery/adventures-in-the-forgotten-realms-variants",
+      "previewed_at": "2021-07-06"
+    },
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Magic+Missile&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Magic+Missile&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Magic+Missile",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Magic+Missile"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Magic+Missile&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Magic+Missile&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Magic+Missile&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Magic Missile",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/1/c13045ec-27e4-497a-bbc4-134cf46b7b89.jpg?1625602248",
+    "cost": "{1}{R}{R}",
+    "ccost": 3,
+    "type": "Sorcery",
+    "colour": "r",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Aafr&unique=prints"
+    ],
+    "num": "401 P Promo Pack",
+    "numInt": 401,
+    "mtgenId": "afr|401 P Promo Pack",
+    "includedReason": "Promo Pack",
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "afr",
+    "title": "Prerelease Deck Box",
+    "colour": "o",
+    "num": "006 Prerelease Deck Box",
+    "rarity": "c",
+    "type": "Insert",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 6,
+    "mtgenId": "afr|006 Prerelease Deck Box",
+    "set": "afr",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-deckbuilding-info.jpg",
+    "src_large": "http://mtgen.net/cards/mtg-deckbuilding-info-lg.jpg",
+    "height": 370,
+    "width": 515,
+    "title": "Deckbuilding Advice Insert",
+    "colour": "o",
+    "num": "007 Insert",
+    "rarity": "c",
+    "type": "Insert",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 7,
+    "mtgenId": "afr|007 Insert",
+    "set": "afr",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-prerelease-card-divider.png",
+    "title": "Card Divider",
+    "colour": "o",
+    "num": "008 Insert",
+    "rarity": "c",
+    "type": "Insert",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 8,
+    "mtgenId": "afr|008 Insert",
+    "set": "afr",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-spindown-life-counter-white.png",
+    "title": "White Spindown Life Counter",
+    "colour": "o",
+    "num": "001a Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "afr|001a Counter",
+    "set": "afr",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-spindown-life-counter-blue.png",
+    "title": "Blue Spindown Life Counter",
+    "colour": "o",
+    "num": "001b Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "afr|001b Counter",
+    "set": "afr",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-spindown-life-counter-black.png",
+    "title": "Black Spindown Life Counter",
+    "colour": "o",
+    "num": "001c Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "afr|001c Counter",
+    "set": "afr",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-spindown-life-counter-red.png",
+    "title": "Red Spindown Life Counter",
+    "colour": "o",
+    "num": "001d Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "afr|001d Counter",
+    "set": "afr",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-spindown-life-counter-green.png",
+    "title": "Green Spindown Life Counter",
+    "colour": "o",
+    "num": "001e Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "afr|001e Counter",
+    "set": "afr",
+    "promo": true,
+    "usableForDeckBuilding": false
+  }
+]

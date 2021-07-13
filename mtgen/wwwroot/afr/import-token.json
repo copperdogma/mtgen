@@ -1,0 +1,356 @@
+{
+  "setCode": "afr",
+  "cardDataUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-adventures-forgotten-realms-2021-07-12",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "afr",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-adventures-forgotten-realms-2021-07-12",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "001|w|Token Creature|Angel\n002|c|Token Legendary Artifact|Icingdeath, Frost Tongue\n003|u|Token Creature|Dog Illusion\n004|u|Token Creature|Faerie Dragon\n007|b|Token Creature|Spider\n008|b|Token Legendary Creature|Vecna|Zombie God\n009|b|Token Creature|Zombie\n010|r|Token Legendary Creature|Boo|Hamster\n011|r|Token Creature|Devil\n013|g|Token Legendary Creature|Guenhwyvar|Cat\n014|g|Token Creature|Wolf\n015|c|Token Artifact|Treasure\n020|c|Token Dungeon|Dungeon of the Mad Mage\n012|r|Token Creature|Goblin\n021|c|Token Dungeon|Lost Mine of Phandelver\n006|b|Token Creature|Skeleton\n022|c|Token Dungeon|Tomb of Annihilation\n005|b|Token Legendary Creature|The Atropal|God Horror\n016|c|Emblem|Ellywick Tumblestrum|Ellywick\n017|c|Emblem|Lolth, Spider Queen|Lolth\n018|c|Emblem|Mordenkainen\n019|c|Emblem|Zariel, Archduke of Avernus|Zariel\ndfc|020|012\ndfc|021|006\ndfc|033|005\n\n"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "afr",
+        "src": "https://media.wizards.com/2021/afr/en_iilnEVQt0T.png",
+        "num": "001",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Angel",
+        "subtype": "Angel",
+        "numInt": 1
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "afr",
+        "src": "https://media.wizards.com/2021/afr/en_8KNXN0VmMD.png",
+        "num": "002",
+        "colour": "c",
+        "type": "Token Legendary Artifact",
+        "title": "Icingdeath, Frost Tongue",
+        "subtype": "Icingdeath, Frost Tongue",
+        "numInt": 2
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "afr",
+        "src": "https://media.wizards.com/2021/afr/en_EgQ9POlG5j.png",
+        "num": "003",
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Dog Illusion",
+        "subtype": "Dog Illusion",
+        "numInt": 3
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "afr",
+        "src": "https://media.wizards.com/2021/afr/en_P01iF9ijCx.png",
+        "num": "004",
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Faerie Dragon",
+        "subtype": "Faerie Dragon",
+        "numInt": 4
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "afr",
+        "src": "https://media.wizards.com/2021/afr/en_EIQ3aSbIKn.png",
+        "num": "005",
+        "colour": "b",
+        "type": "Token Legendary Creature",
+        "title": "The Atropal",
+        "subtype": "God Horror",
+        "numInt": 5
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "afr",
+        "src": "https://media.wizards.com/2021/afr/en_DL76e8LZ0N.png",
+        "num": "007",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Spider",
+        "subtype": "Spider",
+        "numInt": 7
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "afr",
+        "src": "https://media.wizards.com/2021/afr/en_Q1GMVxFZhu.png",
+        "num": "008",
+        "colour": "b",
+        "type": "Token Legendary Creature",
+        "title": "Vecna",
+        "subtype": "Zombie God",
+        "numInt": 8
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "afr",
+        "src": "https://media.wizards.com/2021/afr/en_rbquw8xs8J.png",
+        "num": "009",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Zombie",
+        "subtype": "Zombie",
+        "numInt": 9
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "afr",
+        "src": "https://media.wizards.com/2021/afr/en_tR8QK03eDN.png",
+        "num": "010",
+        "colour": "r",
+        "type": "Token Legendary Creature",
+        "title": "Boo",
+        "subtype": "Hamster",
+        "numInt": 10
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "afr",
+        "src": "https://media.wizards.com/2021/afr/en_BkVMWZITdu.png",
+        "num": "011",
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Devil",
+        "subtype": "Devil",
+        "numInt": 11
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "afr",
+        "src": "https://media.wizards.com/2021/afr/en_1gfaqeH9Bp.png",
+        "num": "013",
+        "colour": "g",
+        "type": "Token Legendary Creature",
+        "title": "Guenhwyvar",
+        "subtype": "Cat",
+        "numInt": 13
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "afr",
+        "src": "https://media.wizards.com/2021/afr/en_s7pOGFqyLT.png",
+        "num": "014",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Wolf",
+        "subtype": "Wolf",
+        "numInt": 14
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "afr",
+        "src": "https://media.wizards.com/2021/afr/en_IY6yOcywjO.png",
+        "num": "015",
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Treasure",
+        "subtype": "Treasure",
+        "numInt": 15
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "afr",
+        "src": "https://media.wizards.com/2021/afr/en_0nQ8IWDS9d.png",
+        "num": "016",
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Ellywick Tumblestrum",
+        "subtype": "Ellywick",
+        "numInt": 16
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "afr",
+        "src": "https://media.wizards.com/2021/afr/en_tMOfwT00HK.png",
+        "num": "017",
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Lolth, Spider Queen",
+        "subtype": "Lolth",
+        "numInt": 17
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "afr",
+        "src": "https://media.wizards.com/2021/afr/en_zt4V1UPk1Y.png",
+        "num": "018",
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Mordenkainen",
+        "subtype": "Mordenkainen",
+        "numInt": 18
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "afr",
+        "src": "https://media.wizards.com/2021/afr/en_9wlHRnfRZp.png",
+        "num": "019",
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Zariel, Archduke of Avernus",
+        "subtype": "Zariel",
+        "numInt": 19
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "afr",
+        "src": "https://media.wizards.com/2021/afr/en_yu0OoWrZHr.png",
+        "num": "020",
+        "colour": "c",
+        "type": "Token Dungeon",
+        "title": "Dungeon of the Mad Mage",
+        "subtype": "Dungeon of the Mad Mage",
+        "numInt": 20,
+        "cardFaces": [
+          {
+            "set": "afr",
+            "src": "https://media.wizards.com/2021/afr/en_yu0OoWrZHr.png",
+            "height": 370,
+            "width": 265,
+            "imageSource": "wotc-article",
+            "num": "020",
+            "colour": "c",
+            "type": "Token Dungeon",
+            "title": "Dungeon of the Mad Mage",
+            "subtype": "Dungeon of the Mad Mage",
+            "matchTitle": "dungeon of the mad mage",
+            "numInt": 20,
+            "mtgenId": "afr|020"
+          },
+          {
+            "set": "afr",
+            "src": "https://media.wizards.com/2021/afr/en_ahkcuaztwc.png",
+            "height": 370,
+            "width": 265,
+            "imageSource": "wotc-article",
+            "num": "012",
+            "colour": "r",
+            "type": "Token Creature",
+            "title": "Goblin",
+            "subtype": "Goblin",
+            "matchTitle": "goblin",
+            "numInt": 12,
+            "mtgenId": "afr|012"
+          }
+        ],
+        "doubleFaceCard": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "afr",
+        "src": "https://media.wizards.com/2021/afr/en_4MqeT8nWd9.png",
+        "num": "021",
+        "colour": "c",
+        "type": "Token Dungeon",
+        "title": "Lost Mine of Phandelver",
+        "subtype": "Lost Mine of Phandelver",
+        "numInt": 21,
+        "cardFaces": [
+          {
+            "set": "afr",
+            "src": "https://media.wizards.com/2021/afr/en_4MqeT8nWd9.png",
+            "height": 370,
+            "width": 265,
+            "imageSource": "wotc-article",
+            "num": "021",
+            "colour": "c",
+            "type": "Token Dungeon",
+            "title": "Lost Mine of Phandelver",
+            "subtype": "Lost Mine of Phandelver",
+            "matchTitle": "lost mine of phandelver",
+            "numInt": 21,
+            "mtgenId": "afr|021"
+          },
+          {
+            "set": "afr",
+            "src": "https://media.wizards.com/2021/afr/en_jYc8ItY7so.png",
+            "height": 370,
+            "width": 265,
+            "imageSource": "wotc-article",
+            "num": "006",
+            "colour": "b",
+            "type": "Token Creature",
+            "title": "Skeleton",
+            "subtype": "Skeleton",
+            "matchTitle": "skeleton",
+            "numInt": 6,
+            "mtgenId": "afr|006"
+          }
+        ],
+        "doubleFaceCard": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "afr",
+        "src": "https://media.wizards.com/2021/afr/en_fZkwUeSE1i.png",
+        "num": "022",
+        "colour": "c",
+        "type": "Token Dungeon",
+        "title": "Tomb of Annihilation",
+        "subtype": "Tomb of Annihilation",
+        "numInt": 22
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/022 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

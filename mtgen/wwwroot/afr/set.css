@@ -1,0 +1,13 @@
+body {
+	background-image: url(images/bg.jpg);
+}
+header .set-name {
+	background-image: url(images/logo-word.png);
+}
+#card-count {
+	color: rgba(255,255,255,1);
+	text-shadow: 1px 1px 1px #000;
+}
+header .set-name {
+	background-image: url(images/logo-word-light.png);
+}
