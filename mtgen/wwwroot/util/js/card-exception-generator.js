@@ -4,6 +4,7 @@ Typically used for tokens, land, and other cards listed on the wotc site in arti
 
 Takes a specific text pattern as input to indicate which images we want and what they are.
 
+20210713: Streamlined import, using #private methods, now supports DFC tokens with new syntax at end: dfc|123|456
 20210415: Now filters out empty pattern elements instead of trying and failing to use them.
 28-Mar-2020: Fixed bug where num total was hard-coded to 012 instead of the actual number of tokens.
 28-Mar-2020: Fixed bug where 'x' in token list was ignored.
@@ -44,9 +45,9 @@ class CardExceptionGenerator extends CardDataImporter {
                     window.dispatchEvent(new Event('data-loaded'));
                     return this._getCardImages(imageData, requiredImageWidth, requiredImageHeight);
                 })
-                .then(cardImages => this._createOutputCards(setCode, cardImages, startingCardNum, cardPattern))
+                .then(cardImages => this.#createOutputCards(setCode, cardImages, startingCardNum, cardPattern))
                 .then(({ cards, skippedCards }) => {
-                    const outputLogPromise = this._createOutputLog(cards, skippedCards);
+                    const outputLogPromise = this.#createOutputLog(cards, skippedCards);
                     const settings = {
                         "setCode": setCode,
                         "cardImageUrl": cardImageUrl,
@@ -55,7 +56,7 @@ class CardExceptionGenerator extends CardDataImporter {
                         "startingCardNum": startingCardNum,
                         "cardPattern": cardPattern
                     };
-                    const finalDataPromise = this._createFinalJsonOutput(settings, cards);
+                    const finalDataPromise = this.#createFinalJsonOutput(settings, cards);
                     resolve(Promise.all([outputLogPromise, finalDataPromise]));
                 });
         });
@@ -63,7 +64,7 @@ class CardExceptionGenerator extends CardDataImporter {
 
     // PRIVATE METHODS ------------------------------------------------------------------------------------
 
-    _getLandTypeFromCode(code) {
+    #getLandTypeFromCode(code) {
         switch (code.toLowerCase()) {
             case "w": return "Plains";
             case "u": return "Island";
@@ -74,17 +75,23 @@ class CardExceptionGenerator extends CardDataImporter {
         }
     }
 
-    _createOutputCards(setCode, cardImages, startingCardNum, cardPattern) {
+    #createOutputCards(setCode, cardImages, startingCardNum, cardPattern) {
         return new Promise(resolve => {
             // Parse the card pattern into an array.
-            const overrideItems = cardPattern.replace(/(?:\r\n|\r|\n)/g, ',');
-            const initialCardPatterns = overrideItems.trim().split(',').filter(Boolean); // Filter removes any empty-like elements.
+            const overrideItems = cardPattern.replace(/(?:\r\n|\r|\n)/g, '~');
+            const initialCardPatterns = overrideItems.trim().split('~').filter(Boolean); // Filter removes any empty-like elements.
+            const dfcPairs = new Array();
 
             // Any x# pattern means "skip # cards" so we'll expand it into the correct number of entries.
             const cardPatterns = initialCardPatterns.reduce((acc, pattern) => {
                 const skipMany = /^x([0-9]{1,3})?$/gi.exec(pattern);
                 if (skipMany) {
                     return acc.concat([...'x'.repeat(skipMany[1] ?? 1)]);
+                }
+                if (pattern.indexOf('dfc') == 0) {
+                    // DFC entries are parsed at the very end.
+                    dfcPairs.push(pattern);
+                    return acc;
                 }
                 else {
                     acc.push(pattern);
@@ -147,24 +154,7 @@ class CardExceptionGenerator extends CardDataImporter {
                                 card.title = `Unknown pattern: ${pattern}`;
                             }
                             else {
-                                // Handle double-faced cards.
-                                const variant = cardPattern[1].split(':');
-                                if (variant.length > 1) {
-                                    card.num = variant[0];
-                                    card.doubleFaceCard = true;
-                                    if (variant[1] === 'a') {
-                                        card.mtgenVariant = 1;
-                                        card.doubleFaceFrontCard = true;
-                                        card.mtgenIdBack = `${card.num}:b`;
-                                    } else {
-                                        card.mtgenVariant = 2;
-                                        card.doubleFaceBackCard = true;
-                                        card.mtgenIdFront = `${card.num}:a`;
-                                    }
-                                }
-                                else {
-                                    card.num = cardPattern[1];
-                                }
+                                card.num = cardPattern[1];
                                 card.colour = cardPattern[2];
                                 var cardNames = cardPattern[3].split('|');
                                 card.type = cardNames[0];
@@ -173,7 +163,6 @@ class CardExceptionGenerator extends CardDataImporter {
                                 if (cardNames[2]) {
                                     card.subtype = cardNames[2];
                                 }
-                                // ** make sure it all works for lands
                             }
                             cards.areTokens = true;
                         }
@@ -192,11 +181,30 @@ class CardExceptionGenerator extends CardDataImporter {
                 }
             });
 
+            // Handle any DFC pairs.
+            dfcPairs.forEach(dfcPair => {
+                const dfcParts = dfcPair.split('|');
+                if (dfcParts.length < 3) { "Unknown DFC format. Should be 'dfc|123|456'. Got: " + dfcPair; return; }
+
+                // Find the first and seconds cards, then add both into a cardFaces array within the first card.
+                const cardArray = [...cards.values()];
+                const cardFront = cardArray.filter(card => card.num == dfcParts[1]);
+                if (cardFront.length != 1) { `Error finding DFC card front with num '${dfcParts[1]}'; found ${cardFront.length} cards. Pattern: ${dfcPair}`; return; }
+
+                const cardBack = cardArray.filter(card => card.num == dfcParts[2]);
+                if (cardBack.length != 1) { `Error finding DFC card back with num '${dfcParts[2]}'; found ${cardFront.length} cards. Pattern: ${dfcPair}`; return; }
+
+                cardFront[0].cardFaces = new Array(Object.assign({}, cardFront[0]), cardBack[0]);
+                cardFront[0].doubleFaceCard = true;
+
+                cards.delete(cardBack[0].mtgenId);
+            });
+
             resolve({ cards, skippedCards });
         });
     }
 
-    _createOutputLog(cards, skippedCards) {
+    #createOutputLog(cards, skippedCards) {
         return new Promise(resolve => {
             let out = "";
             if (cards.size < 1) {
@@ -216,7 +224,8 @@ class CardExceptionGenerator extends CardDataImporter {
         });
     }
 
-    _createFinalJsonOutput(settings, cards) {
+    //TODO: Doesn't output back image of DFC so it doesn't look like it imported
+    #createFinalJsonOutput(settings, cards) {
         return new Promise(resolve => {
             const finalOut = [];
 
@@ -242,35 +251,35 @@ class CardExceptionGenerator extends CardDataImporter {
             if (finalOut.length > 0) {
                 if (cards.areLand) {
                     const postCard =
-                        {
-                            "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
-                            "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
-                            "newValues": {
-                                "set": "{{setCode}}",
-                                "height": 370,
-                                "width": 265,
-                                "type": "Basic Land",
-                                "subtype": "{{title}}",
-                                "colour": "l",
-                                "cost": "",
-                                "rarity": "c",
-                                "num": "{{num}}/264 L"
-                            }
-                        };
+                    {
+                        "_comment": "Set basic land defaults for above lands so we don't have to repeat them every land",
+                        "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
+                        "newValues": {
+                            "set": "{{setCode}}",
+                            "height": 370,
+                            "width": 265,
+                            "type": "Basic Land",
+                            "subtype": "{{title}}",
+                            "colour": "l",
+                            "cost": "",
+                            "rarity": "c",
+                            "num": "{{num}}/264 L"
+                        }
+                    };
                     finalOut.push(postCard);
                 }
                 else if (cards.areTokens) {
                     const postCard =
-                        {
-                            "where": "",
-                            "newValues": {
-                                "set": "{{setCode}}",
-                                "rarity": "c",
-                                "num": `{{num}}/${(cards.size+'').padStart(3,'0')} T`,
-                                "token": true,
-                                "usableForDeckBuilding": false
-                            }
-                        };
+                    {
+                        "where": "",
+                        "newValues": {
+                            "set": "{{setCode}}",
+                            "rarity": "c",
+                            "num": `{{num}}/${(cards.size + '').padStart(3, '0')} T`,
+                            "token": true,
+                            "usableForDeckBuilding": false
+                        }
+                    };
                     finalOut.push(postCard);
                 }
             }
@@ -281,12 +290,12 @@ class CardExceptionGenerator extends CardDataImporter {
             });
 
             const preCard =
-                {
-                    "_comment": {
-                        "generatedUsing": "card-exception-generator.html",
-                        "settings": settings
-                    }
-                };
+            {
+                "_comment": {
+                    "generatedUsing": "card-exception-generator.html",
+                    "settings": settings
+                }
+            };
             finalOut.unshift(preCard);
 
             const jsonMainStr = JSON.stringify(finalOut, null, ' ');

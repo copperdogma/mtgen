@@ -1,0 +1,31 @@
+﻿{
+  "setCode": "afc",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Aafc&unique=prints",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "select cards starting with a value = where: type~='Snow'",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'"
+      ]
+    },
+
+    {
+      "where": "numInt=(274-329)",
+      "FINISH THIS": "FINISH THIS",
+      "newValues": {
+        "extendedArtwork": true
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "commander": true
+      }
+    }
+  ]
+}
