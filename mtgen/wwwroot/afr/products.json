@@ -70,11 +70,10 @@
       "productName": "{{setCode}}-set-booster",
       "productDesc": "Set Boosters",
       "isGenerated": true,
-      "isVisible": false,
+      "isVisible": true,
       "initialSort": "set",
       "caveats": [
-        "Note: The only Art Card images available are all foil-stamped. The wording underneath will say if you've actually pulled a foil stamped card.",
-        "Note: Slots 3-8 are meant to be 'tell a story and be thematically connected' but I can't do that."
+        "Note: The only Art Card images available are all foil-stamped. The wording underneath will say if you've actually pulled a foil stamped card."
       ],
       "packs": [
         { "packName": "{{setCode}}-set-booster" }

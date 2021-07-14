@@ -14,7 +14,7 @@
     },
     {
       "defName": "{{setCode}}-main-set",
-      "query": "from[{{setCode}}]?mainSet=true"
+      "query": "from[{{setCode}}]?mainSet=true-from[{{setCode}}]?type='Basic Land'-from[{{setCode}}]?promo=true"
     },
     {
       "defName": "{{setCode}}-variants",
@@ -79,7 +79,7 @@
         { "query": "take[10]>from[{{setCode}}-main-set]?rarity='c" },
         { "query": "take[3]>from[{{setCode}}-main-set]?rarity='u" },
         { "query": "from[{{setCode}}-main-set]?rarity=rarityByWeight2020(rm)" },
-        { "query": "from[{{setCode}}-main-set]?type='Basic Land'" },
+        { "query": "from[{{setCode}}]?type='Basic Land'" },
         {
           "querySet": [
             {
@@ -101,6 +101,16 @@
               "percent": "33",
               "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(curm)",
               "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "About 10% of Adventures in the Forgotten Realms Set and Draft Boosters contain a rare or mythic rare with an alternate treatment: https://magic.wizards.com/en/articles/archive/feature/collecting-adventures-forgotten-realms-2021-06-29",
+              "overrideSlot": "14",
+              "percent": "10",
+              "query": "from[{{setCode}}-extended-art-and-showcase-and-borderless]?rarity=rarityByWeight2020(rm)"
             }
           ]
         }
@@ -170,26 +180,35 @@
     },
     {
       "_comment": "Set Boosters were introduced as standard feature as of ZNR",
+      "_comment2": "wotc did not release a proper breakdown for each slot, just a more vague description, so I based it heavily off the last Set Booster.",
       "packName": "{{setCode}}-set-booster",
       "packDesc": "{{setName}}: Set Booster",
       "packVersion": "1.0",
-      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/collecting-modern-horizons-2-2021-05-21" ],
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/adventures-forgotten-realms-product-overview-2021-06-29" ],
       "isGenerated": true,
       "cards": [
         {
           "_comment": "Slot 1: Art Card",
-          "_comment2": "There are 81 total possible borderless art cards. 95% of those opened will be regular and 5% will be foil stamped with an artist signature or Planeswalker symbol.",
+          "_comment2": "1 Art card or foil-stamped art card.",
+          "_comment3": "PREVIOUS SET: There are 81 total possible borderless art cards. 95% of those opened will be regular and 5% will be foil stamped with an artist signature or Planeswalker symbol.",
           "query": "from[a{{setCode}}-art-cards]",
           "setValues": { "modifiers": [ "Normal" ] }
         },
         {
           "_comment": "Slot 2: Basic Land",
-          "_comment2": "There are 10 total possible basic lands. 85% of those opened will be regular and 15% will be traditional foil",
+          "_comment2": "1 Basic land or foil basic land",
+          "_comment3": "PREVIOUS SET: There are 10 total possible basic lands. 85% of those opened will be regular and 15% will be traditional foil",
           "query": "from[{{setCode}}]?type='Basic Land'"
         },
         {
-          "_comment": "Slot 3-8: 6x C/U",
-          "_comment2": "6 Common or uncommon cards, of which at least one is uncommon (in any combination of regular cards) – Common cards will tell a story and be thematically connected to other commons. Uncommon cards will be connected to other uncommons",
+          "_comment": "Slot 3-5: 3x C = guaranteed 3 commons out of 10",
+          "_comment2": "7–10 Commons and uncommons (at most 7 may be uncommon)",
+          "_comment3": "PREVIOUS SET: 6 Common or uncommon cards, of which at least one is uncommon (in any combination of regular cards) – Common cards will tell a story and be thematically connected to other commons. Uncommon cards will be connected to other uncommons",
+          "query": "take[3]>from[{{setCode}}-main-set]?rarity='c'"
+        },
+        {
+          "_comment": "Slot 6-12: 7x C/U",
+          "_comment2": "7–10 Commons and uncommons (at most 7 may be uncommon)",
           "query": "from[{{setCode}}-main-set]?rarity=rarityByWeight2020(cu)"
         },
         {
@@ -205,46 +224,43 @@
           "query": "from[{{setCode}}-main-set]?rarity=rarityByWeight2020(cu)"
         },
         {
-          "_comment": "Slot 8: U (the 'guaranteed' uncommon from above)",
-          "query": "from[{{setCode}}-main-set]?rarity='u'"
-        },
-        {
-          "_comment": "Slot 9: Wildcard: C/U/R/M, maybe sketch/retro/borderless, maybe fetchland",
-          "_comment2": "This could be an additional regular common or uncommon. 30% of the time in {{setName}} Set Boosters, you will instead get a rare or mythic rare—maybe even with a showcase sketch treatment, showcase retro frame, or borderless treatment",
           "query": "from[{{setCode}}-main-set]?rarity=rarityByWeight2020(cu)"
         },
         {
-          "_comment": "Slot 10: R/M maybe sketch/retro/borderless, maybe fetchland",
-          "_comment2": "1 Rare or mythic rare, including possible showcase sketch or retro frame rares or mythic rares and borderless mythic rares – You can get either regular enemy fetch lands or retro frame enemy fetch lands in this slot and the wildcard slot, too",
-          "query": "from[{{setCode}}-set-booster-main-and-sketch-and-retro-and-borderless]?rarity=rarityByWeight2020(rm)"
+          "query": "from[{{setCode}}-main-set]?rarity=rarityByWeight2020(cu)"
         },
         {
-          "_comment": "Slot 11: New-to-Modern Reprint (they're all U/R/M)",
-          "_comment2": "1 New-to-Modern reprint – There are 42 cards in {{setName}} being introduced to Modern. This slot guarantees that you get one of these new-to-Modern reprints in each booster. There are four of these new-to-Modern reprints with the showcase retro frame treatment (1 U, 2 R, 1 M) and eight cards with a borderless alternate-art treatment (4 R, 4 M). All of these are possible to get within this slot of the Set Booster",
-          "query": "from[{{setCode}}-new-to-modern]?rarity=rarityByWeight2020(urm)"
+          "_comment": "Slot 13: R/M",
+          "_comment2": "At least 1 rare or mythic rare card (approximately 27% of Set Boosters contain 2 rares or mythic rares, 3% contain 3, and it's even possible to open 4 though that's less than 1% of the time.)",
+          "_comment3": "PREVIOUS SET: 1 Rare or mythic rare, including possible showcase sketch or retro frame rares or mythic rares and borderless mythic rares – You can get either regular enemy fetch lands or retro frame enemy fetch lands in this slot and the wildcard slot, too",
+          "query": "from[{{setCode}}-main-set]?rarity=rarityByWeight2020(rm)"
         },
         {
-          "_comment": "Slot 12: Showcase C/U: sketch/retro",
-          "_comment2": "1 Head-turner showcase common or uncommon – The head-turner slot offers a look at the two showcase treatments featured in {{setName}}, sketch and retro frame. This slot lets us guarantee that in every Set Booster you will find at least one of the showcase cards",
-          "query": "from[{{setCode}}-sketch-and-retro]?rarity=rarityByWeight2020(cu)"
+          "_comment": "Slot 14: Rulebook, module, or borderless C/U",
+          "_comment2": "1 Rulebook, module, or borderless common or uncommon",
+          "_comment3": "PREVIOUS SEt: 1 Head-turner showcase common or uncommon – The head-turner slot offers a look at the two showcase treatments featured in {{setName}}, sketch and retro frame. This slot lets us guarantee that in every Set Booster you will find at least one of the showcase cards",
+          "query": "from[{{setCode}}-showcase-and-borderless]?rarity=rarityByWeight2020(cu)"
         },
         {
-          "_comment": "Slot 13: Foil: C/U/R/M: main set, New-to-Modern U/R/M, showcase, borderless R/M",
-          "_comment2": "1 Traditional foil card – This slot will always have a traditional foil card in it. It can be a main set card of any rarity; a new-to-Modern uncommon, rare, or mythic rare; a showcase treatment card of any rarity; or a borderless rare or mythic rare",
+          "_comment": "Slot 15: Foil: C/U/R/M",
+          "_comment2": "1 Traditional foil card of any rarity",
+          "_comment3": "PREVIOUS SET: 1 Traditional foil card – This slot will always have a traditional foil card in it. It can be a main set card of any rarity; a new-to-Modern uncommon, rare, or mythic rare; a showcase treatment card of any rarity; or a borderless rare or mythic rare",
           "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(curm)",
           "setValues": { "foil": true }
         },
         {
-          "_comment": "Slot 14: Token/Ad or The List",
-          "_comment2": "1 Token/ad card (75%), or a card from The List (25%) – The List is a collection of 300 cards from Magic's history that we have brought together for this special slot. We have rotated in 50 new reprints that we feel help capture the feel of {{setName}}. Inclusion of cards from The List doesn't impact what formats the card is legal in",
-          "query": "from[{{setCode}}-token]"
+          "_comment": "Slot 16: Token/Ad/Dungeon or The List",
+          "_comment2": "Ad/token/dungeon card or 1 card from The List",
+          "_comment3": "PREVIOUS SET: 1 Token/ad card (75%), or a card from The List (25%) – The List is a collection of 300 cards from Magic's history that we have brought together for this special slot. We have rotated in 50 new reprints that we feel help capture the feel of {{setName}}. Inclusion of cards from The List doesn't impact what formats the card is legal in",
+          "query": "from[{{setCode}}]?token=true"
         },
 
         {
           "querySet": [
             {
               "_comment": "Slot 1: Art Card",
-              "_comment2": "There are 81 total possible borderless art cards. 95% of those opened will be regular and 5% will be foil stamped with an artist signature or Planeswalker symbol.",
+              "_comment2": "1 Art card or foil-stamped art card.",
+              "_comment3": "PREVIOUS SET: There are 81 total possible borderless art cards. 95% of those opened will be regular and 5% will be foil stamped with an artist signature or Planeswalker symbol.",
               "overrideSlot": "1",
               "percent": "5",
               "query": "from[a{{setCode}}-art-cards]",
@@ -257,7 +273,8 @@
           "querySet": [
             {
               "_comment": "Slot 2: Basic Land",
-              "_comment2": "There are 10 total possible basic lands. 85% of those opened will be regular and 15% will be traditional foil",
+              "_comment2": "1 Basic land or foil basic land",
+              "_comment3": "PREVIOUS SET: There are 10 total possible basic lands. 85% of those opened will be regular and 15% will be traditional foil",
               "query": "from[{{setCode}}]?type='Basic Land'",
               "overrideSlot": "2",
               "percent": "15",
@@ -266,20 +283,16 @@
           ]
         },
 
-
         {
           "querySet": [
             {
-              "_comment": "Slot 9: Wildcard: C/U/R/M, maybe sketch/retro/borderless, maybe fetchland",
-              "_comment2": "This could be an additional regular common or uncommon. 30% of the time in {{setName}} Set Boosters, you will instead get a rare or mythic rare—maybe even with a showcase sketch treatment, showcase retro frame, or borderless treatment",
-              "_comment3": "Override: 30% of the time you get a rare/mythic",
-              "query": "from[{{setCode}}-set-booster-main-and-sketch-and-retro-and-borderless]?rarity=rarityByWeight2020(rm)",
-              "overrideSlot": "9",
-              "percent": "30"
+              "_comment": "About 10% of Adventures in the Forgotten Realms Set and Draft Boosters contain a rare or mythic rare with an alternate treatment: https://magic.wizards.com/en/articles/archive/feature/collecting-adventures-forgotten-realms-2021-06-29",
+              "overrideSlot": "13",
+              "percent": "10",
+              "query": "from[{{setCode}}-extended-art-and-showcase-and-borderless]?rarity=rarityByWeight2020(rm)"
             }
           ]
         },
-
 
         {
           "querySet": [
@@ -287,7 +300,7 @@
               "_comment": "Slot 14: Token/Ad or The List",
               "_comment2": "1 Token/ad card (75%), or a card from The List (25%) – The List is a collection of 300 cards from Magic's history that we have brought together for this special slot. We have rotated in 50 new reprints that we feel help capture the feel of {{setName}}. Inclusion of cards from The List doesn't impact what formats the card is legal in",
               "query": "from[the-list]?rarity=rarityByWeight2020(curm)",
-              "overrideSlot": "14",
+              "overrideSlot": "16",
               "percent": "25"
             }
           ]
@@ -308,7 +321,7 @@
         },
         { "query": "take[1]>from[{{setCode}}-promo]?type='Life Counter'" },
         {
-          "query": "take[*]>from[{{setCode}}]?type='Dungeon'",
+          "query": "take[*]>from[{{setCode}}]?type='Token Dungeon'",
           "setValues": { "foil": true }
         },
         { "query": "from[{{setCode}}-promo]?title='Prerelease Deck Box" },

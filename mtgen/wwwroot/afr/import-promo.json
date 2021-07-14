@@ -32,11 +32,18 @@
         "includedReason": "Promo Pack"
       }
     },
+    {
+      "where": "numInt=235",
+      "newValues": {
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/0/e/0efb195d-ae5c-4d0f-a275-e9194d8b767e.jpg?1626114958",
+        "includedReason": "Love Your LGS Promo"
+      }
+    },
 
     {
       "add": true,
       "newValues": {
-        "src": "http://mtgen.net/cards/{{setCode}}-prerelease-deck-box.png",
+        "src": "http://mtgen.net/cards/afr-prerelease-deck-box.png",
         "title": "Prerelease Deck Box",
         "colour": "o",
         "num": "006 Prerelease Deck Box",

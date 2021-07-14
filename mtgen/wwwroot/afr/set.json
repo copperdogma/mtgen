@@ -1,22 +1,26 @@
 {
   "startProductName": "afr-prerelease",
   "packFiles": [
-    "packs.json"
+    "packs.json?v1.3"
   ],
   "cardFiles": [
-    "cardsMain.json",
+    "cardsMain.json?v1.1",
     "cardsToken.json",
     "cardsVariant.json",
-    "cardsPromo.json",
+    "cardsPromo.json?v1.2",
     "cardsTheList.json",
     "cardsArtCards.json",
     "cardsCommander.json",
     "../cards/ads/cardsAds.json"
   ],
-  "xxx_updates": [
+  "updates": [
     {
-      "UpdateDate": "2021-06-25T23:30:00:00",
-      "HtmlString": "Foil slot now includes basic lands."
+      "UpdateDate": "2021-07-14T12:00:00:00",
+      "HtmlString": "Draft Booster now includes basic lands. Added Set Booster. Draft/Set boosters now have 10% chance of R/M slot with alternate treatment."
+    },
+    {
+      "UpdateDate": "2021-07-13T21:00:00:00",
+      "HtmlString": "Draft Booster no longer includes basic lands in regular slots. Tiamat 'Love Your LGS' promo removed from main cards."
     }
  ]
 }
