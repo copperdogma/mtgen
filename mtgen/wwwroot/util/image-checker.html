@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <title>mtgen.net Image Checker</title>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+</head>
+<body class="home">
+    <h1>mtgen.net Image Checker</h1>
+    <p>Checks all images for a file, set, or all sets.</p>
+    <p>This will tell you if there are broken links where old images need to be updated/replaced/reimported from elsewhere.</p>
+    <ul>
+        <li>14-Jul-2021: Created.</li>
+    </ul>
+    <section id="options">
+        <p>Choose one of the following or click Check All Sets:</p>
+        <input id="execute-check-all-sets" type="submit" value="Check All Sets" style="font-size:150%" /> Starting from set: <input id="check-all-starting-from" />
+        <br />
+        <br />
+        <label for="check-set">Set code (e.g.: dgm):</label>
+        <br />
+        <input id="check-set" />
+        <input id="execute-check-set" type="submit" value="Check Set" style="font-size:150%" />
+        <br />
+        <br />
+        <label for="check-file">Set one file in a set (e.g.: dgm/cardsMain.json):</label>
+        <br />
+        <input id="check-file" />
+        <input id="execute-check-file" type="submit" value="Check File" style="font-size:150%" />
+        <br />
+        <p id="status-start"></p>
+        <p id="status-processing"></p>
+        <p id="status-end"></p>
+    </section>
+
+    <h3>File Error Output</h3>
+    <textarea id="file-error-output" cols="100" rows="10"></textarea>
+
+    <h3>Processing Log</h3>
+    <section id="log"></section>
+    <footer>
+        <p>Created by: Cam Marsollier - <a href="mailto:cam.marsollier@gmail.com">cam.marsollier@gmail.com</a></p>
+        <p>Note that this site has no affiliation with <a href="http://www.wizards.com/Magic/">Wizards of the Coast</a>, owner of Magic: The Gathering.</p>
+    </footer>
+    <script src="/util/js/image-checker.js"></script>
+    <script>'use strict';
+        const imageChecker = new ImageChecker();
+        let showLogProcessingMessages = true; // Used to suppress logging of processing messages when processing ALL sets. It's too much HTML and you eventually run out of memory.
+
+        var _clear = (id) => document.getElementById(id).innerHTML = '';
+        function _clearAll() {
+            showLogProcessingMessages = true;
+            ['status-start', 'status-processing', 'status-end', 'log'].forEach(_clear);
+            document.getElementById('file-error-output').value = '';
+        }
+        var _display = (id, msg) => document.getElementById(id).innerHTML = msg;
+
+        function _displayAndLog(secondaryId, msg) {
+            if (showLogProcessingMessages || secondaryId == 'status-start' || secondaryId == 'status-end') {
+                document.getElementById('log').innerHTML += msg;
+            }
+            _display(secondaryId, msg);
+        }
+
+        function _warn(errLog, errText) {
+            const htmlErr = `<br/><em style='color:DarkGoldenrod'>${errLog}</em>`;
+            document.getElementById('log').innerHTML += htmlErr;
+            _display('status-processing', htmlErr);
+            document.getElementById('file-error-output').value += errText;
+        }
+
+        document.getElementById('execute-check-all-sets').addEventListener('click', () => { _clearAll(); showLogProcessingMessages = false; imageChecker.checkImagesForAllSets(document.getElementById('check-all-starting-from').value); }, false);
+        document.getElementById('execute-check-set').addEventListener('click', () => { _clearAll(); imageChecker.checkImagesForSet(document.getElementById('check-set').value); }, false);
+        document.getElementById('execute-check-file').addEventListener('click', () => { _clearAll(); imageChecker.checkImagesInFile(document.getElementById('check-file').value); }, false);
+
+        window.addEventListener('processing-started', e => _displayAndLog('status-start', `<br/><strong><span style='color:green'>${e.detail}</span> at ${(new Date())}</strong>`), false);
+        window.addEventListener('processing-failed', e => _displayAndLog('status-end', `<br/><br/><strong style='color:red'>Processing failed: ${e.detail}</strong><br/>`), false);
+        window.addEventListener('processing', e => _displayAndLog('status-processing', `<br/><em>${e.detail}</em>`), false);
+        window.addEventListener('processing-warning', e => _warn(e.detail.errLog, e.detail.errText), false);
+        window.addEventListener('processing-complete', e => {
+            _clear('status-processing');
+            if (e.detail.runImageErrors) {
+                const errorCountText = e.detail.runImageErrors.length === 0 ? " <em style='color: green'>no errors</em>" : ` <em style='color: red'>${e.detail.runImageErrors.length} errors</em>`;
+                _displayAndLog('status-end', `<br/><strong>Processing complete with ${errorCountText} for <span style='color:green'>${e.detail.set.code}</span> at ${(new Date())}</strong><br/>`);
+            }
+            else {
+                _displayAndLog('status-end', `<br/>${e.detail}<br/>`);
+            }
+        }, false);
+    </script>
+</body>
+</html>
