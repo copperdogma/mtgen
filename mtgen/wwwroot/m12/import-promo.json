@@ -1,0 +1,64 @@
+{
+  "setCode": "m12",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Apm12&unique=prints",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+
+    {
+      "where": "title='Bloodlord of Vaasgoth",
+      "newValues": {
+        "num": "{{num}} P Prerelease",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "where": "title='Garruk's Horde'",
+      "newValues": {
+        "num": "{{num}} P Launch",
+        "includedReason": "Launch Promo"
+      }
+    },
+    {
+      "where": "title='Chandra's Phoenix'",
+      "newValues": {
+        "num": "{{num}} P Buy-a-Box",
+        "includedReason": "Buy-a-Box Promo"
+      }
+    },
+    {
+      "where": "title='Stormblood Berserker'",
+      "newValues": {
+        "num": "{{num}} P DCI",
+        "includedReason": "DCI Promo"
+      }
+    },
+    {
+      "where": "title='Dungrove Elder'",
+      "newValues": {
+        "num": "{{num}} P Top 8",
+        "includedReason": "Top 8 Promo"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

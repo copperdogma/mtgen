@@ -1,0 +1,258 @@
+﻿[
+    {
+        "object": "card",
+        "id": "104fd4d9-a911-401a-95ae-50e0502ed35b",
+        "oracle_id": "52e1546a-63eb-48d7-acc4-81b912aabc90",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38390,
+        "cardmarket_id": 20789,
+        "name": "Malfegor",
+        "lang": "en",
+        "released_at": "2009-01-31",
+        "uri": "https://api.scryfall.com/cards/104fd4d9-a911-401a-95ae-50e0502ed35b",
+        "scryfall_uri": "https://scryfall.com/card/pcon/117%E2%98%85/malfegor?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/1/0/104fd4d9-a911-401a-95ae-50e0502ed35b.jpg?1606760810",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/1/0/104fd4d9-a911-401a-95ae-50e0502ed35b.jpg?1606760810",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/1/0/104fd4d9-a911-401a-95ae-50e0502ed35b.jpg?1606760810",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/1/0/104fd4d9-a911-401a-95ae-50e0502ed35b.png?1606760810",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/1/0/104fd4d9-a911-401a-95ae-50e0502ed35b.jpg?1606760810",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/1/0/104fd4d9-a911-401a-95ae-50e0502ed35b.jpg?1606760810"
+        },
+        "mana_cost": "{2}{B}{B}{R}{R}",
+        "cmc": 6,
+        "type_line": "Legendary Creature — Demon Dragon",
+        "oracle_text": "Flying\nWhen Malfegor enters the battlefield, discard your hand. Each opponent sacrifices a creature for each card discarded this way.",
+        "power": "6",
+        "toughness": "6",
+        "colors": [
+            "B",
+            "R"
+        ],
+        "color_identity": [
+            "B",
+            "R"
+        ],
+        "keywords": [
+            "Flying"
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "0ce7fd53-7c14-4d16-a4c3-5c47ad8a8e5b",
+        "set": "con",
+        "set_name": "Conflux Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/0ce7fd53-7c14-4d16-a4c3-5c47ad8a8e5b",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apcon&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/pcon?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/104fd4d9-a911-401a-95ae-50e0502ed35b/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A52e1546a-63eb-48d7-acc4-81b912aabc90&unique=prints",
+        "collector_number": "117★",
+        "digital": false,
+        "rarity": "r",
+        "watermark": "set",
+        "flavor_text": "A demon cannot be trusted, and a dragon will not be ruled.",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Karl Kopinski",
+        "artist_ids": [
+            "0fad2c48-a56e-4a0b-b512-224f6f238f20"
+        ],
+        "illustration_id": "bee2a5ac-f147-4a1e-9d24-8821d481ec5d",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "datestamped",
+            "prerelease"
+        ],
+        "edhrec_rank": 6209,
+        "prices": {
+            "usd": null,
+            "usd_foil": "0.47",
+            "eur": null,
+            "eur_foil": "0.48",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Malfegor&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Malfegor&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Malfegor",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Malfegor"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38390&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Malfegor&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Malfegor&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Malfegor",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/1/0/104fd4d9-a911-401a-95ae-50e0502ed35b.jpg?1606760810",
+        "cost": "{2}{B}{B}{R}{R}",
+        "ccost": 6,
+        "type": "Legendary Creature",
+        "subtype": "Demon Dragon",
+        "colour": "m",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Apcon&unique=prints"
+        ],
+        "num": "117★ P Prerelease",
+        "numInt": 117,
+        "mtgenId": "con|117★ P Prerelease",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "90299569-65c5-4dd9-ac7e-320b64ec62ac",
+        "oracle_id": "75fcb9ce-ac01-4048-82b7-9100143e3b07",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38290,
+        "cardmarket_id": 20790,
+        "name": "Obelisk of Alara",
+        "lang": "en",
+        "released_at": "2009-02-06",
+        "uri": "https://api.scryfall.com/cards/90299569-65c5-4dd9-ac7e-320b64ec62ac",
+        "scryfall_uri": "https://scryfall.com/card/pcon/140%E2%98%85/obelisk-of-alara?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/9/0/90299569-65c5-4dd9-ac7e-320b64ec62ac.jpg?1606761349",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/0/90299569-65c5-4dd9-ac7e-320b64ec62ac.jpg?1606761349",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/9/0/90299569-65c5-4dd9-ac7e-320b64ec62ac.jpg?1606761349",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/9/0/90299569-65c5-4dd9-ac7e-320b64ec62ac.png?1606761349",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/9/0/90299569-65c5-4dd9-ac7e-320b64ec62ac.jpg?1606761349",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/9/0/90299569-65c5-4dd9-ac7e-320b64ec62ac.jpg?1606761349"
+        },
+        "mana_cost": "{6}",
+        "cmc": 6,
+        "type_line": "Artifact",
+        "oracle_text": "{1}{W}, {T}: You gain 5 life.\n{1}{U}, {T}: Draw a card, then discard a card.\n{1}{B}, {T}: Target creature gets -2/-2 until end of turn.\n{1}{R}, {T}: Obelisk of Alara deals 3 damage to target player or planeswalker.\n{1}{G}, {T}: Target creature gets +4/+4 until end of turn.",
+        "colors": [],
+        "color_identity": [
+            "B",
+            "G",
+            "R",
+            "U",
+            "W"
+        ],
+        "keywords": [],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "0ce7fd53-7c14-4d16-a4c3-5c47ad8a8e5b",
+        "set": "con",
+        "set_name": "Conflux Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/0ce7fd53-7c14-4d16-a4c3-5c47ad8a8e5b",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apcon&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/pcon?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/90299569-65c5-4dd9-ac7e-320b64ec62ac/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A75fcb9ce-ac01-4048-82b7-9100143e3b07&unique=prints",
+        "collector_number": "140★",
+        "digital": false,
+        "rarity": "r",
+        "watermark": "set",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "John Avon",
+        "artist_ids": [
+            "798f3932-30e0-4420-aa3f-db4d613f89ca"
+        ],
+        "illustration_id": "68e9acad-9d84-4e69-b148-e4ee1318afe7",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "datestamped",
+            "release"
+        ],
+        "edhrec_rank": 12835,
+        "prices": {
+            "usd": null,
+            "usd_foil": "0.77",
+            "eur": null,
+            "eur_foil": "0.20",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Obelisk+of+Alara&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Obelisk+of+Alara&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Obelisk+of+Alara",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Obelisk+of+Alara"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38290&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Obelisk+of+Alara&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Obelisk+of+Alara&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Obelisk of Alara",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/0/90299569-65c5-4dd9-ac7e-320b64ec62ac.jpg?1606761349",
+        "cost": "{6}",
+        "ccost": 6,
+        "type": "Artifact",
+        "colour": "a",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Apcon&unique=prints"
+        ],
+        "num": "140★ P Release",
+        "numInt": 140,
+        "mtgenId": "con|140★ P Release",
+        "includedReason": "Release Promo",
+        "usableForDeckBuilding": false
+    }
+]

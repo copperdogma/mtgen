@@ -1,0 +1,57 @@
+{
+  "setCode": "som",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Apsom&unique=prints",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "where": "title='Wurmcoil Engine",
+      "newValues": {
+        "num": "{{num}} P Prerelease",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "where": "title='Steel Hellkite",
+      "newValues": {
+        "num": "{{num}} P Prerelease",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "where": "title='Memoricide",
+      "newValues": {
+        "num": "{{num}} P Buy-a-Box",
+        "includedReason": "Buy-a-Box Promo"
+      }
+    },
+    {
+      "where": "title='Memnite",
+      "newValues": {
+        "num": "{{num}} P Game Day",
+        "includedReason": "Game Day Promo"
+      }
+    },
+    {
+      "where": "title='Tempered Steel",
+      "newValues": {
+        "num": "{{num}} P Top 8 Promo",
+        "includedReason": "Top 8 Promo Promo"
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

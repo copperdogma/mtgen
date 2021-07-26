@@ -1,0 +1,37 @@
+{
+    "setCode": "con",
+    "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Apcon&unique=prints",
+    "imagesUrl": "",
+    "exceptions": [
+        {
+            "_comments": [
+                "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+            ]
+        },
+
+        {
+            "where": "title='Malfegor",
+            "newValues": {
+                "num": "{{num}} P Prerelease",
+                "includedReason": "Prerelease Promo"
+            }
+        },
+        {
+            "where": "title='Obelisk of Alara",
+            "newValues": {
+                "num": "{{num}} P Release",
+                "includedReason": "Release Promo"
+            }
+        },
+
+
+        {
+            "where": "",
+            "newValues": {
+                "set": "{{setCode}}",
+                "promo": true,
+                "usableForDeckBuilding": false
+            }
+        }
+    ]
+}

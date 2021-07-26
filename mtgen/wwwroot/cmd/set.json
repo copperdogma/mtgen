@@ -4,9 +4,13 @@
     "packs.json"
   ],
   "cardFiles": [
-    "cardsMain.json",
-    "cardsLand.json",
-    "cardsPromo.json"
+    "cardsMain.json?v1.1",
+    "cardsPromo.json?v1.1"
   ],
-  "updates": []
+  "updates": [
+    {
+      "UpdateDate": "2021-07-18T00:30:00:00",
+      "HtmlString": "Fixed broken promo images."
+    }
+  ]
 }

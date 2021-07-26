@@ -1,0 +1,279 @@
+﻿[
+    {
+        "object": "card",
+        "id": "85a8404f-9e8d-484f-8377-48173b2dd08b",
+        "oracle_id": "a9a6c2ba-30ba-4e45-9ea0-ea9833342069",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38376,
+        "cardmarket_id": 20879,
+        "name": "Dragon Broodmother",
+        "lang": "en",
+        "released_at": "2009-04-25",
+        "uri": "https://api.scryfall.com/cards/85a8404f-9e8d-484f-8377-48173b2dd08b",
+        "scryfall_uri": "https://scryfall.com/card/parb/53%E2%98%85/dragon-broodmother?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/8/5/85a8404f-9e8d-484f-8377-48173b2dd08b.jpg?1606760625",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/8/5/85a8404f-9e8d-484f-8377-48173b2dd08b.jpg?1606760625",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/8/5/85a8404f-9e8d-484f-8377-48173b2dd08b.jpg?1606760625",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/8/5/85a8404f-9e8d-484f-8377-48173b2dd08b.png?1606760625",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/8/5/85a8404f-9e8d-484f-8377-48173b2dd08b.jpg?1606760625",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/8/5/85a8404f-9e8d-484f-8377-48173b2dd08b.jpg?1606760625"
+        },
+        "mana_cost": "{2}{R}{R}{R}{G}",
+        "cmc": 6,
+        "type_line": "Creature — Dragon",
+        "oracle_text": "Flying\nAt the beginning of each upkeep, create a 1/1 red and green Dragon creature token with flying and devour 2. (As the token enters the battlefield, you may sacrifice any number of creatures. It enters the battlefield with twice that many +1/+1 counters on it.)",
+        "power": "4",
+        "toughness": "4",
+        "colors": [
+            "G",
+            "R"
+        ],
+        "color_identity": [
+            "G",
+            "R"
+        ],
+        "keywords": [
+            "Flying"
+        ],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "f7f99431-ae43-4b68-82f0-faf940216c91",
+                "component": "combo_piece",
+                "name": "Dragon Broodmother",
+                "type_line": "Creature — Dragon",
+                "uri": "https://api.scryfall.com/cards/f7f99431-ae43-4b68-82f0-faf940216c91"
+            },
+            {
+                "object": "related_card",
+                "id": "0bb628da-a02f-4d3e-b919-0c03821dd5f2",
+                "component": "token",
+                "name": "Dragon",
+                "type_line": "Token Creature — Dragon",
+                "uri": "https://api.scryfall.com/cards/0bb628da-a02f-4d3e-b919-0c03821dd5f2"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "not_legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "352a7433-5b06-4381-99e9-fc3b6282dd2c",
+        "set": "arb",
+        "set_name": "Alara Reborn Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/352a7433-5b06-4381-99e9-fc3b6282dd2c",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aparb&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/parb?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/85a8404f-9e8d-484f-8377-48173b2dd08b/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Aa9a6c2ba-30ba-4e45-9ea0-ea9833342069&unique=prints",
+        "collector_number": "53★",
+        "digital": false,
+        "rarity": "m",
+        "watermark": "set",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Jean-Sébastien Rossbach",
+        "artist_ids": [
+            "1b0c07a7-84e8-4384-9b97-28c162586558"
+        ],
+        "illustration_id": "2ecbec91-18cb-4891-8981-0916deb01194",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "datestamped",
+            "prerelease"
+        ],
+        "edhrec_rank": 2606,
+        "prices": {
+            "usd": null,
+            "usd_foil": "7.99",
+            "eur": null,
+            "eur_foil": "3.33",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Dragon+Broodmother&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Dragon+Broodmother&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Dragon+Broodmother",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Dragon+Broodmother"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38376&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Dragon+Broodmother&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Dragon+Broodmother&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Dragon Broodmother",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/8/5/85a8404f-9e8d-484f-8377-48173b2dd08b.jpg?1606760625",
+        "cost": "{2}{R}{R}{R}{G}",
+        "ccost": 6,
+        "type": "Creature",
+        "subtype": "Dragon",
+        "colour": "m",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Aparb&unique=prints"
+        ],
+        "num": "53★ P Prerelease",
+        "numInt": 53,
+        "mtgenId": "arb|53★ P Prerelease",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "34f5458f-1745-499e-90ee-4f81a0508c54",
+        "oracle_id": "170856f4-7c9d-494b-9bae-20e4d9eba0da",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38274,
+        "cardmarket_id": 20878,
+        "name": "Knight of New Alara",
+        "lang": "en",
+        "released_at": "2009-04-30",
+        "uri": "https://api.scryfall.com/cards/34f5458f-1745-499e-90ee-4f81a0508c54",
+        "scryfall_uri": "https://scryfall.com/card/parb/70%E2%98%85/knight-of-new-alara?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/3/4/34f5458f-1745-499e-90ee-4f81a0508c54.jpg?1606761359",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/3/4/34f5458f-1745-499e-90ee-4f81a0508c54.jpg?1606761359",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/3/4/34f5458f-1745-499e-90ee-4f81a0508c54.jpg?1606761359",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/3/4/34f5458f-1745-499e-90ee-4f81a0508c54.png?1606761359",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/3/4/34f5458f-1745-499e-90ee-4f81a0508c54.jpg?1606761359",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/3/4/34f5458f-1745-499e-90ee-4f81a0508c54.jpg?1606761359"
+        },
+        "mana_cost": "{2}{G}{W}",
+        "cmc": 4,
+        "type_line": "Creature — Human Knight",
+        "oracle_text": "Each other multicolored creature you control gets +1/+1 for each of its colors.",
+        "power": "2",
+        "toughness": "2",
+        "colors": [
+            "G",
+            "W"
+        ],
+        "color_identity": [
+            "G",
+            "W"
+        ],
+        "keywords": [],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "352a7433-5b06-4381-99e9-fc3b6282dd2c",
+        "set": "arb",
+        "set_name": "Alara Reborn Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/352a7433-5b06-4381-99e9-fc3b6282dd2c",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aparb&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/parb?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/34f5458f-1745-499e-90ee-4f81a0508c54/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A170856f4-7c9d-494b-9bae-20e4d9eba0da&unique=prints",
+        "collector_number": "70★",
+        "digital": false,
+        "rarity": "r",
+        "watermark": "set",
+        "flavor_text": "\"I embrace all of Alara, Grixis as much as Bant. Let my former home call me traitor. I do this not for accolades, but because it is right.\"",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "David Palumbo",
+        "artist_ids": [
+            "04ce1c75-e30c-4b7a-8cb0-b53e4ecc2f39"
+        ],
+        "illustration_id": "3dffc798-3e57-44d4-a4b7-0a9de9e1533d",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "datestamped",
+            "release"
+        ],
+        "edhrec_rank": 6403,
+        "prices": {
+            "usd": null,
+            "usd_foil": "0.90",
+            "eur": null,
+            "eur_foil": "0.30",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Knight+of+New+Alara&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Knight+of+New+Alara&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Knight+of+New+Alara",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Knight+of+New+Alara"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38274&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Knight+of+New+Alara&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Knight+of+New+Alara&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Knight of New Alara",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/3/4/34f5458f-1745-499e-90ee-4f81a0508c54.jpg?1606761359",
+        "cost": "{2}{G}{W}",
+        "ccost": 4,
+        "type": "Creature",
+        "subtype": "Human Knight",
+        "colour": "m",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Aparb&unique=prints"
+        ],
+        "num": "70★ P Release",
+        "numInt": 70,
+        "mtgenId": "arb|70★ P Release",
+        "includedReason": "Release Promo",
+        "usableForDeckBuilding": false
+    }
+]

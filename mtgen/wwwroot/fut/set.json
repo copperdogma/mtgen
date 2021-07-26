@@ -5,7 +5,12 @@
   ],
   "cardFiles": [
     "cardsMain.json",
-    "cardsOther.json"
+    "cardsPromo.json"
   ],
-  "updates": []
+    "updates": [
+        {
+            "UpdateDate": "2021-07-18T00:30:00:00",
+            "HtmlString": "Fixed broken promo images."
+        }
+    ]
 }

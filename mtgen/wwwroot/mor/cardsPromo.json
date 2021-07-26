@@ -1,0 +1,248 @@
+﻿[
+    {
+        "object": "card",
+        "id": "d4ab817e-11d4-4444-b9e1-322624501619",
+        "oracle_id": "9b6d3dcf-aa5a-4516-bd48-a0723e86bfd1",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38373,
+        "cardmarket_id": 18993,
+        "name": "Door of Destinies",
+        "lang": "en",
+        "released_at": "2008-01-19",
+        "uri": "https://api.scryfall.com/cards/d4ab817e-11d4-4444-b9e1-322624501619",
+        "scryfall_uri": "https://scryfall.com/card/pmor/143%E2%98%85/door-of-destinies?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/d/4/d4ab817e-11d4-4444-b9e1-322624501619.jpg?1606761424",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/d/4/d4ab817e-11d4-4444-b9e1-322624501619.jpg?1606761424",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/d/4/d4ab817e-11d4-4444-b9e1-322624501619.jpg?1606761424",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/d/4/d4ab817e-11d4-4444-b9e1-322624501619.png?1606761424",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/d/4/d4ab817e-11d4-4444-b9e1-322624501619.jpg?1606761424",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/d/4/d4ab817e-11d4-4444-b9e1-322624501619.jpg?1606761424"
+        },
+        "mana_cost": "{4}",
+        "cmc": 4,
+        "type_line": "Artifact",
+        "oracle_text": "As Door of Destinies enters the battlefield, choose a creature type.\nWhenever you cast a spell of the chosen type, put a charge counter on Door of Destinies.\nCreatures you control of the chosen type get +1/+1 for each charge counter on Door of Destinies.",
+        "colors": [],
+        "color_identity": [],
+        "keywords": [],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "9bd20131-fe8c-4a5d-9841-7347024ca54a",
+        "set": "mor",
+        "set_name": "Morningtide Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/9bd20131-fe8c-4a5d-9841-7347024ca54a",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apmor&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/pmor?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/d4ab817e-11d4-4444-b9e1-322624501619/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A9b6d3dcf-aa5a-4516-bd48-a0723e86bfd1&unique=prints",
+        "collector_number": "143★",
+        "digital": false,
+        "rarity": "r",
+        "watermark": "set",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Rob Alexander",
+        "artist_ids": [
+            "35906871-6c78-4ab2-9ed1-e6792c8efb74"
+        ],
+        "illustration_id": "092be150-3de6-477e-9947-8e652f09af59",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "datestamped",
+            "prerelease"
+        ],
+        "edhrec_rank": 661,
+        "prices": {
+            "usd": null,
+            "usd_foil": "29.79",
+            "eur": null,
+            "eur_foil": "9.94",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Door+of+Destinies&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Door+of+Destinies&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Door+of+Destinies",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Door+of+Destinies"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38373&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Door+of+Destinies&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Door+of+Destinies&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Door of Destinies",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/d/4/d4ab817e-11d4-4444-b9e1-322624501619.jpg?1606761424",
+        "cost": "{4}",
+        "ccost": 4,
+        "type": "Artifact",
+        "colour": "a",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Apmor&unique=prints"
+        ],
+        "num": "143★ P Prerelease",
+        "numInt": 143,
+        "mtgenId": "mor|143★ P Prerelease",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "3da973ea-3529-4f15-80cf-ec5024b677dd",
+        "oracle_id": "f8526509-2e14-4ac0-b1de-cf4ee7d4f875",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38286,
+        "cardmarket_id": 18994,
+        "name": "Earwig Squad",
+        "lang": "en",
+        "released_at": "2008-02-01",
+        "uri": "https://api.scryfall.com/cards/3da973ea-3529-4f15-80cf-ec5024b677dd",
+        "scryfall_uri": "https://scryfall.com/card/pmor/60%E2%98%85/earwig-squad?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/3/d/3da973ea-3529-4f15-80cf-ec5024b677dd.jpg?1606761423",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/3/d/3da973ea-3529-4f15-80cf-ec5024b677dd.jpg?1606761423",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/3/d/3da973ea-3529-4f15-80cf-ec5024b677dd.jpg?1606761423",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/3/d/3da973ea-3529-4f15-80cf-ec5024b677dd.png?1606761423",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/3/d/3da973ea-3529-4f15-80cf-ec5024b677dd.jpg?1606761423",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/3/d/3da973ea-3529-4f15-80cf-ec5024b677dd.jpg?1606761423"
+        },
+        "mana_cost": "{3}{B}{B}",
+        "cmc": 5,
+        "type_line": "Creature — Goblin Rogue",
+        "oracle_text": "Prowl {2}{B} (You may cast this for its prowl cost if you dealt combat damage to a player this turn with a Goblin or Rogue.)\nWhen Earwig Squad enters the battlefield, if its prowl cost was paid, search target opponent's library for three cards and exile them. Then that player shuffles.",
+        "power": "5",
+        "toughness": "3",
+        "colors": [
+            "B"
+        ],
+        "color_identity": [
+            "B"
+        ],
+        "keywords": [
+            "Prowl"
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "9bd20131-fe8c-4a5d-9841-7347024ca54a",
+        "set": "mor",
+        "set_name": "Morningtide Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/9bd20131-fe8c-4a5d-9841-7347024ca54a",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apmor&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/pmor?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/3da973ea-3529-4f15-80cf-ec5024b677dd/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Af8526509-2e14-4ac0-b1de-cf4ee7d4f875&unique=prints",
+        "collector_number": "60★",
+        "digital": false,
+        "rarity": "r",
+        "watermark": "set",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Warren Mahy",
+        "artist_ids": [
+            "002c739e-aa1f-4c1d-921b-37cb2d1b1c5b"
+        ],
+        "illustration_id": "b1040d0d-c612-4a17-86e5-4ebf8d1b2779",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "release"
+        ],
+        "edhrec_rank": 7124,
+        "prices": {
+            "usd": null,
+            "usd_foil": "2.30",
+            "eur": null,
+            "eur_foil": "1.00",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Earwig+Squad&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Earwig+Squad&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Earwig+Squad",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Earwig+Squad"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38286&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Earwig+Squad&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Earwig+Squad&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Earwig Squad",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/3/d/3da973ea-3529-4f15-80cf-ec5024b677dd.jpg?1606761423",
+        "cost": "{3}{B}{B}",
+        "ccost": 5,
+        "type": "Creature",
+        "subtype": "Goblin Rogue",
+        "colour": "b",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Apmor&unique=prints"
+        ],
+        "num": "60★ P Release",
+        "numInt": 60,
+        "mtgenId": "mor|60★ P Release",
+        "includedReason": "Release Promo",
+        "usableForDeckBuilding": false
+    }
+]

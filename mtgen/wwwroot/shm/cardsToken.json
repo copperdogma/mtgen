@@ -1,194 +1,1706 @@
 [
- {
-  "title": "Kithkin Soldier",
-  "set": "shm",
-  "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/magic/images/mtgcom/arcana1000/1561_SHMToken6.jpg",
-  "colour": "w",
-  "rarity": "c",
-  "type": "Token Creature",
-  "subtype": "Kithkin Soldier",
-  "power": "1",
-  "toughness": "1",
-  "num": "001/012 T",
-  "token": "true",
-  "usableForDeckBuilding": false,
-  "addedViaException": true,
-  "mtgenId": "shm|001/012 T"
- },
- {
-  "title": "Spirit",
-  "set": "shm",
-  "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/magic/images/mtgcom/arcana1000/1566_SHMToken7.jpg",
-  "colour": "w",
-  "rarity": "c",
-  "type": "Token Creature",
-  "subtype": "Spirit",
-  "power": "1",
-  "toughness": "1",
-  "num": "002/012 T",
-  "token": "true",
-  "usableForDeckBuilding": false,
-  "addedViaException": true,
-  "mtgenId": "shm|002/012 T"
- },
- {
-  "title": "Rat",
-  "set": "shm",
-  "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/magic/images/mtgcom/arcana1000/1561_SHMToken5.jpg",
-  "colour": "b",
-  "rarity": "c",
-  "type": "Token Creature",
-  "subtype": "Rat",
-  "power": "1",
-  "toughness": "1",
-  "num": "003/012 T",
-  "token": "true",
-  "usableForDeckBuilding": false,
-  "addedViaException": true,
-  "mtgenId": "shm|003/012 T"
- },
- {
-  "title": "Elemental",
-  "set": "shm",
-  "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/magic/images/mtgcom/arcana1000/1566_SHMToken8.jpg",
-  "colour": "r",
-  "rarity": "c",
-  "type": "Token Creature",
-  "subtype": "Elemental",
-  "power": "1",
-  "toughness": "1",
-  "num": "004/012 T",
-  "token": "true",
-  "usableForDeckBuilding": false,
-  "addedViaException": true,
-  "mtgenId": "shm|004/012 T"
- },
- {
-  "title": "Elf Warrior",
-  "set": "shm",
-  "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/magic/images/mtgcom/arcana1000/1566_SHMToken12.jpg",
-  "colour": "g",
-  "rarity": "c",
-  "type": "Token Creature",
-  "subtype": "Elf Warrior",
-  "power": "1",
-  "toughness": "1",
-  "num": "005/012 T",
-  "token": "true",
-  "usableForDeckBuilding": false,
-  "addedViaException": true,
-  "mtgenId": "shm|005/012 T"
- },
- {
-  "title": "Spider",
-  "set": "shm",
-  "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/magic/images/mtgcom/arcana1000/1566_SHMToken9.jpg",
-  "colour": "g",
-  "rarity": "c",
-  "type": "Token Creature",
-  "subtype": "Spider",
-  "power": "1",
-  "toughness": "2",
-  "num": "006/012 T",
-  "token": "true",
-  "usableForDeckBuilding": false,
-  "addedViaException": true,
-  "mtgenId": "shm|006/012 T"
- },
- {
-  "title": "Wolf",
-  "set": "shm",
-  "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/magic/images/mtgcom/arcana1000/1561_SHMToken3.jpg",
-  "colour": "g",
-  "rarity": "c",
-  "type": "Token Creature",
-  "subtype": "Wolf",
-  "power": "2",
-  "toughness": "2",
-  "num": "007/012 T",
-  "token": "true",
-  "usableForDeckBuilding": false,
-  "addedViaException": true,
-  "mtgenId": "shm|007/012 T"
- },
- {
-  "title": "Faerie Rogue",
-  "set": "shm",
-  "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/magic/images/mtgcom/arcana1000/1566_SHMToken10.jpg",
-  "colour": "m",
-  "rarity": "c",
-  "type": "Token Creature",
-  "subtype": "Faerie Rogue",
-  "power": "1",
-  "toughness": "1",
-  "num": "008/012 T",
-  "token": "true",
-  "usableForDeckBuilding": false,
-  "addedViaException": true,
-  "mtgenId": "shm|008/012 T"
- },
- {
-  "title": "Elemental",
-  "set": "shm",
-  "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/magic/images/mtgcom/arcana1000/1561_SHMToken2.jpg",
-  "colour": "m",
-  "rarity": "c",
-  "type": "Token Creature",
-  "subtype": "Elemental",
-  "power": "5",
-  "toughness": "5",
-  "num": "009/012 T",
-  "token": "true",
-  "usableForDeckBuilding": false,
-  "addedViaException": true,
-  "mtgenId": "shm|009/012 T"
- },
- {
-  "title": "Giant Warrior",
-  "set": "shm",
-  "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/magic/images/mtgcom/arcana1000/1566_SHMToken11.jpg",
-  "colour": "m",
-  "rarity": "c",
-  "type": "Token Creature",
-  "subtype": "Giant Warrior",
-  "power": "4",
-  "toughness": "4",
-  "num": "010/012 T",
-  "token": "true",
-  "usableForDeckBuilding": false,
-  "addedViaException": true,
-  "mtgenId": "shm|010/012 T"
- },
-  {
-    "title": "Goblin Warrior",
-    "set": "shm",
-    "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/magic/images/mtgcom/arcana1000/1561_SHMToken4.jpg",
-    "colour": "m",
-    "rarity": "c",
-    "type": "Token Creature",
-    "subtype": "Goblin Warrior",
-    "power": "1",
-    "toughness": "1",
-    "num": "011/012 T",
-    "token": "true",
-    "usableForDeckBuilding": false,
-    "addedViaException": true,
-    "mtgenId": "shm|011/012 T"
-  },
- {
-  "title": "Elf Warrior",
-  "set": "shm",
-  "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/magic/images/mtgcom/arcana1000/1561_SHMToken1.jpg",
-  "colour": "m",
-  "rarity": "c",
-  "type": "Token Creature",
-  "subtype": "Elf Warrior",
-  "power": "1",
-  "toughness": "1",
-  "num": "012/012 T",
-  "token": "true",
-  "usableForDeckBuilding": false,
-  "addedViaException": true,
-  "mtgenId": "shm|012/012 T"
- }
+    {
+        "object": "card",
+        "id": "061cb705-695a-4f65-adbf-869ebb4eb946",
+        "oracle_id": "caf4a0d2-64de-42df-a88e-bb0d3f34e207",
+        "multiverse_ids": [],
+        "tcgplayer_id": 78592,
+        "name": "Kithkin Soldier",
+        "lang": "en",
+        "released_at": "2008-05-02",
+        "uri": "https://api.scryfall.com/cards/061cb705-695a-4f65-adbf-869ebb4eb946",
+        "scryfall_uri": "https://scryfall.com/card/tshm/1/kithkin-soldier?utm_source=api",
+        "layout": "token",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/0/6/061cb705-695a-4f65-adbf-869ebb4eb946.jpg?1562279127",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/0/6/061cb705-695a-4f65-adbf-869ebb4eb946.jpg?1562279127",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/0/6/061cb705-695a-4f65-adbf-869ebb4eb946.jpg?1562279127",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/0/6/061cb705-695a-4f65-adbf-869ebb4eb946.png?1562279127",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/0/6/061cb705-695a-4f65-adbf-869ebb4eb946.jpg?1562279127",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/0/6/061cb705-695a-4f65-adbf-869ebb4eb946.jpg?1562279127"
+        },
+        "mana_cost": "",
+        "cmc": 0,
+        "type_line": "Token Creature — Kithkin Soldier",
+        "oracle_text": "",
+        "power": "1",
+        "toughness": "1",
+        "colors": [
+            "W"
+        ],
+        "color_identity": [
+            "W"
+        ],
+        "keywords": [],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "38e64b09-1a58-4669-b7f2-baa3ccc85f2d",
+                "component": "combo_piece",
+                "name": "Repel Intruders",
+                "type_line": "Instant",
+                "uri": "https://api.scryfall.com/cards/38e64b09-1a58-4669-b7f2-baa3ccc85f2d"
+            },
+            {
+                "object": "related_card",
+                "id": "061cb705-695a-4f65-adbf-869ebb4eb946",
+                "component": "token",
+                "name": "Kithkin Soldier",
+                "type_line": "Token Creature — Kithkin Soldier",
+                "uri": "https://api.scryfall.com/cards/061cb705-695a-4f65-adbf-869ebb4eb946"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "not_legal",
+            "legacy": "not_legal",
+            "pauper": "not_legal",
+            "vintage": "not_legal",
+            "penny": "not_legal",
+            "commander": "not_legal",
+            "brawl": "not_legal",
+            "duel": "not_legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": true,
+        "oversized": false,
+        "promo": false,
+        "reprint": true,
+        "variation": false,
+        "set_id": "2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set": "shm",
+        "set_name": "Shadowmoor Tokens",
+        "set_type": "token",
+        "set_uri": "https://api.scryfall.com/sets/2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/tshm?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/061cb705-695a-4f65-adbf-869ebb4eb946/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Acaf4a0d2-64de-42df-a88e-bb0d3f34e207&unique=prints",
+        "collector_number": "1",
+        "digital": false,
+        "rarity": "c",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Randy Gallegos",
+        "artist_ids": [
+            "a5048cc7-438a-4378-98e4-da99b78e1db0"
+        ],
+        "illustration_id": "00825dcd-eb99-43e9-bf0d-efdba80b2bac",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": true,
+        "textless": false,
+        "booster": true,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo"
+        ],
+        "prices": {
+            "usd": "0.11",
+            "usd_foil": null,
+            "eur": null,
+            "eur_foil": null,
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Kithkin+Soldier&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Kithkin+Soldier&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Kithkin+Soldier",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Kithkin+Soldier"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=78592&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Kithkin+Soldier&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Kithkin+Soldier&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Kithkin Soldier",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/0/6/061cb705-695a-4f65-adbf-869ebb4eb946.jpg?1562279127",
+        "cost": "",
+        "ccost": 0,
+        "type": "Token Creature",
+        "subtype": "Kithkin Soldier",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints"
+        ],
+        "num": "1/012 T",
+        "numInt": 1,
+        "mtgenId": "shm|1/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "cba50f25-ad8c-4244-8dc1-f8656f4c8c0b",
+        "oracle_id": "dc4e2134-f0c2-49aa-9ea3-ebf83af1445c",
+        "multiverse_ids": [],
+        "tcgplayer_id": 78595,
+        "name": "Spirit",
+        "lang": "en",
+        "released_at": "2008-05-02",
+        "uri": "https://api.scryfall.com/cards/cba50f25-ad8c-4244-8dc1-f8656f4c8c0b",
+        "scryfall_uri": "https://scryfall.com/card/tshm/2/spirit?utm_source=api",
+        "layout": "token",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/c/b/cba50f25-ad8c-4244-8dc1-f8656f4c8c0b.jpg?1562279574",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/b/cba50f25-ad8c-4244-8dc1-f8656f4c8c0b.jpg?1562279574",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/c/b/cba50f25-ad8c-4244-8dc1-f8656f4c8c0b.jpg?1562279574",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/c/b/cba50f25-ad8c-4244-8dc1-f8656f4c8c0b.png?1562279574",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/c/b/cba50f25-ad8c-4244-8dc1-f8656f4c8c0b.jpg?1562279574",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/c/b/cba50f25-ad8c-4244-8dc1-f8656f4c8c0b.jpg?1562279574"
+        },
+        "mana_cost": "",
+        "cmc": 0,
+        "type_line": "Token Creature — Spirit",
+        "oracle_text": "Flying",
+        "power": "1",
+        "toughness": "1",
+        "colors": [
+            "W"
+        ],
+        "color_identity": [
+            "W"
+        ],
+        "keywords": [
+            "Flying"
+        ],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "5e26bd0c-5ec7-4653-8e63-747157c20af1",
+                "component": "combo_piece",
+                "name": "Spectral Procession",
+                "type_line": "Sorcery",
+                "uri": "https://api.scryfall.com/cards/5e26bd0c-5ec7-4653-8e63-747157c20af1"
+            },
+            {
+                "object": "related_card",
+                "id": "cba50f25-ad8c-4244-8dc1-f8656f4c8c0b",
+                "component": "token",
+                "name": "Spirit",
+                "type_line": "Token Creature — Spirit",
+                "uri": "https://api.scryfall.com/cards/cba50f25-ad8c-4244-8dc1-f8656f4c8c0b"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "not_legal",
+            "legacy": "not_legal",
+            "pauper": "not_legal",
+            "vintage": "not_legal",
+            "penny": "not_legal",
+            "commander": "not_legal",
+            "brawl": "not_legal",
+            "duel": "not_legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": true,
+        "oversized": false,
+        "promo": false,
+        "reprint": false,
+        "variation": false,
+        "set_id": "2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set": "shm",
+        "set_name": "Shadowmoor Tokens",
+        "set_type": "token",
+        "set_uri": "https://api.scryfall.com/sets/2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/tshm?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/cba50f25-ad8c-4244-8dc1-f8656f4c8c0b/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Adc4e2134-f0c2-49aa-9ea3-ebf83af1445c&unique=prints",
+        "collector_number": "2",
+        "digital": false,
+        "rarity": "c",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Jeremy Enecio",
+        "artist_ids": [
+            "f9e1fab6-f366-4dae-a5c7-736d475312b8"
+        ],
+        "illustration_id": "b326901a-a5d8-4a3e-af7e-20f72338b57e",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": true,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo"
+        ],
+        "prices": {
+            "usd": "0.35",
+            "usd_foil": null,
+            "eur": null,
+            "eur_foil": null,
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Spirit&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Spirit&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Spirit",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Spirit"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=78595&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Spirit&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Spirit&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Spirit",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/b/cba50f25-ad8c-4244-8dc1-f8656f4c8c0b.jpg?1562279574",
+        "cost": "",
+        "ccost": 0,
+        "type": "Token Creature",
+        "subtype": "Spirit",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints"
+        ],
+        "num": "2/012 T",
+        "numInt": 2,
+        "mtgenId": "shm|2/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "1a85fe9d-ef18-46c4-88b0-cf2e222e30e4",
+        "oracle_id": "7c753b68-b519-43ba-9c58-4902f4850626",
+        "multiverse_ids": [],
+        "tcgplayer_id": 78593,
+        "name": "Rat",
+        "lang": "en",
+        "released_at": "2008-05-02",
+        "uri": "https://api.scryfall.com/cards/1a85fe9d-ef18-46c4-88b0-cf2e222e30e4",
+        "scryfall_uri": "https://scryfall.com/card/tshm/3/rat?utm_source=api",
+        "layout": "token",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/1/a/1a85fe9d-ef18-46c4-88b0-cf2e222e30e4.jpg?1562279130",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/1/a/1a85fe9d-ef18-46c4-88b0-cf2e222e30e4.jpg?1562279130",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/1/a/1a85fe9d-ef18-46c4-88b0-cf2e222e30e4.jpg?1562279130",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/1/a/1a85fe9d-ef18-46c4-88b0-cf2e222e30e4.png?1562279130",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/1/a/1a85fe9d-ef18-46c4-88b0-cf2e222e30e4.jpg?1562279130",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/1/a/1a85fe9d-ef18-46c4-88b0-cf2e222e30e4.jpg?1562279130"
+        },
+        "mana_cost": "",
+        "cmc": 0,
+        "type_line": "Token Creature — Rat",
+        "oracle_text": "",
+        "power": "1",
+        "toughness": "1",
+        "colors": [
+            "B"
+        ],
+        "color_identity": [
+            "B"
+        ],
+        "keywords": [],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "231613d6-d3b8-4b41-bc93-4d5da3fec5d0",
+                "component": "combo_piece",
+                "name": "Plague of Vermin",
+                "type_line": "Sorcery",
+                "uri": "https://api.scryfall.com/cards/231613d6-d3b8-4b41-bc93-4d5da3fec5d0"
+            },
+            {
+                "object": "related_card",
+                "id": "1a85fe9d-ef18-46c4-88b0-cf2e222e30e4",
+                "component": "token",
+                "name": "Rat",
+                "type_line": "Token Creature — Rat",
+                "uri": "https://api.scryfall.com/cards/1a85fe9d-ef18-46c4-88b0-cf2e222e30e4"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "not_legal",
+            "legacy": "not_legal",
+            "pauper": "not_legal",
+            "vintage": "not_legal",
+            "penny": "not_legal",
+            "commander": "not_legal",
+            "brawl": "not_legal",
+            "duel": "not_legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": true,
+        "oversized": false,
+        "promo": false,
+        "reprint": false,
+        "variation": false,
+        "set_id": "2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set": "shm",
+        "set_name": "Shadowmoor Tokens",
+        "set_type": "token",
+        "set_uri": "https://api.scryfall.com/sets/2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/tshm?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/1a85fe9d-ef18-46c4-88b0-cf2e222e30e4/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A7c753b68-b519-43ba-9c58-4902f4850626&unique=prints",
+        "collector_number": "3",
+        "digital": false,
+        "rarity": "c",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Carl Critchlow",
+        "artist_ids": [
+            "17948f16-611a-44b8-8d10-9895a0bdfff1"
+        ],
+        "illustration_id": "5cdbdbd0-810c-4b97-93b6-149790df68e0",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": true,
+        "textless": false,
+        "booster": true,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo"
+        ],
+        "prices": {
+            "usd": "1.74",
+            "usd_foil": null,
+            "eur": null,
+            "eur_foil": null,
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Rat&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Rat&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Rat",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Rat"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=78593&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Rat&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Rat&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Rat",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/1/a/1a85fe9d-ef18-46c4-88b0-cf2e222e30e4.jpg?1562279130",
+        "cost": "",
+        "ccost": 0,
+        "type": "Token Creature",
+        "subtype": "Rat",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints"
+        ],
+        "num": "3/012 T",
+        "numInt": 3,
+        "mtgenId": "shm|3/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "94c14f3d-1578-426b-b64b-07c7e88ab572",
+        "oracle_id": "c1210422-355f-4923-ab04-817d57f9d13d",
+        "multiverse_ids": [],
+        "tcgplayer_id": 78586,
+        "name": "Elemental",
+        "lang": "en",
+        "released_at": "2008-05-02",
+        "uri": "https://api.scryfall.com/cards/94c14f3d-1578-426b-b64b-07c7e88ab572",
+        "scryfall_uri": "https://scryfall.com/card/tshm/4/elemental?utm_source=api",
+        "layout": "token",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/9/4/94c14f3d-1578-426b-b64b-07c7e88ab572.jpg?1562279135",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/4/94c14f3d-1578-426b-b64b-07c7e88ab572.jpg?1562279135",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/9/4/94c14f3d-1578-426b-b64b-07c7e88ab572.jpg?1562279135",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/9/4/94c14f3d-1578-426b-b64b-07c7e88ab572.png?1562279135",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/9/4/94c14f3d-1578-426b-b64b-07c7e88ab572.jpg?1562279135",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/9/4/94c14f3d-1578-426b-b64b-07c7e88ab572.jpg?1562279135"
+        },
+        "mana_cost": "",
+        "cmc": 0,
+        "type_line": "Token Creature — Elemental",
+        "oracle_text": "Haste",
+        "power": "1",
+        "toughness": "1",
+        "colors": [
+            "R"
+        ],
+        "color_identity": [
+            "R"
+        ],
+        "keywords": [
+            "Haste"
+        ],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "91705d63-8aae-47c2-a880-1b07c6d33bde",
+                "component": "combo_piece",
+                "name": "Elemental Mastery",
+                "type_line": "Enchantment — Aura",
+                "uri": "https://api.scryfall.com/cards/91705d63-8aae-47c2-a880-1b07c6d33bde"
+            },
+            {
+                "object": "related_card",
+                "id": "94c14f3d-1578-426b-b64b-07c7e88ab572",
+                "component": "token",
+                "name": "Elemental",
+                "type_line": "Token Creature — Elemental",
+                "uri": "https://api.scryfall.com/cards/94c14f3d-1578-426b-b64b-07c7e88ab572"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "not_legal",
+            "legacy": "not_legal",
+            "pauper": "not_legal",
+            "vintage": "not_legal",
+            "penny": "not_legal",
+            "commander": "not_legal",
+            "brawl": "not_legal",
+            "duel": "not_legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": true,
+        "oversized": false,
+        "promo": false,
+        "reprint": false,
+        "variation": false,
+        "set_id": "2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set": "shm",
+        "set_name": "Shadowmoor Tokens",
+        "set_type": "token",
+        "set_uri": "https://api.scryfall.com/sets/2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/tshm?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/94c14f3d-1578-426b-b64b-07c7e88ab572/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Ac1210422-355f-4923-ab04-817d57f9d13d&unique=prints",
+        "collector_number": "4",
+        "digital": false,
+        "rarity": "c",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Cyril Van Der Haegen",
+        "artist_ids": [
+            "90edbd2e-9462-4394-b0b4-02885b4e56b3"
+        ],
+        "illustration_id": "20b6afff-c352-49db-a2fa-4f8489bdfd27",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": true,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo"
+        ],
+        "prices": {
+            "usd": "1.43",
+            "usd_foil": null,
+            "eur": null,
+            "eur_foil": null,
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Elemental&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Elemental&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Elemental",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Elemental"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=78586&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Elemental&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Elemental&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Elemental",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/4/94c14f3d-1578-426b-b64b-07c7e88ab572.jpg?1562279135",
+        "cost": "",
+        "ccost": 0,
+        "type": "Token Creature",
+        "subtype": "Elemental",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints"
+        ],
+        "num": "4/012 T",
+        "numInt": 4,
+        "mtgenId": "shm|4/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "b7663358-c85c-4ba4-ac9b-6be6105363a9",
+        "oracle_id": "dac8a765-6845-4b57-bb79-4ec463436f92",
+        "multiverse_ids": [],
+        "tcgplayer_id": 78587,
+        "name": "Elf Warrior",
+        "lang": "en",
+        "released_at": "2008-05-02",
+        "uri": "https://api.scryfall.com/cards/b7663358-c85c-4ba4-ac9b-6be6105363a9",
+        "scryfall_uri": "https://scryfall.com/card/tshm/5/elf-warrior?utm_source=api",
+        "layout": "token",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/b/7/b7663358-c85c-4ba4-ac9b-6be6105363a9.jpg?1562279140",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/b/7/b7663358-c85c-4ba4-ac9b-6be6105363a9.jpg?1562279140",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/b/7/b7663358-c85c-4ba4-ac9b-6be6105363a9.jpg?1562279140",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/b/7/b7663358-c85c-4ba4-ac9b-6be6105363a9.png?1562279140",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/b/7/b7663358-c85c-4ba4-ac9b-6be6105363a9.jpg?1562279140",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/b/7/b7663358-c85c-4ba4-ac9b-6be6105363a9.jpg?1562279140"
+        },
+        "mana_cost": "",
+        "cmc": 0,
+        "type_line": "Token Creature — Elf Warrior",
+        "oracle_text": "",
+        "power": "1",
+        "toughness": "1",
+        "colors": [
+            "G"
+        ],
+        "color_identity": [
+            "G"
+        ],
+        "keywords": [],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "6223f5d6-83f1-454e-9cd5-aba157850430",
+                "component": "combo_piece",
+                "name": "Flourishing Defenses",
+                "type_line": "Enchantment",
+                "uri": "https://api.scryfall.com/cards/6223f5d6-83f1-454e-9cd5-aba157850430"
+            },
+            {
+                "object": "related_card",
+                "id": "546c647d-8d0a-4b88-804e-ce0348eb772a",
+                "component": "combo_piece",
+                "name": "Presence of Gond",
+                "type_line": "Enchantment — Aura",
+                "uri": "https://api.scryfall.com/cards/546c647d-8d0a-4b88-804e-ce0348eb772a"
+            },
+            {
+                "object": "related_card",
+                "id": "b7663358-c85c-4ba4-ac9b-6be6105363a9",
+                "component": "token",
+                "name": "Elf Warrior",
+                "type_line": "Token Creature — Elf Warrior",
+                "uri": "https://api.scryfall.com/cards/b7663358-c85c-4ba4-ac9b-6be6105363a9"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "not_legal",
+            "legacy": "not_legal",
+            "pauper": "not_legal",
+            "vintage": "not_legal",
+            "penny": "not_legal",
+            "commander": "not_legal",
+            "brawl": "not_legal",
+            "duel": "not_legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": true,
+        "oversized": false,
+        "promo": false,
+        "reprint": true,
+        "variation": false,
+        "set_id": "2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set": "shm",
+        "set_name": "Shadowmoor Tokens",
+        "set_type": "token",
+        "set_uri": "https://api.scryfall.com/sets/2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/tshm?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/b7663358-c85c-4ba4-ac9b-6be6105363a9/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Adac8a765-6845-4b57-bb79-4ec463436f92&unique=prints",
+        "collector_number": "5",
+        "digital": false,
+        "rarity": "c",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "William O'Connor",
+        "artist_ids": [
+            "4f1c2854-d7a8-4f9a-8b3d-72a16eb7bdc1"
+        ],
+        "illustration_id": "a573739e-fe8e-4ddf-9c96-03a34bd0e3b0",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": true,
+        "textless": false,
+        "booster": true,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo"
+        ],
+        "prices": {
+            "usd": "0.41",
+            "usd_foil": null,
+            "eur": null,
+            "eur_foil": null,
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Elf+Warrior&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Elf+Warrior&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Elf+Warrior",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Elf+Warrior"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=78587&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Elf+Warrior&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Elf+Warrior&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Elf Warrior",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/b/7/b7663358-c85c-4ba4-ac9b-6be6105363a9.jpg?1562279140",
+        "cost": "",
+        "ccost": 0,
+        "type": "Token Creature",
+        "subtype": "Elf Warrior",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints"
+        ],
+        "num": "5/012 T",
+        "numInt": 5,
+        "mtgenId": "shm|5/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "7df0de51-8d05-475a-832e-de8a0f60849e",
+        "oracle_id": "bd386399-69f0-4653-96a1-fd05b8fd148c",
+        "multiverse_ids": [],
+        "tcgplayer_id": 78594,
+        "name": "Spider",
+        "lang": "en",
+        "released_at": "2008-05-02",
+        "uri": "https://api.scryfall.com/cards/7df0de51-8d05-475a-832e-de8a0f60849e",
+        "scryfall_uri": "https://scryfall.com/card/tshm/6/spider?utm_source=api",
+        "layout": "token",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/7/d/7df0de51-8d05-475a-832e-de8a0f60849e.jpg?1562279134",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/7/d/7df0de51-8d05-475a-832e-de8a0f60849e.jpg?1562279134",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/7/d/7df0de51-8d05-475a-832e-de8a0f60849e.jpg?1562279134",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/7/d/7df0de51-8d05-475a-832e-de8a0f60849e.png?1562279134",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/7/d/7df0de51-8d05-475a-832e-de8a0f60849e.jpg?1562279134",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/7/d/7df0de51-8d05-475a-832e-de8a0f60849e.jpg?1562279134"
+        },
+        "mana_cost": "",
+        "cmc": 0,
+        "type_line": "Token Creature — Spider",
+        "oracle_text": "Reach",
+        "power": "1",
+        "toughness": "2",
+        "colors": [
+            "G"
+        ],
+        "color_identity": [
+            "G"
+        ],
+        "keywords": [
+            "Reach"
+        ],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "59b989b4-692c-4ccb-a290-0ff00abacba9",
+                "component": "combo_piece",
+                "name": "Gloomwidow's Feast",
+                "type_line": "Instant",
+                "uri": "https://api.scryfall.com/cards/59b989b4-692c-4ccb-a290-0ff00abacba9"
+            },
+            {
+                "object": "related_card",
+                "id": "7df0de51-8d05-475a-832e-de8a0f60849e",
+                "component": "token",
+                "name": "Spider",
+                "type_line": "Token Creature — Spider",
+                "uri": "https://api.scryfall.com/cards/7df0de51-8d05-475a-832e-de8a0f60849e"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "not_legal",
+            "legacy": "not_legal",
+            "pauper": "not_legal",
+            "vintage": "not_legal",
+            "penny": "not_legal",
+            "commander": "not_legal",
+            "brawl": "not_legal",
+            "duel": "not_legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": true,
+        "oversized": false,
+        "promo": false,
+        "reprint": false,
+        "variation": false,
+        "set_id": "2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set": "shm",
+        "set_name": "Shadowmoor Tokens",
+        "set_type": "token",
+        "set_uri": "https://api.scryfall.com/sets/2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/tshm?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/7df0de51-8d05-475a-832e-de8a0f60849e/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Abd386399-69f0-4653-96a1-fd05b8fd148c&unique=prints",
+        "collector_number": "6",
+        "digital": false,
+        "rarity": "c",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Thomas M. Baxa",
+        "artist_ids": [
+            "ff346569-557d-4043-ae44-97c2c7cabd7d"
+        ],
+        "illustration_id": "04e2cde0-e303-4f24-824a-5b03e74c65cd",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": true,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo"
+        ],
+        "prices": {
+            "usd": "0.42",
+            "usd_foil": null,
+            "eur": null,
+            "eur_foil": null,
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Spider&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Spider&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Spider",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Spider"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=78594&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Spider&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Spider&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Spider",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/7/d/7df0de51-8d05-475a-832e-de8a0f60849e.jpg?1562279134",
+        "cost": "",
+        "ccost": 0,
+        "type": "Token Creature",
+        "subtype": "Spider",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints"
+        ],
+        "num": "6/012 T",
+        "numInt": 6,
+        "mtgenId": "shm|6/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "9c138bf9-8be6-4f1a-a82c-a84938ab84f5",
+        "oracle_id": "b2224843-8274-4872-a7ca-2adf69cc066b",
+        "multiverse_ids": [],
+        "tcgplayer_id": 78596,
+        "name": "Wolf",
+        "lang": "en",
+        "released_at": "2008-05-02",
+        "uri": "https://api.scryfall.com/cards/9c138bf9-8be6-4f1a-a82c-a84938ab84f5",
+        "scryfall_uri": "https://scryfall.com/card/tshm/7/wolf?utm_source=api",
+        "layout": "token",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/9/c/9c138bf9-8be6-4f1a-a82c-a84938ab84f5.jpg?1562279137",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/c/9c138bf9-8be6-4f1a-a82c-a84938ab84f5.jpg?1562279137",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/9/c/9c138bf9-8be6-4f1a-a82c-a84938ab84f5.jpg?1562279137",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/9/c/9c138bf9-8be6-4f1a-a82c-a84938ab84f5.png?1562279137",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/9/c/9c138bf9-8be6-4f1a-a82c-a84938ab84f5.jpg?1562279137",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/9/c/9c138bf9-8be6-4f1a-a82c-a84938ab84f5.jpg?1562279137"
+        },
+        "mana_cost": "",
+        "cmc": 0,
+        "type_line": "Token Creature — Wolf",
+        "oracle_text": "",
+        "power": "2",
+        "toughness": "2",
+        "colors": [
+            "G"
+        ],
+        "color_identity": [
+            "G"
+        ],
+        "keywords": [],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "293f7768-6279-4f26-979f-ea4e48095ae5",
+                "component": "combo_piece",
+                "name": "Howl of the Night Pack",
+                "type_line": "Sorcery",
+                "uri": "https://api.scryfall.com/cards/293f7768-6279-4f26-979f-ea4e48095ae5"
+            },
+            {
+                "object": "related_card",
+                "id": "9c138bf9-8be6-4f1a-a82c-a84938ab84f5",
+                "component": "token",
+                "name": "Wolf",
+                "type_line": "Token Creature — Wolf",
+                "uri": "https://api.scryfall.com/cards/9c138bf9-8be6-4f1a-a82c-a84938ab84f5"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "not_legal",
+            "legacy": "not_legal",
+            "pauper": "not_legal",
+            "vintage": "not_legal",
+            "penny": "not_legal",
+            "commander": "not_legal",
+            "brawl": "not_legal",
+            "duel": "not_legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": true,
+        "oversized": false,
+        "promo": false,
+        "reprint": true,
+        "variation": false,
+        "set_id": "2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set": "shm",
+        "set_name": "Shadowmoor Tokens",
+        "set_type": "token",
+        "set_uri": "https://api.scryfall.com/sets/2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/tshm?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/9c138bf9-8be6-4f1a-a82c-a84938ab84f5/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Ab2224843-8274-4872-a7ca-2adf69cc066b&unique=prints",
+        "collector_number": "7",
+        "digital": false,
+        "rarity": "c",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Lars Grant-West",
+        "artist_ids": [
+            "21ed6499-c4d3-4965-ab02-6c7228275bec"
+        ],
+        "illustration_id": "8de43024-f594-4ea8-bddc-291d084d9e4e",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": true,
+        "textless": false,
+        "booster": true,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo"
+        ],
+        "prices": {
+            "usd": "0.13",
+            "usd_foil": null,
+            "eur": null,
+            "eur_foil": null,
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Wolf&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Wolf&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Wolf",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Wolf"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=78596&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Wolf&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Wolf&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Wolf",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/c/9c138bf9-8be6-4f1a-a82c-a84938ab84f5.jpg?1562279137",
+        "cost": "",
+        "ccost": 0,
+        "type": "Token Creature",
+        "subtype": "Wolf",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints"
+        ],
+        "num": "7/012 T",
+        "numInt": 7,
+        "mtgenId": "shm|7/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "a07b4786-1592-42c7-9d3e-d0d66abaed99",
+        "oracle_id": "759b1cd0-a2d9-46d3-8433-33892abd184c",
+        "multiverse_ids": [],
+        "tcgplayer_id": 78589,
+        "name": "Faerie Rogue",
+        "lang": "en",
+        "released_at": "2008-05-02",
+        "uri": "https://api.scryfall.com/cards/a07b4786-1592-42c7-9d3e-d0d66abaed99",
+        "scryfall_uri": "https://scryfall.com/card/tshm/8/faerie-rogue?utm_source=api",
+        "layout": "token",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/a/0/a07b4786-1592-42c7-9d3e-d0d66abaed99.jpg?1562279139",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/a/0/a07b4786-1592-42c7-9d3e-d0d66abaed99.jpg?1562279139",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/a/0/a07b4786-1592-42c7-9d3e-d0d66abaed99.jpg?1562279139",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/a/0/a07b4786-1592-42c7-9d3e-d0d66abaed99.png?1562279139",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/a/0/a07b4786-1592-42c7-9d3e-d0d66abaed99.jpg?1562279139",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/a/0/a07b4786-1592-42c7-9d3e-d0d66abaed99.jpg?1562279139"
+        },
+        "mana_cost": "",
+        "cmc": 0,
+        "type_line": "Token Creature — Faerie Rogue",
+        "oracle_text": "Flying",
+        "power": "1",
+        "toughness": "1",
+        "colors": [
+            "B",
+            "U"
+        ],
+        "color_identity": [
+            "B",
+            "U"
+        ],
+        "keywords": [
+            "Flying"
+        ],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "24ae75f6-fb74-422c-93f6-a0be7f919e47",
+                "component": "combo_piece",
+                "name": "Oona, Queen of the Fae",
+                "type_line": "Legendary Creature — Faerie Wizard",
+                "uri": "https://api.scryfall.com/cards/24ae75f6-fb74-422c-93f6-a0be7f919e47"
+            },
+            {
+                "object": "related_card",
+                "id": "a07b4786-1592-42c7-9d3e-d0d66abaed99",
+                "component": "token",
+                "name": "Faerie Rogue",
+                "type_line": "Token Creature — Faerie Rogue",
+                "uri": "https://api.scryfall.com/cards/a07b4786-1592-42c7-9d3e-d0d66abaed99"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "not_legal",
+            "legacy": "not_legal",
+            "pauper": "not_legal",
+            "vintage": "not_legal",
+            "penny": "not_legal",
+            "commander": "not_legal",
+            "brawl": "not_legal",
+            "duel": "not_legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": true,
+        "oversized": false,
+        "promo": false,
+        "reprint": false,
+        "variation": false,
+        "set_id": "2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set": "shm",
+        "set_name": "Shadowmoor Tokens",
+        "set_type": "token",
+        "set_uri": "https://api.scryfall.com/sets/2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/tshm?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/a07b4786-1592-42c7-9d3e-d0d66abaed99/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A759b1cd0-a2d9-46d3-8433-33892abd184c&unique=prints",
+        "collector_number": "8",
+        "digital": false,
+        "rarity": "c",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "E. M. Gist",
+        "artist_ids": [
+            "7a9aaa63-73ae-492c-948e-7531415fdf31"
+        ],
+        "illustration_id": "cd880bd0-cdf6-414e-be18-7216595d826c",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": true,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo"
+        ],
+        "prices": {
+            "usd": "7.48",
+            "usd_foil": null,
+            "eur": null,
+            "eur_foil": null,
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Faerie+Rogue&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Faerie+Rogue&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Faerie+Rogue",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Faerie+Rogue"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=78589&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Faerie+Rogue&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Faerie+Rogue&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Faerie Rogue",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/a/0/a07b4786-1592-42c7-9d3e-d0d66abaed99.jpg?1562279139",
+        "cost": "",
+        "ccost": 0,
+        "type": "Token Creature",
+        "subtype": "Faerie Rogue",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints"
+        ],
+        "num": "8/012 T",
+        "numInt": 8,
+        "mtgenId": "shm|8/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "0c5afb0a-a158-4995-881e-eae0f20805a6",
+        "oracle_id": "bfde681b-27f5-4d1d-9907-593364745d10",
+        "multiverse_ids": [],
+        "tcgplayer_id": 78585,
+        "name": "Elemental",
+        "lang": "en",
+        "released_at": "2008-05-02",
+        "uri": "https://api.scryfall.com/cards/0c5afb0a-a158-4995-881e-eae0f20805a6",
+        "scryfall_uri": "https://scryfall.com/card/tshm/9/elemental?utm_source=api",
+        "layout": "token",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/0/c/0c5afb0a-a158-4995-881e-eae0f20805a6.jpg?1562279128",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/0/c/0c5afb0a-a158-4995-881e-eae0f20805a6.jpg?1562279128",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/0/c/0c5afb0a-a158-4995-881e-eae0f20805a6.jpg?1562279128",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/0/c/0c5afb0a-a158-4995-881e-eae0f20805a6.png?1562279128",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/0/c/0c5afb0a-a158-4995-881e-eae0f20805a6.jpg?1562279128",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/0/c/0c5afb0a-a158-4995-881e-eae0f20805a6.jpg?1562279128"
+        },
+        "mana_cost": "",
+        "cmc": 0,
+        "type_line": "Token Creature — Elemental",
+        "oracle_text": "",
+        "power": "5",
+        "toughness": "5",
+        "colors": [
+            "B",
+            "R"
+        ],
+        "color_identity": [
+            "B",
+            "R"
+        ],
+        "keywords": [],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "9bde655f-9f49-42f8-a168-9cbca0592bb8",
+                "component": "combo_piece",
+                "name": "Din of the Fireherd",
+                "type_line": "Sorcery",
+                "uri": "https://api.scryfall.com/cards/9bde655f-9f49-42f8-a168-9cbca0592bb8"
+            },
+            {
+                "object": "related_card",
+                "id": "0c5afb0a-a158-4995-881e-eae0f20805a6",
+                "component": "token",
+                "name": "Elemental",
+                "type_line": "Token Creature — Elemental",
+                "uri": "https://api.scryfall.com/cards/0c5afb0a-a158-4995-881e-eae0f20805a6"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "not_legal",
+            "legacy": "not_legal",
+            "pauper": "not_legal",
+            "vintage": "not_legal",
+            "penny": "not_legal",
+            "commander": "not_legal",
+            "brawl": "not_legal",
+            "duel": "not_legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": true,
+        "oversized": false,
+        "promo": false,
+        "reprint": false,
+        "variation": false,
+        "set_id": "2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set": "shm",
+        "set_name": "Shadowmoor Tokens",
+        "set_type": "token",
+        "set_uri": "https://api.scryfall.com/sets/2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/tshm?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/0c5afb0a-a158-4995-881e-eae0f20805a6/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Abfde681b-27f5-4d1d-9907-593364745d10&unique=prints",
+        "collector_number": "9",
+        "digital": false,
+        "rarity": "c",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Dave Dorman",
+        "artist_ids": [
+            "9235458b-ce92-45bd-a430-a72ecd8e6176"
+        ],
+        "illustration_id": "9d855711-e5bc-49e5-8c0f-8c77c809c551",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": true,
+        "textless": false,
+        "booster": true,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo"
+        ],
+        "prices": {
+            "usd": "1.00",
+            "usd_foil": null,
+            "eur": null,
+            "eur_foil": null,
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Elemental&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Elemental&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Elemental",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Elemental"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=78585&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Elemental&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Elemental&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Elemental",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/0/c/0c5afb0a-a158-4995-881e-eae0f20805a6.jpg?1562279128",
+        "cost": "",
+        "ccost": 0,
+        "type": "Token Creature",
+        "subtype": "Elemental",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints"
+        ],
+        "num": "9/012 T",
+        "numInt": 9,
+        "mtgenId": "shm|9/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "6f84b406-112d-4b01-8500-60391692a17e",
+        "oracle_id": "e067754e-ddd6-44fc-8783-07e98db21c57",
+        "multiverse_ids": [],
+        "tcgplayer_id": 78590,
+        "name": "Giant Warrior",
+        "lang": "en",
+        "released_at": "2008-05-02",
+        "uri": "https://api.scryfall.com/cards/6f84b406-112d-4b01-8500-60391692a17e",
+        "scryfall_uri": "https://scryfall.com/card/tshm/10/giant-warrior?utm_source=api",
+        "layout": "token",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/6/f/6f84b406-112d-4b01-8500-60391692a17e.jpg?1562279132",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/6/f/6f84b406-112d-4b01-8500-60391692a17e.jpg?1562279132",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/6/f/6f84b406-112d-4b01-8500-60391692a17e.jpg?1562279132",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/6/f/6f84b406-112d-4b01-8500-60391692a17e.png?1562279132",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/6/f/6f84b406-112d-4b01-8500-60391692a17e.jpg?1562279132",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/6/f/6f84b406-112d-4b01-8500-60391692a17e.jpg?1562279132"
+        },
+        "mana_cost": "",
+        "cmc": 0,
+        "type_line": "Token Creature — Giant Warrior",
+        "oracle_text": "Haste",
+        "power": "4",
+        "toughness": "4",
+        "colors": [
+            "G",
+            "R"
+        ],
+        "color_identity": [
+            "G",
+            "R"
+        ],
+        "keywords": [
+            "Haste"
+        ],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "0fa3dd33-7240-4b32-b5ee-a67f24b42e4d",
+                "component": "combo_piece",
+                "name": "Giantbaiting",
+                "type_line": "Sorcery",
+                "uri": "https://api.scryfall.com/cards/0fa3dd33-7240-4b32-b5ee-a67f24b42e4d"
+            },
+            {
+                "object": "related_card",
+                "id": "6f84b406-112d-4b01-8500-60391692a17e",
+                "component": "token",
+                "name": "Giant Warrior",
+                "type_line": "Token Creature — Giant Warrior",
+                "uri": "https://api.scryfall.com/cards/6f84b406-112d-4b01-8500-60391692a17e"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "not_legal",
+            "legacy": "not_legal",
+            "pauper": "not_legal",
+            "vintage": "not_legal",
+            "penny": "not_legal",
+            "commander": "not_legal",
+            "brawl": "not_legal",
+            "duel": "not_legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": true,
+        "oversized": false,
+        "promo": false,
+        "reprint": false,
+        "variation": false,
+        "set_id": "2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set": "shm",
+        "set_name": "Shadowmoor Tokens",
+        "set_type": "token",
+        "set_uri": "https://api.scryfall.com/sets/2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/tshm?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/6f84b406-112d-4b01-8500-60391692a17e/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Ae067754e-ddd6-44fc-8783-07e98db21c57&unique=prints",
+        "collector_number": "10",
+        "digital": false,
+        "rarity": "c",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Trevor Hairsine",
+        "artist_ids": [
+            "7c1d7b59-dbf1-4ca8-9975-8e01c593da6e"
+        ],
+        "illustration_id": "2698e279-26de-4c8a-b3ae-c51a58006088",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": true,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo"
+        ],
+        "prices": {
+            "usd": "0.10",
+            "usd_foil": null,
+            "eur": null,
+            "eur_foil": null,
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Giant+Warrior&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Giant+Warrior&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Giant+Warrior",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Giant+Warrior"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=78590&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Giant+Warrior&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Giant+Warrior&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Giant Warrior",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/6/f/6f84b406-112d-4b01-8500-60391692a17e.jpg?1562279132",
+        "cost": "",
+        "ccost": 0,
+        "type": "Token Creature",
+        "subtype": "Giant Warrior",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints"
+        ],
+        "num": "10/012 T",
+        "numInt": 10,
+        "mtgenId": "shm|10/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "e36334f1-afe3-497c-82d9-aaf149934b54",
+        "oracle_id": "b96b076f-9815-457e-bbe2-4abf4c8f85cf",
+        "multiverse_ids": [],
+        "tcgplayer_id": 78591,
+        "name": "Goblin Warrior",
+        "lang": "en",
+        "released_at": "2008-05-02",
+        "uri": "https://api.scryfall.com/cards/e36334f1-afe3-497c-82d9-aaf149934b54",
+        "scryfall_uri": "https://scryfall.com/card/tshm/11/goblin-warrior?utm_source=api",
+        "layout": "token",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/e/3/e36334f1-afe3-497c-82d9-aaf149934b54.jpg?1562279575",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/e/3/e36334f1-afe3-497c-82d9-aaf149934b54.jpg?1562279575",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/e/3/e36334f1-afe3-497c-82d9-aaf149934b54.jpg?1562279575",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/e/3/e36334f1-afe3-497c-82d9-aaf149934b54.png?1562279575",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/e/3/e36334f1-afe3-497c-82d9-aaf149934b54.jpg?1562279575",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/e/3/e36334f1-afe3-497c-82d9-aaf149934b54.jpg?1562279575"
+        },
+        "mana_cost": "",
+        "cmc": 0,
+        "type_line": "Token Creature — Goblin Warrior",
+        "oracle_text": "",
+        "power": "1",
+        "toughness": "1",
+        "colors": [
+            "G",
+            "R"
+        ],
+        "color_identity": [
+            "G",
+            "R"
+        ],
+        "keywords": [],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "535189ec-572f-44ed-9741-09b9f575fc40",
+                "component": "combo_piece",
+                "name": "Wort, the Raidmother",
+                "type_line": "Legendary Creature — Goblin Shaman",
+                "uri": "https://api.scryfall.com/cards/535189ec-572f-44ed-9741-09b9f575fc40"
+            },
+            {
+                "object": "related_card",
+                "id": "e36334f1-afe3-497c-82d9-aaf149934b54",
+                "component": "token",
+                "name": "Goblin Warrior",
+                "type_line": "Token Creature — Goblin Warrior",
+                "uri": "https://api.scryfall.com/cards/e36334f1-afe3-497c-82d9-aaf149934b54"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "not_legal",
+            "legacy": "not_legal",
+            "pauper": "not_legal",
+            "vintage": "not_legal",
+            "penny": "not_legal",
+            "commander": "not_legal",
+            "brawl": "not_legal",
+            "duel": "not_legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": true,
+        "oversized": false,
+        "promo": false,
+        "reprint": false,
+        "variation": false,
+        "set_id": "2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set": "shm",
+        "set_name": "Shadowmoor Tokens",
+        "set_type": "token",
+        "set_uri": "https://api.scryfall.com/sets/2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/tshm?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/e36334f1-afe3-497c-82d9-aaf149934b54/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Ab96b076f-9815-457e-bbe2-4abf4c8f85cf&unique=prints",
+        "collector_number": "11",
+        "digital": false,
+        "rarity": "c",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Dave Allsop",
+        "artist_ids": [
+            "99b8310a-4fd6-4ded-8ab7-3b5185821cbe"
+        ],
+        "illustration_id": "332169c5-fabb-436b-8145-12f0036ac920",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": true,
+        "textless": false,
+        "booster": true,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo"
+        ],
+        "prices": {
+            "usd": "1.06",
+            "usd_foil": null,
+            "eur": null,
+            "eur_foil": null,
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Goblin+Warrior&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Goblin+Warrior&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Goblin+Warrior",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Goblin+Warrior"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=78591&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Goblin+Warrior&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Goblin+Warrior&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Goblin Warrior",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/e/3/e36334f1-afe3-497c-82d9-aaf149934b54.jpg?1562279575",
+        "cost": "",
+        "ccost": 0,
+        "type": "Token Creature",
+        "subtype": "Goblin Warrior",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints"
+        ],
+        "num": "11/012 T",
+        "numInt": 11,
+        "mtgenId": "shm|11/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "49180301-f72f-48ca-8be1-df295e89cdd7",
+        "oracle_id": "86f88b6a-762c-4cbd-8ea2-d30ee16c7f99",
+        "multiverse_ids": [],
+        "tcgplayer_id": 78588,
+        "name": "Elf Warrior",
+        "lang": "en",
+        "released_at": "2008-05-02",
+        "uri": "https://api.scryfall.com/cards/49180301-f72f-48ca-8be1-df295e89cdd7",
+        "scryfall_uri": "https://scryfall.com/card/tshm/12/elf-warrior?utm_source=api",
+        "layout": "token",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/4/9/49180301-f72f-48ca-8be1-df295e89cdd7.jpg?1562279131",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/4/9/49180301-f72f-48ca-8be1-df295e89cdd7.jpg?1562279131",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/4/9/49180301-f72f-48ca-8be1-df295e89cdd7.jpg?1562279131",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/4/9/49180301-f72f-48ca-8be1-df295e89cdd7.png?1562279131",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/4/9/49180301-f72f-48ca-8be1-df295e89cdd7.jpg?1562279131",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/4/9/49180301-f72f-48ca-8be1-df295e89cdd7.jpg?1562279131"
+        },
+        "mana_cost": "",
+        "cmc": 0,
+        "type_line": "Token Creature — Elf Warrior",
+        "oracle_text": "",
+        "power": "1",
+        "toughness": "1",
+        "colors": [
+            "G",
+            "W"
+        ],
+        "color_identity": [
+            "G",
+            "W"
+        ],
+        "keywords": [],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "6f55536d-8573-42c2-9e8a-5a2ce24d1878",
+                "component": "combo_piece",
+                "name": "Mercy Killing",
+                "type_line": "Instant",
+                "uri": "https://api.scryfall.com/cards/6f55536d-8573-42c2-9e8a-5a2ce24d1878"
+            },
+            {
+                "object": "related_card",
+                "id": "59327a58-cd41-479c-81c7-31c9d3b29508",
+                "component": "combo_piece",
+                "name": "Rhys the Redeemed",
+                "type_line": "Legendary Creature — Elf Warrior",
+                "uri": "https://api.scryfall.com/cards/59327a58-cd41-479c-81c7-31c9d3b29508"
+            },
+            {
+                "object": "related_card",
+                "id": "49180301-f72f-48ca-8be1-df295e89cdd7",
+                "component": "token",
+                "name": "Elf Warrior",
+                "type_line": "Token Creature — Elf Warrior",
+                "uri": "https://api.scryfall.com/cards/49180301-f72f-48ca-8be1-df295e89cdd7"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "not_legal",
+            "legacy": "not_legal",
+            "pauper": "not_legal",
+            "vintage": "not_legal",
+            "penny": "not_legal",
+            "commander": "not_legal",
+            "brawl": "not_legal",
+            "duel": "not_legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": true,
+        "oversized": false,
+        "promo": false,
+        "reprint": false,
+        "variation": false,
+        "set_id": "2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set": "shm",
+        "set_name": "Shadowmoor Tokens",
+        "set_type": "token",
+        "set_uri": "https://api.scryfall.com/sets/2dd7782a-5e58-4338-81ff-0841c66ee647",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/tshm?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/49180301-f72f-48ca-8be1-df295e89cdd7/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A86f88b6a-762c-4cbd-8ea2-d30ee16c7f99&unique=prints",
+        "collector_number": "12",
+        "digital": false,
+        "rarity": "c",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Carl Frank",
+        "artist_ids": [
+            "fde6429d-2768-4573-a54d-42694e145079"
+        ],
+        "illustration_id": "95a462da-ec95-4424-b939-a78184b53d9f",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": true,
+        "textless": false,
+        "booster": true,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo"
+        ],
+        "prices": {
+            "usd": "1.64",
+            "usd_foil": null,
+            "eur": null,
+            "eur_foil": null,
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Elf+Warrior&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Elf+Warrior&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Elf+Warrior",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Elf+Warrior"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=78588&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Elf+Warrior&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Elf+Warrior&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Elf Warrior",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/4/9/49180301-f72f-48ca-8be1-df295e89cdd7.jpg?1562279131",
+        "cost": "",
+        "ccost": 0,
+        "type": "Token Creature",
+        "subtype": "Elf Warrior",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Atshm&unique=prints"
+        ],
+        "num": "12/012 T",
+        "numInt": 12,
+        "mtgenId": "shm|12/012 T",
+        "token": true,
+        "usableForDeckBuilding": false
+    }
 ]

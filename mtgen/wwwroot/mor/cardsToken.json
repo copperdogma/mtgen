@@ -1,50 +1,437 @@
 [
-  {
-    "title": "Giant Warrior",
-    "set": "mor",
-    "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/magic/images/mtgcom/arcana1000/1511_Token3.jpg",
-    "colour": "w",
-    "rarity": "c",
-    "type": "Token Creature",
-    "subtype": "Giant Warrior",
-    "power": "5",
-    "toughness": "5",
-    "num": "001/003 T",
-    "token": "true",
-    "usableForDeckBuilding": false,
-    "addedViaException": true,
-    "mtgenId": "mor|001/003 T"
-  },
-  {
-    "title": "Faerie Rogue",
-    "set": "mor",
-    "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/magic/images/mtgcom/arcana1000/1511_Token2.jpg",
-    "colour": "b",
-    "rarity": "c",
-    "type": "Token Creature",
-    "subtype": "Faerie Rogue",
-    "power": "1",
-    "toughness": "1",
-    "num": "002/003 T",
-    "token": "true",
-    "usableForDeckBuilding": false,
-    "addedViaException": true,
-    "mtgenId": "mor|002/003 T"
-  },
-  {
-    "title": "Treefolk Shaman",
-    "set": "mor",
-    "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/magic/images/mtgcom/arcana1000/1511_Token1.jpg",
-    "colour": "g",
-    "rarity": "c",
-    "type": "Token Creature",
-    "subtype": "Treefolk Shaman",
-    "power": "2",
-    "toughness": "5",
-    "num": "003/003 T",
-    "token": "true",
-    "usableForDeckBuilding": false,
-    "addedViaException": true,
-    "mtgenId": "mor|003/003 T"
-  }
+    {
+        "object": "card",
+        "id": "0661166a-7d6c-4cba-8190-8d3eedf7f58c",
+        "oracle_id": "de8fd8a1-561e-4ecc-988f-cdd8d9163349",
+        "multiverse_ids": [],
+        "tcgplayer_id": 78583,
+        "name": "Giant Warrior",
+        "lang": "en",
+        "released_at": "2008-02-01",
+        "uri": "https://api.scryfall.com/cards/0661166a-7d6c-4cba-8190-8d3eedf7f58c",
+        "scryfall_uri": "https://scryfall.com/card/tmor/1/giant-warrior?utm_source=api",
+        "layout": "token",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/0/6/0661166a-7d6c-4cba-8190-8d3eedf7f58c.jpg?1561756604",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/0/6/0661166a-7d6c-4cba-8190-8d3eedf7f58c.jpg?1561756604",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/0/6/0661166a-7d6c-4cba-8190-8d3eedf7f58c.jpg?1561756604",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/0/6/0661166a-7d6c-4cba-8190-8d3eedf7f58c.png?1561756604",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/0/6/0661166a-7d6c-4cba-8190-8d3eedf7f58c.jpg?1561756604",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/0/6/0661166a-7d6c-4cba-8190-8d3eedf7f58c.jpg?1561756604"
+        },
+        "mana_cost": "",
+        "cmc": 0,
+        "type_line": "Token Creature — Giant Warrior",
+        "oracle_text": "",
+        "power": "5",
+        "toughness": "5",
+        "colors": [
+            "W"
+        ],
+        "color_identity": [
+            "W"
+        ],
+        "keywords": [],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "0a1fff8e-0379-4d56-b726-f5cc56e63d48",
+                "component": "combo_piece",
+                "name": "Feudkiller's Verdict",
+                "type_line": "Tribal Sorcery — Giant",
+                "uri": "https://api.scryfall.com/cards/0a1fff8e-0379-4d56-b726-f5cc56e63d48"
+            },
+            {
+                "object": "related_card",
+                "id": "0661166a-7d6c-4cba-8190-8d3eedf7f58c",
+                "component": "token",
+                "name": "Giant Warrior",
+                "type_line": "Token Creature — Giant Warrior",
+                "uri": "https://api.scryfall.com/cards/0661166a-7d6c-4cba-8190-8d3eedf7f58c"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "not_legal",
+            "legacy": "not_legal",
+            "pauper": "not_legal",
+            "vintage": "not_legal",
+            "penny": "not_legal",
+            "commander": "not_legal",
+            "brawl": "not_legal",
+            "duel": "not_legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": true,
+        "oversized": false,
+        "promo": false,
+        "reprint": false,
+        "variation": false,
+        "set_id": "cf25354d-817d-4756-b786-604ac93ba3b7",
+        "set": "mor",
+        "set_name": "Morningtide Tokens",
+        "set_type": "token",
+        "set_uri": "https://api.scryfall.com/sets/cf25354d-817d-4756-b786-604ac93ba3b7",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Atmor&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/tmor?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/0661166a-7d6c-4cba-8190-8d3eedf7f58c/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Ade8fd8a1-561e-4ecc-988f-cdd8d9163349&unique=prints",
+        "collector_number": "1",
+        "digital": false,
+        "rarity": "c",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Steve Ellis",
+        "artist_ids": [
+            "39d8411c-2187-426c-8ad3-d4f688b22db1"
+        ],
+        "illustration_id": "95c871fc-8ce0-4af1-85b7-825628b93f41",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": true,
+        "textless": false,
+        "booster": true,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo"
+        ],
+        "prices": {
+            "usd": "0.25",
+            "usd_foil": null,
+            "eur": null,
+            "eur_foil": null,
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Giant+Warrior&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Giant+Warrior&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Giant+Warrior",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Giant+Warrior"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=78583&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Giant+Warrior&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Giant+Warrior&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Giant Warrior",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/0/6/0661166a-7d6c-4cba-8190-8d3eedf7f58c.jpg?1561756604",
+        "cost": "",
+        "ccost": 0,
+        "type": "Token Creature",
+        "subtype": "Giant Warrior",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Atmor&unique=prints"
+        ],
+        "num": "1/003 T",
+        "numInt": 1,
+        "mtgenId": "mor|1/003 T",
+        "token": true,
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "1666cae8-8750-4091-8e45-259e76268db9",
+        "oracle_id": "741b9f0d-8c0d-4865-b177-fb64b687ad11",
+        "multiverse_ids": [],
+        "tcgplayer_id": 79455,
+        "name": "Faerie Rogue",
+        "lang": "en",
+        "released_at": "2008-02-01",
+        "uri": "https://api.scryfall.com/cards/1666cae8-8750-4091-8e45-259e76268db9",
+        "scryfall_uri": "https://scryfall.com/card/tmor/2/faerie-rogue?utm_source=api",
+        "layout": "token",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/1/6/1666cae8-8750-4091-8e45-259e76268db9.jpg?1561756717",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/1/6/1666cae8-8750-4091-8e45-259e76268db9.jpg?1561756717",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/1/6/1666cae8-8750-4091-8e45-259e76268db9.jpg?1561756717",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/1/6/1666cae8-8750-4091-8e45-259e76268db9.png?1561756717",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/1/6/1666cae8-8750-4091-8e45-259e76268db9.jpg?1561756717",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/1/6/1666cae8-8750-4091-8e45-259e76268db9.jpg?1561756717"
+        },
+        "mana_cost": "",
+        "cmc": 0,
+        "type_line": "Token Creature — Faerie Rogue",
+        "oracle_text": "Flying",
+        "power": "1",
+        "toughness": "1",
+        "colors": [
+            "B"
+        ],
+        "color_identity": [
+            "B"
+        ],
+        "keywords": [
+            "Flying"
+        ],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "8145fed6-6b51-420a-84cf-4ea5e0aa1883",
+                "component": "combo_piece",
+                "name": "Bitterblossom",
+                "type_line": "Tribal Enchantment — Faerie",
+                "uri": "https://api.scryfall.com/cards/8145fed6-6b51-420a-84cf-4ea5e0aa1883"
+            },
+            {
+                "object": "related_card",
+                "id": "6f4b5890-21d3-4eb9-a959-645dd389dde6",
+                "component": "combo_piece",
+                "name": "Notorious Throng",
+                "type_line": "Tribal Sorcery — Rogue",
+                "uri": "https://api.scryfall.com/cards/6f4b5890-21d3-4eb9-a959-645dd389dde6"
+            },
+            {
+                "object": "related_card",
+                "id": "bdfd0fa3-37d2-403e-99fe-8c9e57515e9d",
+                "component": "combo_piece",
+                "name": "Violet Pall",
+                "type_line": "Tribal Instant — Faerie",
+                "uri": "https://api.scryfall.com/cards/bdfd0fa3-37d2-403e-99fe-8c9e57515e9d"
+            },
+            {
+                "object": "related_card",
+                "id": "1666cae8-8750-4091-8e45-259e76268db9",
+                "component": "token",
+                "name": "Faerie Rogue",
+                "type_line": "Token Creature — Faerie Rogue",
+                "uri": "https://api.scryfall.com/cards/1666cae8-8750-4091-8e45-259e76268db9"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "not_legal",
+            "legacy": "not_legal",
+            "pauper": "not_legal",
+            "vintage": "not_legal",
+            "penny": "not_legal",
+            "commander": "not_legal",
+            "brawl": "not_legal",
+            "duel": "not_legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": true,
+        "oversized": false,
+        "promo": false,
+        "reprint": false,
+        "variation": false,
+        "set_id": "cf25354d-817d-4756-b786-604ac93ba3b7",
+        "set": "mor",
+        "set_name": "Morningtide Tokens",
+        "set_type": "token",
+        "set_uri": "https://api.scryfall.com/sets/cf25354d-817d-4756-b786-604ac93ba3b7",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Atmor&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/tmor?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/1666cae8-8750-4091-8e45-259e76268db9/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A741b9f0d-8c0d-4865-b177-fb64b687ad11&unique=prints",
+        "collector_number": "2",
+        "digital": false,
+        "rarity": "c",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Jim Nelson",
+        "artist_ids": [
+            "aa9f64d1-29e1-4c82-877e-44c18183f40b"
+        ],
+        "illustration_id": "bd254f7b-9e18-40c5-a9eb-dee8ed8ec422",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": true,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo"
+        ],
+        "prices": {
+            "usd": "1.62",
+            "usd_foil": null,
+            "eur": null,
+            "eur_foil": null,
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Faerie+Rogue&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Faerie+Rogue&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Faerie+Rogue",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Faerie+Rogue"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=79455&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Faerie+Rogue&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Faerie+Rogue&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Faerie Rogue",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/1/6/1666cae8-8750-4091-8e45-259e76268db9.jpg?1561756717",
+        "cost": "",
+        "ccost": 0,
+        "type": "Token Creature",
+        "subtype": "Faerie Rogue",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Atmor&unique=prints"
+        ],
+        "num": "2/003 T",
+        "numInt": 2,
+        "mtgenId": "mor|2/003 T",
+        "token": true,
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "55c82ec9-692e-48eb-9337-c350fe815a3e",
+        "oracle_id": "36a2a641-862f-43fe-9d45-111eae1430ce",
+        "multiverse_ids": [],
+        "tcgplayer_id": 78584,
+        "name": "Treefolk Shaman",
+        "lang": "en",
+        "released_at": "2008-02-01",
+        "uri": "https://api.scryfall.com/cards/55c82ec9-692e-48eb-9337-c350fe815a3e",
+        "scryfall_uri": "https://scryfall.com/card/tmor/3/treefolk-shaman?utm_source=api",
+        "layout": "token",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/5/5/55c82ec9-692e-48eb-9337-c350fe815a3e.jpg?1561757161",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/5/5/55c82ec9-692e-48eb-9337-c350fe815a3e.jpg?1561757161",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/5/5/55c82ec9-692e-48eb-9337-c350fe815a3e.jpg?1561757161",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/5/5/55c82ec9-692e-48eb-9337-c350fe815a3e.png?1561757161",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/5/5/55c82ec9-692e-48eb-9337-c350fe815a3e.jpg?1561757161",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/5/5/55c82ec9-692e-48eb-9337-c350fe815a3e.jpg?1561757161"
+        },
+        "mana_cost": "",
+        "cmc": 0,
+        "type_line": "Token Creature — Treefolk Shaman",
+        "oracle_text": "",
+        "power": "2",
+        "toughness": "5",
+        "colors": [
+            "G"
+        ],
+        "color_identity": [
+            "G"
+        ],
+        "keywords": [],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "74e2215c-fdc0-4135-83ef-ddf4151318ba",
+                "component": "combo_piece",
+                "name": "Reach of Branches",
+                "type_line": "Tribal Instant — Treefolk",
+                "uri": "https://api.scryfall.com/cards/74e2215c-fdc0-4135-83ef-ddf4151318ba"
+            },
+            {
+                "object": "related_card",
+                "id": "55c82ec9-692e-48eb-9337-c350fe815a3e",
+                "component": "token",
+                "name": "Treefolk Shaman",
+                "type_line": "Token Creature — Treefolk Shaman",
+                "uri": "https://api.scryfall.com/cards/55c82ec9-692e-48eb-9337-c350fe815a3e"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "not_legal",
+            "legacy": "not_legal",
+            "pauper": "not_legal",
+            "vintage": "not_legal",
+            "penny": "not_legal",
+            "commander": "not_legal",
+            "brawl": "not_legal",
+            "duel": "not_legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": true,
+        "oversized": false,
+        "promo": false,
+        "reprint": false,
+        "variation": false,
+        "set_id": "cf25354d-817d-4756-b786-604ac93ba3b7",
+        "set": "mor",
+        "set_name": "Morningtide Tokens",
+        "set_type": "token",
+        "set_uri": "https://api.scryfall.com/sets/cf25354d-817d-4756-b786-604ac93ba3b7",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Atmor&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/tmor?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/55c82ec9-692e-48eb-9337-c350fe815a3e/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A36a2a641-862f-43fe-9d45-111eae1430ce&unique=prints",
+        "collector_number": "3",
+        "digital": false,
+        "rarity": "c",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Richard Sardinha",
+        "artist_ids": [
+            "a3cce4f0-fbf5-4883-aac7-fb28b993b132"
+        ],
+        "illustration_id": "22944624-46d7-4442-9f4e-c8672b15aa43",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": true,
+        "textless": false,
+        "booster": true,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo"
+        ],
+        "prices": {
+            "usd": "0.75",
+            "usd_foil": null,
+            "eur": null,
+            "eur_foil": null,
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Treefolk+Shaman&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Treefolk+Shaman&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Treefolk+Shaman",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Treefolk+Shaman"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=78584&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Treefolk+Shaman&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Treefolk+Shaman&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Treefolk Shaman",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/5/5/55c82ec9-692e-48eb-9337-c350fe815a3e.jpg?1561757161",
+        "cost": "",
+        "ccost": 0,
+        "type": "Token Creature",
+        "subtype": "Treefolk Shaman",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Atmor&unique=prints"
+        ],
+        "num": "3/003 T",
+        "numInt": 3,
+        "mtgenId": "mor|3/003 T",
+        "token": true,
+        "usableForDeckBuilding": false
+    }
 ]

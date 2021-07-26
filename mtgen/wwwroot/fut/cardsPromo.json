@@ -1,0 +1,258 @@
+﻿[
+    {
+        "object": "card",
+        "id": "92d07c87-4f7e-48a4-949a-087dd391d1d4",
+        "oracle_id": "09f99b5a-66cf-4178-ae64-29f2004fe899",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38386,
+        "cardmarket_id": 17727,
+        "name": "Korlash, Heir to Blackblade",
+        "lang": "en",
+        "released_at": "2007-04-21",
+        "uri": "https://api.scryfall.com/cards/92d07c87-4f7e-48a4-949a-087dd391d1d4",
+        "scryfall_uri": "https://scryfall.com/card/pfut/87%E2%98%85/korlash-heir-to-blackblade?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/9/2/92d07c87-4f7e-48a4-949a-087dd391d1d4.jpg?1606761689",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/2/92d07c87-4f7e-48a4-949a-087dd391d1d4.jpg?1606761689",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/9/2/92d07c87-4f7e-48a4-949a-087dd391d1d4.jpg?1606761689",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/9/2/92d07c87-4f7e-48a4-949a-087dd391d1d4.png?1606761689",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/9/2/92d07c87-4f7e-48a4-949a-087dd391d1d4.jpg?1606761689",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/9/2/92d07c87-4f7e-48a4-949a-087dd391d1d4.jpg?1606761689"
+        },
+        "mana_cost": "{2}{B}{B}",
+        "cmc": 4,
+        "type_line": "Legendary Creature — Zombie Warrior",
+        "oracle_text": "Korlash, Heir to Blackblade's power and toughness are each equal to the number of Swamps you control.\n{1}{B}: Regenerate Korlash.\nGrandeur — Discard another card named Korlash, Heir to Blackblade: Search your library for up to two Swamp cards, put them onto the battlefield tapped, then shuffle.",
+        "power": "*",
+        "toughness": "*",
+        "colors": [
+            "B"
+        ],
+        "color_identity": [
+            "B"
+        ],
+        "keywords": [
+            "Grandeur"
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "9d290d54-2aec-4d5e-8ffc-c9714f4437d4",
+        "set": "fut",
+        "set_name": "Future Sight Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/9d290d54-2aec-4d5e-8ffc-c9714f4437d4",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apfut&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/pfut?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/92d07c87-4f7e-48a4-949a-087dd391d1d4/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A09f99b5a-66cf-4178-ae64-29f2004fe899&unique=prints",
+        "collector_number": "87★",
+        "digital": false,
+        "rarity": "r",
+        "watermark": "set",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Richard Kane Ferguson",
+        "artist_ids": [
+            "191620ed-2361-444e-96a6-1fe7ce32ef3b"
+        ],
+        "illustration_id": "a7e6eec0-1428-4a37-a7aa-5dccd0dc8fc2",
+        "border_color": "black",
+        "frame": "future",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "datestamped",
+            "prerelease"
+        ],
+        "edhrec_rank": 9327,
+        "prices": {
+            "usd": null,
+            "usd_foil": "8.07",
+            "eur": null,
+            "eur_foil": "3.50",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Korlash%2C+Heir+to+Blackblade&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Korlash%2C+Heir+to+Blackblade&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Korlash%2C+Heir+to+Blackblade",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Korlash%2C+Heir+to+Blackblade"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38386&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Korlash%2C+Heir+to+Blackblade&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Korlash%2C+Heir+to+Blackblade&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Korlash, Heir to Blackblade",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/2/92d07c87-4f7e-48a4-949a-087dd391d1d4.jpg?1606761689",
+        "cost": "{2}{B}{B}",
+        "ccost": 4,
+        "type": "Legendary Creature",
+        "subtype": "Zombie Warrior",
+        "colour": "b",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Apfut&unique=prints"
+        ],
+        "num": "87★ P Prerelease",
+        "numInt": 87,
+        "mtgenId": "fut|87★ P Prerelease",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "dfd3d187-f894-4550-a444-fc29371f18b7",
+        "oracle_id": "6c3b9136-5e4b-4bb5-bef5-17887d7211dd",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38424,
+        "cardmarket_id": 17740,
+        "name": "Storm Entity",
+        "lang": "en",
+        "released_at": "2007-05-04",
+        "uri": "https://api.scryfall.com/cards/dfd3d187-f894-4550-a444-fc29371f18b7",
+        "scryfall_uri": "https://scryfall.com/card/pfut/122%E2%98%85/storm-entity?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/d/f/dfd3d187-f894-4550-a444-fc29371f18b7.jpg?1607071601",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/d/f/dfd3d187-f894-4550-a444-fc29371f18b7.jpg?1607071601",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/d/f/dfd3d187-f894-4550-a444-fc29371f18b7.jpg?1607071601",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/d/f/dfd3d187-f894-4550-a444-fc29371f18b7.png?1607071601",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/d/f/dfd3d187-f894-4550-a444-fc29371f18b7.jpg?1607071601",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/d/f/dfd3d187-f894-4550-a444-fc29371f18b7.jpg?1607071601"
+        },
+        "mana_cost": "{1}{R}",
+        "cmc": 2,
+        "type_line": "Creature — Elemental",
+        "oracle_text": "Haste\nStorm Entity enters the battlefield with a +1/+1 counter on it for each other spell cast this turn.",
+        "power": "1",
+        "toughness": "1",
+        "colors": [
+            "R"
+        ],
+        "color_identity": [
+            "R"
+        ],
+        "keywords": [
+            "Haste"
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "9d290d54-2aec-4d5e-8ffc-c9714f4437d4",
+        "set": "fut",
+        "set_name": "Future Sight Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/9d290d54-2aec-4d5e-8ffc-c9714f4437d4",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apfut&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/pfut?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/dfd3d187-f894-4550-a444-fc29371f18b7/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6c3b9136-5e4b-4bb5-bef5-17887d7211dd&unique=prints",
+        "collector_number": "122★",
+        "digital": false,
+        "rarity": "r",
+        "watermark": "set",
+        "flavor_text": "Dweldian magi don't enter the Realm of Thrones when they die. Instead their souls are drawn to great works of magic.",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Lucio Parrillo",
+        "artist_ids": [
+            "1b452d3f-5c32-46dc-adc3-83eba53052d5"
+        ],
+        "illustration_id": "c6bf43fd-aa4f-437d-bdf7-41e6a95608a7",
+        "border_color": "black",
+        "frame": "future",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "release"
+        ],
+        "edhrec_rank": 15587,
+        "prices": {
+            "usd": null,
+            "usd_foil": "0.85",
+            "eur": null,
+            "eur_foil": "0.30",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Storm+Entity&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Storm+Entity&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Storm+Entity",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Storm+Entity"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38424&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Storm+Entity&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Storm+Entity&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Storm Entity",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/d/f/dfd3d187-f894-4550-a444-fc29371f18b7.jpg?1607071601",
+        "cost": "{1}{R}",
+        "ccost": 2,
+        "type": "Creature",
+        "subtype": "Elemental",
+        "colour": "r",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Apfut&unique=prints"
+        ],
+        "num": "122★ P Launch",
+        "numInt": 122,
+        "mtgenId": "fut|122★ P Launch",
+        "includedReason": "Launch Promo",
+        "usableForDeckBuilding": false
+    }
+]

@@ -1,0 +1,127 @@
+﻿[
+    {
+        "object": "card",
+        "id": "c29907d2-ecd4-4143-8f33-35f9663927da",
+        "oracle_id": "35f63c60-b0a1-459d-bf51-a8549fb06930",
+        "multiverse_ids": [
+            97056
+        ],
+        "tcgplayer_id": 38402,
+        "cardmarket_id": 17716,
+        "name": "Sword of Kaldra",
+        "lang": "en",
+        "released_at": "2003-09-20",
+        "uri": "https://api.scryfall.com/cards/c29907d2-ecd4-4143-8f33-35f9663927da",
+        "scryfall_uri": "https://scryfall.com/card/pmrd/251%E2%98%85/sword-of-kaldra?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/c/2/c29907d2-ecd4-4143-8f33-35f9663927da.jpg?1606846841",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/2/c29907d2-ecd4-4143-8f33-35f9663927da.jpg?1606846841",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/c/2/c29907d2-ecd4-4143-8f33-35f9663927da.jpg?1606846841",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/c/2/c29907d2-ecd4-4143-8f33-35f9663927da.png?1606846841",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/c/2/c29907d2-ecd4-4143-8f33-35f9663927da.jpg?1606846841",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/c/2/c29907d2-ecd4-4143-8f33-35f9663927da.jpg?1606846841"
+        },
+        "mana_cost": "{4}",
+        "cmc": 4,
+        "type_line": "Legendary Artifact — Equipment",
+        "oracle_text": "Equipped creature gets +5/+5.\nWhenever equipped creature deals damage to a creature, exile that creature. (Exile it only if it's still on the battlefield.)\nEquip {4} ({4}: Attach to target creature you control. Equip only as a sorcery. This card enters the battlefield unattached and stays on the battlefield if the creature leaves.)",
+        "colors": [],
+        "color_identity": [],
+        "keywords": [
+            "Equip"
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "387eb35e-18ae-4162-9332-2c2d3a1d16c1",
+        "set": "mrd",
+        "set_name": "Mirrodin Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/387eb35e-18ae-4162-9332-2c2d3a1d16c1",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apmrd&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/pmrd?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/c29907d2-ecd4-4143-8f33-35f9663927da/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A35f63c60-b0a1-459d-bf51-a8549fb06930&unique=prints",
+        "collector_number": "251★",
+        "digital": false,
+        "rarity": "r",
+        "watermark": "set",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Donato Giancola",
+        "artist_ids": [
+            "90332db2-aecb-4d79-917b-95cbeb8d0cb6"
+        ],
+        "illustration_id": "b52e0c94-a322-43c3-817d-00be7142ce1d",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "datestamped",
+            "prerelease"
+        ],
+        "edhrec_rank": 4262,
+        "prices": {
+            "usd": null,
+            "usd_foil": "32.91",
+            "eur": null,
+            "eur_foil": "5.89",
+            "tix": null
+        },
+        "related_uris": {
+            "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=97056",
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Sword+of+Kaldra&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Sword+of+Kaldra&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Sword+of+Kaldra",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Sword+of+Kaldra"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38402&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Sword+of+Kaldra&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Sword+of+Kaldra&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Sword of Kaldra",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/2/c29907d2-ecd4-4143-8f33-35f9663927da.jpg?1606846841",
+        "cost": "{4}",
+        "ccost": 4,
+        "type": "Legendary Artifact",
+        "subtype": "Equipment",
+        "colour": "a",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Apmrd&unique=prints"
+        ],
+        "num": "251★ P Prerelease",
+        "numInt": 251,
+        "mtgenId": "mrd|251★ P Prerelease",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false
+    }
+]

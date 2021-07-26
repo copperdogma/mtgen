@@ -1,0 +1,673 @@
+﻿[
+    {
+        "object": "card",
+        "id": "3f8060a3-ba74-404c-9050-0e9f7128209f",
+        "oracle_id": "1162c7ff-c0cb-469a-ad3c-322b0981ae1d",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38183,
+        "cardmarket_id": 242501,
+        "name": "Mitotic Slime",
+        "lang": "en",
+        "released_at": "2010-07-15",
+        "uri": "https://api.scryfall.com/cards/3f8060a3-ba74-404c-9050-0e9f7128209f",
+        "scryfall_uri": "https://scryfall.com/card/pm11/53/mitotic-slime?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/3/f/3f8060a3-ba74-404c-9050-0e9f7128209f.jpg?1582916338",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/3/f/3f8060a3-ba74-404c-9050-0e9f7128209f.jpg?1582916338",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/3/f/3f8060a3-ba74-404c-9050-0e9f7128209f.jpg?1582916338",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/3/f/3f8060a3-ba74-404c-9050-0e9f7128209f.png?1582916338",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/3/f/3f8060a3-ba74-404c-9050-0e9f7128209f.jpg?1582916338",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/3/f/3f8060a3-ba74-404c-9050-0e9f7128209f.jpg?1582916338"
+        },
+        "mana_cost": "{4}{G}",
+        "cmc": 5,
+        "type_line": "Creature — Ooze",
+        "oracle_text": "When Mitotic Slime dies, create two 2/2 green Ooze creature tokens. They have \"When this creature dies, create two 1/1 green Ooze creature tokens.\"",
+        "power": "4",
+        "toughness": "4",
+        "colors": [
+            "G"
+        ],
+        "color_identity": [
+            "G"
+        ],
+        "keywords": [],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "967c8cfa-76b8-4a17-be63-947490b64d85",
+                "component": "combo_piece",
+                "name": "Mitotic Slime",
+                "type_line": "Creature — Ooze",
+                "uri": "https://api.scryfall.com/cards/967c8cfa-76b8-4a17-be63-947490b64d85"
+            },
+            {
+                "object": "related_card",
+                "id": "24edd312-ef8e-48a0-8532-13e072daa00f",
+                "component": "token",
+                "name": "Ooze",
+                "type_line": "Token Creature — Ooze",
+                "uri": "https://api.scryfall.com/cards/24edd312-ef8e-48a0-8532-13e072daa00f"
+            },
+            {
+                "object": "related_card",
+                "id": "8ea26341-372c-4657-8910-08e0131fe0fc",
+                "component": "token",
+                "name": "Ooze",
+                "type_line": "Token Creature — Ooze",
+                "uri": "https://api.scryfall.com/cards/8ea26341-372c-4657-8910-08e0131fe0fc"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "8d3a0693-6b2a-4955-aeda-4888b2665dd0",
+        "set": "m11",
+        "set_name": "Magic 2011 Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/8d3a0693-6b2a-4955-aeda-4888b2665dd0",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apm11&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/pm11?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/3f8060a3-ba74-404c-9050-0e9f7128209f/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A1162c7ff-c0cb-469a-ad3c-322b0981ae1d&unique=prints",
+        "collector_number": "53",
+        "digital": false,
+        "rarity": "r",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Ron Spencer",
+        "artist_ids": [
+            "dab52c11-0564-4207-a4a1-c1735c946a65"
+        ],
+        "illustration_id": "aa4df2b2-9321-46d5-9198-8df2a1aa31dc",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": true,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo",
+            "gameday"
+        ],
+        "edhrec_rank": 4331,
+        "prices": {
+            "usd": null,
+            "usd_foil": "18.93",
+            "eur": null,
+            "eur_foil": "5.00",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Mitotic+Slime&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Mitotic+Slime&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Mitotic+Slime",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Mitotic+Slime"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38183&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Mitotic+Slime&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Mitotic+Slime&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Mitotic Slime",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/3/f/3f8060a3-ba74-404c-9050-0e9f7128209f.jpg?1582916338",
+        "cost": "{4}{G}",
+        "ccost": 5,
+        "type": "Creature",
+        "subtype": "Ooze",
+        "colour": "g",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Apm11&unique=prints"
+        ],
+        "num": "53",
+        "numInt": 53,
+        "mtgenId": "m11|53",
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "0e348e20-f0bd-482f-b7de-475fa05753a4",
+        "oracle_id": "1a7e0e55-41c3-4fd8-b718-55b59b5cab90",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38182,
+        "cardmarket_id": 242500,
+        "name": "Liliana's Specter",
+        "lang": "en",
+        "released_at": "2010-07-15",
+        "uri": "https://api.scryfall.com/cards/0e348e20-f0bd-482f-b7de-475fa05753a4",
+        "scryfall_uri": "https://scryfall.com/card/pm11/104/lilianas-specter?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/0/e/0e348e20-f0bd-482f-b7de-475fa05753a4.jpg?1561756658",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/0/e/0e348e20-f0bd-482f-b7de-475fa05753a4.jpg?1561756658",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/0/e/0e348e20-f0bd-482f-b7de-475fa05753a4.jpg?1561756658",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/0/e/0e348e20-f0bd-482f-b7de-475fa05753a4.png?1561756658",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/0/e/0e348e20-f0bd-482f-b7de-475fa05753a4.jpg?1561756658",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/0/e/0e348e20-f0bd-482f-b7de-475fa05753a4.jpg?1561756658"
+        },
+        "mana_cost": "{1}{B}{B}",
+        "cmc": 3,
+        "type_line": "Creature — Specter",
+        "oracle_text": "Flying\nWhen Liliana's Specter enters the battlefield, each opponent discards a card.",
+        "power": "2",
+        "toughness": "1",
+        "colors": [
+            "B"
+        ],
+        "color_identity": [
+            "B"
+        ],
+        "keywords": [
+            "Flying"
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "legal",
+            "vintage": "legal",
+            "penny": "legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": true,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "8d3a0693-6b2a-4955-aeda-4888b2665dd0",
+        "set": "m11",
+        "set_name": "Magic 2011 Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/8d3a0693-6b2a-4955-aeda-4888b2665dd0",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apm11&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/pm11?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/0e348e20-f0bd-482f-b7de-475fa05753a4/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A1a7e0e55-41c3-4fd8-b718-55b59b5cab90&unique=prints",
+        "collector_number": "104",
+        "digital": false,
+        "rarity": "c",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Jaime Jones",
+        "artist_ids": [
+            "92f6c2c1-fa57-4b52-99c4-0fd866c13dc9"
+        ],
+        "illustration_id": "f625794c-45ba-40aa-97bd-06822a53ae8d",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": true,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo",
+            "gameday"
+        ],
+        "edhrec_rank": 4614,
+        "prices": {
+            "usd": "4.78",
+            "usd_foil": null,
+            "eur": "1.30",
+            "eur_foil": null,
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Liliana%27s+Specter&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Liliana%27s+Specter&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Liliana%27s+Specter",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Liliana%27s+Specter"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38182&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Liliana%27s+Specter&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Liliana%27s+Specter&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Liliana's Specter",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/0/e/0e348e20-f0bd-482f-b7de-475fa05753a4.jpg?1561756658",
+        "cost": "{1}{B}{B}",
+        "ccost": 3,
+        "type": "Creature",
+        "subtype": "Specter",
+        "colour": "b",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Apm11&unique=prints"
+        ],
+        "num": "104",
+        "numInt": 104,
+        "mtgenId": "m11|104",
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "df87b2e4-033c-447f-9b52-b67de3e6fe41",
+        "oracle_id": "d3a0b660-358c-41bd-9cd2-41fbf3491b1a",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38347,
+        "cardmarket_id": 241974,
+        "name": "Birds of Paradise",
+        "lang": "en",
+        "released_at": "2010-07-15",
+        "uri": "https://api.scryfall.com/cards/df87b2e4-033c-447f-9b52-b67de3e6fe41",
+        "scryfall_uri": "https://scryfall.com/card/pm11/165%E2%98%85/birds-of-paradise?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/d/f/df87b2e4-033c-447f-9b52-b67de3e6fe41.jpg?1605361641",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/d/f/df87b2e4-033c-447f-9b52-b67de3e6fe41.jpg?1605361641",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/d/f/df87b2e4-033c-447f-9b52-b67de3e6fe41.jpg?1605361641",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/d/f/df87b2e4-033c-447f-9b52-b67de3e6fe41.png?1605361641",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/d/f/df87b2e4-033c-447f-9b52-b67de3e6fe41.jpg?1605361641",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/d/f/df87b2e4-033c-447f-9b52-b67de3e6fe41.jpg?1605361641"
+        },
+        "mana_cost": "{G}",
+        "cmc": 1,
+        "type_line": "Creature — Bird",
+        "oracle_text": "Flying\n{T}: Add one mana of any color.",
+        "power": "0",
+        "toughness": "1",
+        "colors": [
+            "G"
+        ],
+        "color_identity": [
+            "G"
+        ],
+        "keywords": [
+            "Flying"
+        ],
+        "produced_mana": [
+            "B",
+            "G",
+            "R",
+            "U",
+            "W"
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "8d3a0693-6b2a-4955-aeda-4888b2665dd0",
+        "set": "m11",
+        "set_name": "Magic 2011 Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/8d3a0693-6b2a-4955-aeda-4888b2665dd0",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apm11&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/pm11?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/df87b2e4-033c-447f-9b52-b67de3e6fe41/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Ad3a0b660-358c-41bd-9cd2-41fbf3491b1a&unique=prints",
+        "collector_number": "165★",
+        "digital": false,
+        "rarity": "r",
+        "watermark": "colorpie",
+        "flavor_text": "\"The gods used their feathers to paint all the colors of the world.\"\n—Yare-Tiva, warden of Gramur forest",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Terese Nielsen",
+        "artist_ids": [
+            "eb55171c-2342-45f4-a503-2d5a75baf752"
+        ],
+        "illustration_id": "494aff68-e13e-4414-984d-ef6e133aed33",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo",
+            "buyabox"
+        ],
+        "edhrec_rank": 52,
+        "prices": {
+            "usd": null,
+            "usd_foil": "60.54",
+            "eur": null,
+            "eur_foil": "9.16",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Birds+of+Paradise&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Birds+of+Paradise&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Birds+of+Paradise",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Birds+of+Paradise"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38347&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Birds+of+Paradise&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Birds+of+Paradise&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Birds of Paradise",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/d/f/df87b2e4-033c-447f-9b52-b67de3e6fe41.jpg?1605361641",
+        "cost": "{G}",
+        "ccost": 1,
+        "type": "Creature",
+        "subtype": "Bird",
+        "colour": "g",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Apm11&unique=prints"
+        ],
+        "num": "165★",
+        "numInt": 165,
+        "mtgenId": "m11|165★",
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "bb07690e-d816-46de-84e7-617149a51b18",
+        "oracle_id": "b2e950fb-cb7e-40a0-a311-5bbdd0477b29",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38401,
+        "cardmarket_id": 241947,
+        "name": "Sun Titan",
+        "lang": "en",
+        "released_at": "2010-07-15",
+        "uri": "https://api.scryfall.com/cards/bb07690e-d816-46de-84e7-617149a51b18",
+        "scryfall_uri": "https://scryfall.com/card/pm11/35%E2%98%85/sun-titan?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/b/b/bb07690e-d816-46de-84e7-617149a51b18.jpg?1605361637",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/b/b/bb07690e-d816-46de-84e7-617149a51b18.jpg?1605361637",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/b/b/bb07690e-d816-46de-84e7-617149a51b18.jpg?1605361637",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/b/b/bb07690e-d816-46de-84e7-617149a51b18.png?1605361637",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/b/b/bb07690e-d816-46de-84e7-617149a51b18.jpg?1605361637",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/b/b/bb07690e-d816-46de-84e7-617149a51b18.jpg?1605361637"
+        },
+        "mana_cost": "{4}{W}{W}",
+        "cmc": 6,
+        "type_line": "Creature — Giant",
+        "oracle_text": "Vigilance\nWhenever Sun Titan enters the battlefield or attacks, you may return target permanent card with mana value 3 or less from your graveyard to the battlefield.",
+        "power": "6",
+        "toughness": "6",
+        "colors": [
+            "W"
+        ],
+        "color_identity": [
+            "W"
+        ],
+        "keywords": [
+            "Vigilance"
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "not_legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "8d3a0693-6b2a-4955-aeda-4888b2665dd0",
+        "set": "m11",
+        "set_name": "Magic 2011 Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/8d3a0693-6b2a-4955-aeda-4888b2665dd0",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apm11&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/pm11?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/bb07690e-d816-46de-84e7-617149a51b18/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Ab2e950fb-cb7e-40a0-a311-5bbdd0477b29&unique=prints",
+        "collector_number": "35★",
+        "digital": false,
+        "rarity": "m",
+        "watermark": "set",
+        "flavor_text": "A blazing sun that never sets.",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Chris Rahn",
+        "artist_ids": [
+            "7742047e-0f80-4c0f-a530-d07460165e86"
+        ],
+        "illustration_id": "754758ef-7ddf-429c-ad00-20e25399c572",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo",
+            "datestamped",
+            "prerelease"
+        ],
+        "edhrec_rank": 97,
+        "prices": {
+            "usd": null,
+            "usd_foil": "6.23",
+            "eur": null,
+            "eur_foil": "1.82",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Sun+Titan&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Sun+Titan&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Sun+Titan",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Sun+Titan"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38401&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Sun+Titan&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Sun+Titan&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Sun Titan",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/b/b/bb07690e-d816-46de-84e7-617149a51b18.jpg?1605361637",
+        "cost": "{4}{W}{W}",
+        "ccost": 6,
+        "type": "Creature",
+        "subtype": "Giant",
+        "colour": "w",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Apm11&unique=prints"
+        ],
+        "num": "35★ P Prerelease",
+        "numInt": 35,
+        "mtgenId": "m11|35★ P Prerelease",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "918f0760-6a98-4099-8460-e003f3d0d655",
+        "oracle_id": "de672a4b-07eb-4be8-a03f-23dfbb7ac0fa",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38284,
+        "cardmarket_id": 241948,
+        "name": "Ancient Hellkite",
+        "lang": "en",
+        "released_at": "2010-07-15",
+        "uri": "https://api.scryfall.com/cards/918f0760-6a98-4099-8460-e003f3d0d655",
+        "scryfall_uri": "https://scryfall.com/card/pm11/122%E2%98%85/ancient-hellkite?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/9/1/918f0760-6a98-4099-8460-e003f3d0d655.jpg?1605361645",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/1/918f0760-6a98-4099-8460-e003f3d0d655.jpg?1605361645",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/9/1/918f0760-6a98-4099-8460-e003f3d0d655.jpg?1605361645",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/9/1/918f0760-6a98-4099-8460-e003f3d0d655.png?1605361645",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/9/1/918f0760-6a98-4099-8460-e003f3d0d655.jpg?1605361645",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/9/1/918f0760-6a98-4099-8460-e003f3d0d655.jpg?1605361645"
+        },
+        "mana_cost": "{4}{R}{R}{R}",
+        "cmc": 7,
+        "type_line": "Creature — Dragon",
+        "oracle_text": "Flying\n{R}: Ancient Hellkite deals 1 damage to target creature defending player controls. Activate only if Ancient Hellkite is attacking.",
+        "power": "6",
+        "toughness": "6",
+        "colors": [
+            "R"
+        ],
+        "color_identity": [
+            "R"
+        ],
+        "keywords": [
+            "Flying"
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "8d3a0693-6b2a-4955-aeda-4888b2665dd0",
+        "set": "m11",
+        "set_name": "Magic 2011 Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/8d3a0693-6b2a-4955-aeda-4888b2665dd0",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apm11&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/pm11?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/918f0760-6a98-4099-8460-e003f3d0d655/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Ade672a4b-07eb-4be8-a03f-23dfbb7ac0fa&unique=prints",
+        "collector_number": "122★",
+        "digital": false,
+        "rarity": "r",
+        "watermark": "set",
+        "flavor_text": "When a dragon attacks, there are no bystanders.",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Wayne Reynolds",
+        "artist_ids": [
+            "afc47cec-3ccc-404e-a8c6-4d83dd504271"
+        ],
+        "illustration_id": "4417a8cd-5236-46fd-9769-bf98430b430e",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo",
+            "datestamped",
+            "release"
+        ],
+        "edhrec_rank": 11190,
+        "prices": {
+            "usd": null,
+            "usd_foil": "0.42",
+            "eur": null,
+            "eur_foil": "0.25",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Ancient+Hellkite&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Ancient+Hellkite&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Ancient+Hellkite",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Ancient+Hellkite"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38284&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Ancient+Hellkite&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Ancient+Hellkite&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Ancient Hellkite",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/1/918f0760-6a98-4099-8460-e003f3d0d655.jpg?1605361645",
+        "cost": "{4}{R}{R}{R}",
+        "ccost": 7,
+        "type": "Creature",
+        "subtype": "Dragon",
+        "colour": "r",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Apm11&unique=prints"
+        ],
+        "num": "122★ P Launch",
+        "numInt": 122,
+        "mtgenId": "m11|122★ P Launch",
+        "includedReason": "Launch Promo",
+        "usableForDeckBuilding": false
+    }
+]

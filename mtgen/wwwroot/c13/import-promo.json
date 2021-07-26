@@ -1,7 +1,8 @@
 ﻿{
   "setCode": "c13",
-  "cardDataUrl": "http://www.mtgsalvation.com/spoilers/filter?SetID=137&IncludeUnconfirmed=true&CardsPerRequest=999",
-  "imagesUrl": "http://magic.wizards.com/en/articles/archive/2013-edition-card-image-gallery-2013-10-07",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Aoc13&unique=prints",
+  "imagesUrl": "",
+  "_comment": "Each deck has one primary and two secondary commanders. They also included oversized foil versions of the same.",
   "exceptions": [
     {
       "_comment": "add promo:false to ALL cards with the intention of deleting them later",
@@ -12,21 +13,14 @@
     },
 
     {
-      "_comment": "Each deck has one primary and two secondary commanders. They also included oversized foil versions of the same.",
-      "where": "title=(Oloro, Ageless Ascetic|Sharuum the Hegemon|Sphinx of the Steel Wind|    Marath, Will of the Wild|Gahiji, Honored One|Mayael the Anima|    Prossh, Skyraider of Kher|Sek'Kuar, Deathkeeper|Shattergang Brothers|    Jeleva, Nephalia's Scourge|Nekusar, the Mindrazer|Thraximundar|    Derevi, Empyrial Tactician|Roon of the Hidden Realm|Rubinia Soulsinger)",
+      "where": "",
       "newValues": {
-        "promo": true,
+        "set": "{{setCode}}",
         "num": "{{num}} Promo",
         "includedReason": "Oversized Foil Commander Promo",
-        "usableForDeckBuilding": false,
-        "addedViaException": true
+        "promo": true,
+        "usableForDeckBuilding": false
       }
-    },
-
-    {
-      "_comment": "delete all cards that still have promo=false, which leaves just our promo cards",
-      "delete": true,
-      "where": "promo=false"
     }
   ]
 }

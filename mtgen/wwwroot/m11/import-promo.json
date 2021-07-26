@@ -1,0 +1,36 @@
+{
+  "setCode": "m11",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Apm11&unique=prints",
+  "imagesUrl": "",
+    "exceptions": [
+        {
+            "_comments": [
+                "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+            ]
+        },
+
+        {
+            "where": "title='Sun Titan",
+            "newValues": {
+                "num": "{{num}} P Prerelease",
+                "includedReason": "Prerelease Promo"
+            }
+        },
+        {
+            "where": "title='Ancient Hellkite",
+            "newValues": {
+                "num": "{{num}} P Launch",
+                "includedReason": "Launch Promo"
+            }
+        },
+
+        {
+            "where": "",
+            "newValues": {
+                "set": "{{setCode}}",
+                "promo": true,
+                "usableForDeckBuilding": false
+            }
+        }
+    ]
+}

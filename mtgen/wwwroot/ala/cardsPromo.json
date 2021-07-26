@@ -1,0 +1,129 @@
+﻿[
+    {
+        "object": "card",
+        "id": "c6ffd45c-2353-4292-b6f6-29d8f7e031ca",
+        "oracle_id": "f953afdf-96f7-4851-994c-1617e8f5e5c9",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38365,
+        "cardmarket_id": 19953,
+        "name": "Ajani Vengeant",
+        "lang": "en",
+        "released_at": "2008-10-03",
+        "uri": "https://api.scryfall.com/cards/c6ffd45c-2353-4292-b6f6-29d8f7e031ca",
+        "scryfall_uri": "https://scryfall.com/card/pala/154%E2%98%85/ajani-vengeant?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/c/6/c6ffd45c-2353-4292-b6f6-29d8f7e031ca.jpg?1606760897",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/6/c6ffd45c-2353-4292-b6f6-29d8f7e031ca.jpg?1606760897",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/c/6/c6ffd45c-2353-4292-b6f6-29d8f7e031ca.jpg?1606760897",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/c/6/c6ffd45c-2353-4292-b6f6-29d8f7e031ca.png?1606760897",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/c/6/c6ffd45c-2353-4292-b6f6-29d8f7e031ca.jpg?1606760897",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/c/6/c6ffd45c-2353-4292-b6f6-29d8f7e031ca.jpg?1606760897"
+        },
+        "mana_cost": "{2}{R}{W}",
+        "cmc": 4,
+        "type_line": "Legendary Planeswalker — Ajani",
+        "oracle_text": "+1: Target permanent doesn't untap during its controller's next untap step.\n−2: Ajani Vengeant deals 3 damage to any target and you gain 3 life.\n−7: Destroy all lands target player controls.",
+        "loyalty": "3",
+        "colors": [
+            "R",
+            "W"
+        ],
+        "color_identity": [
+            "R",
+            "W"
+        ],
+        "keywords": [],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "not_legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "f31d9028-0a82-4d31-b874-4fdde618948e",
+        "set": "ala",
+        "set_name": "Shards of Alara Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/f31d9028-0a82-4d31-b874-4fdde618948e",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apala&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/pala?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/c6ffd45c-2353-4292-b6f6-29d8f7e031ca/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Af953afdf-96f7-4851-994c-1617e8f5e5c9&unique=prints",
+        "collector_number": "154★",
+        "digital": false,
+        "rarity": "m",
+        "watermark": "set",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Jason Chan",
+        "artist_ids": [
+            "8062d5a9-51b6-4822-933f-fa9e9dba8416"
+        ],
+        "illustration_id": "eb0fb45d-28c4-4067-b019-e0c8a6d5d00e",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "datestamped",
+            "prerelease"
+        ],
+        "edhrec_rank": 6198,
+        "prices": {
+            "usd": null,
+            "usd_foil": "3.73",
+            "eur": null,
+            "eur_foil": "0.95",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Ajani+Vengeant&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Ajani+Vengeant&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Ajani+Vengeant",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Ajani+Vengeant"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38365&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Ajani+Vengeant&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Ajani+Vengeant&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Ajani Vengeant",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/6/c6ffd45c-2353-4292-b6f6-29d8f7e031ca.jpg?1606760897",
+        "cost": "{2}{R}{W}",
+        "ccost": 4,
+        "type": "Legendary Planeswalker",
+        "subtype": "Ajani",
+        "colour": "m",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Apala&unique=prints"
+        ],
+        "num": "154★ P Prerelease",
+        "numInt": 154,
+        "mtgenId": "ala|154★ P Prerelease",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false
+    }
+]

@@ -1,0 +1,261 @@
+﻿[
+    {
+        "object": "card",
+        "id": "c287d593-cfd0-46b6-bde0-0c04a83d828b",
+        "oracle_id": "454b898f-b134-4d63-ae7b-1e736964cd48",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38391,
+        "cardmarket_id": 17726,
+        "name": "Oros, the Avenger",
+        "lang": "en",
+        "released_at": "2007-01-20",
+        "uri": "https://api.scryfall.com/cards/c287d593-cfd0-46b6-bde0-0c04a83d828b",
+        "scryfall_uri": "https://scryfall.com/card/pplc/161%E2%98%85/oros-the-avenger?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/c/2/c287d593-cfd0-46b6-bde0-0c04a83d828b.jpg?1606761751",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/2/c287d593-cfd0-46b6-bde0-0c04a83d828b.jpg?1606761751",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/c/2/c287d593-cfd0-46b6-bde0-0c04a83d828b.jpg?1606761751",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/c/2/c287d593-cfd0-46b6-bde0-0c04a83d828b.png?1606761751",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/c/2/c287d593-cfd0-46b6-bde0-0c04a83d828b.jpg?1606761751",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/c/2/c287d593-cfd0-46b6-bde0-0c04a83d828b.jpg?1606761751"
+        },
+        "mana_cost": "{3}{R}{W}{B}",
+        "cmc": 6,
+        "type_line": "Legendary Creature — Dragon",
+        "oracle_text": "Flying\nWhenever Oros, the Avenger deals combat damage to a player, you may pay {2}{W}. If you do, Oros deals 3 damage to each nonwhite creature.",
+        "power": "6",
+        "toughness": "6",
+        "colors": [
+            "B",
+            "R",
+            "W"
+        ],
+        "color_identity": [
+            "B",
+            "R",
+            "W"
+        ],
+        "keywords": [
+            "Flying"
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "f4e4582f-0ae8-42d7-acb7-49c29958a25e",
+        "set": "plc",
+        "set_name": "Planar Chaos Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/f4e4582f-0ae8-42d7-acb7-49c29958a25e",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Applc&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/pplc?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/c287d593-cfd0-46b6-bde0-0c04a83d828b/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A454b898f-b134-4d63-ae7b-1e736964cd48&unique=prints",
+        "collector_number": "161★",
+        "digital": false,
+        "rarity": "r",
+        "watermark": "set",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Daren Bader",
+        "artist_ids": [
+            "7da1a585-c875-45e4-b322-5da9e8e1f651"
+        ],
+        "illustration_id": "f6c27109-252e-49e4-871c-e902521cc294",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "datestamped",
+            "prerelease"
+        ],
+        "edhrec_rank": 7954,
+        "prices": {
+            "usd": null,
+            "usd_foil": "4.66",
+            "eur": null,
+            "eur_foil": "0.48",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Oros%2C+the+Avenger&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Oros%2C+the+Avenger&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Oros%2C+the+Avenger",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Oros%2C+the+Avenger"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38391&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Oros%2C+the+Avenger&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Oros%2C+the+Avenger&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Oros, the Avenger",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/2/c287d593-cfd0-46b6-bde0-0c04a83d828b.jpg?1606761751",
+        "cost": "{3}{R}{W}{B}",
+        "ccost": 6,
+        "type": "Legendary Creature",
+        "subtype": "Dragon",
+        "colour": "m",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Applc&unique=prints"
+        ],
+        "num": "161★ P Prerelease",
+        "numInt": 161,
+        "mtgenId": "plc|161★ P Prerelease",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "078e67bb-aaae-4d3c-a5b2-1e95b741d187",
+        "oracle_id": "500663c1-390c-4598-b614-4168c4f7debe",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38375,
+        "cardmarket_id": 19458,
+        "name": "Hedge Troll",
+        "lang": "en",
+        "released_at": "2007-02-02",
+        "uri": "https://api.scryfall.com/cards/078e67bb-aaae-4d3c-a5b2-1e95b741d187",
+        "scryfall_uri": "https://scryfall.com/card/pplc/151%E2%98%85/hedge-troll?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/0/7/078e67bb-aaae-4d3c-a5b2-1e95b741d187.jpg?1606761726",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/0/7/078e67bb-aaae-4d3c-a5b2-1e95b741d187.jpg?1606761726",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/0/7/078e67bb-aaae-4d3c-a5b2-1e95b741d187.jpg?1606761726",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/0/7/078e67bb-aaae-4d3c-a5b2-1e95b741d187.png?1606761726",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/0/7/078e67bb-aaae-4d3c-a5b2-1e95b741d187.jpg?1606761726",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/0/7/078e67bb-aaae-4d3c-a5b2-1e95b741d187.jpg?1606761726"
+        },
+        "mana_cost": "{2}{G}",
+        "cmc": 3,
+        "type_line": "Creature — Troll Cleric",
+        "oracle_text": "Hedge Troll gets +1/+1 as long as you control a Plains.\n{W}: Regenerate Hedge Troll.",
+        "power": "2",
+        "toughness": "2",
+        "colors": [
+            "G"
+        ],
+        "color_identity": [
+            "G",
+            "W"
+        ],
+        "keywords": [],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "not_legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "f4e4582f-0ae8-42d7-acb7-49c29958a25e",
+        "set": "plc",
+        "set_name": "Planar Chaos Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/f4e4582f-0ae8-42d7-acb7-49c29958a25e",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Applc&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/pplc?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/078e67bb-aaae-4d3c-a5b2-1e95b741d187/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A500663c1-390c-4598-b614-4168c4f7debe&unique=prints",
+        "collector_number": "151★",
+        "digital": false,
+        "rarity": "r",
+        "watermark": "set",
+        "flavor_text": "His abode was clean and bare, not a morsel in sight. I asked him what he ate, fearing the answer. He smiled and said his faith alone sustained him.",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Paolo Parente",
+        "artist_ids": [
+            "d48dd097-720d-476a-8722-6a02854ae28b"
+        ],
+        "illustration_id": "621c1930-2098-454c-a709-43d0329a17ba",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "release"
+        ],
+        "edhrec_rank": 20844,
+        "prices": {
+            "usd": null,
+            "usd_foil": "0.38",
+            "eur": null,
+            "eur_foil": "0.33",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Hedge+Troll&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Hedge+Troll&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Hedge+Troll",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Hedge+Troll"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38375&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Hedge+Troll&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Hedge+Troll&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Hedge Troll",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/0/7/078e67bb-aaae-4d3c-a5b2-1e95b741d187.jpg?1606761726",
+        "cost": "{2}{G}",
+        "ccost": 3,
+        "type": "Creature",
+        "subtype": "Troll Cleric",
+        "colour": "g",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Applc&unique=prints"
+        ],
+        "num": "151★ P Launch",
+        "numInt": 151,
+        "mtgenId": "plc|151★ P Launch",
+        "includedReason": "Launch Promo",
+        "usableForDeckBuilding": false
+    }
+]

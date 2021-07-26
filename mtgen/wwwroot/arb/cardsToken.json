@@ -1,66 +1,567 @@
 [
- {
-  "title": "Bird Soldier",
-  "set": "arb",
-  "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/mtg/images/daily/arcana/171_birsoltoken.jpg",
-  "colour": "w",
-  "rarity": "c",
-  "type": "Token Creature",
-  "subtype": "Bird Soldier",
-  "power": "1",
-  "toughness": "1",
-  "num": "001/004 T",
-  "token": "true",
-  "usableForDeckBuilding": false,
-  "addedViaException": true,
-  "mtgenId": "arb|001/004 T"
- },
- {
-  "title": "Lizard",
-  "set": "arb",
-  "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/mtg/images/daily/arcana/171_liztoken.jpg",
-  "colour": "g",
-  "rarity": "c",
-  "type": "Token Creature",
-  "subtype": "Lizard",
-  "power": "2",
-  "toughness": "2",
-  "num": "002/004 T",
-  "token": "true",
-  "usableForDeckBuilding": false,
-  "addedViaException": true,
-  "mtgenId": "arb|002/004 T"
- },
-  {
-    "title": "Dragon",
-    "set": "arb",
-    "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/mtg/images/daily/arcana/171_dbmtoken.jpg",
-    "colour": "m",
-    "rarity": "c",
-    "type": "Token Creature",
-    "subtype": "Dragon",
-    "power": "1",
-    "toughness": "1",
-    "num": "003/004 T",
-    "token": "true",
-    "usableForDeckBuilding": false,
-    "addedViaException": true,
-    "mtgenId": "arb|003/004 T"
-  },
- {
-  "title": "Zombie Wizard",
-  "set": "arb",
-  "src": "http://magic.wizards.com/sites/mtg/files/image_legacy_migration/mtg/images/daily/arcana/171_zwtoken.jpg",
-  "colour": "m",
-  "rarity": "c",
-  "type": "Token Creature",
-  "subtype": "Zombie Wizard",
-  "power": "1",
-  "toughness": "1",
-  "num": "004/004 T",
-  "token": "true",
-  "usableForDeckBuilding": false,
-  "addedViaException": true,
-  "mtgenId": "arb|004/004 T"
- }
+    {
+        "object": "card",
+        "id": "b7b55dcf-ae63-4b84-8d39-80b5a6de3c1a",
+        "oracle_id": "f1df6a8f-251e-4fcc-92ce-42eafdbae40b",
+        "multiverse_ids": [],
+        "tcgplayer_id": 78535,
+        "name": "Bird Soldier",
+        "lang": "en",
+        "released_at": "2009-04-30",
+        "uri": "https://api.scryfall.com/cards/b7b55dcf-ae63-4b84-8d39-80b5a6de3c1a",
+        "scryfall_uri": "https://scryfall.com/card/tarb/1/bird-soldier?utm_source=api",
+        "layout": "token",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/b/7/b7b55dcf-ae63-4b84-8d39-80b5a6de3c1a.jpg?1561757893",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/b/7/b7b55dcf-ae63-4b84-8d39-80b5a6de3c1a.jpg?1561757893",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/b/7/b7b55dcf-ae63-4b84-8d39-80b5a6de3c1a.jpg?1561757893",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/b/7/b7b55dcf-ae63-4b84-8d39-80b5a6de3c1a.png?1561757893",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/b/7/b7b55dcf-ae63-4b84-8d39-80b5a6de3c1a.jpg?1561757893",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/b/7/b7b55dcf-ae63-4b84-8d39-80b5a6de3c1a.jpg?1561757893"
+        },
+        "mana_cost": "",
+        "cmc": 0,
+        "type_line": "Token Creature — Bird Soldier",
+        "oracle_text": "Flying",
+        "power": "1",
+        "toughness": "1",
+        "colors": [
+            "W"
+        ],
+        "color_identity": [
+            "W"
+        ],
+        "keywords": [
+            "Flying"
+        ],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "dbabaf1d-0220-438d-8263-e23d8010fe24",
+                "component": "combo_piece",
+                "name": "Flurry of Wings",
+                "type_line": "Instant",
+                "uri": "https://api.scryfall.com/cards/dbabaf1d-0220-438d-8263-e23d8010fe24"
+            },
+            {
+                "object": "related_card",
+                "id": "b7b55dcf-ae63-4b84-8d39-80b5a6de3c1a",
+                "component": "token",
+                "name": "Bird Soldier",
+                "type_line": "Token Creature — Bird Soldier",
+                "uri": "https://api.scryfall.com/cards/b7b55dcf-ae63-4b84-8d39-80b5a6de3c1a"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "not_legal",
+            "legacy": "not_legal",
+            "pauper": "not_legal",
+            "vintage": "not_legal",
+            "penny": "not_legal",
+            "commander": "not_legal",
+            "brawl": "not_legal",
+            "duel": "not_legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": true,
+        "oversized": false,
+        "promo": false,
+        "reprint": false,
+        "variation": false,
+        "set_id": "f1c5bbc9-2b74-443f-8b26-f495f2b4de18",
+        "set": "arb",
+        "set_name": "Alara Reborn Tokens",
+        "set_type": "token",
+        "set_uri": "https://api.scryfall.com/sets/f1c5bbc9-2b74-443f-8b26-f495f2b4de18",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Atarb&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/tarb?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/b7b55dcf-ae63-4b84-8d39-80b5a6de3c1a/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Af1df6a8f-251e-4fcc-92ce-42eafdbae40b&unique=prints",
+        "collector_number": "1",
+        "digital": false,
+        "rarity": "c",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Matt Cavotta",
+        "artist_ids": [
+            "2e6a0611-9411-4ba4-98e3-c0e18cbf9f83"
+        ],
+        "illustration_id": "8738b501-7f66-4f5f-b0ad-5c04b2e9834e",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": true,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo"
+        ],
+        "prices": {
+            "usd": "0.27",
+            "usd_foil": null,
+            "eur": null,
+            "eur_foil": null,
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Bird+Soldier&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Bird+Soldier&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Bird+Soldier",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Bird+Soldier"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=78535&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Bird+Soldier&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Bird+Soldier&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Bird Soldier",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/b/7/b7b55dcf-ae63-4b84-8d39-80b5a6de3c1a.jpg?1561757893",
+        "cost": "",
+        "ccost": 0,
+        "type": "Token Creature",
+        "subtype": "Bird Soldier",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Atarb&unique=prints"
+        ],
+        "num": "1/004 T",
+        "numInt": 1,
+        "mtgenId": "arb|1/004 T",
+        "token": true,
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "83790fd3-f371-494c-97a2-3aa469a399f1",
+        "oracle_id": "150fe7d9-a31d-4947-91a2-70ddebefa95d",
+        "multiverse_ids": [],
+        "tcgplayer_id": 78537,
+        "name": "Lizard",
+        "lang": "en",
+        "released_at": "2009-04-30",
+        "uri": "https://api.scryfall.com/cards/83790fd3-f371-494c-97a2-3aa469a399f1",
+        "scryfall_uri": "https://scryfall.com/card/tarb/2/lizard?utm_source=api",
+        "layout": "token",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/8/3/83790fd3-f371-494c-97a2-3aa469a399f1.jpg?1561757482",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/8/3/83790fd3-f371-494c-97a2-3aa469a399f1.jpg?1561757482",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/8/3/83790fd3-f371-494c-97a2-3aa469a399f1.jpg?1561757482",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/8/3/83790fd3-f371-494c-97a2-3aa469a399f1.png?1561757482",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/8/3/83790fd3-f371-494c-97a2-3aa469a399f1.jpg?1561757482",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/8/3/83790fd3-f371-494c-97a2-3aa469a399f1.jpg?1561757482"
+        },
+        "mana_cost": "",
+        "cmc": 0,
+        "type_line": "Token Creature — Lizard",
+        "oracle_text": "",
+        "power": "2",
+        "toughness": "2",
+        "colors": [
+            "G"
+        ],
+        "color_identity": [
+            "G"
+        ],
+        "keywords": [],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "595ae3af-cc28-407a-a045-a6d71cd6be60",
+                "component": "combo_piece",
+                "name": "Predatory Advantage",
+                "type_line": "Enchantment",
+                "uri": "https://api.scryfall.com/cards/595ae3af-cc28-407a-a045-a6d71cd6be60"
+            },
+            {
+                "object": "related_card",
+                "id": "83790fd3-f371-494c-97a2-3aa469a399f1",
+                "component": "token",
+                "name": "Lizard",
+                "type_line": "Token Creature — Lizard",
+                "uri": "https://api.scryfall.com/cards/83790fd3-f371-494c-97a2-3aa469a399f1"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "not_legal",
+            "legacy": "not_legal",
+            "pauper": "not_legal",
+            "vintage": "not_legal",
+            "penny": "not_legal",
+            "commander": "not_legal",
+            "brawl": "not_legal",
+            "duel": "not_legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": true,
+        "oversized": false,
+        "promo": false,
+        "reprint": false,
+        "variation": false,
+        "set_id": "f1c5bbc9-2b74-443f-8b26-f495f2b4de18",
+        "set": "arb",
+        "set_name": "Alara Reborn Tokens",
+        "set_type": "token",
+        "set_uri": "https://api.scryfall.com/sets/f1c5bbc9-2b74-443f-8b26-f495f2b4de18",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Atarb&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/tarb?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/83790fd3-f371-494c-97a2-3aa469a399f1/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A150fe7d9-a31d-4947-91a2-70ddebefa95d&unique=prints",
+        "collector_number": "2",
+        "digital": false,
+        "rarity": "c",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Anthony S. Waters",
+        "artist_ids": [
+            "f009de11-3c8d-4663-b996-ca0c3e997fad"
+        ],
+        "illustration_id": "327730a4-f3a4-44dd-8be0-73d8965d782f",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": true,
+        "textless": false,
+        "booster": true,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo"
+        ],
+        "prices": {
+            "usd": "0.18",
+            "usd_foil": null,
+            "eur": null,
+            "eur_foil": null,
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Lizard&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Lizard&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Lizard",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Lizard"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=78537&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Lizard&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Lizard&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Lizard",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/8/3/83790fd3-f371-494c-97a2-3aa469a399f1.jpg?1561757482",
+        "cost": "",
+        "ccost": 0,
+        "type": "Token Creature",
+        "subtype": "Lizard",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Atarb&unique=prints"
+        ],
+        "num": "2/004 T",
+        "numInt": 2,
+        "mtgenId": "arb|2/004 T",
+        "token": true,
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "0bb628da-a02f-4d3e-b919-0c03821dd5f2",
+        "oracle_id": "d13ec5e2-7c3a-4ace-b470-e5e0e07550c1",
+        "multiverse_ids": [],
+        "tcgplayer_id": 78536,
+        "name": "Dragon",
+        "lang": "en",
+        "released_at": "2009-04-30",
+        "uri": "https://api.scryfall.com/cards/0bb628da-a02f-4d3e-b919-0c03821dd5f2",
+        "scryfall_uri": "https://scryfall.com/card/tarb/3/dragon?utm_source=api",
+        "layout": "token",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/0/b/0bb628da-a02f-4d3e-b919-0c03821dd5f2.jpg?1561756633",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/0/b/0bb628da-a02f-4d3e-b919-0c03821dd5f2.jpg?1561756633",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/0/b/0bb628da-a02f-4d3e-b919-0c03821dd5f2.jpg?1561756633",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/0/b/0bb628da-a02f-4d3e-b919-0c03821dd5f2.png?1561756633",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/0/b/0bb628da-a02f-4d3e-b919-0c03821dd5f2.jpg?1561756633",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/0/b/0bb628da-a02f-4d3e-b919-0c03821dd5f2.jpg?1561756633"
+        },
+        "mana_cost": "",
+        "cmc": 0,
+        "type_line": "Token Creature — Dragon",
+        "oracle_text": "Flying, devour 2",
+        "power": "1",
+        "toughness": "1",
+        "colors": [
+            "G",
+            "R"
+        ],
+        "color_identity": [
+            "G",
+            "R"
+        ],
+        "keywords": [
+            "Flying",
+            "Devour"
+        ],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "f7f99431-ae43-4b68-82f0-faf940216c91",
+                "component": "combo_piece",
+                "name": "Dragon Broodmother",
+                "type_line": "Creature — Dragon",
+                "uri": "https://api.scryfall.com/cards/f7f99431-ae43-4b68-82f0-faf940216c91"
+            },
+            {
+                "object": "related_card",
+                "id": "0bb628da-a02f-4d3e-b919-0c03821dd5f2",
+                "component": "token",
+                "name": "Dragon",
+                "type_line": "Token Creature — Dragon",
+                "uri": "https://api.scryfall.com/cards/0bb628da-a02f-4d3e-b919-0c03821dd5f2"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "not_legal",
+            "legacy": "not_legal",
+            "pauper": "not_legal",
+            "vintage": "not_legal",
+            "penny": "not_legal",
+            "commander": "not_legal",
+            "brawl": "not_legal",
+            "duel": "not_legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": true,
+        "oversized": false,
+        "promo": false,
+        "reprint": false,
+        "variation": false,
+        "set_id": "f1c5bbc9-2b74-443f-8b26-f495f2b4de18",
+        "set": "arb",
+        "set_name": "Alara Reborn Tokens",
+        "set_type": "token",
+        "set_uri": "https://api.scryfall.com/sets/f1c5bbc9-2b74-443f-8b26-f495f2b4de18",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Atarb&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/tarb?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/0bb628da-a02f-4d3e-b919-0c03821dd5f2/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Ad13ec5e2-7c3a-4ace-b470-e5e0e07550c1&unique=prints",
+        "collector_number": "3",
+        "digital": false,
+        "rarity": "c",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Jaime Jones",
+        "artist_ids": [
+            "92f6c2c1-fa57-4b52-99c4-0fd866c13dc9"
+        ],
+        "illustration_id": "f320026a-afd7-461d-94d0-ce5423f1b168",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": true,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo"
+        ],
+        "prices": {
+            "usd": "2.89",
+            "usd_foil": null,
+            "eur": null,
+            "eur_foil": null,
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Dragon&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Dragon&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Dragon",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Dragon"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=78536&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Dragon&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Dragon&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Dragon",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/0/b/0bb628da-a02f-4d3e-b919-0c03821dd5f2.jpg?1561756633",
+        "cost": "",
+        "ccost": 0,
+        "type": "Token Creature",
+        "subtype": "Dragon",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Atarb&unique=prints"
+        ],
+        "num": "3/004 T",
+        "numInt": 3,
+        "mtgenId": "arb|3/004 T",
+        "token": true,
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "bde17901-35fb-4045-8ba5-deab046cd44f",
+        "oracle_id": "cf3528fe-320c-433a-9a61-298198d7eced",
+        "multiverse_ids": [],
+        "tcgplayer_id": 78538,
+        "name": "Zombie Wizard",
+        "lang": "en",
+        "released_at": "2009-04-30",
+        "uri": "https://api.scryfall.com/cards/bde17901-35fb-4045-8ba5-deab046cd44f",
+        "scryfall_uri": "https://scryfall.com/card/tarb/4/zombie-wizard?utm_source=api",
+        "layout": "token",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/b/d/bde17901-35fb-4045-8ba5-deab046cd44f.jpg?1561757959",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/b/d/bde17901-35fb-4045-8ba5-deab046cd44f.jpg?1561757959",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/b/d/bde17901-35fb-4045-8ba5-deab046cd44f.jpg?1561757959",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/b/d/bde17901-35fb-4045-8ba5-deab046cd44f.png?1561757959",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/b/d/bde17901-35fb-4045-8ba5-deab046cd44f.jpg?1561757959",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/b/d/bde17901-35fb-4045-8ba5-deab046cd44f.jpg?1561757959"
+        },
+        "mana_cost": "",
+        "cmc": 0,
+        "type_line": "Token Creature — Zombie Wizard",
+        "oracle_text": "",
+        "power": "1",
+        "toughness": "1",
+        "colors": [
+            "B",
+            "U"
+        ],
+        "color_identity": [
+            "B",
+            "U"
+        ],
+        "keywords": [],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "df38c422-7830-4f25-b74b-ed90b7047f53",
+                "component": "combo_piece",
+                "name": "Lich Lord of Unx",
+                "type_line": "Creature — Zombie Wizard",
+                "uri": "https://api.scryfall.com/cards/df38c422-7830-4f25-b74b-ed90b7047f53"
+            },
+            {
+                "object": "related_card",
+                "id": "bde17901-35fb-4045-8ba5-deab046cd44f",
+                "component": "token",
+                "name": "Zombie Wizard",
+                "type_line": "Token Creature — Zombie Wizard",
+                "uri": "https://api.scryfall.com/cards/bde17901-35fb-4045-8ba5-deab046cd44f"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "not_legal",
+            "legacy": "not_legal",
+            "pauper": "not_legal",
+            "vintage": "not_legal",
+            "penny": "not_legal",
+            "commander": "not_legal",
+            "brawl": "not_legal",
+            "duel": "not_legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": true,
+        "oversized": false,
+        "promo": false,
+        "reprint": false,
+        "variation": false,
+        "set_id": "f1c5bbc9-2b74-443f-8b26-f495f2b4de18",
+        "set": "arb",
+        "set_name": "Alara Reborn Tokens",
+        "set_type": "token",
+        "set_uri": "https://api.scryfall.com/sets/f1c5bbc9-2b74-443f-8b26-f495f2b4de18",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Atarb&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/tarb?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/bde17901-35fb-4045-8ba5-deab046cd44f/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Acf3528fe-320c-433a-9a61-298198d7eced&unique=prints",
+        "collector_number": "4",
+        "digital": false,
+        "rarity": "c",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Dave Allsop",
+        "artist_ids": [
+            "99b8310a-4fd6-4ded-8ab7-3b5185821cbe"
+        ],
+        "illustration_id": "9c026377-832e-42aa-89d9-efe8a237b061",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": true,
+        "textless": false,
+        "booster": true,
+        "story_spotlight": false,
+        "promo_types": [
+            "setpromo"
+        ],
+        "prices": {
+            "usd": "1.30",
+            "usd_foil": null,
+            "eur": null,
+            "eur_foil": null,
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Zombie+Wizard&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Zombie+Wizard&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Zombie+Wizard",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Zombie+Wizard"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=78538&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Zombie+Wizard&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Zombie+Wizard&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Zombie Wizard",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/b/d/bde17901-35fb-4045-8ba5-deab046cd44f.jpg?1561757959",
+        "cost": "",
+        "ccost": 0,
+        "type": "Token Creature",
+        "subtype": "Zombie Wizard",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Atarb&unique=prints"
+        ],
+        "num": "4/004 T",
+        "numInt": 4,
+        "mtgenId": "arb|4/004 T",
+        "token": true,
+        "usableForDeckBuilding": false
+    }
 ]

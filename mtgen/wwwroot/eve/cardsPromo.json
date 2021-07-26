@@ -1,0 +1,259 @@
+﻿[
+    {
+        "object": "card",
+        "id": "8d0972df-08da-4b4d-8139-09a0f5b7d170",
+        "oracle_id": "5391f601-b778-413f-a31f-9f8b23b40f5c",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38392,
+        "cardmarket_id": 19643,
+        "name": "Overbeing of Myth",
+        "lang": "en",
+        "released_at": "2008-07-12",
+        "uri": "https://api.scryfall.com/cards/8d0972df-08da-4b4d-8139-09a0f5b7d170",
+        "scryfall_uri": "https://scryfall.com/card/peve/157%E2%98%85/overbeing-of-myth?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/8/d/8d0972df-08da-4b4d-8139-09a0f5b7d170.jpg?1606761265",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/8/d/8d0972df-08da-4b4d-8139-09a0f5b7d170.jpg?1606761265",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/8/d/8d0972df-08da-4b4d-8139-09a0f5b7d170.jpg?1606761265",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/8/d/8d0972df-08da-4b4d-8139-09a0f5b7d170.png?1606761265",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/8/d/8d0972df-08da-4b4d-8139-09a0f5b7d170.jpg?1606761265",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/8/d/8d0972df-08da-4b4d-8139-09a0f5b7d170.jpg?1606761265"
+        },
+        "mana_cost": "{G/U}{G/U}{G/U}{G/U}{G/U}",
+        "cmc": 5,
+        "type_line": "Creature — Spirit Avatar",
+        "oracle_text": "Overbeing of Myth's power and toughness are each equal to the number of cards in your hand.\nAt the beginning of your draw step, draw an additional card.",
+        "power": "*",
+        "toughness": "*",
+        "colors": [
+            "G",
+            "U"
+        ],
+        "color_identity": [
+            "G",
+            "U"
+        ],
+        "keywords": [],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "67920ddd-5260-42c0-831e-acbd7e135dd3",
+        "set": "eve",
+        "set_name": "Eventide Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/67920ddd-5260-42c0-831e-acbd7e135dd3",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apeve&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/peve?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/8d0972df-08da-4b4d-8139-09a0f5b7d170/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A5391f601-b778-413f-a31f-9f8b23b40f5c&unique=prints",
+        "collector_number": "157★",
+        "digital": false,
+        "rarity": "r",
+        "watermark": "set",
+        "flavor_text": "\"She walks among us unseen, learning from our imperfections.\"\n—*The Seer's Parables*",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Zoltan Boros & Gabor Szikszai",
+        "artist_ids": [
+            "1885e6cb-c827-4896-994e-3d0a027d602f",
+            "44c3877f-8771-43dc-9e40-f4c765f59d2e"
+        ],
+        "illustration_id": "843d2384-c19e-4757-b59f-c2a7b50f5d74",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "datestamped",
+            "prerelease"
+        ],
+        "edhrec_rank": 7128,
+        "prices": {
+            "usd": null,
+            "usd_foil": "3.55",
+            "eur": null,
+            "eur_foil": "1.00",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Overbeing+of+Myth&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Overbeing+of+Myth&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Overbeing+of+Myth",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Overbeing+of+Myth"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38392&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Overbeing+of+Myth&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Overbeing+of+Myth&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Overbeing of Myth",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/8/d/8d0972df-08da-4b4d-8139-09a0f5b7d170.jpg?1606761265",
+        "cost": "{G/U}{G/U}{G/U}{G/U}{G/U}",
+        "ccost": 5,
+        "type": "Creature",
+        "subtype": "Spirit Avatar",
+        "colour": "m",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Apeve&unique=prints"
+        ],
+        "num": "157★ P Prerelease",
+        "numInt": 157,
+        "mtgenId": "eve|157★ P Prerelease",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "3b2866a9-9f44-410c-8132-9d9822253332",
+        "oracle_id": "cd51cc2d-0d39-4aba-b0ea-70e8118149bc",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38287,
+        "cardmarket_id": 19654,
+        "name": "Figure of Destiny",
+        "lang": "en",
+        "released_at": "2008-07-25",
+        "uri": "https://api.scryfall.com/cards/3b2866a9-9f44-410c-8132-9d9822253332",
+        "scryfall_uri": "https://scryfall.com/card/peve/139%E2%98%85/figure-of-destiny?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/3/b/3b2866a9-9f44-410c-8132-9d9822253332.jpg?1606761352",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/3/b/3b2866a9-9f44-410c-8132-9d9822253332.jpg?1606761352",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/3/b/3b2866a9-9f44-410c-8132-9d9822253332.jpg?1606761352",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/3/b/3b2866a9-9f44-410c-8132-9d9822253332.png?1606761352",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/3/b/3b2866a9-9f44-410c-8132-9d9822253332.jpg?1606761352",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/3/b/3b2866a9-9f44-410c-8132-9d9822253332.jpg?1606761352"
+        },
+        "mana_cost": "{R/W}",
+        "cmc": 1,
+        "type_line": "Creature — Kithkin",
+        "oracle_text": "{R/W}: Figure of Destiny becomes a Kithkin Spirit with base power and toughness 2/2.\n{R/W}{R/W}{R/W}: If Figure of Destiny is a Spirit, it becomes a Kithkin Spirit Warrior with base power and toughness 4/4.\n{R/W}{R/W}{R/W}{R/W}{R/W}{R/W}: If Figure of Destiny is a Warrior, it becomes a Kithkin Spirit Warrior Avatar with base power and toughness 8/8, flying, and first strike.",
+        "power": "1",
+        "toughness": "1",
+        "colors": [
+            "R",
+            "W"
+        ],
+        "color_identity": [
+            "R",
+            "W"
+        ],
+        "keywords": [],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "not_legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "67920ddd-5260-42c0-831e-acbd7e135dd3",
+        "set": "eve",
+        "set_name": "Eventide Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/67920ddd-5260-42c0-831e-acbd7e135dd3",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apeve&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/peve?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/3b2866a9-9f44-410c-8132-9d9822253332/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Acd51cc2d-0d39-4aba-b0ea-70e8118149bc&unique=prints",
+        "collector_number": "139★",
+        "digital": false,
+        "rarity": "r",
+        "watermark": "set",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Scott M. Fischer",
+        "artist_ids": [
+            "23b0cf43-3e43-44c6-8329-96446eca5bce"
+        ],
+        "illustration_id": "ffbf0e5f-d4ed-41a7-b1d5-f53f42cd2dd3",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "release"
+        ],
+        "edhrec_rank": 9203,
+        "prices": {
+            "usd": null,
+            "usd_foil": "1.88",
+            "eur": null,
+            "eur_foil": "0.90",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Figure+of+Destiny&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Figure+of+Destiny&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Figure+of+Destiny",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Figure+of+Destiny"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38287&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Figure+of+Destiny&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Figure+of+Destiny&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Figure of Destiny",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/3/b/3b2866a9-9f44-410c-8132-9d9822253332.jpg?1606761352",
+        "cost": "{R/W}",
+        "ccost": 1,
+        "type": "Creature",
+        "subtype": "Kithkin",
+        "colour": "m",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Apeve&unique=prints"
+        ],
+        "num": "139★ P Release",
+        "numInt": 139,
+        "mtgenId": "eve|139★ P Release",
+        "includedReason": "Release Promo",
+        "usableForDeckBuilding": false
+    }
+]

@@ -1,0 +1,783 @@
+﻿[
+  {
+    "object": "card",
+    "id": "8829efa0-498a-43ca-91aa-f9caeeafe298",
+    "oracle_id": "454a8902-8120-4373-96ee-bbf352b04e8d",
+    "multiverse_ids": [],
+    "tcgplayer_id": 48140,
+    "cardmarket_id": 245268,
+    "name": "Hero of Bladehold",
+    "lang": "en",
+    "released_at": "2011-02-03",
+    "uri": "https://api.scryfall.com/cards/8829efa0-498a-43ca-91aa-f9caeeafe298",
+    "scryfall_uri": "https://scryfall.com/card/pmbs/8%E2%98%85/hero-of-bladehold?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/8/8/8829efa0-498a-43ca-91aa-f9caeeafe298.jpg?1605370731",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/8/8/8829efa0-498a-43ca-91aa-f9caeeafe298.jpg?1605370731",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/8/8/8829efa0-498a-43ca-91aa-f9caeeafe298.jpg?1605370731",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/8/8/8829efa0-498a-43ca-91aa-f9caeeafe298.png?1605370731",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/8/8/8829efa0-498a-43ca-91aa-f9caeeafe298.jpg?1605370731",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/8/8/8829efa0-498a-43ca-91aa-f9caeeafe298.jpg?1605370731"
+    },
+    "mana_cost": "{2}{W}{W}",
+    "cmc": 4,
+    "type_line": "Creature — Human Knight",
+    "oracle_text": "Battle cry (Whenever this creature attacks, each other attacking creature gets +1/+0 until end of turn.)\nWhenever Hero of Bladehold attacks, create two 1/1 white Soldier creature tokens that are tapped and attacking.",
+    "power": "3",
+    "toughness": "4",
+    "colors": [
+      "W"
+    ],
+    "color_identity": [
+      "W"
+    ],
+    "keywords": [
+      "Battle Cry"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "not_legal",
+      "commander": "legal",
+      "brawl": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper"
+    ],
+    "reserved": false,
+    "nonfoil": false,
+    "oversized": false,
+    "promo": true,
+    "reprint": true,
+    "variation": false,
+    "set_id": "8a59d98a-4e13-4943-b06c-b35868e954ba",
+    "set": "mbs",
+    "set_name": "Mirrodin Besieged Promos",
+    "set_type": "promo",
+    "set_uri": "https://api.scryfall.com/sets/8a59d98a-4e13-4943-b06c-b35868e954ba",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apmbs&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/pmbs?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/8829efa0-498a-43ca-91aa-f9caeeafe298/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A454a8902-8120-4373-96ee-bbf352b04e8d&unique=prints",
+    "collector_number": "8★",
+    "digital": false,
+    "rarity": "m",
+    "watermark": "mirran",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Scott Chou",
+    "artist_ids": [
+      "9e048547-f9c3-4958-9c2c-91e45df7c6ae"
+    ],
+    "illustration_id": "bdef2378-b1b2-46fc-81df-b066da385026",
+    "border_color": "black",
+    "frame": "2003",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "setpromo",
+      "datestamped",
+      "prerelease"
+    ],
+    "edhrec_rank": 2755,
+    "prices": {
+      "usd": null,
+      "usd_foil": "7.25",
+      "eur": null,
+      "eur_foil": "1.87",
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Hero+of+Bladehold&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Hero+of+Bladehold&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Hero+of+Bladehold",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Hero+of+Bladehold"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=48140&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Hero+of+Bladehold&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Hero+of+Bladehold&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Hero of Bladehold",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/8/8/8829efa0-498a-43ca-91aa-f9caeeafe298.jpg?1605370731",
+    "cost": "{2}{W}{W}",
+    "ccost": 4,
+    "type": "Creature",
+    "subtype": "Human Knight",
+    "colour": "w",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Apmbs&unique=prints"
+    ],
+    "num": "8★ P Prerelease",
+    "numInt": 8,
+    "mtgenId": "mbs|8★ P Prerelease",
+    "includedReason": "Prerelease Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "9e293b2d-5eae-43c3-bb1f-4c0ed2b0bd21",
+    "oracle_id": "cafacba9-195c-44ea-ba80-3e489274759c",
+    "multiverse_ids": [],
+    "tcgplayer_id": 48141,
+    "cardmarket_id": 245269,
+    "name": "Glissa, the Traitor",
+    "lang": "en",
+    "released_at": "2011-02-03",
+    "uri": "https://api.scryfall.com/cards/9e293b2d-5eae-43c3-bb1f-4c0ed2b0bd21",
+    "scryfall_uri": "https://scryfall.com/card/pmbs/96%E2%98%85/glissa-the-traitor?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/9/e/9e293b2d-5eae-43c3-bb1f-4c0ed2b0bd21.jpg?1605370737",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/e/9e293b2d-5eae-43c3-bb1f-4c0ed2b0bd21.jpg?1605370737",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/9/e/9e293b2d-5eae-43c3-bb1f-4c0ed2b0bd21.jpg?1605370737",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/9/e/9e293b2d-5eae-43c3-bb1f-4c0ed2b0bd21.png?1605370737",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/9/e/9e293b2d-5eae-43c3-bb1f-4c0ed2b0bd21.jpg?1605370737",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/9/e/9e293b2d-5eae-43c3-bb1f-4c0ed2b0bd21.jpg?1605370737"
+    },
+    "mana_cost": "{B}{G}{G}",
+    "cmc": 3,
+    "type_line": "Legendary Creature — Phyrexian Zombie Elf",
+    "oracle_text": "First strike, deathtouch\nWhenever a creature an opponent controls dies, you may return target artifact card from your graveyard to your hand.",
+    "power": "3",
+    "toughness": "3",
+    "colors": [
+      "B",
+      "G"
+    ],
+    "color_identity": [
+      "B",
+      "G"
+    ],
+    "keywords": [
+      "First strike",
+      "Deathtouch"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "legal",
+      "commander": "legal",
+      "brawl": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper"
+    ],
+    "reserved": false,
+    "nonfoil": false,
+    "oversized": false,
+    "promo": true,
+    "reprint": true,
+    "variation": false,
+    "set_id": "8a59d98a-4e13-4943-b06c-b35868e954ba",
+    "set": "mbs",
+    "set_name": "Mirrodin Besieged Promos",
+    "set_type": "promo",
+    "set_uri": "https://api.scryfall.com/sets/8a59d98a-4e13-4943-b06c-b35868e954ba",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apmbs&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/pmbs?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/9e293b2d-5eae-43c3-bb1f-4c0ed2b0bd21/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Acafacba9-195c-44ea-ba80-3e489274759c&unique=prints",
+    "collector_number": "96★",
+    "digital": false,
+    "rarity": "m",
+    "watermark": "phyrexian",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Steve Argyle",
+    "artist_ids": [
+      "a44ddda4-5331-4f83-aac9-3e00ed36bd7b"
+    ],
+    "illustration_id": "f0442fe9-b828-4600-87d7-876d7ed1fcf0",
+    "border_color": "black",
+    "frame": "2003",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "setpromo",
+      "datestamped",
+      "prerelease"
+    ],
+    "edhrec_rank": 3891,
+    "prices": {
+      "usd": null,
+      "usd_foil": "3.98",
+      "eur": null,
+      "eur_foil": "1.83",
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Glissa%2C+the+Traitor&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Glissa%2C+the+Traitor&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Glissa%2C+the+Traitor",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Glissa%2C+the+Traitor"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=48141&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Glissa%2C+the+Traitor&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Glissa%2C+the+Traitor&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Glissa, the Traitor",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/e/9e293b2d-5eae-43c3-bb1f-4c0ed2b0bd21.jpg?1605370737",
+    "cost": "{B}{G}{G}",
+    "ccost": 3,
+    "type": "Legendary Creature",
+    "subtype": "Phyrexian Zombie Elf",
+    "colour": "m",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Apmbs&unique=prints"
+    ],
+    "num": "96★ P Prerelease",
+    "numInt": 96,
+    "mtgenId": "mbs|96★ P Prerelease",
+    "includedReason": "Prerelease Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "f1abeca7-0a9c-49ae-9042-9899829e74a3",
+    "oracle_id": "007c110d-4364-41e5-a8bc-6ac05ecbbd00",
+    "multiverse_ids": [],
+    "tcgplayer_id": 48136,
+    "cardmarket_id": 245270,
+    "name": "Thopter Assembly",
+    "lang": "en",
+    "released_at": "2011-02-03",
+    "uri": "https://api.scryfall.com/cards/f1abeca7-0a9c-49ae-9042-9899829e74a3",
+    "scryfall_uri": "https://scryfall.com/card/pmbs/140%E2%98%85/thopter-assembly?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/f/1/f1abeca7-0a9c-49ae-9042-9899829e74a3.jpg?1605371302",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/f/1/f1abeca7-0a9c-49ae-9042-9899829e74a3.jpg?1605371302",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/f/1/f1abeca7-0a9c-49ae-9042-9899829e74a3.jpg?1605371302",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/f/1/f1abeca7-0a9c-49ae-9042-9899829e74a3.png?1605371302",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/f/1/f1abeca7-0a9c-49ae-9042-9899829e74a3.jpg?1605371302",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/f/1/f1abeca7-0a9c-49ae-9042-9899829e74a3.jpg?1605371302"
+    },
+    "mana_cost": "{6}",
+    "cmc": 6,
+    "type_line": "Artifact Creature — Thopter",
+    "oracle_text": "Flying\nAt the beginning of your upkeep, if you control no Thopters other than Thopter Assembly, return Thopter Assembly to its owner's hand and create five 1/1 colorless Thopter artifact creature tokens with flying.",
+    "power": "5",
+    "toughness": "5",
+    "colors": [],
+    "color_identity": [],
+    "keywords": [
+      "Flying"
+    ],
+    "all_parts": [
+      {
+        "object": "related_card",
+        "id": "644ab412-0603-447d-b8ef-dfd79f78e2a5",
+        "component": "combo_piece",
+        "name": "Thopter Assembly",
+        "type_line": "Artifact Creature — Thopter",
+        "uri": "https://api.scryfall.com/cards/644ab412-0603-447d-b8ef-dfd79f78e2a5"
+      },
+      {
+        "object": "related_card",
+        "id": "8f4e230e-f604-4803-9cbd-fd08d2863db4",
+        "component": "token",
+        "name": "Thopter",
+        "type_line": "Token Artifact Creature — Thopter",
+        "uri": "https://api.scryfall.com/cards/8f4e230e-f604-4803-9cbd-fd08d2863db4"
+      }
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "legal",
+      "commander": "legal",
+      "brawl": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper"
+    ],
+    "reserved": false,
+    "nonfoil": false,
+    "oversized": false,
+    "promo": true,
+    "reprint": true,
+    "variation": false,
+    "set_id": "8a59d98a-4e13-4943-b06c-b35868e954ba",
+    "set": "mbs",
+    "set_name": "Mirrodin Besieged Promos",
+    "set_type": "promo",
+    "set_uri": "https://api.scryfall.com/sets/8a59d98a-4e13-4943-b06c-b35868e954ba",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apmbs&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/pmbs?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/f1abeca7-0a9c-49ae-9042-9899829e74a3/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A007c110d-4364-41e5-a8bc-6ac05ecbbd00&unique=prints",
+    "collector_number": "140★",
+    "digital": false,
+    "rarity": "r",
+    "watermark": "mirran",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Volkan Baǵa",
+    "artist_ids": [
+      "93bec3c0-0260-4d31-8064-5d01efb4153f"
+    ],
+    "illustration_id": "82188cb3-429f-4ae8-92b6-300aec7de5ac",
+    "border_color": "black",
+    "frame": "2003",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "setpromo",
+      "datestamped",
+      "release"
+    ],
+    "edhrec_rank": 1627,
+    "prices": {
+      "usd": null,
+      "usd_foil": "1.00",
+      "eur": null,
+      "eur_foil": "0.25",
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Thopter+Assembly&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Thopter+Assembly&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Thopter+Assembly",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Thopter+Assembly"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=48136&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Thopter+Assembly&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Thopter+Assembly&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Thopter Assembly",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/f/1/f1abeca7-0a9c-49ae-9042-9899829e74a3.jpg?1605371302",
+    "cost": "{6}",
+    "ccost": 6,
+    "type": "Artifact Creature",
+    "subtype": "Thopter",
+    "colour": "a",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Apmbs&unique=prints"
+    ],
+    "num": "140★ P Prerelease",
+    "numInt": 140,
+    "mtgenId": "mbs|140★ P Prerelease",
+    "includedReason": "Prerelease Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "c97874a8-e048-4433-8831-54dc67980902",
+    "oracle_id": "0848bb49-5758-41d6-a3e8-0c62e1768f52",
+    "multiverse_ids": [],
+    "tcgplayer_id": 48128,
+    "cardmarket_id": 245508,
+    "name": "Treasure Mage",
+    "lang": "en",
+    "released_at": "2011-02-03",
+    "uri": "https://api.scryfall.com/cards/c97874a8-e048-4433-8831-54dc67980902",
+    "scryfall_uri": "https://scryfall.com/card/pmbs/34/treasure-mage?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/c/9/c97874a8-e048-4433-8831-54dc67980902.jpg?1561758062",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/9/c97874a8-e048-4433-8831-54dc67980902.jpg?1561758062",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/c/9/c97874a8-e048-4433-8831-54dc67980902.jpg?1561758062",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/c/9/c97874a8-e048-4433-8831-54dc67980902.png?1561758062",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/c/9/c97874a8-e048-4433-8831-54dc67980902.jpg?1561758062",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/c/9/c97874a8-e048-4433-8831-54dc67980902.jpg?1561758062"
+    },
+    "mana_cost": "{2}{U}",
+    "cmc": 3,
+    "type_line": "Creature — Human Wizard",
+    "oracle_text": "When Treasure Mage enters the battlefield, you may search your library for an artifact card with mana value 6 or greater, reveal it, put it into your hand, then shuffle.",
+    "power": "2",
+    "toughness": "2",
+    "colors": [
+      "U"
+    ],
+    "color_identity": [
+      "U"
+    ],
+    "keywords": [],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "legal",
+      "commander": "legal",
+      "brawl": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "oversized": false,
+    "promo": true,
+    "reprint": true,
+    "variation": false,
+    "set_id": "8a59d98a-4e13-4943-b06c-b35868e954ba",
+    "set": "mbs",
+    "set_name": "Mirrodin Besieged Promos",
+    "set_type": "promo",
+    "set_uri": "https://api.scryfall.com/sets/8a59d98a-4e13-4943-b06c-b35868e954ba",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apmbs&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/pmbs?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/c97874a8-e048-4433-8831-54dc67980902/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A0848bb49-5758-41d6-a3e8-0c62e1768f52&unique=prints",
+    "collector_number": "34",
+    "digital": false,
+    "rarity": "u",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Greg Staples",
+    "artist_ids": [
+      "93d65564-bf00-447b-8406-e2031f03b6b1"
+    ],
+    "illustration_id": "13bb2df2-68c3-4c7f-b714-9f387941c322",
+    "border_color": "black",
+    "frame": "2003",
+    "full_art": true,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "setpromo",
+      "gameday"
+    ],
+    "edhrec_rank": 2970,
+    "prices": {
+      "usd": "2.03",
+      "usd_foil": null,
+      "eur": "0.75",
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Treasure+Mage&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Treasure+Mage&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Treasure+Mage",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Treasure+Mage"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=48128&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Treasure+Mage&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Treasure+Mage&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Treasure Mage",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/9/c97874a8-e048-4433-8831-54dc67980902.jpg?1561758062",
+    "cost": "{2}{U}",
+    "ccost": 3,
+    "type": "Creature",
+    "subtype": "Human Wizard",
+    "colour": "u",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Apmbs&unique=prints"
+    ],
+    "num": "34 P Game Day",
+    "numInt": 34,
+    "mtgenId": "mbs|34 P Game Day",
+    "includedReason": "Game Day Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "dd88131a-2811-4a1f-bb9a-c82e12c1493b",
+    "oracle_id": "038c0165-32b6-4e81-8180-604b49905207",
+    "multiverse_ids": [],
+    "tcgplayer_id": 48129,
+    "cardmarket_id": 245507,
+    "name": "Black Sun's Zenith",
+    "lang": "en",
+    "released_at": "2011-02-03",
+    "uri": "https://api.scryfall.com/cards/dd88131a-2811-4a1f-bb9a-c82e12c1493b",
+    "scryfall_uri": "https://scryfall.com/card/pmbs/39/black-suns-zenith?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/d/d/dd88131a-2811-4a1f-bb9a-c82e12c1493b.jpg?1561758222",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/d/d/dd88131a-2811-4a1f-bb9a-c82e12c1493b.jpg?1561758222",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/d/d/dd88131a-2811-4a1f-bb9a-c82e12c1493b.jpg?1561758222",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/d/d/dd88131a-2811-4a1f-bb9a-c82e12c1493b.png?1561758222",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/d/d/dd88131a-2811-4a1f-bb9a-c82e12c1493b.jpg?1561758222",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/d/d/dd88131a-2811-4a1f-bb9a-c82e12c1493b.jpg?1561758222"
+    },
+    "mana_cost": "{X}{B}{B}",
+    "cmc": 2,
+    "type_line": "Sorcery",
+    "oracle_text": "Put X -1/-1 counters on each creature. Shuffle Black Sun's Zenith into its owner's library.",
+    "colors": [
+      "B"
+    ],
+    "color_identity": [
+      "B"
+    ],
+    "keywords": [],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "legal",
+      "commander": "legal",
+      "brawl": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper"
+    ],
+    "reserved": false,
+    "nonfoil": false,
+    "oversized": false,
+    "promo": true,
+    "reprint": true,
+    "variation": false,
+    "set_id": "8a59d98a-4e13-4943-b06c-b35868e954ba",
+    "set": "mbs",
+    "set_name": "Mirrodin Besieged Promos",
+    "set_type": "promo",
+    "set_uri": "https://api.scryfall.com/sets/8a59d98a-4e13-4943-b06c-b35868e954ba",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apmbs&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/pmbs?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/dd88131a-2811-4a1f-bb9a-c82e12c1493b/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A038c0165-32b6-4e81-8180-604b49905207&unique=prints",
+    "collector_number": "39",
+    "digital": false,
+    "rarity": "r",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "James Paick",
+    "artist_ids": [
+      "1a7be0a2-d8ac-45c7-b0a0-eb0886f47b5f"
+    ],
+    "illustration_id": "275a74e3-c403-4c45-a6af-58ed98627589",
+    "border_color": "black",
+    "frame": "2003",
+    "full_art": true,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "setpromo",
+      "gameday"
+    ],
+    "edhrec_rank": 916,
+    "prices": {
+      "usd": null,
+      "usd_foil": "24.44",
+      "eur": null,
+      "eur_foil": "9.55",
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Black+Sun%27s+Zenith&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Black+Sun%27s+Zenith&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Black+Sun%27s+Zenith",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Black+Sun%27s+Zenith"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=48129&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Black+Sun%27s+Zenith&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Black+Sun%27s+Zenith&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Black Sun's Zenith",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/d/d/dd88131a-2811-4a1f-bb9a-c82e12c1493b.jpg?1561758222",
+    "cost": "{X}{B}{B}",
+    "ccost": 2,
+    "type": "Sorcery",
+    "colour": "b",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Apmbs&unique=prints"
+    ],
+    "num": "39 P Top 8 Promo",
+    "numInt": 39,
+    "mtgenId": "mbs|39 P Top 8 Promo",
+    "includedReason": "Top 8 Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "d9a8a187-c479-429c-b0ef-c98153ffa5e5",
+    "oracle_id": "fe69d9bd-2a60-4b33-a0d8-1ca18c2b6705",
+    "multiverse_ids": [],
+    "tcgplayer_id": 48145,
+    "cardmarket_id": 245505,
+    "name": "Mirran Crusader",
+    "lang": "en",
+    "released_at": "2011-02-03",
+    "uri": "https://api.scryfall.com/cards/d9a8a187-c479-429c-b0ef-c98153ffa5e5",
+    "scryfall_uri": "https://scryfall.com/card/pmbs/*14/mirran-crusader?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/d/9/d9a8a187-c479-429c-b0ef-c98153ffa5e5.jpg?1561758195",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/d/9/d9a8a187-c479-429c-b0ef-c98153ffa5e5.jpg?1561758195",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/d/9/d9a8a187-c479-429c-b0ef-c98153ffa5e5.jpg?1561758195",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/d/9/d9a8a187-c479-429c-b0ef-c98153ffa5e5.png?1561758195",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/d/9/d9a8a187-c479-429c-b0ef-c98153ffa5e5.jpg?1561758195",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/d/9/d9a8a187-c479-429c-b0ef-c98153ffa5e5.jpg?1561758195"
+    },
+    "mana_cost": "{1}{W}{W}",
+    "cmc": 3,
+    "type_line": "Creature — Human Knight",
+    "oracle_text": "Double strike, protection from black and from green",
+    "power": "2",
+    "toughness": "2",
+    "colors": [
+      "W"
+    ],
+    "color_identity": [
+      "W"
+    ],
+    "keywords": [
+      "Protection",
+      "Double strike"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "not_legal",
+      "commander": "legal",
+      "brawl": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper"
+    ],
+    "reserved": false,
+    "nonfoil": false,
+    "oversized": false,
+    "promo": true,
+    "reprint": true,
+    "variation": false,
+    "set_id": "8a59d98a-4e13-4943-b06c-b35868e954ba",
+    "set": "mbs",
+    "set_name": "Mirrodin Besieged Promos",
+    "set_type": "promo",
+    "set_uri": "https://api.scryfall.com/sets/8a59d98a-4e13-4943-b06c-b35868e954ba",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apmbs&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/pmbs?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/d9a8a187-c479-429c-b0ef-c98153ffa5e5/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Afe69d9bd-2a60-4b33-a0d8-1ca18c2b6705&unique=prints",
+    "collector_number": "*14",
+    "digital": false,
+    "rarity": "r",
+    "watermark": "mirran",
+    "flavor_text": "A symbol of what Mirrodin once was and hope for what it will be again.",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Karl Kopinski",
+    "artist_ids": [
+      "0fad2c48-a56e-4a0b-b512-224f6f238f20"
+    ],
+    "illustration_id": "33fadc46-f0b2-4558-9bdb-03d2f6e62d1c",
+    "border_color": "black",
+    "frame": "2003",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "setpromo",
+      "buyabox"
+    ],
+    "edhrec_rank": 3392,
+    "prices": {
+      "usd": null,
+      "usd_foil": "3.96",
+      "eur": null,
+      "eur_foil": "1.49",
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Mirran+Crusader&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Mirran+Crusader&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Mirran+Crusader",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Mirran+Crusader"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=48145&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Mirran+Crusader&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Mirran+Crusader&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Mirran Crusader",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/d/9/d9a8a187-c479-429c-b0ef-c98153ffa5e5.jpg?1561758195",
+    "cost": "{1}{W}{W}",
+    "ccost": 3,
+    "type": "Creature",
+    "subtype": "Human Knight",
+    "colour": "w",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Apmbs&unique=prints"
+    ],
+    "num": "*14 P Buy-a-Box Promo",
+    "numInt": null,
+    "mtgenId": "mbs|*14 P Buy-a-Box Promo",
+    "includedReason": "Buy-a-Box Promo",
+    "usableForDeckBuilding": false
+  }
+]

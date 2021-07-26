@@ -1,0 +1,276 @@
+﻿[
+    {
+        "object": "card",
+        "id": "dacea068-102c-44d7-93dc-93fcda9b8d43",
+        "oracle_id": "d4d27fef-e86b-4dd3-a15e-a0db8d0725ee",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38404,
+        "cardmarket_id": 18043,
+        "name": "Wren's Run Packmaster",
+        "lang": "en",
+        "released_at": "2007-09-27",
+        "uri": "https://api.scryfall.com/cards/dacea068-102c-44d7-93dc-93fcda9b8d43",
+        "scryfall_uri": "https://scryfall.com/card/plrw/244%E2%98%85/wrens-run-packmaster?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/d/a/dacea068-102c-44d7-93dc-93fcda9b8d43.jpg?1606761491",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/d/a/dacea068-102c-44d7-93dc-93fcda9b8d43.jpg?1606761491",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/d/a/dacea068-102c-44d7-93dc-93fcda9b8d43.jpg?1606761491",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/d/a/dacea068-102c-44d7-93dc-93fcda9b8d43.png?1606761491",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/d/a/dacea068-102c-44d7-93dc-93fcda9b8d43.jpg?1606761491",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/d/a/dacea068-102c-44d7-93dc-93fcda9b8d43.jpg?1606761491"
+        },
+        "mana_cost": "{3}{G}",
+        "cmc": 4,
+        "type_line": "Creature — Elf Warrior",
+        "oracle_text": "Champion an Elf (When this creature enters the battlefield, sacrifice it unless you exile another Elf you control. When this creature leaves the battlefield, that card returns to the battlefield.)\n{2}{G}: Create a 2/2 green Wolf creature token.\nWolves you control have deathtouch.",
+        "power": "5",
+        "toughness": "5",
+        "colors": [
+            "G"
+        ],
+        "color_identity": [
+            "G"
+        ],
+        "keywords": [
+            "Champion"
+        ],
+        "all_parts": [
+            {
+                "object": "related_card",
+                "id": "3e97f29a-1551-4e75-80e8-2dd31cb6c0db",
+                "component": "combo_piece",
+                "name": "Wren's Run Packmaster",
+                "type_line": "Creature — Elf Warrior",
+                "uri": "https://api.scryfall.com/cards/3e97f29a-1551-4e75-80e8-2dd31cb6c0db"
+            },
+            {
+                "object": "related_card",
+                "id": "02a80dc2-0811-4df0-95f1-dd80ce9e24de",
+                "component": "token",
+                "name": "Wolf",
+                "type_line": "Token Creature — Wolf",
+                "uri": "https://api.scryfall.com/cards/02a80dc2-0811-4df0-95f1-dd80ce9e24de"
+            }
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "091fc340-30ea-4054-a013-44bc345b9c9e",
+        "set": "lrw",
+        "set_name": "Lorwyn Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/091fc340-30ea-4054-a013-44bc345b9c9e",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aplrw&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/plrw?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/dacea068-102c-44d7-93dc-93fcda9b8d43/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Ad4d27fef-e86b-4dd3-a15e-a0db8d0725ee&unique=prints",
+        "collector_number": "244★",
+        "digital": false,
+        "rarity": "r",
+        "watermark": "set",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Steve Prescott",
+        "artist_ids": [
+            "a1139fb8-41f5-4a9e-9a74-f662e1a23b35"
+        ],
+        "illustration_id": "998522cf-4414-488f-b0d1-25a0501c1c9f",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "datestamped",
+            "prerelease"
+        ],
+        "edhrec_rank": 6432,
+        "prices": {
+            "usd": null,
+            "usd_foil": "1.35",
+            "eur": null,
+            "eur_foil": "0.25",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Wren%27s+Run+Packmaster&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Wren%27s+Run+Packmaster&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Wren%27s+Run+Packmaster",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Wren%27s+Run+Packmaster"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38404&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Wren%27s+Run+Packmaster&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Wren%27s+Run+Packmaster&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Wren's Run Packmaster",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/d/a/dacea068-102c-44d7-93dc-93fcda9b8d43.jpg?1606761491",
+        "cost": "{3}{G}",
+        "ccost": 4,
+        "type": "Creature",
+        "subtype": "Elf Warrior",
+        "colour": "g",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Aplrw&unique=prints"
+        ],
+        "num": "244★ P Prerelease",
+        "numInt": 244,
+        "mtgenId": "lrw|244★ P Prerelease",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "6c61bd2c-1c73-42f6-aa8b-449aee7e5ddd",
+        "oracle_id": "717bbb9d-0a5b-4979-a24b-9d54aac7657a",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38423,
+        "cardmarket_id": 18123,
+        "name": "Shriekmaw",
+        "lang": "en",
+        "released_at": "2007-10-12",
+        "uri": "https://api.scryfall.com/cards/6c61bd2c-1c73-42f6-aa8b-449aee7e5ddd",
+        "scryfall_uri": "https://scryfall.com/card/plrw/139%E2%98%85/shriekmaw?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/6/c/6c61bd2c-1c73-42f6-aa8b-449aee7e5ddd.jpg?1606761470",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/6/c/6c61bd2c-1c73-42f6-aa8b-449aee7e5ddd.jpg?1606761470",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/6/c/6c61bd2c-1c73-42f6-aa8b-449aee7e5ddd.jpg?1606761470",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/6/c/6c61bd2c-1c73-42f6-aa8b-449aee7e5ddd.png?1606761470",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/6/c/6c61bd2c-1c73-42f6-aa8b-449aee7e5ddd.jpg?1606761470",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/6/c/6c61bd2c-1c73-42f6-aa8b-449aee7e5ddd.jpg?1606761470"
+        },
+        "mana_cost": "{4}{B}",
+        "cmc": 5,
+        "type_line": "Creature — Elemental",
+        "oracle_text": "Fear (This creature can't be blocked except by artifact creatures and/or black creatures.)\nWhen Shriekmaw enters the battlefield, destroy target nonartifact, nonblack creature.\nEvoke {1}{B} (You may cast this spell for its evoke cost. If you do, it's sacrificed when it enters the battlefield.)",
+        "power": "3",
+        "toughness": "2",
+        "colors": [
+            "B"
+        ],
+        "color_identity": [
+            "B"
+        ],
+        "keywords": [
+            "Evoke",
+            "Fear"
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "091fc340-30ea-4054-a013-44bc345b9c9e",
+        "set": "lrw",
+        "set_name": "Lorwyn Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/091fc340-30ea-4054-a013-44bc345b9c9e",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aplrw&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/plrw?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/6c61bd2c-1c73-42f6-aa8b-449aee7e5ddd/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A717bbb9d-0a5b-4979-a24b-9d54aac7657a&unique=prints",
+        "collector_number": "139★",
+        "digital": false,
+        "rarity": "r",
+        "watermark": "set",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Steve Prescott",
+        "artist_ids": [
+            "a1139fb8-41f5-4a9e-9a74-f662e1a23b35"
+        ],
+        "illustration_id": "55760b86-1a05-4ea8-811e-cf98ba9bd96b",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "release"
+        ],
+        "edhrec_rank": 540,
+        "prices": {
+            "usd": null,
+            "usd_foil": "4.61",
+            "eur": null,
+            "eur_foil": "0.94",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Shriekmaw&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Shriekmaw&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Shriekmaw",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Shriekmaw"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38423&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Shriekmaw&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Shriekmaw&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Shriekmaw",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/6/c/6c61bd2c-1c73-42f6-aa8b-449aee7e5ddd.jpg?1606761470",
+        "cost": "{4}{B}",
+        "ccost": 5,
+        "type": "Creature",
+        "subtype": "Elemental",
+        "colour": "b",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Aplrw&unique=prints"
+        ],
+        "num": "139★ P Release",
+        "numInt": 139,
+        "mtgenId": "lrw|139★ P Release",
+        "includedReason": "Release Promo",
+        "usableForDeckBuilding": false
+    }
+]

@@ -1,0 +1,64 @@
+{
+  "setCode": "mbs",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Apmbs&unique=prints",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "where": "title='Hero of Bladehold",
+      "newValues": {
+        "num": "{{num}} P Prerelease",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "where": "title='Glissa, the Traitor",
+      "newValues": {
+        "num": "{{num}} P Prerelease",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "where": "title='Thopter Assembly",
+      "newValues": {
+        "num": "{{num}} P Prerelease",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "where": "title='Treasure Mage",
+      "newValues": {
+        "num": "{{num}} P Game Day",
+        "includedReason": "Game Day Promo"
+      }
+    },
+    {
+      "where": "title='Black Sun's Zenith",
+      "newValues": {
+        "num": "{{num}} P Top 8 Promo",
+        "includedReason": "Top 8 Promo"
+      }
+    },
+    {
+      "where": "title='Mirran Crusader",
+      "newValues": {
+        "num": "{{num}} P Buy-a-Box Promo",
+        "includedReason": "Buy-a-Box Promo"
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

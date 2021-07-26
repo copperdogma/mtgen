@@ -1,0 +1,259 @@
+﻿[
+    {
+        "object": "card",
+        "id": "c62b3627-34d3-4c05-b479-c2cfbf3b8c91",
+        "oracle_id": "bb7389fa-ab01-4ca2-bd18-03cf5b4cedf6",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38380,
+        "cardmarket_id": 17722,
+        "name": "Gleancrawler",
+        "lang": "en",
+        "released_at": "2005-09-24",
+        "uri": "https://api.scryfall.com/cards/c62b3627-34d3-4c05-b479-c2cfbf3b8c91",
+        "scryfall_uri": "https://scryfall.com/card/prav/247%E2%98%85/gleancrawler?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/c/6/c62b3627-34d3-4c05-b479-c2cfbf3b8c91.jpg?1606845479",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/6/c62b3627-34d3-4c05-b479-c2cfbf3b8c91.jpg?1606845479",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/c/6/c62b3627-34d3-4c05-b479-c2cfbf3b8c91.jpg?1606845479",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/c/6/c62b3627-34d3-4c05-b479-c2cfbf3b8c91.png?1606845479",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/c/6/c62b3627-34d3-4c05-b479-c2cfbf3b8c91.jpg?1606845479",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/c/6/c62b3627-34d3-4c05-b479-c2cfbf3b8c91.jpg?1606845479"
+        },
+        "mana_cost": "{3}{B/G}{B/G}{B/G}",
+        "cmc": 6,
+        "type_line": "Creature — Insect Horror",
+        "oracle_text": "({B/G} can be paid with either {B} or {G}.)\nTrample\nAt the beginning of your end step, return to your hand all creature cards in your graveyard that were put there from the battlefield this turn.",
+        "power": "6",
+        "toughness": "6",
+        "colors": [
+            "B",
+            "G"
+        ],
+        "color_identity": [
+            "B",
+            "G"
+        ],
+        "keywords": [
+            "Trample"
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "bc3c3b61-352b-4dc4-8383-415b9ad1845b",
+        "set": "rav",
+        "set_name": "Ravnica: City of Guilds Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/bc3c3b61-352b-4dc4-8383-415b9ad1845b",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aprav&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/prav?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/c62b3627-34d3-4c05-b479-c2cfbf3b8c91/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Abb7389fa-ab01-4ca2-bd18-03cf5b4cedf6&unique=prints",
+        "collector_number": "247★",
+        "digital": false,
+        "rarity": "r",
+        "watermark": "golgari",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Jeremy Jarvis",
+        "artist_ids": [
+            "b40ac320-89b4-4c51-a85f-4a4b63ae614e"
+        ],
+        "illustration_id": "ed368797-eb15-430a-962f-208a4cc45e92",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "datestamped",
+            "prerelease"
+        ],
+        "edhrec_rank": 7846,
+        "prices": {
+            "usd": null,
+            "usd_foil": "0.92",
+            "eur": null,
+            "eur_foil": "0.19",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Gleancrawler&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Gleancrawler&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Gleancrawler",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Gleancrawler"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38380&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Gleancrawler&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Gleancrawler&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Gleancrawler",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/6/c62b3627-34d3-4c05-b479-c2cfbf3b8c91.jpg?1606845479",
+        "cost": "{3}{B/G}{B/G}{B/G}",
+        "ccost": 6,
+        "type": "Creature",
+        "subtype": "Insect Horror",
+        "colour": "m",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Aprav&unique=prints"
+        ],
+        "num": "247★ P Prerelease",
+        "numInt": 247,
+        "mtgenId": "rav|247★ P Prerelease",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "b9ab53af-749e-4559-85fa-f8d4181cf7da",
+        "oracle_id": "1b6c67e5-5913-4db9-85d9-8dae57da02ee",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38419,
+        "cardmarket_id": 17734,
+        "name": "Dimir Guildmage",
+        "lang": "en",
+        "released_at": "2005-10-07",
+        "uri": "https://api.scryfall.com/cards/b9ab53af-749e-4559-85fa-f8d4181cf7da",
+        "scryfall_uri": "https://scryfall.com/card/prav/245%E2%98%85/dimir-guildmage?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/b/9/b9ab53af-749e-4559-85fa-f8d4181cf7da.jpg?1606845454",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/b/9/b9ab53af-749e-4559-85fa-f8d4181cf7da.jpg?1606845454",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/b/9/b9ab53af-749e-4559-85fa-f8d4181cf7da.jpg?1606845454",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/b/9/b9ab53af-749e-4559-85fa-f8d4181cf7da.png?1606845454",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/b/9/b9ab53af-749e-4559-85fa-f8d4181cf7da.jpg?1606845454",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/b/9/b9ab53af-749e-4559-85fa-f8d4181cf7da.jpg?1606845454"
+        },
+        "mana_cost": "{U/B}{U/B}",
+        "cmc": 2,
+        "type_line": "Creature — Human Wizard",
+        "oracle_text": "({U/B} can be paid with either {U} or {B}.)\n{3}{U}: Target player draws a card. Activate only as a sorcery.\n{3}{B}: Target player discards a card. Activate only as a sorcery.",
+        "power": "2",
+        "toughness": "2",
+        "colors": [
+            "B",
+            "U"
+        ],
+        "color_identity": [
+            "B",
+            "U"
+        ],
+        "keywords": [],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "legal",
+            "vintage": "legal",
+            "penny": "legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "bc3c3b61-352b-4dc4-8383-415b9ad1845b",
+        "set": "rav",
+        "set_name": "Ravnica: City of Guilds Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/bc3c3b61-352b-4dc4-8383-415b9ad1845b",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aprav&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/prav?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/b9ab53af-749e-4559-85fa-f8d4181cf7da/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A1b6c67e5-5913-4db9-85d9-8dae57da02ee&unique=prints",
+        "collector_number": "245★",
+        "digital": false,
+        "rarity": "r",
+        "watermark": "dimir",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Adam Rex",
+        "artist_ids": [
+            "445bd2fb-4a70-4599-87a4-83cf5979fc56"
+        ],
+        "illustration_id": "ce5875d4-c0a2-49c0-a726-056f1f36ed1a",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "release"
+        ],
+        "edhrec_rank": 11069,
+        "prices": {
+            "usd": null,
+            "usd_foil": "0.45",
+            "eur": null,
+            "eur_foil": "0.45",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Dimir+Guildmage&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Dimir+Guildmage&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Dimir+Guildmage",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Dimir+Guildmage"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38419&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Dimir+Guildmage&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Dimir+Guildmage&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Dimir Guildmage",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/b/9/b9ab53af-749e-4559-85fa-f8d4181cf7da.jpg?1606845454",
+        "cost": "{U/B}{U/B}",
+        "ccost": 2,
+        "type": "Creature",
+        "subtype": "Human Wizard",
+        "colour": "m",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Aprav&unique=prints"
+        ],
+        "num": "245★ P Release",
+        "numInt": 245,
+        "mtgenId": "rav|245★ P Release",
+        "includedReason": "Release Promo",
+        "usableForDeckBuilding": false
+    }
+]

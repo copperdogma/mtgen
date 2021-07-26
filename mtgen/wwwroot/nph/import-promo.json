@@ -1,0 +1,71 @@
+{
+  "setCode": "nph",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Apnph&unique=prints",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+
+    {
+      "where": "title='Sheoldred, Whispering One'",
+      "newValues": {
+        "num": "{{numInt}} P Prerelease",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "where": "title='Phyrexian Metamorph'",
+      "newValues": {
+        "num": "{{numInt}} P Launch",
+        "includedReason": "Launch Promo"
+      }
+    },
+    {
+      "where": "title='Pristine Talisman'",
+      "newValues": {
+        "num": "{{numInt}} P Game Day",
+        "includedReason": "Game Day Promo"
+      }
+    },
+    {
+      "where": "title='Priest of Urabrask'",
+      "newValues": {
+        "num": "{{numInt}} P Game Day",
+        "includedReason": "Game Day Promo"
+      }
+    },
+    {
+      "where": "title='Myr Superion'",
+      "newValues": {
+        "num": "{{numInt}} P Top 8",
+        "includedReason": "Top 8 Promo"
+      }
+    },
+    {
+      "where": "title='Surgical Extraction'",
+      "newValues": {
+        "num": "{{numInt}} P Buy-a-Box",
+        "includedReason": "Buy-a-Box Promo"
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

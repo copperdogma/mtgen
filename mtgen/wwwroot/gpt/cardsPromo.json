@@ -1,0 +1,259 @@
+﻿[
+    {
+        "object": "card",
+        "id": "86af4d62-d0c3-4bad-ae3c-4568a80253b3",
+        "oracle_id": "d7dcf1be-2779-419d-8c90-03800f9e7ea2",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38372,
+        "cardmarket_id": 17723,
+        "name": "Djinn Illuminatus",
+        "lang": "en",
+        "released_at": "2006-01-21",
+        "uri": "https://api.scryfall.com/cards/86af4d62-d0c3-4bad-ae3c-4568a80253b3",
+        "scryfall_uri": "https://scryfall.com/card/pgpt/142%E2%98%85/djinn-illuminatus?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/8/6/86af4d62-d0c3-4bad-ae3c-4568a80253b3.jpg?1606845419",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/8/6/86af4d62-d0c3-4bad-ae3c-4568a80253b3.jpg?1606845419",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/8/6/86af4d62-d0c3-4bad-ae3c-4568a80253b3.jpg?1606845419",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/8/6/86af4d62-d0c3-4bad-ae3c-4568a80253b3.png?1606845419",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/8/6/86af4d62-d0c3-4bad-ae3c-4568a80253b3.jpg?1606845419",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/8/6/86af4d62-d0c3-4bad-ae3c-4568a80253b3.jpg?1606845419"
+        },
+        "mana_cost": "{5}{U/R}{U/R}",
+        "cmc": 7,
+        "type_line": "Creature — Djinn",
+        "oracle_text": "({U/R} can be paid with either {U} or {R}.)\nFlying\nEach instant and sorcery spell you cast has replicate. The replicate cost is equal to its mana cost. (When you cast it, copy it for each time you paid its replicate cost. You may choose new targets for the copies.)",
+        "power": "3",
+        "toughness": "5",
+        "colors": [
+            "R",
+            "U"
+        ],
+        "color_identity": [
+            "R",
+            "U"
+        ],
+        "keywords": [
+            "Flying"
+        ],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "a77ddc05-da91-4dce-b564-bfb13766d23b",
+        "set": "gpt",
+        "set_name": "Guildpact Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/a77ddc05-da91-4dce-b564-bfb13766d23b",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apgpt&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/pgpt?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/86af4d62-d0c3-4bad-ae3c-4568a80253b3/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Ad7dcf1be-2779-419d-8c90-03800f9e7ea2&unique=prints",
+        "collector_number": "142★",
+        "digital": false,
+        "rarity": "r",
+        "watermark": "izzet",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Michael Sutfin",
+        "artist_ids": [
+            "5ce7b3bd-53d2-49e6-b504-37191e8e9b17"
+        ],
+        "illustration_id": "fb3271ff-aa49-4634-9b82-c7e3864f036e",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "datestamped",
+            "prerelease"
+        ],
+        "edhrec_rank": 7164,
+        "prices": {
+            "usd": null,
+            "usd_foil": "1.14",
+            "eur": null,
+            "eur_foil": "0.30",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Djinn+Illuminatus&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Djinn+Illuminatus&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Djinn+Illuminatus",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Djinn+Illuminatus"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38372&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Djinn+Illuminatus&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Djinn+Illuminatus&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Djinn Illuminatus",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/8/6/86af4d62-d0c3-4bad-ae3c-4568a80253b3.jpg?1606845419",
+        "cost": "{5}{U/R}{U/R}",
+        "ccost": 7,
+        "type": "Creature",
+        "subtype": "Djinn",
+        "colour": "m",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Apgpt&unique=prints"
+        ],
+        "num": "142★ P Prerelease",
+        "numInt": 142,
+        "mtgenId": "gpt|142★ P Prerelease",
+        "includedReason": "Prerelease Promo",
+        "usableForDeckBuilding": false
+    },
+    {
+        "object": "card",
+        "id": "94668543-3ad9-4454-a0c1-c3fdbc68f11e",
+        "oracle_id": "75645b1f-0e12-4a05-b47f-0d2e2616c3ca",
+        "multiverse_ids": [],
+        "tcgplayer_id": 38374,
+        "cardmarket_id": 17735,
+        "name": "Gruul Guildmage",
+        "lang": "en",
+        "released_at": "2006-02-03",
+        "uri": "https://api.scryfall.com/cards/94668543-3ad9-4454-a0c1-c3fdbc68f11e",
+        "scryfall_uri": "https://scryfall.com/card/pgpt/144%E2%98%85/gruul-guildmage?utm_source=api",
+        "layout": "normal",
+        "highres_image": true,
+        "image_status": "highres_scan",
+        "image_uris": {
+            "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/9/4/94668543-3ad9-4454-a0c1-c3fdbc68f11e.jpg?1606845401",
+            "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/4/94668543-3ad9-4454-a0c1-c3fdbc68f11e.jpg?1606845401",
+            "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/9/4/94668543-3ad9-4454-a0c1-c3fdbc68f11e.jpg?1606845401",
+            "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/9/4/94668543-3ad9-4454-a0c1-c3fdbc68f11e.png?1606845401",
+            "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/9/4/94668543-3ad9-4454-a0c1-c3fdbc68f11e.jpg?1606845401",
+            "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/9/4/94668543-3ad9-4454-a0c1-c3fdbc68f11e.jpg?1606845401"
+        },
+        "mana_cost": "{R/G}{R/G}",
+        "cmc": 2,
+        "type_line": "Creature — Human Shaman",
+        "oracle_text": "({R/G} can be paid with either {R} or {G}.)\n{3}{R}, Sacrifice a land: Gruul Guildmage deals 2 damage to target player or planeswalker.\n{3}{G}: Target creature gets +2/+2 until end of turn.",
+        "power": "2",
+        "toughness": "2",
+        "colors": [
+            "G",
+            "R"
+        ],
+        "color_identity": [
+            "G",
+            "R"
+        ],
+        "keywords": [],
+        "legalities": {
+            "standard": "not_legal",
+            "future": "not_legal",
+            "historic": "not_legal",
+            "gladiator": "not_legal",
+            "pioneer": "not_legal",
+            "modern": "legal",
+            "legacy": "legal",
+            "pauper": "not_legal",
+            "vintage": "legal",
+            "penny": "legal",
+            "commander": "legal",
+            "brawl": "not_legal",
+            "duel": "legal",
+            "oldschool": "not_legal",
+            "premodern": "not_legal"
+        },
+        "games": [
+            "paper"
+        ],
+        "reserved": false,
+        "nonfoil": false,
+        "oversized": false,
+        "promo": true,
+        "reprint": true,
+        "variation": false,
+        "set_id": "a77ddc05-da91-4dce-b564-bfb13766d23b",
+        "set": "gpt",
+        "set_name": "Guildpact Promos",
+        "set_type": "promo",
+        "set_uri": "https://api.scryfall.com/sets/a77ddc05-da91-4dce-b564-bfb13766d23b",
+        "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Apgpt&unique=prints",
+        "scryfall_set_uri": "https://scryfall.com/sets/pgpt?utm_source=api",
+        "rulings_uri": "https://api.scryfall.com/cards/94668543-3ad9-4454-a0c1-c3fdbc68f11e/rulings",
+        "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A75645b1f-0e12-4a05-b47f-0d2e2616c3ca&unique=prints",
+        "collector_number": "144★",
+        "digital": false,
+        "rarity": "r",
+        "watermark": "gruul",
+        "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+        "artist": "Paolo Parente",
+        "artist_ids": [
+            "d48dd097-720d-476a-8722-6a02854ae28b"
+        ],
+        "illustration_id": "27123545-6b79-4394-a961-95f0a37a10c6",
+        "border_color": "black",
+        "frame": "2003",
+        "full_art": false,
+        "textless": false,
+        "booster": false,
+        "story_spotlight": false,
+        "promo_types": [
+            "release"
+        ],
+        "edhrec_rank": 14618,
+        "prices": {
+            "usd": null,
+            "usd_foil": "0.39",
+            "eur": null,
+            "eur_foil": "0.42",
+            "tix": null
+        },
+        "related_uris": {
+            "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Gruul+Guildmage&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Gruul+Guildmage&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "edhrec": "https://edhrec.com/route/?cc=Gruul+Guildmage",
+            "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Gruul+Guildmage"
+        },
+        "purchase_uris": {
+            "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=38374&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+            "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Gruul+Guildmage&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+            "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Gruul+Guildmage&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+        },
+        "title": "Gruul Guildmage",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/4/94668543-3ad9-4454-a0c1-c3fdbc68f11e.jpg?1606845401",
+        "cost": "{R/G}{R/G}",
+        "ccost": 2,
+        "type": "Creature",
+        "subtype": "Human Shaman",
+        "colour": "m",
+        "urlSources": [
+            "https://api.scryfall.com/cards/search?order=set&q=e%3Apgpt&unique=prints"
+        ],
+        "num": "144★ P Launch",
+        "numInt": 144,
+        "mtgenId": "gpt|144★ P Launch",
+        "includedReason": "Launch Promo",
+        "usableForDeckBuilding": false
+    }
+]

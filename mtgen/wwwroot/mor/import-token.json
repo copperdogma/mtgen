@@ -1,0 +1,24 @@
+{
+    "setCode": "mor",
+    "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Atmor&unique=prints",
+    "imagesUrl": "",
+    "exceptions": [
+        {
+            "_comments": [
+                "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+            ]
+        },
+
+        {
+            "where": "",
+            "newValues": {
+                "set": "{{setCode}}",
+                "rarity": "c",
+                "num": "{{num}}/003 T",
+                "token": true,
+                "usableForDeckBuilding": false
+            }
+        }
+
+    ]
+}
