@@ -103,7 +103,7 @@ class CardDataImporter {
     // PUBLIC METHODS ------------------------------------------------------------------------------------
 
     async loadAndProcessAllFiles({ cardDataUrl, htmlCardData, imagesUrl, importOptions, exceptions, setCode }) {
-        setCode = setCode.trim();
+        setCode = setCode ? setCode.trim() : '';
 
         this._clearConsole();
 
@@ -141,7 +141,7 @@ class CardDataImporter {
 
         const options = JSON.parse(importOptions);
 
-        const jsonExceptions = { data: exceptionData };
+        const jsonExceptions = { data: exceptionData ?? '' };
         if (jsonExceptions.data) { jsonExceptions.data = JSON.parse(jsonExceptions.data); }
 
         window.dispatchEvent(new Event('data-loaded'));
@@ -150,7 +150,8 @@ class CardDataImporter {
         let mainImages = new Map();
 
         if (options.theList == true) {
-            mainOut = await this._loadAndProcessTheListFiles(htmlCards, setCode, options);
+            setCode = 'plist'; // This is Scryfall's set name for The List which I've adopted. 
+            mainOut = await this._loadAndProcessTheListFiles(htmlCards, options);
         }
         else if (options.artCards == true) {
             mainImages = await this._getImageData(htmlImages.data, htmlImages.urlSource, options);
@@ -846,9 +847,9 @@ class CardDataImporter {
     }
 
     // Loads cards from The List.
-    // Requires "importOptions": { "theList": true, "theListTableNum": 3 }
+    // Requires "options": { "theList": true, "theListTableNum": 3 }
     //  Where theListTableNum is the table number in the article where The List cards actually reside. They often put tables with What We Removed/Added beforehand.
-    async _loadAndProcessTheListFiles(rawCardData, setCode, options) {
+    async _loadAndProcessTheListFiles(rawWotcCardData, options) {
         // Overview:
         // - Load the card names + set codes from the wotc article
         // - Get the GathererIDs from the same data so we can use those images if Scryfall doesn't have them yet
@@ -866,8 +867,8 @@ class CardDataImporter {
         };
 
         // Retrieve a set of card name/set pairs from a wotc The List article.
-        let wotcOut = this._getTheListCardsFromWotc(rawCardData.data, options.theListTableNum);
-        wotcOut = wotcOut.map(card => mtgGen.addUrlSource(card, rawCardData.urlSource));
+        let wotcOut = this._getTheListCardsFromWotc(rawWotcCardData, options.theListTableNum);
+        wotcOut = wotcOut.map(card => mtgGen.addUrlSource(card, rawWotcCardData.urlSource));
         wotcOut.initialCardDataCount = wotcOut.length;
 
         console.log(wotcOut.initialCardDataCount + " cards retrieved from wotc");
@@ -1007,6 +1008,12 @@ class CardDataImporter {
                 scryfallApiCardUrl = `https://api.scryfall.com/cards/search?q=!"${unmatchedCard.title}"`;
                 cardDataRaw = await this._fetchHtml(scryfallApiCardUrl);
             }
+            // If it's STILL not found.. well.. Scryfall doesn't have it. Either a spelling error from wotc or a data error from Scryfall. Can't do anything.
+            // Retry without the set; scryfall will get the most recent printing which is probably correct.
+            if (cardDataRaw == 'Server error (HTTP NotFound)') {
+                console.log(`Cannot find card '${unmatchedCard.title}' in ANY set. Ignoring, I guess?`);
+                continue;
+            }
             const cardData = JSON.parse(cardDataRaw);
             const card = cardData.data[0];
             card.set = 'plist'; // This is Scryfall's set name for The List which I've adopted.
@@ -1029,6 +1036,10 @@ class CardDataImporter {
                 else if (scryfallCards.length == 1) {
                     console.log(`Bad wotc data. Ended up matching wotc '${wotcCard.title}' to Scryfall '${scryfallCards[0].title}'`);
                     return scryfallCards[0];
+                }
+                else {
+                    console.warn(`No Scryfall data at all for '${wotcCard.matchTitle}'. Ignoring, I guess?`);
+                    return wotcCard;
                 }
             }
             else {
@@ -1329,14 +1340,14 @@ class CardDataImporter {
     }
 
     // ------------------------------------------------------------------------------------------------------------------------------------------------------
-    // This "card" data is really just a named pair of card name/sets retrieve from a wotc article.
+    // This "card" data is really just a named pair of card name/sets retrieved from a wotc article.
     _getTheListCardsFromWotc(rawCardData, tableNum) {
         let cards = [];
         const intTableNum = tableNum == 0 ? 1 : tableNum;
 
         // get all wotc article cards
         const parser = new DOMParser();
-        const cardDoc = parser.parseFromString(rawCardData, "text/html");
+        const cardDoc = parser.parseFromString(rawCardData.data, "text/html");
 
         const cardsTables = cardDoc.querySelectorAll('table.sortable-table');
         if (cardsTables.length === 0) {

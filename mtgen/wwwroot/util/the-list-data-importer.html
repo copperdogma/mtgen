@@ -52,10 +52,9 @@
         if (window.location.protocol == 'file:') { document.getElementById('local-error').getElementById; }
 
         async function _startProcessing() {
-            const [logOutput, finalData] = await cardDataImporter.loadAndProcessTheListFiles({
-                wotcTheListDataUrl: document.getElementById('url-wotc-the-list-data').value
-                , tableNum: document.getElementById('table-num').value
-                , scryfallTheListDataUrl: document.getElementById('url-scryfall-the-list-data').value
+            const [logOutput, finalData] = await cardDataImporter.loadAndProcessAllFiles({
+                cardDataUrl: document.getElementById('url-wotc-the-list-data').value
+                , importOptions: JSON.stringify({ theList: true, theListTableNum: document.getElementById('table-num').value })
             });
 
             document.getElementById('log').innerHTML = logOutput;
