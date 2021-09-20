@@ -1,0 +1,958 @@
+﻿[
+  {
+    "object": "card",
+    "id": "80ade554-861c-423f-9aa3-e36da95b20dc",
+    "oracle_id": "f3654fbd-16a5-4953-84ac-534e8421032f",
+    "multiverse_ids": [],
+    "name": "Champion of the Perished",
+    "lang": "en",
+    "released_at": "2021-09-24",
+    "uri": "https://api.scryfall.com/cards/80ade554-861c-423f-9aa3-e36da95b20dc",
+    "scryfall_uri": "https://scryfall.com/card/mid/385/champion-of-the-perished?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/8/0/80ade554-861c-423f-9aa3-e36da95b20dc.jpg?1630773412",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/8/0/80ade554-861c-423f-9aa3-e36da95b20dc.jpg?1630773412",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/8/0/80ade554-861c-423f-9aa3-e36da95b20dc.jpg?1630773412",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/8/0/80ade554-861c-423f-9aa3-e36da95b20dc.png?1630773412",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/8/0/80ade554-861c-423f-9aa3-e36da95b20dc.jpg?1630773412",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/8/0/80ade554-861c-423f-9aa3-e36da95b20dc.jpg?1630773412"
+    },
+    "mana_cost": "{B}",
+    "cmc": 1,
+    "type_line": "Creature — Zombie",
+    "oracle_text": "Whenever another Zombie enters the battlefield under your control, put a +1/+1 counter on Champion of the Perished.",
+    "power": "1",
+    "toughness": "1",
+    "colors": [
+      "B"
+    ],
+    "color_identity": [
+      "B"
+    ],
+    "keywords": [],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "arena",
+      "paper",
+      "mtgo"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "44b8eb8f-fa23-401a-98b5-1fbb9871128e",
+    "set": "mid",
+    "set_name": "Innistrad: Midnight Hunt",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/44b8eb8f-fa23-401a-98b5-1fbb9871128e",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Amid&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/mid?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/80ade554-861c-423f-9aa3-e36da95b20dc/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Af3654fbd-16a5-4953-84ac-534e8421032f&unique=prints",
+    "collector_number": "385",
+    "digital": false,
+    "rarity": "r",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Daarken",
+    "artist_ids": [
+      "e607a0d4-fc12-4c01-9e3f-501f5269b9cb"
+    ],
+    "illustration_id": "cec861e3-dd14-41fb-a7c6-382a4f4d3abb",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "extendedart"
+    ],
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "buyabox"
+    ],
+    "edhrec_rank": 18229,
+    "preview": {
+      "source": "Wizards of the Coast",
+      "source_uri": "https://magic.wizards.com/en/articles/archive/feature/boosters-and-products-innistrad-midnight-hunt-2021-09-02",
+      "previewed_at": "2021-09-02"
+    },
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Champion+of+the+Perished&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Champion+of+the+Perished&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Champion+of+the+Perished",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Champion+of+the+Perished"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Champion+of+the+Perished&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Champion+of+the+Perished&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Champion+of+the+Perished&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Champion of the Perished",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/8/0/80ade554-861c-423f-9aa3-e36da95b20dc.jpg?1630773412",
+    "cost": "{B}",
+    "ccost": 1,
+    "type": "Creature",
+    "subtype": "Zombie",
+    "colour": "b",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Amid&unique=prints"
+    ],
+    "num": "385 P Buy-a-Box",
+    "numInt": 385,
+    "mtgenId": "mid|385 P Buy-a-Box",
+    "includedReason": "Buy-a-Box Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "b6db2d37-3533-4830-ab63-6724ece6fbea",
+    "oracle_id": "ef238ba8-acf0-4e62-9abd-5291886a32e8",
+    "multiverse_ids": [],
+    "tcgplayer_id": 246439,
+    "name": "Triskaidekaphile",
+    "lang": "en",
+    "released_at": "2021-09-24",
+    "uri": "https://api.scryfall.com/cards/b6db2d37-3533-4830-ab63-6724ece6fbea",
+    "scryfall_uri": "https://scryfall.com/card/mid/386/triskaidekaphile?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/b/6/b6db2d37-3533-4830-ab63-6724ece6fbea.jpg?1628195895",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/b/6/b6db2d37-3533-4830-ab63-6724ece6fbea.jpg?1628195895",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/b/6/b6db2d37-3533-4830-ab63-6724ece6fbea.jpg?1628195895",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/b/6/b6db2d37-3533-4830-ab63-6724ece6fbea.png?1628195895",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/b/6/b6db2d37-3533-4830-ab63-6724ece6fbea.jpg?1628195895",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/b/6/b6db2d37-3533-4830-ab63-6724ece6fbea.jpg?1628195895"
+    },
+    "mana_cost": "{1}{U}",
+    "cmc": 2,
+    "type_line": "Creature — Human Wizard",
+    "oracle_text": "You have no maximum hand size.\nAt the beginning of your upkeep, if you have exactly thirteen cards in your hand, you win the game.\n{3}{U}: Draw a card.",
+    "power": "1",
+    "toughness": "3",
+    "colors": [
+      "U"
+    ],
+    "color_identity": [
+      "U"
+    ],
+    "keywords": [],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "arena",
+      "paper",
+      "mtgo"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "44b8eb8f-fa23-401a-98b5-1fbb9871128e",
+    "set": "mid",
+    "set_name": "Innistrad: Midnight Hunt",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/44b8eb8f-fa23-401a-98b5-1fbb9871128e",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Amid&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/mid?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/b6db2d37-3533-4830-ab63-6724ece6fbea/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Aef238ba8-acf0-4e62-9abd-5291886a32e8&unique=prints",
+    "collector_number": "386",
+    "digital": false,
+    "rarity": "r",
+    "flavor_text": "She's always willing to lend a hand. It just won't be her own.",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Mathias Kollros",
+    "artist_ids": [
+      "2ae0dd12-047c-4efb-80d7-bccc3bac5fba"
+    ],
+    "illustration_id": "a836ee40-8264-41fb-aa61-1837ffd216dd",
+    "border_color": "black",
+    "frame": "2015",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "bundle"
+    ],
+    "edhrec_rank": 17508,
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Triskaidekaphile&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Triskaidekaphile&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Triskaidekaphile",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Triskaidekaphile"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=246439&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Triskaidekaphile&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Triskaidekaphile&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Triskaidekaphile",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/b/6/b6db2d37-3533-4830-ab63-6724ece6fbea.jpg?1628195895",
+    "cost": "{1}{U}",
+    "ccost": 2,
+    "type": "Creature",
+    "subtype": "Human Wizard",
+    "colour": "u",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Amid&unique=prints"
+    ],
+    "num": "386 P Bundle",
+    "numInt": 386,
+    "mtgenId": "mid|386 P Bundle",
+    "includedReason": "Bundle Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "ba0f88d0-49b8-451b-948d-46401d49020e",
+    "oracle_id": "2788cc1e-18b6-4506-be4c-f4056600e33c",
+    "multiverse_ids": [],
+    "tcgplayer_id": 247942,
+    "name": "Gavony Dawnguard",
+    "lang": "en",
+    "released_at": "2021-09-24",
+    "uri": "https://api.scryfall.com/cards/ba0f88d0-49b8-451b-948d-46401d49020e",
+    "scryfall_uri": "https://scryfall.com/card/mid/387/gavony-dawnguard?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/b/a/ba0f88d0-49b8-451b-948d-46401d49020e.jpg?1630979298",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/b/a/ba0f88d0-49b8-451b-948d-46401d49020e.jpg?1630979298",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/b/a/ba0f88d0-49b8-451b-948d-46401d49020e.jpg?1630979298",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/b/a/ba0f88d0-49b8-451b-948d-46401d49020e.png?1630979298",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/b/a/ba0f88d0-49b8-451b-948d-46401d49020e.jpg?1630979298",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/b/a/ba0f88d0-49b8-451b-948d-46401d49020e.jpg?1630979298"
+    },
+    "mana_cost": "{1}{W}{W}",
+    "cmc": 3,
+    "type_line": "Creature — Human Soldier",
+    "oracle_text": "Ward {1}\nIf it's neither day nor night, it becomes day as Gavony Dawnguard enters the battlefield.\nWhenever day becomes night or night becomes day, look at the top four cards of your library. You may reveal a creature card with mana value 3 or less from among them and put it into your hand. Put the rest on the bottom of your library in any order.",
+    "power": "3",
+    "toughness": "3",
+    "colors": [
+      "W"
+    ],
+    "color_identity": [
+      "W"
+    ],
+    "keywords": [
+      "Ward"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "arena",
+      "paper",
+      "mtgo"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "44b8eb8f-fa23-401a-98b5-1fbb9871128e",
+    "set": "mid",
+    "set_name": "Innistrad: Midnight Hunt",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/44b8eb8f-fa23-401a-98b5-1fbb9871128e",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Amid&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/mid?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/ba0f88d0-49b8-451b-948d-46401d49020e/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A2788cc1e-18b6-4506-be4c-f4056600e33c&unique=prints",
+    "collector_number": "387",
+    "digital": false,
+    "rarity": "u",
+    "watermark": "planeswalker",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Micah Epstein",
+    "artist_ids": [
+      "957ec398-9a5e-4f54-9090-37a06d57b96c"
+    ],
+    "illustration_id": "54df8838-8228-4b4c-9d1e-99d2a440e512",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "inverted"
+    ],
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "promopack"
+    ],
+    "preview": {
+      "source": "Wizards of the Coast",
+      "source_uri": "https://magic.wizards.com/en/articles/archive/card-image-gallery/innistrad-midnight-hunt",
+      "previewed_at": "2021-09-03"
+    },
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Gavony+Dawnguard&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Gavony+Dawnguard&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Gavony+Dawnguard",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Gavony+Dawnguard"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=247942&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Gavony+Dawnguard&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Gavony+Dawnguard&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Gavony Dawnguard",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/b/a/ba0f88d0-49b8-451b-948d-46401d49020e.jpg?1630979298",
+    "cost": "{1}{W}{W}",
+    "ccost": 3,
+    "type": "Creature",
+    "subtype": "Human Soldier",
+    "colour": "w",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Amid&unique=prints"
+    ],
+    "num": "387 P Promo Pack",
+    "numInt": 387,
+    "mtgenId": "mid|387 P Promo Pack",
+    "includedReason": "Promo Pack",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "0b3f40a0-5f58-4157-aed9-b1a52e922c3c",
+    "oracle_id": "4c9bcba6-87b5-4fb3-97ee-6fe5b739337d",
+    "multiverse_ids": [],
+    "tcgplayer_id": 246434,
+    "name": "Consider",
+    "lang": "en",
+    "released_at": "2021-09-24",
+    "uri": "https://api.scryfall.com/cards/0b3f40a0-5f58-4157-aed9-b1a52e922c3c",
+    "scryfall_uri": "https://scryfall.com/card/mid/388/consider?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/0/b/0b3f40a0-5f58-4157-aed9-b1a52e922c3c.jpg?1628196437",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/0/b/0b3f40a0-5f58-4157-aed9-b1a52e922c3c.jpg?1628196437",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/0/b/0b3f40a0-5f58-4157-aed9-b1a52e922c3c.jpg?1628196437",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/0/b/0b3f40a0-5f58-4157-aed9-b1a52e922c3c.png?1628196437",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/0/b/0b3f40a0-5f58-4157-aed9-b1a52e922c3c.jpg?1628196437",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/0/b/0b3f40a0-5f58-4157-aed9-b1a52e922c3c.jpg?1628196437"
+    },
+    "mana_cost": "{U}",
+    "cmc": 1,
+    "type_line": "Instant",
+    "oracle_text": "Look at the top card of your library. You may put that card into your graveyard.\nDraw a card.",
+    "colors": [
+      "U"
+    ],
+    "color_identity": [
+      "U"
+    ],
+    "keywords": [],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "arena",
+      "paper",
+      "mtgo"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "44b8eb8f-fa23-401a-98b5-1fbb9871128e",
+    "set": "mid",
+    "set_name": "Innistrad: Midnight Hunt",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/44b8eb8f-fa23-401a-98b5-1fbb9871128e",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Amid&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/mid?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/0b3f40a0-5f58-4157-aed9-b1a52e922c3c/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A4c9bcba6-87b5-4fb3-97ee-6fe5b739337d&unique=prints",
+    "collector_number": "388",
+    "digital": false,
+    "rarity": "c",
+    "watermark": "planeswalker",
+    "flavor_text": "Ivold gasped in surprise. Either a very strange insect had crawled onto one of the lenses or he was seeing geists at last.",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Zezhou Chen",
+    "artist_ids": [
+      "810677e5-a502-4c03-b726-78cd808a75d4"
+    ],
+    "illustration_id": "ae8017d0-f56b-43a9-ab21-8ebc1f51d2c9",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "inverted"
+    ],
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "promopack"
+    ],
+    "edhrec_rank": 15484,
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Consider&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Consider&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Consider",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Consider"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=246434&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Consider&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Consider&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Consider",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/0/b/0b3f40a0-5f58-4157-aed9-b1a52e922c3c.jpg?1628196437",
+    "cost": "{U}",
+    "ccost": 1,
+    "type": "Instant",
+    "colour": "u",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Amid&unique=prints"
+    ],
+    "num": "388 P Promo Pack",
+    "numInt": 388,
+    "mtgenId": "mid|388 P Promo Pack",
+    "includedReason": "Promo Pack",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "0655bae1-d33b-4bac-856a-ca4518f192e8",
+    "oracle_id": "94f0a572-e91c-4b56-a5d1-6cbbeabd210d",
+    "multiverse_ids": [],
+    "tcgplayer_id": 246443,
+    "name": "Infernal Grasp",
+    "lang": "en",
+    "released_at": "2021-09-24",
+    "uri": "https://api.scryfall.com/cards/0655bae1-d33b-4bac-856a-ca4518f192e8",
+    "scryfall_uri": "https://scryfall.com/card/mid/389/infernal-grasp?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/0/6/0655bae1-d33b-4bac-856a-ca4518f192e8.jpg?1628196469",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/0/6/0655bae1-d33b-4bac-856a-ca4518f192e8.jpg?1628196469",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/0/6/0655bae1-d33b-4bac-856a-ca4518f192e8.jpg?1628196469",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/0/6/0655bae1-d33b-4bac-856a-ca4518f192e8.png?1628196469",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/0/6/0655bae1-d33b-4bac-856a-ca4518f192e8.jpg?1628196469",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/0/6/0655bae1-d33b-4bac-856a-ca4518f192e8.jpg?1628196469"
+    },
+    "mana_cost": "{1}{B}",
+    "cmc": 2,
+    "type_line": "Instant",
+    "oracle_text": "Destroy target creature. You lose 2 life.",
+    "colors": [
+      "B"
+    ],
+    "color_identity": [
+      "B"
+    ],
+    "keywords": [],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "arena",
+      "paper",
+      "mtgo"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "44b8eb8f-fa23-401a-98b5-1fbb9871128e",
+    "set": "mid",
+    "set_name": "Innistrad: Midnight Hunt",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/44b8eb8f-fa23-401a-98b5-1fbb9871128e",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Amid&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/mid?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/0655bae1-d33b-4bac-856a-ca4518f192e8/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A94f0a572-e91c-4b56-a5d1-6cbbeabd210d&unique=prints",
+    "collector_number": "389",
+    "digital": false,
+    "rarity": "u",
+    "watermark": "planeswalker",
+    "flavor_text": "Ancient evils dwell within the burning chasm called the Ashmouth, ever ready to devour those foolish enough to travel alone.",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Naomi Baker",
+    "artist_ids": [
+      "6fe0624f-c75c-4f0d-bdb2-514d9b596030"
+    ],
+    "illustration_id": "fedddfb1-4b2b-4cbe-80f5-7d4aa52d68e7",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "inverted"
+    ],
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "promopack"
+    ],
+    "edhrec_rank": 13945,
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Infernal+Grasp&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Infernal+Grasp&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Infernal+Grasp",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Infernal+Grasp"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=246443&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Infernal+Grasp&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Infernal+Grasp&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Infernal Grasp",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/0/6/0655bae1-d33b-4bac-856a-ca4518f192e8.jpg?1628196469",
+    "cost": "{1}{B}",
+    "ccost": 2,
+    "type": "Instant",
+    "colour": "b",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Amid&unique=prints"
+    ],
+    "num": "389 P Promo Pack",
+    "numInt": 389,
+    "mtgenId": "mid|389 P Promo Pack",
+    "includedReason": "Promo Pack",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "42901bec-a8d0-46a3-a710-bfb7bd87f155",
+    "oracle_id": "5ffc1e77-152b-4a82-8ea8-2c79cc31d5ef",
+    "multiverse_ids": [],
+    "tcgplayer_id": 246442,
+    "name": "Play with Fire",
+    "lang": "en",
+    "released_at": "2021-09-24",
+    "uri": "https://api.scryfall.com/cards/42901bec-a8d0-46a3-a710-bfb7bd87f155",
+    "scryfall_uri": "https://scryfall.com/card/mid/390/play-with-fire?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/4/2/42901bec-a8d0-46a3-a710-bfb7bd87f155.jpg?1628196493",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/4/2/42901bec-a8d0-46a3-a710-bfb7bd87f155.jpg?1628196493",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/4/2/42901bec-a8d0-46a3-a710-bfb7bd87f155.jpg?1628196493",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/4/2/42901bec-a8d0-46a3-a710-bfb7bd87f155.png?1628196493",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/4/2/42901bec-a8d0-46a3-a710-bfb7bd87f155.jpg?1628196493",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/4/2/42901bec-a8d0-46a3-a710-bfb7bd87f155.jpg?1628196493"
+    },
+    "mana_cost": "{R}",
+    "cmc": 1,
+    "type_line": "Instant",
+    "oracle_text": "Play with Fire deals 2 damage to any target. If a player is dealt damage this way, scry 1. (Look at the top card of your library. You may put that card on the bottom of your library.)",
+    "colors": [
+      "R"
+    ],
+    "color_identity": [
+      "R"
+    ],
+    "keywords": [
+      "Scry"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "arena",
+      "paper",
+      "mtgo"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "44b8eb8f-fa23-401a-98b5-1fbb9871128e",
+    "set": "mid",
+    "set_name": "Innistrad: Midnight Hunt",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/44b8eb8f-fa23-401a-98b5-1fbb9871128e",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Amid&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/mid?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/42901bec-a8d0-46a3-a710-bfb7bd87f155/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A5ffc1e77-152b-4a82-8ea8-2c79cc31d5ef&unique=prints",
+    "collector_number": "390",
+    "digital": false,
+    "rarity": "u",
+    "watermark": "planeswalker",
+    "flavor_text": "Devils find human dwellings to be oppressively cold, dark, and unburnt.",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Svetlin Velinov",
+    "artist_ids": [
+      "ffd063ae-c097-4f26-b2e6-b1e2137708bc"
+    ],
+    "illustration_id": "cf93ba1b-244e-4582-aa88-95944df0bfa3",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "inverted"
+    ],
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "promopack"
+    ],
+    "edhrec_rank": 21308,
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Play+with+Fire&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Play+with+Fire&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Play+with+Fire",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Play+with+Fire"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=246442&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Play+with+Fire&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Play+with+Fire&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Play with Fire",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/4/2/42901bec-a8d0-46a3-a710-bfb7bd87f155.jpg?1628196493",
+    "cost": "{R}",
+    "ccost": 1,
+    "type": "Instant",
+    "colour": "r",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Amid&unique=prints"
+    ],
+    "num": "390 P Promo Pack",
+    "numInt": 390,
+    "mtgenId": "mid|390 P Promo Pack",
+    "includedReason": "Promo Pack",
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mid-prerelease-deck-box.png",
+    "title": "Prerelease Deck Box",
+    "colour": "o",
+    "num": "006 Prerelease Deck Box",
+    "rarity": "c",
+    "type": "Insert",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 6,
+    "mtgenId": "mid|006 Prerelease Deck Box",
+    "set": "mid",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-deckbuilding-info.jpg",
+    "src_large": "http://mtgen.net/cards/mtg-deckbuilding-info-lg.jpg",
+    "height": 370,
+    "width": 515,
+    "title": "Deckbuilding Advice Insert",
+    "colour": "o",
+    "num": "007 Insert",
+    "rarity": "c",
+    "type": "Insert",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 7,
+    "mtgenId": "mid|007 Insert",
+    "set": "mid",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-prerelease-card-divider.png",
+    "title": "Card Divider",
+    "colour": "o",
+    "num": "008 Insert",
+    "rarity": "c",
+    "type": "Insert",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 8,
+    "mtgenId": "mid|008 Insert",
+    "set": "mid",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-arena-code-card.png",
+    "title": "Arena Code Card",
+    "colour": "o",
+    "num": "009 Insert",
+    "rarity": "c",
+    "type": "Insert",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 9,
+    "mtgenId": "mid|009 Insert",
+    "set": "mid",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mid-spindown-life-counter-white.png",
+    "title": "White Spindown Life Counter",
+    "colour": "o",
+    "num": "001a Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "mid|001a Counter",
+    "set": "mid",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mid-spindown-life-counter-blue.png",
+    "title": "Blue Spindown Life Counter",
+    "colour": "o",
+    "num": "001b Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "mid|001b Counter",
+    "set": "mid",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mid-spindown-life-counter-black.png",
+    "title": "Black Spindown Life Counter",
+    "colour": "o",
+    "num": "001c Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "mid|001c Counter",
+    "set": "mid",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mid-spindown-life-counter-red.png",
+    "title": "Red Spindown Life Counter",
+    "colour": "o",
+    "num": "001d Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "mid|001d Counter",
+    "set": "mid",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mid-spindown-life-counter-green.png",
+    "title": "Green Spindown Life Counter",
+    "colour": "o",
+    "num": "001e Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "mid|001e Counter",
+    "set": "mid",
+    "promo": true,
+    "usableForDeckBuilding": false
+  }
+]

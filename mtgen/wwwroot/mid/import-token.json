@@ -1,0 +1,293 @@
+{
+  "setCode": "mid",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Atmid&unique=prints",
+  "imagesUrl": "",
+  "_comment1": "NOTE: Starting importing data and images from Scryfall as of this set",
+  "_comment2": "NOTE: No longer importing basic land separately as of this set as Scryfall makes it way easier",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "select cards starting with a value = where: type~='Snow'",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'"
+      ]
+    },
+
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "mid",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-innistrad-midnight-hunt-2021-09-17",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "1",
+          "cardPattern": "000|w|Token Creature|Human\n000|w|Token Creature|Spirit\n000|u|Token Creature|Bird\n000|b|Token Creature|Bat\n000|b|Token Creature|Zombie\n000|r|Token Creature|Devil\n000|r|Token Creature|Elemental\n000|g|Token Creature|Beast\n000|g|Token Creature|Insect\n000|g|Token Creature|Ooze\n000|g|Token Creature|Spider\n000|g|Token Creature|Treefolk\n000|g|Token Creature|Wolf\n000|m|Token Creature|Vampire\n000|m|Token Creature|Zombie\n000|c|Token Artifact|Clue\n000|c|Emblem|Teferi Who Slows the Sunset\n000|c|Emblem|Wrenn and Seven\n"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mid",
+        "src": "https://media.wizards.com/2021/mid/en_uHB1zQVvcu.png",
+        "num": 1,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Human",
+        "subtype": "Human",
+        "numInt": 1
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mid",
+        "src": "https://media.wizards.com/2021/mid/en_ieksIYV0t6.png",
+        "num": 2,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Spirit",
+        "subtype": "Spirit",
+        "numInt": 2
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mid",
+        "src": "https://media.wizards.com/2021/mid/en_p0gEyXmaUk.png",
+        "num": 3,
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Bird",
+        "subtype": "Bird",
+        "numInt": 3
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mid",
+        "src": "https://media.wizards.com/2021/mid/en_MRrT1S3cVD.png",
+        "num": 4,
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Bat",
+        "subtype": "Bat",
+        "numInt": 4
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mid",
+        "src": "https://media.wizards.com/2021/mid/en_gQ1kYIpAvu.png",
+        "num": 5,
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Zombie",
+        "subtype": "Zombie",
+        "numInt": 5
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mid",
+        "src": "https://media.wizards.com/2021/mid/en_LeP3ZuQDvl.png",
+        "num": 6,
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Devil",
+        "subtype": "Devil",
+        "numInt": 6
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mid",
+        "src": "https://media.wizards.com/2021/mid/en_Ef2DuYs9bl.png",
+        "num": 7,
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Elemental",
+        "subtype": "Elemental",
+        "numInt": 7
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mid",
+        "src": "https://media.wizards.com/2021/mid/en_hkP0BThOxI.png",
+        "num": 8,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Beast",
+        "subtype": "Beast",
+        "numInt": 8
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mid",
+        "src": "https://media.wizards.com/2021/mid/en_hqoCcZsWvI.png",
+        "num": 9,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Insect",
+        "subtype": "Insect",
+        "numInt": 9
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mid",
+        "src": "https://media.wizards.com/2021/mid/en_bzzSnyh3Qv.png",
+        "num": 10,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Ooze",
+        "subtype": "Ooze",
+        "numInt": 10
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mid",
+        "src": "https://media.wizards.com/2021/mid/en_xhgoi22xru.png",
+        "num": 11,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Spider",
+        "subtype": "Spider",
+        "numInt": 11
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mid",
+        "src": "https://media.wizards.com/2021/mid/en_9vyALhs2CW.png",
+        "num": 12,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Treefolk",
+        "subtype": "Treefolk",
+        "numInt": 12
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mid",
+        "src": "https://media.wizards.com/2021/mid/en_voqEBa4Udh.png",
+        "num": 13,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Wolf",
+        "subtype": "Wolf",
+        "numInt": 13
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mid",
+        "src": "https://media.wizards.com/2021/mid/en_9LXYVm6MmH.png",
+        "num": 14,
+        "colour": "m",
+        "type": "Token Creature",
+        "title": "Vampire",
+        "subtype": "Vampire",
+        "numInt": 14
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mid",
+        "src": "https://media.wizards.com/2021/mid/en_wcRiBf69Go.png",
+        "num": 15,
+        "colour": "m",
+        "type": "Token Creature",
+        "title": "Zombie",
+        "subtype": "Zombie",
+        "numInt": 15
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mid",
+        "src": "https://media.wizards.com/2021/mid/en_TbQVcnUgf6.png",
+        "num": 16,
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Clue",
+        "subtype": "Clue",
+        "numInt": 16
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mid",
+        "src": "https://media.wizards.com/2021/mid/en_qDbCs7RhT8.png",
+        "num": 17,
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Teferi Who Slows the Sunset",
+        "subtype": "Teferi Who Slows the Sunset",
+        "numInt": 17
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "mid",
+        "src": "https://media.wizards.com/2021/mid/en_YPDkHFLwcl.png",
+        "num": 18,
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Wrenn and Seven",
+        "subtype": "Wrenn and Seven",
+        "numInt": 18
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/018 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "set": "mid",
+        "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/5/0/507e152c-50b6-4cd7-b979-a9558219c28b.jpg?1630608168",
+        "num": "1 F",
+        "colour": "c",
+        "rarity": "c",
+        "type": "Double-Faced Substitute Card",
+        "title": "Helper Card",
+        "numInt": 1,
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+
+  ]
+}

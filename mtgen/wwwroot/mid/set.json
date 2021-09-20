@@ -1,0 +1,30 @@
+{
+  "startProductName": "mid-prerelease",
+  "packFiles": [
+    "packs.json?v1.3"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json?v1.1",
+    "cardsVariant.json",
+    "cardsPromo.json?v1.1",
+    "cardsTheList.json",
+    "cardsArtCards.json?v1.1",
+    "cardsCommander.json",
+    "../cards/ads/cardsAds.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2021-09-17T11:30:00:00",
+      "HtmlString": "Added Set Booster, Art Cards, and Tokens."
+    },
+    {
+      "UpdateDate": "2021-09-16T11:00:00:00",
+      "HtmlString": "Added Collector Booster."
+    },
+    {
+      "UpdateDate": "2021-09-15T23:30:00:00",
+      "HtmlString": "Draft Booster now respects showcase cards being Equinox vs Eternal Night."
+    }
+  ]
+}

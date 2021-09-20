@@ -1,0 +1,177 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "_comment2": "You can add an array of caveats to a product to add notes shown to the user",
+  "_comment3": "{{setCode}} and {{setName}} can be used in products.json/packs.json and get replaced in preprocessing to the actual code/name as found in the global sets.json file",
+
+  "products": [
+    {
+      "productName": "{{setCode}}-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "{{setCode}}-all-cards" }
+      ]
+    },
+
+    {
+      "productName": "{{setCode}}-boosters",
+      "productDesc": "Draft Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "{{setCode}}-draft" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "{{setCode}}-draft-boosters-six",
+            "presetDesc": "Six Draft Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "{{setCode}}-draft"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "{{setCode}}-collector",
+      "productDesc": "Collector Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "{{setCode}}-collector" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "{{setCode}}-collector-boosters-six",
+            "presetDesc": "Six Collector Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "{{setCode}}-collector"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "productName": "{{setCode}}-set-booster",
+      "productDesc": "Set Boosters",
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "caveats": [
+        "Note: The only Art Card images available are all foil-stamped. The wording underneath will say if you've actually pulled a foil stamped card."
+      ],
+      "packs": [
+        { "packName": "{{setCode}}-set-booster" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "{{setCode}}-set-booster-six",
+            "presetDesc": "Six Set Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "{{setCode}}-set-booster"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "{{setCode}}-prerelease",
+      "productDesc": "Prerelease",
+      "sources": [ "https://wpn.wizards.com/en/products/adventures-forgotten-realms-1" ],
+      "isGenerated": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "{{setCode}}-draft" },
+        { "packName": "{{setCode}}-prerelease-promo-packins" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "{{setCode}}-prerelease-promo-packins",
+            "presetDesc": "Prerelease Packins",
+            "default": true,
+            "packs": [
+              {
+                "count": 1,
+                "defaultPackName": "{{setCode}}-prerelease-promo-packins"
+              },
+              {
+                "count": 6,
+                "defaultPackName": "{{setCode}}-draft"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "{{setCode}}-variants",
+      "productDesc": "Variants",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/modern-horizons-2-variants" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "{{setCode}}-variants" }
+      ]
+    },
+
+    {
+      "productName": "{{setCode}}-promos",
+      "productDesc": "All Promos",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-preview/ravnica-allegiance-planeswalker-deck-lists-2019-01-10" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "{{setCode}}-promos" }
+      ]
+    },
+
+    {
+      "productName": "{{setCode}}-art-cards",
+      "productDesc": "Art Cards",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/modern-horizons-2-art-cards-2021-06-03" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "a{{setCode}}-art-cards" }
+      ]
+    },
+
+    {
+      "productName": "the-list",
+      "productDesc": "The List",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/updating-list-modern-horizons-2-2021-06-04" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "name",
+      "packs": [
+        { "packName": "the-list" }
+      ]
+    }
+  ]
+}
