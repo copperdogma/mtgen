@@ -929,6 +929,9 @@ class CardDataImporter {
             if (card.src == undefined || card.src == '') {
                 console.log(`Scryfall card '${card.title}' has no image.`);
             }
+            if (card.mana_cost == undefined || card.mana_cost == '') {
+                card.mana_cost = card.cardFaces[0].mana_cost;
+            }
             delete card.card_faces;
         }
 
