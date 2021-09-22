@@ -1,38 +1,36 @@
 ﻿{
     "startProductName": "arb-boosters",
     "packFiles": [
-        "packs.json?v1.3",
-        "../con_/packs.json",
-        "../ala/packs.json"
+        "packs.json?v1.4"
     ],
     "cardFiles": [
         "cardsMain.json",
         "cardsPromo.json",
         "cardsToken.json",
-        "../con_/cardsMain.json",
-        "../con_/cardsPromo.json",
-        "../con_/cardsToken.json",
         "../ala/cardsMain.json",
-        "../ala/cardsPromo.json",
         "../ala/cardsToken.json",
         "../cards/tips/cardsTips.json"
     ],
-    "updates": [
-        {
-            "UpdateDate": "2021-07-18T00:30:00:00",
-            "HtmlString": "Fixed broken promo and token images."
-        },
-        {
-            "UpdateDate": "2021-07-03T23:30:00:00",
-            "HtmlString": "Updated marketing cards to be more accurate for set, plus set chances as 1:3 token:marketing for core sets, 2:3 for expansions, and 9:1 as of Battle for Zendikar."
-        },
-        {
-            "UpdateDate": "2021-06-25T23:30:00:00",
-            "HtmlString": "Updated foil chances. Now 15/67 chance a booster has a foil and it always replaces a common."
-        },
-        {
-            "UpdateDate": "2018-11-24T01:30:00:00",
-            "HtmlString": "Was completely broken. Fixed it!"
-        }
-    ]
+  "updates": [
+    {
+      "UpdateDate": "2021-09-19T22:30:00:00",
+      "HtmlString": "Standard Booster no longer uses Conflux card for R/M (thanks GoldenSandslash15!)."
+    },
+    {
+      "UpdateDate": "2021-07-18T00:30:00:00",
+      "HtmlString": "Fixed broken promo and token images."
+    },
+    {
+      "UpdateDate": "2021-07-03T23:30:00:00",
+      "HtmlString": "Updated marketing cards to be more accurate for set, plus set chances as 1:3 token:marketing for core sets, 2:3 for expansions, and 9:1 as of Battle for Zendikar."
+    },
+    {
+      "UpdateDate": "2021-06-25T23:30:00:00",
+      "HtmlString": "Updated foil chances. Now 15/67 chance a booster has a foil and it always replaces a common."
+    },
+    {
+      "UpdateDate": "2018-11-24T01:30:00:00",
+      "HtmlString": "Was completely broken. Fixed it!"
+    }
+  ]
 }

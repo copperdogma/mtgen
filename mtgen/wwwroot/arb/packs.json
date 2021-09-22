@@ -1,46 +1,48 @@
 {
   "defs": [
     {
-      "defName": "arb",
-      "query": "from[*]?set='arb"
+      "defName": "{{setCode}}",
+      "query": "from[*]?set='{{setCode}}"
     },
     {
+      "_comment": "Includes tokens from ALA",
       "defName": "ala",
       "query": "from[*]?set='ala"
     },
     {
-      "defName": "arb-main",
-      "query": "from[arb]-from[arb]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[arb]?promo=true"
+      "defName": "{{setCode}}-main",
+      "query": "from[{{setCode}}]-from[{{setCode}}]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[{{setCode}}]?promo=true"
     },
     {
-      "defName": "arb-promo",
-      "query": "from[arb]?promo=true"
+      "defName": "{{setCode}}-promo",
+      "query": "from[{{setCode}}]?promo=true"
     },
     {
-      "defName": "arb-all",
-      "query": "from[arb]+from[ala]?token=true"
+      "_comment": "Includes tokens from ALA",
+      "defName": "{{setCode}}-all",
+      "query": "from[{{setCode}}]+from[ala]?token=true"
     },
     {
-      "defName": "arb-foil",
-      "query": "from[arb-main]+from[ala]?type='Basic Land"
+      "defName": "{{setCode}}-foil",
+      "query": "from[{{setCode}}-main]+from[ala]?type='Basic Land"
     }
   ],
   "packs": [
     {
-      "packName": "arb-all-cards",
+      "packName": "{{setCode}}-all-cards",
       "packDesc": "Alara Reborn: All Cards",
       "isGenerated": false,
       "cards": [
-        { "query": "take[*]>from[arb-all]" }
+        { "query": "take[*]>from[{{setCode}}-all]" }
       ]
     },
     {
-      "packName": "arb-standard",
+      "packName": "{{setCode}}-standard",
       "packDesc": "Alara Reborn: Standard Booster",
       "isGenerated": true,
       "cards": [
-        { "query": "take[10]>from[arb-main]?rarity='c" },
-        { "query": "take[3]>from[arb-main]?rarity='u" },
+        { "query": "take[10]>from[{{setCode}}-main]?rarity='c" },
+        { "query": "take[3]>from[{{setCode}}-main]?rarity='u" },
         {
           "querySet": [
             {
@@ -55,7 +57,7 @@
           ]
         },
         { "query": "take[1]>from[ala]?type='Basic Land" },
-        { "query": "from[con-main]?rarity=rarityByWeight2008(rm)" },
+        { "query": "from[{{setCode}}-main]?rarity=rarityByWeight2008(rm)" },
 
         {
           "querySet": [
@@ -63,7 +65,7 @@
               "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
               "percent": "15/67",
               "overrideSlot": "10",
-              "query": "from[arb-foil]?rarity=rarityByWeight2008(curm)",
+              "query": "from[{{setCode}}-foil]?rarity=rarityByWeight2008(curm)",
               "setValues": { "foil": true }
             }
           ]
@@ -71,21 +73,21 @@
       ]
     },
     {
-      "packName": "arb-prerelease-promos",
+      "packName": "{{setCode}}-prerelease-promos",
       "packDesc": "Alara Reborn: Prerelease Promos",
       "isGenerated": false,
       "includeWithUserCards": false,
       "cards": [
-        { "query": "take[*]>from[arb]?includedReason='Prerelease Promo" }
+        { "query": "take[*]>from[{{setCode}}]?includedReason='Prerelease Promo" }
       ]
     },
     {
-      "packName": "arb-promos",
+      "packName": "{{setCode}}-promos",
       "packDesc": "Alara Reborn: Promos",
       "isGenerated": false,
       "includeWithUserCards": false,
       "cards": [
-        { "query": "take[*]>from[arb-promo]" }
+        { "query": "take[*]>from[{{setCode}}-promo]" }
       ]
     }
   ]
