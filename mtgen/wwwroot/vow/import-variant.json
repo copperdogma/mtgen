@@ -1,0 +1,76 @@
+﻿{
+  "setCode": "vow",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Avow&unique=prints",
+  "imagesUrl": "",
+  "importOptions": {},
+  "exceptions": [
+    {
+      "_comments": [
+        "import all images, matching their titles with the same card data over and over = (above) importOptions/importByImage: true",
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'",
+        "ignore later image match and use the one from data (or override below) = useCardDataImg = true"
+      ]
+    },
+
+    {
+      "where": "numInt=(278-285)",
+      "newValues": {
+        "borderless": true
+      }
+    },
+    {
+      "where": "numInt=(278-280)",
+      "newValues": {
+        "borderlessPlaneswalker": true
+      }
+    },
+    {
+      "where": "numInt=(281-285)",
+      "newValues": {
+        "borderlessDualLands": true
+      }
+    },
+    {
+      "where": "numInt=(286-316)",
+      "newValues": {
+        "fangFrame": true,
+        "showcaseCard": true
+      }
+    },
+    {
+      "where": "numInt=(317-328)",
+      "newValues": {
+        "eternalNightLegendaryCard": true,
+        "showcaseCard": true
+      }
+    },
+    {
+      "where": "numInt=(329-345)",
+      "newValues": {
+        "reskinnedDraculaCard": true
+      }
+    },
+    {
+      "where": "numInt=(346-397)",
+      "newValues": {
+        "extendedArtwork": true
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "variant": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "setCode": "vow",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Atvow&unique=prints",
+  "imagesUrl": "",
+  "_comment1": "NOTE: This is the template for importing tokens directly from Scryfall.",
+  "_comments": [
+    "add a new card = add:true, newValues {}",
+    "delete a card  = delete:true, where",
+    "update card(s) = where, newValues {}",
+    "select cards starting with a value = where: type~='Snow'",
+    "get card directly from Gatherer = where: gatherer='Serra Angel'"
+  ],
+
+  "exceptions": [
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/021 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

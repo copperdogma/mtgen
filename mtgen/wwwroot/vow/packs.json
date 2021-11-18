@@ -1,0 +1,471 @@
+{
+  "defs": [
+    {
+      "defName": "{{setCode}}",
+      "query": "from[*]?set='{{setCode}}'"
+    },
+    {
+      "defName": "the-list",
+      "query": "from[*]?theList=true"
+    },
+    {
+      "defName": "a{{setCode}}-art-cards",
+      "query": "from[*]?artCard=true"
+    },
+    {
+      "defName": "{{setCode}}-main-set",
+      "query": "from[{{setCode}}]?mainSet=true-from[{{setCode}}]?type='Basic Land'-from[{{setCode}}]?promo=true"
+    },
+    {
+      "defName": "{{setCode}}-variants",
+      "query": "from[{{setCode}}]?variant=true"
+    },
+    {
+      "defName": "{{setCode}}-promo",
+      "query": "from[{{setCode}}]?promo=true"
+    },
+    {
+      "defName": "{{setCode}}-extended-art",
+      "query": "from[{{setCode}}]?extendedArtwork=true"
+    },
+    {
+      "defName": "{{setCode}}-showcase",
+      "query": "from[{{setCode}}]?showcaseCard=true"
+    },
+    {
+      "defName": "{{setCode}}-showcase-eternal-night",
+      "query": "from[{{setCode}}]?eternalNightLegendaryCard=true"
+    },
+    {
+      "defName": "{{setCode}}-dracula",
+      "query": "from[{{setCode}}]?reskinnedDraculaCard=true"
+    },
+    {
+      "defName": "{{setCode}}-borderless",
+      "query": "from[{{setCode}}]?borderless=true"
+    },
+    {
+      "defName": "{{setCode}}-extended-art-and-showcase-and-borderless",
+      "query": "from[{{setCode}}-extended-art]+from[{{setCode}}-showcase]+from[{{setCode}}-borderless]"
+    },
+    {
+      "defName": "{{setCode}}-showcase-and-borderless",
+      "query": "from[{{setCode}}-showcase]+from[{{setCode}}-borderless]"
+    },
+    {
+      "defName": "{{setCode}}-foils",
+      "query": "from[{{setCode}}-main-set]+from[{{setCode}}]?type='Basic Land'"
+    },
+
+    {
+      "defName": "voc-commander",
+      "query": "from[*]?commander=true"
+    },
+    {
+      "defName": "voc-commander-extended-art",
+      "query": "from[voc-commander]?extendedArtwork=true"
+    },
+    {
+      "defName": "{{setCode}}-dfc",
+      "query": "from[*]?doubleFaceCard=true"
+    },
+    {
+      "defName": "{{setCode}}-single-face",
+      "query": "from[*]-from[{{setCode}}-dfc]"
+    },
+    {
+      "defName": "{{setCode}}-main-dfc",
+      "query": "from[{{setCode}}-main-set]-from[{{setCode}}-single-face]"
+    },
+    {
+      "defName": "{{setCode}}-main-single-face",
+      "query": "from[{{setCode}}-main-set]-from[{{setCode}}-dfc]"
+    },
+    {
+      "defName": "{{setCode}}-main-and-showcase",
+      "query": "from[{{setCode}}-main-set]+from[{{setCode}}-showcase]"
+    },
+    {
+      "defName": "{{setCode}}-main-and-showcase-eternal-night",
+      "query": "from[{{setCode}}-main-set]+from[{{setCode}}-showcase-eternal-night]"
+    },
+    {
+      "defName": "{{setCode}}-main-and-showcase-eternal-night-single-face",
+      "query": "from[{{setCode}}-main-and-showcase-eternal-night]-from[{{setCode}}-dfc]"
+    },
+    {
+      "defName": "{{setCode}}-main-and-showcase-eternal-night-dfc",
+      "query": "from[{{setCode}}-main-and-showcase-eternal-night]-from[{{setCode}}-single-face]"
+    },
+    {
+      "defName": "{{setCode}}-main-and-showcase-dfc",
+      "query": "from[{{setCode}}-main-and-showcase]-from[{{setCode}}-single-face]"
+    },
+    {
+      "defName": "{{setCode}}-main-and-showcase-and-borderless",
+      "query": "from[{{setCode}}-main-and-showcase]+from[{{setCode}}-borderless]"
+    },
+    {
+      "defName": "{{setCode}}-main-and-showcase-and-borderless-single-face",
+      "query": "from[{{setCode}}-main-and-showcase-and-borderless]-from[{{setCode}}-dfc]"
+    },
+    {
+      "defName": "{{setCode}}-main-and-showcase-and-borderless-dfc",
+      "query": "from[{{setCode}}-main-and-showcase-and-borderless]-from[{{setCode}}-single-face]"
+    },
+    {
+      "defName": "{{setCode}}-main-and-showcase-and-borderless-and-commander",
+      "query": "from[{{setCode}}-main-and-showcase-and-borderless]+from[voc-commander]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "{{setCode}}-all-cards",
+      "packDesc": "{{setName}}: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[{{setCode}}]" }
+      ]
+    },
+
+    {
+      "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
+      "packName": "{{setCode}}-draft",
+      "packDesc": "{{setName}}: Draft Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/innistrad-crimson-vow-product-overview-2021-10-28" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[{{setCode}}-main-and-showcase-eternal-night-single-face]?rarity='c" },
+        { "query": "take[3]>from[{{setCode}}-main-and-showcase-eternal-night-single-face]?rarity='u" },
+        { "query": "from[{{setCode}}-main-and-showcase-and-borderless-single-face]?rarity=rarityByWeight2020(rm)" },
+        { "query": "from[{{setCode}}]?type='Basic Land'" },
+        { "query": "from[{{setCode}}]?title='Helper Card'" },
+        {
+          "querySet": [
+            {
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
+            },
+            {
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "1 Common double-faced card. Can be a showcase eternal night double-faced common card",
+              "overrideSlot": "9",
+              "percent": "100",
+              "query": "from[{{setCode}}-main-and-showcase-eternal-night-dfc]?rarity=c"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "33% (1:45) chance of foil, scaled by rarity, replacing the last common, as of m20: Jun-2019",
+              "overrideSlot": "10",
+              "percent": "33",
+              "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(curm)",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "50/50? chance of a DFC R/M or U. This slot is U: Can be showcase eternal night uncommon cards",
+              "overrideSlot": "13",
+              "percent": "50",
+              "query": "from[{{setCode}}-main-and-showcase-eternal-night-dfc]?rarity=u"
+            },
+            {
+              "_comment": "50/50? chance of a DFC R/M or U. This slot is R/M: Can be a double-faced or Booster Fun variant (showcase eternal night, showcase eternal night, or borderless)",
+              "overrideSlot": "14",
+              "percent": "50",
+              "query": "from[{{setCode}}-main-and-showcase-and-borderless-dfc]?rarity=rarityByWeight2020(rm)"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_comment": "Collector Boosters were introduced as standard feature as of ELD",
+      "packName": "{{setCode}}-collector",
+      "packDesc": "{{setName}}: Collector Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/collecting-innistrad-crimson-vow-2021-10-28" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment0": "NOTE: All cards can basically be DFC. 'All cards except basic land and Commander card may be DFC' (except there are no DFC land or commander cards, so...;)",
+          "_comment": "Slot 1: Foil: Any Dracula, Showcase, Borderless, or Main Set Extended Art R/M",
+          "query": "from[{{setCode}}-extended-art-and-showcase-and-borderless]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 2: Any Dracula, Showcase, or Borderless: R/M (Dracula guaranteed in slot 2 or 3)",
+          "query": "from[{{setCode}}-showcase-and-borderless]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 3: Dracula U or Showcase C/U (Dracula guaranteed in slot 2 or 3)",
+          "query": "from[{{setCode}}-showcase]?rarity=rarityByWeight2020(cu)"
+        },
+        {
+          "_comment": "Slot 4: Extended Art Commander R/M (R 2x as often as M)",
+          "query": "from[voc-commander-extended-art]?rarity='r'"
+        },
+        {
+          "_comment": "Slot 5: Extended Art Main Set R/M",
+          "query": "from[{{setCode}}-extended-art]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 6: Foil: Dracula U or Showcase C/U",
+          "query": "from[{{setCode}}-extended-art]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 7: Showcase C/U",
+          "query": "from[{{setCode}}-extended-art]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 8: Foil: R/M",
+          "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 9-10: 2x Foil: U",
+          "query": "take[2]>from[{{setCode}}-foils]?rarity='u'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 11-14: 4x Foil: C (pulled from main set to avoid basic lands)",
+          "query": "take[4]>from[{{setCode}}-main-set]?rarity='c'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 15: Foil: Eternal Night Full-Art Basic Land",
+          "query": "from[{{setCode}}]?type='Basic Land",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 16: Foil: Double-sided token",
+          "query": "from[{{setCode}}]?token=true",
+          "setValues": { "foil": true }
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 2: Any Dracula, Showcase, or Borderless: R/M (Dracula guaranteed in slot 2 or 3)",
+              "_comment2": "Card COULD be Dracula, Showcase, or Borderless, so we'll say 1/3 chance of Dracula between two slots, then 25% chance it's the RM = .33*.25 = 0.0825",
+              "overrideSlot": "2",
+              "percent": "8.25",
+              "query": "from[{{setCode}}-dracula]?rarity=rarityByWeight2020(rm)"
+            },
+            {
+              "_comment": "Slot 3: Dracula U or Showcase C/U (Dracula guaranteed in slot 2 or 3)",
+              "_comment2": "Card COULD be Dracula, Showcase, or Borderless, so we'll say 1/3 chance of Dracula between two slots, then 75% chance it's the U = .33*.75 = 0.2475",
+              "overrideSlot": "3",
+              "percent": "24.75",
+              "query": "from[{{setCode}}-dracula]?rarity=u"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 4: Extended Art Commander R/M (R 2x as often as M)",
+              "_comment2": "WEIRD ratio of R = 2x M.. so we're doing custom here",
+              "overrideSlot": "4",
+              "percent": "1/3",
+              "query": "from[voc-commander-extended-art]?rarity='m'"
+            }
+          ]
+        }
+
+      ]
+    },
+
+    {
+      "_comment": "Set Boosters were introduced as standard feature as of ZNR",
+      "packName": "{{setCode}}-set-booster",
+      "packDesc": "{{setName}}: Set Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/boosters-and-products-innistrad-midnight-hunt-2021-09-02" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1: Art Card",
+          "_comment2": "Art Card is foil-stamped in 5% of packs",
+          "query": "from[a{{setCode}}-art-cards]",
+          "setValues": { "modifiers": [ "Normal" ] }
+        },
+        {
+          "_comment": "Slot 2: Double- or Single-Faced RM",
+          "query": "from[{{setCode}}-main-set]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 3: Foil: Double- or Single-Faced CURM",
+          "query": "from[{{setCode}}-main-set]?rarity=rarityByWeight2020(curm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 4-5: 2x Double- or Single-Faced CURM",
+          "_comment1": "2 Cards from a variety of possibilities:",
+          "_comment2": "Innistrad: Midnight Hunt cards, including single- and double-faced cards, of any rarity",
+          "_comment3": "Booster Fun variants (showcase eternal night, showcase eternal night, and borderless cards)",
+          "_comment4": "Innistrad: Midnight Hunt Commander cards (including Commander cards exclusive to Set and Collector Boosters)",
+          "query": "take[2]>from[{{setCode}}-main-and-showcase-and-borderless-and-commander]?rarity=rarityByWeight2020(curm)"
+        },
+        {
+          "_comment": "Slot 6-7: 2x Double- or Single-Faced CU",
+          "_comment2": "2 Common or uncommon cards, each either double-faced or a showcase eternal night card",
+          "query": "take[2]>from[{{setCode}}-main-and-showcase-eternal-night]?rarity=rarityByWeight2020(cu)"
+        },
+        {
+          "_comment": "Slot 8-9: 2x Single-Faced U",
+          "query": "take[2]>from[{{setCode}}-main-single-face]?rarity=u"
+        },
+        {
+          "_comment": "Slot 10-12: 3x Single-Faced C",
+          "query": "take[3]>from[{{setCode}}-main-single-face]?rarity=c"
+        },
+        {
+          "_comment": "Slot 13: Eternal Night Full-Art Basic Land (chance of foil)",
+          "_comment3": "PREVIOUS SET: There are 10 total possible basic lands. 85% of those opened will be regular and 15% will be traditional foil",
+          "query": "from[{{setCode}}]?type='Basic Land'"
+        },
+        {
+          "_comment": "Slot 14: Token/Ad/Helper Card or The List",
+          "query": "from[{{setCode}}]?token=true"
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 1: Art Card",
+              "_comment2": "1 Art card or foil-stamped art card.",
+              "_comment3": "PREVIOUS SET: There are 81 total possible borderless art cards. 95% of those opened will be regular and 5% will be foil stamped with an artist signature or Planeswalker symbol.",
+              "overrideSlot": "1",
+              "percent": "5",
+              "query": "from[a{{setCode}}-art-cards]",
+              "setValues": { "modifiers": [ "Foil Stamped" ] }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 13: Eternal Night Full-Art Basic Land (chance of foil)",
+              "_comment3": "PREVIOUS SET: There are 10 total possible basic lands. 85% of those opened will be regular and 15% will be traditional foil",
+              "query": "from[{{setCode}}]?type='Basic Land'",
+              "overrideSlot": "13",
+              "percent": "15",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 14: Token/Ad or The List",
+              "_comment2": "1 Token/ad card (75%), or a card from The List (25%) – The List is a collection of 300 cards from Magic's history that we have brought together for this special slot. We have rotated in 50 new reprints that we feel help capture the feel of {{setName}}. Inclusion of cards from The List doesn't impact what formats the card is legal in",
+              "query": "from[the-list]?rarity=rarityByWeight2020(curm)",
+              "overrideSlot": "14",
+              "percent": "25"
+            }
+          ]
+        }
+
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-prerelease-promo-packins",
+      "packDesc": "{{setName}}: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "from[{{setCode}}-main-set]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        { "query": "take[1]>from[{{setCode}}-promo]?type='Life Counter'" },
+        { "query": "take[*]>from[{{setCode}}]?title='Helper Card'" },
+        { "query": "take[*]>from[{{setCode}}]?title='Helper Card'" },
+        { "query": "take[*]>from[{{setCode}}]?title='Helper Card'" },
+        { "query": "from[{{setCode}}-promo]?title='Prerelease Deck Box" },
+        { "query": "from[{{setCode}}-promo]?title='Card Divider" },
+        { "query": "from[{{setCode}}-promo]?title='Arena Code Card" }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-prerelease-promos",
+      "packDesc": "{{setName}}: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[{{setCode}}-promo]?includedReason='Prerelease Promo" }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-variants",
+      "packDesc": "{{setName}}: All Variants",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-variants]"
+        }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-promos",
+      "packDesc": "{{setName}}: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-promo]"
+        }
+      ]
+    },
+
+    {
+      "packName": "a{{setCode}}-art-cards",
+      "packDesc": "{{setName}}: Art Cards",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[a{{setCode}}-art-cards]"
+        }
+      ]
+    },
+
+    {
+      "packName": "the-list",
+      "packDesc": "{{setName}}: The List",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[the-list]"
+        }
+      ]
+    }
+
+  ]
+}
