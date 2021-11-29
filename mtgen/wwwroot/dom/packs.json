@@ -19,7 +19,8 @@
     },
     {
       "defName": "dom-foils",
-      "query": "from[dom-main]+from[dom]?type='Basic Land"
+      "query": "from[dom-main]+from[dom-legendary-creature]+from[dom]?type='Basic Land",
+      "_comment": "20211128 update: Dan pointed out you can get a legendary creature as a foil."
     },
     {
       "defName": "dom-promo",
