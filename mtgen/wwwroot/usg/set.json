@@ -4,7 +4,12 @@
     "packs.json?v1.1"
   ],
   "cardFiles": [
-    "cardsMain.json"
+    "cardsMain.json?v1.1"
   ],
-  "updates": []
+  "updates": [
+    {
+      "UpdateDate": "2021-11-23T21:00:00:00",
+      "HtmlString": "Re-imported all cards, and as a side effect fixing 'Ae' card names like Aether which threw errors and broke the exporter."
+    }
+  ]
 }
