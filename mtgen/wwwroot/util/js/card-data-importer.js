@@ -746,10 +746,12 @@ class CardDataImporter {
     _getCardColourFromCard(card) {
         const hasCardFaces = card.cardFaces && card.cardFaces.length > 0;
         const testableCard = hasCardFaces ? card.cardFaces[0] : card;
+        let isArtifact = false;
 
         if (testableCard.type) {
             const lowerCaseCardType = testableCard.type.toLowerCase();
             if (lowerCaseCardType.includes("land")) { return mtgGen.colours.land.code; }
+            isArtifact = testableCard.type.toLowerCase().includes("artifact");
             // 20220212: Changed to now consider a coloured artifact to be that colour instead of just an artifact.
         }
 
@@ -769,8 +771,11 @@ class CardDataImporter {
         let finalColour = '';
         switch (uniqueColours.length) {
             case 0: // 0 unique colours = colourless
-                if (card.colour !== undefined && card.colour.length === 0) {
-                    finalColour = lowerCaseCardType.includes("artifact") ? mtgGen.colours.artifact.code : mtgGen.colours.generic.code;
+                if (isArtifact) {
+                    finalColour = mtgGen.colours.artifact.code;
+                }
+                else if (card.colour !== undefined && card.colour.length === 0) {
+                    finalColour = isArtifact ? mtgGen.colours.artifact.code : mtgGen.colours.generic.code;
                 }
                 else {
                     finalColour = card.colour;
