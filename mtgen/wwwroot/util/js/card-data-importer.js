@@ -4,6 +4,7 @@ Generates an output mtgen card set in json format for use in the main app, using
 Typically the importer file (e.g. import-main.json) will specify the wotc card gallery as the image source and
 the mtgsalvation spoiler page as the data source.
 
+20220221: getCardColourFromCard() now considers a coloured artifact to be that colour instead of just an artifact.
 20210713: Rewrote DFC import to output in new scryfall format (card.cardFaces[])
 12-Jun-2021: Refactored so import options drive more of the import decisions as opposed to guessing based on data/image urls.
 7-Jun-2021: Added support for importing data from wotc The List articles and getting the images from Scryfall.
@@ -749,7 +750,7 @@ class CardDataImporter {
         if (testableCard.type) {
             const lowerCaseCardType = testableCard.type.toLowerCase();
             if (lowerCaseCardType.includes("land")) { return mtgGen.colours.land.code; }
-            if (lowerCaseCardType.includes("artifact")) { return mtgGen.colours.artifact.code; }
+            // 20220212: Changed to now consider a coloured artifact to be that colour instead of just an artifact.
         }
 
         // Derived from casting cost:
@@ -769,7 +770,7 @@ class CardDataImporter {
         switch (uniqueColours.length) {
             case 0: // 0 unique colours = colourless
                 if (card.colour !== undefined && card.colour.length === 0) {
-                    finalColour = mtgGen.colours.generic.code;
+                    finalColour = lowerCaseCardType.includes("artifact") ? mtgGen.colours.artifact.code : mtgGen.colours.generic.code;
                 }
                 else {
                     finalColour = card.colour;
