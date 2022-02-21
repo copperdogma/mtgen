@@ -1,0 +1,298 @@
+{
+  "setCode": "neo",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-kamigawa-neon-dynasty",
+  "_comments": [
+    "add a new card = add:true, newValues {}",
+    "delete a card  = delete:true, where",
+    "update card(s) = where, newValues {}",
+    "select cards starting with a value = where: type~='Snow'",
+    "get card directly from Gatherer = where: gatherer='Serra Angel'"
+  ],
+
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "neo",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-kamigawa-neon-dynasty",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "1",
+          "cardPattern": "000|w|Token Creature|Samurai\n000|u|Token Creature|Ninja\n000|b|Token Creature|Rat Rogue\n000|r|Token Creature|Spirit\n000|g|Token Creature|Human Monk\n000|m|Token Legendary Creature|Keimi\n000|c|Token Artifact Creature|Construct\n000|c|Token Creature|Spirit\n000|c|Token Artifact Creature|Construct\n000|g|Token Creature|Spirit\n000|c|Token Legendary Artifact Creature|Mechtitan\n000|c|Token Artifact|Treasure\n000|c|Token Creature|Pilot\n000|r|Token Creature|Dragon Spirit\n000|g|Token Creature|Spirit\n000|c|Token Legendary Artifact|Tamiyo's Notebook\n000|r|Token Creature|Goblin Shaman\n000|c|Token Enchantment Creature|Shrine\n000|c|Emblem|Kaito Shizuki\n000|c|Emblem|Tezzeret, Betrayer of Flesh\n\n\n\n\n\n\n\n\n"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "neo",
+        "src": "https://media.wizards.com/2021/neo/en_PtqSZI6bJV.png",
+        "num": 1,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Samurai",
+        "subtype": "Samurai",
+        "numInt": 1
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "neo",
+        "src": "https://media.wizards.com/2021/neo/en_bGh0OEuMb4.png",
+        "num": 2,
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Ninja",
+        "subtype": "Ninja",
+        "numInt": 2
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "neo",
+        "src": "https://media.wizards.com/2021/neo/en_LjuxthvVXM.png",
+        "num": 3,
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Rat Rogue",
+        "subtype": "Rat Rogue",
+        "numInt": 3
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "neo",
+        "src": "https://media.wizards.com/2021/neo/en_ld685mZCgX.png",
+        "num": 4,
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Spirit",
+        "subtype": "Spirit",
+        "numInt": 4
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "neo",
+        "src": "https://media.wizards.com/2021/neo/en_6zijACrerd.png",
+        "num": 5,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Human Monk",
+        "subtype": "Human Monk",
+        "numInt": 5
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "neo",
+        "src": "https://media.wizards.com/2021/neo/en_d8owSK6PqB.png",
+        "num": 6,
+        "colour": "m",
+        "type": "Token Legendary Creature",
+        "title": "Keimi",
+        "subtype": "Keimi",
+        "numInt": 6
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "neo",
+        "src": "https://media.wizards.com/2021/neo/en_8Q220SFNrn.png",
+        "num": 7,
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Construct",
+        "subtype": "Construct",
+        "numInt": 7
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "neo",
+        "src": "https://media.wizards.com/2021/neo/en_lQfak4hzTz.png",
+        "num": 8,
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Spirit",
+        "subtype": "Spirit",
+        "numInt": 8
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "neo",
+        "src": "https://media.wizards.com/2021/neo/en_nVTm6qb66q.png",
+        "num": 9,
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Construct",
+        "subtype": "Construct",
+        "numInt": 9
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "neo",
+        "src": "https://media.wizards.com/2021/neo/en_PZT7OIRdUy.png",
+        "num": 10,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Spirit",
+        "subtype": "Spirit",
+        "numInt": 10
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "neo",
+        "src": "https://media.wizards.com/2021/neo/en_Nnuww065B5.png",
+        "num": 11,
+        "colour": "c",
+        "type": "Token Legendary Artifact Creature",
+        "title": "Mechtitan",
+        "subtype": "Mechtitan",
+        "numInt": 11
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "neo",
+        "src": "https://media.wizards.com/2021/neo/en_anJ8tIvbQi.png",
+        "num": 12,
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Treasure",
+        "subtype": "Treasure",
+        "numInt": 12
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "neo",
+        "src": "https://media.wizards.com/2021/neo/en_ehMHbPbqSG.png",
+        "num": 13,
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Pilot",
+        "subtype": "Pilot",
+        "numInt": 13
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "neo",
+        "src": "https://media.wizards.com/2021/neo/en_yGv9BWU2SE.png",
+        "num": 14,
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Dragon Spirit",
+        "subtype": "Dragon Spirit",
+        "numInt": 14
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "neo",
+        "src": "https://media.wizards.com/2021/neo/en_RGqRQ4doTf.png",
+        "num": 15,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Spirit",
+        "subtype": "Spirit",
+        "numInt": 15
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "neo",
+        "src": "https://media.wizards.com/2021/neo/en_XB0eTMqFyu.png",
+        "num": 16,
+        "colour": "c",
+        "type": "Token Legendary Artifact",
+        "title": "Tamiyo's Notebook",
+        "subtype": "Tamiyo's Notebook",
+        "numInt": 16
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "neo",
+        "src": "https://media.wizards.com/2021/neo/en_JIwEySqt7l.png",
+        "num": 17,
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Goblin Shaman",
+        "subtype": "Goblin Shaman",
+        "numInt": 17
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "neo",
+        "src": "https://media.wizards.com/2021/neo/en_mngfkA1qyY.png",
+        "num": 18,
+        "colour": "c",
+        "type": "Token Enchantment Creature",
+        "title": "Shrine",
+        "subtype": "Shrine",
+        "numInt": 18
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "neo",
+        "src": "https://media.wizards.com/2021/neo/en_VfxBJXyHSL.png",
+        "num": 19,
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Kaito Shizuki",
+        "subtype": "Kaito Shizuki",
+        "numInt": 19
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "neo",
+        "src": "https://media.wizards.com/2021/neo/en_kKDNSlxSeb.png",
+        "num": 20,
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Tezzeret, Betrayer of Flesh",
+        "subtype": "Tezzeret, Betrayer of Flesh",
+        "numInt": 20
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/020 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

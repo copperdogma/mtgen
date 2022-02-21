@@ -1,0 +1,1006 @@
+﻿[
+  {
+    "object": "card",
+    "id": "f7112729-908e-430d-8e0e-eb71a9043309",
+    "oracle_id": "ed1d21ba-ddfe-4f82-9e37-93f9e2c7ba33",
+    "multiverse_ids": [
+      551695
+    ],
+    "arena_id": 79764,
+    "name": "Satoru Umezawa",
+    "lang": "en",
+    "released_at": "2022-02-18",
+    "uri": "https://api.scryfall.com/cards/f7112729-908e-430d-8e0e-eb71a9043309",
+    "scryfall_uri": "https://scryfall.com/card/neo/507/satoru-umezawa?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/f/7/f7112729-908e-430d-8e0e-eb71a9043309.jpg?1640363322",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/f/7/f7112729-908e-430d-8e0e-eb71a9043309.jpg?1640363322",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/f/7/f7112729-908e-430d-8e0e-eb71a9043309.jpg?1640363322",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/f/7/f7112729-908e-430d-8e0e-eb71a9043309.png?1640363322",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/f/7/f7112729-908e-430d-8e0e-eb71a9043309.jpg?1640363322",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/f/7/f7112729-908e-430d-8e0e-eb71a9043309.jpg?1640363322"
+    },
+    "mana_cost": "{1}{U}{B}",
+    "cmc": 3,
+    "type_line": "Legendary Creature — Human Ninja",
+    "oracle_text": "Whenever you activate a ninjutsu ability, look at the top three cards of your library. Put one of them into your hand and the rest on the bottom of your library in any order. This ability triggers only once each turn.\nEach creature card in your hand has ninjutsu {2}{U}{B}.",
+    "power": "2",
+    "toughness": "4",
+    "colors": [
+      "B",
+      "U"
+    ],
+    "color_identity": [
+      "B",
+      "U"
+    ],
+    "keywords": [],
+    "legalities": {
+      "standard": "legal",
+      "future": "legal",
+      "historic": "legal",
+      "gladiator": "legal",
+      "pioneer": "legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "not_legal",
+      "commander": "legal",
+      "brawl": "legal",
+      "historicbrawl": "legal",
+      "alchemy": "legal",
+      "paupercommander": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "arena",
+      "paper",
+      "mtgo"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "59a2059f-5482-433f-8761-eb2e17859b71",
+    "set": "neo",
+    "set_name": "Kamigawa: Neon Dynasty",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/59a2059f-5482-433f-8761-eb2e17859b71",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aneo&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/neo?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/f7112729-908e-430d-8e0e-eb71a9043309/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Aed1d21ba-ddfe-4f82-9e37-93f9e2c7ba33&unique=prints",
+    "collector_number": "507",
+    "digital": false,
+    "rarity": "r",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Yoji Shinkawa",
+    "artist_ids": [
+      "177e5cd7-3787-4c3b-9dda-2f17f4814cc3"
+    ],
+    "illustration_id": "741dba5c-174f-4b9a-ab8a-bca2459564cc",
+    "border_color": "borderless",
+    "frame": "2015",
+    "frame_effects": [
+      "legendary"
+    ],
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "buyabox"
+    ],
+    "edhrec_rank": 6736,
+    "preview": {
+      "source": "Wizards of the Coast",
+      "source_uri": "https://twitter.com/wizards_magic/status/1474425391418904594",
+      "previewed_at": "2021-12-24"
+    },
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=551695",
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Satoru+Umezawa&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Satoru+Umezawa&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Satoru+Umezawa",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Satoru+Umezawa"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Satoru+Umezawa&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Satoru+Umezawa&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Satoru+Umezawa&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Satoru Umezawa",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/f/7/f7112729-908e-430d-8e0e-eb71a9043309.jpg?1640363322",
+    "cost": "{1}{U}{B}",
+    "ccost": 3,
+    "type": "Legendary Creature",
+    "subtype": "Human Ninja",
+    "colour": "m",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Aneo&unique=prints"
+    ],
+    "num": "507 P Buy-a-Box",
+    "numInt": 507,
+    "mtgenId": "neo|507 P Buy-a-Box",
+    "includedReason": "Buy-a-Box Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "dbe6d3be-67b9-45be-a5c8-4edf753a7fd0",
+    "oracle_id": "f9ee4c80-20fb-4322-be02-1c78d37d7a99",
+    "multiverse_ids": [
+      551690
+    ],
+    "name": "Invoke Despair",
+    "lang": "en",
+    "released_at": "2022-02-18",
+    "uri": "https://api.scryfall.com/cards/dbe6d3be-67b9-45be-a5c8-4edf753a7fd0",
+    "scryfall_uri": "https://scryfall.com/card/neo/506/invoke-despair?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/d/b/dbe6d3be-67b9-45be-a5c8-4edf753a7fd0.jpg?1643755350",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/d/b/dbe6d3be-67b9-45be-a5c8-4edf753a7fd0.jpg?1643755350",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/d/b/dbe6d3be-67b9-45be-a5c8-4edf753a7fd0.jpg?1643755350",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/d/b/dbe6d3be-67b9-45be-a5c8-4edf753a7fd0.png?1643755350",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/d/b/dbe6d3be-67b9-45be-a5c8-4edf753a7fd0.jpg?1643755350",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/d/b/dbe6d3be-67b9-45be-a5c8-4edf753a7fd0.jpg?1643755350"
+    },
+    "mana_cost": "{1}{B}{B}{B}{B}",
+    "cmc": 5,
+    "type_line": "Sorcery",
+    "oracle_text": "Target opponent sacrifices a creature. If they can't, they lose 2 life and you draw a card. Then repeat this process for an enchantment and a planeswalker.",
+    "colors": [
+      "B"
+    ],
+    "color_identity": [
+      "B"
+    ],
+    "keywords": [],
+    "legalities": {
+      "standard": "legal",
+      "future": "legal",
+      "historic": "legal",
+      "gladiator": "legal",
+      "pioneer": "legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "not_legal",
+      "commander": "legal",
+      "brawl": "legal",
+      "historicbrawl": "legal",
+      "alchemy": "legal",
+      "paupercommander": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "59a2059f-5482-433f-8761-eb2e17859b71",
+    "set": "neo",
+    "set_name": "Kamigawa: Neon Dynasty",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/59a2059f-5482-433f-8761-eb2e17859b71",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aneo&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/neo?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/dbe6d3be-67b9-45be-a5c8-4edf753a7fd0/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Af9ee4c80-20fb-4322-be02-1c78d37d7a99&unique=prints",
+    "collector_number": "506",
+    "digital": false,
+    "rarity": "r",
+    "flavor_text": "Although officials said it was a sewer failure, the people whispered that it was a warning of night's reach.",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Donato Giancola",
+    "artist_ids": [
+      "90332db2-aecb-4d79-917b-95cbeb8d0cb6"
+    ],
+    "illustration_id": "5d2ea84c-1fad-49cd-b480-4a17c29df709",
+    "border_color": "black",
+    "frame": "2015",
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "bundle"
+    ],
+    "edhrec_rank": 15256,
+    "preview": {
+      "source": "Wizards of the Coast",
+      "source_uri": "https://wpn.wizards.com/en/article/what-you-can-sell-during-kamigawa-neon-dynasty-prerelease",
+      "previewed_at": "2022-01-27"
+    },
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=551690",
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Invoke+Despair&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Invoke+Despair&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Invoke+Despair",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Invoke+Despair"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Invoke+Despair&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Invoke+Despair&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Invoke+Despair&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Invoke Despair",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/d/b/dbe6d3be-67b9-45be-a5c8-4edf753a7fd0.jpg?1643755350",
+    "cost": "{1}{B}{B}{B}{B}",
+    "ccost": 5,
+    "type": "Sorcery",
+    "colour": "b",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Aneo&unique=prints"
+    ],
+    "num": "506 P Bundle",
+    "numInt": 506,
+    "mtgenId": "neo|506 P Bundle",
+    "includedReason": "Bundle Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "9ae5aecd-f1e3-4a1a-92a7-69235437102d",
+    "oracle_id": "9c5f0d91-9d86-4e66-94fd-4af93ad01838",
+    "multiverse_ids": [
+      552965
+    ],
+    "tcgplayer_id": 262491,
+    "name": "Spirited Companion",
+    "lang": "en",
+    "released_at": "2022-02-18",
+    "uri": "https://api.scryfall.com/cards/9ae5aecd-f1e3-4a1a-92a7-69235437102d",
+    "scryfall_uri": "https://scryfall.com/card/neo/508/spirited-companion?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/9/a/9ae5aecd-f1e3-4a1a-92a7-69235437102d.jpg?1643330099",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/a/9ae5aecd-f1e3-4a1a-92a7-69235437102d.jpg?1643330099",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/9/a/9ae5aecd-f1e3-4a1a-92a7-69235437102d.jpg?1643330099",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/9/a/9ae5aecd-f1e3-4a1a-92a7-69235437102d.png?1643330099",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/9/a/9ae5aecd-f1e3-4a1a-92a7-69235437102d.jpg?1643330099",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/9/a/9ae5aecd-f1e3-4a1a-92a7-69235437102d.jpg?1643330099"
+    },
+    "mana_cost": "{1}{W}",
+    "cmc": 2,
+    "type_line": "Enchantment Creature — Dog",
+    "oracle_text": "When Spirited Companion enters the battlefield, draw a card.",
+    "power": "1",
+    "toughness": "1",
+    "colors": [
+      "W"
+    ],
+    "color_identity": [
+      "W"
+    ],
+    "keywords": [],
+    "legalities": {
+      "standard": "legal",
+      "future": "legal",
+      "historic": "legal",
+      "gladiator": "legal",
+      "pioneer": "legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "legal",
+      "vintage": "legal",
+      "penny": "not_legal",
+      "commander": "legal",
+      "brawl": "legal",
+      "historicbrawl": "legal",
+      "alchemy": "legal",
+      "paupercommander": "legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "59a2059f-5482-433f-8761-eb2e17859b71",
+    "set": "neo",
+    "set_name": "Kamigawa: Neon Dynasty",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/59a2059f-5482-433f-8761-eb2e17859b71",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aneo&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/neo?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/9ae5aecd-f1e3-4a1a-92a7-69235437102d/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A9c5f0d91-9d86-4e66-94fd-4af93ad01838&unique=prints",
+    "collector_number": "508",
+    "digital": false,
+    "rarity": "c",
+    "watermark": "planeswalker",
+    "flavor_text": "She formed a friendship with several playful spirits, and soon \"the pack\" was known as the source of much mischief in Eiganjo.",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Ilse Gort",
+    "artist_ids": [
+      "12070c2e-4de6-46bc-b379-8a580dfb34c5"
+    ],
+    "illustration_id": "ea07f664-a773-4e80-b843-49baf0652bec",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "inverted"
+    ],
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "promopack"
+    ],
+    "edhrec_rank": 10126,
+    "prices": {
+      "usd": "3.69",
+      "usd_foil": "5.79",
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=552965",
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Spirited+Companion&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Spirited+Companion&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Spirited+Companion",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Spirited+Companion"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=262491&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Spirited+Companion&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Spirited+Companion&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Spirited Companion",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/a/9ae5aecd-f1e3-4a1a-92a7-69235437102d.jpg?1643330099",
+    "cost": "{1}{W}",
+    "ccost": 2,
+    "type": "Enchantment Creature",
+    "subtype": "Dog",
+    "colour": "w",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Aneo&unique=prints"
+    ],
+    "num": "508 P FNM",
+    "numInt": 508,
+    "mtgenId": "neo|508 P FNM",
+    "includedReason": "Friday Night Magic Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "15a43b94-4425-47ab-9e9f-9287aa9a807e",
+    "oracle_id": "c9722086-23e8-43dc-8a8c-541ff6962318",
+    "multiverse_ids": [
+      552966
+    ],
+    "tcgplayer_id": 262493,
+    "name": "Enthusiastic Mechanaut",
+    "lang": "en",
+    "released_at": "2022-02-18",
+    "uri": "https://api.scryfall.com/cards/15a43b94-4425-47ab-9e9f-9287aa9a807e",
+    "scryfall_uri": "https://scryfall.com/card/neo/509/enthusiastic-mechanaut?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/1/5/15a43b94-4425-47ab-9e9f-9287aa9a807e.jpg?1643321833",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/1/5/15a43b94-4425-47ab-9e9f-9287aa9a807e.jpg?1643321833",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/1/5/15a43b94-4425-47ab-9e9f-9287aa9a807e.jpg?1643321833",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/1/5/15a43b94-4425-47ab-9e9f-9287aa9a807e.png?1643321833",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/1/5/15a43b94-4425-47ab-9e9f-9287aa9a807e.jpg?1643321833",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/1/5/15a43b94-4425-47ab-9e9f-9287aa9a807e.jpg?1643321833"
+    },
+    "mana_cost": "{U}{R}",
+    "cmc": 2,
+    "type_line": "Artifact Creature — Goblin Artificer",
+    "oracle_text": "Flying\nArtifact spells you cast cost {1} less to cast.",
+    "power": "2",
+    "toughness": "2",
+    "colors": [
+      "R",
+      "U"
+    ],
+    "color_identity": [
+      "R",
+      "U"
+    ],
+    "keywords": [
+      "Flying"
+    ],
+    "legalities": {
+      "standard": "legal",
+      "future": "legal",
+      "historic": "legal",
+      "gladiator": "legal",
+      "pioneer": "legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "not_legal",
+      "commander": "legal",
+      "brawl": "legal",
+      "historicbrawl": "legal",
+      "alchemy": "legal",
+      "paupercommander": "restricted",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "59a2059f-5482-433f-8761-eb2e17859b71",
+    "set": "neo",
+    "set_name": "Kamigawa: Neon Dynasty",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/59a2059f-5482-433f-8761-eb2e17859b71",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aneo&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/neo?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/15a43b94-4425-47ab-9e9f-9287aa9a807e/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Ac9722086-23e8-43dc-8a8c-541ff6962318&unique=prints",
+    "collector_number": "509",
+    "digital": false,
+    "rarity": "u",
+    "watermark": "planeswalker",
+    "flavor_text": "\"Greetings, fellow inventors!\" the akki shouted, attempting a friendly smile. To her dismay, the greeting was met only with shrieks and alarms being activated.",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Anna Steinbauer",
+    "artist_ids": [
+      "3516496c-c279-4b56-8239-720683d03ae0"
+    ],
+    "illustration_id": "d7b251f8-edbb-45fb-9156-ba51023ecea1",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "inverted"
+    ],
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "promopack"
+    ],
+    "edhrec_rank": 12497,
+    "preview": {
+      "source": "Wizards of the Coast",
+      "source_uri": "https://www.twitch.tv/videos/1277767538",
+      "previewed_at": "2022-01-27"
+    },
+    "prices": {
+      "usd": "4.58",
+      "usd_foil": "6.89",
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=552966",
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Enthusiastic+Mechanaut&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Enthusiastic+Mechanaut&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Enthusiastic+Mechanaut",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Enthusiastic+Mechanaut"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=262493&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Enthusiastic+Mechanaut&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Enthusiastic+Mechanaut&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Enthusiastic Mechanaut",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/1/5/15a43b94-4425-47ab-9e9f-9287aa9a807e.jpg?1643321833",
+    "cost": "{U}{R}",
+    "ccost": 2,
+    "type": "Artifact Creature",
+    "subtype": "Goblin Artificer",
+    "colour": "m",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Aneo&unique=prints"
+    ],
+    "num": "509 P FNM",
+    "numInt": 509,
+    "mtgenId": "neo|509 P FNM",
+    "includedReason": "Friday Night Magic Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "aa567185-e0f2-4fe1-82a8-57b7fb277ab9",
+    "oracle_id": "c4d1a78f-0cca-4042-862c-8f322ee25d50",
+    "multiverse_ids": [
+      552967
+    ],
+    "tcgplayer_id": 262495,
+    "name": "Jukai Naturalist",
+    "lang": "en",
+    "released_at": "2022-02-18",
+    "uri": "https://api.scryfall.com/cards/aa567185-e0f2-4fe1-82a8-57b7fb277ab9",
+    "scryfall_uri": "https://scryfall.com/card/neo/510/jukai-naturalist?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/a/a/aa567185-e0f2-4fe1-82a8-57b7fb277ab9.jpg?1643322044",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/a/a/aa567185-e0f2-4fe1-82a8-57b7fb277ab9.jpg?1643322044",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/a/a/aa567185-e0f2-4fe1-82a8-57b7fb277ab9.jpg?1643322044",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/a/a/aa567185-e0f2-4fe1-82a8-57b7fb277ab9.png?1643322044",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/a/a/aa567185-e0f2-4fe1-82a8-57b7fb277ab9.jpg?1643322044",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/a/a/aa567185-e0f2-4fe1-82a8-57b7fb277ab9.jpg?1643322044"
+    },
+    "mana_cost": "{G}{W}",
+    "cmc": 2,
+    "type_line": "Enchantment Creature — Human Monk",
+    "oracle_text": "Lifelink\nEnchantment spells you cast cost {1} less to cast.",
+    "power": "2",
+    "toughness": "2",
+    "colors": [
+      "G",
+      "W"
+    ],
+    "color_identity": [
+      "G",
+      "W"
+    ],
+    "keywords": [
+      "Lifelink"
+    ],
+    "legalities": {
+      "standard": "legal",
+      "future": "legal",
+      "historic": "legal",
+      "gladiator": "legal",
+      "pioneer": "legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "not_legal",
+      "commander": "legal",
+      "brawl": "legal",
+      "historicbrawl": "legal",
+      "alchemy": "legal",
+      "paupercommander": "restricted",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "59a2059f-5482-433f-8761-eb2e17859b71",
+    "set": "neo",
+    "set_name": "Kamigawa: Neon Dynasty",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/59a2059f-5482-433f-8761-eb2e17859b71",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aneo&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/neo?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/aa567185-e0f2-4fe1-82a8-57b7fb277ab9/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Ac4d1a78f-0cca-4042-862c-8f322ee25d50&unique=prints",
+    "collector_number": "510",
+    "digital": false,
+    "rarity": "u",
+    "watermark": "planeswalker",
+    "flavor_text": "He had heard rumors of the cities—the constant noise, the stagnant air, the tainted water—and he had no wish to learn if they were true.",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Anna Steinbauer",
+    "artist_ids": [
+      "3516496c-c279-4b56-8239-720683d03ae0"
+    ],
+    "illustration_id": "52f5652d-ad12-4e5d-a8b6-17a14a37f76e",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "inverted"
+    ],
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "promopack"
+    ],
+    "edhrec_rank": 7998,
+    "prices": {
+      "usd": "1.76",
+      "usd_foil": "4.83",
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=552967",
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Jukai+Naturalist&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Jukai+Naturalist&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Jukai+Naturalist",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Jukai+Naturalist"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=262495&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Jukai+Naturalist&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Jukai+Naturalist&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Jukai Naturalist",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/a/a/aa567185-e0f2-4fe1-82a8-57b7fb277ab9.jpg?1643322044",
+    "cost": "{G}{W}",
+    "ccost": 2,
+    "type": "Enchantment Creature",
+    "subtype": "Human Monk",
+    "colour": "m",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Aneo&unique=prints"
+    ],
+    "num": "510 P FNM",
+    "numInt": 510,
+    "mtgenId": "neo|510 P FNM",
+    "includedReason": "Friday Night Magic Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "c1eef728-8f2f-4b18-ae40-f14074ab6791",
+    "oracle_id": "60ec735d-c9be-4776-beb7-f603ae22edbf",
+    "multiverse_ids": [
+      552968
+    ],
+    "tcgplayer_id": 262498,
+    "name": "Silver-Fur Master",
+    "lang": "en",
+    "released_at": "2022-02-18",
+    "uri": "https://api.scryfall.com/cards/c1eef728-8f2f-4b18-ae40-f14074ab6791",
+    "scryfall_uri": "https://scryfall.com/card/neo/511/silver-fur-master?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/c/1/c1eef728-8f2f-4b18-ae40-f14074ab6791.jpg?1643330090",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/1/c1eef728-8f2f-4b18-ae40-f14074ab6791.jpg?1643330090",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/c/1/c1eef728-8f2f-4b18-ae40-f14074ab6791.jpg?1643330090",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/c/1/c1eef728-8f2f-4b18-ae40-f14074ab6791.png?1643330090",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/c/1/c1eef728-8f2f-4b18-ae40-f14074ab6791.jpg?1643330090",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/c/1/c1eef728-8f2f-4b18-ae40-f14074ab6791.jpg?1643330090"
+    },
+    "mana_cost": "{U}{B}",
+    "cmc": 2,
+    "type_line": "Creature — Rat Ninja",
+    "oracle_text": "Ninjutsu {U}{B} ({U}{B}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nNinjutsu abilities you activate cost {1} less to activate.\nOther Ninja and Rogue creatures you control get +1/+1.",
+    "power": "2",
+    "toughness": "2",
+    "colors": [
+      "B",
+      "U"
+    ],
+    "color_identity": [
+      "B",
+      "U"
+    ],
+    "keywords": [
+      "Ninjutsu"
+    ],
+    "legalities": {
+      "standard": "legal",
+      "future": "legal",
+      "historic": "legal",
+      "gladiator": "legal",
+      "pioneer": "legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "not_legal",
+      "commander": "legal",
+      "brawl": "legal",
+      "historicbrawl": "legal",
+      "alchemy": "legal",
+      "paupercommander": "restricted",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "59a2059f-5482-433f-8761-eb2e17859b71",
+    "set": "neo",
+    "set_name": "Kamigawa: Neon Dynasty",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/59a2059f-5482-433f-8761-eb2e17859b71",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aneo&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/neo?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/c1eef728-8f2f-4b18-ae40-f14074ab6791/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A60ec735d-c9be-4776-beb7-f603ae22edbf&unique=prints",
+    "collector_number": "511",
+    "digital": false,
+    "rarity": "u",
+    "watermark": "planeswalker",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Carl Critchlow",
+    "artist_ids": [
+      "17948f16-611a-44b8-8d10-9895a0bdfff1"
+    ],
+    "illustration_id": "d324d1b8-10a1-4d9e-96b7-ca3ecb666978",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "inverted"
+    ],
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "promopack"
+    ],
+    "edhrec_rank": 8015,
+    "prices": {
+      "usd": "3.76",
+      "usd_foil": "7.11",
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=552968",
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Silver-Fur+Master&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Silver-Fur+Master&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Silver-Fur+Master",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Silver-Fur+Master"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://shop.tcgplayer.com/product/productsearch?id=262498&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Silver-Fur+Master&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Silver-Fur+Master&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Silver-Fur Master",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/1/c1eef728-8f2f-4b18-ae40-f14074ab6791.jpg?1643330090",
+    "cost": "{U}{B}",
+    "ccost": 2,
+    "type": "Creature",
+    "subtype": "Rat Ninja",
+    "colour": "m",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Aneo&unique=prints"
+    ],
+    "num": "511 P FNM",
+    "numInt": 511,
+    "mtgenId": "neo|511 P FNM",
+    "includedReason": "Friday Night Magic Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/neo-prerelease-deck-box.png",
+    "title": "Prerelease Deck Box",
+    "colour": "o",
+    "num": "006 Prerelease Deck Box",
+    "rarity": "c",
+    "type": "Insert",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 6,
+    "mtgenId": "neo|006 Prerelease Deck Box",
+    "set": "neo",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-deckbuilding-info.jpg",
+    "src_large": "http://mtgen.net/cards/mtg-deckbuilding-info-lg.jpg",
+    "height": 370,
+    "width": 515,
+    "title": "Deckbuilding Advice Insert",
+    "colour": "o",
+    "num": "007 Insert",
+    "rarity": "c",
+    "type": "Insert",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 7,
+    "mtgenId": "neo|007 Insert",
+    "set": "neo",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-prerelease-card-divider.png",
+    "title": "Card Divider",
+    "colour": "o",
+    "num": "008 Insert",
+    "rarity": "c",
+    "type": "Insert",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 8,
+    "mtgenId": "neo|008 Insert",
+    "set": "neo",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-arena-code-card.png",
+    "title": "Arena Code Card",
+    "colour": "o",
+    "num": "009 Insert",
+    "rarity": "c",
+    "type": "Insert",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 9,
+    "mtgenId": "neo|009 Insert",
+    "set": "neo",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/neo-spindown-life-counter-white.png",
+    "title": "White Spindown Life Counter",
+    "colour": "o",
+    "num": "001a Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "neo|001a Counter",
+    "set": "neo",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/neo-spindown-life-counter-blue.png",
+    "title": "Blue Spindown Life Counter",
+    "colour": "o",
+    "num": "001b Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "neo|001b Counter",
+    "set": "neo",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/neo-spindown-life-counter-black.png",
+    "title": "Black Spindown Life Counter",
+    "colour": "o",
+    "num": "001c Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "neo|001c Counter",
+    "set": "neo",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/neo-spindown-life-counter-red.png",
+    "title": "Red Spindown Life Counter",
+    "colour": "o",
+    "num": "001d Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "neo|001d Counter",
+    "set": "neo",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/neo-spindown-life-counter-green.png",
+    "title": "Green Spindown Life Counter",
+    "colour": "o",
+    "num": "001e Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "neo|001e Counter",
+    "set": "neo",
+    "promo": true,
+    "usableForDeckBuilding": false
+  }
+]

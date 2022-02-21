@@ -1,0 +1,92 @@
+﻿{
+  "setCode": "neo",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Aneo&unique=prints",
+  "imagesUrl": "",
+  "importOptions": {},
+  "exceptions": [
+    {
+      "_comments": [
+        "import all images, matching their titles with the same card data over and over = (above) importOptions/importByImage: true",
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'",
+        "ignore later image match and use the one from data (or override below) = useCardDataImg = true"
+      ]
+    },
+
+    {
+      "where": "numInt=(303-306)",
+      "newValues": {
+        "borderlessPlaneswalker": true,
+        "borderless": true
+      }
+    },
+    {
+      "where": "numInt=(307-308)",
+      "newValues": {
+        "phyrexianLanguage": true
+      }
+    },
+    {
+      "where": "numInt=(309-330)",
+      "newValues": {
+        "samuraiFrame": true,
+        "showcaseCard": true
+      }
+    },
+    {
+      "where": "numInt=(331-354)",
+      "newValues": {
+        "ninjaFrame": true,
+        "showcaseCard": true
+      }
+    },
+    {
+      "where": "numInt=(355-405)",
+      "newValues": {
+        "softGlow": true,
+        "showcaseCard": true
+      }
+    },
+    {
+      "where": "numInt=(406-416)",
+      "newValues": {
+        "borderlessLegandaryDragon": true,
+        "borderless": true
+      }
+    },
+    {
+      "where": "numInt=(417-428)",
+      "newValues": {
+        "_comment": "Twelve mythic and rare cards with alternate frames received versions with the foil-etched treatment, exclusively found in Collector Boosters",
+        "foilEtched": true
+      }
+    },
+    {
+      "where": "numInt=(429-432)",
+      "newValues": {
+        "neonInk": true
+      }
+    },
+    {
+      "where": "numInt=(433-505)",
+      "newValues": {
+        "extendedArtwork": true
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "variant": true
+      }
+    }
+  ]
+}

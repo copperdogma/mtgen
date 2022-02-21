@@ -1,0 +1,24 @@
+{
+  "setCode": "neo",
+  "cardDataUrl": "https://magic.wizards.com/en/articles/archive/feature/whats-new-list-kamigawa-neon-dynasty-2022-02-03",
+  "imagesUrl": "",
+  "importOptions": {
+    "theList": true,
+    "theListTableNum": 3
+  },
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "theList": true,
+        "usableForDeckBuilding": true
+      }
+    }
+  ]
+}

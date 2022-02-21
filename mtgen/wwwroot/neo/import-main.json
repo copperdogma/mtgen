@@ -1,0 +1,45 @@
+﻿{
+  "setCode": "neo",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Aneo&unique=prints",
+  "imagesUrl": "",
+  "_comment1": "NOTE: Starting importing data and images from Scryfall as of this set",
+  "_comment2": "NOTE: No longer importing basic land separately as of this set as Scryfall makes it way easier",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "select cards starting with a value = where: type~='Snow'",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'"
+      ]
+    },
+
+    {
+      "where": "numInt=(264|265|267|269|273|274|277|279|280|282)",
+      "newValues": {
+        "dualLand": true
+      }
+    },
+    {
+      "where": "numInt=(293-303)",
+      "newValues": {
+        "yukioELand": true
+      }
+    },
+
+    {
+      "_comment": "Delete all cards outside of the main set",
+      "where": "numInt=(303-999)",
+      "delete": true
+    },
+
+    {
+      "_comment": "Consider everything left the main set.",
+      "where": "",
+      "newValues": {
+        "mainSet": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+﻿{
+  "setCode": "nec",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Anec&unique=prints",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "select cards starting with a value = where: type~='Snow'",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'"
+      ]
+    },
+
+    {
+      "where": "title=(Chishiro, the Shattered Blade|Kotori, Pilot Prodigy|Kaima, the Fractured Calm|Shorikai, Genesis Engine|Myojin of Blooming Dawn|Myojin of Cryptic Dreams|Myojin of Grim Betrayal|Myojin of Roaring Blades|Myojin of Towering Might|Ruthless Technomancer|Go-Shintai of Life's Origin|Yoshimaru, Ever Faithful)",
+      "newValues": {
+        "_comment": "Oddly, despite being commander cards, these don't appear in commander decks but only the normal Set Boosters",
+        "includedInSetBooster": true,
+        "HERE": "Need to only include the lower-numbered cards.. need two sets, regularIncludedInBooster and ExtendedArtIncludedInBooster"
+      }
+    },
+
+    {
+      "where": "numInt=(1-39)",
+      "newValues": {
+        "main": true
+      }
+    },
+    {
+      "where": "numInt=(39-77)",
+      "newValues": {
+        "extendedArtwork": true
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "commander": true
+      }
+    }
+  ]
+}

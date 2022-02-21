@@ -1,0 +1,532 @@
+{
+  "defs": [
+    {
+      "defName": "{{setCode}}",
+      "query": "from[*]?set='{{setCode}}'"
+    },
+    {
+      "defName": "the-list",
+      "query": "from[*]?theList=true"
+    },
+    {
+      "defName": "a{{setCode}}-art-cards",
+      "query": "from[*]?artCard=true"
+    },
+    {
+      "defName": "{{setCode}}-dual-land",
+      "query": "from[{{setCode}}]?dualLand=true"
+    },
+    {
+      "defName": "{{setCode}}-yukioe-land",
+      "query": "from[{{setCode}}]?yukioELand=true"
+    },
+    {
+      "defName": "{{setCode}}-main-set",
+      "query": "from[{{setCode}}]?mainSet=true-from[{{setCode}}]?type='Basic Land'-from[{{setCode}}-dual-land]-from[{{setCode}}-yukioe-land]-from[{{setCode}}]?promo=true"
+    },
+    {
+      "defName": "{{setCode}}-variants",
+      "query": "from[{{setCode}}]?variant=true"
+    },
+    {
+      "defName": "{{setCode}}-promo",
+      "query": "from[{{setCode}}]?promo=true"
+    },
+    {
+      "defName": "{{setCode}}-extended-art",
+      "query": "from[{{setCode}}]?extendedArtwork=true"
+    },
+    {
+      "defName": "{{setCode}}-showcase",
+      "query": "from[{{setCode}}]?showcaseCard=true"
+    },
+    {
+      "defName": "{{setCode}}-borderless",
+      "query": "from[{{setCode}}]?borderless=true"
+    },
+    {
+      "defName": "{{setCode}}-extended-art-and-showcase-and-borderless",
+      "query": "from[{{setCode}}-extended-art]+from[{{setCode}}-showcase]+from[{{setCode}}-borderless]"
+    },
+    {
+      "defName": "{{setCode}}-showcase-and-borderless",
+      "query": "from[{{setCode}}-showcase]+from[{{setCode}}-borderless]"
+    },
+    {
+      "defName": "{{setCode}}-foils",
+      "query": "from[{{setCode}}-main-set]+from[{{setCode}}]?type='Basic Land'"
+    },
+
+    {
+      "defName": "nec-commander",
+      "query": "from[*]?set='nec'"
+    },
+    {
+      "defName": "nec-commander-included-in-boosters",
+      "query": "from[nec-commander]?includedInSetBooster=true"
+    },
+    {
+      "defName": "nec-commander-main",
+      "query": "from[nec-commander-included-in-boosters]?main=true"
+    },
+    {
+      "defName": "nec-commander-extended-art",
+      "query": "from[nec-commander-included-in-boosters]?extendedArtwork=true"
+    },
+    {
+      "defName": "{{setCode}}-dfc",
+      "query": "from[*]?doubleFaceCard=true"
+    },
+    {
+      "defName": "{{setCode}}-single-face",
+      "query": "from[*]-from[{{setCode}}-dfc]"
+    },
+    {
+      "defName": "{{setCode}}-yukioe-land",
+      "query": "from[{{setCode}}]?yukioELand=true"
+    },
+    {
+      "defName": "{{setCode}}-basic-land",
+      "query": "from[{{setCode}}]?type='Basic Land'-from[{{setCode}}-yukioe-land]"
+    },
+    {
+      "defName": "{{setCode}}-basic-land-and-dual-land",
+      "query": "from[{{setCode}}-basic-land]+from[{{setCode}}-dual-land]"
+    },
+    {
+      "defName": "{{setCode}}-phyrexian",
+      "query": "from[{{setCode}}]?phyrexianLanguage=true"
+    },
+    {
+      "defName": "{{setCode}}-ninja-frame",
+      "query": "from[{{setCode}}]?ninjaFrame=true"
+    },
+    {
+      "defName": "{{setCode}}-samurai-frame",
+      "query": "from[{{setCode}}]?samuraiFrame=true"
+    },
+    {
+      "defName": "{{setCode}}-soft-glow",
+      "query": "from[{{setCode}}]?softGlow=true"
+    },
+    {
+      "defName": "{{setCode}}-borderless-legendary-dragon",
+      "query": "from[{{setCode}}]?borderlessLegandaryDragon=true"
+    },
+    {
+      "defName": "{{setCode}}-foil-etched",
+      "query": "from[{{setCode}}]?foilEtched=true"
+    },
+    {
+      "defName": "{{setCode}}-neon-ink",
+      "query": "from[{{setCode}}]?neonInk=true"
+    },
+    {
+      "defName": "{{setCode}}-foil-etched-and-neon-ink",
+      "query": "from[{{setCode}}-foil-etched]+from[{{setCode}}-neon-ink]"
+    },
+    {
+      "defName": "{{setCode}}-main-single-face",
+      "query": "from[{{setCode}}-main-set]-from[{{setCode}}-dfc]"
+    },
+    {
+      "defName": "{{setCode}}-main-and-showcase",
+      "query": "from[{{setCode}}-main-set]+from[{{setCode}}-showcase]"
+    },
+    {
+      "defName": "{{setCode}}-main-and-showcase-single-face",
+      "query": "from[{{setCode}}-main-set]+from[{{setCode}}-showcase]-from[{{setCode}}-dfc]"
+    },
+    {
+      "defName": "{{setCode}}-main-and-showcase-dfc",
+      "query": "from[{{setCode}}-main-and-showcase]-from[{{setCode}}-single-face]"
+    },
+    {
+      "defName": "{{setCode}}-main-and-showcase-and-borderless",
+      "query": "from[{{setCode}}-main-and-showcase]+from[{{setCode}}-borderless]"
+    },
+    {
+      "defName": "{{setCode}}-main-and-showcase-and-borderless-single-face",
+      "query": "from[{{setCode}}-main-and-showcase-and-borderless]-from[{{setCode}}-dfc]"
+    },
+    {
+      "defName": "{{setCode}}-main-and-showcase-and-borderless-dfc",
+      "query": "from[{{setCode}}-main-and-showcase-and-borderless]-from[{{setCode}}-single-face]"
+    },
+    {
+      "defName": "{{setCode}}-main-and-showcase-and-borderless-and-commander",
+      "query": "from[{{setCode}}-main-and-showcase-and-borderless]+from[nec-commander-main]"
+    },
+    {
+      "defName": "{{setCode}}-main-and-showcase-and-borderless-and-commander-and-yukioe-lands",
+      "query": "from[{{setCode}}-main-and-showcase-and-borderless]+from[nec-commander-main]+from[{{setCode}}-yukioe-land]"
+    },
+    {
+      "_comment2": "Usually this is a traditional foil card with a borderless, Ninja, Samurai, Phyrexian, soft glow, or extended-art treatment, but occasionally you'll open a foil-etched rare or mythic rare, or even a neon ink foil.",
+      "defName": "{{setCode}}-borderless-and-ninja-and-samurai-and-phyrexian-and-soft-glow-and-extended-art",
+      "query": "from[{{setCode}}-borderless]+from[{{setCode}}-ninja-frame]+from[{{setCode}}-samurai-frame]+from[{{setCode}}-phyrexian]+from[{{setCode}}-soft-glow]+from[{{setCode}}-extended-art]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "{{setCode}}-all-cards",
+      "packDesc": "{{setName}}: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[{{setCode}}]" }
+      ]
+    },
+
+    {
+      "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
+      "packName": "{{setCode}}-draft",
+      "packDesc": "{{setName}}: Draft Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/kamigawa-neon-dynasty-product-overview-2022-01-27" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[{{setCode}}-main-and-showcase-single-face]?rarity='c" },
+        { "query": "take[3]>from[{{setCode}}-main-and-showcase-single-face]?rarity='u" },
+        { "query": "from[{{setCode}}-main-and-showcase]?rarity=rarityByWeight2020(rm)" },
+        { "query": "from[{{setCode}}-basic-land-and-dual-land]" },
+        {
+          "querySet": [
+            {
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
+            },
+            {
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "33% (1:45) chance of foil, scaled by rarity, replacing the last common, as of m20: Jun-2019",
+              "overrideSlot": "10",
+              "percent": "33",
+              "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(curm)",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "33% change of Ukiyo-E land",
+              "overrideSlot": "15",
+              "percent": "33",
+              "query": "from[{{setCode}}-yukioe-land]"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_comment": "Collector Boosters were introduced as standard feature as of ELD",
+      "packName": "{{setCode}}-collector",
+      "packDesc": "{{setName}}: Collector Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/kamigawa-neon-dynasty-product-overview-2022-01-27" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment0": "NOTE: All cards can basically be DFC. 'All cards except basic land and Commander card may be DFC' (except there are no DFC land or commander cards, so...;)",
+          "_comment": "Slot 1: Foil: Neon Ink Foil, Foil-Etched, or Traditional Foil R/M",
+          "_comment2": "Usually this is a traditional foil card with a borderless, Ninja, Samurai, Phyrexian, soft glow, or extended-art treatment, but occasionally you'll open a foil-etched rare or mythic rare, or even a neon ink foil.",
+          "query": "from[{{setCode}}-borderless-and-ninja-and-samurai-and-phyrexian-and-soft-glow-and-extended-art]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 2: Showcase RM, Borderless RM, or Phyrexian M)",
+          "query": "from[{{setCode}}-showcase-and-borderless]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 3: Extended art main set RM or borderless M",
+          "query": "from[{{setCode}}-extended-art]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 4: Extended Art Commander R/M",
+          "_comment2": "LAST VERSION: R 2x as often as M",
+          "query": "from[nec-commander-extended-art]?rarity='r'"
+        },
+        {
+          "_comment": "Slot 5: Foil RM",
+          "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 6: Foil: Ninja CU",
+          "query": "from[{{setCode}}-ninja-frame]?rarity=rarityByWeight2020(cu)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 7: Ninja CU",
+          "query": "from[{{setCode}}-ninja-frame]?rarity=rarityByWeight2020(cu)"
+        },
+        {
+          "_comment": "Slot 8: Foil: Samurai CU",
+          "query": "from[{{setCode}}-samurai-frame]?rarity=rarityByWeight2020(cu)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 9: Samurai CU",
+          "query": "from[{{setCode}}-samurai-frame]?rarity=rarityByWeight2020(cu)"
+        },
+        {
+          "_comment": "Slot 10: Foil: DFC CU",
+          "query": "from[{{setCode}}-dfc]?rarity=rarityByWeight2020(cu)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 11-12: 2x Foil: U",
+          "query": "take[2]>from[{{setCode}}-foils]?rarity='u'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 13-14: 2x Foil: C",
+          "query": "take[2]>from[{{setCode}}-foils]?rarity='c'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 15: Foil: Yukio-E Land",
+          "query": "from[{{setCode}}-yukioe-land]",
+          "setValues": { "foil": true }
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 1: Foil: Neon Ink Foil, Foil-Etched, or Traditional Foil R/M",
+              "_comment2": "Usually this is a traditional foil card with a borderless, Ninja, Samurai, Phyrexian, soft glow, or extended-art treatment, but occasionally you'll open a foil-etched rare or mythic rare, or even a neon ink foil.",
+              "_comment3": "I randomly decided it should be a 25% chance for 'occasionally' (thanks, wotc)",
+              "overrideSlot": "1",
+              "percent": "25",
+              "query": "from[{{setCode}}-foil-etched-and-neon-ink]?rarity=rarityByWeight2020(rm)",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 3: Extended art main set RM or borderless M",
+              "overrideSlot": "3",
+              "percent": "1/16",
+              "query": "from[{{setCode}}-borderless]?rarity=rarityByWeight2020(m)"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 4: Extended Art Commander R/M",
+              "_comment2": "LAST VERSION: R 2x as often as M",
+              "overrideSlot": "4",
+              "percent": "1/3",
+              "query": "from[nec-commander-extended-art]?rarity='m'"
+            }
+          ]
+        }
+
+      ]
+    },
+
+    {
+      "_comment": "Set Boosters were introduced as standard feature as of ZNR",
+      "packName": "{{setCode}}-set-booster",
+      "packDesc": "{{setName}}: Set Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/kamigawa-neon-dynasty-product-overview-2022-01-27" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1: Art Card",
+          "_comment2": "Art Card is foil-stamped in 5% of packs",
+          "query": "from[a{{setCode}}-art-cards]",
+          "setValues": { "modifiers": [ "Normal" ] }
+        },
+        {
+          "_comment": "Slot 2: Foil: Double- or Single-Faced CURM",
+          "_comment2": "Showcase, Borderless, or Commander card in some packs",
+          "query": "from[{{setCode}}-main-and-showcase-and-borderless-and-commander]?rarity=rarityByWeight2020(curm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 3: Double- or Single-Faced RM",
+          "_comment2": "Showcase, Borderless in some packs",
+          "query": "from[{{setCode}}-main-and-showcase-and-borderless]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 4-5: 2x Double- or Single-Faced CURM",
+          "_comment0": "Note I split this into two single pulls because there's a bug where rarityByWeight2020(curm) will pick ONE rarity, then choose the two cards from that, so they're always both the same rarity",
+          "_commentA": "Slot 4: Double- or Single-Faced CURM",
+          "_comment1": "2 Cards from a variety of possibilities:",
+          "_comment2": "Showcase, borderless, Ukiyo-e Land, or Commander Card",
+          "query": "from[{{setCode}}-main-and-showcase-and-borderless-and-commander-and-yukioe-lands]?rarity=rarityByWeight2020(curm)"
+        },
+        {
+          "_comment": "Slot 4-5: 2x Double- or Single-Faced CURM",
+          "_commentA": "Slot 5: Double- or Single-Faced CURM",
+          "_comment1": "2 Cards from a variety of possibilities:",
+          "_comment2": "Showcase, borderless, Ukiyo-e Land, or Commander Card",
+          "query": "from[{{setCode}}-main-and-showcase-and-borderless-and-commander-and-yukioe-lands]?rarity=rarityByWeight2020(curm)"
+        },
+        {
+          "_comment": "Slot 6: Single-Faced Showcase CU",
+          "query": "from[{{setCode}}-main-and-showcase-single-face]?rarity=rarityByWeight2020(cu)"
+        },
+        {
+          "_comment": "Slot 7: Double-Faced Showcase CU",
+          "query": "from[{{setCode}}-main-and-showcase-dfc]?rarity=rarityByWeight2020(cu)"
+        },
+        {
+          "_comment": "Slot 8-9: 2x Single-Faced Connected U",
+          "query": "take[2]>from[{{setCode}}-main-single-face]?rarity=u"
+        },
+        {
+          "_comment": "Slot 10-12: 3x Single-Faced Connected C",
+          "query": "take[3]>from[{{setCode}}-main-single-face]?rarity=c"
+        },
+        {
+          "_comment": "Slot 13: Land or foil land, including ukiyo-e lands",
+          "_comment2": "Land is a nonfoil Ukiyo-e land in 33% of packs and traditional foil Ukiyo-e Land in 7% of packs",
+          "query": "from[{{setCode}}]?type='Basic Land'"
+        },
+        {
+          "_comment": "Slot 14: Token/Ad/Helper Card or The List",
+          "_comment2": "25% chance of The List card",
+          "query": "from[{{setCode}}]?token=true"
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 1: Art Card",
+              "_comment2": "1 Art card or foil-stamped art card.",
+              "_comment3": "PREVIOUS SET: There are 81 total possible borderless art cards. 95% of those opened will be regular and 5% will be foil stamped with an artist signature or Planeswalker symbol.",
+              "overrideSlot": "1",
+              "percent": "5",
+              "query": "from[a{{setCode}}-art-cards]",
+              "setValues": { "modifiers": [ "Foil Stamped" ] }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 13: Land or foil land, including ukiyo-e lands",
+              "_comment2": "Land is a nonfoil Ukiyo-e land in 33% of packs and traditional foil Ukiyo-e Land in 7% of packs",
+              "_comment3": "33%: nonfoil Ukiyo-e land",
+              "query": "from[{{setCode}}-yukioe-land]",
+              "overrideSlot": "13",
+              "percent": "33"
+            },
+            {
+              "_comment": "Slot 13: Land or foil land, including ukiyo-e lands",
+              "_comment2": "Land is a nonfoil Ukiyo-e land in 33% of packs and traditional foil Ukiyo-e Land in 7% of packs",
+              "_comment3": "7%: foil Ukiyo-e land",
+              "query": "from[{{setCode}}-yukioe-land]",
+              "overrideSlot": "13",
+              "percent": "7",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 14: Token/Ad or The List",
+              "_comment2": "1 Token/ad card (75%), or a card from The List (25%) – The List is a collection of 300 cards from Magic's history that we have brought together for this special slot. We have rotated in 50 new reprints that we feel help capture the feel of {{setName}}. Inclusion of cards from The List doesn't impact what formats the card is legal in",
+              "query": "from[the-list]?rarity=rarityByWeight2020(curm)",
+              "overrideSlot": "14",
+              "percent": "25"
+            }
+          ]
+        }
+
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-prerelease-promo-packins",
+      "packDesc": "{{setName}}: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "from[{{setCode}}-main-set]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        { "query": "take[1]>from[{{setCode}}-promo]?type='Life Counter'" },
+        { "query": "from[{{setCode}}-promo]?title='Prerelease Deck Box" },
+        { "query": "from[{{setCode}}-promo]?title='Card Divider" },
+        { "query": "from[{{setCode}}-promo]?title='Arena Code Card" }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-prerelease-promos",
+      "packDesc": "{{setName}}: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[{{setCode}}-promo]?includedReason='Prerelease Promo" }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-variants",
+      "packDesc": "{{setName}}: All Variants",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-variants]"
+        }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-promos",
+      "packDesc": "{{setName}}: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-promo]"
+        }
+      ]
+    },
+
+    {
+      "packName": "a{{setCode}}-art-cards",
+      "packDesc": "{{setName}}: Art Cards",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[a{{setCode}}-art-cards]"
+        }
+      ]
+    },
+
+    {
+      "packName": "the-list",
+      "packDesc": "{{setName}}: The List",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[the-list]"
+        }
+      ]
+    }
+
+  ]
+}
