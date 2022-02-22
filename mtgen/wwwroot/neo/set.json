@@ -1,7 +1,7 @@
 {
   "startProductName": "neo-prerelease",
   "packFiles": [
-    "packs.json?v1.2"
+    "packs.json?v1.3"
   ],
   "cardFiles": [
     "cardsMain.json?v1.1",
@@ -14,6 +14,10 @@
     "../cards/ads/cardsAds.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2022-02-21T21:00:00:00",
+      "HtmlString": "Now includes a C/U double-faced card slot in draft boosters."
+    },
     {
       "UpdateDate": "2022-02-21T15:00:00:00",
       "HtmlString": "Now considers a coloured artifact to be that colour instead of just an artifact."
