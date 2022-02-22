@@ -471,6 +471,9 @@
         { "query": "take[1]>from[{{setCode}}-promo]?type='Life Counter'" },
         { "query": "from[{{setCode}}-promo]?title='Prerelease Deck Box" },
         { "query": "from[{{setCode}}-promo]?title='Card Divider" },
+        { "query": "take[*]>from[{{setCode}}-promo]?title='Substitute Card" },
+        { "query": "take[*]>from[{{setCode}}-promo]?title='Substitute Card" },
+        { "query": "take[*]>from[{{setCode}}-promo]?title='Substitute Card" },
         { "query": "from[{{setCode}}-promo]?title='Arena Code Card" }
       ]
     },
