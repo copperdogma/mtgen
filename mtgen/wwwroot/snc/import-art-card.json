@@ -1,0 +1,17 @@
+{
+  "setCode": "snc",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/streets-new-capenna-art-cards-2022-04-19",
+  "importOptions": { "artCards": true },
+  "exceptions": [
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "num": "{{num}}/081 A",
+        "artCard": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

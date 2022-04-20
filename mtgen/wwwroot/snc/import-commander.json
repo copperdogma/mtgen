@@ -1,0 +1,80 @@
+﻿{
+  "setCode": "ncc",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Ancc&unique=prints",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "select cards starting with a value = where: type~='Snow'",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'"
+      ]
+    },
+
+    {
+      "where": "numInt=(1-75)",
+      "newValues": {
+        "main": true
+      }
+    },
+    {
+      "where": "numInt=(76-83)",
+      "newValues": {
+        "setAndCollectorBoosters": true
+      }
+    },
+    {
+      "where": "numInt=(94-185)",
+      "newValues": {
+        "extendedArtwork": true
+      }
+    },
+    {
+      "where": "title=(Perrie, the Pulverizer|Kamiz, Obscura Oculus|Anhelo, the Painter|Henzie Toolbox Torre|Kitt Kanto, Mayhem Diva|Kros, Defense Contractor|Tivit, Seller of Secrets|Parnesse, the Subtle Brush|The Beamtown Bullies|Phabine, Boss's Confidant)",
+      "newValues": {
+        "faceCommander": true
+      }
+    },
+
+    {
+      "_comment": "Set the 5 families.",
+      "where": "watermark=brokers",
+      "newValues": {
+        "family": "Brokers"
+      }
+    },
+    {
+      "where": "watermark=cabaretti",
+      "newValues": {
+        "family": "Cabaretti"
+      }
+    },
+    {
+      "where": "watermark=maestros",
+      "newValues": {
+        "family": "Maestros"
+      }
+    },
+    {
+      "where": "watermark=obscura",
+      "newValues": {
+        "family": "Obscura"
+      }
+    },
+    {
+      "where": "watermark=riveteers",
+      "newValues": {
+        "family": "Riveteers"
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "commander": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "setCode": "snc",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
+      "where": "numInt=461",
+      "newValues": {
+        "num": "{{numInt}} P Buy-a-Box",
+        "includedReason": "Buy-a-Box Promo"
+      }
+    },
+    {
+      "where": "numInt=462",
+      "newValues": {
+        "num": "{{numInt}} P Bundle",
+        "includedReason": "Bundle Promo"
+      }
+    },
+    {
+      "where": "numInt=(450-460)",
+      "newValues": {
+        "num": "{{numInt}} R",
+        "includedReason": "Gala Greeter Box Topper"
+      }
+    },
+    {
+      "where": "numInt=(463-467)",
+      "newValues": {
+        "num": "{{numInt}} P FNM",
+        "includedReason": "Friday Night Magic Promo"
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/snc-prerelease-deck-box.png",
+        "title": "Prerelease Deck Box",
+        "colour": "o",
+        "num": "006 Prerelease Deck Box",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-deckbuilding-info.jpg",
+        "src_large": "http://mtgen.net/cards/mtg-deckbuilding-info-lg.jpg",
+        "height": 370,
+        "width": 515,
+        "title": "Deckbuilding Advice Insert",
+        "colour": "o",
+        "num": "007 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-prerelease-card-divider.png",
+        "title": "Card Divider",
+        "colour": "o",
+        "num": "008 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-arena-code-card.png",
+        "title": "Arena Code Card",
+        "colour": "o",
+        "num": "009 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-substitute-card.png",
+        "title": "Substitute Card",
+        "colour": "o",
+        "num": "010 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-white.png",
+        "title": "White Spindown Life Counter",
+        "colour": "o",
+        "num": "001a Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-blue.png",
+        "title": "Blue Spindown Life Counter",
+        "colour": "o",
+        "num": "001b Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-black.png",
+        "title": "Black Spindown Life Counter",
+        "colour": "o",
+        "num": "001c Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-red.png",
+        "title": "Red Spindown Life Counter",
+        "colour": "o",
+        "num": "001d Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-green.png",
+        "title": "Green Spindown Life Counter",
+        "colour": "o",
+        "num": "001e Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "_comment": "Set the 5 families.",
+      "where": "watermark=brokers",
+      "newValues": {
+        "family": "Brokers"
+      }
+    },
+    {
+      "where": "watermark=cabaretti",
+      "newValues": {
+        "family": "Cabaretti"
+      }
+    },
+    {
+      "where": "watermark=maestros",
+      "newValues": {
+        "family": "Maestros"
+      }
+    },
+    {
+      "where": "watermark=obscura",
+      "newValues": {
+        "family": "Obscura"
+      }
+    },
+    {
+      "where": "watermark=riveteers",
+      "newValues": {
+        "family": "Riveteers"
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

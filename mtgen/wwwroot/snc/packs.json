@@ -1,0 +1,844 @@
+{
+  "defs": [
+    {
+      "defName": "{{setCode}}",
+      "query": "from[*]?set='{{setCode}}'"
+    },
+    {
+      "defName": "the-list",
+      "query": "from[*]?theList=true"
+    },
+    {
+      "defName": "a{{setCode}}-art-cards",
+      "query": "from[*]?artCard=true"
+    },
+    {
+      "defName": "{{setCode}}-variants",
+      "query": "from[{{setCode}}]?variant=true"
+    },
+    {
+      "defName": "{{setCode}}-promo",
+      "query": "from[{{setCode}}]?promo=true"
+    },
+    {
+      "defName": "{{setCode}}-extended-art",
+      "query": "from[{{setCode}}]?extendedArtwork=true"
+    },
+    {
+      "defName": "{{setCode}}-showcase",
+      "query": "from[{{setCode}}]?showcaseCard=true"
+    },
+    {
+      "defName": "{{setCode}}-borderless",
+      "query": "from[{{setCode}}]?borderless=true"
+    },
+
+    {
+      "defName": "{{setCode}}-goldenAge",
+      "query": "from[{{setCode}}]?goldenAge=true"
+    },
+    {
+      "defName": "{{setCode}}-artDeco",
+      "query": "from[{{setCode}}]?artDeco=true"
+    },
+    {
+      "defName": "{{setCode}}-skyscraperLands",
+      "query": "from[{{setCode}}]?skyscraperLands=true"
+    },
+    {
+      "defName": "{{setCode}}-phyrexian",
+      "query": "from[{{setCode}}]?phyrexianLanguage=true"
+    },
+    {
+      "defName": "{{setCode}}-gildedFoil",
+      "query": "from[{{setCode}}]?gildedFoil=true"
+    },
+    {
+      "defName": "{{setCode}}-foilEtchedArtDeco",
+      "query": "from[{{setCode}}]?foilEtchedArtDeco=true"
+    },
+    {
+      "defName": "{{setCode}}-tokens-no-punchout",
+      "query": "from[{{setCode}}]?token=true-from[{{setCode}}]?title='Punch Out Token'"
+    },
+
+    {
+      "defName": "{{setCode}}-main-set",
+      "query": "from[{{setCode}}]?mainSet=true-from[{{setCode}}]?type='Basic Land'-from[{{setCode}}]?promo=true"
+    },
+    {
+      "defName": "{{setCode}}-draft-booster",
+      "query": "from[{{setCode}}-main-set]+from[{{setCode}}-goldenAge]+from[{{setCode}}-skyscraperLands]+from[{{setCode}}-artDeco]+from[{{setCode}}-phyrexian]"
+    },
+    {
+      "defName": "{{setCode}}-showcase-and-borderless",
+      "query": "from[{{setCode}}-showcase]+from[{{setCode}}-borderless]"
+    },
+    {
+      "defName": "{{setCode}}-foils",
+      "query": "from[{{setCode}}-main-set]+from[{{setCode}}]?type='Basic Land'"
+    },
+
+    {
+      "defName": "{{setCode}}-booster-brokers-colours",
+      "query": "from[{{setCode}}-draft-booster]?cost~=(G|W|U)-from[{{setCode}}-draft-booster]?cost~=(B|R)"
+    },
+    {
+      "defName": "{{setCode}}-booster-cabaretti-colours",
+      "query": "from[{{setCode}}-draft-booster]?cost~=(R|G|W)-from[{{setCode}}-draft-booster]?cost~=(B|U)"
+    },
+    {
+      "defName": "{{setCode}}-booster-maestros-colours",
+      "query": "from[{{setCode}}-draft-booster]?cost~=(U|B|R)-from[{{setCode}}-draft-booster]?cost~=(G|W)"
+    },
+    {
+      "defName": "{{setCode}}-booster-obscura-colours",
+      "query": "from[{{setCode}}-draft-booster]?cost~=(W|U|B)-from[{{setCode}}-draft-booster]?cost~=(R|G)"
+    },
+    {
+      "defName": "{{setCode}}-booster-riveteers-colours",
+      "query": "from[{{setCode}}-draft-booster]?cost~=(B|R|G)-from[{{setCode}}-draft-booster]?cost~=(W|U)"
+    },
+    {
+      "defName": "{{setCode}}-family-brokers",
+      "query": "from[{{setCode}}-draft-booster]?family='brokers'"
+    },
+    {
+      "defName": "{{setCode}}-family-cabaretti",
+      "query": "from[{{setCode}}-draft-booster]?family='cabaretti'"
+    },
+    {
+      "defName": "{{setCode}}-family-maestros",
+      "query": "from[{{setCode}}-draft-booster]?family='maestros'"
+    },
+    {
+      "defName": "{{setCode}}-family-obscura",
+      "query": "from[{{setCode}}-draft-booster]?family='obscura'"
+    },
+    {
+      "defName": "{{setCode}}-family-riveteers",
+      "query": "from[{{setCode}}-draft-booster]?family='riveteers'"
+    },
+    {
+      "defName": "{{setCode}}-brokers-colour-booster",
+      "query": "from[{{setCode}}-booster-brokers-colours]-from[{{setCode}}-draft-booster]?family=(cabaretti|maestros|obscura|riveteers)"
+    },
+    {
+      "defName": "{{setCode}}-cabaretti-colour-booster",
+      "query": "from[{{setCode}}-booster-cabaretti-colours]-from[{{setCode}}-draft-booster]?family=(brokers|maestros|obscura|riveteers)"
+    },
+    {
+      "defName": "{{setCode}}-maestros-colour-booster",
+      "query": "from[{{setCode}}-booster-maestros-colours]-from[{{setCode}}-draft-booster]?family=(brokers|cabaretti|obscura|riveteers)"
+    },
+    {
+      "defName": "{{setCode}}-obscura-colour-booster",
+      "query": "from[{{setCode}}-booster-obscura-colours]-from[{{setCode}}-draft-booster]?family=(brokers|cabaretti|maestros|riveteers)"
+    },
+    {
+      "defName": "{{setCode}}-riveteers-colour-booster",
+      "query": "from[{{setCode}}-booster-riveteers-colours]-from[{{setCode}}-draft-booster]?family=(brokers|cabaretti|maestros|obscura)"
+    },
+
+    {
+      "defName": "ncc-commander",
+      "query": "from[*]?set='ncc'"
+    },
+    {
+      "defName": "ncc-commander-included-in-boosters",
+      "query": "from[ncc-commander]?setAndCollectorBoosters=true"
+    },
+    {
+      "defName": "ncc-faceCommander",
+      "query": "from[ncc-commander]?faceCommander=true"
+    },
+    {
+      "defName": "ncc-commander-extended-art",
+      "query": "from[ncc-commander]?extendedArtwork=true"
+    },
+    {
+      "defName": "ncc-set-booster-commander",
+      "query": "from[ncc-commander-included-in-boosters]+from[ncc-faceCommander]"
+    },
+
+    {
+      "defName": "{{setCode}}-gilded-and-showcase",
+      "query": "from[{{setCode}}-gildedFoil]+from[{{setCode}}-showcase]"
+    },
+    {
+      "defName": "{{setCode}}-gilded-and-showcase-and-extended-art-and-boderless-and-phyrexian-and-showcase",
+      "query": "from[{{setCode}}-gilded-and-showcase]+from[{{setCode}}-extended-art]+from[{{setCode}}-borderless]+from[{{setCode}}-phyrexian]"
+    },
+    {
+      "defName": "{{setCode}}-showcase-and-phyrexian-and-borderless",
+      "query": "from[{{setCode}}-showcase]+from[{{setCode}}-extended-art]+from[{{setCode}}-borderless]"
+    },
+    {
+      "defName": "{{setCode}}-showcase-and-phyrexian-and-borderless-and-commander",
+      "query": "from[{{setCode}}-showcase-and-phyrexian-and-borderless]+from[ncc-set-booster-commander]"
+    },
+    {
+      "defName": "{{setCode}}-traditional-foil",
+      "_comment": "Traditional Foil is a Showcase, Borderless, Phyrexian, or Commander card in some packs",
+      "query": "from[{{setCode}}-showcase]+from[{{setCode}}-borderless]+from[{{setCode}}-phyrexian]+from[ncc-set-booster-commander]"
+    },
+    {
+      "defName": "{{setCode}}-gildedFoil-and-traditional-foil",
+      "_comment": "Traditional Foil is a Showcase, Borderless, Phyrexian, or Commander card in some packs",
+      "query": "from[{{setCode}}-gildedFoil]+from[{{setCode}}-traditional-foil]"
+    },
+    {
+      "defName": "{{setCode}}-foils-and-gildedFoil",
+      "query": "from[{{setCode}}-foils]+from[{{setCode}}-gildedFoil]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "{{setCode}}-all-cards",
+      "packDesc": "{{setName}}: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[{{setCode}}]" }
+      ]
+    },
+
+    {
+      "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
+      "packName": "{{setCode}}-draft",
+      "packDesc": "{{setName}}: Draft Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/kamigawa-neon-dynasty-product-overview-2022-01-27" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[9]>from[{{setCode}}-draft-booster]?rarity='c" },
+        { "query": "from[{{setCode}}-draft-booster]?rarity=rarityByWeight2020(cu)" },
+        { "query": "take[3]>from[{{setCode}}-draft-booster]?rarity='u" },
+        { "query": "from[{{setCode}}-draft-booster]?rarity=rarityByWeight2020(rm)" },
+        { "query": "from[{{setCode}}]?type='Basic Land'" },
+        {
+          "querySet": [
+            {
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
+            },
+            {
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "33% (1:45) chance of foil, scaled by rarity, replacing the last common, as of m20: Jun-2019",
+              "overrideSlot": "9",
+              "percent": "33",
+              "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(curm)",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_comment": "Collector Boosters were introduced as standard feature as of ELD",
+      "packName": "{{setCode}}-collector",
+      "packDesc": "{{setName}}: Collector Booster",
+      "packVersion": "1.1",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/kamigawa-neon-dynasty-product-overview-2022-01-27" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1: Foil: Gilded Foil, Foil-Etched, or Traditional Foil R/M",
+          "_comment2": "Gilded Foil Showcase, Foil-Etched Showcase, or Traditional Foil Extended-Art, Borderless, Phyrexian, or Showcase",
+          "query": "from[{{setCode}}-gildedFoil-and-traditional-foil]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 2: Foil: Gilded Foil Showcase or Traditional Foil Showcase C/U)",
+          "query": "from[{{setCode}}-gilded-and-showcase]?rarity=rarityByWeight2020(cu)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 3: Showcase, Phyrexian, or Borderless R/M",
+          "query": "from[{{setCode}}-showcase-and-phyrexian-and-borderless]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 4: Extended Art Commander R/M",
+          "_comment2": "LAST VERSION: R 2x as often as M",
+          "query": "from[ncc-commander-extended-art]?rarity='r'"
+        },
+        {
+          "_comment": "Slot 5: Extended Art R/M",
+          "query": "from[{{setCode}}-extended-art]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 6: Foil: R/M",
+          "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 7-8: 2x Showcase CU",
+          "query": "take[2]>from[{{setCode}}-showcase]?rarity=rarityByWeight2020(cu)"
+        },
+        {
+          "_comment": "Slot 9-10: 2x Foil: U",
+          "query": "take[2]>from[{{setCode}}-foils]?rarity='u'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 11-14: 4x Foil: C",
+          "query": "take[4]>from[{{setCode}}-foils]?rarity='c'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 15: Foil: Metropolis Full-Art Basic Land",
+          "query": "from[{{setCode}}]?fullArtBasicLand=true",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 16: Foil: Double-Sided Token",
+          "query": "from[{{setCode}}-tokens-no-punchout]",
+          "setValues": { "foil": true }
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 1: Foil: Gilded Foil, Foil-Etched, or Traditional Foil R/M",
+              "_comment2": "Usually, this is a traditional foil card with a golden age, skyscraper, art deco, Phyrexian, extended-art, or borderless treatment, but occasionally, you'll open a foil-etched rare or mythic rare, or even a gilded foil rare or mythic rare.",
+              "_comment3": "I randomly decided it should be a 25% chance for 'occasionally' (thanks, wotc)",
+              "overrideSlot": "1",
+              "percent": "25",
+              "query": "from[{{setCode}}-foils-and-gildedFoil]?rarity=rarityByWeight2020(rm)",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 4: Extended Art Commander R/M",
+              "_comment2": "LAST VERSION: R 2x as often as M",
+              "overrideSlot": "4",
+              "percent": "1/3",
+              "query": "from[ncc-commander-extended-art]?rarity='m'"
+            }
+          ]
+        }
+
+      ]
+    },
+
+    {
+      "_comment": "Set Boosters were introduced as standard feature as of ZNR",
+      "packName": "{{setCode}}-set-booster",
+      "packDesc": "{{setName}}: Set Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/streets-of-new-capenna-product-overview-2022-04-07" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1: Art Card",
+          "_comment2": "Art Card is foil-stamped in 5% of packs",
+          "query": "from[a{{setCode}}-art-cards]",
+          "setValues": { "modifiers": [ "Normal" ] }
+        },
+        {
+          "_comment": "Slot 2: Foil: Gilded Foil Showcase or Traditional Foil C/U/R/M",
+          "_comment2": "Traditional Foil is a Showcase, Borderless, Phyrexian, or Commander card in some packs",
+          "query": "from[{{setCode}}-gildedFoil-and-traditional-foil]?rarity=rarityByWeight2020(curm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 3: Main Set RM",
+          "query": "from[{{setCode}}-main-set]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 4-5: 2x Wildcard CURM",
+          "_comment0": "Showcase, Borderless, Phyrexian, or Commander card in some packs",
+          "query": "from[{{setCode}}-showcase-and-phyrexian-and-borderless-and-commander]?rarity=rarityByWeight2020(curm)"
+        },
+        {
+          "_comment": "Slot 4-5: 2x Wildcard CURM",
+          "_comment0": "Showcase, Borderless, Phyrexian, or Commander card in some packs",
+          "query": "from[{{setCode}}-showcase-and-phyrexian-and-borderless-and-commander]?rarity=rarityByWeight2020(curm)"
+        },
+        {
+          "_comment": "Slot 6: Showcase CU",
+          "query": "from[{{setCode}}-showcase]?rarity=rarityByWeight2020(cu)"
+        },
+        {
+          "_comment": "Slot 8-10: 3x U",
+          "query": "take[3]>from[{{setCode}}-main-set]?rarity=u"
+        },
+        {
+          "_comment": "Slot 11-13: 3x C",
+          "query": "take[3]>from[{{setCode}}-main-set]?rarity=c"
+        },
+        {
+          "_comment": "Slot 13: Basic Land",
+          "_comment2": "Metropolis Full-Art Land in 33% of packs. Land is Traditional Foil in 21% of packs.",
+          "query": "from[{{setCode}}]?type='Basic Land'"
+        },
+        {
+          "_comment": "Slot 14: Token/Ad/Counter Punchout Card or The List",
+          "_comment2": "25% chance of The List card",
+          "query": "from[{{setCode}}]?token=true"
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 1: Art Card",
+              "_comment2": "1 Art card or foil-stamped art card.",
+              "_comment3": "PREVIOUS SET: There are 81 total possible borderless art cards. 95% of those opened will be regular and 5% will be foil stamped with an artist signature or Planeswalker symbol.",
+              "overrideSlot": "1",
+              "percent": "5",
+              "query": "from[a{{setCode}}-art-cards]",
+              "setValues": { "modifiers": [ "Foil Stamped" ] }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 13: Basic Land",
+              "_comment2": "Metropolis Full-Art Land in 33% of packs. Land is Traditional Foil in 21% of packs.",
+              "_comment3": "33%: Metropolis Full-Art Land",
+              "query": "from[{{setCode}}-skyscraperLands]",
+              "overrideSlot": "13",
+              "percent": "33"
+            },
+            {
+              "_comment": "Slot 13: Basic Land",
+              "_comment2": "Metropolis Full-Art Land in 33% of packs. Land is Traditional Foil in 21% of packs.",
+              "_comment3": "21%: Foil Basic Land",
+              "query": "from[{{setCode}}]?type='Basic Land'",
+              "overrideSlot": "13",
+              "percent": "21",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 14: Token/Ad or The List",
+              "_comment2": "1 Token/ad card (75%), or a card from The List (25%) – The List is a collection of 300 cards from Magic's history that we have brought together for this special slot. We have rotated in 50 new reprints that we feel help capture the feel of {{setName}}. Inclusion of cards from The List doesn't impact what formats the card is legal in",
+              "query": "from[the-list]?rarity=rarityByWeight2020(rm)",
+              "overrideSlot": "14",
+              "percent": "25"
+            }
+          ]
+        }
+
+      ]
+    },
+
+    {
+      "_comment": "Prerelease Family Booster: Brokers",
+      "packName": "{{setCode}}-prerelease-brokers-booster",
+      "packDesc": "Streets of New Capenna: Brokers Family Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/streets-of-new-capenna-product-overview-2022-04-07", "https://youtu.be/8O1TO0lCGKk?t=285" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[2]>from[{{setCode}}-family-brokers]?type='Land'" },
+        { "query": "take[8]>from[{{setCode}}-brokers-colour-booster]?rarity='c" },
+        { "query": "take[3]>from[{{setCode}}-brokers-colour-booster]?rarity='u" },
+        { "query": "from[{{setCode}}-family-brokers]?rarity='r" },
+        {
+          "querySet": [
+            {
+              "_comment": "In this release R/M prerelease foil was included in this seeded pack instead of separate.",
+              "percent": "7/8",
+              "query": "from[{{setCode}}-main-set]?rarity='r",
+              "setValues": {
+                "foil": true
+              }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[{{setCode}}-main-set]?rarity='m",
+              "setValues": {
+                "foil": true
+              }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
+            },
+            {
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/7.4 chance of replacing rare with mythic (7.4 instead of 8 as of znr Sep-2020",
+              "percent": "10/74",
+              "overrideSlot": "14",
+              "query": "from[{{setCode}}-family-brokers]?rarity='m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_comment": "Prerelease Family Booster: Cabaretti",
+      "packName": "{{setCode}}-prerelease-cabaretti-booster",
+      "packDesc": "Streets of New Capenna: Cabaretti Family Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/streets-of-new-capenna-product-overview-2022-04-07" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[2]>from[{{setCode}}-family-cabaretti]?type='Land'" },
+        { "query": "take[8]>from[{{setCode}}-cabaretti-colour-booster]?rarity='c" },
+        { "query": "take[3]>from[{{setCode}}-cabaretti-colour-booster]?rarity='u" },
+        { "query": "from[{{setCode}}-family-cabaretti]?rarity='r" },
+        {
+          "querySet": [
+            {
+              "_comment": "In this release R/M prerelease foil was included in this seeded pack instead of separate.",
+              "percent": "7/8",
+              "query": "from[{{setCode}}-main-set]?rarity='r",
+              "setValues": {
+                "foil": true
+              }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[{{setCode}}-main-set]?rarity='m",
+              "setValues": {
+                "foil": true
+              }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
+            },
+            {
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/7.4 chance of replacing rare with mythic (7.4 instead of 8 as of znr Sep-2020",
+              "percent": "10/74",
+              "overrideSlot": "14",
+              "query": "from[{{setCode}}-family-cabaretti]?rarity='m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_comment": "Prerelease Family Booster: Maestros",
+      "packName": "{{setCode}}-prerelease-maestros-booster",
+      "packDesc": "Streets of New Capenna: Maestros Family Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/streets-of-new-capenna-product-overview-2022-04-07" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[2]>from[{{setCode}}-family-maestros]?type='Land'" },
+        { "query": "take[8]>from[{{setCode}}-maestros-colour-booster]?rarity='c" },
+        { "query": "take[3]>from[{{setCode}}-maestros-colour-booster]?rarity='u" },
+        { "query": "from[{{setCode}}-family-maestros]?rarity='r" },
+        {
+          "querySet": [
+            {
+              "_comment": "In this release R/M prerelease foil was included in this seeded pack instead of separate.",
+              "percent": "7/8",
+              "query": "from[{{setCode}}-main-set]?rarity='r",
+              "setValues": {
+                "foil": true
+              }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[{{setCode}}-main-set]?rarity='m",
+              "setValues": {
+                "foil": true
+              }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
+            },
+            {
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/7.4 chance of replacing rare with mythic (7.4 instead of 8 as of znr Sep-2020",
+              "percent": "10/74",
+              "overrideSlot": "14",
+              "query": "from[{{setCode}}-family-maestros]?rarity='m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_comment": "Prerelease Family Booster: Obscura",
+      "packName": "{{setCode}}-prerelease-obscura-booster",
+      "packDesc": "Streets of New Capenna: Obscura Family Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/streets-of-new-capenna-product-overview-2022-04-07" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[2]>from[{{setCode}}-family-obscura]?type='Land'" },
+        { "query": "take[8]>from[{{setCode}}-obscura-colour-booster]?rarity='c" },
+        { "query": "take[3]>from[{{setCode}}-obscura-colour-booster]?rarity='u" },
+        { "query": "from[{{setCode}}-family-obscura]?rarity='r" },
+        {
+          "querySet": [
+            {
+              "_comment": "In this release R/M prerelease foil was included in this seeded pack instead of separate.",
+              "percent": "7/8",
+              "query": "from[{{setCode}}-main-set]?rarity='r",
+              "setValues": {
+                "foil": true
+              }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[{{setCode}}-main-set]?rarity='m",
+              "setValues": {
+                "foil": true
+              }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
+            },
+            {
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/7.4 chance of replacing rare with mythic (7.4 instead of 8 as of znr Sep-2020",
+              "percent": "10/74",
+              "overrideSlot": "14",
+              "query": "from[{{setCode}}-family-obscura]?rarity='m"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "_comment": "Prerelease Family Booster: Riveteers",
+      "packName": "{{setCode}}-prerelease-riveteers-booster",
+      "packDesc": "Streets of New Capenna: Riveteers Family Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/streets-of-new-capenna-product-overview-2022-04-07" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[2]>from[{{setCode}}-family-riveteers]?type='Land'" },
+        { "query": "take[8]>from[{{setCode}}-riveteers-colour-booster]?rarity='c" },
+        { "query": "take[3]>from[{{setCode}}-riveteers-colour-booster]?rarity='u" },
+        { "query": "from[{{setCode}}-family-riveteers]?rarity='r" },
+        {
+          "querySet": [
+            {
+              "_comment": "In this release R/M prerelease foil was included in this seeded pack instead of separate.",
+              "percent": "7/8",
+              "query": "from[{{setCode}}-main-set]?rarity='r",
+              "setValues": {
+                "foil": true
+              }
+            },
+            {
+              "percent": "1/8",
+              "query": "from[{{setCode}}-main-set]?rarity='m",
+              "setValues": {
+                "foil": true
+              }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
+            },
+            {
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1/7.4 chance of replacing rare with mythic (7.4 instead of 8 as of znr Sep-2020",
+              "percent": "10/74",
+              "overrideSlot": "14",
+              "query": "from[{{setCode}}-family-riveteers]?rarity='m"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-prerelease-promo-packins-brokers",
+      "packDesc": "Streets of New Capenna: Brokers Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[1]>from[{{setCode}}-promo]?title=(Green Spindown Life Counter|White Spindown Life Counter|Blue Spindown Life Counter" },
+        { "query": "from[{{setCode}}-promo]?title='Prerelease Deck Box" },
+        { "query": "from[{{setCode}}-promo]?title='Deckbuilding Advice Insert" },
+        { "query": "from[{{setCode}}-promo]?title='Arena Code Card" }
+      ]
+    },
+    {
+      "packName": "{{setCode}}-prerelease-promo-packins-cabaretti",
+      "packDesc": "Streets of New Capenna: Cabaretti Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[1]>from[{{setCode}}-promo]?title=(Red Spindown Life Counter|Green Spindown Life Counter|White Spindown Life Counter" },
+        { "query": "from[{{setCode}}-promo]?title='Prerelease Deck Box" },
+        { "query": "from[{{setCode}}-promo]?title='Deckbuilding Advice Insert" },
+        { "query": "from[{{setCode}}-promo]?title='Arena Code Card" }
+      ]
+    },
+    {
+      "packName": "{{setCode}}-prerelease-promo-packins-maestros",
+      "packDesc": "Streets of New Capenna: Maestros Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[1]>from[{{setCode}}-promo]?title=(Blue Spindown Life Counter|Black Spindown Life Counter|Red Spindown Life Counter" },
+        { "query": "from[{{setCode}}-promo]?title='Prerelease Deck Box" },
+        { "query": "from[{{setCode}}-promo]?title='Deckbuilding Advice Insert" },
+        { "query": "from[{{setCode}}-promo]?title='Arena Code Card" }
+      ]
+    },
+    {
+      "packName": "{{setCode}}-prerelease-promo-packins-obscura",
+      "packDesc": "Streets of New Capenna: Obscura Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[1]>from[{{setCode}}-promo]?title=(White Spindown Life Counter|Blue Spindown Life Counter|Black Spindown Life Counter" },
+        { "query": "from[{{setCode}}-promo]?title='Prerelease Deck Box" },
+        { "query": "from[{{setCode}}-promo]?title='Deckbuilding Advice Insert" },
+        { "query": "from[{{setCode}}-promo]?title='Arena Code Card" }
+      ]
+    },
+    {
+      "packName": "{{setCode}}-prerelease-promo-packins-riveteers",
+      "packDesc": "Streets of New Capenna: Riveteers Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[1]>from[{{setCode}}-promo]?title=(Black Spindown Life Counter|Red Spindown Life Counter|Green Spindown Life Counter" },
+        { "query": "from[{{setCode}}-promo]?title='Prerelease Deck Box" },
+        { "query": "from[{{setCode}}-promo]?title='Deckbuilding Advice Insert" },
+        { "query": "from[{{setCode}}-promo]?title='Arena Code Card" }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-prerelease-promos",
+      "packDesc": "{{setName}}: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[{{setCode}}-promo]?includedReason='Prerelease Promo" }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-variants",
+      "packDesc": "{{setName}}: All Variants",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-variants]"
+        }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-promos",
+      "packDesc": "{{setName}}: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-promo]"
+        }
+      ]
+    },
+
+    {
+      "packName": "a{{setCode}}-art-cards",
+      "packDesc": "{{setName}}: Art Cards",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[a{{setCode}}-art-cards]"
+        }
+      ]
+    },
+
+    {
+      "packName": "the-list",
+      "packDesc": "{{setName}}: The List",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[the-list]"
+        }
+      ]
+    }
+
+  ]
+}

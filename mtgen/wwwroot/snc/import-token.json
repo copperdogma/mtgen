@@ -1,0 +1,351 @@
+{
+  "setCode": "snc",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-kamigawa-neon-dynasty",
+  "_comments": [
+    "add a new card = add:true, newValues {}",
+    "delete a card  = delete:true, where",
+    "update card(s) = where, newValues {}",
+    "select cards starting with a value = where: type~='Snow'",
+    "get card directly from Gatherer = where: gatherer='Serra Angel'"
+  ],
+
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "snc",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-streets-new-capenna-2022-04-20",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "1",
+          "cardPattern": "000|c|Token|Copy\n000|w|Token Creature|Angel\n000|w|Token Creature|Spirit\n000|u|Token Creature|Fish\n000|u|Token Creature|Wizard\n000|b|Token Creature|Ogre Warrior\n000|b|Token Creature|Rogue\n000|r|Token Creature|Devil\n000|g|Token Creature|Cat\n000|g|Token Creature|Dog\n000|g|Token Creature|Rhino Warrior\n000|m|Token Creature|Citizen\n000|a|Token Artifact|Treasure\n000|a|Token Artifact|Treasure\n000|a|Token Artifact|Treasure\n000|a|Token Artifact|Treasure\n000|a|Token Artifact|Treasure\n018|c|Token|Punch Out Token\n019|c|Token|Punch Out Token\n020|c|Token|Punch Out Token\n021|c|Token|Punch Out Token\ndfc|018|019\ndfc|020|021"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "snc",
+        "src": "https://media.wizards.com/2022/snc/en_BBFTyBh4yW.png",
+        "num": 1,
+        "colour": "c",
+        "type": "Token",
+        "title": "Copy",
+        "subtype": "Copy",
+        "numInt": 1
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "snc",
+        "src": "https://media.wizards.com/2022/snc/en_kCYPFaz3D0.png",
+        "num": 2,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Angel",
+        "subtype": "Angel",
+        "numInt": 2
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "snc",
+        "src": "https://media.wizards.com/2022/snc/en_MGS0lEUbfF.png",
+        "num": 3,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Spirit",
+        "subtype": "Spirit",
+        "numInt": 3
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "snc",
+        "src": "https://media.wizards.com/2022/snc/en_T2LIIZzeQY.png",
+        "num": 4,
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Fish",
+        "subtype": "Fish",
+        "numInt": 4
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "snc",
+        "src": "https://media.wizards.com/2022/snc/en_DQYMfBfse7.png",
+        "num": 5,
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Wizard",
+        "subtype": "Wizard",
+        "numInt": 5
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "snc",
+        "src": "https://media.wizards.com/2022/snc/en_KvyeDaaJ91.png",
+        "num": 6,
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Ogre Warrior",
+        "subtype": "Ogre Warrior",
+        "numInt": 6
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "snc",
+        "src": "https://media.wizards.com/2022/snc/en_ijjKrtkRr2.png",
+        "num": 7,
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Rogue",
+        "subtype": "Rogue",
+        "numInt": 7
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "snc",
+        "src": "https://media.wizards.com/2022/snc/en_49SZEaNNQW.png",
+        "num": 8,
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Devil",
+        "subtype": "Devil",
+        "numInt": 8
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "snc",
+        "src": "https://media.wizards.com/2022/snc/en_dXZE0GeRcK.png",
+        "num": 9,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Cat",
+        "subtype": "Cat",
+        "numInt": 9
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "snc",
+        "src": "https://media.wizards.com/2022/snc/en_xp0Xv4ZGCU.png",
+        "num": 10,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Dog",
+        "subtype": "Dog",
+        "numInt": 10
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "snc",
+        "src": "https://media.wizards.com/2022/snc/en_PJjrXKb9gs.png",
+        "num": 11,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Rhino Warrior",
+        "subtype": "Rhino Warrior",
+        "numInt": 11
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "snc",
+        "src": "https://media.wizards.com/2022/snc/en_SfS0UTN94g.png",
+        "num": 12,
+        "colour": "m",
+        "type": "Token Creature",
+        "title": "Citizen",
+        "subtype": "Citizen",
+        "numInt": 12
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "snc",
+        "src": "https://media.wizards.com/2022/snc/en_hLVcbOyxF3.png",
+        "num": 13,
+        "colour": "a",
+        "type": "Token Artifact",
+        "title": "Treasure",
+        "subtype": "Treasure",
+        "numInt": 13
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "snc",
+        "src": "https://media.wizards.com/2022/snc/en_XHQoWUdbKk.png",
+        "num": 14,
+        "colour": "a",
+        "type": "Token Artifact",
+        "title": "Treasure",
+        "subtype": "Treasure",
+        "numInt": 14
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "snc",
+        "src": "https://media.wizards.com/2022/snc/en_u1BnldwqLg.png",
+        "num": 15,
+        "colour": "a",
+        "type": "Token Artifact",
+        "title": "Treasure",
+        "subtype": "Treasure",
+        "numInt": 15
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "snc",
+        "src": "https://media.wizards.com/2022/snc/en_5j7mwsCJD8.png",
+        "num": 16,
+        "colour": "a",
+        "type": "Token Artifact",
+        "title": "Treasure",
+        "subtype": "Treasure",
+        "numInt": 16
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "snc",
+        "src": "https://media.wizards.com/2022/snc/en_AXaJsB76gI.png",
+        "num": 17,
+        "colour": "a",
+        "type": "Token Artifact",
+        "title": "Treasure",
+        "subtype": "Treasure",
+        "numInt": 17
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "snc",
+        "src": "https://media.wizards.com/2022/snc/en_z5Djfi2xjZ.png",
+        "num": "1 X",
+        "colour": "c",
+        "type": "Token",
+        "title": "Punch Out Token",
+        "subtype": "Punch Out Token",
+        "numInt": 1,
+        "cardFaces": [
+          {
+            "set": "snc",
+            "src": "https://media.wizards.com/2022/snc/en_z5Djfi2xjZ.png",
+            "height": 370,
+            "width": 265,
+            "imageSource": "wotc-article",
+            "num": "1 X",
+            "colour": "c",
+            "type": "Token",
+            "title": "Punch Out Token",
+            "subtype": "Punch Out Token",
+            "matchTitle": "punch out token",
+            "numInt": 1,
+            "mtgenId": "snc|1 X"
+          },
+          {
+            "set": "snc",
+            "src": "https://media.wizards.com/2022/snc/en_3Br4TWPRqn.png",
+            "height": 370,
+            "width": 265,
+            "imageSource": "wotc-article",
+            "num": "2 X",
+            "colour": "c",
+            "type": "Token",
+            "title": "Punch Out Token",
+            "subtype": "Punch Out Token",
+            "matchTitle": "punch out token",
+            "numInt": 2,
+            "mtgenId": "snc|2 X"
+          }
+        ],
+        "doubleFaceCard": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "snc",
+        "src": "https://media.wizards.com/2022/snc/en_GrqNAsDDve.png",
+        "num": "3 X",
+        "colour": "c",
+        "type": "Token",
+        "title": "Punch Out Token",
+        "subtype": "Punch Out Token",
+        "numInt": 3,
+        "cardFaces": [
+          {
+            "set": "snc",
+            "src": "https://media.wizards.com/2022/snc/en_GrqNAsDDve.png",
+            "height": 370,
+            "width": 265,
+            "imageSource": "wotc-article",
+            "num": "3 X",
+            "colour": "c",
+            "type": "Token",
+            "title": "Punch Out Token",
+            "subtype": "Punch Out Token",
+            "matchTitle": "punch out token",
+            "numInt": 3,
+            "mtgenId": "snc|3 X"
+          },
+          {
+            "set": "snc",
+            "src": "https://media.wizards.com/2022/snc/en_LOJSjpuCAW.png",
+            "height": 370,
+            "width": 265,
+            "imageSource": "wotc-article",
+            "num": "4 X",
+            "colour": "c",
+            "type": "Token",
+            "title": "Punch Out Token",
+            "subtype": "Punch Out Token",
+            "matchTitle": "punch out token",
+            "numInt": 4,
+            "mtgenId": "snc|4 X"
+          }
+        ],
+        "doubleFaceCard": true
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/019 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

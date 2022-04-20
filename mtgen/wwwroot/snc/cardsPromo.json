@@ -1,0 +1,2323 @@
+﻿[
+  {
+    "object": "card",
+    "id": "721bc380-00ac-40bd-a605-0853e97efad8",
+    "oracle_id": "864a9276-2fec-49b3-bc53-008608de5ab6",
+    "multiverse_ids": [],
+    "name": "Mysterious Limousine",
+    "lang": "en",
+    "released_at": "2022-04-29",
+    "uri": "https://api.scryfall.com/cards/721bc380-00ac-40bd-a605-0853e97efad8",
+    "scryfall_uri": "https://scryfall.com/card/snc/462/mysterious-limousine?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/7/2/721bc380-00ac-40bd-a605-0853e97efad8.jpg?1649356354",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/7/2/721bc380-00ac-40bd-a605-0853e97efad8.jpg?1649356354",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/7/2/721bc380-00ac-40bd-a605-0853e97efad8.jpg?1649356354",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/7/2/721bc380-00ac-40bd-a605-0853e97efad8.png?1649356354",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/7/2/721bc380-00ac-40bd-a605-0853e97efad8.jpg?1649356354",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/7/2/721bc380-00ac-40bd-a605-0853e97efad8.jpg?1649356354"
+    },
+    "mana_cost": "{3}{W}{W}",
+    "cmc": 5,
+    "type_line": "Artifact — Vehicle",
+    "oracle_text": "Whenever Mysterious Limousine enters the battlefield or attacks, exile up to one other target creature until Mysterious Limousine leaves the battlefield. If a creature is put into exile this way, return each other card exiled with Mysterious Limousine to the battlefield under its owner's control.\nCrew 2",
+    "power": "4",
+    "toughness": "4",
+    "colors": [
+      "W"
+    ],
+    "color_identity": [
+      "W"
+    ],
+    "keywords": [
+      "Crew"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": false,
+    "finishes": [
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "df837242-8c15-42e4-b049-c933a02dc501",
+    "set": "snc",
+    "set_name": "Streets of New Capenna",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/df837242-8c15-42e4-b049-c933a02dc501",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/snc?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/721bc380-00ac-40bd-a605-0853e97efad8/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A864a9276-2fec-49b3-bc53-008608de5ab6&unique=prints",
+    "collector_number": "462",
+    "digital": false,
+    "rarity": "r",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Hector Ortiz",
+    "artist_ids": [
+      "b12df60b-57df-47d9-8f3e-cfc5fa3b8519"
+    ],
+    "illustration_id": "cd1b58dc-f0e1-4905-acac-1c6a10bda15b",
+    "border_color": "black",
+    "frame": "2015",
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "bundle"
+    ],
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Mysterious+Limousine&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Mysterious+Limousine&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Mysterious+Limousine",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Mysterious+Limousine"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Mysterious+Limousine&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Mysterious+Limousine&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Mysterious+Limousine&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Mysterious Limousine",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/7/2/721bc380-00ac-40bd-a605-0853e97efad8.jpg?1649356354",
+    "cost": "{3}{W}{W}",
+    "ccost": 5,
+    "type": "Artifact",
+    "subtype": "Vehicle",
+    "colour": "w",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
+    ],
+    "num": "462 P Bundle",
+    "numInt": 462,
+    "mtgenId": "snc|462 P Bundle",
+    "includedReason": "Bundle Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "9746b45a-abd8-4a60-9139-48c1522bfd4b",
+    "oracle_id": "cce081eb-8820-415a-a7b2-3c5b9d4a2601",
+    "multiverse_ids": [],
+    "name": "Gala Greeters",
+    "lang": "en",
+    "released_at": "2022-04-29",
+    "uri": "https://api.scryfall.com/cards/9746b45a-abd8-4a60-9139-48c1522bfd4b",
+    "scryfall_uri": "https://scryfall.com/card/snc/450/gala-greeters?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/9/7/9746b45a-abd8-4a60-9139-48c1522bfd4b.jpg?1649363063",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/7/9746b45a-abd8-4a60-9139-48c1522bfd4b.jpg?1649363063",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/9/7/9746b45a-abd8-4a60-9139-48c1522bfd4b.jpg?1649363063",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/9/7/9746b45a-abd8-4a60-9139-48c1522bfd4b.png?1649363063",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/9/7/9746b45a-abd8-4a60-9139-48c1522bfd4b.jpg?1649363063",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/9/7/9746b45a-abd8-4a60-9139-48c1522bfd4b.jpg?1649363063"
+    },
+    "mana_cost": "{1}{G}",
+    "cmc": 2,
+    "type_line": "Creature — Elf Druid",
+    "oracle_text": "Alliance — Whenever another creature enters the battlefield under your control, choose one that hasn't been chosen this turn —\n• Put a +1/+1 counter on Gala Greeters.\n• Create a tapped Treasure token.\n• You gain 2 life.",
+    "power": "1",
+    "toughness": "1",
+    "colors": [
+      "G"
+    ],
+    "color_identity": [
+      "G"
+    ],
+    "keywords": [
+      "Alliance"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": false,
+    "finishes": [
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "df837242-8c15-42e4-b049-c933a02dc501",
+    "set": "snc",
+    "set_name": "Streets of New Capenna",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/df837242-8c15-42e4-b049-c933a02dc501",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/snc?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/9746b45a-abd8-4a60-9139-48c1522bfd4b/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Acce081eb-8820-415a-a7b2-3c5b9d4a2601&unique=prints",
+    "collector_number": "450",
+    "digital": false,
+    "rarity": "r",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Fay Dalton",
+    "artist_ids": [
+      "db096429-0266-4342-8a53-4ad566060216"
+    ],
+    "illustration_id": "c5fe8912-63c2-40d2-8643-f7bd74e876d6",
+    "border_color": "borderless",
+    "frame": "2015",
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "boxtopper",
+      "boosterfun"
+    ],
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Gala+Greeters",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Gala+Greeters"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Gala+Greeters&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Gala+Greeters&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Gala Greeters",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/7/9746b45a-abd8-4a60-9139-48c1522bfd4b.jpg?1649363063",
+    "cost": "{1}{G}",
+    "ccost": 2,
+    "type": "Creature",
+    "subtype": "Elf Druid",
+    "colour": "g",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
+    ],
+    "num": "450 R",
+    "numInt": 450,
+    "mtgenId": "snc|450 R",
+    "includedReason": "Gala Greeter Box Topper",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "476c0f4b-7b16-47a6-946e-b658d7c26bfa",
+    "oracle_id": "cce081eb-8820-415a-a7b2-3c5b9d4a2601",
+    "multiverse_ids": [],
+    "name": "Gala Greeters",
+    "lang": "zhs",
+    "released_at": "2022-04-29",
+    "uri": "https://api.scryfall.com/cards/476c0f4b-7b16-47a6-946e-b658d7c26bfa",
+    "scryfall_uri": "https://scryfall.com/card/snc/451/zhs/gala-greeters?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/4/7/476c0f4b-7b16-47a6-946e-b658d7c26bfa.jpg?1649363452",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/4/7/476c0f4b-7b16-47a6-946e-b658d7c26bfa.jpg?1649363452",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/4/7/476c0f4b-7b16-47a6-946e-b658d7c26bfa.jpg?1649363452",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/4/7/476c0f4b-7b16-47a6-946e-b658d7c26bfa.png?1649363452",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/4/7/476c0f4b-7b16-47a6-946e-b658d7c26bfa.jpg?1649363452",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/4/7/476c0f4b-7b16-47a6-946e-b658d7c26bfa.jpg?1649363452"
+    },
+    "mana_cost": "{1}{G}",
+    "cmc": 2,
+    "type_line": "Creature — Elf Druid",
+    "oracle_text": "Alliance — Whenever another creature enters the battlefield under your control, choose one that hasn't been chosen this turn —\n• Put a +1/+1 counter on Gala Greeters.\n• Create a tapped Treasure token.\n• You gain 2 life.",
+    "power": "1",
+    "toughness": "1",
+    "colors": [
+      "G"
+    ],
+    "color_identity": [
+      "G"
+    ],
+    "keywords": [
+      "Alliance"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": false,
+    "finishes": [
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "df837242-8c15-42e4-b049-c933a02dc501",
+    "set": "snc",
+    "set_name": "Streets of New Capenna",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/df837242-8c15-42e4-b049-c933a02dc501",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/snc?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/476c0f4b-7b16-47a6-946e-b658d7c26bfa/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Acce081eb-8820-415a-a7b2-3c5b9d4a2601&unique=prints",
+    "collector_number": "451",
+    "digital": false,
+    "rarity": "r",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Song Qijin",
+    "artist_ids": [
+      "67750cc4-846d-40a2-8d1a-e8085544be07"
+    ],
+    "illustration_id": "44c21b9d-a292-4b9c-a7e5-04a17ce503fc",
+    "border_color": "borderless",
+    "frame": "2015",
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "boxtopper",
+      "boosterfun"
+    ],
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Gala+Greeters",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Gala+Greeters"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Gala+Greeters&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Gala+Greeters&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Gala Greeters",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/4/7/476c0f4b-7b16-47a6-946e-b658d7c26bfa.jpg?1649363452",
+    "cost": "{1}{G}",
+    "ccost": 2,
+    "type": "Creature",
+    "subtype": "Elf Druid",
+    "colour": "g",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
+    ],
+    "num": "451 R",
+    "numInt": 451,
+    "mtgenId": "snc|451 R",
+    "includedReason": "Gala Greeter Box Topper",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "2daa0323-ec90-4f10-aaeb-f26033c1a7ea",
+    "oracle_id": "cce081eb-8820-415a-a7b2-3c5b9d4a2601",
+    "multiverse_ids": [],
+    "name": "Gala Greeters",
+    "lang": "zht",
+    "released_at": "2022-04-29",
+    "uri": "https://api.scryfall.com/cards/2daa0323-ec90-4f10-aaeb-f26033c1a7ea",
+    "scryfall_uri": "https://scryfall.com/card/snc/452/zht/gala-greeters?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/2/d/2daa0323-ec90-4f10-aaeb-f26033c1a7ea.jpg?1649363136",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/2/d/2daa0323-ec90-4f10-aaeb-f26033c1a7ea.jpg?1649363136",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/2/d/2daa0323-ec90-4f10-aaeb-f26033c1a7ea.jpg?1649363136",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/2/d/2daa0323-ec90-4f10-aaeb-f26033c1a7ea.png?1649363136",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/2/d/2daa0323-ec90-4f10-aaeb-f26033c1a7ea.jpg?1649363136",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/2/d/2daa0323-ec90-4f10-aaeb-f26033c1a7ea.jpg?1649363136"
+    },
+    "mana_cost": "{1}{G}",
+    "cmc": 2,
+    "type_line": "Creature — Elf Druid",
+    "oracle_text": "Alliance — Whenever another creature enters the battlefield under your control, choose one that hasn't been chosen this turn —\n• Put a +1/+1 counter on Gala Greeters.\n• Create a tapped Treasure token.\n• You gain 2 life.",
+    "power": "1",
+    "toughness": "1",
+    "colors": [
+      "G"
+    ],
+    "color_identity": [
+      "G"
+    ],
+    "keywords": [
+      "Alliance"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": false,
+    "finishes": [
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "df837242-8c15-42e4-b049-c933a02dc501",
+    "set": "snc",
+    "set_name": "Streets of New Capenna",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/df837242-8c15-42e4-b049-c933a02dc501",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/snc?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/2daa0323-ec90-4f10-aaeb-f26033c1a7ea/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Acce081eb-8820-415a-a7b2-3c5b9d4a2601&unique=prints",
+    "collector_number": "452",
+    "digital": false,
+    "rarity": "r",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "SENSEN",
+    "artist_ids": [
+      "16c291d9-f6f0-4e15-8b04-e3a4f19400f3"
+    ],
+    "illustration_id": "cfdb2ea1-0002-4480-985f-032b6a3789e4",
+    "border_color": "borderless",
+    "frame": "2015",
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "boxtopper",
+      "boosterfun"
+    ],
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Gala+Greeters",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Gala+Greeters"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Gala+Greeters&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Gala+Greeters&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Gala Greeters",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/2/d/2daa0323-ec90-4f10-aaeb-f26033c1a7ea.jpg?1649363136",
+    "cost": "{1}{G}",
+    "ccost": 2,
+    "type": "Creature",
+    "subtype": "Elf Druid",
+    "colour": "g",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
+    ],
+    "num": "452 R",
+    "numInt": 452,
+    "mtgenId": "snc|452 R",
+    "includedReason": "Gala Greeter Box Topper",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "c5f7c23b-3091-4b13-9209-0d8d23301027",
+    "oracle_id": "cce081eb-8820-415a-a7b2-3c5b9d4a2601",
+    "multiverse_ids": [],
+    "name": "Gala Greeters",
+    "printed_name": "Gala-Begrüßer",
+    "lang": "de",
+    "released_at": "2022-04-29",
+    "uri": "https://api.scryfall.com/cards/c5f7c23b-3091-4b13-9209-0d8d23301027",
+    "scryfall_uri": "https://scryfall.com/card/snc/453/de/gala-begr%C3%BC%C3%9Fer?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/c/5/c5f7c23b-3091-4b13-9209-0d8d23301027.jpg?1649362773",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/5/c5f7c23b-3091-4b13-9209-0d8d23301027.jpg?1649362773",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/c/5/c5f7c23b-3091-4b13-9209-0d8d23301027.jpg?1649362773",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/c/5/c5f7c23b-3091-4b13-9209-0d8d23301027.png?1649362773",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/c/5/c5f7c23b-3091-4b13-9209-0d8d23301027.jpg?1649362773",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/c/5/c5f7c23b-3091-4b13-9209-0d8d23301027.jpg?1649362773"
+    },
+    "mana_cost": "{1}{G}",
+    "cmc": 2,
+    "type_line": "Creature — Elf Druid",
+    "oracle_text": "Alliance — Whenever another creature enters the battlefield under your control, choose one that hasn't been chosen this turn —\n• Put a +1/+1 counter on Gala Greeters.\n• Create a tapped Treasure token.\n• You gain 2 life.",
+    "power": "1",
+    "toughness": "1",
+    "colors": [
+      "G"
+    ],
+    "color_identity": [
+      "G"
+    ],
+    "keywords": [
+      "Alliance"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": false,
+    "finishes": [
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "df837242-8c15-42e4-b049-c933a02dc501",
+    "set": "snc",
+    "set_name": "Streets of New Capenna",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/df837242-8c15-42e4-b049-c933a02dc501",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/snc?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/c5f7c23b-3091-4b13-9209-0d8d23301027/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Acce081eb-8820-415a-a7b2-3c5b9d4a2601&unique=prints",
+    "collector_number": "453",
+    "digital": false,
+    "rarity": "r",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Daniel Lieske",
+    "artist_ids": [
+      "083b8c8d-849b-497b-921a-60c7ee46a46e"
+    ],
+    "illustration_id": "93788c91-726f-4d47-b0d3-0c35a48c0192",
+    "border_color": "borderless",
+    "frame": "2015",
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "boxtopper",
+      "boosterfun"
+    ],
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Gala+Greeters",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Gala+Greeters"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Gala+Greeters&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Gala+Greeters&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Gala Greeters",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/5/c5f7c23b-3091-4b13-9209-0d8d23301027.jpg?1649362773",
+    "cost": "{1}{G}",
+    "ccost": 2,
+    "type": "Creature",
+    "subtype": "Elf Druid",
+    "colour": "g",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
+    ],
+    "num": "453 R",
+    "numInt": 453,
+    "mtgenId": "snc|453 R",
+    "includedReason": "Gala Greeter Box Topper",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "192e737a-57c9-4142-9613-cb19bbbbf2af",
+    "oracle_id": "cce081eb-8820-415a-a7b2-3c5b9d4a2601",
+    "multiverse_ids": [],
+    "name": "Gala Greeters",
+    "printed_name": "Presonnel d'accueil du gala",
+    "lang": "fr",
+    "released_at": "2022-04-29",
+    "uri": "https://api.scryfall.com/cards/192e737a-57c9-4142-9613-cb19bbbbf2af",
+    "scryfall_uri": "https://scryfall.com/card/snc/454/fr/presonnel-daccueil-du-gala?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/1/9/192e737a-57c9-4142-9613-cb19bbbbf2af.jpg?1649363033",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/1/9/192e737a-57c9-4142-9613-cb19bbbbf2af.jpg?1649363033",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/1/9/192e737a-57c9-4142-9613-cb19bbbbf2af.jpg?1649363033",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/1/9/192e737a-57c9-4142-9613-cb19bbbbf2af.png?1649363033",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/1/9/192e737a-57c9-4142-9613-cb19bbbbf2af.jpg?1649363033",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/1/9/192e737a-57c9-4142-9613-cb19bbbbf2af.jpg?1649363033"
+    },
+    "mana_cost": "{1}{G}",
+    "cmc": 2,
+    "type_line": "Creature — Elf Druid",
+    "oracle_text": "Alliance — Whenever another creature enters the battlefield under your control, choose one that hasn't been chosen this turn —\n• Put a +1/+1 counter on Gala Greeters.\n• Create a tapped Treasure token.\n• You gain 2 life.",
+    "power": "1",
+    "toughness": "1",
+    "colors": [
+      "G"
+    ],
+    "color_identity": [
+      "G"
+    ],
+    "keywords": [
+      "Alliance"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": false,
+    "finishes": [
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "df837242-8c15-42e4-b049-c933a02dc501",
+    "set": "snc",
+    "set_name": "Streets of New Capenna",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/df837242-8c15-42e4-b049-c933a02dc501",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/snc?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/192e737a-57c9-4142-9613-cb19bbbbf2af/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Acce081eb-8820-415a-a7b2-3c5b9d4a2601&unique=prints",
+    "collector_number": "454",
+    "digital": false,
+    "rarity": "r",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Samy Halim",
+    "artist_ids": [
+      "b0bb2bc9-3703-4fec-94f6-fa3719fde72f"
+    ],
+    "illustration_id": "7918ef19-c8bd-477a-9902-9c65b6f1dbd6",
+    "border_color": "borderless",
+    "frame": "2015",
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "boxtopper",
+      "boosterfun"
+    ],
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Gala+Greeters",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Gala+Greeters"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Gala+Greeters&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Gala+Greeters&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Gala Greeters",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/1/9/192e737a-57c9-4142-9613-cb19bbbbf2af.jpg?1649363033",
+    "cost": "{1}{G}",
+    "ccost": 2,
+    "type": "Creature",
+    "subtype": "Elf Druid",
+    "colour": "g",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
+    ],
+    "num": "454 R",
+    "numInt": 454,
+    "mtgenId": "snc|454 R",
+    "includedReason": "Gala Greeter Box Topper",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "460db3d4-5c50-4c2c-a066-a4e264ecbb1e",
+    "oracle_id": "cce081eb-8820-415a-a7b2-3c5b9d4a2601",
+    "multiverse_ids": [],
+    "name": "Gala Greeters",
+    "printed_name": "Comitato di Benvenuto al Galà",
+    "lang": "it",
+    "released_at": "2022-04-29",
+    "uri": "https://api.scryfall.com/cards/460db3d4-5c50-4c2c-a066-a4e264ecbb1e",
+    "scryfall_uri": "https://scryfall.com/card/snc/455/it/comitato-di-benvenuto-al-gal%C3%A0?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/4/6/460db3d4-5c50-4c2c-a066-a4e264ecbb1e.jpg?1649363004",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/4/6/460db3d4-5c50-4c2c-a066-a4e264ecbb1e.jpg?1649363004",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/4/6/460db3d4-5c50-4c2c-a066-a4e264ecbb1e.jpg?1649363004",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/4/6/460db3d4-5c50-4c2c-a066-a4e264ecbb1e.png?1649363004",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/4/6/460db3d4-5c50-4c2c-a066-a4e264ecbb1e.jpg?1649363004",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/4/6/460db3d4-5c50-4c2c-a066-a4e264ecbb1e.jpg?1649363004"
+    },
+    "mana_cost": "{1}{G}",
+    "cmc": 2,
+    "type_line": "Creature — Elf Druid",
+    "oracle_text": "Alliance — Whenever another creature enters the battlefield under your control, choose one that hasn't been chosen this turn —\n• Put a +1/+1 counter on Gala Greeters.\n• Create a tapped Treasure token.\n• You gain 2 life.",
+    "power": "1",
+    "toughness": "1",
+    "colors": [
+      "G"
+    ],
+    "color_identity": [
+      "G"
+    ],
+    "keywords": [
+      "Alliance"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": false,
+    "finishes": [
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "df837242-8c15-42e4-b049-c933a02dc501",
+    "set": "snc",
+    "set_name": "Streets of New Capenna",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/df837242-8c15-42e4-b049-c933a02dc501",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/snc?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/460db3d4-5c50-4c2c-a066-a4e264ecbb1e/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Acce081eb-8820-415a-a7b2-3c5b9d4a2601&unique=prints",
+    "collector_number": "455",
+    "digital": false,
+    "rarity": "r",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Katerina Ladon",
+    "artist_ids": [
+      "69f8339f-56af-4208-8fd7-b0ec819e80e6"
+    ],
+    "illustration_id": "ed1671f9-6b29-4c27-b106-c076bd6ba471",
+    "border_color": "borderless",
+    "frame": "2015",
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "boxtopper",
+      "boosterfun"
+    ],
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Gala+Greeters",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Gala+Greeters"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Gala+Greeters&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Gala+Greeters&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Gala Greeters",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/4/6/460db3d4-5c50-4c2c-a066-a4e264ecbb1e.jpg?1649363004",
+    "cost": "{1}{G}",
+    "ccost": 2,
+    "type": "Creature",
+    "subtype": "Elf Druid",
+    "colour": "g",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
+    ],
+    "num": "455 R",
+    "numInt": 455,
+    "mtgenId": "snc|455 R",
+    "includedReason": "Gala Greeter Box Topper",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "da271d69-f086-4267-b044-5dbc01e5c6de",
+    "oracle_id": "cce081eb-8820-415a-a7b2-3c5b9d4a2601",
+    "multiverse_ids": [],
+    "name": "Gala Greeters",
+    "lang": "ja",
+    "released_at": "2022-04-29",
+    "uri": "https://api.scryfall.com/cards/da271d69-f086-4267-b044-5dbc01e5c6de",
+    "scryfall_uri": "https://scryfall.com/card/snc/456/ja/gala-greeters?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/d/a/da271d69-f086-4267-b044-5dbc01e5c6de.jpg?1649362960",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/d/a/da271d69-f086-4267-b044-5dbc01e5c6de.jpg?1649362960",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/d/a/da271d69-f086-4267-b044-5dbc01e5c6de.jpg?1649362960",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/d/a/da271d69-f086-4267-b044-5dbc01e5c6de.png?1649362960",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/d/a/da271d69-f086-4267-b044-5dbc01e5c6de.jpg?1649362960",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/d/a/da271d69-f086-4267-b044-5dbc01e5c6de.jpg?1649362960"
+    },
+    "mana_cost": "{1}{G}",
+    "cmc": 2,
+    "type_line": "Creature — Elf Druid",
+    "oracle_text": "Alliance — Whenever another creature enters the battlefield under your control, choose one that hasn't been chosen this turn —\n• Put a +1/+1 counter on Gala Greeters.\n• Create a tapped Treasure token.\n• You gain 2 life.",
+    "power": "1",
+    "toughness": "1",
+    "colors": [
+      "G"
+    ],
+    "color_identity": [
+      "G"
+    ],
+    "keywords": [
+      "Alliance"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": false,
+    "finishes": [
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "df837242-8c15-42e4-b049-c933a02dc501",
+    "set": "snc",
+    "set_name": "Streets of New Capenna",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/df837242-8c15-42e4-b049-c933a02dc501",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/snc?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/da271d69-f086-4267-b044-5dbc01e5c6de/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Acce081eb-8820-415a-a7b2-3c5b9d4a2601&unique=prints",
+    "collector_number": "456",
+    "digital": false,
+    "rarity": "r",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Kotakan",
+    "artist_ids": [
+      "81519769-b8a8-4a28-a5c6-a64b1a345495"
+    ],
+    "illustration_id": "58ac678c-e9fe-4414-b9e5-5eff7cf70872",
+    "border_color": "borderless",
+    "frame": "2015",
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "boxtopper",
+      "boosterfun"
+    ],
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Gala+Greeters",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Gala+Greeters"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Gala+Greeters&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Gala+Greeters&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Gala Greeters",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/d/a/da271d69-f086-4267-b044-5dbc01e5c6de.jpg?1649362960",
+    "cost": "{1}{G}",
+    "ccost": 2,
+    "type": "Creature",
+    "subtype": "Elf Druid",
+    "colour": "g",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
+    ],
+    "num": "456 R",
+    "numInt": 456,
+    "mtgenId": "snc|456 R",
+    "includedReason": "Gala Greeter Box Topper",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "5475a6ab-7cab-4381-8814-257789fd5791",
+    "oracle_id": "cce081eb-8820-415a-a7b2-3c5b9d4a2601",
+    "multiverse_ids": [],
+    "name": "Gala Greeters",
+    "lang": "ko",
+    "released_at": "2022-04-29",
+    "uri": "https://api.scryfall.com/cards/5475a6ab-7cab-4381-8814-257789fd5791",
+    "scryfall_uri": "https://scryfall.com/card/snc/457/ko/gala-greeters?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/5/4/5475a6ab-7cab-4381-8814-257789fd5791.jpg?1649362955",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/5/4/5475a6ab-7cab-4381-8814-257789fd5791.jpg?1649362955",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/5/4/5475a6ab-7cab-4381-8814-257789fd5791.jpg?1649362955",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/5/4/5475a6ab-7cab-4381-8814-257789fd5791.png?1649362955",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/5/4/5475a6ab-7cab-4381-8814-257789fd5791.jpg?1649362955",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/5/4/5475a6ab-7cab-4381-8814-257789fd5791.jpg?1649362955"
+    },
+    "mana_cost": "{1}{G}",
+    "cmc": 2,
+    "type_line": "Creature — Elf Druid",
+    "oracle_text": "Alliance — Whenever another creature enters the battlefield under your control, choose one that hasn't been chosen this turn —\n• Put a +1/+1 counter on Gala Greeters.\n• Create a tapped Treasure token.\n• You gain 2 life.",
+    "power": "1",
+    "toughness": "1",
+    "colors": [
+      "G"
+    ],
+    "color_identity": [
+      "G"
+    ],
+    "keywords": [
+      "Alliance"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": false,
+    "finishes": [
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "df837242-8c15-42e4-b049-c933a02dc501",
+    "set": "snc",
+    "set_name": "Streets of New Capenna",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/df837242-8c15-42e4-b049-c933a02dc501",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/snc?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/5475a6ab-7cab-4381-8814-257789fd5791/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Acce081eb-8820-415a-a7b2-3c5b9d4a2601&unique=prints",
+    "collector_number": "457",
+    "digital": false,
+    "rarity": "r",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Heonhwa Choe",
+    "artist_ids": [
+      "ce415f9e-8a20-4d64-bcba-2b1b7e94012e"
+    ],
+    "illustration_id": "1c5da6e3-df31-4849-8430-0a9fe0dfa7a2",
+    "border_color": "borderless",
+    "frame": "2015",
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "boxtopper",
+      "boosterfun"
+    ],
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Gala+Greeters",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Gala+Greeters"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Gala+Greeters&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Gala+Greeters&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Gala Greeters",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/5/4/5475a6ab-7cab-4381-8814-257789fd5791.jpg?1649362955",
+    "cost": "{1}{G}",
+    "ccost": 2,
+    "type": "Creature",
+    "subtype": "Elf Druid",
+    "colour": "g",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
+    ],
+    "num": "457 R",
+    "numInt": 457,
+    "mtgenId": "snc|457 R",
+    "includedReason": "Gala Greeter Box Topper",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "fc9fed5b-95ca-4ffa-8754-6b4e43b9e494",
+    "oracle_id": "cce081eb-8820-415a-a7b2-3c5b9d4a2601",
+    "multiverse_ids": [],
+    "name": "Gala Greeters",
+    "printed_name": "Recepcionistas do Baile",
+    "lang": "pt",
+    "released_at": "2022-04-29",
+    "uri": "https://api.scryfall.com/cards/fc9fed5b-95ca-4ffa-8754-6b4e43b9e494",
+    "scryfall_uri": "https://scryfall.com/card/snc/458/pt/recepcionistas-do-baile?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/f/c/fc9fed5b-95ca-4ffa-8754-6b4e43b9e494.jpg?1649363185",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/f/c/fc9fed5b-95ca-4ffa-8754-6b4e43b9e494.jpg?1649363185",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/f/c/fc9fed5b-95ca-4ffa-8754-6b4e43b9e494.jpg?1649363185",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/f/c/fc9fed5b-95ca-4ffa-8754-6b4e43b9e494.png?1649363185",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/f/c/fc9fed5b-95ca-4ffa-8754-6b4e43b9e494.jpg?1649363185",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/f/c/fc9fed5b-95ca-4ffa-8754-6b4e43b9e494.jpg?1649363185"
+    },
+    "mana_cost": "{1}{G}",
+    "cmc": 2,
+    "type_line": "Creature — Elf Druid",
+    "oracle_text": "Alliance — Whenever another creature enters the battlefield under your control, choose one that hasn't been chosen this turn —\n• Put a +1/+1 counter on Gala Greeters.\n• Create a tapped Treasure token.\n• You gain 2 life.",
+    "power": "1",
+    "toughness": "1",
+    "colors": [
+      "G"
+    ],
+    "color_identity": [
+      "G"
+    ],
+    "keywords": [
+      "Alliance"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": false,
+    "finishes": [
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "df837242-8c15-42e4-b049-c933a02dc501",
+    "set": "snc",
+    "set_name": "Streets of New Capenna",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/df837242-8c15-42e4-b049-c933a02dc501",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/snc?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/fc9fed5b-95ca-4ffa-8754-6b4e43b9e494/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Acce081eb-8820-415a-a7b2-3c5b9d4a2601&unique=prints",
+    "collector_number": "458",
+    "digital": false,
+    "rarity": "r",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Daniel Correia",
+    "artist_ids": [
+      "d383f00d-0078-4c43-92f6-cbf62ab5df05"
+    ],
+    "illustration_id": "6dda53f0-4260-40c8-96c1-44bdc6c8751a",
+    "border_color": "borderless",
+    "frame": "2015",
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "boxtopper",
+      "boosterfun"
+    ],
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Gala+Greeters",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Gala+Greeters"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Gala+Greeters&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Gala+Greeters&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Gala Greeters",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/f/c/fc9fed5b-95ca-4ffa-8754-6b4e43b9e494.jpg?1649363185",
+    "cost": "{1}{G}",
+    "ccost": 2,
+    "type": "Creature",
+    "subtype": "Elf Druid",
+    "colour": "g",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
+    ],
+    "num": "458 R",
+    "numInt": 458,
+    "mtgenId": "snc|458 R",
+    "includedReason": "Gala Greeter Box Topper",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "9d4440f3-bf89-4493-bb50-ebf84902e4d0",
+    "oracle_id": "cce081eb-8820-415a-a7b2-3c5b9d4a2601",
+    "multiverse_ids": [],
+    "name": "Gala Greeters",
+    "lang": "ru",
+    "released_at": "2022-04-29",
+    "uri": "https://api.scryfall.com/cards/9d4440f3-bf89-4493-bb50-ebf84902e4d0",
+    "scryfall_uri": "https://scryfall.com/card/snc/459/ru/gala-greeters?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/9/d/9d4440f3-bf89-4493-bb50-ebf84902e4d0.jpg?1649362838",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/d/9d4440f3-bf89-4493-bb50-ebf84902e4d0.jpg?1649362838",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/9/d/9d4440f3-bf89-4493-bb50-ebf84902e4d0.jpg?1649362838",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/9/d/9d4440f3-bf89-4493-bb50-ebf84902e4d0.png?1649362838",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/9/d/9d4440f3-bf89-4493-bb50-ebf84902e4d0.jpg?1649362838",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/9/d/9d4440f3-bf89-4493-bb50-ebf84902e4d0.jpg?1649362838"
+    },
+    "mana_cost": "{1}{G}",
+    "cmc": 2,
+    "type_line": "Creature — Elf Druid",
+    "oracle_text": "Alliance — Whenever another creature enters the battlefield under your control, choose one that hasn't been chosen this turn —\n• Put a +1/+1 counter on Gala Greeters.\n• Create a tapped Treasure token.\n• You gain 2 life.",
+    "power": "1",
+    "toughness": "1",
+    "colors": [
+      "G"
+    ],
+    "color_identity": [
+      "G"
+    ],
+    "keywords": [
+      "Alliance"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": false,
+    "finishes": [
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "df837242-8c15-42e4-b049-c933a02dc501",
+    "set": "snc",
+    "set_name": "Streets of New Capenna",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/df837242-8c15-42e4-b049-c933a02dc501",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/snc?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/9d4440f3-bf89-4493-bb50-ebf84902e4d0/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Acce081eb-8820-415a-a7b2-3c5b9d4a2601&unique=prints",
+    "collector_number": "459",
+    "digital": false,
+    "rarity": "r",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Olga Tereshenko",
+    "artist_ids": [
+      "bf67fd46-5ef1-41d8-b8c6-77dbbbbad3f7"
+    ],
+    "illustration_id": "d027f16c-816c-4daa-a239-1a46a3210986",
+    "border_color": "borderless",
+    "frame": "2015",
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "boxtopper",
+      "boosterfun"
+    ],
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Gala+Greeters",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Gala+Greeters"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Gala+Greeters&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Gala+Greeters&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Gala+Greeters&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Gala Greeters",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/d/9d4440f3-bf89-4493-bb50-ebf84902e4d0.jpg?1649362838",
+    "cost": "{1}{G}",
+    "ccost": 2,
+    "type": "Creature",
+    "subtype": "Elf Druid",
+    "colour": "g",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
+    ],
+    "num": "459 R",
+    "numInt": 459,
+    "mtgenId": "snc|459 R",
+    "includedReason": "Gala Greeter Box Topper",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "ce5a0c6a-6aac-44bc-88c0-52f589980679",
+    "oracle_id": "3ceca713-38de-4428-a4f1-2146f6e98393",
+    "multiverse_ids": [],
+    "name": "Rumor Gatherer",
+    "lang": "en",
+    "released_at": "2022-04-29",
+    "uri": "https://api.scryfall.com/cards/ce5a0c6a-6aac-44bc-88c0-52f589980679",
+    "scryfall_uri": "https://scryfall.com/card/snc/463/rumor-gatherer?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/c/e/ce5a0c6a-6aac-44bc-88c0-52f589980679.jpg?1649422073",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/e/ce5a0c6a-6aac-44bc-88c0-52f589980679.jpg?1649422073",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/c/e/ce5a0c6a-6aac-44bc-88c0-52f589980679.jpg?1649422073",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/c/e/ce5a0c6a-6aac-44bc-88c0-52f589980679.png?1649422073",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/c/e/ce5a0c6a-6aac-44bc-88c0-52f589980679.jpg?1649422073",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/c/e/ce5a0c6a-6aac-44bc-88c0-52f589980679.jpg?1649422073"
+    },
+    "mana_cost": "{1}{W}{W}",
+    "cmc": 3,
+    "type_line": "Creature — Elf Wizard",
+    "oracle_text": "Alliance — Whenever another creature enters the battlefield under your control, scry 1. If this is the second time this ability has resolved this turn, draw a card instead.",
+    "power": "2",
+    "toughness": "1",
+    "colors": [
+      "W"
+    ],
+    "color_identity": [
+      "W"
+    ],
+    "keywords": [
+      "Alliance",
+      "Scry"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "df837242-8c15-42e4-b049-c933a02dc501",
+    "set": "snc",
+    "set_name": "Streets of New Capenna",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/df837242-8c15-42e4-b049-c933a02dc501",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/snc?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/ce5a0c6a-6aac-44bc-88c0-52f589980679/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A3ceca713-38de-4428-a4f1-2146f6e98393&unique=prints",
+    "collector_number": "463",
+    "digital": false,
+    "rarity": "u",
+    "watermark": "planeswalker",
+    "flavor_text": "\"It's delightful, the things their owners reveal when they think no one is listening.\"",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Simon Dominic",
+    "artist_ids": [
+      "b0e80135-db5a-4b88-a0bc-815a0e94faa1"
+    ],
+    "illustration_id": "05e524e0-7339-4668-a56a-658c76bb016e",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "inverted"
+    ],
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "promopack"
+    ],
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Rumor+Gatherer&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Rumor+Gatherer&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Rumor+Gatherer",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Rumor+Gatherer"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Rumor+Gatherer&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Rumor+Gatherer&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Rumor+Gatherer&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Rumor Gatherer",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/e/ce5a0c6a-6aac-44bc-88c0-52f589980679.jpg?1649422073",
+    "cost": "{1}{W}{W}",
+    "ccost": 3,
+    "type": "Creature",
+    "subtype": "Elf Wizard",
+    "colour": "w",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
+    ],
+    "num": "463 P FNM",
+    "numInt": 463,
+    "mtgenId": "snc|463 P FNM",
+    "includedReason": "Friday Night Magic Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "41ecf5f7-db15-4917-ad7f-1c652b0a97da",
+    "oracle_id": "234a734b-ba28-4f1b-9d01-3c3e7d516590",
+    "multiverse_ids": [],
+    "name": "An Offer You Can't Refuse",
+    "lang": "en",
+    "released_at": "2022-04-29",
+    "uri": "https://api.scryfall.com/cards/41ecf5f7-db15-4917-ad7f-1c652b0a97da",
+    "scryfall_uri": "https://scryfall.com/card/snc/464/an-offer-you-cant-refuse?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/4/1/41ecf5f7-db15-4917-ad7f-1c652b0a97da.jpg?1649422075",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/4/1/41ecf5f7-db15-4917-ad7f-1c652b0a97da.jpg?1649422075",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/4/1/41ecf5f7-db15-4917-ad7f-1c652b0a97da.jpg?1649422075",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/4/1/41ecf5f7-db15-4917-ad7f-1c652b0a97da.png?1649422075",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/4/1/41ecf5f7-db15-4917-ad7f-1c652b0a97da.jpg?1649422075",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/4/1/41ecf5f7-db15-4917-ad7f-1c652b0a97da.jpg?1649422075"
+    },
+    "mana_cost": "{U}",
+    "cmc": 1,
+    "type_line": "Instant",
+    "oracle_text": "Counter target noncreature spell. Its controller creates two Treasure tokens. (They're artifacts with \"{T}, Sacrifice this artifact: Add one mana of any color.\")",
+    "colors": [
+      "U"
+    ],
+    "color_identity": [
+      "U"
+    ],
+    "keywords": [],
+    "produced_mana": [
+      "B",
+      "G",
+      "R",
+      "U",
+      "W"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "df837242-8c15-42e4-b049-c933a02dc501",
+    "set": "snc",
+    "set_name": "Streets of New Capenna",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/df837242-8c15-42e4-b049-c933a02dc501",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/snc?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/41ecf5f7-db15-4917-ad7f-1c652b0a97da/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A234a734b-ba28-4f1b-9d01-3c3e7d516590&unique=prints",
+    "collector_number": "464",
+    "digital": false,
+    "rarity": "u",
+    "watermark": "planeswalker",
+    "flavor_text": "Elspeth wanted answers. Xander needed a spy. Their paths were destined to cross.",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Dallas Williams",
+    "artist_ids": [
+      "f62fb5b7-5ef8-47ad-9c3d-8c3e59d886c3"
+    ],
+    "illustration_id": "9ef1c49d-33e4-40ea-a295-6f05b6739316",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "inverted"
+    ],
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "promopack"
+    ],
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=An+Offer+You+Can%27t+Refuse&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=An+Offer+You+Can%27t+Refuse&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=An+Offer+You+Can%27t+Refuse",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=An+Offer+You+Can%27t+Refuse"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=An+Offer+You+Can%27t+Refuse&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=An+Offer+You+Can%27t+Refuse&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=An+Offer+You+Can%27t+Refuse&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "An Offer You Can't Refuse",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/4/1/41ecf5f7-db15-4917-ad7f-1c652b0a97da.jpg?1649422075",
+    "cost": "{U}",
+    "ccost": 1,
+    "type": "Instant",
+    "colour": "u",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
+    ],
+    "num": "464 P FNM",
+    "numInt": 464,
+    "mtgenId": "snc|464 P FNM",
+    "includedReason": "Friday Night Magic Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "61b46ca6-6fbd-41c5-9434-b18bce32165c",
+    "oracle_id": "d8b59cc3-766f-4350-971f-edf721fcc5be",
+    "multiverse_ids": [],
+    "name": "Incriminate",
+    "lang": "en",
+    "released_at": "2022-04-29",
+    "uri": "https://api.scryfall.com/cards/61b46ca6-6fbd-41c5-9434-b18bce32165c",
+    "scryfall_uri": "https://scryfall.com/card/snc/465/incriminate?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/6/1/61b46ca6-6fbd-41c5-9434-b18bce32165c.jpg?1649422080",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/6/1/61b46ca6-6fbd-41c5-9434-b18bce32165c.jpg?1649422080",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/6/1/61b46ca6-6fbd-41c5-9434-b18bce32165c.jpg?1649422080",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/6/1/61b46ca6-6fbd-41c5-9434-b18bce32165c.png?1649422080",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/6/1/61b46ca6-6fbd-41c5-9434-b18bce32165c.jpg?1649422080",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/6/1/61b46ca6-6fbd-41c5-9434-b18bce32165c.jpg?1649422080"
+    },
+    "mana_cost": "{1}{B}",
+    "cmc": 2,
+    "type_line": "Sorcery",
+    "oracle_text": "Choose two target creatures controlled by the same player. That player sacrifices one of them.",
+    "colors": [
+      "B"
+    ],
+    "color_identity": [
+      "B"
+    ],
+    "keywords": [],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "df837242-8c15-42e4-b049-c933a02dc501",
+    "set": "snc",
+    "set_name": "Streets of New Capenna",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/df837242-8c15-42e4-b049-c933a02dc501",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/snc?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/61b46ca6-6fbd-41c5-9434-b18bce32165c/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Ad8b59cc3-766f-4350-971f-edf721fcc5be&unique=prints",
+    "collector_number": "465",
+    "digital": false,
+    "rarity": "c",
+    "watermark": "planeswalker",
+    "flavor_text": "\"If I were you, I'd check that elf's coat. I saw him slipping something into his pocket just before you arrived.\"\n—Krandal, freelance instigator",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Kieran Yanner",
+    "artist_ids": [
+      "aa7e89ed-d294-4633-9057-ce04dacfcfa4"
+    ],
+    "illustration_id": "cbe1d8c5-227f-404f-ad6e-e561d958f654",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "inverted"
+    ],
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "promopack"
+    ],
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Incriminate&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Incriminate&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Incriminate",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Incriminate"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Incriminate&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Incriminate&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Incriminate&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Incriminate",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/6/1/61b46ca6-6fbd-41c5-9434-b18bce32165c.jpg?1649422080",
+    "cost": "{1}{B}",
+    "ccost": 2,
+    "type": "Sorcery",
+    "colour": "b",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
+    ],
+    "num": "465 P FNM",
+    "numInt": 465,
+    "mtgenId": "snc|465 P FNM",
+    "includedReason": "Friday Night Magic Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "5c80b3da-bda1-4d8d-ba50-7162574f4564",
+    "oracle_id": "c6932bcf-d66b-42c1-8ca4-6a4573e0f6bf",
+    "multiverse_ids": [],
+    "name": "Light 'Em Up",
+    "lang": "en",
+    "released_at": "2022-04-29",
+    "uri": "https://api.scryfall.com/cards/5c80b3da-bda1-4d8d-ba50-7162574f4564",
+    "scryfall_uri": "https://scryfall.com/card/snc/466/light-em-up?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/5/c/5c80b3da-bda1-4d8d-ba50-7162574f4564.jpg?1649422083",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/5/c/5c80b3da-bda1-4d8d-ba50-7162574f4564.jpg?1649422083",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/5/c/5c80b3da-bda1-4d8d-ba50-7162574f4564.jpg?1649422083",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/5/c/5c80b3da-bda1-4d8d-ba50-7162574f4564.png?1649422083",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/5/c/5c80b3da-bda1-4d8d-ba50-7162574f4564.jpg?1649422083",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/5/c/5c80b3da-bda1-4d8d-ba50-7162574f4564.jpg?1649422083"
+    },
+    "mana_cost": "{1}{R}",
+    "cmc": 2,
+    "type_line": "Sorcery",
+    "oracle_text": "Casualty 2 (As you cast this spell, you may sacrifice a creature with power 2 or greater. When you do, copy this spell and you may choose new targets for the copy.)\nLight 'Em Up deals 2 damage to target creature or planeswalker.",
+    "colors": [
+      "R"
+    ],
+    "color_identity": [
+      "R"
+    ],
+    "keywords": [
+      "Casualty"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "df837242-8c15-42e4-b049-c933a02dc501",
+    "set": "snc",
+    "set_name": "Streets of New Capenna",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/df837242-8c15-42e4-b049-c933a02dc501",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/snc?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/5c80b3da-bda1-4d8d-ba50-7162574f4564/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Ac6932bcf-d66b-42c1-8ca4-6a4573e0f6bf&unique=prints",
+    "collector_number": "466",
+    "digital": false,
+    "rarity": "c",
+    "watermark": "planeswalker",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Tony Foti",
+    "artist_ids": [
+      "1ab97a5f-9abb-42f4-bbc4-954899619d6f"
+    ],
+    "illustration_id": "cd79c20f-16c9-4763-81fd-c03aac8b86e1",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "inverted"
+    ],
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "promopack"
+    ],
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Light+%27Em+Up&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Light+%27Em+Up&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Light+%27Em+Up",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Light+%27Em+Up"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Light+%27Em+Up&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Light+%27Em+Up&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Light+%27Em+Up&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Light 'Em Up",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/5/c/5c80b3da-bda1-4d8d-ba50-7162574f4564.jpg?1649422083",
+    "cost": "{1}{R}",
+    "ccost": 2,
+    "type": "Sorcery",
+    "colour": "r",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
+    ],
+    "num": "466 P FNM",
+    "numInt": 466,
+    "mtgenId": "snc|466 P FNM",
+    "includedReason": "Friday Night Magic Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/snc-prerelease-deck-box.png",
+    "title": "Prerelease Deck Box",
+    "colour": "o",
+    "num": "006 Prerelease Deck Box",
+    "rarity": "c",
+    "type": "Insert",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 6,
+    "mtgenId": "snc|006 Prerelease Deck Box",
+    "set": "snc",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-deckbuilding-info.jpg",
+    "src_large": "http://mtgen.net/cards/mtg-deckbuilding-info-lg.jpg",
+    "height": 370,
+    "width": 515,
+    "title": "Deckbuilding Advice Insert",
+    "colour": "o",
+    "num": "007 Insert",
+    "rarity": "c",
+    "type": "Insert",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 7,
+    "mtgenId": "snc|007 Insert",
+    "set": "snc",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-prerelease-card-divider.png",
+    "title": "Card Divider",
+    "colour": "o",
+    "num": "008 Insert",
+    "rarity": "c",
+    "type": "Insert",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 8,
+    "mtgenId": "snc|008 Insert",
+    "set": "snc",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-arena-code-card.png",
+    "title": "Arena Code Card",
+    "colour": "o",
+    "num": "009 Insert",
+    "rarity": "c",
+    "type": "Insert",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 9,
+    "mtgenId": "snc|009 Insert",
+    "set": "snc",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-substitute-card.png",
+    "title": "Substitute Card",
+    "colour": "o",
+    "num": "010 Insert",
+    "rarity": "c",
+    "type": "Insert",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 10,
+    "mtgenId": "snc|010 Insert",
+    "set": "snc",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-spindown-life-counter-white.png",
+    "title": "White Spindown Life Counter",
+    "colour": "o",
+    "num": "001a Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "snc|001a Counter",
+    "set": "snc",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-spindown-life-counter-blue.png",
+    "title": "Blue Spindown Life Counter",
+    "colour": "o",
+    "num": "001b Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "snc|001b Counter",
+    "set": "snc",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-spindown-life-counter-black.png",
+    "title": "Black Spindown Life Counter",
+    "colour": "o",
+    "num": "001c Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "snc|001c Counter",
+    "set": "snc",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-spindown-life-counter-red.png",
+    "title": "Red Spindown Life Counter",
+    "colour": "o",
+    "num": "001d Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "snc|001d Counter",
+    "set": "snc",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-spindown-life-counter-green.png",
+    "title": "Green Spindown Life Counter",
+    "colour": "o",
+    "num": "001e Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "snc|001e Counter",
+    "set": "snc",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "ab120b59-8c50-47af-af21-5dd60377bc81",
+    "oracle_id": "764121bf-535d-40d0-ab9d-65486da31734",
+    "multiverse_ids": [],
+    "name": "Jaxis, the Troublemaker",
+    "lang": "en",
+    "released_at": "2022-04-29",
+    "uri": "https://api.scryfall.com/cards/ab120b59-8c50-47af-af21-5dd60377bc81",
+    "scryfall_uri": "https://scryfall.com/card/snc/461/jaxis-the-troublemaker?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/a/b/ab120b59-8c50-47af-af21-5dd60377bc81.jpg?1649362403",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/a/b/ab120b59-8c50-47af-af21-5dd60377bc81.jpg?1649362403",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/a/b/ab120b59-8c50-47af-af21-5dd60377bc81.jpg?1649362403",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/a/b/ab120b59-8c50-47af-af21-5dd60377bc81.png?1649362403",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/a/b/ab120b59-8c50-47af-af21-5dd60377bc81.jpg?1649362403",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/a/b/ab120b59-8c50-47af-af21-5dd60377bc81.jpg?1649362403"
+    },
+    "mana_cost": "{3}{R}",
+    "cmc": 4,
+    "type_line": "Legendary Creature — Human Warrior",
+    "oracle_text": "{R}, {T}, Discard a card: Create a token that's a copy of another target creature you control. It gains haste and \"When this creature dies, draw a card.\" Sacrifice it at the beginning of the next end step. Activate only as a sorcery.\nBlitz {1}{R} (If you cast this spell for its blitz cost, it gains haste and \"When this creature dies, draw a card.\" Sacrifice it at the beginning of the next end step.)",
+    "power": "2",
+    "toughness": "3",
+    "colors": [
+      "R"
+    ],
+    "color_identity": [
+      "R"
+    ],
+    "keywords": [
+      "Blitz"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "df837242-8c15-42e4-b049-c933a02dc501",
+    "set": "snc",
+    "set_name": "Streets of New Capenna",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/df837242-8c15-42e4-b049-c933a02dc501",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/snc?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/ab120b59-8c50-47af-af21-5dd60377bc81/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A764121bf-535d-40d0-ab9d-65486da31734&unique=prints",
+    "collector_number": "461",
+    "digital": false,
+    "rarity": "r",
+    "watermark": "riveteers",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Taras Susak",
+    "artist_ids": [
+      "db356418-19f5-448f-b5a9-68b9afce3d72"
+    ],
+    "illustration_id": "f2c80103-ba48-4cdc-bede-73af3fd5d6a2",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "legendary",
+      "extendedart"
+    ],
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "buyabox"
+    ],
+    "preview": {
+      "source": "Wizards of the Coast",
+      "source_uri": "https://magic.wizards.com/en/articles/archive/feature/streets-of-new-capenna-mechanics-2022-04-07",
+      "previewed_at": "2022-04-07"
+    },
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Jaxis%2C+the+Troublemaker&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Jaxis%2C+the+Troublemaker&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Jaxis%2C+the+Troublemaker",
+      "mtgtop8": "https://mtgtop8.com/search?MD_check=1&SB_check=1&cards=Jaxis%2C+the+Troublemaker"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Jaxis%2C+the+Troublemaker&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Jaxis%2C+the+Troublemaker&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Jaxis%2C+the+Troublemaker&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Jaxis, the Troublemaker",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/a/b/ab120b59-8c50-47af-af21-5dd60377bc81.jpg?1649362403",
+    "cost": "{3}{R}",
+    "ccost": 4,
+    "type": "Legendary Creature",
+    "subtype": "Human Warrior",
+    "colour": "r",
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
+    ],
+    "num": "461 P Buy-a-Box",
+    "numInt": 461,
+    "mtgenId": "snc|461 P Buy-a-Box",
+    "includedReason": "Buy-a-Box Promo",
+    "family": "Riveteers",
+    "usableForDeckBuilding": false
+  }
+]

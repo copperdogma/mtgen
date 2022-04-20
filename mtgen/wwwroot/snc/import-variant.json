@@ -1,0 +1,120 @@
+﻿{
+  "setCode": "snc",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints",
+  "imagesUrl": "",
+  "importOptions": {},
+  "exceptions": [
+    {
+      "_comments": [
+        "import all images, matching their titles with the same card data over and over = (above) importOptions/importByImage: true",
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'",
+        "ignore later image match and use the one from data (or override below) = useCardDataImg = true"
+      ]
+    },
+
+    {
+      "where": "numInt=(282-284)",
+      "newValues": {
+        "borderlessPlaneswalker": true,
+        "borderless": true
+      }
+    },
+    {
+      "where": "numInt=(285-295)",
+      "newValues": {
+        "borderless": true
+      }
+    },
+    {
+      "where": "numInt=(296-340)",
+      "newValues": {
+        "goldenAge": true,
+        "showcaseCard": true
+      }
+    },
+    {
+      "where": "numInt=(341-349)",
+      "newValues": {
+        "artDeco": true
+      }
+    },
+    {
+      "where": "numInt=(350-359)",
+      "newValues": {
+        "skyscraperLands": true
+      }
+    },
+    {
+      "where": "numInt=360",
+      "newValues": {
+        "phyrexianLanguage": true
+      }
+    },
+    {
+      "where": "numInt=(406-440)",
+      "newValues": {
+        "extendedArtwork": true
+      }
+    },
+    {
+      "where": "numInt=(361-405)",
+      "newValues": {
+        "gildedFoil": true
+      }
+    },
+    {
+      "where": "numInt=(441-449)",
+      "newValues": {
+        "foilEtchedArtDeco": true
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "_comment": "Set the 5 families.",
+      "where": "watermark=brokers",
+      "newValues": {
+        "family": "Brokers"
+      }
+    },
+    {
+      "where": "watermark=cabaretti",
+      "newValues": {
+        "family": "Cabaretti"
+      }
+    },
+    {
+      "where": "watermark=maestros",
+      "newValues": {
+        "family": "Maestros"
+      }
+    },
+    {
+      "where": "watermark=obscura",
+      "newValues": {
+        "family": "Obscura"
+      }
+    },
+    {
+      "where": "watermark=riveteers",
+      "newValues": {
+        "family": "Riveteers"
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "variant": true
+      }
+    }
+  ]
+}
