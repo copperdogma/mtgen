@@ -1,5 +1,5 @@
 /*
-MtG Generator script v2.6
+MtG Generator script v2.7.1
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
@@ -26,6 +26,8 @@ Normally 15 cards per booster:
 Quick How Tos:
 - to add a caveat (yellow note banner above), add an array of 'caveats' to the products.json product. See set MID.
 
+20220414: Added family support for SNC.
+20220222: Exporter: Added Magic the Gathering: Arena format.
 11-Jun-2021: Added ability to render an array of card modifiers which appear after the card title in brackets.
 4-May-2021: Added debug mode that shows a Debug Product and Live Debug Product tabs. To enable, add this to top level of products.json: "debug": true
 11-Apr-2021: Now includes college support for stx.
@@ -383,6 +385,11 @@ var mtgGen = (function (my) {
                     return (my.hasColleges) ? my.replaceActiveToken('college', '<a href="#" class="button[[ACTIVE]] sort-all-by-college">College</a>') : '';
                 }
             );
+            this.addMenuItem("family", 21,
+                function () {
+                    return (my.hasFamilies) ? my.replaceActiveToken('family', '<a href="#" class="button[[ACTIVE]] sort-all-by-family">Family</a>') : '';
+                }
+            );
             this.addMenuItem("set", 22,
                 function () {
                     return (my.mainView.currentView.isGenerated) ? my.replaceActiveToken('set', '<a href="#" class="button[[ACTIVE]] sort-all-by-sets">Generated sets</a>')
@@ -423,6 +430,11 @@ var mtgGen = (function (my) {
             this.addMenuItem("college", 16,
                 function () {
                     return (my.hasColleges) ? my.replaceActiveToken('college', '<a href="#" class="button[[ACTIVE]] sort-by-college" data-setid="[[SETID]]">College</a>') : '';
+                }
+            );
+            this.addMenuItem("family", 17,
+                function () {
+                    return (my.hasFamilies) ? my.replaceActiveToken('family', '<a href="#" class="button[[ACTIVE]] sort-by-family" data-setid="[[SETID]]">Family</a>') : '';
                 }
             );
             this.addMenuItem("order", 18,
@@ -511,6 +523,7 @@ var mtgGen = (function (my) {
             events["click #product-content ." + this.productName + " .sort-all-by-clan"] = "sortAllByClan";
             events["click #product-content ." + this.productName + " .sort-all-by-faction"] = "sortAllByFaction";
             events["click #product-content ." + this.productName + " .sort-all-by-college"] = "sortAllByCollege";
+            events["click #product-content ." + this.productName + " .sort-all-by-family"] = "sortAllByFamily";
             events["click #product-content ." + this.productName + " .sort-all-by-sets"] = "sortAllBySets";
 
             events["click #product-content ." + this.productName + " .set .sort-by-name"] = "sortByTitle";
@@ -522,6 +535,7 @@ var mtgGen = (function (my) {
             events["click #product-content ." + this.productName + " .set .sort-by-clan"] = "sortByClan";
             events["click #product-content ." + this.productName + " .set .sort-by-faction"] = "sortByFaction";
             events["click #product-content ." + this.productName + " .set .sort-by-college"] = "sortByCollege";
+            events["click #product-content ." + this.productName + " .set .sort-by-family"] = "sortByFamily";
             events["click #product-content ." + this.productName + " .set .sort-by-opened"] = "sortSetByOpenedOrder";
 
             if (this.hasPackPresets) {
@@ -874,6 +888,7 @@ var mtgGen = (function (my) {
                     case my.sortOrders.clan.sort: return this.sortAllByClan;
                     case my.sortOrders.faction.sort: return this.sortAllByFaction;
                     case my.sortOrders.college.sort: return this.sortAllByCollege;
+                    case my.sortOrders.family.sort: return this.sortAllByFamily;
                     case my.sortOrders.set.sort: return this.sortAllBySets;
                 }
             }
@@ -937,6 +952,12 @@ var mtgGen = (function (my) {
 
         , sortAllByCollege: function () {
             this.sortedSets = my.sortAllByCollege(this.allCards);
+            this.renderAllCardSets(this.sortedSets);
+            return false;
+        }
+
+        , sortAllByFamily: function () {
+            this.sortedSets = my.sortAllByFamily(this.allCards);
             this.renderAllCardSets(this.sortedSets);
             return false;
         }
@@ -1028,11 +1049,20 @@ var mtgGen = (function (my) {
             return false;
         }
 
-        , sortByFaction: function (events) {
+        , sortByCollege: function (events) {
             const setID = events.target.getAttribute('data-setid');
             let sortedCards = my.sortByCollege(this.sortedSets[setID]);
             sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
             sortedCards.sortOrder = my.sortOrders.college;
+            my.renderSetUpdate(this.productName, setID, sortedCards, this.sortedSets);
+            return false;
+        }
+
+        , sortByFamily: function (events) {
+            const setID = events.target.getAttribute('data-setid');
+            let sortedCards = my.sortByFamily(this.sortedSets[setID]);
+            sortedCards.setDesc = this.sortedSets[setID].setDesc; // add the desc back
+            sortedCards.sortOrder = my.sortOrders.family;
             my.renderSetUpdate(this.productName, setID, sortedCards, this.sortedSets);
             return false;
         }
@@ -1324,6 +1354,7 @@ var mtgGen = (function (my) {
                 + "<ul>"
                 + "<li><a href='#' class='button export-dec active' data-export-type='dec'><strong>.dec</strong> - Cockatrice, Apprentice</a></li>"
                 + "<li><a href='#' class='button export-txt' data-export-type='txt'><strong>.txt</strong> - Magic Online</a></li>"
+                + "<li><a href='#' class='button export-mtga' data-export-type='mtga'><strong>.mtga</strong> - MtG Arena</a></li>"
                 + "<li><a href='#' class='button export-mwdeck' data-export-type='mwdeck'><strong>.mwdeck</strong> - Magic Workstation</a></li>"
                 + "<li><a href='#' class='button export-cod' data-export-type='cod'><strong>.cod</strong> - Cockatrice</a></li>"
                 + "<li><a href='#' class='button export-coll' data-export-type='coll'><strong>.coll</strong> - Decked Builder</a></li>"
@@ -1368,6 +1399,7 @@ var mtgGen = (function (my) {
 
         exports.dec = renderDecFormat(countedCards, attrib);
         exports.txt = renderTxtFormat(countedCards, attrib);
+        exports.mtga = renderMtgaFormat(countedCards, attrib);
         exports.mwdeck = renderMwDeckFormat(null, countedCards, attrib);
         exports.cod = renderCodFormat(countedCards, attrib);
         exports.coll = renderCollFormat(countedCards, attrib);
@@ -1443,6 +1475,17 @@ var mtgGen = (function (my) {
             const cardtitle = card.exportTitle.replace(' // ', '/'); // Apparently Magic Online doesn't import it's own magic.wizards.com // format for split cards!
             return memo += card.count + ' ' + cardtitle + '\r\n';
         }, '');
+        return output;
+    }
+
+    // .mtga: used by Magic the Gathering: Arena
+    // Format explanation: https://draftsim.com/mtg-arena-import-deck/
+    // Format is plain list, number of cards at start, DFCs just list first face, can specify set but then also need collector number, e.g.: 1 Mountain (MID) 274
+    function renderMtgaFormat(cards, attrib) {
+        const output = '// ' + attrib 
+            + ' -- Import to Magic the Gathering: Arena by selecting everything in this file and copying it to your clipboard. Within MtG: Arena, go to your decks and click Import.\r\n'
+            + cards.reduce((cardOutput, card) =>
+                cardOutput += card.count + ' ' + card.exportTitle.split(' // ')[0] + '\r\n', '');
         return output;
     }
 

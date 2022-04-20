@@ -1,5 +1,5 @@
 /*
-MtG Generator script v2.7.1 - LIB
+MtG Generator script v2.7.2 - LIB
 
 Shared/base functions.
 
@@ -17,6 +17,7 @@ Query examples:
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
+20220414: Added family support for SNC.
 2-Jul-2021: Added support for ?getMarketingCardsForSet(set) to include new /ads/cardsAds.json cards in the boosters.
 14-Jun-2021: Added support for rarity=rarityByWeight(curm).
 7-Jun-2021: Removed product debug support, replacing with superior ?debug=true querystring support.
@@ -49,6 +50,7 @@ var mtgGen = (function (my) {
     my.hasClans = false;
     my.hasFactions = false;
     my.hasColleges = false;
+    my.hasFamilies = false;
 
     my.initViews = []; // for modules to add their views to be run once at the start of the app
 
@@ -211,6 +213,24 @@ var mtgGen = (function (my) {
             }
         }
         return my.colleges.unknown;
+    }
+
+    my.families = {
+        brokers: { sorder: 1, code: 'brokers', name: 'Brokers', fullName: 'Brokers' },
+        cabaretti: { sorder: 2, code: 'cabaretti', name: 'Cabaretti', fullName: 'Cabaretti' },
+        maestros: { sorder: 3, code: 'maestros', name: 'Maestros', fullName: 'Maestros' },
+        obscura: { sorder: 4, code: 'obscura', name: 'Obscura', fullName: 'Obscura' },
+        riveteers: { sorder: 5, code: 'riveteers', name: 'Riveteers', fullName: 'Riveteers' },
+
+        unknown: { sorder: 97, code: '?', name: 'Unknown', fullName: 'Unknown' }
+    };
+    function getFamilyByCode(code) {
+        for (let family in my.families) {
+            if (my.families[family].code == code) {
+                return my.families[family];
+            }
+        }
+        return my.families.unknown;
     }
 
     my.getRequiredOption = function (options, optionName, abortMsg) {
@@ -424,6 +444,12 @@ var mtgGen = (function (my) {
                         card.college = my.createMatchTitle(card.college);
                         card.collegeOrder = getCollegeByCode(card.college).sorder;
                         my.hasColleges = true;
+                    }
+
+                    if (card.family) {
+                        card.family = my.createMatchTitle(card.family);
+                        card.familyOrder = getCollegeByCode(card.family).sorder;
+                        my.hasFamilies = true;
                     }
 
                     card.ccost = card.ccost ?? calculateConvertedCost(card.cost);
@@ -1142,6 +1168,7 @@ var mtgGen = (function (my) {
         , clan: { sort: 'clan' }
         , faction: { sort: 'faction' }
         , college: { sort: 'college' }
+        , family: { sort: 'family' }
         , order: { sort: 'order' } // opened order within the set
     };
 
@@ -1503,6 +1530,48 @@ var mtgGen = (function (my) {
         return sortedSets;
     };
 
+    my.sortAllByFamily = function (cardList) {
+        let sortedSets = [];
+
+        // For each family, create a new card set
+        let mainCards = cardList.filter(card => card.usableForDeckBuilding === true && card.type != 'Basic Land' && !card.token);
+        let groupedCardSets = my.groupByProperty(mainCards, 'family');
+        const cardSets = this.sortIntoArray(groupedCardSets, my.families);
+        cardSets.forEach(cardSet => {
+            let set = cardSet.sort((a, b) => my.sortBy('matchTitle', a, b));
+            set.setDesc = getFamilyByCode(set[0].family).name;
+            set.sortOrder = my.sortOrders.name;
+            sortedSets.push(set);
+        });
+
+        let basicLandCards = my.getBasicLandCards(cardList);
+
+        // Flatten the grouped sets into a flat array of single cards.
+        const sortedSetCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+        const familyAndBasicLandCards = basicLandCards.concat(sortedSetCards);
+
+        let nonFamilyCards = my.getOtherCards(mainCards, familyAndBasicLandCards);
+        if (nonFamilyCards.length > 0) {
+            nonFamilyCards.setDesc = 'Non-Family';
+            sortedSets.push(nonFamilyCards);
+        }
+
+        if (basicLandCards.length > 0) {
+            sortedSets.push(basicLandCards);
+        }
+
+        // Flatten the grouped sets into a flat array of single cards.
+        const selectedCards = sortedSets.reduce((allCards, sortedSet) => allCards.concat(sortedSet), []);
+        const otherCards = my.getOtherCards(cardList, selectedCards);
+        if (otherCards.length > 0) {
+            sortedSets.push(otherCards);
+        }
+
+        sortedSets.sortOrder = my.sortOrders.family;
+
+        return sortedSets;
+    };
+
     /* --------- Sorting Sets --------------------------------------------------------------------------------------------------------------------- */
     my.sortByTitle = function (cardList) {
         let sortedCards = cardList.sort((a, b) => my.sortBy('matchTitle', a, b));
@@ -1595,6 +1664,17 @@ var mtgGen = (function (my) {
             return ((aProp < bProp) ? -1 : ((aProp > bProp) ? 1 : 0));
         });
         sortedCards.sortOrder = my.sortOrders.college;
+        return sortedCards;
+    };
+
+    my.sortByFamily = function (cardList) {
+        // Sort by family then title
+        let sortedCards = cardList.sort((a, b) => {
+            const aProp = padNum(a.familyOrder, 3) + a.matchTitle;
+            const bProp = padNum(b.familyOrder, 3) + b.matchTitle;
+            return ((aProp < bProp) ? -1 : ((aProp > bProp) ? 1 : 0));
+        });
+        sortedCards.sortOrder = my.sortOrders.family;
         return sortedCards;
     };
 
