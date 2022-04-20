@@ -4,6 +4,7 @@ Generates an output mtgen card set in json format for use in the main app, using
 Typically the importer file (e.g. import-main.json) will specify the wotc card gallery as the image source and
 the mtgsalvation spoiler page as the data source.
 
+20220420: Will now import The List entries with no link.
 20220221: getCardColourFromCard() now considers a coloured artifact to be that colour instead of just an artifact.
 20210713: Rewrote DFC import to output in new scryfall format (card.cardFaces[])
 12-Jun-2021: Refactored so import options drive more of the import decisions as opposed to guessing based on data/image urls.
@@ -854,7 +855,7 @@ class CardDataImporter {
 
     // Loads cards from The List.
     // Requires "options": { "theList": true, "theListTableNum": 3 }
-    //  Where theListTableNum is the table number in the article where The List cards actually reside. They often put tables with What We Removed/Added beforehand.
+    //  Where theListTableNum is the table number in the article where The List cards actually reside (starts at 1). They often put tables with What We Removed/Added beforehand.
     async _loadAndProcessTheListFiles(rawWotcCardData, options) {
         // Overview:
         // - Load the card names + set codes from the wotc article
@@ -1350,6 +1351,7 @@ class CardDataImporter {
 
     // ------------------------------------------------------------------------------------------------------------------------------------------------------
     // This "card" data is really just a named pair of card name/sets retrieved from a wotc article.
+    // tableNum: Count starts from 1
     _getTheListCardsFromWotc(rawCardData, tableNum) {
         let cards = [];
         const intTableNum = tableNum == 0 ? 1 : tableNum;
@@ -1371,11 +1373,11 @@ class CardDataImporter {
         cardsData.forEach(cardEl => {
             const card = { theList: true };
 
-            const aEl = cardEl.querySelector('a');
+            const aEl = cardEl.querySelector('td').innerText;
             if (aEl) {
-                card.title = aEl.textContent.trim();
+                card.title = aEl.trim();
                 card.matchTitle = mtgGen.createMatchTitle(card.title); // used for matching MtG Salvation vs. WotC titles and card titles vs. exception titles
-                card.src = aEl.dataset["imageUrl"];
+                card.src = (aEl.dataset == undefined) ? undefined : aEl.dataset["imageUrl"]; // Some don't have a link to an image. e.g.: https://magic.wizards.com/en/articles/archive/feature/whats-new-list-streets-new-capenna-2022-04-14
             }
 
             const setEls = cardEl.querySelectorAll('td');
