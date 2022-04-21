@@ -269,7 +269,7 @@ var mtgGen = (function (my) {
             }
 
             const includedReason = (card.includedReason !== undefined) ? '<em class="reason">(' + card.includedReason + ')</em>' : '';
-            return `<span class="card${foilClass}${doubleFaceClass}" title="${title}">${aStart}${cardImageHtml}${cardFlipHtml}<em class="title">${title}</em>${includedReason}${aEnd}</span>`;
+            return `<span class="card${foilClass}${doubleFaceClass}" data-card-num="${card.num}" title="${title}">${aStart}${cardImageHtml}${cardFlipHtml}<em class="title">${title}</em>${includedReason}${aEnd}</span>`;
         });
         return htmlOut;
     };
