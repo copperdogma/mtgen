@@ -32,6 +32,34 @@
       "defName": "{{setCode}}-borderless",
       "query": "from[{{setCode}}]?borderless=true"
     },
+    {
+      "defName": "{{setCode}}-land",
+      "query": "from[{{setCode}}]?type='Land'"
+    },
+    {
+      "defName": "{{setCode}}-multicolour-land",
+      "query": "from[{{setCode}}-land]?colourIdentityLength=(2|3)"
+    },
+    {
+      "defName": "{{setCode}}-brokers-land",
+      "query": "from[{{setCode}}-multicolour-land]?colourIdentity~=(G|W|U)-from[{{setCode}}-multicolour-land]?colourIdentity~=(B|R)"
+    },
+    {
+      "defName": "{{setCode}}-cabaretti-land",
+      "query": "from[{{setCode}}-multicolour-land]?colourIdentity~=(R|G|W)-from[{{setCode}}-multicolour-land]?colourIdentity~=(B|U)"
+    },
+    {
+      "defName": "{{setCode}}-maestros-land",
+      "query": "from[{{setCode}}-multicolour-land]?colourIdentity~=(U|B|R)-from[{{setCode}}-multicolour-land]?colourIdentity~=(G|W)"
+    },
+    {
+      "defName": "{{setCode}}-obscura-land",
+      "query": "from[{{setCode}}-multicolour-land]?colourIdentity~=(W|U|B)-from[{{setCode}}-multicolour-land]?colourIdentity~=(R|G)"
+    },
+    {
+      "defName": "{{setCode}}-riveteers-land",
+      "query": "from[{{setCode}}-multicolour-land]?colourIdentity~=(B|R|G)-from[{{setCode}}-multicolour-land]?colourIdentity~=(W|U)"
+    },
 
     {
       "defName": "{{setCode}}-goldenAge",
@@ -444,11 +472,11 @@
       "_comment": "Prerelease Family Booster: Brokers",
       "packName": "{{setCode}}-prerelease-brokers-booster",
       "packDesc": "Streets of New Capenna: Brokers Family Booster",
-      "packVersion": "1.0",
+      "packVersion": "1.1",
       "sources": [ "https://magic.wizards.com/en/articles/archive/feature/streets-of-new-capenna-product-overview-2022-04-07", "https://youtu.be/8O1TO0lCGKk?t=285" ],
       "isGenerated": true,
       "cards": [
-        { "query": "take[2]>from[{{setCode}}-family-brokers]?type='Land'" },
+        { "query": "take[2]>from[{{setCode}}-brokers-land]" },
         { "query": "take[8]>from[{{setCode}}-brokers-colour-booster]?rarity='c" },
         { "query": "take[3]>from[{{setCode}}-brokers-colour-booster]?rarity='u" },
         { "query": "from[{{setCode}}-family-brokers]?rarity='r" },
@@ -500,11 +528,11 @@
       "_comment": "Prerelease Family Booster: Cabaretti",
       "packName": "{{setCode}}-prerelease-cabaretti-booster",
       "packDesc": "Streets of New Capenna: Cabaretti Family Booster",
-      "packVersion": "1.0",
+      "packVersion": "1.1",
       "sources": [ "https://magic.wizards.com/en/articles/archive/feature/streets-of-new-capenna-product-overview-2022-04-07" ],
       "isGenerated": true,
       "cards": [
-        { "query": "take[2]>from[{{setCode}}-family-cabaretti]?type='Land'" },
+        { "query": "take[2]>from[{{setCode}}-cabaretti-land]" },
         { "query": "take[8]>from[{{setCode}}-cabaretti-colour-booster]?rarity='c" },
         { "query": "take[3]>from[{{setCode}}-cabaretti-colour-booster]?rarity='u" },
         { "query": "from[{{setCode}}-family-cabaretti]?rarity='r" },
@@ -556,11 +584,11 @@
       "_comment": "Prerelease Family Booster: Maestros",
       "packName": "{{setCode}}-prerelease-maestros-booster",
       "packDesc": "Streets of New Capenna: Maestros Family Booster",
-      "packVersion": "1.0",
+      "packVersion": "1.1",
       "sources": [ "https://magic.wizards.com/en/articles/archive/feature/streets-of-new-capenna-product-overview-2022-04-07" ],
       "isGenerated": true,
       "cards": [
-        { "query": "take[2]>from[{{setCode}}-family-maestros]?type='Land'" },
+        { "query": "take[2]>from[{{setCode}}-maestros-land]" },
         { "query": "take[8]>from[{{setCode}}-maestros-colour-booster]?rarity='c" },
         { "query": "take[3]>from[{{setCode}}-maestros-colour-booster]?rarity='u" },
         { "query": "from[{{setCode}}-family-maestros]?rarity='r" },
@@ -612,11 +640,11 @@
       "_comment": "Prerelease Family Booster: Obscura",
       "packName": "{{setCode}}-prerelease-obscura-booster",
       "packDesc": "Streets of New Capenna: Obscura Family Booster",
-      "packVersion": "1.0",
+      "packVersion": "1.1",
       "sources": [ "https://magic.wizards.com/en/articles/archive/feature/streets-of-new-capenna-product-overview-2022-04-07" ],
       "isGenerated": true,
       "cards": [
-        { "query": "take[2]>from[{{setCode}}-family-obscura]?type='Land'" },
+        { "query": "take[2]>from[{{setCode}}-obscura-land]" },
         { "query": "take[8]>from[{{setCode}}-obscura-colour-booster]?rarity='c" },
         { "query": "take[3]>from[{{setCode}}-obscura-colour-booster]?rarity='u" },
         { "query": "from[{{setCode}}-family-obscura]?rarity='r" },
@@ -672,7 +700,7 @@
       "sources": [ "https://magic.wizards.com/en/articles/archive/feature/streets-of-new-capenna-product-overview-2022-04-07" ],
       "isGenerated": true,
       "cards": [
-        { "query": "take[2]>from[{{setCode}}-family-riveteers]?type='Land'" },
+        { "query": "take[2]>from[{{setCode}}-riveteers-land]" },
         { "query": "take[8]>from[{{setCode}}-riveteers-colour-booster]?rarity='c" },
         { "query": "take[3]>from[{{setCode}}-riveteers-colour-booster]?rarity='u" },
         { "query": "from[{{setCode}}-family-riveteers]?rarity='r" },

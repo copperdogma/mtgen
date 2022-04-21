@@ -103,11 +103,11 @@
       "previewed_at": "2022-04-12"
     },
     "prices": {
-      "usd": "0.25",
+      "usd": "0.22",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.07",
-      "eur_foil": "0.16",
+      "eur": "0.11",
+      "eur_foil": "0.18",
       "tix": null
     },
     "related_uris": {
@@ -128,6 +128,8 @@
     "type": "Creature",
     "subtype": "Angel Advisor",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -237,7 +239,7 @@
       "usd": "0.30",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.09",
+      "eur": "0.07",
       "eur_foil": null,
       "tix": null
     },
@@ -259,6 +261,8 @@
     "type": "Creature",
     "subtype": "Human Citizen",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -395,6 +399,8 @@
     "type": "Creature",
     "subtype": "Human Warrior",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -530,6 +536,8 @@
     "ccost": 5,
     "type": "Sorcery",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -640,11 +648,11 @@
       "previewed_at": "2022-04-14"
     },
     "prices": {
-      "usd": "0.24",
-      "usd_foil": null,
+      "usd": "0.23",
+      "usd_foil": "0.32",
       "usd_etched": null,
       "eur": "0.10",
-      "eur_foil": "0.18",
+      "eur_foil": "0.19",
       "tix": null
     },
     "related_uris": {
@@ -665,6 +673,8 @@
     "type": "Artifact",
     "subtype": "Equipment",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -775,11 +785,11 @@
       "previewed_at": "2022-04-11"
     },
     "prices": {
-      "usd": "3.34",
+      "usd": "3.32",
       "usd_foil": "4.90",
       "usd_etched": null,
-      "eur": "1.60",
-      "eur_foil": "2.24",
+      "eur": "1.65",
+      "eur_foil": "2.38",
       "tix": null
     },
     "related_uris": {
@@ -799,6 +809,8 @@
     "ccost": 4,
     "type": "Sorcery",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -904,11 +916,11 @@
     "story_spotlight": false,
     "edhrec_rank": 18564,
     "prices": {
-      "usd": "9.58",
+      "usd": "9.49",
       "usd_foil": "20.91",
       "usd_etched": null,
-      "eur": "7.79",
-      "eur_foil": "11.97",
+      "eur": "7.75",
+      "eur_foil": "11.98",
       "tix": null
     },
     "related_uris": {
@@ -929,6 +941,8 @@
     "type": "Legendary Planeswalker",
     "subtype": "Elspeth",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -1037,10 +1051,10 @@
     "story_spotlight": false,
     "edhrec_rank": 21748,
     "prices": {
-      "usd": "3.40",
+      "usd": "3.34",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.69",
+      "eur": "0.64",
       "eur_foil": "1.25",
       "tix": null
     },
@@ -1062,6 +1076,8 @@
     "type": "Creature",
     "subtype": "Human Rogue",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -1170,7 +1186,7 @@
       "usd": null,
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.04",
+      "eur": "0.06",
       "eur_foil": null,
       "tix": null
     },
@@ -1192,6 +1208,8 @@
     "type": "Creature",
     "subtype": "Human Citizen",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -1308,11 +1326,11 @@
     "story_spotlight": true,
     "edhrec_rank": 16174,
     "prices": {
-      "usd": "12.76",
+      "usd": "8.95",
       "usd_foil": "25.88",
       "usd_etched": null,
-      "eur": "4.55",
-      "eur_foil": "6.46",
+      "eur": "3.99",
+      "eur_foil": "6.72",
       "tix": null
     },
     "related_uris": {
@@ -1333,6 +1351,8 @@
     "type": "Legendary Creature",
     "subtype": "Angel",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -1437,11 +1457,11 @@
     "story_spotlight": false,
     "edhrec_rank": 16631,
     "prices": {
-      "usd": "10.36",
+      "usd": "10.41",
       "usd_foil": "17.96",
       "usd_etched": null,
-      "eur": "6.61",
-      "eur_foil": "9.74",
+      "eur": "6.32",
+      "eur_foil": "9.68",
       "tix": null
     },
     "related_uris": {
@@ -1461,6 +1481,8 @@
     "ccost": 3,
     "type": "Artifact",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -1572,10 +1594,10 @@
       "previewed_at": "2022-04-13"
     },
     "prices": {
-      "usd": "0.37",
+      "usd": "0.39",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.20",
+      "eur": "0.08",
       "eur_foil": null,
       "tix": null
     },
@@ -1597,6 +1619,8 @@
     "type": "Enchantment",
     "subtype": "Aura",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -1710,11 +1734,11 @@
       "previewed_at": "2022-04-14"
     },
     "prices": {
-      "usd": "0.47",
+      "usd": "0.45",
       "usd_foil": "1.11",
       "usd_etched": null,
-      "eur": "0.14",
-      "eur_foil": "0.21",
+      "eur": "0.09",
+      "eur_foil": "0.14",
       "tix": null
     },
     "related_uris": {
@@ -1735,6 +1759,8 @@
     "type": "Creature",
     "subtype": "Angel Cleric",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -1842,7 +1868,7 @@
       "usd": "0.30",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.08",
+      "eur": "0.20",
       "eur_foil": null,
       "tix": null
     },
@@ -1863,6 +1889,8 @@
     "ccost": 3,
     "type": "Instant",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -1974,7 +2002,7 @@
       "usd": "0.31",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.13",
+      "eur": "0.09",
       "eur_foil": "0.16",
       "tix": null
     },
@@ -1995,6 +2023,8 @@
     "ccost": 3,
     "type": "Instant",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -2106,11 +2136,11 @@
       "previewed_at": "2022-04-08"
     },
     "prices": {
-      "usd": "0.44",
+      "usd": "0.43",
       "usd_foil": "0.62",
       "usd_etched": null,
-      "eur": "0.14",
-      "eur_foil": "0.24",
+      "eur": "0.09",
+      "eur_foil": "0.22",
       "tix": null
     },
     "related_uris": {
@@ -2131,6 +2161,8 @@
     "type": "Creature",
     "subtype": "Cat Rogue",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -2242,7 +2274,7 @@
       "usd": "1.17",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.16",
+      "eur": "0.20",
       "eur_foil": "0.24",
       "tix": null
     },
@@ -2264,6 +2296,8 @@
     "type": "Artifact",
     "subtype": "Vehicle",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -2373,10 +2407,10 @@
       "previewed_at": "2022-04-13"
     },
     "prices": {
-      "usd": "0.73",
+      "usd": "0.72",
       "usd_foil": "0.98",
       "usd_etched": null,
-      "eur": "0.27",
+      "eur": "0.22",
       "eur_foil": "0.58",
       "tix": null
     },
@@ -2397,6 +2431,8 @@
     "ccost": 3,
     "type": "Sorcery",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -2503,11 +2539,11 @@
     "story_spotlight": false,
     "edhrec_rank": 18696,
     "prices": {
-      "usd": "3.07",
+      "usd": "2.95",
       "usd_foil": "5.70",
       "usd_etched": null,
-      "eur": "1.05",
-      "eur_foil": "2.22",
+      "eur": "1.26",
+      "eur_foil": "2.27",
       "tix": null
     },
     "related_uris": {
@@ -2527,6 +2563,8 @@
     "ccost": 5,
     "type": "Enchantment",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -2640,8 +2678,8 @@
       "usd": "0.31",
       "usd_foil": "0.35",
       "usd_etched": null,
-      "eur": "0.02",
-      "eur_foil": "0.18",
+      "eur": "0.04",
+      "eur_foil": "0.12",
       "tix": null
     },
     "related_uris": {
@@ -2662,6 +2700,8 @@
     "type": "Enchantment",
     "subtype": "Aura",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -2769,7 +2809,7 @@
       "usd": "0.26",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.16",
+      "eur": "0.15",
       "eur_foil": "0.15",
       "tix": null
     },
@@ -2790,6 +2830,8 @@
     "ccost": 2,
     "type": "Instant",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -2897,7 +2939,7 @@
       "usd": "0.39",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.02",
+      "eur": "0.04",
       "eur_foil": "0.18",
       "tix": null
     },
@@ -2918,6 +2960,8 @@
     "ccost": 2,
     "type": "Instant",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -3030,7 +3074,7 @@
       "usd": "0.47",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.23",
+      "eur": "0.13",
       "eur_foil": null,
       "tix": null
     },
@@ -3052,6 +3096,8 @@
     "type": "Creature",
     "subtype": "Bird Citizen",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -3190,6 +3236,8 @@
     "type": "Creature",
     "subtype": "Bird Citizen",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -3306,7 +3354,7 @@
       "usd": "3.76",
       "usd_foil": "4.89",
       "usd_etched": null,
-      "eur": "1.87",
+      "eur": "1.79",
       "eur_foil": "2.23",
       "tix": null
     },
@@ -3328,6 +3376,8 @@
     "type": "Creature",
     "subtype": "Avatar",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -3461,6 +3511,8 @@
     "type": "Creature",
     "subtype": "Cephalid Rogue",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -3574,7 +3626,7 @@
       "usd_foil": null,
       "usd_etched": null,
       "eur": "0.05",
-      "eur_foil": "0.15",
+      "eur_foil": "0.18",
       "tix": null
     },
     "related_uris": {
@@ -3594,6 +3646,8 @@
     "ccost": 4,
     "type": "Instant",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -3707,7 +3761,7 @@
       "usd_foil": null,
       "usd_etched": null,
       "eur": "0.04",
-      "eur_foil": "0.12",
+      "eur_foil": "0.18",
       "tix": null
     },
     "related_uris": {
@@ -3727,6 +3781,8 @@
     "ccost": 2,
     "type": "Instant",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -3846,11 +3902,11 @@
       "previewed_at": "2022-04-09"
     },
     "prices": {
-      "usd": "2.17",
+      "usd": "2.15",
       "usd_foil": "2.99",
       "usd_etched": null,
       "eur": "0.51",
-      "eur_foil": "0.88",
+      "eur_foil": "0.93",
       "tix": null
     },
     "related_uris": {
@@ -3871,6 +3927,8 @@
     "type": "Legendary Creature",
     "subtype": "Human Rogue",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -3984,7 +4042,7 @@
       "usd": "13.57",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "5.49",
+      "eur": "5.54",
       "eur_foil": null,
       "tix": null
     },
@@ -4005,6 +4063,8 @@
     "ccost": 3,
     "type": "Instant",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -4114,7 +4174,7 @@
       "usd": "0.41",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.05",
+      "eur": "0.04",
       "eur_foil": "0.18",
       "tix": null
     },
@@ -4136,6 +4196,8 @@
     "type": "Creature",
     "subtype": "Human Citizen",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -4253,7 +4315,7 @@
       "usd": "0.63",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.11",
+      "eur": "0.08",
       "eur_foil": "0.18",
       "tix": null
     },
@@ -4275,6 +4337,8 @@
     "type": "Creature",
     "subtype": "Faerie Rogue",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -4381,7 +4445,7 @@
       "usd": "0.30",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.04",
+      "eur": "0.05",
       "eur_foil": null,
       "tix": null
     },
@@ -4402,6 +4466,8 @@
     "ccost": 3,
     "type": "Instant",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -4513,10 +4579,10 @@
     "story_spotlight": true,
     "edhrec_rank": 15759,
     "prices": {
-      "usd": "1.68",
+      "usd": "1.76",
       "usd_foil": "4.03",
       "usd_etched": null,
-      "eur": "1.30",
+      "eur": "1.31",
       "eur_foil": "3.21",
       "tix": null
     },
@@ -4537,6 +4603,8 @@
     "ccost": 1,
     "type": "Instant",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -4649,7 +4717,7 @@
       "usd": "0.33",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.12",
+      "eur": "0.09",
       "eur_foil": "0.26",
       "tix": null
     },
@@ -4670,6 +4738,8 @@
     "ccost": 4,
     "type": "Instant",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -4781,10 +4851,10 @@
       "previewed_at": "2022-04-11"
     },
     "prices": {
-      "usd": "0.44",
-      "usd_foil": "0.75",
+      "usd": "0.42",
+      "usd_foil": "0.71",
       "usd_etched": null,
-      "eur": "0.14",
+      "eur": "0.09",
       "eur_foil": "0.22",
       "tix": null
     },
@@ -4806,6 +4876,8 @@
     "type": "Enchantment",
     "subtype": "Aura",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -4920,11 +4992,11 @@
       "previewed_at": "2022-04-13"
     },
     "prices": {
-      "usd": "0.70",
-      "usd_foil": "0.99",
+      "usd": "0.69",
+      "usd_foil": "0.92",
       "usd_etched": null,
-      "eur": "0.88",
-      "eur_foil": "1.43",
+      "eur": "0.92",
+      "eur_foil": "1.34",
       "tix": null
     },
     "related_uris": {
@@ -4945,6 +5017,8 @@
     "type": "Creature",
     "subtype": "Kraken",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -5048,7 +5122,7 @@
     "booster": true,
     "story_spotlight": false,
     "prices": {
-      "usd": "0.39",
+      "usd": "0.38",
       "usd_foil": null,
       "usd_etched": null,
       "eur": "0.04",
@@ -5072,6 +5146,8 @@
     "ccost": 4,
     "type": "Instant",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -5202,6 +5278,8 @@
     "type": "Creature",
     "subtype": "Crocodile",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -5324,10 +5402,10 @@
     "booster": true,
     "story_spotlight": false,
     "prices": {
-      "usd": "0.24",
+      "usd": "0.22",
       "usd_foil": "0.32",
       "usd_etched": null,
-      "eur": "0.12",
+      "eur": "0.08",
       "eur_foil": "0.15",
       "tix": null
     },
@@ -5349,6 +5427,8 @@
     "type": "Enchantment",
     "subtype": "Aura",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -5458,11 +5538,11 @@
       "previewed_at": "2022-04-14"
     },
     "prices": {
-      "usd": "0.43",
-      "usd_foil": "3.07",
+      "usd": "0.42",
+      "usd_foil": "1.45",
       "usd_etched": null,
-      "eur": "0.11",
-      "eur_foil": "0.28",
+      "eur": "0.13",
+      "eur_foil": "0.20",
       "tix": null
     },
     "related_uris": {
@@ -5482,6 +5562,8 @@
     "ccost": 1,
     "type": "Instant",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -5596,8 +5678,8 @@
       "usd": "1.58",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.19",
-      "eur_foil": "0.33",
+      "eur": "0.20",
+      "eur_foil": "0.38",
       "tix": null
     },
     "related_uris": {
@@ -5617,6 +5699,8 @@
     "ccost": 5,
     "type": "Enchantment",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -5728,10 +5812,10 @@
     },
     "prices": {
       "usd": "0.42",
-      "usd_foil": "1.74",
+      "usd_foil": "1.64",
       "usd_etched": null,
-      "eur": "0.11",
-      "eur_foil": "0.18",
+      "eur": "0.09",
+      "eur_foil": "0.20",
       "tix": null
     },
     "related_uris": {
@@ -5752,6 +5836,8 @@
     "type": "Enchantment",
     "subtype": "Aura",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -5862,11 +5948,11 @@
     "story_spotlight": false,
     "edhrec_rank": 22098,
     "prices": {
-      "usd": "4.84",
+      "usd": "4.57",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "5.50",
-      "eur_foil": "8.49",
+      "eur": "5.31",
+      "eur_foil": "8.83",
       "tix": null
     },
     "related_uris": {
@@ -5887,6 +5973,8 @@
     "type": "Creature",
     "subtype": "Nightmare Angel",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -5998,11 +6086,11 @@
       "previewed_at": "2022-04-11"
     },
     "prices": {
-      "usd": "2.01",
+      "usd": "1.94",
       "usd_foil": "5.96",
       "usd_etched": null,
-      "eur": "0.17",
-      "eur_foil": "0.43",
+      "eur": "0.23",
+      "eur_foil": "0.47",
       "tix": null
     },
     "related_uris": {
@@ -6022,6 +6110,8 @@
     "ccost": 3,
     "type": "Enchantment",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -6131,7 +6221,7 @@
       "usd": "0.45",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.10",
+      "eur": "0.02",
       "eur_foil": "0.12",
       "tix": null
     },
@@ -6153,6 +6243,8 @@
     "type": "Creature",
     "subtype": "Human Advisor",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -6283,6 +6375,8 @@
     "type": "Creature",
     "subtype": "Ogre Rogue",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -6393,7 +6487,7 @@
       "usd_foil": null,
       "usd_etched": null,
       "eur": "0.06",
-      "eur_foil": "0.18",
+      "eur_foil": "0.12",
       "tix": null
     },
     "related_uris": {
@@ -6414,6 +6508,8 @@
     "type": "Creature",
     "subtype": "Vampire Warrior",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -6548,6 +6644,8 @@
     "ccost": 4,
     "type": "Instant",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -6657,8 +6755,8 @@
       "usd": "0.48",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.13",
-      "eur_foil": "0.25",
+      "eur": "0.05",
+      "eur_foil": "0.15",
       "tix": null
     },
     "related_uris": {
@@ -6678,6 +6776,8 @@
     "ccost": 4,
     "type": "Instant",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -6788,11 +6888,11 @@
       "previewed_at": "2022-04-12"
     },
     "prices": {
-      "usd": "0.29",
+      "usd": "0.28",
       "usd_foil": "0.41",
       "usd_etched": null,
-      "eur": "0.11",
-      "eur_foil": "0.18",
+      "eur": "0.12",
+      "eur_foil": "0.15",
       "tix": null
     },
     "related_uris": {
@@ -6813,6 +6913,8 @@
     "type": "Creature",
     "subtype": "Horror",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -6919,8 +7021,8 @@
       "usd": "0.45",
       "usd_foil": "1.32",
       "usd_etched": null,
-      "eur": "0.08",
-      "eur_foil": "0.18",
+      "eur": "0.07",
+      "eur_foil": "0.16",
       "tix": null
     },
     "related_uris": {
@@ -6940,6 +7042,8 @@
     "ccost": 2,
     "type": "Sorcery",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -7053,7 +7157,7 @@
       "usd": "0.47",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.05",
+      "eur": "0.04",
       "eur_foil": "0.18",
       "tix": null
     },
@@ -7074,6 +7178,8 @@
     "ccost": 2,
     "type": "Instant",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -7186,7 +7292,7 @@
       "usd": "0.23",
       "usd_foil": "0.71",
       "usd_etched": null,
-      "eur": "0.27",
+      "eur": "0.08",
       "eur_foil": "0.17",
       "tix": null
     },
@@ -7207,6 +7313,8 @@
     "ccost": 5,
     "type": "Sorcery",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -7314,7 +7422,7 @@
       "usd": "0.46",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.25",
+      "eur": "0.05",
       "eur_foil": "0.15",
       "tix": null
     },
@@ -7326,7 +7434,7 @@
     },
     "purchase_uris": {
       "tcgplayer": "https://www.tcgplayer.com/product/268318?page=1&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
-      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Incriminate&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Singles/Streets-of-New-Capenna/Incriminate?referrer=scryfall&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
       "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Incriminate&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
     },
     "title": "Incriminate",
@@ -7335,6 +7443,8 @@
     "ccost": 2,
     "type": "Sorcery",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -7444,10 +7554,10 @@
     "story_spotlight": false,
     "edhrec_rank": 22604,
     "prices": {
-      "usd": "0.48",
+      "usd": "0.45",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.06",
+      "eur": "0.10",
       "eur_foil": "0.10",
       "tix": null
     },
@@ -7469,6 +7579,8 @@
     "type": "Creature",
     "subtype": "Vampire Assassin",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -7581,8 +7693,8 @@
       "usd": null,
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.27",
-      "eur_foil": "0.19",
+      "eur": "0.04",
+      "eur_foil": "0.25",
       "tix": null
     },
     "related_uris": {
@@ -7602,6 +7714,8 @@
     "ccost": 3,
     "type": "Instant",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -7711,10 +7825,10 @@
       "previewed_at": "2022-04-13"
     },
     "prices": {
-      "usd": "0.27",
+      "usd": "0.25",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.04",
+      "eur": "0.09",
       "eur_foil": "0.12",
       "tix": null
     },
@@ -7735,6 +7849,8 @@
     "ccost": 3,
     "type": "Sorcery",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -7844,11 +7960,11 @@
     "story_spotlight": false,
     "edhrec_rank": 21273,
     "prices": {
-      "usd": "1.87",
-      "usd_foil": null,
+      "usd": "1.83",
+      "usd_foil": "2.48",
       "usd_etched": null,
-      "eur": "0.29",
-      "eur_foil": "0.75",
+      "eur": "0.24",
+      "eur_foil": "0.46",
       "tix": null
     },
     "related_uris": {
@@ -7869,6 +7985,8 @@
     "type": "Creature",
     "subtype": "Vampire Rogue",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -7976,11 +8094,11 @@
     "story_spotlight": false,
     "edhrec_rank": 21980,
     "prices": {
-      "usd": "1.38",
-      "usd_foil": "1.31",
+      "usd": "1.28",
+      "usd_foil": "1.37",
       "usd_etched": null,
-      "eur": "1.47",
-      "eur_foil": "3.24",
+      "eur": "1.46",
+      "eur_foil": "2.66",
       "tix": null
     },
     "related_uris": {
@@ -8001,6 +8119,8 @@
     "type": "Creature",
     "subtype": "Avatar",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -8115,11 +8235,11 @@
       "previewed_at": "2022-04-11"
     },
     "prices": {
-      "usd": "2.55",
+      "usd": "2.49",
       "usd_foil": "3.97",
       "usd_etched": null,
-      "eur": "0.88",
-      "eur_foil": "1.84",
+      "eur": "1.04",
+      "eur_foil": "1.38",
       "tix": null
     },
     "related_uris": {
@@ -8140,6 +8260,8 @@
     "type": "Creature",
     "subtype": "Ogre Warrior",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -8271,6 +8393,8 @@
     "type": "Creature",
     "subtype": "Human Rogue",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -8384,10 +8508,10 @@
       "previewed_at": "2022-04-11"
     },
     "prices": {
-      "usd": "0.47",
+      "usd": "0.46",
       "usd_foil": "0.64",
       "usd_etched": null,
-      "eur": "0.12",
+      "eur": "0.11",
       "eur_foil": "0.15",
       "tix": null
     },
@@ -8409,6 +8533,8 @@
     "type": "Creature",
     "subtype": "Vampire Warlock",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -8521,7 +8647,7 @@
       "usd": "0.24",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.13",
+      "eur": "0.07",
       "eur_foil": "0.15",
       "tix": null
     },
@@ -8542,6 +8668,8 @@
     "ccost": 4,
     "type": "Sorcery",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -8649,7 +8777,7 @@
       "usd": "0.48",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.05",
+      "eur": "0.04",
       "eur_foil": "0.12",
       "tix": null
     },
@@ -8670,6 +8798,8 @@
     "ccost": 2,
     "type": "Instant",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -8779,10 +8909,10 @@
       "previewed_at": "2022-04-08"
     },
     "prices": {
-      "usd": "7.52",
-      "usd_foil": "12.38",
+      "usd": "7.30",
+      "usd_foil": "11.00",
       "usd_etched": null,
-      "eur": "4.67",
+      "eur": "4.58",
       "eur_foil": "7.73",
       "tix": null
     },
@@ -8803,6 +8933,8 @@
     "ccost": 6,
     "type": "Enchantment",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -8919,7 +9051,7 @@
       "previewed_at": "2022-04-13"
     },
     "prices": {
-      "usd": "0.78",
+      "usd": "0.73",
       "usd_foil": null,
       "usd_etched": null,
       "eur": "0.08",
@@ -8943,6 +9075,8 @@
     "ccost": 4,
     "type": "Instant",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -9055,8 +9189,8 @@
       "usd": "0.49",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.12",
-      "eur_foil": "0.32",
+      "eur": "0.11",
+      "eur_foil": "0.33",
       "tix": null
     },
     "related_uris": {
@@ -9076,6 +9210,8 @@
     "ccost": 3,
     "type": "Instant",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -9184,7 +9320,7 @@
       "usd": "0.45",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.06",
+      "eur": "0.04",
       "eur_foil": "0.18",
       "tix": null
     },
@@ -9205,6 +9341,8 @@
     "ccost": 1,
     "type": "Instant",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -9320,8 +9458,8 @@
       "usd": "0.47",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.05",
-      "eur_foil": "0.15",
+      "eur": "0.04",
+      "eur_foil": "0.17",
       "tix": null
     },
     "related_uris": {
@@ -9342,6 +9480,8 @@
     "type": "Creature",
     "subtype": "Human Wizard",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -9459,8 +9599,8 @@
       "previewed_at": "2022-04-13"
     },
     "prices": {
-      "usd": "0.41",
-      "usd_foil": "1.41",
+      "usd": "0.36",
+      "usd_foil": "1.31",
       "usd_etched": null,
       "eur": "0.14",
       "eur_foil": "0.32",
@@ -9484,6 +9624,8 @@
     "type": "Artifact",
     "subtype": "Treasure",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -9601,11 +9743,11 @@
     "story_spotlight": false,
     "edhrec_rank": 20663,
     "prices": {
-      "usd": "0.47",
+      "usd": "0.44",
       "usd_foil": "1.00",
       "usd_etched": null,
-      "eur": "0.09",
-      "eur_foil": "0.33",
+      "eur": "0.08",
+      "eur_foil": "0.17",
       "tix": null
     },
     "related_uris": {
@@ -9626,6 +9768,8 @@
     "type": "Artifact Creature",
     "subtype": "Treasure Dog",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -9740,10 +9884,10 @@
       "previewed_at": "2022-04-12"
     },
     "prices": {
-      "usd": "1.79",
+      "usd": "1.69",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.17",
+      "eur": "0.20",
       "eur_foil": "0.37",
       "tix": null
     },
@@ -9765,6 +9909,8 @@
     "type": "Artifact",
     "subtype": "Vehicle",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -9880,10 +10026,10 @@
       "previewed_at": "2022-04-13"
     },
     "prices": {
-      "usd": null,
+      "usd": "0.23",
       "usd_foil": "0.32",
       "usd_etched": null,
-      "eur": "0.11",
+      "eur": "0.12",
       "eur_foil": "0.15",
       "tix": null
     },
@@ -9904,6 +10050,8 @@
     "ccost": 4,
     "type": "Sorcery",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -10035,6 +10183,8 @@
     "type": "Artifact",
     "subtype": "Equipment",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -10147,11 +10297,11 @@
       "previewed_at": "2022-04-08"
     },
     "prices": {
-      "usd": "4.96",
-      "usd_foil": "7.12",
+      "usd": "4.99",
+      "usd_foil": "6.69",
       "usd_etched": null,
-      "eur": "2.99",
-      "eur_foil": "5.57",
+      "eur": "2.97",
+      "eur_foil": "5.41",
       "tix": null
     },
     "related_uris": {
@@ -10172,6 +10322,8 @@
     "type": "Creature",
     "subtype": "Human Warrior",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -10286,8 +10438,8 @@
       "usd": "0.23",
       "usd_foil": "0.49",
       "usd_etched": null,
-      "eur": "0.11",
-      "eur_foil": "0.18",
+      "eur": "0.12",
+      "eur_foil": "0.16",
       "tix": null
     },
     "related_uris": {
@@ -10308,6 +10460,8 @@
     "type": "Creature",
     "subtype": "Viashino Shaman",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -10412,10 +10566,10 @@
     "story_spotlight": false,
     "edhrec_rank": 22866,
     "prices": {
-      "usd": "0.48",
+      "usd": "0.44",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": null,
+      "eur": "0.05",
       "eur_foil": null,
       "tix": null
     },
@@ -10436,6 +10590,8 @@
     "ccost": 5,
     "type": "Sorcery",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -10548,11 +10704,11 @@
     "story_spotlight": false,
     "edhrec_rank": 19207,
     "prices": {
-      "usd": "0.47",
+      "usd": "0.46",
       "usd_foil": "1.11",
       "usd_etched": null,
-      "eur": "0.10",
-      "eur_foil": "0.18",
+      "eur": "0.07",
+      "eur_foil": "0.16",
       "tix": null
     },
     "related_uris": {
@@ -10573,6 +10729,8 @@
     "type": "Enchantment",
     "subtype": "Aura",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -10682,10 +10840,10 @@
       "previewed_at": "2022-04-07"
     },
     "prices": {
-      "usd": "0.45",
-      "usd_foil": null,
+      "usd": "0.44",
+      "usd_foil": "0.38",
       "usd_etched": null,
-      "eur": "0.08",
+      "eur": "0.06",
       "eur_foil": "0.18",
       "tix": null
     },
@@ -10706,6 +10864,8 @@
     "ccost": 1,
     "type": "Sorcery",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -10816,11 +10976,11 @@
       "previewed_at": "2022-04-14"
     },
     "prices": {
-      "usd": "2.70",
-      "usd_foil": null,
+      "usd": "2.52",
+      "usd_foil": "4.00",
       "usd_etched": null,
-      "eur": "0.37",
-      "eur_foil": "0.54",
+      "eur": "0.29",
+      "eur_foil": "0.48",
       "tix": null
     },
     "related_uris": {
@@ -10840,6 +11000,8 @@
     "ccost": 5,
     "type": "Sorcery",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -10950,9 +11112,9 @@
     },
     "prices": {
       "usd": "0.41",
-      "usd_foil": null,
+      "usd_foil": "0.56",
       "usd_etched": null,
-      "eur": "0.15",
+      "eur": "0.08",
       "eur_foil": "0.19",
       "tix": null
     },
@@ -10973,6 +11135,8 @@
     "ccost": 1,
     "type": "Instant",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -11084,10 +11248,10 @@
       "previewed_at": "2022-04-09"
     },
     "prices": {
-      "usd": "0.38",
+      "usd": "0.37",
       "usd_foil": "2.99",
       "usd_etched": null,
-      "eur": "0.16",
+      "eur": "0.11",
       "eur_foil": "0.24",
       "tix": null
     },
@@ -11109,6 +11273,8 @@
     "type": "Creature",
     "subtype": "Human Citizen",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -11221,11 +11387,11 @@
     "story_spotlight": true,
     "edhrec_rank": 19523,
     "prices": {
-      "usd": "10.25",
+      "usd": "9.95",
       "usd_foil": "25.81",
       "usd_etched": null,
-      "eur": "6.91",
-      "eur_foil": "10.71",
+      "eur": "6.76",
+      "eur_foil": "10.98",
       "tix": null
     },
     "related_uris": {
@@ -11246,6 +11412,8 @@
     "type": "Legendary Creature",
     "subtype": "Phyrexian Praetor",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -11364,8 +11532,8 @@
       "usd": "3.71",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.23",
-      "eur_foil": "0.48",
+      "eur": "0.22",
+      "eur_foil": "0.47",
       "tix": null
     },
     "related_uris": {
@@ -11385,6 +11553,8 @@
     "ccost": 3,
     "type": "Enchantment",
     "colour": "r",
+    "colourIdentity": "BGRUW",
+    "colourIdentityLength": 5,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -11519,6 +11689,8 @@
     "type": "Creature",
     "subtype": "Human Warrior",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -11624,10 +11796,10 @@
     "story_spotlight": false,
     "edhrec_rank": 15829,
     "prices": {
-      "usd": "48.35",
-      "usd_foil": "36.75",
+      "usd": "39.56",
+      "usd_foil": "38.99",
       "usd_etched": null,
-      "eur": "17.75",
+      "eur": "17.70",
       "eur_foil": "21.99",
       "tix": null
     },
@@ -11648,6 +11820,8 @@
     "ccost": 6,
     "type": "Artifact",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -11754,7 +11928,7 @@
       "usd": "0.44",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.09",
+      "eur": "0.06",
       "eur_foil": "0.25",
       "tix": null
     },
@@ -11775,6 +11949,8 @@
     "ccost": 3,
     "type": "Instant",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -11883,7 +12059,7 @@
       "usd_foil": null,
       "usd_etched": null,
       "eur": "0.02",
-      "eur_foil": null,
+      "eur_foil": "0.18",
       "tix": null
     },
     "related_uris": {
@@ -11903,6 +12079,8 @@
     "ccost": 3,
     "type": "Instant",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -12013,8 +12191,8 @@
       "usd": "0.46",
       "usd_foil": "1.32",
       "usd_etched": null,
-      "eur": "0.03",
-      "eur_foil": "0.18",
+      "eur": "0.05",
+      "eur_foil": "0.15",
       "tix": null
     },
     "related_uris": {
@@ -12035,6 +12213,8 @@
     "type": "Artifact",
     "subtype": "Vehicle",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -12144,8 +12324,8 @@
       "usd": "0.30",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.10",
-      "eur_foil": "0.17",
+      "eur": "0.03",
+      "eur_foil": "0.12",
       "tix": null
     },
     "related_uris": {
@@ -12166,6 +12346,8 @@
     "type": "Creature",
     "subtype": "Human Citizen",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -12279,7 +12461,7 @@
       "usd": null,
       "usd_foil": "0.32",
       "usd_etched": null,
-      "eur": "0.15",
+      "eur": "0.21",
       "eur_foil": "0.15",
       "tix": null
     },
@@ -12301,6 +12483,8 @@
     "type": "Creature",
     "subtype": "Human Citizen",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -12417,7 +12601,7 @@
       "usd": "0.49",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.19",
+      "eur": "0.08",
       "eur_foil": "0.19",
       "tix": null
     },
@@ -12439,6 +12623,8 @@
     "type": "Artifact",
     "subtype": "Treasure",
     "colour": "g",
+    "colourIdentity": "BGRUW",
+    "colourIdentityLength": 5,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -12549,11 +12735,11 @@
       "previewed_at": "2022-04-10"
     },
     "prices": {
-      "usd": "1.64",
+      "usd": "1.61",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.36",
-      "eur_foil": "0.60",
+      "eur": "0.30",
+      "eur_foil": "0.58",
       "tix": null
     },
     "related_uris": {
@@ -12573,6 +12759,8 @@
     "ccost": 3,
     "type": "Artifact",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -12679,11 +12867,11 @@
     "story_spotlight": false,
     "edhrec_rank": 20733,
     "prices": {
-      "usd": "1.67",
+      "usd": "1.63",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.42",
-      "eur_foil": "0.85",
+      "eur": "0.38",
+      "eur_foil": "0.95",
       "tix": null
     },
     "related_uris": {
@@ -12703,6 +12891,8 @@
     "ccost": 3,
     "type": "Enchantment",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -12807,11 +12997,11 @@
     "story_spotlight": false,
     "edhrec_rank": 22759,
     "prices": {
-      "usd": "0.30",
+      "usd": "0.39",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.10",
-      "eur_foil": "0.18",
+      "eur": "0.08",
+      "eur_foil": "0.12",
       "tix": null
     },
     "related_uris": {
@@ -12831,6 +13021,8 @@
     "ccost": 1,
     "type": "Instant",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -12940,7 +13132,7 @@
       "usd": "0.31",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.06",
+      "eur": "0.07",
       "eur_foil": "0.15",
       "tix": null
     },
@@ -12962,6 +13154,8 @@
     "type": "Creature",
     "subtype": "Rhino Warrior",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -13075,10 +13269,10 @@
     "story_spotlight": false,
     "edhrec_rank": 21574,
     "prices": {
-      "usd": "0.47",
+      "usd": "0.46",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.12",
+      "eur": "0.03",
       "eur_foil": "0.12",
       "tix": null
     },
@@ -13100,6 +13294,8 @@
     "type": "Creature",
     "subtype": "Elf Rogue",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -13233,6 +13429,8 @@
     "type": "Creature",
     "subtype": "Elf Citizen",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -13354,11 +13552,11 @@
       "previewed_at": "2022-04-13"
     },
     "prices": {
-      "usd": "0.38",
+      "usd": "0.37",
       "usd_foil": "3.07",
       "usd_etched": null,
       "eur": "0.07",
-      "eur_foil": "0.32",
+      "eur_foil": "0.13",
       "tix": null
     },
     "related_uris": {
@@ -13379,6 +13577,8 @@
     "type": "Creature",
     "subtype": "Cat Rogue",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -13492,7 +13692,7 @@
       "usd_foil": null,
       "usd_etched": null,
       "eur": "0.11",
-      "eur_foil": "0.15",
+      "eur_foil": "0.17",
       "tix": null
     },
     "related_uris": {
@@ -13512,6 +13712,8 @@
     "ccost": 1,
     "type": "Instant",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -13627,7 +13829,7 @@
       "usd": "0.30",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.16",
+      "eur": "0.04",
       "eur_foil": "0.18",
       "tix": null
     },
@@ -13649,6 +13851,8 @@
     "type": "Enchantment",
     "subtype": "Aura",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -13762,10 +13966,10 @@
     "story_spotlight": false,
     "edhrec_rank": 20854,
     "prices": {
-      "usd": "0.42",
+      "usd": "0.44",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.02",
+      "eur": "0.07",
       "eur_foil": "0.12",
       "tix": null
     },
@@ -13786,6 +13990,8 @@
     "ccost": 2,
     "type": "Instant",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -13918,6 +14124,8 @@
     "ccost": 5,
     "type": "Sorcery",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -14031,11 +14239,11 @@
       "previewed_at": "2022-04-11"
     },
     "prices": {
-      "usd": "2.61",
-      "usd_foil": "3.98",
+      "usd": "2.48",
+      "usd_foil": "3.81",
       "usd_etched": null,
-      "eur": "0.53",
-      "eur_foil": "1.73",
+      "eur": "0.46",
+      "eur_foil": "1.58",
       "tix": null
     },
     "related_uris": {
@@ -14056,6 +14264,8 @@
     "type": "Creature",
     "subtype": "Plant Dinosaur",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -14167,10 +14377,10 @@
       "previewed_at": "2022-04-08"
     },
     "prices": {
-      "usd": "11.02",
-      "usd_foil": "14.80",
+      "usd": "10.95",
+      "usd_foil": "14.19",
       "usd_etched": null,
-      "eur": "7.30",
+      "eur": "7.23",
       "eur_foil": "12.98",
       "tix": null
     },
@@ -14192,6 +14402,8 @@
     "type": "Legendary Planeswalker",
     "subtype": "Vivien",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -14299,7 +14511,7 @@
       "usd": "0.37",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.09",
+      "eur": "0.04",
       "eur_foil": "0.12",
       "tix": null
     },
@@ -14320,6 +14532,8 @@
     "ccost": 3,
     "type": "Instant",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -14434,8 +14648,8 @@
       "usd": "0.90",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.38",
-      "eur_foil": "0.61",
+      "eur": "0.35",
+      "eur_foil": "0.49",
       "tix": null
     },
     "related_uris": {
@@ -14456,6 +14670,8 @@
     "type": "Creature",
     "subtype": "Bird Assassin",
     "colour": "m",
+    "colourIdentity": "BU",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -14570,11 +14786,11 @@
       "previewed_at": "2022-04-11"
     },
     "prices": {
-      "usd": "1.77",
+      "usd": "1.75",
       "usd_foil": "1.79",
       "usd_etched": null,
       "eur": "0.32",
-      "eur_foil": "0.75",
+      "eur_foil": "0.74",
       "tix": null
     },
     "related_uris": {
@@ -14595,6 +14811,8 @@
     "type": "Creature",
     "subtype": "Cat Rogue",
     "colour": "m",
+    "colourIdentity": "GR",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -14711,8 +14929,8 @@
       "usd": "0.41",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.05",
-      "eur_foil": "0.15",
+      "eur": "0.06",
+      "eur_foil": "0.13",
       "tix": null
     },
     "related_uris": {
@@ -14733,6 +14951,8 @@
     "type": "Creature",
     "subtype": "Devil Warrior",
     "colour": "m",
+    "colourIdentity": "BR",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -14850,8 +15070,8 @@
       "usd": "0.36",
       "usd_foil": "0.35",
       "usd_etched": null,
-      "eur": "0.05",
-      "eur_foil": "0.18",
+      "eur": "0.06",
+      "eur_foil": "0.17",
       "tix": null
     },
     "related_uris": {
@@ -14872,6 +15092,8 @@
     "type": "Creature",
     "subtype": "Angel Advisor",
     "colour": "m",
+    "colourIdentity": "UW",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -15009,6 +15231,8 @@
     "type": "Artifact",
     "subtype": "Equipment",
     "colour": "m",
+    "colourIdentity": "GW",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -15146,6 +15370,8 @@
     "type": "Creature",
     "subtype": "Cat Citizen",
     "colour": "m",
+    "colourIdentity": "GW",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -15258,11 +15484,11 @@
       "previewed_at": "2022-04-13"
     },
     "prices": {
-      "usd": "2.33",
+      "usd": "2.20",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.25",
-      "eur_foil": "0.68",
+      "eur": "0.29",
+      "eur_foil": "0.70",
       "tix": null
     },
     "related_uris": {
@@ -15282,6 +15508,8 @@
     "ccost": 3,
     "type": "Sorcery",
     "colour": "m",
+    "colourIdentity": "BR",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -15397,7 +15625,7 @@
       "usd": "0.33",
       "usd_foil": "0.46",
       "usd_etched": null,
-      "eur": "0.11",
+      "eur": "0.07",
       "eur_foil": "0.15",
       "tix": null
     },
@@ -15419,6 +15647,8 @@
     "type": "Creature",
     "subtype": "Elf Citizen",
     "colour": "m",
+    "colourIdentity": "GW",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -15551,8 +15781,8 @@
       "usd": "0.37",
       "usd_foil": "0.66",
       "usd_etched": null,
-      "eur": "0.16",
-      "eur_foil": "0.18",
+      "eur": "0.11",
+      "eur_foil": "0.15",
       "tix": null
     },
     "related_uris": {
@@ -15572,6 +15802,8 @@
     "ccost": 3,
     "type": "Instant",
     "colour": "m",
+    "colourIdentity": "UW",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -15682,11 +15914,11 @@
       "previewed_at": "2022-04-12"
     },
     "prices": {
-      "usd": "0.27",
+      "usd": "0.25",
       "usd_foil": "0.32",
       "usd_etched": null,
-      "eur": "0.15",
-      "eur_foil": "0.59",
+      "eur": "0.17",
+      "eur_foil": "0.55",
       "tix": null
     },
     "related_uris": {
@@ -15706,6 +15938,8 @@
     "ccost": 2,
     "type": "Sorcery",
     "colour": "m",
+    "colourIdentity": "BR",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -15819,11 +16053,11 @@
       "previewed_at": "2022-04-10"
     },
     "prices": {
-      "usd": "0.23",
-      "usd_foil": null,
+      "usd": "0.22",
+      "usd_foil": "0.30",
       "usd_etched": null,
-      "eur": "0.11",
-      "eur_foil": "0.18",
+      "eur": "0.10",
+      "eur_foil": "0.15",
       "tix": null
     },
     "related_uris": {
@@ -15844,6 +16078,8 @@
     "type": "Creature",
     "subtype": "Human Warrior",
     "colour": "m",
+    "colourIdentity": "BR",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -15960,7 +16196,7 @@
       "usd": "0.43",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.10",
+      "eur": "0.09",
       "eur_foil": "0.12",
       "tix": null
     },
@@ -15982,6 +16218,8 @@
     "type": "Creature",
     "subtype": "Cat Warrior",
     "colour": "m",
+    "colourIdentity": "GR",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -16110,7 +16348,7 @@
       "usd": "2.05",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "3.73",
+      "eur": "3.94",
       "eur_foil": "5.47",
       "tix": null
     },
@@ -16131,6 +16369,8 @@
     "ccost": 8,
     "type": "Sorcery",
     "colour": "m",
+    "colourIdentity": "BGRUW",
+    "colourIdentityLength": 5,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -16249,8 +16489,8 @@
       "usd": "0.36",
       "usd_foil": "0.44",
       "usd_etched": null,
-      "eur": "0.15",
-      "eur_foil": "0.16",
+      "eur": "0.10",
+      "eur_foil": "0.17",
       "tix": null
     },
     "related_uris": {
@@ -16271,6 +16511,8 @@
     "type": "Creature",
     "subtype": "Angel Soldier",
     "colour": "m",
+    "colourIdentity": "UW",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -16378,11 +16620,11 @@
     "story_spotlight": false,
     "edhrec_rank": 21086,
     "prices": {
-      "usd": "32.82",
+      "usd": "32.59",
       "usd_foil": "49.76",
       "usd_etched": null,
-      "eur": "29.19",
-      "eur_foil": "37.20",
+      "eur": "28.15",
+      "eur_foil": "37.82",
       "tix": null
     },
     "related_uris": {
@@ -16403,6 +16645,8 @@
     "type": "Legendary Planeswalker",
     "subtype": "Nixilis",
     "colour": "m",
+    "colourIdentity": "BR",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -16523,8 +16767,8 @@
       "usd": "1.23",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.45",
-      "eur_foil": "0.65",
+      "eur": "0.33",
+      "eur_foil": "0.75",
       "tix": null
     },
     "related_uris": {
@@ -16545,6 +16789,8 @@
     "type": "Creature",
     "subtype": "Pegasus",
     "colour": "m",
+    "colourIdentity": "GW",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -16658,11 +16904,11 @@
       "previewed_at": "2022-04-12"
     },
     "prices": {
-      "usd": "2.84",
-      "usd_foil": "4.26",
+      "usd": "2.74",
+      "usd_foil": "4.18",
       "usd_etched": null,
-      "eur": "1.94",
-      "eur_foil": "3.62",
+      "eur": "2.16",
+      "eur_foil": "3.66",
       "tix": null
     },
     "related_uris": {
@@ -16683,6 +16929,8 @@
     "type": "Creature",
     "subtype": "Human Citizen",
     "colour": "m",
+    "colourIdentity": "UW",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -16795,7 +17043,7 @@
       "usd_foil": null,
       "usd_etched": null,
       "eur": "0.11",
-      "eur_foil": "0.20",
+      "eur_foil": "0.17",
       "tix": null
     },
     "related_uris": {
@@ -16816,6 +17064,8 @@
     "type": "Creature",
     "subtype": "Rhino Warrior",
     "colour": "m",
+    "colourIdentity": "GR",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -16933,8 +17183,8 @@
       "usd": null,
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.25",
-      "eur_foil": "0.42",
+      "eur": "0.04",
+      "eur_foil": "0.12",
       "tix": null
     },
     "related_uris": {
@@ -16955,6 +17205,8 @@
     "type": "Creature",
     "subtype": "Human Rogue",
     "colour": "m",
+    "colourIdentity": "BU",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -17072,10 +17324,10 @@
       "previewed_at": "2022-04-12"
     },
     "prices": {
-      "usd": "0.24",
-      "usd_foil": "0.32",
+      "usd": "0.23",
+      "usd_foil": "0.60",
       "usd_etched": null,
-      "eur": "0.12",
+      "eur": "0.05",
       "eur_foil": "0.23",
       "tix": null
     },
@@ -17096,6 +17348,8 @@
     "ccost": 4,
     "type": "Enchantment",
     "colour": "m",
+    "colourIdentity": "GR",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -17231,6 +17485,8 @@
     "type": "Creature",
     "subtype": "Vampire Wizard",
     "colour": "m",
+    "colourIdentity": "BU",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -17342,11 +17598,11 @@
       "previewed_at": "2022-04-12"
     },
     "prices": {
-      "usd": "0.52",
-      "usd_foil": "1.33",
+      "usd": "0.49",
+      "usd_foil": "1.34",
       "usd_etched": null,
-      "eur": "0.42",
-      "eur_foil": "2.48",
+      "eur": "0.49",
+      "eur_foil": "1.93",
       "tix": null
     },
     "related_uris": {
@@ -17366,6 +17622,8 @@
     "ccost": 2,
     "type": "Instant",
     "colour": "m",
+    "colourIdentity": "BU",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -17476,8 +17734,8 @@
       "usd": "0.23",
       "usd_foil": "0.32",
       "usd_etched": null,
-      "eur": "0.11",
-      "eur_foil": "0.18",
+      "eur": "0.07",
+      "eur_foil": "0.15",
       "tix": null
     },
     "related_uris": {
@@ -17498,6 +17756,8 @@
     "type": "Artifact",
     "subtype": "Equipment",
     "colour": "a",
+    "colourIdentity": "",
+    "colourIdentityLength": 0,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -17604,11 +17864,11 @@
       "previewed_at": "2022-04-13"
     },
     "prices": {
-      "usd": "0.45",
-      "usd_foil": "0.98",
+      "usd": "0.44",
+      "usd_foil": "0.90",
       "usd_etched": null,
-      "eur": "0.17",
-      "eur_foil": "0.27",
+      "eur": "0.10",
+      "eur_foil": "0.21",
       "tix": null
     },
     "related_uris": {
@@ -17629,6 +17889,8 @@
     "type": "Artifact",
     "subtype": "Equipment",
     "colour": "a",
+    "colourIdentity": "",
+    "colourIdentityLength": 0,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -17738,7 +18000,7 @@
       "usd": "0.25",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.12",
+      "eur": "0.08",
       "eur_foil": "0.18",
       "tix": null
     },
@@ -17760,6 +18022,8 @@
     "type": "Artifact",
     "subtype": "Equipment",
     "colour": "a",
+    "colourIdentity": "",
+    "colourIdentityLength": 0,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -17888,6 +18152,8 @@
     "type": "Artifact Creature",
     "subtype": "Cat",
     "colour": "a",
+    "colourIdentity": "",
+    "colourIdentityLength": 0,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -17994,10 +18260,10 @@
     "story_spotlight": false,
     "edhrec_rank": 22311,
     "prices": {
-      "usd": "1.21",
+      "usd": "1.17",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.18",
+      "eur": "0.17",
       "eur_foil": "0.27",
       "tix": null
     },
@@ -18019,6 +18285,8 @@
     "type": "Artifact",
     "subtype": "Vehicle",
     "colour": "a",
+    "colourIdentity": "",
+    "colourIdentityLength": 0,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -18127,11 +18395,11 @@
     "story_spotlight": false,
     "edhrec_rank": 22398,
     "prices": {
-      "usd": "0.54",
+      "usd": "0.49",
       "usd_foil": "1.00",
       "usd_etched": null,
-      "eur": "0.12",
-      "eur_foil": "0.12",
+      "eur": "0.06",
+      "eur_foil": "0.15",
       "tix": null
     },
     "related_uris": {
@@ -18152,6 +18420,8 @@
     "type": "Artifact",
     "subtype": "Equipment",
     "colour": "a",
+    "colourIdentity": "",
+    "colourIdentityLength": 0,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -18269,8 +18539,8 @@
       "usd": "0.46",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.10",
-      "eur_foil": "0.10",
+      "eur": "0.06",
+      "eur_foil": "0.12",
       "tix": null
     },
     "related_uris": {
@@ -18291,6 +18561,8 @@
     "type": "Artifact Creature",
     "subtype": "Insect",
     "colour": "a",
+    "colourIdentity": "",
+    "colourIdentityLength": 0,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -18401,11 +18673,11 @@
       "previewed_at": "2022-04-11"
     },
     "prices": {
-      "usd": "20.07",
-      "usd_foil": "32.71",
+      "usd": "20.21",
+      "usd_foil": "30.76",
       "usd_etched": null,
-      "eur": "12.86",
-      "eur_foil": "22.91",
+      "eur": "12.85",
+      "eur_foil": "22.92",
       "tix": null
     },
     "related_uris": {
@@ -18426,6 +18698,8 @@
     "type": "Legendary Artifact",
     "subtype": "Equipment",
     "colour": "a",
+    "colourIdentity": "",
+    "colourIdentityLength": 0,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -18534,7 +18808,7 @@
       "usd": "0.30",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.30",
+      "eur": "0.05",
       "eur_foil": "0.18",
       "tix": null
     },
@@ -18555,6 +18829,8 @@
     "ccost": 1,
     "type": "Artifact",
     "colour": "a",
+    "colourIdentity": "",
+    "colourIdentityLength": 0,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -18659,10 +18935,10 @@
     "story_spotlight": false,
     "edhrec_rank": 22861,
     "prices": {
-      "usd": "0.48",
+      "usd": "0.47",
       "usd_foil": "1.00",
       "usd_etched": null,
-      "eur": "0.30",
+      "eur": "0.09",
       "eur_foil": "0.18",
       "tix": null
     },
@@ -18684,6 +18960,8 @@
     "type": "Artifact Creature",
     "subtype": "Angel Warrior",
     "colour": "a",
+    "colourIdentity": "",
+    "colourIdentityLength": 0,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -18789,7 +19067,7 @@
       "usd": "0.48",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.04",
+      "eur": "0.05",
       "eur_foil": "0.12",
       "tix": null
     },
@@ -18811,6 +19089,8 @@
     "type": "Artifact",
     "subtype": "Equipment",
     "colour": "a",
+    "colourIdentity": "",
+    "colourIdentityLength": 0,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -18942,6 +19222,8 @@
     "type": "Artifact Creature",
     "subtype": "Construct",
     "colour": "a",
+    "colourIdentity": "",
+    "colourIdentityLength": 0,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -19054,8 +19336,8 @@
       "usd": "0.24",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.17",
-      "eur_foil": "0.18",
+      "eur": "0.09",
+      "eur_foil": "0.15",
       "tix": null
     },
     "related_uris": {
@@ -19076,6 +19358,8 @@
     "type": "Artifact Creature",
     "subtype": "Wall",
     "colour": "a",
+    "colourIdentity": "",
+    "colourIdentityLength": 0,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -19185,11 +19469,11 @@
       "previewed_at": "2022-04-12"
     },
     "prices": {
-      "usd": "1.31",
-      "usd_foil": null,
+      "usd": "1.20",
+      "usd_foil": "1.74",
       "usd_etched": null,
-      "eur": "0.56",
-      "eur_foil": "1.14",
+      "eur": "0.59",
+      "eur_foil": "1.13",
       "tix": null
     },
     "related_uris": {
@@ -19210,6 +19494,8 @@
     "type": "Artifact",
     "subtype": "Vehicle",
     "colour": "a",
+    "colourIdentity": "",
+    "colourIdentityLength": 0,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -19320,8 +19606,8 @@
       "usd": "0.27",
       "usd_foil": "2.00",
       "usd_etched": null,
-      "eur": "0.13",
-      "eur_foil": "0.18",
+      "eur": "0.07",
+      "eur_foil": "0.17",
       "tix": null
     },
     "related_uris": {
@@ -19332,7 +19618,7 @@
     },
     "purchase_uris": {
       "tcgplayer": "https://www.tcgplayer.com/product/268326?page=1&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
-      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Singles/Streets-of-New-Capenna/Botanical-Plaza?referrer=scryfall&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Botanical+Plaza&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
       "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Botanical+Plaza&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
     },
     "title": "Botanical Plaza",
@@ -19341,6 +19627,8 @@
     "ccost": 0,
     "type": "Land",
     "colour": "l",
+    "colourIdentity": "GW",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -19451,8 +19739,8 @@
       "usd": "0.40",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.13",
-      "eur_foil": "0.18",
+      "eur": "0.07",
+      "eur_foil": "0.17",
       "tix": null
     },
     "related_uris": {
@@ -19472,6 +19760,8 @@
     "ccost": 0,
     "type": "Land",
     "colour": "l",
+    "colourIdentity": "GR",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -19579,11 +19869,11 @@
     "story_spotlight": false,
     "edhrec_rank": 22625,
     "prices": {
-      "usd": "0.40",
+      "usd": "0.38",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.13",
-      "eur_foil": "0.18",
+      "eur": "0.07",
+      "eur_foil": "0.17",
       "tix": null
     },
     "related_uris": {
@@ -19603,6 +19893,8 @@
     "ccost": 0,
     "type": "Land",
     "colour": "l",
+    "colourIdentity": "UW",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -19710,10 +20002,10 @@
     "story_spotlight": false,
     "edhrec_rank": 22279,
     "prices": {
-      "usd": "0.36",
+      "usd": "0.35",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.13",
+      "eur": "0.07",
       "eur_foil": "0.18",
       "tix": null
     },
@@ -19734,6 +20026,8 @@
     "ccost": 0,
     "type": "Land",
     "colour": "l",
+    "colourIdentity": "BR",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -19844,8 +20138,8 @@
       "usd": "0.40",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.13",
-      "eur_foil": "0.18",
+      "eur": "0.07",
+      "eur_foil": "0.22",
       "tix": null
     },
     "related_uris": {
@@ -19865,6 +20159,8 @@
     "ccost": 0,
     "type": "Land",
     "colour": "l",
+    "colourIdentity": "BU",
+    "colourIdentityLength": 2,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -19971,7 +20267,7 @@
       "usd": null,
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.05",
+      "eur": "0.10",
       "eur_foil": "0.10",
       "tix": null
     },
@@ -19993,6 +20289,8 @@
     "type": "Basic Land",
     "subtype": "Plains",
     "colour": "l",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -20099,7 +20397,7 @@
       "usd": null,
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.05",
+      "eur": "0.10",
       "eur_foil": "0.10",
       "tix": null
     },
@@ -20121,6 +20419,8 @@
     "type": "Basic Land",
     "subtype": "Plains",
     "colour": "l",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -20249,6 +20549,8 @@
     "type": "Basic Land",
     "subtype": "Island",
     "colour": "l",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -20377,6 +20679,8 @@
     "type": "Basic Land",
     "subtype": "Island",
     "colour": "l",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -20483,7 +20787,7 @@
       "usd": null,
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.05",
+      "eur": "0.07",
       "eur_foil": "0.10",
       "tix": null
     },
@@ -20505,6 +20809,8 @@
     "type": "Basic Land",
     "subtype": "Swamp",
     "colour": "l",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -20611,7 +20917,7 @@
       "usd": null,
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.05",
+      "eur": "0.07",
       "eur_foil": "0.10",
       "tix": null
     },
@@ -20633,6 +20939,8 @@
     "type": "Basic Land",
     "subtype": "Swamp",
     "colour": "l",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -20761,6 +21069,8 @@
     "type": "Basic Land",
     "subtype": "Mountain",
     "colour": "l",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -20889,6 +21199,8 @@
     "type": "Basic Land",
     "subtype": "Mountain",
     "colour": "l",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -20995,7 +21307,7 @@
       "usd": null,
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.05",
+      "eur": "0.07",
       "eur_foil": "0.10",
       "tix": null
     },
@@ -21017,6 +21329,8 @@
     "type": "Basic Land",
     "subtype": "Forest",
     "colour": "l",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -21123,7 +21437,7 @@
       "usd": null,
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.05",
+      "eur": "0.07",
       "eur_foil": "0.10",
       "tix": null
     },
@@ -21145,6 +21459,8 @@
     "type": "Basic Land",
     "subtype": "Forest",
     "colour": "l",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -21251,11 +21567,11 @@
     "booster": true,
     "story_spotlight": false,
     "prices": {
-      "usd": "1.23",
-      "usd_foil": "3.19",
+      "usd": "1.11",
+      "usd_foil": "2.50",
       "usd_etched": null,
-      "eur": "0.21",
-      "eur_foil": "0.79",
+      "eur": "0.25",
+      "eur_foil": "0.83",
       "tix": null
     },
     "related_uris": {
@@ -21276,6 +21592,8 @@
     "type": "Basic Land",
     "subtype": "Forest",
     "colour": "l",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -21379,11 +21697,11 @@
     "booster": true,
     "story_spotlight": false,
     "prices": {
-      "usd": "1.57",
-      "usd_foil": "1.99",
+      "usd": "1.46",
+      "usd_foil": "1.74",
       "usd_etched": null,
-      "eur": "0.21",
-      "eur_foil": "0.79",
+      "eur": "0.29",
+      "eur_foil": "0.77",
       "tix": null
     },
     "related_uris": {
@@ -21404,6 +21722,8 @@
     "type": "Basic Land",
     "subtype": "Plains",
     "colour": "l",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -21508,11 +21828,11 @@
     "booster": true,
     "story_spotlight": false,
     "prices": {
-      "usd": "1.45",
-      "usd_foil": "1.99",
+      "usd": "1.16",
+      "usd_foil": "1.69",
       "usd_etched": null,
-      "eur": "0.22",
-      "eur_foil": "0.79",
+      "eur": "0.28",
+      "eur_foil": "0.81",
       "tix": null
     },
     "related_uris": {
@@ -21533,6 +21853,8 @@
     "type": "Basic Land",
     "subtype": "Plains",
     "colour": "l",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -21637,11 +21959,11 @@
     "booster": true,
     "story_spotlight": false,
     "prices": {
-      "usd": "1.99",
-      "usd_foil": "3.13",
+      "usd": "1.91",
+      "usd_foil": "2.48",
       "usd_etched": null,
-      "eur": "0.22",
-      "eur_foil": "1.19",
+      "eur": "0.26",
+      "eur_foil": "1.10",
       "tix": null
     },
     "related_uris": {
@@ -21662,6 +21984,8 @@
     "type": "Basic Land",
     "subtype": "Island",
     "colour": "l",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -21769,11 +22093,11 @@
     "booster": true,
     "story_spotlight": false,
     "prices": {
-      "usd": "1.43",
-      "usd_foil": "3.41",
+      "usd": "1.36",
+      "usd_foil": "2.97",
       "usd_etched": null,
-      "eur": "0.21",
-      "eur_foil": "0.79",
+      "eur": "0.24",
+      "eur_foil": "0.77",
       "tix": null
     },
     "related_uris": {
@@ -21794,6 +22118,8 @@
     "type": "Basic Land",
     "subtype": "Island",
     "colour": "l",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -21901,11 +22227,11 @@
     "booster": true,
     "story_spotlight": false,
     "prices": {
-      "usd": "1.65",
-      "usd_foil": "3.06",
+      "usd": "1.51",
+      "usd_foil": "2.57",
       "usd_etched": null,
-      "eur": "0.24",
-      "eur_foil": "0.79",
+      "eur": "0.26",
+      "eur_foil": "0.81",
       "tix": null
     },
     "related_uris": {
@@ -21926,6 +22252,8 @@
     "type": "Basic Land",
     "subtype": "Swamp",
     "colour": "l",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -22033,11 +22361,11 @@
     "booster": true,
     "story_spotlight": false,
     "prices": {
-      "usd": "1.46",
-      "usd_foil": "3.59",
+      "usd": "1.31",
+      "usd_foil": "2.97",
       "usd_etched": null,
-      "eur": "0.20",
-      "eur_foil": "0.79",
+      "eur": "0.25",
+      "eur_foil": "0.77",
       "tix": null
     },
     "related_uris": {
@@ -22058,6 +22386,8 @@
     "type": "Basic Land",
     "subtype": "Swamp",
     "colour": "l",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -22165,11 +22495,11 @@
     "booster": true,
     "story_spotlight": false,
     "prices": {
-      "usd": "2.72",
-      "usd_foil": "1.99",
+      "usd": "2.20",
+      "usd_foil": "1.76",
       "usd_etched": null,
-      "eur": "0.20",
-      "eur_foil": "0.79",
+      "eur": "0.24",
+      "eur_foil": "0.77",
       "tix": null
     },
     "related_uris": {
@@ -22190,6 +22520,8 @@
     "type": "Basic Land",
     "subtype": "Mountain",
     "colour": "l",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -22297,11 +22629,11 @@
     "booster": true,
     "story_spotlight": false,
     "prices": {
-      "usd": "1.98",
-      "usd_foil": "1.95",
+      "usd": "1.65",
+      "usd_foil": "1.85",
       "usd_etched": null,
-      "eur": "0.21",
-      "eur_foil": "0.79",
+      "eur": "0.27",
+      "eur_foil": "0.76",
       "tix": null
     },
     "related_uris": {
@@ -22322,6 +22654,8 @@
     "type": "Basic Land",
     "subtype": "Mountain",
     "colour": "l",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -22429,11 +22763,11 @@
     "booster": true,
     "story_spotlight": false,
     "prices": {
-      "usd": "1.98",
-      "usd_foil": "3.14",
+      "usd": "1.61",
+      "usd_foil": "2.47",
       "usd_etched": null,
-      "eur": "0.24",
-      "eur_foil": "1.19",
+      "eur": "0.26",
+      "eur_foil": "1.10",
       "tix": null
     },
     "related_uris": {
@@ -22454,6 +22788,8 @@
     "type": "Basic Land",
     "subtype": "Forest",
     "colour": "l",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -22571,7 +22907,7 @@
       "usd_foil": "1.00",
       "usd_etched": null,
       "eur": "0.09",
-      "eur_foil": "0.18",
+      "eur_foil": "0.12",
       "tix": null
     },
     "related_uris": {
@@ -22591,6 +22927,8 @@
     "ccost": 1,
     "type": "Instant",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -22709,7 +23047,7 @@
       "usd": "0.48",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.05",
+      "eur": "0.04",
       "eur_foil": "0.18",
       "tix": null
     },
@@ -22731,6 +23069,8 @@
     "type": "Creature",
     "subtype": "Cat Citizen",
     "colour": "w",
+    "colourIdentity": "GUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -22869,6 +23209,8 @@
     "type": "Creature",
     "subtype": "Human Soldier",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -22984,10 +23326,10 @@
       "previewed_at": "2022-04-14"
     },
     "prices": {
-      "usd": "9.60",
+      "usd": "8.75",
       "usd_foil": "31.31",
       "usd_etched": null,
-      "eur": "6.68",
+      "eur": "6.32",
       "eur_foil": "8.97",
       "tix": null
     },
@@ -23009,6 +23351,8 @@
     "type": "Creature",
     "subtype": "Angel Soldier",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -23128,7 +23472,7 @@
       "usd_foil": null,
       "usd_etched": null,
       "eur": null,
-      "eur_foil": "0.18",
+      "eur_foil": "0.15",
       "tix": null
     },
     "related_uris": {
@@ -23149,6 +23493,8 @@
     "type": "Creature",
     "subtype": "Bird Citizen",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -23277,7 +23623,7 @@
     },
     "purchase_uris": {
       "tcgplayer": "https://www.tcgplayer.com/product/268909?page=1&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
-      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Brokers+Veteran&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Singles/Streets-of-New-Capenna/Brokers-Veteran?referrer=scryfall&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
       "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Brokers+Veteran&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
     },
     "title": "Brokers Veteran",
@@ -23287,6 +23633,8 @@
     "type": "Creature",
     "subtype": "Human Soldier",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -23400,11 +23748,11 @@
       "previewed_at": "2022-04-14"
     },
     "prices": {
-      "usd": "2.60",
+      "usd": "2.52",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.39",
-      "eur_foil": "0.75",
+      "eur": "0.47",
+      "eur_foil": "0.57",
       "tix": null
     },
     "related_uris": {
@@ -23425,6 +23773,8 @@
     "type": "Creature",
     "subtype": "Shapeshifter Rogue",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -23540,7 +23890,7 @@
       "usd": "0.24",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.15",
+      "eur": "0.13",
       "eur_foil": "0.15",
       "tix": null
     },
@@ -23562,6 +23912,8 @@
     "type": "Creature",
     "subtype": "Human Soldier",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -23699,6 +24051,8 @@
     "type": "Creature",
     "subtype": "Rhino Soldier",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -23815,11 +24169,11 @@
       "previewed_at": "2022-04-15"
     },
     "prices": {
-      "usd": "12.80",
+      "usd": "10.53",
       "usd_foil": "22.29",
       "usd_etched": null,
-      "eur": "13.00",
-      "eur_foil": null,
+      "eur": "12.34",
+      "eur_foil": "17.44",
       "tix": null
     },
     "related_uris": {
@@ -23840,6 +24194,8 @@
     "type": "Creature",
     "subtype": "Elemental",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -23977,6 +24333,8 @@
     "type": "Creature",
     "subtype": "Human Citizen",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -24088,11 +24446,11 @@
     "story_spotlight": false,
     "edhrec_rank": 15928,
     "prices": {
-      "usd": "2.19",
-      "usd_foil": "11.08",
+      "usd": "2.14",
+      "usd_foil": "10.07",
       "usd_etched": null,
-      "eur": "0.60",
-      "eur_foil": "1.11",
+      "eur": "0.71",
+      "eur_foil": "1.44",
       "tix": null
     },
     "related_uris": {
@@ -24112,6 +24470,8 @@
     "ccost": 3,
     "type": "Enchantment",
     "colour": "m",
+    "colourIdentity": "GUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -24226,11 +24586,11 @@
       "previewed_at": "2022-04-05"
     },
     "prices": {
-      "usd": "0.57",
+      "usd": "0.56",
       "usd_foil": "2.25",
       "usd_etched": null,
-      "eur": "0.15",
-      "eur_foil": "0.53",
+      "eur": "0.18",
+      "eur_foil": "0.52",
       "tix": null
     },
     "related_uris": {
@@ -24250,6 +24610,8 @@
     "ccost": 3,
     "type": "Instant",
     "colour": "m",
+    "colourIdentity": "GUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -24372,8 +24734,8 @@
       "usd": "0.49",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.11",
-      "eur_foil": "0.25",
+      "eur": "0.08",
+      "eur_foil": "0.19",
       "tix": null
     },
     "related_uris": {
@@ -24394,6 +24756,8 @@
     "type": "Creature",
     "subtype": "Human Citizen",
     "colour": "m",
+    "colourIdentity": "GUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -24510,11 +24874,11 @@
       "previewed_at": "2022-04-14"
     },
     "prices": {
-      "usd": "5.13",
+      "usd": "4.85",
       "usd_foil": "6.99",
       "usd_etched": null,
-      "eur": "2.66",
-      "eur_foil": "4.42",
+      "eur": "2.94",
+      "eur_foil": "4.49",
       "tix": null
     },
     "related_uris": {
@@ -24534,6 +24898,8 @@
     "ccost": 3,
     "type": "Instant",
     "colour": "m",
+    "colourIdentity": "GUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -24652,11 +25018,11 @@
     "story_spotlight": false,
     "edhrec_rank": 19542,
     "prices": {
-      "usd": "7.06",
+      "usd": "6.27",
       "usd_foil": "17.51",
       "usd_etched": null,
       "eur": "3.48",
-      "eur_foil": "7.00",
+      "eur_foil": "5.69",
       "tix": null
     },
     "related_uris": {
@@ -24677,6 +25043,8 @@
     "type": "Legendary Creature",
     "subtype": "Bird Demon",
     "colour": "m",
+    "colourIdentity": "GUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -24821,6 +25189,8 @@
     "type": "Legendary Creature",
     "subtype": "Human Soldier",
     "colour": "m",
+    "colourIdentity": "GUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -24943,8 +25313,8 @@
       "usd": "3.68",
       "usd_foil": "2.99",
       "usd_etched": null,
-      "eur": "1.38",
-      "eur_foil": "2.72",
+      "eur": "1.28",
+      "eur_foil": "2.98",
       "tix": null
     },
     "related_uris": {
@@ -24965,6 +25335,8 @@
     "type": "Legendary Creature",
     "subtype": "Cat Citizen",
     "colour": "m",
+    "colourIdentity": "GUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -25083,11 +25455,11 @@
       "previewed_at": "2022-04-14"
     },
     "prices": {
-      "usd": "0.88",
+      "usd": "0.86",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "1.54",
-      "eur_foil": "2.66",
+      "eur": "1.47",
+      "eur_foil": "1.74",
       "tix": null
     },
     "related_uris": {
@@ -25108,6 +25480,8 @@
     "type": "Creature",
     "subtype": "Avatar",
     "colour": "m",
+    "colourIdentity": "GUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -25232,7 +25606,7 @@
       "usd": "0.47",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.14",
+      "eur": "0.02",
       "eur_foil": "0.12",
       "tix": null
     },
@@ -25254,6 +25628,8 @@
     "type": "Creature",
     "subtype": "Cat Citizen",
     "colour": "m",
+    "colourIdentity": "GUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -25356,11 +25732,11 @@
     "story_spotlight": false,
     "edhrec_rank": 20349,
     "prices": {
-      "usd": "0.47",
+      "usd": "0.46",
       "usd_foil": "1.32",
       "usd_etched": null,
-      "eur": "0.11",
-      "eur_foil": "0.17",
+      "eur": "0.08",
+      "eur_foil": "0.18",
       "tix": null
     },
     "related_uris": {
@@ -25371,7 +25747,7 @@
     },
     "purchase_uris": {
       "tcgplayer": "https://www.tcgplayer.com/product/269107?page=1&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
-      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Singles/Streets-of-New-Capenna/Brokers-Hideout?referrer=scryfall&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Brokers+Hideout&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
       "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Brokers+Hideout&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
     },
     "title": "Brokers Hideout",
@@ -25380,6 +25756,8 @@
     "ccost": 0,
     "type": "Land",
     "colour": "l",
+    "colourIdentity": "",
+    "colourIdentityLength": 0,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -25494,11 +25872,11 @@
     "story_spotlight": false,
     "edhrec_rank": 10362,
     "prices": {
-      "usd": "11.16",
+      "usd": "10.86",
       "usd_foil": "18.64",
       "usd_etched": null,
-      "eur": "8.95",
-      "eur_foil": "13.59",
+      "eur": "9.14",
+      "eur_foil": "13.74",
       "tix": null
     },
     "related_uris": {
@@ -25519,6 +25897,8 @@
     "type": "Land",
     "subtype": "Forest Plains Island",
     "colour": "l",
+    "colourIdentity": "GUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -25638,7 +26018,7 @@
       "usd_foil": null,
       "usd_etched": null,
       "eur": "0.09",
-      "eur_foil": "0.12",
+      "eur_foil": "0.18",
       "tix": null
     },
     "related_uris": {
@@ -25659,6 +26039,8 @@
     "type": "Creature",
     "subtype": "Elf Druid",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -25770,11 +26152,11 @@
     "story_spotlight": false,
     "edhrec_rank": 17933,
     "prices": {
-      "usd": "0.42",
-      "usd_foil": "0.84",
+      "usd": "0.46",
+      "usd_foil": "0.74",
       "usd_etched": null,
-      "eur": "0.20",
-      "eur_foil": "0.56",
+      "eur": "0.16",
+      "eur_foil": "0.48",
       "tix": null
     },
     "related_uris": {
@@ -25795,6 +26177,8 @@
     "type": "Creature",
     "subtype": "Elf Wizard",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -25913,11 +26297,11 @@
       "previewed_at": "2022-04-07"
     },
     "prices": {
-      "usd": "2.96",
+      "usd": "2.53",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.70",
-      "eur_foil": "1.63",
+      "eur": "0.67",
+      "eur_foil": "1.62",
       "tix": null
     },
     "related_uris": {
@@ -25938,6 +26322,8 @@
     "type": "Creature",
     "subtype": "Devil Warrior",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -26055,7 +26441,7 @@
       "usd": "0.24",
       "usd_foil": "0.32",
       "usd_etched": null,
-      "eur": "0.11",
+      "eur": "0.15",
       "eur_foil": "0.15",
       "tix": null
     },
@@ -26077,6 +26463,8 @@
     "type": "Creature",
     "subtype": "Human Citizen",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -26187,11 +26575,11 @@
     "story_spotlight": false,
     "edhrec_rank": 19723,
     "prices": {
-      "usd": "0.48",
-      "usd_foil": "0.77",
+      "usd": "0.46",
+      "usd_foil": "0.76",
       "usd_etched": null,
-      "eur": "0.24",
-      "eur_foil": "0.18",
+      "eur": "0.06",
+      "eur_foil": "0.15",
       "tix": null
     },
     "related_uris": {
@@ -26212,6 +26600,8 @@
     "type": "Creature",
     "subtype": "Devil Citizen",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -26326,7 +26716,7 @@
       "previewed_at": "2022-04-12"
     },
     "prices": {
-      "usd": "0.31",
+      "usd": "0.35",
       "usd_foil": null,
       "usd_etched": null,
       "eur": "0.07",
@@ -26351,6 +26741,8 @@
     "type": "Creature",
     "subtype": "Elf Druid",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -26468,7 +26860,7 @@
       "usd": "0.38",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.20",
+      "eur": "0.04",
       "eur_foil": "0.18",
       "tix": null
     },
@@ -26490,6 +26882,8 @@
     "type": "Creature",
     "subtype": "Raccoon Citizen",
     "colour": "g",
+    "colourIdentity": "GRW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -26605,10 +26999,10 @@
       "previewed_at": "2022-04-12"
     },
     "prices": {
-      "usd": "0.24",
+      "usd": "0.23",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.10",
+      "eur": "0.07",
       "eur_foil": "0.15",
       "tix": null
     },
@@ -26630,6 +27024,8 @@
     "type": "Creature",
     "subtype": "Elf Druid",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -26740,11 +27136,11 @@
     "story_spotlight": false,
     "edhrec_rank": 18008,
     "prices": {
-      "usd": "0.75",
+      "usd": "0.72",
       "usd_foil": "1.09",
       "usd_etched": null,
       "eur": "0.78",
-      "eur_foil": "1.33",
+      "eur_foil": "1.37",
       "tix": null
     },
     "related_uris": {
@@ -26765,6 +27161,8 @@
     "type": "Creature",
     "subtype": "Elf Druid",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -26880,11 +27278,11 @@
       "previewed_at": "2022-04-12"
     },
     "prices": {
-      "usd": "0.33",
+      "usd": "0.32",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.24",
-      "eur_foil": "0.13",
+      "eur": "0.03",
+      "eur_foil": "0.15",
       "tix": null
     },
     "related_uris": {
@@ -26905,6 +27303,8 @@
     "type": "Creature",
     "subtype": "Human Druid",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -27019,11 +27419,11 @@
       "previewed_at": "2022-04-12"
     },
     "prices": {
-      "usd": "0.24",
+      "usd": "0.23",
       "usd_foil": "0.32",
       "usd_etched": null,
-      "eur": "0.12",
-      "eur_foil": "0.15",
+      "eur": "0.09",
+      "eur_foil": "0.17",
       "tix": null
     },
     "related_uris": {
@@ -27044,6 +27444,8 @@
     "type": "Creature",
     "subtype": "Human Druid",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -27166,8 +27568,8 @@
       "usd": "0.30",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.10",
-      "eur_foil": "0.15",
+      "eur": "0.09",
+      "eur_foil": "0.18",
       "tix": null
     },
     "related_uris": {
@@ -27188,6 +27590,8 @@
     "type": "Creature",
     "subtype": "Elf Shaman",
     "colour": "m",
+    "colourIdentity": "GRW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -27299,11 +27703,11 @@
     "story_spotlight": false,
     "edhrec_rank": 20895,
     "prices": {
-      "usd": "1.38",
-      "usd_foil": "2.98",
+      "usd": "1.35",
+      "usd_foil": "2.66",
       "usd_etched": null,
-      "eur": "0.25",
-      "eur_foil": "0.43",
+      "eur": "0.24",
+      "eur_foil": "0.38",
       "tix": null
     },
     "related_uris": {
@@ -27323,6 +27727,8 @@
     "ccost": 3,
     "type": "Enchantment",
     "colour": "m",
+    "colourIdentity": "GRW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -27437,11 +27843,11 @@
       "previewed_at": "2022-03-30"
     },
     "prices": {
-      "usd": "0.61",
+      "usd": "0.59",
       "usd_foil": "2.93",
       "usd_etched": null,
-      "eur": "0.15",
-      "eur_foil": "0.24",
+      "eur": "0.12",
+      "eur_foil": "0.25",
       "tix": null
     },
     "related_uris": {
@@ -27461,6 +27867,8 @@
     "ccost": 3,
     "type": "Instant",
     "colour": "m",
+    "colourIdentity": "GRW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -27583,11 +27991,11 @@
       "previewed_at": "2022-04-12"
     },
     "prices": {
-      "usd": "2.74",
+      "usd": "2.51",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.61",
-      "eur_foil": "0.88",
+      "eur": "0.60",
+      "eur_foil": "0.84",
       "tix": null
     },
     "related_uris": {
@@ -27608,6 +28016,8 @@
     "type": "Creature",
     "subtype": "Elf Druid",
     "colour": "m",
+    "colourIdentity": "GRW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -27727,8 +28137,8 @@
       "usd": "0.78",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.28",
-      "eur_foil": "0.56",
+      "eur": "0.23",
+      "eur_foil": "0.44",
       "tix": null
     },
     "related_uris": {
@@ -27748,6 +28158,8 @@
     "ccost": 3,
     "type": "Sorcery",
     "colour": "m",
+    "colourIdentity": "GRW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -27868,11 +28280,11 @@
       "previewed_at": "2022-03-31"
     },
     "prices": {
-      "usd": "7.68",
-      "usd_foil": "17.53",
+      "usd": "7.23",
+      "usd_foil": "16.53",
       "usd_etched": null,
-      "eur": "2.90",
-      "eur_foil": "4.86",
+      "eur": "2.72",
+      "eur_foil": "4.88",
       "tix": null
     },
     "related_uris": {
@@ -27893,6 +28305,8 @@
     "type": "Legendary Creature",
     "subtype": "Cat Demon",
     "colour": "m",
+    "colourIdentity": "GRW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -28014,11 +28428,11 @@
       "previewed_at": "2022-04-12"
     },
     "prices": {
-      "usd": "3.58",
+      "usd": "3.51",
       "usd_foil": "5.02",
       "usd_etched": null,
-      "eur": "1.54",
-      "eur_foil": "2.47",
+      "eur": "1.60",
+      "eur_foil": "2.32",
       "tix": null
     },
     "related_uris": {
@@ -28039,6 +28453,8 @@
     "type": "Legendary Creature",
     "subtype": "Elf Druid",
     "colour": "m",
+    "colourIdentity": "GRW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -28163,7 +28579,7 @@
       "usd": "0.27",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.11",
+      "eur": "0.02",
       "eur_foil": "0.12",
       "tix": null
     },
@@ -28185,6 +28601,8 @@
     "type": "Creature",
     "subtype": "Elf Druid Rogue",
     "colour": "m",
+    "colourIdentity": "GRW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -28305,11 +28723,11 @@
       "previewed_at": "2022-04-12"
     },
     "prices": {
-      "usd": "0.68",
-      "usd_foil": "2.20",
+      "usd": "0.51",
+      "usd_foil": "2.15",
       "usd_etched": null,
-      "eur": "0.12",
-      "eur_foil": "0.27",
+      "eur": "0.10",
+      "eur_foil": "0.20",
       "tix": null
     },
     "related_uris": {
@@ -28330,6 +28748,8 @@
     "type": "Legendary Creature",
     "subtype": "Elf Druid",
     "colour": "m",
+    "colourIdentity": "GRW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -28437,10 +28857,10 @@
       "previewed_at": "2022-04-12"
     },
     "prices": {
-      "usd": "0.45",
-      "usd_foil": "3.07",
+      "usd": "0.43",
+      "usd_foil": "3.17",
       "usd_etched": null,
-      "eur": "0.04",
+      "eur": "0.09",
       "eur_foil": "0.18",
       "tix": null
     },
@@ -28461,6 +28881,8 @@
     "ccost": 0,
     "type": "Land",
     "colour": "l",
+    "colourIdentity": "",
+    "colourIdentityLength": 0,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -28575,11 +28997,11 @@
     "story_spotlight": false,
     "edhrec_rank": 9165,
     "prices": {
-      "usd": "9.18",
-      "usd_foil": "12.50",
+      "usd": "8.91",
+      "usd_foil": "11.97",
       "usd_etched": null,
-      "eur": "7.77",
-      "eur_foil": "12.08",
+      "eur": "7.67",
+      "eur_foil": "12.46",
       "tix": null
     },
     "related_uris": {
@@ -28600,6 +29022,8 @@
     "type": "Land",
     "subtype": "Mountain Forest Plains",
     "colour": "l",
+    "colourIdentity": "GRW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -28714,10 +29138,10 @@
       "previewed_at": "2022-04-08"
     },
     "prices": {
-      "usd": "1.76",
+      "usd": "1.67",
       "usd_foil": "6.11",
       "usd_etched": null,
-      "eur": "1.04",
+      "eur": "0.91",
       "eur_foil": "2.22",
       "tix": null
     },
@@ -28738,6 +29162,8 @@
     "ccost": 6,
     "type": "Sorcery",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -28850,11 +29276,11 @@
       "previewed_at": "2022-04-07"
     },
     "prices": {
-      "usd": "0.53",
-      "usd_foil": null,
+      "usd": "0.49",
+      "usd_foil": "0.51",
       "usd_etched": null,
-      "eur": "0.16",
-      "eur_foil": "0.50",
+      "eur": "0.13",
+      "eur_foil": "0.58",
       "tix": null
     },
     "related_uris": {
@@ -28874,6 +29300,8 @@
     "ccost": 2,
     "type": "Instant",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -28989,8 +29417,8 @@
       "usd": "0.38",
       "usd_foil": "0.65",
       "usd_etched": null,
-      "eur": "0.33",
-      "eur_foil": "0.45",
+      "eur": "0.06",
+      "eur_foil": "0.27",
       "tix": null
     },
     "related_uris": {
@@ -29010,6 +29438,8 @@
     "ccost": 2,
     "type": "Instant",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -29121,8 +29551,8 @@
       "previewed_at": "2022-04-11"
     },
     "prices": {
-      "usd": "0.17",
-      "usd_foil": null,
+      "usd": "0.33",
+      "usd_foil": "2.04",
       "usd_etched": null,
       "eur": "0.05",
       "eur_foil": null,
@@ -29145,6 +29575,8 @@
     "ccost": 3,
     "type": "Sorcery",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -29254,11 +29686,11 @@
     "story_spotlight": false,
     "edhrec_rank": 20818,
     "prices": {
-      "usd": "1.12",
+      "usd": "1.05",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.22",
-      "eur_foil": "0.27",
+      "eur": "0.17",
+      "eur_foil": "0.28",
       "tix": null
     },
     "related_uris": {
@@ -29278,6 +29710,8 @@
     "ccost": 2,
     "type": "Sorcery",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -29391,10 +29825,10 @@
       "previewed_at": "2022-04-08"
     },
     "prices": {
-      "usd": null,
+      "usd": "0.46",
       "usd_foil": "2.04",
       "usd_etched": null,
-      "eur": "0.05",
+      "eur": "0.07",
       "eur_foil": "0.18",
       "tix": null
     },
@@ -29415,6 +29849,8 @@
     "ccost": 3,
     "type": "Instant",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -29526,10 +29962,10 @@
       "previewed_at": "2022-04-08"
     },
     "prices": {
-      "usd": "0.34",
+      "usd": "0.31",
       "usd_foil": "0.59",
       "usd_etched": null,
-      "eur": "0.09",
+      "eur": "0.13",
       "eur_foil": "0.18",
       "tix": null
     },
@@ -29550,6 +29986,8 @@
     "ccost": 1,
     "type": "Sorcery",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -29663,10 +30101,10 @@
       "previewed_at": "2022-04-08"
     },
     "prices": {
-      "usd": "0.46",
-      "usd_foil": "0.54",
+      "usd": "0.42",
+      "usd_foil": "0.53",
       "usd_etched": null,
-      "eur": "0.15",
+      "eur": "0.12",
       "eur_foil": "0.25",
       "tix": null
     },
@@ -29687,6 +30125,8 @@
     "ccost": 5,
     "type": "Sorcery",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -29800,10 +30240,10 @@
       "previewed_at": "2022-04-08"
     },
     "prices": {
-      "usd": null,
+      "usd": "0.49",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.04",
+      "eur": "0.05",
       "eur_foil": null,
       "tix": null
     },
@@ -29824,6 +30264,8 @@
     "ccost": 5,
     "type": "Sorcery",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -29942,7 +30384,7 @@
       "usd": null,
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.09",
+      "eur": "0.04",
       "eur_foil": "0.15",
       "tix": null
     },
@@ -29964,6 +30406,8 @@
     "type": "Creature",
     "subtype": "Human Citizen",
     "colour": "b",
+    "colourIdentity": "BRU",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -30071,10 +30515,10 @@
     "story_spotlight": false,
     "edhrec_rank": 22847,
     "prices": {
-      "usd": null,
+      "usd": "0.48",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.70",
+      "eur": "0.10",
       "eur_foil": "0.25",
       "tix": null
     },
@@ -30095,6 +30539,8 @@
     "ccost": 2,
     "type": "Sorcery",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -30208,11 +30654,11 @@
       "previewed_at": "2022-04-08"
     },
     "prices": {
-      "usd": "0.50",
-      "usd_foil": "0.72",
+      "usd": "0.49",
+      "usd_foil": "0.71",
       "usd_etched": null,
-      "eur": "0.12",
-      "eur_foil": "0.30",
+      "eur": "0.11",
+      "eur_foil": "0.39",
       "tix": null
     },
     "related_uris": {
@@ -30232,6 +30678,8 @@
     "ccost": 2,
     "type": "Sorcery",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -30359,10 +30807,10 @@
       "previewed_at": "2022-04-08"
     },
     "prices": {
-      "usd": "0.47",
-      "usd_foil": "1.28",
+      "usd": "0.45",
+      "usd_foil": "1.20",
       "usd_etched": null,
-      "eur": "0.23",
+      "eur": "0.18",
       "eur_foil": "0.49",
       "tix": null
     },
@@ -30384,6 +30832,8 @@
     "type": "Legendary Creature",
     "subtype": "Vampire Rogue",
     "colour": "m",
+    "colourIdentity": "BRU",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -30496,10 +30946,10 @@
     "story_spotlight": false,
     "edhrec_rank": 22747,
     "prices": {
-      "usd": "0.43",
+      "usd": "0.42",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.08",
+      "eur": "0.10",
       "eur_foil": "0.15",
       "tix": null
     },
@@ -30521,6 +30971,8 @@
     "type": "Creature",
     "subtype": "Vampire Rogue",
     "colour": "m",
+    "colourIdentity": "BRU",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -30643,11 +31095,11 @@
       "previewed_at": "2022-04-08"
     },
     "prices": {
-      "usd": "3.57",
+      "usd": "3.53",
       "usd_foil": "6.52",
       "usd_etched": null,
-      "eur": "0.27",
-      "eur_foil": "0.44",
+      "eur": "0.24",
+      "eur_foil": "0.45",
       "tix": null
     },
     "related_uris": {
@@ -30668,6 +31120,8 @@
     "type": "Legendary Creature",
     "subtype": "Vampire Rogue",
     "colour": "m",
+    "colourIdentity": "BRU",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -30794,8 +31248,8 @@
       "usd": null,
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.12",
-      "eur_foil": "0.25",
+      "eur": "0.10",
+      "eur_foil": "0.12",
       "tix": null
     },
     "related_uris": {
@@ -30816,6 +31270,8 @@
     "type": "Creature",
     "subtype": "Vampire Rogue",
     "colour": "m",
+    "colourIdentity": "BRU",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -30931,10 +31387,10 @@
       "previewed_at": "2022-04-11"
     },
     "prices": {
-      "usd": "0.50",
+      "usd": "0.39",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.20",
+      "eur": "0.18",
       "eur_foil": "0.32",
       "tix": null
     },
@@ -30955,6 +31411,8 @@
     "ccost": 5,
     "type": "Sorcery",
     "colour": "m",
+    "colourIdentity": "BRU",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -31077,11 +31535,11 @@
       "previewed_at": "2022-03-31"
     },
     "prices": {
-      "usd": "15.42",
-      "usd_foil": "44.73",
+      "usd": "14.42",
+      "usd_foil": "39.49",
       "usd_etched": null,
-      "eur": "4.84",
-      "eur_foil": "9.25",
+      "eur": "4.73",
+      "eur_foil": "9.26",
       "tix": null
     },
     "related_uris": {
@@ -31102,6 +31560,8 @@
     "type": "Legendary Creature",
     "subtype": "Vampire Demon Noble",
     "colour": "m",
+    "colourIdentity": "BRU",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -31217,11 +31677,11 @@
       "previewed_at": "2022-04-08"
     },
     "prices": {
-      "usd": "1.73",
-      "usd_foil": null,
+      "usd": "1.56",
+      "usd_foil": "2.41",
       "usd_etched": null,
       "eur": "0.27",
-      "eur_foil": "0.61",
+      "eur_foil": "0.59",
       "tix": null
     },
     "related_uris": {
@@ -31241,6 +31701,8 @@
     "ccost": 3,
     "type": "Enchantment",
     "colour": "m",
+    "colourIdentity": "BRU",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -31355,11 +31817,11 @@
       "previewed_at": "2022-03-28"
     },
     "prices": {
-      "usd": "0.64",
-      "usd_foil": "2.72",
+      "usd": "0.55",
+      "usd_foil": "2.05",
       "usd_etched": null,
       "eur": "0.12",
-      "eur_foil": "0.31",
+      "eur_foil": "0.30",
       "tix": null
     },
     "related_uris": {
@@ -31379,6 +31841,8 @@
     "ccost": 3,
     "type": "Instant",
     "colour": "m",
+    "colourIdentity": "BRU",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -31495,10 +31959,10 @@
     "story_spotlight": false,
     "edhrec_rank": 22514,
     "prices": {
-      "usd": "1.59",
+      "usd": "1.53",
       "usd_foil": "3.99",
       "usd_etched": null,
-      "eur": "0.21",
+      "eur": "0.16",
       "eur_foil": "0.28",
       "tix": null
     },
@@ -31520,6 +31984,8 @@
     "type": "Creature",
     "subtype": "Vampire Warrior",
     "colour": "m",
+    "colourIdentity": "BRU",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -31627,11 +32093,11 @@
       "previewed_at": "2022-04-08"
     },
     "prices": {
-      "usd": "0.46",
+      "usd": "0.44",
       "usd_foil": "3.07",
       "usd_etched": null,
-      "eur": "0.04",
-      "eur_foil": "0.18",
+      "eur": "0.12",
+      "eur_foil": "0.19",
       "tix": null
     },
     "related_uris": {
@@ -31651,6 +32117,8 @@
     "ccost": 0,
     "type": "Land",
     "colour": "l",
+    "colourIdentity": "",
+    "colourIdentityLength": 0,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -31765,10 +32233,10 @@
     "story_spotlight": false,
     "edhrec_rank": 10446,
     "prices": {
-      "usd": "10.29",
+      "usd": "9.84",
       "usd_foil": "18.43",
       "usd_etched": null,
-      "eur": "9.22",
+      "eur": "9.25",
       "eur_foil": "13.27",
       "tix": null
     },
@@ -31790,6 +32258,8 @@
     "type": "Land",
     "subtype": "Island Swamp Mountain",
     "colour": "l",
+    "colourIdentity": "BRU",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -31907,10 +32377,10 @@
     },
     "prices": {
       "usd": "0.45",
-      "usd_foil": "0.72",
+      "usd_foil": "0.66",
       "usd_etched": null,
-      "eur": "0.08",
-      "eur_foil": "0.34",
+      "eur": "0.15",
+      "eur_foil": "0.30",
       "tix": null
     },
     "related_uris": {
@@ -31931,6 +32401,8 @@
     "type": "Creature",
     "subtype": "Human Rogue",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -32046,10 +32518,10 @@
       "previewed_at": "2022-04-11"
     },
     "prices": {
-      "usd": "0.49",
+      "usd": "0.45",
       "usd_foil": "1.20",
       "usd_etched": null,
-      "eur": "0.08",
+      "eur": "0.04",
       "eur_foil": "0.25",
       "tix": null
     },
@@ -32071,6 +32543,8 @@
     "type": "Creature",
     "subtype": "Human Wizard",
     "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -32212,6 +32686,8 @@
     "type": "Creature",
     "subtype": "Bird Rogue",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -32330,7 +32806,7 @@
       "usd": "0.24",
       "usd_foil": "0.32",
       "usd_etched": null,
-      "eur": "0.11",
+      "eur": "0.07",
       "eur_foil": "0.18",
       "tix": null
     },
@@ -32352,6 +32828,8 @@
     "type": "Creature",
     "subtype": "Human Rogue",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -32469,11 +32947,11 @@
       "previewed_at": "2022-04-07"
     },
     "prices": {
-      "usd": "2.76",
+      "usd": "2.67",
       "usd_foil": "6.46",
       "usd_etched": null,
-      "eur": "0.30",
-      "eur_foil": "0.79",
+      "eur": "0.38",
+      "eur_foil": "0.70",
       "tix": null
     },
     "related_uris": {
@@ -32494,6 +32972,8 @@
     "type": "Creature",
     "subtype": "Bird Advisor",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -32636,6 +33116,8 @@
     "type": "Creature",
     "subtype": "Bird Citizen",
     "colour": "u",
+    "colourIdentity": "BUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -32772,6 +33254,8 @@
     "type": "Creature",
     "subtype": "Human Rogue",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -32911,6 +33395,8 @@
     "type": "Creature",
     "subtype": "Cephalid Rogue",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -33027,8 +33513,8 @@
       "usd": "0.27",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.05",
-      "eur_foil": "0.18",
+      "eur": "0.06",
+      "eur_foil": "0.12",
       "tix": null
     },
     "related_uris": {
@@ -33049,6 +33535,8 @@
     "type": "Enchantment",
     "subtype": "Aura",
     "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -33165,11 +33653,11 @@
       "previewed_at": "2022-04-11"
     },
     "prices": {
-      "usd": "5.53",
-      "usd_foil": null,
+      "usd": "5.21",
+      "usd_foil": "5.93",
       "usd_etched": null,
-      "eur": "3.84",
-      "eur_foil": "5.99",
+      "eur": "3.92",
+      "eur_foil": "5.73",
       "tix": null
     },
     "related_uris": {
@@ -33190,6 +33678,8 @@
     "type": "Creature",
     "subtype": "Ogre Rogue",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -33307,7 +33797,7 @@
       "usd": "0.35",
       "usd_foil": "0.46",
       "usd_etched": null,
-      "eur": "0.13",
+      "eur": "0.09",
       "eur_foil": "0.15",
       "tix": null
     },
@@ -33329,6 +33819,8 @@
     "type": "Creature",
     "subtype": "Human Assassin",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -33448,7 +33940,7 @@
       "usd_foil": null,
       "usd_etched": null,
       "eur": null,
-      "eur_foil": "0.10",
+      "eur_foil": "0.12",
       "tix": null
     },
     "related_uris": {
@@ -33469,6 +33961,8 @@
     "type": "Creature",
     "subtype": "Cephalid Rogue",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -33583,10 +34077,10 @@
     "edhrec_rank": 22854,
     "prices": {
       "usd": "0.41",
-      "usd_foil": null,
+      "usd_foil": "0.52",
       "usd_etched": null,
-      "eur": "0.10",
-      "eur_foil": "0.19",
+      "eur": "0.08",
+      "eur_foil": "0.25",
       "tix": null
     },
     "related_uris": {
@@ -33607,6 +34101,8 @@
     "type": "Creature",
     "subtype": "Bird Rogue",
     "colour": "m",
+    "colourIdentity": "BUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -33724,8 +34220,8 @@
       "usd": "0.63",
       "usd_foil": "0.66",
       "usd_etched": null,
-      "eur": "0.20",
-      "eur_foil": "0.44",
+      "eur": "0.27",
+      "eur_foil": "0.43",
       "tix": null
     },
     "related_uris": {
@@ -33745,6 +34241,8 @@
     "ccost": 3,
     "type": "Enchantment",
     "colour": "m",
+    "colourIdentity": "BUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -33859,11 +34357,11 @@
       "previewed_at": "2022-03-29"
     },
     "prices": {
-      "usd": "0.58",
-      "usd_foil": "4.75",
+      "usd": "0.56",
+      "usd_foil": "4.36",
       "usd_etched": null,
-      "eur": "0.42",
-      "eur_foil": "0.94",
+      "eur": "0.38",
+      "eur_foil": "0.88",
       "tix": null
     },
     "related_uris": {
@@ -33883,6 +34381,8 @@
     "ccost": 3,
     "type": "Instant",
     "colour": "m",
+    "colourIdentity": "BUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -34004,11 +34504,11 @@
       "previewed_at": "2022-04-11"
     },
     "prices": {
-      "usd": "1.28",
+      "usd": "1.23",
       "usd_foil": "1.77",
       "usd_etched": null,
-      "eur": "1.00",
-      "eur_foil": "1.24",
+      "eur": "0.61",
+      "eur_foil": "0.98",
       "tix": null
     },
     "related_uris": {
@@ -34029,6 +34529,8 @@
     "type": "Creature",
     "subtype": "Cephalid Wizard",
     "colour": "m",
+    "colourIdentity": "BUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -34149,11 +34651,11 @@
       "previewed_at": "2022-04-11"
     },
     "prices": {
-      "usd": "0.64",
+      "usd": "0.51",
       "usd_foil": "0.85",
       "usd_etched": null,
-      "eur": "0.18",
-      "eur_foil": "0.69",
+      "eur": "0.20",
+      "eur_foil": "0.65",
       "tix": null
     },
     "related_uris": {
@@ -34174,6 +34676,8 @@
     "type": "Legendary Creature",
     "subtype": "Cephalid Advisor",
     "colour": "m",
+    "colourIdentity": "BUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -34298,11 +34802,11 @@
       "previewed_at": "2022-03-31"
     },
     "prices": {
-      "usd": "10.94",
-      "usd_foil": "14.78",
+      "usd": "10.40",
+      "usd_foil": "12.76",
       "usd_etched": null,
-      "eur": "4.90",
-      "eur_foil": "8.32",
+      "eur": "4.76",
+      "eur_foil": "7.74",
       "tix": null
     },
     "related_uris": {
@@ -34323,6 +34827,8 @@
     "type": "Legendary Creature",
     "subtype": "Sphinx Demon",
     "colour": "m",
+    "colourIdentity": "BUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -34446,11 +34952,11 @@
       "previewed_at": "2022-04-11"
     },
     "prices": {
-      "usd": "0.25",
+      "usd": "0.24",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.12",
-      "eur_foil": "0.18",
+      "eur": "0.08",
+      "eur_foil": "0.13",
       "tix": null
     },
     "related_uris": {
@@ -34471,6 +34977,8 @@
     "type": "Creature",
     "subtype": "Angel Rogue",
     "colour": "m",
+    "colourIdentity": "BUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -34593,11 +35101,11 @@
       "previewed_at": "2022-04-11"
     },
     "prices": {
-      "usd": "1.07",
+      "usd": "1.05",
       "usd_foil": "1.98",
       "usd_etched": null,
-      "eur": "0.57",
-      "eur_foil": "1.15",
+      "eur": "0.69",
+      "eur_foil": "1.69",
       "tix": null
     },
     "related_uris": {
@@ -34618,6 +35126,8 @@
     "type": "Legendary Creature",
     "subtype": "Human Rogue",
     "colour": "m",
+    "colourIdentity": "BUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -34734,11 +35244,11 @@
       "previewed_at": "2022-04-12"
     },
     "prices": {
-      "usd": "5.83",
-      "usd_foil": "8.31",
+      "usd": "5.37",
+      "usd_foil": "8.29",
       "usd_etched": null,
-      "eur": "6.47",
-      "eur_foil": "11.07",
+      "eur": "6.50",
+      "eur_foil": "12.14",
       "tix": null
     },
     "related_uris": {
@@ -34758,6 +35268,8 @@
     "ccost": 3,
     "type": "Instant",
     "colour": "m",
+    "colourIdentity": "BUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -34860,10 +35372,10 @@
     "story_spotlight": false,
     "edhrec_rank": 20928,
     "prices": {
-      "usd": "0.45",
+      "usd": "0.44",
       "usd_foil": "3.07",
       "usd_etched": null,
-      "eur": "0.04",
+      "eur": "0.08",
       "eur_foil": "0.17",
       "tix": null
     },
@@ -34884,6 +35396,8 @@
     "ccost": 0,
     "type": "Land",
     "colour": "l",
+    "colourIdentity": "",
+    "colourIdentityLength": 0,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -34998,10 +35512,10 @@
     "story_spotlight": false,
     "edhrec_rank": 9844,
     "prices": {
-      "usd": "10.13",
-      "usd_foil": "18.43",
+      "usd": "10.03",
+      "usd_foil": "17.43",
       "usd_etched": null,
-      "eur": "9.37",
+      "eur": "9.36",
       "eur_foil": "13.64",
       "tix": null
     },
@@ -35023,6 +35537,8 @@
     "type": "Land",
     "subtype": "Plains Island Swamp",
     "colour": "l",
+    "colourIdentity": "BUW",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -35162,6 +35678,8 @@
     "type": "Creature",
     "subtype": "Ogre Warrior",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -35276,11 +35794,11 @@
       "previewed_at": "2022-04-13"
     },
     "prices": {
-      "usd": "0.42",
+      "usd": "0.37",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.11",
-      "eur_foil": "0.31",
+      "eur": "0.09",
+      "eur_foil": "0.12",
       "tix": null
     },
     "related_uris": {
@@ -35301,6 +35819,8 @@
     "type": "Creature",
     "subtype": "Human Warrior",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -35416,11 +35936,11 @@
       "previewed_at": "2022-04-14"
     },
     "prices": {
-      "usd": "3.83",
+      "usd": "3.45",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "1.29",
-      "eur_foil": "2.58",
+      "eur": "1.26",
+      "eur_foil": "1.49",
       "tix": null
     },
     "related_uris": {
@@ -35441,6 +35961,8 @@
     "type": "Creature",
     "subtype": "Human Warrior",
     "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -35559,11 +36081,11 @@
       "previewed_at": "2022-04-07"
     },
     "prices": {
-      "usd": "3.32",
+      "usd": "3.06",
       "usd_foil": "5.56",
       "usd_etched": null,
-      "eur": "0.42",
-      "eur_foil": "0.93",
+      "eur": "0.48",
+      "eur_foil": "0.82",
       "tix": null
     },
     "related_uris": {
@@ -35584,6 +36106,8 @@
     "type": "Legendary Creature",
     "subtype": "Human Warrior",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -35699,11 +36223,11 @@
       "previewed_at": "2022-04-13"
     },
     "prices": {
-      "usd": "0.33",
+      "usd": "0.30",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.07",
-      "eur_foil": "0.25",
+      "eur": "0.04",
+      "eur_foil": "0.12",
       "tix": null
     },
     "related_uris": {
@@ -35724,6 +36248,8 @@
     "type": "Creature",
     "subtype": "Devil Warrior",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -35842,7 +36368,7 @@
       "usd_foil": null,
       "usd_etched": null,
       "eur": "0.07",
-      "eur_foil": "0.15",
+      "eur_foil": "0.14",
       "tix": null
     },
     "related_uris": {
@@ -35863,6 +36389,8 @@
     "type": "Creature",
     "subtype": "Viashino Warrior",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -35977,11 +36505,11 @@
       "previewed_at": "2022-04-13"
     },
     "prices": {
-      "usd": "0.25",
+      "usd": "0.24",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.10",
-      "eur_foil": "0.18",
+      "eur": "0.08",
+      "eur_foil": "0.15",
       "tix": null
     },
     "related_uris": {
@@ -36002,6 +36530,8 @@
     "type": "Creature",
     "subtype": "Ogre Warrior",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -36121,7 +36651,7 @@
       "usd_foil": null,
       "usd_etched": null,
       "eur": "0.05",
-      "eur_foil": null,
+      "eur_foil": "0.12",
       "tix": null
     },
     "related_uris": {
@@ -36142,6 +36672,8 @@
     "type": "Creature",
     "subtype": "Viashino Citizen",
     "colour": "r",
+    "colourIdentity": "BGR",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -36266,8 +36798,8 @@
       "usd": "0.38",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.12",
-      "eur_foil": "0.18",
+      "eur": "0.09",
+      "eur_foil": "0.15",
       "tix": null
     },
     "related_uris": {
@@ -36288,6 +36820,8 @@
     "type": "Creature",
     "subtype": "Viashino Rogue",
     "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -36427,6 +36961,8 @@
     "type": "Creature",
     "subtype": "Human Warrior",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -36540,8 +37076,8 @@
       "usd": "0.24",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.11",
-      "eur_foil": "0.17",
+      "eur": "0.08",
+      "eur_foil": "0.15",
       "tix": null
     },
     "related_uris": {
@@ -36562,6 +37098,8 @@
     "type": "Creature",
     "subtype": "Human Warrior",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -36673,11 +37211,11 @@
     "story_spotlight": false,
     "edhrec_rank": 22011,
     "prices": {
-      "usd": "5.58",
+      "usd": "5.12",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "1.52",
-      "eur_foil": "2.67",
+      "eur": "1.89",
+      "eur_foil": "2.29",
       "tix": null
     },
     "related_uris": {
@@ -36698,6 +37236,8 @@
     "type": "Creature",
     "subtype": "Rhino Warrior",
     "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -36820,7 +37360,7 @@
       "usd": "0.49",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.04",
+      "eur": "0.10",
       "eur_foil": "0.24",
       "tix": null
     },
@@ -36842,6 +37382,8 @@
     "type": "Creature",
     "subtype": "Human Warrior",
     "colour": "m",
+    "colourIdentity": "BGR",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -36966,10 +37508,10 @@
       "previewed_at": "2022-04-14"
     },
     "prices": {
-      "usd": "0.57",
+      "usd": "0.53",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.17",
+      "eur": "0.02",
       "eur_foil": "0.12",
       "tix": null
     },
@@ -36991,6 +37533,8 @@
     "type": "Creature",
     "subtype": "Raccoon Rogue",
     "colour": "m",
+    "colourIdentity": "BGR",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -37112,11 +37656,11 @@
       "previewed_at": "2022-04-13"
     },
     "prices": {
-      "usd": "0.43",
+      "usd": "0.42",
       "usd_foil": "0.99",
       "usd_etched": null,
-      "eur": "0.10",
-      "eur_foil": "0.19",
+      "eur": "0.08",
+      "eur_foil": "0.18",
       "tix": null
     },
     "related_uris": {
@@ -37137,6 +37681,8 @@
     "type": "Legendary Creature",
     "subtype": "Rhino Warrior",
     "colour": "m",
+    "colourIdentity": "BGR",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -37260,11 +37806,11 @@
       "previewed_at": "2022-04-13"
     },
     "prices": {
-      "usd": "2.51",
+      "usd": "2.45",
       "usd_foil": "3.91",
       "usd_etched": null,
-      "eur": "0.72",
-      "eur_foil": "1.51",
+      "eur": "0.67",
+      "eur_foil": "1.46",
       "tix": null
     },
     "related_uris": {
@@ -37285,6 +37831,8 @@
     "type": "Legendary Creature",
     "subtype": "Viashino Warrior",
     "colour": "m",
+    "colourIdentity": "BGR",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -37401,11 +37949,11 @@
       "previewed_at": "2022-04-13"
     },
     "prices": {
-      "usd": "1.97",
+      "usd": "1.69",
       "usd_foil": "2.39",
       "usd_etched": null,
-      "eur": "0.56",
-      "eur_foil": "2.09",
+      "eur": "0.60",
+      "eur_foil": "1.07",
       "tix": null
     },
     "related_uris": {
@@ -37425,6 +37973,8 @@
     "ccost": 3,
     "type": "Enchantment",
     "colour": "m",
+    "colourIdentity": "BGR",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -37539,11 +38089,11 @@
       "previewed_at": "2022-04-04"
     },
     "prices": {
-      "usd": "0.56",
-      "usd_foil": "2.13",
+      "usd": "0.53",
+      "usd_foil": "1.55",
       "usd_etched": null,
-      "eur": "0.26",
-      "eur_foil": "0.80",
+      "eur": "0.30",
+      "eur_foil": "0.85",
       "tix": null
     },
     "related_uris": {
@@ -37563,6 +38113,8 @@
     "ccost": 3,
     "type": "Instant",
     "colour": "m",
+    "colourIdentity": "BGR",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -37678,10 +38230,10 @@
       "previewed_at": "2022-04-11"
     },
     "prices": {
-      "usd": "1.05",
+      "usd": "0.96",
       "usd_foil": null,
       "usd_etched": null,
-      "eur": "0.20",
+      "eur": "0.17",
       "eur_foil": "0.46",
       "tix": null
     },
@@ -37702,6 +38254,8 @@
     "ccost": 4,
     "type": "Instant",
     "colour": "m",
+    "colourIdentity": "BGR",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -37819,11 +38373,11 @@
     "story_spotlight": false,
     "edhrec_rank": 16677,
     "prices": {
-      "usd": "8.44",
-      "usd_foil": "20.87",
+      "usd": "8.02",
+      "usd_foil": "19.08",
       "usd_etched": null,
-      "eur": "3.70",
-      "eur_foil": "5.91",
+      "eur": "3.59",
+      "eur_foil": "5.93",
       "tix": null
     },
     "related_uris": {
@@ -37844,6 +38398,8 @@
     "type": "Legendary Creature",
     "subtype": "Demon Dragon",
     "colour": "m",
+    "colourIdentity": "BGR",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -37964,11 +38520,11 @@
       "previewed_at": "2022-04-13"
     },
     "prices": {
-      "usd": "1.79",
+      "usd": "1.76",
       "usd_foil": "2.99",
       "usd_etched": null,
-      "eur": "0.99",
-      "eur_foil": "1.59",
+      "eur": "0.90",
+      "eur_foil": "1.68",
       "tix": null
     },
     "related_uris": {
@@ -37989,6 +38545,8 @@
     "type": "Creature",
     "subtype": "Viashino Warrior",
     "colour": "m",
+    "colourIdentity": "BGR",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -38091,10 +38649,10 @@
     "story_spotlight": false,
     "edhrec_rank": 19704,
     "prices": {
-      "usd": "0.47",
+      "usd": "0.46",
       "usd_foil": "1.32",
       "usd_etched": null,
-      "eur": "0.11",
+      "eur": "0.08",
       "eur_foil": "0.17",
       "tix": null
     },
@@ -38115,6 +38673,8 @@
     "ccost": 0,
     "type": "Land",
     "colour": "l",
+    "colourIdentity": "",
+    "colourIdentityLength": 0,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
@@ -38229,11 +38789,11 @@
     "story_spotlight": false,
     "edhrec_rank": 10027,
     "prices": {
-      "usd": "10.08",
-      "usd_foil": "24.99",
+      "usd": "9.29",
+      "usd_foil": "18.70",
       "usd_etched": null,
-      "eur": "9.08",
-      "eur_foil": "13.32",
+      "eur": "9.26",
+      "eur_foil": "13.34",
       "tix": null
     },
     "related_uris": {
@@ -38254,6 +38814,8 @@
     "type": "Land",
     "subtype": "Swamp Mountain Forest",
     "colour": "l",
+    "colourIdentity": "BGR",
+    "colourIdentityLength": 3,
     "urlSources": [
       "https://api.scryfall.com/cards/search?order=set&q=e%3Asnc&unique=prints"
     ],
