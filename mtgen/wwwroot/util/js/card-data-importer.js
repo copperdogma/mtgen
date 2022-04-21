@@ -792,6 +792,14 @@ class CardDataImporter {
         return finalColour;
     }
 
+    // Derived from the array of card colours
+    _getCardColourIdentityFromCard(card) {
+        const hasCardFaces = card.cardFaces && card.cardFaces.length > 0;
+        const colourIdentity = hasCardFaces ? card.cardFaces[0].color_identity.concat(card.cardFaces[1].color_identity) : card.color_identity
+        const uniqueColours = [...new Set(colourIdentity)];
+        return uniqueColours.join('');
+    }
+
     async _getCardData(cardData, cardDataUrlSource, setCode, options) {
         let cards = new Map();
 
@@ -990,6 +998,8 @@ class CardDataImporter {
         }
 
         card.colour = this._getCardColourFromCard(card);
+        card.colourIdentity = this._getCardColourIdentityFromCard(card);
+        card.colourIdentityLength = card.colourIdentity.length;
 
         return card;
     }
