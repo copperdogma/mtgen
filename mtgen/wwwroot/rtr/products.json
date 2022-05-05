@@ -1,7 +1,7 @@
 {
 "_comment": "full product list: http://archive.wizards.com/Magic/tcg/productarticle.aspx?x=mtg/tcg/returntoravnica/productinfo",
-"_comment": "NOTE: cannot do Intro Packs or Event Deck as they mix different sets",
-"_comment": "if there are no options the query/packNames will be auto-run"
+"_comment1": "NOTE: cannot do Intro Packs or Event Deck as they mix different sets",
+"_comment2": "if there are no options the query/packNames will be auto-run"
 
 ,"products": 
 	[
@@ -54,7 +54,7 @@
 					}
 					,{
 						"presetName": "rtr-prerelease-guild-izzet"
-						,"presetDesc": "The Izzet League (Black/Red)"
+						,"presetDesc": "The Izzet League (Blue/Red)"
 						,"packs": [
 							{ "count":1, "defaultPackName":"rtr-guild-booster-izzet" }
 							,{ "count":1, "defaultPackName":"rtr-guild-booster-packins-izzet" }
