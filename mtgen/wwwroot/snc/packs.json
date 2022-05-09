@@ -234,12 +234,11 @@
       "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
       "packName": "{{setCode}}-draft",
       "packDesc": "{{setName}}: Draft Booster",
-      "packVersion": "1.0",
-      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/kamigawa-neon-dynasty-product-overview-2022-01-27" ],
+      "packVersion": "1.1",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/streets-of-new-capenna-product-overview-2022-04-07" ],
       "isGenerated": true,
       "cards": [
-        { "query": "take[9]>from[{{setCode}}-draft-booster]?rarity='c" },
-        { "query": "from[{{setCode}}-draft-booster]?rarity=rarityByWeight2020(cu)" },
+        { "query": "take[10]>from[{{setCode}}-draft-booster]?rarity='c" },
         { "query": "take[3]>from[{{setCode}}-draft-booster]?rarity='u" },
         { "query": "from[{{setCode}}-draft-booster]?rarity=rarityByWeight2020(rm)" },
         { "query": "from[{{setCode}}]?type='Basic Land'" },
@@ -260,7 +259,7 @@
           "querySet": [
             {
               "_comment": "33% (1:45) chance of foil, scaled by rarity, replacing the last common, as of m20: Jun-2019",
-              "overrideSlot": "9",
+              "overrideSlot": "10",
               "percent": "33",
               "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(curm)",
               "setValues": { "foil": true }
