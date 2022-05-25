@@ -1,7 +1,7 @@
 {
   "startProductName": "snc-prerelease",
   "packFiles": [
-    "packs.json?v1.3"
+    "packs.json?v1.4"
   ],
   "cardFiles": [
     "cardsMain.json?v1.2",
@@ -14,6 +14,10 @@
     "../cards/ads/cardsAds.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2022-05-09T11:00:00:00",
+      "HtmlString": "Fixed: Draft booster now contains only 3 U instead of sometimes 4. Thanks, Mike!"
+    },
     {
       "UpdateDate": "2022-04-21T11:00:00:00",
       "HtmlString": "Fixed: Prerelease seeded boosters: 2 land slots can now have family-coloured dual lands instead of just triomes."
