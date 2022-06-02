@@ -1,0 +1,404 @@
+{
+  "defs": [
+    {
+      "defName": "{{setCode}}",
+      "query": "from[*]?set='{{setCode}}'"
+    },
+    {
+      "defName": "the-list",
+      "query": "from[*]?theList=true"
+    },
+    {
+      "defName": "a{{setCode}}-art-cards",
+      "query": "from[*]?artCard=true"
+    },
+    {
+      "defName": "{{setCode}}-main",
+      "query": "from[{{setCode}}]?mainSet=true-from[{{setCode}}]?type='Basic Land'-from[{{setCode}}]?promo=true"
+    },
+    {
+      "defName": "{{setCode}}-variants",
+      "query": "from[{{setCode}}]?variant=true"
+    },
+    {
+      "defName": "{{setCode}}-promo",
+      "query": "from[{{setCode}}]?promo=true"
+    },
+    {
+      "defName": "{{setCode}}-extended-art",
+      "query": "from[{{setCode}}]?extendedArtwork=true"
+    },
+    {
+      "defName": "{{setCode}}-showcase",
+      "query": "from[{{setCode}}]?showcaseCard=true"
+    },
+    {
+      "defName": "{{setCode}}-borderless",
+      "query": "from[{{setCode}}]?borderless=true"
+    },
+    {
+      "defName": "{{setCode}}-etched-foil",
+      "query": "from[{{setCode}}]?etchedFoil=true"
+    },
+    {
+      "defName": "{{setCode}}-borderless-planeswalker",
+      "query": "from[{{setCode}}]?borderlessPlaneswalker=true"
+    },
+    {
+      "defName": "{{setCode}}-legendary",
+      "query": "from[{{setCode}}]?legendary=true"
+    },
+    {
+      "defName": "{{setCode}}-legendary-creature-planeswalker",
+      "query": "from[{{setCode}}-legendary]?type=contains(Creature|Planeswalker)"
+    },
+    {
+      "defName": "{{setCode}}-legendary-background",
+      "query": "from[{{setCode}}-legendary]?subtype='Background'"
+    },
+    {
+      "defName": "{{setCode}}-legendary-creature-background",
+      "query": "from[{{setCode}}-legendary]?type=contains(Creature)+from[{{setCode}}-legendary-background]"
+    },
+    {
+      "defName": "{{setCode}}-extended-art-and-showcase-and-borderless",
+      "query": "from[{{setCode}}-extended-art]+from[{{setCode}}-showcase]+from[{{setCode}}-borderless]"
+    },
+    {
+      "defName": "{{setCode}}-showcase-and-borderless",
+      "query": "from[{{setCode}}-showcase]+from[{{setCode}}-borderless]"
+    },
+    {
+      "defName": "{{setCode}}-foils",
+      "query": "from[{{setCode}}-main]+from[{{setCode}}]?type='Basic Land'"
+    },
+
+    {
+      "defName": "{{setCode}}-commander",
+      "query": "from[{{setCode}}]?commanderDeck=true"
+    },
+
+    {
+      "defName": "{{setCode}}-main-and-showcase",
+      "query": "from[{{setCode}}-main]+from[{{setCode}}-showcase]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "{{setCode}}-all-cards",
+      "packDesc": "{{setName}}: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[{{setCode}}]" }
+      ]
+    },
+    {
+      "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
+      "packName": "{{setCode}}-draft",
+      "packDesc": "{{setName}}: Draft Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/commander-legends-battle-baldurs-gate-product-overview-2022-05-17" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[13]>from[{{setCode}}-main]?rarity='c" },
+        { "query": "take[3]>from[{{setCode}}-main]?rarity='u" },
+        { "query": "from[{{setCode}}-main]?rarity=rarityByWeight2020(rm)" },
+        { "query": "from[{{setCode}}-legendary-creature-planeswalker]?rarity='u'" },
+        { "query": "from[{{setCode}}-legendary-background]?rarity='u'" },
+        {
+          "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(curm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
+            },
+            {
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "rare or mythic rare in 31% of boosters",
+              "overrideSlot": "18",
+              "percent": "31",
+              "query": "from[{{setCode}}-legendary-creature-planeswalker]?rarity=rarityByWeight2020(rm)"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "rare in 1 of 12 boosters",
+              "overrideSlot": "19",
+              "percent": "1/12",
+              "query": "from[{{setCode}}-legendary-background]?rarity='r'"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_comment": "Collector Boosters were introduced as standard feature as of ELD",
+      "packName": "{{setCode}}-collector",
+      "packDesc": "{{setName}}: Collector Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/commander-legends-battle-baldurs-gate-product-overview-2022-05-17" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1: Foil: Showcase/Borderless/Extended-Art R/M",
+          "query": "from[{{setCode}}-extended-art-and-showcase-and-borderless]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 2: Foil: Legendary Creature/Background CU",
+          "query": "from[{{setCode}}-legendary-creature-background]?rarity=rarityByWeight2020(cu)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 3: Legendary Creature/Background RM",
+          "query": "from[{{setCode}}-legendary-creature-background]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 4: Showcase or Borderless R/M",
+          "query": "from[{{setCode}}-showcase-and-borderless]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 5: Extended Art Main R/M",
+          "query": "from[{{setCode}}-extended-art]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 6: Extended Art Commander R/M",
+          "query": "from[{{setCode}}-commander]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 7: Foil: Main R/M",
+          "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 8: Foil: Legendary Creature/Background CU",
+          "query": "from[{{setCode}}-legendary-creature-background]?rarity=rarityByWeight2020(cu)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 9: Foil: Rulebook Showcase CU",
+          "query": "from[{{setCode}}-showcase]?rarity=rarityByWeight2020(cu)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 10-11: 2x Foil: U",
+          "query": "take[2]>from[{{setCode}}-foils]?rarity='u'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 12-14: 3x Foil: C",
+          "query": "take[3]>from[{{setCode}}-foils]?rarity='c'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 15: Foil: Basic Land",
+          "query": "from[{{setCode}}]?type='Basic Land'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 16: Foil: Token",
+          "query": "from[{{setCode}}]?token=true",
+          "setValues": { "foil": true }
+        }
+      ]
+    },
+
+    {
+      "_comment": "Set Boosters were introduced as standard feature as of ZNR",
+      "packName": "{{setCode}}-set-booster",
+      "packDesc": "{{setName}}: Set Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/commander-legends-battle-baldurs-gate-product-overview-2022-05-17" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1: Art Card",
+          "_comment2": "Art Card is foil-stamped signature version in 10% of packs",
+          "query": "from[a{{setCode}}-art-cards]",
+          "setValues": { "modifiers": [ "Normal" ] }
+        },
+        {
+          "_comment": "Slot 2: Foil: Legendary Creature/Background CURM",
+          "query": "from[{{setCode}}-legendary-creature-background]?rarity=rarityByWeight2020(curm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 3: Foil: CURM",
+          "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(curm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 4: Main RM",
+          "query": "from[{{setCode}}-main]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 5: Legendary URM",
+          "query": "from[{{setCode}}-legendary]?rarity=rarityByWeight2020(urm)"
+        },
+        {
+          "_comment": "Slot 6: Legendary Background CUR",
+          "query": "from[{{setCode}}-legendary-background]?rarity=rarityByWeight2020(cur)"
+        },
+        {
+          "_comment": "Slot 7: Showcase CU",
+          "query": "from[{{setCode}}-showcase]?rarity=rarityByWeight2020(cu)"
+        },
+        {
+          "_comment": "Slot 8: 2x Wildcard CURM",
+          "query": "from[{{setCode}}-main]?rarity=rarityByWeight2020(curm)"
+        },
+        {
+          "_comment": "Slot 9: 2x Wildcard CURM",
+          "query": "from[{{setCode}}-main]?rarity=rarityByWeight2020(curm)"
+        },
+        {
+          "_comment": "Slot 10-12: 3x Main U",
+          "query": "take[3]>from[{{setCode}}-main]?rarity=u"
+        },
+        {
+          "_comment": "Slot 13-15: 3x Main C",
+          "query": "take[3]>from[{{setCode}}-main]?rarity=c"
+        },
+        {
+          "_comment": "Slot 16: Basic Land",
+          "_comment2": "Foil 20% chance",
+          "query": "from[{{setCode}}]?type='Basic Land'"
+        },
+        {
+          "_comment": "Slot 17: Token/Ad/Helper Card or The List",
+          "_comment2": "25% chance of The List card",
+          "query": "from[{{setCode}}]?token=true"
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 1: Art Card",
+              "_comment2": "1 Art card or foil-stamped art card.",
+              "_comment3": "PREVIOUS SET: There are 81 total possible borderless art cards. 95% of those opened will be regular and 5% will be foil stamped with an artist signature or Planeswalker symbol.",
+              "overrideSlot": "1",
+              "percent": "5",
+              "query": "from[a{{setCode}}-art-cards]",
+              "setValues": { "modifiers": [ "Foil Stamped" ] }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 16: Basic Land",
+              "_comment2": "Foil 20% chance",
+              "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(curm)",
+              "setValues": { "foil": true },
+              "overrideSlot": "16",
+              "percent": "20"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 17: Token/Ad or The List",
+              "_comment2": "1 Token/ad card (75%), or a card from The List (25%) – The List is a collection of 300 cards from Magic's history that we have brought together for this special slot. We have rotated in 50 new reprints that we feel help capture the feel of {{setName}}. Inclusion of cards from The List doesn't impact what formats the card is legal in",
+              "query": "from[the-list]?rarity=rarityByWeight2020(curm)",
+              "overrideSlot": "17",
+              "percent": "25"
+            }
+          ]
+        }
+
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-prerelease-promo-packins",
+      "packDesc": "{{setName}}: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "from[{{setCode}}-main]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        { "query": "take[1]>from[{{setCode}}-promo]?type='Life Counter'" },
+        { "query": "from[{{setCode}}-promo]?title='Prerelease Deck Box" },
+        { "query": "from[{{setCode}}-promo]?title='Card Divider" },
+        { "query": "from[{{setCode}}-promo]?title='Arena Code Card" }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-prerelease-promos",
+      "packDesc": "{{setName}}: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[{{setCode}}-promo]?includedReason='Prerelease Promo" }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-variants",
+      "packDesc": "{{setName}}: All Variants",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-variants]"
+        }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-promos",
+      "packDesc": "{{setName}}: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-promo]"
+        }
+      ]
+    },
+
+    {
+      "packName": "a{{setCode}}-art-cards",
+      "packDesc": "{{setName}}: Art Cards",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[a{{setCode}}-art-cards]"
+        }
+      ]
+    },
+
+    {
+      "packName": "the-list",
+      "packDesc": "{{setName}}: The List",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[the-list]"
+        }
+      ]
+    }
+
+  ]
+}

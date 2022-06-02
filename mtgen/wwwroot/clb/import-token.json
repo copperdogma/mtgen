@@ -1,0 +1,331 @@
+{
+  "setCode": "clb",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-commander-legends-battle-baldurs-gate-2022-06-02",
+  "_comments": [
+    "add a new card = add:true, newValues {}",
+    "delete a card  = delete:true, where",
+    "update card(s) = where, newValues {}",
+    "select cards starting with a value = where: type~='Snow'",
+    "get card directly from Gatherer = where: gatherer='Serra Angel'"
+  ],
+
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "clb",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-commander-legends-battle-baldurs-gate-2022-06-02",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "1",
+          "cardPattern": "000|w|Token Creature|Goat\n000|w|Token Creature|Knight\n000|w|Token Creature|Pegasus\n000|w|Token Creature|Rabbit\n000|w|Token Creature|Soldier\n000|u|Token Creature|Faerie Dragon\n000|b|Token Creature|Demon\n000|b|Token Creature|Skeleton\n000|r|Token Legendary Creature|Boo|Hamster\n000|r|Token Creature|Devil\n000|r|Token Creature|Dragon\n000|g|Token Creature|Boar\n000|g|Token Creature|Ox\n000|g|Token Creature|Saproling\n000|g|Token Creature|Squirrel\n000|a|Token Artifact Creature|Construct\n000|a|Token Artifact|Treasure\n000|a|Token Legendary Artifact|Volo's Journal\n000|a|Token|Copy\n020|c|Marker|The Initiative\n021|c|Dungeon|The Undercity\ndfc|020|021"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "clb",
+        "src": "https://media.wizards.com/2022/clb/en_ojjGvHMfvw.png",
+        "num": 1,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Goat",
+        "subtype": "Goat",
+        "numInt": 1
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "clb",
+        "src": "https://media.wizards.com/2022/clb/en_cPu67iEpmU.png",
+        "num": 2,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Knight",
+        "subtype": "Knight",
+        "numInt": 2
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "clb",
+        "src": "https://media.wizards.com/2022/clb/en_mssdl50ey4.png",
+        "num": 3,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Pegasus",
+        "subtype": "Pegasus",
+        "numInt": 3
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "clb",
+        "src": "https://media.wizards.com/2022/clb/en_BJClcJ547H.png",
+        "num": 4,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Rabbit",
+        "subtype": "Rabbit",
+        "numInt": 4
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "clb",
+        "src": "https://media.wizards.com/2022/clb/en_pMBHyyAqBP.png",
+        "num": 5,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Soldier",
+        "subtype": "Soldier",
+        "numInt": 5
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "clb",
+        "src": "https://media.wizards.com/2022/clb/en_rebwcYdcUi.png",
+        "num": 6,
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Faerie Dragon",
+        "subtype": "Faerie Dragon",
+        "numInt": 6
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "clb",
+        "src": "https://media.wizards.com/2022/clb/en_8VKhLs1EJK.png",
+        "num": 7,
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Demon",
+        "subtype": "Demon",
+        "numInt": 7
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "clb",
+        "src": "https://media.wizards.com/2022/clb/en_WRkqkNliDi.png",
+        "num": 8,
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Skeleton",
+        "subtype": "Skeleton",
+        "numInt": 8
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "clb",
+        "src": "https://media.wizards.com/2022/clb/en_xf62ABSlRK.png",
+        "num": 9,
+        "colour": "r",
+        "type": "Token Legendary Creature",
+        "title": "Boo",
+        "subtype": "Hamster",
+        "numInt": 9
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "clb",
+        "src": "https://media.wizards.com/2022/clb/en_Xudr56ZU8y.png",
+        "num": 10,
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Devil",
+        "subtype": "Devil",
+        "numInt": 10
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "clb",
+        "src": "https://media.wizards.com/2022/clb/en_Qas6yDe7E5.png",
+        "num": 11,
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Dragon",
+        "subtype": "Dragon",
+        "numInt": 11
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "clb",
+        "src": "https://media.wizards.com/2022/clb/en_fGFJyY3EV6.png",
+        "num": 12,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Boar",
+        "subtype": "Boar",
+        "numInt": 12
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "clb",
+        "src": "https://media.wizards.com/2022/clb/en_blAGqSEJ1o.png",
+        "num": 13,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Ox",
+        "subtype": "Ox",
+        "numInt": 13
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "clb",
+        "src": "https://media.wizards.com/2022/clb/en_ZMVuTLDtu0.png",
+        "num": 14,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Saproling",
+        "subtype": "Saproling",
+        "numInt": 14
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "clb",
+        "src": "https://media.wizards.com/2022/clb/en_So9MGFsrko.png",
+        "num": 15,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Squirrel",
+        "subtype": "Squirrel",
+        "numInt": 15
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "clb",
+        "src": "https://media.wizards.com/2022/clb/en_lSp0T16Z1W.png",
+        "num": 16,
+        "colour": "a",
+        "type": "Token Artifact Creature",
+        "title": "Construct",
+        "subtype": "Construct",
+        "numInt": 16
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "clb",
+        "src": "https://media.wizards.com/2022/clb/en_wcP4C8AHPP.png",
+        "num": 17,
+        "colour": "a",
+        "type": "Token Artifact",
+        "title": "Treasure",
+        "subtype": "Treasure",
+        "numInt": 17
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "clb",
+        "src": "https://media.wizards.com/2022/clb/en_RcFBm3AtJs.png",
+        "num": 18,
+        "colour": "a",
+        "type": "Token Legendary Artifact",
+        "title": "Volo's Journal",
+        "subtype": "Volo's Journal",
+        "numInt": 18
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "clb",
+        "src": "https://media.wizards.com/2022/clb/en_cTpxO4XCPW.png",
+        "num": 19,
+        "colour": "a",
+        "type": "Token",
+        "title": "Copy",
+        "subtype": "Copy",
+        "numInt": 19
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "clb",
+        "src": "https://media.wizards.com/2022/clb/en_hdD7AcaWsq.png",
+        "num": 20,
+        "colour": "c",
+        "type": "Marker",
+        "title": "The Initiative",
+        "subtype": "The Initiative",
+        "numInt": 20,
+        "cardFaces": [
+          {
+            "set": "clb",
+            "src": "https://media.wizards.com/2022/clb/en_hdD7AcaWsq.png",
+            "height": 370,
+            "width": 265,
+            "imageSource": "wotc-article",
+            "num": 20,
+            "colour": "c",
+            "type": "Marker",
+            "title": "The Initiative",
+            "subtype": "The Initiative",
+            "matchTitle": "the initiative",
+            "numInt": 20,
+            "mtgenId": "clb|20"
+          },
+          {
+            "set": "clb",
+            "src": "https://media.wizards.com/2022/clb/en_6swTVEGnrF.png",
+            "height": 370,
+            "width": 265,
+            "imageSource": "wotc-article",
+            "num": 21,
+            "colour": "c",
+            "type": "Dungeon",
+            "title": "The Undercity",
+            "subtype": "The Undercity",
+            "matchTitle": "the undercity",
+            "numInt": 21,
+            "mtgenId": "clb|21"
+          }
+        ],
+        "doubleFaceCard": true
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/020 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

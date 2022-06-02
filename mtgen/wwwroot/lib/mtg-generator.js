@@ -1,5 +1,5 @@
 /*
-MtG Generator script v2.7.1
+MtG Generator script v2.7.2
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
@@ -26,6 +26,7 @@ Normally 15 cards per booster:
 Quick How Tos:
 - to add a caveat (yellow note banner above), add an array of 'caveats' to the products.json product. See set MID.
 
+20220421: Includes card num on rendered HTML.
 20220414: Added family support for SNC.
 20220222: Exporter: Added Magic the Gathering: Arena format.
 11-Jun-2021: Added ability to render an array of card modifiers which appear after the card title in brackets.
