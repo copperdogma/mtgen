@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System.Linq;
-using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Options; 
 
 namespace mtgen.Services
 {
@@ -40,7 +40,7 @@ namespace mtgen.Services
 
         async public Task<string> SaveDraw(DrawEntity drawEntity)
         {
-            if (string.IsNullOrWhiteSpace(drawEntity.Results)) { throw new ArgumentException("DrawEntity.Results is null."); }
+            if (string.IsNullOrWhiteSpace(drawEntity.Results)) throw new ArgumentException("DrawEntity.Results is null.");
 
             if (string.IsNullOrEmpty(drawEntity.DrawId))
             {

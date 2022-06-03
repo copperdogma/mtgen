@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using mtgen.Services;
 using System;
 using System.Threading.Tasks;
@@ -11,10 +12,13 @@ namespace mtgen.Controllers
     public class DrawController : ControllerBase
     {
         private readonly IStorageContext _storageContext;
+        private readonly ILogger<DrawController> _logger;
+        private const string USER_DRAW_ID_KEY = "userDrawId";
 
-        public DrawController(IStorageContext storageContext)
+        public DrawController(IStorageContext storageContext, ILogger<DrawController> logger)
         {
             _storageContext = storageContext;
+            _logger = logger;
         }
 
         // Get a saved draw.
@@ -22,7 +26,7 @@ namespace mtgen.Controllers
         // Used by the client if the set url looks like xxx?draw=yyyyyy
         // This API call is used separately and asynchronously after the main page is loaded.
         [HttpGet("{drawId}")]
-        public async Task<ActionResult> Get(string setCode, string drawId)
+        public async Task<ActionResult> GetDraw(string setCode, string drawId)
         {
             if (drawId == null || drawId.Trim().Length == 0) return new NotFoundResult();
 
@@ -37,18 +41,20 @@ namespace mtgen.Controllers
         // Save a draw. Returns the saved drawId.
         // POST: api/iko/draws
         [HttpPost]
-        public async Task<ActionResult> Post(string setCode, [FromBody]System.Text.Json.JsonElement data)
+        public async Task<ActionResult> SaveDraw(string setCode, [FromBody] System.Text.Json.JsonElement data)
         {
+            _logger.LogWarning("Test log: creating draw");
+
             // See if the user already has a userDrawId. If not, create one for them.
             // This (will be used) to tie a user's draws together so they can see a list of them.
-            var userDrawId = HttpContext.Request.Cookies["userDrawId"];
+            var userDrawId = HttpContext.Request.Cookies[USER_DRAW_ID_KEY];
             if (string.IsNullOrWhiteSpace(userDrawId))
             {
                 // A GUID to hold the drawId.
                 userDrawId = Guid.NewGuid().ToString();
 
                 // Send drawId as a cookie to the client.
-                HttpContext.Response.Cookies.Append("userDrawId", userDrawId);
+                HttpContext.Response.Cookies.Append(USER_DRAW_ID_KEY, userDrawId);
             }
 
             var drawEntity = new DrawEntity
@@ -60,9 +66,10 @@ namespace mtgen.Controllers
             var uniqueId = await _storageContext.SaveDraw(drawEntity);
 
             // This will return something like: http://localhost:1491/ogw?draw=TvizXlV
-            var returnJson = $"{{ \"drawId\": \"{uniqueId}\", \"url\": \"/{setCode}?draw={uniqueId}\" }}";
+            // This will be picked up and used by the Save Draw modules in mtg-generator.js
+            var returnJson = new { drawId = uniqueId, url = $"/{setCode}?draw={uniqueId}" };
 
-            return new JsonResult(returnJson);
+            return Ok(returnJson);
         }
     }
 }
