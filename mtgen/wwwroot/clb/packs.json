@@ -45,8 +45,12 @@
       "query": "from[{{setCode}}]?borderlessPlaneswalker=true"
     },
     {
+      "defName": "{{setCode}}-legendary-base",
+      "query": "from[{{setCode}}]?numInt=(1-361)"
+    },
+    {
       "defName": "{{setCode}}-legendary",
-      "query": "from[{{setCode}}]?legendary=true"
+      "query": "from[{{setCode}}-legendary-base]?legendary=true"
     },
     {
       "defName": "{{setCode}}-legendary-creature-planeswalker",

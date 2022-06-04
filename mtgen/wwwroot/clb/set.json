@@ -1,7 +1,7 @@
 {
   "startProductName": "clb-prerelease",
   "packFiles": [
-    "packs.json"
+    "packs.json?v1.2"
   ],
   "cardFiles": [
     "cardsMain.json",
@@ -13,10 +13,14 @@
     "cardsCommander.json",
     "../cards/ads/cardsAds.json"
   ],
-  "xxxupdates": [
+  "updates": [
     {
-      "UpdateDate": "2022-02-21T21:00:00:00",
-      "HtmlString": "Now includes a C/U double-faced card slot in draft boosters."
+      "UpdateDate": "2022-06-03T21:30:00:00",
+      "HtmlString": "Draft boosters now include proper Legendary cards."
+    },
+    {
+      "UpdateDate": "2022-06-03T17:00:00:00",
+      "HtmlString": "Prerelease now includes 3 boosters instead of 6. Draft boosters no longer include non-main set cards."
     }
   ]
 }
