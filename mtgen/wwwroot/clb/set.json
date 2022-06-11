@@ -8,12 +8,16 @@
     "cardsToken.json",
     "cardsVariant.json",
     "cardsPromo.json",
-    "cardsTheList.json",
-    "cardsArtCards.json",
+    "cardsTheList.json?v1.1",
+    "cardsArtCards.json?v1.1",
     "cardsCommander.json",
     "../cards/ads/cardsAds.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2022-06-09T12:30:00:00",
+      "HtmlString": "Updated The List and Art Cards now that wotc has released them for this set."
+    },
     {
       "UpdateDate": "2022-06-03T21:30:00:00",
       "HtmlString": "Draft boosters now include proper Legendary cards."

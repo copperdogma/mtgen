@@ -76,9 +76,6 @@
       "isVisible": true,
       "initialSort": "set",
       "caveats": [
-        "Note: Placeholder image for Art Cards used until the actual cards are released."
-      ],
-      "XXXcaveats": [
         "Note: The only Art Card images available are all foil-stamped. The wording underneath will say if you've actually pulled a foil stamped card."
       ],
       "packs": [
@@ -164,7 +161,7 @@
       "isVisible": true,
       "initialSort": "name",
       "caveats": [
-        "Note: Placeholder image for Art Cards used until the actual cards are released."
+        "Note: The only Art Card images available are all foil-stamped. The wording underneath will say if you've actually pulled a foil stamped card."
       ],
       "packs": [
         { "packName": "a{{setCode}}-art-cards" }

@@ -1,12 +1,811 @@
 ﻿[
   {
-    "_comment": "Add caveat in products.json, like so: Note: Placeholder image for Art Cards used until the actual cards are released.",
-    "title": "Art Card",
-    "src": "http://mtgen.net/cards/mtg-art-series-card.png",
-    "num": "0001/0001 A",
-    "set": "aclb",
+    "title": "Lurking Green Dragon",
+    "src": "https://media.wizards.com/2022/clb/en_hCB4y9wj1j.png",
+    "num": "0001/081 A",
+    "set": "clb",
     "numInt": 1,
-    "mtgenId": "aclb|0001/0001 A",
+    "mtgenId": "clb|0001/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Ancient Brass Dragon",
+    "src": "https://media.wizards.com/2022/clb/en_dSaXGgyymc.png",
+    "num": "0002/081 A",
+    "set": "clb",
+    "numInt": 2,
+    "mtgenId": "clb|0002/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Ancient Bronze Dragon",
+    "src": "https://media.wizards.com/2022/clb/en_CUHxtVBxut.png",
+    "num": "0003/081 A",
+    "set": "clb",
+    "numInt": 3,
+    "mtgenId": "clb|0003/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Ancient Copper Dragon",
+    "src": "https://media.wizards.com/2022/clb/en_GAJH188kde.png",
+    "num": "0004/081 A",
+    "set": "clb",
+    "numInt": 4,
+    "mtgenId": "clb|0004/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Ancient Gold Dragon",
+    "src": "https://media.wizards.com/2022/clb/en_5KUQ84nM7T.png",
+    "num": "0005/081 A",
+    "set": "clb",
+    "numInt": 5,
+    "mtgenId": "clb|0005/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Ancient Silver Dragon",
+    "src": "https://media.wizards.com/2022/clb/en_caXgSn1f4c.png",
+    "num": "0006/081 A",
+    "set": "clb",
+    "numInt": 6,
+    "mtgenId": "clb|0006/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Balor",
+    "src": "https://media.wizards.com/2022/clb/en_7XvbjDKySn.png",
+    "num": "0007/081 A",
+    "set": "clb",
+    "numInt": 7,
+    "mtgenId": "clb|0007/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Chain Devil",
+    "src": "https://media.wizards.com/2022/clb/en_XhAdXgL9Db.png",
+    "num": "0008/081 A",
+    "set": "clb",
+    "numInt": 8,
+    "mtgenId": "clb|0008/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Chardalyn Dragon",
+    "src": "https://media.wizards.com/2022/clb/en_4rNqfVvkJL.png",
+    "num": "0009/081 A",
+    "set": "clb",
+    "numInt": 9,
+    "mtgenId": "clb|0009/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Death Kiss",
+    "src": "https://media.wizards.com/2022/clb/en_pHqiuHgl4Z.png",
+    "num": "0010/081 A",
+    "set": "clb",
+    "numInt": 10,
+    "mtgenId": "clb|0010/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Ghastly Death Tyrant",
+    "src": "https://media.wizards.com/2022/clb/en_6OxUmhK9rA.png",
+    "num": "0011/081 A",
+    "set": "clb",
+    "numInt": 11,
+    "mtgenId": "clb|0011/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Mocking Doppelganger",
+    "src": "https://media.wizards.com/2022/clb/en_2SQe66A6XX.png",
+    "num": "0012/081 A",
+    "set": "clb",
+    "numInt": 12,
+    "mtgenId": "clb|0012/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Elder Brain",
+    "src": "https://media.wizards.com/2022/clb/en_SypsYDsDvq.png",
+    "num": "0013/081 A",
+    "set": "clb",
+    "numInt": 13,
+    "mtgenId": "clb|0013/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Ettercap",
+    "src": "https://media.wizards.com/2022/clb/en_Mi0XsQ86yi.png",
+    "num": "0014/081 A",
+    "set": "clb",
+    "numInt": 14,
+    "mtgenId": "clb|0014/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Gray Slaad",
+    "src": "https://media.wizards.com/2022/clb/en_UZf3IkK8gN.png",
+    "num": "0015/081 A",
+    "set": "clb",
+    "numInt": 15,
+    "mtgenId": "clb|0015/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Guardian Naga",
+    "src": "https://media.wizards.com/2022/clb/en_7MKgh4YS3A.png",
+    "num": "0016/081 A",
+    "set": "clb",
+    "numInt": 16,
+    "mtgenId": "clb|0016/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Hezrou",
+    "src": "https://media.wizards.com/2022/clb/en_5XAaLa35QM.png",
+    "num": "0017/081 A",
+    "set": "clb",
+    "numInt": 17,
+    "mtgenId": "clb|0017/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Lulu, Loyal Hollyphant",
+    "src": "https://media.wizards.com/2022/clb/en_tHIF9B69Ab.png",
+    "num": "0018/081 A",
+    "set": "clb",
+    "numInt": 18,
+    "mtgenId": "clb|0018/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Nefarious Imp",
+    "src": "https://media.wizards.com/2022/clb/en_GjduTwvyHw.png",
+    "num": "0019/081 A",
+    "set": "clb",
+    "numInt": 19,
+    "mtgenId": "clb|0019/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Intellect Devourer",
+    "src": "https://media.wizards.com/2022/clb/en_7vFfAVV9r1.png",
+    "num": "0020/081 A",
+    "set": "clb",
+    "numInt": 20,
+    "mtgenId": "clb|0020/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Marut",
+    "src": "https://media.wizards.com/2022/clb/en_dbQmJOJAab.png",
+    "num": "0021/081 A",
+    "set": "clb",
+    "numInt": 21,
+    "mtgenId": "clb|0021/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Consuming Aberration",
+    "src": "https://media.wizards.com/2022/clb/en_TvifAoBau9.png",
+    "num": "0022/081 A",
+    "set": "clb",
+    "numInt": 22,
+    "mtgenId": "clb|0022/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Mold Folk",
+    "src": "https://media.wizards.com/2022/clb/en_7XiOM4HT0e.png",
+    "num": "0023/081 A",
+    "set": "clb",
+    "numInt": 23,
+    "mtgenId": "clb|0023/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Myconid Spore Tender",
+    "src": "https://media.wizards.com/2022/clb/en_so09n9SJzD.png",
+    "num": "0024/081 A",
+    "set": "clb",
+    "numInt": 24,
+    "mtgenId": "clb|0024/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Nothic",
+    "src": "https://media.wizards.com/2022/clb/en_7W6ltipBlT.png",
+    "num": "0025/081 A",
+    "set": "clb",
+    "numInt": 25,
+    "mtgenId": "clb|0025/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Treasure Keeper",
+    "src": "https://media.wizards.com/2022/clb/en_Wx0WbnughP.png",
+    "num": "0026/081 A",
+    "set": "clb",
+    "numInt": 26,
+    "mtgenId": "clb|0026/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Young Blue Dragon",
+    "src": "https://media.wizards.com/2022/clb/en_aVa0mUcgYF.png",
+    "num": "0027/081 A",
+    "set": "clb",
+    "numInt": 27,
+    "mtgenId": "clb|0027/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Ancient Gold Dragon",
+    "src": "https://media.wizards.com/2022/clb/en_TOSc0yJxis.png",
+    "num": "0028/081 A",
+    "set": "clb",
+    "numInt": 28,
+    "mtgenId": "clb|0028/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Kindred Discovery",
+    "src": "https://media.wizards.com/2022/clb/en_jkjY2EZc2J.png",
+    "num": "0029/081 A",
+    "set": "clb",
+    "numInt": 29,
+    "mtgenId": "clb|0029/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Renari, Merchant of Marvels",
+    "src": "https://media.wizards.com/2022/clb/en_1r2vlZyuQb.png",
+    "num": "0030/081 A",
+    "set": "clb",
+    "numInt": 30,
+    "mtgenId": "clb|0030/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Brainstealer Dragon",
+    "src": "https://media.wizards.com/2022/clb/en_s9nBQyTrsM.png",
+    "num": "0031/081 A",
+    "set": "clb",
+    "numInt": 31,
+    "mtgenId": "clb|0031/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Sivriss, Nightmare Speaker",
+    "src": "https://media.wizards.com/2022/clb/en_nJnO2Kp0vA.png",
+    "num": "0032/081 A",
+    "set": "clb",
+    "numInt": 32,
+    "mtgenId": "clb|0032/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Baeloth Barrityl, Entertainer",
+    "src": "https://media.wizards.com/2022/clb/en_eyjozAqGVk.png",
+    "num": "0033/081 A",
+    "set": "clb",
+    "numInt": 33,
+    "mtgenId": "clb|0033/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Karlach, Fury of Avernus",
+    "src": "https://media.wizards.com/2022/clb/en_Pj0ufsNGfp.png",
+    "num": "0034/081 A",
+    "set": "clb",
+    "numInt": 34,
+    "mtgenId": "clb|0034/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Owlbear Shepherd",
+    "src": "https://media.wizards.com/2022/clb/en_VMUTeaaEGx.png",
+    "num": "0035/081 A",
+    "set": "clb",
+    "numInt": 35,
+    "mtgenId": "clb|0035/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Elminster",
+    "src": "https://media.wizards.com/2022/clb/en_9acVdZP02f.png",
+    "num": "0036/081 A",
+    "set": "clb",
+    "numInt": 36,
+    "mtgenId": "clb|0036/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Jon Irenicus, Shattered One",
+    "src": "https://media.wizards.com/2022/clb/en_gdRbA5BP2F.png",
+    "num": "0037/081 A",
+    "set": "clb",
+    "numInt": 37,
+    "mtgenId": "clb|0037/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Minsc & Boo, Timeless Heroes",
+    "src": "https://media.wizards.com/2022/clb/en_9QKZMKUrSH.png",
+    "num": "0038/081 A",
+    "set": "clb",
+    "numInt": 38,
+    "mtgenId": "clb|0038/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Myrkul, Lord of Bones",
+    "src": "https://media.wizards.com/2022/clb/en_yrcmFWTPBe.png",
+    "num": "0039/081 A",
+    "set": "clb",
+    "numInt": 39,
+    "mtgenId": "clb|0039/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Raphael, Fiendish Savior",
+    "src": "https://media.wizards.com/2022/clb/en_svIdYkjowZ.png",
+    "num": "0040/081 A",
+    "set": "clb",
+    "numInt": 40,
+    "mtgenId": "clb|0040/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Tasha, the Witch Queen",
+    "src": "https://media.wizards.com/2022/clb/en_wEk5BkB9EO.png",
+    "num": "0041/081 A",
+    "set": "clb",
+    "numInt": 41,
+    "mtgenId": "clb|0041/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Zevlor, Elturel Exile",
+    "src": "https://media.wizards.com/2022/clb/en_A7YbOBMMFY.png",
+    "num": "0042/081 A",
+    "set": "clb",
+    "numInt": 42,
+    "mtgenId": "clb|0042/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Clockwork Fox",
+    "src": "https://media.wizards.com/2022/clb/en_jTliyqrn0G.png",
+    "num": "0043/081 A",
+    "set": "clb",
+    "numInt": 43,
+    "mtgenId": "clb|0043/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Ancient Gold Dragon",
+    "src": "https://media.wizards.com/2022/clb/en_5F053zWjkJ.png",
+    "num": "0044/081 A",
+    "set": "clb",
+    "numInt": 44,
+    "mtgenId": "clb|0044/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Lae'zel, Vlaakith's Champion",
+    "src": "https://media.wizards.com/2022/clb/en_aBznD4OC1T.png",
+    "num": "0045/081 A",
+    "set": "clb",
+    "numInt": 45,
+    "mtgenId": "clb|0045/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Lulu, Loyal Hollyphant",
+    "src": "https://media.wizards.com/2022/clb/en_bfUWMIf7vj.png",
+    "num": "0046/081 A",
+    "set": "clb",
+    "numInt": 46,
+    "mtgenId": "clb|0046/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Ancient Silver Dragon",
+    "src": "https://media.wizards.com/2022/clb/en_wbSKm2jONC.png",
+    "num": "0047/081 A",
+    "set": "clb",
+    "numInt": 47,
+    "mtgenId": "clb|0047/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Volo, Itinerant Scholar",
+    "src": "https://media.wizards.com/2022/clb/en_VR5RSKbrzD.png",
+    "num": "0048/081 A",
+    "set": "clb",
+    "numInt": 48,
+    "mtgenId": "clb|0048/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Ancient Brass Dragon",
+    "src": "https://media.wizards.com/2022/clb/en_gIlQTERABE.png",
+    "num": "0049/081 A",
+    "set": "clb",
+    "numInt": 49,
+    "mtgenId": "clb|0049/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Sarevok, Deathbringer",
+    "src": "https://media.wizards.com/2022/clb/en_qiTUSmJ7Gk.png",
+    "num": "0050/081 A",
+    "set": "clb",
+    "numInt": 50,
+    "mtgenId": "clb|0050/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Sivriss, Nightmare Speaker",
+    "src": "https://media.wizards.com/2022/clb/en_zBSPbNF4jC.png",
+    "num": "0051/081 A",
+    "set": "clb",
+    "numInt": 51,
+    "mtgenId": "clb|0051/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Ancient Copper Dragon",
+    "src": "https://media.wizards.com/2022/clb/en_I2gDHOAWbT.png",
+    "num": "0052/081 A",
+    "set": "clb",
+    "numInt": 52,
+    "mtgenId": "clb|0052/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Ganax, Astral Hunter",
+    "src": "https://media.wizards.com/2022/clb/en_NCoM8uQqYZ.png",
+    "num": "0053/081 A",
+    "set": "clb",
+    "numInt": 53,
+    "mtgenId": "clb|0053/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Karlach, Fury of Avernus",
+    "src": "https://media.wizards.com/2022/clb/en_E8KoubGGrv.png",
+    "num": "0054/081 A",
+    "set": "clb",
+    "numInt": 54,
+    "mtgenId": "clb|0054/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Livaan, Cultist of Tiamat",
+    "src": "https://media.wizards.com/2022/clb/en_PBnmPl4geS.png",
+    "num": "0055/081 A",
+    "set": "clb",
+    "numInt": 55,
+    "mtgenId": "clb|0055/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Nemesis Phoenix",
+    "src": "https://media.wizards.com/2022/clb/en_CZ3DOZkBU1.png",
+    "num": "0056/081 A",
+    "set": "clb",
+    "numInt": 56,
+    "mtgenId": "clb|0056/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Taunting Kobold",
+    "src": "https://media.wizards.com/2022/clb/en_5VQHGhfyeA.png",
+    "num": "0057/081 A",
+    "set": "clb",
+    "numInt": 57,
+    "mtgenId": "clb|0057/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Ancient Bronze Dragon",
+    "src": "https://media.wizards.com/2022/clb/en_6HGUVYWKKr.png",
+    "num": "0058/081 A",
+    "set": "clb",
+    "numInt": 58,
+    "mtgenId": "clb|0058/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Bramble Sovereign",
+    "src": "https://media.wizards.com/2022/clb/en_WDUizIwmzy.png",
+    "num": "0059/081 A",
+    "set": "clb",
+    "numInt": 59,
+    "mtgenId": "clb|0059/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Wilson, Refined Grizzly",
+    "src": "https://media.wizards.com/2022/clb/en_KqKZKsi9oa.png",
+    "num": "0060/081 A",
+    "set": "clb",
+    "numInt": 60,
+    "mtgenId": "clb|0060/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Alaundo the Seer",
+    "src": "https://media.wizards.com/2022/clb/en_bIFX2SSQQ0.png",
+    "num": "0061/081 A",
+    "set": "clb",
+    "numInt": 61,
+    "mtgenId": "clb|0061/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Astarion, the Decadent",
+    "src": "https://media.wizards.com/2022/clb/en_rZvvVAXxpD.png",
+    "num": "0062/081 A",
+    "set": "clb",
+    "numInt": 62,
+    "mtgenId": "clb|0062/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Bhaal, Lord of Murder",
+    "src": "https://media.wizards.com/2022/clb/en_nxRuLBCOJW.png",
+    "num": "0063/081 A",
+    "set": "clb",
+    "numInt": 63,
+    "mtgenId": "clb|0063/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Elminster",
+    "src": "https://media.wizards.com/2022/clb/en_JRtYjJTTts.png",
+    "num": "0064/081 A",
+    "set": "clb",
+    "numInt": 64,
+    "mtgenId": "clb|0064/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Gluntch, the Bestower",
+    "src": "https://media.wizards.com/2022/clb/en_nsqSqeEyIL.png",
+    "num": "0065/081 A",
+    "set": "clb",
+    "numInt": 65,
+    "mtgenId": "clb|0065/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Jan Jansen, Chaos Crafter",
+    "src": "https://media.wizards.com/2022/clb/en_nn62OZTFlE.png",
+    "num": "0066/081 A",
+    "set": "clb",
+    "numInt": 66,
+    "mtgenId": "clb|0066/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Jon Irenicus, Shattered One",
+    "src": "https://media.wizards.com/2022/clb/en_6GIHIXVXzF.png",
+    "num": "0067/081 A",
+    "set": "clb",
+    "numInt": 67,
+    "mtgenId": "clb|0067/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Korlessa, Scale Singer",
+    "src": "https://media.wizards.com/2022/clb/en_uuarTDQz36.png",
+    "num": "0068/081 A",
+    "set": "clb",
+    "numInt": 68,
+    "mtgenId": "clb|0068/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Lozhan, Dragons' Legacy",
+    "src": "https://media.wizards.com/2022/clb/en_te7ChfAhSW.png",
+    "num": "0069/081 A",
+    "set": "clb",
+    "numInt": 69,
+    "mtgenId": "clb|0069/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Mahadi, Emporium Master",
+    "src": "https://media.wizards.com/2022/clb/en_JLHXe8YWwh.png",
+    "num": "0070/081 A",
+    "set": "clb",
+    "numInt": 70,
+    "mtgenId": "clb|0070/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Miirym, Sentinel Wyrm",
+    "src": "https://media.wizards.com/2022/clb/en_tGSFKj1ACB.png",
+    "num": "0071/081 A",
+    "set": "clb",
+    "numInt": 71,
+    "mtgenId": "clb|0071/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Minsc & Boo, Timeless Heroes",
+    "src": "https://media.wizards.com/2022/clb/en_OXTLxwkVSG.png",
+    "num": "0072/081 A",
+    "set": "clb",
+    "numInt": 72,
+    "mtgenId": "clb|0072/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Myrkul, Lord of Bones",
+    "src": "https://media.wizards.com/2022/clb/en_FJXflr0uAe.png",
+    "num": "0073/081 A",
+    "set": "clb",
+    "numInt": 73,
+    "mtgenId": "clb|0073/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Neera, Wild Mage",
+    "src": "https://media.wizards.com/2022/clb/en_EQYUOsP6x8.png",
+    "num": "0074/081 A",
+    "set": "clb",
+    "numInt": 74,
+    "mtgenId": "clb|0074/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Raphael, Fiendish Savior",
+    "src": "https://media.wizards.com/2022/clb/en_gAowVriKI3.png",
+    "num": "0075/081 A",
+    "set": "clb",
+    "numInt": 75,
+    "mtgenId": "clb|0075/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Tasha, the Witch Queen",
+    "src": "https://media.wizards.com/2022/clb/en_FYAd0Ybbm0.png",
+    "num": "0076/081 A",
+    "set": "clb",
+    "numInt": 76,
+    "mtgenId": "clb|0076/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Thrakkus the Butcher",
+    "src": "https://media.wizards.com/2022/clb/en_q7BWK8eEao.png",
+    "num": "0077/081 A",
+    "set": "clb",
+    "numInt": 77,
+    "mtgenId": "clb|0077/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Zevlor, Elturel Exile",
+    "src": "https://media.wizards.com/2022/clb/en_EabONSHDJp.png",
+    "num": "0078/081 A",
+    "set": "clb",
+    "numInt": 78,
+    "mtgenId": "clb|0078/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Decanter of Endless Water",
+    "src": "https://media.wizards.com/2022/clb/en_XaGVrdyvQp.png",
+    "num": "0079/081 A",
+    "set": "clb",
+    "numInt": 79,
+    "mtgenId": "clb|0079/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Nautiloid Ship",
+    "src": "https://media.wizards.com/2022/clb/en_kCneUGJrwi.png",
+    "num": "0080/081 A",
+    "set": "clb",
+    "numInt": 80,
+    "mtgenId": "clb|0080/081 A",
+    "artCard": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "title": "Stonespeaker Crystal",
+    "src": "https://media.wizards.com/2022/clb/en_3oXvPaTc6f.png",
+    "num": "0081/081 A",
+    "set": "clb",
+    "numInt": 81,
+    "mtgenId": "clb|0081/081 A",
     "artCard": true,
     "usableForDeckBuilding": false
   }
