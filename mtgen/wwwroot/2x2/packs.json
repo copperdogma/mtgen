@@ -1,0 +1,248 @@
+{
+  "defs": [
+    {
+      "defName": "{{setCode}}",
+      "query": "from[*]?set='{{setCode}}'"
+    },
+    {
+      "defName": "{{setCode}}-main",
+      "query": "from[{{setCode}}]?mainSet=true-from[{{setCode}}]?numInt=332-from[{{setCode}}]?type='Basic Land'-from[{{setCode}}]?promo=true"
+    },
+    {
+      "defName": "{{setCode}}-variants",
+      "query": "from[{{setCode}}]?variant=true"
+    },
+    {
+      "defName": "{{setCode}}-promo",
+      "query": "from[{{setCode}}]?promo=true"
+    },
+    {
+      "defName": "{{setCode}}-borderless",
+      "query": "from[{{setCode}}]?borderless=true"
+    },
+    {
+      "defName": "{{setCode}}-etched-foil",
+      "query": "from[{{setCode}}]?etchedFoil=true"
+    },
+    {
+      "defName": "{{setCode}}-textured-foil",
+      "query": "from[{{setCode}}]?texturedFoil=true"
+    },
+    {
+      "defName": "{{setCode}}-foils",
+      "_comment": "332: Cryptic Spires: never appears in foil",
+      "query": "from[{{setCode}}-main]-from[{{setCode}}]?numInt=332+from[{{setCode}}]?type='Basic Land'"
+    }
+
+  ],
+  "packs": [
+    {
+      "packName": "{{setCode}}-all-cards",
+      "packDesc": "{{setName}}: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[{{setCode}}]" }
+      ]
+    },
+    {
+      "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
+      "packName": "{{setCode}}-draft",
+      "packDesc": "{{setName}}: Draft Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/commander-legends-battle-baldurs-gate-product-overview-2022-05-17" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[8]>from[{{setCode}}-main]?rarity='c" },
+        { "query": "take[3]>from[{{setCode}}-main]?rarity='u" },
+        { "query": "from[{{setCode}}-main]?rarity=rarityByWeight2020(rm)" },
+        { "query": "from[{{setCode}}-main]?rarity=rarityByWeight2020(rm)" },
+        {
+          "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(curm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(curm)",
+          "setValues": { "foil": true }
+        },
+        { "query": "from[{{setCode}}]?title='Cryptic Spires'" },
+        {
+          "querySet": [
+            {
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
+            },
+            {
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "30% of C/U with borderless versions appear as borderless. Man I dunno. I'm just gonna do a 30% chance of one borderless.",
+              "overrideSlot": "8",
+              "percent": "30",
+              "query": "from[{{setCode}}-borderless]?rarity='c"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "30% of C/U with borderless versions appear as borderless. Man I dunno. I'm just gonna do a 30% chance of one borderless.",
+              "overrideSlot": "11",
+              "percent": "15",
+              "query": "from[{{setCode}}-borderless]?rarity='u"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "11% of R/M are borderless",
+              "overrideSlot": "12",
+              "percent": "11",
+              "query": "from[{{setCode}}-borderless]?rarity=rarityByWeight2020(rm)"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "11% of R/M are borderless",
+              "overrideSlot": "13",
+              "percent": "11",
+              "query": "from[{{setCode}}-borderless]?rarity=rarityByWeight2020(rm)"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1.25% of foils are R/M borderless",
+              "overrideSlot": "14",
+              "percent": "1.25",
+              "query": "from[{{setCode}}-borderless]?rarity=rarityByWeight2020(rm)",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1.25% of foils are R/M borderless",
+              "overrideSlot": "15",
+              "percent": "1.25",
+              "query": "from[{{setCode}}-borderless]?rarity=rarityByWeight2020(rm)",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_comment": "Collector Boosters were introduced as standard feature as of ELD",
+      "packName": "{{setCode}}-collector",
+      "packDesc": "{{setName}}: Collector Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/commander-legends-battle-baldurs-gate-product-overview-2022-05-17" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1-5: Foil: 5x C",
+          "query": "take[5]>from[{{setCode}}-main]?rarity='c'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 6-7: Foil: 2x u",
+          "query": "take[2]>from[{{setCode}}-main]?rarity='u'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 8-9: Borderess C/U",
+          "query": "from[{{setCode}}-borderless]?rarity=rarityByWeight2020(cu)"
+        },
+        {
+          "_comment": "Slot 8-9: Borderess C/U",
+          "query": "from[{{setCode}}-borderless]?rarity=rarityByWeight2020(cu)"
+        },
+        {
+          "_comment": "Slot 10-11: Foil: Borderess C/U",
+          "query": "from[{{setCode}}-borderless]?rarity=rarityByWeight2020(cu)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 10-11: Foil: Borderess C/U",
+          "query": "from[{{setCode}}-borderless]?rarity=rarityByWeight2020(cu)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 12: Foil: R/M",
+          "query": "from[{{setCode}}-main]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 13: Borderless R/M",
+          "query": "from[{{setCode}}-borderless]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 14: Foil-Etched: R/M",
+          "query": "from[{{setCode}}-etched-foil]?rarity=rarityByWeight2020(rm)",
+          "setValues": {
+            "foil": true,
+            "modifiers": [ "Foil Etched" ]
+          }
+        },
+        {
+          "_comment": "Slot 15: Foil Borderless R  OR  Textured Foil M",
+          "query": "from[{{setCode}}-borderless]?rarity='r'",
+          "setValues": { "foil": true }
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 15: Foil Borderless R  OR  Textured Foil M",
+              "overrideSlot": "15",
+              "percent": "3",
+              "query": "from[{{setCode}}-textured-foil]?rarity='m",
+              "setValues": {
+                "foil": true,
+                "modifiers": [ "Textured Foil" ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-variants",
+      "packDesc": "{{setName}}: All Variants",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-variants]"
+        }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-promos",
+      "packDesc": "{{setName}}: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-promo]"
+        }
+      ]
+    }
+
+  ]
+}

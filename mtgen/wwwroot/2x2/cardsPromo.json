@@ -1,0 +1,281 @@
+﻿[
+  {
+    "object": "card",
+    "id": "3a1b6cf0-24b0-43b0-ab95-8bf73710c8ee",
+    "oracle_id": "1093fdb6-bd4f-46a8-92e3-5aa46b52bb4f",
+    "multiverse_ids": [],
+    "name": "Weathered Wayfarer",
+    "lang": "en",
+    "released_at": "2022-07-08",
+    "uri": "https://api.scryfall.com/cards/3a1b6cf0-24b0-43b0-ab95-8bf73710c8ee",
+    "scryfall_uri": "https://scryfall.com/card/2x2/578/weathered-wayfarer?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/3/a/3a1b6cf0-24b0-43b0-ab95-8bf73710c8ee.jpg?1652387188",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/3/a/3a1b6cf0-24b0-43b0-ab95-8bf73710c8ee.jpg?1652387188",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/3/a/3a1b6cf0-24b0-43b0-ab95-8bf73710c8ee.jpg?1652387188",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/3/a/3a1b6cf0-24b0-43b0-ab95-8bf73710c8ee.png?1652387188",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/3/a/3a1b6cf0-24b0-43b0-ab95-8bf73710c8ee.jpg?1652387188",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/3/a/3a1b6cf0-24b0-43b0-ab95-8bf73710c8ee.jpg?1652387188"
+    },
+    "mana_cost": "{W}",
+    "cmc": 1,
+    "type_line": "Creature — Human Nomad Cleric",
+    "oracle_text": "{W}, {T}: Search your library for a land card, reveal it, put it into your hand, then shuffle. Activate only if an opponent controls more lands than you.",
+    "power": "1",
+    "toughness": "1",
+    "colors": [
+      "W"
+    ],
+    "color_identity": [
+      "W"
+    ],
+    "keywords": [],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "explorer": "not_legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "legal",
+      "commander": "legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "legal"
+    },
+    "games": [
+      "paper"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": true,
+    "variation": false,
+    "set_id": "5a645837-b050-449f-ac90-1e7ccbf45031",
+    "set": "2x2",
+    "set_name": "Double Masters 2022",
+    "set_type": "masters",
+    "set_uri": "https://api.scryfall.com/sets/5a645837-b050-449f-ac90-1e7ccbf45031",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3A2x2&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/2x2?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/3a1b6cf0-24b0-43b0-ab95-8bf73710c8ee/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A1093fdb6-bd4f-46a8-92e3-5aa46b52bb4f&unique=prints",
+    "collector_number": "578",
+    "digital": false,
+    "rarity": "r",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Dermot Power",
+    "artist_ids": [
+      "4162c8c0-8ded-497c-b29e-131e43dfae5e"
+    ],
+    "illustration_id": "b4ff4107-e68d-40da-abdd-3889b853f901",
+    "border_color": "black",
+    "frame": "2015",
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "release"
+    ],
+    "edhrec_rank": 1215,
+    "penny_rank": 2625,
+    "preview": {
+      "source": "Wizards of the Coast",
+      "source_uri": "https://magic.wizards.com/en/articles/archive/news/your-sneak-peek-double-masters-2022-dominaria-united-and-beyond-2022-05-12",
+      "previewed_at": "2022-05-12"
+    },
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Weathered+Wayfarer&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Weathered+Wayfarer&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Weathered+Wayfarer"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Weathered+Wayfarer&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Weathered+Wayfarer&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Weathered+Wayfarer&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Weathered Wayfarer",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/3/a/3a1b6cf0-24b0-43b0-ab95-8bf73710c8ee.jpg?1652387188",
+    "cost": "{W}",
+    "ccost": 1,
+    "type": "Creature",
+    "subtype": "Human Nomad Cleric",
+    "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3A2x2&unique=prints"
+    ],
+    "num": "578 P Release",
+    "numInt": 578,
+    "mtgenId": "2x2|578 P Release",
+    "includedReason": "Release Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "467ed050-ed2a-4043-b12b-5d29fb506eb3",
+    "oracle_id": "67183256-23cc-4af5-991e-d7148e942c63",
+    "multiverse_ids": [],
+    "name": "Bring to Light",
+    "lang": "en",
+    "released_at": "2022-07-08",
+    "uri": "https://api.scryfall.com/cards/467ed050-ed2a-4043-b12b-5d29fb506eb3",
+    "scryfall_uri": "https://scryfall.com/card/2x2/579/bring-to-light?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/4/6/467ed050-ed2a-4043-b12b-5d29fb506eb3.jpg?1652387207",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/4/6/467ed050-ed2a-4043-b12b-5d29fb506eb3.jpg?1652387207",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/4/6/467ed050-ed2a-4043-b12b-5d29fb506eb3.jpg?1652387207",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/4/6/467ed050-ed2a-4043-b12b-5d29fb506eb3.png?1652387207",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/4/6/467ed050-ed2a-4043-b12b-5d29fb506eb3.jpg?1652387207",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/4/6/467ed050-ed2a-4043-b12b-5d29fb506eb3.jpg?1652387207"
+    },
+    "mana_cost": "{3}{G}{U}",
+    "cmc": 5,
+    "type_line": "Sorcery",
+    "oracle_text": "Converge — Search your library for a creature, instant, or sorcery card with mana value less than or equal to the number of colors of mana spent to cast this spell, exile that card, then shuffle. You may cast that card without paying its mana cost.",
+    "colors": [
+      "G",
+      "U"
+    ],
+    "color_identity": [
+      "G",
+      "U"
+    ],
+    "keywords": [
+      "Converge"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "legal",
+      "explorer": "not_legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "not_legal",
+      "commander": "legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": true,
+    "variation": false,
+    "set_id": "5a645837-b050-449f-ac90-1e7ccbf45031",
+    "set": "2x2",
+    "set_name": "Double Masters 2022",
+    "set_type": "masters",
+    "set_uri": "https://api.scryfall.com/sets/5a645837-b050-449f-ac90-1e7ccbf45031",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3A2x2&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/2x2?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/467ed050-ed2a-4043-b12b-5d29fb506eb3/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A67183256-23cc-4af5-991e-d7148e942c63&unique=prints",
+    "collector_number": "579",
+    "digital": false,
+    "rarity": "r",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Mark Poole",
+    "artist_ids": [
+      "bfdeaf09-f915-4058-8e8b-bcac3bc43c33"
+    ],
+    "illustration_id": "a010781d-e6d8-410d-b465-1cadc3ba76c6",
+    "border_color": "black",
+    "frame": "2015",
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "release"
+    ],
+    "edhrec_rank": 2914,
+    "penny_rank": 959,
+    "preview": {
+      "source": "Wizards of the Coast",
+      "source_uri": "https://magic.wizards.com/en/articles/archive/news/your-sneak-peek-double-masters-2022-dominaria-united-and-beyond-2022-05-12",
+      "previewed_at": "2022-05-12"
+    },
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Bring+to+Light&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Bring+to+Light&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Bring+to+Light"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Bring+to+Light&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Bring+to+Light&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Bring+to+Light&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Bring to Light",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/4/6/467ed050-ed2a-4043-b12b-5d29fb506eb3.jpg?1652387207",
+    "cost": "{3}{G}{U}",
+    "ccost": 5,
+    "type": "Sorcery",
+    "colour": "m",
+    "colourIdentity": "GU",
+    "colourIdentityLength": 2,
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3A2x2&unique=prints"
+    ],
+    "num": "579 P Release",
+    "numInt": 579,
+    "mtgenId": "2x2|579 P Release",
+    "includedReason": "Release Promo",
+    "usableForDeckBuilding": false
+  }
+]

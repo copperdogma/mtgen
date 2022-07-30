@@ -1,0 +1,350 @@
+{
+  "setCode": "2x2",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-double-masters-2022-2022-06-24",
+  "_comments": [
+    "add a new card = add:true, newValues {}",
+    "delete a card  = delete:true, where",
+    "update card(s) = where, newValues {}",
+    "select cards starting with a value = where: type~='Snow'",
+    "get card directly from Gatherer = where: gatherer='Serra Angel'"
+  ],
+
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "2x2",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-double-masters-2022-2022-06-24",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "1",
+          "cardPattern": "000|c|Token Creature|Eldrazi Scion\n000|c|Token Creature|Spirit\n000|w|Token Creature|Angel\n000|w|Token Creature|Aven Initiate|Zombie Bird Warrior\n000|w|Token Creature|Knight\n000|w|Token Creature|Monk\n000|w|Token Creature|Soldier\n000|w|Token Creature|Spirit\n000|w|Token Creature|Vampire\n000|u|Token Creature|Drake\n000|b|Token Creature|Faerie Rogue\n000|b|Token Creature|Zombie\n000|r|Token Creature|Elemental\n000|g|Token Creature|Bear\n000|g|Token Creature|Boar\n000|g|Token Creature|Egg\n000|g|Token Creature|Saproling\n000|g|Token Creature|Spider\n000|m|Token Creature|Cat Dragon\n000|m|Token Creature|Worm\n000|c|Token Artifact Creature|Phyrexian Golem\n000|c|Token Artifact|Treasure\n000|a|Emblem|Liliana the Last Hope\n000|a|Emblem|Wrenn and Six"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_QQoy2Yzd0B.png",
+        "num": 1,
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Eldrazi Scion",
+        "subtype": "Eldrazi Scion",
+        "numInt": 1
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_EwbmhwOZ1E.png",
+        "num": 2,
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Spirit",
+        "subtype": "Spirit",
+        "numInt": 2
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_uMlYyTuyTn.png",
+        "num": 3,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Angel",
+        "subtype": "Angel",
+        "numInt": 3
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_O5MvF0aNLS.png",
+        "num": 4,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Aven Initiate",
+        "subtype": "Zombie Bird Warrior",
+        "numInt": 4
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_mBCWHWfcVM.png",
+        "num": 5,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Knight",
+        "subtype": "Knight",
+        "numInt": 5
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_ZFHuHkESc6.png",
+        "num": 6,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Monk",
+        "subtype": "Monk",
+        "numInt": 6
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_b8YSP1j0s4.png",
+        "num": 7,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Soldier",
+        "subtype": "Soldier",
+        "numInt": 7
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_OJqUCRXn6q.png",
+        "num": 8,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Spirit",
+        "subtype": "Spirit",
+        "numInt": 8
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_uEf5j75X0n.png",
+        "num": 9,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Vampire",
+        "subtype": "Vampire",
+        "numInt": 9
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_oVOFcTMnOl.png",
+        "num": 10,
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Drake",
+        "subtype": "Drake",
+        "numInt": 10
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_nDJD02Svy7.png",
+        "num": 11,
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Faerie Rogue",
+        "subtype": "Faerie Rogue",
+        "numInt": 11
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_x3uiyIzdbe.png",
+        "num": 12,
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Zombie",
+        "subtype": "Zombie",
+        "numInt": 12
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_uTaEfayobS.png",
+        "num": 13,
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Elemental",
+        "subtype": "Elemental",
+        "numInt": 13
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_K3jl8t1iCK.png",
+        "num": 14,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Bear",
+        "subtype": "Bear",
+        "numInt": 14
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_VVfENp9tAN.png",
+        "num": 15,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Boar",
+        "subtype": "Boar",
+        "numInt": 15
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_bkduNehOns.png",
+        "num": 16,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Egg",
+        "subtype": "Egg",
+        "numInt": 16
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_lxq4GH9S9o.png",
+        "num": 17,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Saproling",
+        "subtype": "Saproling",
+        "numInt": 17
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_QZJVwZMg2c.png",
+        "num": 18,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Spider",
+        "subtype": "Spider",
+        "numInt": 18
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_5O3xZ7lJBh.png",
+        "num": 19,
+        "colour": "m",
+        "type": "Token Creature",
+        "title": "Cat Dragon",
+        "subtype": "Cat Dragon",
+        "numInt": 19
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_wLcC35aTzW.png",
+        "num": 20,
+        "colour": "m",
+        "type": "Token Creature",
+        "title": "Worm",
+        "subtype": "Worm",
+        "numInt": 20
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_nELttllq5U.png",
+        "num": 21,
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Phyrexian Golem",
+        "subtype": "Phyrexian Golem",
+        "numInt": 21
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_CcexVDz9L5.png",
+        "num": 22,
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Treasure",
+        "subtype": "Treasure",
+        "numInt": 22
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_aYBXiBSa9H.png",
+        "num": 23,
+        "colour": "a",
+        "type": "Emblem",
+        "title": "Liliana the Last Hope",
+        "subtype": "Liliana the Last Hope",
+        "numInt": 23
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "2x2",
+        "src": "https://media.wizards.com/2022/2x2/en_mgoPxfnL83.png",
+        "num": 24,
+        "colour": "a",
+        "type": "Emblem",
+        "title": "Wrenn and Six",
+        "subtype": "Wrenn and Six",
+        "numInt": 24
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/024 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

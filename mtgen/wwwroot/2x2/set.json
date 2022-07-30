@@ -1,0 +1,23 @@
+{
+  "startProductName": "2x2-boosters",
+  "packFiles": [
+    "packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json?v1.1",
+    "cardsVariant.json?v1.2",
+    "cardsPromo.json",
+    "cardsToken.json",
+    "../cards/ads/cardsAds.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2022-06-27T22:00:00:00",
+      "HtmlString": "Non-variant legendaries now showing up properly in their slots."
+    },
+    {
+      "UpdateDate": "2022-06-26T23:30:00:00",
+      "HtmlString": "Textured foils now appear at 3% instead of 12.5%. Reimported all cards to fix images: every variant shared same image before."
+    }
+  ]
+}
