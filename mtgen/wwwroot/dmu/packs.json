@@ -1,0 +1,512 @@
+{
+  "defs": [
+    {
+      "defName": "{{setCode}}",
+      "query": "from[*]?set='{{setCode}}'"
+    },
+    {
+      "defName": "the-list",
+      "query": "from[*]?theList=true"
+    },
+    {
+      "defName": "a{{setCode}}-art-cards",
+      "query": "from[*]?artCard=true"
+    },
+    {
+      "defName": "{{setCode}}-main",
+      "query": "from[{{setCode}}]?mainSet=true-from[{{setCode}}]?type='Basic Land'-from[{{setCode}}]?promo=true"
+    },
+    {
+      "defName": "{{setCode}}-variants",
+      "query": "from[{{setCode}}]?variant=true"
+    },
+    {
+      "defName": "{{setCode}}-promo",
+      "query": "from[{{setCode}}]?promo=true"
+    },
+    {
+      "defName": "{{setCode}}-extended-art",
+      "query": "from[{{setCode}}]?extendedArtwork=true"
+    },
+    {
+      "defName": "{{setCode}}-borderless",
+      "query": "from[{{setCode}}]?borderless=true"
+    },
+    {
+      "defName": "{{setCode}}-borderless-planeswalker",
+      "query": "from[{{setCode}}]?borderlessPlaneswalker=true"
+    },
+    {
+      "defName": "{{setCode}}-legendary-base",
+      "query": "from[{{setCode}}]?numInt=(1-361)"
+    },
+    {
+      "defName": "{{setCode}}-legendary",
+      "query": "from[{{setCode}}-legendary-base]?legendary=true"
+    },
+    {
+      "defName": "{{setCode}}-legendary-creature-planeswalker",
+      "query": "from[{{setCode}}-legendary]?type=contains(Creature|Planeswalker)"
+    },
+    {
+      "defName": "{{setCode}}-phyrexian",
+      "query": "from[{{setCode}}]?phyrexian=true"
+    },
+    {
+      "defName": "{{setCode}}-stained-glass-legendary-creatures",
+      "query": "from[{{setCode}}]?stainedGlassLegends=true"
+    },
+    {
+      "defName": "{{setCode}}-booster-fun",
+      "query": "from[{{setCode}}-stained-glass-legendary-creatures]+from[{{setCode}}-borderless]+from[{{setCode}}-phyrexian]"
+    },
+    {
+      "defName": "{{setCode}}-foils",
+      "query": "from[{{setCode}}-main]+from[{{setCode}}]?type='Basic Land'+from[{{setCode}}-phyrexian]"
+    },
+    {
+      "defName": "{{setCode}}-foils-and-booster-fun",
+      "query": "from[{{setCode}}-main]+from[{{setCode}}]?type='Basic Land'+from[{{setCode}}-booster-fun]"
+    },
+
+
+    {
+      "defName": "dmc-commander",
+      "query": "from[*]?set='dmc'"
+    },
+    {
+      "defName": "dmc-set-booster-commander",
+      "query": "from[dmc-commander]?num=(21-29)"
+    },
+
+    {
+      "defName": "{{setCode}}-basic-land",
+      "query": "from[{{setCode}}]?type='Basic Land'-from[{{setCode}}]?stainedGlassBasicLand=true",
+      "_comment": "These are actually just the five unique jumpstart rare cards"
+    },
+    {
+      "defName": "{{setCode}}-jumpstart",
+      "query": "from[{{setCode}}]?jumpstart=true",
+      "_comment": "These are actually just the five unique jumpstart rare cards"
+    },
+    {
+      "defName": "dmc-legends-retold",
+      "query": "from[dmc-commander]?legendsRetold=true",
+      "_comment": "From commander cards"
+    },
+    {
+      "defName": "{{setCode}}-wildcards",
+      "query": "from[{{setCode}}-main]+from[{{setCode}}-booster-fun]+from[dmc-set-booster-commander]+from[{{setCode}}-jumpstart]?rarity='r'"
+    },
+    {
+      "defName": "{{setCode}}-alternate-border",
+      "query": "from[{{setCode}}-stained-glass-legendary-creatures]+from[{{setCode}}]?stainedGlassBasicLand=true+from[{{setCode}}-borderless]+from[{{setCode}}-phyrexian]"
+    },
+    {
+      "defName": "{{setCode}}-alternate-border-and-legends-retold",
+      "query": "from[{{setCode}}-alternate-border]+from[dmc-legends-retold]"
+    },
+    {
+      "defName": "{{setCode}}-main-and-commander-extended-art",
+      "query": "from[{{setCode}}-extended-art]+from[dmc-commander]?extendedArtwork=true"
+    },
+    {
+      "defName": "{{setCode}}-main-and-borderless-and-phyrexian",
+      "query": "from[{{setCode}}-main]+from[{{setCode}}-borderless]+from[{{setCode}}-phyrexian]"
+    },
+    {
+      "defName": "{{setCode}}-special-legendary",
+      "query": "from[{{setCode}}-main-and-borderless-and-phyrexian]?legendary=true+from[{{setCode}}-stained-glass-legendary-creatures]"
+    },
+    {
+      "defName": "{{setCode}}-special-legendary-creature",
+      "query": "from[{{setCode}}-special-legendary]?type='Legendary Creature'"
+    },
+
+    {
+      "defName": "leg",
+      "query": "from[*]?set='leg'"
+    },
+    {
+      "defName": "{{setCode}}-lost-legends",
+      "query": "from[leg]?title=(Abomination|Acid Rain|Active Volcano|Adun Oakenshield|Aerathi Berserker|Aisling Leprechaun|Akron Legionnaire|Al-abara's Carpet|Alchor's Tomb|All Hallow's Eve|Amrou Kithkin|Angelic Voices|Angus Mackenzie|Anti-Magic Aura|Arcades Sabboth|Arena of the Ancients|Avoid Fate|Axelrod Gunnarson|Ayesha Tanaka|Azure Drake|Backfire|Barktooth Warbeard|Bartel Runeaxe|Beasts of Bogardan|Black Mana Battery|Blazing Effigy|Blood Lust|Boomerang|Boris Devilboon|Bronze Horse|Carrion Ants|Cat Warriors|Chain Lightning|Chains of Mephistopheles|Chromium|Clergy of the Holy Nimbus|Concordant Crossroads|Cosmic Horror|Crevasse|Crimson Kobolds|Crimson Manticore|Crookshank Kobolds|Cyclopean Mummy|D'Avenant Archer|Dakkon Blackblade|Demonic Torment|Devouring Deep|Disharmony|Divine Intervention|Divine Offering|Divine Transformation|Dream Coat|Durkwood Boars|Dwarven Song|Elder Land Wurm|Elder Spawn|Elven Riders|Emerald Dragonfly|Enchanted Being|Enchantment Alteration|Energy Tap|Equinox|Eureka|Evil Eye of Orms-by-Gore|Fallen Angel|Falling Star|Feint|Field of Dreams|Fire Sprites|Firestorm Phoenix|Flash Flood|Force Spike|Forethought Amulet|Fortified Area|Gabriel Angelfire|Gaseous Form|Gauntlets of Chaos|Ghosts of the Damned|Giant Slug|Giant Strength|Giant Turtle|Glyph of Delusion|Glyph of Destruction|Glyph of Doom|Glyph of Life|Glyph of Reincarnation|Gosta Dirk|Gravity Sphere|Great Wall|Greater Realm of Preservation|Greed|Halfdane|Hammerheim|Hazezon Tamar|Headless Horseman|Hell Swarm|Hell's Caretaker|Hellfire|Holy Day|Horn of Deafening|Hornet Cobra|Horror of Horrors|Hyperion Blacksmith|Ichneumon Druid|Immolation|In the Eye of Chaos|Indestructible Aura|Infernal Medusa|Infinite Authority|Jacques le Vert|Jasmine Boreal|Jedit Ojanen|Jerrard of the Closed Fist|Johan|Jovial Evil|Juxtapose|Karakas|Kasimir the Lone Wolf|Keepers of the Faith|Kei Takahashi|Killer Bees|Kismet|Knowledge Vault|Kobold Drill Sergeant|Kobold Overlord|Kobold Taskmaster|Kobolds of Kher Keep|Lady Caleria|Lady Evangela|Lady Orca|Land Equilibrium|Land's Edge|Lesser Werewolf|Life Chisel|Life Matrix|Lifeblood|Living Plane|Livonya Silone|Lost Soul|Mana Matrix|Marble Priest|Master of the Hunt|Mirror Universe|Moat|Mold Demon|Moss Monster|Mountain Stronghold|Nebuchadnezzar|Nicol Bolas|North Star|Nova Pentacle|Osai Vultures|Palladia-Mors|Part Water|Pavel Maliki|Pendelhaven|Petra Sphinx|Pit Scorpion|Pixie Queen|Planar Gate|Primordial Ooze|Psionic Entity|Psychic Purge|Quagmire|Quarum Trench Gnomes|Raging Bull|Ragnar|Ramses Overdark|Rapid Fire|Rasputin Dreamweaver|Rebirth|Recall|Red Mana Battery|Reincarnation|Remove Enchantments|Remove Soul|Reset|Revelation|Reverberation|Righteous Avengers|Ring of Immortals|Riven Turnbull|Rohgahh of Kher Keep|Rubinia Soulsinger|Rust|Segovian Leviathan|Sentinel|Serpent Generator|Shelkin Brownie|Shield Wall|Sol'kanar the Swamp King|Spinal Villain|Spirit Shackle|Spiritual Sanctuary|Stangg|Storm Seeker|Storm World|Subdue|Sword of the Ages|Sylvan Paradise|Syphon Soul|Telekinesis|Teleport|Tempest Efreet|Tetsuo Umezawa|The Abyss|The Brute|The Lady of the Mountain|The Tabernacle at Pendrell Vale|The Wretched|Thunder Spirit|Time Elemental|Tobias Andrion|Tolaria|Torsten Von Ursus|Touch of Darkness|Transmutation|Triassic Egg|Tuknir Deathlock|Tundra Wolves|Typhoon|Untamed Wilds|Ur-Drago|Urborg|Vaevictis Asmadi|Vampire Bats|Venarian Gold|Visions|Voodoo Doll|Walking Dead|Wall of Caltrops|Wall of Earth|Wall of Heat|Wall of Shadows|Wall of Vapor|Wall of Wonder|Whirling Dervish|Willow Satyr|Winds of Change|Winter Blast|Wolverine Pack|Wood Elemental|Xira Arien|Zephyr Falcon)"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "{{setCode}}-all-cards",
+      "packDesc": "{{setName}}: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[{{setCode}}]" }
+      ]
+    },
+    {
+      "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
+      "packName": "{{setCode}}-draft",
+      "packDesc": "{{setName}}: Draft Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/dominaria-united-product-overview-2022-08-18" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[{{setCode}}-main]?rarity='c" },
+        { "query": "take[3]>from[{{setCode}}-main]?rarity='u" },
+        { "query": "from[{{setCode}}-main-and-borderless-and-phyrexian]?rarity=rarityByWeight2020(rm)" },
+        { "query": "from[{{setCode}}]?type='Basic Land'" },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
+            },
+            {
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "33% chance of CURM foil replacing a common",
+              "percent": "33",
+              "overrideSlot": "10",
+              "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(curm)",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "33% chance of CURM foil replacing a common",
+              "percent": "33",
+              "overrideSlot": "10",
+              "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(curm)",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "75% chance of Legendary Creature replacing a U",
+              "percent": "75",
+              "overrideSlot": "13",
+              "query": "from[{{setCode}}-special-legendary-creature]?rarity='u'"
+            },
+            {
+              "_comment": "25% chance of Legendary Creature replacing the R/M",
+              "percent": "75",
+              "overrideSlot": "14",
+              "query": "from[{{setCode}}-special-legendary-creature]?rarity=rarityByWeight2020(rm)"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_comment": "Collector Boosters were introduced as standard feature as of ELD",
+      "packName": "{{setCode}}-collector",
+      "packDesc": "{{setName}}: Collector Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/dominaria-united-product-overview-2022-08-18" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1: Textured Foil: Stained Glass URM",
+          "query": "from[{{setCode}}-stained-glass-legendary-creatures]?rarity=rarityByWeight2020(urm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 2: Foil-Etched or Non-Foil Alternate Border RM",
+          "query": "from[{{setCode}}-alternate-border-and-legends-retold]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 3: Foil-Etched or Non-Foil Alternate Border RM",
+          "query": "from[{{setCode}}-alternate-border-and-legends-retold]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 4: Foil-Etched or Non-Foil Legends Retold U",
+          "query": "from[dmc-legends-retold]?rarity='u'"
+        },
+        {
+          "_comment": "Slot 5: Foil: Alternate Border RM",
+          "query": "from[{{setCode}}-alternate-border]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 6: Foil: Stained Glass Legendary Creature U",
+          "query": "from[{{setCode}}-stained-glass-legendary-creatures]?rarity='u'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 7: Extended Art Main/Jumpstart/Commander R/M",
+          "query": "from[{{setCode}}-main-and-commander-extended-art]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 8: Foil: R/M",
+          "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 9-10: Foil: U",
+          "query": "take[2]>from[{{setCode}}-foils]?rarity='u'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 11-14: 3x Foil: C",
+          "query": "take[4]>from[{{setCode}}-foils]?rarity='c'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 15: Foil: Stained Glass Full Art Basic Land",
+          "query": "from[{{setCode}}]?stainedGlassBasicLand=true",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 16: Foil: Token",
+          "query": "from[{{setCode}}]?token=true",
+          "setValues": { "foil": true }
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 2: Foil-Etched or Non-Foil Alternate Border RM",
+              "_comment2": "21% chance? foil-etched",
+              "query": "from[{{setCode}}-alternate-border-and-legends-retold]?rarity=rarityByWeight2020(rm)",
+              "setValues": { "foil": true },
+              "overrideSlot": "2",
+              "percent": "21"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 3: Foil-Etched or Non-Foil Alternate Border RM",
+              "_comment2": "21% chance? foil-etched",
+              "query": "from[{{setCode}}-alternate-border-and-legends-retold]?rarity=rarityByWeight2020(rm)",
+              "setValues": { "foil": true },
+              "overrideSlot": "3",
+              "percent": "21"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 4: Foil-Etched or Non-Foil Legends Retold U",
+              "_comment2": "21% chance? foil-etched",
+              "query": "from[dmc-legends-retold]?rarity='u'",
+              "setValues": { "foil": true },
+              "overrideSlot": "4",
+              "percent": "21"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 14: Foil: C",
+              "_comment2": "3% chance of being replaced by a Lost Legend",
+              "query": "from[{{setCode}}-lost-legends]",
+              "overrideSlot": "14",
+              "percent": "3"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_comment": "Set Boosters were introduced as standard feature as of ZNR",
+      "packName": "{{setCode}}-set-booster",
+      "packDesc": "{{setName}}: Set Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/dominaria-united-product-overview-2022-08-18" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1: Art Card",
+          "_comment2": "Art Card is foil-stamped signature version in 10% of packs",
+          "query": "from[a{{setCode}}-art-cards]",
+          "setValues": { "modifiers": [ "Normal" ] }
+        },
+        {
+          "_comment": "Slot 2: Showcase stained-glass U legendary creature",
+          "query": "from[{{setCode}}-stained-glass-legendary-creatures]?rarity=u",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 3: Main RM",
+          "query": "from[{{setCode}}-main]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 4: Foil: CURM (including Booster Fun cards with showcase stained-glass, borderless, or Phyrexian-language treatments)",
+          "query": "from[{{setCode}}-foils-and-booster-fun]?rarity=rarityByWeight2020(curm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 5: Wildcard CURM (including an opportunity of drawing Dominaria United Commander cards or Dominaria United Jumpstart Booster rares or Booster Fun treatment cards)",
+          "query": "from[{{setCode}}-wildcards]?rarity=rarityByWeight2020(urm)"
+        },
+        {
+          "_comment": "Slot 6: Wildcard CURM (including an opportunity of drawing Dominaria United Commander cards or Dominaria United Jumpstart Booster rares or Booster Fun treatment cards)",
+          "query": "from[{{setCode}}-wildcards]?rarity=rarityByWeight2020(urm)"
+        },
+        {
+          "_comment": "Slot 7-9: 3x U",
+          "query": "take[3]>from[{{setCode}}-main]?rarity=u"
+        },
+        {
+          "_comment": "Slot 10-12: 3x C",
+          "query": "take[3]>from[{{setCode}}-main]?rarity=c"
+        },
+        {
+          "_comment": "Slot 13: Basic Land",
+          "_comment2": "21% chance standard foil, 25% chance Foil or nonfoil Stained Glass Full-Art Land",
+          "query": "from[{{setCode}}-basic-land]"
+        },
+        {
+          "_comment": "Slot 14: Token/Ad Card or The List",
+          "_comment2": "25% chance of The List card",
+          "query": "from[{{setCode}}]?token=true"
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 1: Art Card",
+              "_comment2": "1 Art card or foil-stamped art card.",
+              "_comment3": "PREVIOUS SET: There are 81 total possible borderless art cards. 95% of those opened will be regular and 5% will be foil stamped with an artist signature or Planeswalker symbol.",
+              "overrideSlot": "1",
+              "percent": "5",
+              "query": "from[a{{setCode}}-art-cards]",
+              "setValues": { "modifiers": [ "Foil Stamped" ] }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 13: Basic Land",
+              "_comment2": "21% chance standard foil, 25% chance Foil or nonfoil Stained Glass Full-Art Land",
+              "query": "from[{{setCode}}-basic-land]",
+              "setValues": { "foil": true },
+              "overrideSlot": "13",
+              "percent": "21"
+            },
+            {
+              "_comment": "Slot 13: Basic Land",
+              "_comment2": "21% chance standard foil, 25% chance Foil or nonfoil Stained Glass Full-Art Land",
+              "query": "from[{{setCode}}]?stainedGlassBasicLand=true",
+              "overrideSlot": "13",
+              "percent": "19.75"
+            },
+            {
+              "_comment": "Slot 13: Basic Land",
+              "_comment2": "21% chance standard foil, 25% chance Foil or nonfoil Stained Glass Full-Art Land",
+              "query": "from[{{setCode}}]?stainedGlassBasicLand=true",
+              "overrideSlot": "13",
+              "percent": "5.25"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 17: Token/Ad or The List",
+              "_comment2": "1 Token/ad card (75%), or a card from The List (25%) – The List is a collection of 300 cards from Magic's history that we have brought together for this special slot. We have rotated in 50 new reprints that we feel help capture the feel of {{setName}}. Inclusion of cards from The List doesn't impact what formats the card is legal in",
+              "query": "from[the-list]?rarity=rarityByWeight2020(curm)",
+              "overrideSlot": "17",
+              "percent": "25"
+            }
+          ]
+        }
+
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-prerelease-promo-packins",
+      "packDesc": "{{setName}}: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "from[{{setCode}}-main]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        { "query": "take[1]>from[{{setCode}}-promo]?type='Life Counter'" },
+        { "query": "from[{{setCode}}-promo]?title='Prerelease Deck Box" },
+        { "query": "from[{{setCode}}-promo]?title='Card Divider" },
+        { "query": "from[{{setCode}}-promo]?title='Arena Code Card" }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-prerelease-promos",
+      "packDesc": "{{setName}}: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[{{setCode}}-promo]?includedReason='Prerelease Promo" }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-variants",
+      "packDesc": "{{setName}}: All Variants",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-variants]"
+        }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-promos",
+      "packDesc": "{{setName}}: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-promo]"
+        }
+      ]
+    },
+
+    {
+      "packName": "a{{setCode}}-art-cards",
+      "packDesc": "{{setName}}: Art Cards",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[a{{setCode}}-art-cards]"
+        }
+      ]
+    },
+
+    {
+      "packName": "the-list",
+      "packDesc": "{{setName}}: The List",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[the-list]"
+        }
+      ]
+    }
+
+  ]
+}

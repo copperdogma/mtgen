@@ -1,0 +1,35 @@
+{
+  "startProductName": "dmu-prerelease",
+  "packFiles": [
+    "packs.json?v1.1"
+  ],
+  "cardFiles": [
+    "cardsMain.json?v1.1",
+    "cardsToken.json?v1.1",
+    "cardsVariant.json?v1.1",
+    "cardsPromo.json",
+    "cardsTheList.json",
+    "cardsArtCards.json",
+    "cardsCommander.json",
+    "../leg/cardsMain.json",
+    "../cards/ads/cardsAds.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2022-08-30T14:00:00:00",
+      "HtmlString": "Added Art Cards."
+    },
+    {
+      "UpdateDate": "2022-08-29T17:00:00:00",
+      "HtmlString": "Dominaria United packs no longer include Commander tokens."
+    },
+    {
+      "UpdateDate": "2022-08-29T16:00:00:00",
+      "HtmlString": "Fixed variants appearing in place of main set, especially for multicoloured cards."
+    },
+    {
+      "UpdateDate": "2022-08-29T14:00:00:00",
+      "HtmlString": "Changed prerelease boosters from 3 to 6."
+    }
+  ]
+}

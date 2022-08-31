@@ -1,0 +1,1022 @@
+﻿[
+  {
+    "object": "card",
+    "id": "5d0a1c0d-23cf-472e-a6b3-fd0c3905b4e4",
+    "oracle_id": "08377424-619e-48ae-bc3c-fb199cd77cf9",
+    "multiverse_ids": [],
+    "name": "Llanowar Loamspeaker",
+    "lang": "en",
+    "released_at": "2022-09-09",
+    "uri": "https://api.scryfall.com/cards/5d0a1c0d-23cf-472e-a6b3-fd0c3905b4e4",
+    "scryfall_uri": "https://scryfall.com/card/dmu/428/llanowar-loamspeaker?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/5/d/5d0a1c0d-23cf-472e-a6b3-fd0c3905b4e4.jpg?1658429037",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/5/d/5d0a1c0d-23cf-472e-a6b3-fd0c3905b4e4.jpg?1658429037",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/5/d/5d0a1c0d-23cf-472e-a6b3-fd0c3905b4e4.jpg?1658429037",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/5/d/5d0a1c0d-23cf-472e-a6b3-fd0c3905b4e4.png?1658429037",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/5/d/5d0a1c0d-23cf-472e-a6b3-fd0c3905b4e4.jpg?1658429037",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/5/d/5d0a1c0d-23cf-472e-a6b3-fd0c3905b4e4.jpg?1658429037"
+    },
+    "mana_cost": "{1}{G}",
+    "cmc": 2,
+    "type_line": "Creature — Elf Druid",
+    "oracle_text": "{T}: Add one mana of any color.\n{T}: Target land you control becomes a 3/3 Elemental creature with haste until end of turn. It's still a land. Activate only as a sorcery.",
+    "power": "1",
+    "toughness": "3",
+    "colors": [
+      "G"
+    ],
+    "color_identity": [
+      "G"
+    ],
+    "keywords": [],
+    "produced_mana": [
+      "B",
+      "G",
+      "R",
+      "U",
+      "W"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "explorer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "4e47a6cd-cdeb-4b0f-8f24-cfe1a0127cb3",
+    "set": "dmu",
+    "set_name": "Dominaria United",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/4e47a6cd-cdeb-4b0f-8f24-cfe1a0127cb3",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Admu&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/dmu?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/5d0a1c0d-23cf-472e-a6b3-fd0c3905b4e4/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A08377424-619e-48ae-bc3c-fb199cd77cf9&unique=prints",
+    "collector_number": "428",
+    "digital": false,
+    "rarity": "r",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Volkan Baǵa",
+    "artist_ids": [
+      "93bec3c0-0260-4d31-8064-5d01efb4153f"
+    ],
+    "illustration_id": "c7d6ae0b-cacf-4c0e-8182-e0ad8b74dbe6",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "extendedart"
+    ],
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "buyabox"
+    ],
+    "edhrec_rank": 18862,
+    "preview": {
+      "source": "Wizards of the Coast",
+      "source_uri": "https://magic.wizards.com/en/articles/archive/card-image-gallery/dominaria-united",
+      "previewed_at": "2022-07-21"
+    },
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Llanowar+Loamspeaker&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Llanowar+Loamspeaker&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Llanowar+Loamspeaker"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Llanowar+Loamspeaker&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Llanowar+Loamspeaker&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Llanowar+Loamspeaker&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Llanowar Loamspeaker",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/5/d/5d0a1c0d-23cf-472e-a6b3-fd0c3905b4e4.jpg?1658429037",
+    "cost": "{1}{G}",
+    "ccost": 2,
+    "type": "Creature",
+    "subtype": "Elf Druid",
+    "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Admu&unique=prints"
+    ],
+    "num": "428 P Buy-a-Box",
+    "numInt": 428,
+    "mtgenId": "dmu|428 P Buy-a-Box",
+    "includedReason": "Buy-a-Box Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "e8b91c26-26f3-45d6-bf7d-35a2963dde37",
+    "oracle_id": "dfdc0eab-309b-4441-a94c-930c6dde4c48",
+    "multiverse_ids": [],
+    "name": "Herd Migration",
+    "lang": "en",
+    "released_at": "2022-09-09",
+    "uri": "https://api.scryfall.com/cards/e8b91c26-26f3-45d6-bf7d-35a2963dde37",
+    "scryfall_uri": "https://scryfall.com/card/dmu/429/herd-migration?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/e/8/e8b91c26-26f3-45d6-bf7d-35a2963dde37.jpg?1660846283",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/e/8/e8b91c26-26f3-45d6-bf7d-35a2963dde37.jpg?1660846283",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/e/8/e8b91c26-26f3-45d6-bf7d-35a2963dde37.jpg?1660846283",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/e/8/e8b91c26-26f3-45d6-bf7d-35a2963dde37.png?1660846283",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/e/8/e8b91c26-26f3-45d6-bf7d-35a2963dde37.jpg?1660846283",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/e/8/e8b91c26-26f3-45d6-bf7d-35a2963dde37.jpg?1660846283"
+    },
+    "mana_cost": "{6}{G}",
+    "cmc": 7,
+    "type_line": "Sorcery",
+    "oracle_text": "Domain — Create a 3/3 green Beast creature token for each basic land type among lands you control.\n{1}{G}, Discard Herd Migration: Search your library for a basic land card, reveal it, put it into your hand, then shuffle. You gain 3 life.",
+    "colors": [
+      "G"
+    ],
+    "color_identity": [
+      "G"
+    ],
+    "keywords": [
+      "Domain"
+    ],
+    "all_parts": [
+      {
+        "object": "related_card",
+        "id": "b0244a1f-e696-4223-9c14-22c2ca3cb738",
+        "component": "combo_piece",
+        "name": "Herd Migration",
+        "type_line": "Sorcery",
+        "uri": "https://api.scryfall.com/cards/b0244a1f-e696-4223-9c14-22c2ca3cb738"
+      },
+      {
+        "object": "related_card",
+        "id": "591cb5b2-6394-4c1a-b227-5c32e633b493",
+        "component": "token",
+        "name": "Beast",
+        "type_line": "Token Creature — Beast",
+        "uri": "https://api.scryfall.com/cards/591cb5b2-6394-4c1a-b227-5c32e633b493"
+      }
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "explorer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "arena",
+      "mtgo"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "4e47a6cd-cdeb-4b0f-8f24-cfe1a0127cb3",
+    "set": "dmu",
+    "set_name": "Dominaria United",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/4e47a6cd-cdeb-4b0f-8f24-cfe1a0127cb3",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Admu&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/dmu?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/e8b91c26-26f3-45d6-bf7d-35a2963dde37/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Adfdc0eab-309b-4441-a94c-930c6dde4c48&unique=prints",
+    "collector_number": "429",
+    "digital": false,
+    "rarity": "r",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Antonio José Manzanedo",
+    "artist_ids": [
+      "74986d28-0001-4a78-827c-e490b325d0e3"
+    ],
+    "illustration_id": "a4373af4-0aa9-45fb-8b59-a527fc1e5858",
+    "border_color": "black",
+    "frame": "2015",
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "bundle"
+    ],
+    "preview": {
+      "source": "Wizards of the Coast",
+      "source_uri": "https://www.twitch.tv/videos/1565562937",
+      "previewed_at": "2022-08-18"
+    },
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Herd+Migration&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Herd+Migration&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Herd+Migration"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Herd+Migration&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Herd+Migration&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Herd+Migration&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Herd Migration",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/e/8/e8b91c26-26f3-45d6-bf7d-35a2963dde37.jpg?1660846283",
+    "cost": "{6}{G}",
+    "ccost": 7,
+    "type": "Sorcery",
+    "colour": "g",
+    "colourIdentity": "G",
+    "colourIdentityLength": 1,
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Admu&unique=prints"
+    ],
+    "num": "429 P Bundle",
+    "numInt": 429,
+    "mtgenId": "dmu|429 P Bundle",
+    "includedReason": "Bundle Promo",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "a25a8991-99ac-4fc5-97e2-4631ff234f65",
+    "oracle_id": "eaaed253-9b11-47e2-8624-0340ab2207f6",
+    "multiverse_ids": [],
+    "name": "Resolute Reinforcements",
+    "lang": "en",
+    "released_at": "2022-09-09",
+    "uri": "https://api.scryfall.com/cards/a25a8991-99ac-4fc5-97e2-4631ff234f65",
+    "scryfall_uri": "https://scryfall.com/card/dmu/430/resolute-reinforcements?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/a/2/a25a8991-99ac-4fc5-97e2-4631ff234f65.jpg?1661531413",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/a/2/a25a8991-99ac-4fc5-97e2-4631ff234f65.jpg?1661531413",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/a/2/a25a8991-99ac-4fc5-97e2-4631ff234f65.jpg?1661531413",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/a/2/a25a8991-99ac-4fc5-97e2-4631ff234f65.png?1661531413",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/a/2/a25a8991-99ac-4fc5-97e2-4631ff234f65.jpg?1661531413",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/a/2/a25a8991-99ac-4fc5-97e2-4631ff234f65.jpg?1661531413"
+    },
+    "mana_cost": "{1}{W}",
+    "cmc": 2,
+    "type_line": "Creature — Human Soldier",
+    "oracle_text": "Flash\nWhen Resolute Reinforcements enters the battlefield, create a 1/1 white Soldier creature token.",
+    "power": "1",
+    "toughness": "1",
+    "colors": [
+      "W"
+    ],
+    "color_identity": [
+      "W"
+    ],
+    "keywords": [
+      "Flash"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "explorer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "arena",
+      "mtgo"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "4e47a6cd-cdeb-4b0f-8f24-cfe1a0127cb3",
+    "set": "dmu",
+    "set_name": "Dominaria United",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/4e47a6cd-cdeb-4b0f-8f24-cfe1a0127cb3",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Admu&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/dmu?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/a25a8991-99ac-4fc5-97e2-4631ff234f65/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Aeaaed253-9b11-47e2-8624-0340ab2207f6&unique=prints",
+    "collector_number": "430",
+    "digital": false,
+    "rarity": "u",
+    "watermark": "planeswalker",
+    "flavor_text": "Morale rarely survives the sudden appearance of a squad of Sursi skirmishers at an army's flank.",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Billy Christian",
+    "artist_ids": [
+      "10f26f94-64fc-4174-856e-701bea4f1521"
+    ],
+    "illustration_id": "684e7a8b-9442-4fb9-96a1-2c1639e653e4",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "inverted"
+    ],
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "promopack"
+    ],
+    "edhrec_rank": 22880,
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Resolute+Reinforcements&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Resolute+Reinforcements&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Resolute+Reinforcements"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Resolute+Reinforcements&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Resolute+Reinforcements&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Resolute+Reinforcements&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Resolute Reinforcements",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/a/2/a25a8991-99ac-4fc5-97e2-4631ff234f65.jpg?1661531413",
+    "cost": "{1}{W}",
+    "ccost": 2,
+    "type": "Creature",
+    "subtype": "Human Soldier",
+    "colour": "w",
+    "colourIdentity": "W",
+    "colourIdentityLength": 1,
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Admu&unique=prints"
+    ],
+    "num": "430 P Universal Promo Pack",
+    "numInt": 430,
+    "mtgenId": "dmu|430 P Universal Promo Pack",
+    "darkFrame": true,
+    "includedReason": "Universal Promo Pack",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "3287e20f-a161-4522-8a72-3f2b914019b5",
+    "oracle_id": "d2605782-09f1-4d52-b3e7-5ec1442bd9b5",
+    "multiverse_ids": [],
+    "name": "Micromancer",
+    "lang": "en",
+    "released_at": "2022-09-09",
+    "uri": "https://api.scryfall.com/cards/3287e20f-a161-4522-8a72-3f2b914019b5",
+    "scryfall_uri": "https://scryfall.com/card/dmu/431/micromancer?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/3/2/3287e20f-a161-4522-8a72-3f2b914019b5.jpg?1661531419",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/3/2/3287e20f-a161-4522-8a72-3f2b914019b5.jpg?1661531419",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/3/2/3287e20f-a161-4522-8a72-3f2b914019b5.jpg?1661531419",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/3/2/3287e20f-a161-4522-8a72-3f2b914019b5.png?1661531419",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/3/2/3287e20f-a161-4522-8a72-3f2b914019b5.jpg?1661531419",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/3/2/3287e20f-a161-4522-8a72-3f2b914019b5.jpg?1661531419"
+    },
+    "mana_cost": "{3}{U}",
+    "cmc": 4,
+    "type_line": "Creature — Human Wizard",
+    "oracle_text": "When Micromancer enters the battlefield, you may search your library for an instant or sorcery card with mana value 1, reveal it, put it into your hand, then shuffle.",
+    "power": "3",
+    "toughness": "3",
+    "colors": [
+      "U"
+    ],
+    "color_identity": [
+      "U"
+    ],
+    "keywords": [],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "explorer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "arena",
+      "mtgo"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "4e47a6cd-cdeb-4b0f-8f24-cfe1a0127cb3",
+    "set": "dmu",
+    "set_name": "Dominaria United",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/4e47a6cd-cdeb-4b0f-8f24-cfe1a0127cb3",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Admu&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/dmu?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/3287e20f-a161-4522-8a72-3f2b914019b5/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Ad2605782-09f1-4d52-b3e7-5ec1442bd9b5&unique=prints",
+    "collector_number": "431",
+    "digital": false,
+    "rarity": "u",
+    "watermark": "planeswalker",
+    "flavor_text": "\"Ideas don't have to be big to be great.\"",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Ernanda Souza",
+    "artist_ids": [
+      "e87a8b19-f97f-4df0-9dda-1310ab0257bb"
+    ],
+    "illustration_id": "07d8590d-3ef3-4cee-9852-97db30e3e7cd",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "inverted"
+    ],
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "promopack"
+    ],
+    "edhrec_rank": 22544,
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Micromancer&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Micromancer&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Micromancer"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Micromancer&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Micromancer&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Micromancer&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Micromancer",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/3/2/3287e20f-a161-4522-8a72-3f2b914019b5.jpg?1661531419",
+    "cost": "{3}{U}",
+    "ccost": 4,
+    "type": "Creature",
+    "subtype": "Human Wizard",
+    "colour": "u",
+    "colourIdentity": "U",
+    "colourIdentityLength": 1,
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Admu&unique=prints"
+    ],
+    "num": "431 P Universal Promo Pack",
+    "numInt": 431,
+    "mtgenId": "dmu|431 P Universal Promo Pack",
+    "darkFrame": true,
+    "includedReason": "Universal Promo Pack",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "c2fdde82-6c4d-4e34-a15c-9756c834e9a0",
+    "oracle_id": "1b30210d-10e9-4703-8967-032063bb4f26",
+    "multiverse_ids": [],
+    "name": "Cut Down",
+    "lang": "en",
+    "released_at": "2022-09-09",
+    "uri": "https://api.scryfall.com/cards/c2fdde82-6c4d-4e34-a15c-9756c834e9a0",
+    "scryfall_uri": "https://scryfall.com/card/dmu/432/cut-down?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/c/2/c2fdde82-6c4d-4e34-a15c-9756c834e9a0.jpg?1661531425",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/2/c2fdde82-6c4d-4e34-a15c-9756c834e9a0.jpg?1661531425",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/c/2/c2fdde82-6c4d-4e34-a15c-9756c834e9a0.jpg?1661531425",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/c/2/c2fdde82-6c4d-4e34-a15c-9756c834e9a0.png?1661531425",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/c/2/c2fdde82-6c4d-4e34-a15c-9756c834e9a0.jpg?1661531425",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/c/2/c2fdde82-6c4d-4e34-a15c-9756c834e9a0.jpg?1661531425"
+    },
+    "mana_cost": "{B}",
+    "cmc": 1,
+    "type_line": "Instant",
+    "oracle_text": "Destroy target creature with total power and toughness 5 or less.",
+    "colors": [
+      "B"
+    ],
+    "color_identity": [
+      "B"
+    ],
+    "keywords": [],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "explorer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "arena",
+      "mtgo"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": false,
+    "variation": false,
+    "set_id": "4e47a6cd-cdeb-4b0f-8f24-cfe1a0127cb3",
+    "set": "dmu",
+    "set_name": "Dominaria United",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/4e47a6cd-cdeb-4b0f-8f24-cfe1a0127cb3",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Admu&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/dmu?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/c2fdde82-6c4d-4e34-a15c-9756c834e9a0/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A1b30210d-10e9-4703-8967-032063bb4f26&unique=prints",
+    "collector_number": "432",
+    "digital": false,
+    "rarity": "u",
+    "watermark": "planeswalker",
+    "flavor_text": "\"There can be no mercy, no half measures. When facing Phyrexians, it's kill swiftly or die.\"\n—Jodah",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Dominik Mayer",
+    "artist_ids": [
+      "c3439c4a-1fee-4e33-9b89-18dac27ac927"
+    ],
+    "illustration_id": "8e96e144-da0e-4016-8a4e-d73a5ae87a7a",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "inverted"
+    ],
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "promopack"
+    ],
+    "edhrec_rank": 21260,
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Cut+Down&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Cut+Down&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Cut+Down"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Cut+Down&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Cut+Down&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Cut+Down&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Cut Down",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/c/2/c2fdde82-6c4d-4e34-a15c-9756c834e9a0.jpg?1661531425",
+    "cost": "{B}",
+    "ccost": 1,
+    "type": "Instant",
+    "colour": "b",
+    "colourIdentity": "B",
+    "colourIdentityLength": 1,
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Admu&unique=prints"
+    ],
+    "num": "432 P Universal Promo Pack",
+    "numInt": 432,
+    "mtgenId": "dmu|432 P Universal Promo Pack",
+    "darkFrame": true,
+    "includedReason": "Universal Promo Pack",
+    "usableForDeckBuilding": false
+  },
+  {
+    "object": "card",
+    "id": "d93d0972-4043-4d86-8707-9f9ec5b6e770",
+    "oracle_id": "f34b9bc4-7bfe-47fd-ba23-4eeeb46026eb",
+    "multiverse_ids": [],
+    "name": "Lightning Strike",
+    "lang": "en",
+    "released_at": "2022-09-09",
+    "uri": "https://api.scryfall.com/cards/d93d0972-4043-4d86-8707-9f9ec5b6e770",
+    "scryfall_uri": "https://scryfall.com/card/dmu/433/lightning-strike?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/d/9/d93d0972-4043-4d86-8707-9f9ec5b6e770.jpg?1661531430",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/d/9/d93d0972-4043-4d86-8707-9f9ec5b6e770.jpg?1661531430",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/d/9/d93d0972-4043-4d86-8707-9f9ec5b6e770.jpg?1661531430",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/d/9/d93d0972-4043-4d86-8707-9f9ec5b6e770.png?1661531430",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/d/9/d93d0972-4043-4d86-8707-9f9ec5b6e770.jpg?1661531430",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/d/9/d93d0972-4043-4d86-8707-9f9ec5b6e770.jpg?1661531430"
+    },
+    "mana_cost": "{1}{R}",
+    "cmc": 2,
+    "type_line": "Instant",
+    "oracle_text": "Lightning Strike deals 3 damage to any target.",
+    "colors": [
+      "R"
+    ],
+    "color_identity": [
+      "R"
+    ],
+    "keywords": [],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "legal",
+      "historic": "legal",
+      "gladiator": "legal",
+      "pioneer": "legal",
+      "explorer": "legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "legal",
+      "vintage": "legal",
+      "penny": "legal",
+      "commander": "legal",
+      "brawl": "not_legal",
+      "historicbrawl": "legal",
+      "alchemy": "not_legal",
+      "paupercommander": "legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper",
+      "mtgo",
+      "arena"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": true,
+    "variation": false,
+    "set_id": "4e47a6cd-cdeb-4b0f-8f24-cfe1a0127cb3",
+    "set": "dmu",
+    "set_name": "Dominaria United",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/4e47a6cd-cdeb-4b0f-8f24-cfe1a0127cb3",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Admu&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/dmu?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/d93d0972-4043-4d86-8707-9f9ec5b6e770/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Af34b9bc4-7bfe-47fd-ba23-4eeeb46026eb&unique=prints",
+    "collector_number": "433",
+    "digital": false,
+    "rarity": "c",
+    "watermark": "planeswalker",
+    "flavor_text": "Danitha watched in shock as electricity lanced from Jaya's fingertips, obliterating the charging Phyrexians. \"What?\" said the pyromancer serenely. \"I told you I'd learned some new tricks.\"",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Marta Nael",
+    "artist_ids": [
+      "266ab861-ed64-4ba5-865c-f18758421cc3"
+    ],
+    "illustration_id": "dc392a37-e68d-4e3f-bea6-63a6612bdb9d",
+    "border_color": "black",
+    "frame": "2015",
+    "frame_effects": [
+      "inverted"
+    ],
+    "security_stamp": "oval",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "promopack"
+    ],
+    "edhrec_rank": 5217,
+    "penny_rank": 961,
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Lightning+Strike&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Lightning+Strike&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Lightning+Strike"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/search/magic/product?productLineName=magic&q=Lightning+Strike&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall&view=grid",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Lightning+Strike&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Lightning+Strike&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Lightning Strike",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/d/9/d93d0972-4043-4d86-8707-9f9ec5b6e770.jpg?1661531430",
+    "cost": "{1}{R}",
+    "ccost": 2,
+    "type": "Instant",
+    "colour": "r",
+    "colourIdentity": "R",
+    "colourIdentityLength": 1,
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Admu&unique=prints"
+    ],
+    "num": "433 P Universal Promo Pack",
+    "numInt": 433,
+    "mtgenId": "dmu|433 P Universal Promo Pack",
+    "darkFrame": true,
+    "includedReason": "Universal Promo Pack",
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/dmu-prerelease-deck-box.png",
+    "title": "Prerelease Deck Box",
+    "colour": "o",
+    "num": "006 Prerelease Deck Box",
+    "rarity": "c",
+    "type": "Insert",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 6,
+    "mtgenId": "dmu|006 Prerelease Deck Box",
+    "set": "dmu",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-deckbuilding-info.jpg",
+    "src_large": "http://mtgen.net/cards/mtg-deckbuilding-info-lg.jpg",
+    "height": 370,
+    "width": 515,
+    "title": "Deckbuilding Advice Insert",
+    "colour": "o",
+    "num": "007 Insert",
+    "rarity": "c",
+    "type": "Insert",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 7,
+    "mtgenId": "dmu|007 Insert",
+    "set": "dmu",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-prerelease-card-divider.png",
+    "title": "Card Divider",
+    "colour": "o",
+    "num": "008 Insert",
+    "rarity": "c",
+    "type": "Insert",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 8,
+    "mtgenId": "dmu|008 Insert",
+    "set": "dmu",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-arena-code-card.png",
+    "title": "Arena Code Card",
+    "colour": "o",
+    "num": "009 Insert",
+    "rarity": "c",
+    "type": "Insert",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 9,
+    "mtgenId": "dmu|009 Insert",
+    "set": "dmu",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-substitute-card.png",
+    "title": "Substitute Card",
+    "colour": "o",
+    "num": "010 Insert",
+    "rarity": "c",
+    "type": "Insert",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 10,
+    "mtgenId": "dmu|010 Insert",
+    "set": "dmu",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-spindown-life-counter-white.png",
+    "title": "White Spindown Life Counter",
+    "colour": "o",
+    "num": "001a Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "dmu|001a Counter",
+    "set": "dmu",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-spindown-life-counter-blue.png",
+    "title": "Blue Spindown Life Counter",
+    "colour": "o",
+    "num": "001b Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "dmu|001b Counter",
+    "set": "dmu",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-spindown-life-counter-black.png",
+    "title": "Black Spindown Life Counter",
+    "colour": "o",
+    "num": "001c Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "dmu|001c Counter",
+    "set": "dmu",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-spindown-life-counter-red.png",
+    "title": "Red Spindown Life Counter",
+    "colour": "o",
+    "num": "001d Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "dmu|001d Counter",
+    "set": "dmu",
+    "promo": true,
+    "usableForDeckBuilding": false
+  },
+  {
+    "src": "http://mtgen.net/cards/mtg-spindown-life-counter-green.png",
+    "title": "Green Spindown Life Counter",
+    "colour": "o",
+    "num": "001e Counter",
+    "rarity": "c",
+    "type": "Life Counter",
+    "includedReason": "Prerelease Promo",
+    "addedViaException": true,
+    "numInt": 1,
+    "mtgenId": "dmu|001e Counter",
+    "set": "dmu",
+    "promo": true,
+    "usableForDeckBuilding": false
+  }
+]

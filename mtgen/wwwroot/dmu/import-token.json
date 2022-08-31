@@ -1,0 +1,385 @@
+{
+  "setCode": "dmu",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-dominaria-united-2022-08-26",
+  "_comments": [
+    "add a new card = add:true, newValues {}",
+    "delete a card  = delete:true, where",
+    "update card(s) = where, newValues {}",
+    "select cards starting with a value = where: type~='Snow'",
+    "get card directly from Gatherer = where: gatherer='Serra Angel'"
+  ],
+
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "dmu",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-dominaria-united-2022-08-26",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "1",
+          "cardPattern": "000|w|Token Creature|Angel\n000|w|Token Creature|Bird\n000|w|Token Creature|Knight\n000|w|Token Creature|Solider\n000|u|Token Creature|Merfolk\n000|b|Token Creature|Bird\n000|b|Token Creature|Insect\n000|b|Token Creature|Phyrexian\n000|b|Token Creature|Zombie\n000|r|Token Creature|Dragon\n000|r|Token Creature|Elemental\n000|r|Token Creature|Goblin\n000|r|Token Creature|Kobolds of Kher Keep\n000|r|Token Creature|Monk\n000|g|Token Creature|Badger\n000|g|Token Creature|Beast\n000|g|Token Creature|Cat Warrior\n000|g|Token Creature|Saporling\n000|g|Token Creature|Wurm\n000|c|Token Creature|Sand Warrior\n000|m|Token Creature|Stangg Twin\n000|c|Token Creature|Ornithopter\n000|c|Token Creature|Powerstone\n000|c|Token Creature|Treasure\n000|a|Emblem|Ajani, Sleeper Agent\n000|a|Emblem|Jaya, Fiery Negotiator"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_lHLK8UJ8Z3.png",
+        "num": 1,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Angel",
+        "subtype": "Angel",
+        "numInt": 1
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_kYdmDWH52F.png",
+        "num": 2,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Bird",
+        "subtype": "Bird",
+        "numInt": 2
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_4niMIlG5zF.png",
+        "num": 3,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Knight",
+        "subtype": "Knight",
+        "numInt": 3
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_iuQjWgp10v.png",
+        "num": 4,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Solider",
+        "subtype": "Solider",
+        "numInt": 4
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_kI9y0ytdLy.png",
+        "num": 5,
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Merfolk",
+        "subtype": "Merfolk",
+        "numInt": 5
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_qlNVcc6f1F.png",
+        "num": 6,
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Bird",
+        "subtype": "Bird",
+        "numInt": 6
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_U8Bf8Z44Jy.png",
+        "num": 7,
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Insect",
+        "subtype": "Insect",
+        "numInt": 7
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_Y0CBzqK6sS.png",
+        "num": 8,
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Phyrexian",
+        "subtype": "Phyrexian",
+        "numInt": 8
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_KEYvPu0XrQ.png",
+        "num": 9,
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Zombie",
+        "subtype": "Zombie",
+        "numInt": 9
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_gtI5iKOLsA.png",
+        "num": 10,
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Dragon",
+        "subtype": "Dragon",
+        "numInt": 10
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_kM6dO0eGsl.png",
+        "num": 11,
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Elemental",
+        "subtype": "Elemental",
+        "numInt": 11
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_dd15lKERg4.png",
+        "num": 12,
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Goblin",
+        "subtype": "Goblin",
+        "numInt": 12
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_n9q4Fy1SHb.png",
+        "num": 13,
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Kobolds of Kher Keep",
+        "subtype": "Kobolds of Kher Keep",
+        "numInt": 13
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_RVa73RIVCP.png",
+        "num": 14,
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Monk",
+        "subtype": "Monk",
+        "numInt": 14
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_XWRVAyC4ot.png",
+        "num": 15,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Badger",
+        "subtype": "Badger",
+        "numInt": 15
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_gP3eR758PQ.png",
+        "num": 16,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Beast",
+        "subtype": "Beast",
+        "numInt": 16
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_d3Vljs2GXY.png",
+        "num": 17,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Cat Warrior",
+        "subtype": "Cat Warrior",
+        "numInt": 17
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_zrO8b7lBAU.png",
+        "num": 18,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Saporling",
+        "subtype": "Saporling",
+        "numInt": 18
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_gSo1BijKws.png",
+        "num": 19,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Wurm",
+        "subtype": "Wurm",
+        "numInt": 19
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_yAh7qmn98P.png",
+        "num": 20,
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Sand Warrior",
+        "subtype": "Sand Warrior",
+        "numInt": 20
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_GBddnCBjv4.png",
+        "num": 21,
+        "colour": "m",
+        "type": "Token Creature",
+        "title": "Stangg Twin",
+        "subtype": "Stangg Twin",
+        "numInt": 21
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_Mr4p8Z2FSk.png",
+        "num": 22,
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Ornithopter",
+        "subtype": "Ornithopter",
+        "numInt": 22
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_BXdBbxQxru.png",
+        "num": 23,
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Powerstone",
+        "subtype": "Powerstone",
+        "numInt": 23
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_Bk8rEC0YLd.png",
+        "num": 24,
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Treasure",
+        "subtype": "Treasure",
+        "numInt": 24
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_x9xjNpVo6A.png",
+        "num": 25,
+        "colour": "a",
+        "type": "Emblem",
+        "title": "Ajani, Sleeper Agent",
+        "subtype": "Ajani, Sleeper Agent",
+        "numInt": 25
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmu",
+        "src": "https://media.wizards.com/2022/dmu/en_cCAzfi5jTS.png",
+        "num": 26,
+        "colour": "a",
+        "type": "Emblem",
+        "title": "Jaya, Fiery Negotiator",
+        "subtype": "Jaya, Fiery Negotiator",
+        "numInt": 26
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/026 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    },
+
+    {
+      "_comment": "Dammit they mixed main and commander tokens!",
+      "where": "numInt=(1|3|5|7|9|13|15|17|19|20|21|24)",
+      "newValues": {
+        "set": "dmc"
+      }
+    }
+  ]
+}

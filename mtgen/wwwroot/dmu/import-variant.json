@@ -1,0 +1,84 @@
+﻿{
+  "setCode": "dmu",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Admu&unique=prints",
+  "imagesUrl": "",
+  "importOptions": {},
+  "exceptions": [
+    {
+      "_comments": [
+        "import all images, matching their titles with the same card data over and over = (above) importOptions/importByImage: true",
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'",
+        "ignore later image match and use the one from data (or override below) = useCardDataImg = true"
+      ]
+    },
+
+    {
+      "where": "numInt=(282-287)",
+      "newValues": {
+        "jumpstart": true
+      }
+    },
+    {
+      "where": "numInt=(287-328)",
+      "newValues": {
+        "stainedGlass": true,
+        "stainedGlassLegends": true
+      }
+    },
+    {
+      "where": "numInt=(328-369)",
+      "newValues": {
+        "texturedFoilLegends": true
+      }
+    },
+    {
+      "where": "numInt=(369-371)",
+      "newValues": {
+        "phyrexian": true
+      }
+    },
+    {
+      "where": "numInt=(372-377)",
+      "newValues": {
+        "borderlessPlaneswalker": true,
+        "borderless": true
+      }
+    },
+    {
+      "where": "numInt=(377-383)",
+      "newValues": {
+        "borderlessPainLand": true,
+        "borderless": true
+      }
+    },
+    {
+      "where": "numInt=(383-428)",
+      "newValues": {
+        "extendedArtwork": true
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "type~='Legendary'",
+      "newValues": {
+        "legendary": true
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "variant": true
+      }
+    }
+  ]
+}
