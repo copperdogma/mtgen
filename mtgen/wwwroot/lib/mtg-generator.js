@@ -156,7 +156,12 @@ var mtgGen = (function (my) {
                 this.ProductViews[my.draw.productName].showTab();
             }
             else if (my.startProductName) {
-                this.ProductViews[my.startProductName].showTab();
+                let startProduct = this.ProductViews[my.startProductName];
+                if (startProduct === undefined) {
+                    console.warn(`startProduct '${my.startProductName}' does not exist.`);
+                    startProduct = Object.values(this.ProductViews)[0];
+                }        
+                startProduct.showTab();
             }
             return this;
         }
