@@ -1,0 +1,45 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "_comment2": "You can add an array of caveats to a product to add notes shown to the user",
+  "_comment3": "{{setCode}} and {{setName}} can be used in products.json/packs.json and get replaced in preprocessing to the actual code/name as found in the global sets.json file",
+
+  "products": [
+    {
+      "productName": "{{setCode}}-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/unraveling-mystery-booster-2019-11-14" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "{{setCode}}-all-cards" }
+      ]
+    },
+
+    {
+      "productName": "{{setCode}}-retail-boosters",
+      "productDesc": "Mystery Booster: Retail Edition",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/unraveling-mystery-booster-2019-11-14" ],
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "{{setCode}}-retail" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "{{setCode}}-draft-boosters-six",
+            "presetDesc": "Six Draft Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "{{setCode}}-draft"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

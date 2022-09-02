@@ -1,0 +1,88 @@
+{
+  "defs": [
+    {
+      "defName": "{{setCode}}",
+      "query": "from[*]?set='{{setCode}}'"
+    },
+    {
+      "defName": "{{setCode}}-main",
+      "query": "from[{{setCode}}]?mainSet=true"
+    },
+    {
+      "defName": "{{setCode}}-main-w",
+      "query": "from[{{setCode}}-main]?colour='w'"
+    },
+    {
+      "defName": "{{setCode}}-main-u",
+      "query": "from[{{setCode}}-main]?colour='u'"
+    },
+    {
+      "defName": "{{setCode}}-main-b",
+      "query": "from[{{setCode}}-main]?colour='b'"
+    },
+    {
+      "defName": "{{setCode}}-main-g",
+      "query": "from[{{setCode}}-main]?colour='g'"
+    },
+    {
+      "defName": "{{setCode}}-main-r",
+      "query": "from[{{setCode}}-main]?colour='r'"
+    },
+    {
+      "defName": "{{setCode}}-main-m",
+      "query": "from[{{setCode}}-main]?colour='m'"
+    },
+    {
+      "defName": "{{setCode}}-main-artifact-and-land",
+      "query": "from[{{setCode}}-main]?type=(artifact|land)"
+    },
+    {
+      "defName": "{{setCode}}-pre-m15",
+      "query": "from[{{setCode}}]?preM15=true"
+    },
+    {
+      "defName": "{{setCode}}-post-m15",
+      "query": "from[{{setCode}}]?postM15=true"
+    },
+    {
+      "defName": "{{setCode}}-foils",
+      "query": "from[*]?set='fmb1'"
+    }
+
+  ],
+  "packs": [
+    {
+      "packName": "{{setCode}}-all-cards",
+      "packDesc": "{{setName}}: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[{{setCode}}]" }
+      ]
+    },
+    {
+      "packName": "{{setCode}}-retail",
+      "packDesc": "{{setName}}: Mystery Booster: Retail Edition",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/unraveling-mystery-booster-2019-11-14" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "from[{{setCode}}-main-w]?rarity=rarityByWeight2020(cu)" },
+        { "query": "from[{{setCode}}-main-w]?rarity=rarityByWeight2020(cu)" },
+        { "query": "from[{{setCode}}-main-u]?rarity=rarityByWeight2020(cu)" },
+        { "query": "from[{{setCode}}-main-u]?rarity=rarityByWeight2020(cu)" },
+        { "query": "from[{{setCode}}-main-b]?rarity=rarityByWeight2020(cu)" },
+        { "query": "from[{{setCode}}-main-b]?rarity=rarityByWeight2020(cu)" },
+        { "query": "from[{{setCode}}-main-g]?rarity=rarityByWeight2020(cu)" },
+        { "query": "from[{{setCode}}-main-g]?rarity=rarityByWeight2020(cu)" },
+        { "query": "from[{{setCode}}-main-r]?rarity=rarityByWeight2020(cu)" },
+        { "query": "from[{{setCode}}-main-r]?rarity=rarityByWeight2020(cu)" },
+        { "query": "from[{{setCode}}-main-m]?rarity=rarityByWeight2020(cu)" },
+        { "query": "from[{{setCode}}-main-m]?rarity=rarityByWeight2020(cu)" },
+        { "query": "from[{{setCode}}-main-artifact-and-land]?rarity=rarityByWeight2020(cu)" },
+        { "query": "from[{{setCode}}-pre-m15]?rarity=rarityByWeight2020(curm)" },
+        { "query": "from[{{setCode}}-post-m15]?rarity=rarityByWeight2020(rm)" },
+        { "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(curm)" }
+      ]
+    }
+  ]
+}
