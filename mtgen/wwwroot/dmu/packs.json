@@ -122,6 +122,20 @@
       "defName": "{{setCode}}-special-legendary-creature",
       "query": "from[{{setCode}}-special-legendary]?type='Legendary Creature'"
     },
+    {
+      "defName": "{{setCode}}-collector-foils",
+      "query": "from[{{setCode}}-foils]-from[{{setCode}}-foils]?type='Basic Land'"
+    },
+
+    {
+      "defName": "dmc",
+      "query": "from[*]?set='dmc'"
+    },
+    {
+      "_comment": "Oddly enough the DMU packs use the DMC tokens as well.",
+      "defName": "{{setCode}}-tokens",
+      "query": "from[{{setCode}}]?token=true+from[dmc]?token=true"
+    },
 
     {
       "defName": "leg",
@@ -159,7 +173,7 @@
             {
               "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
               "percent": "90",
-              "query": "from[{{setCode}}]?token=true"
+              "query": "from[{{setCode}}-tokens]"
             },
             {
               "percent": "10",
@@ -250,17 +264,17 @@
         },
         {
           "_comment": "Slot 8: Foil: R/M",
-          "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(rm)",
+          "query": "from[{{setCode}}-collector-foils]?rarity=rarityByWeight2020(rm)",
           "setValues": { "foil": true }
         },
         {
           "_comment": "Slot 9-10: Foil: U",
-          "query": "take[2]>from[{{setCode}}-foils]?rarity='u'",
+          "query": "take[2]>from[{{setCode}}-collector-foils]?rarity='u'",
           "setValues": { "foil": true }
         },
         {
           "_comment": "Slot 11-14: 3x Foil: C",
-          "query": "take[4]>from[{{setCode}}-foils]?rarity='c'",
+          "query": "take[4]>from[{{setCode}}-collector-foils]?rarity='c'",
           "setValues": { "foil": true }
         },
         {
@@ -270,7 +284,7 @@
         },
         {
           "_comment": "Slot 16: Foil: Token",
-          "query": "from[{{setCode}}]?token=true",
+          "query": "from[{{setCode}}-tokens]",
           "setValues": { "foil": true }
         },
 
@@ -376,7 +390,7 @@
         {
           "_comment": "Slot 14: Token/Ad Card or The List",
           "_comment2": "25% chance of The List card",
-          "query": "from[{{setCode}}]?token=true"
+          "query": "from[{{setCode}}-tokens]"
         },
 
         {
