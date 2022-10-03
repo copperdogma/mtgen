@@ -1018,7 +1018,7 @@ class CardDataImporter {
         for (const unmatchedCard of unmatchedWotcCards) {
             // Full Scryfall api/search docs: https://scryfall.com/docs/api/cards/search
             // !"xxx" ensures we're searching for an exact title match
-            let scryfallApiCardUrl = `https://api.scryfall.com/cards/search?q=!"${unmatchedCard.title}"+set=${unmatchedCard.set}`;
+            let scryfallApiCardUrl = `https://api.scryfall.com/cards/search?q=!"${unmatchedCard.matchTitle}"+set=${unmatchedCard.set}`;
             let cardDataRaw = await this._fetchHtml(scryfallApiCardUrl);
 
             // If that card can't be found, wotc may have put the wrong set code on it (happaned in AFR for Nightmare. It wasn't AKH).
