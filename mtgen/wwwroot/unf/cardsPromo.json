@@ -1,0 +1,146 @@
+﻿[
+  {
+    "object": "card",
+    "id": "9cb587e1-1243-4422-8ee3-198bd247b42c",
+    "oracle_id": "3d190316-138e-45f5-b6f0-11667bd0630b",
+    "multiverse_ids": [],
+    "tcgplayer_id": 286816,
+    "name": "Water Gun Balloon Game",
+    "lang": "en",
+    "released_at": "2022-10-07",
+    "uri": "https://api.scryfall.com/cards/9cb587e1-1243-4422-8ee3-198bd247b42c",
+    "scryfall_uri": "https://scryfall.com/card/unf/538/water-gun-balloon-game?utm_source=api",
+    "layout": "normal",
+    "highres_image": false,
+    "image_status": "lowres",
+    "image_uris": {
+      "small": "https://c1.scryfall.com/file/scryfall-cards/small/front/9/c/9cb587e1-1243-4422-8ee3-198bd247b42c.jpg?1664355016",
+      "normal": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/c/9cb587e1-1243-4422-8ee3-198bd247b42c.jpg?1664355016",
+      "large": "https://c1.scryfall.com/file/scryfall-cards/large/front/9/c/9cb587e1-1243-4422-8ee3-198bd247b42c.jpg?1664355016",
+      "png": "https://c1.scryfall.com/file/scryfall-cards/png/front/9/c/9cb587e1-1243-4422-8ee3-198bd247b42c.png?1664355016",
+      "art_crop": "https://c1.scryfall.com/file/scryfall-cards/art_crop/front/9/c/9cb587e1-1243-4422-8ee3-198bd247b42c.jpg?1664355016",
+      "border_crop": "https://c1.scryfall.com/file/scryfall-cards/border_crop/front/9/c/9cb587e1-1243-4422-8ee3-198bd247b42c.jpg?1664355016"
+    },
+    "mana_cost": "{2}",
+    "cmc": 2,
+    "type_line": "Artifact",
+    "oracle_text": "As Water Gun Balloon Game enters the battlefield, each player puts a pop! counter on \"0.\"\nWhenever a player casts a spell, move that player's pop! counter up one.\nWhenever a player's pop! counter hits \"5,\" that player creates a 5/5 pink Giant Teddy Bear creature token and resets all pop! counters to \"0.\"",
+    "colors": [],
+    "color_identity": [],
+    "keywords": [],
+    "all_parts": [
+      {
+        "object": "related_card",
+        "id": "9cb587e1-1243-4422-8ee3-198bd247b42c",
+        "component": "combo_piece",
+        "name": "Water Gun Balloon Game",
+        "type_line": "Artifact",
+        "uri": "https://api.scryfall.com/cards/9cb587e1-1243-4422-8ee3-198bd247b42c"
+      },
+      {
+        "object": "related_card",
+        "id": "628c542b-7579-4070-9143-6f1f7221468f",
+        "component": "token",
+        "name": "Giant Teddy Bear",
+        "type_line": "Token Creature — Giant Teddy Bear",
+        "uri": "https://api.scryfall.com/cards/628c542b-7579-4070-9143-6f1f7221468f"
+      }
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "explorer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "brawl": "not_legal",
+      "historicbrawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal"
+    },
+    "games": [
+      "paper"
+    ],
+    "reserved": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": true,
+    "variation": false,
+    "set_id": "b314f553-8f07-4ba9-96c8-16be7784eff3",
+    "set": "unf",
+    "set_name": "Unfinity",
+    "set_type": "funny",
+    "set_uri": "https://api.scryfall.com/sets/b314f553-8f07-4ba9-96c8-16be7784eff3",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aunf&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/unf?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/9cb587e1-1243-4422-8ee3-198bd247b42c/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A3d190316-138e-45f5-b6f0-11667bd0630b&unique=prints",
+    "collector_number": "538",
+    "digital": false,
+    "rarity": "r",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Ralph Horsley",
+    "artist_ids": [
+      "a51444a8-eb4b-4615-a663-d1d418591ccb"
+    ],
+    "illustration_id": "106e7988-42c9-49fd-b5e4-18410b74e1a7",
+    "border_color": "black",
+    "frame": "2015",
+    "security_stamp": "acorn",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "release"
+    ],
+    "prices": {
+      "usd": "5.99",
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://infinite.tcgplayer.com/search?contentMode=article&game=magic&partner=scryfall&q=Water+Gun+Balloon+Game&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "tcgplayer_infinite_decks": "https://infinite.tcgplayer.com/search?contentMode=deck&game=magic&partner=scryfall&q=Water+Gun+Balloon+Game&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "edhrec": "https://edhrec.com/route/?cc=Water+Gun+Balloon+Game"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://www.tcgplayer.com/product/286816?page=1&utm_campaign=affiliate&utm_medium=api&utm_source=scryfall",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products/Search?referrer=scryfall&searchString=Water+Gun+Balloon+Game&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Water+Gun+Balloon+Game&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    },
+    "title": "Water Gun Balloon Game",
+    "src": "https://c1.scryfall.com/file/scryfall-cards/normal/front/9/c/9cb587e1-1243-4422-8ee3-198bd247b42c.jpg?1664355016",
+    "cost": "{2}",
+    "ccost": 2,
+    "type": "Artifact",
+    "colour": "a",
+    "colourIdentity": "",
+    "colourIdentityLength": 0,
+    "urlSources": [
+      "https://api.scryfall.com/cards/search?order=set&q=e%3Aunf&unique=prints"
+    ],
+    "num": "538 P Launch",
+    "numInt": 538,
+    "mtgenId": "unf|538 P Launch",
+    "includedReason": "Launch Promo",
+    "usableForDeckBuilding": false
+  }
+]

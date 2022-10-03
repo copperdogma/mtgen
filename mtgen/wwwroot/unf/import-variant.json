@@ -1,0 +1,67 @@
+﻿{
+  "setCode": "unf",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Aunf&unique=prints",
+  "imagesUrl": "",
+  "importOptions": {},
+  "exceptions": [
+    {
+      "_comments": [
+        "import all images, matching their titles with the same card data over and over = (above) importOptions/importByImage: true",
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'",
+        "ignore later image match and use the one from data (or override below) = useCardDataImg = true"
+      ]
+    },
+
+    {
+      "where": "numInt=(245-247)",
+      "newValues": {
+        "borderlessPlaneswalker": true,
+        "borderless": true
+      }
+    },
+    {
+      "where": "numInt=(247-277)",
+      "newValues": {
+        "showcaseCardsOfTomorrow": true
+      }
+    },
+    {
+      "where": "numInt=(277-287)",
+      "newValues": {
+        "borderlessShockLand": true,
+        "borderless": true
+      }
+    },
+    {
+      "where": "numInt=(287-538)",
+      "newValues": {
+        "galaxyFoil": true,
+        "foil": true,
+        "modifiers": [ "Galaxy Foil"]
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "type~='Legendary'",
+      "newValues": {
+        "legendary": true
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "variant": true
+      }
+    }
+  ]
+}

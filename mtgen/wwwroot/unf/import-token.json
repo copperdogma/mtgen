@@ -1,0 +1,253 @@
+{
+  "setCode": "unf",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-and-stickers-unfinity-2022-09-27",
+  "_comments": [
+    "add a new card = add:true, newValues {}",
+    "delete a card  = delete:true, where",
+    "update card(s) = where, newValues {}",
+    "select cards starting with a value = where: type~='Snow'",
+    "get card directly from Gatherer = where: gatherer='Serra Angel'"
+  ],
+
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "unf",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-and-stickers-unfinity-2022-09-27",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "x2\n004|u|Token Creature|Contortionist|Octopus Performer\n904|u|Token Creature|Contortionist|Octopus Performer\n001|w|Token Creature|Cat\n002|c|Token Artifact Creature|Clown Robot\n003|c|Token Artifact Creature|Clown Robot\n005|u|Token Creature|Storm Crow\n006|b|Token Creature|Zombie Employee\n007|r|Token Creature|Balloon\n008|g|Token Creature|Squirrel\n009|c|Token Creature|Teddy Bear\n010|c|Token Creature|Food\n011|c|Token Creature|Food\n012|c|Token Artifact|Treasure\n013|c|Token Artifact|Treasure\n014|c|Marker|Ticket Bucket Bot\ndfc|004|904"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_H7TQPBxxFX.png",
+        "num": "001",
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Cat",
+        "subtype": "Cat",
+        "numInt": 1
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_QdqDbp40va.png",
+        "num": "002",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Clown Robot",
+        "subtype": "Clown Robot",
+        "numInt": 2
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_hP7GySV2Ux.png",
+        "num": "003",
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Clown Robot",
+        "subtype": "Clown Robot",
+        "numInt": 3
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_ixzpAZ9ymG.png",
+        "num": "004",
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Contortionist",
+        "subtype": "Octopus Performer",
+        "numInt": 4,
+        "cardFaces": [
+          {
+            "set": "unf",
+            "src": "https://media.wizards.com/2022/unf/en_ixzpAZ9ymG.png",
+            "height": 370,
+            "width": 265,
+            "imageSource": "wotc-article",
+            "num": "004",
+            "colour": "u",
+            "type": "Token Creature",
+            "title": "Contortionist",
+            "subtype": "Octopus Performer",
+            "matchTitle": "contortionist",
+            "numInt": 4,
+            "mtgenId": "unf|004"
+          },
+          {
+            "set": "unf",
+            "src": "https://media.wizards.com/2022/unf/en_3ghIeI0U1p.png",
+            "height": 370,
+            "width": 265,
+            "imageSource": "wotc-article",
+            "num": "904",
+            "colour": "u",
+            "type": "Token Creature",
+            "title": "Contortionist",
+            "subtype": "Octopus Performer",
+            "matchTitle": "contortionist",
+            "numInt": 904,
+            "mtgenId": "unf|904"
+          }
+        ],
+        "doubleFaceCard": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_CkXR6877rI.png",
+        "num": "005",
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Storm Crow",
+        "subtype": "Storm Crow",
+        "numInt": 5
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_Vu4GpnjtNh.png",
+        "num": "006",
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Zombie Employee",
+        "subtype": "Zombie Employee",
+        "numInt": 6
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_CHArAREwGJ.png",
+        "num": "007",
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Balloon",
+        "subtype": "Balloon",
+        "numInt": 7
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_TmPCOmDFgg.png",
+        "num": "008",
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Squirrel",
+        "subtype": "Squirrel",
+        "numInt": 8
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_UzdnWjUqOH.png",
+        "num": "009",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Teddy Bear",
+        "subtype": "Teddy Bear",
+        "numInt": 9
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_zZ6ZWW3z7a.png",
+        "num": "010",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Food",
+        "subtype": "Food",
+        "numInt": 10
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_jGTE39Xqyj.png",
+        "num": "011",
+        "colour": "c",
+        "type": "Token Creature",
+        "title": "Food",
+        "subtype": "Food",
+        "numInt": 11
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_fCmM8NMK48.png",
+        "num": "012",
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Treasure",
+        "subtype": "Treasure",
+        "numInt": 12
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_BLuUvNQnDC.png",
+        "num": "013",
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Treasure",
+        "subtype": "Treasure",
+        "numInt": 13
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_6uZMp0leCT.png",
+        "num": "014",
+        "colour": "c",
+        "type": "Marker",
+        "title": "Ticket Bucket Bot",
+        "subtype": "Ticket Bucket Bot",
+        "numInt": 14
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/014 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,662 @@
+{
+  "setCode": "unf",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-and-stickers-unfinity-2022-09-27",
+  "_comments": [
+    "add a new card = add:true, newValues {}",
+    "delete a card  = delete:true, where",
+    "update card(s) = where, newValues {}",
+    "select cards starting with a value = where: type~='Snow'",
+    "get card directly from Gatherer = where: gatherer='Serra Angel'"
+  ],
+
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "unf",
+          "cardImageUrl": "https://magic.wizards.com/en/articles/archive/card-preview/tokens-and-stickers-unfinity-2022-09-27",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "1",
+          "cardPattern": "x17\n000|u|Sticker|Eldrazi/Guacamole/Tightrope\n000|u|Sticker|Trendy/Circus/Pirate\n000|u|Sticker|Night/Bushwagg/Ringmaster\n000|u|Sticker|Urza's/Dark/Cannonball\n000|u|Sticker|Misunderstood/Trapeze/Elf\n000|u|Sticker|Zombie/Cheese/Magician\n000|u|Sticker|Carnival/Elephant/Meteor\n000|u|Sticker|Happy/Dead/Squirrel\n000|u|Sticker|Slimy/Burrito/Illusion\n000|u|Sticker|Spooky/Clown/Mox\n000|u|Sticker|Mystic/Doom/Sandwich\n000|u|Sticker|Narrow-Minded/Baloney/Fireworks\n000|u|Sticker|Unsanctioned/Ancient/Juggler\n000|u|Sticker|Deep-Fried/Plague/Myr\n000|u|Sticker|Contortionist/Otter/Storm\n000|u|Sticker|Sticky/Kavu/Daredevil\n000|u|Sticker|Goblin/Coward/Parade\n000|u|Sticker|Phyrexian/Midway/Bamboozle\n000|u|Sticker|Eternal/Acrobat/Toast\n000|u|Sticker|Jetpack/Death/Seltzer\n000|u|Sticker|Demonic/Tourist/Laser\n000|u|Sticker|Cursed/Firebreathing/Yogurt\n000|u|Sticker|Ancesteral/Hot Dog/Minotaur\n000|u|Sticker|Familiar/Beeble/Mascot\n000|u|Sticker|Giant/Mana/Cake\n000|u|Sticker|Snazzy/Aether/Homunculus\n000|u|Sticker|Squid/Fire/Knight\n000|u|Sticker|Cool/Fluffy/Loxodon\n000|u|Sticker|Space/Fungus/Snickerdoodle\n000|u|Sticker|Playable/Delusionary/Hydra\n000|u|Sticker|Wrinkly/Monkey/Shenanigans\n000|u|Sticker|Geek/Lotus/Warrior\n000|u|Sticker|Primal/Elder/Kitty\n000|u|Sticker|Sassy/Gremlin/Blood\n000|u|Sticker|Yawgmoth/Merfolk/Soul\n000|u|Sticker|Unassuming/Gelatinous/Serpent\n000|u|Sticker|Squishy/Sphinx/Ninja\n000|u|Sticker|Unique/Charmed/Pants\n000|u|Sticker|Unhinged/Beast/Hunt\n000|u|Sticker|Wild/Ogre/Bupkis\n000|u|Sticker|Notorious/Silver/War\n000|u|Sticker|Weird/Angel/Flame\n000|u|Sticker|Vampire/Champion/Fury\n000|u|Sticker|Trained/Blessed/Mind\n000|u|Sticker|Unglued/Pea-Brained/Dinosaur\n000|u|Sticker|Elemental/Time/Flamingo\n000|u|Sticker|Unstable/Robot/Dragon\n000|u|Sticker|Werewolf/Lightning/Mage"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_ks1QjJWPsD.png",
+        "num": 1,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Eldrazi/Guacamole/Tightrope",
+        "subtype": "Eldrazi/Guacamole/Tightrope",
+        "numInt": 1
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_ZKsj4sWQIq.png",
+        "num": 2,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Trendy/Circus/Pirate",
+        "subtype": "Trendy/Circus/Pirate",
+        "numInt": 2
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_PzON9bBfGh.png",
+        "num": 3,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Night/Bushwagg/Ringmaster",
+        "subtype": "Night/Bushwagg/Ringmaster",
+        "numInt": 3
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_h0NVXUtcyA.png",
+        "num": 4,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Urza's/Dark/Cannonball",
+        "subtype": "Urza's/Dark/Cannonball",
+        "numInt": 4
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_g8ry9RWajq.png",
+        "num": 5,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Misunderstood/Trapeze/Elf",
+        "subtype": "Misunderstood/Trapeze/Elf",
+        "numInt": 5
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_UWINANpLX3.png",
+        "num": 6,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Zombie/Cheese/Magician",
+        "subtype": "Zombie/Cheese/Magician",
+        "numInt": 6
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_qNytyedL7P.png",
+        "num": 7,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Carnival/Elephant/Meteor",
+        "subtype": "Carnival/Elephant/Meteor",
+        "numInt": 7
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_gCJ9T3JHAI.png",
+        "num": 8,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Happy/Dead/Squirrel",
+        "subtype": "Happy/Dead/Squirrel",
+        "numInt": 8
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_1Rw4yKBsBN.png",
+        "num": 9,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Slimy/Burrito/Illusion",
+        "subtype": "Slimy/Burrito/Illusion",
+        "numInt": 9
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_MQMyw2LyD1.png",
+        "num": 10,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Spooky/Clown/Mox",
+        "subtype": "Spooky/Clown/Mox",
+        "numInt": 10
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_Ire9F3k8K5.png",
+        "num": 11,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Mystic/Doom/Sandwich",
+        "subtype": "Mystic/Doom/Sandwich",
+        "numInt": 11
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_2jgNGn4vp7.png",
+        "num": 12,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Narrow-Minded/Baloney/Fireworks",
+        "subtype": "Narrow-Minded/Baloney/Fireworks",
+        "numInt": 12
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_kWPAolrIRa.png",
+        "num": 13,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Unsanctioned/Ancient/Juggler",
+        "subtype": "Unsanctioned/Ancient/Juggler",
+        "numInt": 13
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_ZlAqdqDakn.png",
+        "num": 14,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Deep-Fried/Plague/Myr",
+        "subtype": "Deep-Fried/Plague/Myr",
+        "numInt": 14
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_nRjsjO6E9d.png",
+        "num": 15,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Contortionist/Otter/Storm",
+        "subtype": "Contortionist/Otter/Storm",
+        "numInt": 15
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_VungbhQVbo.png",
+        "num": 16,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Sticky/Kavu/Daredevil",
+        "subtype": "Sticky/Kavu/Daredevil",
+        "numInt": 16
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_D28m0PKu89.png",
+        "num": 17,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Goblin/Coward/Parade",
+        "subtype": "Goblin/Coward/Parade",
+        "numInt": 17
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_8ngX54qbpc.png",
+        "num": 18,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Phyrexian/Midway/Bamboozle",
+        "subtype": "Phyrexian/Midway/Bamboozle",
+        "numInt": 18
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_IFVDOjStS0.png",
+        "num": 19,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Eternal/Acrobat/Toast",
+        "subtype": "Eternal/Acrobat/Toast",
+        "numInt": 19
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_GuckXrXyPA.png",
+        "num": 20,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Jetpack/Death/Seltzer",
+        "subtype": "Jetpack/Death/Seltzer",
+        "numInt": 20
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_GeqfCd8MuW.png",
+        "num": 21,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Demonic/Tourist/Laser",
+        "subtype": "Demonic/Tourist/Laser",
+        "numInt": 21
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_dZU6PjeWgg.png",
+        "num": 22,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Cursed/Firebreathing/Yogurt",
+        "subtype": "Cursed/Firebreathing/Yogurt",
+        "numInt": 22
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_RleBoblC97.png",
+        "num": 23,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Ancesteral/Hot Dog/Minotaur",
+        "subtype": "Ancesteral/Hot Dog/Minotaur",
+        "numInt": 23
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_IEI71zbBr8.png",
+        "num": 24,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Familiar/Beeble/Mascot",
+        "subtype": "Familiar/Beeble/Mascot",
+        "numInt": 24
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_8Kv4cQEc9b.png",
+        "num": 25,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Giant/Mana/Cake",
+        "subtype": "Giant/Mana/Cake",
+        "numInt": 25
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_HeWWrAP4lh.png",
+        "num": 26,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Snazzy/Aether/Homunculus",
+        "subtype": "Snazzy/Aether/Homunculus",
+        "numInt": 26
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_33Mc5sS9Zl.png",
+        "num": 27,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Squid/Fire/Knight",
+        "subtype": "Squid/Fire/Knight",
+        "numInt": 27
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_mw9kriE4Wq.png",
+        "num": 28,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Cool/Fluffy/Loxodon",
+        "subtype": "Cool/Fluffy/Loxodon",
+        "numInt": 28
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_QeyU0DtdCC.png",
+        "num": 29,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Space/Fungus/Snickerdoodle",
+        "subtype": "Space/Fungus/Snickerdoodle",
+        "numInt": 29
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_y7WW1866JF.png",
+        "num": 30,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Playable/Delusionary/Hydra",
+        "subtype": "Playable/Delusionary/Hydra",
+        "numInt": 30
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_215DSS5MSF.png",
+        "num": 31,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Wrinkly/Monkey/Shenanigans",
+        "subtype": "Wrinkly/Monkey/Shenanigans",
+        "numInt": 31
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_Omj1fO5WzN.png",
+        "num": 32,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Geek/Lotus/Warrior",
+        "subtype": "Geek/Lotus/Warrior",
+        "numInt": 32
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_jbvqHemRz5.png",
+        "num": 33,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Primal/Elder/Kitty",
+        "subtype": "Primal/Elder/Kitty",
+        "numInt": 33
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_18lf8bGXW3.png",
+        "num": 34,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Sassy/Gremlin/Blood",
+        "subtype": "Sassy/Gremlin/Blood",
+        "numInt": 34
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_WzOLrKwvQb.png",
+        "num": 35,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Yawgmoth/Merfolk/Soul",
+        "subtype": "Yawgmoth/Merfolk/Soul",
+        "numInt": 35
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_L6PvCuJkuT.png",
+        "num": 36,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Unassuming/Gelatinous/Serpent",
+        "subtype": "Unassuming/Gelatinous/Serpent",
+        "numInt": 36
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_dK4vPAGWaa.png",
+        "num": 37,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Squishy/Sphinx/Ninja",
+        "subtype": "Squishy/Sphinx/Ninja",
+        "numInt": 37
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_zM7P0OkqWL.png",
+        "num": 38,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Unique/Charmed/Pants",
+        "subtype": "Unique/Charmed/Pants",
+        "numInt": 38
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_d4vu4hLHWK.png",
+        "num": 39,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Unhinged/Beast/Hunt",
+        "subtype": "Unhinged/Beast/Hunt",
+        "numInt": 39
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_prIlQUmUHw.png",
+        "num": 40,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Wild/Ogre/Bupkis",
+        "subtype": "Wild/Ogre/Bupkis",
+        "numInt": 40
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_sgjAj7eZhb.png",
+        "num": 41,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Notorious/Silver/War",
+        "subtype": "Notorious/Silver/War",
+        "numInt": 41
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_vUC5c4bJab.png",
+        "num": 42,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Weird/Angel/Flame",
+        "subtype": "Weird/Angel/Flame",
+        "numInt": 42
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_YXgadXpCyQ.png",
+        "num": 43,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Vampire/Champion/Fury",
+        "subtype": "Vampire/Champion/Fury",
+        "numInt": 43
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_cTtrRLxC8o.png",
+        "num": 44,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Trained/Blessed/Mind",
+        "subtype": "Trained/Blessed/Mind",
+        "numInt": 44
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_qJCda1ZlPT.png",
+        "num": 45,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Unglued/Pea-Brained/Dinosaur",
+        "subtype": "Unglued/Pea-Brained/Dinosaur",
+        "numInt": 45
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_PScyF71Q7D.png",
+        "num": 46,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Elemental/Time/Flamingo",
+        "subtype": "Elemental/Time/Flamingo",
+        "numInt": 46
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_wp1XxCN5v7.png",
+        "num": 47,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Unstable/Robot/Dragon",
+        "subtype": "Unstable/Robot/Dragon",
+        "numInt": 47
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "unf",
+        "src": "https://media.wizards.com/2022/unf/en_U5HkpsZ6nU.png",
+        "num": 48,
+        "colour": "u",
+        "type": "Sticker",
+        "title": "Werewolf/Lightning/Mage",
+        "subtype": "Werewolf/Lightning/Mage",
+        "numInt": 48
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/48",
+        "sticker": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

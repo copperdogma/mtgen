@@ -1,0 +1,21 @@
+{
+  "startProductName": "unf-boosters",
+  "packFiles": [
+    "packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsVariant.json",
+    "cardsPromo.json",
+    "cardsTheList.json?v1.1",
+    "cardsSticker.json",
+    "../cards/ads/cardsAds.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2022-10-03T14:00:00:00",
+      "HtmlString": "Fixed a few missing cards from The List."
+    }
+  ]
+}

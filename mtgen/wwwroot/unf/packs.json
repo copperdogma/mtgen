@@ -1,0 +1,357 @@
+{
+  "defs": [
+    {
+      "defName": "{{setCode}}",
+      "query": "from[*]?set='{{setCode}}'"
+    },
+    {
+      "defName": "{{setCode}}-the-list",
+      "query": "from[*]?theList=true"
+    },
+    {
+      "defName": "{{setCode}}-main",
+      "query": "from[{{setCode}}]?mainSet=true-from[{{setCode}}]?type='Basic Land'-from[{{setCode}}]?promo=true-from[{{setCode}}]?subtype='Attraction'"
+    },
+    {
+      "defName": "{{setCode}}-variants",
+      "query": "from[{{setCode}}]?variant=true"
+    },
+    {
+      "defName": "{{setCode}}-promo",
+      "query": "from[{{setCode}}]?promo=true"
+    },
+    {
+      "defName": "{{setCode}}-borderless",
+      "query": "from[{{setCode}}]?borderless=true"
+    },
+    {
+      "defName": "{{setCode}}-borderless-planeswalker",
+      "query": "from[{{setCode}}]?borderlessPlaneswalker=true"
+    },
+    {
+      "defName": "{{setCode}}-showcase",
+      "query": "from[{{setCode}}]?showcaseCardsOfTomorrow=true"
+    },
+    {
+      "defName": "{{setCode}}-galaxy-foil",
+      "query": "from[{{setCode}}]?galaxyFoil=true"
+    },
+    {
+      "defName": "{{setCode}}-galaxy-foil-orbital-land",
+      "query": "from[{{setCode}}]?numInt=(486-491)"
+    },
+    {
+      "defName": "{{setCode}}-galaxy-foil-planetary-land",
+      "query": "from[{{setCode}}]?numInt=(491-496)"
+    },
+    {
+      "defName": "{{setCode}}-showcase-galaxy-foil",
+      "query": "from[{{setCode}}]?numInt=(497-527)"
+    },
+    {
+      "defName": "{{setCode}}-borderless-shock-land-galaxy-foil",
+      "query": "from[{{setCode}}]?numInt=(528-536)"
+    },
+    {
+      "defName": "{{setCode}}-all-showcase",
+      "query": "from[{{setCode}}-showcase]+from[{{setCode}}-showcase-galaxy-foil]"
+    },
+    {
+      "defName": "{{setCode}}-showcase-and-borderless-planeswalker",
+      "query": "from[{{setCode}}-showcase]+from[{{setCode}}-borderless-planeswalker]"
+    },
+    {
+      "defName": "{{setCode}}-main-and-showcase",
+      "query": "from[{{setCode}}-main]+from[{{setCode}}-showcase]"
+    },
+    {
+      "defName": "{{setCode}}-main-and-showcase-and-borderless-planeswalker",
+      "query": "from[{{setCode}}-main]+from[{{setCode}}-showcase-and-borderless-planeswalker]"
+    },
+    {
+      "defName": "{{setCode}}-attraction",
+      "query": "from[{{setCode}}]?subtype='Attraction'"
+    },
+    {
+      "defName": "{{setCode}}-basic-land",
+      "query": "from[{{setCode}}]?type='Basic Land'-from[{{setCode}}-galaxy-foil]"
+    },
+    {
+      "defName": "{{setCode}}-foil-no-land",
+      "query": "from[{{setCode}}-main]"
+    },
+    {
+      "defName": "{{setCode}}-foil",
+      "query": "from[{{setCode}}-main]+from[{{setCode}}]?type='Basic Land'"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "{{setCode}}-all-cards",
+      "packDesc": "{{setName}}: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[{{setCode}}]" }
+      ]
+    },
+    {
+      "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
+      "packName": "{{setCode}}-draft",
+      "packDesc": "{{setName}}: Draft Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/almost-everything-know-about-unfinity-boosters-2022-09-20" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[7]>from[{{setCode}}-main]?rarity='c" },
+        { "query": "take[3]>from[{{setCode}}-main]?rarity='u" },
+        { "query": "from[{{setCode}}-main-and-showcase-and-borderless-planeswalker]?rarity=rarityByWeight2020(rm)" },
+        { "query": "from[{{setCode}}]?planetaryLand=true" },
+        { "query": "from[{{setCode}}-attraction]rarity=rarityByWeight2020(curm)" },
+        { "query": "from[{{setCode}}-attraction]rarity=rarityByWeight2020(curm)" },
+        { "query": "from[{{setCode}}]?sticker=true" },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
+            },
+            {
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "25% chance of Showcase uncommon replacing uncommon",
+              "percent": "25",
+              "overrideSlot": "8",
+              "query": "from[{{setCode}}-showcase]?rarity='u'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "25% chance of Showcase uncommon replacing uncommon",
+              "percent": "25",
+              "overrideSlot": "9",
+              "query": "from[{{setCode}}-showcase]?rarity='u'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "25% chance of Showcase uncommon replacing uncommon",
+              "percent": "25",
+              "overrideSlot": "10",
+              "query": "from[{{setCode}}-showcase]?rarity='u'"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "25% chance of Orbital Land replacing Basic Land",
+              "percent": "25",
+              "overrideSlot": "12",
+              "query": "from[{{setCode}}]?orbitalLand=true"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "4% chance of Borderless Shock Land replacing Basic Land",
+              "percent": "4",
+              "overrideSlot": "12",
+              "query": "from[{{setCode}}]?borderlessShockLand=true"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "33% chance of CURM foil replacing a common",
+              "percent": "33",
+              "overrideSlot": "7",
+              "query": "from[{{setCode}}-foil]?rarity=rarityByWeight2020(curm)",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_comment": "Collector Boosters were introduced as standard feature as of ELD",
+      "packName": "{{setCode}}-collector",
+      "packDesc": "{{setName}}: Collector Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/feature/almost-everything-know-about-unfinity-boosters-2022-09-20" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1: Galaxy/Traditional Foil: Showcase/Borderless RM",
+          "query": "from[{{setCode}}-showcase-and-borderless-planeswalker]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 2: Foil: Un-Set Reprint RM",
+          "query": "from[{{setCode}}-the-list]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 3: Galaxy/Traditional Foil: Showcase U",
+          "query": "from[{{setCode}}-all-showcase]?rarity='u'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 4: Galaxy Foil: RM",
+          "query": "from[{{setCode}}-galaxy-foil]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 5: Galaxy Foil: CU",
+          "query": "from[{{setCode}}-galaxy-foil]?rarity=rarityByWeight2020(cu)"
+        },
+        {
+          "_comment": "Slot 6: Foil: RM",
+          "query": "from[{{setCode}}-main]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 7: Foil: Attraction CUR",
+          "query": "from[{{setCode}}-attraction]?rarity=rarityByWeight2020(cur)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 8-9: 2x Foil: U",
+          "query": "take[2]>from[{{setCode}}-foil-no-land]?rarity='u'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 10-13: 4x Foil: C",
+          "query": "take[4]>from[{{setCode}}-foil-no-land]?rarity='c'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 14: Galaxy Foil: Basic Land",
+          "query": "from[{{setCode}}-galaxy-foil-planetary-land]"
+        },
+        {
+          "_comment": "Slot 15: Foil: Basic Land",
+          "query": "from[{{setCode}}-basic-land]?planetaryLand=true",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 16: Foil: Token",
+          "query": "from[{{setCode}}]?token=true",
+          "setValues": { "foil": true }
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 14: Galaxy Foil: Basic Land",
+              "_comment2": "25% chance of being replaced by a Galaxy Foil Orbital Land",
+              "query": "from[{{setCode}}-galaxy-foil-orbital-land]",
+              "overrideSlot": "14",
+              "percent": "25"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 14: Galaxy Foil: Basic Land",
+              "_comment2": "4% chance of being replaced by a Galaxy Foil Borderless Shock Land",
+              "query": "from[{{setCode}}-borderless-shock-land-galaxy-foil]",
+              "overrideSlot": "14",
+              "percent": "4"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 15: Foil: Basic Land",
+              "_comment2": "25% chance of being replaced by a Foil Orbital Land",
+              "query": "from[{{setCode}}]?orbitalLand=true",
+              "overrideSlot": "15",
+              "percent": "25",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 15: Foil: Basic Land",
+              "_comment2": "4% chance of being replaced by a Foil Borderless Shock Land",
+              "query": "from[{{setCode}}]?borderlessShockLand=true",
+              "overrideSlot": "15",
+              "percent": "4",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-variants",
+      "packDesc": "{{setName}}: All Variants",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-variants]"
+        }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-promos",
+      "packDesc": "{{setName}}: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-promo]"
+        }
+      ]
+    },
+
+    {
+      "packName": "a{{setCode}}-art-cards",
+      "packDesc": "{{setName}}: Art Cards",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[a{{setCode}}-art-cards]"
+        }
+      ]
+    },
+
+    {
+      "packName": "the-list",
+      "packDesc": "{{setName}}: The List",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-the-list]"
+        }
+      ]
+    }
+
+  ]
+}

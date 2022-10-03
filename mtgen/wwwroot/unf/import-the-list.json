@@ -1,0 +1,55 @@
+{
+  "setCode": "unf",
+  "cardDataUrl": "https://magic.wizards.com/en/articles/archive/feature/list-unfinity-un-usual-twist-list-2022-09-20",
+  "imagesUrl": "",
+  "importOptions": {
+    "theList": true,
+    "theListTableNum": 1
+  },
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "where": "title='Ineffable Blessing (a)'",
+      "newValues": {
+        "src": "https://cards.scryfall.io/large/front/4/3/439ecb6d-1ff3-4cba-9907-768a371eb660.jpg?1664309635"
+      }
+    },
+    {
+      "where": "title='Ineffable Blessing (c)'",
+      "newValues": {
+        "src": "https://cards.scryfall.io/large/front/6/8/68c16f48-59a4-4f1f-9f12-d8fd66932583.jpg?1664309658"
+      }
+    },
+    {
+      "where": "title='Everythingamajig (a)'",
+      "newValues": {
+        "src": "https://cards.scryfall.io/large/front/1/8/186363a6-ef91-43e9-9d09-2cc2947b414f.jpg?1664310084"
+      }
+    },
+    {
+      "where": "title='Everythingamajig (f)'",
+      "newValues": {
+        "src": "https://cards.scryfall.io/large/front/e/9/e9600f0b-c182-40fc-a0da-77f7758c94a9.jpg?1664310111"
+      }
+    },
+    {
+      "where": "title='Sword of Dungeons & Dragons'",
+      "newValues": {
+        "src": "https://cards.scryfall.io/large/front/5/4/541640e3-4b45-41b3-b2b0-090ea5bb1e57.jpg?1664319908"
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "theList": true,
+        "usableForDeckBuilding": true
+      }
+    }
+  ]
+}
