@@ -30,7 +30,7 @@ Quick How Tos:
 20220414: Added family support for SNC.
 20220222: Exporter: Added Magic the Gathering: Arena format.
 11-Jun-2021: Added ability to render an array of card modifiers which appear after the card title in brackets.
-4-May-2021: Added debug mode that shows a Debug Product and Live Debug Product tabs. To enable, add this to top level of products.json: "debug": true
+4-May-2021: Added debug mode that shows a Debug Product and Live Debug Product tabs. To enable, add this to top level of products.json: "debug": true   OR add ?debug=true to the url.
 11-Apr-2021: Now includes college support for stx.
 3-Apr-2020: Exporter: Added Deckstats format.
 3-Apr-2018: Exporter: now combined two-sided cards into FrontTitle // BackTitle, and added Frogtown export format

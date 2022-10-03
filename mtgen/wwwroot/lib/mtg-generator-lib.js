@@ -17,6 +17,7 @@ Query examples:
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
+20221003: Debug packs no longer defaults to all packs, just the first pack with the rest available in the dropdown.
 20220414: Added family support for SNC.
 2-Jul-2021: Added support for ?getMarketingCardsForSet(set) to include new /ads/cardsAds.json cards in the boosters.
 14-Jun-2021: Added support for rarity=rarityByWeight(curm).
@@ -558,16 +559,18 @@ var mtgGen = (function (my) {
                         "isGenerated": true,
                         "initialSort": "set"
                     };
+
                     const debugProductOptions = {
                         "presets": [
                             {
                                 "presetName": "debug-product",
                                 "presetDesc": "All Debug Packs",
                                 "default": true,
-                                "packs": debugPacks.map(debugPack => ({ "count": 1, "defaultPackName": debugPack.packName }))
+                                "packs": [{ "count": 1, "defaultPackName": debugPacks[0].packName } ]
                             }
                         ]
                     };
+                    //"packs": debugPacks.map(debugPack => ({ "count": 1, "defaultPackName": debugPack.packName }))
                     debugProduct.packs = debugPacks.map(debugPack => ({ "packName": debugPack.packName }));
                     debugProduct.options = debugProductOptions;
                     my.products.push(debugProduct);
