@@ -24,13 +24,13 @@
     {
       "where": "numInt=(235-240)",
       "newValues": {
-        "orbitalLand": true
+        "planetaryLand": true
       }
     },
     {
       "where": "numInt=(240-245)",
       "newValues": {
-        "planetaryLand": true
+        "orbitalLand": true
       }
     },
 

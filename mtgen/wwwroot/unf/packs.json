@@ -10,7 +10,7 @@
     },
     {
       "defName": "{{setCode}}-main",
-      "query": "from[{{setCode}}]?mainSet=true-from[{{setCode}}]?type='Basic Land'-from[{{setCode}}]?promo=true-from[{{setCode}}]?subtype='Attraction'"
+      "query": "from[{{setCode}}]?mainSet=true-from[{{setCode}}]?type='Basic Land'-from[{{setCode}}]?promo=true-from[{{setCode}}]?subtype='Attraction'-from[{{setCode}}]?borderlessShockLand=true"
     },
     {
       "defName": "{{setCode}}-variants",
@@ -34,14 +34,14 @@
     },
     {
       "defName": "{{setCode}}-galaxy-foil",
-      "query": "from[{{setCode}}]?galaxyFoil=true"
-    },
-    {
-      "defName": "{{setCode}}-galaxy-foil-orbital-land",
-      "query": "from[{{setCode}}]?numInt=(486-491)"
+      "query": "from[{{setCode}}]?galaxyFoil=true-from[{{setCode}}]?type='Basic Land'-from[{{setCode}}-showcase]"
     },
     {
       "defName": "{{setCode}}-galaxy-foil-planetary-land",
+      "query": "from[{{setCode}}]?numInt=(486-491)"
+    },
+    {
+      "defName": "{{setCode}}-galaxy-foil-orbital-land",
       "query": "from[{{setCode}}]?numInt=(491-496)"
     },
     {
@@ -127,8 +127,8 @@
         {
           "querySet": [
             {
-              "_comment": "25% chance of Showcase uncommon replacing uncommon",
-              "percent": "25",
+              "_comment": "25% chance of Showcase uncommon replacing uncommon (for those with a showcase version; around 4%)",
+              "percent": "4",
               "overrideSlot": "8",
               "query": "from[{{setCode}}-showcase]?rarity='u'"
             }
@@ -137,8 +137,8 @@
         {
           "querySet": [
             {
-              "_comment": "25% chance of Showcase uncommon replacing uncommon",
-              "percent": "25",
+              "_comment": "25% chance of Showcase uncommon replacing uncommon (for those with a showcase version; around 4%)",
+              "percent": "4",
               "overrideSlot": "9",
               "query": "from[{{setCode}}-showcase]?rarity='u'"
             }
@@ -147,8 +147,8 @@
         {
           "querySet": [
             {
-              "_comment": "25% chance of Showcase uncommon replacing uncommon",
-              "percent": "25",
+              "_comment": "25% chance of Showcase uncommon replacing uncommon (for those with a showcase version; around 4%)",
+              "percent": "4",
               "overrideSlot": "10",
               "query": "from[{{setCode}}-showcase]?rarity='u'"
             }

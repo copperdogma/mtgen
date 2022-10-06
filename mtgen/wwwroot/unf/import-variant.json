@@ -29,6 +29,12 @@
       }
     },
     {
+      "where": "numInt=(496-528)",
+      "newValues": {
+        "showcaseCardsOfTomorrow": true
+      }
+    },
+    {
       "where": "numInt=(277-287)",
       "newValues": {
         "borderlessShockLand": true,
@@ -40,7 +46,7 @@
       "newValues": {
         "galaxyFoil": true,
         "foil": true,
-        "modifiers": [ "Galaxy Foil"]
+        "modifiers": [ "Galaxy Foil" ]
       }
     },
 
