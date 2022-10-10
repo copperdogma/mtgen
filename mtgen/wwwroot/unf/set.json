@@ -1,18 +1,26 @@
 {
   "startProductName": "unf-boosters",
   "packFiles": [
-    "packs.json"
+    "packs.json?v1.2"
   ],
   "cardFiles": [
-    "cardsMain.json",
+    "cardsMain.json?v1.1",
     "cardsToken.json",
-    "cardsVariant.json",
+    "cardsVariant.json?v1.1",
     "cardsPromo.json",
     "cardsTheList.json?v1.1",
     "cardsSticker.json",
     "../cards/ads/cardsAds.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2022-10-09T21:00:00:00",
+      "HtmlString": "Fixed Collector Booster: shock lands now only show up in the two land slots."
+    },
+    {
+      "UpdateDate": "2022-10-06T14:00:00:00",
+      "HtmlString": "Fixed: showcase no longer appear outside of slot 1/2 in collector boosters, orbital/planetary lands were swapped, showcase card frequency reduced in draft boosters, shock lands now only show up in land slot (thanks, Apsis!)"
+    },
     {
       "UpdateDate": "2022-10-03T14:00:00:00",
       "HtmlString": "Fixed a few missing cards from The List."

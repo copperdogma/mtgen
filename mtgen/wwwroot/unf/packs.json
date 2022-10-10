@@ -33,8 +33,16 @@
       "query": "from[{{setCode}}]?showcaseCardsOfTomorrow=true"
     },
     {
+      "defName": "{{setCode}}-borderless-shock-land-galaxy-foil",
+      "query": "from[{{setCode}}]?numInt=(528-538)"
+    },
+    {
+      "defName": "{{setCode}}-shock-land",
+      "query": "from[{{setCode}}]?numInt=(277-287)+from[{{setCode}}-borderless-shock-land-galaxy-foil]"
+    },
+    {
       "defName": "{{setCode}}-galaxy-foil",
-      "query": "from[{{setCode}}]?galaxyFoil=true-from[{{setCode}}]?type='Basic Land'-from[{{setCode}}-showcase]"
+      "query": "from[{{setCode}}]?galaxyFoil=true-from[{{setCode}}]?type='Basic Land'-from[{{setCode}}-showcase]-from[{{setCode}}-shock-land]"
     },
     {
       "defName": "{{setCode}}-galaxy-foil-planetary-land",
@@ -47,10 +55,6 @@
     {
       "defName": "{{setCode}}-showcase-galaxy-foil",
       "query": "from[{{setCode}}]?numInt=(497-527)"
-    },
-    {
-      "defName": "{{setCode}}-borderless-shock-land-galaxy-foil",
-      "query": "from[{{setCode}}]?numInt=(528-536)"
     },
     {
       "defName": "{{setCode}}-all-showcase",
