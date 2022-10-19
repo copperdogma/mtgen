@@ -1,0 +1,100 @@
+{
+  "defs": [
+    {
+      "defName": "{{setCode}}",
+      "query": "from[*]?set='{{setCode}}'"
+    },
+    {
+      "defName": "{{setCode}}-main",
+      "query": "from[{{setCode}}]?mainSet=true-from[{{setCode}}]?type='Basic Land'"
+    },
+    {
+      "defName": "{{setCode}}-variants",
+      "query": "from[{{setCode}}]?variant=true"
+    },
+    {
+      "defName": "{{setCode}}-retro-frame",
+      "query": "from[{{setCode}}]?retroFrame=true"
+    },
+    {
+      "defName": "{{setCode}}-main-basic-land",
+      "query": "from[{{setCode}}]?type='Basic Land'-from[{{setCode}}-retro-frame]"
+    },
+    {
+      "defName": "{{setCode}}-main-retro-frame",
+      "query": "from[{{setCode}}-retro-frame]-from[{{setCode}}]?type='Basic Land'"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "{{setCode}}-all-cards",
+      "packDesc": "{{setName}}: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[{{setCode}}]" }
+      ]
+    },
+    {
+      "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
+      "packName": "{{setCode}}-booster",
+      "packDesc": "{{setName}}: Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/news/celebrate-30-years-magic-gathering-30th-anniversary-edition-2022-10-04" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[7]>from[{{setCode}}-main]?rarity='c" },
+        { "query": "take[3]>from[{{setCode}}-main]?rarity='u" },
+        { "query": "from[{{setCode}}-main]?rarity='r" },
+        { "query": "from[{{setCode}}-main-retro-frame]?rarity='c" },
+        { "query": "take[2]>from[{{setCode}}-main-basic-land]" },
+        { "query": "from[{{setCode}}-retro-frame]?type='Basic Land'" },
+        { "query": "from[{{setCode}}]?token=true" },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Dual lands appear twice as frequently as all other rares",
+              "percent": "20/226",
+              "overrideSlot": "11",
+              "query": "from[{{setCode}}-main]?dualLand=true'"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "percent": "4/10",
+              "overrideSlot": "12",
+              "query": "from[{{setCode}}-main-retro-frame]?rarity='u'"
+            },
+            {
+              "_comment": "3/10 chance of retro frame rare",
+              "percent": "3/10",
+              "overrideSlot": "12",
+              "query": "from[{{setCode}}-main-retro-frame]?rarity='r'"
+            },
+            {
+              "_comment": "3/10 * 20/226 chance of retro frame rare dual land",
+              "percent": "60/2260",
+              "overrideSlot": "12",
+              "query": "from[{{setCode}}-main-retro-frame]?dualLand=true"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-variants",
+      "packDesc": "{{setName}}: All Variants",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-variants]"
+        }
+      ]
+    }
+
+  ]
+}

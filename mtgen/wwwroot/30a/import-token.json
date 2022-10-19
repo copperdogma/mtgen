@@ -1,0 +1,26 @@
+{
+  "setCode": "30a",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3At30a&unique=prints",
+  "imagesUrl": "",
+  "_comment1": "NOTE: Starting importing data and images from Scryfall as of this set",
+  "_comments": [
+    "add a new card = add:true, newValues {}",
+    "delete a card  = delete:true, where",
+    "update card(s) = where, newValues {}",
+    "select cards starting with a value = where: type~='Snow'",
+    "get card directly from Gatherer = where: gatherer='Serra Angel'"
+  ],
+
+  "exceptions": [
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/016 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

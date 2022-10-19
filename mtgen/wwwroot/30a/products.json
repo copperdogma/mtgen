@@ -1,0 +1,58 @@
+{
+  "_comment": "if there are no options the query/packNames will be auto-run",
+  "_comment2": "You can add an array of caveats to a product to add notes shown to the user",
+  "_comment3": "{{setCode}} and {{setName}} can be used in products.json/packs.json and get replaced in preprocessing to the actual code/name as found in the global sets.json file",
+
+  "products": [
+    {
+      "productName": "{{setCode}}-all-cards",
+      "productDesc": "All Cards",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/30th-anniversary-edition" ],
+      "isGenerated": false,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "{{setCode}}-all-cards" }
+      ]
+    },
+
+    {
+      "productName": "{{setCode}}-boosters",
+      "productDesc": "Boosters",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/news/celebrate-30-years-magic-gathering-30th-anniversary-edition-2022-10-04" ],
+      "isGenerated": true,
+      "isVisible": true,
+      "initialSort": "set",
+      "packs": [
+        { "packName": "{{setCode}}-booster" }
+      ],
+      "options": {
+        "presets": [
+          {
+            "presetName": "{{setCode}}-boosters-four",
+            "presetDesc": "Four Boosters",
+            "default": true,
+            "packs": [
+              {
+                "count": 6,
+                "defaultPackName": "{{setCode}}-booster"
+              }
+            ]
+          }
+        ]
+      }
+    },
+
+    {
+      "productName": "{{setCode}}-variants",
+      "productDesc": "Variants",
+      "sources": [ "https://magic.wizards.com/en/articles/archive/news/celebrate-30-years-magic-gathering-30th-anniversary-edition-2022-10-04" ],
+      "isGenerated": false,
+      "isVisible": true,
+      "initialSort": "colour",
+      "packs": [
+        { "packName": "{{setCode}}-variants" }
+      ]
+    }
+
+  ]
+}

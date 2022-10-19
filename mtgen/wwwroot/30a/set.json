@@ -1,0 +1,17 @@
+{
+  "startProductName": "30a-boosters",
+  "packFiles": [
+    "packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsVariant.json"
+  ],
+  "XXXupdates": [
+    {
+      "UpdateDate": "2022-10-06T14:00:00:00",
+      "HtmlString": "Fixed: showcase no longer appear outside of slot 1/2 in collector boosters, orbital/planetary lands were swapped, showcase card frequency reduced in draft boosters, shock lands now only show up in land slot (thanks, Apsis!)"
+    }
+  ]
+}
