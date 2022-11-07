@@ -4,6 +4,7 @@ Generates an output mtgen card set in json format for use in the main app, using
 Typically the importer file (e.g. import-main.json) will specify the wotc card gallery as the image source and
 the mtgsalvation spoiler page as the data source.
 
+20221107: Updated wotc image importer to use new wotc html layout.
 20220420: Will now import The List entries with no link.
 20220221: getCardColourFromCard() now considers a coloured artifact to be that colour instead of just an artifact.
 20210713: Rewrote DFC import to output in new scryfall format (card.cardFaces[])
@@ -1736,9 +1737,8 @@ class CardDataImporter {
         const parser = new DOMParser();
         const imageDoc = parser.parseFromString(rawHtmlImageData, "text/html");
 
-        // v1 - 20150914, bfz gallery -- hard to scan as anything unique is added by js
-        const content = imageDoc.querySelector('#content');
-        const rawImages = imageDoc.querySelectorAll('#content img');
+        // v2 - 20221107: bro gallery, changed layout
+        const rawImages = imageDoc.querySelectorAll('#article-body img');
         if (rawImages) {
             // Preload the images so we get the heights and widths.
             // This wasn't necessary under jQuery because I assume it rendered the HTML hidden in the browser.
@@ -1766,6 +1766,37 @@ class CardDataImporter {
 
             return finalImages;
         }
+
+        //// v1 - 20150914, bfz gallery -- hard to scan as anything unique is added by js
+        //const content = imageDoc.querySelector('#content');
+        //const rawImages = imageDoc.querySelectorAll('#content img');
+        //if (rawImages) {
+        //    // Preload the images so we get the heights and widths.
+        //    // This wasn't necessary under jQuery because I assume it rendered the HTML hidden in the browser.
+        //    const imagePromises = [...rawImages].map(rawImage => this._preloadImage(rawImage.src));
+        //    let images;
+        //    try {
+        //        images = await Promise.all(imagePromises);
+        //    }
+        //    catch (err) { alert(`ERROR: failed to retrieve image: ${err.message}`); }
+
+        //    let finalImages = []
+        //    const requiredImageHeightInt = parseInt(requiredImageHeight, 10);
+        //    const requiredImageWidthInt = parseInt(requiredImageWidth, 10);
+        //    images.forEach(event => {
+        //        const img = event.target;
+        //        if (!isNaN(requiredImageHeightInt) && requiredImageHeightInt !== img.height) { return true; }
+        //        if (!isNaN(requiredImageWidthInt) && requiredImageWidthInt !== img.width) { return true; }
+        //        const image = {};
+        //        image.src = img.src;
+        //        image.height = img.height;
+        //        image.width = img.width;
+        //        image.imageSource = "wotc-article";
+        //        finalImages.push(image);
+        //    });
+
+        //    return finalImages;
+        //}
     }
 
     async _getCardImagesFromTwitter(rawHtmlImageData, requiredImageWidth, requiredImageHeight) {
