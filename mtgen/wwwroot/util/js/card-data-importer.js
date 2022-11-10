@@ -4,6 +4,7 @@ Generates an output mtgen card set in json format for use in the main app, using
 Typically the importer file (e.g. import-main.json) will specify the wotc card gallery as the image source and
 the mtgsalvation spoiler page as the data source.
 
+20221109: Updated wotc The List importer to use new wotc html layout.
 20221107: Updated wotc image importer to use new wotc html layout.
 20220420: Will now import The List entries with no link.
 20220221: getCardColourFromCard() now considers a coloured artifact to be that colour instead of just an artifact.
@@ -1371,7 +1372,8 @@ class CardDataImporter {
         const parser = new DOMParser();
         const cardDoc = parser.parseFromString(rawCardData.data, "text/html");
 
-        const cardsTables = cardDoc.querySelectorAll('table.sortable-table');
+        // OLD: const cardsTables = cardDoc.querySelectorAll('table.sortable-table');
+        const cardsTables = cardDoc.querySelectorAll('.collapsibleBlock .wrapper table'); // 20221109: BRO: new wotc format
         if (cardsTables.length === 0) {
             alert("No cards from the wotc article found.");
         }
@@ -1391,8 +1393,9 @@ class CardDataImporter {
                 card.src = (aEl.dataset == undefined) ? undefined : aEl.dataset["imageUrl"]; // Some don't have a link to an image. e.g.: https://magic.wizards.com/en/articles/archive/feature/whats-new-list-streets-new-capenna-2022-04-14
             }
 
+            // 20221109: As of BRO, wotc's new The List article format no longer includes the set the card is from which.. sucks.
             const setEls = cardEl.querySelectorAll('td');
-            if (setEls) {
+            if (setEls && setEls.length && setEls.length > 1) {
                 card.set = setEls[1].textContent.trim();
             }
 
@@ -1566,8 +1569,10 @@ class CardDataImporter {
         const parser = new DOMParser();
         const imageDoc = parser.parseFromString(rawHtmlImageData, "text/html");
 
-        let cardEls = imageDoc.querySelectorAll('#card-image-gallery .resizing-cig');
+        let cardEls = imageDoc.querySelectorAll('.article-body .resizing-cig');
         if (cardEls.length === 0) {
+            cardEls = imageDoc.querySelectorAll('#card-image-gallery .resizing-cig');
+        } else if (cardEls.length === 0) {
             cardEls = imageDoc.querySelectorAll('#content-detail-page-of-an-article .resizing-cig');
         }
 
