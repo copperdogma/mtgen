@@ -1,0 +1,63 @@
+﻿{
+  "setCode": "bro",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Abro&unique=prints",
+  "imagesUrl": "",
+  "importOptions": {},
+  "exceptions": [
+    {
+      "_comments": [
+        "import all images, matching their titles with the same card data over and over = (above) importOptions/importByImage: true",
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'",
+        "ignore later image match and use the one from data (or override below) = useCardDataImg = true"
+      ]
+    },
+
+    {
+      "where": "numInt=(278-288)",
+      "newValues": {
+        "fullArtBasicLand": true
+      }
+    },
+    {
+      "where": "numInt=(288-294)",
+      "newValues": {
+        "jumpstartRare": true
+      }
+    },
+    {
+      "where": "numInt=(294-302)",
+      "newValues": {
+        "borderless": true
+      }
+    },
+    {
+      "where": "numInt=(302-378)",
+      "newValues": {
+        "extendedArtwork": true
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "type~='Legendary'",
+      "newValues": {
+        "legendary": true
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "variant": true
+      }
+    }
+  ]
+}

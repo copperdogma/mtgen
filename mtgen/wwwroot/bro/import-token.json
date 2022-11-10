@@ -1,0 +1,242 @@
+{
+  "setCode": "bro",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/news/card-preview/the-tokens-of-the-brothers-war",
+  "_comments": [
+    "add a new card = add:true, newValues {}",
+    "delete a card  = delete:true, where",
+    "update card(s) = where, newValues {}",
+    "select cards starting with a value = where: type~='Snow'",
+    "get card directly from Gatherer = where: gatherer='Serra Angel'"
+  ],
+
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "bro",
+          "cardImageUrl": "https://magic.wizards.com/en/news/card-preview/the-tokens-of-the-brothers-war",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "1",
+          "cardPattern": "000|u|Token Creature|Spirit\n000|g|Token Creature|Bear\n000|g|Token Creature|Forest Dryad\n000|c|Token Artifact Creature|Construct\n000|c|Token Artifact Creature|Construct\n000|c|Token Artifact Creature|Golem\n000|c|Token Artifact|Powerstone\n000|c|Token Artifact Creature|Soldier\n000|c|Token Artifact Creature|Soldier\n000|c|Token Artifact Creature|Thopter\n000|c|Token Artifact Creature|Zombie\n000|c|Emblem|Saheeli, Filigree Master\n000|g|Token Creature|Elemental\nx36\n000|c|Legendary Token Artifact Creature|Lazerbeak\n000|c|Legendary Token Artifact Creature|Ravage\n"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bro",
+        "src": "https://media.wizards.com/2022/bro/en_Td1TnI0fed.png",
+        "num": 1,
+        "colour": "u",
+        "type": "Token Creature",
+        "title": "Spirit",
+        "subtype": "Spirit",
+        "numInt": 1
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bro",
+        "src": "https://media.wizards.com/2022/bro/en_pPrsI3Iimb.png",
+        "num": 2,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Bear",
+        "subtype": "Bear",
+        "numInt": 2
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bro",
+        "src": "https://media.wizards.com/2022/bro/en_UxYANYcUw2.png",
+        "num": 3,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Forest Dryad",
+        "subtype": "Forest Dryad",
+        "numInt": 3
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bro",
+        "src": "https://media.wizards.com/2022/bro/en_StGs0eIzu2.png",
+        "num": 4,
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Construct",
+        "subtype": "Construct",
+        "numInt": 4
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bro",
+        "src": "https://media.wizards.com/2022/bro/en_3Yk1OyEVNz.png",
+        "num": 5,
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Construct",
+        "subtype": "Construct",
+        "numInt": 5
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bro",
+        "src": "https://media.wizards.com/2022/bro/en_4Bots25dS9.png",
+        "num": 6,
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Golem",
+        "subtype": "Golem",
+        "numInt": 6
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bro",
+        "src": "https://media.wizards.com/2022/bro/en_dvX3CYiGLG.png",
+        "num": 7,
+        "colour": "c",
+        "type": "Token Artifact",
+        "title": "Powerstone",
+        "subtype": "Powerstone",
+        "numInt": 7
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bro",
+        "src": "https://media.wizards.com/2022/bro/en_FdMErybmJo.png",
+        "num": 8,
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Soldier",
+        "subtype": "Soldier",
+        "numInt": 8
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bro",
+        "src": "https://media.wizards.com/2022/bro/en_nE3ggoaCqc.png",
+        "num": 9,
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Soldier",
+        "subtype": "Soldier",
+        "numInt": 9
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bro",
+        "src": "https://media.wizards.com/2022/bro/en_HZ1brj2fwE.png",
+        "num": 10,
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Thopter",
+        "subtype": "Thopter",
+        "numInt": 10
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bro",
+        "src": "https://media.wizards.com/2022/bro/en_0peH5vpM2f.png",
+        "num": 11,
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Zombie",
+        "subtype": "Zombie",
+        "numInt": 11
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bro",
+        "src": "https://media.wizards.com/2022/bro/en_YsbY6089fA.png",
+        "num": 12,
+        "colour": "c",
+        "type": "Emblem",
+        "title": "Saheeli, Filigree Master",
+        "subtype": "Saheeli, Filigree Master",
+        "numInt": 12
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bro",
+        "src": "https://media.wizards.com/2022/bro/en_akxBpxFeWt.png",
+        "num": 13,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Elemental",
+        "subtype": "Elemental",
+        "numInt": 13
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/015 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "set": "bot",
+        "setCode": "bot",
+        "src": "https://media.wizards.com/2022/bro/en_LvNqsQmgVv.png",
+        "num": "001 T",
+        "colour": "c",
+        "rarity": "c",
+        "type": "Legendary Token Artifact Creature",
+        "title": "Lazerbeak",
+        "subtype": "Lazerbeak",
+        "numInt": 1,
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "bot",
+        "setCode": "bot",
+        "src": "https://media.wizards.com/2022/bro/en_hkBTIS2JVW.png",
+        "num": "002 T",
+        "colour": "c",
+        "rarity": "c",
+        "type": "Legendary Token Artifact Creature",
+        "title": "Ravage",
+        "subtype": "Ravage",
+        "numInt": 1,
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

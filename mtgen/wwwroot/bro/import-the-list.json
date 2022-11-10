@@ -1,0 +1,24 @@
+{
+  "setCode": "bro",
+  "cardDataUrl": "https://magic.wizards.com/en/news/feature/whats-new-on-the-list-for-the-brothers-war",
+  "imagesUrl": "",
+  "importOptions": {
+    "theList": true,
+    "theListTableNum": 3
+  },
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "theList": true,
+        "usableForDeckBuilding": true
+      }
+    }
+  ]
+}

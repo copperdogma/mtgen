@@ -1,0 +1,17 @@
+{
+  "setCode": "bro",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/news/card-image-gallery/the-brothers-war-art-cards",
+  "importOptions": { "artCards": true },
+  "exceptions": [
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "num": "{{num}}/081 A",
+        "artCard": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

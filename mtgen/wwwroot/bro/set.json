@@ -1,0 +1,32 @@
+{
+  "startProductName": "bro-prerelease",
+  "packFiles": [
+    "packs.json?v1.1"
+  ],
+  "cardFiles": [
+    "cardsMain.json?v1.1",
+    "cardsToken.json",
+    "cardsVariant.json",
+    "cardsPromo.json",
+    "cardsTheList.json?v1.1",
+    "cardsArtCards.json?v1.1",
+    "cardsCommander.json",
+    "cardsRetroArtifacts.json",
+    "cardsTransformers.json",
+    "../cards/ads/cardsAds.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2022-11-09T20:30:00:00",
+      "HtmlString": "Added The List cards for this set."
+    },
+    {
+      "UpdateDate": "2022-11-08T20:30:00:00",
+      "HtmlString": "Added Art Cards. No longer included melded cards in boosters. Now includes Transformers in Set Booster Wildcart slots (5/6)."
+    },
+    {
+      "UpdateDate": "2022-11-07T20:30:00:00",
+      "HtmlString": "Missing Art Cards and updated List. Will update when wotc releases them."
+    }
+  ]
+}
