@@ -26,6 +26,7 @@ Normally 15 cards per booster:
 Quick How Tos:
 - to add a caveat (yellow note banner above), add an array of 'caveats' to the products.json product. See set MID.
 
+20221113: No longer crashes on export if a set code doesn't exist in sets.json. Now defaults to using that set code in place of set name.
 20220421: Includes card num on rendered HTML.
 20220414: Added family support for SNC.
 20220222: Exporter: Added Magic the Gathering: Arena format.
@@ -1457,6 +1458,16 @@ var mtgGen = (function (my) {
 
     // All 'cards' arguments below should be a list of unique, counted, sorted cards
 
+    function _getCardSetName(card) {
+        // Checking the set because I didn't add all related sets in sets.json. e.g.: BRO includes BRR cards, but that set isn't in sets.json.
+        // I COULD add them all but I'm lazy;)
+        // Will default to just the set code if the set name is missing.
+        const setCode = card.set.toUpperCase();
+        const set = my.sets[setCode];
+        const setName = set?.name ?? setCode;
+        return setName;
+    }
+
     // .dec: used by Cockatrice, Apprentice
     // sample (under ".dec File Format"): http://www.deckedbuilder.com/faq.html
     function renderDecFormat(cards, attrib) {
@@ -1470,7 +1481,7 @@ var mtgGen = (function (my) {
     // No sideboard option as they're not decks; they're card collections.
     function renderCollFormat(cards, attrib) {
         const output = '// ' + attrib + '\r\n' + cards.reduce((cardOutput, card) =>
-            cardOutput += card.count + ' ' + card.exportTitle + ' [' + my.sets[card.set.toUpperCase()].name + ']\r\n', '');
+            cardOutput += card.count + ' ' + card.exportTitle + ' [' + _getCardSetName(card) + ']\r\n', '');
         return output;
     }
 
