@@ -634,6 +634,132 @@ var mtgGen = (function (my) {
             });
     };
 
+    my.generateCardSetsFromPacks = function (packs) {
+        // Generate the requested sets
+        let generatedSets = [];
+        packs.forEach(pack => {
+            // Create X of the desired packs.
+            for (let i = 0; i < pack.count; i++) {
+                const cardSet = my.generateCardSetFromPack(pack.packName);
+                generatedSets.push(cardSet);
+            }
+        });
+
+        return generatedSets;
+    };
+
+    my.generateCardSetFromPack = function (packName) {
+        const pack = my.getPack(packName);
+        if (pack === undefined) {
+            console.warn(`ERROR: generateCardSet(): missing packName: ${packName}`);
+            return false;
+        }
+
+        let cardQueries = [];
+
+        // Go through each card query in the pack and select it according to its query
+        pack.cards.forEach(cardDef => {
+            if (cardDef.querySet) {
+                const totalWeight = cardDef.querySet[0].overrideSlot !== undefined ? 100 : cardDef.querySet.reduce((total, query) => total + query.percent, 0);
+
+                // Choose the card query percent; we want decimal numbers because the cards can be specified as such (e.g.: 1/8 chance = 12.5%)
+                let percent = Math.random() * totalWeight;
+                if (percent > totalWeight) { percent = totalWeight; }
+
+                // Choose the card query that matches that weighted percentage
+                let currentWeight = 0;
+                const chosenCardDefItem = cardDef.querySet.find(cardDefItem => {
+                    currentWeight += cardDefItem.percent;
+                    if (currentWeight >= percent) { return true; }
+                });
+
+                // Return the query result matching the random percent.
+                // IF there is one. If overrideSlot was defined it may not have triggered so we'd return nothing.
+                if (chosenCardDefItem) {
+                    cardQueries.push(chosenCardDefItem);
+                }
+            }
+            else if (cardDef.query) {
+                cardQueries.push(cardDef);
+            }
+            else {
+                console.error(`cardDef doesn't have a queryDef or query property: ${cardDef}`);
+            }
+        });
+
+        // Basically if the pack was created with usableForDeckBuilding=false then use that, otherwise default to true
+        let usableForDeckBuilding = pack.usableForDeckBuilding || true;
+
+        // Execute each card template's query to choose the actual card
+        let cardSet = [];
+        let cardIndices = [];
+        cardQueries.forEach(cardDef => {
+            const isOrderImportant = cardDef.inOrder && cardDef.inOrder === true;
+            const possibleCards = my.executeQuery(my.cards, my.packDefs, cardDef.query, isOrderImportant);
+
+            let takeCount = 1;
+            const take = cardDef.query.match(/take\[(.+)\]>/i);
+            if (take) {
+                takeCount = take[1];
+            }
+
+            // Shallow clone the cards via .slice().
+            let chosenCards;
+            if (takeCount == "*") {
+                chosenCards = possibleCards.slice();
+            }
+            else if (cardDef.canBeDuplicate === true) {
+                chosenCards = randomCards(cardDef.query, possibleCards, takeCount).slice();
+            }
+            else {
+                chosenCards = randomCards(cardDef.query, possibleCards, takeCount, cardIndices).slice();
+            }
+
+            // Apply any setValues
+            if (cardDef.setValues) {
+                // clone via Object.assign() so we don't modify the original cards
+                chosenCards = chosenCards.map(chosenCard => Object.assign({}, chosenCard, cardDef.setValues));
+            }
+
+            chosenCards.forEach(card => {
+                // Apply usableForDeckBuilding if not already specified
+                if (card.usableForDeckBuilding === undefined) {
+                    card.usableForDeckBuilding = usableForDeckBuilding;
+                }
+                // If overrideSlot is set, don't just push the cards to the end; override that particular slot.
+                // You can override multiple slots by supplying a comma-separated list.
+                if (cardDef.overrideSlot) {
+                    const overrideSlots = cardDef.overrideSlot.split(',');
+                    const overrideCount = Math.min(chosenCards.length, overrideSlots.length);
+                    const chosenCardSet = chosenCards.slice(0, overrideCount);
+                    const chosenCardSetMtgenIds = chosenCardSet.map(c => c.mtgenId);
+                    for (let i = 0; i < overrideCount; i++) {
+                        cardIndices.splice(overrideSlots[i] - 1, 1, chosenCardSetMtgenIds[i]);
+                        cardSet.splice(overrideSlots[i] - 1, 1, chosenCardSet[i]);
+                    }
+                }
+                else {
+                    cardIndices.push(card.mtgenId);
+                    cardSet.push(card);
+                }
+            });
+        });
+
+        cardSet.setName = pack.packName;
+        cardSet.setDesc = pack.packDesc;
+        cardSet.packVersion = pack.packVersion;
+
+        // Used to ensure things like promos aren't included when you sort all cards by colour
+        // NOTE: this isn't really used right now -- I'm leaving it in in case it's useful when we start actually letting the user build decks
+        cardSet.includeWithUserCards = pack.includeWithUserCards;
+        if (pack.includeWithUserCards !== false) {
+            cardSet.includeWithUserCards = true;
+        }
+
+        return cardSet;
+    };
+
+
     // Private MtG Generator functions --------------------------------------------------------------------------------------------------------------------------------
 
     function replaceSetCodeAndNameTokens(jsonData, set) {
@@ -994,131 +1120,6 @@ var mtgGen = (function (my) {
 
     my.getPack = function (packName) {
         return my.packs.find(pack => pack.packName == packName);
-    };
-
-    my.generateCardSetsFromPacks = function (packs) {
-        // Generate the requested sets
-        let generatedSets = [];
-        packs.forEach(pack => {
-            // Create X of the desired packs.
-            for (let i = 0; i < pack.count; i++) {
-                const cardSet = my.generateCardSetFromPack(pack.packName);
-                generatedSets.push(cardSet);
-            }
-        });
-
-        return generatedSets;
-    };
-
-    my.generateCardSetFromPack = function (packName) {
-        const pack = my.getPack(packName);
-        if (pack === undefined) {
-            console.warn(`ERROR: generateCardSet(): missing packName: ${packName}`);
-            return false;
-        }
-
-        let cardQueries = [];
-
-        // Go through each card query in the pack and select it according to its query
-        pack.cards.forEach(cardDef => {
-            if (cardDef.querySet) {
-                const totalWeight = cardDef.querySet[0].overrideSlot !== undefined ? 100 : cardDef.querySet.reduce((total, query) => total + query.percent, 0);
-
-                // Choose the card query percent; we want decimal numbers because the cards can be specified as such (e.g.: 1/8 chance = 12.5%)
-                let percent = Math.random() * totalWeight;
-                if (percent > totalWeight) { percent = totalWeight; }
-
-                // Choose the card query that matches that weighted percentage
-                let currentWeight = 0;
-                const chosenCardDefItem = cardDef.querySet.find(cardDefItem => {
-                    currentWeight += cardDefItem.percent;
-                    if (currentWeight >= percent) { return true; }
-                });
-
-                // Return the query result matching the random percent.
-                // IF there is one. If overrideSlot was defined it may not have triggered so we'd return nothing.
-                if (chosenCardDefItem) {
-                    cardQueries.push(chosenCardDefItem);
-                }
-            }
-            else if (cardDef.query) {
-                cardQueries.push(cardDef);
-            }
-            else {
-                console.error(`cardDef doesn't have a queryDef or query property: ${cardDef}`);
-            }
-        });
-
-        // Basically if the pack was created with usableForDeckBuilding=false then use that, otherwise default to true
-        let usableForDeckBuilding = pack.usableForDeckBuilding || true;
-
-        // Execute each card template's query to choose the actual card
-        let cardSet = [];
-        let cardIndices = [];
-        cardQueries.forEach(cardDef => {
-            const isOrderImportant = cardDef.inOrder && cardDef.inOrder === true;
-            const possibleCards = my.executeQuery(my.cards, my.packDefs, cardDef.query, isOrderImportant);
-
-            let takeCount = 1;
-            const take = cardDef.query.match(/take\[(.+)\]>/i);
-            if (take) {
-                takeCount = take[1];
-            }
-
-            // Shallow clone the cards via .slice().
-            let chosenCards;
-            if (takeCount == "*") {
-                chosenCards = possibleCards.slice();
-            }
-            else if (cardDef.canBeDuplicate === true) {
-                chosenCards = randomCards(cardDef.query, possibleCards, takeCount).slice();
-            }
-            else {
-                chosenCards = randomCards(cardDef.query, possibleCards, takeCount, cardIndices).slice();
-            }
-
-            // Apply any setValues
-            if (cardDef.setValues) {
-                // clone via Object.assign() so we don't modify the original cards
-                chosenCards = chosenCards.map(chosenCard => Object.assign({}, chosenCard, cardDef.setValues));
-            }
-
-            chosenCards.forEach(card => {
-                // Apply usableForDeckBuilding if not already specified
-                if (card.usableForDeckBuilding === undefined) {
-                    card.usableForDeckBuilding = usableForDeckBuilding;
-                }
-                // If overrideSlot is set, don't just push the cards to the end; override that particular slot.
-                // You can override multiple slots by supplying a comma-separated list.
-                if (cardDef.overrideSlot) {
-                    const overrideSlots = cardDef.overrideSlot.split(',');
-                    const overrideCount = Math.min(chosenCards.length, overrideSlots.length);
-                    const chosenCardSet = chosenCards.slice(0, overrideCount);
-                    const chosenCardSetMtgenIds = chosenCardSet.map(c => c.mtgenId);
-                    for (let i = 0; i < overrideCount; i++) {
-                        cardIndices.splice(overrideSlots[i] - 1, 1, chosenCardSetMtgenIds[i]);
-                        cardSet.splice(overrideSlots[i] - 1, 1, chosenCardSet[i]);
-                    }
-                }
-                else {
-                    cardIndices.push(card.mtgenId);
-                    cardSet.push(card);
-                }
-            });
-        });
-
-        cardSet.setName = pack.packName;
-        cardSet.setDesc = pack.packDesc;
-        cardSet.packVersion = pack.packVersion;
-
-        // Used to ensure things like promos aren't included when you sort all cards by colour
-        // NOTE: this isn't really used right now -- I'm leaving it in in case it's useful when we start actually letting the user build decks
-        cardSet.includeWithUserCards = pack.includeWithUserCards;
-        if (pack.includeWithUserCards !== false) {
-            cardSet.includeWithUserCards = true;
-        }
-
-        return cardSet;
     };
 
     my.CountCardsInSets = function (cardSets) {
