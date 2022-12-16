@@ -111,14 +111,14 @@
             const currProduct = '#products a.active';
             const currOption = '#product-content>section.active .options a.active';
             window.addEventListener('cardSetsGenerated', e =>
-                ga('send', 'event', e.detail.setCode.toUpperCase(), 'Generate', `${e.detail.setCode.toUpperCase()}: generate: ${currProduct.textContent}, ${currOption.textContent}`), false);
+                gtag('event', 'Generate', { 'set_code': e.detail.setCode.toUpperCase(), 'product': currProduct.textContent, 'option': currOption.textContent }), false);
             window.addEventListener('drawSaved', e =>
-                ga('send', 'event', e.detail.setCode.toUpperCase(), 'SaveDraw', `${e.detail.setCode.toUpperCase()}: save-draw: ${currProduct.textContent}`), false);
+                gtag('event', 'SaveDraw', { 'set_code': e.detail.setCode.toUpperCase(), 'product': currProduct.textContent }), false);
             window.addEventListener('drawLoaded', e =>
-                ga('send', 'event', e.detail.setCode.toUpperCase(), 'LoadDraw', `${e.detail.setCode.toUpperCase()}: load-draw: ${currProduct.textContent}`, e.detail.drawId), false);
+                gtag('event', 'LoadDraw', { 'set_code': e.detail.setCode.toUpperCase(), 'product': currProduct.textContent, 'draw_id': e.detail.drawId }), false);
             window.addEventListener('exporting', e =>
-                ga('send', 'event', e.detail.setCode.toUpperCase(), 'Export', `${e.detail.setCode.toUpperCase()}: export: ${currProduct.textContent}, ${currOption.textContent}`), false);
-
+                gtag('event', 'Export', { 'set_code': e.detail.setCode.toUpperCase(), 'product': currProduct.textContent, 'draw_id': e.detail.drawId }), false);
+            
             // "Read more" support in top news section
             document.querySelector('aside.info').addEventListener('click', event => {
                 if (event.target.classList.contains('update-more')) {
