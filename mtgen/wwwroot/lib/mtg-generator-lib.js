@@ -1719,3 +1719,8 @@ var mtgGen = (function (my) {
 
     return my;
 }(mtgGen || {}));
+
+// export self when in Node.js
+if (typeof(module) == 'object') {
+    module.exports = mtgGen;
+}
