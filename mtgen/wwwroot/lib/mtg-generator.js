@@ -551,6 +551,7 @@ var mtgGen = (function (my) {
                 events["click #product-content ." + this.productName + " .options #add-booster"] = "addBooster";
                 events["click #product-content ." + this.productName + " .options .remove-input"] = "removeBooster";
                 events["click #product-content ." + this.productName + " .options #generate"] = "renderResultsFromOptions";
+                events["click #product-content ." + this.productName + " .options #use-custom-seed"] = "toggleCustomSeed";
             }
 
             if (this.hasButtonOptions) {
@@ -710,11 +711,46 @@ var mtgGen = (function (my) {
                 let packsOut = preset.packs.reduce((packString, pack, packIndex) => { return packString += this.renderInput(allPacks, pack, packIndex); }, '');
 
                 packsOut += this.renderInput(allPacks); // Will render a booster template for dynamic js addition
+                // FIXME: IDs should *never* be duplicated in the DOM, even in invisible tabs.
                 packsOut += "<button id='add-booster'>Add Booster</button>";
                 packsOut = "<section id='boosters'>" + packsOut + "</section>";
                 packsOut += "<input id='generate' type='submit' value='Generate my sets!' />";
+                packsOut += "<input id='use-custom-seed' type='checkbox' />";
+                // FIXME: when we get proper IDs, the label for should work
+                packsOut += "<label for='use-custom-seed'>Seed:</label>";
+                packsOut += "<input id='custom-seed' type='text' disabled='true' />";
+                packsOut += "<span id='custom-seed-warning' style='display:none'><b>WARNING!</b> Experimental feature!</span>";
                 return packsOut;
             }
+        }
+
+        , toggleCustomSeed: function () {
+            var curTab = this.getCurrentTab();
+            var newState = curTab.querySelector('#use-custom-seed').checked;
+
+            curTab.querySelector('#custom-seed').disabled = !newState;
+            var disp;
+            if (newState) {
+                disp = 'inline';
+            } else {
+                disp = 'none';
+            }
+            curTab.querySelector('#custom-seed-warning').style = 'display: ' + disp;
+        }
+
+        , seedRNGFromInput: function () {
+            var curTab = this.getCurrentTab();
+            var useCustom = curTab.querySelector('#use-custom-seed').checked;
+
+            var seed;
+            if (useCustom) {
+                seed = curTab.querySelector('#custom-seed').value;
+            } else {
+                seed = my.getRandomSeed();
+                curTab.querySelector('#custom-seed').value = seed;
+            }
+
+            my.seedRNG(seed);
         }
 
         , renderResultsFromOptions: function () {
@@ -762,6 +798,7 @@ var mtgGen = (function (my) {
             }
 
             // Generate the cards, one set per pack, and render them to the UI.
+            this.seedRNGFromInput();
             this.generatedSets = my.generateCardSetsFromPacks(packs);
             this.renderResults(this.generatedSets);
 
@@ -778,6 +815,7 @@ var mtgGen = (function (my) {
             const packName = event.target.getAttribute('data-pack');
 
             this.generatedSets = [];
+            // TODO: does this need seedRNGFromInput? Is renderPack even used?
             this.generatedSets.push(my.generateCardSetFromPack(packName));
 
             this.renderResults(this.generatedSets);
