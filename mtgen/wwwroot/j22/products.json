@@ -156,11 +156,13 @@
             "packs": [
               {
                 "count": 1,
-                "defaultPackName": "{{setCode}}-vehicles"
+                "randomDefaultPackName": [],
+                "_comment": "This will have it randomly choose a pack from all packs above."
               },
               {
                 "count": 1,
-                "defaultPackName": "{{setCode}}-knights"
+                "randomDefaultPackName": [],
+                "_comment": "This will have it randomly choose a pack from all packs above."
               }
             ]
           }
