@@ -4,6 +4,7 @@ Generates an output mtgen card set in json format for use in the main app, using
 Typically the importer file (e.g. import-main.json) will specify the wotc card gallery as the image source and
 the mtgsalvation spoiler page as the data source.
 
+20221221: Now handles certain multicolour cards properly (like DMR "Assaumt // Battery") instead of tagging them 'colourless'
 20221216: Card import now treats colourless cards that aren't artifacts but have a CMC as the "colourless" colour intead of "other""
 20221109: Updated wotc The List importer to use new wotc html layout.
 20221107: Updated wotc image importer to use new wotc html layout.
@@ -765,7 +766,7 @@ class CardDataImporter {
         // NEWER: () are groups around split colour (R///)
         let cardColours = '';
         if (hasCardFaces) {
-            cardColours = card.cardFaces.reduce((colourString, cardFace) => colourString + (cardFace.colors ?? []).join(''), '').toLowerCase(); // Get all colours from all faces
+            cardColours = card.cardFaces.reduce((colourString, cardFace) => colourString + (cardFace.colour ?? ''), '').toLowerCase(); // Get all colours from all faces
         }
         else {
             cardColours = card.cost.toLowerCase().replace(/[^bcgkruw]/g, ""); // Remove all but the whitelisted card colour letters.
@@ -807,7 +808,7 @@ class CardDataImporter {
         const uniqueColours = [...new Set(colourIdentity)];
 
         // Some cards (e.g.: J22 Karn Liberated) have no casting colour but aren't artifacts, so we'll force "colourness".
-        const finalColours = (uniqueColours.length < 1 && card.ccost > 0) ? [ "c" ] : [];
+        const finalColours = (uniqueColours.length < 1 && card.ccost > 0) ? ["c"] : uniqueColours;
 
         return finalColours.join('');
     }
