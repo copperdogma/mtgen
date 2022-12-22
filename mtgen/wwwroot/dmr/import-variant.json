@@ -1,0 +1,73 @@
+﻿{
+  "setCode": "dmr",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Admr&unique=prints",
+  "imagesUrl": "",
+  "importOptions": {},
+  "exceptions": [
+    {
+      "_comments": [
+        "import all images, matching their titles with the same card data over and over = (above) importOptions/importByImage: true",
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'",
+        "ignore later image match and use the one from data (or override below) = useCardDataImg = true"
+      ]
+    },
+
+    {
+      "where": "numInt=(262-402)",
+      "newValues": {
+        "retroFrame": true
+      }
+    },
+    {
+      "where": "numInt=(402-412)",
+      "newValues": {
+        "retroFrameBasicLands": true
+      }
+    },
+    {
+      "where": "numInt=(412-457)",
+      "newValues": {
+        "borderless": true
+      }
+    },
+
+    {
+      "where": "numInt=457",
+      "newValues": {
+        "num": "{{numInt}} P Release",
+        "includedReason": "Release Promo",
+        "promo": true,
+        "usableForDeckBuilding": false
+      }
+    },
+
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "type~='Legendary'",
+      "newValues": {
+        "legendary": true
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "variant": true
+      }
+    },
+    {
+      "where": "numInt=457",
+      "newValues": {
+        "variant": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "startProductName": "dmr-boosters",
+  "packFiles": [
+    "packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsVariant.json",
+    "../cards/ads/cardsAds.json"
+  ],
+  "XXXupdates": [
+    {
+      "UpdateDate": "2022-11-09T20:30:00:00",
+      "HtmlString": "Added The List cards for this set."
+    }
+  ]
+}

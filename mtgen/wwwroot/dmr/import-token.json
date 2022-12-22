@@ -1,0 +1,220 @@
+{
+  "setCode": "dmr",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/news/card-preview/the-tokens-of-dominaria-remastered",
+  "_comments": [
+    "add a new card = add:true, newValues {}",
+    "delete a card  = delete:true, where",
+    "update card(s) = where, newValues {}",
+    "select cards starting with a value = where: type~='Snow'",
+    "get card directly from Gatherer = where: gatherer='Serra Angel'"
+  ],
+
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "dmr",
+          "cardImageUrl": "https://magic.wizards.com/en/news/card-preview/the-tokens-of-dominaria-remastered",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "1",
+          "cardPattern": "000|w|Token Creature|Bird\n000|w|Token Creature|Griffin\n000|b|Token Creature|Cat\n000|b|Token Legendary Creature|Marit Lage|Avatar\n000|b|Token Creature|Zombie\n000|r|Token Creature|Elemental\n000|r|Token Creature|Goblin\n000|g|Token Creature|Cat\n000|g|Token Creature|Elephant\n000|g|Token Creature|Insect\n000|g|Token Creature|Saproling\n000|g|Token Creature|Sheep\n000|g|Token Creature|Squirrel\n000|c|Token Artifact Creature|Construct"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmr",
+        "src": "https://media.wizards.com/2022/dmr/en_aa42abea971.png",
+        "num": 1,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Bird",
+        "subtype": "Bird",
+        "numInt": 1
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmr",
+        "src": "https://media.wizards.com/2022/dmr/en_97fbd8dee71.png",
+        "num": 2,
+        "colour": "w",
+        "type": "Token Creature",
+        "title": "Griffin",
+        "subtype": "Griffin",
+        "numInt": 2
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmr",
+        "src": "https://media.wizards.com/2022/dmr/en_f4355286b91.png",
+        "num": 3,
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Cat",
+        "subtype": "Cat",
+        "numInt": 3
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmr",
+        "src": "https://media.wizards.com/2022/dmr/en_274db90c1b1.png",
+        "num": 4,
+        "colour": "b",
+        "type": "Token Legendary Creature",
+        "title": "Marit Lage",
+        "subtype": "Avatar",
+        "numInt": 4
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmr",
+        "src": "https://media.wizards.com/2022/dmr/en_7d9cd720941.png",
+        "num": 5,
+        "colour": "b",
+        "type": "Token Creature",
+        "title": "Zombie",
+        "subtype": "Zombie",
+        "numInt": 5
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmr",
+        "src": "https://media.wizards.com/2022/dmr/en_8c707a47621.png",
+        "num": 6,
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Elemental",
+        "subtype": "Elemental",
+        "numInt": 6
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmr",
+        "src": "https://media.wizards.com/2022/dmr/en_61afe7f36f1.png",
+        "num": 7,
+        "colour": "r",
+        "type": "Token Creature",
+        "title": "Goblin",
+        "subtype": "Goblin",
+        "numInt": 7
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmr",
+        "src": "https://media.wizards.com/2022/dmr/en_c7873675971.png",
+        "num": 8,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Cat",
+        "subtype": "Cat",
+        "numInt": 8
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmr",
+        "src": "https://media.wizards.com/2022/dmr/en_12303291211.png",
+        "num": 9,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Elephant",
+        "subtype": "Elephant",
+        "numInt": 9
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmr",
+        "src": "https://media.wizards.com/2022/dmr/en_2c90330aa21.png",
+        "num": 10,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Insect",
+        "subtype": "Insect",
+        "numInt": 10
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmr",
+        "src": "https://media.wizards.com/2022/dmr/en_620b13ebe81.png",
+        "num": 11,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Saproling",
+        "subtype": "Saproling",
+        "numInt": 11
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmr",
+        "src": "https://media.wizards.com/2022/dmr/en_d8eece52511.png",
+        "num": 12,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Sheep",
+        "subtype": "Sheep",
+        "numInt": 12
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmr",
+        "src": "https://media.wizards.com/2022/dmr/en_93b6c4e3251.png",
+        "num": 13,
+        "colour": "g",
+        "type": "Token Creature",
+        "title": "Squirrel",
+        "subtype": "Squirrel",
+        "numInt": 13
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "dmr",
+        "src": "https://media.wizards.com/2022/dmr/en_d45bc749111.png",
+        "num": 14,
+        "colour": "c",
+        "type": "Token Artifact Creature",
+        "title": "Construct",
+        "subtype": "Construct",
+        "numInt": 14
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/014 T",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

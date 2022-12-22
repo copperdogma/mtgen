@@ -1,0 +1,205 @@
+{
+  "defs": [
+    {
+      "defName": "{{setCode}}",
+      "query": "from[*]?set='{{setCode}}'"
+    },
+    {
+      "defName": "{{setCode}}-main",
+      "query": "from[{{setCode}}]?mainSet=true-from[{{setCode}}]?type='Basic Land'-from[{{setCode}}]?promo=true"
+    },
+    {
+      "defName": "{{setCode}}-variants",
+      "query": "from[{{setCode}}]?variant=true"
+    },
+    {
+      "defName": "{{setCode}}-promo",
+      "query": "from[{{setCode}}]?promo=true"
+    },
+    {
+      "defName": "{{setCode}}-borderless",
+      "query": "from[{{setCode}}]?borderless=true"
+    },
+    {
+      "defName": "{{setCode}}-retro-frame",
+      "query": "from[{{setCode}}]?retroFrame=true"
+    },
+    {
+      "defName": "{{setCode}}-retro-frame-and-borderless",
+      "query": "from[{{setCode}}-retro-frame]+from[{{setCode}}-borderless]"
+    },
+
+    {
+      "defName": "{{setCode}}-foils",
+      "query": "from[{{setCode}}-main]+from[{{setCode}}]?type='Basic Land'"
+    },
+
+    {
+      "defName": "{{setCode}}-basic-land",
+      "query": "from[{{setCode}}]?type='Basic Land'"
+    },
+    {
+      "defName": "{{setCode}}-main-and-borderless",
+      "query": "from[{{setCode}}-main]+from[{{setCode}}-borderless]"
+    },
+
+    {
+      "defName": "{{setCode}}-tokens",
+      "query": "from[{{setCode}}]?token=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "{{setCode}}-all-cards",
+      "packDesc": "{{setName}}: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[{{setCode}}]" }
+      ]
+    },
+    {
+      "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
+      "packName": "{{setCode}}-draft",
+      "packDesc": "{{setName}}: Draft Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/news/feature/collecting-dominaria-remastered-and-product-overview" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[9]>from[{{setCode}}-main]?rarity='c" },
+        { "query": "take[3]>from[{{setCode}}-main]?rarity='u" },
+        { "query": "from[{{setCode}}-main]?rarity='c" },
+        { "query": "from[{{setCode}}-main-and-borderless]?rarity=rarityByWeight2020(rm)" },
+        { "query": "from[{{setCode}}-basic-land]" },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}-tokens]"
+            },
+            {
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "33% chance of CURM foil replacing a common",
+              "percent": "33",
+              "overrideSlot": "9",
+              "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(curm)",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "1 Retro frame CURM in every Draft Booster. If R/M is retro frame, the C/U is not retro frame and vice versa.",
+              "percent": "50",
+              "overrideSlot": "13",
+              "query": "from[{{setCode}}-retro-frame]?rarity=rarityByWeight2020(cu)"
+            },
+            {
+              "percent": "50",
+              "overrideSlot": "14",
+              "query": "from[{{setCode}}-retro-frame]?rarity=rarityByWeight2020(rm)"
+            }
+          ]
+        }
+
+      ]
+    },
+
+    {
+      "_comment": "Collector Boosters were introduced as standard feature as of ELD",
+      "packName": "{{setCode}}-collector",
+      "packDesc": "{{setName}}: Collector Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/news/feature/collecting-dominaria-remastered-and-product-overview" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1: Foil: Retro frame or boderless RM",
+          "query": "from[{{setCode}}-retro-frame-and-borderless]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 2: Borderless RM",
+          "query": "from[{{setCode}}-borderless]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 3: Retro frame RM",
+          "query": "from[{{setCode}}-retro-frame]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 4: Foil: Retro frame or borderless CU",
+          "query": "from[{{setCode}}-retro-frame-and-borderless]?rarity=rarityByWeight2020(cu)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 5-6: 2x Retro frame or borderless CU",
+          "query": "from[{{setCode}}-retro-frame-and-borderless]?rarity=rarityByWeight2020(cu)"
+        },
+        {
+          "_comment": "Slot 5-6: 2x Retro frame or borderless CU",
+          "query": "from[{{setCode}}-retro-frame-and-borderless]?rarity=rarityByWeight2020(cu)"
+        },
+        {
+          "_comment": "Slot 7: Foil: RM",
+          "query": "from[{{setCode}}-main]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 8-9: 2x Foil: U",
+          "query": "take[2]>from[{{setCode}}-main]?rarity='u'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 10-14: 5x Foil: C",
+          "query": "take[5]>from[{{setCode}}-main]?rarity='c'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 15: Foil: Retro frame basic land",
+          "query": "from[{{setCode}}]?retroFrameBasicLands=true",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 16: Foil: double-sided token",
+          "query": "from[{{setCode}}-tokens]",
+          "setValues": { "foil": true }
+        }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-variants",
+      "packDesc": "{{setName}}: All Variants",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-variants]"
+        }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-promos",
+      "packDesc": "{{setName}}: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-promo]"
+        }
+      ]
+    }
+
+  ]
+}
