@@ -301,28 +301,24 @@ var mtgGen = (function (my) {
     };
 
     // Public functions --------------------------------------------------------------------------------------------------------------------------------
-
-    /* 
-    Init MtG Generator. Will trigger 'ready' event when all files loaded and .generateCardSets() can be called.
-    Will trigger 'playableCardLoaded' every every time a new playable card is loaded.
-    Options:
-        setCode				: WotC code for set, e.g.: dgm
-        setFile				: Contains set codes and names for all sets
-        cardFiles			: Array of JSON files containing main cards, token cards, other cards (like marketing cards), and you can load card sets from other releases if need be.
-        packFiles			: JSON file containg pack definitions.
-        productFile			: JSON file controlling the product tabs and what's inside them
-        startProductName	: if specified, auto-showTab this product
-        setCardCount		: Number of cards that should be in the total set. Used to say "X/Y cards available" for when all cards aren't yet released.
-        contentElem			: Selector for the spot the products, options, results, etc will be shown, e.g.: All Cards, Prerelease, Duel Decks, etc.
-        flags			    : Flags that change execution. Currently supports only 'debug'
+    /*
+    Do the actual initialization. Doesn't reference the document or window.
+    Can be used in stand-alone libs.
+    Arguments:
+        options: a dict containing the same options as for run()
+        drawId: the draw querystring or ''
+        drawCallback: function to call when draw is loaded
+        playableCardLoadedCallback: function to call when a playable card is loaded
+    Returns:
+        A promise that resolves when MtG Generator is ready.
+    };
     */
-    my.run = function (options) {
+
+    my.runWithoutBrowser = function (options, drawId, drawCallback, playableCardLoadedCallback) {
         // Import options into instance variables
         Object.assign(my, options);
 
         my.SetCardCount = options.setCardCount;
-
-        my.contentElem = document.querySelector(my.getRequiredOption(options, 'contentElem'));
 
         // if missing any essentials, abort
         my.getRequiredOption(options, 'setFile');
@@ -344,7 +340,6 @@ var mtgGen = (function (my) {
         // TODO: draw data should be optional it fails, not required/terminal
         // If a draw was specified, try to load that
         let drawDataPromise;
-        const drawId = my.getQuerystringParamByName('draw');
         if (drawId) {
             //CANKILL:drawDataPromise = this.fetchJson(`/${options.setCode}/LoadDraw/${drawId}`);
             drawDataPromise = this.fetchJson(`/api/${options.setCode}/draws/${drawId}`);
@@ -354,7 +349,7 @@ var mtgGen = (function (my) {
         }
 
         // Load all of the data once it all arrives
-        Promise.all([setFilePromise, cardFilePromises, packFilePromises, productFilePromise, drawDataPromise])
+        return Promise.all([setFilePromise, cardFilePromises, packFilePromises, productFilePromise, drawDataPromise])
             .catch(err => my.throwTerminalError(err.message))
             .then(([setData, cardDataArray, packDataArray, productData, drawData]) => {
                 // Turn set data into an associative array
@@ -399,8 +394,8 @@ var mtgGen = (function (my) {
                         && options.originalProductName === my.draw.productName;
                 };
                 if (my.hasDraw()) {
-                    my.draw.code = my.getQuerystringParamByName('draw');
-                    window.dispatchEvent(new CustomEvent('draw', { detail: { setCode: my.setCode, code: my.draw.code } }));
+                    my.draw.code = drawId;
+                    drawCallback({ setCode: my.setCode, code: my.draw.code });
                 }
 
                 // Add card indicies and sort orders for internal use
@@ -465,7 +460,7 @@ var mtgGen = (function (my) {
                     }
                     if (card.set == my.setCode && (card.usableForDeckBuilding === undefined || card.usableForDeckBuilding === true)) {
                         setCardsLoadedCount++;
-                        window.dispatchEvent(new CustomEvent('playableCardLoaded', { detail: { setCardsLoadedCount } }));
+                        playableCardLoadedCallback({ setCardsLoadedCount });
                     }
                     if (goodCards[card.mtgenId] !== undefined) {
                         console.warn(`WARNING: duplicate mtgenId: ${card.mtgenId} : ${card.title}`);
@@ -600,6 +595,38 @@ var mtgGen = (function (my) {
 
                 my.SetCardsLoadedCount = setCardsLoadedCount;
 
+            });
+    };
+
+    /*
+    Init MtG Generator. Will trigger 'ready' event when all files loaded and .generateCardSets() can be called.
+    Will trigger 'playableCardLoaded' every every time a new playable card is loaded.
+    Options:
+        setCode				: WotC code for set, e.g.: dgm
+        setFile				: Contains set codes and names for all sets
+        cardFiles			: Array of JSON files containing main cards, token cards, other cards (like marketing cards), and you can load card sets from other releases if need be.
+        packFiles			: JSON file containg pack definitions.
+        productFile			: JSON file controlling the product tabs and what's inside them
+        startProductName	: if specified, auto-showTab this product
+        setCardCount		: Number of cards that should be in the total set. Used to say "X/Y cards available" for when all cards aren't yet released.
+        contentElem			: Selector for the spot the products, options, results, etc will be shown, e.g.: All Cards, Prerelease, Duel Decks, etc.
+        flags			    : Flags that change execution. Currently supports only 'debug'
+    */
+    my.run = function (options) {
+        const drawId = my.getQuerystringParamByName('draw');
+
+        var runPromise = my.runWithoutBrowser(options, drawId,
+            (data) => {
+                window.dispatchEvent(new CustomEvent('draw', { detail: data }));
+            },
+            (data) => {
+                window.dispatchEvent(new CustomEvent('playableCardLoaded', { detail: data }));
+            });
+
+        my.contentElem = document.querySelector(my.getRequiredOption(options, 'contentElem'));
+
+        runPromise.then(
+            () => {
                 // Render the Main view
                 my.mainView = new my.MainView({ el: my.contentElem });
                 my.mainView.render();
@@ -607,6 +634,132 @@ var mtgGen = (function (my) {
                 window.dispatchEvent(new Event('ready'));
             });
     };
+
+    my.generateCardSetsFromPacks = function (packs) {
+        // Generate the requested sets
+        let generatedSets = [];
+        packs.forEach(pack => {
+            // Create X of the desired packs.
+            for (let i = 0; i < pack.count; i++) {
+                const cardSet = my.generateCardSetFromPack(pack.packName);
+                generatedSets.push(cardSet);
+            }
+        });
+
+        return generatedSets;
+    };
+
+    my.generateCardSetFromPack = function (packName) {
+        const pack = my.getPack(packName);
+        if (pack === undefined) {
+            console.warn(`ERROR: generateCardSet(): missing packName: ${packName}`);
+            return false;
+        }
+
+        let cardQueries = [];
+
+        // Go through each card query in the pack and select it according to its query
+        pack.cards.forEach(cardDef => {
+            if (cardDef.querySet) {
+                const totalWeight = cardDef.querySet[0].overrideSlot !== undefined ? 100 : cardDef.querySet.reduce((total, query) => total + query.percent, 0);
+
+                // Choose the card query percent; we want decimal numbers because the cards can be specified as such (e.g.: 1/8 chance = 12.5%)
+                let percent = Math.random() * totalWeight;
+                if (percent > totalWeight) { percent = totalWeight; }
+
+                // Choose the card query that matches that weighted percentage
+                let currentWeight = 0;
+                const chosenCardDefItem = cardDef.querySet.find(cardDefItem => {
+                    currentWeight += cardDefItem.percent;
+                    if (currentWeight >= percent) { return true; }
+                });
+
+                // Return the query result matching the random percent.
+                // IF there is one. If overrideSlot was defined it may not have triggered so we'd return nothing.
+                if (chosenCardDefItem) {
+                    cardQueries.push(chosenCardDefItem);
+                }
+            }
+            else if (cardDef.query) {
+                cardQueries.push(cardDef);
+            }
+            else {
+                console.error(`cardDef doesn't have a queryDef or query property: ${cardDef}`);
+            }
+        });
+
+        // Basically if the pack was created with usableForDeckBuilding=false then use that, otherwise default to true
+        let usableForDeckBuilding = pack.usableForDeckBuilding || true;
+
+        // Execute each card template's query to choose the actual card
+        let cardSet = [];
+        let cardIndices = [];
+        cardQueries.forEach(cardDef => {
+            const isOrderImportant = cardDef.inOrder && cardDef.inOrder === true;
+            const possibleCards = my.executeQuery(my.cards, my.packDefs, cardDef.query, isOrderImportant);
+
+            let takeCount = 1;
+            const take = cardDef.query.match(/take\[(.+)\]>/i);
+            if (take) {
+                takeCount = take[1];
+            }
+
+            // Shallow clone the cards via .slice().
+            let chosenCards;
+            if (takeCount == "*") {
+                chosenCards = possibleCards.slice();
+            }
+            else if (cardDef.canBeDuplicate === true) {
+                chosenCards = randomCards(cardDef.query, possibleCards, takeCount).slice();
+            }
+            else {
+                chosenCards = randomCards(cardDef.query, possibleCards, takeCount, cardIndices).slice();
+            }
+
+            // Apply any setValues
+            if (cardDef.setValues) {
+                // clone via Object.assign() so we don't modify the original cards
+                chosenCards = chosenCards.map(chosenCard => Object.assign({}, chosenCard, cardDef.setValues));
+            }
+
+            chosenCards.forEach(card => {
+                // Apply usableForDeckBuilding if not already specified
+                if (card.usableForDeckBuilding === undefined) {
+                    card.usableForDeckBuilding = usableForDeckBuilding;
+                }
+                // If overrideSlot is set, don't just push the cards to the end; override that particular slot.
+                // You can override multiple slots by supplying a comma-separated list.
+                if (cardDef.overrideSlot) {
+                    const overrideSlots = cardDef.overrideSlot.split(',');
+                    const overrideCount = Math.min(chosenCards.length, overrideSlots.length);
+                    const chosenCardSet = chosenCards.slice(0, overrideCount);
+                    const chosenCardSetMtgenIds = chosenCardSet.map(c => c.mtgenId);
+                    for (let i = 0; i < overrideCount; i++) {
+                        cardIndices.splice(overrideSlots[i] - 1, 1, chosenCardSetMtgenIds[i]);
+                        cardSet.splice(overrideSlots[i] - 1, 1, chosenCardSet[i]);
+                    }
+                }
+                else {
+                    cardIndices.push(card.mtgenId);
+                    cardSet.push(card);
+                }
+            });
+        });
+
+        cardSet.setName = pack.packName;
+        cardSet.setDesc = pack.packDesc;
+        cardSet.packVersion = pack.packVersion;
+
+        // Used to ensure things like promos aren't included when you sort all cards by colour
+        // NOTE: this isn't really used right now -- I'm leaving it in in case it's useful when we start actually letting the user build decks
+        cardSet.includeWithUserCards = pack.includeWithUserCards;
+        if (pack.includeWithUserCards !== false) {
+            cardSet.includeWithUserCards = true;
+        }
+
+        return cardSet;
+    };
+
 
     // Private MtG Generator functions --------------------------------------------------------------------------------------------------------------------------------
 
@@ -968,131 +1121,6 @@ var mtgGen = (function (my) {
 
     my.getPack = function (packName) {
         return my.packs.find(pack => pack.packName == packName);
-    };
-
-    my.generateCardSetsFromPacks = function (packs) {
-        // Generate the requested sets
-        let generatedSets = [];
-        packs.forEach(pack => {
-            // Create X of the desired packs.
-            for (let i = 0; i < pack.count; i++) {
-                const cardSet = my.generateCardSetFromPack(pack.packName);
-                generatedSets.push(cardSet);
-            }
-        });
-
-        return generatedSets;
-    };
-
-    my.generateCardSetFromPack = function (packName) {
-        const pack = my.getPack(packName);
-        if (pack === undefined) {
-            console.warn(`ERROR: generateCardSet(): missing packName: ${packName}`);
-            return false;
-        }
-
-        let cardQueries = [];
-
-        // Go through each card query in the pack and select it according to its query
-        pack.cards.forEach(cardDef => {
-            if (cardDef.querySet) {
-                const totalWeight = cardDef.querySet[0].overrideSlot !== undefined ? 100 : cardDef.querySet.reduce((total, query) => total + query.percent, 0);
-
-                // Choose the card query percent; we want decimal numbers because the cards can be specified as such (e.g.: 1/8 chance = 12.5%)
-                let percent = Math.random() * totalWeight;
-                if (percent > totalWeight) { percent = totalWeight; }
-
-                // Choose the card query that matches that weighted percentage
-                let currentWeight = 0;
-                const chosenCardDefItem = cardDef.querySet.find(cardDefItem => {
-                    currentWeight += cardDefItem.percent;
-                    if (currentWeight >= percent) { return true; }
-                });
-
-                // Return the query result matching the random percent.
-                // IF there is one. If overrideSlot was defined it may not have triggered so we'd return nothing.
-                if (chosenCardDefItem) {
-                    cardQueries.push(chosenCardDefItem);
-                }
-            }
-            else if (cardDef.query) {
-                cardQueries.push(cardDef);
-            }
-            else {
-                console.error(`cardDef doesn't have a queryDef or query property: ${cardDef}`);
-            }
-        });
-
-        // Basically if the pack was created with usableForDeckBuilding=false then use that, otherwise default to true
-        let usableForDeckBuilding = pack.usableForDeckBuilding || true;
-
-        // Execute each card template's query to choose the actual card
-        let cardSet = [];
-        let cardIndices = [];
-        cardQueries.forEach(cardDef => {
-            const isOrderImportant = cardDef.inOrder && cardDef.inOrder === true;
-            const possibleCards = my.executeQuery(my.cards, my.packDefs, cardDef.query, isOrderImportant);
-
-            let takeCount = 1;
-            const take = cardDef.query.match(/take\[(.+)\]>/i);
-            if (take) {
-                takeCount = take[1];
-            }
-
-            // Shallow clone the cards via .slice().
-            let chosenCards;
-            if (takeCount == "*") {
-                chosenCards = possibleCards.slice();
-            }
-            else if (cardDef.canBeDuplicate === true) {
-                chosenCards = randomCards(cardDef.query, possibleCards, takeCount).slice();
-            }
-            else {
-                chosenCards = randomCards(cardDef.query, possibleCards, takeCount, cardIndices).slice();
-            }
-
-            // Apply any setValues
-            if (cardDef.setValues) {
-                // clone via Object.assign() so we don't modify the original cards
-                chosenCards = chosenCards.map(chosenCard => Object.assign({}, chosenCard, cardDef.setValues));
-            }
-
-            chosenCards.forEach(card => {
-                // Apply usableForDeckBuilding if not already specified
-                if (card.usableForDeckBuilding === undefined) {
-                    card.usableForDeckBuilding = usableForDeckBuilding;
-                }
-                // If overrideSlot is set, don't just push the cards to the end; override that particular slot.
-                // You can override multiple slots by supplying a comma-separated list.
-                if (cardDef.overrideSlot) {
-                    const overrideSlots = cardDef.overrideSlot.split(',');
-                    const overrideCount = Math.min(chosenCards.length, overrideSlots.length);
-                    const chosenCardSet = chosenCards.slice(0, overrideCount);
-                    const chosenCardSetMtgenIds = chosenCardSet.map(c => c.mtgenId);
-                    for (let i = 0; i < overrideCount; i++) {
-                        cardIndices.splice(overrideSlots[i] - 1, 1, chosenCardSetMtgenIds[i]);
-                        cardSet.splice(overrideSlots[i] - 1, 1, chosenCardSet[i]);
-                    }
-                }
-                else {
-                    cardIndices.push(card.mtgenId);
-                    cardSet.push(card);
-                }
-            });
-        });
-
-        cardSet.setName = pack.packName;
-        cardSet.setDesc = pack.packDesc;
-        cardSet.packVersion = pack.packVersion;
-
-        // Used to ensure things like promos aren't included when you sort all cards by colour
-        // NOTE: this isn't really used right now -- I'm leaving it in in case it's useful when we start actually letting the user build decks
-        cardSet.includeWithUserCards = pack.includeWithUserCards;
-        if (pack.includeWithUserCards !== false) {
-            cardSet.includeWithUserCards = true;
-        }
-
-        return cardSet;
     };
 
     my.CountCardsInSets = function (cardSets) {
@@ -1721,6 +1749,12 @@ var mtgGen = (function (my) {
     return my;
 }(mtgGen || {}));
 
+//TODO: Fix this merge conflict
+// export self when in Node.js
+if (typeof(module) == 'object') {
+    module.exports = mtgGen;
+}
+=======
 String.prototype.levenshtein =
     function (t) {
         // ith character of s
@@ -1780,3 +1814,4 @@ String.prototype.related =
         a.sort(function (a, b) { return a.ld - b.ld });
         return a;
     };
+
