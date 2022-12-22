@@ -1,0 +1,462 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+	<title>Magic: The Gathering: Decklist IMPORTER</title>
+	<link rel='stylesheet' href='style.css' type='text/css' />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body class="home">
+	<h1>Magic: The Gathering: Decklist IMPORTER</h1>
+	<h2>OLD AND BROKEN - Delete if the new one works</h2>
+	<p>This page imports decklists and outputs them in my query language for use in the packs.json file. It's used for creating those decks for use in the generator as an option in the drop-down.</p>
+	<ul>
+		<li>13-Jul-2015: Added option to auto-correct card names.</li>
+		<li>9-Jul-2014: Created.</li>
+	</ul>
+	<br />
+	<form>
+		<table style="width:0;white-space:nowrap;">
+			<tr>
+				<td><label for="pack-name">Pack name (e.g.: 2015-clash-pack-fate):</label></td>
+				<td><input id="pack-name" size=50 /></td>
+			</tr>
+			<tr>
+				<td><label for="pack-desc">Pack description (e.g.: 2015 Clash Pack: Fate):</label></td>
+				<td><input id="pack-desc" size=50 /></td>
+			</tr>
+			<tr>
+				<td><label for="query-set">Query set (e.g.: m15_main):</label></td>
+				<td><input id="query-set" /></td>
+			</tr>
+			<tr>
+				<td><label for="min-card-count">Minimum acceptable card count in a pack:</label></td>
+				<td><input id="min-card-count" value="15" /></td>
+			</tr>
+			<tr>
+				<td><label for="cards-json">cardsMain.json file (optional) to match incoming cards against:</label></td>
+				<td><input id="cards-json" size=100 /> <em>eg: http://copper-dog.com/mtg-generator/2015-core/cardsMain.json</em></td>
+			</tr>
+		</table>
+		<br />
+		<table>
+			<tr>
+				<td>
+					<label for="input-decklist">Input decklist (example from <a href="http://www.gatheringmagic.com/news-07072014-magic-2015-clash-pack-revealed/">Gathering Magic "Magic 2015 Clash Pack Revealed"</a>):</label><br />
+					<textarea id="input-decklist" rows="30" cols="80">
+Fate — Magic 2015 Standard | Clash Pack
+Creatures (22)
+1 Prognostic Sphinx
+1 Prophet of Kruphix
+1 Hypnotic Siren
+2 Leafcrown Dryad
+2 Omenspeaker
+3 Vaporkin
+3 Kiora's Follower
+2 Frost Lynx
+2 Nimbus Naiad
+2 Thassa's Emissary
+3 Horizon Chimera
+Spells (13)
+2 Negate
+2 Pin to the Earth
+1 Voyage's End
+2 Divination
+2 Griptide
+1 Aetherspouts
+2 Jace's Ingenuity
+1 Curse of the Swine
+Lands (25)
+1 Temple of Mystery
+7 Forest
+17 Island
+					</textarea>
+				</td>
+				<td>
+					<label for="output-query">Output packs.json query:</label><br />
+					<textarea id="output-query" rows="30" cols="80"></textarea>
+				</td>
+			</tr>
+		</table>
+		<br />
+		<input id="auto-correct-cards" type="checkbox" checked />
+		<label for="auto-correct-cards">Auto-correct card names</label><br />
+		<br />
+		<input id="process" type="submit" value="Process Decklist" style="font-size:150%" />
+		<p id="msg"></p>
+	</form>
+
+	<footer style="margin-top:5em">
+		<p>Created by: Cam Marsollier - <a href="mailto:cam.marsollier@gmail.com">cam.marsollier@gmail.com</a></p>
+		<p>Note that this site has no affiliation with <a href="http://www.wizards.com/Magic/">Wizards of the Coast</a>, owner of Magic: The Gathering.</p>
+	</footer>
+	<script>'use strict';
+		$(document).ready(function () {
+			/*
+				Typical packs.json output from the example:
+					,{
+					"packName": "m15-seeded-booster-packins-white",
+					"packDesc": "2015 Core Set: Hunt with Valor (White) Pack-Ins",
+					"cards": {
+						"card": [
+							{ "percents": [ { "percent": 100, "query": "from[m15]?title='White Spindown Life Counter'" } ] }
+							,{ "percents": [ { "percent": 100, "query": "from[m15]?title='White Activity Insert" } ] }
+							,{ "percents": [ { "percent": 100, "query": "from[m15]?title='Garruk the Slayer: Oversized" } ] }
+							,{ "percents": [ { "percent": 100, "query": "from[m15]?title='Wolf" } ] }
+							,{ "percents": [ { "percent": 100, "query": "from[m15]?title='Wolf" } ] }
+							,{ "percents": [ { "percent": 100, "query": "from[m15]?title='Wolf" } ] }
+							]
+						}
+					}
+				 */
+
+			var outputTemplate =
+				'		,{\n'
+				+ '		"packName": "[[PACKNAME_TOKEN]]",\n'
+				+ '		"packDesc": "[[PACKDESC_TOKEN]]",\n'
+				+ '		"isGenerated": false,\n'
+				+ '		"cards": [\n'
+				+ '[[CARDS_TOKEN]]\n'
+				+ '			]\n'
+				+ '		}\n';
+
+			var outputCardTemplate = '			{ "query": "[[TAKE_TOKEN]]from[[[QUERY_SET_TOKEN]]]?title=[[TITLE_TOKEN]]"[[DUPLICATE_TOKEN]][[INORDER_TOKEN]] }';
+			var outputCardSetTemplate = '			{ "querySet": [\n[[CARDSET_TOKEN]]\n				]\n			}';
+
+			var mismatchedCardsList;
+			var validTitles;
+			var possibleTitles;
+			function validateCardTitle(title) {
+				if (validTitles) {
+					var match = validTitles[title.toLowerCase()];
+					if (match === undefined) {
+						mismatchedCardsList.push(title);
+						return false;
+					}
+				}
+				return true;
+			}
+
+			$('input#process').on('click', function () {
+				var cardsMainJson = $('#cards-json').val();
+
+				// if cardsMain.json was supplied, fetch it
+				if (cardsMainJson && cardsMainJson.length > 0) {
+					validTitles = undefined;
+					$.getJSON(cardsMainJson, function (data) {
+						validTitles = [];
+						possibleTitles = [];
+						$.each(data, function (index, card) {
+							validTitles[card.title.toLowerCase()] = card.title;
+							possibleTitles.push(card.title);
+						});
+						//console.log('loaded json:',validTitles);
+					});
+					waitUntilCardsJsonLoaded();
+				}
+				else {
+					processCards();
+				}
+
+				return false;
+			});
+
+			function waitUntilCardsJsonLoaded() {
+				if (validTitles === undefined) {
+					setTimeout(waitUntilCardsJsonLoaded, 1000); // check again in a second
+				}
+				else {
+					processCards();
+				}
+			}
+
+			function processCards() {
+				var packName = $('#pack-name').val();
+				var packDesc = $('#pack-desc').val();
+				var querySet = $('#query-set').val();
+				var minCardCount = parseInt($('#min-card-count').val(), 10);
+				var inputDecklist = $('#input-decklist').val().trim();
+				var deckListLines = inputDecklist.split(/\n/);
+
+				if (packName.trim().length < 1 && packDesc.trim().length > 0) {
+					packName = friendly_url(packDesc.trim(), 256);
+					$('#pack-name').val(packName);
+				}
+
+				if (minCardCount === NaN) {
+					alert("Minimum acceptable card count must be a number!");
+					minCardCount = 15;
+				}
+
+				var autoCorrectCardNames = $('#auto-correct-cards').is(':checked');
+
+				var outputSetTemplate;
+				var outputText = '';
+				mismatchedCardsList = [];
+
+				var totalCount = 0;
+
+				// either cards or packs will be populated by the end
+				var cards = [];
+				var packs = [[], [], [], [], []];
+
+				// Try basic import of the format:
+				// 	1 Hypnotic Siren
+				// 	2 Leafcrown Dryad
+				// 	2 Omenspeaker
+				// 	3 Vaporkin
+				var card, take, duplicate, parts, title;
+				for (var i = 0; i < deckListLines.length; i++) {
+					var parts = deckListLines[i].trim().split(' ');
+					if (parts.length > 1) {
+						var count = parseInt(parts[0], 10);
+						if (!isNaN((count))) {
+							take = (count > 1) ? 'take[' + count + ']>' : '';
+							duplicate = (count > 1) ? ', "canBeDuplicate": true' : '';
+							title = parts.slice(1).join(' ').replace("'", "\u2019").trim(); // Unicode escape \u2019 = right single quotation mark: ’
+							var isValid = validateCardTitle(title);
+							if (!isValid && autoCorrectCardNames) {
+								var closestTitles = title.related(10, possibleTitles); // max LD distance = 10
+								if (closestTitles.length > 0) {
+									title = closestTitles[0].s;
+								}
+							}
+							card = outputCardTemplate
+								.replace('[[TAKE_TOKEN]]', take)
+								.replace('[[QUERY_SET_TOKEN]]', querySet)
+								.replace('[[TITLE_TOKEN]]', "'" + title + "'")
+								.replace('[[DUPLICATE_TOKEN]]', duplicate)
+								.replace('[[INORDER_TOKEN]]', '');
+							cards.push(card);
+							totalCount += count;
+						}
+					}
+				}
+
+				if (cards.length < 1) {
+					// if no cards are found, process it again assuming there are no numbers in front of the cards, i.e.: it's just singles
+					// this will output it all in a single query statement, like this:
+					// 		take[*]>from[rtr]?title=(Isperia, Supreme Judge|Judge's Familiar|Syncopate|Azorius Justiciar|Sunspire Griffin|Inspiration|Avenging Arrow|Cancel|Search Warrant|Inaction Injunction|Keening Apparition|Tower Drake|Hussar Patrol|Trained Caracal)
+
+					// if there is a tab in the first line we'll assume it's copied from brine (MTG Salvation) (or brinelol on reddit)'s spreadsheet: https://docs.google.com/spreadsheet/ccc?key=0Apln2HM4aSGbdDJ6MFk5cTBjb09sXzFWdndhTkx2V1E#gid=0
+					if (deckListLines[0].indexOf('\t') !== -1) {
+						/* this is going to contain columns of cards separated by tabs like this:
+						WHITE	BLUE	BLACK	RED	GREEN
+						PACK 1	PACK 1	PACK 1	PACK 1	PACK 1
+						Soul of Theros	Soul of Ravnica	Soul of Innistrad	Soul of Shandalar	Soul of Zendikar
+						Oreskos Swiftclaw	Fugitive Wizard	Witch's Familiar	Goblin Roughrider	Runeclaw Bear
+						Wall of Limbs	Rogue's Gloves	Might Makes Right	Meteorite	Back to Nature
+						Ajani's Pridemate	Illusory Angel	Endless Obedience	Might Makes Right	Devouring Light
+						Staff of the Sun Magus	Wall of Mulch	Brawler's Plate	Turn to Frog	Gravedigger
+						...	...	...	...	...
+
+						we want:
+						colourSets : {
+							"white": [ [one,two,three,four], [five,six,seven,eight], ... ]
+							,"blue": [ [one,two,three,four], [five,six,seven,eight], ... ]
+							,"black": [ [one,two,three,four], [five,six,seven,eight], ... ]
+							,"red": [ [one,two,three,four], [five,six,seven,eight], ... ]
+							,"green": [ [one,two,three,four], [five,six,seven,eight], ... ]
+						}
+
+						We're also going to simplify this by ASSUMING you've pasted in the whole thing: 5 cols, starting with white and ending with blue
+						*/
+						var cols, cell, cellLower, currColour, deckListLineLower;
+						var packNum = -1;
+						var colourSets = [];
+						for (var i = 0; i < deckListLines.length; i++) {
+							deckListLineLower = deckListLines[i].toLowerCase();
+							if (deckListLineLower.indexOf('pack ') === 0) {
+								packNum++;
+							}
+							else if (deckListLineLower.indexOf("white\t") === -1) { // ignore the header row
+								cols = deckListLines[i].split('\t');
+								for (var j = 0; j < cols.length; j++) {
+									cell = cols[j].trim();
+									cellLower = cell.toLowerCase();
+									if (cellLower.length > 0 && cellLower.indexOf('http') === -1) {
+										// normal card
+										if (packs[j][packNum] === undefined) {
+											packs[j][packNum] = [];
+										}
+										var isValid = validateCardTitle(cell);
+										if (!isValid && autoCorrectCardNames) {
+											var closestTitles = cell.related(10, possibleTitles); // max LD distance = 10
+											if (closestTitles.length > 0) {
+												cell = closestTitles[0].s;
+											}
+										}
+										packs[j][packNum].push(cell);
+										totalCount++;
+									}
+									else if (cellLower.length > 0) {
+										console.log("ignoring cell: " + cell);
+									}
+								}
+							}
+						}
+					}
+					else {
+						// otherwise we'll assume it's no counts before the cards meaning one of each card, e.g.:
+						// 	Hypnotic Siren
+						// 	Leafcrown Dryad
+						// 	Omenspeaker
+						// 	Vaporkin
+						var deckListLine;
+						var singleCards = [];
+						for (var i = 0; i < deckListLines.length; i++) {
+							deckListLine = deckListLines[i].trim();
+							if (deckListLine.length > 0) {
+								var isValid = validateCardTitle(deckListLine);
+								if (!isValid && autoCorrectCardNames) {
+									var closestTitles = deckListLine.related(10, possibleTitles); // max LD distance = 10
+									if (closestTitles.length > 0) {
+										deckListLine = closestTitles[0].s;
+									}
+								}
+								singleCards.push(deckListLine);
+								totalCount++;
+							}
+						}
+						if (singleCards.length > 0) {
+							card = outputCardTemplate
+								.replace('[[TAKE_TOKEN]]', 'take[*]>')
+								.replace('[[QUERY_SET_TOKEN]]', querySet)
+								.replace('[[TITLE_TOKEN]]', '(' + singleCards.join('|') + ')')
+								.replace('[[DUPLICATE_TOKEN]]', '')
+								.replace('[[INORDER_TOKEN]]', ', "inOrder": true');
+							cards.push(card);
+							//KILL:	.replace('[[TITLE_TOKEN]]','('+singleCards.join('|').replace("'","’")+')')  // Unicode escape \u2019 = right single quotation mark: ’
+						}
+					}
+				}
+				if (cards.length > 0) {
+					outputSetTemplate = outputTemplate.replace('[[PACKNAME_TOKEN]]', packName).replace('[[PACKDESC_TOKEN]]', packDesc);
+					outputText = outputSetTemplate.replace('[[CARDS_TOKEN]]', cards.join(',\n'));
+				}
+				else if (packs[0].length > 0) {
+					var outputPacksText, titles, outputSetsText, outputSetTemplate2;
+					var colours = ['white', 'blue', 'black', 'red', 'green'];
+					for (var i = 0; i < packs.length; i++) {
+						outputPacksText = [];
+						for (var j = 0; j < packs[i].length; j++) {
+							if (packs[i][j].length >= minCardCount) {
+								titles = "(" + packs[i][j].join('|') + ")";
+								// template from above for reference: { "query": "[[TAKE_TOKEN]]from[[[QUERY_SET_TOKEN]]]?title=[[TITLE_TOKEN]]"[[DUPLICATE_TOKEN]][[INORDER_TOKEN]] }
+								outputPacksText.push('\t' + outputCardTemplate
+									.replace('[[TAKE_TOKEN]]', 'take[*]>')
+									.replace('[[QUERY_SET_TOKEN]]', querySet)
+									.replace('[[TITLE_TOKEN]]', titles)
+									.replace('[[DUPLICATE_TOKEN]]', '')
+									.replace('[[INORDER_TOKEN]]', ', "inOrder": true')
+								);
+							}
+							else {
+								console.warn("Not outputting pack as it only has " + packs[i][j].length + " entries (fewer than minCardCount's cutoff of " + minCardCount + "):", packs[i][j]);
+							}
+						}
+						outputSetsText = outputCardSetTemplate.replace('[[CARDSET_TOKEN]]', outputPacksText.join(',\n'));
+						outputSetTemplate2 = outputTemplate.replace('[[PACKNAME_TOKEN]]', colours[i]).replace('[[PACKDESC_TOKEN]]', packDesc);
+						outputText += outputSetTemplate2.replace('[[CARDS_TOKEN]]', outputSetsText);
+					}
+				}
+				else {
+					alert("ERROR: no cards found!");
+				}
+
+				$('#output-query').val(outputText);
+
+				var output = "<strong>" + totalCount + " cards processed</strong> at " + (new Date());
+				var mismatchedCardTitles = '';
+				var closestTitles, closestTitle;
+				if (mismatchedCardsList && mismatchedCardsList.length > 0) {
+					output += "<p><strong>" + mismatchedCardsList.length + " Mismatched Card Titles:</strong> <em>(formatted for Reddit markdown)</em></p><ul>";
+					$.each(mismatchedCardsList, function (index, title) {
+						closestTitles = title.related(10, possibleTitles); // max LD distance = 10
+						closestTitle = (closestTitles.length > 0) ? closestTitles[0].s : "[nothing close!]";
+						output += "<li>* " + title + " -> " + closestTitle + "<br/><br/></li>";
+					});
+					output += "</ul>";
+				}
+				$('#msg').html(output);
+			}
+
+			// from: http://guegue.net/friendlyURL_JS
+			function friendly_url(str, max) {
+				if (max === undefined) max = 32;
+				var a_chars = new Array(
+					new Array("a", /[áàâãªÁÀÂÃ]/g),
+					new Array("e", /[éèêÉÈÊ]/g),
+					new Array("i", /[íìîÍÌÎ]/g),
+					new Array("o", /[òóôõºÓÒÔÕ]/g),
+					new Array("u", /[úùûÚÙÛ]/g),
+					new Array("c", /[çÇ]/g),
+					new Array("n", /[Ññ]/g)
+				);
+				// Replace vowel with accent without them
+				for (var i = 0; i < a_chars.length; i++)
+					str = str.replace(a_chars[i][1], a_chars[i][0]);
+				// first replace whitespace by -, second remove repeated - by just one, third turn in low case the chars,
+				// fourth delete all chars which are not between a-z or 0-9, fifth trim the string and
+				// the last step truncate the string to 32 chars
+				return str.replace(/\s+/g, '-').toLowerCase().replace(/[^a-z0-9\-]/g, '').replace(/\-{2,}/g, '-').replace(/(^\s*)|(\s*$)/g, '').substr(0, max);
+			};
+
+			String.prototype.levenshtein =
+				function (t) {
+					// ith character of s
+					var si;
+					// cost
+					var c;
+					// Step 1
+					var n = this.length;
+					var m = t.length;
+					if (!n)
+						return m;
+					if (!m)
+						return n;
+					// Matrix
+					var mx = [];
+					// Step 2 - Init matrix
+					for (var i = 0; i <= n; i++) {
+						mx[i] = [];
+						mx[i][0] = i;
+					}
+					for (var j = 0; j <= m; j++)
+						mx[0][j] = j;
+					// Step 3 - For each character in this
+					for (var i = 1; i <= n; i++) {
+						si = this.charAt(i - 1);
+						// Step 4 - For each character in t do step 5 (si == t.charAt(j - 1) ? 0 : 1) and 6
+						for (var j = 1; j <= m; j++)
+							mx[i][j] = Math.min(mx[i - 1][j] + 1, mx[i][j - 1] + 1, mx[i - 1][j - 1] + (si == t.charAt(j - 1) ? 0 : 1));
+					}
+					// Step 7
+					return mx[n][m];
+				};
+
+			String.prototype.related =
+				function (t, d) {
+					var ld;
+					// Return this array
+					var a = [];
+					// Length of dictionary
+					var l = d.length;
+					// for each entry in the dictionary
+					for (var i = 0; i < l; i++) {
+						// If LD of calling string and string at a[i]
+						// is less than t then include a[i] in result
+						ld = this.levenshtein(d[i]);
+						if (ld <= t) {
+							// Save LD and string as we need LD to sort later
+							a.push({ ld: ld, s: d[i] });
+						}
+					}
+					// Sort by LD ascending
+					a.sort(function (a, b) { return a.ld - b.ld });
+					return a;
+				};
+
+		});</script>
+</body>
+</html>

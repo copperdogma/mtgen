@@ -1,0 +1,635 @@
+{
+  "setCode": "j22",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/news/feature/jumpstart-2022-booster-themes-and-card-lists",
+  "_comments": [
+    "add a new card = add:true, newValues {}",
+    "delete a card  = delete:true, where",
+    "update card(s) = where, newValues {}",
+    "select cards starting with a value = where: type~='Snow'",
+    "get card directly from Gatherer = where: gatherer='Serra Angel'"
+  ],
+
+  "exceptions": [
+    {
+      "_comment": {
+        "generatedUsing": "card-exception-generator.html",
+        "settings": {
+          "setCode": "j22",
+          "cardImageUrl": "https://magic.wizards.com/en/news/feature/jumpstart-2022-booster-themes-and-card-lists",
+          "requiredImageWidth": "265",
+          "requiredImageHeight": "370",
+          "startingCardNum": "",
+          "cardPattern": "009|c|Theme Description|Vehicles\n005|c|Theme Description|Knights\n003|c|Theme Description|Constellation\nx\n008|c|Theme Description|Teamwork\nx\n007|c|Theme Description|Spirits\nx\n001|c|Theme Description|Blink\nx3\n002|c|Theme Description|Cats\nx3\n006|c|Theme Description|Law\nx3\n004|c|Theme Description|Holy\nx3\n016|c|Theme Description|Shapeshifters\n017|c|Theme Description|Snow\n012|c|Theme Description|Go to School\nx\n015|c|Theme Description|Scrying\nx\n011|c|Theme Description|Faeries\nx\n014|c|Theme Description|Merfolk\nx3\n010|c|Theme Description|Detective\nx3\n016|c|Theme Description|Think Again\nx3\n013|c|Theme Description|Inventive\nx3\n026|c|Theme Description|Unlucky Thirteen\n025|c|Theme Description|Rats\n021|c|Theme Description|Demons\nx\n019|c|Theme Description|Boneyard\nx\n024|c|Theme Description|Morbid\nx\n020|c|Theme Description|Cruel\nx3\n022|c|Theme Description|Fangs\nx3\n027|c|Theme Description|Zombies\nx3\n023|c|Theme Description|Gross\nx3\n035|c|Theme Description|Spicy\n034|c|Theme Description|Speedy\n030|c|Theme Description|Experimental\nx\n029|c|Theme Description|Dragons\nx\n026|c|Theme Description|Cycling\nx\n032|c|Theme Description|Goblins\nx3\n036|c|Theme Description|Treasure\nx3\n031|c|Theme Description|Fiery\nx3\n033|c|Theme Description|Raid\nx3\n037|c|Theme Description|Eldrazi\n044|c|Theme Description|Primates\n043|c|Theme Description|Multi-Headed\nx\n040|c|Theme Description|Gigantic\nx\n042|c|Theme Description|Landfall\nx2\n036|c|Theme Description|Elves\nx3\n045|c|Theme Description|Wolves\nx3\n039|c|Theme Description|Ferocious\nx3\n041|c|Theme Description|Insects\nx3\n046|c|Theme Description|Urza's"
+        }
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_Syvjy4p7Gn.png",
+        "num": "001",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Blink",
+        "subtype": "Blink",
+        "numInt": 1
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_5pdGRS0Wq9.png",
+        "num": "002",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Cats",
+        "subtype": "Cats",
+        "numInt": 2
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_b2TEbv8hWw.png",
+        "num": "003",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Constellation",
+        "subtype": "Constellation",
+        "numInt": 3
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_mYElNsAgRn.png",
+        "num": "004",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Holy",
+        "subtype": "Holy",
+        "numInt": 4
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_95R9cA3QOc.png",
+        "num": "005",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Knights",
+        "subtype": "Knights",
+        "numInt": 5
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_fcGJOaNYoX.png",
+        "num": "006",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Law",
+        "subtype": "Law",
+        "numInt": 6
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_BqHy0Ajd1Y.png",
+        "num": "007",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Spirits",
+        "subtype": "Spirits",
+        "numInt": 7
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_8dd1IYD4rp.png",
+        "num": "008",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Teamwork",
+        "subtype": "Teamwork",
+        "numInt": 8
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_gsj0DDJJ4n.png",
+        "num": "009",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Vehicles",
+        "subtype": "Vehicles",
+        "numInt": 9
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_8kK2JBngYV.png",
+        "num": "010",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Detective",
+        "subtype": "Detective",
+        "numInt": 10
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_TT8hjazfeO.png",
+        "num": "011",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Faeries",
+        "subtype": "Faeries",
+        "numInt": 11
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_bOCQ0cI1jU.png",
+        "num": "012",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Go to School",
+        "subtype": "Go to School",
+        "numInt": 12
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_nDZISDYa51.png",
+        "num": "013",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Inventive",
+        "subtype": "Inventive",
+        "numInt": 13
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_09tLQDx0LM.png",
+        "num": "014",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Merfolk",
+        "subtype": "Merfolk",
+        "numInt": 14
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_snBZwSYwOX.png",
+        "num": "015",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Scrying",
+        "subtype": "Scrying",
+        "numInt": 15
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_QRb9V3HbIr.png",
+        "num": "016",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Shapeshifters",
+        "subtype": "Shapeshifters",
+        "numInt": 16,
+        "mtgenVariant": 1,
+        "duplicateNum": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_XTMNELvdP9.png",
+        "num": "016",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Think Again",
+        "subtype": "Think Again",
+        "numInt": 16,
+        "mtgenVariant": 2,
+        "duplicateNum": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_DYKxJeSUe8.png",
+        "num": "017",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Snow",
+        "subtype": "Snow",
+        "numInt": 17
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_dUmvjxwySg.png",
+        "num": "019",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Boneyard",
+        "subtype": "Boneyard",
+        "numInt": 19
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_WPGmvClrMu.png",
+        "num": "020",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Cruel",
+        "subtype": "Cruel",
+        "numInt": 20
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_H9EGVHsUpj.png",
+        "num": "021",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Demons",
+        "subtype": "Demons",
+        "numInt": 21
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_g6Y16Eis2m.png",
+        "num": "022",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Fangs",
+        "subtype": "Fangs",
+        "numInt": 22
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_8BXj9hL6gw.png",
+        "num": "023",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Gross",
+        "subtype": "Gross",
+        "numInt": 23
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_SyHWKyZR5i.png",
+        "num": "024",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Morbid",
+        "subtype": "Morbid",
+        "numInt": 24
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_DtM8MUfNRm.png",
+        "num": "025",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Rats",
+        "subtype": "Rats",
+        "numInt": 25
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_l8fDWLWxPw.png",
+        "num": "026",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Unlucky Thirteen",
+        "subtype": "Unlucky Thirteen",
+        "numInt": 26,
+        "mtgenVariant": 1,
+        "duplicateNum": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_oNgxIlQDw1.png",
+        "num": "026",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Cycling",
+        "subtype": "Cycling",
+        "numInt": 26,
+        "mtgenVariant": 2,
+        "duplicateNum": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_So37UbpubU.png",
+        "num": "027",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Zombies",
+        "subtype": "Zombies",
+        "numInt": 27
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_pLPQyeFTO1.png",
+        "num": "029",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Dragons",
+        "subtype": "Dragons",
+        "numInt": 29
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_DSGIsg6NJS.png",
+        "num": "030",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Experimental",
+        "subtype": "Experimental",
+        "numInt": 30
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_kIuvvDQ39M.png",
+        "num": "031",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Fiery",
+        "subtype": "Fiery",
+        "numInt": 31
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_up0mooodGe.png",
+        "num": "032",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Goblins",
+        "subtype": "Goblins",
+        "numInt": 32
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_Hlue9DDye6.png",
+        "num": "033",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Raid",
+        "subtype": "Raid",
+        "numInt": 33
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_giEclrGl4t.png",
+        "num": "034",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Speedy",
+        "subtype": "Speedy",
+        "numInt": 34
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_6zpgD0gbj2.png",
+        "num": "035",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Spicy",
+        "subtype": "Spicy",
+        "numInt": 35
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_3y2I66MOev.png",
+        "num": "036",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Treasure",
+        "subtype": "Treasure",
+        "numInt": 36,
+        "mtgenVariant": 1,
+        "duplicateNum": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_okmSsY42Bh.png",
+        "num": "036",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Elves",
+        "subtype": "Elves",
+        "numInt": 36,
+        "mtgenVariant": 2,
+        "duplicateNum": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_0LMOfCjO8Y.png",
+        "num": "037",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Eldrazi",
+        "subtype": "Eldrazi",
+        "numInt": 37
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_tiYVmR69LI.png",
+        "num": "039",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Ferocious",
+        "subtype": "Ferocious",
+        "numInt": 39
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_Duge7XycwN.png",
+        "num": "040",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Gigantic",
+        "subtype": "Gigantic",
+        "numInt": 40
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_v80dBRLITl.png",
+        "num": "041",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Insects",
+        "subtype": "Insects",
+        "numInt": 41
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_unn3WLxGGT.png",
+        "num": "042",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Landfall",
+        "subtype": "Landfall",
+        "numInt": 42
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_rIzv15jKTL.png",
+        "num": "043",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Multi-Headed",
+        "subtype": "Multi-Headed",
+        "numInt": 43
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_ZzqmGFsgH5.png",
+        "num": "044",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Primates",
+        "subtype": "Primates",
+        "numInt": 44
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "set": "j22",
+        "src": "https://media.wizards.com/2022/j22/en_t5ITarkwOo.png",
+        "num": "045",
+        "colour": "c",
+        "type": "Theme Description",
+        "title": "Wolves",
+        "subtype": "Wolves",
+        "numInt": 45
+      }
+    },
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "rarity": "c",
+        "num": "{{num}}/045 F",
+        "token": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}

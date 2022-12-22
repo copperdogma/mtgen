@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <title>Magic: The Gathering: Deck IMPORTER</title>
+    <link rel='stylesheet' href='style.css' type='text/css' />
+</head>
+<body class="home">
+    <h1>Magic: The Gathering: Deck IMPORTER</h1>
+    <p>This page imports deck data from web pages, specifically from wotc.</p>
+    <ul>
+        <li>13-Dec-2022: Created for J22.</li>
+    </ul>
+    <br />
+    <h2 id='local-error' class='error' style="display:none">NOTE: You CANNOT run this thing locally. It won't work. It needs to run through the proxy to work.</h2>
+    <section id="options">
+        <label for="pack-name">Pack name, <em>e.g.: 2015-clash-pack-fate</em>:</label>
+        <br />
+        <input id="pack-name" size=50 />
+        <br />
+        <br />
+        <label for="pack-desc">Pack description, <em>e.g.: 2015 Clash Pack: Fate</em>:</label>
+        <br />
+        <input id="pack-desc" size=50 />
+        <br />
+        <br />
+        <label for="url-deck-data">URL from which to import deck(s), <em>e.g.: https://magic.wizards.com/en/news/feature/jumpstart-2022-booster-themes-and-card-lists</em>:</label>
+        <br />
+        <input id="url-deck-data" size="100" />
+        <br />
+        <br />
+        <label for="json-def-name">JSON Def Name, <em>The one you want to use in the generated query, e.g.: j22-main</em>:</label>
+        <br />
+        <input id="json-def-name" />
+        <br />
+        <br />
+        <label for="min-card-count">Minimum acceptable card count in a pack:</label>
+        <br />
+        <input id="min-card-count" value="15" />
+        <br />
+        <br />
+        <label for="url-cards-json">cardsMain.json file (optional) to match incoming cards against, <em>e.g.: http://mtgen.net/j22/cardsMain.json</em>:</label>
+        <br />
+        <input id="url-cards-json" size=100 />
+        <br />
+        <br />
+        <label for="pre-query">First query to include in each deck (optional), <em>e.g.: from[{{setCode}}-tokens]?title='{{deckTitle}}'</em> :</label>
+        <br />
+        <input id="pre-query" size=50 />
+        <br />
+        <br />
+        <label for="post-query">Last query to include in each deck (optional), <em>e.g.: from[{{setCode}}-tokens]?title='{{deckDesc}}'</em> :</label>
+        <br />
+        <input id="post-query" size=50 />
+        <br />
+        <br />
+        <input id="import" type="submit" value="Import Deck(s)" style="font-size:150%" />
+        <br />
+        <p id="status"></p>
+        <p id="msg"></p>
+    </section>
+
+    <h2>Output</h2>
+    <h3>Parsing Log</h3>
+    <section id="log"></section>
+    <h3>Output packs.json Data</h3>
+    <textarea id="out-packs-json" cols="100" rows="20"></textarea>
+    <h3>Output products.json Data</h3>
+    <textarea id="out-products-json" cols="100" rows="20"></textarea>
+
+    <footer>
+        <p>Created by: Cam Marsollier - <a href="mailto:cam.marsollier@gmail.com">cam.marsollier@gmail.com</a></p>
+        <p>Note that this site has no affiliation with <a href="http://www.wizards.com/Magic/">Wizards of the Coast</a>, owner of Magic: The Gathering.</p>
+    </footer>
+    <script src="/lib/mtg-generator-lib.js"></script>
+    <script src="/util/js/deck-importer.js"></script>
+    <script src="//unpkg.com/string-similarity/umd/string-similarity.min.js"></script>
+    <script>'use strict';
+        const deckImporter = new DeckImporter();
+
+        if (window.location.protocol == 'file:') { document.getElementById('local-error').getElementById; }
+
+        async function _startProcessing() {
+            const [logOutput, finalData] = await deckImporter.loadAndProcessAllFiles({
+                deckDataUrl: document.getElementById('url-deck-data').value
+                , packName: document.getElementById('pack-name').value
+                , packDesc: document.getElementById('pack-desc').value
+                , jsonDefName: document.getElementById('json-def-name').value
+                , minCardCount: document.getElementById('min-card-count').value
+                , allowListCardsJsonUrl: document.getElementById('url-cards-json').value
+                , preQuery: document.getElementById('pre-query').value
+                , postQuery: document.getElementById('pre-query').value
+            });
+
+            document.getElementById('log').innerHTML = logOutput.length > 0 ? logOutput : '<em>No logs, warnings, or errors.</em>';
+
+            document.getElementById('msg').innerHTML =
+                `${finalData.deckCount} decks (with ${finalData.totalCardCount} cards) created from ${document.getElementById('url-deck-data').value}</br></br>
+                         <strong>Final packs.json output generated at ${(new Date())}.</strong>`;
+            document.getElementById('status').innerHTML = `<strong>Processing complete at ${(new Date())}</strong>`;
+            document.getElementById('out-packs-json').value = finalData.packsJson;
+            document.getElementById('out-products-json').value = finalData.productsJson;
+        }
+
+        document.getElementById('import').addEventListener('click', _startProcessing);
+
+        window.addEventListener('data-loading', () => document.getElementById('status').innerHTML = `<strong>Data load started at ${(new Date())}</strong>`, false);
+
+        window.addEventListener('data-loaded', () => {
+            document.getElementById('status').innerHTML = `<strong>Have data; now processing at ${(new Date())}</strong>`;
+            document.getElementById('out-packs-json').value = '';
+            document.getElementById('log').innerHTML = '';
+        }, false);</script>
+</body>
+</html>
