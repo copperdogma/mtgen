@@ -1759,72 +1759,70 @@ var mtgGen = (function (my) {
         return str.replace(/\s+/g, '-').toLowerCase().replace(/[^a-z0-9\-]/g, '').replace(/\-{2,}/g, '-').replace(/(^\s*)|(\s*$)/g, '').substr(0, max);
     };
 
+    String.prototype.levenshtein =
+        function (t) {
+            // ith character of s
+            var si;
+            // cost
+            var c;
+            // Step 1
+            var n = this.length;
+            var m = t.length;
+            if (!n)
+                return m;
+            if (!m)
+                return n;
+            // Matrix
+            var mx = [];
+            // Step 2 - Init matrix
+            for (var i = 0; i <= n; i++) {
+                mx[i] = [];
+                mx[i][0] = i;
+            }
+            for (var j = 0; j <= m; j++)
+                mx[0][j] = j;
+            // Step 3 - For each character in this
+            for (var i = 1; i <= n; i++) {
+                si = this.charAt(i - 1);
+                // Step 4 - For each character in t do step 5 (si == t.charAt(j - 1) ? 0 : 1) and 6
+                for (var j = 1; j <= m; j++)
+                    mx[i][j] = Math.min(mx[i - 1][j] + 1, mx[i][j - 1] + 1, mx[i - 1][j - 1] + (si == t.charAt(j - 1) ? 0 : 1));
+            }
+            // Step 7
+            return mx[n][m];
+        };
+
+    // Find a closely matching string from the given array.
+    //
+    // levenshteinDistance: Measure of how closely the string must match. The minimum number of single-character edits required to change one word into the other.
+    //                      i.e.: The lower the number, the more closely they must match. A good happy medium is around 10.
+    // possibleMatchArray: Array of strings we'll try to match against.
+    String.prototype.related =
+        function (levenshteinDistance, possibleMatchArray) {
+            var ld;
+            // Return this array
+            var a = [];
+            // Length of dictionary
+            var l = possibleMatchArray.length;
+            // for each entry in the dictionary
+            for (var i = 0; i < l; i++) {
+                // If LD of calling string and string at a[i]
+                // is less than t then include a[i] in result
+                ld = this.levenshtein(possibleMatchArray[i]);
+                if (ld <= levenshteinDistance) {
+                    // Save LD and string as we need LD to sort later
+                    a.push({ ld: ld, s: possibleMatchArray[i] });
+                }
+            }
+            // Sort by LD ascending
+            a.sort(function (a, b) { return a.ld - b.ld });
+            return a;
+        };
+
     return my;
 }(mtgGen || {}));
 
-//TODO: Fix this merge conflict
 // export self when in Node.js
 if (typeof(module) == 'object') {
     module.exports = mtgGen;
 }
-=======
-String.prototype.levenshtein =
-    function (t) {
-        // ith character of s
-        var si;
-        // cost
-        var c;
-        // Step 1
-        var n = this.length;
-        var m = t.length;
-        if (!n)
-            return m;
-        if (!m)
-            return n;
-        // Matrix
-        var mx = [];
-        // Step 2 - Init matrix
-        for (var i = 0; i <= n; i++) {
-            mx[i] = [];
-            mx[i][0] = i;
-        }
-        for (var j = 0; j <= m; j++)
-            mx[0][j] = j;
-        // Step 3 - For each character in this
-        for (var i = 1; i <= n; i++) {
-            si = this.charAt(i - 1);
-            // Step 4 - For each character in t do step 5 (si == t.charAt(j - 1) ? 0 : 1) and 6
-            for (var j = 1; j <= m; j++)
-                mx[i][j] = Math.min(mx[i - 1][j] + 1, mx[i][j - 1] + 1, mx[i - 1][j - 1] + (si == t.charAt(j - 1) ? 0 : 1));
-        }
-        // Step 7
-        return mx[n][m];
-    };
-
-// Find a closely matching string from the given array.
-//
-// levenshteinDistance: Measure of how closely the string must match. The minimum number of single-character edits required to change one word into the other.
-//                      i.e.: The lower the number, the more closely they must match. A good happy medium is around 10.
-// possibleMatchArray: Array of strings we'll try to match against.
-String.prototype.related =
-    function (levenshteinDistance, possibleMatchArray) {
-        var ld;
-        // Return this array
-        var a = [];
-        // Length of dictionary
-        var l = possibleMatchArray.length;
-        // for each entry in the dictionary
-        for (var i = 0; i < l; i++) {
-            // If LD of calling string and string at a[i]
-            // is less than t then include a[i] in result
-            ld = this.levenshtein(possibleMatchArray[i]);
-            if (ld <= levenshteinDistance) {
-                // Save LD and string as we need LD to sort later
-                a.push({ ld: ld, s: possibleMatchArray[i] });
-            }
-        }
-        // Sort by LD ascending
-        a.sort(function (a, b) { return a.ld - b.ld });
-        return a;
-    };
-

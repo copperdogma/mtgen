@@ -512,7 +512,6 @@ var mtgGen = (function (my) {
             this.isGenerated = this.options.isGenerated || false;
             this.hasOptions = (this.hasOwnProperty('options') && this.options.hasOwnProperty('options'));
             this.hasPackPresets = (this.hasOptions && this.options.options.hasOwnProperty('presets'));
-            this.hasButtonOptions = (this.hasOptions && this.options.options.hasOwnProperty('buttons'));
 
             return this;
         }
@@ -553,10 +552,6 @@ var mtgGen = (function (my) {
                 events["click #product-content ." + this.productName + " .options .remove-input"] = "removeBooster";
                 events["click #product-content ." + this.productName + " .options #generate"] = "renderResultsFromOptions";
                 events["click #product-content ." + this.productName + " .options #use-custom-seed"] = "toggleCustomSeed";
-            }
-
-            if (this.hasButtonOptions) {
-                events["click #product-content ." + this.productName + " .options a.button"] = "renderPack";
             }
 
             events["click #product-content ." + this.productName + " .card .transform-button"] = "transformCard";
@@ -809,25 +804,7 @@ var mtgGen = (function (my) {
             return this;
         }
 
-        , renderPack: function (event) {
-            Array.from(event.target.parentNode.querySelectorAll('a.button')).forEach(n => n.classList.remove('active'));
-            event.target.classList.add('active');
-
-            const packName = event.target.getAttribute('data-pack');
-
-            this.generatedSets = [];
-            // TODO: does this need seedRNGFromInput? Is renderPack even used?
-            this.generatedSets.push(my.generateCardSetFromPack(packName));
-
-            this.renderResults(this.generatedSets);
-
-            // Triggers google analytics booster-generation tracking event on index.html
-            window.dispatchEvent(new CustomEvent('cardSetsGenerated', { detail: { setCode: my.setCode } }));
-
-            return false;
-        }
-
-        // Should only be called from renderPack and renderResultsFromOptions
+        // Should only be called from renderResultsFromOptions
         , renderResults: function (sets) {
             this.allCards = sets.reduce((sets, set) => sets.concat(set), []);
             if (sets.length === 1 && sets[0].setDesc) {
