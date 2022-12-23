@@ -47,7 +47,7 @@ Author: Cam Marsollier cam.marsollier@gmail.com
 var mtgGen = (function (my) {
     'use strict';
     // globals
-    my.version = "2.7.1";
+    my.version = "2.7.3";
     my.setData = undefined;
     my.packData = undefined;
     my.cardsData = undefined;
@@ -366,6 +366,7 @@ var mtgGen = (function (my) {
                         my.sets[set.code.substr(0, set.code.length - 1)] = set;
                     }
                 });
+
                 // Add set aliases for any sets we had to suffix with _, like con_.
                 my.set = my.sets[my.setCode.toUpperCase()];
                 if (my.set) {

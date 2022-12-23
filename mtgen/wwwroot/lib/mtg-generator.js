@@ -695,10 +695,17 @@ var mtgGen = (function (my) {
         }
 
         , renderPackPreset: function (allPacks, preset) {
+            // Add custom seed textbox if debug is enabled.
+            // FIXME: when we get proper IDs, the label for should work
+            const customSeedSection = my.flags.debug
+                ? "<section><input id='use-custom-seed' type='checkbox' /><label for='use-custom-seed'>Seed:</label><input id='custom-seed' type='text' disabled='true' /></section>"
+                : "";
+
             // "Live Debug" product where user can type in any query and run it.
             if (allPacks.length == 1 && allPacks[0].packName == 'live-debug-dummy-pack') {
                 let packsOut = "<p>Enter your query:</p>";
                 packsOut += "<textarea id='product-query' cols='60' rows='5'></textarea><br/>";
+                packsOut += customSeedSection;
                 packsOut += "<input id='generate' type='submit' value='Run my query!' />";
                 return packsOut;
             }
@@ -710,43 +717,36 @@ var mtgGen = (function (my) {
                 // FIXME: IDs should *never* be duplicated in the DOM, even in invisible tabs.
                 packsOut += "<button id='add-booster'>Add Booster</button>";
                 packsOut = "<section id='boosters'>" + packsOut + "</section>";
+                packsOut += customSeedSection;
                 packsOut += "<input id='generate' type='submit' value='Generate my sets!' />";
-                packsOut += "<input id='use-custom-seed' type='checkbox' />";
-                // FIXME: when we get proper IDs, the label for should work
-                packsOut += "<label for='use-custom-seed'>Seed:</label>";
-                packsOut += "<input id='custom-seed' type='text' disabled='true' />";
-                packsOut += "<span id='custom-seed-warning' style='display:none'><b>WARNING!</b> Experimental feature!</span>";
                 return packsOut;
             }
         }
 
         , toggleCustomSeed: function () {
-            var curTab = this.getCurrentTab();
-            var newState = curTab.querySelector('#use-custom-seed').checked;
+            const curTab = this.getCurrentTab();
+            const newState = curTab.querySelector('#use-custom-seed').checked;
 
             curTab.querySelector('#custom-seed').disabled = !newState;
-            var disp;
-            if (newState) {
-                disp = 'inline';
-            } else {
-                disp = 'none';
-            }
-            curTab.querySelector('#custom-seed-warning').style = 'display: ' + disp;
         }
 
         , seedRNGFromInput: function () {
-            var curTab = this.getCurrentTab();
-            var useCustom = curTab.querySelector('#use-custom-seed').checked;
+            // Only use the seed if the pack has options (i.e.: will be generated).
+            // Non-generated packs, like All Cards, aren't random and therefore don't need a seed.
+            if (this.hasOptions) {
+                const curTab = this.getCurrentTab();
+                const useCustom = curTab.querySelector('#use-custom-seed').checked;
 
-            var seed;
-            if (useCustom) {
-                seed = curTab.querySelector('#custom-seed').value;
-            } else {
-                seed = my.getRandomSeed();
-                curTab.querySelector('#custom-seed').value = seed;
+                let seed;
+                if (useCustom) {
+                    seed = curTab.querySelector('#custom-seed').value;
+                } else {
+                    seed = my.getRandomSeed();
+                    curTab.querySelector('#custom-seed').value = seed;
+                }
+
+                my.seedRNG(seed);
             }
-
-            my.seedRNG(seed);
         }
 
         , renderResultsFromOptions: function () {
@@ -1438,7 +1438,7 @@ var mtgGen = (function (my) {
     }
 
     function chooseExportFormat(exportType) {
-        var allButtons = document.querySelectorAll('.exporter.modal .export-set a.button');
+        const allButtons = document.querySelectorAll('.exporter.modal .export-set a.button');
         Array.from(allButtons).forEach(b => b.classList.remove('active'));
         document.querySelector('.exporter.modal .export-set a.export-' + exportType).classList.add('active');
 
