@@ -1,54 +1,19 @@
 {
-"_comment": "full product list: http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/1307",
-"_comment": "NOTE: cannot do Intro Packs or Event Deck as they mix different sets",
-"_comment": "if there are no options the query/packNames will be auto-run"
+	"_comment": "full product list: http://archive.wizards.com/Magic/magazine/article.aspx?x=mtg/daily/arcana/1307",
+	"_comment1": "NOTE: cannot do Intro Packs or Event Deck as they mix different sets",
+	"_comment2": "if there are no options the query/packNames will be auto-run",
 
-		,"BAD":{
-			"_comment": "CANNOT USE: it combines mutiple sets"
-			,"productName": "ths-intro-packs"
-			,"productDesc": "Intro Packs"
-			,"isGenerated": false
-			,"autoGenerate": true
-			,"initialSort": "set"
-			,"options" : {
-				"buttons": [
-					{
-						"packName": "ths-intro-pack-favors-from-nyx"
-						,"packDesc": "Theros Intro Pack: Favors From Nyx"
-						,"default": true
-					}
-					,{
-						"packName": "ths-intro-pack-manipulative-monstrosities"
-						,"packDesc": "Theros Intro Pack: Manipulative Monstrosities"
-					}
-					,{
-						"packName": "ths-intro-pack-devotion-to-darkness"
-						,"packDesc": "Theros Intro Pack: Devotion to Darkness"
-					}
-					,{
-						"packName": "ths-intro-pack-blazing-beasts-of-myth"
-						,"packDesc": "Theros Intro Pack: Blazing Beasts of Myth"
-					}
-					,{
-						"packName": "ths-intro-pack-anthousas-army"
-						,"packDesc": "Theros Intro Pack: Anthousas Army"
-					}
-
+	"products": 
+		[
+			{
+				"productName": "ths-all-cards"
+				,"productDesc": "All Cards"
+				,"isGenerated": false
+				,"initialSort": "colour"
+				,"packs": [
+					{ "packName":"ths-all-cards" }
 				]
 			}
-		}
-
-,"products": 
-	[
-		{
-			"productName": "ths-all-cards"
-			,"productDesc": "All Cards"
-			,"isGenerated": false
-			,"initialSort": "colour"
-			,"packs": [
-				{ "packName":"ths-all-cards" }
-			]
-		}
 		,{
 			"productName": "ths-prerelease"
 			,"productDesc": "Prerelease"

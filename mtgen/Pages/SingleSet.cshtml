@@ -71,28 +71,28 @@
     <script src="~/lib/underscore/underscore-min.js"></script>
     <script src="~/lib/backbone/backbone.js"></script>
     <script src="~/lib/tingle/dist/tingle.js?v0.16.0"></script>
-    <script src="~/lib/mtg-generator-lib.js?v2.7.3"></script>
-    <script src="~/lib/mtg-generator.js?v=2.7.3"></script>
+    <script src="~/lib/mtg-generator-lib.js?v3.0.0"></script>
+    <script src="~/lib/mtg-generator-web.js?v3.0.0"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js"></script>
     <script>
         $(document).ready(function () {
-            mtgGen.run({
+            mtgGen.runBrowser({
                 setCode: "@Model.Set.Code"
                 , setFile: "@Model.Set.SetFile"
                 , cardFiles: [ @Html.Raw(string.Join(", ", Model.Set.CardFiles.Select(cardFile => $"'/{Model.Set.Code}/{cardFile}'"))) ]
                 , packFiles: [ @Html.Raw(string.Join(", ", Model.Set.PackFiles.Select(packFile => $"'/{Model.Set.Code}/{packFile}'"))) ]
                 , productFile: "/@Model.Set.Code/@Model.Set.ProductFile"
                 , startProductName: "@Model.Set.StartProductName"
-                , setCardCount: "@Model.Set.CardCount"
+                , drawId: mtgGen.getQuerystringParamByName('drawId')
+                , debug: mtgGen.getQuerystringParamByName('debug')
                 , contentElem: "main"
-                , flags: { debug: mtgGen.getQuerystringParamByName('debug') }
             });
 
             // Modal popup support.
             window.modal = new tingle.modal({});
 
             // Dynamic card loading counts
-            document.querySelector('#card-count .total').textContent = mtgGen.setCardCount;
+            document.querySelector('#card-count .total').textContent = @Model.Set.CardCount;
             const currentCardCountEl = document.querySelector('#card-count .current');
             window.addEventListener('playableCardLoaded', e => currentCardCountEl.textContent = e.detail.setCardsLoadedCount, false);
 
@@ -118,7 +118,7 @@
                 gtag('event', 'LoadDraw', { 'set_code': e.detail.setCode.toUpperCase(), 'product': currProduct.textContent, 'draw_id': e.detail.drawId }), false);
             window.addEventListener('exporting', e =>
                 gtag('event', 'Export', { 'set_code': e.detail.setCode.toUpperCase(), 'product': currProduct.textContent, 'draw_id': e.detail.drawId }), false);
-            
+
             // "Read more" support in top news section
             document.querySelector('aside.info').addEventListener('click', event => {
                 if (event.target.classList.contains('update-more')) {

@@ -1,5 +1,5 @@
 /*
-MtG Generator script v2.7.3
+MtG Generator Web script v3.0.0
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
@@ -26,6 +26,14 @@ Normally 15 cards per booster:
 Quick How Tos:
 - to add a caveat (yellow note banner above), add an array of 'caveats' to the products.json product. See set MID.
 
+20221231: Refactor: implemented github @goblin's changes as v3:
+    - allow mtg-generator-lib.js to run from the command line
+    - generate packs via RNG seeds, allowing the UI to provide them under debug mode
+    - renamed this file from mtg-generator.js to mtg-generator-web.js to reflect its status as one possible interface
+    - removed setCardCount param as it was never used
+    - added main web call (runBrowser())) to this file instead of the main mtg-generatior-lib.js file as it only had browser-specific calls in it
+    - got rid of all HTML IDs that aren't unique, replacing them with classes
+    - refeactored renderInput (now called renderBoosterSelectors) to be simpler, use <template>, and use iteration instead of labelling everything with specific ids and data
 20221216: Can now randomly choose from all packs if products.json/products/options/presets/packs/randomDefaultPackName specified with no array of packs to choose from.
 20221113: No longer crashes on export if a set code doesn't exist in sets.json. Now defaults to using that set code in place of set name.
 20220421: Includes card num on rendered HTML.
@@ -112,6 +120,43 @@ Quick How Tos:
 var mtgGen = (function (my) {
     'use strict';
 
+    /*
+    Initializes MtG Generator for the browser. Main Call.
+
+    @fires  ready                   When all files loaded and .generateCardSets() can be called.
+    @fires  drawLoaded              When the draw, if supplied, is successfully loaded.
+    @fires  playableCardLoaded      Every every time a new playable card is loaded.
+
+    @param {string}         setCode             WotC code for set, e.g.: dgm
+    @param {string}         setFile             Contains set codes and names for all sets
+    @param {Array.<string>} cardFiles           Array of JSON files containing main cards, token cards, other cards (like marketing cards), and you can load card sets from other releases if need be.
+    @param {JSON}           packFiles           JSON file containg pack definitions.
+    @param {JSON}           productFile         JSON file controlling the product tabs and what's inside them
+    @param {JSON}           startProductName    If specified, auto-showTab this product
+    @param {JSON}           drawId              If specified, will attempt to load the saved draw with the given drawId, displaying it to the UI if found
+    @param {bool}           debug               If true, display extra UI elements for debugging
+    @param {string}         contentElem         Selector for the DOM elements the products, options, results, etc will be shown, e.g.: All Cards, Prerelease, Duel Decks, etc.
+
+    */
+    my.runBrowser = function ({ setCode, setFile, cardFiles, packFiles, productFile, startProductName, drawId, debug, contentElem }) {
+
+        // The core of the app in here, the main function from mtg-generator-lib.js.
+        const runPromise = my.run({ setCode, setFile, cardFiles, packFiles, productFile, startProductName, drawId, debug,
+            drawCallback: (data) => { window.dispatchEvent(new CustomEvent('drawLoaded', { detail: data })); },
+            playableCardLoadedCallback: (data) => { window.dispatchEvent(new CustomEvent('playableCardLoaded', { detail: data })); } });
+
+        my.contentElem = document.querySelector(my.getRequiredOption(arguments[0], 'contentElem'));
+
+        runPromise.then(
+            () => {
+                // Render the Main view
+                my.mainView = new my.MainView({ el: my.contentElem });
+                my.mainView.render();
+
+                window.dispatchEvent(new Event('ready'));
+            });
+    };
+
     my.MainView = Backbone.View.extend({
         ProductViews: {}
         , currentView: { name: "none" }
@@ -139,7 +184,7 @@ var mtgGen = (function (my) {
             window.dispatchEvent(new Event('menusInitialized'));
 
             this.el.innerHTML = ''; // Get rid of the Loading message
-            this.el.innerHTML = '<section id="products"></section><section id="product-content"></section><div class="back-to-top"><a class="button top" href="#">Back to top</a></a>';
+            this.el.innerHTML = '<section class="products"></section><section class="product-content"></section><div class="back-to-top"><a class="button top" href="#">Back to top</a></a>';
 
             // Render the initial views
             my.initViews.forEach(view => view.render());
@@ -149,7 +194,7 @@ var mtgGen = (function (my) {
 
             // If there is only one Product view, hide the tab button (we need to render it so it will auto-execute the main Product)
             if (Object.keys(this.ProductViews).length < 2) {
-                document.querySelector('#products>a.button').style.display = 'none';
+                document.querySelector('.products>a.button').style.display = 'none';
             }
 
             // If specified, auto-showTab the startup product from the Draw (if there is one),
@@ -162,7 +207,7 @@ var mtgGen = (function (my) {
                 if (startProduct === undefined) {
                     console.warn(`startProduct '${my.startProductName}' does not exist.`);
                     startProduct = Object.values(this.ProductViews)[0];
-                }        
+                }
                 startProduct.showTab();
             }
             return this;
@@ -173,7 +218,7 @@ var mtgGen = (function (my) {
     // All results should be rendered through this function
     my.displayResults = function (productName, html) {
         window.dispatchEvent(new Event('menusInitialized'));
-        this.contentElem.querySelector('#product-content .' + productName + ' .result').innerHTML = html;
+        this.contentElem.querySelector(`.product-content .${productName} .result`).innerHTML = html;
         setTimeout(() => window.dispatchEvent(new Event('layoutChanged')), 500);
     };
 
@@ -181,8 +226,7 @@ var mtgGen = (function (my) {
     my.renderSetUpdate = function (productName, setID, cards, parentSet) {
         window.dispatchEvent(new Event('menusInitialized'));
         const newSet = my.renderCardSet(setID, cards, parentSet);
-        this.contentElem.querySelector('#product-content .' + productName + ' .result .set[data-setid="' + setID + '"]')
-            .innerHTML = newSet;
+        this.contentElem.querySelector(`.product-content .${productName} .result .set[data-setid='${setID}']`).innerHTML = newSet;
         setTimeout(() => window.dispatchEvent(new Event('layoutChanged')), 500);
     };
 
@@ -289,7 +333,7 @@ var mtgGen = (function (my) {
     my.renderCardSet = function (setID, cards, parentSet, preTitle) {
         preTitle = preTitle || '';
         my.mainView.setMenu.setID = setID;
-        const htmlOut = '<section id="' + my.friendly_url(cards.setDesc) + '-' + setID + '" class="set" data-setid="' + setID + '">'
+        const htmlOut = '<section data-set-info="' + my.friendly_url(cards.setDesc) + '-' + setID + '" class="set" data-setid="' + setID + '">'
             + my.renderCardsTitle(preTitle + cards.setDesc + ' <span class="card-count">(' + cards.length + ')')
             + my.mainView.setMenu.render(cards, parentSet)
             + my.renderCards(cards)
@@ -512,7 +556,6 @@ var mtgGen = (function (my) {
             this.isGenerated = this.options.isGenerated || false;
             this.hasOptions = (this.hasOwnProperty('options') && this.options.hasOwnProperty('options'));
             this.hasPackPresets = (this.hasOptions && this.options.options.hasOwnProperty('presets'));
-            this.hasButtonOptions = (this.hasOptions && this.options.options.hasOwnProperty('buttons'));
 
             return this;
         }
@@ -521,67 +564,64 @@ var mtgGen = (function (my) {
         //      You can no longer modify the events hash or your view's el property in initialize.
         , events: function () {
             let events = {};
-            events["click #products #" + this.typeButtonId] = "showTab";
-            events["click #product-content ." + this.productName + " .sort-all-by-name"] = "sortAllByTitle";
-            events["click #product-content ." + this.productName + " .sort-all-by-colour"] = "sortAllByColour";
-            events["click #product-content ." + this.productName + " .sort-all-by-rarity"] = "sortAllByRarity";
-            events["click #product-content ." + this.productName + " .sort-all-by-cost"] = "sortAllByCost";
-            events["click #product-content ." + this.productName + " .sort-all-by-type"] = "sortAllByType";
-            events["click #product-content ." + this.productName + " .sort-all-by-guild"] = "sortAllByGuild";
-            events["click #product-content ." + this.productName + " .sort-all-by-clan"] = "sortAllByClan";
-            events["click #product-content ." + this.productName + " .sort-all-by-faction"] = "sortAllByFaction";
-            events["click #product-content ." + this.productName + " .sort-all-by-college"] = "sortAllByCollege";
-            events["click #product-content ." + this.productName + " .sort-all-by-family"] = "sortAllByFamily";
-            events["click #product-content ." + this.productName + " .sort-all-by-sets"] = "sortAllBySets";
+            events["click .products #" + this.typeButtonId] = "showTab";
+            events["click .product-content ." + this.productName + " .sort-all-by-name"] = "sortAllByTitle";
+            events["click .product-content ." + this.productName + " .sort-all-by-colour"] = "sortAllByColour";
+            events["click .product-content ." + this.productName + " .sort-all-by-rarity"] = "sortAllByRarity";
+            events["click .product-content ." + this.productName + " .sort-all-by-cost"] = "sortAllByCost";
+            events["click .product-content ." + this.productName + " .sort-all-by-type"] = "sortAllByType";
+            events["click .product-content ." + this.productName + " .sort-all-by-guild"] = "sortAllByGuild";
+            events["click .product-content ." + this.productName + " .sort-all-by-clan"] = "sortAllByClan";
+            events["click .product-content ." + this.productName + " .sort-all-by-faction"] = "sortAllByFaction";
+            events["click .product-content ." + this.productName + " .sort-all-by-college"] = "sortAllByCollege";
+            events["click .product-content ." + this.productName + " .sort-all-by-family"] = "sortAllByFamily";
+            events["click .product-content ." + this.productName + " .sort-all-by-sets"] = "sortAllBySets";
 
-            events["click #product-content ." + this.productName + " .set .sort-by-name"] = "sortByTitle";
-            events["click #product-content ." + this.productName + " .set .sort-by-colour"] = "sortByColour";
-            events["click #product-content ." + this.productName + " .set .sort-by-rarity"] = "sortByRarity";
-            events["click #product-content ." + this.productName + " .set .sort-by-cost"] = "sortByCost";
-            events["click #product-content ." + this.productName + " .set .sort-by-type"] = "sortByType";
-            events["click #product-content ." + this.productName + " .set .sort-by-guild"] = "sortByGuild";
-            events["click #product-content ." + this.productName + " .set .sort-by-clan"] = "sortByClan";
-            events["click #product-content ." + this.productName + " .set .sort-by-faction"] = "sortByFaction";
-            events["click #product-content ." + this.productName + " .set .sort-by-college"] = "sortByCollege";
-            events["click #product-content ." + this.productName + " .set .sort-by-family"] = "sortByFamily";
-            events["click #product-content ." + this.productName + " .set .sort-by-opened"] = "sortSetByOpenedOrder";
+            events["click .product-content ." + this.productName + " .set .sort-by-name"] = "sortByTitle";
+            events["click .product-content ." + this.productName + " .set .sort-by-colour"] = "sortByColour";
+            events["click .product-content ." + this.productName + " .set .sort-by-rarity"] = "sortByRarity";
+            events["click .product-content ." + this.productName + " .set .sort-by-cost"] = "sortByCost";
+            events["click .product-content ." + this.productName + " .set .sort-by-type"] = "sortByType";
+            events["click .product-content ." + this.productName + " .set .sort-by-guild"] = "sortByGuild";
+            events["click .product-content ." + this.productName + " .set .sort-by-clan"] = "sortByClan";
+            events["click .product-content ." + this.productName + " .set .sort-by-faction"] = "sortByFaction";
+            events["click .product-content ." + this.productName + " .set .sort-by-college"] = "sortByCollege";
+            events["click .product-content ." + this.productName + " .set .sort-by-family"] = "sortByFamily";
+            events["click .product-content ." + this.productName + " .set .sort-by-opened"] = "sortSetByOpenedOrder";
 
             if (this.hasPackPresets) {
-                events["click #product-content ." + this.productName + " .presets a.button"] = "switchPreset";
+                events["click .product-content ." + this.productName + " .presets a.button"] = "switchPreset";
 
-                events["click #product-content ." + this.productName + " .options #add-booster"] = "addBooster";
-                events["click #product-content ." + this.productName + " .options .remove-input"] = "removeBooster";
-                events["click #product-content ." + this.productName + " .options #generate"] = "renderResultsFromOptions";
+                events["click .product-content ." + this.productName + " .options .add-booster"] = "addBooster";
+                events["click .product-content ." + this.productName + " .options .remove-input"] = "removeBooster";
+                events["click .product-content ." + this.productName + " .options .generate"] = "renderResultsFromOptions";
+                events["click .product-content ." + this.productName + " .options .use-custom-seed"] = "toggleCustomSeed";
             }
 
-            if (this.hasButtonOptions) {
-                events["click #product-content ." + this.productName + " .options a.button"] = "renderPack";
-            }
-
-            events["click #product-content ." + this.productName + " .card .transform-button"] = "transformCard";
+            events["click .product-content ." + this.productName + " .card .transform-button"] = "transformCard";
 
             return events;
         }
 
         , getCurrentTab: function () {
-            return document.querySelector('#product-content section.active');
+            return document.querySelector('.product-content section.active');
         }
 
         , renderType: function () {
-            this.el.querySelector('#product-content').insertAdjacentHTML('beforeend', "<section class='" + this.productName + "'><section class='options'></section><section class='result' class='stickem-container'></section></section>");
-            this.el.querySelector('#products').insertAdjacentHTML('beforeend', '<a href="#" id="' + this.typeButtonId + '" class="button">' + this.productDesc + '</a>');
+            this.el.querySelector('.product-content').insertAdjacentHTML('beforeend', "<section class='" + this.productName + "'><section class='options'></section><section class='result' class='stickem-container'></section></section>");
+            this.el.querySelector('.products').insertAdjacentHTML('beforeend', '<a href="#" id="' + this.typeButtonId + '" class="button">' + this.productDesc + '</a>');
             return this;
         }
 
         , showTab: function () {
             // Set active tab's css class
-            Array.from(this.el.querySelectorAll('#products .button')).forEach(n => n.classList.remove('active'));
+            Array.from(this.el.querySelectorAll('.products .button')).forEach(n => n.classList.remove('active'));
             this.el.querySelector('#' + this.typeButtonId).classList.add('active');
 
             my.mainView.currentView = this;
 
-            Array.from(this.el.querySelectorAll('#product-content > section')).forEach(n => n.classList.remove('active'));
-            this.el.querySelector('#product-content .' + this.productName).classList.add('active');
+            Array.from(this.el.querySelectorAll('.product-content > section')).forEach(n => n.classList.remove('active'));
+            this.el.querySelector('.product-content .' + this.productName).classList.add('active');
 
             // Render the options if not already done, hide old tab, show new tab
             if (!this.isInitialized) {
@@ -699,22 +739,56 @@ var mtgGen = (function (my) {
         }
 
         , renderPackPreset: function (allPacks, preset) {
+            // Add custom seed textbox if debug is enabled.
+            const customSeedSection = my.debug
+                ? "<section><label><input class='use-custom-seed' type='checkbox' />Seed:</label><input class='custom-seed' type='text' disabled='true' /></section>"
+                : "";
+
             // "Live Debug" product where user can type in any query and run it.
             if (allPacks.length == 1 && allPacks[0].packName == 'live-debug-dummy-pack') {
                 let packsOut = "<p>Enter your query:</p>";
-                packsOut += "<textarea id='product-query' cols='60' rows='5'></textarea><br/>";
-                packsOut += "<input id='generate' type='submit' value='Run my query!' />";
+                packsOut += "<textarea class='product-query' cols='60' rows='5'></textarea><br/>";
+                packsOut += customSeedSection;
+                packsOut += "<input class='generate' type='submit' value='Run my query!' />";
                 return packsOut;
             }
             else {
                 // Regular product packs.
-                let packsOut = preset.packs.reduce((packString, pack, packIndex) => { return packString += this.renderInput(allPacks, pack, packIndex); }, '');
+                let packsOut = preset.packs.reduce((packString, pack, packIndex) => { return packString += this.renderBoosterSelectors(allPacks, pack, packIndex); }, '');
 
-                packsOut += this.renderInput(allPacks); // Will render a booster template for dynamic js addition
-                packsOut += "<button id='add-booster'>Add Booster</button>";
-                packsOut = "<section id='boosters'>" + packsOut + "</section>";
-                packsOut += "<input id='generate' type='submit' value='Generate my sets!' />";
+                packsOut += this.renderBoosterSelectors(allPacks); // Will render a booster template for dynamic js addition
+
+                packsOut += "<button class='add-booster'>Add Booster</button>";
+                packsOut = "<section class='boosters'>" + packsOut + "</section>";
+                packsOut += customSeedSection;
+                packsOut += "<input class='generate' type='submit' value='Generate my sets!' />";
                 return packsOut;
+            }
+        }
+
+        , toggleCustomSeed: function () {
+            const curTab = this.getCurrentTab();
+            const newState = curTab.querySelector('.use-custom-seed').checked;
+
+            curTab.querySelector('.custom-seed').disabled = !newState;
+        }
+
+        , seedRNGFromInput: function () {
+            // Only use the seed if the pack has options (i.e.: will be generated) and debug is enabled.
+            // Non-generated packs, like All Cards, aren't random and therefore don't need a seed.
+            if (this.hasOptions && my.debug) {
+                const curTab = this.getCurrentTab();
+                const useCustom = curTab.querySelector('.use-custom-seed').checked;
+
+                let seed;
+                if (useCustom) {
+                    seed = curTab.querySelector('.custom-seed').value;
+                } else {
+                    seed = my.getRandomSeed();
+                    curTab.querySelector('.custom-seed').value = seed;
+                }
+
+                my.seedRNG(seed, useCustom);
             }
         }
 
@@ -740,14 +814,14 @@ var mtgGen = (function (my) {
             }
             // Live Debug tab with a text box that lets the user enter a query to run live
             else if (this.options.productName == 'product-live-debug') {
-                const debugQuery = this.getCurrentTab().querySelector('#product-query').value;
+                const debugQuery = this.getCurrentTab().querySelector('.product-query').value;
                 // Create a dummy pack from this query to let it run through the standard generateCardSetFromPack(packName) function
                 const tempPackName = 'product-live-debug-pack';
                 const tempPack = {
                     packName: tempPackName,
                     count: 1,
                     isGenerated: true,
-                    cards: [{ query: debugQuery } ]
+                    cards: [{ query: debugQuery }]
                 };
                 packs.push(tempPack);
                 my.packs = my.packs.filter(pack => pack.packName !== tempPackName); // Remove existing pack from previous runs if there is one.
@@ -763,7 +837,9 @@ var mtgGen = (function (my) {
             }
 
             // Generate the cards, one set per pack, and render them to the UI.
-            this.generatedSets = my.generateCardSetsFromPacks(packs);
+            this.seedRNGFromInput();
+            this.generatedCardSet = my.generateCardSetFromPacks(packs);
+            this.generatedSets = this.generatedCardSet.generatedSets;
             this.renderResults(this.generatedSets);
 
             // Triggers google analytics booster-generation tracking event on index.html
@@ -772,24 +848,7 @@ var mtgGen = (function (my) {
             return this;
         }
 
-        , renderPack: function (event) {
-            Array.from(event.target.parentNode.querySelectorAll('a.button')).forEach(n => n.classList.remove('active'));
-            event.target.classList.add('active');
-
-            const packName = event.target.getAttribute('data-pack');
-
-            this.generatedSets = [];
-            this.generatedSets.push(my.generateCardSetFromPack(packName));
-
-            this.renderResults(this.generatedSets);
-
-            // Triggers google analytics booster-generation tracking event on index.html
-            window.dispatchEvent(new CustomEvent('cardSetsGenerated', { detail: { setCode: my.setCode } }));
-
-            return false;
-        }
-
-        // Should only be called from renderPack and renderResultsFromOptions
+        // Should only be called from renderResultsFromOptions
         , renderResults: function (sets) {
             this.allCards = sets.reduce((sets, set) => sets.concat(set), []);
             if (sets.length === 1 && sets[0].setDesc) {
@@ -1088,20 +1147,22 @@ var mtgGen = (function (my) {
 
         // Render an input template (text box for count, drop-down for pack).
         // If no booster and boosterIndex provided, renders a template version for use in dynamic js addition.
-        , renderInput: function (packsInDropdown, inputSettings, boosterIndex) {
-            // If no inputSettings provided, we're creating an empty template
-            let htmlOut = (inputSettings) ? "<div class='booster-input'>" : "<div class='booster-input-template' style='display:none'>";
+        , renderBoosterSelectors: function (packsInDropdown, inputSettings, boosterIndex) {
+            // No inputSettings provided indicates an empty template should be created.
+            const isTemplate = inputSettings === undefined;
+            let htmlOut = isTemplate ? "<template class='booster-selection-template'>" : "";
+            htmlOut += "<div class='booster-input'>";
 
             // Each input gets a unique ID so we know which was clicked later
-            const boosterIndex2 = boosterIndex ? (boosterIndex + 1) : "template";
+            const boosterIndex2 = (boosterIndex ?? 1) + "-template";
 
             // Each input has a count next to it (defaults to 1 if not supplied by inputSettings)
             const inputElId = "booster-count-" + boosterIndex2;
             const boosterCount = inputSettings ? inputSettings.count : 1;
-            htmlOut += "<input id='" + inputElId + "' type='number' min='0' max='99' value='" + boosterCount + "'>";
+            htmlOut += `<input class='booster-count' type='number' min='0' max='99' value='${boosterCount}'>`;
 
             // Render the dropdown containing all available packs
-            htmlOut += "<select id='booster-" + boosterIndex2 + "' data-count-el='" + inputElId + "'>";
+            htmlOut += "<select class='booster-selection'>";
 
             // If randomDefaultPackName is specified, choose one and use that in place of defaultPackName
             if (inputSettings && inputSettings.hasOwnProperty('randomDefaultPackName') && Array.isArray(inputSettings.randomDefaultPackName)) {
@@ -1129,40 +1190,21 @@ var mtgGen = (function (my) {
                 const pack = my.getPack(packName2);
                 const packDesc = (pack === undefined) ? console.error(`ERROR: Missing packName: ${packName2}`) : pack.packDesc;
 
-                htmlOut += "<option value='" + packName2 + "'" + selected + ">" + packDesc + "</option>";
+                htmlOut += `<option value='${packName2}'${selected}>${packDesc}</option>`;
             });
             htmlOut += "</select>";
             htmlOut += "<button class='remove-input' title='Remove Booster'>-</button>";
-            htmlOut += "</div>";
+            htmlOut += isTemplate ? "</div></template>" : "</div>";
 
             return htmlOut;
         }
 
         , addBooster: function () {
-            //let html = $('#boosters .booster-input-template').html();
-
-            //let boosterCount = $('#boosters .booster-input').length + 1;
-            //while ($('#boosters .booster-' + boosterCount).length > 0) {
-            //    boosterCount++;
-            //}
-
-            //html = html.replace(/booster-count-template/g, 'booster-count-' + boosterCount)
-            //    .replace(/booster-template/g, 'booster-' + boosterCount);
-            //html = "<div class='booster-input'>" + html + "</div>";
-
-            //$(html).insertBefore(this.$productTab.find('#boosters .booster-input-template'));
-            let html = document.querySelector('#boosters .booster-input-template').innerHTML;
-
-            let boosterCount = document.querySelectorAll('#boosters .booster-input').length + 1;
-            while (document.querySelector('#boosters .booster-' + boosterCount)) {
-                boosterCount++;
-            }
-
-            html = html.replace(/booster-count-template/g, 'booster-count-' + boosterCount)
-                .replace(/booster-template/g, 'booster-' + boosterCount);
-            html = "<div class='booster-input'>" + html + "</div>";
-
-            this.getCurrentTab().querySelector('#boosters .booster-input-template').insertAdjacentHTML('beforebegin', html);
+            const currTab = this.getCurrentTab();
+            const boosterSelectorTemplate = currTab.querySelector('.boosters .booster-selection-template');
+            const newBoosterSelector = boosterSelectorTemplate.content.cloneNode(true);
+            const newBoosterSelectorHtml = newBoosterSelector.outerHtml;
+            boosterSelectorTemplate.parentNode.insertBefore(newBoosterSelector, boosterSelectorTemplate);
         }
 
         , removeBooster: function (event) {
@@ -1172,19 +1214,12 @@ var mtgGen = (function (my) {
         , getPacksFromInput: function () {
             let packs = [];
 
-            // Convert the pack option elements into an array of set names to be generated
-            const topThis = document.querySelector('#product-content section.active');
-            const packEls = topThis.querySelectorAll('.options .booster-input select');
-            Array.from(packEls).forEach(el => {
-                let boosterCount = 1;
-                const boosterCountEl = topThis.querySelector('#' + el.getAttribute('data-count-el'));
-                if (boosterCountEl === null) {
-                    console.warn(`Missing booster count (data-count-el) for ${el.id}`);
-                }
-                else {
-                    boosterCount = boosterCountEl.value;
-                }
-                const pack = { count: boosterCount, packName: el.value };
+            // Convert the booster selection elements into an array of pack names/counts to be generated
+            const boosterSelectors = this.getCurrentTab().querySelectorAll('.boosters .booster-input')
+            Array.from(boosterSelectors).forEach(boosterSelector => {
+                const packCount = boosterSelector.querySelector('.booster-count').value;
+                const packName = boosterSelector.querySelector('.booster-selection').value;
+                const pack = { count: packCount, packName: packName };
                 packs.push(pack);
             });
 
@@ -1200,115 +1235,115 @@ var mtgGen = (function (my) {
     return my;
 }(mtgGen || {}));
 
+// TEMPORARILY DISABLED: Hasn't been working for awhile now.
+//// --------------------------------------------------------------------------------------------------------------------------------
+//// Save Draw module 
+//// --------------------------------------------------------------------------------------------------------------------------------
+//var mtgGen = (function (my) {
+//    'use strict';
 
-// --------------------------------------------------------------------------------------------------------------------------------
-// Save Draw module 
-// --------------------------------------------------------------------------------------------------------------------------------
-var mtgGen = (function (my) {
-    'use strict';
+//    var SaveDrawView = Backbone.View.extend({
+//        el: "body"
 
-    var SaveDrawView = Backbone.View.extend({
-        el: "body"
+//        , initialize: function () {
+//            this.el.addEventListener('click', (e) => { if (e.target.classList.contains('save-draw')) { this.saveDraw(e); } });
 
-        , initialize: function () {
-            this.el.addEventListener('click', (e) => { if (e.target.classList.contains('save-draw')) { this.saveDraw(e); } });
+//            window.addEventListener('ready', e => {
+//                my.mainView.mainMenu.addMenuItem("saveDraw", 99, function () {
+//                    // If it's a generated view or there's already a draw saved for the current product, 
+//                    // don't show the Save Draw button
+//                    if (!my.mainView.currentView.isGenerated || my.hasDrawForCurrentProduct()) {
+//                        return "";
+//                    }
+//                    return '<a href="#save-draw" class="button save-draw" data-save-draw="all" title="Save/Share your draw">Save Draw</a>'
+//                });
+//            }, false);
 
-            window.addEventListener('ready', e => {
-                my.mainView.mainMenu.addMenuItem("saveDraw", 99, function () {
-                    // If it's a generated view or there's already a draw saved for the current product, 
-                    // don't show the Save Draw button
-                    if (!my.mainView.currentView.isGenerated || my.hasDrawForCurrentProduct()) {
-                        return "";
-                    }
-                    return '<a href="#save-draw" class="button save-draw" data-save-draw="all" title="Save/Share your draw">Save Draw</a>'
-                });
-            }, false);
+//            window.addEventListener('cardSetsGenerated', e => {
+//                // Erase out storage of the last draw once a new one has been created.
+//                // It will be re-saved when the user clicks Save Draw again.
+//                my.mainView.currentView.saveDrawResults = undefined;
+//            }, false);
+//        }
 
-            window.addEventListener('cardSetsGenerated', e => {
-                // Erase out storage of the last draw once a new one has been created.
-                // It will be re-saved when the user clicks Save Draw again.
-                my.mainView.currentView.saveDrawResults = undefined;
-            }, false);
-        }
+//        , saveDraw: function (event) {
+//            //$.post("/[set]/SaveDraw", { name: "John", time: "2pm" })
+//            // JSON doesn't support my odd properties-on-an-array format (oops), so let's convert to something that JSON can handle
+//            // And for each card, we only need the set|cardNum as a unique composite key
+//            let drawData = {
+//                generatorVersion: my.version,
+//                drawVersion: '1.0',
+//                useCount: 1,
+//                productName: my.mainView.currentView.options.originalProductName,
+//                sets: []
+//            }
+//            my.mainView.currentView.generatedSets.forEach(generatedSet => {
+//                const set = {
+//                    mtgenIds: generatedSet.map(generatedSet => generatedSet.mtgenId),
+//                    setName: generatedSet.setName,
+//                    sortOrder: generatedSet.sortOrder.sort,
+//                    packVersion: generatedSet.packVersion || '1.0'
+//                };
+//                drawData.sets.push(set);
+//            });
 
-        , saveDraw: function (event) {
-            //$.post("/[set]/SaveDraw", { name: "John", time: "2pm" })
-            // JSON doesn't support my odd properties-on-an-array format (oops), so let's convert to something that JSON can handle
-            // And for each card, we only need the set|cardNum as a unique composite key
-            let drawData = {
-                generatorVersion: my.version,
-                drawVersion: '1.0',
-                useCount: 1,
-                productName: my.mainView.currentView.options.originalProductName,
-                sets: []
-            }
-            my.mainView.currentView.generatedSets.forEach(generatedSet => {
-                const set = {
-                    mtgenIds: generatedSet.map(generatedSet => generatedSet.mtgenId),
-                    setName: generatedSet.setName,
-                    sortOrder: generatedSet.sortOrder.sort,
-                    packVersion: generatedSet.packVersion || '1.0'
-                };
-                drawData.sets.push(set);
-            });
+//            if (my.mainView.currentView.saveDrawResults !== undefined) {
+//                displayDrawResults(my.mainView.currentView.saveDrawResults);
+//            }
+//            else {
+//                document.querySelector('#save-draw input').value = 'Loading...';
+//                fetch(`/api/${my.setCode}/draws`, {
+//                    method: "POST",
+//                    headers: new Headers({ 'Content-Type': 'application/json' }),
+//                    body: JSON.stringify(drawData)
+//                })
+//                    .then(response => {
+//                        if (response.ok) { return response.json(); }
+//                        my.throwTerminalError('Save draw failed.');
+//                    })
+//                    // e.g. return: { "drawId": "m09mJw", "url": "ogw?draw=m09mJw" }
+//                    .then(drawResults => displayDrawResults(drawResults));
+//            }
 
-            if (my.mainView.currentView.saveDrawResults !== undefined) {
-                displayDrawResults(my.mainView.currentView.saveDrawResults);
-            }
-            else {
-                document.querySelector('#save-draw input').value = 'Loading...';
-                fetch(`/api/${my.setCode}/draws`, {
-                    method: "POST",
-                    headers: new Headers({ 'Content-Type': 'application/json' }),
-                    body: JSON.stringify(drawData)
-                })
-                    .then(response => {
-                        if (response.ok) { return response.json(); }
-                        my.throwTerminalError('Save draw failed.');
-                    })
-                    // e.g. return: { "drawId": "m09mJw", "url": "ogw?draw=m09mJw" }
-                    .then(drawResults => displayDrawResults(drawResults));
-            }
+//            window.modal.setContent(document.querySelector('.save-draw.modal').outerHTML);
 
-            window.modal.setContent(document.querySelector('.save-draw.modal').outerHTML);
+//            window.modal.open();
 
-            window.modal.open();
+//            window.dispatchEvent(new CustomEvent('drawSaved', { detail: { setCode: my.setCode } })); // triggers google analytics tracking event
 
-            window.dispatchEvent(new CustomEvent('drawSaved', { detail: { setCode: my.setCode } })); // triggers google analytics tracking event
+//            // no 'return false;' so fancybox can trigger afterward
+//        }
 
-            // no 'return false;' so fancybox can trigger afterward
-        }
+//        , render: function () {
+//            this.el.insertAdjacentHTML('beforeend', "<div style='display: none'>"
+//                + "<aside id='save-draw' class='modal save-draw'>"
+//                + "<h2>Save or Share Your Draw</h2>"
+//                + "<section>"
+//                + "<p>Bookmark this page or copy and save/share the following link:</p>"
+//                + "<p><input type='text' /></p>"
+//                + "</section class='export-set'>"
+//                + "</aside>"
+//                + "</div>");
+//            return this;
+//        }
+//    });
 
-        , render: function () {
-            this.el.insertAdjacentHTML('beforeend', "<div style='display: none'>"
-                + "<aside id='save-draw' class='modal save-draw'>"
-                + "<h2>Save or Share Your Draw</h2>"
-                + "<section>"
-                + "<p>Bookmark this page or copy and save/share the following link:</p>"
-                + "<p><input type='text' /></p>"
-                + "</section class='export-set'>"
-                + "</aside>"
-                + "</div>");
-            return this;
-        }
-    });
+//    my.initViews.push(new SaveDrawView()); // Hook this module into main rendering view
 
-    my.initViews.push(new SaveDrawView()); // Hook this module into main rendering view
+//    function displayDrawResults(drawData) {
+//        history.pushState({ setCode: my.setCode, drawId: drawData.drawId },
+//            my.set.name + " Draw", drawData.url); // Change the url to match the saved draw
+//        my.mainView.currentView.saveDrawResults = drawData; // Save it so we don't regenerate it
 
-    function displayDrawResults(drawData) {
-        history.pushState({ setCode: my.setCode, drawId: drawData.drawId },
-            my.set.name + " Draw", drawData.url); // Change the url to match the saved draw
-        my.mainView.currentView.saveDrawResults = drawData; // Save it so we don't regenerate it
+//        // Display it
+//        const saveDrawInput = document.querySelector("#save-draw input");
+//        saveDrawInput.value = window.location.href
+//        saveDrawInput.select();
+//        saveDrawInput.focus();
+//    }
 
-        // Display it
-        const saveDrawInput = document.querySelector("#save-draw input");
-        saveDrawInput.value = window.location.href
-        saveDrawInput.select();
-        saveDrawInput.focus();
-    }
-
-    return my; // END Save Draw module
-}(mtgGen || {}));
+//    return my; // END Save Draw module
+//}(mtgGen || {}));
 
 // --------------------------------------------------------------------------------------------------------------------------------
 // Card Set Export module 
@@ -1362,7 +1397,7 @@ var mtgGen = (function (my) {
 
         , render: function () {
             this.el.insertAdjacentHTML('beforeend', "<div style='display: none'>"
-                + "<aside id='exporter' class='modal exporter'>"
+                + "<aside class='modal exporter'>"
                 + "<h2>Export Your Boosters</h2>"
                 + "<section class='export-set'>"
                 + "<p>A variety of programs allow you to import cards in a certain format. Choose your format and copy &amp; paste the result or click Download to get a file.</p>"
@@ -1423,7 +1458,7 @@ var mtgGen = (function (my) {
     }
 
     function chooseExportFormat(exportType) {
-        var allButtons = document.querySelectorAll('.exporter.modal .export-set a.button');
+        const allButtons = document.querySelectorAll('.exporter.modal .export-set a.button');
         Array.from(allButtons).forEach(b => b.classList.remove('active'));
         document.querySelector('.exporter.modal .export-set a.export-' + exportType).classList.add('active');
 
@@ -1507,7 +1542,7 @@ var mtgGen = (function (my) {
     // Format explanation: https://draftsim.com/mtg-arena-import-deck/
     // Format is plain list, number of cards at start, DFCs just list first face, can specify set but then also need collector number, e.g.: 1 Mountain (MID) 274
     function renderMtgaFormat(cards, attrib) {
-        const output = '// ' + attrib 
+        const output = '// ' + attrib
             + ' -- Import to Magic the Gathering: Arena by selecting everything in this file and copying it to your clipboard. Within MtG: Arena, go to your decks and click Import.\r\n'
             + cards.reduce((cardOutput, card) =>
                 cardOutput += card.count + ' ' + card.exportTitle.split(' // ')[0] + '\r\n', '');
