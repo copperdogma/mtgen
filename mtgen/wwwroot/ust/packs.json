@@ -1,0 +1,89 @@
+{
+  "defs": [
+    {
+      "defName": "{{setCode}}",
+      "query": "from[*]?set='{{setCode}}'"
+    },
+    {
+      "defName": "{{setCode}}-main",
+      "query": "from[{{setCode}}]-from[{{setCode}}]?type='Basic Land'-from[*]?usableForDeckBuilding=false-from[{{setCode}}]?title='Steamflogger Boss'"
+    },
+    {
+      "defName": "{{setCode}}-main-no-contraptions",
+      "query": "from[{{setCode}}-main]-from[{{setCode}}]?subtype='Contraption'"
+    },
+    {
+      "defName": "{{setCode}}-main-contraptions",
+      "query": "from[{{setCode}}-main]?subtype='Contraption'"
+    },
+    {
+      "defName": "{{setCode}}-foils",
+      "query": "from[{{setCode}}-main-no-contraptions]+from[{{setCode}}]?type='Basic Land'"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "{{setCode}}-all-cards",
+      "packDesc": "Unstable: All Cards",
+      "isGenerated": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}]"
+        }
+      ]
+    },
+    {
+      "packName": "{{setCode}}-standard",
+      "packDesc": "Unstable: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        {
+          "query": "take[8]>from[{{setCode}}-main-no-contraptions]?rarity='c'"
+        },
+        {
+          "query": "take[3]>from[{{setCode}}-main-no-contraptions]?rarity='u"
+        },
+        {
+          "query": "from[{{setCode}}-main-no-contraptions]?rarity=rarityByWeight2008(rm)"
+        },
+        {
+          "query": "from[{{setCode}}-main-contraptions]?rarity='c"
+        },
+        {
+          "query": "from[{{setCode}}-main-contraptions]?rarity=rarityByWeight2008(urm)"
+        },
+        {
+          "querySet": [
+            {
+              "percent": "120/121",
+              "query": "from[{{setCode}}]?type='Basic Land'"
+            },
+            {
+              "percent": "1/121",
+              "query": "from[{{setCode}}]?title='Steamflogger Boss'"
+            }
+          ]
+        },
+        {
+          "query": "from[{{setCode}}]?token=true",
+          "setValues": {
+            "foil": true
+          }
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Early sets had 1/67 cards as foil, equating to 15/67 (~20%) chance a booster had a foil, and as of TSP it replaces a common.",
+              "percent": "15/67",
+              "overrideSlot": "8",
+              "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2008(curm)",
+              "setValues": {
+                "foil": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

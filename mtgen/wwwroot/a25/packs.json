@@ -1,0 +1,64 @@
+{
+  "defs": [
+    {
+      "defName": "{{setCode}}",
+      "query": "from[*]?set='{{setCode}}'"
+    },
+    {
+      "defName": "{{setCode}}-main",
+      "query": "from[{{setCode}}]-from[{{setCode}}]?type='Basic Land'-from[*]?usableForDeckBuilding=false"
+    },
+    {
+      "defName": "{{setCode}}-foils",
+      "query": "from[{{setCode}}-main]"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "{{setCode}}-all-cards",
+      "packDesc": "Masters 25: All Cards",
+      "isGenerated": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}]"
+        }
+      ]
+    },
+    {
+      "packName": "{{setCode}}-standard",
+      "packDesc": "Masters 25: Standard Booster",
+      "isGenerated": true,
+      "cards": [
+        {
+          "query": "take[10]>from[{{setCode}}-main]?rarity='c'"
+        },
+        {
+          "query": "take[3]>from[{{setCode}}-main]?rarity='u'"
+        },
+        {
+          "query": "from[{{setCode}}-main]?rarity=rarityByWeight2008(rm)"
+        },
+        {
+          "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2008(curm)",
+          "canBeDuplicate": true,
+          "setValues": {
+            "foil": true
+          }
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}]?token=true"
+            },
+            {
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

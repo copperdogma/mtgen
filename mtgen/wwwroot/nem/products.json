@@ -2,34 +2,43 @@
   "_comment": "if there are no options the query/packNames will be auto-run",
   "products": [
     {
-      "productName": "un3-all-cards",
+      "productName": "{{setCode}}-all-cards",
       "productDesc": "All Cards",
-      "sources": [ "https://magic.wizards.com/en/articles/archive/card-image-gallery/unstable", "http://www.mtgsalvation.com/spoilers/filter?SetID=187&IncludeUnconfirmed=true&CardsPerRequest=999", "https://mtg.gamepedia.com/Unstable" ],
+      "sources": [
+        "http://mtgjson.com/json/{{setCode}}.json",
+        "http://gatherer.wizards.com/"
+      ],
       "isGenerated": false,
       "initialSort": "colour",
       "packs": [
-        { "packName": "un3-all-cards" }
+        {
+          "packName": "{{setCode}}-all-cards"
+        }
       ]
     },
     {
-      "productName": "un3-boosters",
+      "productName": "{{setCode}}-boosters",
       "productDesc": "Boosters",
-      "sources": [ ],
+      "sources": [
+        "http://en.wikipedia.org/wiki/Masques_block"
+      ],
       "isGenerated": true,
       "initialSort": "set",
       "packs": [
-        { "packName": "un3-standard" }
+        {
+          "packName": "{{setCode}}-standard"
+        }
       ],
       "options": {
         "presets": [
           {
-            "presetName": "un3-boosters-six",
+            "presetName": "{{setCode}}-boosters-six",
             "presetDesc": "Six Boosters",
             "default": true,
             "packs": [
               {
                 "count": 6,
-                "defaultPackName": "un3-standard"
+                "defaultPackName": "{{setCode}}-standard"
               }
             ]
           }

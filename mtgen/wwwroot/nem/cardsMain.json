@@ -1,0 +1,4056 @@
+[
+  {
+    "layout": "normal",
+    "type": "Instant",
+    "types": [
+      "Instant"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 21285,
+    "name": "Accumulated Knowledge",
+    "cmc": 2,
+    "rarity": "c",
+    "artist": "Randy Gallegos",
+    "manaCost": "{1}{U}",
+    "text": "Draw a card, then draw cards equal to the number of cards named Accumulated Knowledge in all graveyards.",
+    "flavor": "\"I have seen and heard much here. There are secrets within secrets. Let me show you.\"\n�Takara, to Eladamri",
+    "number": "26",
+    "imageName": "accumulated knowledge",
+    "title": "Accumulated Knowledge",
+    "set": "nem",
+    "cost": "{1}{U}",
+    "colour": "u",
+    "num": "26",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21285&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 22289,
+    "name": "Aether Barrier",
+    "cmc": 3,
+    "rarity": "r",
+    "artist": "David Martin",
+    "manaCost": "{2}{U}",
+    "text": "Whenever a player casts a creature spell, that player sacrifices a permanent unless he or she pays {1}.",
+    "flavor": "\"Creatures fade in and out of existence. It's an unfortunate side effect. The losses are tolerable.\"\n�Belbe",
+    "number": "27",
+    "imageName": "aether barrier",
+    "title": "Aether Barrier",
+    "set": "nem",
+    "cost": "{2}{U}",
+    "colour": "u",
+    "num": "27",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22289&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 22377,
+    "name": "Air Bladder",
+    "subtypes": [
+      "Aura"
+    ],
+    "cmc": 1,
+    "rarity": "c",
+    "artist": "Donato Giancola",
+    "manaCost": "{U}",
+    "text": "Enchant creature\nEnchanted creature has flying.\nEnchanted creature can block only creatures with flying.",
+    "flavor": "Random mutations among Rootwater merfolk were common�and disturbing.",
+    "number": "28",
+    "imageName": "air bladder",
+    "title": "Air Bladder",
+    "set": "nem",
+    "cost": "{U}",
+    "colour": "u",
+    "num": "28",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22377&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 22296,
+    "name": "Ancient Hydra",
+    "subtypes": [
+      "Hydra"
+    ],
+    "cmc": 5,
+    "rarity": "u",
+    "artist": "Scott M. Fischer",
+    "power": "5",
+    "toughness": "1",
+    "manaCost": "{4}{R}",
+    "text": "Fading 5 (This creature enters the battlefield with five fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\n{1}, Remove a fade counter from Ancient Hydra: Ancient Hydra deals 1 damage to target creature or player.",
+    "number": "76",
+    "imageName": "ancient hydra",
+    "title": "Ancient Hydra",
+    "set": "nem",
+    "cost": "{4}{R}",
+    "colour": "r",
+    "num": "76",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22296&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Instant",
+    "types": [
+      "Instant"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 21258,
+    "name": "Angelic Favor",
+    "cmc": 4,
+    "rarity": "u",
+    "artist": "Paolo Parente",
+    "manaCost": "{3}{W}",
+    "text": "If you control a Plains, you may tap an untapped creature you control rather than pay Angelic Favor's mana cost.\nCast Angelic Favor only during combat.\nPut a 4/4 white Angel creature token with flying onto the battlefield. Exile it at the beginning of the next end step.",
+    "number": "1",
+    "imageName": "angelic favor",
+    "title": "Angelic Favor",
+    "set": "nem",
+    "cost": "{3}{W}",
+    "colour": "w",
+    "num": "1",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21258&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Instant",
+    "types": [
+      "Instant"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 21377,
+    "name": "Animate Land",
+    "cmc": 1,
+    "rarity": "u",
+    "artist": "Rebecca Guay",
+    "manaCost": "{G}",
+    "text": "Until end of turn, target land becomes a 3/3 creature that's still a land.",
+    "flavor": "Irony is getting walked on by the earth instead of the other way around.",
+    "number": "101",
+    "imageName": "animate land",
+    "title": "Animate Land",
+    "set": "nem",
+    "cost": "{G}",
+    "colour": "g",
+    "num": "101",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21377&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 21343,
+    "name": "Arc Mage",
+    "subtypes": [
+      "Human",
+      "Spellshaper"
+    ],
+    "cmc": 3,
+    "rarity": "u",
+    "artist": "Terese Nielsen",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{2}{R}",
+    "text": "{2}{R}, {T}, Discard a card: Arc Mage deals 2 damage divided as you choose among one or two target creatures and/or players.",
+    "number": "77",
+    "imageName": "arc mage",
+    "title": "Arc Mage",
+    "set": "nem",
+    "cost": "{2}{R}",
+    "colour": "r",
+    "num": "77",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21343&type=card"
+  },
+  {
+    "layout": "normal",
+    "supertypes": [
+      "Legendary"
+    ],
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 22897,
+    "name": "Ascendant Evincar",
+    "subtypes": [
+      "Vampire"
+    ],
+    "cmc": 6,
+    "rarity": "r",
+    "artist": "Mark Zug",
+    "power": "3",
+    "toughness": "3",
+    "manaCost": "{4}{B}{B}",
+    "text": "Flying (This creature can't be blocked except by creatures with flying or reach.)\nOther black creatures get +1/+1.\nNonblack creatures get -1/-1.",
+    "flavor": "\"Things are going to change around here.\"\n�Crovax",
+    "number": "51",
+    "imageName": "ascendant evincar",
+    "title": "Ascendant Evincar",
+    "set": "nem",
+    "cost": "{4}{B}{B}",
+    "colour": "b",
+    "num": "51",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22897&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 21263,
+    "name": "Avenger en-Dal",
+    "subtypes": [
+      "Human",
+      "Spellshaper"
+    ],
+    "cmc": 2,
+    "rarity": "r",
+    "artist": "Ron Spencer",
+    "power": "1",
+    "toughness": "1",
+    "manaCost": "{1}{W}",
+    "text": "{2}{W}, {T}, Discard a card: Exile target attacking creature. Its controller gains life equal to its toughness.",
+    "number": "2",
+    "imageName": "avenger en-dal",
+    "title": "Avenger en-Dal",
+    "set": "nem",
+    "cost": "{1}{W}",
+    "colour": "w",
+    "num": "2",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21263&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 21320,
+    "name": "Battlefield Percher",
+    "subtypes": [
+      "Bird"
+    ],
+    "cmc": 5,
+    "rarity": "u",
+    "artist": "Edward P. Beard, Jr.",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{3}{B}{B}",
+    "text": "Flying\nBattlefield Percher can block only creatures with flying.\n{1}{B}: Battlefield Percher gets +1/+1 until end of turn.",
+    "number": "52",
+    "imageName": "battlefield percher",
+    "title": "Battlefield Percher",
+    "set": "nem",
+    "cost": "{3}{B}{B}",
+    "colour": "b",
+    "num": "52",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21320&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Artifact",
+    "types": [
+      "Artifact"
+    ],
+    "multiverseid": 21390,
+    "name": "Belbe's Armor",
+    "cmc": 3,
+    "rarity": "u",
+    "artist": "D. Alexander Gregory",
+    "manaCost": "{3}",
+    "text": "{X}, {T}: Target creature gets -X/+X until end of turn.",
+    "flavor": "It protects her from the ravages of Phyrexia and the savages of Rath.",
+    "number": "126",
+    "imageName": "belbe's armor",
+    "title": "Belbe's Armor",
+    "set": "nem",
+    "cost": "{3}",
+    "colour": "?",
+    "num": "126",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21390&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 21308,
+    "name": "Belbe's Percher",
+    "subtypes": [
+      "Bird"
+    ],
+    "cmc": 3,
+    "rarity": "c",
+    "artist": "Edward P. Beard, Jr.",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{2}{B}",
+    "text": "Flying\nBelbe's Percher can block only creatures with flying.",
+    "flavor": "Long and powerful, these birds were used to carry messages to and from the evincar.",
+    "number": "53",
+    "imageName": "belbe's percher",
+    "title": "Belbe's Percher",
+    "set": "nem",
+    "cost": "{2}{B}",
+    "colour": "b",
+    "num": "53",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21308&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Artifact",
+    "types": [
+      "Artifact"
+    ],
+    "multiverseid": 21401,
+    "name": "Belbe's Portal",
+    "cmc": 5,
+    "rarity": "r",
+    "artist": "Mark Tedin",
+    "manaCost": "{5}",
+    "text": "As Belbe's Portal enters the battlefield, choose a creature type.\n{3}, {T}: You may put a creature card of the chosen type from your hand onto the battlefield.",
+    "flavor": "The fight will continue on a new battlefield.",
+    "number": "127",
+    "imageName": "belbe's portal",
+    "title": "Belbe's Portal",
+    "set": "nem",
+    "cost": "{5}",
+    "colour": "?",
+    "num": "127",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21401&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 21363,
+    "name": "Blastoderm",
+    "subtypes": [
+      "Beast"
+    ],
+    "cmc": 4,
+    "rarity": "c",
+    "artist": "Eric Peterson",
+    "power": "5",
+    "toughness": "5",
+    "manaCost": "{2}{G}{G}",
+    "text": "Shroud (This creature can't be the target of spells or abilities.)\nFading 3 (This creature enters the battlefield with three fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)",
+    "number": "102",
+    "imageName": "blastoderm",
+    "title": "Blastoderm",
+    "set": "nem",
+    "cost": "{2}{G}{G}",
+    "colour": "g",
+    "num": "102",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21363&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 21273,
+    "name": "Blinding Angel",
+    "subtypes": [
+      "Angel"
+    ],
+    "cmc": 5,
+    "rarity": "r",
+    "artist": "Todd Lockwood",
+    "power": "2",
+    "toughness": "4",
+    "manaCost": "{3}{W}{W}",
+    "text": "Flying (This creature can't be blocked except by creatures with flying or reach.)\nWhenever Blinding Angel deals combat damage to a player, that player skips his or her next combat phase.",
+    "flavor": "\"Their eyes will shrivel and blacken before faith's true light.\"",
+    "number": "3",
+    "imageName": "blinding angel",
+    "title": "Blinding Angel",
+    "set": "nem",
+    "cost": "{3}{W}{W}",
+    "colour": "w",
+    "num": "3",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21273&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 22060,
+    "name": "Bola Warrior",
+    "subtypes": [
+      "Human",
+      "Spellshaper",
+      "Warrior"
+    ],
+    "cmc": 2,
+    "rarity": "c",
+    "artist": "Adam Rex",
+    "power": "1",
+    "toughness": "1",
+    "manaCost": "{1}{R}",
+    "text": "{R}, {T}, Discard a card: Target creature can't block this turn.",
+    "flavor": "The ingredients for panic include equal parts danger, uncertainty, and helplessness.",
+    "number": "78",
+    "imageName": "bola warrior",
+    "title": "Bola Warrior",
+    "set": "nem",
+    "cost": "{1}{R}",
+    "colour": "r",
+    "num": "78",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22060&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 21319,
+    "name": "Carrion Wall",
+    "subtypes": [
+      "Wall"
+    ],
+    "cmc": 3,
+    "rarity": "u",
+    "artist": "Tony Szczudlo",
+    "power": "3",
+    "toughness": "2",
+    "manaCost": "{1}{B}{B}",
+    "text": "Defender (This creature can't attack.)\n{1}{B}: Regenerate Carrion Wall.",
+    "flavor": "A wall built from the bodies of the enemy will never lack building material in times of war.",
+    "number": "54",
+    "imageName": "carrion wall",
+    "title": "Carrion Wall",
+    "set": "nem",
+    "cost": "{1}{B}{B}",
+    "colour": "b",
+    "num": "54",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21319&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 21264,
+    "name": "Chieftain en-Dal",
+    "subtypes": [
+      "Human",
+      "Knight"
+    ],
+    "cmc": 3,
+    "rarity": "u",
+    "artist": "Orizio Daniele",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{1}{W}{W}",
+    "text": "Whenever Chieftain en-Dal attacks, attacking creatures gain first strike until end of turn.",
+    "flavor": "The clearest commands are practical examples.",
+    "number": "4",
+    "imageName": "chieftain en-dal",
+    "title": "Chieftain en-Dal",
+    "set": "nem",
+    "cost": "{1}{W}{W}",
+    "colour": "w",
+    "num": "4",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21264&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 21280,
+    "name": "Cloudskate",
+    "subtypes": [
+      "Illusion"
+    ],
+    "cmc": 2,
+    "rarity": "c",
+    "artist": "Carl Critchlow",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{1}{U}",
+    "text": "Flying\nFading 3 (This creature enters the battlefield with three fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)",
+    "number": "29",
+    "imageName": "cloudskate",
+    "title": "Cloudskate",
+    "set": "nem",
+    "cost": "{1}{U}",
+    "colour": "u",
+    "num": "29",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21280&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 21364,
+    "name": "Coiling Woodworm",
+    "subtypes": [
+      "Insect",
+      "Worm"
+    ],
+    "cmc": 3,
+    "rarity": "u",
+    "artist": "David Martin",
+    "power": "*",
+    "toughness": "1",
+    "manaCost": "{2}{G}",
+    "text": "Coiling Woodworm's power is equal to the number of Forests on the battlefield.",
+    "flavor": "Only the elves know where the woods end and the woodworm begins.",
+    "number": "103",
+    "imageName": "coiling woodworm",
+    "title": "Coiling Woodworm",
+    "set": "nem",
+    "cost": "{2}{G}",
+    "colour": "g",
+    "num": "103",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21364&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Artifact",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "multiverseid": 21395,
+    "name": "Complex Automaton",
+    "subtypes": [
+      "Golem"
+    ],
+    "cmc": 4,
+    "rarity": "r",
+    "artist": "Dana Knutson",
+    "power": "4",
+    "toughness": "4",
+    "manaCost": "{4}",
+    "text": "At the beginning of your upkeep, if you control seven or more permanents, return Complex Automaton to its owner's hand.",
+    "flavor": "\"This wasteful design cannot possibly be Phyrexian.\"\n�Belbe",
+    "number": "128",
+    "imageName": "complex automaton",
+    "title": "Complex Automaton",
+    "set": "nem",
+    "cost": "{4}",
+    "colour": "?",
+    "num": "128",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21395&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Instant",
+    "types": [
+      "Instant"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 21322,
+    "name": "Dark Triumph",
+    "cmc": 5,
+    "rarity": "u",
+    "artist": "Adam Rex",
+    "manaCost": "{4}{B}",
+    "text": "If you control a Swamp, you may sacrifice a creature rather than pay Dark Triumph's mana cost.\nCreatures you control get +2/+0 until end of turn.",
+    "flavor": "All that's left is the coronation.",
+    "number": "55",
+    "imageName": "dark triumph",
+    "title": "Dark Triumph",
+    "set": "nem",
+    "cost": "{4}{B}",
+    "colour": "b",
+    "num": "55",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21322&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Instant",
+    "types": [
+      "Instant"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 21284,
+    "name": "Daze",
+    "cmc": 2,
+    "rarity": "c",
+    "artist": "Matthew D. Wilson",
+    "manaCost": "{1}{U}",
+    "text": "You may return an Island you control to its owner's hand rather than pay Daze's mana cost.\nCounter target spell unless its controller pays {1}.",
+    "number": "30",
+    "imageName": "daze",
+    "title": "Daze",
+    "set": "nem",
+    "cost": "{1}{U}",
+    "colour": "u",
+    "num": "30",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21284&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 21330,
+    "name": "Death Pit Offering",
+    "cmc": 4,
+    "rarity": "r",
+    "artist": "Pete Venters",
+    "manaCost": "{2}{B}{B}",
+    "text": "When Death Pit Offering enters the battlefield, sacrifice all creatures you control.\nCreatures you control get +2/+2.",
+    "flavor": "\"Kill them all and feed them to the new recruits.\"\n�Crovax",
+    "number": "56",
+    "imageName": "death pit offering",
+    "title": "Death Pit Offering",
+    "set": "nem",
+    "cost": "{2}{B}{B}",
+    "colour": "b",
+    "num": "56",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21330&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 22026,
+    "name": "Defender en-Vec",
+    "subtypes": [
+      "Human",
+      "Cleric"
+    ],
+    "cmc": 4,
+    "rarity": "c",
+    "artist": "Bradley Williams",
+    "power": "2",
+    "toughness": "4",
+    "manaCost": "{3}{W}",
+    "text": "Fading 4 (This creature enters the battlefield with four fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\nRemove a fade counter from Defender en-Vec: Prevent the next 2 damage that would be dealt to target creature or player this turn.",
+    "number": "5",
+    "imageName": "defender en-vec",
+    "title": "Defender en-Vec",
+    "set": "nem",
+    "cost": "{3}{W}",
+    "colour": "w",
+    "num": "5",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22026&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 21251,
+    "name": "Defiant Falcon",
+    "subtypes": [
+      "Rebel",
+      "Bird"
+    ],
+    "cmc": 2,
+    "rarity": "c",
+    "artist": "Heather Hudson",
+    "power": "1",
+    "toughness": "1",
+    "manaCost": "{1}{W}",
+    "text": "Flying\n{4}, {T}: Search your library for a Rebel permanent card with converted mana cost 3 or less and put it onto the battlefield. Then shuffle your library.",
+    "number": "6",
+    "imageName": "defiant falcon",
+    "title": "Defiant Falcon",
+    "set": "nem",
+    "cost": "{1}{W}",
+    "colour": "w",
+    "num": "6",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21251&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 21266,
+    "name": "Defiant Vanguard",
+    "subtypes": [
+      "Human",
+      "Rebel"
+    ],
+    "cmc": 3,
+    "rarity": "u",
+    "artist": "Pete Venters",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{2}{W}",
+    "text": "When Defiant Vanguard blocks, at end of combat, destroy it and all creatures it blocked this turn.\n{5}, {T}: Search your library for a Rebel permanent card with converted mana cost 4 or less and put it onto the battlefield. Then shuffle your library.",
+    "number": "7",
+    "imageName": "defiant vanguard",
+    "title": "Defiant Vanguard",
+    "set": "nem",
+    "cost": "{2}{W}",
+    "colour": "w",
+    "num": "7",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21266&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 21318,
+    "name": "Divining Witch",
+    "subtypes": [
+      "Human",
+      "Spellshaper"
+    ],
+    "cmc": 2,
+    "rarity": "r",
+    "artist": "Donato Giancola",
+    "power": "1",
+    "toughness": "1",
+    "manaCost": "{1}{B}",
+    "text": "{1}{B}, {T}, Discard a card: Name a card. Exile the top six cards of your library. Reveal cards from the top of your library until you reveal the named card, then put that card into your hand. Exile all other cards revealed this way.",
+    "number": "57",
+    "imageName": "divining witch",
+    "title": "Divining Witch",
+    "set": "nem",
+    "cost": "{1}{B}",
+    "colour": "b",
+    "num": "57",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21318&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Instant",
+    "types": [
+      "Instant"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 21303,
+    "name": "Dominate",
+    "cmc": 3,
+    "rarity": "u",
+    "artist": "Scott Hampton",
+    "manaCost": "{X}{1}{U}{U}",
+    "text": "Gain control of target creature with converted mana cost X or less. (This effect lasts indefinitely.)",
+    "flavor": "\"I've come to reclaim what is mine. And you, Greven, are mine.\"\n�Volrath",
+    "number": "31",
+    "imageName": "dominate",
+    "title": "Dominate",
+    "set": "nem",
+    "cost": "{X}{1}{U}{U}",
+    "colour": "u",
+    "num": "31",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21303&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Instant",
+    "types": [
+      "Instant"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 21338,
+    "name": "Downhill Charge",
+    "cmc": 3,
+    "rarity": "c",
+    "artist": "Greg & Tim Hildebrandt",
+    "manaCost": "{2}{R}",
+    "text": "You may sacrifice a Mountain rather than pay Downhill Charge's mana cost.\nTarget creature gets +X/+0 until end of turn, where X is the number of Mountains you control.",
+    "number": "79",
+    "imageName": "downhill charge",
+    "title": "Downhill Charge",
+    "set": "nem",
+    "cost": "{2}{R}",
+    "colour": "r",
+    "num": "79",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21338&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Instant",
+    "types": [
+      "Instant"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 22881,
+    "name": "Ensnare",
+    "cmc": 4,
+    "rarity": "u",
+    "artist": "Gao Yan",
+    "manaCost": "{3}{U}",
+    "text": "You may return two Islands you control to their owner's hand rather than pay Ensnare's mana cost.\nTap all creatures.",
+    "flavor": "Rootwater has become as dangerous to its denizens as to its enemies.",
+    "number": "32",
+    "imageName": "ensnare",
+    "title": "Ensnare",
+    "set": "nem",
+    "cost": "{3}{U}",
+    "colour": "u",
+    "num": "32",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22881&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Artifact",
+    "types": [
+      "Artifact"
+    ],
+    "multiverseid": 21392,
+    "name": "Eye of Yawgmoth",
+    "cmc": 3,
+    "rarity": "r",
+    "artist": "DiTerlizzi",
+    "manaCost": "{3}",
+    "text": "{3}, {T}, Sacrifice a creature: Reveal a number of cards from the top of your library equal to the sacrificed creature's power. Put one into your hand and exile the rest.",
+    "number": "129",
+    "imageName": "eye of yawgmoth",
+    "title": "Eye of Yawgmoth",
+    "set": "nem",
+    "cost": "{3}",
+    "colour": "?",
+    "num": "129",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21392&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 21260,
+    "name": "Fanatical Devotion",
+    "cmc": 3,
+    "rarity": "c",
+    "artist": "Massimilano Frezzato",
+    "manaCost": "{2}{W}",
+    "text": "Sacrifice a creature: Regenerate target creature.",
+    "flavor": "The Oracle told Eladamri he would save his people by abandoning them. His followers adopted that ideal.",
+    "number": "8",
+    "imageName": "fanatical devotion",
+    "title": "Fanatical Devotion",
+    "set": "nem",
+    "cost": "{2}{W}",
+    "colour": "w",
+    "num": "8",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21260&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Sorcery",
+    "types": [
+      "Sorcery"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 22290,
+    "name": "Flame Rift",
+    "cmc": 2,
+    "rarity": "c",
+    "artist": "Ben Thompson",
+    "manaCost": "{1}{R}",
+    "text": "Flame Rift deals 4 damage to each player.",
+    "flavor": "Crovax hungered for power, and the stronghold devoured the sky.",
+    "number": "80",
+    "imageName": "flame rift",
+    "title": "Flame Rift",
+    "set": "nem",
+    "cost": "{1}{R}",
+    "colour": "r",
+    "num": "80",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22290&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Artifact",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "multiverseid": 22284,
+    "name": "Flint Golem",
+    "subtypes": [
+      "Golem"
+    ],
+    "cmc": 4,
+    "rarity": "u",
+    "artist": "Lou Harrison",
+    "power": "2",
+    "toughness": "3",
+    "manaCost": "{4}",
+    "text": "Whenever Flint Golem becomes blocked, defending player puts the top three cards of his or her library into his or her graveyard.",
+    "number": "130",
+    "imageName": "flint golem",
+    "title": "Flint Golem",
+    "set": "nem",
+    "cost": "{4}",
+    "colour": "?",
+    "num": "130",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22284&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Artifact",
+    "types": [
+      "Artifact"
+    ],
+    "multiverseid": 21391,
+    "name": "Flowstone Armor",
+    "cmc": 3,
+    "rarity": "u",
+    "artist": "Paolo Parente",
+    "manaCost": "{3}",
+    "text": "You may choose not to untap Flowstone Armor during your untap step.\n{3}, {T}: Target creature gets +1/-1 for as long as Flowstone Armor remains tapped.",
+    "number": "131",
+    "imageName": "flowstone armor",
+    "title": "Flowstone Armor",
+    "set": "nem",
+    "cost": "{3}",
+    "colour": "?",
+    "num": "131",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21391&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 21334,
+    "name": "Flowstone Crusher",
+    "subtypes": [
+      "Beast"
+    ],
+    "cmc": 5,
+    "rarity": "c",
+    "artist": "Ben Thompson",
+    "power": "4",
+    "toughness": "4",
+    "manaCost": "{3}{R}{R}",
+    "text": "{R}: Flowstone Crusher gets +1/-1 until end of turn.",
+    "flavor": "\"Someone must have done something very bad to make a rock that angry.\"\n�Rebel scout",
+    "number": "81",
+    "imageName": "flowstone crusher",
+    "title": "Flowstone Crusher",
+    "set": "nem",
+    "cost": "{3}{R}{R}",
+    "colour": "r",
+    "num": "81",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21334&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 21351,
+    "name": "Flowstone Overseer",
+    "subtypes": [
+      "Beast"
+    ],
+    "cmc": 5,
+    "rarity": "r",
+    "artist": "Andrew Goldhawk",
+    "power": "4",
+    "toughness": "4",
+    "manaCost": "{2}{R}{R}{R}",
+    "text": "{R}{R}: Target creature gets +1/-1 until end of turn.",
+    "flavor": "The rebels couldn't see where the roar was coming from. Then they saw it was coming from everywhere.",
+    "number": "82",
+    "imageName": "flowstone overseer",
+    "title": "Flowstone Overseer",
+    "set": "nem",
+    "cost": "{2}{R}{R}{R}",
+    "colour": "r",
+    "num": "82",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21351&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Sorcery",
+    "types": [
+      "Sorcery"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 21355,
+    "name": "Flowstone Slide",
+    "cmc": 4,
+    "rarity": "r",
+    "artist": "Chippy",
+    "manaCost": "{X}{2}{R}{R}",
+    "text": "All creatures get +X/-X until end of turn.",
+    "flavor": "It may look like soil, but its nature is malice.",
+    "number": "83",
+    "imageName": "flowstone slide",
+    "title": "Flowstone Slide",
+    "set": "nem",
+    "cost": "{X}{2}{R}{R}",
+    "colour": "r",
+    "num": "83",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21355&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Instant",
+    "types": [
+      "Instant"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 21341,
+    "name": "Flowstone Strike",
+    "cmc": 2,
+    "rarity": "c",
+    "artist": "Mike Ploog",
+    "manaCost": "{1}{R}",
+    "text": "Target creature gets +1/-1 and gains haste until end of turn.",
+    "flavor": "Aggression exacts its toll.",
+    "number": "84",
+    "imageName": "flowstone strike",
+    "title": "Flowstone Strike",
+    "set": "nem",
+    "cost": "{1}{R}",
+    "colour": "r",
+    "num": "84",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21341&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 21348,
+    "name": "Flowstone Surge",
+    "cmc": 2,
+    "rarity": "u",
+    "artist": "Scott Hampton",
+    "manaCost": "{1}{R}",
+    "text": "Creatures you control get +1/-1.",
+    "flavor": "The army was never at a loss for weapons; Crovax was their forge.",
+    "number": "85",
+    "imageName": "flowstone surge",
+    "title": "Flowstone Surge",
+    "set": "nem",
+    "cost": "{1}{R}",
+    "colour": "r",
+    "num": "85",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21348&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Artifact",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "multiverseid": 21398,
+    "name": "Flowstone Thopter",
+    "subtypes": [
+      "Thopter"
+    ],
+    "cmc": 7,
+    "rarity": "u",
+    "artist": "Mike Ploog",
+    "power": "4",
+    "toughness": "4",
+    "manaCost": "{7}",
+    "text": "{1}: Flowstone Thopter gets +1/-1 and gains flying until end of turn.",
+    "flavor": "Airborne flowstone isn't less dangerous, only less common.",
+    "number": "132",
+    "imageName": "flowstone thopter",
+    "title": "Flowstone Thopter",
+    "set": "nem",
+    "cost": "{7}",
+    "colour": "?",
+    "num": "132",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21398&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 21336,
+    "name": "Flowstone Wall",
+    "subtypes": [
+      "Wall"
+    ],
+    "cmc": 3,
+    "rarity": "c",
+    "artist": "Jeff Miracola",
+    "power": "0",
+    "toughness": "6",
+    "manaCost": "{2}{R}",
+    "text": "Defender (This creature can't attack.)\n{R}: Flowstone Wall gets +1/-1 until end of turn.",
+    "flavor": "The rebels assaulted the wall, never suspecting the wall would assault back.",
+    "number": "86",
+    "imageName": "flowstone wall",
+    "title": "Flowstone Wall",
+    "set": "nem",
+    "cost": "{2}{R}",
+    "colour": "r",
+    "num": "86",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21336&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Instant",
+    "types": [
+      "Instant"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 21368,
+    "name": "Fog Patch",
+    "cmc": 2,
+    "rarity": "c",
+    "artist": "Rebecca Guay",
+    "manaCost": "{1}{G}",
+    "text": "Cast Fog Patch only during the declare blockers step.\nAttacking creatures become blocked. (This spell works on creatures that can't be blocked.)",
+    "flavor": "Realizing they weren't getting past the fog, the elves did the only thing they could do: wait.",
+    "number": "104",
+    "imageName": "fog patch",
+    "title": "Fog Patch",
+    "set": "nem",
+    "cost": "{1}{G}",
+    "colour": "g",
+    "num": "104",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21368&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 21370,
+    "name": "Harvest Mage",
+    "subtypes": [
+      "Human",
+      "Spellshaper"
+    ],
+    "cmc": 1,
+    "rarity": "c",
+    "artist": "Dan Frazier",
+    "power": "1",
+    "toughness": "1",
+    "manaCost": "{G}",
+    "text": "{G}, {T}, Discard a card: Until end of turn, if you tap a land for mana, it produces one mana of a color of your choice instead of any other type and amount.",
+    "flavor": "\"Why should one limit oneself to the resources at hand?\"",
+    "number": "105",
+    "imageName": "harvest mage",
+    "title": "Harvest Mage",
+    "set": "nem",
+    "cost": "{G}",
+    "colour": "g",
+    "num": "105",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21370&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Instant",
+    "types": [
+      "Instant"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 21286,
+    "name": "Infiltrate",
+    "cmc": 1,
+    "rarity": "c",
+    "artist": "Nelson DeCastro",
+    "manaCost": "{U}",
+    "text": "Target creature can't be blocked this turn.",
+    "flavor": "Getting in was the easy part. Getting out proved to be more difficult.",
+    "number": "33",
+    "imageName": "infiltrate",
+    "title": "Infiltrate",
+    "set": "nem",
+    "cost": "{U}",
+    "colour": "u",
+    "num": "33",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21286&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 21281,
+    "name": "Jolting Merfolk",
+    "subtypes": [
+      "Merfolk"
+    ],
+    "cmc": 4,
+    "rarity": "u",
+    "artist": "Glen Angus",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{2}{U}{U}",
+    "text": "Fading 4 (This creature enters the battlefield with four fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\nRemove a fade counter from Jolting Merfolk: Tap target creature.",
+    "number": "34",
+    "imageName": "jolting merfolk",
+    "title": "Jolting Merfolk",
+    "set": "nem",
+    "cost": "{2}{U}{U}",
+    "colour": "u",
+    "num": "34",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21281&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Artifact",
+    "types": [
+      "Artifact"
+    ],
+    "multiverseid": 22318,
+    "name": "Kill Switch",
+    "cmc": 3,
+    "rarity": "r",
+    "artist": "Brian Sn�ddy",
+    "manaCost": "{3}",
+    "text": "{2}, {T}: Tap all other artifacts. They don't untap during their controllers' untap steps for as long as Kill Switch remains tapped.",
+    "flavor": "Success is largely a matter of knowing which lever to pull.",
+    "number": "133",
+    "imageName": "kill switch",
+    "title": "Kill Switch",
+    "set": "nem",
+    "cost": "{3}",
+    "colour": "?",
+    "num": "133",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22318&type=card"
+  },
+  {
+    "layout": "normal",
+    "supertypes": [
+      "Legendary"
+    ],
+    "type": "Land",
+    "types": [
+      "Land"
+    ],
+    "multiverseid": 21403,
+    "name": "Kor Haven",
+    "rarity": "r",
+    "artist": "Darrell Riche",
+    "text": "{T}: Add {1} to your mana pool.\n{1}{W}, {T}: Prevent all combat damage that would be dealt by target attacking creature this turn.",
+    "number": "141",
+    "imageName": "kor haven",
+    "title": "Kor Haven",
+    "set": "nem",
+    "cost": "",
+    "colour": "?",
+    "num": "141",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21403&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 21333,
+    "name": "Laccolith Grunt",
+    "subtypes": [
+      "Beast"
+    ],
+    "cmc": 3,
+    "rarity": "c",
+    "artist": "Arnie Swekel",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{2}{R}",
+    "text": "Whenever Laccolith Grunt becomes blocked, you may have it deal damage equal to its power to target creature. If you do, Laccolith Grunt assigns no combat damage this turn.",
+    "flavor": "They leave a trail of ash and sorrow.",
+    "number": "87",
+    "imageName": "laccolith grunt",
+    "title": "Laccolith Grunt",
+    "set": "nem",
+    "cost": "{2}{R}",
+    "colour": "r",
+    "num": "87",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21333&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 21339,
+    "name": "Laccolith Rig",
+    "subtypes": [
+      "Aura"
+    ],
+    "cmc": 1,
+    "rarity": "c",
+    "artist": "Massimilano Frezzato",
+    "manaCost": "{R}",
+    "text": "Enchant creature\nWhenever enchanted creature becomes blocked, you may have it deal damage equal to its power to target creature. If you do, the first creature assigns no combat damage this turn.",
+    "number": "88",
+    "imageName": "laccolith rig",
+    "title": "Laccolith Rig",
+    "set": "nem",
+    "cost": "{R}",
+    "colour": "r",
+    "num": "88",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21339&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 22297,
+    "name": "Laccolith Titan",
+    "subtypes": [
+      "Beast"
+    ],
+    "cmc": 7,
+    "rarity": "r",
+    "artist": "Tony Szczudlo",
+    "power": "6",
+    "toughness": "6",
+    "manaCost": "{5}{R}{R}",
+    "text": "Whenever Laccolith Titan becomes blocked, you may have it deal damage equal to its power to target creature. If you do, Laccolith Titan assigns no combat damage this turn.",
+    "flavor": "Proximity guarantees injury or death.",
+    "number": "89",
+    "imageName": "laccolith titan",
+    "title": "Laccolith Titan",
+    "set": "nem",
+    "cost": "{5}{R}{R}",
+    "colour": "r",
+    "num": "89",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22297&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 21344,
+    "name": "Laccolith Warrior",
+    "subtypes": [
+      "Beast",
+      "Warrior"
+    ],
+    "cmc": 4,
+    "rarity": "u",
+    "artist": "Mark Zug",
+    "power": "3",
+    "toughness": "3",
+    "manaCost": "{2}{R}{R}",
+    "text": "Whenever Laccolith Warrior becomes blocked, you may have it deal damage equal to its power to target creature. If you do, Laccolith Warrior assigns no combat damage this turn.",
+    "flavor": "The screams are brief. The silence lingers.",
+    "number": "90",
+    "imageName": "laccolith warrior",
+    "title": "Laccolith Warrior",
+    "set": "nem",
+    "cost": "{2}{R}{R}",
+    "colour": "r",
+    "num": "90",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21344&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 21335,
+    "name": "Laccolith Whelp",
+    "subtypes": [
+      "Beast"
+    ],
+    "cmc": 1,
+    "rarity": "c",
+    "artist": "Dave Dorman",
+    "power": "1",
+    "toughness": "1",
+    "manaCost": "{R}",
+    "text": "Whenever Laccolith Whelp becomes blocked, you may have it deal damage equal to its power to target creature. If you do, Laccolith Whelp assigns no combat damage this turn.",
+    "flavor": "They don't feed; they stoke.",
+    "number": "91",
+    "imageName": "laccolith whelp",
+    "title": "Laccolith Whelp",
+    "set": "nem",
+    "cost": "{R}",
+    "colour": "r",
+    "num": "91",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21335&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 21257,
+    "name": "Lashknife",
+    "subtypes": [
+      "Aura"
+    ],
+    "cmc": 2,
+    "rarity": "c",
+    "artist": "Hannibal King",
+    "manaCost": "{1}{W}",
+    "text": "If you control a Plains, you may tap an untapped creature you control rather than pay Lashknife's mana cost.\nEnchant creature\nEnchanted creature has first strike.",
+    "flavor": "Those it won't scare, it scars.",
+    "number": "9",
+    "imageName": "lashknife",
+    "title": "Lashknife",
+    "set": "nem",
+    "cost": "{1}{W}",
+    "colour": "w",
+    "num": "9",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21257&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 21255,
+    "name": "Lawbringer",
+    "subtypes": [
+      "Kor",
+      "Rebel"
+    ],
+    "cmc": 3,
+    "rarity": "c",
+    "artist": "Matt Cavotta",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{2}{W}",
+    "text": "{T}, Sacrifice Lawbringer: Exile target red creature.",
+    "flavor": "One injustice starts a thousand riots. One law stops a thousand crimes.\n�Lawbringer creed",
+    "number": "10",
+    "imageName": "lawbringer",
+    "title": "Lawbringer",
+    "set": "nem",
+    "cost": "{2}{W}",
+    "colour": "w",
+    "num": "10",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21255&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 21256,
+    "name": "Lightbringer",
+    "subtypes": [
+      "Kor",
+      "Rebel"
+    ],
+    "cmc": 3,
+    "rarity": "c",
+    "artist": "Paolo Parente",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{2}{W}",
+    "text": "{T}, Sacrifice Lightbringer: Exile target black creature.",
+    "flavor": "One thought opens a thousand eyes. One sun brings a thousand dawns.\n�Lightbringer creed",
+    "number": "11",
+    "imageName": "lightbringer",
+    "title": "Lightbringer",
+    "set": "nem",
+    "cost": "{2}{W}",
+    "colour": "w",
+    "num": "11",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21256&type=card"
+  },
+  {
+    "layout": "normal",
+    "supertypes": [
+      "Legendary"
+    ],
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 21271,
+    "name": "Lin Sivvi, Defiant Hero",
+    "subtypes": [
+      "Human",
+      "Rebel"
+    ],
+    "cmc": 3,
+    "rarity": "r",
+    "artist": "rk post",
+    "power": "1",
+    "toughness": "3",
+    "manaCost": "{1}{W}{W}",
+    "text": "{X}, {T}: Search your library for a Rebel permanent card with converted mana cost X or less and put it onto the battlefield. Then shuffle your library.\n{3}: Put target Rebel card from your graveyard on the bottom of your library.",
+    "number": "12",
+    "imageName": "lin sivvi, defiant hero",
+    "title": "Lin Sivvi, Defiant Hero",
+    "set": "nem",
+    "cost": "{1}{W}{W}",
+    "colour": "w",
+    "num": "12",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21271&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 21356,
+    "name": "Mana Cache",
+    "cmc": 3,
+    "rarity": "r",
+    "artist": "rk post",
+    "manaCost": "{1}{R}{R}",
+    "text": "At the beginning of each player's end step, put a charge counter on Mana Cache for each untapped land that player controls.\nRemove a charge counter from Mana Cache: Add {1} to your mana pool. Any player may activate this ability but only during his or her turn before the end step.",
+    "number": "92",
+    "imageName": "mana cache",
+    "title": "Mana Cache",
+    "set": "nem",
+    "cost": "{1}{R}{R}",
+    "colour": "r",
+    "num": "92",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21356&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Sorcery",
+    "types": [
+      "Sorcery"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 21324,
+    "name": "Massacre",
+    "cmc": 4,
+    "rarity": "u",
+    "artist": "Pete Venters",
+    "manaCost": "{2}{B}{B}",
+    "text": "If an opponent controls a Plains and you control a Swamp, you may cast Massacre without paying its mana cost.\nAll creatures get -2/-2 until end of turn.",
+    "number": "58",
+    "imageName": "massacre",
+    "title": "Massacre",
+    "set": "nem",
+    "cost": "{2}{B}{B}",
+    "colour": "b",
+    "num": "58",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21324&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 21331,
+    "name": "Mind Slash",
+    "cmc": 3,
+    "rarity": "u",
+    "artist": "Adam Rex",
+    "manaCost": "{1}{B}{B}",
+    "text": "{B}, Sacrifice a creature: Target opponent reveals his or her hand. You choose a card from it. That player discards that card. Activate this ability only any time you could cast a sorcery.",
+    "flavor": "\"I can't think with all that screaming.\"",
+    "number": "59",
+    "imageName": "mind slash",
+    "title": "Mind Slash",
+    "set": "nem",
+    "cost": "{1}{B}{B}",
+    "colour": "b",
+    "num": "59",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21331&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Sorcery",
+    "types": [
+      "Sorcery"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 21313,
+    "name": "Mind Swords",
+    "cmc": 2,
+    "rarity": "c",
+    "artist": "Daren Bader",
+    "manaCost": "{1}{B}",
+    "text": "If you control a Swamp, you may sacrifice a creature rather than pay Mind Swords's mana cost.\nEach player exiles two cards from his or her hand.",
+    "number": "60",
+    "imageName": "mind swords",
+    "title": "Mind Swords",
+    "set": "nem",
+    "cost": "{1}{B}",
+    "colour": "b",
+    "num": "60",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21313&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Sorcery",
+    "types": [
+      "Sorcery"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 21345,
+    "name": "Mogg Alarm",
+    "cmc": 3,
+    "rarity": "u",
+    "artist": "Dave Dorman",
+    "manaCost": "{1}{R}{R}",
+    "text": "You may sacrifice two Mountains rather than pay Mogg Alarm's mana cost.\nPut two 1/1 red Goblin creature tokens onto the battlefield.",
+    "flavor": "They make mountains into mogg holes.",
+    "number": "93",
+    "imageName": "mogg alarm",
+    "title": "Mogg Alarm",
+    "set": "nem",
+    "cost": "{1}{R}{R}",
+    "colour": "r",
+    "num": "93",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21345&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Instant",
+    "types": [
+      "Instant"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 21349,
+    "name": "Mogg Salvage",
+    "cmc": 3,
+    "rarity": "u",
+    "artist": "Paolo Parente",
+    "manaCost": "{2}{R}",
+    "text": "If an opponent controls an Island and you control a Mountain, you may cast Mogg Salvage without paying its mana cost.\nDestroy target artifact.",
+    "flavor": "Three moggs, one treasure, too bad.",
+    "number": "94",
+    "imageName": "mogg salvage",
+    "title": "Mogg Salvage",
+    "set": "nem",
+    "cost": "{2}{R}",
+    "colour": "r",
+    "num": "94",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21349&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 22299,
+    "name": "Mogg Toady",
+    "subtypes": [
+      "Goblin"
+    ],
+    "cmc": 2,
+    "rarity": "c",
+    "artist": "Mike Ploog",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{1}{R}",
+    "text": "Mogg Toady can't attack unless you control more creatures than defending player.\nMogg Toady can't block unless you control more creatures than attacking player.",
+    "number": "95",
+    "imageName": "mogg toady",
+    "title": "Mogg Toady",
+    "set": "nem",
+    "cost": "{1}{R}",
+    "colour": "r",
+    "num": "95",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22299&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 21350,
+    "name": "Moggcatcher",
+    "subtypes": [
+      "Human",
+      "Mercenary"
+    ],
+    "cmc": 4,
+    "rarity": "r",
+    "artist": "Pete Venters",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{2}{R}{R}",
+    "text": "{3}, {T}: Search your library for a Goblin permanent card and put it onto the battlefield. Then shuffle your library.",
+    "flavor": "\"They're not worth much, but they're easy to catch.\"",
+    "number": "96",
+    "imageName": "moggcatcher",
+    "title": "Moggcatcher",
+    "set": "nem",
+    "cost": "{2}{R}{R}",
+    "colour": "r",
+    "num": "96",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21350&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 21290,
+    "name": "Mossdog",
+    "subtypes": [
+      "Plant",
+      "Hound"
+    ],
+    "cmc": 1,
+    "rarity": "c",
+    "artist": "Matt Cavotta",
+    "power": "1",
+    "toughness": "1",
+    "manaCost": "{G}",
+    "text": "Whenever Mossdog becomes the target of a spell or ability an opponent controls, put a +1/+1 counter on Mossdog.",
+    "flavor": "The more you look at it, the more dangerous it becomes.",
+    "number": "106",
+    "imageName": "mossdog",
+    "title": "Mossdog",
+    "set": "nem",
+    "cost": "{G}",
+    "colour": "g",
+    "num": "106",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21290&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 21329,
+    "name": "Murderous Betrayal",
+    "cmc": 3,
+    "rarity": "r",
+    "artist": "Randy Gallegos",
+    "manaCost": "{B}{B}{B}",
+    "text": "{B}{B}, Pay half your life, rounded up: Destroy target nonblack creature. It can't be regenerated.",
+    "flavor": "In darkness, the assassin sneaked into the village and destroyed what Eladamri loved most: his daughter.",
+    "number": "61",
+    "imageName": "murderous betrayal",
+    "title": "Murderous Betrayal",
+    "set": "nem",
+    "cost": "{B}{B}{B}",
+    "colour": "b",
+    "num": "61",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21329&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 21373,
+    "name": "Nesting Wurm",
+    "subtypes": [
+      "Wurm"
+    ],
+    "cmc": 6,
+    "rarity": "u",
+    "artist": "rk post",
+    "power": "4",
+    "toughness": "3",
+    "manaCost": "{4}{G}{G}",
+    "text": "Trample\nWhen Nesting Wurm enters the battlefield, you may search your library for up to three cards named Nesting Wurm, reveal them, and put them into your hand. If you do, shuffle your library.",
+    "number": "107",
+    "imageName": "nesting wurm",
+    "title": "Nesting Wurm",
+    "set": "nem",
+    "cost": "{4}{G}{G}",
+    "colour": "g",
+    "num": "107",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21373&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 22027,
+    "name": "Netter en-Dal",
+    "subtypes": [
+      "Human",
+      "Spellshaper"
+    ],
+    "cmc": 1,
+    "rarity": "c",
+    "artist": "Matt Cavotta",
+    "power": "1",
+    "toughness": "1",
+    "manaCost": "{W}",
+    "text": "{W}, {T}, Discard a card: Target creature can't attack this turn.",
+    "flavor": "The wizard's vocabulary of mogg profanities increased with every net she cast.",
+    "number": "13",
+    "imageName": "netter en-dal",
+    "title": "Netter en-Dal",
+    "set": "nem",
+    "cost": "{W}",
+    "colour": "w",
+    "num": "13",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22027&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 21262,
+    "name": "Noble Stand",
+    "cmc": 5,
+    "rarity": "u",
+    "artist": "Greg & Tim Hildebrandt",
+    "manaCost": "{4}{W}",
+    "text": "Whenever a creature you control blocks, you gain 2 life.",
+    "flavor": "Soldiers will always endanger their lives to defend many other lives.",
+    "number": "14",
+    "imageName": "noble stand",
+    "title": "Noble Stand",
+    "set": "nem",
+    "cost": "{4}{W}",
+    "colour": "w",
+    "num": "14",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21262&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Instant",
+    "types": [
+      "Instant"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 22032,
+    "name": "Off Balance",
+    "cmc": 1,
+    "rarity": "c",
+    "artist": "Jeff Miracola",
+    "manaCost": "{W}",
+    "text": "Target creature can't attack or block this turn.",
+    "flavor": "A heavy weapon deals plenty of damage�but it does have to hit.",
+    "number": "15",
+    "imageName": "off balance",
+    "title": "Off Balance",
+    "set": "nem",
+    "cost": "{W}",
+    "colour": "w",
+    "num": "15",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22032&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 22030,
+    "name": "Oracle's Attendants",
+    "subtypes": [
+      "Human",
+      "Soldier"
+    ],
+    "cmc": 4,
+    "rarity": "r",
+    "artist": "Orizio Daniele",
+    "power": "1",
+    "toughness": "5",
+    "manaCost": "{3}{W}",
+    "text": "{T}: All damage that would be dealt to target creature this turn by a source of your choice is dealt to Oracle's Attendants instead.",
+    "flavor": "The future isn't sacred, but its speaker is.",
+    "number": "16",
+    "imageName": "oracle's attendants",
+    "title": "Oracle's Attendants",
+    "set": "nem",
+    "cost": "{3}{W}",
+    "colour": "w",
+    "num": "16",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22030&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 22293,
+    "name": "Oraxid",
+    "subtypes": [
+      "Crab",
+      "Beast"
+    ],
+    "cmc": 4,
+    "rarity": "c",
+    "artist": "Dave Dorman",
+    "power": "2",
+    "toughness": "3",
+    "manaCost": "{3}{U}",
+    "text": "Protection from red",
+    "flavor": "\"I'm constantly amazed by the tenacity of living creatures on this plane. Even in the stronghold's white-hot core, life persists.\"\n�Ertai",
+    "number": "35",
+    "imageName": "oraxid",
+    "title": "Oraxid",
+    "set": "nem",
+    "cost": "{3}{U}",
+    "colour": "u",
+    "num": "35",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22293&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 22061,
+    "name": "Overlaid Terrain",
+    "cmc": 4,
+    "rarity": "r",
+    "artist": "DiTerlizzi",
+    "manaCost": "{2}{G}{G}",
+    "text": "As Overlaid Terrain enters the battlefield, sacrifice all lands you control.\nLands you control have \"{T}: Add two mana of any one color to your mana pool.\"",
+    "flavor": "One must reap before one can sow.",
+    "number": "108",
+    "imageName": "overlaid terrain",
+    "title": "Overlaid Terrain",
+    "set": "nem",
+    "cost": "{2}{G}{G}",
+    "colour": "g",
+    "num": "108",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22061&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Sorcery",
+    "types": [
+      "Sorcery"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 21375,
+    "name": "Pack Hunt",
+    "cmc": 4,
+    "rarity": "r",
+    "artist": "Sam Wood",
+    "manaCost": "{3}{G}",
+    "text": "Search your library for up to three cards with the same name as target creature, reveal them, and put them into your hand. Then shuffle your library.",
+    "flavor": "The one you see is just a diversion.",
+    "number": "109",
+    "imageName": "pack hunt",
+    "title": "Pack Hunt",
+    "set": "nem",
+    "cost": "{3}{G}",
+    "colour": "g",
+    "num": "109",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21375&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Instant",
+    "types": [
+      "Instant"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 21302,
+    "name": "Pale Moon",
+    "cmc": 2,
+    "rarity": "r",
+    "artist": "Pete Venters",
+    "manaCost": "{1}{U}",
+    "text": "Until end of turn, if a player taps a nonbasic land for mana, it produces colorless mana instead of any other type.",
+    "flavor": "Denizens of Rath had never seen the moon before. It was a symbol of change, not constancy.",
+    "number": "36",
+    "imageName": "pale moon",
+    "title": "Pale Moon",
+    "set": "nem",
+    "cost": "{1}{U}",
+    "colour": "u",
+    "num": "36",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21302&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 21315,
+    "name": "Parallax Dementia",
+    "subtypes": [
+      "Aura"
+    ],
+    "cmc": 2,
+    "rarity": "c",
+    "artist": "Eric Peterson",
+    "manaCost": "{1}{B}",
+    "text": "Enchant creature\nFading 1 (This enchantment enters the battlefield with one fade counter on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\nEnchanted creature gets +3/+2.\nWhen Parallax Dementia leaves the battlefield, destroy enchanted creature. That creature can't be regenerated.",
+    "number": "62",
+    "imageName": "parallax dementia",
+    "title": "Parallax Dementia",
+    "set": "nem",
+    "cost": "{1}{B}",
+    "colour": "b",
+    "num": "62",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21315&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Artifact",
+    "types": [
+      "Artifact"
+    ],
+    "multiverseid": 22301,
+    "name": "Parallax Inhibitor",
+    "cmc": 2,
+    "rarity": "r",
+    "artist": "Greg Staples",
+    "manaCost": "{2}",
+    "text": "{1}, {T}, Sacrifice Parallax Inhibitor: Put a fade counter on each permanent with fading you control.",
+    "flavor": "\"The best I can offer is a temporary reprieve.\"\n�Belbe",
+    "number": "134",
+    "imageName": "parallax inhibitor",
+    "title": "Parallax Inhibitor",
+    "set": "nem",
+    "cost": "{2}",
+    "colour": "?",
+    "num": "134",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22301&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 22031,
+    "name": "Parallax Nexus",
+    "cmc": 3,
+    "rarity": "r",
+    "artist": "Greg Staples",
+    "manaCost": "{2}{B}",
+    "text": "Fading 5 (This enchantment enters the battlefield with five fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\nRemove a fade counter from Parallax Nexus: Target opponent exiles a card from his or her hand. Activate this ability only any time you could cast a sorcery.\nWhen Parallax Nexus leaves the battlefield, each player returns to his or her hand all cards he or she owns exiled with Parallax Nexus.",
+    "number": "63",
+    "imageName": "parallax nexus",
+    "title": "Parallax Nexus",
+    "set": "nem",
+    "cost": "{2}{B}",
+    "colour": "b",
+    "num": "63",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22031&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 22035,
+    "name": "Parallax Tide",
+    "cmc": 4,
+    "rarity": "r",
+    "artist": "Carl Critchlow",
+    "manaCost": "{2}{U}{U}",
+    "text": "Fading 5 (This enchantment enters the battlefield with five fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\nRemove a fade counter from Parallax Tide: Exile target land.\nWhen Parallax Tide leaves the battlefield, each player returns to the battlefield all cards he or she owns exiled with Parallax Tide.",
+    "number": "37",
+    "imageName": "parallax tide",
+    "title": "Parallax Tide",
+    "set": "nem",
+    "cost": "{2}{U}{U}",
+    "colour": "u",
+    "num": "37",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22035&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 22028,
+    "name": "Parallax Wave",
+    "cmc": 4,
+    "rarity": "r",
+    "artist": "Greg Staples",
+    "manaCost": "{2}{W}{W}",
+    "text": "Fading 5 (This enchantment enters the battlefield with five fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\nRemove a fade counter from Parallax Wave: Exile target creature.\nWhen Parallax Wave leaves the battlefield, each player returns to the battlefield all cards he or she owns exiled with Parallax Wave.",
+    "number": "17",
+    "imageName": "parallax wave",
+    "title": "Parallax Wave",
+    "set": "nem",
+    "cost": "{2}{W}{W}",
+    "colour": "w",
+    "num": "17",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22028&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 22379,
+    "name": "Phyrexian Driver",
+    "subtypes": [
+      "Zombie",
+      "Mercenary"
+    ],
+    "cmc": 3,
+    "rarity": "c",
+    "artist": "Chippy",
+    "power": "1",
+    "toughness": "1",
+    "manaCost": "{2}{B}",
+    "text": "When Phyrexian Driver enters the battlefield, other Mercenary creatures get +1/+1 until end of turn.",
+    "flavor": "Although the abuse was initially effective, the troops soon became numb to it.",
+    "number": "64",
+    "imageName": "phyrexian driver",
+    "title": "Phyrexian Driver",
+    "set": "nem",
+    "cost": "{2}{B}",
+    "colour": "b",
+    "num": "64",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22379&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 22029,
+    "name": "Phyrexian Prowler",
+    "subtypes": [
+      "Zombie",
+      "Mercenary"
+    ],
+    "cmc": 4,
+    "rarity": "u",
+    "artist": "Mark Zug",
+    "power": "3",
+    "toughness": "3",
+    "manaCost": "{3}{B}",
+    "text": "Fading 3 (This creature enters the battlefield with three fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\nRemove a fade counter from Phyrexian Prowler: Phyrexian Prowler gets +1/+1 until end of turn.",
+    "number": "65",
+    "imageName": "phyrexian prowler",
+    "title": "Phyrexian Prowler",
+    "set": "nem",
+    "cost": "{3}{B}",
+    "colour": "b",
+    "num": "65",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22029&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 19579,
+    "name": "Plague Witch",
+    "subtypes": [
+      "Elf",
+      "Spellshaper"
+    ],
+    "cmc": 2,
+    "rarity": "c",
+    "artist": "Nelson DeCastro",
+    "power": "1",
+    "toughness": "1",
+    "manaCost": "{1}{B}",
+    "text": "{B}, {T}, Discard a card: Target creature gets -1/-1 until end of turn.",
+    "flavor": "\"I can ail what cures you.\"",
+    "number": "66",
+    "imageName": "plague witch",
+    "title": "Plague Witch",
+    "set": "nem",
+    "cost": "{1}{B}",
+    "colour": "b",
+    "num": "66",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=19579&type=card"
+  },
+  {
+    "layout": "normal",
+    "supertypes": [
+      "Legendary"
+    ],
+    "type": "Artifact",
+    "types": [
+      "Artifact"
+    ],
+    "multiverseid": 21400,
+    "name": "Predator, Flagship",
+    "cmc": 5,
+    "rarity": "r",
+    "artist": "Mark Tedin",
+    "manaCost": "{5}",
+    "text": "{2}: Target creature gains flying until end of turn.\n{5}, {T}: Destroy target creature with flying.",
+    "flavor": "\"The scourge of Skyshroud is airborne once more.\"\n�Oracle en-Vec",
+    "number": "135",
+    "imageName": "predator, flagship",
+    "title": "Predator, Flagship",
+    "set": "nem",
+    "cost": "{5}",
+    "colour": "?",
+    "num": "135",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21400&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Artifact",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "multiverseid": 21396,
+    "name": "Rackling",
+    "subtypes": [
+      "Construct"
+    ],
+    "cmc": 4,
+    "rarity": "u",
+    "artist": "D. Alexander Gregory",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{4}",
+    "text": "At the beginning of each opponent's upkeep, Rackling deals X damage to that player, where X is 3 minus the number of cards in his or her hand.",
+    "flavor": "\"This may hurt a little.\"",
+    "number": "136",
+    "imageName": "rackling",
+    "title": "Rackling",
+    "set": "nem",
+    "cost": "{4}",
+    "colour": "?",
+    "num": "136",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21396&type=card"
+  },
+  {
+    "layout": "normal",
+    "supertypes": [
+      "Legendary"
+    ],
+    "type": "Land",
+    "types": [
+      "Land"
+    ],
+    "multiverseid": 21402,
+    "name": "Rath's Edge",
+    "rarity": "r",
+    "artist": "Ron Spencer",
+    "text": "{T}: Add {1} to your mana pool.\n{4}, {T}, Sacrifice a land: Rath's Edge deals 1 damage to target creature or player.",
+    "number": "142",
+    "imageName": "rath's edge",
+    "title": "Rath's Edge",
+    "set": "nem",
+    "cost": "",
+    "colour": "?",
+    "num": "142",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21402&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 22890,
+    "name": "Rathi Assassin",
+    "subtypes": [
+      "Zombie",
+      "Mercenary",
+      "Assassin"
+    ],
+    "cmc": 4,
+    "rarity": "r",
+    "artist": "Dana Knutson",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{2}{B}{B}",
+    "text": "{1}{B}{B}, {T}: Destroy target tapped nonblack creature.\n{3}, {T}: Search your library for a Mercenary permanent card with converted mana cost 3 or less and put it onto the battlefield. Then shuffle your library.",
+    "number": "67",
+    "imageName": "rathi assassin",
+    "title": "Rathi Assassin",
+    "set": "nem",
+    "cost": "{2}{B}{B}",
+    "colour": "b",
+    "num": "67",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22890&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 21311,
+    "name": "Rathi Fiend",
+    "subtypes": [
+      "Horror",
+      "Mercenary"
+    ],
+    "cmc": 4,
+    "rarity": "u",
+    "artist": "Mark Tedin",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{3}{B}",
+    "text": "When Rathi Fiend enters the battlefield, each player loses 3 life.\n{3}, {T}: Search your library for a Mercenary permanent card with converted mana cost 3 or less and put it onto the battlefield. Then shuffle your library.",
+    "number": "68",
+    "imageName": "rathi fiend",
+    "title": "Rathi Fiend",
+    "set": "nem",
+    "cost": "{3}{B}",
+    "colour": "b",
+    "num": "68",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21311&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 21307,
+    "name": "Rathi Intimidator",
+    "subtypes": [
+      "Horror",
+      "Mercenary"
+    ],
+    "cmc": 3,
+    "rarity": "c",
+    "artist": "Mike Ploog",
+    "power": "2",
+    "toughness": "1",
+    "manaCost": "{1}{B}{B}",
+    "text": "Fear (This creature can't be blocked except by artifact creatures and/or black creatures.)\n{2}, {T}: Search your library for a Mercenary permanent card with converted mana cost 2 or less and put it onto the battlefield. Then shuffle your library.",
+    "number": "69",
+    "imageName": "rathi intimidator",
+    "title": "Rathi Intimidator",
+    "set": "nem",
+    "cost": "{1}{B}{B}",
+    "colour": "b",
+    "num": "69",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21307&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Instant",
+    "types": [
+      "Instant"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 21378,
+    "name": "Refreshing Rain",
+    "cmc": 4,
+    "rarity": "u",
+    "artist": "Don Hazeltine",
+    "manaCost": "{3}{G}",
+    "text": "If an opponent controls a Swamp and you control a Forest, you may cast Refreshing Rain without paying its mana cost.\nTarget player gains 6 life.",
+    "number": "110",
+    "imageName": "refreshing rain",
+    "title": "Refreshing Rain",
+    "set": "nem",
+    "cost": "{3}{G}",
+    "colour": "g",
+    "num": "110",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21378&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Artifact",
+    "types": [
+      "Artifact"
+    ],
+    "multiverseid": 21386,
+    "name": "Rejuvenation Chamber",
+    "cmc": 3,
+    "rarity": "u",
+    "artist": "Alan Pollack",
+    "manaCost": "{3}",
+    "text": "Fading 2 (This artifact enters the battlefield with two fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\n{T}: You gain 2 life.",
+    "number": "137",
+    "imageName": "rejuvenation chamber",
+    "title": "Rejuvenation Chamber",
+    "set": "nem",
+    "cost": "{3}",
+    "colour": "?",
+    "num": "137",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21386&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Sorcery",
+    "types": [
+      "Sorcery"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 22316,
+    "name": "Reverent Silence",
+    "cmc": 4,
+    "rarity": "c",
+    "artist": "Don Hazeltine",
+    "manaCost": "{3}{G}",
+    "text": "If you control a Forest, rather than pay Reverent Silence's mana cost, you may have each other player gain 6 life.\nDestroy all enchantments.",
+    "number": "111",
+    "imageName": "reverent silence",
+    "title": "Reverent Silence",
+    "set": "nem",
+    "cost": "{3}{G}",
+    "colour": "g",
+    "num": "111",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22316&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 24687,
+    "name": "Rhox",
+    "subtypes": [
+      "Rhino",
+      "Beast"
+    ],
+    "cmc": 6,
+    "rarity": "r",
+    "artist": "Carl Critchlow",
+    "power": "5",
+    "toughness": "5",
+    "manaCost": "{4}{G}{G}",
+    "text": "You may have Rhox assign its combat damage as though it weren't blocked.\n{2}{G}: Regenerate Rhox. (The next time this creature would be destroyed this turn, it isn't. Instead tap it, remove all damage from it, and remove it from combat.)",
+    "number": "112",
+    "imageName": "rhox",
+    "title": "Rhox",
+    "set": "nem",
+    "cost": "{4}{G}{G}",
+    "colour": "g",
+    "num": "112",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=24687&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 21304,
+    "name": "Rising Waters",
+    "cmc": 4,
+    "rarity": "r",
+    "artist": "Scott M. Fischer",
+    "manaCost": "{3}{U}",
+    "text": "Lands don't untap during their controllers' untap steps.\nAt the beginning of each player's upkeep, that player untaps a land he or she controls.",
+    "flavor": "Rising waters, sinking hope.",
+    "number": "38",
+    "imageName": "rising waters",
+    "title": "Rising Waters",
+    "set": "nem",
+    "cost": "{3}{U}",
+    "colour": "u",
+    "num": "38",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21304&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 22292,
+    "name": "Rootwater Commando",
+    "subtypes": [
+      "Merfolk"
+    ],
+    "cmc": 3,
+    "rarity": "c",
+    "artist": "Mark Tedin",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{2}{U}",
+    "text": "Islandwalk (This creature can't be blocked as long as defending player controls an Island.)",
+    "flavor": "Rootwater merfolk are seldom seen these days, but elf corpses are as numerous as ever.",
+    "number": "39",
+    "imageName": "rootwater commando",
+    "title": "Rootwater Commando",
+    "set": "nem",
+    "cost": "{2}{U}",
+    "colour": "u",
+    "num": "39",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22292&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 22889,
+    "name": "Rootwater Thief",
+    "subtypes": [
+      "Merfolk",
+      "Rogue"
+    ],
+    "cmc": 2,
+    "rarity": "r",
+    "artist": "Ron Spears",
+    "power": "1",
+    "toughness": "2",
+    "manaCost": "{1}{U}",
+    "text": "{U}: Rootwater Thief gains flying until end of turn.\nWhenever Rootwater Thief deals combat damage to a player, you may pay {2}. If you do, search that player's library for a card and exile it, then the player shuffles his or her library.",
+    "number": "40",
+    "imageName": "rootwater thief",
+    "title": "Rootwater Thief",
+    "set": "nem",
+    "cost": "{1}{U}",
+    "colour": "u",
+    "num": "40",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22889&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Sorcery",
+    "types": [
+      "Sorcery"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 21347,
+    "name": "Rupture",
+    "cmc": 3,
+    "rarity": "u",
+    "artist": "Gao Yan",
+    "manaCost": "{2}{R}",
+    "text": "Sacrifice a creature. Rupture deals damage equal to that creature's power to each creature without flying and each player.",
+    "flavor": "All creatures have an inner fire. Releasing it can be dangerous.",
+    "number": "97",
+    "imageName": "rupture",
+    "title": "Rupture",
+    "set": "nem",
+    "cost": "{2}{R}",
+    "colour": "r",
+    "num": "97",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21347&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Artifact",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "multiverseid": 21388,
+    "name": "Rusting Golem",
+    "subtypes": [
+      "Golem"
+    ],
+    "cmc": 4,
+    "rarity": "u",
+    "artist": "Greg Staples",
+    "power": "*",
+    "toughness": "*",
+    "manaCost": "{4}",
+    "text": "Fading 5 (This creature enters the battlefield with five fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\nRusting Golem's power and toughness are each equal to the number of fade counters on it.",
+    "number": "138",
+    "imageName": "rusting golem",
+    "title": "Rusting Golem",
+    "set": "nem",
+    "cost": "{4}",
+    "colour": "?",
+    "num": "138",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21388&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 21381,
+    "name": "Saproling Burst",
+    "cmc": 5,
+    "rarity": "r",
+    "artist": "Carl Critchlow",
+    "manaCost": "{4}{G}",
+    "text": "Fading 7 (This enchantment enters the battlefield with seven fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\nRemove a fade counter from Saproling Burst: Put a green Saproling creature token onto the battlefield. It has \"This creature's power and toughness are each equal to the number of fade counters on Saproling Burst.\"\nWhen Saproling Burst leaves the battlefield, destroy all tokens put onto the battlefield with Saproling Burst. They can't be regenerated.",
+    "number": "113",
+    "imageName": "saproling burst",
+    "title": "Saproling Burst",
+    "set": "nem",
+    "cost": "{4}{G}",
+    "colour": "g",
+    "num": "113",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21381&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 21385,
+    "name": "Saproling Cluster",
+    "cmc": 2,
+    "rarity": "r",
+    "artist": "Matt Cavotta",
+    "manaCost": "{1}{G}",
+    "text": "{1}, Discard a card: Put a 1/1 green Saproling creature token onto the battlefield. Any player may activate this ability.",
+    "number": "114",
+    "imageName": "saproling cluster",
+    "title": "Saproling Cluster",
+    "set": "nem",
+    "cost": "{1}{G}",
+    "colour": "g",
+    "num": "114",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21385&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 21297,
+    "name": "Seahunter",
+    "subtypes": [
+      "Human",
+      "Mercenary"
+    ],
+    "cmc": 4,
+    "rarity": "r",
+    "artist": "Heather Hudson",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{2}{U}{U}",
+    "text": "{3}, {T}: Search your library for a Merfolk permanent card and put it onto the battlefield. Then shuffle your library.",
+    "flavor": "\"They can't feel pain. They just wiggle 'cause they're scared.\"",
+    "number": "41",
+    "imageName": "seahunter",
+    "title": "Seahunter",
+    "set": "nem",
+    "cost": "{2}{U}{U}",
+    "colour": "u",
+    "num": "41",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21297&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 21259,
+    "name": "Seal of Cleansing",
+    "cmc": 2,
+    "rarity": "c",
+    "artist": "Christopher Moeller",
+    "manaCost": "{1}{W}",
+    "text": "Sacrifice Seal of Cleansing: Destroy target artifact or enchantment.",
+    "flavor": "\"I am the purifier, the light that clears all shadows.\"\n�Seal inscription",
+    "number": "18",
+    "imageName": "seal of cleansing",
+    "title": "Seal of Cleansing",
+    "set": "nem",
+    "cost": "{1}{W}",
+    "colour": "w",
+    "num": "18",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21259&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 21316,
+    "name": "Seal of Doom",
+    "cmc": 3,
+    "rarity": "c",
+    "artist": "Christopher Moeller",
+    "manaCost": "{2}{B}",
+    "text": "Sacrifice Seal of Doom: Destroy target nonblack creature. It can't be regenerated.",
+    "flavor": "\"I am the banisher, the ill will that snuffs the final candle.\"\n�Seal inscription",
+    "number": "70",
+    "imageName": "seal of doom",
+    "title": "Seal of Doom",
+    "set": "nem",
+    "cost": "{2}{B}",
+    "colour": "b",
+    "num": "70",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21316&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 21340,
+    "name": "Seal of Fire",
+    "cmc": 1,
+    "rarity": "c",
+    "artist": "Christopher Moeller",
+    "manaCost": "{R}",
+    "text": "Sacrifice Seal of Fire: Seal of Fire deals 2 damage to target creature or player.",
+    "flavor": "\"I am the romancer, the passion that consumes the flesh.\"\n�Seal inscription",
+    "number": "98",
+    "imageName": "seal of fire",
+    "title": "Seal of Fire",
+    "set": "nem",
+    "cost": "{R}",
+    "colour": "r",
+    "num": "98",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21340&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 21287,
+    "name": "Seal of Removal",
+    "cmc": 1,
+    "rarity": "c",
+    "artist": "Christopher Moeller",
+    "manaCost": "{U}",
+    "text": "Sacrifice Seal of Removal: Return target creature to its owner's hand.",
+    "flavor": "\"I am the unraveler, the loosened thread that will not hold.\"\n�Seal inscription",
+    "number": "42",
+    "imageName": "seal of removal",
+    "title": "Seal of Removal",
+    "set": "nem",
+    "cost": "{U}",
+    "colour": "u",
+    "num": "42",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21287&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 21366,
+    "name": "Seal of Strength",
+    "cmc": 1,
+    "rarity": "c",
+    "artist": "Christopher Moeller",
+    "manaCost": "{G}",
+    "text": "Sacrifice Seal of Strength: Target creature gets +3/+3 until end of turn.",
+    "flavor": "\"I am the feeder, the morsel that revives the starving.\"\n�Seal inscription",
+    "number": "115",
+    "imageName": "seal of strength",
+    "title": "Seal of Strength",
+    "set": "nem",
+    "cost": "{G}",
+    "colour": "g",
+    "num": "115",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21366&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 21353,
+    "name": "Shrieking Mogg",
+    "subtypes": [
+      "Goblin"
+    ],
+    "cmc": 2,
+    "rarity": "r",
+    "artist": "Dan Frazier",
+    "power": "1",
+    "toughness": "1",
+    "manaCost": "{1}{R}",
+    "text": "Haste\nWhen Shrieking Mogg enters the battlefield, tap all other creatures.",
+    "flavor": "You have to admire its enthusiasm.",
+    "number": "99",
+    "imageName": "shrieking mogg",
+    "title": "Shrieking Mogg",
+    "set": "nem",
+    "cost": "{1}{R}",
+    "colour": "r",
+    "num": "99",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21353&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 22320,
+    "name": "Silkenfist Fighter",
+    "subtypes": [
+      "Kor",
+      "Soldier"
+    ],
+    "cmc": 2,
+    "rarity": "c",
+    "artist": "Mark Brill",
+    "power": "1",
+    "toughness": "3",
+    "manaCost": "{1}{W}",
+    "text": "Whenever Silkenfist Fighter becomes blocked, untap it.",
+    "flavor": "Simple wooden staff\nMade from life, protecting life,\nStronger than cold steel.",
+    "number": "19",
+    "imageName": "silkenfist fighter",
+    "title": "Silkenfist Fighter",
+    "set": "nem",
+    "cost": "{1}{W}",
+    "colour": "w",
+    "num": "19",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22320&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 22338,
+    "name": "Silkenfist Order",
+    "subtypes": [
+      "Kor",
+      "Soldier"
+    ],
+    "cmc": 5,
+    "rarity": "u",
+    "artist": "Greg & Tim Hildebrandt",
+    "power": "3",
+    "toughness": "5",
+    "manaCost": "{3}{W}{W}",
+    "text": "Whenever Silkenfist Order becomes blocked, untap it.",
+    "flavor": "Hands weave life and death;\nIntertwining spirits knit\nTapestries and shrouds.",
+    "number": "20",
+    "imageName": "silkenfist order",
+    "title": "Silkenfist Order",
+    "set": "nem",
+    "cost": "{3}{W}{W}",
+    "colour": "w",
+    "num": "20",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22338&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Instant",
+    "types": [
+      "Instant"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 21270,
+    "name": "Sivvi's Ruse",
+    "cmc": 4,
+    "rarity": "u",
+    "artist": "Kev Walker",
+    "manaCost": "{2}{W}{W}",
+    "text": "If an opponent controls a Mountain and you control a Plains, you may cast Sivvi's Ruse without paying its mana cost.\nPrevent all damage that would be dealt this turn to creatures you control.",
+    "number": "21",
+    "imageName": "sivvi's ruse",
+    "title": "Sivvi's Ruse",
+    "set": "nem",
+    "cost": "{2}{W}{W}",
+    "colour": "w",
+    "num": "21",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21270&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Instant",
+    "types": [
+      "Instant"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 22302,
+    "name": "Sivvi's Valor",
+    "cmc": 3,
+    "rarity": "r",
+    "artist": "Jeff Miracola",
+    "manaCost": "{2}{W}",
+    "text": "If you control a Plains, you may tap an untapped creature you control rather than pay Sivvi's Valor's mana cost.\nAll damage that would be dealt to target creature this turn is dealt to you instead.",
+    "number": "22",
+    "imageName": "sivvi's valor",
+    "title": "Sivvi's Valor",
+    "set": "nem",
+    "cost": "{2}{W}",
+    "colour": "w",
+    "num": "22",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22302&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 22892,
+    "name": "Skyshroud Behemoth",
+    "subtypes": [
+      "Beast"
+    ],
+    "cmc": 7,
+    "rarity": "r",
+    "artist": "Eric Peterson",
+    "power": "10",
+    "toughness": "10",
+    "manaCost": "{5}{G}{G}",
+    "text": "Fading 2 (This creature enters the battlefield with two fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\nSkyshroud Behemoth enters the battlefield tapped.",
+    "number": "116",
+    "imageName": "skyshroud behemoth",
+    "title": "Skyshroud Behemoth",
+    "set": "nem",
+    "cost": "{5}{G}{G}",
+    "colour": "g",
+    "num": "116",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22892&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Sorcery",
+    "types": [
+      "Sorcery"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 22891,
+    "name": "Skyshroud Claim",
+    "cmc": 4,
+    "rarity": "c",
+    "artist": "Mark Romanoski",
+    "manaCost": "{3}{G}",
+    "text": "Search your library for up to two Forest cards and put them onto the battlefield. Then shuffle your library.",
+    "flavor": "The forest's constant struggle is to keep the spreading flowstone at bay.",
+    "number": "117",
+    "imageName": "skyshroud claim",
+    "title": "Skyshroud Claim",
+    "set": "nem",
+    "cost": "{3}{G}",
+    "colour": "g",
+    "num": "117",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22891&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 21372,
+    "name": "Skyshroud Cutter",
+    "subtypes": [
+      "Beast"
+    ],
+    "cmc": 4,
+    "rarity": "c",
+    "artist": "Tony Szczudlo",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{3}{G}",
+    "text": "If you control a Forest, rather than pay Skyshroud Cutter's mana cost, you may have each other player gain 5 life.",
+    "number": "118",
+    "imageName": "skyshroud cutter",
+    "title": "Skyshroud Cutter",
+    "set": "nem",
+    "cost": "{3}{G}",
+    "colour": "g",
+    "num": "118",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21372&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 21379,
+    "name": "Skyshroud Poacher",
+    "subtypes": [
+      "Human",
+      "Rebel"
+    ],
+    "cmc": 4,
+    "rarity": "r",
+    "artist": "Ron Spencer",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{2}{G}{G}",
+    "text": "{3}, {T}: Search your library for an Elf permanent card and put it onto the battlefield. Then shuffle your library.",
+    "flavor": "\"It's OK. They're just elves.\"",
+    "number": "119",
+    "imageName": "skyshroud poacher",
+    "title": "Skyshroud Poacher",
+    "set": "nem",
+    "cost": "{2}{G}{G}",
+    "colour": "g",
+    "num": "119",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21379&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 21360,
+    "name": "Skyshroud Ridgeback",
+    "subtypes": [
+      "Beast"
+    ],
+    "cmc": 1,
+    "rarity": "c",
+    "artist": "Carl Critchlow",
+    "power": "2",
+    "toughness": "3",
+    "manaCost": "{G}",
+    "text": "Fading 2 (This creature enters the battlefield with two fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)",
+    "number": "120",
+    "imageName": "skyshroud ridgeback",
+    "title": "Skyshroud Ridgeback",
+    "set": "nem",
+    "cost": "{G}",
+    "colour": "g",
+    "num": "120",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21360&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 21362,
+    "name": "Skyshroud Sentinel",
+    "subtypes": [
+      "Elf"
+    ],
+    "cmc": 3,
+    "rarity": "c",
+    "artist": "Randy Gallegos",
+    "power": "1",
+    "toughness": "1",
+    "manaCost": "{2}{G}",
+    "text": "When Skyshroud Sentinel enters the battlefield, you may search your library for up to three cards named Skyshroud Sentinel, reveal them, and put them into your hand. If you do, shuffle your library.",
+    "number": "121",
+    "imageName": "skyshroud sentinel",
+    "title": "Skyshroud Sentinel",
+    "set": "nem",
+    "cost": "{2}{G}",
+    "colour": "g",
+    "num": "121",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21362&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 21283,
+    "name": "Sliptide Serpent",
+    "subtypes": [
+      "Serpent"
+    ],
+    "cmc": 6,
+    "rarity": "r",
+    "artist": "Daren Bader",
+    "power": "4",
+    "toughness": "4",
+    "manaCost": "{4}{U}{U}",
+    "text": "{3}{U}: Return Sliptide Serpent to its owner's hand.",
+    "flavor": "It's futile to fight something you can see only in the corner of your eye.",
+    "number": "43",
+    "imageName": "sliptide serpent",
+    "title": "Sliptide Serpent",
+    "set": "nem",
+    "cost": "{4}{U}{U}",
+    "colour": "u",
+    "num": "43",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21283&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 21282,
+    "name": "Sneaky Homunculus",
+    "subtypes": [
+      "Homunculus",
+      "Illusion"
+    ],
+    "cmc": 2,
+    "rarity": "c",
+    "artist": "Scott M. Fischer",
+    "power": "1",
+    "toughness": "1",
+    "manaCost": "{1}{U}",
+    "text": "Sneaky Homunculus can't block or be blocked by creatures with power 2 or greater.",
+    "flavor": "Keep watch only for the giants and you'll be eaten by the ants.",
+    "number": "44",
+    "imageName": "sneaky homunculus",
+    "title": "Sneaky Homunculus",
+    "set": "nem",
+    "cost": "{1}{U}",
+    "colour": "u",
+    "num": "44",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21282&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 21310,
+    "name": "Spineless Thug",
+    "subtypes": [
+      "Zombie",
+      "Mercenary"
+    ],
+    "cmc": 2,
+    "rarity": "c",
+    "artist": "Matthew D. Wilson",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{1}{B}",
+    "text": "Spineless Thug can't block.",
+    "flavor": "These troops are only as strong as the evincar's control.",
+    "number": "71",
+    "imageName": "spineless thug",
+    "title": "Spineless Thug",
+    "set": "nem",
+    "cost": "{1}{B}",
+    "colour": "b",
+    "num": "71",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21310&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 21277,
+    "name": "Spiritual Asylum",
+    "cmc": 4,
+    "rarity": "r",
+    "artist": "Matt Cavotta",
+    "manaCost": "{2}{W}{W}",
+    "text": "Creatures and lands you control have shroud. (They can't be the targets of spells or abilities.)\nWhen a creature you control attacks, sacrifice Spiritual Asylum.",
+    "flavor": "Trapped in safety is still trapped.",
+    "number": "23",
+    "imageName": "spiritual asylum",
+    "title": "Spiritual Asylum",
+    "set": "nem",
+    "cost": "{2}{W}{W}",
+    "colour": "w",
+    "num": "23",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21277&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 21309,
+    "name": "Spiteful Bully",
+    "subtypes": [
+      "Zombie",
+      "Mercenary"
+    ],
+    "cmc": 2,
+    "rarity": "c",
+    "artist": "Chippy",
+    "power": "3",
+    "toughness": "3",
+    "manaCost": "{1}{B}",
+    "text": "At the beginning of your upkeep, Spiteful Bully deals 3 damage to target creature you control.",
+    "flavor": "Like most creatures bent on total destruction, they rarely bother to double-check their targets.",
+    "number": "72",
+    "imageName": "spiteful bully",
+    "title": "Spiteful Bully",
+    "set": "nem",
+    "cost": "{1}{B}",
+    "colour": "b",
+    "num": "72",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21309&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 21359,
+    "name": "Stampede Driver",
+    "subtypes": [
+      "Human",
+      "Spellshaper"
+    ],
+    "cmc": 1,
+    "rarity": "u",
+    "artist": "Ron Spears",
+    "power": "1",
+    "toughness": "1",
+    "manaCost": "{G}",
+    "text": "{1}{G}, {T}, Discard a card: Creatures you control get +1/+1 and gain trample until end of turn.",
+    "flavor": "\"The thunder of hooves is music to my ears.\"",
+    "number": "122",
+    "imageName": "stampede driver",
+    "title": "Stampede Driver",
+    "set": "nem",
+    "cost": "{G}",
+    "colour": "g",
+    "num": "122",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21359&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 21298,
+    "name": "Stronghold Biologist",
+    "subtypes": [
+      "Human",
+      "Spellshaper"
+    ],
+    "cmc": 3,
+    "rarity": "u",
+    "artist": "Terese Nielsen",
+    "power": "1",
+    "toughness": "1",
+    "manaCost": "{2}{U}",
+    "text": "{U}{U}, {T}, Discard a card: Counter target creature spell.",
+    "flavor": "He twists the laws of nature until they scream.",
+    "number": "45",
+    "imageName": "stronghold biologist",
+    "title": "Stronghold Biologist",
+    "set": "nem",
+    "cost": "{2}{U}",
+    "colour": "u",
+    "num": "45",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21298&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Sorcery",
+    "types": [
+      "Sorcery"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 22374,
+    "name": "Stronghold Discipline",
+    "cmc": 4,
+    "rarity": "c",
+    "artist": "Li Tie",
+    "manaCost": "{2}{B}{B}",
+    "text": "Each player loses 1 life for each creature he or she controls.",
+    "flavor": "\"Crovax never passes up an opportunity to cause widespread misery.\"\n�Belbe",
+    "number": "73",
+    "imageName": "stronghold discipline",
+    "title": "Stronghold Discipline",
+    "set": "nem",
+    "cost": "{2}{B}{B}",
+    "colour": "b",
+    "num": "73",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22374&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Sorcery",
+    "types": [
+      "Sorcery"
+    ],
+    "colors": [
+      "Red"
+    ],
+    "multiverseid": 21357,
+    "name": "Stronghold Gambit",
+    "cmc": 2,
+    "rarity": "r",
+    "artist": "Greg & Tim Hildebrandt",
+    "manaCost": "{1}{R}",
+    "text": "Each player chooses a card in his or her hand. Then each player reveals his or her chosen card. The owner of each creature card revealed this way with the lowest converted mana cost puts it onto the battlefield.",
+    "number": "100",
+    "imageName": "stronghold gambit",
+    "title": "Stronghold Gambit",
+    "set": "nem",
+    "cost": "{1}{R}",
+    "colour": "r",
+    "num": "100",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21357&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 22033,
+    "name": "Stronghold Machinist",
+    "subtypes": [
+      "Human",
+      "Spellshaper"
+    ],
+    "cmc": 3,
+    "rarity": "u",
+    "artist": "Terese Nielsen",
+    "power": "1",
+    "toughness": "1",
+    "manaCost": "{2}{U}",
+    "text": "{U}{U}, {T}, Discard a card: Counter target noncreature spell.",
+    "flavor": "She stretches the laws of physics until they snap.",
+    "number": "46",
+    "imageName": "stronghold machinist",
+    "title": "Stronghold Machinist",
+    "set": "nem",
+    "cost": "{2}{U}",
+    "colour": "u",
+    "num": "46",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22033&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 22880,
+    "name": "Stronghold Zeppelin",
+    "subtypes": [
+      "Human"
+    ],
+    "cmc": 4,
+    "rarity": "u",
+    "artist": "Arnie Swekel",
+    "power": "3",
+    "toughness": "3",
+    "manaCost": "{2}{U}{U}",
+    "text": "Flying\nStronghold Zeppelin can block only creatures with flying.",
+    "flavor": "As long as the stronghold controlled the sky, the rebels were doomed.",
+    "number": "47",
+    "imageName": "stronghold zeppelin",
+    "title": "Stronghold Zeppelin",
+    "set": "nem",
+    "cost": "{2}{U}{U}",
+    "colour": "u",
+    "num": "47",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=22880&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Instant",
+    "types": [
+      "Instant"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 21296,
+    "name": "Submerge",
+    "cmc": 5,
+    "rarity": "u",
+    "artist": "Mark Romanoski",
+    "manaCost": "{4}{U}",
+    "text": "If an opponent controls a Forest and you control an Island, you may cast Submerge without paying its mana cost.\nPut target creature on top of its owner's library.",
+    "number": "48",
+    "imageName": "submerge",
+    "title": "Submerge",
+    "set": "nem",
+    "cost": "{4}{U}",
+    "colour": "u",
+    "num": "48",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21296&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Artifact",
+    "types": [
+      "Artifact"
+    ],
+    "multiverseid": 21399,
+    "name": "Tangle Wire",
+    "cmc": 3,
+    "rarity": "r",
+    "artist": "Glen Angus",
+    "manaCost": "{3}",
+    "text": "Fading 4 (This artifact enters the battlefield with four fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\nAt the beginning of each player's upkeep, that player taps an untapped artifact, creature, or land he or she controls for each fade counter on Tangle Wire.",
+    "number": "139",
+    "imageName": "tangle wire",
+    "title": "Tangle Wire",
+    "set": "nem",
+    "cost": "{3}",
+    "colour": "?",
+    "num": "139",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21399&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Land",
+    "types": [
+      "Land"
+    ],
+    "multiverseid": 21394,
+    "name": "Terrain Generator",
+    "rarity": "u",
+    "artist": "Alan Pollack",
+    "text": "{T}: Add {1} to your mana pool.\n{2}, {T}: You may put a basic land card from your hand onto the battlefield tapped.",
+    "number": "143",
+    "imageName": "terrain generator",
+    "title": "Terrain Generator",
+    "set": "nem",
+    "cost": "",
+    "colour": "?",
+    "num": "143",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21394&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Sorcery",
+    "types": [
+      "Sorcery"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 21268,
+    "name": "Topple",
+    "cmc": 3,
+    "rarity": "c",
+    "artist": "Daren Bader",
+    "manaCost": "{2}{W}",
+    "text": "Exile target creature with the greatest power among creatures on the battlefield. (If two or more creatures are tied for greatest power, target any one of them.)",
+    "flavor": "\"Let all witness the fate of those who defy me.\"\n�Crovax",
+    "number": "24",
+    "imageName": "topple",
+    "title": "Topple",
+    "set": "nem",
+    "cost": "{2}{W}",
+    "colour": "w",
+    "num": "24",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21268&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Enchantment",
+    "types": [
+      "Enchantment"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 21365,
+    "name": "Treetop Bracers",
+    "subtypes": [
+      "Aura"
+    ],
+    "cmc": 2,
+    "rarity": "c",
+    "artist": "Heather Hudson",
+    "manaCost": "{1}{G}",
+    "text": "Enchant creature (Target a creature as you cast this. This card enters the battlefield attached to that creature.)\nEnchanted creature gets +1/+1 and can't be blocked except by creatures with flying.",
+    "flavor": "Gravity is truly what you make of it.",
+    "number": "123",
+    "imageName": "treetop bracers",
+    "title": "Treetop Bracers",
+    "set": "nem",
+    "cost": "{1}{G}",
+    "colour": "g",
+    "num": "123",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21365&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 21278,
+    "name": "Trickster Mage",
+    "subtypes": [
+      "Human",
+      "Spellshaper"
+    ],
+    "cmc": 1,
+    "rarity": "c",
+    "artist": "Alan Rabinowitz",
+    "power": "1",
+    "toughness": "1",
+    "manaCost": "{U}",
+    "text": "{U}, {T}, Discard a card: You may tap or untap target artifact, creature, or land.",
+    "flavor": "\"If it ain't broke, I'll break it. If it is broke, I'll fix it.\"",
+    "number": "49",
+    "imageName": "trickster mage",
+    "title": "Trickster Mage",
+    "set": "nem",
+    "cost": "{U}",
+    "colour": "u",
+    "num": "49",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21278&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Sorcery",
+    "types": [
+      "Sorcery"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 21317,
+    "name": "Vicious Hunger",
+    "cmc": 2,
+    "rarity": "c",
+    "artist": "Massimilano Frezzato",
+    "manaCost": "{B}{B}",
+    "text": "Vicious Hunger deals 2 damage to target creature and you gain 2 life.",
+    "flavor": "\"Blood is foul, the flesh dross. My ascendance thirsts for life itself.\"\n�Crovax",
+    "number": "74",
+    "imageName": "vicious hunger",
+    "title": "Vicious Hunger",
+    "set": "nem",
+    "cost": "{B}{B}",
+    "colour": "b",
+    "num": "74",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21317&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Artifact",
+    "types": [
+      "Artifact",
+      "Creature"
+    ],
+    "multiverseid": 21397,
+    "name": "Viseling",
+    "subtypes": [
+      "Construct"
+    ],
+    "cmc": 4,
+    "rarity": "u",
+    "artist": "Kev Walker",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{4}",
+    "text": "At the beginning of each opponent's upkeep, Viseling deals X damage to that player, where X is the number of cards in his or her hand minus 4.",
+    "flavor": "\"This may hurt a lot.\"",
+    "number": "140",
+    "imageName": "viseling",
+    "title": "Viseling",
+    "set": "nem",
+    "cost": "{4}",
+    "colour": "?",
+    "num": "140",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21397&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "White"
+    ],
+    "multiverseid": 21265,
+    "name": "Voice of Truth",
+    "subtypes": [
+      "Angel"
+    ],
+    "cmc": 4,
+    "rarity": "u",
+    "artist": "rk post",
+    "power": "2",
+    "toughness": "2",
+    "manaCost": "{3}{W}",
+    "text": "Flying, protection from white",
+    "flavor": "\"Above them all is Truth, and Truth must be set free. If the wings of Truth are clipped, the voices will fall silent.\"\n�Song of All, canto 167",
+    "number": "25",
+    "imageName": "voice of truth",
+    "title": "Voice of Truth",
+    "set": "nem",
+    "cost": "{3}{W}",
+    "colour": "w",
+    "num": "25",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21265&type=card"
+  },
+  {
+    "layout": "normal",
+    "supertypes": [
+      "Legendary"
+    ],
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Black"
+    ],
+    "multiverseid": 21328,
+    "name": "Volrath the Fallen",
+    "subtypes": [
+      "Shapeshifter"
+    ],
+    "cmc": 6,
+    "rarity": "r",
+    "artist": "Kev Walker",
+    "power": "6",
+    "toughness": "4",
+    "manaCost": "{3}{B}{B}{B}",
+    "text": "{1}{B}, Discard a creature card: Volrath the Fallen gets +X/+X until end of turn, where X is the discarded card's converted mana cost.",
+    "flavor": "\"I stepped out. I did not step down.\"",
+    "number": "75",
+    "imageName": "volrath the fallen",
+    "title": "Volrath the Fallen",
+    "set": "nem",
+    "cost": "{3}{B}{B}{B}",
+    "colour": "b",
+    "num": "75",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21328&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Blue"
+    ],
+    "multiverseid": 21279,
+    "name": "Wandering Eye",
+    "subtypes": [
+      "Illusion"
+    ],
+    "cmc": 3,
+    "rarity": "c",
+    "artist": "Sam Wood",
+    "power": "1",
+    "toughness": "3",
+    "manaCost": "{2}{U}",
+    "text": "Flying\nPlayers play with their hands revealed.",
+    "flavor": "The evincar has many ways of keeping track of his subjects.",
+    "number": "50",
+    "imageName": "wandering eye",
+    "title": "Wandering Eye",
+    "set": "nem",
+    "cost": "{2}{U}",
+    "colour": "u",
+    "num": "50",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21279&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 21376,
+    "name": "Wild Mammoth",
+    "subtypes": [
+      "Elephant"
+    ],
+    "cmc": 3,
+    "rarity": "u",
+    "artist": "Bradley Williams",
+    "power": "3",
+    "toughness": "4",
+    "manaCost": "{2}{G}",
+    "text": "At the beginning of your upkeep, if a player controls more creatures than each other player, the player who controls the most creatures gains control of Wild Mammoth.",
+    "flavor": "\"Sit. Heel! Down! HELP!\"",
+    "number": "124",
+    "imageName": "wild mammoth",
+    "title": "Wild Mammoth",
+    "set": "nem",
+    "cost": "{2}{G}",
+    "colour": "g",
+    "num": "124",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21376&type=card"
+  },
+  {
+    "layout": "normal",
+    "type": "Creature",
+    "types": [
+      "Creature"
+    ],
+    "colors": [
+      "Green"
+    ],
+    "multiverseid": 21374,
+    "name": "Woodripper",
+    "subtypes": [
+      "Beast"
+    ],
+    "cmc": 5,
+    "rarity": "u",
+    "artist": "Alan Pollack",
+    "power": "4",
+    "toughness": "6",
+    "manaCost": "{3}{G}{G}",
+    "text": "Fading 3 (This creature enters the battlefield with three fade counters on it. At the beginning of your upkeep, remove a fade counter from it. If you can't, sacrifice it.)\n{1}, Remove a fade counter from Woodripper: Destroy target artifact.",
+    "number": "125",
+    "imageName": "woodripper",
+    "title": "Woodripper",
+    "set": "nem",
+    "cost": "{3}{G}{G}",
+    "colour": "g",
+    "num": "125",
+    "src": "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=21374&type=card"
+  }
+]
