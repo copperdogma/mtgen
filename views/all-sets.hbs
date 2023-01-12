@@ -1,0 +1,37 @@
+﻿    <meta name="Description" content="Magic: The Gathering Sealed/Booster Generator: Generate accurate random Magic: The Gathering boosters and other such madness.">
+    <link rel='stylesheet' href='/css/home.css' type='text/css' />
+    <link rel="prerender" href="//mtgen.net/@Model.AllSets.NewestCurrentSet.Code/">
+    <link rel="dns-prefetch" href="//media.wizards.com">
+    {{> favicons}}
+    {{> ga}}
+</head>
+<body class="home">
+    <header>
+        <img src="/images/logo-mtg.png" alt="Magic the Gathering" />
+        <h1>Sealed Deck Card Generator</h1>
+        <h2>Generate accurate random Magic: The Gathering boosters and other such madness.</h2>
+        <div class="links">
+            <a href="/about" class="button" title="About me and this site">About</a>
+            <a href="http://eepurl.com/bbdyO5" class="button" title="Subscribe to email updates">Subscribe</a>
+            <a href="https://twitter.com/mtggen" class="button" title="Follow @mtggen on Twitter">@mtggen</a>
+            <a href="https://github.com/copperdogma/mtgen" class="button" title="Open sourced on Github">github</a>
+        </div>
+    </header>
+    <main>
+        {{#each sets}}
+            {{#unless isHidden}}
+                {{#if isBlockSet}}
+                <div class="block">
+                    <h2 class="block-title">{{{block}}} Block</h2>
+                    {{#each blockSets}}
+                        {{> set-summary}}
+                    {{/each}}
+                </div>
+                {{else}}
+                    {{#unless isBlockSet}}
+                        {{> set-summary}}
+                    {{/unless}}
+                {{/if}}
+            {{/unless}}
+        {{/each}}
+    </main>

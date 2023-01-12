@@ -1,0 +1,32 @@
+﻿{{#if generatorCreatedDate}}
+  <a class="set-link" href="{{codeLowerCase}}">
+{{/if}}
+<div class="set {{#if IsCurrentSet}}current{{/if}} {{#if IsFutureSet}}future{{/if}}">
+  <div class="set-logo">
+    <img src="/{{codeLowerCase}}/images/{{image}}" title="{{name}}" alt="{{name}} logo" />
+  </div>
+  <div class="set-name">{{name}}</div>
+  <div class="set-count">{{cardCount}} cards</div>
+  <div class="set-dates">
+    <div class="set-prerelease-date">
+      {{#if hasPrereleaseDate}}
+        <span>Prerelease:</span> <time datetime="{{dateFormat prereleaseDateTimestamp 'yyyy-MM-DD'}}">{{dateFormat prereleaseDateTimestamp 'MMMM D, yyyy'}}</time>
+      {{else}}
+        <span class="none">Prerelease:</span> <em>No prerelease</em>
+      {{/if}}
+    </div>
+    <div class="set-release-date">
+      {{#if releaseDate}} 
+        <span>Release:</span> <time datetime="{{dateFormat releaseDateTimestamp 'yyyy-MM-DD'}}">{{dateFormat releaseDateTimestamp 'MMMM D, yyyy'}}</time>
+      {{else}}
+        <span class="none">Release:</span> <em>No release</em>
+      {{/if}}
+    </div>
+  </div>
+  {{#if isFutureSet}}
+    <div class="future-set"><em>Coming Soon</em></div>
+  {{/if}}
+</div>
+{{#if generatorCreatedDate}}
+  </a>
+{{/if}}

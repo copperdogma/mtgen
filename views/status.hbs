@@ -1,0 +1,61 @@
+    <meta name="Description" content="mtgen.net - Status">
+    <link rel="stylesheet" href="/css/home.css" type="text/css" />
+    {{> favicons}}
+    {{> ga}}
+</head>
+<body class="status">
+    <header>
+        <img src="/images/logo-mtg.png" alt="Magic the Gathering" />
+        <h1>Sealed Deck Card Generator</h1>
+        <h2>Generate accurate random Magic: The Gathering boosters and other such madness.</h2>
+        <div class="links">
+            <a href="/" class="button" title="Home">Home</a>
+            <a href="/about" class="button" title="About me and this site">About</a>
+            <a href="http://eepurl.com/bbdyO5" class="button" title="Subscribe to email updates">Subscribe</a>
+            <a href="https://twitter.com/mtggen" class="button" title="Follow @mtggen on Twitter">@mtggen</a>
+            <a href="https://github.com/copperdogma/mtgen" class="button" title="Open sourced on Github">github</a>
+        </div>
+    </header>
+    <main class="content">
+        <h1>Status</h1>
+        <p>See <a href="/status-machine">this machine's status.</a></p>
+
+        <h2>Environment Settings</h2>
+        <table>
+            <tr>
+                <td>process.env.NODE_ENV</td>
+                <td>{{{process.env.NODE_ENV}}}</td>
+            </tr>
+            <tr>
+                <td>process.env.PORT</td>
+                <td>{{{process.env.PORT}}}</td>
+            </tr>
+            <tr>
+                <td>process.arch</td>
+                <td>{{{process.arch}}}</td>
+            </tr>
+            <tr>
+                <td>process.argv0</td>
+                <td>{{{process.argv0}}}</td>
+            </tr>
+            <tr>
+                <td>process.execPath</td>
+                <td>{{{process.execPath}}}</td>
+            </tr>
+            <tr>
+                <td>process.platform</td>
+                <td>{{{process.platform}}}</td>
+            </tr>
+            <tr>
+                <td>process.version (node.js)</td>
+                <td>{{{process.version}}}</td>
+            </tr>
+            {{#each package.dependencies}}
+            <tr>
+                <td>package.dependencies.{{{@key}}}</td>
+                <td>{{{@this}}}</td>
+            </tr>
+            {{/each}}
+
+        </table>
+    </main>
