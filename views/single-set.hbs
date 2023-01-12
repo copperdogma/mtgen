@@ -1,0 +1,101 @@
+﻿    <meta name="Description" content="{{{pageDesc}}} Sealed/Booster Card Generator for Magic: The Gathering">
+    <link rel="stylesheet" href="/css/generator.css" type="text/css" />
+    <link rel="stylesheet" href="/lib/tingle/dist/tingle.css">
+    <link rel="stylesheet" href="/css/print.css?v1.1" type="text/css" media="print" />
+    <link rel="stylesheet" href="/{{codeLowerCase}}/set.css" type="text/css" />
+    {{> favicons}}
+    {{> ga}}
+</head>
+<body class="home">
+    <aside class="info">
+        <p class="created-date">Created: {{dateFormat createdDateTimestamp 'DD-MMM-yyyy'}}.</p>
+        {{#each updates}}
+            {{#if @first}}
+                    <p class="update-new">Updated: {{dateFormat updateDateTimestamp 'DD-MMM-yyyy'}}: {{{HtmlString}}}</p>
+            {{else}}
+                    <p class="update hidden">{{dateFormat updateDateTimestamp 'DD-MMM-yyyy'}}: {{{HtmlString}}}</p>
+            {{/if}}
+        {{/each}}
+        {{#if hasMultipleUpdates }}
+            <a class="update-more button" href="#">{{updateMoreCount}} More ></a>
+        {{/if}}
+    </aside>
+    {{#if incomplete}}
+        <div class="warning">WARNING: All cards have not yet been released. Placeholders have been created for cards we know exist but we don't yet have good images for them.</div>
+    {{/if}}
+    <header>
+        <div class="symbol">
+            <img itemprop="image" src="/{{codeLowerCase}}/images/symbol.png" alt="symbol" />
+            <a href="/" class="button"><span>Back to </span>Home</a>
+            <a href="http://eepurl.com/bbdyO5" class="button small" title="Subscribe to email updates">Subscribe</a>
+            <a href="https://twitter.com/mtggen" class="button small" title="Follow @mtggen on Twitter">@mtggen</a>
+        </div>
+        <h1 itemprop="name"><span class="mtg">Magic: The Gathering</span> <span class="set-name">{{{name}}}</span> <span class="sdg">Sealed Deck Card Generator</span></h1>
+        <div id="card-count">
+            <span class="current">...</span>/<span class="total"></span> cards
+        </div>
+    </header>
+    <main>
+        <em>Loading ...</em>
+    </main>
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/underscore/underscore-min.js"></script>
+    <script src="/lib/backbone/backbone.js"></script>
+    <script src="/lib/tingle/dist/tingle.js?v0.16.0"></script>
+    <script src="/lib/mtg-generator-lib.js?v3.0.0"></script>
+    <script src="/lib/mtg-generator-web.js?v3.0.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            mtgGen.runBrowser({
+                setCode: "{{codeLowerCase}}"
+                , setFile: "{{setFile}}"
+                , cardFiles: [{{#cardFiles}} '{{@root.codeLowerCase}}/{{.}}',{{/cardFiles}}]
+                , packFiles: [{{#packFiles}} '{{@root.codeLowerCase}}/{{.}}',{{/packFiles}}]
+                , productFile: '{{codeLowerCase}}/{{productFile}}'
+                , startProductName: "{{startProductName}}"
+                , drawId: mtgGen.getQuerystringParamByName('drawId')
+                , debug: mtgGen.getQuerystringParamByName('debug')
+                , contentElem: "main"
+            });
+
+            // Modal popup support.
+            window.modal = new tingle.modal({});
+
+            // Dynamic card loading counts
+            document.querySelector('#card-count .total').textContent = {{cardCount}};
+            const currentCardCountEl = document.querySelector('#card-count .current');
+            window.addEventListener('playableCardLoaded', e => currentCardCountEl.textContent = e.detail.setCardsLoadedCount, false);
+
+            // Properly render any placeholder images and modal popups.
+            const _showCardModal = event => {
+                window.modal.setContent(`<div class='modal-card'><img src='${event.currentTarget.href}'/></div>`);
+                window.modal.open();
+                event.preventDefault();
+            };
+            window.addEventListener('resultsRendered', e => {
+                Holder.run()
+                document.querySelectorAll('#product-content .card a').forEach(el => el.addEventListener('click', _showCardModal) );
+            }, false);
+
+            // Analytics event tracking
+            const currProduct = '#products a.active';
+            const currOption = '#product-content>section.active .options a.active';
+            window.addEventListener('cardSetsGenerated', e =>
+                gtag('event', 'Generate', { 'set_code': e.detail.setCode.toUpperCase(), 'product': currProduct.textContent, 'option': currOption.textContent }), false);
+            window.addEventListener('drawSaved', e =>
+                gtag('event', 'SaveDraw', { 'set_code': e.detail.setCode.toUpperCase(), 'product': currProduct.textContent }), false);
+            window.addEventListener('drawLoaded', e =>
+                gtag('event', 'LoadDraw', { 'set_code': e.detail.setCode.toUpperCase(), 'product': currProduct.textContent, 'draw_id': e.detail.drawId }), false);
+            window.addEventListener('exporting', e =>
+                gtag('event', 'Export', { 'set_code': e.detail.setCode.toUpperCase(), 'product': currProduct.textContent, 'draw_id': e.detail.drawId }), false);
+
+            // "Read more" support in top news section
+            document.querySelector('aside.info').addEventListener('click', event => {
+                if (event.target.classList.contains('update-more')) {
+                    event.target.style.display = 'none';
+                    document.querySelectorAll('aside.info p').forEach(n => n.classList.remove('hidden'));
+                }
+            });
+        });
+    </script>
