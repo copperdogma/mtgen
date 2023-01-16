@@ -1,5 +1,5 @@
 /*
-MtG Generator script v3.0.0 - LIB
+MtG Generator script v3.0.1 - LIB
 
 Shared/base functions.
 
@@ -17,6 +17,7 @@ Query examples:
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
+20230105: Finally fixed range bug, where (200-203) would only take 201,202 and leave out 203.
 20221231: Refactor: implemented github @goblin's changes as v3:
     - allow mtg-generator-lib.js to run from the command line
     - generate packs via RNG seeds, allowing the UI to provide them under debug mode
@@ -913,7 +914,7 @@ var mtgGen = (function (my) {
                 if (numericRangeMatch) {
                     const startNum = Math.min(numericRangeMatch[1], numericRangeMatch[2]);
                     const endNum = Math.max(numericRangeMatch[1], numericRangeMatch[2]);
-                    const expandedNumberArray = Array.from({ length: (endNum - startNum) }, (v, k) => k + startNum);
+                    const expandedNumberArray = Array.from({ length: (endNum - startNum + 1) }, (v, k) => k + startNum);
                     const generatedInClause = '(' + expandedNumberArray.join('|') + ')';
                     query2[2] = generatedInClause;
                 }
