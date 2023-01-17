@@ -1,5 +1,5 @@
 /*
-MtG Generator script v3.0.1 - LIB
+MtG Generator script v3.0.2 - LIB
 
 Shared/base functions.
 
@@ -17,6 +17,7 @@ Query examples:
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
+20230117: Added my.getSetNameFromCard() function for use by the web's exporter for .coll formats.
 20230105: Finally fixed range bug, where (200-203) would only take 201,202 and leave out 203.
 20221231: Refactor: implemented github @goblin's changes as v3:
     - allow mtg-generator-lib.js to run from the command line
@@ -54,7 +55,7 @@ Author: Cam Marsollier cam.marsollier@gmail.com
 var mtgGen = (function (my) {
     'use strict';
     // globals
-    my.version = "3.0.0";
+    my.version = "3.0.2";
     my.setData = undefined;
     my.packData = undefined;
     my.cardsData = undefined;
@@ -311,6 +312,16 @@ var mtgGen = (function (my) {
                 if (json) { return Promise.resolve(json); }
                 throw Error(`ERROR retrieving file '${url}'. Cannot continue.`);
             });
+    };
+
+    my.getSetNameFromCard = (card) => {
+        // Checking the set because I didn't add all related sets in sets.json. e.g.: BRO includes BRR cards, but that set isn't in sets.json.
+        // I COULD add them all but I'm lazy;)
+        // Will default to just the set code if the set name is missing.
+        const setCode = card.set.toUpperCase();
+        const set = my.sets[setCode];
+        const setName = set?.name ?? setCode;
+        return setName;
     };
 
     // Public functions --------------------------------------------------------------------------------------------------------------------------------
