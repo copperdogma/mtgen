@@ -1365,15 +1365,15 @@ var mtgGen = (function (my) {
         constructor(generatorUrl) {
             this.#attribution = 'Created by MtG Generator: ' + generatorUrl;
 
-            this.addExporter(new PrintingProxiesExport());
-            this.addExporter(new DecExport());
-            this.addExporter(new TxtExport());
-            this.addExporter(new MtgaExport());
-            this.addExporter(new MwDeckExport());
-            this.addExporter(new CodExport());
-            this.addExporter(new CollExport());
-            this.addExporter(new FrogtownExport());
-            this.addExporter(new DeckstatsExport());
+            this.#addExporter(new PrintingProxiesExport());
+            this.#addExporter(new DecExport());
+            this.#addExporter(new TxtExport());
+            this.#addExporter(new MtgaExport());
+            this.#addExporter(new MwDeckExport());
+            this.#addExporter(new CodExport());
+            this.#addExporter(new CollExport());
+            this.#addExporter(new FrogtownExport());
+            this.#addExporter(new DeckstatsExport());
         }
 
         // Set the card sets to be rendered to the object.
@@ -1401,8 +1401,6 @@ var mtgGen = (function (my) {
             this.#countedCards = [...countedCardsMap.values()].sort((a, b) => my.sortBy('matchTitle', a, b));
         }
 
-        addExporter = (newExporter) => this.exporters.set(newExporter.slug, newExporter);
-
         getFirstExporter = () => Array.from(this.exporters.values())[0];
 
         getAllCardsCount = () => this.#allCards.length;
@@ -1417,6 +1415,8 @@ var mtgGen = (function (my) {
             const exp = this.exporters.get(exporterSlug);
             exp.setActionLink(this.#allCards, this.#countedCards, this.#attribution);
         }
+
+        #addExporter = (newExporter) => this.exporters.set(newExporter.slug, newExporter);
     }
 
     class BaseExport {
