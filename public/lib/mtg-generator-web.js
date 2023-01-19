@@ -1,5 +1,5 @@
 /*
-MtG Generator Web script v3.0.1
+MtG Generator Web script v3.0.2
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
@@ -336,7 +336,8 @@ var mtgGen = (function (my) {
     my.renderCardSet = function (setID, cards, parentSet, preTitle) {
         preTitle = preTitle || '';
         my.mainView.setMenu.setID = setID;
-        const htmlOut = '<section data-set-info="' + my.friendly_url(cards.setDesc) + '-' + setID + '" class="set" data-setid="' + setID + '">'
+        // ID used by UI to jump down to card categories, e.g.: White, Blue, Basic Land, etc.
+        const htmlOut = '<section id="' + my.friendly_url(cards.setDesc) + '-' + setID + '" class="set" data-setid="' + setID + '">'
             + my.renderCardsTitle(preTitle + cards.setDesc + ' <span class="card-count">(' + cards.length + ')')
             + my.mainView.setMenu.render(cards, parentSet)
             + my.renderCards(cards)
