@@ -162,7 +162,7 @@ header h1 span {
 }
 
 header .set-name {
-    background: url(images/logo-word.png) no-repeat center center;
+    background: url(images/logo-word.webp) no-repeat center center;
     background-size: contain;
     display: block;
     text-direction: ltr;
@@ -521,7 +521,7 @@ main {
 }
 
     .foil:before {
-        background: url(../cards/mtg-foil.png) no-repeat;
+        background: url(../cards/mtg-foil.webp) no-repeat;
         bottom: 0;
         content: "";
         left: 0;

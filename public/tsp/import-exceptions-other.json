@@ -10,7 +10,7 @@
     "_comment": "modify each of the promo cards, override their src/num/promo=true/includedReason/usableForDeckBuilding",
     "where": "title='Lotus Bloom",
     "newValues": {
-      "src": "http://mtgen.net/cards/tsp-lotus-bloom-prerelease-promo.png",
+      "src": "http://mtgen.net/cards/tsp-lotus-bloom-prerelease-promo.webp",
       "num": "{{num}} P Prerelease",
       "promo": true,
       "includedReason": "Prerelease Promo",
@@ -20,7 +20,7 @@
   {
     "where": "title='Sudden Shock",
     "newValues": {
-      "src": "http://mtgen.net/cards/tsp-sudden-shock-release-promo.png",
+      "src": "http://mtgen.net/cards/tsp-sudden-shock-release-promo.webp",
       "num": "{{num}} P Release",
       "promo": true,
       "includedReason": "Release Promo",
