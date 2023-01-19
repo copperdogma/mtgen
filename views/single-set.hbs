@@ -1,8 +1,8 @@
 ﻿    <meta name="Description" content="{{{pageDesc}}} Sealed/Booster Card Generator for Magic: The Gathering">
-    <link rel="stylesheet" href="/css/generator.css" type="text/css" />
+    <link rel="stylesheet" href="/css/generator.css" type="text/css">
     <link rel="stylesheet" href="/lib/tingle/dist/tingle.css">
-    <link rel="stylesheet" href="/css/print.css?v1.1" type="text/css" media="print" />
-    <link rel="stylesheet" href="/{{codeLowerCase}}/set.css" type="text/css" />
+    <link rel="stylesheet" href="/css/print.css?v1.1" type="text/css" media="print">
+    <link rel="stylesheet" href="/{{codeLowerCase}}/set.css" type="text/css">
     {{> favicons}}
     {{> ga}}
 </head>
@@ -25,12 +25,12 @@
     {{/if}}
     <header>
         <div class="symbol">
-            <img itemprop="image" src="/{{codeLowerCase}}/images/symbol.png" alt="symbol" />
+            <img src="/{{codeLowerCase}}/images/symbol.png" alt="symbol">
             <a href="/" class="button"><span>Back to </span>Home</a>
             <a href="http://eepurl.com/bbdyO5" class="button small" title="Subscribe to email updates">Subscribe</a>
             <a href="https://twitter.com/mtggen" class="button small" title="Follow @mtggen on Twitter">@mtggen</a>
         </div>
-        <h1 itemprop="name"><span class="mtg">Magic: The Gathering</span> <span class="set-name">{{{name}}}</span> <span class="sdg">Sealed Deck Card Generator</span></h1>
+        <h1><span class="mtg">Magic: The Gathering</span> <span class="set-name">{{{name}}}</span> <span class="sdg">Sealed Deck Card Generator</span></h1>
         <div id="card-count">
             <span class="current">...</span>/<span class="total"></span> cards
         </div>
@@ -69,7 +69,7 @@
 
             // Properly render any placeholder images and modal popups.
             const _showCardModal = event => {
-                window.modal.setContent(`<div class='modal-card'><img src='${event.currentTarget.href}'/></div>`);
+                window.modal.setContent(`<div class='modal-card'><img src='${event.currentTarget.href}'></div>`);
                 window.modal.open();
                 event.preventDefault();
             };

@@ -2,7 +2,7 @@ img {
 	float: right;
 	max-width: 200px;
 }
-img[itemprop=image] {
+.symbol img {
 	padding: 1em;
 }
 .ad {
