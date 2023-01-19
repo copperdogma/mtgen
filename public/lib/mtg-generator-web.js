@@ -1,5 +1,5 @@
 /*
-MtG Generator Web script v3.0.0
+MtG Generator Web script v3.0.1
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
@@ -26,6 +26,7 @@ Normally 15 cards per booster:
 Quick How Tos:
 - to add a caveat (yellow note banner above), add an array of 'caveats' to the products.json product. See set MID.
 
+20230117: Added support for exporting card sets to PrintingProxies.com
 20221231: Refactor: implemented github @goblin's changes as v3:
     - allow mtg-generator-lib.js to run from the command line
     - generate packs via RNG seeds, allowing the UI to provide them under debug mode
@@ -141,9 +142,11 @@ var mtgGen = (function (my) {
     my.runBrowser = function ({ setCode, setFile, cardFiles, packFiles, productFile, startProductName, drawId, debug, contentElem }) {
 
         // The core of the app in here, the main function from mtg-generator-lib.js.
-        const runPromise = my.run({ setCode, setFile, cardFiles, packFiles, productFile, startProductName, drawId, debug,
+        const runPromise = my.run({
+            setCode, setFile, cardFiles, packFiles, productFile, startProductName, drawId, debug,
             drawCallback: (data) => { window.dispatchEvent(new CustomEvent('drawLoaded', { detail: data })); },
-            playableCardLoadedCallback: (data) => { window.dispatchEvent(new CustomEvent('playableCardLoaded', { detail: data })); } });
+            playableCardLoadedCallback: (data) => { window.dispatchEvent(new CustomEvent('playableCardLoaded', { detail: data })); }
+        });
 
         my.contentElem = document.querySelector(my.getRequiredOption(arguments[0], 'contentElem'));
 
@@ -1351,22 +1354,285 @@ var mtgGen = (function (my) {
 var mtgGen = (function (my) {
     'use strict';
 
+    let exporter;  // All deck exporter formats and logic are kept within here.
+
+    class Exporter {
+        #allCards;
+        #countedCards;
+        #attribution;
+        exporters = new Map();
+
+        constructor(generatorUrl) {
+            this.#attribution = 'Created by MtG Generator: ' + generatorUrl;
+
+            this.#addExporter(new PrintingProxiesExport());
+            this.#addExporter(new DecExport());
+            this.#addExporter(new TxtExport());
+            this.#addExporter(new MtgaExport());
+            this.#addExporter(new MwDeckExport());
+            this.#addExporter(new CodExport());
+            this.#addExporter(new CollExport());
+            this.#addExporter(new FrogtownExport());
+            this.#addExporter(new DeckstatsExport());
+        }
+
+        // Set the card sets to be rendered to the object.
+        // This must be done before calling any of the exporters.
+        setSets(cardSets) {
+            this.#allCards = cardSets.reduce((cards, cardSet) => cards.concat(cardSet.map(card => card)), []).filter(card => card.usableForDeckBuilding);
+
+            // Create a count/card pair for each set of unique cards.
+            const countedCardsMap = this.#allCards.reduce((countedCards, card) => {
+                const matchTitle = card.matchTitle;
+                card.exportTitle = card.title.replace("’", "'"); // ’ messes up cockatrice
+                if (card.cardBack) { card.exportTitle += ' // ' + card.cardBack.title.replace("’", "'"); }
+                if (countedCards.has(matchTitle)) {
+                    let existingCard = countedCards.get(matchTitle);
+                    existingCard.count++;
+                    countedCards.set(matchTitle, existingCard);
+                } else {
+                    card.count = 1;
+                    countedCards.set(matchTitle, card);
+                }
+                return countedCards;
+            }, new Map());
+
+            // Convert associative array to numeric array
+            this.#countedCards = [...countedCardsMap.values()].sort((a, b) => my.sortBy('matchTitle', a, b));
+        }
+
+        getFirstExporter = () => Array.from(this.exporters.values())[0];
+
+        getAllCardsCount = () => this.#allCards.length;
+        getCountedCardsCount = () => this.#countedCards.length;
+
+        render(exporterSlug) {
+            const exp = this.exporters.get(exporterSlug);
+            return exp.render(this.#allCards, this.#countedCards, this.#attribution);
+        }
+
+        setActionLink(exporterSlug) {
+            const exp = this.exporters.get(exporterSlug);
+            exp.setActionLink(this.#allCards, this.#countedCards, this.#attribution);
+        }
+
+        #addExporter = (newExporter) => this.exporters.set(newExporter.slug, newExporter);
+    }
+
+    class BaseExport {
+        constructor(name, slug, fileExtension) {
+            this.name = name;
+            this.slug = slug;
+            this.fileExtension = fileExtension;
+            this.linkSelector = '.exporter.modal .export-detail a.export-download';
+        }
+
+        // Default render is the Frogtown output which is complete and straightforward.
+        render(cards, countedCards, attrib) {
+            const output = '// ' + attrib + '\r\n' + countedCards.reduce((cardOutput, card) =>
+                cardOutput += card.count + ' ' + card.exportTitle + ' [' + card.set.toUpperCase() + ']\r\n', '');
+            return output;
+        }
+
+        // Default action is to set the link to download the file.
+        setActionLink(cards, countedCards, attrib) {
+            const encodedContent = btoa(this.render(cards, countedCards, attrib));
+            const linkEl = document.querySelector(this.linkSelector);
+            linkEl.text = 'Download this format as a file';
+            linkEl.setAttribute('href', 'data:text/octet-stream;base64,' + encodedContent);
+            linkEl.removeAttribute('target');
+            linkEl.setAttribute('download', `mtg-generator-${my.set.slug}-prerelease.${this.slug}`); // 'download' attr is Chrome/FF-only to set download filename
+        }
+    }
+
+    // pp: Send card data to PrintingProxies.com for printing
+    // mtgen.net's REF ID is: 3490
+    // URL is your REF ID : 3490, multi=0 (for our own use), and a &list formatted as such : [XX,X].
+    // 1st slot can either be ID or Multiverse ID. Followed by the quantity. I believe that your draft system is more of a 1 card only, so just leave 1 by default.
+    // e.g.: from PrintingProxies.com email: https://www.printingproxies.com/card-printing/?ref=3490&multi=0&list=[4ac2b852-92b2-4daf-9d1f-f71d3b27c241,1],[586298,1]
+    class PrintingProxiesExport extends BaseExport {
+        constructor() { super('PrintingProxies.com', 'printing-proxies'); }
+
+        // Use default renderer.
+
+        // Set the link to go to PrintingProxies.com with the cards in the url.
+        setActionLink(cards, countedCards, attrib) {
+            const baseUrl = 'https://www.printingproxies.com/card-printing/?ref=3490&multi=0&list=';
+            const cardList = countedCards.map(card => `[${card.id},${card.count}]`);
+            const printingProxiesUrl = baseUrl + cardList.join();
+
+            document.querySelector(this.linkSelector).text = 'Send to PrintingProxies.com';
+            document.querySelector(this.linkSelector).setAttribute('href', printingProxiesUrl);
+            document.querySelector(this.linkSelector).setAttribute('target', '_blank');
+        }
+    }
+
+    // Any exporter that doesn't implement render() or setActionLink() will use the default supplied by BaseExport.
+
+    // .dec: used by Cockatrice, Apprentice
+    // sample (under ".dec File Format"): http://www.deckedbuilder.com/faq.html
+    class DecExport extends BaseExport {
+        constructor() { super('Cockatrice, Apprentice', 'dec', '.dec'); }
+
+        render(cards, countedCards, attrib) {
+            const output = '// ' + attrib + '\r\n' + countedCards.reduce((cardOutput, card) =>
+                cardOutput += card.count + ' ' + card.exportTitle + '\r\n', '');
+            return output;
+        }
+    }
+
+    // .coll: used by used by Decked Builder
+    // sample (under ".coll File Format"): http://www.deckedbuilder.com/faq.html
+    // No sideboard option as they're not decks; they're card collections.
+    class CollExport extends BaseExport {
+        constructor() { super('Decked Builder', 'coll', '.coll'); }
+
+        render(cards, countedCards, attrib) {
+            const output = '// ' + attrib + '\r\n' + countedCards.reduce((cardOutput, card) =>
+                cardOutput += card.count + ' ' + card.exportTitle + ' [' + my.getSetNameFromCard(card) + ']\r\n', '');
+            return output;
+        }
+    }
+
+    // .txt: used by used by Magic Online
+    // sample: http://archive.wizards.com/Magic/magazine/article.aspx?x=mtgcom/arcana/678
+    class TxtExport extends BaseExport {
+        constructor() { super('Magic Online', 'txt', '.txt'); }
+
+        render(cards, countedCards, attrib) {
+            const output = 'Sideboard\r\n' + _.reduce(countedCards, function (memo, card) {
+                const cardtitle = card.exportTitle.replace(' // ', '/'); // Apparently Magic Online doesn't import it's own magic.wizards.com // format for split cards!
+                return memo += card.count + ' ' + cardtitle + '\r\n';
+            }, '');
+            return output;
+        }
+    }
+
+    // .mtga: used by Magic the Gathering: Arena
+    // Format explanation: https://draftsim.com/mtg-arena-import-deck/
+    // Format is plain list, number of cards at start, DFCs just list first face, can specify set but then also need collector number, e.g.: 1 Mountain (MID) 274
+    class MtgaExport extends BaseExport {
+        constructor() { super('MtG Arena', 'mtga', '.mtga'); }
+
+        render(cards, countedCards, attrib) {
+            const output = '// ' + attrib
+                + ' -- Import to Magic the Gathering: Arena by selecting everything in this file and copying it to your clipboard. Within MtG: Arena, go to your decks and click Import.\r\n'
+                + countedCards.reduce((cardOutput, card) =>
+                    cardOutput += card.count + ' ' + card.exportTitle.split(' // ')[0] + '\r\n', '');
+            return output;
+        }
+    }
+
+    // .cod: used by Cockatrice
+    // sample: http://mtgstudio.uservoice.com/forums/16948-mtg-studio-suggestions/suggestions/2675891-support-cockatrice-deck-format-
+    class CodExport extends BaseExport {
+        constructor() { super('Cockatrice', 'cod', '.cod'); }
+
+        render(cards, countedCards, attrib) {
+            const output = '<?xml version="1.0" encoding="UTF-8"?>\r\n'
+                + '\t<cockatrice_deck version="1">\r\n'
+                + '\t<deckname>' + my.set.name + ' Prerelease</deckname>\r\n'
+                + '\t<comments>' + attrib + ' Prerelease</comments>\r\n'
+                + '\t<zone name="main">\r\n'
+                + '\t</zone>\r\n'
+                + '\t<zone name="side">\r\n'
+                + countedCards.reduce((cardOutput, card) =>
+                    cardOutput += '\t\t<card number="' + card.count + '" name="' + card.exportTitle.replace('&', '&amp;') + '"/>\r\n', '')
+                + '\t</zone>\r\n'
+                + '</cockatrice_deck>';
+            return output;
+        }
+    }
+
+    // .mwDeck: used by Magic Workstation
+    // & replaced with / in card title otherwise MWS won't import
+    // sample: https://code.google.com/p/deckprinter/source/browse/trunk/downloaded.mwdeck?spec=svn34&r=34
+    class MwDeckExport extends BaseExport {
+        constructor() { super('Magic Workstation', 'mwdeck', '.mwdeck'); }
+
+        render(cards, countedCards, attrib) {
+            let output = `// ${attrib}\r\n`;
+            let prefix = '    ';
+
+            // This section never gets used. I was told it was better to output all card into the sideboard so...
+            // It was originall supposed to export the main cards.
+            // if (cards !== null && cards.length > 0) {
+            //         output += cards.reduce((cardOutput, card) =>
+            //             cardOutput += prefix + card.count + ' [' + card.set.toUpperCase() + '] ' + card.exportTitle.replace(' & ', '/') + '\r\n',
+            //             '');
+            //     }
+
+            // Export cards as sideboard.
+            if (countedCards !== null && countedCards.length > 0) {
+                prefix = 'SB: ';
+                output += countedCards.reduce((cardOutput, card) => cardOutput += prefix + card.count + ' [' + card.set.toUpperCase() + '] ' + card.exportTitle.replace(' & ', '/') + '\r\n',
+                    '// Sideboard:\r\n');
+            }
+            return output;
+        }
+    }
+
+    // .frog: used by used by Frogtown
+    // Requsted by Gavin R. Frogtown site: https://www.frogtown.me/
+    // No sideboard option as they're not decks; they're card collections.
+    class FrogtownExport extends BaseExport {
+        constructor() { super('Frogtown', 'frog', '.frog'); }
+
+        // Use default renderer.
+    }
+
+    // .ds: used by deckstats.net
+    // & replaced with / in card title otherwise MWS won't import
+    // format help: https://deckstats.net/deckbuilder/en/ - Paste/upload a deck list - Formatting Help
+    class DeckstatsExport extends BaseExport {
+        constructor() { super('deckstats', 'deckstats', '.deckstats'); }
+
+        render(cards, countedCards, attrib) {
+            let output = `// ${attrib}\r\n`;
+            let prefix = '    ';
+
+            // This wasn't used in the last verion.
+            // if (cards !== null && cards.length > 0) {
+            //     output += cards.reduce((cardOutput, card) => {
+            //         const exportTitle = card.exportTitle.replace(' (', ' // ').replace(') ', ' // ').replace('(', '').replace(')', '').replace(' & ', '/');
+            //         return cardOutput += prefix + card.count + ' [' + card.set.toUpperCase() + '] ' + exportTitle + '\r\n';
+            //     },
+            //         '');
+            // }
+
+            // All cards exported as sideboard.
+            if (countedCards !== null && countedCards.length > 0) {
+                prefix = '';
+                output += countedCards.reduce((cardOutput, card) => {
+                    const exportTitle = card.exportTitle.replace(' (', ' // ').replace(') ', ' // ').replace('(', '').replace(')', '').replace(' & ', '/');
+                    return cardOutput += prefix + card.count + ' [' + card.set.toUpperCase() + '] ' + exportTitle + '\r\n';
+                },
+                    '// Sideboard:\r\n');
+            }
+            return output;
+        }
+    }
+
+
     var ExportView = Backbone.View.extend({
         el: "body"
 
         , initialize: function () {
+            const generatorUrl = window.location.href.replace('index.html', '').split('#')[0].split('?')[0];
+            exporter = new Exporter(generatorUrl);
+
             this.el.addEventListener('click', (e) => { if (e.target.classList.contains('export')) { this.showExport(e); } });
 
             window.addEventListener('ready', e => {
-                my.mainView.mainMenu.addMenuItem("export", 99, () => '<a href="#exporter" class="button export" data-export="all">Export</a>');
-                my.mainView.setMenu.addMenuItem("export", 99, () => '<a href="#exporter" class="button export" data-export="set">Export</a>');
+                my.mainView.mainMenu.addMenuItem("export", 99, () => '<a href="#exporter" class="button export" data-export="all">Export/Buy</a>');
+                my.mainView.setMenu.addMenuItem("export", 99, () => '<a href="#exporter" class="button export" data-export="set">Export/Buy</a>');
             }, false);
         }
 
         , showExport: function (event) {
             const exportType = event.target.getAttribute('data-export');
             if (exportType == 'all') {
-                addExportableTextFormats(my.mainView.currentView.generatedSets);
+                exporter.setSets(my.mainView.currentView.generatedSets);
             }
             else {
                 const setID = event.target.closest('.set').getAttribute('data-setid');
@@ -1377,13 +1643,16 @@ var mtgGen = (function (my) {
                 else {
                     sets.push(my.mainView.currentView.generatedSets[setID]);
                 }
-                addExportableTextFormats(sets);
+                exporter.setSets(sets);
             }
 
             window.modal.setContent(document.querySelector('.exporter.modal').outerHTML);
 
-            // Display the first format (dec: Cockatrice) for initial display
-            chooseExportFormat('dec');
+            document.querySelector('.exporter.modal .card-count').textContent = `${exporter.getAllCardsCount()} cards total, ${exporter.getCountedCardsCount()} unique`;
+
+
+            // Display the first format for initial display
+            this.setExportFormat(exporter.getFirstExporter().slug);
 
             window.modal.open();
 
@@ -1396,20 +1665,19 @@ var mtgGen = (function (my) {
         }
 
         , render: function () {
-            this.el.insertAdjacentHTML('beforeend', "<div style='display: none'>"
+            var exportEls = [];
+            exporter.exporters.forEach((exp, slug) => {
+                const fileExtension = exp.fileExtension ? `<strong>${exp.fileExtension}</strong> - ` : '';
+                exportEls.push(`<li><a href='#' class='button export-${slug} active' data-export-type='${slug}'>${fileExtension}${exp.name}</a></li>`);
+            });
+            this.el.insertAdjacentHTML('beforeend',
+                "<div style='display: none'>"
                 + "<aside class='modal exporter'>"
                 + "<h2>Export Your Boosters</h2>"
                 + "<section class='export-set'>"
                 + "<p>A variety of programs allow you to import cards in a certain format. Choose your format and copy &amp; paste the result or click Download to get a file.</p>"
                 + "<ul>"
-                + "<li><a href='#' class='button export-dec active' data-export-type='dec'><strong>.dec</strong> - Cockatrice, Apprentice</a></li>"
-                + "<li><a href='#' class='button export-txt' data-export-type='txt'><strong>.txt</strong> - Magic Online</a></li>"
-                + "<li><a href='#' class='button export-mtga' data-export-type='mtga'><strong>.mtga</strong> - MtG Arena</a></li>"
-                + "<li><a href='#' class='button export-mwdeck' data-export-type='mwdeck'><strong>.mwdeck</strong> - Magic Workstation</a></li>"
-                + "<li><a href='#' class='button export-cod' data-export-type='cod'><strong>.cod</strong> - Cockatrice</a></li>"
-                + "<li><a href='#' class='button export-coll' data-export-type='coll'><strong>.coll</strong> - Decked Builder</a></li>"
-                + "<li><a href='#' class='button export-frog' data-export-type='frog'><strong>.frog</strong> - Frogtown</a></li>"
-                + "<li><a href='#' class='button export-deckstats' data-export-type='deckstats'><strong>.deckstats</strong> - deckstats</a></li>"
+                + exportEls.join('')
                 + "</ul>"
                 + "</section>"
                 + "<section class='export-detail'>"
@@ -1427,196 +1695,21 @@ var mtgGen = (function (my) {
         // Toggle between export formats
         , changeExportFormat: function (e) {
             const exportType = e.target.getAttribute('data-export-type').toLowerCase();
-            chooseExportFormat(exportType);
+            this.setExportFormat(exportType);
             return false;
+        }
+
+        , setExportFormat: function (exportSlug) {
+            const allButtons = document.querySelectorAll('.exporter.modal .export-set a.button');
+            Array.from(allButtons).forEach(b => b.classList.remove('active'));
+            document.querySelector('.exporter.modal .export-set a.export-' + exportSlug).classList.add('active');
+            document.querySelector('.exporter.modal textarea').value = exporter.render(exportSlug);
+            exporter.setActionLink(exportSlug);
         }
 
     });
 
     my.initViews.push(new ExportView()); // Hook this module into main rendering view
-
-    let exports = {}; // All exported deck formats are kept within here
-
-    function addExportableTextFormats(generatedSets) {
-        // It's the same list for all formats
-        const allCards = getAllDeckBuildingGeneratedCards(generatedSets);
-        const countedCards = getUniqueCountedSortedCardSet(allCards);
-
-        const attrib = 'Created by MtG Generator: ' + window.location.href.replace('index.html', '').replace('#', '');
-
-        // Store the exports so we can do various things with them later
-        document.querySelector('.exporter.modal .card-count').textContent = `${allCards.length} cards total, ${countedCards.length} unique`;
-
-        exports.dec = renderDecFormat(countedCards, attrib);
-        exports.txt = renderTxtFormat(countedCards, attrib);
-        exports.mtga = renderMtgaFormat(countedCards, attrib);
-        exports.mwdeck = renderMwDeckFormat(null, countedCards, attrib);
-        exports.cod = renderCodFormat(countedCards, attrib);
-        exports.coll = renderCollFormat(countedCards, attrib);
-        exports.frog = renderFrogtownFormat(countedCards, attrib);
-        exports.deckstats = renderDeckstatsDeckFormat(null, countedCards, attrib);
-    }
-
-    function chooseExportFormat(exportType) {
-        const allButtons = document.querySelectorAll('.exporter.modal .export-set a.button');
-        Array.from(allButtons).forEach(b => b.classList.remove('active'));
-        document.querySelector('.exporter.modal .export-set a.export-' + exportType).classList.add('active');
-
-        document.querySelector('.exporter.modal textarea').value = exports[exportType];
-        setLinkToDownloadFile('.exporter.modal .export-detail a.export-download', exportType);
-    }
-
-    function setLinkToDownloadFile(linkSelector, exportType) {
-        const encodedContent = btoa(exports[exportType]);
-        document.querySelector(linkSelector).setAttribute('href', 'data:text/octet-stream;base64,' + encodedContent);
-        document.querySelector(linkSelector).setAttribute('download', `mtg-generator-${my.set.slug}-prerelease.${exportType}`); // 'download' attr is Chrome/FF-only to set download filename
-    }
-
-    function getAllDeckBuildingGeneratedCards(cardSets) {
-        const cards = cardSets.reduce((cards, cardSet) => cards.concat(cardSet.map(card => card)), []).filter(card => card.usableForDeckBuilding);
-        return cards;
-    }
-
-    function getUniqueCountedSortedCardSet(cards) {
-        const countedCards = cards.reduce((countedCards, card) => {
-            const matchTitle = card.matchTitle;
-            card.exportTitle = card.title.replace("’", "'"); // ’ messes up cockatrice
-            if (card.cardBack) { card.exportTitle += ' // ' + card.cardBack.title.replace("’", "'"); }
-            if (countedCards.has(matchTitle)) {
-                let existingCard = countedCards.get(matchTitle);
-                existingCard.count++;
-                countedCards.set(matchTitle, existingCard);
-            } else {
-                card.count = 1;
-                countedCards.set(matchTitle, card);
-            }
-            return countedCards;
-        }, new Map());
-
-        // Convert associative array to numeric array
-        const cardList = [...countedCards.values()].sort((a, b) => my.sortBy('matchTitle', a, b));
-
-        return cardList;
-    }
-
-    // All 'cards' arguments below should be a list of unique, counted, sorted cards
-
-    function _getCardSetName(card) {
-        // Checking the set because I didn't add all related sets in sets.json. e.g.: BRO includes BRR cards, but that set isn't in sets.json.
-        // I COULD add them all but I'm lazy;)
-        // Will default to just the set code if the set name is missing.
-        const setCode = card.set.toUpperCase();
-        const set = my.sets[setCode];
-        const setName = set?.name ?? setCode;
-        return setName;
-    }
-
-    // .dec: used by Cockatrice, Apprentice
-    // sample (under ".dec File Format"): http://www.deckedbuilder.com/faq.html
-    function renderDecFormat(cards, attrib) {
-        const output = '// ' + attrib + '\r\n' + cards.reduce((cardOutput, card) =>
-            cardOutput += card.count + ' ' + card.exportTitle + '\r\n', '');
-        return output;
-    }
-
-    // .coll: used by used by Decked Builder
-    // sample (under ".coll File Format"): http://www.deckedbuilder.com/faq.html
-    // No sideboard option as they're not decks; they're card collections.
-    function renderCollFormat(cards, attrib) {
-        const output = '// ' + attrib + '\r\n' + cards.reduce((cardOutput, card) =>
-            cardOutput += card.count + ' ' + card.exportTitle + ' [' + _getCardSetName(card) + ']\r\n', '');
-        return output;
-    }
-
-    // .txt: used by used by Magic Online
-    // sample: http://archive.wizards.com/Magic/magazine/article.aspx?x=mtgcom/arcana/678
-    function renderTxtFormat(cards, attrib) {
-        const output = 'Sideboard\r\n' + _.reduce(cards, function (memo, card) {
-            const cardtitle = card.exportTitle.replace(' // ', '/'); // Apparently Magic Online doesn't import it's own magic.wizards.com // format for split cards!
-            return memo += card.count + ' ' + cardtitle + '\r\n';
-        }, '');
-        return output;
-    }
-
-    // .mtga: used by Magic the Gathering: Arena
-    // Format explanation: https://draftsim.com/mtg-arena-import-deck/
-    // Format is plain list, number of cards at start, DFCs just list first face, can specify set but then also need collector number, e.g.: 1 Mountain (MID) 274
-    function renderMtgaFormat(cards, attrib) {
-        const output = '// ' + attrib
-            + ' -- Import to Magic the Gathering: Arena by selecting everything in this file and copying it to your clipboard. Within MtG: Arena, go to your decks and click Import.\r\n'
-            + cards.reduce((cardOutput, card) =>
-                cardOutput += card.count + ' ' + card.exportTitle.split(' // ')[0] + '\r\n', '');
-        return output;
-    }
-
-    // .cod: used by Cockatrice
-    // sample: http://mtgstudio.uservoice.com/forums/16948-mtg-studio-suggestions/suggestions/2675891-support-cockatrice-deck-format-
-    function renderCodFormat(cards, attrib) {
-        const output = '<?xml version="1.0" encoding="UTF-8"?>\r\n'
-            + '\t<cockatrice_deck version="1">\r\n'
-            + '\t<deckname>' + my.set.name + ' Prerelease</deckname>\r\n'
-            + '\t<comments>' + attrib + ' Prerelease</comments>\r\n'
-            + '\t<zone name="main">\r\n'
-            + '\t</zone>\r\n'
-            + '\t<zone name="side">\r\n'
-            + cards.reduce((cardOutput, card) =>
-                cardOutput += '\t\t<card number="' + card.count + '" name="' + card.exportTitle.replace('&', '&amp;') + '"/>\r\n', '')
-            + '\t</zone>\r\n'
-            + '</cockatrice_deck>';
-        return output;
-    }
-
-    // .mwDeck: used by Magic Workstation
-    // & replaced with / in card title otherwise MWS won't import
-    // sample: https://code.google.com/p/deckprinter/source/browse/trunk/downloaded.mwdeck?spec=svn34&r=34
-    function renderMwDeckFormat(cards, sbCards, attrib) {
-        let output = `// ${attrib}\r\n`;
-        let prefix = '    ';
-        if (cards !== null && cards.length > 0) {
-            output += cards.reduce((cardOutput, card) =>
-                cardOutput += prefix + card.count + ' [' + card.set.toUpperCase() + '] ' + card.exportTitle.replace(' & ', '/') + '\r\n',
-                '');
-        }
-        if (sbCards !== null && sbCards.length > 0) {
-            prefix = 'SB: ';
-            output += sbCards.reduce((cardOutput, card) => cardOutput += prefix + card.count + ' [' + card.set.toUpperCase() + '] ' + card.exportTitle.replace(' & ', '/') + '\r\n',
-                '// Sideboard:\r\n');
-        }
-        return output;
-    }
-
-    // .frog: used by used by Frogtown
-    // Requsted by Gavin R. Frogtown site: https://www.frogtown.me/
-    // No sideboard option as they're not decks; they're card collections.
-    function renderFrogtownFormat(cards, attrib) {
-        const output = '// ' + attrib + '\r\n' + cards.reduce((cardOutput, card) =>
-            cardOutput += card.count + ' ' + card.exportTitle + ' [' + card.set.toUpperCase() + ']\r\n', '');
-        return output;
-    }
-
-    // .ds: used by deckstats.net
-    // & replaced with / in card title otherwise MWS won't import
-    // format help: https://deckstats.net/deckbuilder/en/ - Paste/upload a deck list - Formatting Help
-    function renderDeckstatsDeckFormat(cards, sbCards, attrib) {
-        let output = `// ${attrib}\r\n`;
-        let prefix = '    ';
-        if (cards !== null && cards.length > 0) {
-            output += cards.reduce((cardOutput, card) => {
-                const exportTitle = card.exportTitle.replace(' (', ' // ').replace(') ', ' // ').replace('(', '').replace(')', '').replace(' & ', '/');
-                return cardOutput += prefix + card.count + ' [' + card.set.toUpperCase() + '] ' + exportTitle + '\r\n';
-            },
-                '');
-        }
-        if (sbCards !== null && sbCards.length > 0) {
-            prefix = '';
-            output += sbCards.reduce((cardOutput, card) => {
-                const exportTitle = card.exportTitle.replace(' (', ' // ').replace(') ', ' // ').replace('(', '').replace(')', '').replace(' & ', '/');
-                return cardOutput += prefix + card.count + ' [' + card.set.toUpperCase() + '] ' + exportTitle + '\r\n';
-            },
-                '// Sideboard:\r\n');
-        }
-        return output;
-    }
 
     return my; // END Card Export module
 }(mtgGen || {}));
