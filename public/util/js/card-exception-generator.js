@@ -17,6 +17,9 @@ class CardExceptionGenerator extends CardDataImporter {
 
     // PUBLIC METHODS ------------------------------------------------------------------------------------
 
+    DEFAULT_WIDTH = 744;
+    DEFAULT_HEIGHT = 1039;
+
     loadImagesAndGenerateExceptions({ cardImageUrl, startingCardNum, requiredImageWidth,
         requiredImageHeight, cardPattern, setCode }) {
 
@@ -214,8 +217,9 @@ class CardExceptionGenerator extends CardDataImporter {
             if (skippedCards.length > 0) {
                 out += `<p>The following ${skippedCards.length} cards were skipped due to 'x's in your Card Patterns setting:</p><ul class='skipped-cards'>`;
                 skippedCards.forEach(card => {
-                    out += `<li><img src='${card.src}' height='${Math.round(card.height / 2)}' width='${Math.round(card.width / 2)}' />`;
+                    out += `<li><img src='${card.src}' height='132.5' width='185' />`;
                     out += `<p>Card #${(card.skippedCardIndex + 1)}</p></li>`;
+
                 });
                 out += "</ul>";
             }
@@ -236,8 +240,11 @@ class CardExceptionGenerator extends CardDataImporter {
                 delete card.fixedViaException;
                 delete card.imageSource;
                 delete card.mtgenId;
-                if (card.height === 370) { delete card.height; }
-                if (card.width === 265) { delete card.width; }
+
+                // The default width/height will be assumed when rendering the cards in mtgen.net's UI,
+                // so we only need to keep them if they're nonstandard.
+                if (card.width === this.DEFAULT_WIDTH) { delete card.width; }
+                if (card.height === this.DEFAULT_HEIGHT) { delete card.height; }
 
                 // Create the card as an exception.
                 const exception = {
@@ -256,8 +263,6 @@ class CardExceptionGenerator extends CardDataImporter {
                         "where": "title=(Plains|Island|Swamp|Mountain|Forest)",
                         "newValues": {
                             "set": "{{setCode}}",
-                            "height": 370,
-                            "width": 265,
                             "type": "Basic Land",
                             "subtype": "{{title}}",
                             "colour": "l",
@@ -302,7 +307,7 @@ class CardExceptionGenerator extends CardDataImporter {
 
             let cardsHtmlSample = '';
             [...cards.values()].forEach(card =>
-                cardsHtmlSample += `<div class='card'><img src='${card.src}' height='${card.height}' width='${card.width}' /><p>${card.num}:${card.title}</p></div>`
+                cardsHtmlSample += `<div class='card'><img src='${card.src}' height='370' width='265' /><p>${card.num}:${card.title}</p></div>`
             );
 
             const finalData = {
