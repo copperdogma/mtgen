@@ -50,9 +50,9 @@
             mtgGen.runBrowser({
                 setCode: "{{codeLowerCase}}"
                 , setFile: "{{setFile}}"
-                , cardFiles: [{{#cardFiles}} '{{@root.codeLowerCase}}/{{.}}',{{/cardFiles}}]
-                , packFiles: [{{#packFiles}} '{{@root.codeLowerCase}}/{{.}}',{{/packFiles}}]
-                , productFile: '{{codeLowerCase}}/{{productFile}}'
+                , cardFiles: [{{#cardFiles}} '/{{@root.codeLowerCase}}/{{.}}',{{/cardFiles}}]
+                , packFiles: [{{#packFiles}} '/{{@root.codeLowerCase}}/{{.}}',{{/packFiles}}]
+                , productFile: '/{{codeLowerCase}}/{{productFile}}'
                 , startProductName: "{{startProductName}}"
                 , drawId: mtgGen.getQuerystringParamByName('drawId')
                 , debug: mtgGen.getQuerystringParamByName('debug')
