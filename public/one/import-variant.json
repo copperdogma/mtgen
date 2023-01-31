@@ -1,0 +1,118 @@
+﻿{
+  "setCode": "one",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Aone&unique=prints",
+  "imagesUrl": "",
+  "importOptions": {},
+  "exceptions": [
+    {
+      "_comments": [
+        "import all images, matching their titles with the same card data over and over = (above) importOptions/importByImage: true",
+        "add a new card = add:true, newValues {}",
+        "delete a card  = delete:true, where",
+        "update card(s) = where, newValues {}",
+        "get card directly from Gatherer = where: gatherer='Serra Angel'",
+        "ignore later image match and use the one from data (or override below) = useCardDataImg = true"
+      ]
+    },
+
+    {
+      "where": "numInt=(272-276)",
+      "newValues": {
+        "bundleBasicLand": true
+      }
+    },
+    {
+      "where": "numInt=(285-297)",
+      "newValues": {
+        "ichorShowcase": true
+      }
+    },
+    {
+      "where": "numInt=(298-324)",
+      "newValues": {
+        "borderlessIchorShowcase": true,
+        "borderless": true
+      }
+    },
+    {
+      "where": "numInt=(325-329)",
+      "newValues": {
+        "darkPhyrexianPlaneswalker": true
+      }
+    },
+    {
+      "where": "numInt=(330-344)",
+      "newValues": {
+        "borderlessMangaWhatIf": true
+      }
+    },
+    {
+      "where": "numInt=(345-369)",
+      "newValues": {
+        "oilSlickFoil": true
+      }
+    },
+    {
+      "where": "numInt=(370-374)",
+      "newValues": {
+        "borderlessDualLand": true,
+        "borderless": true
+      }
+    },
+    {
+      "where": "numInt=(375-403)",
+      "newValues": {
+        "extendedArtwork": true
+      }
+    },
+    {
+      "where": "numInt=(404-413)",
+      "newValues": {
+        "jumpstartRare": true
+      }
+    },
+    {
+      "where": "numInt=(414-421)",
+      "newValues": {
+        "conceptPraetorEleshNorn": true
+      }
+    },
+    {
+      "where": "numInt=(422-489)",
+      "newValues": {
+        "stepAndCompleatFoil": true
+      }
+    },
+
+    {
+      "_comment": "As of ONE, Scryfall is including promos in the main set data, with promo=true. Delete them here because we import them separately.",
+      "delete": true,
+      "where": "promo=true"
+    },
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "type~='Legendary'",
+      "newValues": {
+        "legendary": true
+      }
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "variant": true
+      }
+    },
+    {
+      "where": "numInt=457",
+      "newValues": {
+        "variant": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "startProductName": "one-prerelease",
+  "packFiles": [
+    "packs.json"
+  ],
+  "cardFiles": [
+    "cardsMain.json",
+    "cardsToken.json",
+    "cardsVariant.json?v1.1",
+    "cardsPromo.json?v1.4",
+    "cardsCommander.json?v1.1",
+    "cardsTheList.json",
+    "cardsArtCards.json",
+    "../cards/ads/cardsAds.json"
+  ],
+  "updates": [
+    {
+      "UpdateDate": "2023-01-30T20:30:00:00",
+      "HtmlString": "Collector Booster: Fixed wildcard slots (1/2)."
+    }
+  ]
+}

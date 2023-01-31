@@ -1,0 +1,161 @@
+{
+  "setCode": "one",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Aone&unique=prints",
+  "imagesUrl": "",
+  "exceptions": [
+    {
+      "_comments": [
+        "promo pattern: target the full set, set ALL to promo:false, pull in the indivdual promo cards and override their src/num/promo=true/includedReason/usableForDeckBuilding, then delete all cards where promo is still false"
+      ]
+    },
+
+    {
+      "where": "numInt=(282-283)",
+      "newValues": {
+        "num": "{{numInt}} P Bundle",
+        "includedReason": "Bundle Promo"
+      }
+    },
+    {
+      "where": "numInt=284",
+      "newValues": {
+        "num": "{{numInt}} P Buy-a-Box",
+        "includedReason": "Buy-a-Box Promo"
+      }
+    },
+    {
+      "where": "numInt=(277-281)",
+      "newValues": {
+        "num": "{{numInt}} P Promo Pack",
+        "includedReason": "Universal Promo Pack"
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/one-prerelease-deck-box.webp",
+        "title": "Prerelease Deck Box",
+        "colour": "o",
+        "num": "006 Prerelease Deck Box",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-deckbuilding-info.jpg",
+        "src_large": "http://mtgen.net/cards/mtg-deckbuilding-info-lg.jpg",
+        "height": 370,
+        "width": 515,
+        "title": "Deckbuilding Advice Insert",
+        "colour": "o",
+        "num": "007 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-prerelease-card-divider.webp",
+        "title": "Card Divider",
+        "colour": "o",
+        "num": "008 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-arena-code-card.webp",
+        "title": "Arena Code Card",
+        "colour": "o",
+        "num": "009 Insert",
+        "rarity": "c",
+        "type": "Insert",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-white.webp",
+        "title": "White Spindown Life Counter",
+        "colour": "o",
+        "num": "001a Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-blue.webp",
+        "title": "Blue Spindown Life Counter",
+        "colour": "o",
+        "num": "001b Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-black.webp",
+        "title": "Black Spindown Life Counter",
+        "colour": "o",
+        "num": "001c Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-red.webp",
+        "title": "Red Spindown Life Counter",
+        "colour": "o",
+        "num": "001d Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "http://mtgen.net/cards/mtg-spindown-life-counter-green.webp",
+        "title": "Green Spindown Life Counter",
+        "colour": "o",
+        "num": "001e Counter",
+        "rarity": "c",
+        "type": "Life Counter",
+        "includedReason": "Prerelease Promo"
+      }
+    },
+    {
+      "_comment": "delete all cards that weren't selected above",
+      "delete": true,
+      "where": "isSelected=false"
+    },
+
+    {
+      "where": "",
+      "newValues": {
+        "set": "{{setCode}}",
+        "promo": true,
+        "usableForDeckBuilding": false
+      }
+    }
+  ]
+}
