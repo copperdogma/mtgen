@@ -1,0 +1,440 @@
+{
+  "defs": [
+    {
+      "defName": "{{setCode}}",
+      "query": "from[*]?set='{{setCode}}'"
+    },
+
+    {
+      "defName": "a{{setCode}}-art-cards",
+      "query": "from[*]?artCard=true"
+    },
+
+    {
+      "defName": "the-list",
+      "query": "from[*]?theList=true"
+    },
+
+    {
+      "defName": "{{setCode}}-commander",
+      "query": "from[*]?set='onc'"
+    },
+    {
+      "defName": "{{setCode}}-commander-extended-art",
+      "query": "from[{{setCode}}-commander]?extendedArtwork=true"
+    },
+    
+    {
+      "defName": "{{setCode}}-main",
+      "query": "from[{{setCode}}]?mainSet=true-from[{{setCode}}]?type='Basic Land'-from[{{setCode}}]?promo=true"
+    },
+    {
+      "defName": "{{setCode}}-variants",  
+      "query": "from[{{setCode}}]?variant=true"
+    },
+    {
+      "defName": "{{setCode}}-promo",
+      "query": "from[{{setCode}}]?promo=true"
+    },
+    {
+      "defName": "{{setCode}}-extended-art",
+      "query": "from[{{setCode}}]?extendedArtwork=true"
+    },
+    {
+      "defName": "{{setCode}}-borderless",
+      "query": "from[{{setCode}}]?borderless=true"
+    },
+    {
+      "defName": "{{setCode}}-step-and-compleat",
+      "query": "from[{{setCode}}]?stepAndCompleatFoil=true"
+    },
+    {
+      "defName": "{{setCode}}-ichor",
+      "query": "from[{{setCode}}]?ichorShowcase=true"
+    },
+    {
+      "defName": "{{setCode}}-borderless-ichor",
+      "query": "from[{{setCode}}]?borderlessIchorShowcase=true"
+    },
+    {
+      "defName": "{{setCode}}-borderless-manga",
+      "query": "from[{{setCode}}]?borderlessMangaWhatIf=true"
+    },
+    {
+      "defName": "{{setCode}}-phyrexian-planeswalkers",
+      "query": "from[{{setCode}}]?darkPhyrexianPlaneswalker=true"
+    },
+    {
+      "defName": "{{setCode}}-concept-praetor",
+      "query": "from[{{setCode}}]?conceptPraetorEleshNorn=true"
+    },
+    {
+      "defName": "{{setCode}}-jumpstart-extended-art",
+      "query": "from[{{setCode}}]?jumpstartRare=true"
+    },
+    {
+      "defName": "{{setCode}}-jumpstart-and-commander-extended-art",
+      "query": "from[{{setCode}}-jumpstart-extended-art]+from[{{setCode}}-commander-extended-art]"
+    },
+    {
+      "defName": "{{setCode}}-extended-art-and-borderless",
+      "query": "from[{{setCode}}-extended-art]+from[{{setCode}}-commander-extended-art]+from[{{setCode}}-commander-extended-art]+from[{{setCode}}-borderless]"
+    },
+    {
+      "defName": "{{setCode}}-panorama-and-phyrexianized-basic-land",
+      "query": "from[{{setCode}}]?panoramaFullArtBasicLand=true+from[{{setCode}}]?phyrexianizedFullArtBasicLand=true"
+    },
+    {
+      "defName": "{{setCode}}-wildcards",
+      "query": "from[{{setCode}}-borderless]?rarity=(r|m)+from[{{setCode}}-commander-extended-art]?rarity=(r|m)+from[{{setCode}}-jumpstart-extended-art]+from[{{setCode}}-ichor]?rarity=(c|u)"
+    },
+    {
+      "defName": "{{setCode}}-borderless-fast-land",
+      "query": "from[{{setCode}}]?numInt=(370-374)"
+    },
+    {
+      "defName": "{{setCode}}-booster-fun",
+      "query": "from[{{setCode}}-borderless-fast-land]+from[{{setCode}}-borderless-ichor]+from[{{setCode}}-borderless-manga]+from[{{setCode}}-phyrexian-planeswalkers]+from[{{setCode}}-concept-praetor]"
+    },
+    {
+      "defName": "{{setCode}}-booster-fun-foil",
+      "query": "from[{{setCode}}-booster-fun]"
+    },
+
+    {
+      "defName": "{{setCode}}-foils",
+      "query": "from[{{setCode}}-main]+from[{{setCode}}]?type='Basic Land'"
+    },
+
+    {
+      "defName": "{{setCode}}-basic-land",
+      "query": "from[{{setCode}}]?type='Basic Land'"
+    },
+    {
+      "defName": "{{setCode}}-main-and-borderless",
+      "query": "from[{{setCode}}-main]+from[{{setCode}}-borderless]"
+    },
+
+    {
+      "defName": "{{setCode}}-tokens",
+      "query": "from[{{setCode}}]?token=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "{{setCode}}-all-cards",
+      "packDesc": "{{setName}}: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[{{setCode}}]" }
+      ]
+    },
+    {
+      "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
+      "packName": "{{setCode}}-draft",
+      "packDesc": "{{setName}}: Draft Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/news/feature/collecting-phyrexia-all-will-be-one" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[10]>from[{{setCode}}-main]?rarity='c" },
+        { "query": "take[3]>from[{{setCode}}-main]?rarity='u" },
+        { "query": "from[{{setCode}}-main]?rarity=rarityByWeight2020(rm)" },
+        { "query": "from[{{setCode}}]?panoramaFullArtBasicLand=true" },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}-tokens]"
+            },
+            {
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "33% chance of CURM foil replacing a common",
+              "percent": "33",
+              "overrideSlot": "10",
+              "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(curm)",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "50%? chance of Phyrexianized Basic Land",
+              "percent": "50",
+              "overrideSlot": "15",
+              "query": "from[{{setCode}}]?phyrexianizedFullArtBasicLand=true"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_comment": "Collector Boosters were introduced as standard feature as of ELD",
+      "packName": "{{setCode}}-collector",
+      "packDesc": "{{setName}}: Collector Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/news/feature/collecting-phyrexia-all-will-be-one" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1: Foil: Alt border or boderless RM",
+          "query": "from[{{setCode}}-booster-fun]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 2: Borderless RM",
+          "query": "from[{{setCode}}-booster-fun]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 3: Foil: Step-and-Compleat CURM",
+          "query": "from[{{setCode}}-step-and-compleat]?rarity=rarityByWeight2020(curm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 4: Foil: Showcase ichor CU",
+          "query": "from[{{setCode}}-ichor]?rarity=rarityByWeight2020(cu)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 5: Showcase ichor CU",
+          "query": "from[{{setCode}}-ichor]?rarity=rarityByWeight2020(cu)"
+        },
+        {
+          "_comment": "Slot 6: Extended Art Jumpstart R or Commander RM",
+          "_comment2": "Jumpstart only has rare, so we can just pull RM from the whole pool",
+          "query": "from[{{setCode}}-jumpstart-and-commander-extended-art]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 7: Extended Art R",
+          "query": "from[{{setCode}}-extended-art]?rarity='r'"
+        },
+        {
+          "_comment": "Slot 8: Foil: RM",
+          "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 9-10: 2x Foil: U",
+          "query": "take[2]>from[{{setCode}}-foils]?rarity='u'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 11-14: 4x Foil: C",
+          "query": "take[4]>from[{{setCode}}-foils]?rarity='c'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 15: Foil: Panorama or Phyrexianized Basic Land",
+          "query": "from[{{setCode}}]?panoramaFullArtBasicLand=true",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 16: Foil: double-sided token",
+          "query": "from[{{setCode}}-tokens]",
+          "setValues": { "foil": true }
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 1: Foil: Alt border or boderless RM",
+              "_comment2": "You get an extended-art rare or mythic rare in foil 49% of the time.",
+              "percent": "49",
+              "overrideSlot": "1",
+              "query": "from[{{setCode}}-jumpstart-and-commander-extended-art]?rarity=rarityByWeight2020(rm)",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "50%? chance of Phyrexianized Basic Land",
+              "percent": "50",
+              "overrideSlot": "15",
+              "query": "from[{{setCode}}]?phyrexianizedFullArtBasicLand=true",
+              "setValues": { "foil": true }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_comment": "Set Boosters were introduced as standard feature as of ZNR",
+      "packName": "{{setCode}}-set-booster",
+      "packDesc": "{{setName}}: Set Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/news/feature/collecting-phyrexia-all-will-be-one" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1: Art Card",
+          "_comment2": "Art Card is foil-stamped signature version in 10% of packs",
+          "query": "from[a{{setCode}}-art-cards]",
+          "setValues": { "modifiers": [ "Normal" ] }
+        },
+        {
+          "_comment": "Slot 2: Showcase Ichor CU",
+          "query": "from[{{setCode}}-ichor]?rarity=rarityByWeight2020(cu)"
+        },
+        {
+          "_comment": "Slot 3: Main RM",
+          "query": "from[{{setCode}}-main]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 4: Foil: CURM (including borderless RM, Commander RM, Jumpostart R, Showcase Ichor CU)",
+          "query": "from[{{setCode}}-wildcards]?rarity=rarityByWeight2020(curm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 5-6: 2x Wildcard CURM (including borderless RM, Commander RM, Jumpostart R, Showcase Ichor CU)",
+          "query": "take[2]>from[{{setCode}}-wildcards]?rarity=rarityByWeight2020(curm)"
+        },
+        {
+          "_comment": "Slot 7-9: 3x U",
+          "query": "take[3]>from[{{setCode}}-main]?rarity=u"
+        },
+        {
+          "_comment": "Slot 10-12: 3x C",
+          "query": "take[3]>from[{{setCode}}-main]?rarity=c"
+        },
+        {
+          "_comment": "Slot 13: Basic Land: Panorama or Phyrexianized",
+          "_comment2": "20% chance standard foil",
+          "query": "from[{{setCode}}-panorama-and-phyrexianized-basic-land]"
+        },
+        {
+          "_comment": "Slot 14: Token/Ad Card or The List",
+          "_comment2": "25% chance of The List card",
+          "query": "from[{{setCode}}-tokens]"
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 1: Art Card",
+              "_comment2": "Art Card is foil-stamped signature version in 10% of packs",
+              "overrideSlot": "1",
+              "percent": "10",
+              "query": "from[a{{setCode}}-art-cards]",
+              "setValues": { "modifiers": [ "Foil Stamped" ] }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 13: Basic Land: Panorama or Phyrexianized",
+              "_comment2": "20% chance standard foil",
+              "query": "from[{{setCode}}-panorama-and-phyrexianized-basic-land]",
+              "setValues": { "foil": true },
+              "overrideSlot": "13",
+              "percent": "20"
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 14: Token/Ad or The List",
+              "_comment2": "1 Token/ad card (75%), or a card from The List (25%) – The List is a collection of 300 cards from Magic's history that we have brought together for this special slot. We have rotated in 50 new reprints that we feel help capture the feel of {{setName}}. Inclusion of cards from The List doesn't impact what formats the card is legal in",
+              "query": "from[the-list]?rarity=rarityByWeight2020(curm)",
+              "overrideSlot": "14",
+              "percent": "25"
+            }
+          ]
+        }
+
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-prerelease-promo-packins",
+      "packDesc": "{{setName}}: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "from[{{setCode}}-main]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        { "query": "take[1]>from[{{setCode}}-promo]?type='Life Counter'" },
+        { "query": "take[*]>from[{{setCode}}-promo]?title~='Prerelease Deck Box" },
+        { "query": "from[{{setCode}}-promo]?title='Card Divider" },
+        { "query": "from[{{setCode}}-promo]?title='Arena Code Card" }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-prerelease-promos",
+      "packDesc": "{{setName}}: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[{{setCode}}-promo]?includedReason='Prerelease Promo" }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-variants",
+      "packDesc": "{{setName}}: All Variants",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-variants]"
+        }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-promos",
+      "packDesc": "{{setName}}: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-promo]"
+        }
+      ]
+    },
+
+    {
+      "packName": "a{{setCode}}-art-cards",
+      "packDesc": "{{setName}}: Art Cards",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[a{{setCode}}-art-cards]"
+        }
+      ]
+    },
+
+    {
+      "packName": "the-list",
+      "packDesc": "{{setName}}: The List",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[the-list]"
+        }
+      ]
+    }
+
+  ]
+}
