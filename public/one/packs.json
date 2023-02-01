@@ -25,8 +25,14 @@
     },
     
     {
+      "comment": "These are pulled from five different sets",
+      "defName": "{{setCode}}-borderless-concept-praetor",
+      "query": "from[*]?borderlessConceptPraetor=true"
+    },
+
+    {
       "defName": "{{setCode}}-main",
-      "query": "from[{{setCode}}]?mainSet=true-from[{{setCode}}]?type='Basic Land'-from[{{setCode}}]?promo=true"
+      "query": "from[{{setCode}}]?mainSet=true-from[{{setCode}}]?type='Basic Land'-from[{{setCode}}]?promo=true+from[{{setCode}}-borderless-concept-praetor]"
     },
     {
       "defName": "{{setCode}}-variants",  
@@ -73,6 +79,10 @@
       "query": "from[{{setCode}}]?jumpstartRare=true"
     },
     {
+      "defName": "{{setCode}}-all-with-borderless-concept-praetor",
+      "query": "from[{{setCode}}]+from[{{setCode}}-borderless-concept-praetor]"
+    },
+    {
       "defName": "{{setCode}}-jumpstart-and-commander-extended-art",
       "query": "from[{{setCode}}-jumpstart-extended-art]+from[{{setCode}}-commander-extended-art]"
     },
@@ -94,7 +104,7 @@
     },
     {
       "defName": "{{setCode}}-booster-fun",
-      "query": "from[{{setCode}}-borderless-fast-land]+from[{{setCode}}-borderless-ichor]+from[{{setCode}}-borderless-manga]+from[{{setCode}}-phyrexian-planeswalkers]+from[{{setCode}}-concept-praetor]"
+      "query": "from[{{setCode}}-borderless-fast-land]+from[{{setCode}}-borderless-ichor]+from[{{setCode}}-borderless-manga]+from[{{setCode}}-phyrexian-planeswalkers]+from[{{setCode}}-concept-praetor]+from[{{setCode}}-borderless-concept-praetor]"
     },
     {
       "defName": "{{setCode}}-booster-fun-foil",
@@ -103,7 +113,7 @@
 
     {
       "defName": "{{setCode}}-foils",
-      "query": "from[{{setCode}}-main]+from[{{setCode}}]?type='Basic Land'"
+      "query": "from[{{setCode}}-main]+from[{{setCode}}]?type='Basic Land'-from[{{setCode}}]?oilSlickFoil=true"
     },
 
     {
@@ -126,7 +136,7 @@
       "packDesc": "{{setName}}: All Cards",
       "isGenerated": false,
       "cards": [
-        { "query": "take[*]>from[{{setCode}}]" }
+        { "query": "take[*]>from[{{setCode}}-all-with-borderless-concept-praetor]" }
       ]
     },
     {

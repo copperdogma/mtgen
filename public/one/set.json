@@ -1,12 +1,12 @@
 {
   "startProductName": "one-prerelease",
   "packFiles": [
-    "packs.json"
+    "packs.json?v1.1"
   ],
   "cardFiles": [
     "cardsMain.json",
     "cardsToken.json",
-    "cardsVariant.json?v1.1",
+    "cardsVariant.json?v1.2",
     "cardsPromo.json?v1.4",
     "cardsCommander.json?v1.1",
     "cardsTheList.json",
@@ -14,6 +14,10 @@
     "../cards/ads/cardsAds.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2023-01-31T11:00:00:00",
+      "HtmlString": "Oil slick lands no long appear in foils (or in any booster). Added Borderless Concept Praetors to Set/Collector/Draft boosters."
+    },
     {
       "UpdateDate": "2023-01-30T20:30:00:00",
       "HtmlString": "Collector Booster: Fixed wildcard slots (1/2)."
