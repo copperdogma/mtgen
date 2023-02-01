@@ -89,6 +89,83 @@
       "delete": true,
       "where": "promo=true"
     },
+
+    {
+      "comment": "scryfall didn't include these for some reason, so I'm adding them manully here from this article: https://magic.wizards.com/en/news/feature/collecting-phyrexia-all-will-be-one",
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2023/one/en_ae8ca23282.png",
+        "title": "Elesh Norn, Mother of Machines",
+        "colour": "w",
+        "num": "416 M Concept Praetor",
+        "rarity": "m",
+        "cost": "{4}{W}",
+        "type": "Legendary Creature",
+        "subtype": "Phyrexian Praetor",
+        "borderlessConceptPraetor": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2023/one/en_a36f80fd33.png",
+        "title": "Jin-Gitaxias, Progress Tyrant",
+        "colour": "u",
+        "num": "513 M Concept Praetor",
+        "rarity": "m",
+        "cost": "{5}{U}{U}",
+        "type": "Legendary Creature",
+        "subtype": "Phyrexian Praetor",
+        "set": "NEO",
+        "borderlessConceptPraetor": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2023/one/en_9d1e698306.png",
+        "title": "Sheoldred, the Apocalypse",
+        "colour": "b",
+        "num": "435 M Concept Praetor",
+        "rarity": "m",
+        "cost": "{2}{B}{B}",
+        "type": "Legendary Creature",
+        "subtype": "Phyrexian Praetor",
+        "set": "DMU",
+        "borderlessConceptPraetor": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2023/one/en_b26906d85a.png",
+        "title": "Urabrask, Heretic Praetor",
+        "colour": "r",
+        "num": "468 M Concept Praetor",
+        "rarity": "m",
+        "cost": "{3}{R}{R}",
+        "type": "Legendary Creature",
+        "subtype": "Phyrexian Praetor",
+        "set": "SNC",
+        "borderlessConceptPraetor": true
+      }
+    },
+    {
+      "add": true,
+      "newValues": {
+        "src": "https://media.wizards.com/2023/one/en_59dbaeeda7.png",
+        "title": "Vorinclex, Monstrous Raider",
+        "colour": "g",
+        "num": "406 M Concept Praetor",
+        "rarity": "m",
+        "cost": "{4}{G}{G}",
+        "type": "Legendary Creature",
+        "subtype": "Phyrexian Praetor",
+        "set": "KHM",
+        "borderlessConceptPraetor": true
+      }
+    },
+
     {
       "_comment": "delete all cards that weren't selected above",
       "delete": true,
