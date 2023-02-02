@@ -1,7 +1,7 @@
 ﻿{
   "setCode": "rna",
-  "cardDataUrl": "https://www.mtgsalvation.com/spoilers/filter?SetID=229&IncludeUnconfirmed=true&CardsPerRequest=999",
-  "imagesUrl": "https://magic.wizards.com/en/articles/archive/card-image-gallery/ravnica-allegiance-2018-12-17",
+  "cardDataUrl": "https://api.scryfall.com/cards/search?order=set&q=e%3Arna&unique=prints",
+  "imagesUrl": "",
   "exceptions": [
     {
       "_comments": [
@@ -9,95 +9,6 @@
         "delete a card  = delete:true, where",
         "update card(s) = where, newValues {}"
       ]
-    },
-
-    {
-      "where": "title='Immolation Shaman'",
-      "newValues": {
-        "num": "106"
-      }
-    },
-    {
-      "where": "title='Senate Guildmage'",
-      "newValues": {
-        "num": "204"
-      }
-    },
-    {
-      "where": "title='Get to the Point",
-      "newValues": {
-        "title": "Get the Point"
-      }
-    },
-    {
-      "where": "title='Charging War Bear",
-      "newValues": {
-        "title": "Charging War Boar"
-      }
-    },
-    {
-      "where": "title='Rampaging Redhorn",
-      "newValues": {
-        "title": "Rampaging Rendhorn"
-      }
-    },
-    {
-      "where": "title='Footlight Fiend",
-      "newValues": {
-        "cost": "{B/R}",
-        "colour": "m"
-      }
-    },
-    {
-      "where": "title='Rubble Slinger",
-      "newValues": {
-        "cost": "2{R/G}",
-        "colour": "m"
-      }
-    },
-    {
-      "where": "title='Senate Griffin",
-      "newValues": {
-        "cost": "2{W/B}{W/B}",
-        "colour": "m"
-      }
-    },
-    {
-      "where": "title=(Arrester's Admonition|Azorius Locket|Gruul Locket|Orzhov Locket|Rakdos Locket|Simic Locket)",
-      "newValues": {
-        "rarity": "c"
-      }
-    },
-    {
-      "where": "title='Titanic Brawl",
-      "newValues": {
-        "cost": "1G"
-      }
-    },
-    {
-      "where": "title='Orzhov Racketeers",
-      "newValues": {
-        "cost": "4B"
-      }
-    },
-    {
-      "where": "title='Scuttlegator",
-      "newValues": {
-        "cost": "4{G/U}{G/U}",
-        "colour": "m"
-      }
-    },
-    {
-      "where": "title=(Expose to Daylight|Regenesis)",
-      "newValues": {
-        "type": "Instant"
-      }
-    },
-    {
-      "where": "title=(Growth-Chamber Guardian|Imperious Oligarch)",
-      "newValues": {
-        "type": "Creature"
-      }
     },
 
     {
@@ -144,13 +55,8 @@
 
 
     {
-      "_comment": "Lands and Basic lands are imported separately",
+      "_comment": "Lands (incl Guildgates) and Basic lands are imported separately",
       "where": "type=(Land|Basic Land)",
-      "delete": true
-    },
-    {
-      "_comment": "Guildgates are imported separately",
-      "where": "subtype='Gate'",
       "delete": true
     },
 
