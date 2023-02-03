@@ -10,10 +10,14 @@
     "cardsPromo.json?v1.4",
     "cardsCommander.json?v1.1",
     "cardsTheList.json",
-    "cardsArtCards.json",
+    "cardsArtCards.json?v1.1",
     "../cards/ads/cardsAds.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2023-02-01T11:45:00:00",
+      "HtmlString": "Art cards added."
+    },
     {
       "UpdateDate": "2023-01-31T11:00:00:00",
       "HtmlString": "Oil slick lands no long appear in foils (or in any booster). Added Borderless Concept Praetors to Set/Collector/Draft boosters."

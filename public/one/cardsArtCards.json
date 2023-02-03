@@ -1,13 +1,812 @@
 ﻿[
   {
-    "_comment": "Add caveat in products.json, like so: Note: Placeholder image for Art Cards used until the actual cards are released.",
-    "title": "Art Card",
-    "src": "http://mtgen.net/cards/mtg-art-series-card.webp",
-    "num": "0001/0001 A",
-    "set": "aone",
-    "numInt": 1,
-    "mtgenId": "aone|0001/0001 A",
-    "artCard": true,
-    "usableForDeckBuilding": false
+   "title": "Against All Odds",
+   "src": "https://media.wizards.com/2023/one/en_cdd66917cb.png",
+   "num": "0001/081 A",
+   "set": "one",
+   "numInt": 1,
+   "mtgenId": "one|0001/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Elesh Norn, Mother of Machines",
+   "src": "https://media.wizards.com/2023/one/en_75155d6292.png",
+   "num": "0002/081 A",
+   "set": "one",
+   "numInt": 2,
+   "mtgenId": "one|0002/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "The Eternal Wanderer",
+   "src": "https://media.wizards.com/2023/one/en_50d82e1316.png",
+   "num": "0003/081 A",
+   "set": "one",
+   "numInt": 3,
+   "mtgenId": "one|0003/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Mite Overseer",
+   "src": "https://media.wizards.com/2023/one/en_8fe1c6b474.png",
+   "num": "0004/081 A",
+   "set": "one",
+   "numInt": 4,
+   "mtgenId": "one|0004/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Mondrak, Glory Dominus",
+   "src": "https://media.wizards.com/2023/one/en_3eaec07284.png",
+   "num": "0005/081 A",
+   "set": "one",
+   "numInt": 5,
+   "mtgenId": "one|0005/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Norn's Decree",
+   "src": "https://media.wizards.com/2023/one/en_5f0027c7fb.png",
+   "num": "0006/081 A",
+   "set": "one",
+   "numInt": 6,
+   "mtgenId": "one|0006/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Phyrexian Vindicator",
+   "src": "https://media.wizards.com/2023/one/en_72ff48816b.png",
+   "num": "0007/081 A",
+   "set": "one",
+   "numInt": 7,
+   "mtgenId": "one|0007/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Porcelain Zealot",
+   "src": "https://media.wizards.com/2023/one/en_18323ca026.png",
+   "num": "0008/081 A",
+   "set": "one",
+   "numInt": 8,
+   "mtgenId": "one|0008/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Skyhunter Strike Force",
+   "src": "https://media.wizards.com/2023/one/en_91413818b9.png",
+   "num": "0009/081 A",
+   "set": "one",
+   "numInt": 9,
+   "mtgenId": "one|0009/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Vanish into Eternity",
+   "src": "https://media.wizards.com/2023/one/en_25248ff5ff.png",
+   "num": "0010/081 A",
+   "set": "one",
+   "numInt": 10,
+   "mtgenId": "one|0010/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "White Sun's Twilight",
+   "src": "https://media.wizards.com/2023/one/en_961145beba.png",
+   "num": "0011/081 A",
+   "set": "one",
+   "numInt": 11,
+   "mtgenId": "one|0011/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Atmosphere Surgeon",
+   "src": "https://media.wizards.com/2023/one/en_efc21de229.png",
+   "num": "0012/081 A",
+   "set": "one",
+   "numInt": 12,
+   "mtgenId": "one|0012/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Blue Sun's Twilight",
+   "src": "https://media.wizards.com/2023/one/en_00af9cbc60.png",
+   "num": "0013/081 A",
+   "set": "one",
+   "numInt": 13,
+   "mtgenId": "one|0013/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Ichor Synthesizer",
+   "src": "https://media.wizards.com/2023/one/en_216d860854.png",
+   "num": "0014/081 A",
+   "set": "one",
+   "numInt": 14,
+   "mtgenId": "one|0014/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Jace, the Perfected Mind",
+   "src": "https://media.wizards.com/2023/one/en_7a512ebfd3.png",
+   "num": "0015/081 A",
+   "set": "one",
+   "numInt": 15,
+   "mtgenId": "one|0015/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Meldweb Curator",
+   "src": "https://media.wizards.com/2023/one/en_9f5c218835.png",
+   "num": "0016/081 A",
+   "set": "one",
+   "numInt": 16,
+   "mtgenId": "one|0016/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Mirage Mockery",
+   "src": "https://media.wizards.com/2023/one/en_c6ccdb19c8.png",
+   "num": "0017/081 A",
+   "set": "one",
+   "numInt": 17,
+   "mtgenId": "one|0017/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Archfiend of the Dross",
+   "src": "https://media.wizards.com/2023/one/en_b06a17d56a.png",
+   "num": "0018/081 A",
+   "set": "one",
+   "numInt": 18,
+   "mtgenId": "one|0018/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Black Sun's Twilight",
+   "src": "https://media.wizards.com/2023/one/en_6893d68d78.png",
+   "num": "0019/081 A",
+   "set": "one",
+   "numInt": 19,
+   "mtgenId": "one|0019/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Drivnod, Carnage Dominus",
+   "src": "https://media.wizards.com/2023/one/en_24affb0702.png",
+   "num": "0020/081 A",
+   "set": "one",
+   "numInt": 20,
+   "mtgenId": "one|0020/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Necrogen Communion",
+   "src": "https://media.wizards.com/2023/one/en_792a4fb1b6.png",
+   "num": "0021/081 A",
+   "set": "one",
+   "numInt": 21,
+   "mtgenId": "one|0021/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Phyrexian Arena",
+   "src": "https://media.wizards.com/2023/one/en_58187b0365.png",
+   "num": "0022/081 A",
+   "set": "one",
+   "numInt": 22,
+   "mtgenId": "one|0022/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Testament Bearer",
+   "src": "https://media.wizards.com/2023/one/en_cfc3b1bf48.png",
+   "num": "0023/081 A",
+   "set": "one",
+   "numInt": 23,
+   "mtgenId": "one|0023/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Vraan, Executioner Thane",
+   "src": "https://media.wizards.com/2023/one/en_7864ffd0e6.png",
+   "num": "0024/081 A",
+   "set": "one",
+   "numInt": 24,
+   "mtgenId": "one|0024/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "All Will Be One",
+   "src": "https://media.wizards.com/2023/one/en_80358485e9.png",
+   "num": "0025/081 A",
+   "set": "one",
+   "numInt": 25,
+   "mtgenId": "one|0025/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Forgehammer Centurion",
+   "src": "https://media.wizards.com/2023/one/en_081d64c9d6.png",
+   "num": "0026/081 A",
+   "set": "one",
+   "numInt": 26,
+   "mtgenId": "one|0026/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Free from Flesh",
+   "src": "https://media.wizards.com/2023/one/en_db9f29926f.png",
+   "num": "0027/081 A",
+   "set": "one",
+   "numInt": 27,
+   "mtgenId": "one|0027/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Gleeful Demolition",
+   "src": "https://media.wizards.com/2023/one/en_60f27a4f97.png",
+   "num": "0028/081 A",
+   "set": "one",
+   "numInt": 28,
+   "mtgenId": "one|0028/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Goldwardens' Gambit",
+   "src": "https://media.wizards.com/2023/one/en_0af867c651.png",
+   "num": "0029/081 A",
+   "set": "one",
+   "numInt": 29,
+   "mtgenId": "one|0029/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Hexgold Slash",
+   "src": "https://media.wizards.com/2023/one/en_d77a207526.png",
+   "num": "0030/081 A",
+   "set": "one",
+   "numInt": 30,
+   "mtgenId": "one|0030/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Koth, Fire of Resistance",
+   "src": "https://media.wizards.com/2023/one/en_58fbff781d.png",
+   "num": "0031/081 A",
+   "set": "one",
+   "numInt": 31,
+   "mtgenId": "one|0031/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Kuldotha Cackler",
+   "src": "https://media.wizards.com/2023/one/en_f698757619.png",
+   "num": "0032/081 A",
+   "set": "one",
+   "numInt": 32,
+   "mtgenId": "one|0032/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Red Sun's Twilight",
+   "src": "https://media.wizards.com/2023/one/en_50457e9b06.png",
+   "num": "0033/081 A",
+   "set": "one",
+   "numInt": 33,
+   "mtgenId": "one|0033/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Roar of Resistance",
+   "src": "https://media.wizards.com/2023/one/en_122beebb1d.png",
+   "num": "0034/081 A",
+   "set": "one",
+   "numInt": 34,
+   "mtgenId": "one|0034/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Solphim, Mayhem Dominus",
+   "src": "https://media.wizards.com/2023/one/en_2ad676659b.png",
+   "num": "0035/081 A",
+   "set": "one",
+   "numInt": 35,
+   "mtgenId": "one|0035/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Thrill of Possibility",
+   "src": "https://media.wizards.com/2023/one/en_c0fee2fcaa.png",
+   "num": "0036/081 A",
+   "set": "one",
+   "numInt": 36,
+   "mtgenId": "one|0036/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Urabrask's Forge",
+   "src": "https://media.wizards.com/2023/one/en_934241c4f4.png",
+   "num": "0037/081 A",
+   "set": "one",
+   "numInt": 37,
+   "mtgenId": "one|0037/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Expand the Sphere",
+   "src": "https://media.wizards.com/2023/one/en_6952a1d237.png",
+   "num": "0038/081 A",
+   "set": "one",
+   "numInt": 38,
+   "mtgenId": "one|0038/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Green Sun's Twilight",
+   "src": "https://media.wizards.com/2023/one/en_6ff007f0dc.png",
+   "num": "0039/081 A",
+   "set": "one",
+   "numInt": 39,
+   "mtgenId": "one|0039/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Maze's Mantle",
+   "src": "https://media.wizards.com/2023/one/en_b682b6628f.png",
+   "num": "0040/081 A",
+   "set": "one",
+   "numInt": 40,
+   "mtgenId": "one|0040/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Noxious Assault",
+   "src": "https://media.wizards.com/2023/one/en_ada9eca80d.png",
+   "num": "0041/081 A",
+   "set": "one",
+   "numInt": 41,
+   "mtgenId": "one|0041/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Skyscythe Engulfer",
+   "src": "https://media.wizards.com/2023/one/en_5a5efdf2fd.png",
+   "num": "0042/081 A",
+   "set": "one",
+   "numInt": 42,
+   "mtgenId": "one|0042/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Tyvar's Stand",
+   "src": "https://media.wizards.com/2023/one/en_71dca4c7b9.png",
+   "num": "0043/081 A",
+   "set": "one",
+   "numInt": 43,
+   "mtgenId": "one|0043/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Zopandrel, Hunger Dominus",
+   "src": "https://media.wizards.com/2023/one/en_d6c4204fa2.png",
+   "num": "0044/081 A",
+   "set": "one",
+   "numInt": 44,
+   "mtgenId": "one|0044/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Atraxa, Grand Unifier",
+   "src": "https://media.wizards.com/2023/one/en_42634fa40a.png",
+   "num": "0045/081 A",
+   "set": "one",
+   "numInt": 45,
+   "mtgenId": "one|0045/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Bladehold War-Whip",
+   "src": "https://media.wizards.com/2023/one/en_96b1b541bb.png",
+   "num": "0046/081 A",
+   "set": "one",
+   "numInt": 46,
+   "mtgenId": "one|0046/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Glissa Sunslayer",
+   "src": "https://media.wizards.com/2023/one/en_0ef95427c0.png",
+   "num": "0047/081 A",
+   "set": "one",
+   "numInt": 47,
+   "mtgenId": "one|0047/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Kaito, Dancing Shadow",
+   "src": "https://media.wizards.com/2023/one/en_391b8d5353.png",
+   "num": "0048/081 A",
+   "set": "one",
+   "numInt": 48,
+   "mtgenId": "one|0048/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Kaya, Intangible Slayer",
+   "src": "https://media.wizards.com/2023/one/en_8115c91933.png",
+   "num": "0049/081 A",
+   "set": "one",
+   "numInt": 49,
+   "mtgenId": "one|0049/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Melira, the Living Cure",
+   "src": "https://media.wizards.com/2023/one/en_6d7c45c8d0.png",
+   "num": "0050/081 A",
+   "set": "one",
+   "numInt": 50,
+   "mtgenId": "one|0050/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Nahiri, the Unforgiving",
+   "src": "https://media.wizards.com/2023/one/en_88cf7cd494.png",
+   "num": "0051/081 A",
+   "set": "one",
+   "numInt": 51,
+   "mtgenId": "one|0051/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Otharri, Suns' Glory",
+   "src": "https://media.wizards.com/2023/one/en_6134a2b202.png",
+   "num": "0052/081 A",
+   "set": "one",
+   "numInt": 52,
+   "mtgenId": "one|0052/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Ria Ivor, Bane of Bladehold",
+   "src": "https://media.wizards.com/2023/one/en_757d11ba2e.png",
+   "num": "0053/081 A",
+   "set": "one",
+   "numInt": 53,
+   "mtgenId": "one|0053/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Vivisection Evangelist",
+   "src": "https://media.wizards.com/2023/one/en_07d8aeb48a.png",
+   "num": "0054/081 A",
+   "set": "one",
+   "numInt": 54,
+   "mtgenId": "one|0054/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Atraxa's Skitterfang",
+   "src": "https://media.wizards.com/2023/one/en_a18c713abd.png",
+   "num": "0055/081 A",
+   "set": "one",
+   "numInt": 55,
+   "mtgenId": "one|0055/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Myr Kinsmith",
+   "src": "https://media.wizards.com/2023/one/en_0e3c819472.png",
+   "num": "0056/081 A",
+   "set": "one",
+   "numInt": 56,
+   "mtgenId": "one|0056/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Copperline Gorge",
+   "src": "https://media.wizards.com/2023/one/en_2bc4b70296.png",
+   "num": "0057/081 A",
+   "set": "one",
+   "numInt": 57,
+   "mtgenId": "one|0057/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "The Dross Pits",
+   "src": "https://media.wizards.com/2023/one/en_4c2c1268f4.png",
+   "num": "0058/081 A",
+   "set": "one",
+   "numInt": 58,
+   "mtgenId": "one|0058/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "The Fair Basilica",
+   "src": "https://media.wizards.com/2023/one/en_2574f8fcf8.png",
+   "num": "0059/081 A",
+   "set": "one",
+   "numInt": 59,
+   "mtgenId": "one|0059/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "The Hunter Maze",
+   "src": "https://media.wizards.com/2023/one/en_73ccea4cc7.png",
+   "num": "0060/081 A",
+   "set": "one",
+   "numInt": 60,
+   "mtgenId": "one|0060/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Seachrome Coast",
+   "src": "https://media.wizards.com/2023/one/en_54b04868c2.png",
+   "num": "0061/081 A",
+   "set": "one",
+   "numInt": 61,
+   "mtgenId": "one|0061/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "The Surgical Bay",
+   "src": "https://media.wizards.com/2023/one/en_b7207347d6.png",
+   "num": "0062/081 A",
+   "set": "one",
+   "numInt": 62,
+   "mtgenId": "one|0062/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Swamp",
+   "src": "https://media.wizards.com/2023/one/en_7874a8ec59.png",
+   "num": "0063/081 A",
+   "set": "one",
+   "numInt": 63,
+   "mtgenId": "one|0063/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Elesh Norn, Mother of Machines 2",
+   "src": "https://media.wizards.com/2023/one/en_e4d7cc2c8d.png",
+   "num": "0064/081 A",
+   "set": "one",
+   "numInt": 64,
+   "mtgenId": "one|0064/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Phyrexian Vindicator 2",
+   "src": "https://media.wizards.com/2023/one/en_8242c0f7c7.png",
+   "num": "0065/081 A",
+   "set": "one",
+   "numInt": 65,
+   "mtgenId": "one|0065/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Sinew Dancer",
+   "src": "https://media.wizards.com/2023/one/en_cad74737e0.png",
+   "num": "0066/081 A",
+   "set": "one",
+   "numInt": 66,
+   "mtgenId": "one|0066/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Jace, the Perfected Mind 2",
+   "src": "https://media.wizards.com/2023/one/en_733082db62.png",
+   "num": "0067/081 A",
+   "set": "one",
+   "numInt": 67,
+   "mtgenId": "one|0067/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Quicksilver Fisher",
+   "src": "https://media.wizards.com/2023/one/en_c175c37cf6.png",
+   "num": "0068/081 A",
+   "set": "one",
+   "numInt": 68,
+   "mtgenId": "one|0068/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Tekuthal, Inquiry Dominus",
+   "src": "https://media.wizards.com/2023/one/en_1fb577c92b.png",
+   "num": "0069/081 A",
+   "set": "one",
+   "numInt": 69,
+   "mtgenId": "one|0069/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Karumonix, the Rat King",
+   "src": "https://media.wizards.com/2023/one/en_6367e469e2.png",
+   "num": "0070/081 A",
+   "set": "one",
+   "numInt": 70,
+   "mtgenId": "one|0070/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Phyrexian Obliterator",
+   "src": "https://media.wizards.com/2023/one/en_cbcc012eac.png",
+   "num": "0071/081 A",
+   "set": "one",
+   "numInt": 71,
+   "mtgenId": "one|0071/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Vraska, Betrayal's Sting",
+   "src": "https://media.wizards.com/2023/one/en_ec0a580536.png",
+   "num": "0072/081 A",
+   "set": "one",
+   "numInt": 72,
+   "mtgenId": "one|0072/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Capricious Hellraiser",
+   "src": "https://media.wizards.com/2023/one/en_3c30922631.png",
+   "num": "0073/081 A",
+   "set": "one",
+   "numInt": 73,
+   "mtgenId": "one|0073/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Nissa, Ascended Animist",
+   "src": "https://media.wizards.com/2023/one/en_ad3b93fc37.png",
+   "num": "0074/081 A",
+   "set": "one",
+   "numInt": 74,
+   "mtgenId": "one|0074/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Rustvine Cultivator",
+   "src": "https://media.wizards.com/2023/one/en_d739c69b2b.png",
+   "num": "0075/081 A",
+   "set": "one",
+   "numInt": 75,
+   "mtgenId": "one|0075/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Thrun, Breaker of Silence",
+   "src": "https://media.wizards.com/2023/one/en_17e46c5bb0.png",
+   "num": "0076/081 A",
+   "set": "one",
+   "numInt": 76,
+   "mtgenId": "one|0076/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Atraxa, Grand Unifier 2",
+   "src": "https://media.wizards.com/2023/one/en_cc44aa0d03.png",
+   "num": "0077/081 A",
+   "set": "one",
+   "numInt": 77,
+   "mtgenId": "one|0077/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Kaito, Dancing Shadow 2",
+   "src": "https://media.wizards.com/2023/one/en_9cb9c0ed05.png",
+   "num": "0078/081 A",
+   "set": "one",
+   "numInt": 78,
+   "mtgenId": "one|0078/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Lukka, Bound to Ruin",
+   "src": "https://media.wizards.com/2023/one/en_03bffcc45b.png",
+   "num": "0079/081 A",
+   "set": "one",
+   "numInt": 79,
+   "mtgenId": "one|0079/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Nahiri, the Unforgiving 2",
+   "src": "https://media.wizards.com/2023/one/en_55db47fc3a.png",
+   "num": "0080/081 A",
+   "set": "one",
+   "numInt": 80,
+   "mtgenId": "one|0080/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
+  },
+  {
+   "title": "Myr Convert",
+   "src": "https://media.wizards.com/2023/one/en_d18fe1dc45.png",
+   "num": "0081/081 A",
+   "set": "one",
+   "numInt": 81,
+   "mtgenId": "one|0081/081 A",
+   "artCard": true,
+   "usableForDeckBuilding": false
   }
-]
+ ]
