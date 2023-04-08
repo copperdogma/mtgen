@@ -1,6 +1,8 @@
 const compression = require('compression');
 const express = require('express');
 const request = require('request');
+const path = require('path');
+const axios = require('axios');
 
 // Set up our view engine. We're using Handlebars (express-handlebars).
 const expressHbs = require('express-handlebars');
@@ -49,6 +51,9 @@ app.set('views', 'views');
 
 // Compress all HTTP responses
 app.use(compression());
+
+// Serve static files from the /public folder
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Status monitor: /status
 var healthCheckEndpoint = {
@@ -134,6 +139,23 @@ app.get("/about", (req, res) => { res.render('about', { pageTitle: 'About - ' })
 app.get("/status", (req, res) => {
     const packageJson = require('./package.json');
     res.render('status', { process, package: packageJson });
+});
+
+// Simple proxy for the util pages to import set data from other websites.
+app.get('/proxy', async (req, res) => {
+    const { u } = req.query;
+
+    try {
+        const response = await axios.get(u);
+
+        if (response.status !== 200) {
+            throw new Error(`Server error (HTTP ${response.status})`);
+        }
+
+        res.send(response.data);
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
 });
 
 app.use((req, res, next) => { res.render('error', { pageTitle: 'Page Not Found - ', errDesc: 'Page not found.' }) });
