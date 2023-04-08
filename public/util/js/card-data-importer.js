@@ -514,6 +514,8 @@ class CardDataImporter {
 
     // Get html via a proxy, erroring if it fails or if no HTML is retrieved.
     async _fetchHtml(url) {
+        if (!url || url.trim().length < 1) return "";
+
         const response = await fetch(`/proxy?u=${encodeURIComponent(url)}`);
 
         if (!response.ok) { throw Error(response.statusText); }

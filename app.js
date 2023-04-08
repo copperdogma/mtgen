@@ -3,6 +3,7 @@ const express = require('express');
 const request = require('request');
 const path = require('path');
 const axios = require('axios');
+const cors = require('cors');
 
 // Set up our view engine. We're using Handlebars (express-handlebars).
 const expressHbs = require('express-handlebars');
@@ -44,6 +45,8 @@ blocksAndSets = blocksAndSets.filter(bns => (!bns.isBlockSet || bns.blockSets) &
     .sort((a, b) => a.releaseDateTimestamp - b.releaseDateTimestamp).reverse();
 
 const app = express();
+
+app.use(cors());
 
 app.engine('hbs', xhbsEngine);
 app.set('view engine', 'hbs');
