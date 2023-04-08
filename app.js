@@ -157,7 +157,10 @@ app.get('/proxy', async (req, res) => {
 
         res.send(response.data);
     } catch (error) {
-        res.status(500).send(error.message);
+        // Returning the errors as sucessful responses so that the client can handle them.
+        // This.. is probably not great, but I don't want to write error trapping in all of my importers for now.
+        // e.g.: "Request failed with status code 404"
+        res.status(200).send(error.message);
     }
 });
 
