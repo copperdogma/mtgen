@@ -1,0 +1,614 @@
+{
+  "defs": [
+    {
+      "defName": "{{setCode}}",
+      "query": "from[*]?set='{{setCode}}'"
+    },
+
+    {
+      "defName": "a{{setCode}}-art-cards",
+      "query": "from[*]?artCard=true"
+    },
+
+    {
+      "defName": "the-list",
+      "query": "from[*]?theList=true"
+    },
+
+    {
+      "defName": "{{setCode}}-commander",
+      "query": "from[*]?set='moc'"
+    },
+    {
+      "defName": "{{setCode}}-commander-extended-art",
+      "query": "from[{{setCode}}-commander]?extendedArtwork=true"
+    },
+    {
+      "defName": "{{setCode}}-commander-set-and-collector",
+      "query": "from[{{setCode}}-commander]?setAndCollectorCards=true"
+    },
+    
+    {
+      "defName": "{{setCode}}-main",
+      "query": "from[{{setCode}}]?mainSet=true-from[{{setCode}}]?type='Basic Land'-from[{{setCode}}]?promo=true"
+    },
+    {
+      "defName": "{{setCode}}-variants",  
+      "query": "from[{{setCode}}]?variant=true"
+    },
+    {
+      "defName": "{{setCode}}-promo",
+      "query": "from[{{setCode}}]?promo=true"
+    },
+    {
+      "defName": "{{setCode}}-extended-art",
+      "query": "from[{{setCode}}]?extendedArtworkCard=true"
+    },
+    {
+      "defName": "{{setCode}}-showcase",
+      "query": "from[{{setCode}}]?showcaseStyleCard=true"
+    },
+    {
+      "defName": "{{setCode}}-borderless",
+      "query": "from[{{setCode}}]?borderless=true"
+    },
+    {
+      "defName": "{{setCode}}-collector-extended-art",
+      "query": "from[{{setCode}}-extended-art]+from[{{setCode}}-commander-extended-art]"
+    },
+
+    {
+      "defName": "{{setCode}}-dual-lands",
+      "query": "from[{{setCode}}-main]?title=(Bloodfell Caves|Blossoming Sands|Dismal Backwater|Jungle Hollow|Rugged Highlands|Scoured Barrens|Swiftwater Cliffs|Thornwood Falls|Tranquil Cove|Wind-Scarred Crag)"
+    },
+    {
+      "defName": "{{setCode}}-basic-and-dual-lands",
+      "query": "from[{{setCode}}]?type='Basic Land'+from[{{setCode}}-dual-lands]"
+    },
+    {
+      "defName": "{{setCode}}-multiverse-legends",
+      "query": "from[*]?set='mul'"
+    },
+    {
+      "defName": "{{setCode}}-battle",
+      "query": "from[{{setCode}}]?type='Battle'"
+    },
+    {
+      "defName": "{{setCode}}-dfc",
+      "query": "from[{{setCode}}]?doubleFaceCard=true"
+    },
+    {
+      "defName": "{{setCode}}-main-dfc",
+      "query": "from[{{setCode}}-main]?doubleFaceCard=true"
+    },
+    {
+      "defName": "{{setCode}}-non-battle-dfc",
+      "query": "from[{{setCode}}-dfc]-from[{{setCode}}-battle]"
+    },
+    {
+      "defName": "{{setCode}}-battle-dfc",
+      "query": "from[{{setCode}}-battle]?doubleFaceCard=true"
+    },
+    {
+      "defName": "{{setCode}}-phyrexian-full-art-basic-land",
+      "query": "from[{{setCode}}]?phyrexianFullArtBasicLand=true"
+    },
+    {
+      "defName": "{{setCode}}-jumpstart",
+      "query": "from[{{setCode}}]?standardLegalJumpstartCard=true"
+    },
+    {
+      "defName": "{{setCode}}-planar-booster-fun",
+      "query": "from[{{setCode}}]?showcaseStyleCard=true"
+    },
+    {
+      "defName": "{{setCode}}-collector-booster-foil",
+      "_comment": "Planar Booster Fun from March of the Machine, Extended art from March of the Machine, Extended art from March of the Machine Commander",
+      "query": "from[{{setCode}}-planar-booster-fun]+from[{{setCode}}-extended-art]+from[{{setCode}}-commander-extended-art]"
+    },
+    {
+      "defName": "{{setCode}}-extended-art-and-showcase-and-borderless",
+      "query": "from[{{setCode}}-extended-art]+from[{{setCode}}-planar-booster-fun]+from[{{setCode}}-borderless]"
+    },
+    {
+      "defName": "{{setCode}}-main-and-set-booster-commander",
+      "query": "from[{{setCode}}-main]+from[{{setCode}}-commander-set-and-collector]"
+    },
+    {
+      "defName": "{{setCode}}-serialized-praetors",
+      "query": "from[{{setCode}}]?alternateArtBorderlessPraetorSagas=true"
+    },
+    
+
+
+    {
+      "defName": "{{setCode}}-wildcards",
+      "comment": "including an opportunity to open March of the Machine Commander cards, Jumpstart Booster rares, or Multiverse Legends",
+      "query": "from[{{setCode}}-main]+from[{{setCode}}-commander]+from[{{setCode}}-jumpstart]?rarity='r'+from[{{setCode}}-multiverse-legends]-from[{{setCode}}]?type='Basic Land'"
+    },
+
+    {
+      "defName": "{{setCode}}-foils",
+      "query": "from[{{setCode}}-main]+from[{{setCode}}]?type='Basic Land'+from[{{setCode}}-multiverse-legends]"
+    },
+
+    {
+      "defName": "{{setCode}}-basic-land",
+      "query": "from[{{setCode}}]?type='Basic Land'"
+    },
+    {
+      "defName": "{{setCode}}-main-and-borderless",
+      "query": "from[{{setCode}}-main]+from[{{setCode}}-borderless]"
+    },
+
+    {
+      "defName": "{{setCode}}-tokens",
+      "query": "from[{{setCode}}]?token=true"
+    }
+  ],
+  "packs": [
+    {
+      "packName": "{{setCode}}-all-cards",
+      "packDesc": "{{setName}}: All Cards",
+      "isGenerated": false,
+      "cards": [
+        { "query": "take[*]>from[{{setCode}}]" }
+      ]
+    },
+    {
+      "_comment": "Standard Boosters were renamed to Draft Boosters as of ELD",
+      "packName": "{{setCode}}-draft",
+      "packDesc": "{{setName}}: Draft Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/news/feature/collecting-march-of-the-machine" ],
+      "isGenerated": true,
+      "cards": [
+        { "query": "take[9]>from[{{setCode}}-main]?rarity='c" },
+        { "query": "take[2]>from[{{setCode}}-main]?rarity='u" },
+        { "query": "from[{{setCode}}-non-battle-dfc]?rarity='u'" },
+        { "query": "from[{{setCode}}-battle-dfc]?rarity='u'" },
+        { "query": "from[{{setCode}}-multiverse-legends]?rarity='u'" },
+        { "query": "from[{{setCode}}-basic-land]" },
+        {
+          "querySet": [
+            {
+              "_comment": "Starting in BFZ the token:marketing ratio changed to 9:1.",
+              "percent": "90",
+              "query": "from[{{setCode}}-tokens]"
+            },
+            {
+              "percent": "10",
+              "query": "from[*]?getMarketingCardsForSet({{setCode}})"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "33% chance of CURM foil replacing a common",
+              "percent": "33",
+              "overrideSlot": "9",
+              "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(curm)",
+              "setValues": { "foil": true }
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "WEIRD set. 33% chance of the R/M being a non-battle-dfc, battle-def, or multiverse-legend",
+              "percent": "1/3",
+              "overrideSlot": "12",
+              "query": "from[{{setCode}}-non-battle-dfc]?rarity=rarityByWeight2020(rm)"
+            },
+            {
+              "percent": "1/3",
+              "overrideSlot": "13",
+              "query": "from[{{setCode}}-battle-dfc]?rarity=rarityByWeight2020(rm)"
+            },
+            {
+              "percent": "1/3",
+              "overrideSlot": "14",
+              "query": "from[{{setCode}}-multiverse-legends]?rarity=rarityByWeight2020(rm)"
+            }
+          ]
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "50% chance of land being dual land",
+              "percent": "50",
+              "overrideSlot": "15",
+              "query": "from[{{setCode}}-dual-lands]"
+            },
+            {
+              "_comment": "33% chance of land being full-art basic land",
+              "percent": "33",
+              "overrideSlot": "15",
+              "query": "from[{{setCode}}-phyrexian-full-art-basic-land]"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_comment": "Collector Boosters were introduced as standard feature as of ELD",
+      "packName": "{{setCode}}-collector",
+      "packDesc": "{{setName}}: Collector Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/news/feature/collecting-march-of-the-machine" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1: Foil Serialized or Non-Serialized Multiverse Legend R/M",
+          "_comment2": "(Halo Foil, Foil-Etched, or Traditional Foil non-serialized or Double Rainbow Foil serialized card)",
+          "query": "from[{{setCode}}-multiverse-legends]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 2: Traditional Foil Alt-Border R/M or Double Rainbow Foil Serialized Praetor M",
+          "_comment2": "(Alt-Border card may be Extended-Art, Showcase, or Borderless)",
+          "_comment3": "Planar Booster Fun from March of the Machine, Extended art from March of the Machine, Extended art from March of the Machine Commander",
+          "_comment4": "Thanks, wotc. Those two criteria don't make much sense together. As usual.",
+          "query": "from[{{setCode}}-collector-booster-foil]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 3: Special Foil Serialized or Non-Serialized Multiverse Legend U",
+          "_comment2": "(Halo Foil or Foil-Etched non-serialized or Double Rainbow Foil serialized card)",
+          "query": "from[{{setCode}}-multiverse-legends]?rarity='u'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 4: Nonfoil Extended-Art R/M, Showcase R/M, or Borderless M",
+          "_comment2": "Non-foil rare or mythic rare from March of the Machine in a planar Booster Fun, extended-art, or borderless treatment",
+          "query": "from[{{setCode}}-extended-art-and-showcase-and-borderless]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 5: Nonfoil Extended-Art Commander R/M or Jumpstart R",
+          "_comment2": "Non-foil rare or mythic rare in extended art from either the Jumpstart Boosters or March of the Machine Commander",
+          "_comment3": "I THINK Jumpstart-extended-art are in the regulat 38 extended art cards",
+          "query": "from[{{setCode}}-collector-extended-art]?rarity=rarityByWeight2020(rm)"
+        },
+        {
+          "_comment": "Slot 6: Traditional Foil R/M",
+          "_comment2": "Traditional foil rare or mythic rare from March of the Machine or from the Set Booster Commander cards",
+          "query": "from[{{setCode}}-main-and-set-booster-commander]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 7: Traditional Foil Multiverse Legend U",
+          "query": "from[{{setCode}}-multiverse-legends]?rarity='u'",
+          "setValues": { "foil": true , "modifiers": [ "Foil Etched" ] }            
+        },
+        {
+          "_comment": "Slot 8-9: 2x Foil: U",
+          "query": "take[2]>from[{{setCode}}-foils]?rarity='u'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 10-14: 5x Foil: C",
+          "query": "take[5]>from[{{setCode}}-foils]?rarity='c'",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 15: Foil Full-Art Basic Land",
+          "query": "from[{{setCode}}-phyrexian-full-art-basic-land]",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 16: Foil: double-sided token",
+          "query": "from[{{setCode}}-tokens]",
+          "setValues": { "foil": true }
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 1: Foil Serialized or Non-Serialized Multiverse Legend R/M",
+              "_comment2": "(Halo Foil, Foil-Etched, or Traditional Foil non-serialized or Double Rainbow Foil serialized card)",
+              "_comment3": "Traditional foil in 75% of boosters, Foil etched in 14% of boosters, Halo foil in 10% of boosters, Serialized double rainbow in < 1% of boosters",
+              "_comment4": "This one: Foil etched in 14% of boosters",
+              "query": "from[{{setCode}}-multiverse-legends]?rarity=rarityByWeight2020(rm)",
+              "percent": "14",
+              "overrideSlot": "1",
+              "setValues": { "foil": true , "modifiers": [ "Foil Etched" ] }            
+            },
+            {
+              "_comment4": "Halo foil in 10% of boosters",
+              "query": "from[{{setCode}}-multiverse-legends]?rarity=rarityByWeight2020(rm)",
+              "percent": "10",
+              "overrideSlot": "1",
+              "setValues": { "foil": true, "modifiers": [ "Halo Foil" ] }            
+            },
+            {
+              "_comment4": "Serialized double rainbow in < 1% of boosters",
+              "query": "from[{{setCode}}-serialized-praetors]",
+              "percent": "0.5",
+              "overrideSlot": "1",
+              "setValues": { "foil": true, "modifiers": [ "Serialized Double Rainbow" ] }            
+            }
+          ]
+        },        {
+          "querySet": [
+            {
+              "_comment": "Slot 7: Traditional Foil Multiverse Legend U",
+              "_comment2": "Foil etched in 75% of boosters, Halo foil in 24% of boosters, Serialized double rainbow in < 1% of boosters",
+              "_comment4": "This one: Halo foil in 24% of boosters",
+              "query": "from[{{setCode}}-multiverse-legends]?rarity='u'",
+              "percent": "24",
+              "overrideSlot": "7",
+              "setValues": { "foil": true , "modifiers": [ "Halo Foil" ] }            
+            },
+            {
+              "_comment4": "Serialized double rainbow in < 1% of boosters",
+              "query": "from[{{setCode}}-multiverse-legends]?rarity='u'",
+              "percent": "0.5",
+              "overrideSlot": "7",
+              "setValues": { "foil": true, "modifiers": [ "Serialized Double Rainbow" ] }            
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "_comment": "Set Boosters were introduced as standard feature as of ZNR",
+      "packName": "{{setCode}}-set-booster",
+      "packDesc": "{{setName}}: Set Booster",
+      "packVersion": "1.0",
+      "sources": [ "https://magic.wizards.com/en/news/feature/collecting-march-of-the-machine" ],
+      "isGenerated": true,
+      "cards": [
+        {
+          "_comment": "Slot 1: Art Card",
+          "_comment2": "Art Card is foil-stamped signature version in 10% of packs",
+          "query": "from[a{{setCode}}-art-cards]",
+          "setValues": { "modifiers": [ "Normal" ] }
+        },
+        {
+          "_comment": "Slot 2: Main RM",
+          "_comment2": "Weird set setup: Set Boosters contain at least one rare or mythic rare card (approximately 42% to have two, 14% to have three, 2% to have four, and < 1% to have five)",
+          "_comment3": "My solution: no mythics in base pack, then distribute mythics according to those percentages after the fact",
+          "query": "from[{{setCode}}-main]?rarity='r'"
+        },
+        {
+          "_comment": "Slot 3: Multiverse Legend URM",
+          "query": "from[{{setCode}}-multiverse-legends]?rarity=rarityByWeight2020(ur)"
+        },
+        {
+          "_comment": "Slot 4: Foil/Etched: CURM (including Multiverse Legends in traditional foil and the foil-etched treatment)",
+          "_comment2": "Approximately 4% of Set Boosters contain a foil-etched Multiverse Legends card in the traditional foil slot",
+          "query": "from[{{setCode}}-foils]?rarity=rarityByWeight2020(curm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Slot 5-6: 2x Wildcard CURM (including March of the Machine Commander cards, Jumpstart Booster rares, or Multiverse Legends)",
+          "query": "take[2]>from[{{setCode}}-wildcards]?rarity=rarityByWeight2020(cur)"
+        },
+        {
+          "_comment": "Slot 7: Battle DFC",
+          "query": "from[{{setCode}}-battle-dfc]?rarity='u'"
+        },
+        {
+          "_comment": "Slot 8: DFC Phyrexian CU",
+          "_comment2": "What the hell is a PHYREXIAN CU? Nothing in the Set Booster has more detail. Just this.",
+          "query": "from[{{setCode}}-dfc]?rarity='u'"
+        },
+        {
+          "_comment": "Slot 9-10: 2x U",
+          "query": "take[2]>from[{{setCode}}-main]?rarity=u"
+        },
+        {
+          "_comment": "Slot 11-12: 2x C",
+          "query": "take[2]>from[{{setCode}}-main]?rarity=c"
+        },
+        {
+          "_comment": "Slot 13: Basic or Dual Land",
+          "_comment2": "20% chance standard foil",
+          "query": "from[{{setCode}}-basic-and-dual-lands]"
+        },
+        {
+          "_comment": "Slot 14: Token/Ad Card or The List",
+          "_comment2": "25% chance of The List card",
+          "query": "from[{{setCode}}-tokens]"
+        },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 1: Art Card",
+              "_comment2": "Art Card is foil-stamped signature version in 10% of packs",
+              "overrideSlot": "1",
+              "percent": "10",
+              "query": "from[a{{setCode}}-art-cards]",
+              "setValues": { "modifiers": [ "Foil Stamped" ] }
+            }
+          ]
+        },
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 2: Main RM",
+              "_comment2": "Weird set setup: Set Boosters contain at least one rare or mythic rare card (approximately 42% to have two, 14% to have three, 2% to have four, and < 1% to have five)",
+              "_comment3": "My solution: no mythics in base pack, then distribute mythics according to those percentages after the fact",
+              "query": "from[{{setCode}}-main]?rarity='m'",
+              "overrideSlot": "2",
+              "percent": "42"
+            },
+            {
+              "_comment": "Slot 3: Multiverse Legend URM",
+              "query": "from[{{setCode}}-multiverse-legends]?rarity='m'",
+              "overrideSlot": "2",
+              "percent": "14"
+            },
+            {
+              "_comment": "Slot 4: Foil/Etched: CURM (including Multiverse Legends in traditional foil and the foil-etched treatment)",
+              "_comment2": "Approximately 4% of Set Boosters contain a foil-etched Multiverse Legends card in the traditional foil slot",
+              "query": "from[{{setCode}}-foils]?rarity='m'",
+              "setValues": { "foil": true },
+              "overrideSlot": "3",
+              "percent": "2"
+            },
+            {
+              "_comment": "Slot 5-6: 2x Wildcard CURM (including March of the Machine Commander cards, Jumpstart Booster rares, or Multiverse Legends)",
+              "query": "take[2]>from[{{setCode}}-wildcards]?rarity='m'",
+              "overrideSlot": "4",
+              "percent": "1"
+            }
+          ]
+        },        
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 13: Basic or Dual Land",
+              "_comment2": "20% chance foil = 12.8% chance standard foil (20% of 64% basic land chance)",
+              "query": "from[{{setCode}}-basic-and-dual-lands]",
+              "setValues": { "foil": true },
+              "overrideSlot": "13",
+              "percent": "12.8"
+            },
+            {
+              "_comment2": "36% chance Phyrexian (harbinger) full art basic land = 28.8% chance non-foil",
+              "query": "from[{{setCode}}-phyrexian-full-art-basic-land]",
+              "overrideSlot": "13",
+              "percent": "28.8"
+            },
+            {
+              "_comment2": "36% chance Phyrexian (harbinger) full art basic land = 7.2% chance of foil",
+              "query": "from[{{setCode}}-phyrexian-full-art-basic-land]",
+              "setValues": { "foil": true },
+              "overrideSlot": "13",
+              "percent": "7.2"
+            }
+          ]
+        },
+        
+        {
+          "querySet": [
+            {
+              "_comment": "Slot 14: Token/Ad or The List",
+              "_comment2": "1 Token/ad card (75%), or a card from The List (25%) – The List is a collection of 300 cards from Magic's history that we have brought together for this special slot. We have rotated in 50 new reprints that we feel help capture the feel of {{setName}}. Inclusion of cards from The List doesn't impact what formats the card is legal in",
+              "query": "from[the-list]?rarity=rarityByWeight2020(curm)",
+              "overrideSlot": "14",
+              "percent": "25"
+            }
+          ]
+        }
+
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-prerelease-promo-packins",
+      "packDesc": "{{setName}}: Prerelease Packins",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "from[{{setCode}}-main]?rarity=rarityByWeight2020(rm)",
+          "setValues": { "foil": true }
+        },
+        {
+          "_comment": "Special Prerelease Promo: 1 of 6 cards with different treatments",
+          "_comment2": "Approximately two thirds of Prerelease Packs contain a non-foil Prerelease promo. Approximately 11% of Prerelease Packs contain a traditional foil Prerelease promo. Slightly fewer than 15% of Prerelease Packs contain a non-foil planar Booster Fun Prerelease promo, and approximately 7.4% of Prerelease Packs contain a traditional foil planar Booster Fun Prerelease promo.",
+          "_comment3": "From 'Prerelease Promos' here: https://magic.wizards.com/en/news/feature/collecting-march-of-the-machine",
+          "query": "from[{{setCode}}]?prereleasePromoStandard=true"
+        },
+        { "query": "take[1]>from[{{setCode}}-promo]?type='Life Counter'" },
+        { "query": "take[*]>from[{{setCode}}-promo]?title~='Prerelease Deck Box" },
+        { "query": "from[{{setCode}}-promo]?title='Card Divider" },
+        { "query": "from[{{setCode}}-promo]?title='Arena Code Card" },
+
+        {
+          "querySet": [
+            {
+              "_comment": "Special Prerelease Promo",
+              "_comment2": "Approximately 11% of Prerelease Packs contain a traditional foil Prerelease promo.",
+              "query": "from[{{setCode}}]?prereleasePromoStandard=true",
+              "setValues": { "foil": true },
+              "overrideSlot": "2",
+              "percent": "11"
+            },
+            {
+              "_comment": "Slightly fewer than 15% of Prerelease Packs contain a non-foil planar Booster Fun Prerelease promo",
+              "query": "from[{{setCode}}]?prereleasePromoBoosterFun=true",
+              "overrideSlot": "2",
+              "percent": "14.9"
+            },
+            {
+              "_comment": "Approximately 7.4% of Prerelease Packs contain a traditional foil planar Booster Fun Prerelease promo.",
+              "query": "from[{{setCode}}]?prereleasePromoBoosterFun=true",
+              "setValues": { "foil": true },
+              "overrideSlot": "2",
+              "percent": "7.4"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-prerelease-promos",
+      "packDesc": "{{setName}}: Prerelease Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        { "query": "take[*]>from[{{setCode}}-promo]?includedReason='Prerelease Promo" }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-variants",
+      "packDesc": "{{setName}}: All Variants",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-variants]"
+        }
+      ]
+    },
+
+    {
+      "packName": "{{setCode}}-promos",
+      "packDesc": "{{setName}}: All Promos",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[{{setCode}}-promo]"
+        }
+      ]
+    },
+
+    {
+      "packName": "a{{setCode}}-art-cards",
+      "packDesc": "{{setName}}: Art Cards",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[a{{setCode}}-art-cards]"
+        }
+      ]
+    },
+
+    {
+      "packName": "the-list",
+      "packDesc": "{{setName}}: The List",
+      "isGenerated": false,
+      "includeWithUserCards": false,
+      "cards": [
+        {
+          "query": "take[*]>from[the-list]"
+        }
+      ]
+    }
+
+  ]
+}

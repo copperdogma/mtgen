@@ -1,6 +1,12 @@
 const compression = require('compression');
 const express = require('express');
+const dotenv = require('dotenv');
 const request = require('request');
+const path = require('path');
+const axios = require('axios');
+const cors = require('cors');
+
+dotenv.config(); // Load environment variables from .env file
 
 // Set up our view engine. We're using Handlebars (express-handlebars).
 const expressHbs = require('express-handlebars');
@@ -43,12 +49,17 @@ blocksAndSets = blocksAndSets.filter(bns => (!bns.isBlockSet || bns.blockSets) &
 
 const app = express();
 
+app.use(cors());
+
 app.engine('hbs', xhbsEngine);
 app.set('view engine', 'hbs');
 app.set('views', 'views');
 
 // Compress all HTTP responses
 app.use(compression());
+
+// Serve static files from the /public folder
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Status monitor: /status
 var healthCheckEndpoint = {
@@ -85,6 +96,20 @@ if (process.env.NODE_ENV === 'development') {
         req.pipe(proxyRequest).pipe(res);
     });
 }
+
+// Restart endpoint: /restart?password=...
+const restartPassword = process.env.RESTART_PASSWORD;
+
+app.get('/restart', (req, res) => {
+    const requestPassword = req.query.password;
+
+    if (requestPassword === restartPassword) {
+        res.send('Restarting application...');
+        process.exit(1); // Exit the application with a non-zero status code
+    } else {
+        res.status(401).send('Unauthorized');
+    }
+});
 
 // Home page: listing of all sets
 app.get("/", (req, res) => {
@@ -134,6 +159,26 @@ app.get("/about", (req, res) => { res.render('about', { pageTitle: 'About - ' })
 app.get("/status", (req, res) => {
     const packageJson = require('./package.json');
     res.render('status', { process, package: packageJson });
+});
+
+// Simple proxy for the util pages to import set data from other websites.
+app.get('/proxy', async (req, res) => {
+    const { u } = req.query;
+
+    try {
+        const response = await axios.get(u);
+
+        if (response.status !== 200) {
+            throw new Error(`Server error (HTTP ${response.status})`);
+        }
+
+        res.send(response.data);
+    } catch (error) {
+        // Returning the errors as sucessful responses so that the client can handle them.
+        // This.. is probably not great, but I don't want to write error trapping in all of my importers for now.
+        // e.g.: "Request failed with status code 404"
+        res.status(200).send(error.message);
+    }
 });
 
 app.use((req, res, next) => { res.render('error', { pageTitle: 'Page Not Found - ', errDesc: 'Page not found.' }) });

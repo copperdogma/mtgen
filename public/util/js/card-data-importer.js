@@ -512,8 +512,10 @@ class CardDataImporter {
         console.API.clear();
     }
 
-    // Get html via a proxy, erroring if it fails or if no HTML is retrieved.
+    // Get html via a proxy, erroring if it fails or if no HTML is retrieved.   
     async _fetchHtml(url) {
+        if (!url || url.trim().length < 1) return "";
+
         const response = await fetch(`/proxy?u=${encodeURIComponent(url)}`);
 
         if (!response.ok) { throw Error(response.statusText); }
@@ -1020,11 +1022,20 @@ class CardDataImporter {
     // The wotc data is the actual current "The List," so that will form the base, with the bulk of the data and image
     // (if found) from the Scryfall data.
     async _combineScryfallData(wotcCards, scryfallCards) {
+        // Filter out any duplicate scryfall cards. 
+        // The issue is Scryfall sets all of the 'set' values to plist, so we can't match them to the wotc cards where we know the set names.
+        // We'll just let the second part of this method look up the 'missing' cards manually.
+        const titleCounts = scryfallCards.data.reduce((counts, card) => {
+            counts.set(card.title, (counts.get(card.title) || 0) + 1);
+            return counts;
+        }, new Map());
+
+        const uniqueScryfallCards = scryfallCards.data.filter(card => titleCounts.get(card.title) === 1);
+
         // Convert Scryfall cards to be indexed on their matchtitles so we have a common property to match them on and they can be looked up quickly.
         let scryfallCardMap = new Map();
-        scryfallCards.data.forEach(card => scryfallCardMap.set(card.matchTitle, card));
+        uniqueScryfallCards.forEach(card => scryfallCardMap.set(card.matchTitle, card));
 
-        // Find any wotc cards we don't have Scryfall data for.
         const unmatchedWotcCards = wotcCards.filter(wotcCard => !scryfallCardMap.has(wotcCard.matchTitle));
 
         // Get all missing cards from Scryfall.
@@ -1036,7 +1047,7 @@ class CardDataImporter {
 
             // If that card can't be found, wotc may have put the wrong set code on it (happaned in AFR for Nightmare. It wasn't AKH).
             // Retry without the set; scryfall will get the most recent printing which is probably correct.
-            if (cardDataRaw == 'Server error (HTTP NotFound)') {
+            if (cardDataRaw == 'Request failed with status code 404') {
                 console.log(`Cannot find card '${unmatchedCard.title}' in set '${unmatchedCard.set}'. Retrying without set to get latest printing.`)
                 scryfallApiCardUrl = `https://api.scryfall.com/cards/search?q=!"${unmatchedCard.title}"`;
                 cardDataRaw = await this._fetchHtml(scryfallApiCardUrl);
@@ -1049,7 +1060,6 @@ class CardDataImporter {
             }
             const cardData = JSON.parse(cardDataRaw);
             const card = cardData.data[0];
-            card.set = 'plist'; // This is Scryfall's set name for The List which I've adopted.
             const fixedCard = this._processScryfallCard(card, scryfallApiCardUrl);
             scryfallCardMap.set(fixedCard.matchTitle, fixedCard)
         }
@@ -1081,6 +1091,12 @@ class CardDataImporter {
         });
         let finalCardMap = new Map();
         finalCards.forEach(finalCard => { finalCardMap = this._addCardToCards(finalCardMap, finalCard); });
+        // This is Scryfall's set name for The List which I've adopted.
+        // Has to be done after adding cards to avoid the duplicate check.
+        finalCardMap = finalCards.map(finalCard => {
+            finalCard.set = 'plist';
+            return finalCard;
+        });
 
         return finalCardMap;
     }
@@ -1112,7 +1128,7 @@ class CardDataImporter {
 
             // If it's a duplicate mtgenId AND title it's the SAME card.. ditch it
             if (originalCard) {
-                if (originalCard.matchTitle === newCard.matchTitle) {
+                if (originalCard.matchTitle === newCard.matchTitle && originalCard.set === newCard.set) {
                     console.log(`DUPLICATE CARD: ${newCard.title}`);
                     return cards;
                 }
@@ -1392,7 +1408,8 @@ class CardDataImporter {
             alert(`Only ${cardsTables.length} tables found, but table ${tableNum} requested. Cannot continue.`);
         }
         const cardsTable = cardsTables[intTableNum - 1];
-        const cardsData = cardsTable.querySelectorAll('tbody tr');
+        const cardRows = cardsTable.querySelectorAll('tbody tr');
+        const cardsData = Array.from(cardRows).filter(cardRow => cardRow.querySelector('td') !== null); // filter out the header row (which has no <td>)
 
         cardsData.forEach(cardEl => {
             const card = { theList: true };
@@ -1405,8 +1422,14 @@ class CardDataImporter {
             }
 
             // 20221109: As of BRO, wotc's new The List article format no longer includes the set the card is from which.. sucks.
+            // const setEls = cardEl.querySelectorAll('td');
+            // if (setEls && setEls.length && setEls.length > 1) {
+            //     card.set = setEls[1].textContent.trim();
+            // }
+
+            // 20230308: As of MOM they've added them back! hooray!
             const setEls = cardEl.querySelectorAll('td');
-            if (setEls && setEls.length && setEls.length > 1) {
+            if (setEls) {
                 card.set = setEls[1].textContent.trim();
             }
 
