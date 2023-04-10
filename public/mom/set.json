@@ -1,23 +1,39 @@
 {
   "startProductName": "mom-prerelease",
   "packFiles": [
-    "packs.json"
+    "packs.json?v1.4"
   ],
   "cardFiles": [
     "cardsMain.json",
-    "cardsToken.json",
+    "cardsToken.json?v1.1",
     "cardsVariant.json",
     "cardsPromo.json",
-    "cardsCommander.json",
+    "cardsCommander.json?v1.1",
     "cardsMultiverseLegends.json",
     "cardsTheList.json",
     "cardsArtCards.json",
     "../cards/ads/cardsAds.json"
   ],
-  "XXXupdates": [
+  "updates": [
     {
-      "UpdateDate": "2023-02-01T11:45:00:00",
-      "HtmlString": "Art cards added."
+      "UpdateDate": "2023-03-10T15:15:00:00",
+      "HtmlString": "Added proper tokens."
+    },
+    {
+      "UpdateDate": "2023-03-10T15:01:00:00",
+      "HtmlString": "Fixed Draft Booster: Now ensures at least one rare per pack."
+    },
+    {
+      "UpdateDate": "2023-03-10T15:00:00:00",
+      "HtmlString": "Fixed Set Booster: Now only includes commander cards num 72-79."
+    },
+    {
+      "UpdateDate": "2023-03-10T14:00:00:00",
+      "HtmlString": "Fixed Set Booster: Fewer mythics. Fixedserialized cards 10x more rare. (Sorry for both! It's more accurate now)"
+    },
+    {
+      "UpdateDate": "2023-03-10T13:00:00:00",
+      "HtmlString": "Fixed Draft Booster: Can now have multiple R/M cards (up to 2) in a pack."
     }
   ]
 }

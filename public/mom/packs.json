@@ -124,7 +124,7 @@
     {
       "defName": "{{setCode}}-wildcards",
       "comment": "including an opportunity to open March of the Machine Commander cards, Jumpstart Booster rares, or Multiverse Legends",
-      "query": "from[{{setCode}}-main]+from[{{setCode}}-commander]+from[{{setCode}}-jumpstart]?rarity='r'+from[{{setCode}}-multiverse-legends]-from[{{setCode}}]?type='Basic Land'"
+      "query": "from[{{setCode}}-main]+from[{{setCode}}-commander-set-and-collector]+from[{{setCode}}-jumpstart]?rarity='r'+from[{{setCode}}-multiverse-legends]-from[{{setCode}}]?type='Basic Land'"
     },
 
     {
@@ -167,7 +167,7 @@
         { "query": "take[2]>from[{{setCode}}-main]?rarity='u" },
         { "query": "from[{{setCode}}-non-battle-dfc]?rarity='u'" },
         { "query": "from[{{setCode}}-battle-dfc]?rarity='u'" },
-        { "query": "from[{{setCode}}-multiverse-legends]?rarity='u'" },
+        { "query": "from[{{setCode}}-multiverse-legends]?rarity=rarityByWeight2020(urm)" },
         { "query": "from[{{setCode}}-basic-land]" },
         {
           "querySet": [
@@ -198,7 +198,15 @@
         {
           "querySet": [
             {
-              "_comment": "WEIRD set. 33% chance of the R/M being a non-battle-dfc, battle-def, or multiverse-legend",
+              "_comment": "WEIRD set. Guaranteed R/M in slot 14, but slots 11/12/13 can also be urm, with a max of 1 more r/m ",
+              "_comment2": "So seeing as there COULD only be ONE rare per set, I'm going to say 25% chance for each of these to be another R/M",
+              "percent": "1/3",
+              "overrideSlot": "11",
+              "query": "from[{{setCode}}-main]?rarity=rarityByWeight2020(rm)"
+            },
+            {
+              "_comment": "This is one of the regular U slots ('normal' (single-faced cards, or SFC)",
+              "_comment2": "So seeing as there COULD only be ONE rare per set, I'm going to say 25% chance for each of these to be another R/M",
               "percent": "1/3",
               "overrideSlot": "12",
               "query": "from[{{setCode}}-non-battle-dfc]?rarity=rarityByWeight2020(rm)"
@@ -207,11 +215,6 @@
               "percent": "1/3",
               "overrideSlot": "13",
               "query": "from[{{setCode}}-battle-dfc]?rarity=rarityByWeight2020(rm)"
-            },
-            {
-              "percent": "1/3",
-              "overrideSlot": "14",
-              "query": "from[{{setCode}}-multiverse-legends]?rarity=rarityByWeight2020(rm)"
             }
           ]
         },
@@ -328,7 +331,7 @@
             {
               "_comment4": "Serialized double rainbow in < 1% of boosters",
               "query": "from[{{setCode}}-serialized-praetors]",
-              "percent": "0.5",
+              "percent": "0.05",
               "overrideSlot": "1",
               "setValues": { "foil": true, "modifiers": [ "Serialized Double Rainbow" ] }            
             }
@@ -347,7 +350,7 @@
             {
               "_comment4": "Serialized double rainbow in < 1% of boosters",
               "query": "from[{{setCode}}-multiverse-legends]?rarity='u'",
-              "percent": "0.5",
+              "percent": "0.05",
               "overrideSlot": "7",
               "setValues": { "foil": true, "modifiers": [ "Serialized Double Rainbow" ] }            
             }
@@ -374,11 +377,11 @@
           "_comment": "Slot 2: Main RM",
           "_comment2": "Weird set setup: Set Boosters contain at least one rare or mythic rare card (approximately 42% to have two, 14% to have three, 2% to have four, and < 1% to have five)",
           "_comment3": "My solution: no mythics in base pack, then distribute mythics according to those percentages after the fact",
-          "query": "from[{{setCode}}-main]?rarity='r'"
+          "query": "from[{{setCode}}-main]?rarity=rarityByWeight2020(urm)"
         },
         {
           "_comment": "Slot 3: Multiverse Legend URM",
-          "query": "from[{{setCode}}-multiverse-legends]?rarity=rarityByWeight2020(ur)"
+          "query": "from[{{setCode}}-multiverse-legends]?rarity=rarityByWeight2020(urm)"
         },
         {
           "_comment": "Slot 4: Foil/Etched: CURM (including Multiverse Legends in traditional foil and the foil-etched treatment)",
@@ -388,7 +391,7 @@
         },
         {
           "_comment": "Slot 5-6: 2x Wildcard CURM (including March of the Machine Commander cards, Jumpstart Booster rares, or Multiverse Legends)",
-          "query": "take[2]>from[{{setCode}}-wildcards]?rarity=rarityByWeight2020(cur)"
+          "query": "take[2]>from[{{setCode}}-wildcards]?rarity=rarityByWeight2020(curm)"
         },
         {
           "_comment": "Slot 7: Battle DFC",
@@ -433,32 +436,12 @@
         {
           "querySet": [
             {
-              "_comment": "Slot 2: Main RM",
-              "_comment2": "Weird set setup: Set Boosters contain at least one rare or mythic rare card (approximately 42% to have two, 14% to have three, 2% to have four, and < 1% to have five)",
-              "_comment3": "My solution: no mythics in base pack, then distribute mythics according to those percentages after the fact",
-              "query": "from[{{setCode}}-main]?rarity='m'",
-              "overrideSlot": "2",
-              "percent": "42"
-            },
-            {
-              "_comment": "Slot 3: Multiverse Legend URM",
-              "query": "from[{{setCode}}-multiverse-legends]?rarity='m'",
-              "overrideSlot": "2",
-              "percent": "14"
-            },
-            {
               "_comment": "Slot 4: Foil/Etched: CURM (including Multiverse Legends in traditional foil and the foil-etched treatment)",
               "_comment2": "Approximately 4% of Set Boosters contain a foil-etched Multiverse Legends card in the traditional foil slot",
-              "query": "from[{{setCode}}-foils]?rarity='m'",
-              "setValues": { "foil": true },
-              "overrideSlot": "3",
-              "percent": "2"
-            },
-            {
-              "_comment": "Slot 5-6: 2x Wildcard CURM (including March of the Machine Commander cards, Jumpstart Booster rares, or Multiverse Legends)",
-              "query": "take[2]>from[{{setCode}}-wildcards]?rarity='m'",
+              "query": "from[{{setCode}}-multiverse-legends]?rarity=rarityByWeight2020(urm)",
+              "setValues": { "foil": true, "modifiers": [ "Foil Etched" ] },
               "overrideSlot": "4",
-              "percent": "1"
+              "percent": "4"
             }
           ]
         },        

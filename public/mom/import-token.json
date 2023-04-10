@@ -1,7 +1,7 @@
 {
-  "setCode": "one",
+  "setCode": "mom",
   "cardDataUrl": "",
-  "imagesUrl": "https://magic.wizards.com/en/news/card-preview/the-tokens-of-phyrexia-all-will-be-one",
+  "imagesUrl": "https://magic.wizards.com/en/news/card-preview/the-tokens-of-march-of-the-machine",
   "_comments": [
     "add a new card = add:true, newValues {}",
     "delete a card  = delete:true, where",
@@ -15,195 +15,398 @@
      "_comment": {
       "generatedUsing": "card-exception-generator.html",
       "settings": {
-       "setCode": "one",
-       "cardImageUrl": "https://magic.wizards.com/en/news/card-preview/the-tokens-of-phyrexia-all-will-be-one",
-       "requiredImageWidth": "744",
-       "requiredImageHeight": "1039",
-       "startingCardNum": "1",
-       "cardPattern": "000|w|Token Creature|Cat\n000|w|Token Creature|Samurai\n000|r|Token Creature|Phyrexian Goblin\n000|r|Token Creature|Phyrexian Horror\n000|r|Token Creature|Rebel\n000|g|Token Creature|Phyrexian Beast\n000|g|Token Creature|Phyrexian Horror\n000|c|Token Artifact Creature|Drone\n000|c|Token Legendary Artifact Creature|The Hollow Sentinel\n000|c|Token Artifact Creature|Phyrexian Golem\n000|c|Token Artifact Creature|Phyrexian Mite\n000|c|Token Artifact Creature|Phyrexian Mite\n000|c|Emblem|Koth, Fire of Resistance\n000|c|Marker|Poison Counter\n"
+       "setCode": "mom",
+       "cardImageUrl": "https://magic.wizards.com/en/news/card-preview/the-tokens-of-march-of-the-machine",
+       "requiredImageWidth": "",
+       "requiredImageHeight": "",
+       "startingCardNum": "",
+       "cardPattern": "x\n000|w|Token Creature|Monk\n000|w|Token Creature|Soldier\n000|w|Token Creature|Vampire\n000|u|Token Creature|Kraken\n000|b|Token Creature|Zombie\n000|r|Token Creature|First Mate Ragavan\n000|g|Token Creature|Dinosaur\n000|g|Token Creature|Phyrexian Saproling\n000|m|Token Creature|Elemental\n000|m|Token Creature|Knight\n000|m|Token Creature|Phyrexian Hydra\n000|m|Token Creature|Phyrexian Hydra\n000|m|Token Creature|Spirit\n000|m|Token Creature|Spirit\n000|m|Token Creature|Warrior\n000|c|Token Artifact|Incubator // Phyrexian\nx\n000|c|Token Artifact|Incubator // Phyrexian\nx\n000|c|Token Artifact|Incubator // Phyrexian\nx\n000|c|Token Artifact Creature|Thopter\n000|c|Token Artifact|Treasure\n000|c|Token Artifact|Treasure\n000|c|Emblem|Teferi Akosa of Zhalfir\n000|c|Emblem|Wrenn and Realmbreaker"
       }
      }
     },
     {
      "add": true,
      "newValues": {
-      "set": "one",
-      "src": "https://media.wizards.com/2023/one/en_ab6b3f3166.png",
-      "num": 1,
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_225e083133.png",
+      "num": "000",
       "colour": "w",
       "type": "Token Creature",
-      "title": "Cat",
-      "subtype": "Cat",
-      "numInt": 1
+      "title": "Monk",
+      "subtype": "Monk",
+      "numInt": 0,
+      "mtgenVariant": 1,
+      "duplicateNum": true
      }
     },
     {
      "add": true,
      "newValues": {
-      "set": "one",
-      "src": "https://media.wizards.com/2023/one/en_12808fcbfd.png",
-      "num": 2,
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_2eef32e2f0.png",
+      "num": "000",
       "colour": "w",
       "type": "Token Creature",
-      "title": "Samurai",
-      "subtype": "Samurai",
-      "numInt": 2
+      "title": "Soldier",
+      "subtype": "Soldier",
+      "numInt": 0,
+      "mtgenVariant": 2,
+      "duplicateNum": true
      }
     },
     {
      "add": true,
      "newValues": {
-      "set": "one",
-      "src": "https://media.wizards.com/2023/one/en_b603155d27.png",
-      "num": 3,
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_0883a900e7.png",
+      "height": 902,
+      "width": 646,
+      "num": "000",
+      "colour": "w",
+      "type": "Token Creature",
+      "title": "Vampire",
+      "subtype": "Vampire",
+      "numInt": 0,
+      "mtgenVariant": 3,
+      "duplicateNum": true
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_2909c9dafa.png",
+      "height": 902,
+      "width": 646,
+      "num": "000",
+      "colour": "u",
+      "type": "Token Creature",
+      "title": "Kraken",
+      "subtype": "Kraken",
+      "numInt": 0,
+      "mtgenVariant": 4,
+      "duplicateNum": true
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_9880d1c030.png",
+      "height": 902,
+      "width": 646,
+      "num": "000",
+      "colour": "b",
+      "type": "Token Creature",
+      "title": "Zombie",
+      "subtype": "Zombie",
+      "numInt": 0,
+      "mtgenVariant": 5,
+      "duplicateNum": true
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_972877273e.png",
+      "height": 902,
+      "width": 646,
+      "num": "000",
       "colour": "r",
       "type": "Token Creature",
-      "title": "Phyrexian Goblin",
-      "subtype": "Phyrexian Goblin",
-      "numInt": 3
+      "title": "First Mate Ragavan",
+      "subtype": "First Mate Ragavan",
+      "numInt": 0,
+      "mtgenVariant": 6,
+      "duplicateNum": true
      }
     },
     {
      "add": true,
      "newValues": {
-      "set": "one",
-      "src": "https://media.wizards.com/2023/one/en_670752157e.png",
-      "num": 4,
-      "colour": "r",
-      "type": "Token Creature",
-      "title": "Phyrexian Horror",
-      "subtype": "Phyrexian Horror",
-      "numInt": 4
-     }
-    },
-    {
-     "add": true,
-     "newValues": {
-      "set": "one",
-      "src": "https://media.wizards.com/2023/one/en_533dbc3794.png",
-      "num": 5,
-      "colour": "r",
-      "type": "Token Creature",
-      "title": "Rebel",
-      "subtype": "Rebel",
-      "numInt": 5
-     }
-    },
-    {
-     "add": true,
-     "newValues": {
-      "set": "one",
-      "src": "https://media.wizards.com/2023/one/en_51659e6172.png",
-      "num": 6,
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_c738487d13.png",
+      "height": 902,
+      "width": 646,
+      "num": "000",
       "colour": "g",
       "type": "Token Creature",
-      "title": "Phyrexian Beast",
-      "subtype": "Phyrexian Beast",
-      "numInt": 6
+      "title": "Dinosaur",
+      "subtype": "Dinosaur",
+      "numInt": 0,
+      "mtgenVariant": 7,
+      "duplicateNum": true
      }
     },
     {
      "add": true,
      "newValues": {
-      "set": "one",
-      "src": "https://media.wizards.com/2023/one/en_cdc4f66b07.png",
-      "num": 7,
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_d6d1dfb7d4.png",
+      "height": 902,
+      "width": 646,
+      "num": "000",
       "colour": "g",
       "type": "Token Creature",
-      "title": "Phyrexian Horror",
-      "subtype": "Phyrexian Horror",
-      "numInt": 7
+      "title": "Phyrexian Saproling",
+      "subtype": "Phyrexian Saproling",
+      "numInt": 0,
+      "mtgenVariant": 8,
+      "duplicateNum": true
      }
     },
     {
      "add": true,
      "newValues": {
-      "set": "one",
-      "src": "https://media.wizards.com/2023/one/en_88b9d2e5f5.png",
-      "num": 8,
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_3cfbddf2da.png",
+      "height": 902,
+      "width": 646,
+      "num": "000",
+      "colour": "m",
+      "type": "Token Creature",
+      "title": "Elemental",
+      "subtype": "Elemental",
+      "numInt": 0,
+      "mtgenVariant": 9,
+      "duplicateNum": true
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_0f51ecc263.png",
+      "height": 902,
+      "width": 646,
+      "num": "000",
+      "colour": "m",
+      "type": "Token Creature",
+      "title": "Knight",
+      "subtype": "Knight",
+      "numInt": 0,
+      "mtgenVariant": 10,
+      "duplicateNum": true
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_cda6274d1e.png",
+      "height": 902,
+      "width": 646,
+      "num": "000",
+      "colour": "m",
+      "type": "Token Creature",
+      "title": "Phyrexian Hydra",
+      "subtype": "Phyrexian Hydra",
+      "numInt": 0,
+      "mtgenVariant": 11,
+      "duplicateNum": true
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_563a9948ef.png",
+      "height": 902,
+      "width": 646,
+      "num": "000",
+      "colour": "m",
+      "type": "Token Creature",
+      "title": "Phyrexian Hydra",
+      "subtype": "Phyrexian Hydra",
+      "numInt": 0,
+      "mtgenVariant": 12,
+      "duplicateNum": true
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_b605dbe198.png",
+      "height": 902,
+      "width": 646,
+      "num": "000",
+      "colour": "m",
+      "type": "Token Creature",
+      "title": "Spirit",
+      "subtype": "Spirit",
+      "numInt": 0,
+      "mtgenVariant": 13,
+      "duplicateNum": true
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_af1fbb99f1.png",
+      "height": 902,
+      "width": 646,
+      "num": "000",
+      "colour": "m",
+      "type": "Token Creature",
+      "title": "Spirit",
+      "subtype": "Spirit",
+      "numInt": 0,
+      "mtgenVariant": 14,
+      "duplicateNum": true
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_f955208130.png",
+      "height": 902,
+      "width": 646,
+      "num": "000",
+      "colour": "m",
+      "type": "Token Creature",
+      "title": "Warrior",
+      "subtype": "Warrior",
+      "numInt": 0,
+      "mtgenVariant": 15,
+      "duplicateNum": true
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_01bec8f863.png",
+      "num": "000",
+      "colour": "c",
+      "type": "Token Artifact",
+      "title": "Incubator // Phyrexian",
+      "subtype": "Incubator // Phyrexian",
+      "numInt": 0,
+      "mtgenVariant": 16,
+      "duplicateNum": true
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_d258d2b8fe.png",
+      "height": 902,
+      "width": 646,
+      "num": "000",
+      "colour": "c",
+      "type": "Token Artifact",
+      "title": "Incubator // Phyrexian",
+      "subtype": "Incubator // Phyrexian",
+      "numInt": 0,
+      "mtgenVariant": 17,
+      "duplicateNum": true
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_4227c900ff.png",
+      "height": 902,
+      "width": 646,
+      "num": "000",
+      "colour": "c",
+      "type": "Token Artifact",
+      "title": "Incubator // Phyrexian",
+      "subtype": "Incubator // Phyrexian",
+      "numInt": 0,
+      "mtgenVariant": 18,
+      "duplicateNum": true
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_7a43178e03.png",
+      "height": 902,
+      "width": 646,
+      "num": "000",
       "colour": "c",
       "type": "Token Artifact Creature",
-      "title": "Drone",
-      "subtype": "Drone",
-      "numInt": 8
+      "title": "Thopter",
+      "subtype": "Thopter",
+      "numInt": 0,
+      "mtgenVariant": 19,
+      "duplicateNum": true
      }
     },
     {
      "add": true,
      "newValues": {
-      "set": "one",
-      "src": "https://media.wizards.com/2023/one/en_ea543151b6.png",
-      "num": 9,
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_ce82451d4c.png",
+      "height": 902,
+      "width": 646,
+      "num": "000",
       "colour": "c",
-      "type": "Token Legendary Artifact Creature",
-      "title": "The Hollow Sentinel",
-      "subtype": "The Hollow Sentinel",
-      "numInt": 9
+      "type": "Token Artifact",
+      "title": "Treasure",
+      "subtype": "Treasure",
+      "numInt": 0,
+      "mtgenVariant": 20,
+      "duplicateNum": true
      }
     },
     {
      "add": true,
      "newValues": {
-      "set": "one",
-      "src": "https://media.wizards.com/2023/one/en_fc02d27497.png",
-      "num": 10,
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_514dcc52fe.png",
+      "height": 902,
+      "width": 646,
+      "num": "000",
       "colour": "c",
-      "type": "Token Artifact Creature",
-      "title": "Phyrexian Golem",
-      "subtype": "Phyrexian Golem",
-      "numInt": 10
+      "type": "Token Artifact",
+      "title": "Treasure",
+      "subtype": "Treasure",
+      "numInt": 0,
+      "mtgenVariant": 21,
+      "duplicateNum": true
      }
     },
     {
      "add": true,
      "newValues": {
-      "set": "one",
-      "src": "https://media.wizards.com/2023/one/en_e95a9928e2.png",
-      "num": 11,
-      "colour": "c",
-      "type": "Token Artifact Creature",
-      "title": "Phyrexian Mite",
-      "subtype": "Phyrexian Mite",
-      "numInt": 11
-     }
-    },
-    {
-     "add": true,
-     "newValues": {
-      "set": "one",
-      "src": "https://media.wizards.com/2023/one/en_7e433aedee.png",
-      "num": 12,
-      "colour": "c",
-      "type": "Token Artifact Creature",
-      "title": "Phyrexian Mite",
-      "subtype": "Phyrexian Mite",
-      "numInt": 12
-     }
-    },
-    {
-     "add": true,
-     "newValues": {
-      "set": "one",
-      "src": "https://media.wizards.com/2023/one/en_c743ab0bce.png",
-      "num": 13,
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_e996490549.png",
+      "height": 902,
+      "width": 646,
+      "num": "000",
       "colour": "c",
       "type": "Emblem",
-      "title": "Koth, Fire of Resistance",
-      "subtype": "Koth, Fire of Resistance",
-      "numInt": 13
+      "title": "Teferi Akosa of Zhalfir",
+      "subtype": "Teferi Akosa of Zhalfir",
+      "numInt": 0,
+      "mtgenVariant": 22,
+      "duplicateNum": true
      }
     },
     {
      "add": true,
      "newValues": {
-      "set": "one",
-      "src": "https://media.wizards.com/2023/one/en_390c2eb428.png",
-      "num": 14,
+      "set": "mom",
+      "src": "https://media.wizards.com/2023/mom/en_87aaf55ab5.png",
+      "height": 902,
+      "width": 646,
+      "num": "000",
       "colour": "c",
-      "type": "Marker",
-      "title": "Poison Counter",
-      "subtype": "Poison Counter",
-      "numInt": 14
+      "type": "Emblem",
+      "title": "Wrenn and Realmbreaker",
+      "subtype": "Wrenn and Realmbreaker",
+      "numInt": 0,
+      "mtgenVariant": 23,
+      "duplicateNum": true
      }
     },
     {
@@ -211,7 +414,7 @@
      "newValues": {
       "set": "{{setCode}}",
       "rarity": "c",
-      "num": "{{num}}/014 T",
+      "num": "{{num}}/023 T",
       "token": true,
       "usableForDeckBuilding": false
      }
