@@ -147,6 +147,10 @@ app.get('/:route([A-Za-z0-9]{3})', (req, res) => {
             combinedSet.updates.map(update => {
                 update.updateDateTimestamp = new Date(update.UpdateDate.substring(0, 19)) // Some dates have an extra :00 on the end (oops)
             });
+
+            // Sort updates in descending order by updateDateTimestamp
+            combinedSet.updates.sort((a, b) => b.updateDateTimestamp - a.updateDateTimestamp);
+
             combinedSet.createdDateTimestamp = combinedSet.generatorCreatedDate;
             combinedSet.updateMoreCount = combinedSet.updates.length - 1;
             combinedSet.hasMultipleUpdates = combinedSet.updates.length > 1;
