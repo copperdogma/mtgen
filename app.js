@@ -1,9 +1,12 @@
 const compression = require('compression');
 const express = require('express');
+const dotenv = require('dotenv');
 const request = require('request');
 const path = require('path');
 const axios = require('axios');
 const cors = require('cors');
+
+dotenv.config(); // Load environment variables from .env file
 
 // Set up our view engine. We're using Handlebars (express-handlebars).
 const expressHbs = require('express-handlebars');
@@ -93,6 +96,20 @@ if (process.env.NODE_ENV === 'development') {
         req.pipe(proxyRequest).pipe(res);
     });
 }
+
+// Restart endpoint: /restart?password=...
+const restartPassword = process.env.RESTART_PASSWORD;
+
+app.get('/restart', (req, res) => {
+    const requestPassword = req.query.password;
+
+    if (requestPassword === restartPassword) {
+        res.send('Restarting application...');
+        process.exit(1); // Exit the application with a non-zero status code
+    } else {
+        res.status(401).send('Unauthorized');
+    }
+});
 
 // Home page: listing of all sets
 app.get("/", (req, res) => {

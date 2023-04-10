@@ -1,0 +1,220 @@
+{
+  "setCode": "one",
+  "cardDataUrl": "",
+  "imagesUrl": "https://magic.wizards.com/en/news/card-preview/the-tokens-of-phyrexia-all-will-be-one",
+  "_comments": [
+    "add a new card = add:true, newValues {}",
+    "delete a card  = delete:true, where",
+    "update card(s) = where, newValues {}",
+    "select cards starting with a value = where: type~='Snow'",
+    "get card directly from Gatherer = where: gatherer='Serra Angel'"
+  ],
+
+  "exceptions": [
+    {
+     "_comment": {
+      "generatedUsing": "card-exception-generator.html",
+      "settings": {
+       "setCode": "one",
+       "cardImageUrl": "https://magic.wizards.com/en/news/card-preview/the-tokens-of-phyrexia-all-will-be-one",
+       "requiredImageWidth": "744",
+       "requiredImageHeight": "1039",
+       "startingCardNum": "1",
+       "cardPattern": "000|w|Token Creature|Cat\n000|w|Token Creature|Samurai\n000|r|Token Creature|Phyrexian Goblin\n000|r|Token Creature|Phyrexian Horror\n000|r|Token Creature|Rebel\n000|g|Token Creature|Phyrexian Beast\n000|g|Token Creature|Phyrexian Horror\n000|c|Token Artifact Creature|Drone\n000|c|Token Legendary Artifact Creature|The Hollow Sentinel\n000|c|Token Artifact Creature|Phyrexian Golem\n000|c|Token Artifact Creature|Phyrexian Mite\n000|c|Token Artifact Creature|Phyrexian Mite\n000|c|Emblem|Koth, Fire of Resistance\n000|c|Marker|Poison Counter\n"
+      }
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "one",
+      "src": "https://media.wizards.com/2023/one/en_ab6b3f3166.png",
+      "num": 1,
+      "colour": "w",
+      "type": "Token Creature",
+      "title": "Cat",
+      "subtype": "Cat",
+      "numInt": 1
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "one",
+      "src": "https://media.wizards.com/2023/one/en_12808fcbfd.png",
+      "num": 2,
+      "colour": "w",
+      "type": "Token Creature",
+      "title": "Samurai",
+      "subtype": "Samurai",
+      "numInt": 2
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "one",
+      "src": "https://media.wizards.com/2023/one/en_b603155d27.png",
+      "num": 3,
+      "colour": "r",
+      "type": "Token Creature",
+      "title": "Phyrexian Goblin",
+      "subtype": "Phyrexian Goblin",
+      "numInt": 3
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "one",
+      "src": "https://media.wizards.com/2023/one/en_670752157e.png",
+      "num": 4,
+      "colour": "r",
+      "type": "Token Creature",
+      "title": "Phyrexian Horror",
+      "subtype": "Phyrexian Horror",
+      "numInt": 4
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "one",
+      "src": "https://media.wizards.com/2023/one/en_533dbc3794.png",
+      "num": 5,
+      "colour": "r",
+      "type": "Token Creature",
+      "title": "Rebel",
+      "subtype": "Rebel",
+      "numInt": 5
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "one",
+      "src": "https://media.wizards.com/2023/one/en_51659e6172.png",
+      "num": 6,
+      "colour": "g",
+      "type": "Token Creature",
+      "title": "Phyrexian Beast",
+      "subtype": "Phyrexian Beast",
+      "numInt": 6
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "one",
+      "src": "https://media.wizards.com/2023/one/en_cdc4f66b07.png",
+      "num": 7,
+      "colour": "g",
+      "type": "Token Creature",
+      "title": "Phyrexian Horror",
+      "subtype": "Phyrexian Horror",
+      "numInt": 7
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "one",
+      "src": "https://media.wizards.com/2023/one/en_88b9d2e5f5.png",
+      "num": 8,
+      "colour": "c",
+      "type": "Token Artifact Creature",
+      "title": "Drone",
+      "subtype": "Drone",
+      "numInt": 8
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "one",
+      "src": "https://media.wizards.com/2023/one/en_ea543151b6.png",
+      "num": 9,
+      "colour": "c",
+      "type": "Token Legendary Artifact Creature",
+      "title": "The Hollow Sentinel",
+      "subtype": "The Hollow Sentinel",
+      "numInt": 9
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "one",
+      "src": "https://media.wizards.com/2023/one/en_fc02d27497.png",
+      "num": 10,
+      "colour": "c",
+      "type": "Token Artifact Creature",
+      "title": "Phyrexian Golem",
+      "subtype": "Phyrexian Golem",
+      "numInt": 10
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "one",
+      "src": "https://media.wizards.com/2023/one/en_e95a9928e2.png",
+      "num": 11,
+      "colour": "c",
+      "type": "Token Artifact Creature",
+      "title": "Phyrexian Mite",
+      "subtype": "Phyrexian Mite",
+      "numInt": 11
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "one",
+      "src": "https://media.wizards.com/2023/one/en_7e433aedee.png",
+      "num": 12,
+      "colour": "c",
+      "type": "Token Artifact Creature",
+      "title": "Phyrexian Mite",
+      "subtype": "Phyrexian Mite",
+      "numInt": 12
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "one",
+      "src": "https://media.wizards.com/2023/one/en_c743ab0bce.png",
+      "num": 13,
+      "colour": "c",
+      "type": "Emblem",
+      "title": "Koth, Fire of Resistance",
+      "subtype": "Koth, Fire of Resistance",
+      "numInt": 13
+     }
+    },
+    {
+     "add": true,
+     "newValues": {
+      "set": "one",
+      "src": "https://media.wizards.com/2023/one/en_390c2eb428.png",
+      "num": 14,
+      "colour": "c",
+      "type": "Marker",
+      "title": "Poison Counter",
+      "subtype": "Poison Counter",
+      "numInt": 14
+     }
+    },
+    {
+     "where": "",
+     "newValues": {
+      "set": "{{setCode}}",
+      "rarity": "c",
+      "num": "{{num}}/014 T",
+      "token": true,
+      "usableForDeckBuilding": false
+     }
+    }
+   ]
+}

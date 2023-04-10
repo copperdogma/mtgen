@@ -1,5 +1,5 @@
 /*
-MtG Generator script v3.0.2 - LIB
+MtG Generator script v3.0.3 - LIB
 
 Shared/base functions.
 
@@ -17,6 +17,7 @@ Query examples:
 
 Author: Cam Marsollier cam.marsollier@gmail.com
 
+20230409: Added suport for grouping by new card type: 'Battle'
 20230117: Added my.getSetNameFromCard() function for use by the web's exporter for .coll formats.
 20230105: Finally fixed range bug, where (200-203) would only take 201,202 and leave out 203.
 20221231: Refactor: implemented github @goblin's changes as v3:
@@ -128,6 +129,7 @@ var mtgGen = (function (my) {
         enchantment: { sorder: 7, code: 'e', name: 'Enchantment' },
         artifact: { sorder: 8, code: 'a', name: 'Artifact' },
         land: { sorder: 9, code: 'l', name: 'Land' },
+        battle: { sorder: 10, code: 'b', name: 'Battle' },
         unknown: { sorder: 97, code: '?', name: 'Unknown' },
     };
     function getCardTypeByCode(code) {
@@ -684,7 +686,7 @@ var mtgGen = (function (my) {
                 cardQueries.push(cardDef);
             }
             else {
-                console.error(`cardDef doesn't have a queryDef or query property: ${cardDef}`);
+                console.error(`cardDef doesn't have a queryDef or query property: ${JSON.stringify(cardDef)}`);
             }
         });
 
