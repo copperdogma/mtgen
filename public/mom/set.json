@@ -1,7 +1,7 @@
 {
   "startProductName": "mom-prerelease",
   "packFiles": [
-    "packs.json?v1.4"
+    "packs.json?v1.7"
   ],
   "cardFiles": [
     "cardsMain.json",
@@ -15,6 +15,18 @@
     "../cards/ads/cardsAds.json"
   ],
   "updates": [
+    {
+      "UpdateDate": "2023-03-11T17:30:00:00",
+      "HtmlString": "Fixed Collector Booster: Serialized RM Multiverse Legends now appear in slot 1 (VERY rarely)."
+    },
+    {
+      "UpdateDate": "2023-03-10T16:40:00:00",
+      "HtmlString": "Fixed Collector Booster: Serialized Praetors now occupt slot 2 instead of 1 (if you've lucky enough to get one)."
+    },
+    {
+      "UpdateDate": "2023-03-10T16:30:00:00",
+      "HtmlString": "Fixed Set Booster (again): Now always includes a rare (or mythic!) in slot 2."
+    },
     {
       "UpdateDate": "2023-03-10T15:15:00:00",
       "HtmlString": "Added proper tokens."

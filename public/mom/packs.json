@@ -319,24 +319,36 @@
               "query": "from[{{setCode}}-multiverse-legends]?rarity=rarityByWeight2020(rm)",
               "percent": "14",
               "overrideSlot": "1",
-              "setValues": { "foil": true , "modifiers": [ "Foil Etched" ] }            
+              "setValues": { "foil": true , "modifiers": [ "Foil Etched" ] }
             },
             {
               "_comment4": "Halo foil in 10% of boosters",
               "query": "from[{{setCode}}-multiverse-legends]?rarity=rarityByWeight2020(rm)",
               "percent": "10",
               "overrideSlot": "1",
-              "setValues": { "foil": true, "modifiers": [ "Halo Foil" ] }            
+              "setValues": { "foil": true, "modifiers": [ "Halo Foil" ] }
             },
+            {
+              "_comment4": "Serialized double rainbow in < 1% of boosters",
+              "query": "from[{{setCode}}-multiverse-legends]?rarity=rarityByWeight2020(rm)",
+              "percent": "0.05",
+              "overrideSlot": "1",
+              "setValues": { "foil": true, "modifiers": [ "Serialized Double Rainbow" ] }
+            }
+          ]
+        },
+        {
+          "querySet": [
             {
               "_comment4": "Serialized double rainbow in < 1% of boosters",
               "query": "from[{{setCode}}-serialized-praetors]",
               "percent": "0.05",
-              "overrideSlot": "1",
+              "overrideSlot": "2",
               "setValues": { "foil": true, "modifiers": [ "Serialized Double Rainbow" ] }            
             }
           ]
-        },        {
+        },
+        {
           "querySet": [
             {
               "_comment": "Slot 7: Traditional Foil Multiverse Legend U",
@@ -377,7 +389,7 @@
           "_comment": "Slot 2: Main RM",
           "_comment2": "Weird set setup: Set Boosters contain at least one rare or mythic rare card (approximately 42% to have two, 14% to have three, 2% to have four, and < 1% to have five)",
           "_comment3": "My solution: no mythics in base pack, then distribute mythics according to those percentages after the fact",
-          "query": "from[{{setCode}}-main]?rarity=rarityByWeight2020(urm)"
+          "query": "from[{{setCode}}-main]?rarity=rarityByWeight2020(rm)"
         },
         {
           "_comment": "Slot 3: Multiverse Legend URM",
